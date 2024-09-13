@@ -1,21 +1,18 @@
 import type { Link } from '../types';
-import type { Notification, Subject, User } from '../utils/api/typesGitHub';
-import { mockAtlasifyUser, mockToken } from './state-mocks';
+import type {
+  AtlasifyNotification,
+  Subject,
+  User,
+} from '../utils/api/typesGitHub';
 
 export function partialMockNotification(
   subject: Partial<Subject>,
-): Notification {
-  const mockNotification: Partial<Notification> = {
-    account: {
-      platform: 'Atlassian Cloud',
-      method: 'API Token',
-      token: mockToken,
-      user: mockAtlasifyUser,
-    },
+): AtlasifyNotification {
+  const mockNotification: Partial<AtlasifyNotification> = {
     subject: subject as Subject,
   };
 
-  return mockNotification as Notification;
+  return mockNotification as AtlasifyNotification;
 }
 
 export function partialMockUser(login: string): User {

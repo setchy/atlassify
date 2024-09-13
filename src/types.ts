@@ -1,4 +1,9 @@
-import type { Notification, Reason } from './utils/api/typesGitHub';
+import type {
+  AtlasifyNotification,
+  Category,
+  Product,
+  ReadState,
+} from './utils/api/typesGitHub';
 import type { AuthMethod, PlatformType } from './utils/auth/types';
 
 declare const __brand: unique symbol;
@@ -24,9 +29,8 @@ export type Status = 'loading' | 'success' | 'error';
 export interface Account {
   method: AuthMethod;
   platform: PlatformType;
-  version?: string;
   token: Token;
-  user: AtlasifyUser | null;
+  user: AtlasifyUser;
 }
 
 export type SettingsValue =
@@ -34,7 +38,9 @@ export type SettingsValue =
   | number
   | GroupBy
   | OpenPreference
-  | Reason[]
+  | Category[]
+  | ReadState[]
+  | Product[]
   | Theme;
 
 export type SettingsState = AppearanceSettingsState &
@@ -45,17 +51,11 @@ export type SettingsState = AppearanceSettingsState &
 interface AppearanceSettingsState {
   theme: Theme;
   zoomPercentage: number;
-  detailedNotifications: boolean;
   showAccountHeader: boolean;
-  showPills: boolean;
-  showNumber: boolean;
 }
 
 interface NotificationSettingsState {
   groupBy: GroupBy;
-  participating: boolean;
-  markAsDoneOnOpen: boolean;
-  markAsDoneOnUnsubscribe: boolean;
   delayNotificationState: boolean;
 }
 
@@ -63,15 +63,16 @@ interface SystemSettingsState {
   openLinks: OpenPreference;
   keyboardShortcut: boolean;
   showNotificationsCountInTray: boolean;
-  showNotifications: boolean;
+  showSystemNotifications: boolean;
   useAlternateIdleIcon: boolean;
   playSound: boolean;
   openAtStartup: boolean;
 }
 
 interface FilterSettingsState {
-  hideBots: boolean;
-  filterReasons: Reason[];
+  filterCategories: Category[];
+  filterReadStates: ReadState[];
+  filterProducts: Product[];
 }
 
 export interface AtlasifyState {
@@ -91,6 +92,7 @@ export enum OpenPreference {
 }
 
 export enum GroupBy {
+  PRODUCT = 'PRODUCT',
   REPOSITORY = 'REPOSITORY',
   DATE = 'DATE',
 }
@@ -102,7 +104,7 @@ export type RadioGroupItem = {
 
 export interface AccountNotifications {
   account: Account;
-  notifications: Notification[];
+  notifications: AtlasifyNotification[];
   error: AtlasifyError | null;
 }
 

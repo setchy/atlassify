@@ -1,16 +1,8 @@
-import {
-  CheckIcon,
-  CommentIcon,
-  GitPullRequestIcon,
-  IssueClosedIcon,
-  MilestoneIcon,
-  PaintbrushIcon,
-  TagIcon,
-} from '@primer/octicons-react';
+import { PaintbrushIcon } from '@primer/octicons-react';
 import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../context/App';
-import { Size, Theme } from '../../types';
+import { Theme } from '../../types';
 import { hasMultipleAccounts } from '../../utils/auth/utils';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
@@ -50,6 +42,7 @@ export const AppearanceSettings: FC = () => {
   return (
     <fieldset>
       <Legend icon={PaintbrushIcon}>Appearance</Legend>
+
       <RadioGroup
         name="theme"
         label="Theme:"
@@ -63,6 +56,7 @@ export const AppearanceSettings: FC = () => {
           updateSetting('theme', evt.target.value as Theme);
         }}
       />
+
       <div className="flex items-center mt-3 mb-2 text-sm">
         <label
           htmlFor="Zoom"
@@ -105,97 +99,7 @@ export const AppearanceSettings: FC = () => {
           X
         </Button>
       </div>
-      <Checkbox
-        name="detailedNotifications"
-        label="Detailed notifications"
-        checked={settings.detailedNotifications}
-        onChange={(evt) =>
-          updateSetting('detailedNotifications', evt.target.checked)
-        }
-        tooltip={
-          <div>
-            <div className="pb-3">
-              Enrich notifications with author or last commenter profile
-              information, state and GitHub-like colors.
-            </div>
-            <div className="text-orange-600">
-              ⚠️ Users with a large number of unread notifications <i>may</i>{' '}
-              experience rate limiting under certain circumstances. Disable this
-              setting if you experience this.
-            </div>
-          </div>
-        }
-      />
-      <Checkbox
-        name="showPills"
-        label="Show notification metric pills"
-        checked={settings.showPills}
-        onChange={(evt) => updateSetting('showPills', evt.target.checked)}
-        tooltip={
-          <div>
-            <div>Show notification metric pills for:</div>
-            <div className="pl-6">
-              <ul className="list-disc">
-                <li>
-                  <IssueClosedIcon size={Size.MEDIUM} className="pr-1" />
-                  linked issues
-                </li>
-                <li>
-                  <CheckIcon size={Size.MEDIUM} className="pr-1" /> pr reviews
-                </li>
-                <li>
-                  <CommentIcon size={Size.MEDIUM} className="pr-1" />
-                  comments
-                </li>
 
-                <li>
-                  <TagIcon size={Size.MEDIUM} className="pr-1" />
-                  labels
-                </li>
-                <li>
-                  <MilestoneIcon size={Size.MEDIUM} className="pr-1" />
-                  milestones
-                </li>
-              </ul>
-            </div>
-          </div>
-        }
-      />
-      <Checkbox
-        name="showNumber"
-        label="Show number"
-        checked={settings.detailedNotifications && settings.showNumber}
-        onChange={(evt) =>
-          settings.detailedNotifications &&
-          updateSetting('showNumber', evt.target.checked)
-        }
-        disabled={!settings.detailedNotifications}
-        tooltip={
-          <div>
-            <div>Show GitHub number for:</div>
-            <div className="pl-6">
-              <ul className="list-disc">
-                <li>
-                  <CommentIcon size={Size.MEDIUM} className="pr-1" />
-                  Discussion
-                </li>
-                <li>
-                  <IssueClosedIcon size={Size.MEDIUM} className="pr-1" />
-                  Issue
-                </li>
-                <li>
-                  <GitPullRequestIcon size={Size.MEDIUM} className="pr-1" />
-                  Pull Request
-                </li>
-              </ul>
-            </div>
-            <div className="pt-3 text-orange-600">
-              ⚠️ This setting requires <strong>Detailed Notifications</strong> to
-              be enabled.
-            </div>
-          </div>
-        }
-      />
       <Checkbox
         name="showAccountHeader"
         label="Show account header"

@@ -3,16 +3,8 @@ import axios, { AxiosError } from 'axios';
 import nock from 'nock';
 
 import log from 'electron-log';
-import {
-  mockAtlassianCloudAccount,
-  mockAuth,
-  mockSettings,
-  mockState,
-} from '../__mocks__/state-mocks';
-import {
-  mockNotificationUser,
-  mockSingleNotification,
-} from '../utils/api/__mocks__/response-mocks';
+import { mockAuth, mockSettings, mockState } from '../__mocks__/state-mocks';
+import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import { Errors } from '../utils/errors';
 import { useNotifications } from './useNotifications';
 
@@ -29,7 +21,7 @@ describe('hooks/useNotifications.ts', () => {
   const id = mockSingleNotification.id;
 
   describe('fetchNotifications', () => {
-    it('should fetch non-detailed notifications with success', async () => {
+    it('should fetch notifications with success', async () => {
       const mockState = {
         auth: mockAuth,
         settings: {
@@ -66,185 +58,6 @@ describe('hooks/useNotifications.ts', () => {
       expect(result.current.notifications[0].notifications.length).toBe(2);
 
       expect(result.current.notifications[1].notifications.length).toBe(2);
-    });
-
-    it('should fetch detailed notifications with success', async () => {
-      const mockNotifications = [
-        {
-          id: 1,
-          subject: {
-            title: 'This is a check suite workflow.',
-            type: 'CheckSuite',
-            url: null,
-            latest_comment_url: null,
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-        },
-        {
-          id: 2,
-          subject: {
-            title: 'This is a Discussion.',
-            type: 'Discussion',
-            url: null,
-            latest_comment_url: null,
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-          updated_at: '2024-02-26T00:00:00Z',
-        },
-        {
-          id: 3,
-          subject: {
-            title: 'This is an Issue.',
-            type: 'Issue',
-            url: 'https://api.github.com/repos/atlasify-app/notifications-test/issues/3',
-            latest_comment_url:
-              'https://api.github.com/repos/atlasify-app/notifications-test/issues/3/comments',
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-        },
-        {
-          id: 4,
-          subject: {
-            title: 'This is a Pull Request.',
-            type: 'PullRequest',
-            url: 'https://api.github.com/repos/atlasify-app/notifications-test/pulls/4',
-            latest_comment_url:
-              'https://api.github.com/repos/atlasify-app/notifications-test/issues/4/comments',
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-        },
-        {
-          id: 5,
-          subject: {
-            title: 'This is an invitation.',
-            type: 'RepositoryInvitation',
-            url: null,
-            latest_comment_url: null,
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-        },
-        {
-          id: 6,
-          subject: {
-            title: 'This is a workflow run.',
-            type: 'WorkflowRun',
-            url: null,
-            latest_comment_url: null,
-          },
-          repository: {
-            full_name: 'atlasify-app/notifications-test',
-          },
-        },
-      ];
-
-      nock('https://api.github.com')
-        .get('/notifications?participating=false')
-        .reply(200, mockNotifications);
-
-      nock('https://api.github.com')
-        .post('/graphql')
-        .reply(200, {
-          data: {
-            search: {
-              nodes: [
-                {
-                  title: 'This is a Discussion.',
-                  stateReason: null,
-                  isAnswered: true,
-                  url: 'https://github.com/atlasify-app/notifications-test/discussions/612',
-                  author: {
-                    login: 'discussion-creator',
-                    url: 'https://github.com/discussion-creator',
-                    avatar_url:
-                      'https://avatars.githubusercontent.com/u/133795385?s=200&v=4',
-                    type: 'User',
-                  },
-                  comments: {
-                    nodes: [
-                      {
-                        databaseId: 2297637,
-                        createdAt: '2022-03-04T20:39:44Z',
-                        author: {
-                          login: 'comment-user',
-                          url: 'https://github.com/comment-user',
-                          avatar_url:
-                            'https://avatars.githubusercontent.com/u/1?v=4',
-                          type: 'User',
-                        },
-                        replies: {
-                          nodes: [],
-                        },
-                      },
-                    ],
-                  },
-                  labels: null,
-                },
-              ],
-            },
-          },
-        });
-
-      nock('https://api.github.com')
-        .get('/repos/atlasify-app/notifications-test/issues/3')
-        .reply(200, {
-          state: 'closed',
-          merged: true,
-          user: mockNotificationUser,
-          labels: [],
-        });
-      nock('https://api.github.com')
-        .get('/repos/atlasify-app/notifications-test/issues/3/comments')
-        .reply(200, {
-          user: mockNotificationUser,
-        });
-      nock('https://api.github.com')
-        .get('/repos/atlasify-app/notifications-test/pulls/4')
-        .reply(200, {
-          state: 'closed',
-          merged: false,
-          user: mockNotificationUser,
-          labels: [],
-        });
-      nock('https://api.github.com')
-        .get('/repos/atlasify-app/notifications-test/pulls/4/reviews')
-        .reply(200, {});
-      nock('https://api.github.com')
-        .get('/repos/atlasify-app/notifications-test/issues/4/comments')
-        .reply(200, {
-          user: mockNotificationUser,
-        });
-
-      const { result } = renderHook(() => useNotifications());
-
-      act(() => {
-        result.current.fetchNotifications({
-          auth: {
-            accounts: [mockAtlassianCloudAccount],
-          },
-          settings: {
-            ...mockSettings,
-            detailedNotifications: true,
-          },
-        });
-      });
-
-      expect(result.current.status).toBe('loading');
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('success');
-      });
-
-      expect(result.current.notifications[0].notifications.length).toBe(6);
     });
 
     it('should fetch notifications with same failures', async () => {

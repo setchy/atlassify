@@ -1,10 +1,10 @@
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 import { defaultSettings } from '../context/App';
 import type { Link, SettingsState } from '../types';
-import type { Notification } from './api/typesGitHub';
+import type { AtlasifyNotification } from './api/typesGitHub';
 
 export async function generateGitHubWebUrl(
-  notification: Notification,
+  notification: AtlasifyNotification,
 ): Promise<Link> {
   const url = new URL(notification.entity.url);
 
@@ -27,7 +27,7 @@ export function formatForDisplay(text: string[]): string {
 }
 
 export function formatNotificationUpdatedAt(
-  notification: Notification,
+  notification: AtlasifyNotification,
 ): string {
   try {
     return formatDistanceToNowStrict(parseISO(notification.updated_at), {
@@ -41,15 +41,22 @@ export function formatNotificationUpdatedAt(
 export function getFilterCount(settings: SettingsState): number {
   let count = 0;
 
-  if (settings.filterReasons.length !== defaultSettings.filterReasons.length) {
-    count += settings.filterReasons.length;
+  if (
+    settings.filterCategories.length !== defaultSettings.filterCategories.length
+  ) {
+    count += settings.filterCategories.length;
   }
 
   if (
-    settings.detailedNotifications &&
-    settings.hideBots !== defaultSettings.hideBots
+    settings.filterReadStates.length !== defaultSettings.filterReadStates.length
   ) {
-    count += 1;
+    count += settings.filterReadStates.length;
+  }
+
+  if (
+    settings.filterProducts.length !== defaultSettings.filterProducts.length
+  ) {
+    count += settings.filterProducts.length;
   }
 
   return count;

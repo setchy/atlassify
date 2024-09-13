@@ -6,7 +6,7 @@ import {
 import { ensureStableEmojis, mockDirectoryPath } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
 import { GroupBy } from '../types';
-import { mockGitHubNotifications } from '../utils/api/__mocks__/response-mocks';
+import { mockAtlasifyNotification } from '../utils/api/__mocks__/response-mocks';
 import * as links from '../utils/links';
 import { AccountNotifications } from './AccountNotifications';
 
@@ -23,7 +23,7 @@ describe('components/AccountNotifications.tsx', () => {
   it('should render itself - group notifications by repositories', () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockGitHubNotifications,
+      notifications: mockAtlasifyNotification,
       showAccountHeader: true,
       error: null,
     };
@@ -41,7 +41,7 @@ describe('components/AccountNotifications.tsx', () => {
   it('should render itself - group notifications by date', () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockGitHubNotifications,
+      notifications: mockAtlasifyNotification,
       showAccountHeader: true,
       error: null,
     };
@@ -173,7 +173,7 @@ describe('components/AccountNotifications.tsx', () => {
   it('should toggle account notifications visibility', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockGitHubNotifications,
+      notifications: mockAtlasifyNotification,
       showAccountHeader: true,
       error: null,
     };

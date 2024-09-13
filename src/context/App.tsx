@@ -21,7 +21,7 @@ import {
   type Status,
   Theme,
 } from '../types';
-import type { Notification } from '../utils/api/typesGitHub';
+import type { AtlasifyNotification, ReadState } from '../utils/api/typesGitHub';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import {
   addAccount,
@@ -48,17 +48,11 @@ export const defaultAuth: AuthState = {
 const defaultAppearanceSettings = {
   theme: Theme.SYSTEM,
   zoomPercentage: 100,
-  detailedNotifications: true,
-  showPills: true,
-  showNumber: true,
   showAccountHeader: false,
 };
 
 const defaultNotificationSettings = {
   groupBy: GroupBy.REPOSITORY,
-  participating: false,
-  markAsDoneOnOpen: false,
-  markAsDoneOnUnsubscribe: false,
   delayNotificationState: false,
 };
 
@@ -66,15 +60,16 @@ const defaultSystemSettings = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcut: true,
   showNotificationsCountInTray: false,
-  showNotifications: true,
+  showSystemNotifications: true,
   playSound: true,
   useAlternateIdleIcon: false,
   openAtStartup: false,
 };
 
 export const defaultFilters = {
-  hideBots: false,
-  filterReasons: [],
+  filterCategories: [],
+  filterReadStates: ['unread' as ReadState],
+  filterProducts: [],
 };
 
 export const defaultSettings: SettingsState = {
@@ -95,11 +90,17 @@ interface AppContextState {
   globalError: AtlasifyError;
   removeAccountNotifications: (account: Account) => Promise<void>;
   fetchNotifications: () => Promise<void>;
-  markNotificationRead: (notification: Notification) => Promise<void>;
-  markNotificationDone: (notification: Notification) => Promise<void>;
-  unsubscribeNotification: (notification: Notification) => Promise<void>;
-  markRepoNotificationsRead: (notification: Notification) => Promise<void>;
-  markRepoNotificationsDone: (notification: Notification) => Promise<void>;
+  markNotificationRead: (notification: AtlasifyNotification) => Promise<void>;
+  markNotificationDone: (notification: AtlasifyNotification) => Promise<void>;
+  unsubscribeNotification: (
+    notification: AtlasifyNotification,
+  ) => Promise<void>;
+  markRepoNotificationsRead: (
+    notification: AtlasifyNotification,
+  ) => Promise<void>;
+  markRepoNotificationsDone: (
+    notification: AtlasifyNotification,
+  ) => Promise<void>;
 
   settings: SettingsState;
   clearFilters: () => void;
@@ -255,25 +256,25 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const markNotificationReadWithAccounts = useCallback(
-    async (notification: Notification) =>
+    async (notification: AtlasifyNotification) =>
       await markNotificationRead({ auth, settings }, notification),
     [auth, settings, markNotificationRead],
   );
 
   const markNotificationDoneWithAccounts = useCallback(
-    async (notification: Notification) =>
+    async (notification: AtlasifyNotification) =>
       await markNotificationDone({ auth, settings }, notification),
     [auth, settings, markNotificationDone],
   );
 
   const markRepoNotificationsReadWithAccounts = useCallback(
-    async (notification: Notification) =>
+    async (notification: AtlasifyNotification) =>
       await markRepoNotificationsRead({ auth, settings }, notification),
     [auth, settings, markRepoNotificationsRead],
   );
 
   const markRepoNotificationsDoneWithAccounts = useCallback(
-    async (notification: Notification) =>
+    async (notification: AtlasifyNotification) =>
       await markRepoNotificationsDone({ auth, settings }, notification),
     [auth, settings, markRepoNotificationsDone],
   );

@@ -8,7 +8,7 @@ import {
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
 import { AppContext } from '../context/App';
 import { type Account, type AtlasifyError, Opacity, Size } from '../types';
-import type { Notification } from '../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../utils/api/typesGitHub';
 import { cn } from '../utils/cn';
 import {
   openAccountProfile,
@@ -26,7 +26,7 @@ import { PlatformIcon } from './icons/PlatformIcon';
 
 interface IAccountNotifications {
   account: Account;
-  notifications: Notification[];
+  notifications: AtlasifyNotification[];
   error: AtlasifyError | null;
   showAccountHeader: boolean;
 }
@@ -40,7 +40,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const groupedNotifications = Object.values(
     notifications.reduce(
-      (acc: { [key: string]: Notification[] }, notification) => {
+      (acc: { [key: string]: AtlasifyNotification[] }, notification) => {
         const key = notification.repository.full_name;
         if (!acc[key]) acc[key] = [];
         acc[key].push(notification);

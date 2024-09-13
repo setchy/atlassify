@@ -1,9 +1,4 @@
-import {
-  FeedPersonIcon,
-  FilterIcon,
-  FilterRemoveIcon,
-  NoteIcon,
-} from '@primer/octicons-react';
+import { FilterIcon, FilterRemoveIcon, NoteIcon } from '@primer/octicons-react';
 import { type FC, useContext } from 'react';
 import { Header } from '../components/Header';
 import { Checkbox } from '../components/fields/Checkbox';
@@ -11,26 +6,25 @@ import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
 import { BUTTON_CLASS_NAME } from '../styles/gitify';
 import { Size } from '../types';
-import type { Reason } from '../utils/api/typesGitHub';
-import { FORMATTED_REASONS, formatReason } from '../utils/reason';
+import type { Product } from '../utils/api/typesGitHub';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);
 
-  const updateReasonFilter = (reason: Reason, checked: boolean) => {
-    let reasons: Reason[] = settings.filterReasons;
+  const updateProductFilter = (product: Product, checked: boolean) => {
+    let products: Product[] = settings.filterProducts;
 
     if (checked) {
-      reasons.push(reason);
+      products.push(product);
     } else {
-      reasons = reasons.filter((r) => r !== reason);
+      products = products.filter((r) => r !== product);
     }
 
-    updateSetting('filterReasons', reasons);
+    updateSetting('filterProducts', products);
   };
 
-  const shouldShowReason = (reason: Reason) => {
-    return settings.filterReasons.includes(reason);
+  const shouldShowProduct = (product: Product) => {
+    return settings.filterProducts.includes(product);
   };
 
   return (
@@ -40,47 +34,22 @@ export const FiltersRoute: FC = () => {
       </Header>
       <div className="flex-grow overflow-x-auto px-8">
         <fieldset className="mb-3">
-          <Legend icon={FeedPersonIcon}>Users</Legend>
-          <Checkbox
-            name="hideBots"
-            label="Hide notifications from Bot accounts"
-            checked={settings.detailedNotifications && settings.hideBots}
-            onChange={(evt) =>
-              settings.detailedNotifications &&
-              updateSetting('hideBots', evt.target.checked)
-            }
-            disabled={!settings.detailedNotifications}
-            tooltip={
-              <div>
-                <div className="pb-3">
-                  Hide notifications from GitHub Bot accounts, such as
-                  @dependabot, @renovate, @netlify, etc
-                </div>
-                <div className="text-orange-600">
-                  ⚠️ This filter requires the{' '}
-                  <strong>Detailed Notifications</strong> setting to be enabled.
-                </div>
-              </div>
-            }
-          />
-        </fieldset>
-
-        <fieldset className="mb-3">
           <Legend icon={NoteIcon}>Reason</Legend>
+
           <span className="text-xs italic">
             Note: if no reasons are selected, all notifications will be shown.
           </span>
-          {Object.keys(FORMATTED_REASONS).map((reason: Reason) => {
+          {Object.keys([]).map((product: Product) => {
             return (
               <Checkbox
-                key={reason}
-                name={reason}
-                label={formatReason(reason).title}
-                checked={shouldShowReason(reason)}
+                key={product}
+                name={product}
+                label={product}
+                checked={shouldShowProduct(product)}
                 onChange={(evt) =>
-                  updateReasonFilter(reason, evt.target.checked)
+                  updateProductFilter(product, evt.target.checked)
                 }
-                tooltip={<div>{formatReason(reason).description}</div>}
+                tooltip={<div>{product}</div>}
               />
             );
           })}

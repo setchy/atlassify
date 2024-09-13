@@ -10,6 +10,7 @@ import {
   Theme,
   type Token,
 } from '../types';
+import type { ReadState } from '../utils/api/typesGitHub';
 
 export const mockAtlasifyUser: AtlasifyUser = {
   login: 'atlas',
@@ -35,17 +36,11 @@ export const mockToken = mockAtlassianCloudAccount.token;
 const mockAppearanceSettings = {
   theme: Theme.SYSTEM,
   zoomPercentage: 100,
-  detailedNotifications: true,
-  showPills: true,
-  showNumber: true,
   showAccountHeader: false,
 };
 
 const mockNotificationSettings = {
   groupBy: GroupBy.REPOSITORY,
-  participating: false,
-  markAsDoneOnOpen: false,
-  markAsDoneOnUnsubscribe: false,
   delayNotificationState: false,
 };
 
@@ -53,15 +48,16 @@ const mockSystemSettings = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcut: true,
   showNotificationsCountInTray: false,
-  showNotifications: true,
+  showSystemNotifications: true,
   playSound: true,
   useAlternateIdleIcon: false,
   openAtStartup: false,
 };
 
 const mockFilters = {
-  hideBots: false,
-  filterReasons: [],
+  filterCategories: [],
+  filterReadStates: ['unread' as ReadState],
+  filterProducts: [],
 };
 
 export const mockSettings: SettingsState = {

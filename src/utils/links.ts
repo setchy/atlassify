@@ -1,5 +1,9 @@
 import type { Account, Link } from '../types';
-import type { Notification, Repository, SubjectUser } from './api/typesGitHub';
+import type {
+  AtlasifyNotification,
+  Repository,
+  SubjectUser,
+} from './api/typesGitHub';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
 import { generateGitHubWebUrl } from './helpers';
@@ -42,7 +46,7 @@ export function openRepository(repository: Repository) {
   openExternalLink(repository.html_url);
 }
 
-export async function openNotification(notification: Notification) {
+export async function openNotification(notification: AtlasifyNotification) {
   const url = await generateGitHubWebUrl(notification);
   openExternalLink(url);
 }

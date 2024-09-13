@@ -324,7 +324,7 @@ describe('context/App.tsx', () => {
         return (
           <button
             type="button"
-            onClick={() => updateSetting('participating', true)}
+            onClick={() => updateSetting('playSound', true)}
           >
             Test Case
           </button>
@@ -346,7 +346,7 @@ describe('context/App.tsx', () => {
         } as AuthState,
         settings: {
           ...defaultSettings,
-          participating: true,
+          playSound: true,
         } as SettingsState,
       });
     });
@@ -422,8 +422,9 @@ describe('context/App.tsx', () => {
         } as AuthState,
         settings: {
           ...mockSettings,
-          hideBots: defaultSettings.hideBots,
-          filterReasons: defaultSettings.filterReasons,
+          filterCategories: defaultSettings.filterCategories,
+          filterReadStates: defaultSettings.filterReadStates,
+          filterProducts: defaultSettings.filterProducts,
         },
       });
     });

@@ -1,11 +1,11 @@
 import type { AccountNotifications } from '../types';
-import { mockGitHubNotifications } from '../utils/api/__mocks__/response-mocks';
+import { mockAtlasifyNotification } from '../utils/api/__mocks__/response-mocks';
 import { mockAtlassianCloudAccount } from './state-mocks';
 
 export const mockAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
-    notifications: mockGitHubNotifications,
+    notifications: mockAtlasifyNotification,
     error: null,
   },
 ];
@@ -13,7 +13,7 @@ export const mockAccountNotifications: AccountNotifications[] = [
 export const mockSingleAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
-    notifications: [mockGitHubNotifications[0]],
+    notifications: [mockAtlasifyNotification[0]],
     error: null,
   },
 ];

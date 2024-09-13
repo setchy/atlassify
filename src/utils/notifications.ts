@@ -7,7 +7,10 @@ import type {
 } from '../types';
 import { listNotificationsForAuthenticatedUser } from './api/client';
 import { determineFailureType } from './api/errors';
-import { type AtlassianNotification, Notification } from './api/typesGitHub';
+import type {
+  AtlasifyNotification,
+  AtlassianNotification,
+} from './api/typesGitHub';
 import { getAccountUUID } from './auth/utils';
 import { hideWindow, showWindow, updateTrayIcon } from './comms';
 import { openNotification } from './links';
@@ -68,12 +71,14 @@ export const triggerNativeNotifications = (
     raiseSoundNotification();
   }
 
-  if (state.settings.showNotifications) {
+  if (state.settings.showSystemNotifications) {
     raiseNativeNotification(diffNotifications);
   }
 };
 
-export const raiseNativeNotification = (notifications: Notification[]) => {
+export const raiseNativeNotification = (
+  notifications: AtlasifyNotification[],
+) => {
   let title: string;
   let body: string;
 
@@ -202,17 +207,27 @@ export function mapAtlassianNotificationsToAtlasifyNotifications(
 }
 
 export function filterNotifications(
-  notifications: Notification[],
+  notifications: AtlasifyNotification[],
   settings: SettingsState,
-): Notification[] {
+): AtlasifyNotification[] {
   return notifications.filter((notification) => {
-    if (settings.hideBots && notification.subject?.user?.type === 'Bot') {
+    if (
+      settings.filterCategories.length > 0 &&
+      !settings.filterCategories.includes(notification.category)
+    ) {
       return false;
     }
 
     if (
-      settings.filterReasons.length > 0 &&
-      !settings.filterReasons.includes(notification.reason)
+      settings.filterReadStates.length > 0 &&
+      !settings.filterReadStates.includes(notification.readState)
+    ) {
+      return false;
+    }
+
+    if (
+      settings.filterProducts.length > 0 &&
+      !settings.filterProducts.includes(notification.product.name)
     ) {
       return false;
     }

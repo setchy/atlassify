@@ -1,42 +1,13 @@
 import { BitbucketIcon } from '@atlaskit/logo';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
 import type { Link } from '../../../types';
-import type { Notification, Repository, User } from '../typesGitHub';
+import type { AtlasifyNotification, Repository } from '../typesGitHub';
 
-export const mockNotificationUser: User = {
-  login: 'octocat',
-  id: 123456789,
-  node_id: 'MDQ6VXNlcjE=',
-  avatar_url: 'https://avatars.githubusercontent.com/u/583231?v=4' as Link,
-  gravatar_url: '' as Link,
-  url: 'https://api.github.com/users/octocat' as Link,
-  html_url: 'https://github.com/octocat' as Link,
-  followers_url: 'https://api.github.com/users/octocat/followers' as Link,
-  following_url:
-    'https://api.github.com/users/octocat/following{/other_user}' as Link,
-  gists_url: 'https://api.github.com/users/octocat/gists{/gist_id}' as Link,
-  starred_url:
-    'https://api.github.com/users/octocat/starred{/owner}{/repo}' as Link,
-  subscriptions_url:
-    'https://api.github.com/users/octocat/subscriptions' as Link,
-  organizations_url: 'https://api.github.com/users/octocat/orgs' as Link,
-  repos_url: 'https://api.github.com/users/octocat/repos' as Link,
-  events_url: 'https://api.github.com/users/octocat/events{/privacy}' as Link,
-  received_events_url:
-    'https://api.github.com/users/octocat/received_events' as Link,
-  type: 'User',
-  site_admin: false,
-};
-
-// 2 Notifications
-// Hostname : 'github.com'
-// Repository : 'atlasify-app/notifications-test'
-export const mockGitHubNotifications: Notification[] = [
+export const mockAtlasifyNotification: AtlasifyNotification[] = [
   {
     account: mockAtlassianCloudAccount,
     id: '138661096',
     unread: true,
-    reason: 'subscribed',
     updated_at: '2017-05-20T17:51:57Z',
     last_read_at: '2017-05-20T17:06:51Z',
     subject: {
@@ -44,8 +15,6 @@ export const mockGitHubNotifications: Notification[] = [
       url: 'https://api.github.com/repos/atlasify-app/notifications-test/issues/1' as Link,
       latest_comment_url:
         'https://api.github.com/repos/atlasify-app/notifications-test/issues/comments/302888448' as Link,
-      type: 'Issue',
-      state: 'open',
       user: {
         login: 'gitify-app',
         html_url: 'https://github.com/atlasify-app' as Link,
@@ -53,20 +22,6 @@ export const mockGitHubNotifications: Notification[] = [
           'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
         type: 'User',
       },
-      reviews: [
-        {
-          state: 'APPROVED',
-          users: ['octocat'],
-        },
-        {
-          state: 'CHANGES_REQUESTED',
-          users: ['gitify-app'],
-        },
-        {
-          state: 'PENDING',
-          users: ['gitify-user'],
-        },
-      ],
     },
     entity: {
       title: 'Repository',
@@ -79,9 +34,11 @@ export const mockGitHubNotifications: Notification[] = [
       url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
     },
     product: {
-      name: 'Bitbucket',
+      name: 'bitbucket',
       icon: BitbucketIcon,
     },
+    category: 'direct',
+    readState: 'unread',
     repository: {
       id: 57216596,
       node_id: 'MDEwOlJlcG9zaXRvcnkzNjAyOTcwNg==',
@@ -199,10 +156,8 @@ export const mockGitHubNotifications: Notification[] = [
       'https://api.github.com/notifications/threads/138661096/subscription' as Link,
   },
   {
-    account: mockAtlassianCloudAccount,
     id: '148827438',
     unread: true,
-    reason: 'author',
     updated_at: '2017-05-20T17:06:34Z',
     last_read_at: '2017-05-20T16:59:03Z',
     subject: {
@@ -210,8 +165,6 @@ export const mockGitHubNotifications: Notification[] = [
       url: 'https://api.github.com/repos/atlasify-app/notifications-test/issues/4' as Link,
       latest_comment_url:
         'https://api.github.com/repos/atlasify-app/notifications-test/issues/comments/302885965' as Link,
-      type: 'Issue',
-      reviews: null,
     },
     entity: {
       title: 'Repository',
@@ -224,9 +177,12 @@ export const mockGitHubNotifications: Notification[] = [
       url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
     },
     product: {
-      name: 'Bitbucket',
+      name: 'bitbucket',
       icon: BitbucketIcon,
     },
+    category: 'direct',
+    readState: 'unread',
+    account: mockAtlassianCloudAccount,
     repository: {
       id: 57216596,
       name: 'notifications-test',
@@ -271,4 +227,5 @@ export const mockGitHubNotifications: Notification[] = [
   },
 ];
 
-export const mockSingleNotification: Notification = mockGitHubNotifications[0];
+export const mockSingleNotification: AtlasifyNotification =
+  mockAtlasifyNotification[0];

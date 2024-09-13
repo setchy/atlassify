@@ -6,7 +6,7 @@ import {
 import { type FC, type MouseEvent, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
 import { Opacity, Size } from '../types';
-import type { Notification } from '../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../utils/api/typesGitHub';
 import { cn } from '../utils/cn';
 import { openRepository } from '../utils/links';
 import { HoverGroup } from './HoverGroup';
@@ -15,7 +15,7 @@ import { InteractionButton } from './buttons/InteractionButton';
 import { AvatarIcon } from './icons/AvatarIcon';
 
 interface IRepositoryNotifications {
-  repoNotifications: Notification[];
+  repoNotifications: AtlasifyNotification[];
   repoName: string;
 }
 

@@ -4,7 +4,7 @@ import { ReadIcon } from '@primer/octicons-react';
 import { type FC, useCallback, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
 import { Opacity, Size } from '../types';
-import type { Notification } from '../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../utils/api/typesGitHub';
 import { cn } from '../utils/cn';
 import { formatNotificationUpdatedAt } from '../utils/helpers';
 import { openNotification } from '../utils/links';
@@ -14,7 +14,7 @@ import { NotificationFooter } from './notification/NotificationFooter';
 import { NotificationHeader } from './notification/NotificationHeader';
 
 interface INotificationRow {
-  notification: Notification;
+  notification: AtlasifyNotification;
   isAnimated?: boolean;
   isRead?: boolean;
 }
@@ -35,11 +35,7 @@ export const NotificationRow: FC<INotificationRow> = ({
 
     openNotification(notification);
 
-    if (settings.markAsDoneOnOpen) {
-      markNotificationDone(notification);
-    } else {
-      markNotificationRead(notification);
-    }
+    markNotificationRead(notification);
   }, [notification, markNotificationDone, markNotificationRead, settings]);
 
   const notificationTitle = notification.subject.title.trim();

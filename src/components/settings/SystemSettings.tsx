@@ -14,6 +14,7 @@ export const SystemSettings: FC = () => {
   return (
     <fieldset>
       <Legend icon={DeviceDesktopIcon}>System</Legend>
+
       <RadioGroup
         name="openLinks"
         label="Open Links:"
@@ -26,6 +27,7 @@ export const SystemSettings: FC = () => {
           updateSetting('openLinks', evt.target.value as OpenPreference);
         }}
       />
+
       <Checkbox
         name="keyboardShortcutEnabled"
         label="Enable keyboard shortcut"
@@ -43,6 +45,7 @@ export const SystemSettings: FC = () => {
           </div>
         }
       />
+
       {isMacOS() && (
         <Checkbox
           name="showNotificationsCountInTray"
@@ -53,20 +56,23 @@ export const SystemSettings: FC = () => {
           }
         />
       )}
+
       <Checkbox
         name="showNotifications"
         label="Show system notifications"
-        checked={settings.showNotifications}
+        checked={settings.showSystemNotifications}
         onChange={(evt) =>
-          updateSetting('showNotifications', evt.target.checked)
+          updateSetting('showSystemNotifications', evt.target.checked)
         }
       />
+
       <Checkbox
         name="playSound"
         label="Play sound"
         checked={settings.playSound}
         onChange={(evt) => updateSetting('playSound', evt.target.checked)}
       />
+
       <Checkbox
         name="useAlternateIdleIcon"
         label="Use alternate idle icon"
@@ -82,6 +88,7 @@ export const SystemSettings: FC = () => {
           </div>
         }
       />
+
       {!isLinux() && (
         <Checkbox
           name="openAtStartUp"

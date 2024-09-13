@@ -6,7 +6,7 @@ import {
 import { AppContext } from '../context/App';
 import type { Link } from '../types';
 import {
-  mockGitHubNotifications,
+  mockAtlasifyNotification,
   mockSingleNotification,
 } from '../utils/api/__mocks__/response-mocks';
 import * as comms from '../utils/comms';
@@ -23,7 +23,7 @@ describe('components/Repository.tsx', () => {
   const props = {
     account: mockAtlassianCloudAccount,
     repoName: 'atlasify-app/notifications-test',
-    repoNotifications: mockGitHubNotifications,
+    repoNotifications: mockAtlasifyNotification,
   };
 
   afterEach(() => {

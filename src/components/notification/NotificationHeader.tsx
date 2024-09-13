@@ -1,13 +1,13 @@
 import { type FC, type MouseEvent, useContext } from 'react';
 import { AppContext } from '../../context/App';
 import { Opacity, Size } from '../../types';
-import type { Notification } from '../../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../../utils/api/typesGitHub';
 import { cn } from '../../utils/cn';
 import { openRepository } from '../../utils/links';
 import { AvatarIcon } from '../icons/AvatarIcon';
 
 interface INotificationHeader {
-  notification: Notification;
+  notification: AtlasifyNotification;
 }
 
 export const NotificationHeader: FC<INotificationHeader> = ({

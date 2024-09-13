@@ -11,7 +11,7 @@ import {
   markNotificationThreadAsRead,
   markRepositoryNotificationsAsRead,
 } from '../utils/api/client';
-import type { Notification } from '../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../utils/api/typesGitHub';
 import { getAccountUUID } from '../utils/auth/utils';
 import {
   getAllNotifications,
@@ -27,19 +27,19 @@ interface NotificationsState {
   fetchNotifications: (state: AtlasifyState) => Promise<void>;
   markNotificationRead: (
     state: AtlasifyState,
-    notification: Notification,
+    notification: AtlasifyNotification,
   ) => Promise<void>;
   markNotificationDone: (
     state: AtlasifyState,
-    notification: Notification,
+    notification: AtlasifyNotification,
   ) => Promise<void>;
   markRepoNotificationsRead: (
     state: AtlasifyState,
-    notification: Notification,
+    notification: AtlasifyNotification,
   ) => Promise<void>;
   markRepoNotificationsDone: (
     state: AtlasifyState,
-    notification: Notification,
+    notification: AtlasifyNotification,
   ) => Promise<void>;
   status: Status;
   globalError: AtlasifyError;
@@ -102,7 +102,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markNotificationRead = useCallback(
-    async (state: AtlasifyState, notification: Notification) => {
+    async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
       try {
@@ -129,7 +129,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markNotificationDone = useCallback(
-    async (state: AtlasifyState, notification: Notification) => {
+    async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
       try {
@@ -151,7 +151,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markRepoNotificationsRead = useCallback(
-    async (state: AtlasifyState, notification: Notification) => {
+    async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
       const repoSlug = notification.repository.full_name;
@@ -183,7 +183,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markRepoNotificationsDone = useCallback(
-    async (state: AtlasifyState, notification: Notification) => {
+    async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
       const repoSlug = notification.repository.full_name;

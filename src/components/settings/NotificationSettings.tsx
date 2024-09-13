@@ -12,6 +12,7 @@ export const NotificationSettings: FC = () => {
   return (
     <fieldset>
       <Legend icon={BellIcon}>Notifications</Legend>
+
       <RadioGroup
         name="groupBy"
         label="Group by:"
@@ -25,34 +26,6 @@ export const NotificationSettings: FC = () => {
         }}
       />
 
-      <Checkbox
-        name="markAsDoneOnOpen"
-        label="Mark as done on open"
-        checked={settings.markAsDoneOnOpen}
-        onChange={(evt) =>
-          updateSetting('markAsDoneOnOpen', evt.target.checked)
-        }
-        tooltip={
-          <div>
-            <strong>Mark as Done</strong> feature is supported in GitHub Cloud
-            and GitHub Enterprise Server 3.13 or later.
-          </div>
-        }
-      />
-      <Checkbox
-        name="markAsDoneOnUnsubscribe"
-        label="Mark as done on unsubscribe"
-        checked={settings.markAsDoneOnUnsubscribe}
-        onChange={(evt) =>
-          updateSetting('markAsDoneOnUnsubscribe', evt.target.checked)
-        }
-        tooltip={
-          <div>
-            <strong>Mark as Done</strong> feature is supported in GitHub Cloud
-            and GitHub Enterprise Server 3.13 or later.
-          </div>
-        }
-      />
       <Checkbox
         name="delayNotificationState"
         label="Delay notification state"

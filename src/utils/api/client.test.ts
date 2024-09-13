@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   mockAtlassianCloudAccount,
+  mockSettings,
   mockToken,
   mockUsername,
 } from '../../__mocks__/state-mocks';
@@ -53,10 +54,6 @@ describe('utils/api/client.ts', () => {
   });
 
   describe('listNotificationsForAuthenticatedUser', () => {
-    const mockSettings: Partial<SettingsState> = {
-      participating: true,
-    };
-
     it('should list notifications for user', async () => {
       await listNotificationsForAuthenticatedUser(
         mockAtlassianCloudAccount,

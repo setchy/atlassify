@@ -60,26 +60,6 @@ describe('components/NotificationRow.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render itself & its children - hide numbers', async () => {
-    jest
-      .spyOn(global.Date, 'now')
-      .mockImplementation(() => new Date('2024').valueOf());
-
-    const props = {
-      notification: mockSingleNotification,
-      account: mockAtlassianCloudAccount,
-    };
-
-    const tree = render(
-      <AppContext.Provider
-        value={{ settings: { ...mockSettings, showNumber: false } }}
-      >
-        <NotificationRow {...props} />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
   describe('notification interactions', () => {
     it('should open a notification in the browser - click', () => {
       const markNotificationRead = jest.fn();
@@ -92,7 +72,7 @@ describe('components/NotificationRow.tsx', () => {
       render(
         <AppContext.Provider
           value={{
-            settings: { ...mockSettings, markAsDoneOnOpen: false },
+            settings: mockSettings,
             markNotificationRead,
             auth: mockAuth,
           }}
@@ -119,7 +99,6 @@ describe('components/NotificationRow.tsx', () => {
           value={{
             settings: {
               ...mockSettings,
-              markAsDoneOnOpen: false,
               delayNotificationState: true,
             },
             markNotificationRead,
@@ -146,7 +125,7 @@ describe('components/NotificationRow.tsx', () => {
       render(
         <AppContext.Provider
           value={{
-            settings: { ...mockSettings, markAsDoneOnOpen: false },
+            settings: mockSettings,
             markNotificationRead,
             auth: mockAuth,
           }}
@@ -160,31 +139,6 @@ describe('components/NotificationRow.tsx', () => {
       expect(markNotificationRead).toHaveBeenCalledTimes(1);
     });
 
-    it('should open a notification in browser & mark it as done', () => {
-      const markNotificationDone = jest.fn();
-
-      const props = {
-        notification: mockSingleNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, markAsDoneOnOpen: true },
-            markNotificationDone,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.click(screen.getByRole('main'));
-      expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationDone).toHaveBeenCalledTimes(1);
-    });
-
     it('should mark a notification as read', () => {
       const markNotificationRead = jest.fn();
 
@@ -196,7 +150,7 @@ describe('components/NotificationRow.tsx', () => {
       render(
         <AppContext.Provider
           value={{
-            settings: { ...mockSettings, markAsDoneOnOpen: false },
+            settings: mockSettings,
             markNotificationRead,
           }}
         >

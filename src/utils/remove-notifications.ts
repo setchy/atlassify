@@ -1,10 +1,10 @@
 import type { AccountNotifications, SettingsState } from '../types';
-import type { Notification } from './api/typesGitHub';
+import type { AtlasifyNotification } from './api/typesGitHub';
 import { getAccountUUID } from './auth/utils';
 
 export function removeNotifications(
   settings: SettingsState,
-  notification: Notification,
+  notification: AtlasifyNotification,
   notifications: AccountNotifications[],
 ): AccountNotifications[] {
   if (settings.delayNotificationState) {

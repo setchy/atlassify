@@ -1,110 +1,8 @@
 import type { Account, Link } from '../../types';
 
-export type Reason =
-  | 'approval_requested'
-  | 'assign'
-  | 'author'
-  | 'ci_activity'
-  | 'comment'
-  | 'invitation'
-  | 'manual'
-  | 'member_feature_requested'
-  | 'mention'
-  | 'review_requested'
-  | 'security_advisory_credit'
-  | 'security_alert'
-  | 'state_change'
-  | 'subscribed'
-  | 'team_mention';
-
-// Note: ANSWERED and OPEN are not an official discussion state type in the GitHub API
-export type DiscussionStateType =
-  | 'ANSWERED'
-  | 'DUPLICATE'
-  | 'OPEN'
-  | 'OUTDATED'
-  | 'REOPENED'
-  | 'RESOLVED';
-
-export type SubjectType =
-  | 'CheckSuite'
-  | 'Commit'
-  | 'Discussion'
-  | 'Issue'
-  | 'PullRequest'
-  | 'Release'
-  | 'RepositoryDependabotAlertsThread'
-  | 'RepositoryInvitation'
-  | 'RepositoryVulnerabilityAlert'
-  | 'WorkflowRun';
-
-export type IssueStateType = 'closed' | 'open';
-
-export type IssueStateReasonType = 'completed' | 'not_planned' | 'reopened';
-
-export type UserType =
-  | 'Bot'
-  | 'EnterpriseUserAccount'
-  | 'Mannequin'
-  | 'Organization'
-  | 'User';
-
-/**
- * Note: draft and merged are not official states in the GitHub API.
- * These are derived from the pull request's `merged` and `draft` properties.
- */
-export type PullRequestStateType = 'closed' | 'draft' | 'merged' | 'open';
-
-export type StateType =
-  | CheckSuiteStatus
-  | DiscussionStateType
-  | IssueStateType
-  | IssueStateReasonType
-  | PullRequestStateType;
-
-export type CheckSuiteStatus =
-  | 'action_required'
-  | 'cancelled'
-  | 'completed'
-  | 'failure'
-  | 'in_progress'
-  | 'pending'
-  | 'queued'
-  | 'requested'
-  | 'skipped'
-  | 'stale'
-  | 'success'
-  | 'timed_out'
-  | 'waiting';
-
-export type PullRequestReviewState =
-  | 'APPROVED'
-  | 'CHANGES_REQUESTED'
-  | 'COMMENTED'
-  | 'DISMISSED'
-  | 'PENDING';
-
-export type PullRequestReviewAuthorAssociation =
-  | 'COLLABORATOR'
-  | 'CONTRIBUTOR'
-  | 'FIRST_TIMER'
-  | 'FIRST_TIME_CONTRIBUTOR'
-  | 'MANNEQUIN'
-  | 'MEMBER'
-  | 'NONE'
-  | 'OWNER';
-
-export type Notification = GitHubNotification & GitifyNotification;
-
-export interface AtlassianProduct {
-  name: string;
-  icon: React.ComponentType;
-}
-
-export interface GitHubNotification {
+export interface AtlasifyNotification {
   id: string;
   unread: boolean;
-  reason: Reason;
   updated_at: string;
   last_read_at: string | null;
   subject: Subject;
@@ -119,13 +17,21 @@ export interface GitHubNotification {
     url: Link;
   };
   product: {
-    name: string;
+    name: Product;
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     icon: any;
   };
   repository: Repository;
+  category: Category;
+  readState: ReadState;
   url: Link;
   subscription_url: Link;
+  account: Account;
+}
+
+export interface AtlassianProduct {
+  name: string;
+  icon: React.ComponentType;
 }
 
 // Note: This is not in the official GitHub API. We add this to make notification interactions easier.
@@ -151,6 +57,17 @@ export interface MyNotifications {
     };
   };
 }
+
+export type Category = 'direct' | 'watching';
+
+export type ReadState = 'unread' | 'read';
+
+export type Product =
+  | 'bitbucket'
+  | 'confluence'
+  | 'compass'
+  | 'jira'
+  | 'unknown';
 
 export interface AtlassianNotification {
   groupId: string;
@@ -243,16 +160,16 @@ export interface User {
   site_admin: boolean;
 }
 
+export type UserType =
+  | 'Bot'
+  | 'EnterpriseUserAccount'
+  | 'Mannequin'
+  | 'Organization'
+  | 'User';
+
 export interface SubjectUser {
   login: string;
   html_url: Link;
-  avatar_url: Link;
-  type: UserType;
-}
-
-export interface DiscussionAuthor {
-  login: string;
-  url: Link;
   avatar_url: Link;
   type: UserType;
 }
@@ -333,234 +250,15 @@ interface GitHubSubject {
   title: string;
   url: Link | null;
   latest_comment_url: Link | null;
-  type: SubjectType;
 }
 
 // This is not in the GitHub API, but we add it to the type to make it easier to work with
 export interface GitifySubject {
   number?: number;
-  state?: StateType;
   user?: SubjectUser;
-  reviews?: GitifyPullRequestReview[];
   linkedIssues?: string[];
   comments?: number;
   labels?: string[];
-  milestone?: Milestone;
-}
-
-export interface PullRequest {
-  url: Link;
-  id: number;
-  node_id: string;
-  html_url: Link;
-  diff_url: Link;
-  patch_url: Link;
-  issue_url: Link;
-  number: number;
-  state: PullRequestStateType;
-  locked: boolean;
-  title: string;
-  user: User;
-  body: string;
-  created_at: string;
-  updated_at: string;
-  closed_at: string | null;
-  merged_at: string | null;
-  merge_commit_sha: string | null;
-  labels: Labels[];
-  milestone: Milestone | null;
-  draft: boolean;
-  commits_url: Link;
-  review_comments_url: Link;
-  review_comment_url: Link;
-  comments_url: Link;
-  statuses_url: Link;
-  author_association: string;
-  merged: boolean;
-  mergeable: boolean;
-  rebaseable: boolean;
-  comments: number;
-  review_comments: number;
-  maintainer_can_modify: boolean;
-  commits: number;
-  additions: number;
-  deletions: number;
-  changed_files: number;
-}
-
-export interface GitifyPullRequestReview {
-  state: PullRequestReviewState;
-  users: string[];
-}
-
-export interface Labels {
-  id: number;
-  node_id: string;
-  url: Link;
-  name: string;
-  color: string;
-  default: boolean;
-  description: string;
-}
-
-export interface PullRequestReview {
-  id: number;
-  node_id: string;
-  user: User;
-  body: string;
-  state: PullRequestReviewState;
-  html_url: Link;
-  pull_request_url: Link;
-  author_association: PullRequestReviewAuthorAssociation;
-  submitted_at: string;
-  commit_id: string;
-}
-
-export interface Commit {
-  sha: string;
-  node_id: string;
-  commit: {
-    author: CommitUser;
-    committer: CommitUser;
-    message: string;
-    tree: {
-      sha: string;
-      url: Link;
-    };
-    url: Link;
-    comment_count: number;
-    verification: {
-      verified: boolean;
-      reason: string;
-      signature: string | null;
-      payload: string | null;
-    };
-  };
-  url: Link;
-  html_url: Link;
-  comments_url: Link;
-  author: User;
-  committer: User;
-  parents: CommitParent[];
-  stats: {
-    total: number;
-    additions: number;
-    deletions: number;
-  };
-  files: CommitFiles[];
-}
-
-interface CommitUser {
-  name: string;
-  email: string;
-  date: string;
-}
-
-interface CommitParent {
-  sha: string;
-  url: Link;
-  html_url: Link;
-}
-
-interface CommitFiles {
-  sha: string;
-  filename: string;
-  status: string;
-  additions: number;
-  deletions: number;
-  changes: number;
-  blob_url: Link;
-  raw_url: Link;
-  contents_url: Link;
-  patch: string;
-}
-
-export interface CommitComment {
-  url: Link;
-  html_url: Link;
-  issue_url: Link;
-  id: number;
-  node_id: string;
-  user: User;
-  created_at: string;
-  updated_at: string;
-  body: string;
-}
-
-export interface Issue {
-  url: Link;
-  repository_url: Link;
-  labels_url: Link;
-  comments_url: Link;
-  events_url: Link;
-  html_url: Link;
-  id: number;
-  node_id: string;
-  number: number;
-  title: string;
-  user: User;
-  state: IssueStateType;
-  locked: boolean;
-  labels: Labels[];
-  milestone: Milestone | null;
-  comments: number;
-  created_at: string;
-  updated_at: string;
-  closed_at: string | null;
-  author_association: string;
-  body: string;
-  state_reason: IssueStateReasonType | null;
-}
-
-export interface IssueOrPullRequestComment {
-  url: Link;
-  html_url: Link;
-  issue_url: Link;
-  id: number;
-  node_id: string;
-  user: User;
-  created_at: string;
-  updated_at: string;
-  body: string;
-}
-
-export interface Milestone {
-  url: Link;
-  html_url: Link;
-  labels_url: Link;
-  id: number;
-  node_id: string;
-  number: number;
-  title: string;
-  description: string;
-  creator: User;
-  open_issues: number;
-  closed_issues: number;
-  state: MilestoneStateType;
-  created_at: string;
-  updated_at: string;
-  due_on: string | null;
-  closed_at: string | null;
-}
-
-type MilestoneStateType = 'open' | 'closed';
-
-export interface Release {
-  url: Link;
-  assets_url: Link;
-  upload_url: Link;
-  html_url: Link;
-  id: number;
-  author: User;
-  node_id: string;
-  tag_name: string;
-  target_commitish: string;
-  name: string | null;
-  body: string | null;
-  draft: boolean;
-  prerelease: boolean;
-  created_at: string;
-  published_at: string | null;
 }
 
 export interface GraphQLSearch<T> {
@@ -575,63 +273,7 @@ export interface GraphQLResponse<T> {
   data: T;
 }
 
-export interface Discussion {
-  number: number;
-  title: string;
-  stateReason: DiscussionStateType;
-  isAnswered: boolean;
-  url: Link;
-  author: DiscussionAuthor;
-  comments: DiscussionComments;
-  labels: DiscussionLabels | null;
-}
-
-export interface DiscussionLabels {
-  nodes: DiscussionLabel[];
-}
-
-export interface DiscussionLabel {
-  name: string;
-}
-
-export interface DiscussionComments {
-  nodes: DiscussionComment[];
-  totalCount: number;
-}
-
-export interface DiscussionComment {
-  databaseId: string | number;
-  createdAt: string;
-  author: DiscussionAuthor;
-  replies?: {
-    nodes: DiscussionComment[];
-  };
-}
-
-export interface CheckSuiteAttributes {
-  workflowName: string;
-  attemptNumber?: number;
-  statusDisplayName: string;
-  status: CheckSuiteStatus | null;
-  branchName: string;
-}
-
-export interface WorkflowRunAttributes {
-  user: string;
-  statusDisplayName: string;
-  status: CheckSuiteStatus | null;
-}
-
 export interface GitHubRESTError {
   message: string;
   documentation_url: Link;
-}
-
-export interface NotificationThreadSubscription {
-  subscribed: boolean;
-  ignored: boolean;
-  reason: string | null;
-  created_at: string;
-  url: Link;
-  thread_url: Link;
 }
