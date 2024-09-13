@@ -146,8 +146,6 @@ export async function getAllNotifications(
             rawNotifications,
           );
 
-          console.log('ADAM ', notifications.length);
-
           notifications = filterNotifications(notifications, state.settings);
 
           return {

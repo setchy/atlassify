@@ -7,13 +7,13 @@ import { AppContext } from '../context/App';
 import { BUTTON_CLASS_NAME } from '../styles/gitify';
 import { Size } from '../types';
 import type { Category, Product, ReadState } from '../utils/api/types';
-import { getProductDetails, PRODUCTS } from '../utils/product';
 import {
   CATEGORIES,
+  READ_STATES,
   getCategoryDetails,
   getReadStateDetails,
-  READ_STATES,
 } from '../utils/filters';
+import { PRODUCTS, getProductDetails } from '../utils/product';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);

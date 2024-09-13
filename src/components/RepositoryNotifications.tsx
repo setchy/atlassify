@@ -5,7 +5,7 @@ import {
 } from '@primer/octicons-react';
 import { type FC, type MouseEvent, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
-import { AtlasifyNotification, Opacity, Size } from '../types';
+import { type AtlasifyNotification, Opacity, Size } from '../types';
 import { cn } from '../utils/cn';
 import { openRepository } from '../utils/links';
 import { HoverGroup } from './HoverGroup';

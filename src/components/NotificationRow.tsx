@@ -3,7 +3,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { ReadIcon } from '@primer/octicons-react';
 import { type FC, useCallback, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
-import { AtlasifyNotification, Opacity, Size } from '../types';
+import { type AtlasifyNotification, Opacity, Size } from '../types';
 import { cn } from '../utils/cn';
 import { formatNotificationUpdatedAt } from '../utils/helpers';
 import { openNotification } from '../utils/links';

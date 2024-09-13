@@ -10,7 +10,7 @@ import { AppContext } from '../context/App';
 import {
   type Account,
   type AtlasifyError,
-  AtlasifyNotification,
+  type AtlasifyNotification,
   Opacity,
   Size,
 } from '../types';

@@ -1,6 +1,6 @@
 import { type FC, type MouseEvent, useContext } from 'react';
 import { AppContext } from '../../context/App';
-import { AtlasifyNotification, Opacity, Size } from '../../types';
+import { type AtlasifyNotification, Opacity, Size } from '../../types';
 import { cn } from '../../utils/cn';
 import { openRepository } from '../../utils/links';
 import { AvatarIcon } from '../icons/AvatarIcon';

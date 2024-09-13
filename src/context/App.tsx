@@ -13,7 +13,7 @@ import {
   type Account,
   type AccountNotifications,
   type AtlasifyError,
-  AtlasifyNotification,
+  type AtlasifyNotification,
   type AuthState,
   GroupBy,
   OpenPreference,
