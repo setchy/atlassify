@@ -22,7 +22,7 @@ import {
   type Status,
   Theme,
 } from '../types';
-import type { ReadState } from '../utils/api/types';
+import type { Category, ReadState } from '../utils/api/types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import {
   addAccount,
@@ -68,7 +68,7 @@ const defaultSystemSettings = {
 };
 
 export const defaultFilters = {
-  filterCategories: [],
+  filterCategories: ['direct' as Category],
   filterReadStates: ['unread' as ReadState],
   filterProducts: [],
 };
