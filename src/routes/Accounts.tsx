@@ -59,7 +59,7 @@ export const AccountsRoute: FC = () => {
             >
               <div className="ml-2">
                 <div>
-                  <Tooltip content="Open Profile">
+                  <Tooltip content={account.user.name}>
                     <Avatar
                       name={account.user.name}
                       src={account.user.avatar}

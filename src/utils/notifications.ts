@@ -6,7 +6,7 @@ import type {
   AtlasifyState,
   SettingsState,
 } from '../types';
-import { listNotificationsForAuthenticatedUser } from './api/client';
+import { getNotificationsForUser } from './api/client';
 import { determineFailureType } from './api/errors';
 import type { AtlassianNotification } from './api/types';
 import { getAccountUUID } from './auth/utils';
@@ -14,6 +14,7 @@ import { hideWindow, showWindow, updateTrayIcon } from './comms';
 import { openNotification } from './links';
 import { isWindows } from './platform';
 import { getAtlassianProduct } from './product';
+import { READ_STATES } from './filters';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);
@@ -118,10 +119,7 @@ function getNotifications(state: AtlasifyState) {
   return state.auth.accounts.map((account) => {
     return {
       account,
-      notifications: listNotificationsForAuthenticatedUser(
-        account,
-        state.settings,
-      ),
+      notifications: getNotificationsForUser(account, state.settings),
     };
   });
 }
@@ -205,6 +203,7 @@ export function mapAtlassianNotificationsToAtlasifyNotifications(
     path: notification.headNotification.content.path[0],
     category: notification.headNotification.category,
     readState: notification.headNotification.readState,
+    unread: notification.headNotification.readState === READ_STATES.unread.name,
     product: getAtlassianProduct(notification),
     account: account,
   }));

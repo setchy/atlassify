@@ -9,8 +9,8 @@ import type {
   Status,
 } from '../types';
 import {
-  markNotificationThreadAsRead,
-  markRepositoryNotificationsAsRead,
+  markNotificationsAsRead,
+  markNotificationsAsUnread,
 } from '../utils/api/client';
 import { getAccountUUID } from '../utils/auth/utils';
 import {
@@ -29,7 +29,7 @@ interface NotificationsState {
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
-  markNotificationDone: (
+  markNotificationUnread: (
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
@@ -106,10 +106,7 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
 
       try {
-        await markNotificationThreadAsRead(
-          notification.id,
-          notification.account.token,
-        );
+        await markNotificationsAsRead(notification.account, [notification.id]);
 
         const updatedNotifications = removeNotification(
           state.settings,
@@ -121,6 +118,26 @@ export const useNotifications = (): NotificationsState => {
         setTrayIconColor(updatedNotifications);
       } catch (err) {
         log.error('Error occurred while marking notification as read', err);
+      }
+
+      setStatus('success');
+    },
+    [notifications],
+  );
+
+  const markNotificationUnread = useCallback(
+    async (state: AtlasifyState, notification: AtlasifyNotification) => {
+      setStatus('loading');
+
+      try {
+        await markNotificationsAsUnread(notification.account, [
+          notification.id,
+        ]);
+
+        setNotifications(notifications);
+        setTrayIconColor(notifications);
+      } catch (err) {
+        log.error('Error occurred while marking notification as unread', err);
       }
 
       setStatus('success');
@@ -154,13 +171,13 @@ export const useNotifications = (): NotificationsState => {
     async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
-      const repoSlug = notification.repository.full_name;
+      // const repoSlug = notification.repository.full_name;
 
       try {
-        await markRepositoryNotificationsAsRead(
-          repoSlug,
-          notification.account.token,
-        );
+        // await markRepositoryNotificationsAsRead(
+        //   repoSlug,
+        //   notification.account.token,
+        // );
 
         const updatedNotifications = removeNotifications(
           state.settings,
@@ -237,7 +254,7 @@ export const useNotifications = (): NotificationsState => {
     removeAccountNotifications,
     fetchNotifications,
     markNotificationRead,
-    markNotificationDone,
+    markNotificationUnread,
     markRepoNotificationsRead,
     markRepoNotificationsDone,
   };

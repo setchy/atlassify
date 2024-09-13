@@ -1,6 +1,6 @@
 import Avatar from '@atlaskit/avatar';
 import Tooltip from '@atlaskit/tooltip';
-import { ReadIcon } from '@primer/octicons-react';
+import { ReadIcon, UnreadIcon } from '@primer/octicons-react';
 import { type FC, useCallback, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
 import { type AtlasifyNotification, Opacity, Size } from '../types';
@@ -11,7 +11,7 @@ import { HoverGroup } from './HoverGroup';
 import { InteractionButton } from './buttons/InteractionButton';
 import { NotificationFooter } from './notification/NotificationFooter';
 import { NotificationHeader } from './notification/NotificationHeader';
-
+import PresenceActiveIcon from '@atlaskit/icon/glyph/presence-active';
 interface INotificationRow {
   notification: AtlasifyNotification;
   isAnimated?: boolean;
@@ -23,7 +23,8 @@ export const NotificationRow: FC<INotificationRow> = ({
   isAnimated = false,
   isRead = false,
 }: INotificationRow) => {
-  const { settings, markNotificationRead } = useContext(AppContext);
+  const { settings, markNotificationRead, markNotificationUnread } =
+    useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
 
@@ -54,14 +55,23 @@ export const NotificationRow: FC<INotificationRow> = ({
       )}
     >
       <div className="mr-3 flex items-center justify-center">
-        <Tooltip content="Open Profile">
-          <Avatar
-            name={notification.subject.user.login}
-            src={notification.subject.user.avatar_url}
-            size="small"
-            // onClick={() => openAccountProfile(account)}
-          />
-        </Tooltip>
+        <div className="flex flex-col items-center justify-center">
+          <Tooltip content={notification.subject.user.login}>
+            <Avatar
+              name={notification.subject.user.login}
+              src={notification.subject.user.avatar_url}
+              size="small"
+              // onClick={() => openAccountProfile(account)}
+            />
+          </Tooltip>
+          {notification.unread && (
+            <PresenceActiveIcon
+              label="unread"
+              size="small"
+              primaryColor="blue"
+            />
+          )}
+        </div>
       </div>
 
       <div
@@ -86,16 +96,30 @@ export const NotificationRow: FC<INotificationRow> = ({
 
       {!animateExit && (
         <HoverGroup>
-          <InteractionButton
-            title="Mark as Read"
-            icon={ReadIcon}
-            size={Size.SMALL}
-            onClick={() => {
-              setAnimateExit(!settings.delayNotificationState);
-              setShowAsRead(settings.delayNotificationState);
-              markNotificationRead(notification);
-            }}
-          />
+          {notification.unread && (
+            <InteractionButton
+              title="Mark as Read"
+              icon={ReadIcon}
+              size={Size.SMALL}
+              onClick={() => {
+                setAnimateExit(!settings.delayNotificationState);
+                setShowAsRead(settings.delayNotificationState);
+                markNotificationRead(notification);
+              }}
+            />
+          )}
+          {!notification.unread && (
+            <InteractionButton
+              title="Mark as Unread"
+              icon={UnreadIcon}
+              size={Size.SMALL}
+              onClick={() => {
+                setAnimateExit(!settings.delayNotificationState);
+                setShowAsRead(false);
+                markNotificationUnread(notification);
+              }}
+            />
+          )}
         </HoverGroup>
       )}
     </div>

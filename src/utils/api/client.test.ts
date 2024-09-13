@@ -8,11 +8,9 @@ import {
 import type { SettingsState } from '../../types';
 import {
   getAuthenticatedUser,
-  headNotifications,
-  listNotificationsForAuthenticatedUser,
-  markNotificationThreadAsDone,
-  markNotificationThreadAsRead,
-  markRepositoryNotificationsAsRead,
+  getNotificationsForUser,
+  markNotificationsAsRead,
+  markNotificationsAsUnread,
 } from './client';
 
 jest.mock('axios');
@@ -39,23 +37,9 @@ describe('utils/api/client.ts', () => {
     });
   });
 
-  describe('headNotifications', () => {
-    it('should fetch notifications head', async () => {
-      await headNotifications(mockToken);
-
-      expect(axios).toHaveBeenCalledWith({
-        url: 'https://api.github.com/notifications',
-        method: 'HEAD',
-        data: {},
-      });
-
-      expect(axios.defaults.headers.common).toMatchSnapshot();
-    });
-  });
-
   describe('listNotificationsForAuthenticatedUser', () => {
     it('should list notifications for user', async () => {
-      await listNotificationsForAuthenticatedUser(
+      await getNotificationsForUser(
         mockAtlassianCloudAccount,
         mockSettings as SettingsState,
       );
@@ -70,9 +54,9 @@ describe('utils/api/client.ts', () => {
     });
   });
 
-  describe('markNotificationThreadAsRead', () => {
-    it('should mark notification thread as read - github', async () => {
-      await markNotificationThreadAsRead(mockThreadId, mockToken);
+  describe('markNotificationsAsRead', () => {
+    it('should mark notifications as read', async () => {
+      await markNotificationsAsRead(mockAtlassianCloudAccount, [mockThreadId]);
 
       expect(axios).toHaveBeenCalledWith({
         url: `https://api.github.com/notifications/threads/${mockThreadId}`,
@@ -82,49 +66,13 @@ describe('utils/api/client.ts', () => {
 
       expect(axios.defaults.headers.common).toMatchSnapshot();
     });
-
-    it('should mark notification thread as read - enterprise', async () => {
-      await markNotificationThreadAsRead(mockThreadId, mockToken);
-
-      expect(axios).toHaveBeenCalledWith({
-        url: `https://example.com/api/v3/notifications/threads/${mockThreadId}`,
-        method: 'PATCH',
-        data: {},
-      });
-
-      expect(axios.defaults.headers.common).toMatchSnapshot();
-    });
   });
 
-  describe('markNotificationThreadAsDone', () => {
-    it('should mark notification thread as done - github', async () => {
-      await markNotificationThreadAsDone(mockThreadId, mockToken);
-
-      expect(axios).toHaveBeenCalledWith({
-        url: `https://api.github.com/notifications/threads/${mockThreadId}`,
-        method: 'DELETE',
-        data: {},
-      });
-
-      expect(axios.defaults.headers.common).toMatchSnapshot();
-    });
-
-    it('should mark notification thread as done - enterprise', async () => {
-      await markNotificationThreadAsDone(mockThreadId, mockToken);
-
-      expect(axios).toHaveBeenCalledWith({
-        url: `https://example.com/api/v3/notifications/threads/${mockThreadId}`,
-        method: 'DELETE',
-        data: {},
-      });
-
-      expect(axios.defaults.headers.common).toMatchSnapshot();
-    });
-  });
-
-  describe('markRepositoryNotificationsAsRead', () => {
+  describe('markNotificationsAsUnread', () => {
     it('should mark repository notifications as read - github', async () => {
-      await markRepositoryNotificationsAsRead(mockRepoSlug, mockToken);
+      await markNotificationsAsUnread(mockAtlassianCloudAccount, [
+        mockThreadId,
+      ]);
 
       expect(axios).toHaveBeenCalledWith({
         url: `https://api.github.com/repos/${mockRepoSlug}/notifications`,

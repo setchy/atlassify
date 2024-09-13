@@ -188,7 +188,7 @@ describe('hooks/useNotifications.ts', () => {
     });
   });
 
-  describe('markNotificationDone', () => {
+  describe('markNotificationUnread', () => {
     it('should mark a notification as done with success', async () => {
       nock('https://api.github.com/')
         .delete(`/notifications/threads/${id}`)
@@ -197,7 +197,10 @@ describe('hooks/useNotifications.ts', () => {
       const { result } = renderHook(() => useNotifications());
 
       act(() => {
-        result.current.markNotificationDone(mockState, mockSingleNotification);
+        result.current.markNotificationUnread(
+          mockState,
+          mockSingleNotification,
+        );
       });
 
       await waitFor(() => {
@@ -207,7 +210,7 @@ describe('hooks/useNotifications.ts', () => {
       expect(result.current.notifications.length).toBe(0);
     });
 
-    it('should mark a notification as done with failure', async () => {
+    it('should mark a notification as unread with failure', async () => {
       nock('https://api.github.com/')
         .delete(`/notifications/threads/${id}`)
         .reply(400);
@@ -215,7 +218,10 @@ describe('hooks/useNotifications.ts', () => {
       const { result } = renderHook(() => useNotifications());
 
       act(() => {
-        result.current.markNotificationDone(mockState, mockSingleNotification);
+        result.current.markNotificationUnread(
+          mockState,
+          mockSingleNotification,
+        );
       });
 
       await waitFor(() => {
