@@ -141,12 +141,18 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
+          let notifications = mapAtlassianNotificationsToAtlasifyNotifications(
+            accountNotifications.account,
+            rawNotifications,
+          );
+
+          console.log('ADAM ', notifications.length);
+
+          notifications = filterNotifications(notifications, state.settings);
+
           return {
             account: accountNotifications.account,
-            notifications: mapAtlassianNotificationsToAtlasifyNotifications(
-              accountNotifications.account,
-              rawNotifications,
-            ),
+            notifications: notifications,
             error: null,
           };
         } catch (error) {
@@ -199,6 +205,8 @@ export function mapAtlassianNotificationsToAtlasifyNotifications(
     },
     entity: notification.headNotification.content.entity,
     path: notification.headNotification.content.path[0],
+    category: notification.headNotification.category,
+    readState: notification.headNotification.readState,
     product: getAtlassianProduct(notification),
     account: account,
   }));

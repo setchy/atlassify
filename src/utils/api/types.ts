@@ -1,8 +1,14 @@
 import type { Account, Link } from '../../types';
 
 export interface AtlassianProduct {
-  name: string;
+  name: Product;
+  description: string;
   icon: React.ComponentType;
+}
+
+export interface BasicDetails {
+  name: string;
+  description: string;
 }
 
 // Note: This is not in the official GitHub API. We add this to make notification interactions easier.

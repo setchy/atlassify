@@ -6,10 +6,53 @@ import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
 import { BUTTON_CLASS_NAME } from '../styles/gitify';
 import { Size } from '../types';
-import type { Product } from '../utils/api/types';
+import type { Category, Product, ReadState } from '../utils/api/types';
+import { getProductDetails, PRODUCTS } from '../utils/product';
+import {
+  CATEGORIES,
+  getCategoryDetails,
+  getReadStateDetails,
+  READ_STATES,
+} from '../utils/filters';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);
+
+  const shouldShowCategory = (category: Category) => {
+    return settings.filterCategories.includes(category);
+  };
+
+  const updateCategoryFilter = (category: Category, checked: boolean) => {
+    let categories: Category[] = settings.filterCategories;
+
+    if (checked) {
+      categories.push(category);
+    } else {
+      categories = categories.filter((c) => c !== category);
+    }
+
+    updateSetting('filterCategories', categories);
+  };
+
+  const shouldShowReadState = (readState: ReadState) => {
+    return settings.filterReadStates.includes(readState);
+  };
+
+  const updateReadStateFilter = (readState: ReadState, checked: boolean) => {
+    let readStates: ReadState[] = settings.filterReadStates;
+
+    if (checked) {
+      readStates.push(readState);
+    } else {
+      readStates = readStates.filter((rs) => rs !== readState);
+    }
+
+    updateSetting('filterReadStates', readStates);
+  };
+
+  const shouldShowProduct = (product: Product) => {
+    return settings.filterProducts.includes(product);
+  };
 
   const updateProductFilter = (product: Product, checked: boolean) => {
     let products: Product[] = settings.filterProducts;
@@ -17,14 +60,10 @@ export const FiltersRoute: FC = () => {
     if (checked) {
       products.push(product);
     } else {
-      products = products.filter((r) => r !== product);
+      products = products.filter((p) => p !== product);
     }
 
     updateSetting('filterProducts', products);
-  };
-
-  const shouldShowProduct = (product: Product) => {
-    return settings.filterProducts.includes(product);
   };
 
   return (
@@ -32,24 +71,62 @@ export const FiltersRoute: FC = () => {
       <Header fetchOnBack={true} icon={FilterIcon}>
         Filters
       </Header>
+
       <div className="flex-grow overflow-x-auto px-8">
         <fieldset className="mb-3">
-          <Legend icon={NoteIcon}>Reason</Legend>
+          <Legend icon={NoteIcon}>Category</Legend>
 
-          <span className="text-xs italic">
-            Note: if no reasons are selected, all notifications will be shown.
-          </span>
-          {Object.keys([]).map((product: Product) => {
+          {Object.keys(CATEGORIES).map((category: Category) => {
+            return (
+              <Checkbox
+                key={category}
+                name={category}
+                label={getCategoryDetails(category).name}
+                checked={shouldShowCategory(category)}
+                onChange={(evt) =>
+                  updateCategoryFilter(category, evt.target.checked)
+                }
+                tooltip={<div>{getCategoryDetails(category).description}</div>}
+              />
+            );
+          })}
+        </fieldset>
+
+        <fieldset className="mb-3">
+          <Legend icon={NoteIcon}>Read State</Legend>
+
+          {Object.keys(READ_STATES).map((readState: ReadState) => {
+            return (
+              <Checkbox
+                key={readState}
+                name={readState}
+                label={getReadStateDetails(readState).name}
+                checked={shouldShowReadState(readState)}
+                onChange={(evt) =>
+                  updateReadStateFilter(readState, evt.target.checked)
+                }
+                tooltip={
+                  <div>{getReadStateDetails(readState).description}</div>
+                }
+              />
+            );
+          })}
+        </fieldset>
+
+        <fieldset className="mb-3">
+          <Legend icon={NoteIcon}>Products</Legend>
+
+          {Object.keys(PRODUCTS).map((product: Product) => {
             return (
               <Checkbox
                 key={product}
                 name={product}
-                label={product}
+                label={getProductDetails(product).name}
                 checked={shouldShowProduct(product)}
                 onChange={(evt) =>
                   updateProductFilter(product, evt.target.checked)
                 }
-                tooltip={<div>{product}</div>}
+                tooltip={<div>{getProductDetails(product).description}</div>}
               />
             );
           })}
