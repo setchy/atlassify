@@ -10,14 +10,15 @@
       "suspicious": {
         "noConsoleLog": "error"
       },
-      "nursery": {
-        "noUnusedFunctionParameters": "error",
+      "style": {
         "useDefaultSwitchClause": "error"
       },
       "a11y": {
-        "useKeyWithClickEvents": "off"
+        "useKeyWithClickEvents": "off",
+        "useSemanticElements": "off"
       },
       "correctness": {
+        "noUnusedFunctionParameters": "error",
         "useExhaustiveDependencies": {
           "level": "warn",
           "options": {
