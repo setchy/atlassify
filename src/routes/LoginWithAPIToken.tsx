@@ -26,7 +26,7 @@ export const validate = (values: IValues): IFormErrors => {
   const errors: IFormErrors = {};
 
   if (!values.username) {
-    errors.token = 'Required';
+    errors.username = 'Required';
   }
 
   if (!values.token) {
@@ -53,6 +53,25 @@ export const LoginWithAPIToken: FC = () => {
           name="username"
           label="Username"
           placeholder="Your Atlassian username"
+          helpText={
+            <div>
+              <div className="mt-3">
+                <Button
+                  label="Create API token"
+                  disabled={!values.hostname}
+                  icon={{ icon: KeyIcon, size: Size.XSMALL }}
+                  url={Constants.ATLASSIAN_WEB.SECURITY_TOKENS}
+                  size="xs"
+                >
+                  Create an API Token
+                </Button>
+                <span className="mx-1">
+                  for your Atlassian account and then paste your{' '}
+                  <span className="italic">API Token</span> below.
+                </span>
+              </div>
+            </div>
+          }
         />
 
         <FieldInput

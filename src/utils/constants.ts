@@ -19,6 +19,8 @@ export const Constants = {
   // Web Links
   ATLASSIAN_WEB: {
     MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
+    SECURITY_TOKENS:
+      'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
   },
 
   // Atlassian Docs
