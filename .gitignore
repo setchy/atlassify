@@ -1,0 +1,13 @@
+# Mac Files
+.DS_Store
+
+# Build files
+dist/
+build/
+
+# Dependency directories
+node_modules/
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "moduleResolution": "Bundler",
+    "target": "es2022",
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": ["jest"],
+    "skipLibCheck": true,
+    "checkJs": true
+  },
+  "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.tsx"]
+}

@@ -1,0 +1,307 @@
+import { ipcRenderer, webFrame } from 'electron';
+import {
+  type ReactNode,
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { useInterval } from '../hooks/useInterval';
+import { useNotifications } from '../hooks/useNotifications';
+import {
+  type Account,
+  type AccountNotifications,
+  type AtlasifyError,
+  type AuthState,
+  GroupBy,
+  OpenPreference,
+  type SettingsState,
+  type SettingsValue,
+  type Status,
+  Theme,
+} from '../types';
+import type { Notification } from '../utils/api/typesGitHub';
+import type { LoginAPITokenOptions } from '../utils/auth/types';
+import {
+  addAccount,
+  hasAccounts,
+  refreshAccount,
+  removeAccount,
+} from '../utils/auth/utils';
+import {
+  setAlternateIdleIcon,
+  setAutoLaunch,
+  setKeyboardShortcut,
+  updateTrayTitle,
+} from '../utils/comms';
+import { Constants } from '../utils/constants';
+import { getNotificationCount } from '../utils/notifications';
+import { clearState, loadState, saveState } from '../utils/storage';
+import { setTheme } from '../utils/theme';
+import { zoomPercentageToLevel } from '../utils/zoom';
+
+export const defaultAuth: AuthState = {
+  accounts: [],
+};
+
+const defaultAppearanceSettings = {
+  theme: Theme.SYSTEM,
+  zoomPercentage: 100,
+  detailedNotifications: true,
+  showPills: true,
+  showNumber: true,
+  showAccountHeader: false,
+};
+
+const defaultNotificationSettings = {
+  groupBy: GroupBy.REPOSITORY,
+  participating: false,
+  markAsDoneOnOpen: false,
+  markAsDoneOnUnsubscribe: false,
+  delayNotificationState: false,
+};
+
+const defaultSystemSettings = {
+  openLinks: OpenPreference.FOREGROUND,
+  keyboardShortcut: true,
+  showNotificationsCountInTray: false,
+  showNotifications: true,
+  playSound: true,
+  useAlternateIdleIcon: false,
+  openAtStartup: false,
+};
+
+export const defaultFilters = {
+  hideBots: false,
+  filterReasons: [],
+};
+
+export const defaultSettings: SettingsState = {
+  ...defaultAppearanceSettings,
+  ...defaultNotificationSettings,
+  ...defaultSystemSettings,
+  ...defaultFilters,
+};
+
+interface AppContextState {
+  auth: AuthState;
+  isLoggedIn: boolean;
+  loginWithAPIToken: (data: LoginAPITokenOptions) => void;
+  logoutFromAccount: (account: Account) => void;
+
+  notifications: AccountNotifications[];
+  status: Status;
+  globalError: AtlasifyError;
+  removeAccountNotifications: (account: Account) => Promise<void>;
+  fetchNotifications: () => Promise<void>;
+  markNotificationRead: (notification: Notification) => Promise<void>;
+  markNotificationDone: (notification: Notification) => Promise<void>;
+  unsubscribeNotification: (notification: Notification) => Promise<void>;
+  markRepoNotificationsRead: (notification: Notification) => Promise<void>;
+  markRepoNotificationsDone: (notification: Notification) => Promise<void>;
+
+  settings: SettingsState;
+  clearFilters: () => void;
+  resetSettings: () => void;
+  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+}
+
+export const AppContext = createContext<Partial<AppContextState>>({});
+
+export const AppProvider = ({ children }: { children: ReactNode }) => {
+  const [auth, setAuth] = useState<AuthState>(defaultAuth);
+  const [settings, setSettings] = useState<SettingsState>(defaultSettings);
+  const {
+    removeAccountNotifications,
+    fetchNotifications,
+    notifications,
+    globalError,
+    status,
+    markNotificationRead,
+    markNotificationDone,
+    markRepoNotificationsRead,
+    markRepoNotificationsDone,
+  } = useNotifications();
+  getNotificationCount;
+  useEffect(() => {
+    restoreSettings();
+  }, []);
+
+  useEffect(() => {
+    setTheme(settings.theme);
+  }, [settings.theme]);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We only want fetchNotifications to be called for account changes
+  useEffect(() => {
+    fetchNotifications({ auth, settings });
+  }, [auth.accounts]);
+
+  useInterval(() => {
+    fetchNotifications({ auth, settings });
+  }, Constants.FETCH_NOTIFICATIONS_INTERVAL);
+
+  useInterval(() => {
+    for (const account of auth.accounts) {
+      refreshAccount(account);
+    }
+  }, Constants.REFRESH_ACCOUNTS_INTERVAL);
+
+  useEffect(() => {
+    const count = getNotificationCount(notifications);
+
+    if (settings.showNotificationsCountInTray && count > 0) {
+      updateTrayTitle(count.toString());
+    } else {
+      updateTrayTitle();
+    }
+  }, [settings.showNotificationsCountInTray, notifications]);
+
+  useEffect(() => {
+    setKeyboardShortcut(settings.keyboardShortcut);
+  }, [settings.keyboardShortcut]);
+
+  useEffect(() => {
+    ipcRenderer.on('atlasify:reset-app', () => {
+      clearState();
+      setAuth(defaultAuth);
+      setSettings(defaultSettings);
+    });
+  }, []);
+
+  const clearFilters = useCallback(() => {
+    const newSettings = { ...settings, ...defaultFilters };
+    setSettings(newSettings);
+    saveState({ auth, settings: newSettings });
+  }, [auth, settings]);
+
+  const resetSettings = useCallback(() => {
+    setSettings(defaultSettings);
+    saveState({ auth, settings: defaultSettings });
+  }, [auth]);
+
+  const updateSetting = useCallback(
+    (name: keyof SettingsState, value: SettingsValue) => {
+      if (name === 'openAtStartup') {
+        setAutoLaunch(value as boolean);
+      }
+      if (name === 'useAlternateIdleIcon') {
+        setAlternateIdleIcon(value as boolean);
+      }
+
+      const newSettings = { ...settings, [name]: value };
+      setSettings(newSettings);
+      saveState({ auth, settings: newSettings });
+    },
+    [auth, settings],
+  );
+
+  const isLoggedIn = useMemo(() => {
+    return hasAccounts(auth);
+  }, [auth]);
+
+  const loginWithAPIToken = useCallback(
+    async ({ username, token }: LoginAPITokenOptions) => {
+      // Should check if the token is valid
+
+      const updatedAuth = await addAccount(auth, username, token);
+
+      // TODO - fetch and set user data
+
+      setAuth(updatedAuth);
+      saveState({ auth: updatedAuth, settings });
+    },
+    [auth, settings],
+  );
+
+  const logoutFromAccount = useCallback(
+    async (account: Account) => {
+      // Remove notifications for account
+      removeAccountNotifications(account);
+
+      // Remove from auth state
+      const updatedAuth = removeAccount(auth, account);
+      setAuth(updatedAuth);
+      saveState({ auth: updatedAuth, settings });
+    },
+    [auth, settings],
+  );
+
+  const restoreSettings = useCallback(async () => {
+    const existing = loadState();
+
+    if (existing.auth) {
+      setAuth({ ...defaultAuth, ...existing.auth });
+
+      // Refresh account data on app start
+      for (const account of existing.auth.accounts) {
+        await refreshAccount(account);
+      }
+    }
+
+    if (existing.settings) {
+      setKeyboardShortcut(existing.settings.keyboardShortcut);
+      setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
+      setSettings({ ...defaultSettings, ...existing.settings });
+      webFrame.setZoomLevel(
+        zoomPercentageToLevel(existing.settings.zoomPercentage),
+      );
+    }
+  }, []);
+
+  const fetchNotificationsWithAccounts = useCallback(
+    async () => await fetchNotifications({ auth, settings }),
+    [auth, settings, fetchNotifications],
+  );
+
+  const markNotificationReadWithAccounts = useCallback(
+    async (notification: Notification) =>
+      await markNotificationRead({ auth, settings }, notification),
+    [auth, settings, markNotificationRead],
+  );
+
+  const markNotificationDoneWithAccounts = useCallback(
+    async (notification: Notification) =>
+      await markNotificationDone({ auth, settings }, notification),
+    [auth, settings, markNotificationDone],
+  );
+
+  const markRepoNotificationsReadWithAccounts = useCallback(
+    async (notification: Notification) =>
+      await markRepoNotificationsRead({ auth, settings }, notification),
+    [auth, settings, markRepoNotificationsRead],
+  );
+
+  const markRepoNotificationsDoneWithAccounts = useCallback(
+    async (notification: Notification) =>
+      await markRepoNotificationsDone({ auth, settings }, notification),
+    [auth, settings, markRepoNotificationsDone],
+  );
+
+  return (
+    <AppContext.Provider
+      value={{
+        auth,
+        isLoggedIn,
+        loginWithAPIToken,
+        logoutFromAccount,
+
+        notifications,
+        status,
+        globalError,
+        fetchNotifications: fetchNotificationsWithAccounts,
+        markNotificationRead: markNotificationReadWithAccounts,
+        markNotificationDone: markNotificationDoneWithAccounts,
+        markRepoNotificationsRead: markRepoNotificationsReadWithAccounts,
+        markRepoNotificationsDone: markRepoNotificationsDoneWithAccounts,
+
+        settings,
+        clearFilters,
+        resetSettings,
+        updateSetting,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};

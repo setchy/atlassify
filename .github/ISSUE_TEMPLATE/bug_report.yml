@@ -1,0 +1,64 @@
+name: 🐛 Bug Report
+description: Report errors or unexpected behavior
+labels: [bug]
+body:
+  - type: checkboxes
+    attributes:
+      label: 🔍 Is there already an issue for your problem?
+      description: |
+        Thanks for taking the time to fill out this bug report 🤗
+        Make sure there aren't any open/closed issues for this topic 😃
+      options:
+        - label: I have checked older issues, open and closed
+          required: true
+
+  - type: textarea
+    attributes:
+      label: 📝 Description
+      description: List steps to reproduce the error and details on what happens and what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🪜 Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment-version
+    attributes:
+      label: Atlasify Version
+      description: What version of Atlasify are you using?
+      options:
+        - 1.0.0
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment-os
+    attributes:
+      label: Operating System
+      description: What OS are you using?
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 📸 Screenshots
+      description: Place any screenshots of the issue here if needed
+    validations:
+      required: false
