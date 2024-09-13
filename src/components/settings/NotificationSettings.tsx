@@ -35,9 +35,9 @@ export const NotificationSettings: FC = () => {
         }
         tooltip={
           <div>
-            Keep the notification within Gitify window upon interaction (click,
-            mark as read, mark as done, etc) until the next refresh window
-            (scheduled or user initiated).
+            Keep the notification within Atlasify window upon interaction
+            (click, mark as read, mark as done, etc) until the next refresh
+            window (scheduled or user initiated).
           </div>
         }
       />

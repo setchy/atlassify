@@ -16,7 +16,7 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
       latest_comment_url:
         'https://api.github.com/repos/atlasify-app/notifications-test/issues/comments/302888448' as Link,
       user: {
-        login: 'gitify-app',
+        login: 'atlasify-app',
         html_url: 'https://github.com/atlasify-app' as Link,
         avatar_url:
           'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
@@ -46,14 +46,14 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
       full_name: 'atlasify-app/notifications-test',
       url: 'https://api.github.com/atlasify-app/notifications-test' as Link,
       owner: {
-        login: 'gitify-app',
+        login: 'atlasify-app',
         id: 6333409,
         node_id: 'MDQ6VXNlcjYzMzM0MDk=',
         avatar_url:
           'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
         gravatar_id: '',
-        url: 'https://api.github.com/users/gitify-app' as Link,
-        html_url: 'https://github.com/gitify-app' as Link,
+        url: 'https://api.github.com/users/atlasify-app' as Link,
+        html_url: 'https://github.com/atlasify-app' as Link,
         followers_url:
           'https://api.github.com/users/atlasify-app/followers' as Link,
         following_url:
@@ -188,13 +188,13 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
       name: 'notifications-test',
       full_name: 'atlasify-app/notifications-test',
       owner: {
-        login: 'gitify-app',
+        login: 'atlasify-app',
         id: 6333409,
         avatar_url:
           'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
         gravatar_id: '',
-        url: 'https://api.github.com/users/gitify-app' as Link,
-        html_url: 'https://github.com/gitify-app' as Link,
+        url: 'https://api.github.com/users/atlasify-app' as Link,
+        html_url: 'https://github.com/atlasify-app' as Link,
         followers_url:
           'https://api.github.com/users/atlasify-app/followers' as Link,
         following_url:

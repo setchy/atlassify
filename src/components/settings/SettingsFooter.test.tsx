@@ -146,7 +146,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Quit Gitify'));
+    fireEvent.click(screen.getByTitle('Quit Atlasify'));
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });
 });

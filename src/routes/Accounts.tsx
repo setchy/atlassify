@@ -15,7 +15,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
-import { BUTTON_CLASS_NAME } from '../styles/gitify';
+import { BUTTON_CLASS_NAME } from '../styles/atlasify';
 import type { Account } from '../types';
 import { getAccountUUID, refreshAccount } from '../utils/auth/utils';
 import { cn } from '../utils/cn';

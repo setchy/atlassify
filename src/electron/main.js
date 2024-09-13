@@ -104,7 +104,7 @@ const contextMenu = Menu.buildFromTemplate([
   },
   { type: 'separator' },
   {
-    label: 'Quit Gitify',
+    label: 'Quit Atlasify',
     accelerator: 'CommandOrControl+Q',
     click: () => {
       app.quit();
@@ -126,17 +126,10 @@ app.whenReady().then(async () => {
   await onFirstRunMaybe();
 
   mb.on('ready', () => {
-    mb.app.setAppUserModelId('com.electron.gitify');
-
-    /**
-     * TODO: Remove @electron/remote use - see #650
-     * GitHub OAuth 2 Login Flows - Enable Remote Browser Window Launch
-     */
-    require('@electron/remote/main').initialize();
-    require('@electron/remote/main').enable(mb.window.webContents);
+    mb.app.setAppUserModelId('com.electron.atlasify');
 
     // Tray configuration
-    mb.tray.setToolTip('Gitify');
+    mb.tray.setToolTip('Atlasify');
     mb.tray.setIgnoreDoubleClickEvents(true);
     mb.tray.on('right-click', (_event, bounds) => {
       mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
@@ -175,7 +168,7 @@ app.whenReady().then(async () => {
   });
 
   /**
-   * Gitify custom IPC events
+   * Atlasify custom IPC events
    */
   ipc.handle('atlasify:version', () => app.getVersion());
 
@@ -262,13 +255,13 @@ app.whenReady().then(async () => {
   autoUpdater.on('update-available', () => {
     log.info('Auto Updater: New update available');
     updateAvailableMenuItem.visible = true;
-    mb.tray.setToolTip('Gitify\nA new update is available');
+    mb.tray.setToolTip('Atlasify\nA new update is available');
   });
 
   autoUpdater.on('update-downloaded', () => {
     log.info('Auto Updater: Update downloaded');
     updateReadyForInstallMenuItem.visible = true;
-    mb.tray.setToolTip('Gitify\nA new update is ready to install');
+    mb.tray.setToolTip('Atlasify\nA new update is ready to install');
   });
 
   autoUpdater.on('update-not-available', () => {
@@ -281,7 +274,7 @@ function takeScreenshot() {
   const date = new Date();
   const dateStr = date.toISOString().replace(/:/g, '-');
 
-  const capturedPicFilePath = `${os.homedir()}/${dateStr}-gitify-screenshot.png`;
+  const capturedPicFilePath = `${os.homedir()}/${dateStr}-atlasify-screenshot.png`;
   mb.window.capturePage().then((img) => {
     fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
       log.info(`Screenshot saved ${capturedPicFilePath}`),
@@ -295,9 +288,9 @@ function resetApp() {
 
   const response = dialog.showMessageBoxSync(mb.window, {
     type: 'warning',
-    title: 'Reset Gitify',
+    title: 'Reset Atlasify',
     message:
-      'Are you sure you want to reset Gitify? You will be logged out of all accounts',
+      'Are you sure you want to reset Atlasify? You will be logged out of all accounts',
     buttons: ['Cancel', 'Reset'],
     defaultId: cancelButtonId,
     cancelId: cancelButtonId,

@@ -41,7 +41,7 @@ export const SystemSettings: FC = () => {
             <span className="text-orange-600">
               {Constants.DEFAULT_KEYBOARD_SHORTCUT}
             </span>{' '}
-            to show or hide Gitify.
+            to show or hide Atlasify.
           </div>
         }
       />
@@ -82,9 +82,9 @@ export const SystemSettings: FC = () => {
         }
         tooltip={
           <div>
-            Use a white Gitify logo (instead of the default black logo) when all
-            notifications are read. Particularly useful for devices which have a
-            dark-themed menubar or taskbar.
+            Use a white Atlasify logo (instead of the default black logo) when
+            all notifications are read. Particularly useful for devices which
+            have a dark-themed menubar or taskbar.
           </div>
         }
       />

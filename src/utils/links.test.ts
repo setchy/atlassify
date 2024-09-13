@@ -5,8 +5,8 @@ import type { Repository } from './api/types';
 import * as comms from './comms';
 import {
   openAccountProfile,
-  openGitifyReleaseNotes,
-  openGitifyRepository,
+  openAtlasifyReleaseNotes,
+  openAtlasifyRepository,
   openMyIssues,
   openMyNotifications,
   openMyPullRequests,
@@ -24,15 +24,15 @@ describe('utils/links.ts', () => {
     jest.clearAllMocks();
   });
 
-  it('openGitifyRepository', () => {
-    openGitifyRepository();
+  it('openAtlasifyRepository', () => {
+    openAtlasifyRepository();
     expect(openExternalLinkMock).toHaveBeenCalledWith(
       'https://github.com/setchy/atlasify',
     );
   });
 
-  it('openGitifyReleaseNotes', () => {
-    openGitifyReleaseNotes('v1.0.0');
+  it('openAtlasifyReleaseNotes', () => {
+    openAtlasifyReleaseNotes('v1.0.0');
     expect(openExternalLinkMock).toHaveBeenCalledWith(
       'https://github.com/setchy/atlasify/releases/tag/v1.0.0',
     );

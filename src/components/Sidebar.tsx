@@ -15,7 +15,7 @@ import { Size } from '../types';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
 import {
-  openGitifyRepository,
+  openAtlasifyRepository,
   openMyIssues,
   openMyNotifications,
   openMyPullRequests,
@@ -67,7 +67,7 @@ export const Sidebar: FC = () => {
           type="button"
           className="mx-auto my-3 cursor-pointer outline-none"
           title="Open Atlasify on GitHub"
-          onClick={() => openGitifyRepository()}
+          onClick={() => openAtlasifyRepository()}
           data-testid="atlasify-logo"
         >
           <AtlasIcon size="medium" appearance="brand" />
@@ -124,7 +124,7 @@ export const Sidebar: FC = () => {
 
         {!isLoggedIn && (
           <SidebarButton
-            title="Quit Gitify"
+            title="Quit Atlasify"
             icon={XCircleIcon}
             size={Size.MEDIUM}
             onClick={() => quitApp()}

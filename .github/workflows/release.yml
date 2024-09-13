@@ -23,9 +23,6 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-        env:
-          OAUTH_CLIENT_ID: ${{ secrets.oauth_client_id }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.oauth_client_secret }}
       - run: pnpm make:macos --publish onTagOrDraft
         env:
           APPLEID_USERNAME: ${{ secrets.appleid_username }}
@@ -54,9 +51,6 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-        env:
-          OAUTH_CLIENT_ID: ${{ secrets.oauth_client_id }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.oauth_client_secret }}
       - run: pnpm make:win --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.github_token }}
@@ -79,9 +73,6 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-        env:
-          OAUTH_CLIENT_ID: ${{ secrets.oauth_client_id }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.oauth_client_secret }}
       - run: pnpm make:linux --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.github_token }}

@@ -2,9 +2,9 @@ import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
 import { type FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BUTTON_CLASS_NAME } from '../../styles/gitify';
+import { BUTTON_CLASS_NAME } from '../../styles/atlasify';
 import { getAppVersion, quitApp } from '../../utils/comms';
-import { openGitifyReleaseNotes } from '../../utils/links';
+import { openAtlasifyReleaseNotes } from '../../utils/links';
 
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);
@@ -27,7 +27,7 @@ export const SettingsFooter: FC = () => {
         type="button"
         className="cursor-pointer font-semibold"
         title="View release notes"
-        onClick={() => openGitifyReleaseNotes(appVersion)}
+        onClick={() => openAtlasifyReleaseNotes(appVersion)}
       >
         <div className="flex items-center gap-1">
           <span aria-label="app-version">Atlasify {appVersion}</span>

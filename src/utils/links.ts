@@ -3,11 +3,11 @@ import type { Repository, SubjectUser } from './api/types';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
 
-export function openGitifyRepository() {
+export function openAtlasifyRepository() {
   openExternalLink(`https://github.com/${Constants.REPO_SLUG}` as Link);
 }
 
-export function openGitifyReleaseNotes(version: string) {
+export function openAtlasifyReleaseNotes(version: string) {
   openExternalLink(
     `https://github.com/${Constants.REPO_SLUG}/releases/tag/${version}` as Link,
   );

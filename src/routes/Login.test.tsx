@@ -48,30 +48,15 @@ describe('routes/Login.tsx', () => {
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
-  it('should navigate to login with personal access token', () => {
+  it('should navigate to login with api token', () => {
     render(
       <MemoryRouter>
         <LoginRoute />
       </MemoryRouter>,
     );
 
-    fireEvent.click(screen.getByLabelText('Login with Personal Access Token'));
+    fireEvent.click(screen.getByLabelText('Login'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(
-      1,
-      '/login-personal-access-token',
-    );
-  });
-
-  it('should navigate to login with oauth app', () => {
-    render(
-      <MemoryRouter>
-        <LoginRoute />
-      </MemoryRouter>,
-    );
-
-    fireEvent.click(screen.getByLabelText('Login with OAuth App'));
-
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-oauth-app');
+    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token');
   });
 });

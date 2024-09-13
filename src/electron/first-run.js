@@ -30,7 +30,7 @@ async function promptMoveToApplicationsFolder() {
 
 const getConfigPath = () => {
   const userDataPath = app.getPath('userData');
-  return path.join(userDataPath, 'FirstRun', 'gitify-first-run');
+  return path.join(userDataPath, 'FirstRun', 'atlasify-first-run');
 };
 
 // Whether or not the app is being run for the first time.

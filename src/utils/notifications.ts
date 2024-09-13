@@ -82,12 +82,12 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = `${isWindows() ? '' : 'Gitify - '}${
+    title = `${isWindows() ? '' : 'Atlasify - '}${
       notification.repository.full_name
     }`;
     body = notification.subject.title;
   } else {
-    title = 'Gitify';
+    title = 'Atlasify';
     body = `You have ${notifications.length} notifications.`;
   }
 

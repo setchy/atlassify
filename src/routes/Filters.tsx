@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { Checkbox } from '../components/fields/Checkbox';
 import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
-import { BUTTON_CLASS_NAME } from '../styles/gitify';
+import { BUTTON_CLASS_NAME } from '../styles/atlasify';
 import { Size } from '../types';
 import type { Category, Product, ReadState } from '../utils/api/types';
 import {

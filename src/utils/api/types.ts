@@ -1,4 +1,4 @@
-import type { Account, Link } from '../../types';
+import type { Link } from '../../types';
 
 export interface AtlassianProduct {
   name: Product;
@@ -9,11 +9,6 @@ export interface AtlassianProduct {
 export interface BasicDetails {
   name: string;
   description: string;
-}
-
-// Note: This is not in the official GitHub API. We add this to make notification interactions easier.
-export interface GitifyNotification {
-  account: Account;
 }
 
 export interface MyUserDetails {

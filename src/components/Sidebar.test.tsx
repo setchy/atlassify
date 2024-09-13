@@ -421,12 +421,12 @@ describe('components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTitle('Quit Gitify'));
+    fireEvent.click(screen.getByTitle('Quit Atlasify'));
 
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should open the gitify repository', () => {
+  it('should open the atlasify repository', () => {
     const openExternalLinkMock = jest.spyOn(comms, 'openExternalLink');
 
     render(
@@ -443,7 +443,7 @@ describe('components/Sidebar.tsx', () => {
         </MemoryRouter>
       </AppContext.Provider>,
     );
-    fireEvent.click(screen.getByTestId('gitify-logo'));
+    fireEvent.click(screen.getByTestId('atlasify-logo'));
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
       'https://github.com/setchy/atlasify',

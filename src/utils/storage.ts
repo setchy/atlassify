@@ -7,9 +7,9 @@ export function loadState(): AtlasifyState {
   return { auth, settings };
 }
 
-export function saveState(gitifyState: AtlasifyState) {
-  const auth = gitifyState.auth;
-  const settings = gitifyState.settings;
+export function saveState(atlasifyState: AtlasifyState) {
+  const auth = atlasifyState.auth;
+  const settings = atlasifyState.settings;
   const settingsString = JSON.stringify({ auth, settings });
   localStorage.setItem(Constants.STORAGE_KEY, settingsString);
 }

@@ -28,13 +28,7 @@ const config = {
       },
     ],
   },
-  plugins: [
-    new webpack.EnvironmentPlugin({
-      // Development Keys - See README.md
-      OAUTH_CLIENT_ID: '3fef4433a29c6ad8f22c',
-      OAUTH_CLIENT_SECRET: '9670de733096c15322183ff17ed0fc8704050379',
-    }),
-  ],
+  plugins: [],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
