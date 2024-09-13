@@ -28,6 +28,11 @@ Atlasify is licensed under the MIT Open Source license.
 For more information, see [LICENSE](LICENSE).
 
 
+### Attributino
+
+1. [Gitify][attribution-gitify]
+2. [Atlassian Design System][attribution-atlassian]
+
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io
 [faqs]: https://www.atlasify.io/faq/
@@ -53,3 +58,6 @@ For more information, see [LICENSE](LICENSE).
 [homebrew-cask-badge]: https://img.shields.io/homebrew/cask/v/atlasify?logo=homebrew
 [renovate]: https://renovatebot.com/
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
+
+[attribution-gitify]: https://gitify.io
+[attribution-atlassian]: https://atlassian.design/
