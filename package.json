@@ -87,7 +87,7 @@
   },
   "dependencies": {
     "@atlaskit/avatar": "21.15.1",
-    "@atlaskit/icon": "22.16.1",
+    "@atlaskit/icon": "22.18.0",
     "@atlaskit/logo": "14.2.2",
     "@atlaskit/primitives": "12.1.1",
     "@atlaskit/tooltip": "18.7.2",
