@@ -9,19 +9,19 @@ importers:
   .:
     dependencies:
       '@atlaskit/avatar':
-        specifier: ^21.15.1
+        specifier: 21.15.1
         version: 21.15.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: ^22.16.1
+        specifier: 22.16.1
         version: 22.16.1(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/logo':
-        specifier: ^14.2.2
+        specifier: 14.2.2
         version: 14.2.2(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/primitives':
-        specifier: ^12.1.1
+        specifier: 12.1.1
         version: 12.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tooltip':
-        specifier: ^18.7.2
+        specifier: 18.7.2
         version: 18.7.2(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@discordapp/twemoji':
         specifier: 15.1.0

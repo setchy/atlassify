@@ -86,11 +86,11 @@
     "afterSign": "scripts/notarize.js"
   },
   "dependencies": {
-    "@atlaskit/avatar": "^21.15.1",
-    "@atlaskit/icon": "^22.16.1",
-    "@atlaskit/logo": "^14.2.2",
-    "@atlaskit/primitives": "^12.1.1",
-    "@atlaskit/tooltip": "^18.7.2",
+    "@atlaskit/avatar": "21.15.1",
+    "@atlaskit/icon": "22.16.1",
+    "@atlaskit/logo": "14.2.2",
+    "@atlaskit/primitives": "12.1.1",
+    "@atlaskit/tooltip": "18.7.2",
     "@discordapp/twemoji": "15.1.0",
     "@electron/remote": "2.1.2",
     "@primer/octicons-react": "19.11.0",
