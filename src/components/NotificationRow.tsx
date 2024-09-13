@@ -3,8 +3,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { ReadIcon } from '@primer/octicons-react';
 import { type FC, useCallback, useContext, useState } from 'react';
 import { AppContext } from '../context/App';
-import { Opacity, Size } from '../types';
-import type { AtlasifyNotification } from '../utils/api/typesGitHub';
+import { AtlasifyNotification, Opacity, Size } from '../types';
 import { cn } from '../utils/cn';
 import { formatNotificationUpdatedAt } from '../utils/helpers';
 import { openNotification } from '../utils/links';
@@ -24,8 +23,7 @@ export const NotificationRow: FC<INotificationRow> = ({
   isAnimated = false,
   isRead = false,
 }: INotificationRow) => {
-  const { settings, markNotificationRead, markNotificationDone } =
-    useContext(AppContext);
+  const { settings, markNotificationRead } = useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
 
@@ -36,7 +34,7 @@ export const NotificationRow: FC<INotificationRow> = ({
     openNotification(notification);
 
     markNotificationRead(notification);
-  }, [notification, markNotificationDone, markNotificationRead, settings]);
+  }, [notification, markNotificationRead, settings]);
 
   const notificationTitle = notification.subject.title.trim();
 

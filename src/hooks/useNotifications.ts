@@ -4,6 +4,7 @@ import type {
   Account,
   AccountNotifications,
   AtlasifyError,
+  AtlasifyNotification,
   AtlasifyState,
   Status,
 } from '../types';
@@ -11,7 +12,6 @@ import {
   markNotificationThreadAsRead,
   markRepositoryNotificationsAsRead,
 } from '../utils/api/client';
-import type { AtlasifyNotification } from '../utils/api/typesGitHub';
 import { getAccountUUID } from '../utils/auth/utils';
 import {
   getAllNotifications,

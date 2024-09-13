@@ -1,9 +1,5 @@
-import type { Link } from '../types';
-import type {
-  AtlasifyNotification,
-  Subject,
-  User,
-} from '../utils/api/typesGitHub';
+import type { AtlasifyNotification, Link } from '../types';
+import type { Subject, User } from '../utils/api/types';
 
 export function partialMockNotification(
   subject: Partial<Subject>,

@@ -1,7 +1,7 @@
 import { BitbucketIcon } from '@atlaskit/logo';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
-import type { Link } from '../../../types';
-import type { AtlasifyNotification, Repository } from '../typesGitHub';
+import type { AtlasifyNotification, Link } from '../../../types';
+import type { Repository } from '../types';
 
 export const mockAtlasifyNotification: AtlasifyNotification[] = [
   {

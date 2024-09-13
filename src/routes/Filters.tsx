@@ -6,7 +6,7 @@ import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
 import { BUTTON_CLASS_NAME } from '../styles/gitify';
 import { Size } from '../types';
-import type { Product } from '../utils/api/typesGitHub';
+import type { Product } from '../utils/api/types';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);

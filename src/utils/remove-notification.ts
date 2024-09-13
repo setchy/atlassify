@@ -1,5 +1,8 @@
-import type { AccountNotifications, SettingsState } from '../types';
-import type { AtlasifyNotification } from './api/typesGitHub';
+import type {
+  AccountNotifications,
+  AtlasifyNotification,
+  SettingsState,
+} from '../types';
 import { getAccountUUID } from './auth/utils';
 
 export function removeNotification(

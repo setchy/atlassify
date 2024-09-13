@@ -13,6 +13,7 @@ import {
   type Account,
   type AccountNotifications,
   type AtlasifyError,
+  AtlasifyNotification,
   type AuthState,
   GroupBy,
   OpenPreference,
@@ -21,7 +22,7 @@ import {
   type Status,
   Theme,
 } from '../types';
-import type { AtlasifyNotification, ReadState } from '../utils/api/typesGitHub';
+import type { ReadState } from '../utils/api/types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import {
   addAccount,
@@ -85,20 +86,15 @@ interface AppContextState {
   loginWithAPIToken: (data: LoginAPITokenOptions) => void;
   logoutFromAccount: (account: Account) => void;
 
-  notifications: AccountNotifications[];
   status: Status;
   globalError: AtlasifyError;
-  removeAccountNotifications: (account: Account) => Promise<void>;
+
+  notifications: AccountNotifications[];
   fetchNotifications: () => Promise<void>;
+  removeAccountNotifications: (account: Account) => Promise<void>;
+
   markNotificationRead: (notification: AtlasifyNotification) => Promise<void>;
-  markNotificationDone: (notification: AtlasifyNotification) => Promise<void>;
-  unsubscribeNotification: (
-    notification: AtlasifyNotification,
-  ) => Promise<void>;
   markRepoNotificationsRead: (
-    notification: AtlasifyNotification,
-  ) => Promise<void>;
-  markRepoNotificationsDone: (
     notification: AtlasifyNotification,
   ) => Promise<void>;
 
@@ -114,15 +110,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [auth, setAuth] = useState<AuthState>(defaultAuth);
   const [settings, setSettings] = useState<SettingsState>(defaultSettings);
   const {
-    removeAccountNotifications,
-    fetchNotifications,
     notifications,
-    globalError,
+    fetchNotifications,
+    removeAccountNotifications,
     status,
+    globalError,
     markNotificationRead,
-    markNotificationDone,
     markRepoNotificationsRead,
-    markRepoNotificationsDone,
   } = useNotifications();
   getNotificationCount;
   useEffect(() => {
@@ -261,22 +255,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationRead],
   );
 
-  const markNotificationDoneWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
-      await markNotificationDone({ auth, settings }, notification),
-    [auth, settings, markNotificationDone],
-  );
-
   const markRepoNotificationsReadWithAccounts = useCallback(
     async (notification: AtlasifyNotification) =>
       await markRepoNotificationsRead({ auth, settings }, notification),
     [auth, settings, markRepoNotificationsRead],
-  );
-
-  const markRepoNotificationsDoneWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
-      await markRepoNotificationsDone({ auth, settings }, notification),
-    [auth, settings, markRepoNotificationsDone],
   );
 
   return (
@@ -287,14 +269,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         loginWithAPIToken,
         logoutFromAccount,
 
-        notifications,
         status,
         globalError,
+
+        notifications,
         fetchNotifications: fetchNotificationsWithAccounts,
+
         markNotificationRead: markNotificationReadWithAccounts,
-        markNotificationDone: markNotificationDoneWithAccounts,
         markRepoNotificationsRead: markRepoNotificationsReadWithAccounts,
-        markRepoNotificationsDone: markRepoNotificationsDoneWithAccounts,
 
         settings,
         clearFilters,

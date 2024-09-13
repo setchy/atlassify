@@ -2,7 +2,7 @@ import { AxiosError, type AxiosResponse } from 'axios';
 import type { Link } from '../../types';
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
-import type { GitHubRESTError } from './typesGitHub';
+import type { GitHubRESTError } from './types';
 
 describe('utils/api/errors.ts', () => {
   it('network error', async () => {

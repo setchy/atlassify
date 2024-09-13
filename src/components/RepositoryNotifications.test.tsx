@@ -18,7 +18,6 @@ jest.mock('./NotificationRow', () => ({
 
 describe('components/Repository.tsx', () => {
   const markRepoNotificationsRead = jest.fn();
-  const markRepoNotificationsDone = jest.fn();
 
   const props = {
     account: mockAtlassianCloudAccount,
@@ -70,22 +69,6 @@ describe('components/Repository.tsx', () => {
     fireEvent.click(screen.getByTitle('Mark Repository as Read'));
 
     expect(markRepoNotificationsRead).toHaveBeenCalledWith(
-      mockSingleNotification,
-    );
-  });
-
-  it('should mark a repo as done', () => {
-    render(
-      <AppContext.Provider
-        value={{ settings: { ...mockSettings }, markRepoNotificationsDone }}
-      >
-        <RepositoryNotifications {...props} />
-      </AppContext.Provider>,
-    );
-
-    fireEvent.click(screen.getByTitle('Mark Repository as Done'));
-
-    expect(markRepoNotificationsDone).toHaveBeenCalledWith(
       mockSingleNotification,
     );
   });

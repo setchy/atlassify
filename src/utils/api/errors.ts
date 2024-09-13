@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import type { AtlasifyError } from '../../types';
 import { Errors } from '../errors';
-import type { GitHubRESTError } from './typesGitHub';
+import type { GitHubRESTError } from './types';
 
 export function determineFailureType(
   err: AxiosError<GitHubRESTError>,

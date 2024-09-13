@@ -1,9 +1,10 @@
 import type {
-  AtlasifyNotification,
   Category,
   Product,
   ReadState,
-} from './utils/api/typesGitHub';
+  Repository,
+  Subject,
+} from './utils/api/types';
 import type { AuthMethod, PlatformType } from './utils/auth/types';
 
 declare const __brand: unique symbol;
@@ -106,6 +107,35 @@ export interface AccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
   error: AtlasifyError | null;
+}
+
+export interface AtlasifyNotification {
+  id: string;
+  unread: boolean;
+  updated_at: string;
+  last_read_at: string | null;
+  subject: Subject;
+  path: {
+    title: string;
+    url: Link;
+    iconUrl: Link | null;
+  };
+  entity: {
+    title: string;
+    iconUrl: Link;
+    url: Link;
+  };
+  product: {
+    name: Product;
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    icon: any;
+  };
+  repository: Repository;
+  category: Category;
+  readState: ReadState;
+  url: Link;
+  subscription_url: Link;
+  account: Account;
 }
 
 export interface AtlasifyUser {

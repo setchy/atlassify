@@ -1,7 +1,4 @@
-import type {
-  AtlassianNotification,
-  AtlassianProduct,
-} from './api/typesGitHub';
+import type { AtlassianNotification, AtlassianProduct } from './api/types';
 
 import {
   AtlassianIcon,

@@ -7,8 +7,13 @@ import {
 } from '@primer/octicons-react';
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
 import { AppContext } from '../context/App';
-import { type Account, type AtlasifyError, Opacity, Size } from '../types';
-import type { AtlasifyNotification } from '../utils/api/typesGitHub';
+import {
+  type Account,
+  type AtlasifyError,
+  AtlasifyNotification,
+  Opacity,
+  Size,
+} from '../types';
 import { cn } from '../utils/cn';
 import {
   openAccountProfile,

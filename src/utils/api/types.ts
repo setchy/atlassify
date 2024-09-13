@@ -1,34 +1,5 @@
 import type { Account, Link } from '../../types';
 
-export interface AtlasifyNotification {
-  id: string;
-  unread: boolean;
-  updated_at: string;
-  last_read_at: string | null;
-  subject: Subject;
-  path: {
-    title: string;
-    url: Link;
-    iconUrl: Link | null;
-  };
-  entity: {
-    title: string;
-    iconUrl: Link;
-    url: Link;
-  };
-  product: {
-    name: Product;
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    icon: any;
-  };
-  repository: Repository;
-  category: Category;
-  readState: ReadState;
-  url: Link;
-  subscription_url: Link;
-  account: Account;
-}
-
 export interface AtlassianProduct {
   name: string;
   icon: React.ComponentType;

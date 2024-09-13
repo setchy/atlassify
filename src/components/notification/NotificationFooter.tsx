@@ -1,7 +1,7 @@
 import Avatar from '@atlaskit/avatar';
 import type { FC } from 'react';
 import { Opacity } from '../../types';
-import type { AtlasifyNotification } from '../../utils/api/typesGitHub';
+import type { AtlasifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 
 interface INotificationFooter {

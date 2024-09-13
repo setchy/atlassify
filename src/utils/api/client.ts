@@ -3,11 +3,7 @@ import gql from 'graphql-tag';
 import { print } from 'graphql/language/printer';
 import type { Account, Link, SettingsState, Token } from '../../types';
 import { apiRequestAuth, apiRequestAuth2 } from './request';
-import type {
-  GraphQLResponse,
-  MyNotifications,
-  MyUserDetails,
-} from './typesGitHub';
+import type { GraphQLResponse, MyNotifications, MyUserDetails } from './types';
 import { getAPIUrl } from './utils';
 
 /**

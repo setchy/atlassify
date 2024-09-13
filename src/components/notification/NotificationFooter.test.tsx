@@ -6,7 +6,7 @@ import {
 import { AppContext } from '../../context/App';
 import { GroupBy, type Link } from '../../types';
 import { mockSingleNotification } from '../../utils/api/__mocks__/response-mocks';
-import type { UserType } from '../../utils/api/typesGitHub';
+import type { UserType } from '../../utils/api/types';
 import * as comms from '../../utils/comms';
 import { NotificationFooter } from './NotificationFooter';
 

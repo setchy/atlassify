@@ -1,15 +1,6 @@
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 import { defaultSettings } from '../context/App';
-import type { Link, SettingsState } from '../types';
-import type { AtlasifyNotification } from './api/typesGitHub';
-
-export async function generateGitHubWebUrl(
-  notification: AtlasifyNotification,
-): Promise<Link> {
-  const url = new URL(notification.entity.url);
-
-  return url.toString() as Link;
-}
+import type { AtlasifyNotification, SettingsState } from '../types';
 
 export function formatForDisplay(text: string[]): string {
   if (!text) {

@@ -7,7 +7,7 @@ import {
 import { AppContext } from '../context/App';
 import { GroupBy, type Link } from '../types';
 import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
-import type { UserType } from '../utils/api/typesGitHub';
+import type { UserType } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { NotificationRow } from './NotificationRow';
@@ -160,47 +160,6 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByTitle('Mark as Read'));
       expect(markNotificationRead).toHaveBeenCalledTimes(1);
-    });
-
-    it('should mark a notification as done', () => {
-      const markNotificationDone = jest.fn();
-
-      const props = {
-        notification: mockSingleNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{ settings: mockSettings, markNotificationDone }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.click(screen.getByTitle('Mark as Done'));
-      expect(markNotificationDone).toHaveBeenCalledTimes(1);
-    });
-
-    it('should unsubscribe from a notification thread', () => {
-      const unsubscribeNotification = jest.fn();
-
-      const props = {
-        notification: mockSingleNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider value={{}}>
-          <AppContext.Provider
-            value={{ settings: mockSettings, unsubscribeNotification }}
-          >
-            <NotificationRow {...props} />
-          </AppContext.Provider>
-        </AppContext.Provider>,
-      );
-      fireEvent.click(screen.getByTitle('Unsubscribe from Thread'));
-      expect(unsubscribeNotification).toHaveBeenCalledTimes(1);
     });
 
     it('should open notification user profile', () => {

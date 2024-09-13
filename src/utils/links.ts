@@ -1,12 +1,7 @@
-import type { Account, Link } from '../types';
-import type {
-  AtlasifyNotification,
-  Repository,
-  SubjectUser,
-} from './api/typesGitHub';
+import type { Account, AtlasifyNotification, Link } from '../types';
+import type { Repository, SubjectUser } from './api/types';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
-import { generateGitHubWebUrl } from './helpers';
 
 export function openGitifyRepository() {
   openExternalLink(`https://github.com/${Constants.REPO_SLUG}` as Link);
@@ -47,6 +42,5 @@ export function openRepository(repository: Repository) {
 }
 
 export async function openNotification(notification: AtlasifyNotification) {
-  const url = await generateGitHubWebUrl(notification);
-  openExternalLink(url);
+  openExternalLink(notification.entity.url);
 }

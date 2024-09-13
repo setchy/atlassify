@@ -1,9 +1,8 @@
 import { partialMockUser } from '../__mocks__/partial-mocks';
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import { mockSingleNotification } from './api/__mocks__/response-mocks';
-import type { Repository } from './api/typesGitHub';
+import type { Repository } from './api/types';
 import * as comms from './comms';
-import * as helpers from './helpers';
 import {
   openAccountProfile,
   openGitifyReleaseNotes,
@@ -88,9 +87,6 @@ describe('utils/links.ts', () => {
 
   it('openNotification', async () => {
     const mockNotificationUrl = mockSingleNotification.repository.html_url;
-    jest
-      .spyOn(helpers, 'generateGitHubWebUrl')
-      .mockResolvedValue(mockNotificationUrl);
     await openNotification(mockSingleNotification);
     expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
   });

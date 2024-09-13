@@ -2,15 +2,13 @@ import log from 'electron-log';
 import type {
   Account,
   AccountNotifications,
+  AtlasifyNotification,
   AtlasifyState,
   SettingsState,
 } from '../types';
 import { listNotificationsForAuthenticatedUser } from './api/client';
 import { determineFailureType } from './api/errors';
-import type {
-  AtlasifyNotification,
-  AtlassianNotification,
-} from './api/typesGitHub';
+import type { AtlassianNotification } from './api/types';
 import { getAccountUUID } from './auth/utils';
 import { hideWindow, showWindow, updateTrayIcon } from './comms';
 import { openNotification } from './links';

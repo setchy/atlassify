@@ -10,7 +10,7 @@ import {
   Theme,
   type Token,
 } from '../types';
-import type { ReadState } from '../utils/api/typesGitHub';
+import type { ReadState } from '../utils/api/types';
 
 export const mockAtlasifyUser: AtlasifyUser = {
   login: 'atlas',
