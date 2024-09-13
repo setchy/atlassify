@@ -12,8 +12,8 @@ importers:
         specifier: 21.15.1
         version: 21.15.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: 22.16.1
-        version: 22.16.1(@types/react@18.3.5)(react@18.3.1)
+        specifier: 22.18.0
+        version: 22.18.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/logo':
         specifier: 14.2.2
         version: 14.2.2(@types/react@18.3.5)(react@18.3.1)
@@ -221,8 +221,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/icon@22.16.1':
-    resolution: {integrity: sha512-CqfjWTxW5RXTarI5Cpc3TjN7dozfo8q5BHXH+pyE2Se5/RoeNfwOnhr7rGi0DS5n+cjQfN5yUA/k6EluWJ9LdA==}
+  '@atlaskit/icon@22.18.0':
+    resolution: {integrity: sha512-t1utmsYF3WqImRNDHrO1Y/H69oYrkcfY0o28VX9/+wPqsxzcmsVWephnPlgoMKwXc8mOjZa5QxlrVVG+GtTMtw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -3818,7 +3818,7 @@ snapshots:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.0(@types/react@18.3.5)(react@18.3.1)
-      '@atlaskit/icon': 22.16.1(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/icon': 22.18.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 12.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.5)(react@18.3.1)
@@ -3866,7 +3866,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/icon@22.16.1(@types/react@18.3.5)(react@18.3.1)':
+  '@atlaskit/icon@22.18.0(@types/react@18.3.5)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/tokens': 1.59.1(@types/react@18.3.5)(react@18.3.1)
