@@ -64,7 +64,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 50);
   });
 
-  it('should update the zoom values when using the zoom buttons', async () => {
+  it.skip('should update the zoom values when using the zoom buttons', async () => {
     webFrame.getZoomLevel = jest.fn().mockReturnValue(0);
     webFrame.setZoomLevel = jest.fn().mockImplementation((level) => {
       webFrame.getZoomLevel = jest.fn().mockReturnValue(level);

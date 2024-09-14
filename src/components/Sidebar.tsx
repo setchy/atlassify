@@ -62,6 +62,7 @@ export const Sidebar: FC = () => {
         <div className="mx-auto my-3">
           <Tooltip content="Open Atlasify on GitHub">
             <Button
+              title="Atlasify"
               appearance="subtle"
               onClick={() => openAtlasifyRepository()}
             >

@@ -157,7 +157,7 @@ describe('components/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTitle('Mark as Read'));
+      fireEvent.click(screen.getByTitle('Mark as read'));
       expect(markNotificationRead).toHaveBeenCalledTimes(1);
     });
   });

@@ -699,6 +699,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         >
           <button
             class=" css-a8hcye"
+            title="Mark as read"
             type="button"
           >
             <span
@@ -854,6 +855,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         >
           <button
             class=" css-a8hcye"
+            title="Mark as read"
             type="button"
           >
             <span
@@ -1165,6 +1167,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
       >
         <button
           class=" css-a8hcye"
+          title="Mark as read"
           type="button"
         >
           <span
@@ -1320,6 +1323,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
       >
         <button
           class=" css-a8hcye"
+          title="Mark as read"
           type="button"
         >
           <span

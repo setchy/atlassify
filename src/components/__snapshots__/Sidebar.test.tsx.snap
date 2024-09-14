@@ -19,6 +19,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             >
               <button
                 class=" css-1aearyh"
+                title="Atlasify"
                 type="button"
               >
                 <span
@@ -182,6 +183,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           >
             <button
               class=" css-1aearyh"
+              title="Atlasify"
               type="button"
             >
               <span
@@ -402,6 +404,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             >
               <button
                 class=" css-1aearyh"
+                title="Atlasify"
                 type="button"
               >
                 <span
@@ -565,6 +568,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           >
             <button
               class=" css-1aearyh"
+              title="Atlasify"
               type="button"
             >
               <span

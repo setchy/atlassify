@@ -118,6 +118,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                 <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
               )}
               label="Mark as read"
+              title="Mark as read"
               isTooltipDisabled={false}
               shape="circle"
               spacing="compact"

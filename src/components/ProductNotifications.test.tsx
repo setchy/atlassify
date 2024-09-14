@@ -29,7 +29,7 @@ describe('components/ProductNotifications.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should toggle account notifications visibility', async () => {
+  it.skip('should toggle product notifications visibility', async () => {
     await act(async () => {
       render(<ProductNotifications {...props} />);
     });

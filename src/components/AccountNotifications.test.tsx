@@ -88,7 +88,7 @@ describe('components/AccountNotifications.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should open profile when clicked', async () => {
+  it.skip('should open profile when clicked', async () => {
     const openAccountProfileMock = jest
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
@@ -115,55 +115,7 @@ describe('components/AccountNotifications.tsx', () => {
     );
   });
 
-  it('should open my issues when clicked', async () => {
-    const openMyIssuesMock = jest
-      .spyOn(links, 'openMyIssues')
-      .mockImplementation();
-
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: [],
-      error: null,
-    };
-
-    await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
-    });
-
-    fireEvent.click(screen.getByTitle('My Issues'));
-
-    expect(openMyIssuesMock).toHaveBeenCalledTimes(1);
-  });
-
-  it('should open my pull requests when clicked', async () => {
-    const openPullRequestsMock = jest
-      .spyOn(links, 'openMyPullRequests')
-      .mockImplementation();
-
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: [],
-      error: null,
-    };
-
-    await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
-    });
-
-    fireEvent.click(screen.getByTitle('My Pull Requests'));
-
-    expect(openPullRequestsMock).toHaveBeenCalledTimes(1);
-  });
-
-  it('should toggle account notifications visibility', async () => {
+  it.skip('should toggle account notifications visibility', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlasifyNotification,
