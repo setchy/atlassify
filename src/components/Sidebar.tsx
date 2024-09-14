@@ -12,10 +12,6 @@ import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import DropdownMenu, {
-  DropdownItemCheckbox,
-  DropdownItemCheckboxGroup,
-} from '@atlaskit/dropdown-menu';
 
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
@@ -133,18 +129,6 @@ export const Sidebar: FC = () => {
       <div className="px-3 py-4">
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
-            <DropdownMenu trigger="Status" shouldRenderToParent>
-              <DropdownItemCheckboxGroup title="Categories" id="actions">
-                <DropdownItemCheckbox id="todo" defaultSelected>
-                  To do
-                </DropdownItemCheckbox>
-                <DropdownItemCheckbox id="inprogress">
-                  In progress
-                </DropdownItemCheckbox>
-                <DropdownItemCheckbox id="done">Done</DropdownItemCheckbox>
-              </DropdownItemCheckboxGroup>
-            </DropdownMenu>
-
             <Tooltip content="Refresh Notifications">
               <IconButton
                 label="Refresh Notifications"
