@@ -33,7 +33,6 @@ export const mockAuth: AuthState = {
 const mockAppearanceSettings = {
   theme: Theme.SYSTEM,
   zoomPercentage: 100,
-  showAccountHeader: false,
 };
 
 const mockNotificationSettings = {

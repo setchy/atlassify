@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
-import { mockSettings } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';
@@ -28,23 +27,9 @@ describe('routes/Notifications.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render itself & its children (all read notifications)', () => {
+  it('should render itself & its children', () => {
     const tree = render(
       <AppContext.Provider value={{ notifications: [] }}>
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render itself & its children (show account header)', () => {
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          notifications: [mockAccountNotifications[0]],
-          settings: { ...mockSettings, showAccountHeader: true },
-        }}
-      >
         <NotificationsRoute />
       </AppContext.Provider>,
     );

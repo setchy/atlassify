@@ -8,13 +8,7 @@ import { Errors } from '../utils/errors';
 import { getNotificationCount } from '../utils/notifications';
 
 export const NotificationsRoute: FC = () => {
-  const { notifications, status, globalError, settings } =
-    useContext(AppContext);
-
-  const hasMultipleAccounts = useMemo(
-    () => notifications.length > 1,
-    [notifications],
-  );
+  const { notifications, status, globalError } = useContext(AppContext);
 
   const hasNoAccountErrors = useMemo(
     () => notifications.every((account) => account.error === null),
@@ -42,7 +36,6 @@ export const NotificationsRoute: FC = () => {
           account={accountNotifications.account}
           notifications={accountNotifications.notifications}
           error={accountNotifications.error}
-          showAccountHeader={hasMultipleAccounts || settings.showAccountHeader}
         />
       ))}
     </div>

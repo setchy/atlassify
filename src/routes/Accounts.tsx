@@ -20,7 +20,7 @@ import type { Account } from '../types';
 import { getAccountUUID, refreshAccount } from '../utils/auth/utils';
 import { cn } from '../utils/cn';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
-import { openAccountProfile, openManageProfileSecurity } from '../utils/links';
+import { openAccountProfile } from '../utils/links';
 import { saveState } from '../utils/storage';
 
 export const AccountsRoute: FC = () => {
@@ -71,28 +71,21 @@ export const AccountsRoute: FC = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <div className="text-sm font-semibold">{account.user.name}</div>
-                <div className="text-xs">
-                  <button
-                    type="button"
-                    className="flex flex-1 gap-11 cursor-pointer align-middle"
-                  >
+                <div className="flex flex-1 gap-1 align-center text-xs">
+                  <div>
                     <Tooltip content="Username">
                       <PersonIcon label="Username" size="small" />
-                      {account.user.login}
                     </Tooltip>
-                  </button>
+                  </div>
+                  <div>{account.user.login}</div>
                 </div>
-                <div className="text-xs">
-                  <button
-                    type="button"
-                    className="flex flex-1 gap-1 cursor-pointer align-middle"
-                    onClick={() => openManageProfileSecurity()}
-                  >
-                    <Tooltip content="Open profile security">
+                <div className="flex flex-1 gap-1 align-center text-xs">
+                  <div>
+                    <Tooltip content="Authentication method">
                       <LockIcon label="Authentication method" size="small" />
-                      {account.method}
                     </Tooltip>
-                  </button>
+                  </div>
+                  <div>{account.method}</div>
                 </div>
               </div>
 

@@ -26,7 +26,6 @@ interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
   error: AtlasifyError | null;
-  showAccountHeader: boolean;
 }
 
 export const AccountNotifications: FC<IAccountNotifications> = (
@@ -34,7 +33,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 ) => {
   const [showOnlyUnread, setShowOnlyUnread] = useState(false);
 
-  const { account, showAccountHeader, notifications } = props;
+  const { account, notifications } = props;
 
   const { settings } = useContext(AppContext);
 
@@ -80,61 +79,59 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   return (
     <>
-      {showAccountHeader && (
-        <div
-          className={cn(
-            'group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white',
-            props.error
-              ? 'bg-red-300 dark:bg-red-500'
-              : 'bg-gray-300 dark:bg-gray-darkest',
-            Opacity.LOW,
-          )}
-          onClick={toggleAccountNotifications}
-        >
-          <div className="flex">
-            <button
-              type="button"
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openAccountProfile(account);
-              }}
-            >
-              <div className="flex">
-                <Tooltip content={account.user.name}>
-                  <Avatar
-                    name={account.user.name}
-                    src={account.user.avatar}
-                    size="xsmall"
-                    appearance="circle"
-                  />
-                </Tooltip>
-                <span className="ml-2">{account.user.login}</span>
-              </div>
-            </button>
-          </div>
-
-          <Tooltip content={showOnlyUnread ? 'Show all' : 'Only show unread'}>
-            <Toggle
-              id="toggle-default"
-              size="regular"
-              label="Show unread"
-              onChange={() => setShowOnlyUnread((prev) => !prev)}
-            />
-          </Tooltip>
-
-          <HoverGroup>
-            <IconButton
-              icon={ChevronIcon}
-              label={toggleAccountNotificationsLabel}
-              isTooltipDisabled={false}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-            />
-          </HoverGroup>
+      <div
+        className={cn(
+          'group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white',
+          props.error
+            ? 'bg-red-300 dark:bg-red-500'
+            : 'bg-gray-300 dark:bg-gray-darkest',
+          Opacity.LOW,
+        )}
+        onClick={toggleAccountNotifications}
+      >
+        <div className="flex">
+          <button
+            type="button"
+            onClick={(event: MouseEvent<HTMLElement>) => {
+              // Don't trigger onClick of parent element.
+              event.stopPropagation();
+              openAccountProfile(account);
+            }}
+          >
+            <div className="flex">
+              <Tooltip content={account.user.name}>
+                <Avatar
+                  name={account.user.name}
+                  src={account.user.avatar}
+                  size="xsmall"
+                  appearance="circle"
+                />
+              </Tooltip>
+              <span className="ml-2">{account.user.login}</span>
+            </div>
+          </button>
         </div>
-      )}
+
+        <Tooltip content={showOnlyUnread ? 'Show all' : 'Only show unread'}>
+          <Toggle
+            id="toggle-default"
+            size="regular"
+            label="Show unread"
+            onChange={() => setShowOnlyUnread((prev) => !prev)}
+          />
+        </Tooltip>
+
+        <HoverGroup>
+          <IconButton
+            icon={ChevronIcon}
+            label={toggleAccountNotificationsLabel}
+            isTooltipDisabled={false}
+            shape="circle"
+            spacing="compact"
+            appearance="subtle"
+          />
+        </HoverGroup>
+      </div>
 
       {showAccountNotifications && (
         <>

@@ -20,11 +20,10 @@ describe('components/AccountNotifications.tsx', () => {
     mockDirectoryPath();
   });
 
-  it('should render itself - group notifications by repositories', () => {
+  it('should render itself - group notifications by products', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlasifyNotification,
-      showAccountHeader: true,
       error: null,
     };
 
@@ -42,7 +41,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlasifyNotification,
-      showAccountHeader: true,
       error: null,
     };
 
@@ -60,7 +58,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
-      showAccountHeader: true,
       error: null,
     };
 
@@ -81,7 +78,6 @@ describe('components/AccountNotifications.tsx', () => {
         descriptions: ['Error description'],
         emojis: ['🔥'],
       },
-      showAccountHeader: true,
     };
 
     const tree = render(
@@ -100,7 +96,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
-      showAccountHeader: true,
       error: null,
     };
 
@@ -128,7 +123,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
-      showAccountHeader: true,
       error: null,
     };
 
@@ -153,7 +147,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
-      showAccountHeader: true,
       error: null,
     };
 
@@ -174,7 +167,6 @@ describe('components/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlasifyNotification,
-      showAccountHeader: true,
       error: null,
     };
 

@@ -50,7 +50,6 @@ export type SettingsState = AppearanceSettingsState &
 interface AppearanceSettingsState {
   theme: Theme;
   zoomPercentage: number;
-  showAccountHeader: boolean;
 }
 
 interface NotificationSettingsState {

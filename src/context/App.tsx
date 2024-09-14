@@ -49,7 +49,6 @@ export const defaultAuth: AuthState = {
 const defaultAppearanceSettings = {
   theme: Theme.SYSTEM,
   zoomPercentage: 100,
-  showAccountHeader: false,
 };
 
 const defaultNotificationSettings = {

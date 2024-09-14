@@ -35,11 +35,6 @@ export function openAccountProfile(account: Account) {
   openExternalLink(url.toString() as Link);
 }
 
-export function openManageProfileSecurity() {
-  const url = new URL(Constants.ATLASSIAN_URLS.WEB.PROFILE_SECURITY);
-  openExternalLink(url.toString() as Link);
-}
-
 export function openUserProfile(user: SubjectUser) {
   openExternalLink(user.html_url);
 }

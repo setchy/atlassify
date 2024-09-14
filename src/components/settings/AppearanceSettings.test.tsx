@@ -1,11 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { webFrame } from 'electron';
 import { MemoryRouter } from 'react-router-dom';
-import {
-  mockAtlassianCloudAccount,
-  mockAuth,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
 import { AppearanceSettings } from './AppearanceSettings';
 
@@ -197,32 +193,5 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('showNumber', false);
-  });
-
-  it('should toggle account header checkbox', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: {
-              accounts: [mockAtlassianCloudAccount],
-            },
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <AppearanceSettings />
-          </MemoryRouter>
-        </AppContext.Provider>,
-      );
-    });
-
-    await screen.findByLabelText('Show account header');
-
-    fireEvent.click(screen.getByLabelText('Show account header'));
-
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('showAccountHeader', true);
   });
 });

@@ -22,8 +22,6 @@ export const Constants = {
     WEB: {
       MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
-      PROFILE_SECURITY:
-        'https://id.atlassian.com/manage-profile/security' as Link,
       SECURITY_TOKENS:
         'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
     },
