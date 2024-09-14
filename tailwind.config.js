@@ -10,7 +10,7 @@ export default {
       colors: {
         // TODO - Update to use color palette - https://atlassian.design/foundations/color-new/color-palette-new/
         gray: {
-          sidebar: '#85B8FF',
+          sidebar: '#388BFF',
           dark: '#161b22',
           darker: '#090E15',
           darkest: '#000209',

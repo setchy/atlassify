@@ -50,7 +50,12 @@
   "build": {
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
-    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
+    "files": [
+      "build/**/*",
+      "assets/**/*",
+      "src/electron/*",
+      "LICENSE"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -59,7 +64,9 @@
       "gatekeeperAssess": false,
       "entitlements": "./entitlements/entitlements.mac.plist",
       "entitlementsInherit": "./entitlements/entitlements.mac.plist",
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -79,7 +86,11 @@
       "oneClick": false
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
       "category": "Development",
       "maintainer": "Adam Setch"
     },
@@ -91,6 +102,7 @@
     "@atlaskit/button": "^20.1.1",
     "@atlaskit/checkbox": "^14.0.0",
     "@atlaskit/css-reset": "^6.10.1",
+    "@atlaskit/dropdown-menu": "^12.18.2",
     "@atlaskit/heading": "^2.4.5",
     "@atlaskit/icon": "22.18.0",
     "@atlaskit/inline-message": "^12.3.3",

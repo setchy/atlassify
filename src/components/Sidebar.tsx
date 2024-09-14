@@ -1,7 +1,7 @@
 import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { IconButton } from '@atlaskit/button/new';
+import Button, { IconButton } from '@atlaskit/button/new';
 import IssuesIcon from '@atlaskit/icon/glyph/issues';
 import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
 import { Stack, Text } from '@atlaskit/primitives';
@@ -12,6 +12,10 @@ import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
+import DropdownMenu, {
+  DropdownItemCheckbox,
+  DropdownItemCheckboxGroup,
+} from '@atlaskit/dropdown-menu';
 
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
@@ -64,15 +68,16 @@ export const Sidebar: FC = () => {
   return (
     <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
-        <button
-          type="button"
-          className="mx-auto my-3 cursor-pointer outline-none"
-          title="Open Atlasify on GitHub"
-          onClick={() => openAtlasifyRepository()}
-          data-testid="atlasify-logo"
-        >
-          <AtlasIcon size="medium" appearance="brand" />
-        </button>
+        <div className="mx-auto my-3">
+          <Tooltip content="Open Atlasify on GitHub">
+            <Button
+              appearance="subtle"
+              onClick={() => openAtlasifyRepository()}
+            >
+              <AtlasIcon size="medium" appearance="brand" />
+            </Button>
+          </Tooltip>
+        </div>
 
         <Stack alignInline="center" space="space.100">
           <Tooltip content={`${notificationsCount} Unread Notifications`}>
@@ -128,6 +133,18 @@ export const Sidebar: FC = () => {
       <div className="px-3 py-4">
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
+            <DropdownMenu trigger="Status" shouldRenderToParent>
+              <DropdownItemCheckboxGroup title="Categories" id="actions">
+                <DropdownItemCheckbox id="todo" defaultSelected>
+                  To do
+                </DropdownItemCheckbox>
+                <DropdownItemCheckbox id="inprogress">
+                  In progress
+                </DropdownItemCheckbox>
+                <DropdownItemCheckbox id="done">Done</DropdownItemCheckbox>
+              </DropdownItemCheckboxGroup>
+            </DropdownMenu>
+
             <Tooltip content="Refresh Notifications">
               <IconButton
                 label="Refresh Notifications"
