@@ -60,11 +60,11 @@ interface NotificationSettingsState {
 
 interface SystemSettingsState {
   openLinks: OpenPreference;
-  keyboardShortcut: boolean;
+  keyboardShortcutEnabled: boolean;
   showNotificationsCountInTray: boolean;
   showSystemNotifications: boolean;
   useAlternateIdleIcon: boolean;
-  playSound: boolean;
+  playSoundNewNotifications: boolean;
   openAtStartup: boolean;
 }
 

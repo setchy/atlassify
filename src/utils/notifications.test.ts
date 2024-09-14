@@ -18,7 +18,7 @@ describe('utils/notifications.ts', () => {
   it('should raise a system notification (settings - on)', () => {
     const settings: SettingsState = {
       ...defaultSettings,
-      playSound: true,
+      playSoundNewNotifications: true,
       showSystemNotifications: true,
     };
 

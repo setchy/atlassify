@@ -59,10 +59,10 @@ const defaultNotificationSettings = {
 
 const defaultSystemSettings = {
   openLinks: OpenPreference.FOREGROUND,
-  keyboardShortcut: true,
+  keyboardShortcutEnabled: true,
   showNotificationsCountInTray: true,
   showSystemNotifications: true,
-  playSound: true,
+  playSoundNewNotifications: true,
   useAlternateIdleIcon: false,
   openAtStartup: false,
 };
@@ -160,8 +160,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.showNotificationsCountInTray, notifications]);
 
   useEffect(() => {
-    setKeyboardShortcut(settings.keyboardShortcut);
-  }, [settings.keyboardShortcut]);
+    setKeyboardShortcut(settings.keyboardShortcutEnabled);
+  }, [settings.keyboardShortcutEnabled]);
 
   useEffect(() => {
     ipcRenderer.on('atlasify:reset-app', () => {
@@ -234,7 +234,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     // Restore settings before accounts to ensure filters are available before fetching notifications
     if (existing.settings) {
-      setKeyboardShortcut(existing.settings.keyboardShortcut);
+      setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
       setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
       setSettings({ ...defaultSettings, ...existing.settings });
       webFrame.setZoomLevel(

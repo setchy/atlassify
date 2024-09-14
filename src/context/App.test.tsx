@@ -268,7 +268,7 @@ describe('context/App.tsx', () => {
         return (
           <button
             type="button"
-            onClick={() => updateSetting('playSound', true)}
+            onClick={() => updateSetting('playSoundNewNotifications', true)}
           >
             Test Case
           </button>

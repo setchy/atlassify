@@ -49,6 +49,9 @@ A list of "things" to improve
 - [ ] setup coveralls (or similar)
 - [ ] fix unit tests
 - [ ] use atlaskit/tokens for colors
+- [ ] advanced feature for Bitbucket "Your Work" queue
+- [ ] atlaskit progress bar
+- [ ] atlaskit for modal dialog on reset
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io

@@ -43,10 +43,10 @@ const mockNotificationSettings = {
 
 const mockSystemSettings = {
   openLinks: OpenPreference.FOREGROUND,
-  keyboardShortcut: true,
+  keyboardShortcutEnabled: true,
   showNotificationsCountInTray: false,
   showSystemNotifications: true,
-  playSound: true,
+  playSoundNewNotifications: true,
   useAlternateIdleIcon: false,
   openAtStartup: false,
 };

@@ -1,7 +1,9 @@
 import { FilterIcon, FilterRemoveIcon, NoteIcon } from '@primer/octicons-react';
 import { type FC, useContext } from 'react';
+
+import Checkbox from '@atlaskit/checkbox';
+
 import { Header } from '../components/Header';
-import { Checkbox } from '../components/fields/Checkbox';
 import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
 import { BUTTON_CLASS_NAME } from '../styles/atlasify';
@@ -83,11 +85,10 @@ export const FiltersRoute: FC = () => {
                 key={category}
                 name={category}
                 label={formatProperCase(getCategoryDetails(category).name)}
-                checked={shouldShowCategory(category)}
+                isChecked={shouldShowCategory(category)}
                 onChange={(evt) =>
                   updateCategoryFilter(category, evt.target.checked)
                 }
-                tooltip={<div>{getCategoryDetails(category).description}</div>}
               />
             );
           })}
@@ -102,12 +103,9 @@ export const FiltersRoute: FC = () => {
                 key={readState}
                 name={readState}
                 label={formatProperCase(getReadStateDetails(readState).name)}
-                checked={shouldShowReadState(readState)}
+                isChecked={shouldShowReadState(readState)}
                 onChange={(evt) =>
                   updateReadStateFilter(readState, evt.target.checked)
-                }
-                tooltip={
-                  <div>{getReadStateDetails(readState).description}</div>
                 }
               />
             );
@@ -118,18 +116,16 @@ export const FiltersRoute: FC = () => {
           <Legend icon={NoteIcon}>Products</Legend>
 
           {Object.keys(PRODUCTS).map((product: Product) => {
-            // TODO - add icon to checkbox
             return (
               <Checkbox
-                key={product}
+                key={`checkbox-${product}`}
                 name={product}
                 label={formatProperCase(getProductDetails(product).name)}
-                checked={shouldShowProduct(product)}
+                isChecked={shouldShowProduct(product)}
                 onChange={(evt) =>
                   updateProductFilter(product, evt.target.checked)
                 }
-                tooltip={<div>{getProductDetails(product).description}</div>}
-              /> 
+              />
             );
           })}
         </fieldset>

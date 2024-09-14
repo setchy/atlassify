@@ -66,7 +66,7 @@ export const triggerNativeNotifications = (
     return;
   }
 
-  if (state.settings.playSound) {
+  if (state.settings.playSoundNewNotifications) {
     raiseSoundNotification();
   }
 
