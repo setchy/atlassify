@@ -10,8 +10,8 @@ import { mockAtlasifyNotification } from '../utils/api/__mocks__/response-mocks'
 import * as links from '../utils/links';
 import { AccountNotifications } from './AccountNotifications';
 
-jest.mock('./RepositoryNotifications', () => ({
-  RepositoryNotifications: () => <div>Repository Notifications</div>,
+jest.mock('./ProductNotifications', () => ({
+  ProductNotifications: () => <div>Product Notifications</div>,
 }));
 
 describe('components/AccountNotifications.tsx', () => {
@@ -29,7 +29,7 @@ describe('components/AccountNotifications.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
+        value={{ settings: { ...mockSettings, groupBy: GroupBy.PRODUCT } }}
       >
         <AccountNotifications {...props} />
       </AppContext.Provider>,
