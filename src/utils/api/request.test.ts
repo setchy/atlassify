@@ -5,8 +5,8 @@ import { apiRequestAuth } from './request';
 
 jest.mock('axios');
 
-const url = 'https://example.com' as Link;
-const method = 'get';
+const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
+const method = 'POST';
 
 describe('utils/api/request.ts', () => {
   afterEach(() => {

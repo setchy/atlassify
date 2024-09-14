@@ -2,10 +2,10 @@ import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
+// import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
-import IssuesIcon from '@atlaskit/icon/glyph/issues';
+// import IssuesIcon from '@atlaskit/icon/glyph/issues';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
@@ -16,12 +16,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
-import {
-  openAtlasifyRepository,
-  openMyIssues,
-  openMyNotifications,
-  openMyPullRequests,
-} from '../utils/links';
+import { openAtlasifyRepository, openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications';
 
 export const Sidebar: FC = () => {
@@ -96,7 +91,7 @@ export const Sidebar: FC = () => {
             )}
           </Tooltip>
 
-          <Tooltip content="My Issues">
+          {/* <Tooltip content="My Issues">
             <IconButton
               label="My Issues"
               icon={(iconProps) => (
@@ -106,7 +101,7 @@ export const Sidebar: FC = () => {
               spacing="compact"
               onClick={() => openMyIssues()}
             />
-          </Tooltip>
+          </Tooltip> 
 
           <Tooltip content="My Pull Requests">
             <IconButton
@@ -122,7 +117,7 @@ export const Sidebar: FC = () => {
               spacing="compact"
               onClick={() => openMyPullRequests()}
             />
-          </Tooltip>
+          </Tooltip>*/}
         </Stack>
       </div>
 

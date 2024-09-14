@@ -45,7 +45,7 @@ describe('utils/notifications.ts', () => {
   it('should not raise a system notification (settings - off)', () => {
     const settings = {
       ...defaultSettings,
-      playSound: false,
+      playSoundNewNotifications: false,
       showSystemNotifications: false,
     };
 

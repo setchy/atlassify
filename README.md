@@ -48,7 +48,8 @@ NOW
 - [ ] setup coveralls (or similar)
 
 SOON
-- [ ] fix unit tests
+- [ ] fix unit tests - re-enable those that are skipped
+- [ ] improve test coverage
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue

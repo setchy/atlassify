@@ -32,20 +32,6 @@ describe('utils/api/errors.ts', () => {
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
 
-    it('missing scopes', async () => {
-      const mockError: Partial<AxiosError<GitHubRESTError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 403,
-        response: createMockResponse(403, "Missing the 'notifications' scope"),
-      };
-
-      const result = determineFailureType(
-        mockError as AxiosError<GitHubRESTError>,
-      );
-
-      expect(result).toBe(Errors.MISSING_SCOPES);
-    });
-
     it('rate limited - primary', async () => {
       const mockError: Partial<AxiosError<GitHubRESTError>> = {
         code: AxiosError.ERR_BAD_REQUEST,

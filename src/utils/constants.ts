@@ -3,7 +3,6 @@ import type { Link } from '../types';
 export const Constants = {
   REPO_SLUG: 'setchy/atlasify',
 
-  // Storage
   STORAGE_KEY: 'atlasify-storage',
 
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],

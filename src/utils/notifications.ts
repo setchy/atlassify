@@ -171,6 +171,7 @@ export function mapAtlassianNotificationsToAtlasifyNotifications(
   notifications: AtlassianNotification[],
 ): AtlasifyNotification[] {
   return notifications?.map((notification: AtlassianNotification) => ({
+    // TODO Improve the fidelity of this mapping
     id: notification.headNotification.notificationId,
     title: notification.headNotification.content.message,
     readState: notification.headNotification.readState as ReadState,

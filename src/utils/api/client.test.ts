@@ -13,9 +13,9 @@ import {
 
 jest.mock('axios');
 
-const mockThreadId = '1234';
-const mockRepoSlug = 'atlasify-app/notifications-test';
+const mockNotificationID = '1234';
 
+// TODO - Improve assertions of data request object sent
 describe('utils/api/client.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
@@ -25,11 +25,12 @@ describe('utils/api/client.ts', () => {
     it('should fetch authenticated user - github', async () => {
       await getAuthenticatedUser(mockAtlassianCloudAccount);
 
-      expect(axios).toHaveBeenCalledWith({
-        url: 'https://api.github.com/user',
-        method: 'GET',
-        data: {},
-      });
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+        }),
+      );
 
       expect(axios.defaults.headers.common).toMatchSnapshot();
     });
@@ -42,11 +43,12 @@ describe('utils/api/client.ts', () => {
         mockSettings as SettingsState,
       );
 
-      expect(axios).toHaveBeenCalledWith({
-        url: 'https://api.github.com/notifications?participating=true',
-        method: 'GET',
-        data: {},
-      });
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+        }),
+      );
 
       expect(axios.defaults.headers.common).toMatchSnapshot();
     });
@@ -54,13 +56,16 @@ describe('utils/api/client.ts', () => {
 
   describe('markNotificationsAsRead', () => {
     it('should mark notifications as read', async () => {
-      await markNotificationsAsRead(mockAtlassianCloudAccount, [mockThreadId]);
+      await markNotificationsAsRead(mockAtlassianCloudAccount, [
+        mockNotificationID,
+      ]);
 
-      expect(axios).toHaveBeenCalledWith({
-        url: `https://api.github.com/notifications/threads/${mockThreadId}`,
-        method: 'PATCH',
-        data: {},
-      });
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+        }),
+      );
 
       expect(axios.defaults.headers.common).toMatchSnapshot();
     });
@@ -69,14 +74,15 @@ describe('utils/api/client.ts', () => {
   describe('markNotificationsAsUnread', () => {
     it('should mark repository notifications as read - github', async () => {
       await markNotificationsAsUnread(mockAtlassianCloudAccount, [
-        mockThreadId,
+        mockNotificationID,
       ]);
 
-      expect(axios).toHaveBeenCalledWith({
-        url: `https://api.github.com/repos/${mockRepoSlug}/notifications`,
-        method: 'PUT',
-        data: {},
-      });
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+        }),
+      );
 
       expect(axios.defaults.headers.common).toMatchSnapshot();
     });

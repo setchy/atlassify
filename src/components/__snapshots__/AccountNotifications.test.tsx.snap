@@ -12,113 +12,149 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
           class="flex"
         >
           <button
-            title="Open Profile"
             type="button"
           >
             <div
               class="flex"
             >
-              <img
-                alt="atlas's avatar"
-                class="rounded-full object-cover size-5"
-                src="https://avatars.githubusercontent.com/u/583231?v=4"
-              />
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="30"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="30"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+              </div>
               <span
                 class="ml-2"
               >
-                @
                 atlas
               </span>
             </div>
           </button>
         </div>
         <div
+          role="presentation"
+        >
+          <label
+            class="css-uv11fq"
+            data-size="regular"
+          >
+            <span
+              hidden=""
+              id="32"
+            >
+              Show unread
+            </span>
+            <input
+              aria-labelledby="32"
+              id="toggle-default"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class=" css-j0xbwm"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                    fill="currentcolor"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class=" css-1c1p6pd"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+          </label>
+        </div>
+        <div
           class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
         >
-          <span
-            class="mr-1"
-            title="Atlassian Cloud"
-          >
-            <svg
-              aria-hidden="true"
-              class="octicon octicon-mark-github"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-              />
-            </svg>
-          </span>
           <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Issues"
+            class=" css-a8hcye"
             type="button"
           >
-            <svg
-              aria-label="My Issues"
-              class="octicon octicon-issue-opened"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
+            <span
+              class=" css-1spmf3f"
             >
-              <path
-                d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-              />
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Pull Requests"
-            type="button"
-          >
-            <svg
-              aria-label="My Pull Requests"
-              class="octicon octicon-git-pull-request"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="No notifications for account"
-            type="button"
-          >
-            <svg
-              aria-label="No notifications for account"
-              class="octicon octicon-chevron-left"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 12 12"
-              width="14"
-            >
-              <path
-                d="M3.587 6.025c0 .2.1.4.2.5l3.3 3.3c.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1l-2.7-2.7 2.7-2.7c.3-.3.3-.8 0-1.1-.3-.3-.8-.3-1.1 0l-3.2 3.2c-.2.2-.3.4-.3.6Z"
-              />
-            </svg>
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                No notifications for account
+              </span>
+            </span>
           </button>
         </div>
       </div>
@@ -158,113 +194,149 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
         class="flex"
       >
         <button
-          title="Open Profile"
           type="button"
         >
           <div
             class="flex"
           >
-            <img
-              alt="atlas's avatar"
-              class="rounded-full object-cover size-5"
-              src="https://avatars.githubusercontent.com/u/583231?v=4"
-            />
+            <div
+              role="presentation"
+            >
+              <div
+                aria-labelledby="30"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-vucx95"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="30"
+                >
+                  Atlassian
+                </span>
+              </div>
+            </div>
             <span
               class="ml-2"
             >
-              @
               atlas
             </span>
           </div>
         </button>
       </div>
       <div
+        role="presentation"
+      >
+        <label
+          class="css-uv11fq"
+          data-size="regular"
+        >
+          <span
+            hidden=""
+            id="32"
+          >
+            Show unread
+          </span>
+          <input
+            aria-labelledby="32"
+            id="toggle-default"
+            name=""
+            type="checkbox"
+            value=""
+          />
+          <span
+            class=" css-j0xbwm"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                  fill="currentcolor"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class=" css-1c1p6pd"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
         class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
       >
-        <span
-          class="mr-1"
-          title="Atlassian Cloud"
-        >
-          <svg
-            aria-hidden="true"
-            class="octicon octicon-mark-github"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-            />
-          </svg>
-        </span>
         <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Issues"
+          class=" css-a8hcye"
           type="button"
         >
-          <svg
-            aria-label="My Issues"
-            class="octicon octicon-issue-opened"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
+          <span
+            class=" css-1spmf3f"
           >
-            <path
-              d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-            />
-            <path
-              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Pull Requests"
-          type="button"
-        >
-          <svg
-            aria-label="My Pull Requests"
-            class="octicon octicon-git-pull-request"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="No notifications for account"
-          type="button"
-        >
-          <svg
-            aria-label="No notifications for account"
-            class="octicon octicon-chevron-left"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 12 12"
-            width="14"
-          >
-            <path
-              d="M3.587 6.025c0 .2.1.4.2.5l3.3 3.3c.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1l-2.7-2.7 2.7-2.7c.3-.3.3-.8 0-1.1-.3-.3-.8-.3-1.1 0l-3.2 3.2c-.2.2-.3.4-.3.6Z"
-            />
-          </svg>
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              No notifications for account
+            </span>
+          </span>
         </button>
       </div>
     </div>
@@ -292,6 +364,995 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
         class="mb-2 text-center"
       >
         Error description
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`components/AccountNotifications.tsx should render itself - group notifications by date 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white bg-gray-300 dark:bg-gray-darkest opacity-70"
+      >
+        <div
+          class="flex"
+        >
+          <button
+            type="button"
+          >
+            <div
+              class="flex"
+            >
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="8"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="8"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+              </div>
+              <span
+                class="ml-2"
+              >
+                atlas
+              </span>
+            </div>
+          </button>
+        </div>
+        <div
+          role="presentation"
+        >
+          <label
+            class="css-uv11fq"
+            data-size="regular"
+          >
+            <span
+              hidden=""
+              id="10"
+            >
+              Show unread
+            </span>
+            <input
+              aria-labelledby="10"
+              id="toggle-default"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class=" css-j0xbwm"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                    fill="currentcolor"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class=" css-1c1p6pd"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+          </label>
+        </div>
+        <div
+          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+        >
+          <button
+            class=" css-a8hcye"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Hide account notifications
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        id="138661096"
+      >
+        <div
+          class="mr-3 flex items-center justify-center"
+        >
+          <div
+            role="presentation"
+          >
+            <div
+              aria-labelledby="14"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-1hqd2wf"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                  style="border-radius: 50%;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="14"
+              >
+                atlasify-app
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mr-3 flex flex-1 cursor-pointer text-wrap"
+        >
+          <div
+            class="flex flex-col gap-1"
+          >
+            <div
+              class="text-sm"
+              role="main"
+              title="I am a robot and this is a test!"
+            >
+              I am a robot and this is a test!
+              <span
+                class="pl-2 text-xs text-gray-700"
+                title="Updated 1 day ago"
+              >
+                1 day ago
+              </span>
+            </div>
+            <div
+              class="flex flex-1 items-center gap-1 text-xs opacity-80"
+            >
+              <div
+                aria-labelledby="15"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-122fgfa"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://github.atlasify.io/favicon.ico"
+                    style="border-radius: 2px;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="15"
+                >
+                  Repository
+                </span>
+              </div>
+              Repository
+            </div>
+            <div
+              class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+            >
+              <span
+                aria-label="Bitbucket"
+                class="css-5vjqu0"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                    fill="#1868DB"
+                  />
+                  
+    
+                </svg>
+              </span>
+              Repository
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+        >
+          <button
+            class=" css-a8hcye"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                    r="5"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Mark as read
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        id="148827438"
+      >
+        <div
+          class="mr-3 flex items-center justify-center"
+        >
+          <div
+            role="presentation"
+          >
+            <div
+              aria-labelledby="19"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-1hqd2wf"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                  style="border-radius: 50%;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="19"
+              >
+                atlasify-app
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mr-3 flex flex-1 cursor-pointer text-wrap"
+        >
+          <div
+            class="flex flex-col gap-1"
+          >
+            <div
+              class="text-sm"
+              role="main"
+              title="I am a robot and this is a test!"
+            >
+              I am a robot and this is a test!
+              <span
+                class="pl-2 text-xs text-gray-700"
+                title="Updated 1 day ago"
+              >
+                1 day ago
+              </span>
+            </div>
+            <div
+              class="flex flex-1 items-center gap-1 text-xs opacity-80"
+            >
+              <div
+                aria-labelledby="20"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-122fgfa"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://github.atlasify.io/favicon.ico"
+                    style="border-radius: 2px;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="20"
+                >
+                  Repository
+                </span>
+              </div>
+              Repository
+            </div>
+            <div
+              class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+            >
+              <span
+                aria-label="Bitbucket"
+                class="css-5vjqu0"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                    fill="#1868DB"
+                  />
+                  
+    
+                </svg>
+              </span>
+              Repository
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+        >
+          <button
+            class=" css-a8hcye"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                    r="5"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Mark as read
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white bg-gray-300 dark:bg-gray-darkest opacity-70"
+    >
+      <div
+        class="flex"
+      >
+        <button
+          type="button"
+        >
+          <div
+            class="flex"
+          >
+            <div
+              role="presentation"
+            >
+              <div
+                aria-labelledby="8"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-vucx95"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="8"
+                >
+                  Atlassian
+                </span>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              atlas
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        role="presentation"
+      >
+        <label
+          class="css-uv11fq"
+          data-size="regular"
+        >
+          <span
+            hidden=""
+            id="10"
+          >
+            Show unread
+          </span>
+          <input
+            aria-labelledby="10"
+            id="toggle-default"
+            name=""
+            type="checkbox"
+            value=""
+          />
+          <span
+            class=" css-j0xbwm"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                  fill="currentcolor"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class=" css-1c1p6pd"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+      >
+        <button
+          class=" css-a8hcye"
+          type="button"
+        >
+          <span
+            class=" css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Hide account notifications
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+      id="138661096"
+    >
+      <div
+        class="mr-3 flex items-center justify-center"
+      >
+        <div
+          role="presentation"
+        >
+          <div
+            aria-labelledby="14"
+            role="img"
+            style="display: inline-block; position: relative; outline: 0;"
+          >
+            <span
+              class="css-1hqd2wf"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                class="css-13ep12v"
+                data-vc="avatar-image"
+                src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                style="border-radius: 50%;"
+              />
+            </span>
+            <span
+              hidden=""
+              id="14"
+            >
+              atlasify-app
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mr-3 flex flex-1 cursor-pointer text-wrap"
+      >
+        <div
+          class="flex flex-col gap-1"
+        >
+          <div
+            class="text-sm"
+            role="main"
+            title="I am a robot and this is a test!"
+          >
+            I am a robot and this is a test!
+            <span
+              class="pl-2 text-xs text-gray-700"
+              title="Updated 1 day ago"
+            >
+              1 day ago
+            </span>
+          </div>
+          <div
+            class="flex flex-1 items-center gap-1 text-xs opacity-80"
+          >
+            <div
+              aria-labelledby="15"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-122fgfa"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://github.atlasify.io/favicon.ico"
+                  style="border-radius: 2px;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="15"
+              >
+                Repository
+              </span>
+            </div>
+            Repository
+          </div>
+          <div
+            class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+          >
+            <span
+              aria-label="Bitbucket"
+              class="css-5vjqu0"
+              role="img"
+              style="--logo-color: inherit; --logo-fill: currentColor;"
+            >
+              <svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="32"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                
+      
+                <path
+                  d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                  fill="#1868DB"
+                />
+                
+    
+              </svg>
+            </span>
+            Repository
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+      >
+        <button
+          class=" css-a8hcye"
+          type="button"
+        >
+          <span
+            class=" css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                  r="5"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Mark as read
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+      id="148827438"
+    >
+      <div
+        class="mr-3 flex items-center justify-center"
+      >
+        <div
+          role="presentation"
+        >
+          <div
+            aria-labelledby="19"
+            role="img"
+            style="display: inline-block; position: relative; outline: 0;"
+          >
+            <span
+              class="css-1hqd2wf"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                class="css-13ep12v"
+                data-vc="avatar-image"
+                src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                style="border-radius: 50%;"
+              />
+            </span>
+            <span
+              hidden=""
+              id="19"
+            >
+              atlasify-app
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mr-3 flex flex-1 cursor-pointer text-wrap"
+      >
+        <div
+          class="flex flex-col gap-1"
+        >
+          <div
+            class="text-sm"
+            role="main"
+            title="I am a robot and this is a test!"
+          >
+            I am a robot and this is a test!
+            <span
+              class="pl-2 text-xs text-gray-700"
+              title="Updated 1 day ago"
+            >
+              1 day ago
+            </span>
+          </div>
+          <div
+            class="flex flex-1 items-center gap-1 text-xs opacity-80"
+          >
+            <div
+              aria-labelledby="20"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-122fgfa"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://github.atlasify.io/favicon.ico"
+                  style="border-radius: 2px;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="20"
+              >
+                Repository
+              </span>
+            </div>
+            Repository
+          </div>
+          <div
+            class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+          >
+            <span
+              aria-label="Bitbucket"
+              class="css-5vjqu0"
+              role="img"
+              style="--logo-color: inherit; --logo-fill: currentColor;"
+            >
+              <svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                height="32"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                
+      
+                <path
+                  d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                  fill="#1868DB"
+                />
+                
+    
+              </svg>
+            </span>
+            Repository
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+      >
+        <button
+          class=" css-a8hcye"
+          type="button"
+        >
+          <span
+            class=" css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                  r="5"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Mark as read
+            </span>
+          </span>
+        </button>
       </div>
     </div>
   </div>,
@@ -724,309 +1785,6 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
 }
 `;
 
-exports[`components/AccountNotifications.tsx should render itself - group notifications by repositories 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white bg-gray-300 dark:bg-gray-darkest opacity-70"
-      >
-        <div
-          class="flex"
-        >
-          <button
-            title="Open Profile"
-            type="button"
-          >
-            <div
-              class="flex"
-            >
-              <img
-                alt="atlas's avatar"
-                class="rounded-full object-cover size-5"
-                src="https://avatars.githubusercontent.com/u/583231?v=4"
-              />
-              <span
-                class="ml-2"
-              >
-                @
-                atlas
-              </span>
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
-        >
-          <span
-            class="mr-1"
-            title="Atlassian Cloud"
-          >
-            <svg
-              aria-hidden="true"
-              class="octicon octicon-mark-github"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-              />
-            </svg>
-          </span>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Issues"
-            type="button"
-          >
-            <svg
-              aria-label="My Issues"
-              class="octicon octicon-issue-opened"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-              />
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Pull Requests"
-            type="button"
-          >
-            <svg
-              aria-label="My Pull Requests"
-              class="octicon octicon-git-pull-request"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="Hide account notifications"
-            type="button"
-          >
-            <svg
-              aria-label="Hide account notifications"
-              class="octicon octicon-chevron-down"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 12 12"
-              width="14"
-            >
-              <path
-                d="M6 8.825c-.2 0-.4-.1-.5-.2l-3.3-3.3c-.3-.3-.3-.8 0-1.1.3-.3.8-.3 1.1 0l2.7 2.7 2.7-2.7c.3-.3.8-.3 1.1 0 .3.3.3.8 0 1.1l-3.2 3.2c-.2.2-.4.3-.6.3Z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div>
-        Repository Notifications
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white bg-gray-300 dark:bg-gray-darkest opacity-70"
-    >
-      <div
-        class="flex"
-      >
-        <button
-          title="Open Profile"
-          type="button"
-        >
-          <div
-            class="flex"
-          >
-            <img
-              alt="atlas's avatar"
-              class="rounded-full object-cover size-5"
-              src="https://avatars.githubusercontent.com/u/583231?v=4"
-            />
-            <span
-              class="ml-2"
-            >
-              @
-              atlas
-            </span>
-          </div>
-        </button>
-      </div>
-      <div
-        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
-      >
-        <span
-          class="mr-1"
-          title="Atlassian Cloud"
-        >
-          <svg
-            aria-hidden="true"
-            class="octicon octicon-mark-github"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-            />
-          </svg>
-        </span>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Issues"
-          type="button"
-        >
-          <svg
-            aria-label="My Issues"
-            class="octicon octicon-issue-opened"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-            />
-            <path
-              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Pull Requests"
-          type="button"
-        >
-          <svg
-            aria-label="My Pull Requests"
-            class="octicon octicon-git-pull-request"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="Hide account notifications"
-          type="button"
-        >
-          <svg
-            aria-label="Hide account notifications"
-            class="octicon octicon-chevron-down"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 12 12"
-            width="14"
-          >
-            <path
-              d="M6 8.825c-.2 0-.4-.1-.5-.2l-3.3-3.3c-.3-.3-.3-.8 0-1.1.3-.3.8-.3 1.1 0l2.7 2.7 2.7-2.7c.3-.3.8-.3 1.1 0 .3.3.3.8 0 1.1l-3.2 3.2c-.2.2-.4.3-.6.3Z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div>
-      Repository Notifications
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
 exports[`components/AccountNotifications.tsx should render itself - no notifications 1`] = `
 {
   "asFragment": [Function],
@@ -1039,113 +1797,149 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
           class="flex"
         >
           <button
-            title="Open Profile"
             type="button"
           >
             <div
               class="flex"
             >
-              <img
-                alt="atlas's avatar"
-                class="rounded-full object-cover size-5"
-                src="https://avatars.githubusercontent.com/u/583231?v=4"
-              />
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="24"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="24"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+              </div>
               <span
                 class="ml-2"
               >
-                @
                 atlas
               </span>
             </div>
           </button>
         </div>
         <div
+          role="presentation"
+        >
+          <label
+            class="css-uv11fq"
+            data-size="regular"
+          >
+            <span
+              hidden=""
+              id="26"
+            >
+              Show unread
+            </span>
+            <input
+              aria-labelledby="26"
+              id="toggle-default"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class=" css-j0xbwm"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                    fill="currentcolor"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class=" css-1c1p6pd"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </span>
+          </label>
+        </div>
+        <div
           class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
         >
-          <span
-            class="mr-1"
-            title="Atlassian Cloud"
-          >
-            <svg
-              aria-hidden="true"
-              class="octicon octicon-mark-github"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-              />
-            </svg>
-          </span>
           <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Issues"
+            class=" css-a8hcye"
             type="button"
           >
-            <svg
-              aria-label="My Issues"
-              class="octicon octicon-issue-opened"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
+            <span
+              class=" css-1spmf3f"
             >
-              <path
-                d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-              />
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="My Pull Requests"
-            type="button"
-          >
-            <svg
-              aria-label="My Pull Requests"
-              class="octicon octicon-git-pull-request"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="14"
-            >
-              <path
-                d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="h-full hover:text-green-500 focus:outline-none"
-            title="No notifications for account"
-            type="button"
-          >
-            <svg
-              aria-label="No notifications for account"
-              class="octicon octicon-chevron-left"
-              fill="currentColor"
-              focusable="false"
-              height="14"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 12 12"
-              width="14"
-            >
-              <path
-                d="M3.587 6.025c0 .2.1.4.2.5l3.3 3.3c.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1l-2.7-2.7 2.7-2.7c.3-.3.3-.8 0-1.1-.3-.3-.8-.3-1.1 0l-3.2 3.2c-.2.2-.3.4-.3.6Z"
-              />
-            </svg>
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                No notifications for account
+              </span>
+            </span>
           </button>
         </div>
       </div>
@@ -1180,113 +1974,149 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
         class="flex"
       >
         <button
-          title="Open Profile"
           type="button"
         >
           <div
             class="flex"
           >
-            <img
-              alt="atlas's avatar"
-              class="rounded-full object-cover size-5"
-              src="https://avatars.githubusercontent.com/u/583231?v=4"
-            />
+            <div
+              role="presentation"
+            >
+              <div
+                aria-labelledby="24"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-vucx95"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="24"
+                >
+                  Atlassian
+                </span>
+              </div>
+            </div>
             <span
               class="ml-2"
             >
-              @
               atlas
             </span>
           </div>
         </button>
       </div>
       <div
+        role="presentation"
+      >
+        <label
+          class="css-uv11fq"
+          data-size="regular"
+        >
+          <span
+            hidden=""
+            id="26"
+          >
+            Show unread
+          </span>
+          <input
+            aria-labelledby="26"
+            id="toggle-default"
+            name=""
+            type="checkbox"
+            value=""
+          />
+          <span
+            class=" css-j0xbwm"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                  fill="currentcolor"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class=" css-1c1p6pd"
+          >
+            <span
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
         class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
       >
-        <span
-          class="mr-1"
-          title="Atlassian Cloud"
-        >
-          <svg
-            aria-hidden="true"
-            class="octicon octicon-mark-github"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-            />
-          </svg>
-        </span>
         <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Issues"
+          class=" css-a8hcye"
           type="button"
         >
-          <svg
-            aria-label="My Issues"
-            class="octicon octicon-issue-opened"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
+          <span
+            class=" css-1spmf3f"
           >
-            <path
-              d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-            />
-            <path
-              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="My Pull Requests"
-          type="button"
-        >
-          <svg
-            aria-label="My Pull Requests"
-            class="octicon octicon-git-pull-request"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="14"
-          >
-            <path
-              d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="h-full hover:text-green-500 focus:outline-none"
-          title="No notifications for account"
-          type="button"
-        >
-          <svg
-            aria-label="No notifications for account"
-            class="octicon octicon-chevron-left"
-            fill="currentColor"
-            focusable="false"
-            height="14"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 12 12"
-            width="14"
-          >
-            <path
-              d="M3.587 6.025c0 .2.1.4.2.5l3.3 3.3c.3.3.8.3 1.1 0 .3-.3.3-.8 0-1.1l-2.7-2.7 2.7-2.7c.3-.3.3-.8 0-1.1-.3-.3-.8-.3-1.1 0l-3.2 3.2c-.2.2-.3.4-.3.6Z"
-            />
-          </svg>
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              No notifications for account
+            </span>
+          </span>
         </button>
       </div>
     </div>

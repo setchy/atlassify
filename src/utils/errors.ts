@@ -6,11 +6,6 @@ export const Errors: Record<ErrorType, AtlasifyError> = {
     descriptions: ['Your credentials are either invalid or expired.'],
     emojis: ['🔓'],
   },
-  MISSING_SCOPES: {
-    title: 'Missing Scopes',
-    descriptions: ['Your credentials are missing a required API scope.'],
-    emojis: ['🔭'],
-  },
   NETWORK: {
     title: 'Network Error',
     descriptions: [

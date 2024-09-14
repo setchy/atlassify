@@ -3,7 +3,6 @@ import { MemoryRouter } from 'react-router-dom';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import { IconColor } from '../types';
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 
@@ -104,9 +103,7 @@ describe('components/Sidebar.tsx', () => {
 
         const notificationsIcon = screen.getByTitle('0 Unread Notifications');
 
-        expect(notificationsIcon.className).toContain('text-white');
-        expect(notificationsIcon.childNodes.length).toBe(1);
-        expect(notificationsIcon.childNodes[0].nodeName).toBe('svg');
+        expect(notificationsIcon).toMatchSnapshot();
 
         fireEvent.click(screen.getByLabelText('0 Unread Notifications'));
 
@@ -134,10 +131,7 @@ describe('components/Sidebar.tsx', () => {
 
         const notificationsIcon = screen.getByTitle('4 Unread Notifications');
 
-        expect(notificationsIcon.className).toContain(IconColor.GREEN);
-        expect(notificationsIcon.childNodes.length).toBe(2);
-        expect(notificationsIcon.childNodes[0].nodeName).toBe('svg');
-        expect(notificationsIcon.childNodes[1].nodeValue).toBe('4');
+        expect(notificationsIcon).toMatchSnapshot();
 
         fireEvent.click(screen.getByLabelText('4 Unread Notifications'));
 
@@ -490,10 +484,7 @@ describe('components/Sidebar.tsx', () => {
       );
 
       const notificationsIcon = screen.getByTitle('4 Unread Notifications');
-      expect(notificationsIcon.className).toContain(IconColor.GREEN);
-      expect(notificationsIcon.childNodes.length).toBe(2);
-      expect(notificationsIcon.childNodes[0].nodeName).toBe('svg');
-      expect(notificationsIcon.childNodes[1].nodeValue).toBe('4');
+      expect(notificationsIcon).toMatchSnapshot();
     });
   });
 });

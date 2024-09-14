@@ -25,6 +25,7 @@ export const Header: FC<IHeader> = (props: IHeader) => {
         <Tooltip content="Go Back">
           <IconButton
             label="Go Back"
+            title="Go Back"
             icon={ArrowLeftIcon}
             appearance="subtle"
             shape="circle"

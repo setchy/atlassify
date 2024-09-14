@@ -55,9 +55,9 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               I am a robot and this is a test!
               <span
                 class="pl-2 text-xs text-gray-700"
-                title="Updated 7 years ago"
+                title="Updated in 9 months"
               >
-                7 years ago
+                in 9 months
               </span>
             </div>
             <div
@@ -213,9 +213,9 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             I am a robot and this is a test!
             <span
               class="pl-2 text-xs text-gray-700"
-              title="Updated 7 years ago"
+              title="Updated in 9 months"
             >
-              7 years ago
+              in 9 months
             </span>
           </div>
           <div
@@ -428,9 +428,9 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               I am a robot and this is a test!
               <span
                 class="pl-2 text-xs text-gray-700"
-                title="Updated 7 years ago"
+                title="Updated in 9 months"
               >
-                7 years ago
+                in 9 months
               </span>
             </div>
             <div
@@ -586,9 +586,9 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             I am a robot and this is a test!
             <span
               class="pl-2 text-xs text-gray-700"
-              title="Updated 7 years ago"
+              title="Updated in 9 months"
             >
-              7 years ago
+              in 9 months
             </span>
           </div>
           <div

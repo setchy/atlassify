@@ -187,49 +187,4 @@ describe('hooks/useNotifications.ts', () => {
       expect(logErrorSpy).toHaveBeenCalledTimes(1);
     });
   });
-
-  describe('markNotificationUnread', () => {
-    it('should mark a notification as done with success', async () => {
-      nock('https://api.github.com/')
-        .delete(`/notifications/threads/${id}`)
-        .reply(200);
-
-      const { result } = renderHook(() => useNotifications());
-
-      act(() => {
-        result.current.markNotificationUnread(
-          mockState,
-          mockSingleNotification,
-        );
-      });
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('success');
-      });
-
-      expect(result.current.notifications.length).toBe(0);
-    });
-
-    it('should mark a notification as unread with failure', async () => {
-      nock('https://api.github.com/')
-        .delete(`/notifications/threads/${id}`)
-        .reply(400);
-
-      const { result } = renderHook(() => useNotifications());
-
-      act(() => {
-        result.current.markNotificationUnread(
-          mockState,
-          mockSingleNotification,
-        );
-      });
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('success');
-      });
-
-      expect(result.current.notifications.length).toBe(0);
-      expect(logErrorSpy).toHaveBeenCalledTimes(1);
-    });
-  });
 });

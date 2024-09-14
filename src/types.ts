@@ -145,7 +145,6 @@ export interface AtlasifyError {
 
 export type ErrorType =
   | 'BAD_CREDENTIALS'
-  | 'MISSING_SCOPES'
   | 'NETWORK'
   | 'RATE_LIMITED'
   | 'UNKNOWN';
@@ -155,27 +154,9 @@ export interface FormattedReason {
   description: string;
 }
 
-// TODO - Remove this
-export enum IconColor {
-  GRAY = 'text-gray-500 dark:text-gray-300',
-  GREEN = 'text-green-500',
-  PURPLE = 'text-purple-500',
-  RED = 'text-red-500',
-  YELLOW = 'text-yellow-500 dark:text-yellow-300',
-  WHITE = 'text-white',
-}
-
 export enum Opacity {
   READ = 'opacity-50',
   LOW = 'opacity-70',
   MEDIUM = 'opacity-80',
   HIGH = 'opacity-90',
-}
-
-export enum Size {
-  XSMALL = 12,
-  SMALL = 14,
-  MEDIUM = 16,
-  LARGE = 18,
-  XLARGE = 20,
 }

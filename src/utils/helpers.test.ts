@@ -43,18 +43,26 @@ describe('utils/helpers.ts', () => {
       expect(getFilterCount(defaultSettings)).toBe(0);
     });
 
-    it('non-default reason filters', () => {
+    it('non-default category filters', () => {
       const settings = {
         ...defaultSettings,
-        filterReasons: ['subscribed', 'manual'],
+        filterCategories: ['direct'],
       } as SettingsState;
-      expect(getFilterCount(settings)).toBe(2);
+      expect(getFilterCount(settings)).toBe(1);
     });
 
-    it('non-default bot filters', () => {
+    it('non-default read state filters', () => {
       const settings = {
         ...defaultSettings,
-        hideBots: true,
+        filterReadStates: ['read'],
+      } as SettingsState;
+      expect(getFilterCount(settings)).toBe(1);
+    });
+
+    it('non-default product filters', () => {
+      const settings = {
+        ...defaultSettings,
+        filterProducts: ['bitbucket'],
       } as SettingsState;
       expect(getFilterCount(settings)).toBe(1);
     });

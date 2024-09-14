@@ -121,9 +121,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     status,
     globalError,
     markNotificationRead,
-    markNotificationUnread,
     markProductNotificationsRead,
-    markProductNotificationsUnread,
   } = useNotifications();
   getNotificationCount;
   useEffect(() => {
@@ -263,22 +261,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationRead],
   );
 
-  const markNotificationUnreadWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
-      await markNotificationUnread({ auth, settings }, notification),
-    [auth, settings, markNotificationUnread],
-  );
-
   const markProductNotificationsReadWithAccounts = useCallback(
     async (notification: AtlasifyNotification) =>
       await markProductNotificationsRead({ auth, settings }, notification),
     [auth, settings, markProductNotificationsRead],
-  );
-
-  const markProductNotificationsUnreadWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
-      await markProductNotificationsUnread({ auth, settings }, notification),
-    [auth, settings, markProductNotificationsUnread],
   );
 
   return (
@@ -296,11 +282,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         fetchNotifications: fetchNotificationsWithAccounts,
 
         markNotificationRead: markNotificationReadWithAccounts,
-        markNotificationUnread: markNotificationUnreadWithAccounts,
-
         markProductNotificationsRead: markProductNotificationsReadWithAccounts,
-        markProductNotificationsUnread:
-          markProductNotificationsUnreadWithAccounts,
 
         settings,
         clearFilters,

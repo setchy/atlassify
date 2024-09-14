@@ -3,6 +3,7 @@ import type { AtlasifyError } from '../../types';
 import { Errors } from '../errors';
 import type { GitHubRESTError } from './types';
 
+// TODO this needs reworking for Atlassian
 export function determineFailureType(
   err: AxiosError<GitHubRESTError>,
 ): AtlasifyError {
@@ -24,10 +25,6 @@ export function determineFailureType(
   }
 
   if (status === 403) {
-    if (message.includes("Missing the 'notifications' scope")) {
-      return Errors.MISSING_SCOPES;
-    }
-
     if (
       message.includes('API rate limit exceeded') ||
       message.includes('You have exceeded a secondary rate limit')

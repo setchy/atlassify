@@ -16,6 +16,7 @@ exports[`components/Header.tsx should render itself & its children 1`] = `
           >
             <button
               class=" css-1hmr5rx"
+              title="Go Back"
               type="button"
             >
               <span
@@ -70,6 +71,7 @@ exports[`components/Header.tsx should render itself & its children 1`] = `
         >
           <button
             class=" css-1hmr5rx"
+            title="Go Back"
             type="button"
           >
             <span

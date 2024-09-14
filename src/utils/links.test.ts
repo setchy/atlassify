@@ -34,36 +34,36 @@ describe('utils/links.ts', () => {
     );
   });
 
-  it('openGitHubNotifications', () => {
+  it('openMyNotifications', () => {
     openMyNotifications();
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/notifications',
+      'https://team.atlassian.com/notifications',
     );
   });
 
-  it('openGitHubIssues', () => {
+  it('openMyIssues', () => {
     openMyIssues();
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/issues',
+      'https://team.atlassian.com/notifications',
     );
   });
 
-  it('openGitHubPulls', () => {
+  it('openMyPullRequests', () => {
     openMyPullRequests();
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/pulls',
+      'https://team.atlassian.com/notifications',
     );
   });
 
   it('openAccountProfile', () => {
     openAccountProfile(mockAtlassianCloudAccount);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/octocat',
+      'https://team.atlassian.com/people/123456789',
     );
   });
 
   it('openNotification', async () => {
-    const mockNotificationUrl = mockSingleNotification.url;
+    const mockNotificationUrl = mockSingleNotification.entity.url;
     await openNotification(mockSingleNotification);
     expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
   });

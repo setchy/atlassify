@@ -16,6 +16,7 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
       >
         <button
           class=" css-1hmr5rx"
+          title="Go Back"
           type="button"
         >
           <span
@@ -505,12 +506,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="css-exvs2c"
             >
               <input
-                checked=""
                 class="css-t4vzni"
                 name="openLinks"
                 tabindex="0"
                 type="radio"
-                value="FOREGROUND"
+                value="BACKGROUND"
               />
               <span
                 class="css-b9c6gp"

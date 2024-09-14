@@ -9,8 +9,8 @@ describe('utils/storage.ts', () => {
         auth: {
           accounts: [
             {
-              platform: 'GitHub Cloud',
-              method: 'Personal Access Token',
+              platform: 'Atlassian Cloud',
+              method: 'API Token',
               token: '123-456' as Token,
               user: null,
             },
@@ -23,8 +23,8 @@ describe('utils/storage.ts', () => {
 
     expect(result.auth.accounts).toEqual([
       {
-        platform: 'GitHub Cloud',
-        method: 'Personal Access Token',
+        platform: 'Atlassian Cloud',
+        method: 'API Token',
         token: '123-456' as Token,
         user: null,
       },

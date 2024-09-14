@@ -8,10 +8,7 @@ import type {
   AtlasifyState,
   Status,
 } from '../types';
-import {
-  markNotificationsAsRead,
-  markNotificationsAsUnread,
-} from '../utils/api/client';
+import { markNotificationsAsRead } from '../utils/api/client';
 import {
   getAllNotifications,
   setTrayIconColor,
@@ -28,15 +25,7 @@ interface NotificationsState {
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
-  markNotificationUnread: (
-    state: AtlasifyState,
-    notification: AtlasifyNotification,
-  ) => Promise<void>;
   markProductNotificationsRead: (
-    state: AtlasifyState,
-    notification: AtlasifyNotification,
-  ) => Promise<void>;
-  markProductNotificationsUnread: (
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
@@ -124,59 +113,7 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  const markNotificationUnread = useCallback(
-    async (_state: AtlasifyState, notification: AtlasifyNotification) => {
-      setStatus('loading');
-
-      try {
-        await markNotificationsAsUnread(notification.account, [
-          notification.id,
-        ]);
-
-        setNotifications(notifications);
-        setTrayIconColor(notifications);
-      } catch (err) {
-        log.error('Error occurred while marking notification as unread', err);
-      }
-
-      setStatus('success');
-    },
-    [notifications],
-  );
-
   const markProductNotificationsRead = useCallback(
-    async (state: AtlasifyState, notification: AtlasifyNotification) => {
-      setStatus('loading');
-
-      // const repoSlug = notification.repository.full_name;
-
-      try {
-        // await markRepositoryNotificationsAsRead(
-        //   repoSlug,
-        //   notification.account.token,
-        // );
-
-        const updatedNotifications = removeNotifications(
-          state.settings,
-          notification,
-          notifications,
-        );
-
-        setNotifications(updatedNotifications);
-        setTrayIconColor(updatedNotifications);
-      } catch (err) {
-        log.error(
-          'Error occurred while marking repository notifications as read',
-          err,
-        );
-      }
-
-      setStatus('success');
-    },
-    [notifications],
-  );
-
-  const markProductNotificationsUnread = useCallback(
     async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
@@ -216,8 +153,6 @@ export const useNotifications = (): NotificationsState => {
     removeAccountNotifications,
     fetchNotifications,
     markNotificationRead,
-    markNotificationUnread,
     markProductNotificationsRead,
-    markProductNotificationsUnread,
   };
 };
