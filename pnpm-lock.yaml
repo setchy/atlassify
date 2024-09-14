@@ -12,28 +12,28 @@ importers:
         specifier: 21.15.1
         version: 21.15.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
-        specifier: ^16.4.0
+        specifier: 16.4.0
         version: 16.4.0(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
-        specifier: ^20.1.1
+        specifier: 20.1.1
         version: 20.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: ^14.0.0
+        specifier: 14.0.0
         version: 14.0.0(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
-        specifier: ^6.10.1
+        specifier: 6.10.1
         version: 6.10.1(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/dropdown-menu':
-        specifier: ^12.18.2
+        specifier: 12.18.2
         version: 12.18.2(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
-        specifier: ^2.4.5
+        specifier: 2.4.5
         version: 2.4.5(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
         specifier: 22.18.0
         version: 22.18.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: ^12.3.3
+        specifier: 12.3.3
         version: 12.3.3(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 14.2.2
@@ -42,13 +42,13 @@ importers:
         specifier: 12.1.1
         version: 12.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/radio':
-        specifier: ^6.5.1
+        specifier: 6.5.1
         version: 6.5.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: ^13.4.1
+        specifier: 13.4.1
         version: 13.4.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
-        specifier: ^1.59.1
+        specifier: 1.59.1
         version: 1.59.1(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/tooltip':
         specifier: 18.7.2
