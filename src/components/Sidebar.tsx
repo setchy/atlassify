@@ -91,9 +91,7 @@ export const Sidebar: FC = () => {
             />
 
             {notificationsCount > 0 && (
-              <Text size="small" weight="bold" color="color.text.accent.blue">
-                {notificationsCount}
-              </Text>
+              <span className="text-xs text-white">{notificationsCount}</span>
             )}
           </Tooltip>
 

@@ -37,19 +37,25 @@ For more information, see [LICENSE](LICENSE).
 
 A list of "things" to improve
 
+NOW
+- [ ] clear out all TODOs in this project
 - [ ] create "update available" icon bundle
 - [ ] create "icn" and "icns"
+- [ ] create new social images
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] setup docs -> atlasify.io
 - [ ] setup coveralls (or similar)
+
+SOON
 - [ ] fix unit tests
-- [ ] use atlaskit/tokens for colors
+
+LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
 - [ ] atlaskit progress bar
 - [ ] atlaskit for modal dialog on reset
 - [ ] replace divs+classNames with atlaskit primitives
-- [ ] clear out all TODOs in this project
+- [ ] use atlaskit/tokens for colors
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io
