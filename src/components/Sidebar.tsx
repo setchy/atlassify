@@ -1,17 +1,19 @@
-import { AtlasIcon } from '@atlaskit/logo';
-import {
-  BellIcon,
-  FilterIcon,
-  GearIcon,
-  GitPullRequestIcon,
-  IssueOpenedIcon,
-  SyncIcon,
-  XCircleIcon,
-} from '@primer/octicons-react';
 import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import { IconButton } from '@atlaskit/button/new';
+import IssuesIcon from '@atlaskit/icon/glyph/issues';
+import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
+import { Stack, Text } from '@atlaskit/primitives';
+import Tooltip from '@atlaskit/tooltip';
+import { AtlasIcon } from '@atlaskit/logo';
+import NotificationIcon from '@atlaskit/icon/glyph/notification';
+import SettingsIcon from '@atlaskit/icon/glyph/settings';
+import FilterIcon from '@atlaskit/icon/glyph/filter';
+import RefreshIcon from '@atlaskit/icon/glyph/refresh';
+import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
+
 import { AppContext } from '../context/App';
-import { Size } from '../types';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
 import {
@@ -21,13 +23,12 @@ import {
   openMyPullRequests,
 } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications';
-import { SidebarButton } from './buttons/SidebarButton';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { notifications, fetchNotifications, isLoggedIn, status, settings } =
+  const { notifications, fetchNotifications, isLoggedIn, settings } =
     useContext(AppContext);
 
   const toggleFilters = () => {
@@ -73,62 +74,130 @@ export const Sidebar: FC = () => {
           <AtlasIcon size="medium" appearance="brand" />
         </button>
 
-        <SidebarButton
-          title={`${notificationsCount} Unread Notifications`}
-          metric={isLoggedIn ? notificationsCount : null}
-          icon={BellIcon}
-          onClick={() => openMyNotifications()}
-        />
+        <Stack alignInline="center" space="space.100">
+          <Tooltip content={`${notificationsCount} Unread Notifications`}>
+            <IconButton
+              label={`${notificationsCount} Unread Notifications`}
+              icon={(iconProps) => (
+                <NotificationIcon
+                  {...iconProps}
+                  size="small"
+                  primaryColor="white"
+                />
+              )}
+              appearance="subtle"
+              spacing="compact"
+              onClick={() => openMyNotifications()}
+            />
 
-        <SidebarButton
-          title="My Issues"
-          icon={IssueOpenedIcon}
-          onClick={() => openMyIssues()}
-        />
+            {notificationsCount > 0 && (
+              <Text size="small" weight="bold" color="color.text.accent.blue">
+                {notificationsCount}
+              </Text>
+            )}
+          </Tooltip>
 
-        <SidebarButton
-          title="My Pull Requests"
-          icon={GitPullRequestIcon}
-          onClick={() => openMyPullRequests()}
-        />
+          <Tooltip content="My Issues">
+            <IconButton
+              label="My Issues"
+              icon={(iconProps) => (
+                <IssuesIcon {...iconProps} size="small" primaryColor="white" />
+              )}
+              appearance="subtle"
+              spacing="compact"
+              onClick={() => openMyIssues()}
+            />
+          </Tooltip>
+
+          <Tooltip content="My Pull Requests">
+            <IconButton
+              label="My Pull Requests"
+              icon={(iconProps) => (
+                <BitbucketPullrequestsIcon
+                  {...iconProps}
+                  size="small"
+                  primaryColor="white"
+                />
+              )}
+              appearance="subtle"
+              spacing="compact"
+              onClick={() => openMyPullRequests()}
+            />
+          </Tooltip>
+        </Stack>
       </div>
 
       <div className="px-3 py-4">
         {isLoggedIn && (
-          <>
-            <SidebarButton
-              title="Refresh Notifications"
-              icon={SyncIcon}
-              size={Size.MEDIUM}
-              loading={status === 'loading'}
-              disabled={status === 'loading'}
-              onClick={() => refreshNotifications()}
-            />
+          <Stack alignInline="center" space="space.150">
+            <Tooltip content="Refresh Notifications">
+              <IconButton
+                label="Refresh Notifications"
+                icon={(iconProps) => (
+                  <RefreshIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                onClick={() => refreshNotifications()}
+              />
+            </Tooltip>
 
-            <SidebarButton
-              title="Filters"
-              icon={FilterIcon}
-              size={Size.MEDIUM}
-              metric={filterCount}
-              onClick={() => toggleFilters()}
-            />
+            <Tooltip content="Filters">
+              <IconButton
+                label="Filters"
+                icon={(iconProps) => (
+                  <FilterIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                onClick={() => toggleFilters()}
+              />
 
-            <SidebarButton
-              title="Settings"
-              icon={GearIcon}
-              size={Size.MEDIUM}
-              onClick={() => toggleSettings()}
-            />
-          </>
+              {filterCount > 0 && (
+                <Text size="small" weight="bold" color="color.text.accent.blue">
+                  {filterCount}
+                </Text>
+              )}
+            </Tooltip>
+
+            <Tooltip content="Settings">
+              <IconButton
+                label="Settings"
+                icon={(iconProps) => (
+                  <SettingsIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                onClick={() => toggleSettings()}
+              />
+            </Tooltip>
+          </Stack>
         )}
 
         {!isLoggedIn && (
-          <SidebarButton
-            title="Quit Atlasify"
-            icon={XCircleIcon}
-            size={Size.MEDIUM}
-            onClick={() => quitApp()}
-          />
+          <Tooltip content="Quit Atlasify">
+            <IconButton
+              label="Quit Atlasify"
+              icon={(iconProps) => (
+                <CrossCircleIcon
+                  {...iconProps}
+                  size="medium"
+                  primaryColor="white"
+                />
+              )}
+              appearance="subtle"
+              onClick={() => quitApp()}
+            />
+          </Tooltip>
         )}
       </div>
     </div>

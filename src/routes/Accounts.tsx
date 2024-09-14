@@ -1,5 +1,3 @@
-import { PersonIcon as PersonIconOld } from '@primer/octicons-react';
-
 import { type FC, useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,13 +10,13 @@ import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
 import StarIcon from '@atlaskit/icon/glyph/star';
 import StarFilledIcon from '@atlaskit/icon/glyph/star-filled';
 import Tooltip from '@atlaskit/tooltip';
+import { IconButton } from '@atlaskit/button/new';
+import { Box, Flex, Inline } from '@atlaskit/primitives';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
-import { BUTTON_CLASS_NAME } from '../styles/atlasify';
 import type { Account } from '../types';
 import { getAccountUUID, refreshAccount } from '../utils/auth/utils';
-import { cn } from '../utils/cn';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
 import { saveState } from '../utils/storage';
@@ -44,12 +42,12 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const login = useCallback(() => {
-    return navigate('/login', { replace: true });
+    return navigate('/login-api-token', { replace: true });
   }, []);
 
   return (
     <div className="flex h-screen flex-col" data-testid="accounts">
-      <Header icon={PersonIconOld}>Accounts</Header>
+      <Header>Accounts</Header>
       <div className="flex-grow overflow-x-auto px-8">
         <div className="mt-4 flex flex-col text-sm">
           {auth.accounts.map((account, i) => (
@@ -90,77 +88,72 @@ export const AccountsRoute: FC = () => {
               </div>
 
               <div>
-                <button
-                  type="button"
-                  className={cn(BUTTON_CLASS_NAME, 'px-0', 'cursor-default')}
-                  hidden={i !== 0}
-                >
-                  <Tooltip content="Primary account">
-                    <StarFilledIcon
-                      label="Primary account"
-                      primaryColor="gold"
-                      size="medium"
-                    />
-                  </Tooltip>
-                </button>
+                <Inline>
+                  {i === 0 ? (
+                    <Tooltip content="Primary account">
+                      <IconButton
+                        label="Primary account"
+                        icon={(iconProps) => (
+                          <StarFilledIcon {...iconProps} primaryColor="gold" />
+                        )}
+                        appearance="subtle"
+                        isDisabled={true}
+                        hidden={i !== 0}
+                      />
+                    </Tooltip>
+                  ) : (
+                    <Tooltip content="Set as primary account">
+                      <IconButton
+                        label="Set as primary account"
+                        icon={StarIcon}
+                        appearance="subtle"
+                        onClick={() => setAsPrimaryAccount(account)}
+                        hidden={i === 0}
+                      />
+                    </Tooltip>
+                  )}
 
-                <button
-                  type="button"
-                  className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  onClick={() => setAsPrimaryAccount(account)}
-                  hidden={i === 0}
-                >
-                  <Tooltip content="Set as primary account">
-                    <StarIcon label="Set as primary account" size="medium" />
-                  </Tooltip>
-                </button>
-
-                <button
-                  type="button"
-                  className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  onClick={async () => {
-                    await refreshAccount(account);
-                    navigate('/accounts', { replace: true });
-                  }}
-                >
                   <Tooltip content={`Refresh ${account.user.login}`}>
-                    <RefreshIcon
+                    <IconButton
                       label={`Refresh ${account.user.login}`}
-                      size="medium"
+                      icon={RefreshIcon}
+                      appearance="subtle"
+                      onClick={async () => {
+                        await refreshAccount(account);
+                        navigate('/accounts', { replace: true });
+                      }}
                     />
                   </Tooltip>
-                </button>
 
-                <button
-                  type="button"
-                  className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  onClick={() => logoutAccount(account)}
-                >
                   <Tooltip content={`Logout ${account.user.login}`}>
-                    <SignOutIcon
+                    <IconButton
                       label={`Logout ${account.user.login}`}
-                      size="medium"
+                      icon={SignOutIcon}
+                      appearance="subtle"
+                      onClick={() => logoutAccount(account)}
                     />
                   </Tooltip>
-                </button>
+                </Inline>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex items-center justify-between bg-gray-200 px-8 py-1 text-sm dark:bg-gray-darker">
-        <div className="font-semibold italic">Add new account</div>
-        <div>
-          <button
-            type="button"
-            className={BUTTON_CLASS_NAME}
-            title="Add new account"
-            onClick={login}
-          >
-            <InviteTeamIcon label="Add new account" size="medium" />
-          </button>
-        </div>
+      <div className="text-sm px-8 bg-gray-200 dark:bg-gray-darker">
+        <Box padding="space.050">
+          <Flex justifyContent="end">
+            <Tooltip content="Add new account">
+              <IconButton
+                label="Add new account"
+                icon={InviteTeamIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => login()}
+              />
+            </Tooltip>
+          </Flex>
+        </Box>
       </div>
     </div>
   );

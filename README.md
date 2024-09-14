@@ -43,15 +43,13 @@ A list of "things" to improve
 - [ ] setup brew cask definition
 - [ ] setup docs -> atlasify.io
 - [ ] create unique AtlasifyNotification type
-- [ ] remove octicons package
-- [ ] adopt atlaskit further
-- [ ] rework "group by" to be `Product` or `None/Date`
 - [ ] setup coveralls (or similar)
 - [ ] fix unit tests
 - [ ] use atlaskit/tokens for colors
 - [ ] advanced feature for Bitbucket "Your Work" queue
 - [ ] atlaskit progress bar
 - [ ] atlaskit for modal dialog on reset
+- [ ] replace divs+classNames with atlaskit primitives
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io

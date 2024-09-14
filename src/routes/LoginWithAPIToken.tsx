@@ -1,4 +1,3 @@
-import { KeyIcon } from '@primer/octicons-react';
 import log from 'electron-log';
 import { type FC, useCallback, useContext, useState } from 'react';
 
@@ -131,7 +130,7 @@ export const LoginWithAPIToken: FC = () => {
 
   return (
     <>
-      <Header icon={KeyIcon}>Login with Atlassian Account</Header>
+      <Header>Login with Atlassian Account</Header>
 
       <div className="px-8">
         <Form

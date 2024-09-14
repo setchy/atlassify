@@ -1,10 +1,14 @@
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
 import { type FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BUTTON_CLASS_NAME } from '../../styles/atlasify';
+
+import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
+import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
+import Button, { IconButton } from '@atlaskit/button/new';
+
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlasifyReleaseNotes } from '../../utils/links';
+import Tooltip from '@atlaskit/tooltip';
+import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);
@@ -22,38 +26,41 @@ export const SettingsFooter: FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-between bg-gray-200 px-8 py-1 text-sm dark:bg-gray-darker">
-      <button
-        type="button"
-        className="cursor-pointer font-semibold"
-        title="View release notes"
-        onClick={() => openAtlasifyReleaseNotes(appVersion)}
-      >
-        <div className="flex items-center gap-1">
-          <span aria-label="app-version">Atlasify {appVersion}</span>
-        </div>
-      </button>
-      <div>
-        <button
-          type="button"
-          className={BUTTON_CLASS_NAME}
-          title="Accounts"
-          onClick={() => {
-            navigate('/accounts');
-          }}
-        >
-          <PeopleGroupIcon size="medium" label="Accounts" />
-        </button>
-
-        <button
-          type="button"
-          className={BUTTON_CLASS_NAME}
-          title="Quit Atlasify"
-          onClick={quitApp}
-        >
-          <CrossCircleIcon size="medium" label="Quit Atlasify" />
-        </button>
-      </div>
+    <div className="text-sm  px-2 bg-gray-200 dark:bg-gray-darker">
+      <Box padding="space.050">
+        <Stack>
+          <Inline grow="fill" spread="space-between">
+            <Tooltip content="View release notes">
+              <Button
+                appearance="subtle"
+                onClick={() => openAtlasifyReleaseNotes(appVersion)}
+              >
+                Atlasify {appVersion}
+              </Button>
+            </Tooltip>
+            <Inline space="space.200">
+              <Tooltip content="Accounts">
+                <IconButton
+                  label="Accounts"
+                  icon={PeopleGroupIcon}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => navigate('/accounts')}
+                />
+              </Tooltip>
+              <Tooltip content="Quit Atlasify">
+                <IconButton
+                  label="Quit Atlasify"
+                  icon={CrossCircleIcon}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => quitApp()}
+                />
+              </Tooltip>
+            </Inline>
+          </Inline>
+        </Stack>
+      </Box>
     </div>
   );
 };

@@ -1,21 +1,20 @@
-import { GearIcon } from '@primer/octicons-react';
 import { type FC, useContext } from 'react';
+
+import { Stack } from '@atlaskit/primitives';
+
 import { Header } from '../components/Header';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SystemSettings } from '../components/settings/SystemSettings';
 import { AppContext } from '../context/App';
-import { Stack } from '@atlaskit/primitives';
 
 export const SettingsRoute: FC = () => {
   const { resetSettings } = useContext(AppContext);
 
   return (
     <div className="flex h-screen flex-col" data-testid="settings">
-      <Header fetchOnBack icon={GearIcon}>
-        Settings
-      </Header>
+      <Header fetchOnBack>Settings</Header>
 
       <div className="flex flex-col flex-grow overflow-x-auto px-8">
         <Stack space="space.500">

@@ -1,4 +1,3 @@
-import { PaintbrushIcon } from '@primer/octicons-react';
 import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
 
@@ -14,7 +13,7 @@ import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
-import { Legend } from './Legend';
+import Heading from '@atlaskit/heading';
 
 let timeout: NodeJS.Timeout;
 const DELAY = 200;
@@ -51,64 +50,62 @@ export const AppearanceSettings: FC = () => {
   ];
 
   return (
-    <fieldset>
-      <Legend icon={PaintbrushIcon}>Appearance</Legend>
+    <Stack space="space.100">
+      <Heading size="small">Appearance</Heading>
 
-      <Stack space="space.100">
-        <Inline space="space.100">
-          <Text id="theme-label" weight="medium">
-            Theme:
-          </Text>
-          <RadioGroup
-            options={themeOptions}
-            defaultValue={settings.theme}
-            value={settings.theme}
-            onChange={(evt) => {
-              updateSetting('theme', evt.target.value as Theme);
-            }}
-            aria-labelledby="theme-label"
-          />
-        </Inline>
+      <Inline space="space.100">
+        <Text id="theme-label" weight="medium">
+          Theme:
+        </Text>
+        <RadioGroup
+          options={themeOptions}
+          defaultValue={settings.theme}
+          value={settings.theme}
+          onChange={(evt) => {
+            updateSetting('theme', evt.target.value as Theme);
+          }}
+          aria-labelledby="theme-label"
+        />
+      </Inline>
 
-        <div className="flex items-center mt-3 mb-2 text-sm">
-          <label
-            htmlFor="Zoom"
-            className="mr-3 content-center font-medium text-gray-700 dark:text-gray-200"
-          >
-            Zoom:
-          </label>
-          <IconButton
-            icon={MediaServicesZoomOutIcon}
-            label="Zoom Out"
-            shape="circle"
-            spacing="compact"
-            onClick={() =>
-              zoomPercentage > 0 &&
-              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
-            }
-          />
-          <span className="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200">
-            {zoomPercentage.toFixed(0)}%
-          </span>
-          <IconButton
-            icon={MediaServicesZoomInIcon}
-            label="Zoom In"
-            shape="circle"
-            spacing="compact"
-            onClick={() =>
-              zoomPercentage < 120 &&
-              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
-            }
-          />
-          <IconButton
-            icon={SelectClearIcon}
-            label="Reset Zoom"
-            shape="circle"
-            spacing="compact"
-            onClick={() => webFrame.setZoomLevel(0)}
-          />
-        </div>
-      </Stack>
-    </fieldset>
+      <div className="flex items-center mt-3 mb-2 text-sm">
+        <label
+          htmlFor="Zoom"
+          className="mr-3 content-center font-medium text-gray-700 dark:text-gray-200"
+        >
+          Zoom:
+        </label>
+        <IconButton
+          icon={MediaServicesZoomOutIcon}
+          label="Zoom Out"
+          shape="circle"
+          spacing="compact"
+          onClick={() =>
+            zoomPercentage > 0 &&
+            webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
+          }
+        />
+        <span className="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200">
+          {zoomPercentage.toFixed(0)}%
+        </span>
+        <IconButton
+          icon={MediaServicesZoomInIcon}
+          label="Zoom In"
+          shape="circle"
+          spacing="compact"
+          onClick={() =>
+            zoomPercentage < 120 &&
+            webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
+          }
+        />
+        <IconButton
+          icon={SelectClearIcon}
+          label="Reset Zoom"
+          shape="circle"
+          spacing="compact"
+          onClick={() => webFrame.setZoomLevel(0)}
+        />
+      </div>
+    </Stack>
   );
 };
