@@ -228,15 +228,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const restoreSettings = useCallback(async () => {
     const existing = loadState();
 
-    if (existing.auth) {
-      setAuth({ ...defaultAuth, ...existing.auth });
-
-      // Refresh account data on app start
-      for (const account of existing.auth.accounts) {
-        await refreshAccount(account);
-      }
-    }
-
+    // Restore settings before accounts to ensure filters are available before fetching notifications
     if (existing.settings) {
       setKeyboardShortcut(existing.settings.keyboardShortcut);
       setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
@@ -244,6 +236,15 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       webFrame.setZoomLevel(
         zoomPercentageToLevel(existing.settings.zoomPercentage),
       );
+    }
+
+    if (existing.auth) {
+      setAuth({ ...defaultAuth, ...existing.auth });
+
+      // Refresh account data on app start
+      for (const account of existing.auth.accounts) {
+        await refreshAccount(account);
+      }
     }
   }, []);
 
