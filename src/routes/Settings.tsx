@@ -6,6 +6,7 @@ import { NotificationSettings } from '../components/settings/NotificationSetting
 import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SystemSettings } from '../components/settings/SystemSettings';
 import { AppContext } from '../context/App';
+import { Stack } from '@atlaskit/primitives';
 
 export const SettingsRoute: FC = () => {
   const { resetSettings } = useContext(AppContext);
@@ -16,20 +17,22 @@ export const SettingsRoute: FC = () => {
         Settings
       </Header>
 
-      <div className="flex flex-col flex-grow overflow-x-auto px-8 gap-3">
-        <AppearanceSettings />
-        <NotificationSettings />
-        <SystemSettings />
-        <button
-          type="button"
-          onClick={() => {
-            confirm('Are you sure you want to reset all settings?') &&
-              resetSettings();
-          }}
-          className="text-sm hover:underline mb-4 hover:cursor-pointer"
-        >
-          Restore settings to their defaults
-        </button>
+      <div className="flex flex-col flex-grow overflow-x-auto px-8">
+        <Stack space="space.500">
+          <AppearanceSettings />
+          <NotificationSettings />
+          <SystemSettings />
+          <button
+            type="button"
+            onClick={() => {
+              confirm('Are you sure you want to reset all settings?') &&
+                resetSettings();
+            }}
+            className="text-sm hover:underline mb-4 hover:cursor-pointer"
+          >
+            Restore settings to their defaults
+          </button>
+        </Stack>
       </div>
 
       <SettingsFooter />

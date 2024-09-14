@@ -3,35 +3,43 @@ import { type FC, useContext } from 'react';
 import { BellIcon } from '@primer/octicons-react';
 
 import { Checkbox } from '@atlaskit/checkbox';
-import { Inline, Stack } from '@atlaskit/primitives';
+import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { RadioGroup } from '@atlaskit/radio';
+import type { OptionsPropType } from '@atlaskit/radio/types';
 
 import { AppContext } from '../../context/App';
 import { GroupBy } from '../../types';
-import { RadioGroup } from '../fields/RadioGroup';
 import { Legend } from './Legend';
 import InlineMessage from '@atlaskit/inline-message';
 
 export const NotificationSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
 
+  const groupByOptions: OptionsPropType = [
+    { name: 'groupBy', label: 'Date', value: GroupBy.DATE },
+    { name: 'openLinks', label: 'Product', value: GroupBy.PRODUCT },
+  ];
+
   return (
     <fieldset>
       <Legend icon={BellIcon}>Notifications</Legend>
 
-      <RadioGroup
-        name="groupBy"
-        label="Group by:"
-        value={settings.groupBy}
-        options={[
-          { label: 'Date', value: GroupBy.DATE },
-          { label: 'Product', value: GroupBy.PRODUCT },
-        ]}
-        onChange={(evt) => {
-          updateSetting('groupBy', evt.target.value as GroupBy);
-        }}
-      />
+      <Stack space="space.100">
+        <Inline space="space.100">
+          <Text id="groupBy-label" weight="medium">
+            Group by:
+          </Text>
+          <RadioGroup
+            options={groupByOptions}
+            defaultValue={settings.groupBy}
+            value={settings.groupBy}
+            onChange={(evt) => {
+              updateSetting('groupBy', evt.target.value as GroupBy);
+            }}
+            aria-labelledby="groupBy-label"
+          />
+        </Inline>
 
-      <Stack space="space.150">
         <Checkbox
           name="markAsReadOnOpen"
           label="Mark as read on open"

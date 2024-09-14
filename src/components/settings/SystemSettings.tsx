@@ -2,37 +2,53 @@ import { DeviceDesktopIcon } from '@primer/octicons-react';
 import { type FC, useContext } from 'react';
 
 import { Checkbox } from '@atlaskit/checkbox';
-import { Inline, Stack } from '@atlaskit/primitives';
+import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { RadioGroup } from '@atlaskit/radio';
+import type { OptionsPropType } from '@atlaskit/radio/types';
 
 import { AppContext } from '../../context/App';
-import type { OpenPreference } from '../../types';
+import { OpenPreference } from '../../types';
 import { Constants } from '../../utils/constants';
 import { isLinux, isMacOS } from '../../utils/platform';
-import { RadioGroup } from '../fields/RadioGroup';
 import { Legend } from './Legend';
 import InlineMessage from '@atlaskit/inline-message';
 
 export const SystemSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
 
+  const openLinksOptions: OptionsPropType = [
+    {
+      name: 'openLinks',
+      label: 'Foreground',
+      value: OpenPreference.FOREGROUND,
+    },
+    {
+      name: 'openLinks',
+      label: 'Background',
+      value: OpenPreference.BACKGROUND,
+    },
+  ];
+
   return (
     <fieldset>
       <Legend icon={DeviceDesktopIcon}>System</Legend>
 
-      <RadioGroup
-        name="openLinks"
-        label="Open Links:"
-        value={settings.openLinks}
-        options={[
-          { label: 'Foreground', value: 'FOREGROUND' },
-          { label: 'Background', value: 'BACKGROUND' },
-        ]}
-        onChange={(evt) => {
-          updateSetting('openLinks', evt.target.value as OpenPreference);
-        }}
-      />
+      <Stack space="space.100">
+        <Inline space="space.100">
+          <Text id="openlinks-label" weight="medium">
+            Open Links:
+          </Text>
+          <RadioGroup
+            options={openLinksOptions}
+            defaultValue={settings.openLinks}
+            value={settings.openLinks}
+            onChange={(evt) => {
+              updateSetting('openLinks', evt.target.value as OpenPreference);
+            }}
+            aria-labelledby="openlinks-label"
+          />
+        </Inline>
 
-      <Stack space="space.150">
         <Inline space="space.100">
           <Checkbox
             name="keyboardShortcutEnabled"

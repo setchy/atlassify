@@ -32,6 +32,9 @@ importers:
       '@atlaskit/primitives':
         specifier: 12.1.1
         version: 12.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/radio':
+        specifier: ^6.5.1
+        version: 6.5.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
         specifier: ^13.4.1
         version: 13.4.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -302,6 +305,11 @@ packages:
 
   '@atlaskit/primitives@12.1.1':
     resolution: {integrity: sha512-sTH9O1QW+RsjUlXQJ8zX2JvBKYOUfEbY35TPFEjS8y9k6Tm5R+L9M85F/Kn/hXby765k5lzUOVkIya/DKv3jJA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/radio@6.5.1':
+    resolution: {integrity: sha512-PbzEbVxPrq9fBuStKlGB5Qv7Vq/g2SuzLqYVYj5kYI6ap7qoQp4deiXn+2oEgaXMrOH7xKq+xSywPKXnLF7UTg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4086,6 +4094,20 @@ snapshots:
       bind-event-listener: 3.0.0
       react: 18.3.1
       tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/radio@6.5.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/theme': 13.0.0(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/tokens': 1.59.1(@types/react@18.3.5)(react@18.3.1)
+      '@babel/runtime': 7.24.1
+      '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
+      react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
       - react-dom
