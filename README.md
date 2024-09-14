@@ -42,7 +42,6 @@ A list of "things" to improve
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] setup docs -> atlasify.io
-- [ ] create unique AtlasifyNotification type
 - [ ] setup coveralls (or similar)
 - [ ] fix unit tests
 - [ ] use atlaskit/tokens for colors
@@ -50,6 +49,7 @@ A list of "things" to improve
 - [ ] atlaskit progress bar
 - [ ] atlaskit for modal dialog on reset
 - [ ] replace divs+classNames with atlaskit primitives
+- [ ] clear out all TODOs in this project
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io

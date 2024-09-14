@@ -1,7 +1,5 @@
-import { partialMockUser } from '../__mocks__/partial-mocks';
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import { mockSingleNotification } from './api/__mocks__/response-mocks';
-import type { Repository } from './api/types';
 import * as comms from './comms';
 import {
   openAccountProfile,
@@ -11,8 +9,6 @@ import {
   openMyNotifications,
   openMyPullRequests,
   openNotification,
-  openRepository,
-  openUserProfile,
 } from './links';
 
 describe('utils/links.ts', () => {
@@ -66,27 +62,8 @@ describe('utils/links.ts', () => {
     );
   });
 
-  it('openUserProfile', () => {
-    const mockUser = partialMockUser('mock-user');
-    openUserProfile(mockUser);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/mock-user',
-    );
-  });
-
-  it('openRepository', () => {
-    const mockHtmlUrl = 'https://github.com/setchy/atlasify';
-
-    const repo = {
-      html_url: mockHtmlUrl,
-    } as Repository;
-
-    openRepository(repo);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(mockHtmlUrl);
-  });
-
   it('openNotification', async () => {
-    const mockNotificationUrl = mockSingleNotification.repository.html_url;
+    const mockNotificationUrl = mockSingleNotification.url;
     await openNotification(mockSingleNotification);
     expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
   });

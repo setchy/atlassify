@@ -1,10 +1,4 @@
-import type {
-  Category,
-  Product,
-  ReadState,
-  Repository,
-  Subject,
-} from './utils/api/types';
+import type { Category, Product, ReadState } from './utils/api/types';
 import type { AuthMethod, PlatformType } from './utils/auth/types';
 
 declare const __brand: unique symbol;
@@ -108,10 +102,11 @@ export interface AccountNotifications {
 
 export interface AtlasifyNotification {
   id: string;
-  unread: boolean;
+  title: string;
+  readState: ReadState;
+  unread: boolean; // TODO - Redundant?
   updated_at: string;
-  last_read_at: string | null;
-  subject: Subject;
+  url: Link;
   path: {
     title: string;
     url: Link;
@@ -127,11 +122,11 @@ export interface AtlasifyNotification {
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     icon: any;
   };
-  repository: Repository;
+  actor: {
+    displayName: string;
+    avatarURL: Link;
+  };
   category: Category;
-  readState: ReadState;
-  url: Link;
-  subscription_url: Link;
   account: Account;
 }
 

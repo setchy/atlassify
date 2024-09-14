@@ -8,7 +8,7 @@ import type {
 } from '../types';
 import { getNotificationsForUser } from './api/client';
 import { determineFailureType } from './api/errors';
-import type { AtlassianNotification } from './api/types';
+import type { AtlassianNotification, Category, ReadState } from './api/types';
 import { getAccountUUID } from './auth/utils';
 import { hideWindow, showWindow, updateTrayIcon } from './comms';
 import { openNotification } from './links';
@@ -83,10 +83,8 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = `${isWindows() ? '' : 'Atlasify - '}${
-      notification.repository.full_name
-    }`;
-    body = notification.subject.title;
+    title = `${isWindows() ? '' : 'Atlasify - '}${notification.title}`;
+    body = notification.entity.title; // TODO Confirm this mapping
   } else {
     title = 'Atlasify';
     body = `You have ${notifications.length} notifications.`;
@@ -171,39 +169,18 @@ export async function getAllNotifications(
 export function mapAtlassianNotificationsToAtlasifyNotifications(
   account: Account,
   notifications: AtlassianNotification[],
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-): any {
+): AtlasifyNotification[] {
   return notifications?.map((notification: AtlassianNotification) => ({
     id: notification.headNotification.notificationId,
-    reason: 'review_requested',
+    title: notification.headNotification.content.message,
+    readState: notification.headNotification.readState as ReadState,
+    unread: notification.headNotification.readState === READ_STATES.unread.name,
     updated_at: notification.headNotification.timestamp,
     url: notification.headNotification.content.url,
-    repository: {
-      full_name: 'mocked',
-      owner: {
-        avatar_url: 'www.google.com',
-      },
-      html_url: 'www.google.com',
-    },
-    subject: {
-      number: '',
-      title: notification.headNotification.content.message,
-      url: notification.headNotification.content.url,
-      type: 'PullRequest',
-      state: 'open',
-      user: {
-        login: notification.headNotification.content.actor.displayName,
-        avatar_url: notification.headNotification.content.actor.avatarURL,
-        type: 'User',
-      },
-      comments: 0,
-      tasks: 0,
-    },
-    entity: notification.headNotification.content.entity,
     path: notification.headNotification.content.path[0],
-    category: notification.headNotification.category,
-    readState: notification.headNotification.readState,
-    unread: notification.headNotification.readState === READ_STATES.unread.name,
+    entity: notification.headNotification.content.entity,
+    category: notification.headNotification.category as Category,
+    actor: notification.headNotification.content.actor,
     product: getAtlassianProduct(notification),
     account: account,
   }));

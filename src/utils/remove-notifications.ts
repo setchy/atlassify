@@ -14,7 +14,7 @@ export function removeNotifications(
     return notifications;
   }
 
-  const repoSlug = notification.repository.full_name;
+  const productName = notification.product.name;
 
   const accountIndex = notifications.findIndex(
     (accountNotifications) =>
@@ -27,7 +27,7 @@ export function removeNotifications(
     updatedNotifications[accountIndex] = {
       ...updatedNotifications[accountIndex],
       notifications: updatedNotifications[accountIndex].notifications.filter(
-        (notification) => notification.repository.full_name !== repoSlug,
+        (notification) => notification.product.name !== productName,
       ),
     };
     return updatedNotifications;

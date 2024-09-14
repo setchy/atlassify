@@ -41,8 +41,6 @@ export const NotificationRow: FC<INotificationRow> = ({
     openNotification(notification);
   }, [notification, markNotificationRead, settings]);
 
-  const notificationTitle = notification.subject.title.trim();
-
   const updatedAt = formatNotificationUpdatedAt(notification);
 
   return (
@@ -56,10 +54,10 @@ export const NotificationRow: FC<INotificationRow> = ({
       )}
     >
       <div className="mr-3 flex items-center justify-center">
-        <Tooltip content={notification.subject.user.login}>
+        <Tooltip content={notification.actor.displayName}>
           <Avatar
-            name={notification.subject.user.login}
-            src={notification.subject.user.avatar_url}
+            name={notification.actor.displayName}
+            src={notification.actor.avatarURL}
             size="small"
           />
         </Tooltip>
@@ -70,8 +68,12 @@ export const NotificationRow: FC<INotificationRow> = ({
         onClick={() => handleNotification()}
       >
         <div className="flex flex-col gap-1">
-          <div className="text-sm" role="main" title={notificationTitle}>
-            {notification.subject.title}
+          <div
+            className="text-sm"
+            role="main"
+            title={notification.title.trim()}
+          >
+            {notification.title}
             <span
               className="pl-2 text-xs text-gray-700"
               title={`Updated ${updatedAt}`}

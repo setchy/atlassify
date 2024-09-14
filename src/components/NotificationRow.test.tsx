@@ -5,9 +5,8 @@ import {
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import { GroupBy, type Link } from '../types';
+import { GroupBy } from '../types';
 import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
-import type { UserType } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { NotificationRow } from './NotificationRow';
@@ -160,45 +159,6 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByTitle('Mark as Read'));
       expect(markNotificationRead).toHaveBeenCalledTimes(1);
-    });
-
-    it('should open notification user profile', () => {
-      const openExternalLinkMock = jest.spyOn(comms, 'openExternalLink');
-
-      const props = {
-        notification: {
-          ...mockSingleNotification,
-          subject: {
-            ...mockSingleNotification.subject,
-            user: {
-              login: 'some-user',
-              html_url: 'https://github.com/some-user' as Link,
-              avatar_url:
-                'https://avatars.githubusercontent.com/u/123456789?v=4' as Link,
-              type: 'User' as UserType,
-            },
-            reviews: null,
-          },
-        },
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings },
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.click(screen.getByTitle('View User Profile'));
-      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
-      expect(openExternalLinkMock).toHaveBeenCalledWith(
-        props.notification.subject.user.html_url,
-      );
     });
   });
 });

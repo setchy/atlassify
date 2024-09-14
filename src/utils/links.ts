@@ -1,5 +1,4 @@
 import type { Account, AtlasifyNotification, Link } from '../types';
-import type { Repository, SubjectUser } from './api/types';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
 
@@ -43,15 +42,6 @@ export function openAccountProfile(account: Account) {
     `${Constants.ATLASSIAN_URLS.WEB.PEOPLE}/${account.user.id}`,
   );
   openExternalLink(url.toString() as Link);
-}
-
-export function openUserProfile(user: SubjectUser) {
-  openExternalLink(user.html_url);
-}
-
-// TODO - REMOVE THIS
-export function openRepository(repository: Repository) {
-  openExternalLink(repository.html_url);
 }
 
 export async function openNotification(notification: AtlasifyNotification) {
