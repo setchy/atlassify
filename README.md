@@ -28,10 +28,26 @@ Atlasify is licensed under the MIT Open Source license.
 For more information, see [LICENSE](LICENSE).
 
 
-### Attributino
+### Attribution
 
 1. [Gitify][attribution-gitify]
 2. [Atlassian Design System][attribution-atlassian]
+
+### TODO
+
+A list of "things" to improve
+
+- [ ] create "update available" icon bundle
+- [ ] create "icn" and "icns"
+- [ ] purchase and setup Apple developer account
+- [ ] setup brew cask definition
+- [ ] setup docs -> atlasify.io
+- [ ] create unique AtlasifyNotification type
+- [ ] remove octicons package
+- [ ] adopt atlaskit further
+- [ ] rework "group by" to be `Product` or `None/Date`
+- [ ] setup coveralls (or similar)
+- [ ] fix unit tests
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io
