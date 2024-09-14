@@ -12,6 +12,8 @@ import { InteractionButton } from './buttons/InteractionButton';
 import { NotificationFooter } from './notification/NotificationFooter';
 import { NotificationHeader } from './notification/NotificationHeader';
 import PresenceActiveIcon from '@atlaskit/icon/glyph/presence-active';
+// import { IconButton } from '@atlaskit/button/new';
+
 interface INotificationRow {
   notification: AtlasifyNotification;
   isAnimated?: boolean;
@@ -65,11 +67,26 @@ export const NotificationRow: FC<INotificationRow> = ({
             />
           </Tooltip>
           {notification.unread && (
-            <PresenceActiveIcon
-              label="unread"
-              size="small"
-              primaryColor="blue"
-            />
+            <>
+              <Tooltip content="Unread">
+                <PresenceActiveIcon
+                  label="unread"
+                  size="small"
+                  primaryColor="blue-200"
+                />
+              </Tooltip>
+
+              {/* <Tooltip content="Mark as unread">
+                <IconButton
+                  shape="circle"
+                  appearance="subtle"
+                  icon={(iconProps) => (
+                    <PresenceActiveIcon {...iconProps} size="small" />
+                  )}
+                  label="Mark as unread"
+                />
+              </Tooltip> */}
+            </>
           )}
         </div>
       </div>
