@@ -33,7 +33,7 @@ export const SystemSettings: FC = () => {
       <Heading size="small">System</Heading>
 
       <Inline space="space.100">
-        <Text id="openlinks-label" weight="medium">
+        <Text id="openLinks-label" weight="medium">
           Open Links:
         </Text>
         <RadioGroup
@@ -43,7 +43,7 @@ export const SystemSettings: FC = () => {
           onChange={(evt) => {
             updateSetting('openLinks', evt.target.value as OpenPreference);
           }}
-          aria-labelledby="openlinks-label"
+          aria-labelledby="openLinks-label"
         />
       </Inline>
 

@@ -6,53 +6,55 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
   data-testid="accounts"
 >
   <div
-    class="mx-8 mt-2 flex items-center justify-between py-2"
+    class="mx-8 mt-2 py-2"
   >
-    <button
-      class="focus:outline-none"
-      title="Go Back"
-      type="button"
+    <div
+      class=" css-uwvn2m"
     >
-      <svg
-        aria-label="Go Back"
-        class="hover:text-gray-400"
-        fill="currentColor"
-        focusable="false"
-        height="20"
-        role="img"
-        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-        viewBox="0 0 16 16"
-        width="20"
+      <div
+        role="presentation"
       >
-        <path
-          d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06Z"
-        />
-      </svg>
-    </button>
-    <h3
-      class="text-lg font-semibold flex items-center"
-    >
-      <legend
-        class="mb-1 mt-2 font-semibold flex items-center"
-        id="accounts"
-      >
-        <svg
-          aria-hidden="true"
-          class="mr-2"
-          fill="currentColor"
-          focusable="false"
-          height="16"
-          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-          viewBox="0 0 16 16"
-          width="16"
+        <button
+          class=" css-1hmr5rx"
+          type="button"
         >
-          <path
-            d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"
-          />
-        </svg>
+          <span
+            class=" css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Go Back
+            </span>
+          </span>
+        </button>
+      </div>
+      <h3
+        class="css-rex7s6"
+      >
         Accounts
-      </legend>
-    </h3>
+      </h3>
+    </div>
   </div>
   <div
     class="flex-grow overflow-x-auto px-8"
@@ -74,12 +76,12 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <button
-                  aria-label="At Lassian"
+                  aria-label="Atlassian"
                   class="css-1tnqmrq"
                   type="button"
                 >
                   <img
-                    alt="At Lassian"
+                    alt="Atlassian"
                     class="css-13ep12v"
                     data-vc="avatar-image"
                     src="https://avatars.githubusercontent.com/u/583231?v=4"
@@ -96,21 +98,254 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
           <div
             class="text-sm font-semibold"
           >
-            At Lassian
+            Atlassian
           </div>
           <div
-            class="text-xs"
+            class="flex flex-1 gap-1 align-center text-xs"
           >
-            <button
-              class="flex flex-1 gap-1 cursor-pointer align-middle"
-              title="Open Host"
-              type="button"
+            <div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-label="Username"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                      />
+                      <circle
+                        cx="12"
+                        cy="7"
+                        r="4"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              atlas
+            </div>
+          </div>
+          <div
+            class="flex flex-1 gap-1 align-center text-xs"
+          >
+            <div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-label="Authentication method"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill="currentcolor"
+                    >
+                      <path
+                        d="M16 11V9h-2V7.002A2 2 0 0 0 12 5c-1.102 0-2 .898-2 2.002V9H8v2H7v8h10v-8zm-2 0h-4V9h4zM8 9V7.002A4.004 4.004 0 0 1 12 3a4 4 0 0 1 4 4.002V9h.994A2.01 2.01 0 0 1 19 11.009v7.982c0 1.11-.897 2.009-2.006 2.009H7.006A2.01 2.01 0 0 1 5 18.991V11.01C5 9.899 5.897 9 7.006 9zm0 0h2v2H8zm6 0h2v2h-2z"
+                      />
+                      <circle
+                        cx="12"
+                        cy="15"
+                        r="2"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              API Token
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="css-1au07qt"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-1uxpsra"
+                disabled=""
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: gold; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="m12.072 17.284-3.905 2.053a1 1 0 0 1-1.451-1.054l.745-4.349-3.159-3.08a1 1 0 0 1 .554-1.705l4.366-.635 1.953-3.956a1 1 0 0 1 1.794 0l1.952 3.956 4.366.635a1 1 0 0 1 .555 1.705l-3.16 3.08.746 4.349a1 1 0 0 1-1.45 1.054z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Primary account
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-1l7n0sn"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M8 6.003v2.995a1 1 0 1 0 2 0V5.102C10 4.494 9.507 4 8.9 4H5a1 1 0 0 0 0 2.003z"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M9.428 18.018C7.351 16.989 6 14.807 6 12.37c0-2.266 1.167-4.319 3.02-5.425.48-.286.646-.922.371-1.421a.98.98 0 0 0-1.364-.386C5.557 6.611 4 9.35 4 12.37c0 3.248 1.802 6.158 4.57 7.529.498.247 1.095.026 1.332-.493.237-.52.025-1.141-.474-1.388"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M14 15.002v3.896c0 .608.493 1.102 1.1 1.102H19a1 1 0 0 0 0-2.003h-3v-2.995a1 1 0 1 0-2 0"
+                        />
+                        <path
+                          d="M14.097 4.596c-.237.52-.025 1.14.474 1.387 2.077 1.029 3.428 3.21 3.428 5.647 0 2.266-1.167 4.32-3.021 5.425a1.063 1.063 0 0 0-.37 1.42c.274.5.885.673 1.364.387 2.47-1.473 4.027-4.212 4.027-7.232 0-3.248-1.802-6.158-4.57-7.528A.96.96 0 0 0 15.002 4a1 1 0 0 0-.905.596"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Refresh atlas
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-1l7n0sn"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M4.977 11A.99.99 0 0 0 4 12c0 .551.437 1 .977 1h11.046A.99.99 0 0 0 17 12a.99.99 0 0 0-.977-1z"
+                        />
+                        <path
+                          d="M6.23 8.31 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96a1.03 1.03 0 0 0 1.47 0 1.05 1.05 0 0 0 0-1.48L5.5 12l2.2-2.22a1.05 1.05 0 0 0 0-1.48 1.03 1.03 0 0 0-1.47 0M15.5 3H12v2h7v14h-7v2h7.01c1.1 0 1.99-.89 1.99-1.99V5a1.99 1.99 0 0 0-1.99-2z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Logout atlas
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="text-sm px-8 bg-gray-200 dark:bg-gray-darker"
+  >
+    <div
+      class="css-1s54rt6"
+    >
+      <div
+        class="css-hugz22"
+      >
+        <div
+          role="presentation"
+        >
+          <button
+            class=" css-1hmr5rx"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
             >
               <span
-                aria-label="Username"
-                class="css-1wits42"
+                aria-hidden="true"
+                class="css-snhnyn"
                 data-vc="icon-undefined"
-                role="img"
                 style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
                 <svg
@@ -123,245 +358,40 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                     fill="currentcolor"
                     fill-rule="evenodd"
                   >
+                    <rect
+                      height="6"
+                      rx="1"
+                      width="2"
+                      x="18"
+                      y="5"
+                    />
+                    <rect
+                      height="2"
+                      rx="1"
+                      width="6"
+                      x="16"
+                      y="7"
+                    />
                     <path
-                      d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                      d="M5 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
                     />
                     <circle
-                      cx="12"
+                      cx="11"
                       cy="7"
                       r="4"
                     />
                   </g>
                 </svg>
               </span>
-              atlas
-            </button>
-          </div>
-          <div
-            class="text-xs"
-          >
-            <button
-              class="flex flex-1 gap-1 cursor-pointer align-middle"
-              title="Open Developer Settings"
-              type="button"
-            >
               <span
-                aria-label="Authentication method"
-                class="css-1wits42"
-                data-vc="icon-undefined"
-                role="img"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class="css-b5o75w"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
-                >
-                  <g
-                    fill="currentcolor"
-                  >
-                    <path
-                      d="M16 11V9h-2V7.002A2 2 0 0 0 12 5c-1.102 0-2 .898-2 2.002V9H8v2H7v8h10v-8zm-2 0h-4V9h4zM8 9V7.002A4.004 4.004 0 0 1 12 3a4 4 0 0 1 4 4.002V9h.994A2.01 2.01 0 0 1 19 11.009v7.982c0 1.11-.897 2.009-2.006 2.009H7.006A2.01 2.01 0 0 1 5 18.991V11.01C5 9.899 5.897 9 7.006 9zm0 0h2v2H8zm6 0h2v2h-2z"
-                    />
-                    <circle
-                      cx="12"
-                      cy="15"
-                      r="2"
-                    />
-                  </g>
-                </svg>
+                Add new account
               </span>
-              API Token
-            </button>
-          </div>
-        </div>
-        <div>
-          <button
-            class="hover:text-gray-500 py-1 my-1 mx-2 focus:outline-none px-0 cursor-default"
-            title="Primary account"
-            type="button"
-          >
-            <span
-              aria-label="Primary account"
-              class="css-1afrefi"
-              data-vc="icon-undefined"
-              role="img"
-              style="--icon-primary-color: gold; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-            >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <path
-                  d="m12.072 17.284-3.905 2.053a1 1 0 0 1-1.451-1.054l.745-4.349-3.159-3.08a1 1 0 0 1 .554-1.705l4.366-.635 1.953-3.956a1 1 0 0 1 1.794 0l1.952 3.956 4.366.635a1 1 0 0 1 .555 1.705l-3.16 3.08.746 4.349a1 1 0 0 1-1.45 1.054z"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            class="hover:text-gray-500 py-1 my-1 mx-2 focus:outline-none px-0"
-            hidden=""
-            title="Set as primary account"
-            type="button"
-          >
-            <span
-              aria-label="Set as primary account"
-              class="css-1afrefi"
-              data-vc="icon-undefined"
-              role="img"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-            >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <path
-                  d="m12 16.373 3.98 2.193-.76-4.655 3.276-3.347-4.524-.69L12 5.687l-1.972 4.189-4.524.689L8.78 13.91l-.762 4.655zm0 2.283-3.016 1.662a2 2 0 0 1-2.939-2.075l.599-3.656-2.57-2.624a2 2 0 0 1 1.129-3.377l3.47-.528 1.518-3.224a2 2 0 0 1 3.618 0l1.519 3.224 3.47.528a2 2 0 0 1 1.127 3.377l-2.569 2.624.599 3.656a2 2 0 0 1-2.94 2.075z"
-                  fill="currentcolor"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            class="hover:text-gray-500 py-1 my-1 mx-2 focus:outline-none px-0"
-            title="Refresh atlas"
-            type="button"
-          >
-            <span
-              aria-label="Refresh atlas"
-              class="css-1afrefi"
-              data-vc="icon-undefined"
-              role="img"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-            >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <g
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                >
-                  <path
-                    d="M8 6.003v2.995a1 1 0 1 0 2 0V5.102C10 4.494 9.507 4 8.9 4H5a1 1 0 0 0 0 2.003z"
-                    fill-rule="nonzero"
-                  />
-                  <path
-                    d="M9.428 18.018C7.351 16.989 6 14.807 6 12.37c0-2.266 1.167-4.319 3.02-5.425.48-.286.646-.922.371-1.421a.98.98 0 0 0-1.364-.386C5.557 6.611 4 9.35 4 12.37c0 3.248 1.802 6.158 4.57 7.529.498.247 1.095.026 1.332-.493.237-.52.025-1.141-.474-1.388"
-                    fill-rule="nonzero"
-                  />
-                  <path
-                    d="M14 15.002v3.896c0 .608.493 1.102 1.1 1.102H19a1 1 0 0 0 0-2.003h-3v-2.995a1 1 0 1 0-2 0"
-                  />
-                  <path
-                    d="M14.097 4.596c-.237.52-.025 1.14.474 1.387 2.077 1.029 3.428 3.21 3.428 5.647 0 2.266-1.167 4.32-3.021 5.425a1.063 1.063 0 0 0-.37 1.42c.274.5.885.673 1.364.387 2.47-1.473 4.027-4.212 4.027-7.232 0-3.248-1.802-6.158-4.57-7.528A.96.96 0 0 0 15.002 4a1 1 0 0 0-.905.596"
-                  />
-                </g>
-              </svg>
-            </span>
-          </button>
-          <button
-            class="hover:text-gray-500 py-1 my-1 mx-2 focus:outline-none px-0"
-            title="Logout atlas"
-            type="button"
-          >
-            <span
-              aria-label="Logout atlas"
-              class="css-1afrefi"
-              data-vc="icon-undefined"
-              role="img"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-            >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <g
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                >
-                  <path
-                    d="M4.977 11A.99.99 0 0 0 4 12c0 .551.437 1 .977 1h11.046A.99.99 0 0 0 17 12a.99.99 0 0 0-.977-1z"
-                  />
-                  <path
-                    d="M6.23 8.31 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96a1.03 1.03 0 0 0 1.47 0 1.05 1.05 0 0 0 0-1.48L5.5 12l2.2-2.22a1.05 1.05 0 0 0 0-1.48 1.03 1.03 0 0 0-1.47 0M15.5 3H12v2h7v14h-7v2h7.01c1.1 0 1.99-.89 1.99-1.99V5a1.99 1.99 0 0 0-1.99-2z"
-                  />
-                </g>
-              </svg>
             </span>
           </button>
         </div>
       </div>
-    </div>
-  </div>
-  <div
-    class="flex items-center justify-between bg-gray-200 px-8 py-1 text-sm dark:bg-gray-darker"
-  >
-    <div
-      class="font-semibold italic"
-    >
-      Add new account
-    </div>
-    <div>
-      <button
-        class="hover:text-gray-500 py-1 px-2 my-1 mx-2 focus:outline-none"
-        title="Add new account"
-        type="button"
-      >
-        <span
-          aria-label="Add new account"
-          class="css-1afrefi"
-          data-vc="icon-undefined"
-          role="img"
-          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-        >
-          <svg
-            height="24"
-            role="presentation"
-            viewBox="0 0 24 24"
-            width="24"
-          >
-            <g
-              fill="currentcolor"
-              fill-rule="evenodd"
-            >
-              <rect
-                height="6"
-                rx="1"
-                width="2"
-                x="18"
-                y="5"
-              />
-              <rect
-                height="2"
-                rx="1"
-                width="6"
-                x="16"
-                y="7"
-              />
-              <path
-                d="M5 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-              />
-              <circle
-                cx="11"
-                cy="7"
-                r="4"
-              />
-            </g>
-          </svg>
-        </span>
-      </button>
     </div>
   </div>
 </div>

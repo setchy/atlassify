@@ -1,19 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`routes/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
-<span
-  aria-label="app-version"
+<button
+  class=" css-1aearyh"
+  title="View Atlasify release notes"
+  type="button"
 >
-  Atlasify 
-  dev
-</span>
+  <span
+    class=" css-1nqby2s"
+  >
+    Atlasify 
+    dev
+  </span>
+</button>
 `;
 
 exports[`routes/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
-<span
-  aria-label="app-version"
+<button
+  class=" css-1aearyh"
+  title="View Atlasify release notes"
+  type="button"
 >
-  Atlasify 
-  v0.0.1
-</span>
+  <span
+    class=" css-1nqby2s"
+  >
+    Atlasify 
+    v0.0.1
+  </span>
+</button>
 `;

@@ -53,97 +53,187 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               </svg>
             </span>
           </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="2 Unread Notifications"
-            type="button"
+          <div
+            class="css-2k1qcz"
           >
-            <svg
-              aria-label="2 Unread Notifications"
-              class="octicon octicon-bell"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+            <div
+              role="presentation"
             >
-              <path
-                d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="My Issues"
-            type="button"
-          >
-            <svg
-              aria-label="My Issues"
-              class="octicon octicon-issue-opened"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    2 Unread Notifications
+                  </span>
+                </span>
+              </button>
+              <span
+                class="css-1l63z09"
+              >
+                2
+              </span>
+            </div>
+            <div
+              role="presentation"
             >
-              <path
-                d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-              />
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="My Pull Requests"
-            type="button"
-          >
-            <svg
-              aria-label="My Pull Requests"
-              class="octicon octicon-git-pull-request"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M5 12.99C5 13 19.01 13 19.01 13 19 13 19 5.01 19 5.01 19 5 5 5 5 5zM3 5.01C3 3.9 3.89 3 5 3h14.01A2 2 0 0 1 21 5.01v7.98A2 2 0 0 1 19.01 15H5a2 2 0 0 1-2-2.01zM19 19c0 1.11-.9 2-2.01 2H7.01A2.01 2.01 0 0 1 5 19zm1-3a2 2 0 0 1-1.99 2H5.99A2 2 0 0 1 4 16z"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M10.674 11.331c.36.36.941.36 1.3 0l2.758-2.763a.92.92 0 0 0-1.301-1.298l-2.108 2.11-.755-.754a.92.92 0 0 0-1.3 1.3z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My Issues
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <path
-                d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-              />
-            </svg>
-          </button>
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M18 15.2V11c0-1.7-1.3-3-3-3h-1.9l.8-.8c.3-.3.3-.8 0-1.1s-.8-.3-1.1 0l-2.3 2.3c-.3.4-.3.9 0 1.2l2.3 2.3c.2.2.3.2.5.2q.3 0 .6-.3c.3-.3.3-.8 0-1.1l-.7-.7H15c.6 0 1 .4 1 1v4.2c-1.2.4-2 1.5-2 2.8 0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.3-.8-2.4-2-2.8M17 19c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1M7 3C5.4 3 4 4.3 4 6c0 1.3.8 2.4 2 2.8V20c0 .6.4 1 1 1s1-.4 1-1V8.8c1.2-.4 2-1.5 2-2.8 0-1.7-1.3-3-3-3m0 4c-.5 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My Pull Requests
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
         <div
           class="px-3 py-4"
         >
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-2"
-            title="Quit Atlasify"
-            type="button"
+          <div
+            role="presentation"
           >
-            <svg
-              aria-label="Quit Atlasify"
-              class="octicon octicon-x-circle"
-              fill="currentColor"
-              focusable="false"
-              height="16"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="16"
+            <button
+              class=" css-1l7n0sn"
+              type="button"
             >
-              <path
-                d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"
-              />
-            </svg>
-          </button>
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1afrefi"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        r="10"
+                      />
+                      <path
+                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                        fill="inherit"
+                      />
+                      <path
+                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                        fill="inherit"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Quit Atlasify
+                </span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -197,97 +287,187 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             </svg>
           </span>
         </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="2 Unread Notifications"
-          type="button"
+        <div
+          class="css-2k1qcz"
         >
-          <svg
-            aria-label="2 Unread Notifications"
-            class="octicon octicon-bell"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+          <div
+            role="presentation"
           >
-            <path
-              d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="My Issues"
-          type="button"
-        >
-          <svg
-            aria-label="My Issues"
-            class="octicon octicon-issue-opened"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  2 Unread Notifications
+                </span>
+              </span>
+            </button>
+            <span
+              class="css-1l63z09"
+            >
+              2
+            </span>
+          </div>
+          <div
+            role="presentation"
           >
-            <path
-              d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-            />
-            <path
-              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="My Pull Requests"
-          type="button"
-        >
-          <svg
-            aria-label="My Pull Requests"
-            class="octicon octicon-git-pull-request"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M5 12.99C5 13 19.01 13 19.01 13 19 13 19 5.01 19 5.01 19 5 5 5 5 5zM3 5.01C3 3.9 3.89 3 5 3h14.01A2 2 0 0 1 21 5.01v7.98A2 2 0 0 1 19.01 15H5a2 2 0 0 1-2-2.01zM19 19c0 1.11-.9 2-2.01 2H7.01A2.01 2.01 0 0 1 5 19zm1-3a2 2 0 0 1-1.99 2H5.99A2 2 0 0 1 4 16z"
+                        fill-rule="nonzero"
+                      />
+                      <path
+                        d="M10.674 11.331c.36.36.941.36 1.3 0l2.758-2.763a.92.92 0 0 0-1.301-1.298l-2.108 2.11-.755-.754a.92.92 0 0 0-1.3 1.3z"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  My Issues
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            role="presentation"
           >
-            <path
-              d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-            />
-          </svg>
-        </button>
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M18 15.2V11c0-1.7-1.3-3-3-3h-1.9l.8-.8c.3-.3.3-.8 0-1.1s-.8-.3-1.1 0l-2.3 2.3c-.3.4-.3.9 0 1.2l2.3 2.3c.2.2.3.2.5.2q.3 0 .6-.3c.3-.3.3-.8 0-1.1l-.7-.7H15c.6 0 1 .4 1 1v4.2c-1.2.4-2 1.5-2 2.8 0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.3-.8-2.4-2-2.8M17 19c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1M7 3C5.4 3 4 4.3 4 6c0 1.3.8 2.4 2 2.8V20c0 .6.4 1 1 1s1-.4 1-1V8.8c1.2-.4 2-1.5 2-2.8 0-1.7-1.3-3-3-3m0 4c-.5 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  My Pull Requests
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
       <div
         class="px-3 py-4"
       >
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-2"
-          title="Quit Atlasify"
-          type="button"
+        <div
+          role="presentation"
         >
-          <svg
-            aria-label="Quit Atlasify"
-            class="octicon octicon-x-circle"
-            fill="currentColor"
-            focusable="false"
-            height="16"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="16"
+          <button
+            class=" css-1l7n0sn"
+            type="button"
           >
-            <path
-              d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"
-            />
-          </svg>
-        </button>
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1afrefi"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      r="10"
+                    />
+                    <path
+                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                      fill="inherit"
+                    />
+                    <path
+                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                      fill="inherit"
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Quit Atlasify
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>,
@@ -398,97 +578,187 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               </svg>
             </span>
           </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="2 Unread Notifications"
-            type="button"
+          <div
+            class="css-2k1qcz"
           >
-            <svg
-              aria-label="2 Unread Notifications"
-              class="octicon octicon-bell"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+            <div
+              role="presentation"
             >
-              <path
-                d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="My Issues"
-            type="button"
-          >
-            <svg
-              aria-label="My Issues"
-              class="octicon octicon-issue-opened"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    2 Unread Notifications
+                  </span>
+                </span>
+              </button>
+              <span
+                class="css-1l63z09"
+              >
+                2
+              </span>
+            </div>
+            <div
+              role="presentation"
             >
-              <path
-                d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-              />
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              />
-            </svg>
-          </button>
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-            title="My Pull Requests"
-            type="button"
-          >
-            <svg
-              aria-label="My Pull Requests"
-              class="octicon octicon-git-pull-request"
-              fill="currentColor"
-              focusable="false"
-              height="12"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="12"
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M5 12.99C5 13 19.01 13 19.01 13 19 13 19 5.01 19 5.01 19 5 5 5 5 5zM3 5.01C3 3.9 3.89 3 5 3h14.01A2 2 0 0 1 21 5.01v7.98A2 2 0 0 1 19.01 15H5a2 2 0 0 1-2-2.01zM19 19c0 1.11-.9 2-2.01 2H7.01A2.01 2.01 0 0 1 5 19zm1-3a2 2 0 0 1-1.99 2H5.99A2 2 0 0 1 4 16z"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M10.674 11.331c.36.36.941.36 1.3 0l2.758-2.763a.92.92 0 0 0-1.301-1.298l-2.108 2.11-.755-.754a.92.92 0 0 0-1.3 1.3z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My Issues
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <path
-                d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-              />
-            </svg>
-          </button>
+              <button
+                class=" css-1cbe6t"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M18 15.2V11c0-1.7-1.3-3-3-3h-1.9l.8-.8c.3-.3.3-.8 0-1.1s-.8-.3-1.1 0l-2.3 2.3c-.3.4-.3.9 0 1.2l2.3 2.3c.2.2.3.2.5.2q.3 0 .6-.3c.3-.3.3-.8 0-1.1l-.7-.7H15c.6 0 1 .4 1 1v4.2c-1.2.4-2 1.5-2 2.8 0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.3-.8-2.4-2-2.8M17 19c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1M7 3C5.4 3 4 4.3 4 6c0 1.3.8 2.4 2 2.8V20c0 .6.4 1 1 1s1-.4 1-1V8.8c1.2-.4 2-1.5 2-2.8 0-1.7-1.3-3-3-3m0 4c-.5 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My Pull Requests
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
         <div
           class="px-3 py-4"
         >
-          <button
-            class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-2"
-            title="Quit Atlasify"
-            type="button"
+          <div
+            role="presentation"
           >
-            <svg
-              aria-label="Quit Atlasify"
-              class="octicon octicon-x-circle"
-              fill="currentColor"
-              focusable="false"
-              height="16"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 16 16"
-              width="16"
+            <button
+              class=" css-1l7n0sn"
+              type="button"
             >
-              <path
-                d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"
-              />
-            </svg>
-          </button>
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1afrefi"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        r="10"
+                      />
+                      <path
+                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                        fill="inherit"
+                      />
+                      <path
+                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                        fill="inherit"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Quit Atlasify
+                </span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -542,97 +812,187 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             </svg>
           </span>
         </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="2 Unread Notifications"
-          type="button"
+        <div
+          class="css-2k1qcz"
         >
-          <svg
-            aria-label="2 Unread Notifications"
-            class="octicon octicon-bell"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+          <div
+            role="presentation"
           >
-            <path
-              d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="My Issues"
-          type="button"
-        >
-          <svg
-            aria-label="My Issues"
-            class="octicon octicon-issue-opened"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  2 Unread Notifications
+                </span>
+              </span>
+            </button>
+            <span
+              class="css-1l63z09"
+            >
+              2
+            </span>
+          </div>
+          <div
+            role="presentation"
           >
-            <path
-              d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
-            />
-            <path
-              d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-1"
-          title="My Pull Requests"
-          type="button"
-        >
-          <svg
-            aria-label="My Pull Requests"
-            class="octicon octicon-git-pull-request"
-            fill="currentColor"
-            focusable="false"
-            height="12"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="12"
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    >
+                      <path
+                        d="M5 12.99C5 13 19.01 13 19.01 13 19 13 19 5.01 19 5.01 19 5 5 5 5 5zM3 5.01C3 3.9 3.89 3 5 3h14.01A2 2 0 0 1 21 5.01v7.98A2 2 0 0 1 19.01 15H5a2 2 0 0 1-2-2.01zM19 19c0 1.11-.9 2-2.01 2H7.01A2.01 2.01 0 0 1 5 19zm1-3a2 2 0 0 1-1.99 2H5.99A2 2 0 0 1 4 16z"
+                        fill-rule="nonzero"
+                      />
+                      <path
+                        d="M10.674 11.331c.36.36.941.36 1.3 0l2.758-2.763a.92.92 0 0 0-1.301-1.298l-2.108 2.11-.755-.754a.92.92 0 0 0-1.3 1.3z"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  My Issues
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            role="presentation"
           >
-            <path
-              d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"
-            />
-          </svg>
-        </button>
+            <button
+              class=" css-1cbe6t"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M18 15.2V11c0-1.7-1.3-3-3-3h-1.9l.8-.8c.3-.3.3-.8 0-1.1s-.8-.3-1.1 0l-2.3 2.3c-.3.4-.3.9 0 1.2l2.3 2.3c.2.2.3.2.5.2q.3 0 .6-.3c.3-.3.3-.8 0-1.1l-.7-.7H15c.6 0 1 .4 1 1v4.2c-1.2.4-2 1.5-2 2.8 0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.3-.8-2.4-2-2.8M17 19c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1M7 3C5.4 3 4 4.3 4 6c0 1.3.8 2.4 2 2.8V20c0 .6.4 1 1 1s1-.4 1-1V8.8c1.2-.4 2-1.5 2-2.8 0-1.7-1.3-3-3-3m0 4c-.5 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  My Pull Requests
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
       <div
         class="px-3 py-4"
       >
-        <button
-          class="flex justify-evenly items-center w-full my-1 cursor-pointer text-xs font-extrabold focus:outline-none disabled:text-gray-500 disabled:cursor-default text-white hover:text-gray-500 py-2"
-          title="Quit Atlasify"
-          type="button"
+        <div
+          role="presentation"
         >
-          <svg
-            aria-label="Quit Atlasify"
-            class="octicon octicon-x-circle"
-            fill="currentColor"
-            focusable="false"
-            height="16"
-            role="img"
-            style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-            viewBox="0 0 16 16"
-            width="16"
+          <button
+            class=" css-1l7n0sn"
+            type="button"
           >
-            <path
-              d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"
-            />
-          </svg>
-        </button>
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1afrefi"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      r="10"
+                    />
+                    <path
+                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                      fill="inherit"
+                    />
+                    <path
+                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                      fill="inherit"
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Quit Atlasify
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>,

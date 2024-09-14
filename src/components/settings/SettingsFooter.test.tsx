@@ -48,7 +48,9 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
         );
       });
 
-      expect(screen.getByLabelText('app-version')).toMatchSnapshot();
+      expect(
+        screen.getByTitle('View Atlasify release notes'),
+      ).toMatchSnapshot();
     });
 
     it('should show development app version', async () => {
@@ -72,7 +74,9 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
         );
       });
 
-      expect(screen.getByLabelText('app-version')).toMatchSnapshot();
+      expect(
+        screen.getByTitle('View Atlasify release notes'),
+      ).toMatchSnapshot();
     });
   });
 
@@ -100,7 +104,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('View release notes'));
+    fireEvent.click(screen.getByTitle('View Atlasify release notes'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
