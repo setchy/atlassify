@@ -1,17 +1,25 @@
-import { BookIcon, KeyIcon, SignInIcon } from '@primer/octicons-react';
+import { KeyIcon } from '@primer/octicons-react';
 import log from 'electron-log';
 import { type FC, useCallback, useContext, useState } from 'react';
+
+import Button from '@atlaskit/button/new';
+import SignInIcon from '@atlaskit/icon/glyph/sign-in';
+import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
+import Tooltip from '@atlaskit/tooltip';
+import LockIcon from '@atlaskit/icon/glyph/lock';
+
 import { Form, type FormRenderProps } from 'react-final-form';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
-import { Button } from '../components/buttons/Button';
 import { FieldInput } from '../components/fields/FieldInput';
 import { AppContext } from '../context/App';
-import { Size, type Token, type Username } from '../types';
+import type { Token, Username } from '../types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import { isValidAPIToken } from '../utils/auth/utils';
-import { Constants } from '../utils/constants';
-
+import {
+  openAtlassianCreateToken,
+  openAtlassianSecurityDocs,
+} from '../utils/links';
 interface IValues {
   username: Username;
   token?: Token;
@@ -53,31 +61,28 @@ export const LoginWithAPIToken: FC = () => {
           name="username"
           label="Username"
           placeholder="Your Atlassian username"
-          helpText={
-            <div>
-              <div className="mt-3">
-                <Button
-                  label="Create API token"
-                  disabled={!values.hostname}
-                  icon={{ icon: KeyIcon, size: Size.XSMALL }}
-                  url={Constants.ATLASSIAN_URLS.WEB.SECURITY_TOKENS}
-                  size="xs"
-                >
-                  Create an API Token
-                </Button>
-                <span className="mx-1">
-                  for your Atlassian account and then paste your{' '}
-                  <span className="italic">API Token</span> below.
-                </span>
-              </div>
-            </div>
-          }
         />
 
         <FieldInput
           name="token"
           label="API Token"
           placeholder="The 24 characters API Token"
+          helpText={
+            <div>
+              <div className="mt-3">
+                <Tooltip content="Create API Token">
+                  <Button
+                    appearance="discovery"
+                    spacing="compact"
+                    iconBefore={LockIcon}
+                    onClick={() => openAtlassianCreateToken()}
+                  >
+                    Create API Token
+                  </Button>
+                </Tooltip>
+              </div>
+            </div>
+          }
         />
 
         {!isValidToken && (
@@ -86,21 +91,22 @@ export const LoginWithAPIToken: FC = () => {
           </div>
         )}
 
-        <div className="flex items-end justify-between mt-2">
+        <div className="mt-10 flex items-end justify-between">
+          <Tooltip content="See Atlassian documentation">
+            <Button
+              appearance="subtle"
+              iconBefore={ShortcutIcon}
+              onClick={() => openAtlassianSecurityDocs()}
+            >
+              Docs
+            </Button>
+          </Tooltip>
+
           <Button
-            label="Atlassian Docs"
-            icon={{ icon: BookIcon, size: Size.XSMALL }}
-            size="xs"
-            url={Constants.ATLASSIAN_URLS.DOCS.API_TOKEN_URL}
-          >
-            Docs
-          </Button>
-          <Button
-            label="Login"
-            className="px-4 py-2 !text-sm"
-            icon={{ icon: SignInIcon, size: Size.MEDIUM }}
-            disabled={submitting || pristine}
             type="submit"
+            iconBefore={SignInIcon}
+            appearance="primary"
+            isDisabled={submitting || pristine}
           >
             Login
           </Button>

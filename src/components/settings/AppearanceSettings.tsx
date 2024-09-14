@@ -1,11 +1,16 @@
 import { PaintbrushIcon } from '@primer/octicons-react';
 import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
+
+import { IconButton } from '@atlaskit/button/new';
+import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
+import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
+import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
+
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
-import { Button } from '../buttons/Button';
 import { RadioGroup } from '../fields/RadioGroup';
 import { Legend } from './Legend';
 
@@ -62,40 +67,36 @@ export const AppearanceSettings: FC = () => {
         >
           Zoom:
         </label>
-        <Button
+        <IconButton
+          icon={MediaServicesZoomOutIcon}
           label="Zoom Out"
+          shape="circle"
+          spacing="compact"
           onClick={() =>
             zoomPercentage > 0 &&
             webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
           }
-          className="rounded-r-none"
-          size="inline"
-        >
-          -
-        </Button>
+        />
         <span className="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200">
           {zoomPercentage.toFixed(0)}%
         </span>
-        <Button
+        <IconButton
+          icon={MediaServicesZoomInIcon}
           label="Zoom In"
+          shape="circle"
+          spacing="compact"
           onClick={() =>
             zoomPercentage < 120 &&
             webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
           }
-          className="rounded-none"
-          size="inline"
-        >
-          +
-        </Button>
-        <Button
+        />
+        <IconButton
+          icon={SelectClearIcon}
           label="Reset Zoom"
+          shape="circle"
+          spacing="compact"
           onClick={() => webFrame.setZoomLevel(0)}
-          variant="destructive"
-          className="rounded-l-none"
-          size="inline"
-        >
-          X
-        </Button>
+        />
       </div>
     </fieldset>
   );

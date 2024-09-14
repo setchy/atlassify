@@ -50,12 +50,7 @@
   "build": {
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
-    "files": [
-      "build/**/*",
-      "assets/**/*",
-      "src/electron/*",
-      "LICENSE"
-    ],
+    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -64,9 +59,7 @@
       "gatekeeperAssess": false,
       "entitlements": "./entitlements/entitlements.mac.plist",
       "entitlementsInherit": "./entitlements/entitlements.mac.plist",
-      "publish": [
-        "github"
-      ],
+      "publish": ["github"],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -86,11 +79,7 @@
       "oneClick": false
     },
     "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm"
-      ],
+      "target": ["AppImage", "deb", "rpm"],
       "category": "Development",
       "maintainer": "Adam Setch"
     },
@@ -110,7 +99,6 @@
     "@electron/remote": "2.1.2",
     "@primer/octicons-react": "19.11.0",
     "axios": "1.7.7",
-    "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "date-fns": "3.6.0",
     "electron-log": "5.2.0",

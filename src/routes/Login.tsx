@@ -1,9 +1,8 @@
 import { type FC, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/buttons/Button';
-import { AppContext } from '../context/App';
-import { showWindow } from '../utils/comms';
 
+import Button from '@atlaskit/button/new';
+import Tooltip from '@atlaskit/tooltip';
 import NotificationAllIcon from '@atlaskit/icon/glyph/notification-all';
 import {
   AtlassianIcon,
@@ -11,7 +10,12 @@ import {
   CompassIcon,
   ConfluenceIcon,
   JiraIcon,
+  JiraProductDiscoveryIcon,
+  JiraServiceManagementIcon,
 } from '@atlaskit/logo';
+
+import { AppContext } from '../context/App';
+import { showWindow } from '../utils/comms';
 
 export const LoginRoute: FC = () => {
   const navigate = useNavigate();
@@ -40,16 +44,23 @@ export const LoginRoute: FC = () => {
           <ConfluenceIcon size="small" appearance="neutral" />
           <CompassIcon size="small" appearance="neutral" />
           <JiraIcon size="small" appearance="neutral" />
+          <JiraProductDiscoveryIcon size="small" appearance="neutral" />
+          <JiraServiceManagementIcon size="small" appearance="neutral" />
         </div>
       </div>
-      <Button
-        name="Atlassian"
-        label="Login with Atlassian"
-        className="mt-2 py-2"
-        onClick={() => navigate('/login-api-token')}
-      >
-        <AtlassianIcon appearance="neutral" size="small" /> Login
-      </Button>
+
+      <Tooltip content="Login with Atlassian">
+        <Button
+          appearance="primary"
+          spacing="default"
+          iconBefore={(iconProps) => (
+            <AtlassianIcon {...iconProps} size="small" />
+          )}
+          onClick={() => navigate('/login-api-token')}
+        >
+          Login
+        </Button>
+      </Tooltip>
     </div>
   );
 };

@@ -13,6 +13,16 @@ export function openAtlasifyReleaseNotes(version: string) {
   );
 }
 
+export function openAtlassianSecurityDocs() {
+  const url = new URL(Constants.ATLASSIAN_URLS.DOCS.API_TOKEN_URL);
+  openExternalLink(url.toString() as Link);
+}
+
+export function openAtlassianCreateToken() {
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.SECURITY_TOKENS);
+  openExternalLink(url.toString() as Link);
+}
+
 export function openMyNotifications() {
   const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
   openExternalLink(url.toString() as Link);
