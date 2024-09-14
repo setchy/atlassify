@@ -2,7 +2,6 @@ import type { Config } from 'jest';
 
 const config: Config = {
   preset: 'ts-jest',
-  setupFiles: ['<rootDir>/src/__helpers__/setupEnvVars.js'],
   testEnvironment: 'jsdom',
   collectCoverage: true,
   moduleNameMapper: {

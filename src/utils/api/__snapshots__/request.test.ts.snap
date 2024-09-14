@@ -1,26 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`apiRequestAuth should make an authenticated request with the correct parameters 1`] = `
-{
-  "Accept": "application/json",
-  "Authorization": "token yourAuthToken",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
-}
-`;
-
-exports[`apiRequestAuth should make an authenticated request with the correct parameters and default data 1`] = `
-{
-  "Accept": "application/json",
-  "Authorization": "token yourAuthToken",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
-}
-`;
-
 exports[`utils/api/request.ts should make a request with the correct parameters 1`] = `
 {
   "Accept": "application/json",
+  "Authorization": "Basic YXRsYXM6dG9rZW4tMTIzLTQ1Ng==",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",
 }
@@ -29,6 +12,7 @@ exports[`utils/api/request.ts should make a request with the correct parameters 
 exports[`utils/api/request.ts should make a request with the correct parameters and default data 1`] = `
 {
   "Accept": "application/json",
+  "Authorization": "Basic YXRsYXM6dG9rZW4tMTIzLTQ1Ng==",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",
 }

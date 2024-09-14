@@ -206,7 +206,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="showAccountHeader"
             >
-              Show account header
+              <span
+                class="capitalize"
+              >
+                Show account header
+              </span>
             </label>
           </div>
         </div>
@@ -310,7 +314,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="delayNotificationState"
             >
-              Delay notification state
+              <span
+                class="capitalize"
+              >
+                Delay notification state
+              </span>
               <span
                 aria-label="tooltip-delayNotificationState"
                 class="relative"
@@ -435,7 +443,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="keyboardShortcutEnabled"
             >
-              Enable keyboard shortcut
+              <span
+                class="capitalize"
+              >
+                Enable keyboard shortcut
+              </span>
               <span
                 aria-label="tooltip-keyboardShortcutEnabled"
                 class="relative"
@@ -478,7 +490,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="showNotificationsCountInTray"
             >
-              Show notifications count in tray
+              <span
+                class="capitalize"
+              >
+                Show notifications count in tray
+              </span>
             </label>
           </div>
         </div>
@@ -502,7 +518,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="showNotifications"
             >
-              Show system notifications
+              <span
+                class="capitalize"
+              >
+                Show system notifications
+              </span>
             </label>
           </div>
         </div>
@@ -526,7 +546,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="playSound"
             >
-              Play sound
+              <span
+                class="capitalize"
+              >
+                Play sound
+              </span>
             </label>
           </div>
         </div>
@@ -549,7 +573,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="useAlternateIdleIcon"
             >
-              Use alternate idle icon
+              <span
+                class="capitalize"
+              >
+                Use alternate idle icon
+              </span>
               <span
                 aria-label="tooltip-useAlternateIdleIcon"
                 class="relative"
@@ -592,7 +620,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="openAtStartUp"
             >
-              Open at startup
+              <span
+                class="capitalize"
+              >
+                Open at startup
+              </span>
             </label>
           </div>
         </div>

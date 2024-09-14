@@ -24,7 +24,11 @@ exports[`components/fields/Checkbox.tsx should render 1`] = `
               class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
               for="appearance"
             >
-              Appearance
+              <span
+                class="capitalize"
+              >
+                Appearance
+              </span>
             </label>
           </div>
         </div>
@@ -56,7 +60,11 @@ exports[`components/fields/Checkbox.tsx should render 1`] = `
             class="font-medium text-gray-700 dark:text-gray-200 cursor-pointer"
             for="appearance"
           >
-            Appearance
+            <span
+              class="capitalize"
+            >
+              Appearance
+            </span>
           </label>
         </div>
       </div>
