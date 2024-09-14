@@ -87,7 +87,7 @@ export enum Theme {
 
 export enum OpenPreference {
   FOREGROUND = 'FOREGROUND',
-  BACKGROUND = 'FOREGROUND',
+  BACKGROUND = 'BACKGROUND',
 }
 
 export enum GroupBy {
