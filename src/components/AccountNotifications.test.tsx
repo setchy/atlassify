@@ -30,7 +30,7 @@ describe('components/AccountNotifications.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.REPOSITORY } }}
+        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
       >
         <AccountNotifications {...props} />
       </AppContext.Provider>,

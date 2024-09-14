@@ -1,34 +1,27 @@
-import {
-  ChevronDownIcon,
-  ChevronLeftIcon,
-  ChevronUpIcon,
-  GitPullRequestIcon,
-  IssueOpenedIcon,
-} from '@primer/octicons-react';
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
+
+import Toggle from '@atlaskit/toggle';
+import Tooltip from '@atlaskit/tooltip';
+import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
+import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
+import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import { IconButton } from '@atlaskit/button/new';
+import Avatar from '@atlaskit/avatar';
+
 import { AppContext } from '../context/App';
 import {
   type Account,
   type AtlasifyError,
   type AtlasifyNotification,
   Opacity,
-  Size,
 } from '../types';
 import { cn } from '../utils/cn';
-import {
-  openAccountProfile,
-  openMyIssues,
-  openMyPullRequests,
-} from '../utils/links';
+import { openAccountProfile } from '../utils/links';
 import { AllRead } from './AllRead';
 import { HoverGroup } from './HoverGroup';
 import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
-import { RepositoryNotifications } from './RepositoryNotifications';
-import { InteractionButton } from './buttons/InteractionButton';
-import { AvatarIcon } from './icons/AvatarIcon';
-import { PlatformIcon } from './icons/PlatformIcon';
-
+import { ProductNotifications } from './ProductNotifications';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
@@ -39,6 +32,8 @@ interface IAccountNotifications {
 export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
+  const [showOnlyUnread, setShowOnlyUnread] = useState(false);
+
   const { account, showAccountHeader, notifications } = props;
 
   const { settings } = useContext(AppContext);
@@ -46,7 +41,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   const groupedNotifications = Object.values(
     notifications.reduce(
       (acc: { [key: string]: AtlasifyNotification[] }, notification) => {
-        const key = notification.repository.full_name;
+        const key = notification.product.name;
         if (!acc[key]) acc[key] = [];
         acc[key].push(notification);
         return acc;
@@ -81,7 +76,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         ? 'Hide account notifications'
         : 'Show account notifications';
 
-  const groupByRepository = settings.groupBy === 'REPOSITORY';
+  const groupByProduct = settings.groupBy === 'PRODUCT';
 
   return (
     <>
@@ -99,7 +94,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           <div className="flex">
             <button
               type="button"
-              title="Open Profile"
               onClick={(event: MouseEvent<HTMLElement>) => {
                 // Don't trigger onClick of parent element.
                 event.stopPropagation();
@@ -107,42 +101,36 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               }}
             >
               <div className="flex">
-                <AvatarIcon
-                  title={account.user.login}
-                  url={account.user.avatar}
-                  size={Size.SMALL}
-                />
-                <span className="ml-2">@{account.user.login}</span>
+                <Tooltip content={account.user.name}>
+                  <Avatar
+                    name={account.user.name}
+                    src={account.user.avatar}
+                    size="xsmall"
+                    appearance="circle"
+                  />
+                </Tooltip>
+                <span className="ml-2">{account.user.login}</span>
               </div>
             </button>
           </div>
+
+          <Tooltip content={showOnlyUnread ? 'Show all' : 'Only show unread'}>
+            <Toggle
+              id="toggle-default"
+              size="regular"
+              label="Show unread"
+              onChange={() => setShowOnlyUnread((prev) => !prev)}
+            />
+          </Tooltip>
+
           <HoverGroup>
-            <PlatformIcon type={account.platform} size={Size.SMALL} />
-            <InteractionButton
-              title="My Issues"
-              icon={IssueOpenedIcon}
-              size={Size.SMALL}
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openMyIssues();
-              }}
-            />
-            <InteractionButton
-              title="My Pull Requests"
-              icon={GitPullRequestIcon}
-              size={Size.SMALL}
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openMyPullRequests();
-              }}
-            />
-            <InteractionButton
-              title={toggleAccountNotificationsLabel}
+            <IconButton
               icon={ChevronIcon}
-              size={Size.SMALL}
-              onClick={toggleAccountNotifications}
+              label={toggleAccountNotificationsLabel}
+              isTooltipDisabled={false}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
             />
           </HoverGroup>
         </div>
@@ -152,18 +140,17 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         <>
           {props.error && <Oops error={props.error} />}
           {!hasNotifications && !props.error && <AllRead />}
-          {groupByRepository
-            ? Object.values(groupedNotifications).map((repoNotifications) => {
-                const repoSlug = repoNotifications[0].repository.full_name;
-
-                return (
-                  <RepositoryNotifications
-                    key={repoSlug}
-                    repoName={repoSlug}
-                    repoNotifications={repoNotifications}
-                  />
-                );
-              })
+          {groupByProduct
+            ? Object.values(groupedNotifications).map(
+                (productNotifications) => {
+                  return (
+                    <ProductNotifications
+                      key={productNotifications[0].product.name}
+                      productNotifications={productNotifications}
+                    />
+                  );
+                },
+              )
             : notifications.map((notification) => (
                 <NotificationRow
                   key={notification.id}

@@ -1,10 +1,9 @@
 import type { AxiosPromise } from 'axios';
 import gql from 'graphql-tag';
 import { print } from 'graphql/language/printer';
-import type { Account, Link, SettingsState, Token } from '../../types';
+import type { Account, SettingsState } from '../../types';
 import { apiRequestAuth } from './request';
 import type { GraphQLResponse, MyNotifications, MyUserDetails } from './types';
-import { getAPIUrl } from './utils';
 
 /**
  * Get the authenticated user
@@ -12,11 +11,8 @@ import { getAPIUrl } from './utils';
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
 export function getAuthenticatedUser(
-  username: string,
-  token: Token,
+  account: Account,
 ): AxiosPromise<GraphQLResponse<MyUserDetails>> {
-  const url = getAPIUrl();
-
   const QUERY = gql`
       query me {
       me {
@@ -29,7 +25,7 @@ export function getAuthenticatedUser(
     }
   `;
 
-  return apiRequestAuth(url.toString() as Link, 'POST', username, token, {
+  return apiRequestAuth(account, {
     query: print(QUERY),
     variables: {},
   });
@@ -44,24 +40,22 @@ export function getNotificationsForUser(
   account: Account,
   _settings: SettingsState,
 ): AxiosPromise<GraphQLResponse<MyNotifications>> {
-  const url = getAPIUrl();
-
   const QUERY = gql`
     query myNotifications
-      # (
-      #   # $readState: InfluentsNotificationReadState, 
+      (
+        $readState: InfluentsNotificationReadState, 
       #   # $product: String
-      # ) 
+      ) 
       {
       notifications {
         unseenNotificationCount
         notificationFeed(
           flat: true, 
-          first: 1000,
-          # filter: {
-          #   # readStateFilter: $readState
+          first: 100,
+          filter: {
+            readStateFilter: $readState
           #   # productFilter: $product
-          # }
+          }
         ) {
           nodes {
             groupId
@@ -100,19 +94,13 @@ export function getNotificationsForUser(
     }
   `;
 
-  return apiRequestAuth(
-    url.toString() as Link,
-    'POST',
-    account.user.login,
-    account.token,
-    {
-      query: print(QUERY),
-      variables: {
-        // readState: 'unread',
-        // product: settings.product,
-      },
+  return apiRequestAuth(account, {
+    query: print(QUERY),
+    variables: {
+      readState: 'unread',
+      // product: settings.product,
     },
-  );
+  });
 }
 
 /**
@@ -124,8 +112,6 @@ export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
 ): AxiosPromise<void> {
-  const url = getAPIUrl();
-
   const MUTATION = gql`
     mutation markAsRead($notificationIDs: [String!]!) {
       notifications {
@@ -134,18 +120,12 @@ export function markNotificationsAsRead(
     }
   `;
 
-  return apiRequestAuth(
-    url.toString() as Link,
-    'POST',
-    account.user.login,
-    account.token,
-    {
-      query: print(MUTATION),
-      variables: {
-        notificationIDs: notificationIds,
-      },
+  return apiRequestAuth(account, {
+    query: print(MUTATION),
+    variables: {
+      notificationIDs: notificationIds,
     },
-  );
+  });
 }
 
 /**
@@ -157,8 +137,6 @@ export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
 ): AxiosPromise<void> {
-  const url = getAPIUrl();
-
   const MUTATION = gql`
     mutation markAsUnread($notificationIDs: [String!]!) {
       notifications {
@@ -167,16 +145,10 @@ export function markNotificationsAsUnread(
     }
   `;
 
-  return apiRequestAuth(
-    url.toString() as Link,
-    'POST',
-    account.user.login,
-    account.token,
-    {
-      query: print(MUTATION),
-      variables: {
-        notificationIDs: notificationIds,
-      },
+  return apiRequestAuth(account, {
+    query: print(MUTATION),
+    variables: {
+      notificationIDs: notificationIds,
     },
-  );
+  });
 }

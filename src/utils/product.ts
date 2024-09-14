@@ -10,16 +10,23 @@ import {
   CompassIcon,
   ConfluenceIcon,
   JiraIcon,
+  JiraProductDiscoveryIcon,
+  JiraServiceManagementIcon,
 } from '@atlaskit/logo';
 
 export function getAtlassianProduct(
   notification: AtlassianNotification,
 ): AtlassianProduct {
-  const productName = notification.headNotification.analyticsAttributes.filter(
-    (attribute) => attribute.key === 'registrationProduct',
+  const registrationProduct =
+    notification.headNotification.analyticsAttributes.filter(
+      (attribute) => attribute.key === 'registrationProduct',
+    )[0].value;
+
+  const subProduct = notification.headNotification.analyticsAttributes.filter(
+    (attribute) => attribute.key === 'subProduct',
   )[0].value;
 
-  switch (productName) {
+  switch (registrationProduct) {
     case 'bitbucket':
       return PRODUCTS.bitbucket;
     case 'compass':
@@ -28,8 +35,14 @@ export function getAtlassianProduct(
       return PRODUCTS.confluence;
 
     case 'jira':
-      return PRODUCTS.jira;
-
+      switch (subProduct) {
+        case 'serviceDesk':
+          return PRODUCTS['jira service management'];
+        case 'software':
+          return PRODUCTS.jira;
+        default:
+          return PRODUCTS['jira product discovery'];
+      }
     default:
       return PRODUCTS.unknown;
   }
@@ -55,6 +68,16 @@ export const PRODUCTS: Record<Product, AtlassianProduct> = {
     name: 'jira',
     description: 'Jira description',
     icon: JiraIcon,
+  },
+  'jira product discovery': {
+    name: 'jira product discovery',
+    description: 'Jira product discovery description',
+    icon: JiraProductDiscoveryIcon,
+  },
+  'jira service management': {
+    name: 'jira service management',
+    description: 'Jira service management description',
+    icon: JiraServiceManagementIcon,
   },
   unknown: {
     name: 'unknown',

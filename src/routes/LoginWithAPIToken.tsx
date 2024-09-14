@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 import { Button } from '../components/buttons/Button';
 import { FieldInput } from '../components/fields/FieldInput';
 import { AppContext } from '../context/App';
-import { type Organization, Size, type Token, type Username } from '../types';
+import { Size, type Token, type Username } from '../types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import { isValidAPIToken } from '../utils/auth/utils';
 import { Constants } from '../utils/constants';
@@ -60,7 +60,7 @@ export const LoginWithAPIToken: FC = () => {
                   label="Create API token"
                   disabled={!values.hostname}
                   icon={{ icon: KeyIcon, size: Size.XSMALL }}
-                  url={Constants.ATLASSIAN_WEB.SECURITY_TOKENS}
+                  url={Constants.ATLASSIAN_URLS.WEB.SECURITY_TOKENS}
                   size="xs"
                 >
                   Create an API Token
@@ -91,7 +91,7 @@ export const LoginWithAPIToken: FC = () => {
             label="Atlassian Docs"
             icon={{ icon: BookIcon, size: Size.XSMALL }}
             size="xs"
-            url={Constants.ATLASSIAN_DOCS.API_TOKEN_URL}
+            url={Constants.ATLASSIAN_URLS.DOCS.API_TOKEN_URL}
           >
             Docs
           </Button>
@@ -132,7 +132,6 @@ export const LoginWithAPIToken: FC = () => {
           initialValues={{
             username: '' as Username,
             token: '' as Token,
-            workspace: '' as Organization,
           }}
           onSubmit={login}
           validate={validate}

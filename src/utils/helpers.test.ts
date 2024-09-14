@@ -1,28 +1,10 @@
 import { defaultSettings } from '../context/App';
 import type { SettingsState } from '../types';
 import { mockSingleNotification } from './api/__mocks__/response-mocks';
-import {
-  formatForDisplay,
-  formatNotificationUpdatedAt,
-  getFilterCount,
-} from './helpers';
+import { formatNotificationUpdatedAt, getFilterCount } from './helpers';
 
 describe('utils/helpers.ts', () => {
   describe('formatting', () => {
-    it('formatForDisplay', () => {
-      expect(formatForDisplay(null)).toBe('');
-      expect(formatForDisplay([])).toBe('');
-      expect(formatForDisplay(['open', 'PullRequest'])).toBe(
-        'Open Pull Request',
-      );
-      expect(formatForDisplay(['OUTDATED', 'Discussion'])).toBe(
-        'Outdated Discussion',
-      );
-      expect(formatForDisplay(['not_planned', 'Issue'])).toBe(
-        'Not Planned Issue',
-      );
-    });
-
     describe('formatNotificationUpdatedAt', () => {
       it('should use updated_at if last_read_at is null', () => {
         const notification = {

@@ -2,19 +2,11 @@ import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 import { defaultSettings } from '../context/App';
 import type { AtlasifyNotification, SettingsState } from '../types';
 
-export function formatForDisplay(text: string[]): string {
-  if (!text) {
-    return '';
-  }
-
-  return text
-    .join(' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2') // Add space between lowercase character followed by an uppercase character
-    .replace(/_/g, ' ') // Replace underscores with spaces
-    .replace(/\w+/g, (word) => {
-      // Convert to proper case (capitalize first letter of each word)
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
+export function formatProperCase(text: string) {
+  return text.replace(/\w+/g, (word) => {
+    // Convert to proper case (capitalize first letter of each word)
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
 }
 
 export function formatNotificationUpdatedAt(

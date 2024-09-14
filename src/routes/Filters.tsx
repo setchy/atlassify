@@ -14,6 +14,7 @@ import {
   getReadStateDetails,
 } from '../utils/filters';
 import { PRODUCTS, getProductDetails } from '../utils/product';
+import { formatProperCase } from '../utils/helpers';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);
@@ -81,7 +82,7 @@ export const FiltersRoute: FC = () => {
               <Checkbox
                 key={category}
                 name={category}
-                label={getCategoryDetails(category).name}
+                label={formatProperCase(getCategoryDetails(category).name)}
                 checked={shouldShowCategory(category)}
                 onChange={(evt) =>
                   updateCategoryFilter(category, evt.target.checked)
@@ -100,7 +101,7 @@ export const FiltersRoute: FC = () => {
               <Checkbox
                 key={readState}
                 name={readState}
-                label={getReadStateDetails(readState).name}
+                label={formatProperCase(getReadStateDetails(readState).name)}
                 checked={shouldShowReadState(readState)}
                 onChange={(evt) =>
                   updateReadStateFilter(readState, evt.target.checked)
@@ -117,17 +118,18 @@ export const FiltersRoute: FC = () => {
           <Legend icon={NoteIcon}>Products</Legend>
 
           {Object.keys(PRODUCTS).map((product: Product) => {
+            // TODO - add icon to checkbox
             return (
               <Checkbox
                 key={product}
                 name={product}
-                label={getProductDetails(product).name}
+                label={formatProperCase(getProductDetails(product).name)}
                 checked={shouldShowProduct(product)}
                 onChange={(evt) =>
                   updateProductFilter(product, evt.target.checked)
                 }
                 tooltip={<div>{getProductDetails(product).description}</div>}
-              />
+              /> 
             );
           })}
         </fieldset>

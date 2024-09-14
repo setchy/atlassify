@@ -46,8 +46,8 @@ describe('context/App.tsx', () => {
     const markNotificationReadMock = jest.fn();
     const markNotificationDoneMock = jest.fn();
     const unsubscribeNotificationMock = jest.fn();
-    const markRepoNotificationsReadMock = jest.fn();
-    const markRepoNotificationsDoneMock = jest.fn();
+    const markProductNotificationsReadMock = jest.fn();
+    const markProductNotificationsUnreadMock = jest.fn();
 
     const mockDefaultState = {
       auth: { accounts: [], enterpriseAccounts: [], token: null, user: null },
@@ -60,8 +60,8 @@ describe('context/App.tsx', () => {
         markNotificationRead: markNotificationReadMock,
         markNotificationDone: markNotificationDoneMock,
         unsubscribeNotification: unsubscribeNotificationMock,
-        markRepoNotificationsRead: markRepoNotificationsReadMock,
-        markRepoNotificationsDone: markRepoNotificationsDoneMock,
+        markProductNotificationsRead: markProductNotificationsReadMock,
+        markProductNotificationsUnread: markProductNotificationsUnreadMock,
       });
     });
 
@@ -142,14 +142,14 @@ describe('context/App.tsx', () => {
       );
     });
 
-    it('should call markRepoNotificationsRead', async () => {
+    it('should call markProductNotificationsRead', async () => {
       const TestComponent = () => {
-        const { markRepoNotificationsRead } = useContext(AppContext);
+        const { markProductNotificationsRead } = useContext(AppContext);
 
         return (
           <button
             type="button"
-            onClick={() => markRepoNotificationsRead(mockSingleNotification)}
+            onClick={() => markProductNotificationsRead(mockSingleNotification)}
           >
             Test Case
           </button>
@@ -160,8 +160,35 @@ describe('context/App.tsx', () => {
 
       fireEvent.click(getByText('Test Case'));
 
-      expect(markRepoNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markRepoNotificationsReadMock).toHaveBeenCalledWith(
+      expect(markProductNotificationsReadMock).toHaveBeenCalledTimes(1);
+      expect(markProductNotificationsReadMock).toHaveBeenCalledWith(
+        mockDefaultState,
+        mockSingleNotification,
+      );
+    });
+
+    it('should call markProductNotificationsUnread', async () => {
+      const TestComponent = () => {
+        const { markProductNotificationsUnread } = useContext(AppContext);
+
+        return (
+          <button
+            type="button"
+            onClick={() =>
+              markProductNotificationsUnread(mockSingleNotification)
+            }
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      fireEvent.click(getByText('Test Case'));
+
+      expect(markProductNotificationsUnreadMock).toHaveBeenCalledTimes(1);
+      expect(markProductNotificationsUnreadMock).toHaveBeenCalledWith(
         mockDefaultState,
         mockSingleNotification,
       );

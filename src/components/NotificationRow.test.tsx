@@ -52,7 +52,7 @@ describe('components/NotificationRow.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.REPOSITORY } }}
+        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
       >
         <NotificationRow {...props} />
       </AppContext.Provider>,

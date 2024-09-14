@@ -14,22 +14,29 @@ export function openAtlasifyReleaseNotes(version: string) {
 }
 
 export function openMyNotifications() {
-  const url = new URL(Constants.ATLASSIAN_WEB.MY_NOTIFICATIONS);
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
   openExternalLink(url.toString() as Link);
 }
 
 export function openMyIssues() {
-  const url = new URL(Constants.ATLASSIAN_WEB.MY_NOTIFICATIONS);
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
   openExternalLink(url.toString() as Link);
 }
 
 export function openMyPullRequests() {
-  const url = new URL(Constants.ATLASSIAN_WEB.MY_NOTIFICATIONS);
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
   openExternalLink(url.toString() as Link);
 }
 
 export function openAccountProfile(account: Account) {
-  const url = new URL(`https://team.atlassian.com/people/${account.user.id}`);
+  const url = new URL(
+    `${Constants.ATLASSIAN_URLS.WEB.PEOPLE}/${account.user.id}`,
+  );
+  openExternalLink(url.toString() as Link);
+}
+
+export function openManageProfileSecurity() {
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.PROFILE_SECURITY);
   openExternalLink(url.toString() as Link);
 }
 
@@ -37,6 +44,7 @@ export function openUserProfile(user: SubjectUser) {
   openExternalLink(user.html_url);
 }
 
+// TODO - REMOVE THIS
 export function openRepository(repository: Repository) {
   openExternalLink(repository.html_url);
 }

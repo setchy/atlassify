@@ -20,7 +20,7 @@ import type { Account } from '../types';
 import { getAccountUUID, refreshAccount } from '../utils/auth/utils';
 import { cn } from '../utils/cn';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
-import { openAccountProfile } from '../utils/links';
+import { openAccountProfile, openManageProfileSecurity } from '../utils/links';
 import { saveState } from '../utils/storage';
 
 export const AccountsRoute: FC = () => {
@@ -74,22 +74,24 @@ export const AccountsRoute: FC = () => {
                 <div className="text-xs">
                   <button
                     type="button"
-                    className="flex flex-1 gap-1 cursor-pointer align-middle"
-                    title="Open Host"
+                    className="flex flex-1 gap-11 cursor-pointer align-middle"
                   >
-                    <PersonIcon label="Username" size="small" />
-                    {account.user.login}
+                    <Tooltip content="Username">
+                      <PersonIcon label="Username" size="small" />
+                      {account.user.login}
+                    </Tooltip>
                   </button>
                 </div>
                 <div className="text-xs">
                   <button
                     type="button"
                     className="flex flex-1 gap-1 cursor-pointer align-middle"
-                    title="Open Developer Settings"
-                    // onClick={() => openDeveloperSettings(account)}
+                    onClick={() => openManageProfileSecurity()}
                   >
-                    <LockIcon label="Authentication method" size="small" />
-                    {account.method}
+                    <Tooltip content="Open profile security">
+                      <LockIcon label="Authentication method" size="small" />
+                      {account.method}
+                    </Tooltip>
                   </button>
                 </div>
               </div>
@@ -98,48 +100,55 @@ export const AccountsRoute: FC = () => {
                 <button
                   type="button"
                   className={cn(BUTTON_CLASS_NAME, 'px-0', 'cursor-default')}
-                  title="Primary account"
                   hidden={i !== 0}
                 >
-                  <StarFilledIcon
-                    label="Primary account"
-                    primaryColor="gold"
-                    size="medium"
-                  />
+                  <Tooltip content="Primary account">
+                    <StarFilledIcon
+                      label="Primary account"
+                      primaryColor="gold"
+                      size="medium"
+                    />
+                  </Tooltip>
                 </button>
+
                 <button
                   type="button"
                   className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  title="Set as primary account"
                   onClick={() => setAsPrimaryAccount(account)}
                   hidden={i === 0}
                 >
-                  <StarIcon label="Set as primary account" size="medium" />
+                  <Tooltip content="Set as primary account">
+                    <StarIcon label="Set as primary account" size="medium" />
+                  </Tooltip>
                 </button>
+
                 <button
                   type="button"
                   className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  title={`Refresh ${account.user.login}`}
                   onClick={async () => {
                     await refreshAccount(account);
                     navigate('/accounts', { replace: true });
                   }}
                 >
-                  <RefreshIcon
-                    label={`Refresh ${account.user.login}`}
-                    size="medium"
-                  />
+                  <Tooltip content={`Refresh ${account.user.login}`}>
+                    <RefreshIcon
+                      label={`Refresh ${account.user.login}`}
+                      size="medium"
+                    />
+                  </Tooltip>
                 </button>
+
                 <button
                   type="button"
                   className={cn(BUTTON_CLASS_NAME, 'px-0')}
-                  title={`Logout ${account.user.login}`}
                   onClick={() => logoutAccount(account)}
                 >
-                  <SignOutIcon
-                    label={`Logout ${account.user.login}`}
-                    size="medium"
-                  />
+                  <Tooltip content={`Logout ${account.user.login}`}>
+                    <SignOutIcon
+                      label={`Logout ${account.user.login}`}
+                      size="medium"
+                    />
+                  </Tooltip>
                 </button>
               </div>
             </div>

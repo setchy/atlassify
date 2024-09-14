@@ -21,8 +21,6 @@ export type Username = Branded<string, 'Username'>;
 
 export type Token = Branded<string, 'Token'>;
 
-export type Organization = Branded<string, 'Organization'>;
-
 export type Link = Branded<string, 'WebUrl'>;
 
 export type Status = 'loading' | 'success' | 'error';
@@ -57,6 +55,7 @@ interface AppearanceSettingsState {
 
 interface NotificationSettingsState {
   groupBy: GroupBy;
+  markAsReadOnOpen: boolean;
   delayNotificationState: boolean;
 }
 
@@ -94,7 +93,6 @@ export enum OpenPreference {
 
 export enum GroupBy {
   PRODUCT = 'PRODUCT',
-  REPOSITORY = 'REPOSITORY',
   DATE = 'DATE',
 }
 

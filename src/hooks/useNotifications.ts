@@ -12,7 +12,6 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
-import { getAccountUUID } from '../utils/auth/utils';
 import {
   getAllNotifications,
   setTrayIconColor,
@@ -33,11 +32,11 @@ interface NotificationsState {
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
-  markRepoNotificationsRead: (
+  markProductNotificationsRead: (
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
-  markRepoNotificationsDone: (
+  markProductNotificationsUnread: (
     state: AtlasifyState,
     notification: AtlasifyNotification,
   ) => Promise<void>;
@@ -126,7 +125,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markNotificationUnread = useCallback(
-    async (state: AtlasifyState, notification: AtlasifyNotification) => {
+    async (_state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
       try {
@@ -145,29 +144,7 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  const markNotificationDone = useCallback(
-    async (state: AtlasifyState, notification: AtlasifyNotification) => {
-      setStatus('loading');
-
-      try {
-        const updatedNotifications = removeNotification(
-          state.settings,
-          notification,
-          notifications,
-        );
-
-        setNotifications(updatedNotifications);
-        setTrayIconColor(updatedNotifications);
-      } catch (err) {
-        log.error('Error occurred while marking notification as done', err);
-      }
-
-      setStatus('success');
-    },
-    [notifications],
-  );
-
-  const markRepoNotificationsRead = useCallback(
+  const markProductNotificationsRead = useCallback(
     async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
@@ -199,32 +176,17 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  const markRepoNotificationsDone = useCallback(
+  const markProductNotificationsUnread = useCallback(
     async (state: AtlasifyState, notification: AtlasifyNotification) => {
       setStatus('loading');
 
-      const repoSlug = notification.repository.full_name;
+      // const repoSlug = notification.repository.full_name;
 
       try {
-        const accountIndex = notifications.findIndex(
-          (accountNotifications) =>
-            getAccountUUID(accountNotifications.account) ===
-            getAccountUUID(notification.account),
-        );
-
-        if (accountIndex !== -1) {
-          const notificationsToRemove = notifications[
-            accountIndex
-          ].notifications.filter(
-            (notification) => notification.repository.full_name === repoSlug,
-          );
-
-          await Promise.all(
-            notificationsToRemove.map((notification) =>
-              markNotificationDone(state, notification),
-            ),
-          );
-        }
+        // await markRepositoryNotificationsAsRead(
+        //   repoSlug,
+        //   notification.account.token,
+        // );
 
         const updatedNotifications = removeNotifications(
           state.settings,
@@ -236,14 +198,14 @@ export const useNotifications = (): NotificationsState => {
         setTrayIconColor(updatedNotifications);
       } catch (err) {
         log.error(
-          'Error occurred while marking repository notifications as done',
+          'Error occurred while marking repository notifications as read',
           err,
         );
       }
 
       setStatus('success');
     },
-    [notifications, markNotificationDone],
+    [notifications],
   );
 
   return {
@@ -255,7 +217,7 @@ export const useNotifications = (): NotificationsState => {
     fetchNotifications,
     markNotificationRead,
     markNotificationUnread,
-    markRepoNotificationsRead,
-    markRepoNotificationsDone,
+    markProductNotificationsRead,
+    markProductNotificationsUnread,
   };
 };

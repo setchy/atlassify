@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Link } from '../../types';
 import { apiRequestAuth } from './request';
-import { mockToken, mockUsername } from '../../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 
 jest.mock('axios');
 
@@ -16,7 +16,7 @@ describe('utils/api/request.ts', () => {
   it('should make a request with the correct parameters', async () => {
     const data = { key: 'value' };
 
-    await apiRequestAuth(url, method, mockUsername, mockToken, data);
+    await apiRequestAuth(mockAtlassianCloudAccount, data);
 
     expect(axios).toHaveBeenCalledWith({
       method,
@@ -29,7 +29,7 @@ describe('utils/api/request.ts', () => {
 
   it('should make a request with the correct parameters and default data', async () => {
     const data = {};
-    await apiRequestAuth(url, method, mockUsername, mockToken, data);
+    await apiRequestAuth(mockAtlassianCloudAccount, data);
 
     expect(axios).toHaveBeenCalledWith({
       method,

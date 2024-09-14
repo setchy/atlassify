@@ -53,7 +53,8 @@ const defaultAppearanceSettings = {
 };
 
 const defaultNotificationSettings = {
-  groupBy: GroupBy.REPOSITORY,
+  groupBy: GroupBy.DATE,
+  markAsReadOnOpen: true,
   delayNotificationState: false,
 };
 
@@ -96,7 +97,10 @@ interface AppContextState {
   markNotificationRead: (notification: AtlasifyNotification) => Promise<void>;
   markNotificationUnread: (notification: AtlasifyNotification) => Promise<void>;
 
-  markRepoNotificationsRead: (
+  markProductNotificationsRead: (
+    notification: AtlasifyNotification,
+  ) => Promise<void>;
+  markProductNotificationsUnread: (
     notification: AtlasifyNotification,
   ) => Promise<void>;
 
@@ -119,7 +123,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     globalError,
     markNotificationRead,
     markNotificationUnread,
-    markRepoNotificationsRead,
+    markProductNotificationsRead,
+    markProductNotificationsUnread,
   } = useNotifications();
   getNotificationCount;
   useEffect(() => {
@@ -265,10 +270,16 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationUnread],
   );
 
-  const markRepoNotificationsReadWithAccounts = useCallback(
+  const markProductNotificationsReadWithAccounts = useCallback(
     async (notification: AtlasifyNotification) =>
-      await markRepoNotificationsRead({ auth, settings }, notification),
-    [auth, settings, markRepoNotificationsRead],
+      await markProductNotificationsRead({ auth, settings }, notification),
+    [auth, settings, markProductNotificationsRead],
+  );
+
+  const markProductNotificationsUnreadWithAccounts = useCallback(
+    async (notification: AtlasifyNotification) =>
+      await markProductNotificationsUnread({ auth, settings }, notification),
+    [auth, settings, markProductNotificationsUnread],
   );
 
   return (
@@ -288,7 +299,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         markNotificationRead: markNotificationReadWithAccounts,
         markNotificationUnread: markNotificationUnreadWithAccounts,
 
-        markRepoNotificationsRead: markRepoNotificationsReadWithAccounts,
+        markProductNotificationsRead: markProductNotificationsReadWithAccounts,
+        markProductNotificationsUnread:
+          markProductNotificationsUnreadWithAccounts,
 
         settings,
         clearFilters,

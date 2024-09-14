@@ -50,7 +50,12 @@
   "build": {
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
-    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
+    "files": [
+      "build/**/*",
+      "assets/**/*",
+      "src/electron/*",
+      "LICENSE"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -59,7 +64,9 @@
       "gatekeeperAssess": false,
       "entitlements": "./entitlements/entitlements.mac.plist",
       "entitlementsInherit": "./entitlements/entitlements.mac.plist",
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -79,7 +86,11 @@
       "oneClick": false
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
       "category": "Development",
       "maintainer": "Adam Setch"
     },
@@ -87,9 +98,13 @@
   },
   "dependencies": {
     "@atlaskit/avatar": "21.15.1",
+    "@atlaskit/button": "^20.1.1",
+    "@atlaskit/css-reset": "^6.10.1",
     "@atlaskit/icon": "22.18.0",
     "@atlaskit/logo": "14.2.2",
     "@atlaskit/primitives": "12.1.1",
+    "@atlaskit/toggle": "^13.4.1",
+    "@atlaskit/tokens": "^1.59.1",
     "@atlaskit/tooltip": "18.7.2",
     "@discordapp/twemoji": "15.1.0",
     "@electron/remote": "2.1.2",

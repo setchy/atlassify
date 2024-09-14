@@ -13,19 +13,19 @@ export const Constants = {
 
   DEFAULT_KEYBOARD_SHORTCUT: 'CommandOrControl+Shift+G',
 
-  // API
-  ATLASSIAN_API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
-
-  // Web Links
-  ATLASSIAN_WEB: {
-    MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
-    SECURITY_TOKENS:
-      'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
-  },
-
-  // Atlassian Docs
-  ATLASSIAN_DOCS: {
-    API_TOKEN_URL:
-      'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/' as Link,
+  ATLASSIAN_URLS: {
+    API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
+    DOCS: {
+      API_TOKEN_URL:
+        'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/' as Link,
+    },
+    WEB: {
+      MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
+      PEOPLE: 'https://team.atlassian.com/people' as Link,
+      PROFILE_SECURITY:
+        'https://id.atlassian.com/manage-profile/security' as Link,
+      SECURITY_TOKENS:
+        'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
+    },
   },
 };

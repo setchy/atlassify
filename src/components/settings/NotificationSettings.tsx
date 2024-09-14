@@ -1,5 +1,7 @@
-import { BellIcon } from '@primer/octicons-react';
 import { type FC, useContext } from 'react';
+
+import { BellIcon } from '@primer/octicons-react';
+
 import { AppContext } from '../../context/App';
 import { GroupBy } from '../../types';
 import { Checkbox } from '../fields/Checkbox';
@@ -18,12 +20,21 @@ export const NotificationSettings: FC = () => {
         label="Group by:"
         value={settings.groupBy}
         options={[
-          { label: 'Repository', value: GroupBy.REPOSITORY },
           { label: 'Date', value: GroupBy.DATE },
+          { label: 'Product', value: GroupBy.PRODUCT },
         ]}
         onChange={(evt) => {
           updateSetting('groupBy', evt.target.value as GroupBy);
         }}
+      />
+
+      <Checkbox
+        name="markAsReadOnOpen"
+        label="Mark as read on open"
+        checked={settings.markAsReadOnOpen}
+        onChange={(evt) =>
+          updateSetting('markAsReadOnOpen', evt.target.checked)
+        }
       />
 
       <Checkbox

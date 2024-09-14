@@ -2,8 +2,6 @@ import axios from 'axios';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
-  mockToken,
-  mockUsername,
 } from '../../__mocks__/state-mocks';
 import type { SettingsState } from '../../types';
 import {
@@ -25,7 +23,7 @@ describe('utils/api/client.ts', () => {
 
   describe('getAuthenticatedUser', () => {
     it('should fetch authenticated user - github', async () => {
-      await getAuthenticatedUser(mockUsername, mockToken);
+      await getAuthenticatedUser(mockAtlassianCloudAccount);
 
       expect(axios).toHaveBeenCalledWith({
         url: 'https://api.github.com/user',

@@ -48,6 +48,7 @@ A list of "things" to improve
 - [ ] rework "group by" to be `Product` or `None/Date`
 - [ ] setup coveralls (or similar)
 - [ ] fix unit tests
+- [ ] use atlaskit/tokens for colors
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io

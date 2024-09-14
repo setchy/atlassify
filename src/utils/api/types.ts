@@ -39,6 +39,8 @@ export type Product =
   | 'confluence'
   | 'compass'
   | 'jira'
+  | 'jira product discovery'
+  | 'jira service management'
   | 'unknown';
 
 export interface AtlassianNotification {

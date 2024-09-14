@@ -40,7 +40,7 @@ export function removeAccount(auth: AuthState, account: Account): AuthState {
 
 export async function refreshAccount(account: Account): Promise<Account> {
   try {
-    const res = await getAuthenticatedUser(account.user.login, account.token);
+    const res = await getAuthenticatedUser(account);
 
     // Refresh user data
     account.user = {

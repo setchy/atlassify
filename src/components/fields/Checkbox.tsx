@@ -32,7 +32,7 @@ export const Checkbox: FC<ICheckbox> = (props: ICheckbox) => {
               props.disabled ? { textDecoration: 'line-through' } : undefined
             }
           >
-            <span className="capitalize">{props.label}</span>
+            <span>{props.label}</span>
             {props.tooltip && (
               <Tooltip name={`tooltip-${props.name}`} tooltip={props.tooltip} />
             )}

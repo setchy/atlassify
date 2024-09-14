@@ -14,7 +14,7 @@ import type { ReadState } from '../utils/api/types';
 
 export const mockAtlasifyUser: AtlasifyUser = {
   login: 'atlas',
-  name: 'At Lassian',
+  name: 'Atlassian',
   id: '123456789',
   avatar: 'https://avatars.githubusercontent.com/u/583231?v=4' as Link,
 };
@@ -30,9 +30,6 @@ export const mockAuth: AuthState = {
   accounts: [mockAtlassianCloudAccount],
 };
 
-export const mockUsername = mockAtlasifyUser.login;
-export const mockToken = mockAtlassianCloudAccount.token;
-
 const mockAppearanceSettings = {
   theme: Theme.SYSTEM,
   zoomPercentage: 100,
@@ -40,7 +37,8 @@ const mockAppearanceSettings = {
 };
 
 const mockNotificationSettings = {
-  groupBy: GroupBy.REPOSITORY,
+  groupBy: GroupBy.DATE,
+  markAsReadOnOpen: true,
   delayNotificationState: false,
 };
 
