@@ -1,12 +1,12 @@
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
 
-import Toggle from '@atlaskit/toggle';
-import Tooltip from '@atlaskit/tooltip';
+import Avatar from '@atlaskit/avatar';
+import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
-import { IconButton } from '@atlaskit/button/new';
-import Avatar from '@atlaskit/avatar';
+import Toggle from '@atlaskit/toggle';
+import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 import {

@@ -1,14 +1,14 @@
 import { type FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Button, { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
-import Button, { IconButton } from '@atlaskit/button/new';
 
+import { Box, Inline, Stack } from '@atlaskit/primitives';
+import Tooltip from '@atlaskit/tooltip';
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlasifyReleaseNotes } from '../../utils/links';
-import Tooltip from '@atlaskit/tooltip';
-import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);

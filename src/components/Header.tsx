@@ -1,11 +1,11 @@
 import { type FC, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
-import Tooltip from '@atlaskit/tooltip';
-import { IconButton } from '@atlaskit/button/new';
 import { Inline } from '@atlaskit/primitives';
+import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 

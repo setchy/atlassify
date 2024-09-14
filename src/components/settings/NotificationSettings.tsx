@@ -1,14 +1,14 @@
 import { type FC, useContext } from 'react';
 
 import { Checkbox } from '@atlaskit/checkbox';
+import Heading from '@atlaskit/heading';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
-import Heading from '@atlaskit/heading';
 
+import InlineMessage from '@atlaskit/inline-message';
 import { AppContext } from '../../context/App';
 import { GroupBy } from '../../types';
-import InlineMessage from '@atlaskit/inline-message';
 
 export const NotificationSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);

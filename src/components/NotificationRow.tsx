@@ -1,9 +1,9 @@
 import { type FC, useCallback, useContext, useState } from 'react';
 
 import Avatar from '@atlaskit/avatar';
-import Tooltip from '@atlaskit/tooltip';
 import { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 import { type AtlasifyNotification, Opacity } from '../types';

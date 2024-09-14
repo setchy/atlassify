@@ -2,16 +2,16 @@ import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import IssuesIcon from '@atlaskit/icon/glyph/issues';
 import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
+import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
+import FilterIcon from '@atlaskit/icon/glyph/filter';
+import IssuesIcon from '@atlaskit/icon/glyph/issues';
+import NotificationIcon from '@atlaskit/icon/glyph/notification';
+import RefreshIcon from '@atlaskit/icon/glyph/refresh';
+import SettingsIcon from '@atlaskit/icon/glyph/settings';
+import { AtlasIcon } from '@atlaskit/logo';
 import { Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
-import { AtlasIcon } from '@atlaskit/logo';
-import NotificationIcon from '@atlaskit/icon/glyph/notification';
-import SettingsIcon from '@atlaskit/icon/glyph/settings';
-import FilterIcon from '@atlaskit/icon/glyph/filter';
-import RefreshIcon from '@atlaskit/icon/glyph/refresh';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';

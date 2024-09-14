@@ -2,10 +2,10 @@ import log from 'electron-log';
 import { type FC, useCallback, useContext, useState } from 'react';
 
 import Button from '@atlaskit/button/new';
-import SignInIcon from '@atlaskit/icon/glyph/sign-in';
-import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
-import Tooltip from '@atlaskit/tooltip';
 import LockIcon from '@atlaskit/icon/glyph/lock';
+import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
+import SignInIcon from '@atlaskit/icon/glyph/sign-in';
+import Tooltip from '@atlaskit/tooltip';
 
 import { Form, type FormRenderProps } from 'react-final-form';
 import { useNavigate } from 'react-router-dom';

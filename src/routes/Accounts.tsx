@@ -2,6 +2,7 @@ import { type FC, useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Avatar from '@atlaskit/avatar';
+import { IconButton } from '@atlaskit/button/new';
 import InviteTeamIcon from '@atlaskit/icon/glyph/invite-team';
 import LockIcon from '@atlaskit/icon/glyph/lock';
 import PersonIcon from '@atlaskit/icon/glyph/person';
@@ -9,9 +10,8 @@ import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
 import StarIcon from '@atlaskit/icon/glyph/star';
 import StarFilledIcon from '@atlaskit/icon/glyph/star-filled';
-import Tooltip from '@atlaskit/tooltip';
-import { IconButton } from '@atlaskit/button/new';
 import { Box, Flex, Inline } from '@atlaskit/primitives';
+import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';

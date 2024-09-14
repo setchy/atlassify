@@ -9,11 +9,11 @@ import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 
+import Heading from '@atlaskit/heading';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
-import Heading from '@atlaskit/heading';
 
 let timeout: NodeJS.Timeout;
 const DELAY = 200;

@@ -11,10 +11,10 @@ import { determineFailureType } from './api/errors';
 import type { AtlassianNotification, Category, ReadState } from './api/types';
 import { getAccountUUID } from './auth/utils';
 import { hideWindow, showWindow, updateTrayIcon } from './comms';
+import { READ_STATES } from './filters';
 import { openNotification } from './links';
 import { isWindows } from './platform';
 import { getAtlassianProduct } from './product';
-import { READ_STATES } from './filters';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);

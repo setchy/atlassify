@@ -1,9 +1,9 @@
 import { type FC, useContext } from 'react';
 
-import Checkbox from '@atlaskit/checkbox';
-import { Box, Flex, Stack } from '@atlaskit/primitives';
 import Button from '@atlaskit/button/new';
+import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
+import { Box, Flex, Stack } from '@atlaskit/primitives';
 
 import { Header } from '../components/Header';
 // import { Legend } from '../components/settings/Legend';
@@ -15,8 +15,8 @@ import {
   getCategoryDetails,
   getReadStateDetails,
 } from '../utils/filters';
-import { PRODUCTS, getProductDetails } from '../utils/product';
 import { formatProperCase } from '../utils/helpers';
+import { PRODUCTS, getProductDetails } from '../utils/product';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);

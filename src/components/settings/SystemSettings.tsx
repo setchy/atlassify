@@ -1,16 +1,16 @@
 import { type FC, useContext } from 'react';
 
 import { Checkbox } from '@atlaskit/checkbox';
+import Heading from '@atlaskit/heading';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
-import Heading from '@atlaskit/heading';
 
+import InlineMessage from '@atlaskit/inline-message';
 import { AppContext } from '../../context/App';
 import { OpenPreference } from '../../types';
 import { Constants } from '../../utils/constants';
 import { isLinux, isMacOS } from '../../utils/platform';
-import InlineMessage from '@atlaskit/inline-message';
 
 export const SystemSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);

@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { Link } from '../../types';
 import { apiRequestAuth } from './request';
-import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 
 jest.mock('axios');
 

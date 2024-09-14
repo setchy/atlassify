@@ -2,7 +2,6 @@ import { type FC, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
-import Tooltip from '@atlaskit/tooltip';
 import NotificationAllIcon from '@atlaskit/icon/glyph/notification-all';
 import {
   AtlassianIcon,
@@ -13,6 +12,7 @@ import {
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
 } from '@atlaskit/logo';
+import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 import { showWindow } from '../utils/comms';

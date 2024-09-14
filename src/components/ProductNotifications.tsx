@@ -7,10 +7,10 @@ import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-
 
 import { AppContext } from '../context/App';
 import { type AtlasifyNotification, Opacity } from '../types';
+import { markNotificationsAsRead } from '../utils/api/client';
 import { cn } from '../utils/cn';
 import { HoverGroup } from './HoverGroup';
 import { NotificationRow } from './NotificationRow';
-import { markNotificationsAsRead } from '../utils/api/client';
 
 interface IProductNotifications {
   productNotifications: AtlasifyNotification[];

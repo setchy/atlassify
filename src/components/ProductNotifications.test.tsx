@@ -2,8 +2,8 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import { mockAtlasifyNotification } from '../utils/api/__mocks__/response-mocks';
+import type { Product } from '../utils/api/types';
 import { ProductNotifications } from './ProductNotifications';
-import { Product } from '../utils/api/types';
 
 jest.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
