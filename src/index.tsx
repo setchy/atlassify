@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';
@@ -6,6 +6,4 @@ import '@atlaskit/css-reset';
 
 import { App } from './app';
 
-const container = document.getElementById('atlasify');
-const root = createRoot(container);
-root.render(<App />);
+ReactDOM.render(<App />, document.getElementById('atlasify'));
