@@ -48,5 +48,9 @@
     "parser": {
       "allowComments": true
     }
+  },
+
+  "files": {
+    "ignore": ["docs/*"]
   }
 }
