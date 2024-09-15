@@ -3,7 +3,6 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
-import type { SettingsState } from '../../types';
 import {
   getAuthenticatedUser,
   getNotificationsForUser,
