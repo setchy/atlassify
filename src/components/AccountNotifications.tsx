@@ -111,13 +111,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           </Inline>
 
           <Inline space="space.100" alignInline="center">
-            <Tooltip
-              content={
-                settings.fetchOnlyUnreadNotifications
-                  ? 'Retrieve only unread notifications'
-                  : 'Retrieve all notifications'
-              }
-            >
+            <Tooltip content="Show only unread notifications">
               <Toggle
                 id="toggle-unread-only"
                 size="regular"
