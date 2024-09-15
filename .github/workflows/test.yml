@@ -25,7 +25,7 @@ jobs:
         uses: coverallsapp/github-action@v2
 
   sonarcloud:
-    name: SonarCloud
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
