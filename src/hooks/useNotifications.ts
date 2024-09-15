@@ -61,11 +61,6 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
       setGlobalError(null);
 
-      console.log(
-        'ADAM FETCHING WITH PARAM',
-        state.settings.fetchOnlyUnreadNotifications,
-      );
-
       const fetchedNotifications = await getAllNotifications(state);
 
       // Set Global Error if all accounts have the same error

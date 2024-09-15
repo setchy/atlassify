@@ -203,12 +203,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const loginWithAPIToken = useCallback(
     async ({ username, token }: LoginAPITokenOptions) => {
-      // Should check if the token is valid
+      // TODO - Should check if the token is valid
 
       const updatedAuth = await addAccount(auth, username, token);
-
-      // TODO - fetch and set user data
-
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },

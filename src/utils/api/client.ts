@@ -51,7 +51,7 @@ export function getNotificationsForUser(
         unseenNotificationCount
         notificationFeed(
           flat: true, 
-          first: 100,
+          first: 1000,
           filter: {
             readStateFilter: $readState
           #   # productFilter: $product
