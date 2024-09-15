@@ -6,7 +6,6 @@ import Heading from '@atlaskit/heading';
 import { Box, Flex, Stack } from '@atlaskit/primitives';
 
 import { Header } from '../components/Header';
-// import { Legend } from '../components/settings/Legend';
 import { AppContext } from '../context/App';
 import type { Category, Product, ReadState } from '../utils/api/types';
 import {

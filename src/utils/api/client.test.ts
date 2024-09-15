@@ -38,10 +38,7 @@ describe('utils/api/client.ts', () => {
 
   describe('listNotificationsForAuthenticatedUser', () => {
     it('should list notifications for user', async () => {
-      await getNotificationsForUser(
-        mockAtlassianCloudAccount,
-        mockSettings as SettingsState,
-      );
+      await getNotificationsForUser(mockAtlassianCloudAccount, mockSettings);
 
       expect(axios).toHaveBeenCalledWith(
         expect.objectContaining({
