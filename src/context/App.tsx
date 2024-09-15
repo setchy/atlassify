@@ -123,7 +123,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationRead,
     markProductNotificationsRead,
   } = useNotifications();
-  getNotificationCount;
+
   useEffect(() => {
     restoreSettings();
   }, []);
