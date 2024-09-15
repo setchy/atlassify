@@ -47,7 +47,6 @@ NOW
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] setup docs -> atlasify.io
-- [ ] setup coveralls (or similar)
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
