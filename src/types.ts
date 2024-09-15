@@ -145,8 +145,8 @@ export interface AtlasifyError {
 
 export type ErrorType =
   | 'BAD_CREDENTIALS'
+  | 'BAD_REQUEST'
   | 'NETWORK'
-  | 'RATE_LIMITED'
   | 'UNKNOWN';
 
 export interface FormattedReason {

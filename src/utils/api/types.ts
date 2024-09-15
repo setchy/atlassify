@@ -84,7 +84,28 @@ export interface GraphQLResponse<T> {
   data: T;
 }
 
-export interface GitHubRESTError {
+export type AtlassianAPIError =
+  | AtlassianHTTPError
+  | AtlassianAuthError
+  | AtlassianGraphQLAPIError;
+
+export interface AtlassianAuthError {
+  code: number;
   message: string;
-  documentation_url: Link;
+}
+
+export interface AtlassianHTTPError {
+  status: number;
+  message: string;
+}
+
+export interface AtlassianGraphQLAPIError {
+  errors: {
+    message: string;
+    extensions: {
+      classification: string;
+      errorType: string;
+      statusCode: number;
+    };
+  }[];
 }
