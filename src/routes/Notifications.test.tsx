@@ -53,22 +53,6 @@ describe('routes/Notifications.tsx', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('rate limited', () => {
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: [],
-            status: 'error',
-            globalError: Errors.RATE_LIMITED,
-          }}
-        >
-          <NotificationsRoute />
-        </AppContext.Provider>,
-      );
-
-      expect(tree).toMatchSnapshot();
-    });
-
     it('unknown error', () => {
       const tree = render(
         <AppContext.Provider

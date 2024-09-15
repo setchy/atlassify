@@ -1,17 +1,16 @@
 import { AxiosError, type AxiosResponse } from 'axios';
-import type { Link } from '../../types';
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
-import type { GitHubRESTError } from './types';
+import type { AtlassianAPIError } from './types';
 
 describe('utils/api/errors.ts', () => {
   it('network error', async () => {
-    const mockError: Partial<AxiosError<GitHubRESTError>> = {
+    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
       code: AxiosError.ERR_NETWORK,
     };
 
     const result = determineFailureType(
-      mockError as AxiosError<GitHubRESTError>,
+      mockError as AxiosError<AtlassianAPIError>,
     );
 
     expect(result).toBe(Errors.NETWORK);
@@ -19,59 +18,28 @@ describe('utils/api/errors.ts', () => {
 
   describe('bad request errors', () => {
     it('bad credentials', async () => {
-      const mockError: Partial<AxiosError<GitHubRESTError>> = {
+      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
         status: 401,
         response: createMockResponse(401, 'Bad credentials'),
       };
 
       const result = determineFailureType(
-        mockError as AxiosError<GitHubRESTError>,
+        mockError as AxiosError<AtlassianAPIError>,
       );
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
 
-    it('rate limited - primary', async () => {
-      const mockError: Partial<AxiosError<GitHubRESTError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 403,
-        response: createMockResponse(403, 'API rate limit exceeded'),
-      };
-
-      const result = determineFailureType(
-        mockError as AxiosError<GitHubRESTError>,
-      );
-
-      expect(result).toBe(Errors.RATE_LIMITED);
-    });
-
-    it('rate limited - secondary', async () => {
-      const mockError: Partial<AxiosError<GitHubRESTError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 403,
-        response: createMockResponse(
-          403,
-          'You have exceeded a secondary rate limit',
-        ),
-      };
-
-      const result = determineFailureType(
-        mockError as AxiosError<GitHubRESTError>,
-      );
-
-      expect(result).toBe(Errors.RATE_LIMITED);
-    });
-
     it('unhandled bad request error', async () => {
-      const mockError: Partial<AxiosError<GitHubRESTError>> = {
+      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
         status: 400,
         response: createMockResponse(403, 'Oops! Something went wrong.'),
       };
 
       const result = determineFailureType(
-        mockError as AxiosError<GitHubRESTError>,
+        mockError as AxiosError<AtlassianAPIError>,
       );
 
       expect(result).toBe(Errors.UNKNOWN);
@@ -79,12 +47,12 @@ describe('utils/api/errors.ts', () => {
   });
 
   it('unknown error', async () => {
-    const mockError: Partial<AxiosError<GitHubRESTError>> = {
+    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
       code: 'anything',
     };
 
     const result = determineFailureType(
-      mockError as AxiosError<GitHubRESTError>,
+      mockError as AxiosError<AtlassianAPIError>,
     );
 
     expect(result).toBe(Errors.UNKNOWN);
@@ -94,11 +62,11 @@ describe('utils/api/errors.ts', () => {
 function createMockResponse(
   status: number,
   message: string,
-): AxiosResponse<GitHubRESTError> {
+): AxiosResponse<AtlassianAPIError> {
   return {
     data: {
+      code: status,
       message,
-      documentation_url: 'https://some-url.com' as Link,
     },
     status,
     statusText: 'Some status text',
