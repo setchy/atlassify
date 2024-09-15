@@ -10,7 +10,7 @@ import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { AtlasIcon } from '@atlaskit/logo';
-import { Stack, Text } from '@atlaskit/primitives';
+import { Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -92,6 +92,27 @@ export const Sidebar: FC = () => {
             )}
           </Tooltip>
 
+          {isLoggedIn && (
+            <Tooltip content="Filters">
+              <IconButton
+                label="Filters"
+                icon={(iconProps) => (
+                  <FilterIcon
+                    {...iconProps}
+                    size="small"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                onClick={() => toggleFilters()}
+              />
+
+              {filterCount > 0 && (
+                <span className="text-xs text-white">{filterCount}</span>
+              )}
+            </Tooltip>
+          )}
+
           {/* <Tooltip content="My Issues">
             <IconButton
               label="My Issues"
@@ -138,27 +159,6 @@ export const Sidebar: FC = () => {
                 appearance="subtle"
                 onClick={() => refreshNotifications()}
               />
-            </Tooltip>
-
-            <Tooltip content="Filters">
-              <IconButton
-                label="Filters"
-                icon={(iconProps) => (
-                  <FilterIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                  />
-                )}
-                appearance="subtle"
-                onClick={() => toggleFilters()}
-              />
-
-              {filterCount > 0 && (
-                <Text size="small" weight="bold" color="color.text.accent.blue">
-                  {filterCount}
-                </Text>
-              )}
             </Tooltip>
 
             <Tooltip content="Settings">

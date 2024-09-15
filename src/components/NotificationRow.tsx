@@ -13,7 +13,6 @@ import {
   formatProperCase,
 } from '../utils/helpers';
 import { openNotification } from '../utils/links';
-import { HoverGroup } from './HoverGroup';
 
 interface INotificationRow {
   notification: AtlasifyNotification;
@@ -110,27 +109,25 @@ export const NotificationRow: FC<INotificationRow> = ({
         </div>
       </div>
 
-      {!animateExit && (
-        <HoverGroup>
-          {notification.unread && (
-            <IconButton
-              icon={(iconProps) => (
-                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
-              )}
-              label="Mark as read"
-              title="Mark as read"
-              isTooltipDisabled={false}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-              onClick={() => {
-                setAnimateExit(!settings.delayNotificationState);
-                setShowAsRead(settings.delayNotificationState);
-                markNotificationRead(notification);
-              }}
-            />
-          )}
-        </HoverGroup>
+      {!animateExit && notification.unread && (
+        <div className="flex items-center justify-center gap-2">
+          <IconButton
+            icon={(iconProps) => (
+              <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
+            )}
+            label="Mark as read"
+            title="Mark as read"
+            isTooltipDisabled={false}
+            shape="circle"
+            spacing="compact"
+            appearance="subtle"
+            onClick={() => {
+              setAnimateExit(!settings.delayNotificationState);
+              setShowAsRead(settings.delayNotificationState);
+              markNotificationRead(notification);
+            }}
+          />
+        </div>
       )}
     </div>
   );

@@ -55,6 +55,7 @@ const defaultNotificationSettings = {
   groupBy: GroupBy.DATE,
   markAsReadOnOpen: true,
   delayNotificationState: false,
+  fetchOnlyUnreadNotifications: true,
 };
 
 const defaultSystemSettings = {

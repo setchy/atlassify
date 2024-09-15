@@ -38,7 +38,7 @@ export function getAuthenticatedUser(
  */
 export function getNotificationsForUser(
   account: Account,
-  _settings: SettingsState,
+  settings: SettingsState,
 ): AxiosPromise<GraphQLResponse<MyNotifications>> {
   const QUERY = gql`
     query myNotifications
@@ -97,7 +97,7 @@ export function getNotificationsForUser(
   return apiRequestAuth(account, {
     query: print(QUERY),
     variables: {
-      readState: 'unread',
+      readState: settings.fetchOnlyUnreadNotifications ? null : 'unread',
       // product: settings.product,
     },
   });

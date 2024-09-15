@@ -50,6 +50,7 @@ interface NotificationSettingsState {
   groupBy: GroupBy;
   markAsReadOnOpen: boolean;
   delayNotificationState: boolean;
+  fetchOnlyUnreadNotifications: boolean;
 }
 
 interface SystemSettingsState {

@@ -1,13 +1,24 @@
+import EmojiFlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
+import WatchIcon from '@atlaskit/icon/glyph/watch';
+
 import type { BasicDetails, Category, ReadState } from './api/types';
 
 export const CATEGORIES: Record<Category, BasicDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notifications',
+    icon: EmojiFlagsIcon,
+    iconProps: {
+      size: 'small',
+    },
   },
   watching: {
     name: 'watching',
     description: 'Watching notifications',
+    icon: WatchIcon,
+    iconProps: {
+      size: 'small',
+    },
   },
 };
 

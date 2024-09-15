@@ -3,7 +3,7 @@ import { type FC, useContext } from 'react';
 import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
-import { Box, Flex, Stack } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
@@ -79,18 +79,27 @@ export const FiltersRoute: FC = () => {
               <Heading size="small">Category</Heading>
               <Box>
                 {Object.keys(CATEGORIES).map((category: Category) => {
+                  const categoryDetails = getCategoryDetails(category);
+                  const categoryIconProps: Record<string, string> = {
+                    size: 'small',
+                  };
                   return (
-                    <Checkbox
+                    <Inline
                       key={category}
-                      name={category}
-                      label={formatProperCase(
-                        getCategoryDetails(category).name,
-                      )}
-                      isChecked={shouldShowCategory(category)}
-                      onChange={(evt) =>
-                        updateCategoryFilter(category, evt.target.checked)
-                      }
-                    />
+                      space="space.050"
+                      alignBlock="center"
+                    >
+                      <Checkbox
+                        key={category}
+                        name={category}
+                        label={formatProperCase(categoryDetails.name)}
+                        isChecked={shouldShowCategory(category)}
+                        onChange={(evt) =>
+                          updateCategoryFilter(category, evt.target.checked)
+                        }
+                      />
+                      <categoryDetails.icon {...categoryIconProps} />
+                    </Inline>
                   );
                 })}
               </Box>
@@ -123,16 +132,23 @@ export const FiltersRoute: FC = () => {
               <Heading size="small">Products</Heading>
               <Box>
                 {Object.keys(PRODUCTS).map((product: Product) => {
+                  const productDetails = getProductDetails(product);
+                  const productIconProps: Record<string, string> = {
+                    size: 'xsmall',
+                  };
+
                   return (
-                    <Checkbox
-                      key={`checkbox-${product}`}
-                      name={product}
-                      label={formatProperCase(getProductDetails(product).name)}
-                      isChecked={shouldShowProduct(product)}
-                      onChange={(evt) =>
-                        updateProductFilter(product, evt.target.checked)
-                      }
-                    />
+                    <Inline key={product} space="space.050" alignBlock="center">
+                      <Checkbox
+                        name={product}
+                        label={formatProperCase(productDetails.name)}
+                        isChecked={shouldShowProduct(product)}
+                        onChange={(evt) =>
+                          updateProductFilter(product, evt.target.checked)
+                        }
+                      />
+                      <productDetails.icon {...productIconProps} />
+                    </Inline>
                   );
                 })}
               </Box>

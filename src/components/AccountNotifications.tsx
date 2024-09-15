@@ -1,24 +1,25 @@
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
 
-import Avatar from '@atlaskit/avatar';
+import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
 import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import ListIcon from '@atlaskit/icon/glyph/list';
+import CalendarIcon from '@atlaskit/icon/glyph/calendar';
 
 import { AppContext } from '../context/App';
 import {
+  GroupBy,
   type Account,
   type AtlasifyError,
   type AtlasifyNotification,
-  Opacity,
 } from '../types';
-import { cn } from '../utils/cn';
 import { openAccountProfile } from '../utils/links';
 import { AllRead } from './AllRead';
-import { HoverGroup } from './HoverGroup';
 import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
@@ -31,11 +32,10 @@ interface IAccountNotifications {
 export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
-  const [showOnlyUnread, setShowOnlyUnread] = useState(false);
-
   const { account, notifications } = props;
 
-  const { settings } = useContext(AppContext);
+  const { settings, updateSetting, fetchNotifications } =
+    useContext(AppContext);
 
   const groupedNotifications = Object.values(
     notifications.reduce(
@@ -75,69 +75,111 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         ? 'Hide account notifications'
         : 'Show account notifications';
 
-  const groupByProduct = settings.groupBy === 'PRODUCT';
+  const isGroupByProduct = settings.groupBy === 'PRODUCT';
+  const GroupByIcon = isGroupByProduct ? ListIcon : CalendarIcon;
 
   return (
-    <>
-      <div
-        className={cn(
-          'group flex items-center justify-between px-3 py-1.5 text-sm font-semibold dark:text-white',
-          props.error
-            ? 'bg-red-300 dark:bg-red-500'
-            : 'bg-gray-300 dark:bg-gray-darkest',
-          Opacity.LOW,
-        )}
+    <Stack>
+      <Box
         onClick={toggleAccountNotifications}
+        paddingInline="space.100"
+        paddingBlock="space.050"
+        backgroundColor={
+          props.error
+            ? 'color.background.accent.red.subtler'
+            : 'color.background.neutral'
+        }
       >
-        <div className="flex">
-          <button
-            type="button"
-            onClick={(event: MouseEvent<HTMLElement>) => {
-              // Don't trigger onClick of parent element.
-              event.stopPropagation();
-              openAccountProfile(account);
-            }}
-          >
-            <div className="flex">
-              <Tooltip content={account.user.name}>
-                <Avatar
-                  name={account.user.name}
-                  src={account.user.avatar}
-                  size="xsmall"
-                  appearance="circle"
+        <Flex alignItems="center" justifyContent="space-between">
+          <Inline space="space.100" alignInline="center">
+            <Tooltip
+              content={`${account.user.name}
+              (${account.user.login})`}
+            >
+              <AvatarItem
+                avatar={
+                  <Avatar
+                    name={account.user.name}
+                    src={account.user.avatar}
+                    size="xsmall"
+                    appearance="circle"
+                  />
+                }
+                primaryText={account.user.name}
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openAccountProfile(account);
+                }}
+              />
+            </Tooltip>
+          </Inline>
+
+          <Inline space="space.100" alignInline="center">
+            <Tooltip
+              content={
+                isGroupByProduct
+                  ? 'Group notifications by products'
+                  : 'Order notifications by date'
+              }
+            >
+              <Inline>
+                <GroupByIcon label="groupBy" size="medium" />
+                <Toggle
+                  id="toggle-group-by-product"
+                  size="regular"
+                  label="Group by product toggle"
+                  isChecked={isGroupByProduct}
+                  onChange={() => {
+                    updateSetting(
+                      'groupBy',
+                      isGroupByProduct ? GroupBy.DATE : GroupBy.PRODUCT,
+                    );
+                    fetchNotifications();
+                  }}
                 />
-              </Tooltip>
-              <span className="ml-2">{account.user.login}</span>
-            </div>
-          </button>
-        </div>
+              </Inline>
+            </Tooltip>
 
-        <Tooltip content={showOnlyUnread ? 'Show all' : 'Only show unread'}>
-          <Toggle
-            id="toggle-default"
-            size="regular"
-            label="Show unread"
-            onChange={() => setShowOnlyUnread((prev) => !prev)}
-          />
-        </Tooltip>
+            <Tooltip
+              content={
+                !settings.fetchOnlyUnreadNotifications
+                  ? 'Retrieve all notifications'
+                  : 'Retrieve only unread notifications'
+              }
+            >
+              <Toggle
+                id="toggle-unread-only"
+                size="regular"
+                label="Show only unread toggle"
+                isChecked={settings.fetchOnlyUnreadNotifications}
+                onChange={() => {
+                  updateSetting(
+                    'fetchOnlyUnreadNotifications',
+                    !settings.fetchOnlyUnreadNotifications,
+                  );
+                  fetchNotifications();
+                }}
+              />
+            </Tooltip>
 
-        <HoverGroup>
-          <IconButton
-            icon={ChevronIcon}
-            label={toggleAccountNotificationsLabel}
-            isTooltipDisabled={false}
-            shape="circle"
-            spacing="compact"
-            appearance="subtle"
-          />
-        </HoverGroup>
-      </div>
+            <IconButton
+              icon={ChevronIcon}
+              label={toggleAccountNotificationsLabel}
+              isTooltipDisabled={false}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+            />
+          </Inline>
+        </Flex>
+      </Box>
 
       {showAccountNotifications && (
         <>
           {props.error && <Oops error={props.error} />}
           {!hasNotifications && !props.error && <AllRead />}
-          {groupByProduct
+          {isGroupByProduct
             ? Object.values(groupedNotifications).map(
                 (productNotifications) => {
                   return (
@@ -156,6 +198,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               ))}
         </>
       )}
-    </>
+    </Stack>
   );
 };

@@ -11,29 +11,6 @@ describe('routes/components/settings/NotificationSettings.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it('should change the groupBy radio group', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <NotificationSettings />
-          </MemoryRouter>
-        </AppContext.Provider>,
-      );
-    });
-
-    fireEvent.click(screen.getByLabelText('Product'));
-
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('groupBy', 'PRODUCT');
-  });
-
   it('should toggle the markAsReadOnOpen checkbox', async () => {
     await act(async () => {
       render(

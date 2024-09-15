@@ -9,6 +9,8 @@ export interface AtlassianProduct {
 export interface BasicDetails {
   name: string;
   description: string;
+  icon?: React.ComponentType;
+  iconProps?: Record<string, string>;
 }
 
 export interface MyUserDetails {

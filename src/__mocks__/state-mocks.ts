@@ -38,6 +38,7 @@ const mockNotificationSettings = {
   groupBy: GroupBy.DATE,
   markAsReadOnOpen: true,
   delayNotificationState: false,
+  fetchOnlyUnreadNotifications: true,
 };
 
 const mockSystemSettings = {
