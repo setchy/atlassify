@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import Hero from '../components/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import SectionRow from '../layouts/SectionRow.astro';
+
+const openSourceLibs = [
+  {
+    name: 'Electron',
+    link: 'https://www.electronjs.org/',
+    image: import('../assets/logos/electron.png'),
+  },
+  {
+    name: 'React JS',
+    link: 'https://reactjs.org/',
+    image: import('../assets/logos/react.png'),
+  },
+  {
+    name: 'Tailwind CSS',
+    link: 'https://tailwindcss.com/',
+    image: import('../assets/logos/tailwindcss.png'),
+  },
+  {
+    name: 'Jest',
+    link: 'https://jestjs.io/',
+    image: import('../assets/logos/jest.png'),
+  },
+  {
+    name: 'Typescript',
+    link: 'https://www.typescriptlang.org/',
+    image: import('../assets/logos/typescript.png'),
+  },
+  {
+    name: 'GitHub',
+    link: 'https://www.github.com/',
+    image: import('../assets/logos/github.png'),
+  },
+];
+---
+
+<Layout title="Atlassian notifications on your menu bar">
+  <main>
+    <Hero />
+
+    <SectionRow
+      title="All your Atlassian notifications on your desktop. Nice & Easy."
+      description="Ever got lost with Atlassian notifications? Too many emails? Atlasify is all about making your life easier. Sitting on your menu bar, it informs you for any Atlassian notifications without being annoying and of course without adverts. It just gets the job done. You can even connect **multiple** accounts."
+      screenshot={{
+        path: 'all-read',
+        alt: 'Screenshot when there are no notifications read',
+      }}
+    />
+
+    <SectionRow
+      title="It's about your preferences."
+      description="Atlasify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native mac OS notifications or by just turning its tray icon to green. It is not there to interupt your workflow or distract you, you can customize your settings to your preference."
+      screenshot={{
+        path: 'settings',
+        alt: 'Your Preferences, Settings',
+      }}
+      isDark
+      isReversed
+    />
+
+    <SectionRow
+      title="Free & Open Source. It's ours."
+      description="Atlasify is based on Electron, React, Tailwind CSS and more awesome open source libraries. Written in Typescript."
+    >
+      <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
+        {
+          openSourceLibs.map((item) => (
+            <div class="hover:bg-gray-200 px-2 py-2 m-2">
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <Image
+                  width="50"
+                  height="50"
+                  class="w-8 sm:w-12"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </SectionRow>
+  </main>
+</Layout>

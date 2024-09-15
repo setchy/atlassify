@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown ul {
+  @apply list-disc m-4;
+}
+
+.markdown ul > li {
+  @apply m-2;
+}

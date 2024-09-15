@@ -1,0 +1,65 @@
+---
+import Footer from '../components/Footer.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import Navbar from '../components/Navbar.astro';
+import '../app.css';
+
+import { SITE_URL, siteMetadata } from '../constants';
+
+export interface Props {
+  title: string;
+  hideFooter?: boolean;
+}
+
+const { title, hideFooter = false } = Astro.props;
+const pageTitle = `${title} - Atlasify`;
+const ogImage = `${SITE_URL}/images/social.png`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={siteMetadata.description} />
+    <title>{pageTitle}</title>
+    <GoogleAnalytics />
+
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+
+    {/* Open Graph Meta Tags for Social Media */}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={siteMetadata.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta
+      name="google-site-verification"
+      content="jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU"
+    />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Navbar currentPathname={Astro.url.pathname} />
+    <slot />
+    {!hideFooter && <Footer currentPathname={Astro.url.pathname} />}
+  </body>
+</html>

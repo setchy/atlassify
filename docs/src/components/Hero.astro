@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import Logo from './Logo.astro';
+
+import notifications from '../assets/notifications.png';
+import LatestRelease from './LatestRelease.astro';
+---
+
+<div class="bg-gray-100">
+  <div
+    class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
+  >
+    <div class="flex flex-col justify-center flex-grow">
+      <Logo />
+
+      <h1 class="text-2xl lg:text-4xl font-semibold">Atlasify</h1>
+
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">
+        Your Atlassian notifications <br /> on your menu bar.
+      </h2>
+
+      <LatestRelease />
+    </div>
+
+    <div class="">
+      <Image
+        class="block w-full max-w-sm mx-auto h-auto shadow-2xl rounded-xl transform rotate-6 mt-16 mb-8 md:ml-16 md:my-16"
+        src={notifications}
+        alt="Atlasify - Notifications"
+        width="500"
+        height="400"
+      />
+    </div>
+  </div>
+</div>

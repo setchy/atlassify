@@ -1,0 +1,139 @@
+---
+import Bowser from 'bowser';
+import { format, parseISO } from 'date-fns';
+import DownloadIcon from '../icons/Download.astro';
+import type { Assets, DownloadLink, DownloadLinks, HeroData } from '../types';
+
+const REPO_API_URL =
+  'https://api.github.com/repos/setchy/atlasify/releases/latest';
+const REPO_RELEASES_URL = 'https://github.com/setchy/atlasify/releases/latest';
+const releaseDetailsClassName = 'text-sm mt-4';
+
+const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
+  const getAssetLink = (filenameRegex: RegExp): string => {
+    const asset = assets.find((item) => item.name.match(filenameRegex));
+    return asset ? asset.browser_download_url : REPO_RELEASES_URL;
+  };
+
+  const supportedOSs: DownloadLink[] = [
+    {
+      os: 'macOS',
+      name: 'macOS (Universal)',
+      url: getAssetLink(/Atlasify-\d+.\d+.\d+-universal.dmg/g),
+    },
+    {
+      os: 'Windows',
+      name: 'Windows',
+      url: getAssetLink(/Atlasify-Setup-\d+.\d+.\d+.exe/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (AppImage)',
+      url: getAssetLink(/Atlasify-\d+.\d+.\d+.AppImage/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (deb)',
+      url: getAssetLink(/atlasify_\d+.\d+.\d+_amd64.deb/g),
+    },
+    {
+      os: 'Linux',
+      name: 'Linux (rpm)',
+      url: getAssetLink(/atlasify-\d+.\d+.\d+.x86_64.rpm/g),
+    },
+  ];
+
+  const isWindowAvailable = typeof window !== 'undefined' && window.navigator;
+  const currentOs = isWindowAvailable
+    ? Bowser.parse(window.navigator.userAgent).os.name
+    : 'macOS'; // macOS, Windows, Linux
+
+  const primaryLinks = supportedOSs.filter(
+    ({ os, url }) => url && os === currentOs,
+  );
+  const primaryLinksOSs = primaryLinks.map(({ os }) => os);
+  const alt = supportedOSs.filter(
+    ({ os, url }) => !primaryLinksOSs.includes(os) && url,
+  );
+
+  return {
+    primary: primaryLinks.length ? primaryLinks : [supportedOSs[0]],
+    alt,
+  };
+};
+
+const loadInitialData = async (): Promise<HeroData> => {
+  try {
+    const response = await fetch(REPO_API_URL);
+    const data = await response.json();
+    const parsedDate = parseISO(data.published_at.slice(0, -1));
+    const downloadLinks = getDownloadLinks(data.assets);
+
+    return {
+      downloadLinks,
+      version: data.tag_name,
+      releaseDate: format(parsedDate, 'dd/MM/yyyy'),
+    };
+  } catch (error) {
+    return {
+      downloadLinks: {
+        alt: [],
+        primary: [],
+      },
+      version: '',
+      releaseDate: '',
+    };
+  }
+};
+
+const { downloadLinks, version, releaseDate } = await loadInitialData();
+---
+
+<div class={releaseDetailsClassName}>
+  {
+    version ? (
+      <>
+        <div class="sm:flex md:grid md:grid-cols-2">
+          {downloadLinks.primary.map((item, index) => (
+            <a
+              href={item.url}
+              class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 mr-4`}
+            >
+              <DownloadIcon className="w-4 h-4 mr-2" /> <span>{item.name}</span>
+            </a>
+          ))}
+        </div>
+        <div class="w-80">
+          <p>Current Version: {version}.</p>
+          <p>Released on {releaseDate}.</p>
+          {downloadLinks.alt.length > 0 && (
+            <p>
+              Also available on{' '}
+              {downloadLinks.alt.map((platform, index) => (
+                <a href={platform.url || REPO_RELEASES_URL}>
+                  {platform.name +
+                    (index < downloadLinks.alt.length - 1 ? ', ' : '.')}
+                </a>
+              ))}
+            </p>
+          )}
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="flex">
+          <a
+            class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
+            href={REPO_RELEASES_URL}
+          >
+            <DownloadIcon className="w-4 h-4 mr-2" />{' '}
+            <span>View GitHub Releases</span>
+          </a>
+        </div>
+        <div>
+          <div>Couldn&apos;t get latest version.</div>
+        </div>
+      </>
+    )
+  }
+</div>

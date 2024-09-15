@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import { marked } from 'marked';
+
+export interface Props {
+  title: string;
+  description: string;
+  screenshot?: {
+    path: string;
+    alt: string;
+  };
+  isDark?: boolean;
+  isReversed?: boolean;
+}
+
+const {
+  title,
+  description,
+  screenshot,
+  isDark = false,
+  isReversed = false,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'flex px-12 py-16 lg:py-24',
+    isDark ? 'bg-gray-800 text-white' : 'bg-gray-50',
+  ]}
+>
+  <div
+    class:list={[
+      'container max-w-5xl mx-auto flex flex-col items-center lg:space-x-36',
+      !isReversed ? 'lg:flex-row' : 'lg:flex-row-reverse',
+      isReversed && 'lg:space-x-reverse',
+    ]}
+  >
+    <div class="flex-1">
+      <h3 class="mb-4 text-xl lg:text-2xl font-semibold">{title}</h3>
+      <div
+        class="text-lg lg:text-xl font-light"
+        set:html={marked(description)}
+      />
+    </div>
+
+    {
+      screenshot && (
+        <Image
+          class="w-full lg:w-96 max-w-md rounded-lg shadow-lg transform -rotate-6 mt-16 lg:mt-0 mb-8 lg:mb-0"
+          width="500"
+          height="400"
+          src={import(`../assets/${screenshot.path}.png`)}
+          alt={screenshot.alt}
+        />
+      )
+    }
+
+    <slot />
+  </div>
+</div>

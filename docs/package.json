@@ -1,0 +1,66 @@
+{
+  "name": "atlasify-website",
+  "version": "latest",
+  "description": "The source code of atlasify.io",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "prepare": "husky",
+    "astro": "astro",
+    "lint:check": "biome check",
+    "lint": "biome check --fix"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/setchy/atlasify"
+  },
+  "keywords": [
+    "atlasify",
+    "atlassian",
+    "notifier",
+    "notifications",
+    "website",
+    "astro"
+  ],
+  "author": {
+    "name": "Adam Setch",
+    "url": "https://github.com/setchy"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/setchy/atlasify/issues"
+  },
+  "homepage": "https://www.atlasify.io/",
+  "dependencies": {
+    "@astrojs/solid-js": "4.4.1",
+    "@astrojs/tailwind": "5.1.0",
+    "@kobalte/core": "0.13.6",
+    "@tailwindcss/typography": "0.5.15",
+    "astro": "4.15.6",
+    "bowser": "2.11.0",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "date-fns": "3.6.0",
+    "marked": "14.1.2",
+    "sharp": "0.33.5",
+    "solid-js": "1.8.22",
+    "solid-markdown": "2.0.13",
+    "tailwind-merge": "2.5.2",
+    "tailwindcss": "3.4.11",
+    "tailwindcss-animate": "1.0.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.0",
+    "husky": "9.1.6"
+  },
+  "packageManager": "pnpm@9.10.0",
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
+  }
+}

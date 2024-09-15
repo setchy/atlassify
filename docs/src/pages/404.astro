@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found">
+  <div class="container max-w-4xl mx-auto px-12 flex-1">
+    <div
+      class="w-full h-screens py-32 xl:py-56 flex flex-col items-center justify-center"
+    >
+      <img class="w-1/2 md:1/3 lg:w-1/4 text-blue-600" src="/images/404.svg" />
+      <div class="flex flex-col items-center justify-center">
+        <p class="text-3xl md:text-4xl lg:text-5xl text-gray-800 mt-12">
+          Page Not Found
+        </p>
+        <p class="md:text-lg lg:text-xl text-gray-600 mt-8">
+          Sorry, the page you are looking for could not be found.
+        </p>
+        <a
+          href="/"
+          class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 mt-12 rounded transition duration-150"
+          title="Return Home"
+        >
+          <span>&#8592 Return Home</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

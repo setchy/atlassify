@@ -1,0 +1,54 @@
+---
+import { siteMetadata } from '../constants';
+import GithubIcon from '../icons/Github.astro';
+import Logo from './Logo.astro';
+
+const { currentPathname } = Astro.props;
+const isHomepage = currentPathname === '/';
+---
+
+<nav class:list={["py-8 px-8", isHomepage && "bg-gray-100"]}>
+  <div class="container max-w-5xl lg:mx-auto">
+    <div
+      class="bg-gray-navbar rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
+    >
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <a href="/" aria-label="Atlasify">
+          <Logo />
+        </a>
+      </div>
+
+      <div class="flex justify-end">
+        <ul class="flex flex-row items-center list-none space-x-4">
+          {
+            siteMetadata.menuLinks.map((item) => (
+              <li>
+                <a
+                  href={item.path}
+                  class={`py-1.5 lg:py-2 px-2 lg:px-3 font-light ${
+                    currentPathname === item.path
+                      ? "border rounded-lg border-white text-white"
+                      : "text-gray-200"
+                  } hover:text-gray-300`}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+
+          <li>
+            <a
+              class="flex flex-1 py-2 px-2 text-white hover:text-gray-300"
+              rel="noopener noreferrer"
+              href="https://github.com/setchy/atlasify/"
+              aria-label="GitHub Repository"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
