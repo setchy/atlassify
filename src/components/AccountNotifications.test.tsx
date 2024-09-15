@@ -5,7 +5,6 @@ import {
 } from '../__mocks__/state-mocks';
 import { ensureStableEmojis, mockDirectoryPath } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
-import { GroupBy } from '../types';
 import { mockAtlasifyNotification } from '../utils/api/__mocks__/response-mocks';
 import * as links from '../utils/links';
 import { AccountNotifications } from './AccountNotifications';
@@ -29,7 +28,9 @@ describe('components/AccountNotifications.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.PRODUCT } }}
+        value={{
+          settings: { ...mockSettings, groupNotificationsByProduct: true },
+        }}
       >
         <AccountNotifications {...props} />
       </AppContext.Provider>,
@@ -46,7 +47,9 @@ describe('components/AccountNotifications.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
+        value={{
+          settings: { ...mockSettings, groupNotificationsByProduct: false },
+        }}
       >
         <AccountNotifications {...props} />
       </AppContext.Provider>,

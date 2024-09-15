@@ -5,7 +5,6 @@ import {
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import { GroupBy } from '../types';
 import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
@@ -31,7 +30,9 @@ describe('components/NotificationRow.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
+        value={{
+          settings: { ...mockSettings, groupNotificationsByProduct: false },
+        }}
       >
         <NotificationRow {...props} />
       </AppContext.Provider>,
@@ -39,7 +40,7 @@ describe('components/NotificationRow.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render itself & its children - group by repositories', async () => {
+  it('should render itself & its children - group by products', async () => {
     jest
       .spyOn(global.Date, 'now')
       .mockImplementation(() => new Date('2024').valueOf());
@@ -51,7 +52,9 @@ describe('components/NotificationRow.tsx', () => {
 
     const tree = render(
       <AppContext.Provider
-        value={{ settings: { ...mockSettings, groupBy: GroupBy.DATE } }}
+        value={{
+          settings: { ...mockSettings, groupNotificationsByProduct: true },
+        }}
       >
         <NotificationRow {...props} />
       </AppContext.Provider>,

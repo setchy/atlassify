@@ -6,7 +6,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
   "baseElement": <body>
     <div>
       <div
-        class="group flex justify-between bg-gray-100 px-3 py-1.5 dark:bg-gray-darker dark:text-white"
+        class="group flex justify-between bg-gray-100 px-4 py-1.5 dark:bg-gray-darker dark:text-white"
       >
         <div
           class="flex flex-1 gap-3 items-center truncate text-sm font-medium opacity-80"
@@ -124,7 +124,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
   </body>,
   "container": <div>
     <div
-      class="group flex justify-between bg-gray-100 px-3 py-1.5 dark:bg-gray-darker dark:text-white"
+      class="group flex justify-between bg-gray-100 px-4 py-1.5 dark:bg-gray-darker dark:text-white"
     >
       <div
         class="flex flex-1 gap-3 items-center truncate text-sm font-medium opacity-80"

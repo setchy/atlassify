@@ -3,7 +3,6 @@ import {
   type AtlasifyState,
   type AtlasifyUser,
   type AuthState,
-  GroupBy,
   type Link,
   OpenPreference,
   type SettingsState,
@@ -35,10 +34,10 @@ const mockAppearanceSettings = {
 };
 
 const mockNotificationSettings = {
-  groupBy: GroupBy.DATE,
   markAsReadOnOpen: true,
   delayNotificationState: false,
   fetchOnlyUnreadNotifications: true,
+  groupNotificationsByProduct: false,
 };
 
 const mockSystemSettings = {

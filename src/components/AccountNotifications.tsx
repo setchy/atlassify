@@ -9,11 +9,9 @@ import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import ListIcon from '@atlaskit/icon/glyph/list';
-import CalendarIcon from '@atlaskit/icon/glyph/calendar';
 
 import { AppContext } from '../context/App';
 import {
-  GroupBy,
   type Account,
   type AtlasifyError,
   type AtlasifyNotification,
@@ -75,9 +73,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         ? 'Hide account notifications'
         : 'Show account notifications';
 
-  const isGroupByProduct = settings.groupBy === 'PRODUCT';
-  const GroupByIcon = isGroupByProduct ? ListIcon : CalendarIcon;
-
   return (
     <Stack>
       <Box
@@ -118,31 +113,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           <Inline space="space.100" alignInline="center">
             <Tooltip
               content={
-                isGroupByProduct
-                  ? 'Group notifications by products'
-                  : 'Order notifications by date'
-              }
-            >
-              <Inline>
-                <GroupByIcon label="groupBy" size="medium" />
-                <Toggle
-                  id="toggle-group-by-product"
-                  size="regular"
-                  label="Group by product toggle"
-                  defaultChecked={isGroupByProduct}
-                  onChange={() => {
-                    updateSetting(
-                      'groupBy',
-                      isGroupByProduct ? GroupBy.DATE : GroupBy.PRODUCT,
-                    );
-                    fetchNotifications();
-                  }}
-                />
-              </Inline>
-            </Tooltip>
-
-            <Tooltip
-              content={
                 settings.fetchOnlyUnreadNotifications
                   ? 'Retrieve only unread notifications'
                   : 'Retrieve all notifications'
@@ -152,7 +122,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 id="toggle-unread-only"
                 size="regular"
                 label="Show only unread toggle"
-                defaultChecked={settings.fetchOnlyUnreadNotifications}
+                isChecked={settings.fetchOnlyUnreadNotifications}
                 onChange={(evt) => {
                   updateSetting(
                     'fetchOnlyUnreadNotifications',
@@ -160,6 +130,27 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   );
                   fetchNotifications();
                 }}
+              />
+            </Tooltip>
+
+            <Tooltip content={'Group notifications by products'}>
+              <IconButton
+                label="toggleGroupNotificationsByProduct"
+                icon={() => <ListIcon label="groupByProduct" size="small" />}
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+
+                  updateSetting(
+                    'groupNotificationsByProduct',
+                    !settings.groupNotificationsByProduct,
+                  );
+                }}
+                appearance={
+                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
+                }
+                spacing="compact"
+                shape="circle"
               />
             </Tooltip>
 
@@ -179,7 +170,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         <>
           {props.error && <Oops error={props.error} />}
           {!hasNotifications && !props.error && <AllRead />}
-          {isGroupByProduct
+          {settings.groupNotificationsByProduct
             ? Object.values(groupedNotifications).map(
                 (productNotifications) => {
                   return (

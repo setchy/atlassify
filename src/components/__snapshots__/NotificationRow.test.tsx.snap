@@ -13,30 +13,57 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           class="mr-3 flex items-center justify-center"
         >
           <div
-            role="presentation"
+            class="css-2k1qcz"
           >
             <div
-              aria-labelledby="2"
-              role="img"
-              style="display: inline-block; position: relative; outline: 0;"
+              role="presentation"
+            >
+              <div
+                aria-labelledby="2"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-1hqd2wf"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="2"
+                >
+                  atlasify-app
+                </span>
+              </div>
+            </div>
+            <div
+              role="presentation"
             >
               <span
-                class="css-1hqd2wf"
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  class="css-13ep12v"
-                  data-vc="avatar-image"
-                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                  style="border-radius: 50%;"
-                />
-              </span>
-              <span
-                hidden=""
-                id="2"
-              >
-                atlasify-app
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
             </div>
           </div>
@@ -64,7 +91,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="3"
+                aria-labelledby="4"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -82,7 +109,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="3"
+                  id="4"
                 >
                   Repository
                 </span>
@@ -121,7 +148,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+          class="flex items-center justify-center gap-2"
         >
           <button
             class=" css-a8hcye"
@@ -172,30 +199,57 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         class="mr-3 flex items-center justify-center"
       >
         <div
-          role="presentation"
+          class="css-2k1qcz"
         >
           <div
-            aria-labelledby="2"
-            role="img"
-            style="display: inline-block; position: relative; outline: 0;"
+            role="presentation"
+          >
+            <div
+              aria-labelledby="2"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-1hqd2wf"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                  style="border-radius: 50%;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="2"
+              >
+                atlasify-app
+              </span>
+            </div>
+          </div>
+          <div
+            role="presentation"
           >
             <span
-              class="css-1hqd2wf"
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
             >
-              <img
-                alt=""
-                aria-hidden="true"
-                class="css-13ep12v"
-                data-vc="avatar-image"
-                src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                style="border-radius: 50%;"
-              />
-            </span>
-            <span
-              hidden=""
-              id="2"
-            >
-              atlasify-app
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </span>
           </div>
         </div>
@@ -223,7 +277,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             class="flex flex-1 items-center gap-1 text-xs opacity-80"
           >
             <div
-              aria-labelledby="3"
+              aria-labelledby="4"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -241,7 +295,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="3"
+                id="4"
               >
                 Repository
               </span>
@@ -280,7 +334,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
       </div>
       <div
-        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+        class="flex items-center justify-center gap-2"
       >
         <button
           class=" css-a8hcye"
@@ -375,7 +429,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
 }
 `;
 
-exports[`components/NotificationRow.tsx should render itself & its children - group by repositories 1`] = `
+exports[`components/NotificationRow.tsx should render itself & its children - group by products 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -388,30 +442,57 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           class="mr-3 flex items-center justify-center"
         >
           <div
-            role="presentation"
+            class="css-2k1qcz"
           >
             <div
-              aria-labelledby="7"
-              role="img"
-              style="display: inline-block; position: relative; outline: 0;"
+              role="presentation"
+            >
+              <div
+                aria-labelledby="8"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-1hqd2wf"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="8"
+                >
+                  atlasify-app
+                </span>
+              </div>
+            </div>
+            <div
+              role="presentation"
             >
               <span
-                class="css-1hqd2wf"
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  class="css-13ep12v"
-                  data-vc="avatar-image"
-                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                  style="border-radius: 50%;"
-                />
-              </span>
-              <span
-                hidden=""
-                id="7"
-              >
-                atlasify-app
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
             </div>
           </div>
@@ -439,7 +520,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="8"
+                aria-labelledby="10"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -457,7 +538,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="8"
+                  id="10"
                 >
                   Repository
                 </span>
@@ -496,7 +577,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+          class="flex items-center justify-center gap-2"
         >
           <button
             class=" css-a8hcye"
@@ -547,30 +628,57 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         class="mr-3 flex items-center justify-center"
       >
         <div
-          role="presentation"
+          class="css-2k1qcz"
         >
           <div
-            aria-labelledby="7"
-            role="img"
-            style="display: inline-block; position: relative; outline: 0;"
+            role="presentation"
+          >
+            <div
+              aria-labelledby="8"
+              role="img"
+              style="display: inline-block; position: relative; outline: 0;"
+            >
+              <span
+                class="css-1hqd2wf"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  class="css-13ep12v"
+                  data-vc="avatar-image"
+                  src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                  style="border-radius: 50%;"
+                />
+              </span>
+              <span
+                hidden=""
+                id="8"
+              >
+                atlasify-app
+              </span>
+            </div>
+          </div>
+          <div
+            role="presentation"
           >
             <span
-              class="css-1hqd2wf"
+              aria-hidden="true"
+              class="css-1wits42"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
             >
-              <img
-                alt=""
-                aria-hidden="true"
-                class="css-13ep12v"
-                data-vc="avatar-image"
-                src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                style="border-radius: 50%;"
-              />
-            </span>
-            <span
-              hidden=""
-              id="7"
-            >
-              atlasify-app
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </span>
           </div>
         </div>
@@ -598,7 +706,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             class="flex flex-1 items-center gap-1 text-xs opacity-80"
           >
             <div
-              aria-labelledby="8"
+              aria-labelledby="10"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -616,7 +724,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="8"
+                id="10"
               >
                 Repository
               </span>
@@ -655,7 +763,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
       </div>
       <div
-        class="flex items-center justify-center gap-2 opacity-0 transition-opacity group-hover:opacity-80"
+        class="flex items-center justify-center gap-2"
       >
         <button
           class=" css-a8hcye"

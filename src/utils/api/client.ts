@@ -97,7 +97,7 @@ export function getNotificationsForUser(
   return apiRequestAuth(account, {
     query: print(QUERY),
     variables: {
-      readState: settings.fetchOnlyUnreadNotifications ? null : 'unread',
+      readState: settings.fetchOnlyUnreadNotifications ? 'unread' : null,
       // product: settings.product,
     },
   });

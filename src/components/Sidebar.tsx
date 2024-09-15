@@ -104,6 +104,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 appearance="subtle"
+                shape="circle"
                 onClick={() => toggleFilters()}
               />
 
@@ -157,6 +158,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 appearance="subtle"
+                shape="circle"
                 onClick={() => refreshNotifications()}
               />
             </Tooltip>
@@ -172,6 +174,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 appearance="subtle"
+                shape="circle"
                 onClick={() => toggleSettings()}
               />
             </Tooltip>

@@ -29,7 +29,6 @@ export interface Account {
 export type SettingsValue =
   | boolean
   | number
-  | GroupBy
   | OpenPreference
   | Category[]
   | ReadState[]
@@ -47,10 +46,10 @@ interface AppearanceSettingsState {
 }
 
 interface NotificationSettingsState {
-  groupBy: GroupBy;
   markAsReadOnOpen: boolean;
   delayNotificationState: boolean;
   fetchOnlyUnreadNotifications: boolean;
+  groupNotificationsByProduct: boolean;
 }
 
 interface SystemSettingsState {
@@ -83,11 +82,6 @@ export enum Theme {
 export enum OpenPreference {
   FOREGROUND = 'FOREGROUND',
   BACKGROUND = 'BACKGROUND',
-}
-
-export enum GroupBy {
-  PRODUCT = 'PRODUCT',
-  DATE = 'DATE',
 }
 
 export type RadioGroupItem = {

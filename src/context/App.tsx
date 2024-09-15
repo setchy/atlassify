@@ -15,14 +15,12 @@ import {
   type AtlasifyError,
   type AtlasifyNotification,
   type AuthState,
-  GroupBy,
   OpenPreference,
   type SettingsState,
   type SettingsValue,
   type Status,
   Theme,
 } from '../types';
-// import type { Category, ReadState } from '../utils/api/types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
 import {
   addAccount,
@@ -52,10 +50,10 @@ const defaultAppearanceSettings = {
 };
 
 const defaultNotificationSettings = {
-  groupBy: GroupBy.DATE,
   markAsReadOnOpen: true,
   delayNotificationState: false,
   fetchOnlyUnreadNotifications: true,
+  groupNotificationsByProduct: false,
 };
 
 const defaultSystemSettings = {

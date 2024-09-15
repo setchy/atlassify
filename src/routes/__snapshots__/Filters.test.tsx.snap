@@ -77,76 +77,128 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
           <div
             class="css-k5cxwk"
           >
-            <label
-              class="css-k8x29e"
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="direct"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="direct"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Direct
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                Direct
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="watching"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="watching"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Watching
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                Watching
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <g
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M12 18c-4.536 0-7.999-4.26-7.999-6 0-2.001 3.459-6 8-6 4.376 0 7.998 3.973 7.998 6 0 1.74-3.462 6-7.998 6m0-14C6.48 4 2 8.841 2 12c0 3.086 4.576 8 10 8 5.423 0 10-4.914 10-8 0-3.159-4.48-8-10-8"
+                    />
+                    <path
+                      d="M11.978 13.984c-1.104 0-2-.897-2-2s.896-2 2-2c1.103 0 2 .897 2 2s-.897 2-2 2m0-6c-2.206 0-4 1.794-4 4s1.793 4 4 4 4-1.794 4-4-1.794-4-4-4"
+                    />
+                  </g>
+                </svg>
               </span>
-            </label>
+            </div>
           </div>
         </div>
       </div>
@@ -251,251 +303,449 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
           <div
             class="css-k5cxwk"
           >
-            <label
-              class="css-k8x29e"
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="bitbucket"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="bitbucket"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Bitbucket
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Bitbucket"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Bitbucket
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="compass"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="compass"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Compass
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Compass"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Compass
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M15.667 15.66v5.942H9.713V15.66zV9.722H4.807c-.58.004-1.047.47-1.043 1.04v15.755a1.04 1.04 0 0 0 1.028 1.054h15.771a1.04 1.04 0 0 0 1.042-1.04V15.66zm0-11.88v5.942h5.967v5.938h5.935V4.82a1.04 1.04 0 0 0-1.028-1.053h-.014z"
+                    fill="inherit"
+                  />
+                  
+      
+                </svg>
+                
+    
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="confluence"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="confluence"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Confluence
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Confluence"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Confluence
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M25.769 20.234c-6.584-3.183-8.507-3.66-11.282-3.66-3.254 0-6.028 1.355-8.507 5.16l-.406.622c-.333.513-.407.696-.407.915s.11.403.517.659l4.18 2.598c.222.146.407.22.592.22.222 0 .37-.11.592-.44l.665-1.024c1.036-1.574 1.96-2.086 3.144-2.086 1.036 0 2.257.293 3.773 1.025l4.365 2.049c.443.22.924.11 1.146-.403l2.071-4.537c.222-.512.074-.842-.444-1.098M6.572 12.22c6.584 3.184 8.507 3.66 11.281 3.66 3.255 0 6.03-1.354 8.507-5.16l.407-.622c.333-.512.407-.695.407-.915s-.11-.402-.518-.658l-4.18-2.598c-.221-.147-.406-.22-.591-.22-.222 0-.37.11-.592.44l-.666 1.024c-1.035 1.573-1.96 2.086-3.144 2.086-1.035 0-2.256-.293-3.772-1.025L9.346 6.183c-.444-.22-.924-.11-1.146.402l-2.072 4.538c-.222.512-.074.841.444 1.098"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="jira"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="jira"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Jira
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Jira"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Jira
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M11.034 21.99h-2.22c-3.346 0-5.747-2.05-5.747-5.052h11.932c.619 0 1.019.44 1.019 1.062v12.007c-2.983 0-4.984-2.416-4.984-5.784zm5.893-5.967h-2.219c-3.347 0-5.748-2.013-5.748-5.015h11.933c.618 0 1.055.402 1.055 1.025V24.04c-2.983 0-5.02-2.416-5.02-5.784zm5.93-5.93h-2.219c-3.347 0-5.748-2.05-5.748-5.052h11.933c.618 0 1.018.439 1.018 1.025v12.007c-2.983 0-4.984-2.416-4.984-5.784z"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="jira product discovery"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="jira product discovery"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Jira Product Discovery
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Jira Product Discovery"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Jira Product Discovery
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M17.655 5.884a15.3 15.3 0 0 0 8.75 0c.257-.056.428.114.37.37-.826 2.985-.826 5.742 0 8.727.058.228-.113.427-.37.342a16.33 16.33 0 0 0-8.75 0c-.228.085-.428-.114-.342-.342.77-2.985.77-5.742 0-8.727-.086-.256.114-.426.342-.37m1.169 10.576v.483c0 2.246-1.568 3.894-3.506 3.894a3.474 3.474 0 0 1-3.477-3.496c0-1.933 1.567-3.468 3.762-3.468h.57V7.078c-.285-.028-.57-.028-.855-.028C9.618 7.05 5 11.655 5 17.37c0 5.713 4.617 10.29 10.318 10.29s10.346-4.605 10.346-10.29v-.91z"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="jira service management"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="jira service management"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Jira Service Management
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Jira Service Management"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Jira Service Management
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M18.79 13.257h7.325c1.1 0 1.476 1.046.805 1.878L15.464 29.274c-3.702-2.951-3.353-7.62-.644-11.027zm-5.66 5.634H5.806c-1.1 0-1.476-1.046-.805-1.878L16.457 2.874c3.702 2.951 3.3 7.566.617 11z"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="unknown"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="unknown"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Unknown
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                aria-label="Atlassian"
+                class="css-1ka881b"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
               >
-                Unknown
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    d="M27.545 24.378 16.96 3.208c-.208-.458-.417-.541-.667-.541-.208 0-.458.083-.708.5-1.5 2.375-2.167 5.125-2.167 8 0 4.001 2.042 7.752 5.042 13.795.334.666.584.791 1.167.791h7.335c.541 0 .833-.208.833-.625 0-.208-.042-.333-.25-.75M12.168 14.377c-.834-1.25-1.084-1.334-1.292-1.334s-.333.083-.708.834L4.875 24.46c-.167.334-.208.459-.208.625 0 .334.291.667.916.667h7.46c.5 0 .875-.416 1.083-1.208.25-1 .334-1.876.334-2.917 0-2.917-1.292-5.751-2.292-7.251"
+                    fill="inherit"
+                  />
+                  
+    
+                </svg>
               </span>
-            </label>
+            </div>
           </div>
         </div>
       </div>

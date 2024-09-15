@@ -274,54 +274,6 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
         >
           Notifications
         </h4>
-        <div
-          class="css-gokkc4"
-        >
-          <span
-            class="css-19g3t4k"
-            id="groupBy-label"
-          >
-            Group by:
-          </span>
-          <div
-            aria-labelledby="groupBy-label"
-            role="radiogroup"
-          >
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                checked=""
-                class="css-t4vzni"
-                name="groupBy"
-                tabindex="0"
-                type="radio"
-                value="DATE"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Date
-              </span>
-            </label>
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                class="css-t4vzni"
-                name="openLinks"
-                tabindex="0"
-                type="radio"
-                value="PRODUCT"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Product
-              </span>
-            </label>
-          </div>
-        </div>
         <label
           class="css-k8x29e"
         >
