@@ -61,6 +61,7 @@ export const AppearanceSettings: FC = () => {
           options={themeOptions}
           defaultValue={settings.theme}
           value={settings.theme}
+          isDisabled={true}
           onChange={(evt) => {
             updateSetting('theme', evt.target.value as Theme);
           }}

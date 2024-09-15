@@ -45,12 +45,14 @@ NOW
 - [ ] create new social images
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
+- [ ] update test snapshot for "date updated at" to mock result
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
 - [ ] improve test coverage
 - [ ] consider making product filter list semi-dynamic based on response
 - [ ] make filters a dropdown overlay
+- [ ] DARK and System theme
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue

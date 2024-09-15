@@ -30,7 +30,7 @@ export const mockAuth: AuthState = {
 };
 
 const mockAppearanceSettings = {
-  theme: Theme.SYSTEM,
+  theme: Theme.LIGHT,
   zoomPercentage: 100,
 };
 

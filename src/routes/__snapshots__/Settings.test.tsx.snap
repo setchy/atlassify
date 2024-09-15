@@ -86,10 +86,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
           >
             <label
               class="css-exvs2c"
+              data-disabled="true"
             >
               <input
-                checked=""
                 class="css-t4vzni"
+                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"
@@ -103,9 +104,12 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             </label>
             <label
               class="css-exvs2c"
+              data-disabled="true"
             >
               <input
+                checked=""
                 class="css-t4vzni"
+                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"
@@ -119,9 +123,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             </label>
             <label
               class="css-exvs2c"
+              data-disabled="true"
             >
               <input
                 class="css-t4vzni"
+                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"

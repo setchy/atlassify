@@ -47,7 +47,7 @@ export const defaultAuth: AuthState = {
 };
 
 const defaultAppearanceSettings = {
-  theme: Theme.SYSTEM,
+  theme: Theme.LIGHT,
   zoomPercentage: 100,
 };
 
