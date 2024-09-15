@@ -1,12 +1,12 @@
 ---
 import Bowser from 'bowser';
 import { format, parseISO } from 'date-fns';
+import { siteMetadata } from '~/constants';
 import DownloadIcon from '../icons/Download.astro';
 import type { Assets, DownloadLink, DownloadLinks, HeroData } from '../types';
 
-const REPO_API_URL =
-  'https://api.github.com/repos/setchy/atlasify/releases/latest';
-const REPO_RELEASES_URL = 'https://github.com/setchy/atlasify/releases/latest';
+const REPO_API_URL = `https://api.github.com/repos/${siteMetadata.repo}/releases/latest`;
+const REPO_RELEASES_URL = `https://github.com/${siteMetadata.repo}/releases/latest`;
 const releaseDetailsClassName = 'text-sm mt-4';
 
 const getDownloadLinks = (assets: Assets[]): DownloadLinks => {

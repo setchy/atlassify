@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/Accordion';
+import { siteMetadata } from '~/constants';
 
 const content = [
   {
@@ -16,8 +17,7 @@ const content = [
   {
     id: '2',
     question: 'How can I contribute to Atlasify?',
-    answer:
-      "You can contribute to Atlasify by opening a pull request @[setchy/atlasify](https://github.com/setchy/atlasify)! Check out our open issues and see if there's anything you'd like to work on.",
+    answer: `You can contribute to Atlasify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
   },
 ];
 

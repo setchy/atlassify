@@ -1,4 +1,5 @@
 ---
+import { siteMetadata } from '../constants';
 import GithubIcon from '../icons/Github.astro';
 
 const { currentPathname } = Astro.props;
@@ -14,7 +15,7 @@ const isHomepage = currentPathname === '/';
     <a
       target="_blank"
       rel="noopener noreferrer"
-      href="https://github.com/setchy/atlasify/"
+      href=`${siteMetadata.repo}`
       aria-label="GitHub Repository"
       class="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
     >
@@ -22,7 +23,7 @@ const isHomepage = currentPathname === '/';
     </a>
 
     <div class="my-3">
-      Copyright © <a href="https://setchy.io">setchy</a>
+      Copyright © <a href=`${siteMetadata.author.site}`>{siteMetadata.author.name}</a>
       {new Date().getFullYear()}.
     </div>
   </div>

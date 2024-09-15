@@ -1,5 +1,5 @@
 ---
-import { siteMetadata } from '../constants';
+import { siteMetadata } from '~/constants';
 import GithubIcon from '../icons/Github.astro';
 import Logo from './Logo.astro';
 
@@ -41,7 +41,7 @@ const isHomepage = currentPathname === '/';
             <a
               class="flex flex-1 py-2 px-2 text-white hover:text-gray-300"
               rel="noopener noreferrer"
-              href="https://github.com/setchy/atlasify/"
+              href=`https://github.com/${siteMetadata.repo}`
               aria-label="GitHub Repository"
             >
               <GithubIcon className="w-4 h-4" />
