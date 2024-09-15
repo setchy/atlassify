@@ -69,7 +69,7 @@ export const NotificationRow: FC<INotificationRow> = ({
               size="small"
             />
           </Tooltip>
-          <Tooltip content={formatProperCase(categoryDetails.name)}>
+          <Tooltip content={categoryDetails.description}>
             <CategoryIcon {...CategoryIconProps} />
           </Tooltip>
         </Stack>
@@ -125,12 +125,11 @@ export const NotificationRow: FC<INotificationRow> = ({
       {!animateExit && notification.unread && (
         <div className="flex items-center justify-center gap-2">
           <IconButton
+            label="Mark as read"
+            title="Mark as read"
             icon={(iconProps) => (
               <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
             )}
-            label="Mark as read"
-            title="Mark as read"
-            isTooltipDisabled={false}
             shape="circle"
             spacing="compact"
             appearance="subtle"

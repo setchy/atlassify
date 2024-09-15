@@ -5,7 +5,6 @@ import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
 import { Inline } from '@atlaskit/primitives';
-import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 
@@ -22,21 +21,19 @@ export const Header: FC<IHeader> = (props: IHeader) => {
   return (
     <div className="mx-8 mt-2 py-2">
       <Inline grow="fill" spread="space-between">
-        <Tooltip content="Go Back">
-          <IconButton
-            title="Go Back"
-            label="Go Back"
-            icon={ArrowLeftIcon}
-            appearance="subtle"
-            shape="circle"
-            onClick={() => {
-              navigate(-1);
-              if (props.fetchOnBack) {
-                fetchNotifications();
-              }
-            }}
-          />
-        </Tooltip>
+        <IconButton
+          label="Go Back"
+          title="Go Back"
+          icon={ArrowLeftIcon}
+          appearance="subtle"
+          shape="circle"
+          onClick={() => {
+            navigate(-1);
+            if (props.fetchOnBack) {
+              fetchNotifications();
+            }
+          }}
+        />
 
         <Heading size="medium">{props.children}</Heading>
       </Inline>

@@ -77,8 +77,9 @@ export const AppearanceSettings: FC = () => {
           Zoom:
         </label>
         <IconButton
-          icon={MediaServicesZoomOutIcon}
           label="Zoom Out"
+          title="Zoom Out"
+          icon={MediaServicesZoomOutIcon}
           shape="circle"
           spacing="compact"
           onClick={() =>
@@ -90,8 +91,9 @@ export const AppearanceSettings: FC = () => {
           {zoomPercentage.toFixed(0)}%
         </span>
         <IconButton
-          icon={MediaServicesZoomInIcon}
           label="Zoom In"
+          title="Zoom In"
+          icon={MediaServicesZoomInIcon}
           shape="circle"
           spacing="compact"
           onClick={() =>
@@ -100,8 +102,9 @@ export const AppearanceSettings: FC = () => {
           }
         />
         <IconButton
-          icon={SelectClearIcon}
           label="Reset Zoom"
+          title="Reset Zoom"
+          icon={SelectClearIcon}
           shape="circle"
           spacing="compact"
           onClick={() => webFrame.setZoomLevel(0)}

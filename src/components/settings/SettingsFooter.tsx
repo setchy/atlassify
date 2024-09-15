@@ -40,26 +40,22 @@ export const SettingsFooter: FC = () => {
               </Button>
             </Tooltip>
             <Inline space="space.200">
-              <Tooltip content="Accounts">
-                <IconButton
-                  label="Accounts"
-                  title="Accounts"
-                  icon={PeopleGroupIcon}
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => navigate('/accounts')}
-                />
-              </Tooltip>
-              <Tooltip content="Quit Atlasify">
-                <IconButton
-                  label="Quit Atlasify"
-                  title="Quit Atlasify"
-                  icon={CrossCircleIcon}
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => quitApp()}
-                />
-              </Tooltip>
+              <IconButton
+                label="Accounts"
+                title="Accounts"
+                icon={PeopleGroupIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => navigate('/accounts')}
+              />
+              <IconButton
+                label="Quit Atlasify"
+                title="Quit Atlasify"
+                icon={CrossCircleIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => quitApp()}
+              />
             </Inline>
           </Inline>
         </Stack>

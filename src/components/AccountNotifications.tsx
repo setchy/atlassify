@@ -127,31 +127,30 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               />
             </Tooltip>
 
-            <Tooltip content={'Group notifications by products'}>
-              <IconButton
-                label="toggleGroupNotificationsByProduct"
-                icon={() => <ListIcon label="groupByProduct" size="small" />}
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
-                  event.stopPropagation();
+            <IconButton
+              label="Group notifications by products"
+              isTooltipDisabled={false}
+              icon={() => <ListIcon label="groupByProduct" size="small" />}
+              onClick={(event: MouseEvent<HTMLElement>) => {
+                // Don't trigger onClick of parent element.
+                event.stopPropagation();
 
-                  updateSetting(
-                    'groupNotificationsByProduct',
-                    !settings.groupNotificationsByProduct,
-                  );
-                }}
-                appearance={
-                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
-                }
-                spacing="compact"
-                shape="circle"
-              />
-            </Tooltip>
+                updateSetting(
+                  'groupNotificationsByProduct',
+                  !settings.groupNotificationsByProduct,
+                );
+              }}
+              appearance={
+                settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
+              }
+              spacing="compact"
+              shape="circle"
+            />
 
             <IconButton
-              icon={ChevronIcon}
               label={toggleAccountNotificationsLabel}
-              isTooltipDisabled={false}
+              title={toggleAccountNotificationsLabel}
+              icon={ChevronIcon}
               shape="circle"
               spacing="compact"
               appearance="subtle"

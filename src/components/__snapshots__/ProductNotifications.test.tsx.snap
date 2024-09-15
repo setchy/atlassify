@@ -46,6 +46,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
         >
           <button
             class=" css-a8hcye"
+            title="Mark all product notifications as read"
             type="button"
           >
             <span
@@ -81,6 +82,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
           </button>
           <button
             class=" css-a8hcye"
+            title="Hide product notifications"
             type="button"
           >
             <span
@@ -164,6 +166,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
       >
         <button
           class=" css-a8hcye"
+          title="Mark all product notifications as read"
           type="button"
         >
           <span
@@ -199,6 +202,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
         </button>
         <button
           class=" css-a8hcye"
+          title="Hide product notifications"
           type="button"
         >
           <span

@@ -64,11 +64,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         {!animateExit && (
           <HoverGroup>
             <IconButton
+              label="Mark all product notifications as read"
+              title="Mark all product notifications as read"
               icon={(iconProps) => (
                 <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
               )}
-              label="Mark all product notifications as read"
-              isTooltipDisabled={false}
               shape="circle"
               spacing="compact"
               appearance="subtle"
@@ -85,9 +85,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             />
 
             <IconButton
-              icon={ChevronIcon}
               label={toggleProductNotificationsLabel}
-              isTooltipDisabled={false}
+              title={toggleProductNotificationsLabel}
+              icon={ChevronIcon}
               shape="circle"
               spacing="compact"
               appearance="subtle"

@@ -2,10 +2,8 @@ import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-// import BitbucketPullrequestsIcon from '@atlaskit/icon/glyph/bitbucket/pullrequests';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
-// import IssuesIcon from '@atlaskit/icon/glyph/issues';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
@@ -60,15 +58,13 @@ export const Sidebar: FC = () => {
     <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
-          <Tooltip content="Open Atlasify on GitHub">
-            <Button
-              title="Atlasify"
-              appearance="subtle"
-              onClick={() => openAtlasifyRepository()}
-            >
-              <AtlasIcon size="medium" appearance="brand" />
-            </Button>
-          </Tooltip>
+          <Button
+            title="Open Atlasify on GitHub"
+            appearance="subtle"
+            onClick={() => openAtlasifyRepository()}
+          >
+            <AtlasIcon size="medium" appearance="brand" />
+          </Button>
         </div>
 
         <Stack alignInline="center" space="space.100">
@@ -114,88 +110,85 @@ export const Sidebar: FC = () => {
             </Tooltip>
           )}
 
-          {/* <Tooltip content="My Issues">
-            <IconButton
-              label="My Issues"
-              icon={(iconProps) => (
-                <IssuesIcon {...iconProps} size="small" primaryColor="white" />
-              )}
-              appearance="subtle"
-              spacing="compact"
-              onClick={() => openMyIssues()}
-            />
-          </Tooltip> 
+          {/* 
+          <IconButton
+            label="My Issues"
+            title="My Issues"
+            icon={(iconProps) => (
+              <IssuesIcon {...iconProps} size="small" primaryColor="white" />
+            )}
+            appearance="subtle"
+            spacing="compact"
+            onClick={() => openMyIssues()}
+          />
 
-          <Tooltip content="My Pull Requests">
-            <IconButton
-              label="My Pull Requests"
-              icon={(iconProps) => (
-                <BitbucketPullrequestsIcon
-                  {...iconProps}
-                  size="small"
-                  primaryColor="white"
-                />
-              )}
-              appearance="subtle"
-              spacing="compact"
-              onClick={() => openMyPullRequests()}
-            />
-          </Tooltip>*/}
+          <IconButton
+            label="My Pull Requests"
+            title="My Pull Requests"
+            icon={(iconProps) => (
+              <BitbucketPullrequestsIcon
+                {...iconProps}
+                size="small"
+                primaryColor="white"
+              />
+            )}
+            appearance="subtle"
+            spacing="compact"
+            onClick={() => openMyPullRequests()}
+          />
+          */}
         </Stack>
       </div>
 
       <div className="px-3 py-4">
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
-            <Tooltip content="Refresh Notifications">
-              <IconButton
-                label="Refresh Notifications"
-                icon={(iconProps) => (
-                  <RefreshIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                  />
-                )}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => refreshNotifications()}
-              />
-            </Tooltip>
-
-            <Tooltip content="Settings">
-              <IconButton
-                label="Settings"
-                icon={(iconProps) => (
-                  <SettingsIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                  />
-                )}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => toggleSettings()}
-              />
-            </Tooltip>
-          </Stack>
-        )}
-
-        {!isLoggedIn && (
-          <Tooltip content="Quit Atlasify">
             <IconButton
-              label="Quit Atlasify"
+              label="Refresh Notifications"
+              title="Refresh Notifications"
               icon={(iconProps) => (
-                <CrossCircleIcon
+                <RefreshIcon
                   {...iconProps}
                   size="medium"
                   primaryColor="white"
                 />
               )}
               appearance="subtle"
-              onClick={() => quitApp()}
+              shape="circle"
+              onClick={() => refreshNotifications()}
             />
-          </Tooltip>
+
+            <IconButton
+              label="Settings"
+              title="Settings"
+              icon={(iconProps) => (
+                <SettingsIcon
+                  {...iconProps}
+                  size="medium"
+                  primaryColor="white"
+                />
+              )}
+              appearance="subtle"
+              shape="circle"
+              onClick={() => toggleSettings()}
+            />
+          </Stack>
+        )}
+
+        {!isLoggedIn && (
+          <IconButton
+            label="Quit Atlasify"
+            title="Quit Atlasify"
+            icon={(iconProps) => (
+              <CrossCircleIcon
+                {...iconProps}
+                size="medium"
+                primaryColor="white"
+              />
+            )}
+            appearance="subtle"
+            onClick={() => quitApp()}
+          />
         )}
       </div>
     </div>

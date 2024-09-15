@@ -11,45 +11,41 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     <div
       class=" css-uwvn2m"
     >
-      <div
-        role="presentation"
+      <button
+        class=" css-1hmr5rx"
+        title="Go Back"
+        type="button"
       >
-        <button
-          class=" css-1hmr5rx"
-          title="Go Back"
-          type="button"
+        <span
+          class=" css-1spmf3f"
         >
           <span
-            class=" css-1spmf3f"
+            aria-hidden="true"
+            class="css-snhnyn"
+            data-vc="icon-undefined"
+            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
           >
-            <span
-              aria-hidden="true"
-              class="css-snhnyn"
-              data-vc="icon-undefined"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            <svg
+              height="24"
+              role="presentation"
+              viewBox="0 0 24 24"
+              width="24"
             >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <span
-              class="css-b5o75w"
-            >
-              Go Back
-            </span>
+              <path
+                clip-rule="evenodd"
+                d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                fill="currentcolor"
+                fill-rule="evenodd"
+              />
+            </svg>
           </span>
-        </button>
-      </div>
+          <span
+            class="css-b5o75w"
+          >
+            Go Back
+          </span>
+        </span>
+      </button>
       <h3
         class="css-rex7s6"
       >

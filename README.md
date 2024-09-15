@@ -53,6 +53,7 @@ SOON
 - [ ] consider making product filter list semi-dynamic based on response
 - [ ] make filters a dropdown overlay
 - [ ] DARK and System theme
+- [ ] animate refresh icon
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue

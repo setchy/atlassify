@@ -25,7 +25,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   type="button"
                 >
                   <div
-                    aria-labelledby="38"
+                    aria-labelledby="33"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -43,7 +43,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                     </span>
                     <span
                       hidden=""
-                      id="38"
+                      id="33"
                     >
                       Atlassian
                     </span>
@@ -76,12 +76,12 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                 >
                   <span
                     hidden=""
-                    id="40"
+                    id="35"
                   >
                     Show only unread toggle
                   </span>
                   <input
-                    aria-labelledby="40"
+                    aria-labelledby="35"
                     checked=""
                     id="toggle-unread-only"
                     name=""
@@ -135,45 +135,42 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   </span>
                 </label>
               </div>
-              <div
-                role="presentation"
-              >
-                <button
-                  class=" css-a8hcye"
-                  type="button"
-                >
-                  <span
-                    class=" css-1spmf3f"
-                  >
-                    <span
-                      aria-label="groupByProduct"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      toggleGroupNotificationsByProduct
-                    </span>
-                  </span>
-                </button>
-              </div>
               <button
                 class=" css-a8hcye"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-label="groupByProduct"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    role="img"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                        fill="currentcolor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Group notifications by products
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
+                title="No notifications for account"
                 type="button"
               >
                 <span
@@ -258,7 +255,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                 type="button"
               >
                 <div
-                  aria-labelledby="38"
+                  aria-labelledby="33"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -276,7 +273,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   </span>
                   <span
                     hidden=""
-                    id="38"
+                    id="33"
                   >
                     Atlassian
                   </span>
@@ -309,12 +306,12 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
               >
                 <span
                   hidden=""
-                  id="40"
+                  id="35"
                 >
                   Show only unread toggle
                 </span>
                 <input
-                  aria-labelledby="40"
+                  aria-labelledby="35"
                   checked=""
                   id="toggle-unread-only"
                   name=""
@@ -368,45 +365,42 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                 </span>
               </label>
             </div>
-            <div
-              role="presentation"
-            >
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    toggleGroupNotificationsByProduct
-                  </span>
-                </span>
-              </button>
-            </div>
             <button
               class=" css-a8hcye"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-label="groupByProduct"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                      fill="currentcolor"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Group notifications by products
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
+              title="No notifications for account"
               type="button"
             >
               <span
@@ -548,7 +542,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   type="button"
                 >
                   <div
-                    aria-labelledby="10"
+                    aria-labelledby="9"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -566,7 +560,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                     </span>
                     <span
                       hidden=""
-                      id="10"
+                      id="9"
                     >
                       Atlassian
                     </span>
@@ -599,12 +593,12 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 >
                   <span
                     hidden=""
-                    id="12"
+                    id="11"
                   >
                     Show only unread toggle
                   </span>
                   <input
-                    aria-labelledby="12"
+                    aria-labelledby="11"
                     checked=""
                     id="toggle-unread-only"
                     name=""
@@ -658,45 +652,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                 </label>
               </div>
-              <div
-                role="presentation"
-              >
-                <button
-                  class=" css-a8hcye"
-                  type="button"
-                >
-                  <span
-                    class=" css-1spmf3f"
-                  >
-                    <span
-                      aria-label="groupByProduct"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      toggleGroupNotificationsByProduct
-                    </span>
-                  </span>
-                </button>
-              </div>
               <button
                 class=" css-a8hcye"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-label="groupByProduct"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    role="img"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                        fill="currentcolor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Group notifications by products
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
+                title="Hide account notifications"
                 type="button"
               >
                 <span
@@ -745,7 +736,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="18"
+                  aria-labelledby="16"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -763,7 +754,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="18"
+                    id="16"
                   >
                     atlasify-app
                   </span>
@@ -817,7 +808,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="20"
+                  aria-labelledby="18"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -835,7 +826,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="20"
+                    id="18"
                   >
                     Repository
                   </span>
@@ -928,7 +919,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="24"
+                  aria-labelledby="21"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -946,7 +937,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="24"
+                    id="21"
                   >
                     atlasify-app
                   </span>
@@ -1000,7 +991,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="26"
+                  aria-labelledby="23"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -1018,7 +1009,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="26"
+                    id="23"
                   >
                     Repository
                   </span>
@@ -1121,7 +1112,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 type="button"
               >
                 <div
-                  aria-labelledby="10"
+                  aria-labelledby="9"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -1139,7 +1130,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="10"
+                    id="9"
                   >
                     Atlassian
                   </span>
@@ -1172,12 +1163,12 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               >
                 <span
                   hidden=""
-                  id="12"
+                  id="11"
                 >
                   Show only unread toggle
                 </span>
                 <input
-                  aria-labelledby="12"
+                  aria-labelledby="11"
                   checked=""
                   id="toggle-unread-only"
                   name=""
@@ -1231,45 +1222,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
               </label>
             </div>
-            <div
-              role="presentation"
-            >
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    toggleGroupNotificationsByProduct
-                  </span>
-                </span>
-              </button>
-            </div>
             <button
               class=" css-a8hcye"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-label="groupByProduct"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                      fill="currentcolor"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Group notifications by products
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
+              title="Hide account notifications"
               type="button"
             >
               <span
@@ -1318,7 +1306,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="18"
+                aria-labelledby="16"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1336,7 +1324,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="18"
+                  id="16"
                 >
                   atlasify-app
                 </span>
@@ -1390,7 +1378,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="20"
+                aria-labelledby="18"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1408,7 +1396,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="20"
+                  id="18"
                 >
                   Repository
                 </span>
@@ -1501,7 +1489,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="24"
+                aria-labelledby="21"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1519,7 +1507,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="24"
+                  id="21"
                 >
                   atlasify-app
                 </span>
@@ -1573,7 +1561,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="26"
+                aria-labelledby="23"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1591,7 +1579,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="26"
+                  id="23"
                 >
                   Repository
                 </span>
@@ -1861,45 +1849,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                 </label>
               </div>
-              <div
-                role="presentation"
+              <button
+                class=" css-1pe4njs"
+                type="button"
               >
-                <button
-                  class=" css-1pe4njs"
-                  type="button"
+                <span
+                  class=" css-1spmf3f"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    aria-label="groupByProduct"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    role="img"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <span
-                      aria-label="groupByProduct"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      toggleGroupNotificationsByProduct
-                    </span>
+                      <path
+                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                        fill="currentcolor"
+                      />
+                    </svg>
                   </span>
-                </button>
-              </div>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Group notifications by products
+                  </span>
+                </span>
+              </button>
               <button
                 class=" css-a8hcye"
+                title="Hide account notifications"
                 type="button"
               >
                 <span
@@ -2071,45 +2056,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
               </label>
             </div>
-            <div
-              role="presentation"
+            <button
+              class=" css-1pe4njs"
+              type="button"
             >
-              <button
-                class=" css-1pe4njs"
-                type="button"
+              <span
+                class=" css-1spmf3f"
               >
                 <span
-                  class=" css-1spmf3f"
+                  aria-label="groupByProduct"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    toggleGroupNotificationsByProduct
-                  </span>
+                    <path
+                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                      fill="currentcolor"
+                    />
+                  </svg>
                 </span>
-              </button>
-            </div>
+                <span
+                  class="css-b5o75w"
+                >
+                  Group notifications by products
+                </span>
+              </span>
+            </button>
             <button
               class=" css-a8hcye"
+              title="Hide account notifications"
               type="button"
             >
               <span
@@ -2228,7 +2210,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   type="button"
                 >
                   <div
-                    aria-labelledby="30"
+                    aria-labelledby="26"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -2246,7 +2228,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                     </span>
                     <span
                       hidden=""
-                      id="30"
+                      id="26"
                     >
                       Atlassian
                     </span>
@@ -2279,12 +2261,12 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                 >
                   <span
                     hidden=""
-                    id="32"
+                    id="28"
                   >
                     Show only unread toggle
                   </span>
                   <input
-                    aria-labelledby="32"
+                    aria-labelledby="28"
                     checked=""
                     id="toggle-unread-only"
                     name=""
@@ -2338,45 +2320,42 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   </span>
                 </label>
               </div>
-              <div
-                role="presentation"
-              >
-                <button
-                  class=" css-a8hcye"
-                  type="button"
-                >
-                  <span
-                    class=" css-1spmf3f"
-                  >
-                    <span
-                      aria-label="groupByProduct"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      toggleGroupNotificationsByProduct
-                    </span>
-                  </span>
-                </button>
-              </div>
               <button
                 class=" css-a8hcye"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-label="groupByProduct"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    role="img"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                        fill="currentcolor"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Group notifications by products
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
+                title="No notifications for account"
                 type="button"
               >
                 <span
@@ -2456,7 +2435,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                 type="button"
               >
                 <div
-                  aria-labelledby="30"
+                  aria-labelledby="26"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -2474,7 +2453,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   </span>
                   <span
                     hidden=""
-                    id="30"
+                    id="26"
                   >
                     Atlassian
                   </span>
@@ -2507,12 +2486,12 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
               >
                 <span
                   hidden=""
-                  id="32"
+                  id="28"
                 >
                   Show only unread toggle
                 </span>
                 <input
-                  aria-labelledby="32"
+                  aria-labelledby="28"
                   checked=""
                   id="toggle-unread-only"
                   name=""
@@ -2566,45 +2545,42 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                 </span>
               </label>
             </div>
-            <div
-              role="presentation"
-            >
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    toggleGroupNotificationsByProduct
-                  </span>
-                </span>
-              </button>
-            </div>
             <button
               class=" css-a8hcye"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-label="groupByProduct"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  role="img"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+                      fill="currentcolor"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Group notifications by products
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
+              title="No notifications for account"
               type="button"
             >
               <span

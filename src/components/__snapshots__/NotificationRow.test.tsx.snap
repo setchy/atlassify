@@ -448,7 +448,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               role="presentation"
             >
               <div
-                aria-labelledby="8"
+                aria-labelledby="7"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -466,7 +466,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="8"
+                  id="7"
                 >
                   atlasify-app
                 </span>
@@ -520,7 +520,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="10"
+                aria-labelledby="9"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -538,7 +538,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="10"
+                  id="9"
                 >
                   Repository
                 </span>
@@ -634,7 +634,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             role="presentation"
           >
             <div
-              aria-labelledby="8"
+              aria-labelledby="7"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -652,7 +652,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="8"
+                id="7"
               >
                 atlasify-app
               </span>
@@ -706,7 +706,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             class="flex flex-1 items-center gap-1 text-xs opacity-80"
           >
             <div
-              aria-labelledby="10"
+              aria-labelledby="9"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -724,7 +724,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="10"
+                id="9"
               >
                 Repository
               </span>

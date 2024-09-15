@@ -75,7 +75,7 @@ describe('components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTitle('Atlasify'));
+    fireEvent.click(screen.getByTitle('Open Atlasify on GitHub'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
