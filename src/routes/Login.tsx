@@ -51,6 +51,8 @@ export const LoginRoute: FC = () => {
 
       <Tooltip content="Login with Atlassian">
         <Button
+          title="Login"
+          aria-label="Login"
           appearance="primary"
           spacing="default"
           iconBefore={(iconProps) => (

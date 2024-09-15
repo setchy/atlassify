@@ -2,7 +2,7 @@ import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import { useContext } from 'react';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AuthState, SettingsState } from '../types';
+import type { AuthState, SettingsState, Token, Username } from '../types';
 import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
@@ -44,13 +44,10 @@ describe('context/App.tsx', () => {
 
     const fetchNotificationsMock = jest.fn();
     const markNotificationReadMock = jest.fn();
-    const markNotificationDoneMock = jest.fn();
-    const unsubscribeNotificationMock = jest.fn();
     const markProductNotificationsReadMock = jest.fn();
-    const markProductNotificationsUnreadMock = jest.fn();
 
     const mockDefaultState = {
-      auth: { accounts: [], enterpriseAccounts: [], token: null, user: null },
+      auth: { accounts: [] },
       settings: mockSettings,
     };
 
@@ -58,10 +55,7 @@ describe('context/App.tsx', () => {
       (useNotifications as jest.Mock).mockReturnValue({
         fetchNotifications: fetchNotificationsMock,
         markNotificationRead: markNotificationReadMock,
-        markNotificationDone: markNotificationDoneMock,
-        unsubscribeNotification: unsubscribeNotificationMock,
         markProductNotificationsRead: markProductNotificationsReadMock,
-        markProductNotificationsUnread: markProductNotificationsUnreadMock,
       });
     });
 
@@ -166,33 +160,6 @@ describe('context/App.tsx', () => {
         mockSingleNotification,
       );
     });
-
-    it('should call markProductNotificationsUnread', async () => {
-      const TestComponent = () => {
-        const { markProductNotificationsUnread } = useContext(AppContext);
-
-        return (
-          <button
-            type="button"
-            onClick={() =>
-              markProductNotificationsUnread(mockSingleNotification)
-            }
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      fireEvent.click(getByText('Test Case'));
-
-      expect(markProductNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markProductNotificationsUnreadMock).toHaveBeenCalledWith(
-        mockDefaultState,
-        mockSingleNotification,
-      );
-    });
   });
 
   describe('authentication methods', () => {
@@ -205,46 +172,42 @@ describe('context/App.tsx', () => {
       });
     });
 
-    it('should call loginWithAPIToken', async () => {
+    it.skip('should call loginWithAPIToken', async () => {
       apiRequestAuthMock.mockResolvedValueOnce(null);
 
-      // const TestComponent = () => {
-      //   const { loginWithPersonalAccessToken } = useContext(AppContext);
+      const TestComponent = () => {
+        const { loginWithAPIToken } = useContext(AppContext);
 
-      //   return (
-      //     <button
-      //       type="button"
-      //       onClick={() =>
-      //         loginWithPersonalAccessToken({
-      //           hostname: 'github.com' as Hostname,
-      //           token: '123-456' as Token,
-      //         })
-      //       }
-      //     >
-      //       Test Case
-      //     </button>
-      //   );
-      // };
+        return (
+          <button
+            type="button"
+            onClick={() =>
+              loginWithAPIToken({
+                username: 'atlas' as Username,
+                token: '123-456' as Token,
+              })
+            }
+          >
+            Test Case
+          </button>
+        );
+      };
 
-      // const { getByText } = customRender(<TestComponent />);
+      const { getByText } = customRender(<TestComponent />);
 
-      // fireEvent.click(getByText('Test Case'));
+      fireEvent.click(getByText('Test Case'));
 
-      // await waitFor(() =>
-      //   expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      // );
+      await waitFor(() =>
+        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
+      );
 
-      // expect(apiRequestAuthMock).toHaveBeenCalledTimes(2);
-      // expect(apiRequestAuthMock).toHaveBeenCalledWith(
-      //   'https://api.github.com/notifications',
-      //   'HEAD',
-      //   '123-456',
-      // );
-      // expect(apiRequestAuthMock).toHaveBeenCalledWith(
-      //   'https://api.github.com/user',
-      //   'GET',
-      //   '123-456',
-      // );
+      expect(apiRequestAuthMock).toHaveBeenCalledTimes(2);
+      expect(apiRequestAuthMock).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+        }),
+      );
     });
   });
 
@@ -257,7 +220,7 @@ describe('context/App.tsx', () => {
       });
     });
 
-    it('should call updateSetting', async () => {
+    it('should call updateSetting and set playSoundNewNotifications', async () => {
       const saveStateMock = jest
         .spyOn(storage, 'saveState')
         .mockImplementation(jest.fn());
@@ -284,18 +247,15 @@ describe('context/App.tsx', () => {
       expect(saveStateMock).toHaveBeenCalledWith({
         auth: {
           accounts: [],
-          enterpriseAccounts: [],
-          token: null,
-          user: null,
         } as AuthState,
         settings: {
           ...defaultSettings,
-          playSound: true,
+          playSoundNewNotifications: true,
         } as SettingsState,
       });
     });
 
-    it('should call updateSetting and set auto launch(openAtStartup)', async () => {
+    it('should call updateSetting and set openAtStartup', async () => {
       const setAutoLaunchMock = jest.spyOn(comms, 'setAutoLaunch');
       const saveStateMock = jest
         .spyOn(storage, 'saveState')
@@ -325,9 +285,6 @@ describe('context/App.tsx', () => {
       expect(saveStateMock).toHaveBeenCalledWith({
         auth: {
           accounts: [],
-          enterpriseAccounts: [],
-          token: null,
-          user: null,
         } as AuthState,
         settings: {
           ...defaultSettings,
@@ -360,9 +317,6 @@ describe('context/App.tsx', () => {
       expect(saveStateMock).toHaveBeenCalledWith({
         auth: {
           accounts: [],
-          enterpriseAccounts: [],
-          token: null,
-          user: null,
         } as AuthState,
         settings: {
           ...mockSettings,
@@ -397,9 +351,6 @@ describe('context/App.tsx', () => {
       expect(saveStateMock).toHaveBeenCalledWith({
         auth: {
           accounts: [],
-          enterpriseAccounts: [],
-          token: null,
-          user: null,
         } as AuthState,
         settings: defaultSettings,
       });

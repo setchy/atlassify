@@ -168,7 +168,6 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
               class="css-k8x29e"
             >
               <input
-                checked=""
                 class="css-f3myyk"
                 name="unread"
                 tabindex="0"
@@ -191,10 +190,6 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                     width="12"
                     x="6"
                     y="6"
-                  />
-                  <path
-                    d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                    fill="inherit"
                   />
                 </g>
               </svg>
@@ -517,7 +512,7 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
       >
         <button
           class=" css-sxpr96"
-          title="Reset filters"
+          title="Clear filters"
           type="button"
         >
           <span

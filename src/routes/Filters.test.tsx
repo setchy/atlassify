@@ -52,7 +52,7 @@ describe('routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByLabelText('Go Back'));
+      fireEvent.click(screen.getByTitle('Go Back'));
       expect(fetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });

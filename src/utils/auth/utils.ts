@@ -67,7 +67,3 @@ export function getAccountUUID(account: Account): string {
 export function hasAccounts(auth: AuthState) {
   return auth.accounts.length > 0;
 }
-
-export function hasMultipleAccounts(auth: AuthState) {
-  return auth.accounts.length > 1;
-}

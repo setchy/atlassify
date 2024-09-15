@@ -10,7 +10,6 @@ import {
   Theme,
   type Token,
 } from '../types';
-import type { ReadState } from '../utils/api/types';
 
 export const mockAtlasifyUser: AtlasifyUser = {
   login: 'atlas',
@@ -44,7 +43,7 @@ const mockNotificationSettings = {
 const mockSystemSettings = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcutEnabled: true,
-  showNotificationsCountInTray: false,
+  showNotificationsCountInTray: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   useAlternateIdleIcon: false,
@@ -53,7 +52,7 @@ const mockSystemSettings = {
 
 const mockFilters = {
   filterCategories: [],
-  filterReadStates: ['unread' as ReadState],
+  filterReadStates: [],
   filterProducts: [],
 };
 

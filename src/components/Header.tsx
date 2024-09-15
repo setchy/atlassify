@@ -24,8 +24,8 @@ export const Header: FC<IHeader> = (props: IHeader) => {
       <Inline grow="fill" spread="space-between">
         <Tooltip content="Go Back">
           <IconButton
-            label="Go Back"
             title="Go Back"
+            label="Go Back"
             icon={ArrowLeftIcon}
             appearance="subtle"
             shape="circle"

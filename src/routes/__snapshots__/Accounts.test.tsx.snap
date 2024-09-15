@@ -77,7 +77,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <button
-                  aria-label="Atlassian"
+                  aria-label="Open account profile"
                   class="css-1tnqmrq"
                   type="button"
                 >
@@ -230,6 +230,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
             >
               <button
                 class=" css-1l7n0sn"
+                title="Refresh atlas"
                 type="button"
               >
                 <span
@@ -281,6 +282,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
             >
               <button
                 class=" css-1l7n0sn"
+                title="Logout atlas"
                 type="button"
               >
                 <span
@@ -338,6 +340,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
         >
           <button
             class=" css-1hmr5rx"
+            title="Add new account"
             type="button"
           >
             <span

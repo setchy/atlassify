@@ -59,6 +59,7 @@ export const AccountsRoute: FC = () => {
                 <div>
                   <Tooltip content={account.user.name}>
                     <Avatar
+                      label="Open account profile"
                       name={account.user.name}
                       src={account.user.avatar}
                       size="medium"
@@ -115,6 +116,7 @@ export const AccountsRoute: FC = () => {
 
                   <Tooltip content={`Refresh ${account.user.login}`}>
                     <IconButton
+                      title={`Refresh ${account.user.login}`}
                       label={`Refresh ${account.user.login}`}
                       icon={RefreshIcon}
                       appearance="subtle"
@@ -127,6 +129,7 @@ export const AccountsRoute: FC = () => {
 
                   <Tooltip content={`Logout ${account.user.login}`}>
                     <IconButton
+                      title={`Logout ${account.user.login}`}
                       label={`Logout ${account.user.login}`}
                       icon={SignOutIcon}
                       appearance="subtle"
@@ -145,6 +148,7 @@ export const AccountsRoute: FC = () => {
           <Flex justifyContent="end">
             <Tooltip content="Add new account">
               <IconButton
+                title="Add new account"
                 label="Add new account"
                 icon={InviteTeamIcon}
                 appearance="subtle"
