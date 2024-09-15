@@ -8,17 +8,11 @@ export const CATEGORIES: Record<Category, BasicDetails> = {
     name: 'direct',
     description: 'Direct notifications',
     icon: EmojiFlagsIcon,
-    iconProps: {
-      size: 'small',
-    },
   },
   watching: {
     name: 'watching',
     description: 'Watching notifications',
     icon: WatchIcon,
-    iconProps: {
-      size: 'small',
-    },
   },
 };
 

@@ -129,7 +129,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   id="toggle-group-by-product"
                   size="regular"
                   label="Group by product toggle"
-                  isChecked={isGroupByProduct}
+                  defaultChecked={isGroupByProduct}
                   onChange={() => {
                     updateSetting(
                       'groupBy',
@@ -143,20 +143,20 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
             <Tooltip
               content={
-                !settings.fetchOnlyUnreadNotifications
-                  ? 'Retrieve all notifications'
-                  : 'Retrieve only unread notifications'
+                settings.fetchOnlyUnreadNotifications
+                  ? 'Retrieve only unread notifications'
+                  : 'Retrieve all notifications'
               }
             >
               <Toggle
                 id="toggle-unread-only"
                 size="regular"
                 label="Show only unread toggle"
-                isChecked={settings.fetchOnlyUnreadNotifications}
-                onChange={() => {
+                defaultChecked={settings.fetchOnlyUnreadNotifications}
+                onChange={(evt) => {
                   updateSetting(
                     'fetchOnlyUnreadNotifications',
-                    !settings.fetchOnlyUnreadNotifications,
+                    evt.target.checked,
                   );
                   fetchNotifications();
                 }}

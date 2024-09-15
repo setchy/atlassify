@@ -13,6 +13,8 @@ import {
   formatProperCase,
 } from '../utils/helpers';
 import { openNotification } from '../utils/links';
+import { getCategoryDetails } from '../utils/filters';
+import { Stack } from '@atlaskit/primitives';
 
 interface INotificationRow {
   notification: AtlasifyNotification;
@@ -42,6 +44,12 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const updatedAt = formatNotificationUpdatedAt(notification);
 
+  const categoryDetails = getCategoryDetails(notification.category);
+  const CategoryIcon = categoryDetails.icon;
+  const CategoryIconProps: Record<string, string> = {
+    size: 'small',
+  };
+
   return (
     <div
       id={notification.id}
@@ -53,13 +61,18 @@ export const NotificationRow: FC<INotificationRow> = ({
       )}
     >
       <div className="mr-3 flex items-center justify-center">
-        <Tooltip content={notification.actor.displayName}>
-          <Avatar
-            name={notification.actor.displayName}
-            src={notification.actor.avatarURL}
-            size="small"
-          />
-        </Tooltip>
+        <Stack space="space.100" alignInline="center">
+          <Tooltip content={notification.actor.displayName}>
+            <Avatar
+              name={notification.actor.displayName}
+              src={notification.actor.avatarURL}
+              size="small"
+            />
+          </Tooltip>
+          <Tooltip content={formatProperCase(categoryDetails.name)}>
+            <CategoryIcon {...CategoryIconProps} />
+          </Tooltip>
+        </Stack>
       </div>
 
       <div
