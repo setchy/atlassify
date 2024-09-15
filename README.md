@@ -1,4 +1,4 @@
-# Atlasify [![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coveralls][coveralls-badge]][coveralls] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases] [![Homebrew Cask][homebrew-cask-badge]][homebrew-cask]
+# Atlasify [![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases] [![Homebrew Cask][homebrew-cask-badge]][homebrew-cask]
 
 > Atlassian Notifications on your menu bar. Available on macOS, Windows and Linux.
 
@@ -68,8 +68,10 @@ LATER
 [github-website-pulls]: https://github.com/setchy/atlasify-website/pulls
 [brew]: https://brew.sh/
 [homebrew-cask]: https://formulae.brew.sh/cask/atlasify
-[coveralls]: https://coveralls.io/github/setchy/atlasify
-[coveralls-badge]: https://img.shields.io/coverallsCoverage/github/setchy/atlasify?logo=coveralls
+[coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlasify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
+[coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlasify
+[quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlasify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
+[quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlasify
 [build-workflow-badge]: https://github.com/setchy/atlasify/actions/workflows/build.yml/badge.svg
 [release-workflow-badge]: https://github.com/setchy/atlasify/actions/workflows/release.yml/badge.svg
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlasify/total?label=downloads@all&logo=github
