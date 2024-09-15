@@ -629,9 +629,9 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               I am a robot and this is a test!
               <span
                 class="pl-2 text-xs text-gray-700"
-                title="Updated 1 day ago"
+                title="Updated 2 days ago"
               >
-                1 day ago
+                2 days ago
               </span>
             </div>
             <div
@@ -785,9 +785,9 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               I am a robot and this is a test!
               <span
                 class="pl-2 text-xs text-gray-700"
-                title="Updated 1 day ago"
+                title="Updated 2 days ago"
               >
-                1 day ago
+                2 days ago
               </span>
             </div>
             <div
@@ -1097,9 +1097,9 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             I am a robot and this is a test!
             <span
               class="pl-2 text-xs text-gray-700"
-              title="Updated 1 day ago"
+              title="Updated 2 days ago"
             >
-              1 day ago
+              2 days ago
             </span>
           </div>
           <div
@@ -1253,9 +1253,9 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             I am a robot and this is a test!
             <span
               class="pl-2 text-xs text-gray-700"
-              title="Updated 1 day ago"
+              title="Updated 2 days ago"
             >
-              1 day ago
+              2 days ago
             </span>
           </div>
           <div
