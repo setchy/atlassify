@@ -14,7 +14,6 @@ import { FieldInput } from '../components/fields/FieldInput';
 import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
 import type { LoginAPITokenOptions } from '../utils/auth/types';
-import { isValidAPIToken } from '../utils/auth/utils';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -38,8 +37,6 @@ export const validate = (values: IValues): IFormErrors => {
 
   if (!values.token) {
     errors.token = 'Required';
-  } else if (!isValidAPIToken(values.token)) {
-    errors.token = 'Invalid app password.';
   }
 
   return errors;
