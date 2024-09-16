@@ -16,6 +16,7 @@ import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
 import { BitbucketIcon } from '@atlaskit/logo';
+import Badge from '@atlaskit/badge';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
@@ -74,28 +75,31 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
-            : 'color.background.neutral'
+            : 'color.background.brand.subtlest'
         }
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Tooltip content="Open account profile">
-            <AvatarItem
-              avatar={
-                <Avatar
-                  name={account.user.name}
-                  src={account.user.avatar}
-                  size="xsmall"
-                  appearance="circle"
-                />
-              }
-              primaryText={account.user.name}
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openAccountProfile(account);
-              }}
-            />
-          </Tooltip>
+          <Inline space="space.100" alignBlock="center">
+            <Tooltip content="Open account profile">
+              <AvatarItem
+                avatar={
+                  <Avatar
+                    name={account.user.name}
+                    src={account.user.avatar}
+                    size="xsmall"
+                    appearance="circle"
+                  />
+                }
+                primaryText={account.user.name}
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openAccountProfile(account);
+                }}
+              />
+            </Tooltip>{' '}
+            <Badge appearance="primary">{notifications.length}</Badge>
+          </Inline>
 
           <Inline space="space.100">
             <IconButton
