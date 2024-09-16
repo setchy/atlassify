@@ -1,11 +1,11 @@
 import { type FC, type MouseEvent, useContext, useState } from 'react';
 
+import Badge from '@atlaskit/badge';
 import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
-import Badge from '@atlaskit/badge';
 
 import { AppContext } from '../context/App';
 import type { AtlasifyNotification } from '../types';

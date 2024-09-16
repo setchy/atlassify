@@ -6,7 +6,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
   "baseElement": <body>
     <div>
       <div
-        class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar"
+        class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center py-4"
@@ -100,7 +100,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                 </span>
               </button>
               <span
-                class="text-xs text-white"
+                class="css-17r4cdi"
               >
                 2
               </span>
@@ -108,7 +108,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           </div>
         </div>
         <div
-          class="px-3 py-4"
+          class="css-sitfir"
         >
           <button
             class=" css-1l7n0sn"
@@ -163,7 +163,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
   </body>,
   "container": <div>
     <div
-      class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar"
+      class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center py-4"
@@ -257,7 +257,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               </span>
             </button>
             <span
-              class="text-xs text-white"
+              class="css-17r4cdi"
             >
               2
             </span>
@@ -265,7 +265,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
         </div>
       </div>
       <div
-        class="px-3 py-4"
+        class="css-sitfir"
       >
         <button
           class=" css-1l7n0sn"
@@ -377,7 +377,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
   "baseElement": <body>
     <div>
       <div
-        class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar"
+        class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center py-4"
@@ -471,7 +471,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                 </span>
               </button>
               <span
-                class="text-xs text-white"
+                class="css-17r4cdi"
               >
                 2
               </span>
@@ -479,7 +479,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           </div>
         </div>
         <div
-          class="px-3 py-4"
+          class="css-sitfir"
         >
           <button
             class=" css-1l7n0sn"
@@ -534,7 +534,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
   </body>,
   "container": <div>
     <div
-      class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar"
+      class="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center py-4"
@@ -628,7 +628,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               </span>
             </button>
             <span
-              class="text-xs text-white"
+              class="css-17r4cdi"
             >
               2
             </span>
@@ -636,7 +636,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
         </div>
       </div>
       <div
-        class="px-3 py-4"
+        class="css-sitfir"
       >
         <button
           class=" css-1l7n0sn"

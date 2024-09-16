@@ -8,6 +8,8 @@ import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import Badge from '@atlaskit/badge';
+import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
 import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
 import { openAccountProfile, openMyPullRequests } from '../utils/links';
@@ -15,8 +17,6 @@ import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
-import { BitbucketIcon } from '@atlaskit/logo';
-import Badge from '@atlaskit/badge';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];

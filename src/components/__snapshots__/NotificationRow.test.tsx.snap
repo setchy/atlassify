@@ -148,7 +148,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2"
+          class="css-1barwao"
         >
           <button
             class=" css-a8hcye"
@@ -334,7 +334,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
       </div>
       <div
-        class="flex items-center justify-center gap-2"
+        class="css-1barwao"
       >
         <button
           class=" css-a8hcye"
@@ -577,7 +577,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2"
+          class="css-1barwao"
         >
           <button
             class=" css-a8hcye"
@@ -763,7 +763,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
       </div>
       <div
-        class="flex items-center justify-center gap-2"
+        class="css-1barwao"
       >
         <button
           class=" css-a8hcye"
