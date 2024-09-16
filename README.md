@@ -41,12 +41,9 @@ A list of "things" to improve
 
 NOW
 - [ ] clear out all TODOs in this project
-- [ ] create "update available" icon bundle
-- [ ] create new social images
-- [ ] purchase and setup Apple developer account
+- [ ] setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] update test snapshot for "date updated at" to mock result
-- [ ] refactor account header settings from settings -> account object
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
@@ -56,7 +53,9 @@ SOON
 - [ ] DARK and System theme
 - [ ] animate refresh icon
 - [ ] badge counts for each filter group
-- [ ] use graphql codegen  
+- [ ] use graphql codegen
+- [ ] fix mark as read - product level glitch
+- [ ] add mark all as read - account level
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
