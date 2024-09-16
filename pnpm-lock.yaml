@@ -20,6 +20,9 @@ importers:
       electron-updater:
         specifier: 6.3.4
         version: 6.3.4
+      menubar:
+        specifier: 9.5.0
+        version: 9.5.0(electron@32.1.0)
       update-electron-app:
         specifier: 3.0.0
         version: 3.0.0
@@ -132,9 +135,6 @@ importers:
       jest-environment-jsdom:
         specifier: 29.7.0
         version: 29.7.0
-      menubar:
-        specifier: 9.5.0
-        version: 9.5.0(electron@32.1.0)
       nock:
         specifier: 13.5.5
         version: 13.5.5
