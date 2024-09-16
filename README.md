@@ -46,6 +46,7 @@ NOW
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
+- [ ] refactor "footer" to display product name + product additional data (ie: repository name for bitbucket)
 - [ ] improve test coverage
 - [ ] consider making product filter list semi-dynamic based on response
 - [ ] make filters a dropdown overlay

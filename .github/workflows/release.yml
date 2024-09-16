@@ -25,9 +25,9 @@ jobs:
       - run: pnpm build
       - run: pnpm make:macos --publish onTagOrDraft
         env:
-          APPLEID_USERNAME: ${{ secrets.appleid_username }}
-          APPLEID_PASSWORD: ${{ secrets.appleid_password }}
-          APPLEID_TEAM_ID: ${{ secrets.appleid_teamid }}
+          APPLE_ID_USERNAME: ${{ secrets.appleid_username }}
+          APPLE_ID_PASSWORD: ${{ secrets.appleid_password }}
+          APPLE_TEAM_ID: ${{ secrets.appleid_teamid }}
           CSC_LINK: ${{ secrets.csc_link }}
           CSC_KEY_PASSWORD: ${{ secrets.csc_key_password }}
           GH_TOKEN: ${{ secrets.github_token }}
