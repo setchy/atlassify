@@ -1,9 +1,10 @@
-import { type FC, useContext, useMemo } from 'react';
+import { type FC, type MouseEvent, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
+import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
@@ -11,6 +12,7 @@ import { AtlasIcon } from '@atlaskit/logo';
 import { Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import Toggle from '@atlaskit/toggle';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
@@ -21,8 +23,13 @@ export const Sidebar: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { notifications, fetchNotifications, isLoggedIn, settings } =
-    useContext(AppContext);
+  const {
+    notifications,
+    fetchNotifications,
+    isLoggedIn,
+    settings,
+    updateSetting,
+  } = useContext(AppContext);
 
   const toggleFilters = () => {
     if (location.pathname.startsWith('/filters')) {
@@ -95,25 +102,69 @@ export const Sidebar: FC = () => {
           </Tooltip>
 
           {isLoggedIn && (
-            <Tooltip content="Filters">
+            <>
+              <Tooltip content="Show only unread notifications">
+                <Toggle
+                  id="toggle-unread-only"
+                  size="regular"
+                  label="Show only unread toggle"
+                  isChecked={settings.fetchOnlyUnreadNotifications}
+                  onChange={(evt) => {
+                    updateSetting(
+                      'fetchOnlyUnreadNotifications',
+                      evt.target.checked,
+                    );
+                    fetchNotifications();
+                  }}
+                />
+              </Tooltip>
+
               <IconButton
-                label="Filters"
-                icon={(iconProps) => (
-                  <FilterIcon
-                    {...iconProps}
+                label="Group notifications by products"
+                isTooltipDisabled={false}
+                icon={() => (
+                  <ListIcon
+                    label="groupByProduct"
                     size="small"
                     primaryColor="white"
                   />
                 )}
-                appearance="subtle"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+
+                  updateSetting(
+                    'groupNotificationsByProduct',
+                    !settings.groupNotificationsByProduct,
+                  );
+                }}
+                appearance={
+                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
+                }
+                spacing="compact"
                 shape="circle"
-                onClick={() => toggleFilters()}
               />
 
-              {filterCount > 0 && (
-                <span className="text-xs text-white">{filterCount}</span>
-              )}
-            </Tooltip>
+              <Tooltip content="Filters">
+                <IconButton
+                  label="Filters"
+                  icon={(iconProps) => (
+                    <FilterIcon
+                      {...iconProps}
+                      size="small"
+                      primaryColor="white"
+                    />
+                  )}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => toggleFilters()}
+                />
+
+                {filterCount > 0 && (
+                  <span className="text-xs text-white">{filterCount}</span>
+                )}
+              </Tooltip>
+            </>
           )}
 
           {/* 

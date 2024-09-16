@@ -5,9 +5,7 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
-import ListIcon from '@atlaskit/icon/glyph/list';
-import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
-import Toggle from '@atlaskit/toggle';
+import { Box, Flex, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -28,8 +26,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 ) => {
   const { account, notifications } = props;
 
-  const { settings, updateSetting, fetchNotifications } =
-    useContext(AppContext);
+  const { settings } = useContext(AppContext);
 
   const groupedNotifications = Object.values(
     notifications.reduce(
@@ -82,76 +79,36 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         }
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Inline space="space.100" alignInline="center">
-            <Tooltip
-              content={`${account.user.name}
+          <Tooltip
+            content={`${account.user.name}
               (${account.user.login})`}
-            >
-              <AvatarItem
-                avatar={
-                  <Avatar
-                    name={account.user.name}
-                    src={account.user.avatar}
-                    size="xsmall"
-                    appearance="circle"
-                  />
-                }
-                primaryText={account.user.name}
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
-                  event.stopPropagation();
-                  openAccountProfile(account);
-                }}
-              />
-            </Tooltip>
-          </Inline>
-
-          <Inline space="space.100" alignInline="center">
-            <Tooltip content="Show only unread notifications">
-              <Toggle
-                id="toggle-unread-only"
-                size="regular"
-                label="Show only unread toggle"
-                isChecked={settings.fetchOnlyUnreadNotifications}
-                onChange={(evt) => {
-                  updateSetting(
-                    'fetchOnlyUnreadNotifications',
-                    evt.target.checked,
-                  );
-                  fetchNotifications();
-                }}
-              />
-            </Tooltip>
-
-            <IconButton
-              label="Group notifications by products"
-              isTooltipDisabled={false}
-              icon={() => <ListIcon label="groupByProduct" size="small" />}
+          >
+            <AvatarItem
+              avatar={
+                <Avatar
+                  name={account.user.name}
+                  src={account.user.avatar}
+                  size="xsmall"
+                  appearance="circle"
+                />
+              }
+              primaryText={account.user.name}
               onClick={(event: MouseEvent<HTMLElement>) => {
                 // Don't trigger onClick of parent element.
                 event.stopPropagation();
-
-                updateSetting(
-                  'groupNotificationsByProduct',
-                  !settings.groupNotificationsByProduct,
-                );
+                openAccountProfile(account);
               }}
-              appearance={
-                settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
-              }
-              spacing="compact"
-              shape="circle"
             />
+          </Tooltip>
 
-            <IconButton
-              label={toggleAccountNotificationsLabel}
-              title={toggleAccountNotificationsLabel}
-              icon={ChevronIcon}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-            />
-          </Inline>
+          <IconButton
+            label={toggleAccountNotificationsLabel}
+            title={toggleAccountNotificationsLabel}
+            icon={ChevronIcon}
+            shape="circle"
+            spacing="compact"
+            appearance="subtle"
+          />
         </Flex>
       </Box>
 
