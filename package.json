@@ -110,7 +110,7 @@
     "@atlaskit/tooltip": "18.7.2",
     "axios": "1.7.7",
     "clsx": "2.1.1",
-    "date-fns": "3.6.0",
+    "date-fns": "4.0.0",
     "@biomejs/biome": "1.9.1",
     "@electron/notarize": "2.4.0",
     "@testing-library/react": "16.0.1",
