@@ -13,6 +13,7 @@ import { getCategoryDetails } from '../utils/filters';
 import {
   formatNotificationUpdatedAt,
   formatProperCase,
+  getRepositoryName,
 } from '../utils/helpers';
 import { openNotification } from '../utils/links';
 
@@ -116,8 +117,11 @@ export const NotificationRow: FC<INotificationRow> = ({
             )}
           >
             <notification.product.icon size="xsmall" appearance="brand" />
-            {notification.path?.title ??
-              formatProperCase(notification.product.name)}
+            {notification.path?.title
+              ? notification.path.title
+              : notification.product.name === 'bitbucket'
+                ? getRepositoryName(notification)
+                : formatProperCase(notification.product.name)}
           </div>
         </div>
       </div>

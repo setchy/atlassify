@@ -9,6 +9,10 @@ export function formatProperCase(text: string) {
   });
 }
 
+export function getRepositoryName(notification: AtlasifyNotification): string {
+  return notification.entity.url.split('/').slice(3, 5).join('/');
+}
+
 export function formatNotificationUpdatedAt(
   notification: AtlasifyNotification,
 ): string {
