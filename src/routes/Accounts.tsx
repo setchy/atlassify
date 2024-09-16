@@ -1,11 +1,9 @@
 import { type FC, useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Avatar from '@atlaskit/avatar';
+import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
 import InviteTeamIcon from '@atlaskit/icon/glyph/invite-team';
-import LockIcon from '@atlaskit/icon/glyph/lock';
-import PersonIcon from '@atlaskit/icon/glyph/person';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
 import StarIcon from '@atlaskit/icon/glyph/star';
@@ -50,90 +48,71 @@ export const AccountsRoute: FC = () => {
       <Header>Accounts</Header>
       <div className="flex-grow overflow-x-auto px-8">
         <div className="mt-4 flex flex-col text-sm">
-          {auth.accounts.map((account, i) => (
-            <div
-              key={getAccountUUID(account)}
-              className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
-            >
-              <div className="ml-2">
-                <div>
-                  <Tooltip content={account.user.name}>
-                    <Avatar
+          {auth.accounts.map((account, i) => {
+            const isPrimaryAccount = i === 0;
+            const AccountIcon = isPrimaryAccount ? StarFilledIcon : StarIcon;
+            const accountLabel = isPrimaryAccount
+              ? 'Primary account'
+              : 'Set as primary account';
+
+            return (
+              <div
+                key={getAccountUUID(account)}
+                className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
+              >
+                <Inline grow="fill" spread="space-between" alignBlock="center">
+                  <Tooltip content="Open account profile">
+                    <AvatarItem
                       label="Open account profile"
-                      name={account.user.name}
-                      src={account.user.avatar}
-                      size="medium"
+                      avatar={
+                        <Avatar
+                          name={account.user.name}
+                          src={account.user.avatar}
+                          size="medium"
+                          appearance="circle"
+                        />
+                      }
+                      primaryText={account.user.name}
+                      secondaryText={account.user.login}
                       onClick={() => openAccountProfile(account)}
                     />
                   </Tooltip>
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="text-sm font-semibold">{account.user.name}</div>
-                <div className="flex flex-1 gap-1 align-center text-xs">
-                  <div>
-                    <Tooltip content="Username">
-                      <PersonIcon label="Username" size="small" />
-                    </Tooltip>
-                  </div>
-                  <div>{account.user.login}</div>
-                </div>
-                <div className="flex flex-1 gap-1 align-center text-xs">
-                  <div>
-                    <Tooltip content="Authentication method">
-                      <LockIcon label="Authentication method" size="small" />
-                    </Tooltip>
-                  </div>
-                  <div>{account.method}</div>
-                </div>
-              </div>
 
-              <div>
-                <Inline>
-                  {i === 0 ? (
+                  <Inline>
                     <IconButton
-                      label="Primary account"
-                      title="Primary account"
+                      label={accountLabel}
+                      title={accountLabel}
                       icon={(iconProps) => (
-                        <StarFilledIcon {...iconProps} primaryColor="gold" />
+                        <AccountIcon {...iconProps} primaryColor="gold" />
                       )}
                       appearance="subtle"
-                      isDisabled={true}
-                      hidden={i !== 0}
-                    />
-                  ) : (
-                    <IconButton
-                      label="Set as primary account"
-                      title="Set as primary account"
-                      icon={StarIcon}
-                      appearance="subtle"
+                      isDisabled={isPrimaryAccount}
                       onClick={() => setAsPrimaryAccount(account)}
-                      hidden={i === 0}
                     />
-                  )}
 
-                  <IconButton
-                    label={`Refresh ${account.user.login}`}
-                    title={`Refresh ${account.user.login}`}
-                    icon={RefreshIcon}
-                    appearance="subtle"
-                    onClick={async () => {
-                      await refreshAccount(account);
-                      navigate('/accounts', { replace: true });
-                    }}
-                  />
+                    <IconButton
+                      label={`Refresh ${account.user.login}`}
+                      title={`Refresh ${account.user.login}`}
+                      icon={RefreshIcon}
+                      appearance="subtle"
+                      onClick={async () => {
+                        await refreshAccount(account);
+                        navigate('/accounts', { replace: true });
+                      }}
+                    />
 
-                  <IconButton
-                    label={`Logout ${account.user.login}`}
-                    title={`Logout ${account.user.login}`}
-                    icon={SignOutIcon}
-                    appearance="subtle"
-                    onClick={() => logoutAccount(account)}
-                  />
+                    <IconButton
+                      label={`Logout ${account.user.login}`}
+                      title={`Logout ${account.user.login}`}
+                      icon={SignOutIcon}
+                      appearance="subtle"
+                      onClick={() => logoutAccount(account)}
+                    />
+                  </Inline>
                 </Inline>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

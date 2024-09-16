@@ -79,10 +79,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         }
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Tooltip
-            content={`${account.user.name}
-              (${account.user.login})`}
-          >
+          <Tooltip content="Open account profile">
             <AvatarItem
               avatar={
                 <Avatar
