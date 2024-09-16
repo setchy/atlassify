@@ -91,6 +91,7 @@
     "@electron/remote": "2.1.2",
     "electron-log": "5.2.0",
     "electron-updater": "6.3.4",
+    "menubar": "9.5.0",
     "update-electron-app": "3.0.0"
   },
   "devDependencies": {
@@ -130,7 +131,6 @@
     "husky": "9.1.6",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
-    "menubar": "9.5.0",
     "nock": "13.5.5",
     "nprogress": "0.2.0",
     "postcss": "8.4.47",
