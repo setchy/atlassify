@@ -61,7 +61,7 @@ export const LoginWithAPIToken: FC = () => {
         <FieldInput
           name="token"
           label="API Token"
-          placeholder="The 24 characters API Token"
+          placeholder="Your Atlassian API Token"
           helpText={
             <div>
               <div className="mt-3">

@@ -4,7 +4,7 @@
 
 > Atlassian Notifications on your menu bar. Available on macOS, Windows and Linux.
 
-![Atlasify](assets/images/press.png)
+![Atlasify](docs/public//images//social.png)
 
 ### Download
 
@@ -41,12 +41,12 @@ A list of "things" to improve
 
 NOW
 - [ ] clear out all TODOs in this project
-- [ ] setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] update test snapshot for "date updated at" to mock result
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
+- [ ] refactor "footer" to display product name + product additional data (ie: repository name for bitbucket)
 - [ ] improve test coverage
 - [ ] consider making product filter list semi-dynamic based on response
 - [ ] make filters a dropdown overlay
@@ -56,6 +56,7 @@ SOON
 - [ ] use graphql codegen
 - [ ] fix mark as read - product level glitch
 - [ ] add mark all as read - account level
+- [ ] shrink app bundle size
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
