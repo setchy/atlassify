@@ -50,6 +50,12 @@ export const Sidebar: FC = () => {
     return getNotificationCount(notifications);
   }, [notifications]);
 
+  const notificationsLabel = useMemo(() => {
+    const hasMore = notifications.some((n) => n.hasNextPage);
+
+    return `${notificationsCount}${hasMore ? '+' : ''}`;
+  }, [notifications]);
+
   const filterCount = useMemo(() => {
     return getFilterCount(settings);
   }, [settings]);
@@ -68,9 +74,9 @@ export const Sidebar: FC = () => {
         </div>
 
         <Stack alignInline="center" space="space.100">
-          <Tooltip content={`${notificationsCount} Unread Notifications`}>
+          <Tooltip content={`${notificationsLabel} Unread Notifications`}>
             <IconButton
-              label={`${notificationsCount} Unread Notifications`}
+              label={`${notificationsLabel} Unread Notifications`}
               icon={(iconProps) => (
                 <NotificationIcon
                   {...iconProps}
@@ -84,7 +90,7 @@ export const Sidebar: FC = () => {
             />
 
             {notificationsCount > 0 && (
-              <span className="text-xs text-white">{notificationsCount}</span>
+              <span className="text-xs text-white">{notificationsLabel}</span>
             )}
           </Tooltip>
 

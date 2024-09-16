@@ -26,7 +26,18 @@ export interface MyNotifications {
   notifications: {
     unseenNotificationCount: number;
     notificationFeed: {
+      pageInfo: {
+        hasNextPage: boolean;
+      };
       nodes: AtlassianNotification[];
+    };
+  };
+}
+
+export interface NotificationsExtensions {
+  notifications: {
+    response_info: {
+      responseSize: number;
     };
   };
 }
@@ -81,8 +92,9 @@ export interface AtlassianNotification {
   };
 }
 
-export interface GraphQLResponse<T> {
+export interface GraphQLResponse<T, U> {
   data: T;
+  extensions: U;
 }
 
 export type AtlassianAPIError =

@@ -35,7 +35,10 @@ import {
   updateTrayTitle,
 } from '../utils/comms';
 import { Constants } from '../utils/constants';
-import { getNotificationCount } from '../utils/notifications';
+import {
+  getNotificationCount,
+  hasMoreNotifications,
+} from '../utils/notifications';
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { zoomPercentageToLevel } from '../utils/zoom';
@@ -148,9 +151,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const count = getNotificationCount(notifications);
+    const hasMore = hasMoreNotifications(notifications);
 
     if (settings.showNotificationsCountInTray && count > 0) {
-      updateTrayTitle(count.toString());
+      updateTrayTitle(`${count.toString()}${hasMore ? '+' : ''}`);
     } else {
       updateTrayTitle();
     }

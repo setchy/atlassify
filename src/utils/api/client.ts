@@ -3,7 +3,14 @@ import gql from 'graphql-tag';
 import { print } from 'graphql/language/printer';
 import type { Account, SettingsState } from '../../types';
 import { apiRequestAuth } from './request';
-import type { GraphQLResponse, MyNotifications, MyUserDetails } from './types';
+import type {
+  GraphQLResponse,
+  MyNotifications,
+  MyUserDetails,
+  NotificationsExtensions,
+} from './types';
+
+export const MAX_PAGE_SIZE = 1000;
 
 /**
  * Get the authenticated user
@@ -12,7 +19,7 @@ import type { GraphQLResponse, MyNotifications, MyUserDetails } from './types';
  */
 export function getAuthenticatedUser(
   account: Account,
-): AxiosPromise<GraphQLResponse<MyUserDetails>> {
+): AxiosPromise<GraphQLResponse<MyUserDetails, unknown>> {
   const QUERY = gql`
       query me {
       me {
@@ -39,11 +46,12 @@ export function getAuthenticatedUser(
 export function getNotificationsForUser(
   account: Account,
   settings: SettingsState,
-): AxiosPromise<GraphQLResponse<MyNotifications>> {
+): AxiosPromise<GraphQLResponse<MyNotifications, NotificationsExtensions>> {
   const QUERY = gql`
     query myNotifications
       (
         $readState: InfluentsNotificationReadState, 
+        $first: Int
       #   # $product: String
       ) 
       {
@@ -51,12 +59,15 @@ export function getNotificationsForUser(
         unseenNotificationCount
         notificationFeed(
           flat: true, 
-          first: 1000,
+          first: $first,
           filter: {
             readStateFilter: $readState
           #   # productFilter: $product
           }
         ) {
+          pageInfo {
+            hasNextPage
+          }
           nodes {
             groupId
             headNotification {
@@ -97,6 +108,7 @@ export function getNotificationsForUser(
   return apiRequestAuth(account, {
     query: print(QUERY),
     variables: {
+      first: MAX_PAGE_SIZE,
       readState: settings.fetchOnlyUnreadNotifications ? 'unread' : null,
       // product: settings.product,
     },

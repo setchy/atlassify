@@ -6,6 +6,7 @@ export const mockAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: mockAtlasifyNotification,
+    hasNextPage: false,
     error: null,
   },
 ];
@@ -14,6 +15,7 @@ export const mockSingleAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: [mockAtlasifyNotification[0]],
+    hasNextPage: false,
     error: null,
   },
 ];
