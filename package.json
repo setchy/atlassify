@@ -70,7 +70,7 @@
     },
     "dmg": {
       "icon": "assets/images/app-icon.icns",
-      "sign": false
+      "sign": true
     },
     "win": {
       "target": "nsis",
@@ -83,8 +83,7 @@
       "target": ["AppImage", "deb", "rpm"],
       "category": "Development",
       "maintainer": "Adam Setch"
-    },
-    "afterSign": "scripts/notarize.js"
+    }
   },
   "dependencies": {
     "@atlaskit/avatar": "21.15.1",
