@@ -2,7 +2,7 @@ import {
   mockAtlassianCloudAccount,
   mockAuth,
 } from '../../__mocks__/state-mocks';
-import type { Account, Token } from '../../types';
+import type { Account } from '../../types';
 import * as auth from './utils';
 
 describe('utils/auth/utils.ts', () => {
@@ -26,22 +26,6 @@ describe('utils/auth/utils.ts', () => {
 
       expect(result.accounts.length).toBe(1);
     });
-  });
-});
-
-describe('isValidAPIToken', () => {
-  it('should validate token - valid', () => {
-    expect(
-      auth.isValidAPIToken('1234567890asdfghjklPOIUY' as Token),
-    ).toBeTruthy();
-  });
-
-  it('should validate token - empty', () => {
-    expect(auth.isValidAPIToken('' as Token)).toBeFalsy();
-  });
-
-  it('should validate token - invalid', () => {
-    expect(auth.isValidAPIToken('1234567890asdfg' as Token)).toBeFalsy();
   });
 });
 

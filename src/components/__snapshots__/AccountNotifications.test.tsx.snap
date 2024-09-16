@@ -15,52 +15,66 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
             class="css-1a0x9v0"
           >
             <div
-              role="presentation"
+              class="css-1v6wdk"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                role="presentation"
               >
-                <div
-                  aria-labelledby="24"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <button
+                  class="css-1xq1pkg"
+                  type="button"
                 >
-                  <span
-                    class="css-vucx95"
+                  <div
+                    aria-labelledby="24"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
                   >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
+                    <span
+                      class="css-vucx95"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://avatars.githubusercontent.com/u/583231?v=4"
+                        style="border-radius: 50%;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="24"
+                    >
+                      Atlassian
+                    </span>
+                  </div>
+                  <div
+                    class="css-1orugy9"
+                  >
+                    <span
+                      class="css-pbo52v"
+                    >
+                      Atlassian
+                    </span>
+                    <span
+                      class="css-km389f"
                     />
-                  </span>
-                  <span
-                    hidden=""
-                    id="24"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
+                  </div>
+                </button>
+              </div>
+               
+              <span
+                class="css-g73hg0"
+              >
+                <span
+                  class="css-pvol9p"
                 >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
-                  />
-                </div>
-              </button>
+                  0
+                </span>
+              </span>
             </div>
             <div
-              class="css-srvzt9"
+              class="css-gokkc4"
             >
               <button
                 class=" css-a8hcye"
@@ -176,52 +190,66 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
           class="css-1a0x9v0"
         >
           <div
-            role="presentation"
+            class="css-1v6wdk"
           >
-            <button
-              class="css-1xq1pkg"
-              type="button"
+            <div
+              role="presentation"
             >
-              <div
-                aria-labelledby="24"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <span
-                  class="css-vucx95"
+                <div
+                  aria-labelledby="24"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/583231?v=4"
-                    style="border-radius: 50%;"
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="24"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                </span>
-                <span
-                  hidden=""
-                  id="24"
-                >
-                  Atlassian
-                </span>
-              </div>
-              <div
-                class="css-1orugy9"
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
               >
-                <span
-                  class="css-pbo52v"
-                >
-                  Atlassian
-                </span>
-                <span
-                  class="css-km389f"
-                />
-              </div>
-            </button>
+                0
+              </span>
+            </span>
           </div>
           <div
-            class="css-srvzt9"
+            class="css-gokkc4"
           >
             <button
               class=" css-a8hcye"
@@ -388,58 +416,72 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         class="css-1npayr"
       >
         <div
-          class="css-tipqhv"
+          class="css-41uoy6"
         >
           <div
             class="css-1a0x9v0"
           >
             <div
-              role="presentation"
+              class="css-1v6wdk"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                role="presentation"
               >
-                <div
-                  aria-labelledby="6"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <button
+                  class="css-1xq1pkg"
+                  type="button"
                 >
-                  <span
-                    class="css-vucx95"
+                  <div
+                    aria-labelledby="6"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
                   >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
+                    <span
+                      class="css-vucx95"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://avatars.githubusercontent.com/u/583231?v=4"
+                        style="border-radius: 50%;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="6"
+                    >
+                      Atlassian
+                    </span>
+                  </div>
+                  <div
+                    class="css-1orugy9"
+                  >
+                    <span
+                      class="css-pbo52v"
+                    >
+                      Atlassian
+                    </span>
+                    <span
+                      class="css-km389f"
                     />
-                  </span>
-                  <span
-                    hidden=""
-                    id="6"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
+                  </div>
+                </button>
+              </div>
+               
+              <span
+                class="css-g73hg0"
+              >
+                <span
+                  class="css-pvol9p"
                 >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
-                  />
-                </div>
-              </button>
+                  2
+                </span>
+              </span>
             </div>
             <div
-              class="css-srvzt9"
+              class="css-gokkc4"
             >
               <button
                 class=" css-a8hcye"
@@ -658,7 +700,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             </div>
           </div>
           <div
-            class="flex items-center justify-center gap-2"
+            class="css-1barwao"
           >
             <button
               class=" css-a8hcye"
@@ -841,7 +883,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             </div>
           </div>
           <div
-            class="flex items-center justify-center gap-2"
+            class="css-1barwao"
           >
             <button
               class=" css-a8hcye"
@@ -889,58 +931,72 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
       class="css-1npayr"
     >
       <div
-        class="css-tipqhv"
+        class="css-41uoy6"
       >
         <div
           class="css-1a0x9v0"
         >
           <div
-            role="presentation"
+            class="css-1v6wdk"
           >
-            <button
-              class="css-1xq1pkg"
-              type="button"
+            <div
+              role="presentation"
             >
-              <div
-                aria-labelledby="6"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <span
-                  class="css-vucx95"
+                <div
+                  aria-labelledby="6"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/583231?v=4"
-                    style="border-radius: 50%;"
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="6"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                </span>
-                <span
-                  hidden=""
-                  id="6"
-                >
-                  Atlassian
-                </span>
-              </div>
-              <div
-                class="css-1orugy9"
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
               >
-                <span
-                  class="css-pbo52v"
-                >
-                  Atlassian
-                </span>
-                <span
-                  class="css-km389f"
-                />
-              </div>
-            </button>
+                2
+              </span>
+            </span>
           </div>
           <div
-            class="css-srvzt9"
+            class="css-gokkc4"
           >
             <button
               class=" css-a8hcye"
@@ -1159,7 +1215,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2"
+          class="css-1barwao"
         >
           <button
             class=" css-a8hcye"
@@ -1342,7 +1398,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
           </div>
         </div>
         <div
-          class="flex items-center justify-center gap-2"
+          class="css-1barwao"
         >
           <button
             class=" css-a8hcye"
@@ -1447,58 +1503,72 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         class="css-1npayr"
       >
         <div
-          class="css-tipqhv"
+          class="css-41uoy6"
         >
           <div
             class="css-1a0x9v0"
           >
             <div
-              role="presentation"
+              class="css-1v6wdk"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                role="presentation"
               >
-                <div
-                  aria-labelledby="2"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <button
+                  class="css-1xq1pkg"
+                  type="button"
                 >
-                  <span
-                    class="css-vucx95"
+                  <div
+                    aria-labelledby="2"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
                   >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
+                    <span
+                      class="css-vucx95"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://avatars.githubusercontent.com/u/583231?v=4"
+                        style="border-radius: 50%;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="2"
+                    >
+                      Atlassian
+                    </span>
+                  </div>
+                  <div
+                    class="css-1orugy9"
+                  >
+                    <span
+                      class="css-pbo52v"
+                    >
+                      Atlassian
+                    </span>
+                    <span
+                      class="css-km389f"
                     />
-                  </span>
-                  <span
-                    hidden=""
-                    id="2"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
+                  </div>
+                </button>
+              </div>
+               
+              <span
+                class="css-g73hg0"
+              >
+                <span
+                  class="css-pvol9p"
                 >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
-                  />
-                </div>
-              </button>
+                  2
+                </span>
+              </span>
             </div>
             <div
-              class="css-srvzt9"
+              class="css-gokkc4"
             >
               <button
                 class=" css-a8hcye"
@@ -1585,58 +1655,72 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
       class="css-1npayr"
     >
       <div
-        class="css-tipqhv"
+        class="css-41uoy6"
       >
         <div
           class="css-1a0x9v0"
         >
           <div
-            role="presentation"
+            class="css-1v6wdk"
           >
-            <button
-              class="css-1xq1pkg"
-              type="button"
+            <div
+              role="presentation"
             >
-              <div
-                aria-labelledby="2"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <span
-                  class="css-vucx95"
+                <div
+                  aria-labelledby="2"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/583231?v=4"
-                    style="border-radius: 50%;"
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="2"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                </span>
-                <span
-                  hidden=""
-                  id="2"
-                >
-                  Atlassian
-                </span>
-              </div>
-              <div
-                class="css-1orugy9"
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
               >
-                <span
-                  class="css-pbo52v"
-                >
-                  Atlassian
-                </span>
-                <span
-                  class="css-km389f"
-                />
-              </div>
-            </button>
+                2
+              </span>
+            </span>
           </div>
           <div
-            class="css-srvzt9"
+            class="css-gokkc4"
           >
             <button
               class=" css-a8hcye"
@@ -1780,58 +1864,72 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
         class="css-1npayr"
       >
         <div
-          class="css-tipqhv"
+          class="css-41uoy6"
         >
           <div
             class="css-1a0x9v0"
           >
             <div
-              role="presentation"
+              class="css-1v6wdk"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                role="presentation"
               >
-                <div
-                  aria-labelledby="20"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <button
+                  class="css-1xq1pkg"
+                  type="button"
                 >
-                  <span
-                    class="css-vucx95"
+                  <div
+                    aria-labelledby="20"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
                   >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
+                    <span
+                      class="css-vucx95"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://avatars.githubusercontent.com/u/583231?v=4"
+                        style="border-radius: 50%;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="20"
+                    >
+                      Atlassian
+                    </span>
+                  </div>
+                  <div
+                    class="css-1orugy9"
+                  >
+                    <span
+                      class="css-pbo52v"
+                    >
+                      Atlassian
+                    </span>
+                    <span
+                      class="css-km389f"
                     />
-                  </span>
-                  <span
-                    hidden=""
-                    id="20"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
+                  </div>
+                </button>
+              </div>
+               
+              <span
+                class="css-g73hg0"
+              >
+                <span
+                  class="css-pvol9p"
                 >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
-                  />
-                </div>
-              </button>
+                  0
+                </span>
+              </span>
             </div>
             <div
-              class="css-srvzt9"
+              class="css-gokkc4"
             >
               <button
                 class=" css-a8hcye"
@@ -1936,58 +2034,72 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
       class="css-1npayr"
     >
       <div
-        class="css-tipqhv"
+        class="css-41uoy6"
       >
         <div
           class="css-1a0x9v0"
         >
           <div
-            role="presentation"
+            class="css-1v6wdk"
           >
-            <button
-              class="css-1xq1pkg"
-              type="button"
+            <div
+              role="presentation"
             >
-              <div
-                aria-labelledby="20"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <span
-                  class="css-vucx95"
+                <div
+                  aria-labelledby="20"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/583231?v=4"
-                    style="border-radius: 50%;"
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="20"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                </span>
-                <span
-                  hidden=""
-                  id="20"
-                >
-                  Atlassian
-                </span>
-              </div>
-              <div
-                class="css-1orugy9"
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
               >
-                <span
-                  class="css-pbo52v"
-                >
-                  Atlassian
-                </span>
-                <span
-                  class="css-km389f"
-                />
-              </div>
-            </button>
+                0
+              </span>
+            </span>
           </div>
           <div
-            class="css-srvzt9"
+            class="css-gokkc4"
           >
             <button
               class=" css-a8hcye"

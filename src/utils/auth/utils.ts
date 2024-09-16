@@ -56,10 +56,6 @@ export async function refreshAccount(account: Account): Promise<Account> {
   return account;
 }
 
-export function isValidAPIToken(token: Token) {
-  return /^[A-Z0-9_]{24}$/i.test(token);
-}
-
 export function getAccountUUID(account: Account): string {
   return btoa(`${account.platform}-${account.user.id}-${account.method}`);
 }
