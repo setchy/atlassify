@@ -4,7 +4,7 @@
 
 > Atlassian Notifications on your menu bar. Available on macOS, Windows and Linux.
 
-![Atlasify](assets/images/press.png)
+![Atlasify](docs/public//images//social.png)
 
 ### Download
 
