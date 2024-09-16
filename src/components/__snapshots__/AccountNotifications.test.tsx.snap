@@ -15,194 +15,84 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
             class="css-1a0x9v0"
           >
             <div
-              class="css-19ksfco"
+              role="presentation"
             >
-              <div
-                role="presentation"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <button
-                  class="css-1xq1pkg"
-                  type="button"
+                <div
+                  aria-labelledby="21"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <div
-                    aria-labelledby="33"
-                    role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
+                  <span
+                    class="css-vucx95"
                   >
-                    <span
-                      class="css-vucx95"
-                    >
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        class="css-13ep12v"
-                        data-vc="avatar-image"
-                        src="https://avatars.githubusercontent.com/u/583231?v=4"
-                        style="border-radius: 50%;"
-                      />
-                    </span>
-                    <span
-                      hidden=""
-                      id="33"
-                    >
-                      Atlassian
-                    </span>
-                  </div>
-                  <div
-                    class="css-1orugy9"
-                  >
-                    <span
-                      class="css-pbo52v"
-                    >
-                      Atlassian
-                    </span>
-                    <span
-                      class="css-km389f"
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
                     />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="css-19ksfco"
-            >
-              <div
-                role="presentation"
-              >
-                <label
-                  class="css-uv11fq"
-                  data-checked="true"
-                  data-size="regular"
-                >
+                  </span>
                   <span
                     hidden=""
-                    id="35"
+                    id="21"
                   >
-                    Show only unread toggle
+                    Atlassian
                   </span>
-                  <input
-                    aria-labelledby="35"
-                    checked=""
-                    id="toggle-unread-only"
-                    name=""
-                    type="checkbox"
-                    value=""
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                  <span
-                    class=" css-j0xbwm"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class=" css-1c1p6pd"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Group notifications by products
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="No notifications for account"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    No notifications for account
-                  </span>
-                </span>
+                </div>
               </button>
             </div>
+            <button
+              class=" css-a8hcye"
+              title="No notifications for account"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-snhnyn"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  No notifications for account
+                </span>
+              </span>
+            </button>
           </div>
         </div>
         <div
@@ -245,194 +135,84 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
           class="css-1a0x9v0"
         >
           <div
-            class="css-19ksfco"
+            role="presentation"
           >
-            <div
-              role="presentation"
+            <button
+              class="css-1xq1pkg"
+              type="button"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                aria-labelledby="21"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
               >
-                <div
-                  aria-labelledby="33"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <span
+                  class="css-vucx95"
                 >
-                  <span
-                    class="css-vucx95"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="33"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
-                >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
                   />
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="css-19ksfco"
-          >
-            <div
-              role="presentation"
-            >
-              <label
-                class="css-uv11fq"
-                data-checked="true"
-                data-size="regular"
-              >
+                </span>
                 <span
                   hidden=""
-                  id="35"
+                  id="21"
                 >
-                  Show only unread toggle
+                  Atlassian
                 </span>
-                <input
-                  aria-labelledby="35"
-                  checked=""
-                  id="toggle-unread-only"
-                  name=""
-                  type="checkbox"
-                  value=""
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassian
+                </span>
+                <span
+                  class="css-km389f"
                 />
-                <span
-                  class=" css-j0xbwm"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <span
-                  class=" css-1c1p6pd"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <button
-              class=" css-a8hcye"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-label="groupByProduct"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                      fill="currentcolor"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Group notifications by products
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="No notifications for account"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  No notifications for account
-                </span>
-              </span>
+              </div>
             </button>
           </div>
+          <button
+            class=" css-a8hcye"
+            title="No notifications for account"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                No notifications for account
+              </span>
+            </span>
+          </button>
         </div>
       </div>
       <div
@@ -532,194 +312,84 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             class="css-1a0x9v0"
           >
             <div
-              class="css-19ksfco"
+              role="presentation"
             >
-              <div
-                role="presentation"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <button
-                  class="css-1xq1pkg"
-                  type="button"
+                <div
+                  aria-labelledby="5"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <div
-                    aria-labelledby="9"
-                    role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
+                  <span
+                    class="css-vucx95"
                   >
-                    <span
-                      class="css-vucx95"
-                    >
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        class="css-13ep12v"
-                        data-vc="avatar-image"
-                        src="https://avatars.githubusercontent.com/u/583231?v=4"
-                        style="border-radius: 50%;"
-                      />
-                    </span>
-                    <span
-                      hidden=""
-                      id="9"
-                    >
-                      Atlassian
-                    </span>
-                  </div>
-                  <div
-                    class="css-1orugy9"
-                  >
-                    <span
-                      class="css-pbo52v"
-                    >
-                      Atlassian
-                    </span>
-                    <span
-                      class="css-km389f"
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
                     />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="css-19ksfco"
-            >
-              <div
-                role="presentation"
-              >
-                <label
-                  class="css-uv11fq"
-                  data-checked="true"
-                  data-size="regular"
-                >
+                  </span>
                   <span
                     hidden=""
-                    id="11"
+                    id="5"
                   >
-                    Show only unread toggle
+                    Atlassian
                   </span>
-                  <input
-                    aria-labelledby="11"
-                    checked=""
-                    id="toggle-unread-only"
-                    name=""
-                    type="checkbox"
-                    value=""
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                  <span
-                    class=" css-j0xbwm"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class=" css-1c1p6pd"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Group notifications by products
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Hide account notifications"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Hide account notifications
-                  </span>
-                </span>
+                </div>
               </button>
             </div>
+            <button
+              class=" css-a8hcye"
+              title="Hide account notifications"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-snhnyn"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Hide account notifications
+                </span>
+              </span>
+            </button>
           </div>
         </div>
         <div
@@ -736,7 +406,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="16"
+                  aria-labelledby="8"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -754,7 +424,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="16"
+                    id="8"
                   >
                     atlasify-app
                   </span>
@@ -808,7 +478,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="18"
+                  aria-labelledby="10"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -826,7 +496,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="18"
+                    id="10"
                   >
                     Repository
                   </span>
@@ -919,7 +589,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="21"
+                  aria-labelledby="13"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -937,7 +607,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="21"
+                    id="13"
                   >
                     atlasify-app
                   </span>
@@ -991,7 +661,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="23"
+                  aria-labelledby="15"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -1009,7 +679,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="23"
+                    id="15"
                   >
                     Repository
                   </span>
@@ -1102,194 +772,84 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
           class="css-1a0x9v0"
         >
           <div
-            class="css-19ksfco"
+            role="presentation"
           >
-            <div
-              role="presentation"
+            <button
+              class="css-1xq1pkg"
+              type="button"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                aria-labelledby="5"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
               >
-                <div
-                  aria-labelledby="9"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <span
+                  class="css-vucx95"
                 >
-                  <span
-                    class="css-vucx95"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="9"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
-                >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
                   />
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="css-19ksfco"
-          >
-            <div
-              role="presentation"
-            >
-              <label
-                class="css-uv11fq"
-                data-checked="true"
-                data-size="regular"
-              >
+                </span>
                 <span
                   hidden=""
-                  id="11"
+                  id="5"
                 >
-                  Show only unread toggle
+                  Atlassian
                 </span>
-                <input
-                  aria-labelledby="11"
-                  checked=""
-                  id="toggle-unread-only"
-                  name=""
-                  type="checkbox"
-                  value=""
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassian
+                </span>
+                <span
+                  class="css-km389f"
                 />
-                <span
-                  class=" css-j0xbwm"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <span
-                  class=" css-1c1p6pd"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <button
-              class=" css-a8hcye"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-label="groupByProduct"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                      fill="currentcolor"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Group notifications by products
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Hide account notifications"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Hide account notifications
-                </span>
-              </span>
+              </div>
             </button>
           </div>
+          <button
+            class=" css-a8hcye"
+            title="Hide account notifications"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Hide account notifications
+              </span>
+            </span>
+          </button>
         </div>
       </div>
       <div
@@ -1306,7 +866,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="16"
+                aria-labelledby="8"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1324,7 +884,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="16"
+                  id="8"
                 >
                   atlasify-app
                 </span>
@@ -1378,7 +938,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="18"
+                aria-labelledby="10"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1396,7 +956,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="18"
+                  id="10"
                 >
                   Repository
                 </span>
@@ -1489,7 +1049,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="21"
+                aria-labelledby="13"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1507,7 +1067,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="21"
+                  id="13"
                 >
                   atlasify-app
                 </span>
@@ -1561,7 +1121,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="23"
+                aria-labelledby="15"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1579,7 +1139,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="23"
+                  id="15"
                 >
                   Repository
                 </span>
@@ -1729,216 +1289,6 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             class="css-1a0x9v0"
           >
             <div
-              class="css-19ksfco"
-            >
-              <div
-                role="presentation"
-              >
-                <button
-                  class="css-1xq1pkg"
-                  type="button"
-                >
-                  <div
-                    aria-labelledby="2"
-                    role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
-                  >
-                    <span
-                      class="css-vucx95"
-                    >
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        class="css-13ep12v"
-                        data-vc="avatar-image"
-                        src="https://avatars.githubusercontent.com/u/583231?v=4"
-                        style="border-radius: 50%;"
-                      />
-                    </span>
-                    <span
-                      hidden=""
-                      id="2"
-                    >
-                      Atlassian
-                    </span>
-                  </div>
-                  <div
-                    class="css-1orugy9"
-                  >
-                    <span
-                      class="css-pbo52v"
-                    >
-                      Atlassian
-                    </span>
-                    <span
-                      class="css-km389f"
-                    />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="css-19ksfco"
-            >
-              <div
-                role="presentation"
-              >
-                <label
-                  class="css-uv11fq"
-                  data-checked="true"
-                  data-size="regular"
-                >
-                  <span
-                    hidden=""
-                    id="4"
-                  >
-                    Show only unread toggle
-                  </span>
-                  <input
-                    aria-labelledby="4"
-                    checked=""
-                    id="toggle-unread-only"
-                    name=""
-                    type="checkbox"
-                    value=""
-                  />
-                  <span
-                    class=" css-j0xbwm"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class=" css-1c1p6pd"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <button
-                class=" css-1pe4njs"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Group notifications by products
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Hide account notifications"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Hide account notifications
-                  </span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div>
-          Product Notifications
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="css-1npayr"
-    >
-      <div
-        class="css-tipqhv"
-      >
-        <div
-          class="css-1a0x9v0"
-        >
-          <div
-            class="css-19ksfco"
-          >
-            <div
               role="presentation"
             >
               <button
@@ -1983,112 +1333,6 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </div>
               </button>
             </div>
-          </div>
-          <div
-            class="css-19ksfco"
-          >
-            <div
-              role="presentation"
-            >
-              <label
-                class="css-uv11fq"
-                data-checked="true"
-                data-size="regular"
-              >
-                <span
-                  hidden=""
-                  id="4"
-                >
-                  Show only unread toggle
-                </span>
-                <input
-                  aria-labelledby="4"
-                  checked=""
-                  id="toggle-unread-only"
-                  name=""
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class=" css-j0xbwm"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <span
-                  class=" css-1c1p6pd"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <button
-              class=" css-1pe4njs"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-label="groupByProduct"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                      fill="currentcolor"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Group notifications by products
-                </span>
-              </span>
-            </button>
             <button
               class=" css-a8hcye"
               title="Hide account notifications"
@@ -2124,6 +1368,102 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               </span>
             </button>
           </div>
+        </div>
+        <div>
+          Product Notifications
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-1npayr"
+    >
+      <div
+        class="css-tipqhv"
+      >
+        <div
+          class="css-1a0x9v0"
+        >
+          <div
+            role="presentation"
+          >
+            <button
+              class="css-1xq1pkg"
+              type="button"
+            >
+              <div
+                aria-labelledby="2"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-vucx95"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="2"
+                >
+                  Atlassian
+                </span>
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassian
+                </span>
+                <span
+                  class="css-km389f"
+                />
+              </div>
+            </button>
+          </div>
+          <button
+            class=" css-a8hcye"
+            title="Hide account notifications"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Hide account notifications
+              </span>
+            </span>
+          </button>
         </div>
       </div>
       <div>
@@ -2200,194 +1540,84 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
             class="css-1a0x9v0"
           >
             <div
-              class="css-19ksfco"
+              role="presentation"
             >
-              <div
-                role="presentation"
+              <button
+                class="css-1xq1pkg"
+                type="button"
               >
-                <button
-                  class="css-1xq1pkg"
-                  type="button"
+                <div
+                  aria-labelledby="18"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <div
-                    aria-labelledby="26"
-                    role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
+                  <span
+                    class="css-vucx95"
                   >
-                    <span
-                      class="css-vucx95"
-                    >
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        class="css-13ep12v"
-                        data-vc="avatar-image"
-                        src="https://avatars.githubusercontent.com/u/583231?v=4"
-                        style="border-radius: 50%;"
-                      />
-                    </span>
-                    <span
-                      hidden=""
-                      id="26"
-                    >
-                      Atlassian
-                    </span>
-                  </div>
-                  <div
-                    class="css-1orugy9"
-                  >
-                    <span
-                      class="css-pbo52v"
-                    >
-                      Atlassian
-                    </span>
-                    <span
-                      class="css-km389f"
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
                     />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="css-19ksfco"
-            >
-              <div
-                role="presentation"
-              >
-                <label
-                  class="css-uv11fq"
-                  data-checked="true"
-                  data-size="regular"
-                >
+                  </span>
                   <span
                     hidden=""
-                    id="28"
+                    id="18"
                   >
-                    Show only unread toggle
+                    Atlassian
                   </span>
-                  <input
-                    aria-labelledby="28"
-                    checked=""
-                    id="toggle-unread-only"
-                    name=""
-                    type="checkbox"
-                    value=""
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
                   />
-                  <span
-                    class=" css-j0xbwm"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class=" css-1c1p6pd"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path
-                          d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <button
-                class=" css-a8hcye"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-label="groupByProduct"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    role="img"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Group notifications by products
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="No notifications for account"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    No notifications for account
-                  </span>
-                </span>
+                </div>
               </button>
             </div>
+            <button
+              class=" css-a8hcye"
+              title="No notifications for account"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-snhnyn"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  No notifications for account
+                </span>
+              </span>
+            </button>
           </div>
         </div>
         <div
@@ -2425,194 +1655,84 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
           class="css-1a0x9v0"
         >
           <div
-            class="css-19ksfco"
+            role="presentation"
           >
-            <div
-              role="presentation"
+            <button
+              class="css-1xq1pkg"
+              type="button"
             >
-              <button
-                class="css-1xq1pkg"
-                type="button"
+              <div
+                aria-labelledby="18"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
               >
-                <div
-                  aria-labelledby="26"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <span
+                  class="css-vucx95"
                 >
-                  <span
-                    class="css-vucx95"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="26"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
-                >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatars.githubusercontent.com/u/583231?v=4"
+                    style="border-radius: 50%;"
                   />
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="css-19ksfco"
-          >
-            <div
-              role="presentation"
-            >
-              <label
-                class="css-uv11fq"
-                data-checked="true"
-                data-size="regular"
-              >
+                </span>
                 <span
                   hidden=""
-                  id="28"
+                  id="18"
                 >
-                  Show only unread toggle
+                  Atlassian
                 </span>
-                <input
-                  aria-labelledby="28"
-                  checked=""
-                  id="toggle-unread-only"
-                  name=""
-                  type="checkbox"
-                  value=""
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassian
+                </span>
+                <span
+                  class="css-km389f"
                 />
-                <span
-                  class=" css-j0xbwm"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
-                        fill="currentcolor"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <span
-                  class=" css-1c1p6pd"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <button
-              class=" css-a8hcye"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-label="groupByProduct"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
-                      fill="currentcolor"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Group notifications by products
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="No notifications for account"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  No notifications for account
-                </span>
-              </span>
+              </div>
             </button>
           </div>
+          <button
+            class=" css-a8hcye"
+            title="No notifications for account"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                No notifications for account
+              </span>
+            </span>
+          </button>
         </div>
       </div>
       <div

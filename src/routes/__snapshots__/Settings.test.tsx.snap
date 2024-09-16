@@ -6,10 +6,10 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
   data-testid="settings"
 >
   <div
-    class="mx-8 mt-2 py-2"
+    class="css-18bes35"
   >
     <div
-      class=" css-uwvn2m"
+      class=" css-y272c0"
     >
       <button
         class=" css-1hmr5rx"
