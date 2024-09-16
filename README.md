@@ -56,7 +56,8 @@ SOON
 - [ ] use graphql codegen
 - [ ] fix mark as read - product level glitch
 - [ ] add mark all as read - account level
-- [ ] shrink app bundle size
+- [ ] shrink app bundle size by moving dependencies around and adjusting files filter
+- [ ] prevent reordering when grouped by product
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
