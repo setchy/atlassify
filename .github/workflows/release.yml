@@ -28,8 +28,8 @@ jobs:
           APPLEID_USERNAME: ${{ secrets.appleid_username }}
           APPLEID_PASSWORD: ${{ secrets.appleid_password }}
           APPLEID_TEAM_ID: ${{ secrets.appleid_teamid }}
-          CSC_LINK: ${{ secrets.mac_certs }}
-          CSC_KEY_PASSWORD: ${{ secrets.mac_certs_password }}
+          CSC_LINK: ${{ secrets.csc_link }}
+          CSC_KEY_PASSWORD: ${{ secrets.csc_key_password }}
           GH_TOKEN: ${{ secrets.github_token }}
           NOTARIZE: true
       - uses: actions/upload-artifact@v4
