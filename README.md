@@ -46,7 +46,6 @@ NOW
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] update test snapshot for "date updated at" to mock result
-- [ ] count total, add + when there are more paged results
 - [ ] refactor account header settings from settings -> account object
 
 SOON

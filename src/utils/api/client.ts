@@ -2,6 +2,7 @@ import type { AxiosPromise } from 'axios';
 import gql from 'graphql-tag';
 import { print } from 'graphql/language/printer';
 import type { Account, SettingsState } from '../../types';
+import { Constants } from '../constants';
 import { apiRequestAuth } from './request';
 import type {
   GraphQLResponse,
@@ -9,8 +10,6 @@ import type {
   MyUserDetails,
   NotificationsExtensions,
 } from './types';
-
-export const MAX_PAGE_SIZE = 1000;
 
 /**
  * Get the authenticated user
@@ -108,7 +107,7 @@ export function getNotificationsForUser(
   return apiRequestAuth(account, {
     query: print(QUERY),
     variables: {
-      first: MAX_PAGE_SIZE,
+      first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
       readState: settings.fetchOnlyUnreadNotifications ? 'unread' : null,
       // product: settings.product,
     },

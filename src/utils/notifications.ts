@@ -6,11 +6,12 @@ import type {
   AtlasifyState,
   SettingsState,
 } from '../types';
-import { MAX_PAGE_SIZE, getNotificationsForUser } from './api/client';
+import { getNotificationsForUser } from './api/client';
 import { determineFailureType } from './api/errors';
 import type { AtlassianNotification, Category, ReadState } from './api/types';
 import { getAccountUUID } from './auth/utils';
 import { hideWindow, showWindow, updateTrayIcon } from './comms';
+import { Constants } from './constants';
 import { READ_STATES } from './filters';
 import { openNotification } from './links';
 import { isWindows } from './platform';
@@ -30,7 +31,7 @@ export function getNotificationCount(notifications: AccountNotifications[]) {
 }
 
 export function hasMoreNotifications(notifications: AccountNotifications[]) {
-  return notifications.some((n) => n.hasNextPage);
+  return notifications?.some((n) => n.hasNextPage);
 }
 
 export const triggerNativeNotifications = (
@@ -153,7 +154,7 @@ export async function getAllNotifications(
             notifications: notifications,
             hasNextPage:
               res.extensions.notifications.response_info.responseSize ===
-              MAX_PAGE_SIZE, // TODO - there is a bug in the Atlassian GraphQL response
+              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT, // TODO - there is a bug in the Atlassian GraphQL response
             error: null,
           };
         } catch (error) {
