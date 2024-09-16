@@ -29,6 +29,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const { settings } = useContext(AppContext);
 
+  const [showAccountNotifications, setShowAccountNotifications] =
+    useState(true);
+
   const groupedNotifications = Object.values(
     notifications.reduce(
       (acc: { [key: string]: AtlasifyNotification[] }, notification) => {
@@ -41,31 +44,26 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     ),
   );
 
+  const toggleAccountNotifications = () => {
+    setShowAccountNotifications(!showAccountNotifications);
+  };
+
   const hasNotifications = useMemo(
     () => notifications.length > 0,
     [notifications],
   );
 
-  const [showAccountNotifications, setShowAccountNotifications] =
-    useState(true);
+  const ChevronIcon = !hasNotifications
+    ? ChevronLeftIcon
+    : showAccountNotifications
+      ? ChevronDownIcon
+      : ChevronUpIcon;
 
-  const toggleAccountNotifications = () => {
-    setShowAccountNotifications(!showAccountNotifications);
-  };
-
-  const ChevronIcon =
-    notifications.length === 0
-      ? ChevronLeftIcon
-      : showAccountNotifications
-        ? ChevronDownIcon
-        : ChevronUpIcon;
-
-  const toggleAccountNotificationsLabel =
-    notifications.length === 0
-      ? 'No notifications for account'
-      : showAccountNotifications
-        ? 'Hide account notifications'
-        : 'Show account notifications';
+  const toggleAccountNotificationsLabel = !hasNotifications
+    ? 'No notifications for account'
+    : showAccountNotifications
+      ? 'Hide account notifications'
+      : 'Show account notifications';
 
   return (
     <Stack>

@@ -5,7 +5,7 @@ import { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import Tooltip from '@atlaskit/tooltip';
 
-import { Stack } from '@atlaskit/primitives';
+import { Flex, Stack } from '@atlaskit/primitives';
 import { AppContext } from '../context/App';
 import { type AtlasifyNotification, Opacity } from '../types';
 import { cn } from '../utils/cn';
@@ -126,8 +126,8 @@ export const NotificationRow: FC<INotificationRow> = ({
         </div>
       </div>
 
-      {!animateExit && notification.unread && (
-        <div className="flex items-center justify-center gap-2">
+      {!animateExit && !isRead && notification.unread && (
+        <Flex alignItems="center">
           <IconButton
             label="Mark as read"
             title="Mark as read"
@@ -143,7 +143,7 @@ export const NotificationRow: FC<INotificationRow> = ({
               markNotificationRead(notification);
             }}
           />
-        </div>
+        </Flex>
       )}
     </div>
   );
