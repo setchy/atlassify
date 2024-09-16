@@ -18,8 +18,8 @@ importers:
         specifier: 20.1.1
         version: 20.1.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 14.0.0
-        version: 14.0.0(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 14.0.1
+        version: 14.0.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 6.10.1
         version: 6.10.1(@types/react@18.3.5)(react@18.3.1)
@@ -237,8 +237,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/checkbox@14.0.0':
-    resolution: {integrity: sha512-RsbR6AbUhU5aSJ8lH48SHXk7oVRiupPRqE56CcDiH35oRKeVGswwPHSdiZgdra5NwaJnC8sixj/5zB67Lxe9CQ==}
+  '@atlaskit/checkbox@14.0.1':
+    resolution: {integrity: sha512-hQY1i+b0ZUYd0gIODI663RfXMRIdGi7yvf3qlWO19GRJas4G7nS+W5LoQ5AXEFD3h11Wdqim1kMFFhcNUDNfqA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -252,6 +252,11 @@ packages:
 
   '@atlaskit/css@0.4.0':
     resolution: {integrity: sha512-bg5RaGieN3yRwFHRkk56bZ6/I0dpXNyISRz9rDfbp+yGso8lpIhubmLx4OXfbUUkUEE+9tMWZuEHJXPuCN4jdw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/css@0.5.0':
+    resolution: {integrity: sha512-WfE1u8c+mgAnoba1wEQfAx3OyiAWUkMrKJPcT66lG4urabaUhozz648Zbxi2JaGrqszZYe8xlqz/GEyb770rsQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -364,6 +369,11 @@ packages:
 
   '@atlaskit/tokens@1.59.1':
     resolution: {integrity: sha512-V4sFrp1MphHFDL5toDS3PMkcnwQoJJbTO/ioGSwvhFq9r46UoDnoaxSljl2ktWdEfdfqTq+ybq8gpKMutojjXA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/tokens@1.60.0':
+    resolution: {integrity: sha512-+Z1EIBNDmcNaICkXSwKJHIyVwxC1FWYuJudM8NzNEfVM/UYoLLu1VFXCvs6bH+AgwA5zDmeTNzFShKwKsw0zbw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -3967,14 +3977,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@14.0.0(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@14.0.1(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.4.0(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/css': 0.5.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/icon': 22.18.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.5)(react@18.3.1)
-      '@atlaskit/tokens': 1.59.1(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/tokens': 1.60.0(@types/react@18.3.5)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
       react: 18.3.1
@@ -4000,6 +4010,16 @@ snapshots:
   '@atlaskit/css@0.4.0(@types/react@18.3.5)(react@18.3.1)':
     dependencies:
       '@atlaskit/tokens': 1.59.1(@types/react@18.3.5)(react@18.3.1)
+      '@babel/runtime': 7.24.1
+      '@compiled/react': 0.17.3(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/css@0.5.0(@types/react@18.3.5)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/tokens': 1.60.0(@types/react@18.3.5)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@compiled/react': 0.17.3(react@18.3.1)
       react: 18.3.1
@@ -4282,6 +4302,19 @@ snapshots:
       - supports-color
 
   '@atlaskit/tokens@1.59.1(@types/react@18.3.5)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.5)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.24.1
+      '@babel/traverse': 7.24.1
+      '@babel/types': 7.24.0
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/tokens@1.60.0(@types/react@18.3.5)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.5)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
