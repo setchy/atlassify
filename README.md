@@ -46,6 +46,8 @@ NOW
 - [ ] purchase and setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] update test snapshot for "date updated at" to mock result
+- [ ] count total, add + when there are more paged results
+- [ ] refactor account header settings from settings -> account object
 
 SOON
 - [ ] fix unit tests - re-enable those that are skipped
@@ -54,6 +56,8 @@ SOON
 - [ ] make filters a dropdown overlay
 - [ ] DARK and System theme
 - [ ] animate refresh icon
+- [ ] badge counts for each filter group
+- [ ] use graphql codegen  
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
@@ -61,6 +65,7 @@ LATER
 - [ ] atlaskit for modal dialog on reset
 - [ ] replace divs+classNames with atlaskit primitives
 - [ ] use atlaskit/tokens for colors
+- [ ] add "update available icons"
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io
