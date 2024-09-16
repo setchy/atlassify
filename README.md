@@ -41,7 +41,6 @@ A list of "things" to improve
 
 NOW
 - [ ] clear out all TODOs in this project
-- [ ] setup Apple developer account
 - [ ] setup brew cask definition
 - [ ] update test snapshot for "date updated at" to mock result
 
