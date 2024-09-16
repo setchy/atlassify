@@ -21,21 +21,21 @@ log.initialize();
 const idleIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-idleTemplate.png`,
 );
+// const idleUpdateAvailableIcon = path.resolve(
+//   `${__dirname}/../../assets/images/tray-idle-update.png`,
+// );
 const idleAlternateIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-idle-white.png`,
 );
-const idleUpdateAvailableIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-idle-update.png`,
-);
-const idleAlternateUpdateAvailableIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-idle-white-update.png`,
-);
+// const idleAlternateUpdateAvailableIcon = path.resolve(
+//   `${__dirname}/../../assets/images/tray-idle-white-update.png`,
+// );
 const activeIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-active.png`,
 );
-const activeUpdateAvailableIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-active-update.png`,
-);
+// const activeUpdateAvailableIcon = path.resolve(
+//   `${__dirname}/../../assets/images/tray-active-update.png`,
+// );
 
 const browserWindowOpts = {
   width: 500,
@@ -184,26 +184,29 @@ app.whenReady().then(async () => {
 
   ipc.on('atlasify:icon-active', () => {
     if (!mb.tray.isDestroyed()) {
-      mb.tray.setImage(
-        updateAvailableMenuItem.visible
-          ? activeUpdateAvailableIcon
-          : activeIcon,
-      );
+      // mb.tray.setImage(
+      //   updateAvailableMenuItem.visible
+      //     ? activeUpdateAvailableIcon
+      //     : activeIcon,
+      // );
+      mb.tray.setImage(activeIcon);
     }
   });
 
   ipc.on('atlasify:icon-idle', () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
-        mb.tray.setImage(
-          updateAvailableMenuItem.visible
-            ? idleAlternateUpdateAvailableIcon
-            : idleAlternateIcon,
-        );
+        // mb.tray.setImage(
+        //   updateAvailableMenuItem.visible
+        //     ? idleAlternateUpdateAvailableIcon
+        //     : idleAlternateIcon,
+        // );
+        mb.tray.setImage(idleAlternateIcon);
       } else {
-        mb.tray.setImage(
-          updateAvailableMenuItem.visible ? idleUpdateAvailableIcon : idleIcon,
-        );
+        // mb.tray.setImage(
+        //   updateAvailableMenuItem.visible ? idleUpdateAvailableIcon : idleIcon,
+        // );
+        mb.tray.setImage(idleIcon);
       }
     }
   });
