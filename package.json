@@ -1,6 +1,6 @@
 {
   "name": "atlasify",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Atlassian Notifications on your menu bar.",
   "main": "src/electron/main.js",
   "scripts": {
@@ -69,8 +69,8 @@
       }
     },
     "dmg": {
-      "icon": "assets/images/app-icon.icns",
-      "sign": true
+      "sign": true,
+      "icon": "assets/images/app-icon.icns"
     },
     "win": {
       "target": "nsis",
@@ -81,7 +81,7 @@
     },
     "linux": {
       "target": ["AppImage", "deb", "rpm"],
-      "category": "Development",
+      "category": "Productivity",
       "maintainer": "Adam Setch"
     }
   },
