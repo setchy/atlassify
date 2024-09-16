@@ -55,6 +55,7 @@ SOON
 - [ ] use graphql codegen
 - [ ] fix mark as read - product level glitch
 - [ ] add mark all as read - account level
+- [ ] shrink app bundle size
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
