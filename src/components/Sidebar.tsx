@@ -9,7 +9,7 @@ import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { AtlasIcon } from '@atlaskit/logo';
-import { Stack } from '@atlaskit/primitives';
+import { Box, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import Toggle from '@atlaskit/toggle';
@@ -68,7 +68,7 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-gray-sidebar">
+    <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
           <Button
@@ -97,7 +97,9 @@ export const Sidebar: FC = () => {
             />
 
             {notificationsCount > 0 && (
-              <span className="text-xs text-white">{notificationsLabel}</span>
+              <Text color="color.text.inverse" size="small" weight="semibold">
+                {notificationsCount}
+              </Text>
             )}
           </Tooltip>
 
@@ -156,48 +158,27 @@ export const Sidebar: FC = () => {
                     />
                   )}
                   appearance="subtle"
+                  spacing="compact"
                   shape="circle"
                   onClick={() => toggleFilters()}
                 />
 
                 {filterCount > 0 && (
-                  <span className="text-xs text-white">{filterCount}</span>
+                  <Text
+                    color="color.text.inverse"
+                    size="small"
+                    weight="semibold"
+                  >
+                    {filterCount}
+                  </Text>
                 )}
               </Tooltip>
             </>
           )}
-
-          {/* 
-          <IconButton
-            label="My Issues"
-            title="My Issues"
-            icon={(iconProps) => (
-              <IssuesIcon {...iconProps} size="small" primaryColor="white" />
-            )}
-            appearance="subtle"
-            spacing="compact"
-            onClick={() => openMyIssues()}
-          />
-
-          <IconButton
-            label="My Pull Requests"
-            title="My Pull Requests"
-            icon={(iconProps) => (
-              <BitbucketPullrequestsIcon
-                {...iconProps}
-                size="small"
-                primaryColor="white"
-              />
-            )}
-            appearance="subtle"
-            spacing="compact"
-            onClick={() => openMyPullRequests()}
-          />
-          */}
         </Stack>
       </div>
 
-      <div className="px-3 py-4">
+      <Box paddingBlock="space.200">
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
             <IconButton
@@ -247,7 +228,7 @@ export const Sidebar: FC = () => {
             onClick={() => quitApp()}
           />
         )}
-      </div>
+      </Box>
     </div>
   );
 };

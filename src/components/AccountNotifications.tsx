@@ -5,16 +5,18 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
-import { Box, Flex, Stack } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
-import { openAccountProfile } from '../utils/links';
+import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
+import { BitbucketIcon } from '@atlaskit/logo';
+import Badge from '@atlaskit/badge';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
@@ -28,6 +30,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const { settings } = useContext(AppContext);
 
+  const [showAccountNotifications, setShowAccountNotifications] =
+    useState(true);
+
   const groupedNotifications = Object.values(
     notifications.reduce(
       (acc: { [key: string]: AtlasifyNotification[] }, notification) => {
@@ -40,31 +45,26 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     ),
   );
 
+  const toggleAccountNotifications = () => {
+    setShowAccountNotifications(!showAccountNotifications);
+  };
+
   const hasNotifications = useMemo(
     () => notifications.length > 0,
     [notifications],
   );
 
-  const [showAccountNotifications, setShowAccountNotifications] =
-    useState(true);
+  const ChevronIcon = !hasNotifications
+    ? ChevronLeftIcon
+    : showAccountNotifications
+      ? ChevronDownIcon
+      : ChevronUpIcon;
 
-  const toggleAccountNotifications = () => {
-    setShowAccountNotifications(!showAccountNotifications);
-  };
-
-  const ChevronIcon =
-    notifications.length === 0
-      ? ChevronLeftIcon
-      : showAccountNotifications
-        ? ChevronDownIcon
-        : ChevronUpIcon;
-
-  const toggleAccountNotificationsLabel =
-    notifications.length === 0
-      ? 'No notifications for account'
-      : showAccountNotifications
-        ? 'Hide account notifications'
-        : 'Show account notifications';
+  const toggleAccountNotificationsLabel = !hasNotifications
+    ? 'No notifications for account'
+    : showAccountNotifications
+      ? 'Hide account notifications'
+      : 'Show account notifications';
 
   return (
     <Stack>
@@ -75,40 +75,57 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
-            : 'color.background.neutral'
+            : 'color.background.brand.subtlest'
         }
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Tooltip
-            content={`${account.user.name}
-              (${account.user.login})`}
-          >
-            <AvatarItem
-              avatar={
-                <Avatar
-                  name={account.user.name}
-                  src={account.user.avatar}
-                  size="xsmall"
-                  appearance="circle"
-                />
-              }
-              primaryText={account.user.name}
+          <Inline space="space.100" alignBlock="center">
+            <Tooltip content="Open account profile">
+              <AvatarItem
+                avatar={
+                  <Avatar
+                    name={account.user.name}
+                    src={account.user.avatar}
+                    size="xsmall"
+                    appearance="circle"
+                  />
+                }
+                primaryText={account.user.name}
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openAccountProfile(account);
+                }}
+              />
+            </Tooltip>{' '}
+            <Badge appearance="primary">{notifications.length}</Badge>
+          </Inline>
+
+          <Inline space="space.100">
+            <IconButton
+              label="My pull requests"
+              title="My pull requests"
+              icon={(iconProps) => (
+                <BitbucketIcon {...iconProps} size="xsmall" />
+              )}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
               onClick={(event: MouseEvent<HTMLElement>) => {
                 // Don't trigger onClick of parent element.
                 event.stopPropagation();
-                openAccountProfile(account);
+                openMyPullRequests();
               }}
             />
-          </Tooltip>
-
-          <IconButton
-            label={toggleAccountNotificationsLabel}
-            title={toggleAccountNotificationsLabel}
-            icon={ChevronIcon}
-            shape="circle"
-            spacing="compact"
-            appearance="subtle"
-          />
+            <IconButton
+              label={toggleAccountNotificationsLabel}
+              title={toggleAccountNotificationsLabel}
+              icon={ChevronIcon}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+            />
+          </Inline>
         </Flex>
       </Box>
 

@@ -5,7 +5,6 @@ import {
   openAccountProfile,
   openAtlasifyReleaseNotes,
   openAtlasifyRepository,
-  openMyIssues,
   openMyNotifications,
   openMyPullRequests,
   openNotification,
@@ -41,18 +40,9 @@ describe('utils/links.ts', () => {
     );
   });
 
-  it('openMyIssues', () => {
-    openMyIssues();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://team.atlassian.com/notifications',
-    );
-  });
-
   it('openMyPullRequests', () => {
     openMyPullRequests();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://team.atlassian.com/notifications',
-    );
+    expect(openExternalLinkMock).toHaveBeenCalledWith('https://bitbucket.org/');
   });
 
   it('openAccountProfile', () => {

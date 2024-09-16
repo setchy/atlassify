@@ -8,9 +8,10 @@ export default {
         xxs: '0.625rem', // 10px
       },
       colors: {
+        sidebar: '#388BFF',
+
         // TODO - Update to use color palette - https://atlassian.design/foundations/color-new/color-palette-new/
         gray: {
-          sidebar: '#388BFF',
           dark: '#161b22',
           darker: '#090E15',
           darkest: '#000209',

@@ -63,123 +63,56 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
         class="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
       >
         <div
-          class="ml-2"
+          class=" css-y272c0"
         >
-          <div>
-            <div
-              role="presentation"
+          <div
+            role="presentation"
+          >
+            <button
+              aria-label="Open account profile"
+              class="css-1xq1pkg"
+              type="button"
             >
               <div
+                aria-labelledby="3"
+                role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
-                <button
-                  aria-label="Open account profile"
-                  class="css-1tnqmrq"
-                  type="button"
+                <span
+                  class="css-1i6qr0h"
                 >
                   <img
-                    alt="Atlassian"
+                    alt=""
+                    aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
                     src="https://avatars.githubusercontent.com/u/583231?v=4"
                     style="border-radius: 50%;"
                   />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col gap-1"
-        >
-          <div
-            class="text-sm font-semibold"
-          >
-            Atlassian
-          </div>
-          <div
-            class="flex flex-1 gap-1 align-center text-xs"
-          >
-            <div>
-              <div
-                role="presentation"
-              >
+                </span>
                 <span
-                  aria-label="Username"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  hidden=""
+                  id="3"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                      />
-                      <circle
-                        cx="12"
-                        cy="7"
-                        r="4"
-                      />
-                    </g>
-                  </svg>
+                  Atlassian
                 </span>
               </div>
-            </div>
-            <div>
-              atlas
-            </div>
-          </div>
-          <div
-            class="flex flex-1 gap-1 align-center text-xs"
-          >
-            <div>
               <div
-                role="presentation"
+                class="css-1orugy9"
               >
                 <span
-                  aria-label="Authentication method"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  role="img"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class="css-pbo52v"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill="currentcolor"
-                    >
-                      <path
-                        d="M16 11V9h-2V7.002A2 2 0 0 0 12 5c-1.102 0-2 .898-2 2.002V9H8v2H7v8h10v-8zm-2 0h-4V9h4zM8 9V7.002A4.004 4.004 0 0 1 12 3a4 4 0 0 1 4 4.002V9h.994A2.01 2.01 0 0 1 19 11.009v7.982c0 1.11-.897 2.009-2.006 2.009H7.006A2.01 2.01 0 0 1 5 18.991V11.01C5 9.899 5.897 9 7.006 9zm0 0h2v2H8zm6 0h2v2h-2z"
-                      />
-                      <circle
-                        cx="12"
-                        cy="15"
-                        r="2"
-                      />
-                    </g>
-                  </svg>
+                  Atlassian
+                </span>
+                <span
+                  class="css-km389f"
+                >
+                  atlas
                 </span>
               </div>
-            </div>
-            <div>
-              API Token
-            </div>
+            </button>
           </div>
-        </div>
-        <div>
           <div
             class="css-1au07qt"
           >

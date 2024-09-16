@@ -4,12 +4,12 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import Badge from '@atlaskit/badge';
 
 import { AppContext } from '../context/App';
-import { type AtlasifyNotification, Opacity } from '../types';
+import type { AtlasifyNotification } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
-import { cn } from '../utils/cn';
-import { HoverGroup } from './HoverGroup';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
@@ -20,6 +20,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   productNotifications,
 }) => {
   const { settings } = useContext(AppContext);
+
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
   const [showProductNotifications, setShowProductNotifications] =
@@ -44,25 +45,22 @@ export const ProductNotifications: FC<IProductNotifications> = ({
     : 'Show product notifications';
 
   return (
-    <>
-      <div
-        className="group flex justify-between bg-gray-100 px-4 py-1.5 dark:bg-gray-darker dark:text-white"
+    <Stack>
+      <Box
         onClick={toggleProductNotifications}
+        paddingInlineStart="space.200"
+        paddingInlineEnd="space.100"
+        paddingBlock="space.050"
+        backgroundColor="color.background.brand.subtlest.hovered"
       >
-        <div
-          className={cn(
-            'flex flex-1 gap-3 items-center truncate text-sm font-medium',
-            animateExit &&
-              'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
-            showAsRead ? Opacity.READ : Opacity.MEDIUM,
-          )}
-        >
-          <productNotification.icon size="xsmall" appearance="brand" />
-          <span className="capitalize">{productNotification.name}</span>
-        </div>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Inline space="space.100" alignBlock="center">
+            <productNotification.icon size="xsmall" appearance="brand" />
+            <span className="capitalize">{productNotification.name}</span>
+            <Badge>{productNotifications.length}</Badge>
+          </Inline>
 
-        {!animateExit && (
-          <HoverGroup>
+          <Inline space="space.100">
             <IconButton
               label="Mark all product notifications as read"
               title="Mark all product notifications as read"
@@ -92,9 +90,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               spacing="compact"
               appearance="subtle"
             />
-          </HoverGroup>
-        )}
-      </div>
+          </Inline>
+        </Flex>
+      </Box>
 
       {showProductNotifications &&
         productNotifications.map((notification) => (
@@ -105,6 +103,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             isRead={showAsRead}
           />
         ))}
-    </>
+    </Stack>
   );
 };
