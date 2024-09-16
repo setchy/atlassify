@@ -8,7 +8,7 @@
 
 ### Download
 
-You can download Atlasify for **free** from the website [www.atlasify.io][website] or install it via [Homebrew Cask][brew].
+You can download Atlasify for **free** from the website [www.atlasify.io][website], and (hopefully soon) via [Homebrew Cask][brew].
 
 ```shell
 brew install --cask atlasify
