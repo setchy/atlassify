@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
-import { Inline } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives';
 
 import { AppContext } from '../context/App';
 
@@ -19,8 +19,12 @@ export const Header: FC<IHeader> = (props: IHeader) => {
   const { fetchNotifications } = useContext(AppContext);
 
   return (
-    <div className="mx-8 mt-2 py-2">
-      <Inline grow="fill" spread="space-between">
+    <Box
+      paddingInlineStart="space.300"
+      paddingInlineEnd="space.500"
+      paddingBlock="space.200"
+    >
+      <Inline grow="fill" spread="space-between" alignBlock="center">
         <IconButton
           label="Go Back"
           title="Go Back"
@@ -37,6 +41,6 @@ export const Header: FC<IHeader> = (props: IHeader) => {
 
         <Heading size="medium">{props.children}</Heading>
       </Inline>
-    </div>
+    </Box>
   );
 };
