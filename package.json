@@ -50,6 +50,7 @@
   "build": {
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
+    "copyright": "Copyright © 2024 Adam Setch",
     "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
     "mac": {
       "category": "public.app-category.developer-tools",
