@@ -21,6 +21,7 @@ export const Constants = {
         'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/' as Link,
     },
     WEB: {
+      BITBUCKET_HOME: 'https://bitbucket.org' as Link,
       MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
       SECURITY_TOKENS:

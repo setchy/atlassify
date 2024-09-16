@@ -5,16 +5,17 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
-import { Box, Flex, Stack } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
 import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
-import { openAccountProfile } from '../utils/links';
+import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
 import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
+import { BitbucketIcon } from '@atlaskit/logo';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlasifyNotification[];
@@ -98,14 +99,31 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             />
           </Tooltip>
 
-          <IconButton
-            label={toggleAccountNotificationsLabel}
-            title={toggleAccountNotificationsLabel}
-            icon={ChevronIcon}
-            shape="circle"
-            spacing="compact"
-            appearance="subtle"
-          />
+          <Inline space="space.100">
+            <IconButton
+              label="My pull requests"
+              title="My pull requests"
+              icon={(iconProps) => (
+                <BitbucketIcon {...iconProps} size="xsmall" />
+              )}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+              onClick={(event: MouseEvent<HTMLElement>) => {
+                // Don't trigger onClick of parent element.
+                event.stopPropagation();
+                openMyPullRequests();
+              }}
+            />
+            <IconButton
+              label={toggleAccountNotificationsLabel}
+              title={toggleAccountNotificationsLabel}
+              icon={ChevronIcon}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+            />
+          </Inline>
         </Flex>
       </Box>
 

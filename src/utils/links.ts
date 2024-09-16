@@ -27,13 +27,8 @@ export function openMyNotifications() {
   openExternalLink(url.toString() as Link);
 }
 
-export function openMyIssues() {
-  const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
-  openExternalLink(url.toString() as Link);
-}
-
 export function openMyPullRequests() {
-  const url = new URL(Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS);
+  const url = new URL(Constants.ATLASSIAN_URLS.WEB.BITBUCKET_HOME);
   openExternalLink(url.toString() as Link);
 }
 
