@@ -5,16 +5,16 @@ import { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import Tooltip from '@atlaskit/tooltip';
 
+import { Stack } from '@atlaskit/primitives';
 import { AppContext } from '../context/App';
 import { type AtlasifyNotification, Opacity } from '../types';
 import { cn } from '../utils/cn';
+import { getCategoryDetails } from '../utils/filters';
 import {
   formatNotificationUpdatedAt,
   formatProperCase,
 } from '../utils/helpers';
 import { openNotification } from '../utils/links';
-import { getCategoryDetails } from '../utils/filters';
-import { Stack } from '@atlaskit/primitives';
 
 interface INotificationRow {
   notification: AtlasifyNotification;

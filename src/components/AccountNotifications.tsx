@@ -5,17 +5,13 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import ListIcon from '@atlaskit/icon/glyph/list';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
-import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
-import ListIcon from '@atlaskit/icon/glyph/list';
 
 import { AppContext } from '../context/App';
-import {
-  type Account,
-  type AtlasifyError,
-  type AtlasifyNotification,
-} from '../types';
+import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
 import { openAccountProfile } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
