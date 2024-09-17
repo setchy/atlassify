@@ -25,7 +25,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   type="button"
                 >
                   <div
-                    aria-labelledby="24"
+                    aria-labelledby="27"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -43,7 +43,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                     </span>
                     <span
                       hidden=""
-                      id="24"
+                      id="27"
                     >
                       Atlassian
                     </span>
@@ -110,6 +110,42 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                     class="css-b5o75w"
                   >
                     My pull requests
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
+                title="Mark all account notifications as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
                   </span>
                 </span>
               </button>
@@ -200,7 +236,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                 type="button"
               >
                 <div
-                  aria-labelledby="24"
+                  aria-labelledby="27"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -218,7 +254,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   </span>
                   <span
                     hidden=""
-                    id="24"
+                    id="27"
                   >
                     Atlassian
                   </span>
@@ -285,6 +321,42 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   class="css-b5o75w"
                 >
                   My pull requests
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
+              title="Mark all account notifications as read"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark all account notifications as read
                 </span>
               </span>
             </button>
@@ -432,7 +504,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   type="button"
                 >
                   <div
-                    aria-labelledby="6"
+                    aria-labelledby="7"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -450,7 +522,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                     </span>
                     <span
                       hidden=""
-                      id="6"
+                      id="7"
                     >
                       Atlassian
                     </span>
@@ -522,6 +594,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               </button>
               <button
                 class=" css-a8hcye"
+                title="Mark all account notifications as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
                 title="Hide account notifications"
                 type="button"
               >
@@ -571,7 +679,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="10"
+                  aria-labelledby="12"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -589,7 +697,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="10"
+                    id="12"
                   >
                     atlasify-app
                   </span>
@@ -643,7 +751,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="12"
+                  aria-labelledby="14"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -661,7 +769,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="12"
+                    id="14"
                   >
                     Repository
                   </span>
@@ -754,7 +862,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 role="presentation"
               >
                 <div
-                  aria-labelledby="15"
+                  aria-labelledby="17"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -772,7 +880,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="15"
+                    id="17"
                   >
                     atlasify-app
                   </span>
@@ -826,7 +934,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 class="flex flex-1 items-center gap-1 text-xs opacity-80"
               >
                 <div
-                  aria-labelledby="17"
+                  aria-labelledby="19"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -844,7 +952,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="17"
+                    id="19"
                   >
                     Repository
                   </span>
@@ -947,7 +1055,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 type="button"
               >
                 <div
-                  aria-labelledby="6"
+                  aria-labelledby="7"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -965,7 +1073,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                   <span
                     hidden=""
-                    id="6"
+                    id="7"
                   >
                     Atlassian
                   </span>
@@ -1037,6 +1145,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             </button>
             <button
               class=" css-a8hcye"
+              title="Mark all account notifications as read"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark all account notifications as read
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
               title="Hide account notifications"
               type="button"
             >
@@ -1086,7 +1230,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="10"
+                aria-labelledby="12"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1104,7 +1248,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="10"
+                  id="12"
                 >
                   atlasify-app
                 </span>
@@ -1158,7 +1302,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="12"
+                aria-labelledby="14"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1176,7 +1320,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="12"
+                  id="14"
                 >
                   Repository
                 </span>
@@ -1269,7 +1413,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="15"
+                aria-labelledby="17"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1287,7 +1431,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="15"
+                  id="17"
                 >
                   atlasify-app
                 </span>
@@ -1341,7 +1485,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="17"
+                aria-labelledby="19"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1359,7 +1503,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="17"
+                  id="19"
                 >
                   Repository
                 </span>
@@ -1609,6 +1753,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               </button>
               <button
                 class=" css-a8hcye"
+                title="Mark all account notifications as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
                 title="Hide account notifications"
                 type="button"
               >
@@ -1761,6 +1941,42 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             </button>
             <button
               class=" css-a8hcye"
+              title="Mark all account notifications as read"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark all account notifications as read
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
               title="Hide account notifications"
               type="button"
             >
@@ -1880,7 +2096,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   type="button"
                 >
                   <div
-                    aria-labelledby="20"
+                    aria-labelledby="22"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -1898,7 +2114,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                     </span>
                     <span
                       hidden=""
-                      id="20"
+                      id="22"
                     >
                       Atlassian
                     </span>
@@ -1965,6 +2181,42 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                     class="css-b5o75w"
                   >
                     My pull requests
+                  </span>
+                </span>
+              </button>
+              <button
+                class=" css-a8hcye"
+                title="Mark all account notifications as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
                   </span>
                 </span>
               </button>
@@ -2050,7 +2302,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                 type="button"
               >
                 <div
-                  aria-labelledby="20"
+                  aria-labelledby="22"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -2068,7 +2320,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   </span>
                   <span
                     hidden=""
-                    id="20"
+                    id="22"
                   >
                     Atlassian
                   </span>
@@ -2135,6 +2387,42 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   class="css-b5o75w"
                 >
                   My pull requests
+                </span>
+              </span>
+            </button>
+            <button
+              class=" css-a8hcye"
+              title="Mark all account notifications as read"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark all account notifications as read
                 </span>
               </span>
             </button>

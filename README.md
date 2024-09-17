@@ -54,10 +54,10 @@ SOON
 - [ ] animate refresh icon
 - [ ] badge counts for each filter group
 - [ ] use graphql codegen
-- [ ] fix mark as read - product level glitch
-- [ ] add mark all as read - account level
+- [ ] fix mark as read - product level glitch on animation
 - [ ] shrink app bundle size by moving dependencies around and adjusting files filter
 - [ ] prevent reordering when grouped by product
+- [ ] hyperlink product name
 
 LATER
 - [ ] advanced feature for Bitbucket "Your Work" queue
