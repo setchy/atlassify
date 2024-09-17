@@ -76,8 +76,8 @@ importers:
         specifier: 14.0.1
         version: 14.0.1(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
-        specifier: 6.10.1
-        version: 6.10.1(@types/react@18.3.6)(react@18.3.1)
+        specifier: 6.11.0
+        version: 6.11.0(@types/react@18.3.6)(react@18.3.1)
       '@atlaskit/dropdown-menu':
         specifier: 12.18.2
         version: 12.18.2(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -248,8 +248,8 @@ packages:
   '@atlaskit/codemod-utils@4.2.4':
     resolution: {integrity: sha512-ETeLShTnEpLvsEhm0wmIlC7toRPy9hrMGbttdsiKzyUeGQQ3VqBxvOOPZNA6Uvi0660Jjd3lS7n5u7R/Ku0OHg==}
 
-  '@atlaskit/css-reset@6.10.1':
-    resolution: {integrity: sha512-0fJL7ZLZpbJ4ZYH6ncy8tLueZLCz97Yt6xBMUD+t2ux9Kw8PeguBoX8APdkgto7joPtZKGLuXhjFAmjF2Pt+vg==}
+  '@atlaskit/css-reset@6.11.0':
+    resolution: {integrity: sha512-ixnhPOsPG1kfg6fWRQFeKP44J9y+OeBo5wO96Zi/mt783aF4eRPHA38bxqDHgWETFRQu/pi/8Vph70MG35x4iA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4049,7 +4049,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.1
 
-  '@atlaskit/css-reset@6.10.1(@types/react@18.3.6)(react@18.3.1)':
+  '@atlaskit/css-reset@6.11.0(@types/react@18.3.6)(react@18.3.1)':
     dependencies:
       '@atlaskit/theme': 13.0.0(@types/react@18.3.6)(react@18.3.1)
       '@atlaskit/tokens': 1.60.0(@types/react@18.3.6)(react@18.3.1)
