@@ -38,7 +38,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                     
     
                     <g
-                      fill="#1868DB"
+                      fill="#FFFFFF"
                     >
                       
       
@@ -195,7 +195,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                   
     
                   <g
-                    fill="#1868DB"
+                    fill="#FFFFFF"
                   >
                     
       
@@ -409,7 +409,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                     
     
                     <g
-                      fill="#1868DB"
+                      fill="#FFFFFF"
                     >
                       
       
@@ -566,7 +566,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                   
     
                   <g
-                    fill="#1868DB"
+                    fill="#FFFFFF"
                   >
                     
       
