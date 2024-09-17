@@ -184,7 +184,11 @@ export const Sidebar: FC = () => {
               title="Refresh notifications"
               isTooltipDisabled={false}
               icon={(iconProps) => (
-                <RefreshIcon {...iconProps} size="small" primaryColor="white" />
+                <RefreshIcon
+                  {...iconProps}
+                  size="medium"
+                  primaryColor="white"
+                />
               )}
               appearance="subtle"
               shape="circle"
@@ -198,7 +202,7 @@ export const Sidebar: FC = () => {
               icon={(iconProps) => (
                 <SettingsIcon
                   {...iconProps}
-                  size="small"
+                  size="medium"
                   primaryColor="white"
                 />
               )}
