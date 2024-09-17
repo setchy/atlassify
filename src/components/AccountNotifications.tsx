@@ -5,6 +5,7 @@ import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -12,6 +13,7 @@ import Badge from '@atlaskit/badge';
 import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
 import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
+import { markNotificationsAsRead } from '../utils/api/client';
 import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
@@ -32,6 +34,10 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const [showAccountNotifications, setShowAccountNotifications] =
     useState(true);
+
+  const accountNotificationIDs = notifications.map(
+    (notification) => notification.id,
+  );
 
   const groupedNotifications = Object.values(
     notifications.reduce(
@@ -117,6 +123,23 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 openMyPullRequests();
               }}
             />
+
+            <IconButton
+              label="Mark all account notifications as read"
+              title="Mark all account notifications as read"
+              icon={(iconProps) => (
+                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
+              )}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+              onClick={(event: MouseEvent<HTMLElement>) => {
+                // Don't trigger onClick of parent element.
+                event.stopPropagation();
+                markNotificationsAsRead(account, accountNotificationIDs);
+              }}
+            />
+
             <IconButton
               label={toggleAccountNotificationsLabel}
               title={toggleAccountNotificationsLabel}
