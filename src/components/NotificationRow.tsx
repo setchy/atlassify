@@ -11,9 +11,8 @@ import { type AtlasifyNotification, Opacity } from '../types';
 import { cn } from '../utils/cn';
 import { getCategoryDetails } from '../utils/filters';
 import {
+  formatNotificationFooterText,
   formatNotificationUpdatedAt,
-  formatProperCase,
-  getRepositoryName,
 } from '../utils/helpers';
 import { openNotification } from '../utils/links';
 
@@ -117,11 +116,7 @@ export const NotificationRow: FC<INotificationRow> = ({
             )}
           >
             <notification.product.icon size="xsmall" appearance="brand" />
-            {notification.path?.title
-              ? notification.path.title
-              : notification.product.name === 'bitbucket'
-                ? getRepositoryName(notification)
-                : formatProperCase(notification.product.name)}
+            {formatNotificationFooterText(notification)}
           </div>
         </div>
       </div>
