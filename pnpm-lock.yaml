@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@atlaskit/modal-dialog':
-        specifier: ^12.15.7
+        specifier: 12.15.7
         version: 12.15.7(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@discordapp/twemoji':
         specifier: 15.1.0
