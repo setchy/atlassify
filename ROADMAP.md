@@ -9,7 +9,6 @@ A list of "things" to improve
 
 ## Soon
 - [ ] fix unit tests - re-enable those that are skipped
-- [ ] refactor "footer" to display product name + product additional data (ie: repository name for bitbucket)
 - [ ] improve test coverage
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
