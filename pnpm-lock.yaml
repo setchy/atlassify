@@ -148,7 +148,7 @@ importers:
         specifier: 25.0.5
         version: 25.0.5(electron-builder-squirrel-windows@24.13.3(dmg-builder@25.0.5))
       electron-builder-notarize:
-        specifier: ^1.5.2
+        specifier: 1.5.2
         version: 1.5.2(electron-builder@25.0.5(electron-builder-squirrel-windows@24.13.3(dmg-builder@25.0.5)))
       graphql-tag:
         specifier: 2.12.6
