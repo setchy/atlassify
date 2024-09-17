@@ -74,7 +74,7 @@ export const Sidebar: FC = () => {
           <Button
             title="Home"
             appearance="subtle"
-            onClick={() => refreshNotifications()}
+            onClick={() => navigate('/', { replace: true })}
           >
             <AtlasIcon size="medium" appearance="inverse" />
           </Button>

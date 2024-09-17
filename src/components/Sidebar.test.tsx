@@ -77,7 +77,6 @@ describe('components/Sidebar.tsx', () => {
     );
 
     fireEvent.click(screen.getByTitle('Home'));
-    expect(fetchNotifications).toHaveBeenCalledTimes(1);
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
