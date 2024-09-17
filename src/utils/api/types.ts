@@ -4,6 +4,7 @@ export interface AtlassianProduct {
   name: Product;
   description: string;
   icon: React.ComponentType;
+  home?: Link;
 }
 
 export interface BasicDetails {

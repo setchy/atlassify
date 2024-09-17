@@ -14,48 +14,58 @@ exports[`components/ProductNotifications.tsx should render itself & its children
           <div
             class="css-1a0x9v0"
           >
-            <div
-              class="css-1v6wdk"
+            <button
+              class=" css-3uwhr5"
+              type="button"
             >
               <span
-                aria-label="Bitbucket"
-                class="css-5vjqu0"
-                role="img"
-                style="--logo-color: inherit; --logo-fill: currentColor;"
+                class=" css-1nqby2s"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  focusable="false"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="css-1v6wdk"
                 >
-                  
+                  <span
+                    aria-label="Bitbucket"
+                    class="css-5vjqu0"
+                    role="img"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                  <path
-                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                    fill="#1868DB"
-                  />
-                  
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="#1868DB"
+                      />
+                      
     
-                </svg>
+                    </svg>
+                  </span>
+                  <span
+                    class="capitalize"
+                  >
+                    bitbucket
+                  </span>
+                  <span
+                    class="css-1wkl091"
+                  >
+                    <span
+                      class="css-f9etm4"
+                    >
+                      2
+                    </span>
+                  </span>
+                </div>
+                 
               </span>
-              <span
-                class="capitalize"
-              >
-                bitbucket
-              </span>
-              <span
-                class="css-1wkl091"
-              >
-                <span
-                  class="css-f9etm4"
-                >
-                  2
-                </span>
-              </span>
-            </div>
+            </button>
             <div
               class="css-gokkc4"
             >
@@ -151,48 +161,58 @@ exports[`components/ProductNotifications.tsx should render itself & its children
         <div
           class="css-1a0x9v0"
         >
-          <div
-            class="css-1v6wdk"
+          <button
+            class=" css-3uwhr5"
+            type="button"
           >
             <span
-              aria-label="Bitbucket"
-              class="css-5vjqu0"
-              role="img"
-              style="--logo-color: inherit; --logo-fill: currentColor;"
+              class=" css-1nqby2s"
             >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                focusable="false"
-                height="32"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="css-1v6wdk"
               >
-                
+                <span
+                  aria-label="Bitbucket"
+                  class="css-5vjqu0"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
       
-                <path
-                  d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                  fill="#1868DB"
-                />
-                
+                    <path
+                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                      fill="#1868DB"
+                    />
+                    
     
-              </svg>
+                  </svg>
+                </span>
+                <span
+                  class="capitalize"
+                >
+                  bitbucket
+                </span>
+                <span
+                  class="css-1wkl091"
+                >
+                  <span
+                    class="css-f9etm4"
+                  >
+                    2
+                  </span>
+                </span>
+              </div>
+               
             </span>
-            <span
-              class="capitalize"
-            >
-              bitbucket
-            </span>
-            <span
-              class="css-1wkl091"
-            >
-              <span
-                class="css-f9etm4"
-              >
-                2
-              </span>
-            </span>
-          </div>
+          </button>
           <div
             class="css-gokkc4"
           >
