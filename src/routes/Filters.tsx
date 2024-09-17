@@ -135,6 +135,7 @@ export const FiltersRoute: FC = () => {
                   const productDetails = getProductDetails(product);
                   const productIconProps: Record<string, string> = {
                     size: 'xsmall',
+                    appearance: 'subtle',
                   };
 
                   return (
