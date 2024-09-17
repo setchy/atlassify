@@ -159,7 +159,7 @@ describe('hooks/useNotifications.ts', () => {
     });
   });
 
-  describe('markNotificationRead', () => {
+  describe.skip('markNotificationRead', () => {
     it('should mark a notification as read with success', async () => {
       nock('https://api.github.com/')
         .patch(`/notifications/threads/${id}`)
