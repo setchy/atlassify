@@ -40,8 +40,8 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   };
 
   const ChevronIcon = showProductNotifications
-    ? ChevronDownIcon
-    : ChevronUpIcon;
+    ? ChevronUpIcon
+    : ChevronDownIcon;
 
   const toggleProductNotificationsLabel = showProductNotifications
     ? 'Hide product notifications'
@@ -58,6 +58,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Button
+            appearance="subtle"
             onClick={(event: MouseEvent<HTMLElement>) => {
               if (productDetails.home) {
                 // Don't trigger onClick of parent element.

@@ -58,7 +58,7 @@ export const SystemSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            When enabled you can use the hotkeys{' '}
+            When enabled, you can use the hotkeys{' '}
             <span className="text-orange-600">
               {Constants.DEFAULT_KEYBOARD_SHORTCUT}
             </span>{' '}

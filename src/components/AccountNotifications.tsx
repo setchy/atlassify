@@ -63,8 +63,8 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   const ChevronIcon = !hasNotifications
     ? ChevronLeftIcon
     : showAccountNotifications
-      ? ChevronDownIcon
-      : ChevronUpIcon;
+      ? ChevronUpIcon
+      : ChevronDownIcon;
 
   const toggleAccountNotificationsLabel = !hasNotifications
     ? 'No notifications for account'
