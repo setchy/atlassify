@@ -3,7 +3,7 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
@@ -40,8 +40,8 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   };
 
   const ChevronIcon = showProductNotifications
-    ? ChevronUpIcon
-    : ChevronDownIcon;
+    ? ChevronDownIcon
+    : ChevronRightIcon;
 
   const toggleProductNotificationsLabel = showProductNotifications
     ? 'Hide product notifications'
