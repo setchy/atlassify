@@ -15,7 +15,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             class="mx-auto my-3"
           >
             <button
-              class=" css-1lwcrd3"
+              class=" css-1hmr5rx"
               title="Home"
               type="button"
             >
@@ -70,7 +70,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               role="presentation"
             >
               <button
-                class=" css-ukdscy"
+                class=" css-nw65qk"
                 type="button"
               >
                 <span
@@ -174,7 +174,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           class="mx-auto my-3"
         >
           <button
-            class=" css-1lwcrd3"
+            class=" css-1hmr5rx"
             title="Home"
             type="button"
           >
@@ -229,7 +229,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             role="presentation"
           >
             <button
-              class=" css-ukdscy"
+              class=" css-nw65qk"
               type="button"
             >
               <span
@@ -390,7 +390,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             class="mx-auto my-3"
           >
             <button
-              class=" css-1lwcrd3"
+              class=" css-1hmr5rx"
               title="Home"
               type="button"
             >
@@ -445,7 +445,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               role="presentation"
             >
               <button
-                class=" css-ukdscy"
+                class=" css-nw65qk"
                 type="button"
               >
                 <span
@@ -549,7 +549,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           class="mx-auto my-3"
         >
           <button
-            class=" css-1lwcrd3"
+            class=" css-1hmr5rx"
             title="Home"
             type="button"
           >
@@ -604,7 +604,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             role="presentation"
           >
             <button
-              class=" css-ukdscy"
+              class=" css-nw65qk"
               type="button"
             >
               <span
