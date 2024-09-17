@@ -15,7 +15,7 @@ import { Constants } from './constants';
 import { READ_STATES } from './filters';
 import { openNotification } from './links';
 import { isWindows } from './platform';
-import { getAtlassianProduct } from './product';
+import { getAtlassianProduct } from './products';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);

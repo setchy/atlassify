@@ -54,6 +54,7 @@ export type Product =
   | 'jira product discovery'
   | 'jira service management'
   | 'team central (atlas)'
+  | 'trello'
   | 'unknown';
 
 export interface AtlassianNotification {
