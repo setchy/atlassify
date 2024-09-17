@@ -5,6 +5,7 @@ import type {
 } from './api/types';
 
 import {
+  AtlasIcon,
   AtlassianIcon,
   BitbucketIcon,
   CompassIcon,
@@ -33,7 +34,6 @@ export function getAtlassianProduct(
       return PRODUCTS.compass;
     case 'confluence':
       return PRODUCTS.confluence;
-
     case 'jira':
       switch (subProduct) {
         case 'serviceDesk':
@@ -43,6 +43,8 @@ export function getAtlassianProduct(
         default:
           return PRODUCTS['jira product discovery'];
       }
+    case 'team-central':
+      return PRODUCTS['team central (atlas)'];
     default:
       return PRODUCTS.unknown;
   }
@@ -78,6 +80,11 @@ export const PRODUCTS: Record<Product, AtlassianProduct> = {
     name: 'jira service management',
     description: 'Jira service management description',
     icon: JiraServiceManagementIcon,
+  },
+  'team central (atlas)': {
+    name: 'team central (atlas)',
+    description: 'Team central (atlas) description',
+    icon: AtlasIcon,
   },
   unknown: {
     name: 'unknown',

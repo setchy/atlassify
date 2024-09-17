@@ -53,6 +53,7 @@ export type Product =
   | 'jira'
   | 'jira product discovery'
   | 'jira service management'
+  | 'team central (atlas)'
   | 'unknown';
 
 export interface AtlassianNotification {
