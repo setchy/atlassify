@@ -13,42 +13,8 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  TrelloIcon,
 } from '@atlaskit/logo';
-
-export function getAtlassianProduct(
-  notification: AtlassianNotification,
-): AtlassianProduct {
-  const registrationProduct =
-    notification.headNotification.analyticsAttributes.filter(
-      (attribute) => attribute.key === 'registrationProduct',
-    )[0].value;
-
-  const subProduct = notification.headNotification.analyticsAttributes.filter(
-    (attribute) => attribute.key === 'subProduct',
-  )[0].value;
-
-  switch (registrationProduct) {
-    case 'bitbucket':
-      return PRODUCTS.bitbucket;
-    case 'compass':
-      return PRODUCTS.compass;
-    case 'confluence':
-      return PRODUCTS.confluence;
-    case 'jira':
-      switch (subProduct) {
-        case 'serviceDesk':
-          return PRODUCTS['jira service management'];
-        case 'software':
-          return PRODUCTS.jira;
-        default:
-          return PRODUCTS['jira product discovery'];
-      }
-    case 'team-central':
-      return PRODUCTS['team central (atlas)'];
-    default:
-      return PRODUCTS.unknown;
-  }
-}
 
 export const PRODUCTS: Record<Product, AtlassianProduct> = {
   bitbucket: {
@@ -86,12 +52,52 @@ export const PRODUCTS: Record<Product, AtlassianProduct> = {
     description: 'Team central (atlas) description',
     icon: AtlasIcon,
   },
+  trello: {
+    name: 'trello',
+    description: 'Trello description',
+    icon: TrelloIcon,
+  },
   unknown: {
     name: 'unknown',
     description: 'Unknown description',
     icon: AtlassianIcon,
   },
 };
+
+export function getAtlassianProduct(
+  notification: AtlassianNotification,
+): AtlassianProduct {
+  const registrationProduct =
+    notification.headNotification.analyticsAttributes.filter(
+      (attribute) => attribute.key === 'registrationProduct',
+    )[0].value;
+
+  const subProduct = notification.headNotification.analyticsAttributes.filter(
+    (attribute) => attribute.key === 'subProduct',
+  )[0].value;
+
+  switch (registrationProduct) {
+    case 'bitbucket':
+      return PRODUCTS.bitbucket;
+    case 'compass':
+      return PRODUCTS.compass;
+    case 'confluence':
+      return PRODUCTS.confluence;
+    case 'jira':
+      switch (subProduct) {
+        case 'serviceDesk':
+          return PRODUCTS['jira service management'];
+        case 'software':
+          return PRODUCTS.jira;
+        default:
+          return PRODUCTS['jira product discovery'];
+      }
+    case 'team-central':
+      return PRODUCTS['team central (atlas)'];
+    default:
+      return PRODUCTS.unknown;
+  }
+}
 
 export function getProductDetails(product: Product): AtlassianProduct {
   return PRODUCTS[product];

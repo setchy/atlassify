@@ -719,7 +719,7 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
               </label>
               <span
                 aria-label="Atlas"
-                class="css-1ka881b"
+                class="css-5vjqu0"
                 role="img"
               >
                 <svg
@@ -733,7 +733,7 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   
     
                   <g
-                    fill="#1868DB"
+                    fill="undefined"
                   >
                     
       
@@ -750,6 +750,71 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   </g>
                   
   
+                </svg>
+              </span>
+            </div>
+            <div
+              class="css-bsfd3j"
+            >
+              <label
+                class="css-k8x29e"
+              >
+                <input
+                  class="css-f3myyk"
+                  name="trello"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Trello
+                </span>
+              </label>
+              <span
+                aria-label="Trello"
+                class="css-5vjqu0"
+                role="img"
+                style="--logo-color: inherit; --logo-fill: currentColor;"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="none"
+                  focusable="false"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  
+      
+                  <path
+                    clip-rule="evenodd"
+                    d="M24.286 5.337H7.714a2.585 2.585 0 0 0-2.585 2.585v16.572a2.585 2.585 0 0 0 2.585 2.584h16.572a2.585 2.585 0 0 0 2.585-2.584V7.922a2.585 2.585 0 0 0-2.585-2.585m-9.791 15.66a.86.86 0 0 1-.859.858h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86zm8.362-4.953a.86.86 0 0 1-.859.859h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86z"
+                    fill="undefined"
+                    fill-rule="evenodd"
+                  />
+                  
+    
                 </svg>
               </span>
             </div>

@@ -15,7 +15,7 @@ import {
   getReadStateDetails,
 } from '../utils/filters';
 import { formatProperCase } from '../utils/helpers';
-import { PRODUCTS, getProductDetails } from '../utils/product';
+import { PRODUCTS, getProductDetails } from '../utils/products';
 
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting } = useContext(AppContext);
