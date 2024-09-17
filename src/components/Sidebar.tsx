@@ -76,7 +76,7 @@ export const Sidebar: FC = () => {
             appearance="subtle"
             onClick={() => openAtlasifyRepository()}
           >
-            <AtlasIcon size="medium" appearance="brand" />
+            <AtlasIcon size="medium" appearance="inverse" />
           </Button>
         </div>
 
