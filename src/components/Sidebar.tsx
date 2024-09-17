@@ -176,36 +176,38 @@ export const Sidebar: FC = () => {
 
       <Box paddingBlock="space.200">
         {isLoggedIn && (
-          <Stack alignInline="center" space="space.150">
-            <IconButton
-              label="Refresh Notifications"
-              title="Refresh Notifications"
-              icon={(iconProps) => (
-                <RefreshIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
-                />
-              )}
-              appearance="subtle"
-              shape="circle"
-              onClick={() => refreshNotifications()}
-            />
+          <Stack alignInline="center" space="space.075">
+            <Tooltip content="Refresh Notifications">
+              <IconButton
+                label="Refresh Notifications"
+                icon={(iconProps) => (
+                  <RefreshIcon
+                    {...iconProps}
+                    size="small"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => refreshNotifications()}
+              />
+            </Tooltip>
 
-            <IconButton
-              label="Settings"
-              title="Settings"
-              icon={(iconProps) => (
-                <SettingsIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
-                />
-              )}
-              appearance="subtle"
-              shape="circle"
-              onClick={() => toggleSettings()}
-            />
+            <Tooltip content="Settings" position="bottom">
+              <IconButton
+                label="Settings"
+                icon={(iconProps) => (
+                  <SettingsIcon
+                    {...iconProps}
+                    size="small"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => toggleSettings()}
+              />
+            </Tooltip>
           </Stack>
         )}
 
