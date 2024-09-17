@@ -71,11 +71,11 @@ export function getAtlassianProduct(
 ): AtlassianProduct {
   const registrationProduct = notification.headNotification.analyticsAttributes
     .filter((attribute) => attribute.key === 'registrationProduct')[0]
-    .value.toLowerCase();
+    .value?.toLowerCase();
 
   const subProduct = notification.headNotification.analyticsAttributes
     .filter((attribute) => attribute.key === 'subProduct')[0]
-    .value.toLowerCase();
+    .value?.toLowerCase();
 
   switch (registrationProduct) {
     case 'bitbucket':

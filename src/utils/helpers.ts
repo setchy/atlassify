@@ -13,6 +13,21 @@ export function getRepositoryName(notification: AtlasifyNotification): string {
   return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 
+export function formatNotificationFooterText(
+  notification: AtlasifyNotification,
+): string {
+  if (notification.path?.title) {
+    return notification.path.title;
+  }
+
+  switch (notification.product.name) {
+    case 'bitbucket':
+      return getRepositoryName(notification);
+    default:
+      formatProperCase(notification.product.name);
+  }
+}
+
 export function formatNotificationUpdatedAt(
   notification: AtlasifyNotification,
 ): string {
