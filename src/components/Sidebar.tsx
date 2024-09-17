@@ -71,36 +71,37 @@ export const Sidebar: FC = () => {
     <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
-          <Button
+          <IconButton
+            label="Home"
             title="Home"
-            appearance="subtle"
+            isTooltipDisabled={false}
+            icon={(iconProps) => (
+              <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
+            )}
+            shape="circle"
             onClick={() => navigate('/', { replace: true })}
-          >
-            <AtlasIcon size="medium" appearance="inverse" />
-          </Button>
+          />
         </div>
 
         <Stack alignInline="center" space="space.100">
-          <Tooltip content={`${notificationsLabel} Unread Notifications`}>
-            <IconButton
-              label={`${notificationsLabel} Unread Notifications`}
-              icon={(iconProps) => (
+          <Tooltip content={`${notificationsLabel} unread notifications`}>
+            <Button
+              iconBefore={(iconProps) => (
                 <NotificationIcon
                   {...iconProps}
                   size="small"
                   primaryColor="white"
                 />
               )}
-              appearance="subtle"
               spacing="compact"
               onClick={() => openMyNotifications()}
-            />
-
-            {notificationsCount > 0 && (
-              <Text color="color.text.inverse" size="small" weight="semibold">
-                {notificationsCount}
-              </Text>
-            )}
+            >
+              {notificationsCount > 0 && (
+                <Text color="color.text.inverse" size="small" weight="semibold">
+                  {notificationsCount}
+                </Text>
+              )}
+            </Button>
           </Tooltip>
 
           {isLoggedIn && (
@@ -122,6 +123,7 @@ export const Sidebar: FC = () => {
 
               <IconButton
                 label="Group notifications by products"
+                title="Group notifications by products"
                 isTooltipDisabled={false}
                 icon={() => (
                   <ListIcon
@@ -137,37 +139,34 @@ export const Sidebar: FC = () => {
                   );
                 }}
                 appearance={
-                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
+                  settings.groupNotificationsByProduct ? 'discovery' : 'default'
                 }
                 spacing="compact"
                 shape="circle"
               />
 
               <Tooltip content="Filters">
-                <IconButton
-                  label="Filters"
-                  icon={(iconProps) => (
+                <Button
+                  iconBefore={(iconProps) => (
                     <FilterIcon
                       {...iconProps}
                       size="small"
                       primaryColor="white"
                     />
                   )}
-                  appearance="subtle"
                   spacing="compact"
-                  shape="circle"
                   onClick={() => toggleFilters()}
-                />
-
-                {filterCount > 0 && (
-                  <Text
-                    color="color.text.inverse"
-                    size="small"
-                    weight="semibold"
-                  >
-                    {filterCount}
-                  </Text>
-                )}
+                >
+                  {filterCount > 0 && (
+                    <Text
+                      color="color.text.inverse"
+                      size="small"
+                      weight="semibold"
+                    >
+                      {filterCount}
+                    </Text>
+                  )}
+                </Button>
               </Tooltip>
             </>
           )}
@@ -178,8 +177,9 @@ export const Sidebar: FC = () => {
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
             <IconButton
-              label="Refresh Notifications"
-              title="Refresh Notifications"
+              label="Refresh notifications"
+              title="Refresh notifications"
+              isTooltipDisabled={false}
               icon={(iconProps) => (
                 <RefreshIcon
                   {...iconProps}
@@ -187,7 +187,6 @@ export const Sidebar: FC = () => {
                   primaryColor="white"
                 />
               )}
-              appearance="subtle"
               shape="circle"
               onClick={() => refreshNotifications()}
             />
@@ -195,6 +194,7 @@ export const Sidebar: FC = () => {
             <IconButton
               label="Settings"
               title="Settings"
+              isTooltipDisabled={false}
               icon={(iconProps) => (
                 <SettingsIcon
                   {...iconProps}
@@ -202,7 +202,6 @@ export const Sidebar: FC = () => {
                   primaryColor="white"
                 />
               )}
-              appearance="subtle"
               shape="circle"
               onClick={() => toggleSettings()}
             />
@@ -213,6 +212,7 @@ export const Sidebar: FC = () => {
           <IconButton
             label="Quit Atlasify"
             title="Quit Atlasify"
+            isTooltipDisabled={false}
             icon={(iconProps) => (
               <CrossCircleIcon
                 {...iconProps}
@@ -220,7 +220,7 @@ export const Sidebar: FC = () => {
                 primaryColor="white"
               />
             )}
-            appearance="subtle"
+            shape="circle"
             onClick={() => quitApp()}
           />
         )}
