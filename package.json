@@ -51,12 +51,7 @@
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
     "copyright": "Copyright © 2024 Adam Setch",
-    "files": [
-      "build/**/*",
-      "assets/**/*",
-      "src/electron/*",
-      "LICENSE"
-    ],
+    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -65,9 +60,7 @@
       "gatekeeperAssess": false,
       "entitlements": "./entitlements/entitlements.mac.plist",
       "entitlementsInherit": "./entitlements/entitlements.mac.plist",
-      "publish": [
-        "github"
-      ],
+      "publish": ["github"],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -87,11 +80,7 @@
       "oneClick": false
     },
     "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm"
-      ],
+      "target": ["AppImage", "deb", "rpm"],
       "category": "Productivity",
       "maintainer": "Adam Setch"
     },
