@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useContext, useMemo } from 'react';
+import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -111,12 +111,11 @@ export const Sidebar: FC = () => {
                   size="regular"
                   label="Show only unread toggle"
                   isChecked={settings.fetchOnlyUnreadNotifications}
-                  onChange={(evt) => {
+                  onChange={async (evt) => {
                     updateSetting(
                       'fetchOnlyUnreadNotifications',
                       evt.target.checked,
                     );
-                    fetchNotifications();
                   }}
                 />
               </Tooltip>
@@ -131,10 +130,7 @@ export const Sidebar: FC = () => {
                     primaryColor="white"
                   />
                 )}
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
-                  event.stopPropagation();
-
+                onClick={() => {
                   updateSetting(
                     'groupNotificationsByProduct',
                     !settings.groupNotificationsByProduct,
