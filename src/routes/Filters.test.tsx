@@ -76,7 +76,7 @@ describe('routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Clear filters'));
+      fireEvent.click(screen.getByTitle('Clear Filters'));
 
       expect(clearFilters).toHaveBeenCalled();
     });

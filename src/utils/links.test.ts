@@ -4,7 +4,6 @@ import * as comms from './comms';
 import {
   openAccountProfile,
   openAtlasifyReleaseNotes,
-  openAtlasifyRepository,
   openMyNotifications,
   openMyPullRequests,
   openNotification,
@@ -17,13 +16,6 @@ describe('utils/links.ts', () => {
 
   afterEach(() => {
     jest.clearAllMocks();
-  });
-
-  it('openAtlasifyRepository', () => {
-    openAtlasifyRepository();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/setchy/atlasify',
-    );
   });
 
   it('openAtlasifyReleaseNotes', () => {

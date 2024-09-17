@@ -16,7 +16,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           >
             <button
               class=" css-1aearyh"
-              title="Open Atlasify on GitHub"
+              title="Home"
               type="button"
             >
               <span
@@ -173,7 +173,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
         >
           <button
             class=" css-1aearyh"
-            title="Open Atlasify on GitHub"
+            title="Home"
             type="button"
           >
             <span
@@ -387,7 +387,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           >
             <button
               class=" css-1aearyh"
-              title="Open Atlasify on GitHub"
+              title="Home"
               type="button"
             >
               <span
@@ -544,7 +544,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
         >
           <button
             class=" css-1aearyh"
-            title="Open Atlasify on GitHub"
+            title="Home"
             type="button"
           >
             <span

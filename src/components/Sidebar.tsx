@@ -16,7 +16,7 @@ import Toggle from '@atlaskit/toggle';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
-import { openAtlasifyRepository, openMyNotifications } from '../utils/links';
+import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications';
 
 export const Sidebar: FC = () => {
@@ -72,9 +72,9 @@ export const Sidebar: FC = () => {
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
           <Button
-            title="Open Atlasify on GitHub"
+            title="Home"
             appearance="subtle"
-            onClick={() => openAtlasifyRepository()}
+            onClick={() => refreshNotifications()}
           >
             <AtlasIcon size="medium" appearance="inverse" />
           </Button>

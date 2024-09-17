@@ -162,12 +162,12 @@ export const FiltersRoute: FC = () => {
         <Box padding="space.100">
           <Flex justifyContent="end">
             <Button
-              title="Clear filters"
+              title="Clear Filters"
               onClick={clearFilters}
               appearance="discovery"
               spacing="compact"
             >
-              Clear filters
+              Clear Filters
             </Button>
           </Flex>
         </Box>

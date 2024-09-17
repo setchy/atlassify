@@ -2,10 +2,6 @@ import type { Account, AtlasifyNotification, Link } from '../types';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
 
-export function openAtlasifyRepository() {
-  openExternalLink(`https://github.com/${Constants.REPO_SLUG}` as Link);
-}
-
 export function openAtlasifyReleaseNotes(version: string) {
   openExternalLink(
     `https://github.com/${Constants.REPO_SLUG}/releases/tag/${version}` as Link,

@@ -897,13 +897,13 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
       >
         <button
           class=" css-sxpr96"
-          title="Clear filters"
+          title="Clear Filters"
           type="button"
         >
           <span
             class=" css-1nqby2s"
           >
-            Clear filters
+            Clear Filters
           </span>
         </button>
       </div>
