@@ -56,9 +56,7 @@ describe('routes/Settings.tsx', () => {
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });
 
-  it('should reset default settings when `OK`', async () => {
-    window.confirm = jest.fn(() => true); // always click 'OK'
-
+  it('should reset default settings when `confirmed`', async () => {
     await act(async () => {
       render(
         <AppContext.Provider
@@ -75,13 +73,12 @@ describe('routes/Settings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByText('Restore settings to their defaults'));
+    fireEvent.click(screen.getByText('Reset Settings'));
+    fireEvent.click(screen.getByText('Reset'));
     expect(resetSettings).toHaveBeenCalled();
   });
 
   it('should skip reset default settings when `cancelled`', async () => {
-    window.confirm = jest.fn(() => false); // always click 'cancel'
-
     await act(async () => {
       render(
         <AppContext.Provider
@@ -98,7 +95,8 @@ describe('routes/Settings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByText('Restore settings to their defaults'));
+    fireEvent.click(screen.getByText('Reset Settings'));
+    fireEvent.click(screen.getByText('Cancel'));
     expect(resetSettings).not.toHaveBeenCalled();
   });
 });

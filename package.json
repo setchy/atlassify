@@ -51,7 +51,12 @@
     "appId": "com.electron.atlasify",
     "productName": "Atlasify",
     "copyright": "Copyright © 2024 Adam Setch",
-    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
+    "files": [
+      "build/**/*",
+      "assets/**/*",
+      "src/electron/*",
+      "LICENSE"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -60,7 +65,9 @@
       "gatekeeperAssess": false,
       "entitlements": "./entitlements/entitlements.mac.plist",
       "entitlementsInherit": "./entitlements/entitlements.mac.plist",
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -80,13 +87,18 @@
       "oneClick": false
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
       "category": "Productivity",
       "maintainer": "Adam Setch"
     },
     "afterSign": "scripts/notarize.js"
   },
   "dependencies": {
+    "@atlaskit/modal-dialog": "^12.15.7",
     "@discordapp/twemoji": "15.1.0",
     "@electron/remote": "2.1.2",
     "axios": "1.7.7",
@@ -142,11 +154,9 @@
     "nock": "13.5.5",
     "postcss": "8.4.47",
     "postcss-loader": "8.1.1",
-
     "resize-observer-polyfill": "1.5.1",
     "rimraf": "6.0.1",
     "style-loader": "4.0.0",
-
     "tailwindcss": "3.4.11",
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
