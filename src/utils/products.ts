@@ -69,14 +69,13 @@ export const PRODUCTS: Record<Product, AtlassianProduct> = {
 export function getAtlassianProduct(
   notification: AtlassianNotification,
 ): AtlassianProduct {
-  const registrationProduct =
-    notification.headNotification.analyticsAttributes.filter(
-      (attribute) => attribute.key === 'registrationProduct',
-    )[0].value;
+  const registrationProduct = notification.headNotification.analyticsAttributes
+    .filter((attribute) => attribute.key === 'registrationProduct')[0]
+    .value.toLowerCase();
 
-  const subProduct = notification.headNotification.analyticsAttributes.filter(
-    (attribute) => attribute.key === 'subProduct',
-  )[0].value;
+  const subProduct = notification.headNotification.analyticsAttributes
+    .filter((attribute) => attribute.key === 'subProduct')[0]
+    .value.toLowerCase();
 
   switch (registrationProduct) {
     case 'bitbucket':
