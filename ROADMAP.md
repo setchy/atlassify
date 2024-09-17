@@ -14,12 +14,12 @@ A list of "things" to improve
 - [ ] theme: restore ability to toggle theme (DARK and System)
 - [ ] animate refresh icon
 - [ ] badge counts for each filter group
-- [ ] use graphql codegen
-- [ ] fix mark as read - product level glitch on animation
+- [ ] fix mark as read (product and account level) animation and state removal
 - [ ] prevent reordering when grouped by product
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
+- [ ] use graphql codegen to help with client types
 - [ ] atlaskit progress bar
 - [ ] ongoing refactor to replace any local html (divs+classNames) with atlaskit primitives
 - [ ] use atlaskit/tokens for colors
