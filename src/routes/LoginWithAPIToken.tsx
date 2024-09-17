@@ -68,7 +68,7 @@ export const LoginWithAPIToken: FC = () => {
                 <Tooltip content="Create API Token">
                   <Button
                     appearance="discovery"
-                    spacing="compact"
+                    spacing="default"
                     iconBefore={LockIcon}
                     onClick={() => openAtlassianCreateToken()}
                   >
