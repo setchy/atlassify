@@ -57,7 +57,7 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
     class="flex flex-col flex-grow overflow-x-auto px-8"
   >
     <div
-      class="css-xsetlv"
+      class="css-1qcqice"
     >
       <div
         class="css-t8lj6l"
@@ -852,12 +852,25 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
           </span>
         </label>
       </div>
-      <button
-        class="text-sm hover:underline mb-4 hover:cursor-pointer"
-        type="button"
+      <div
+        class="css-ze0mo2"
       >
-        Restore settings to their defaults
-      </button>
+        <div
+          class="css-1g56j5j"
+        >
+          <button
+            aria-haspopup="dialog"
+            class=" css-hyamds"
+            type="button"
+          >
+            <span
+              class=" css-1nqby2s"
+            >
+              Reset Settings
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div
