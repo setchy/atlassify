@@ -51,7 +51,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
     <Stack>
       <Box
         onClick={toggleProductNotifications}
-        paddingInlineStart="space.200"
+        paddingInlineStart="space.050"
         paddingInlineEnd="space.100"
         paddingBlock="space.050"
         backgroundColor="color.background.brand.subtlest.hovered"
