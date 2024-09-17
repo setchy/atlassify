@@ -1,39 +1,31 @@
-# Atlasify 
+# Roadmap 
 
-[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases] [![Homebrew Cask][homebrew-cask-badge]][homebrew-cask]
+A list of "things" to improve
 
-> Atlassian Notifications on your menu bar. Available on macOS, Windows and Linux.
-
-![Atlasify](docs/public//images//social.png)
-
-### Download
-
-You can download Atlasify for **free** from the website [www.atlasify.io][website], and (hopefully soon) via [Homebrew Cask][brew].
-
-```shell
-brew install --cask atlasify
-```
-
-Atlasify supports macOS, Windows and Linux.
-
-### FAQ
-
-Please visit our [Atlasify FAQs][faqs] for all commonly asked questions.
-
-### Contributing
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-### License
-
-Atlasify is licensed under the MIT Open Source license. 
-For more information, see [LICENSE](LICENSE).
+## Now
+- [ ] clear out all TODOs in this project
+- [ ] setup brew cask definition
 
 
-### Attribution
+## Soon
+- [ ] fix unit tests - re-enable those that are skipped
+- [ ] refactor "footer" to display product name + product additional data (ie: repository name for bitbucket)
+- [ ] improve test coverage
+- [ ] make filters a dropdown overlay
+- [ ] theme: restore ability to toggle theme (DARK and System)
+- [ ] animate refresh icon
+- [ ] badge counts for each filter group
+- [ ] use graphql codegen
+- [ ] fix mark as read - product level glitch on animation
+- [ ] prevent reordering when grouped by product
 
-1. [Gitify][attribution-gitify]
-2. [Atlassian Design System][attribution-atlassian]
+## Later
+- [ ] advanced feature for Bitbucket "Your Work" queue
+- [ ] atlaskit progress bar
+- [ ] ongoing refactor to replace any local html (divs+classNames) with atlaskit primitives
+- [ ] use atlaskit/tokens for colors
+- [ ] add "update available icons"
+- [ ] shrink app bundle size by moving dependencies around and adjusting files filter
 
 
 <!-- LINK LABELS -->
