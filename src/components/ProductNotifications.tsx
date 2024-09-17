@@ -1,7 +1,7 @@
 import { type FC, type MouseEvent, useContext, useState } from 'react';
 
 import Badge from '@atlaskit/badge';
-import { IconButton } from '@atlaskit/button/new';
+import Button, { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
@@ -10,6 +10,8 @@ import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import { AppContext } from '../context/App';
 import type { AtlasifyNotification } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
+import { openExternalLink } from '../utils/comms';
+import { getProductDetails } from '../utils/products';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
@@ -27,6 +29,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
     useState(true);
 
   const productNotification = productNotifications[0].product;
+  const productDetails = getProductDetails(productNotification.name);
 
   const productNotificationIDs = productNotifications.map(
     (notification) => notification.id,
@@ -54,11 +57,21 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         backgroundColor="color.background.brand.subtlest.hovered"
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Inline space="space.100" alignBlock="center">
-            <productNotification.icon size="xsmall" appearance="brand" />
-            <span className="capitalize">{productNotification.name}</span>
-            <Badge>{productNotifications.length}</Badge>
-          </Inline>
+          <Button
+            onClick={(event: MouseEvent<HTMLElement>) => {
+              if (productDetails.home) {
+                // Don't trigger onClick of parent element.
+                event.stopPropagation();
+                openExternalLink(productDetails.home);
+              }
+            }}
+          >
+            <Inline space="space.100" alignBlock="center">
+              <productNotification.icon size="xsmall" appearance="brand" />
+              <span className="capitalize">{productNotification.name}</span>
+              <Badge>{productNotifications.length}</Badge>
+            </Inline>{' '}
+          </Button>
 
           <Inline space="space.100">
             <IconButton

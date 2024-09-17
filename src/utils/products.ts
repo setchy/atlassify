@@ -3,6 +3,7 @@ import type {
   AtlassianProduct,
   Product,
 } from './api/types';
+import { Constants } from './constants';
 
 import {
   AtlasIcon,
@@ -21,6 +22,7 @@ export const PRODUCTS: Record<Product, AtlassianProduct> = {
     name: 'bitbucket',
     description: 'Bitbucket description',
     icon: BitbucketIcon,
+    home: Constants.ATLASSIAN_URLS.WEB.BITBUCKET_HOME,
   },
   compass: {
     name: 'compass',
