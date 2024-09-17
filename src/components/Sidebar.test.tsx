@@ -59,7 +59,7 @@ describe('components/Sidebar.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should open the atlasify repository', () => {
+  it('should navigate to home', () => {
     render(
       <AppContext.Provider
         value={{
@@ -67,6 +67,7 @@ describe('components/Sidebar.tsx', () => {
           notifications: [],
           auth: mockAuth,
           settings: mockSettings,
+          fetchNotifications,
         }}
       >
         <MemoryRouter>
@@ -75,12 +76,9 @@ describe('components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTitle('Open Atlasify on GitHub'));
-
-    expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/setchy/atlasify',
-    );
+    fireEvent.click(screen.getByTitle('Home'));
+    expect(fetchNotifications).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
   describe.skip('quick links', () => {

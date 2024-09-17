@@ -1,7 +1,7 @@
 {
   "name": "atlasify",
   "version": "0.1.0",
-  "description": "Atlassian Notifications on your menu bar.",
+  "description": "Atlassian notifications on your menu bar.",
   "main": "src/electron/main.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
