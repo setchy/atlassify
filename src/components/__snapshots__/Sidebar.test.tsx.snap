@@ -15,17 +15,15 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             class="mx-auto my-3"
           >
             <button
-              class=" css-1aearyh"
+              class=" css-1lwcrd3"
               title="Home"
               type="button"
             >
               <span
-                class=" css-1nqby2s"
+                class=" css-1spmf3f"
               >
                 <span
-                  aria-label="Atlas"
                   class="css-12mte9y"
-                  role="img"
                 >
                   <svg
                     aria-hidden="true"
@@ -57,6 +55,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
   
                   </svg>
                 </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Home
+                </span>
               </span>
             </button>
           </div>
@@ -67,11 +70,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               role="presentation"
             >
               <button
-                class=" css-1cbe6t"
+                class=" css-ukdscy"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class=" css-12rb8n9"
                 >
                   <span
                     aria-hidden="true"
@@ -92,18 +95,17 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                       />
                     </svg>
                   </span>
+                </span>
+                <span
+                  class=" css-1nqby2s"
+                >
                   <span
-                    class="css-b5o75w"
+                    class="css-17r4cdi"
                   >
-                    2 Unread Notifications
+                    2
                   </span>
                 </span>
               </button>
-              <span
-                class="css-17r4cdi"
-              >
-                2
-              </span>
             </div>
           </div>
         </div>
@@ -111,7 +113,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           class="css-sitfir"
         >
           <button
-            class=" css-1l7n0sn"
+            class=" css-1lwcrd3"
             title="Quit Atlasify"
             type="button"
           >
@@ -172,17 +174,15 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           class="mx-auto my-3"
         >
           <button
-            class=" css-1aearyh"
+            class=" css-1lwcrd3"
             title="Home"
             type="button"
           >
             <span
-              class=" css-1nqby2s"
+              class=" css-1spmf3f"
             >
               <span
-                aria-label="Atlas"
                 class="css-12mte9y"
-                role="img"
               >
                 <svg
                   aria-hidden="true"
@@ -214,6 +214,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
   
                 </svg>
               </span>
+              <span
+                class="css-b5o75w"
+              >
+                Home
+              </span>
             </span>
           </button>
         </div>
@@ -224,11 +229,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             role="presentation"
           >
             <button
-              class=" css-1cbe6t"
+              class=" css-ukdscy"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class=" css-12rb8n9"
               >
                 <span
                   aria-hidden="true"
@@ -249,18 +254,17 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                     />
                   </svg>
                 </span>
+              </span>
+              <span
+                class=" css-1nqby2s"
+              >
                 <span
-                  class="css-b5o75w"
+                  class="css-17r4cdi"
                 >
-                  2 Unread Notifications
+                  2
                 </span>
               </span>
             </button>
-            <span
-              class="css-17r4cdi"
-            >
-              2
-            </span>
           </div>
         </div>
       </div>
@@ -268,7 +272,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
         class="css-sitfir"
       >
         <button
-          class=" css-1l7n0sn"
+          class=" css-1lwcrd3"
           title="Quit Atlasify"
           type="button"
         >
@@ -386,17 +390,15 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             class="mx-auto my-3"
           >
             <button
-              class=" css-1aearyh"
+              class=" css-1lwcrd3"
               title="Home"
               type="button"
             >
               <span
-                class=" css-1nqby2s"
+                class=" css-1spmf3f"
               >
                 <span
-                  aria-label="Atlas"
                   class="css-12mte9y"
-                  role="img"
                 >
                   <svg
                     aria-hidden="true"
@@ -428,6 +430,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
   
                   </svg>
                 </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Home
+                </span>
               </span>
             </button>
           </div>
@@ -438,11 +445,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               role="presentation"
             >
               <button
-                class=" css-1cbe6t"
+                class=" css-ukdscy"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class=" css-12rb8n9"
                 >
                   <span
                     aria-hidden="true"
@@ -463,18 +470,17 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                       />
                     </svg>
                   </span>
+                </span>
+                <span
+                  class=" css-1nqby2s"
+                >
                   <span
-                    class="css-b5o75w"
+                    class="css-17r4cdi"
                   >
-                    2 Unread Notifications
+                    2
                   </span>
                 </span>
               </button>
-              <span
-                class="css-17r4cdi"
-              >
-                2
-              </span>
             </div>
           </div>
         </div>
@@ -482,7 +488,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           class="css-sitfir"
         >
           <button
-            class=" css-1l7n0sn"
+            class=" css-1lwcrd3"
             title="Quit Atlasify"
             type="button"
           >
@@ -543,17 +549,15 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           class="mx-auto my-3"
         >
           <button
-            class=" css-1aearyh"
+            class=" css-1lwcrd3"
             title="Home"
             type="button"
           >
             <span
-              class=" css-1nqby2s"
+              class=" css-1spmf3f"
             >
               <span
-                aria-label="Atlas"
                 class="css-12mte9y"
-                role="img"
               >
                 <svg
                   aria-hidden="true"
@@ -585,6 +589,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
   
                 </svg>
               </span>
+              <span
+                class="css-b5o75w"
+              >
+                Home
+              </span>
             </span>
           </button>
         </div>
@@ -595,11 +604,11 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             role="presentation"
           >
             <button
-              class=" css-1cbe6t"
+              class=" css-ukdscy"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class=" css-12rb8n9"
               >
                 <span
                   aria-hidden="true"
@@ -620,18 +629,17 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                     />
                   </svg>
                 </span>
+              </span>
+              <span
+                class=" css-1nqby2s"
+              >
                 <span
-                  class="css-b5o75w"
+                  class="css-17r4cdi"
                 >
-                  2 Unread Notifications
+                  2
                 </span>
               </span>
             </button>
-            <span
-              class="css-17r4cdi"
-            >
-              2
-            </span>
           </div>
         </div>
       </div>
@@ -639,7 +647,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
         class="css-sitfir"
       >
         <button
-          class=" css-1l7n0sn"
+          class=" css-1lwcrd3"
           title="Quit Atlasify"
           type="button"
         >
