@@ -74,6 +74,7 @@ export const Sidebar: FC = () => {
           <IconButton
             label="Home"
             title="Home"
+            appearance="subtle"
             isTooltipDisabled={false}
             icon={(iconProps) => (
               <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
@@ -93,6 +94,7 @@ export const Sidebar: FC = () => {
                   primaryColor="white"
                 />
               )}
+              appearance="subtle"
               spacing="compact"
               onClick={() => openMyNotifications()}
             >
@@ -139,7 +141,7 @@ export const Sidebar: FC = () => {
                   );
                 }}
                 appearance={
-                  settings.groupNotificationsByProduct ? 'discovery' : 'default'
+                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
                 }
                 spacing="compact"
                 shape="circle"
@@ -154,6 +156,7 @@ export const Sidebar: FC = () => {
                       primaryColor="white"
                     />
                   )}
+                  appearance="subtle"
                   spacing="compact"
                   onClick={() => toggleFilters()}
                 >
@@ -181,12 +184,9 @@ export const Sidebar: FC = () => {
               title="Refresh notifications"
               isTooltipDisabled={false}
               icon={(iconProps) => (
-                <RefreshIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
-                />
+                <RefreshIcon {...iconProps} size="small" primaryColor="white" />
               )}
+              appearance="subtle"
               shape="circle"
               onClick={() => refreshNotifications()}
             />
@@ -198,10 +198,11 @@ export const Sidebar: FC = () => {
               icon={(iconProps) => (
                 <SettingsIcon
                   {...iconProps}
-                  size="medium"
+                  size="small"
                   primaryColor="white"
                 />
               )}
+              appearance="subtle"
               shape="circle"
               onClick={() => toggleSettings()}
             />

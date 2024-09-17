@@ -3,7 +3,7 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
@@ -41,7 +41,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
 
   const ChevronIcon = showProductNotifications
     ? ChevronDownIcon
-    : ChevronUpIcon;
+    : ChevronRightIcon;
 
   const toggleProductNotificationsLabel = showProductNotifications
     ? 'Hide product notifications'
@@ -58,6 +58,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Button
+            appearance="subtle"
             onClick={(event: MouseEvent<HTMLElement>) => {
               if (productDetails.home) {
                 // Don't trigger onClick of parent element.

@@ -15,7 +15,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
             class="css-1a0x9v0"
           >
             <button
-              class=" css-3uwhr5"
+              class=" css-1aearyh"
               type="button"
             >
               <span
@@ -162,7 +162,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
           class="css-1a0x9v0"
         >
           <button
-            class=" css-3uwhr5"
+            class=" css-1aearyh"
             type="button"
           >
             <span

@@ -4,7 +4,7 @@ import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
-import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
@@ -64,7 +64,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     ? ChevronLeftIcon
     : showAccountNotifications
       ? ChevronDownIcon
-      : ChevronUpIcon;
+      : ChevronRightIcon;
 
   const toggleAccountNotificationsLabel = !hasNotifications
     ? 'No notifications for account'
