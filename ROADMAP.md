@@ -1,11 +1,10 @@
-# Roadmap 
+# Atlassify Roadmap 
 
 A list of "things" to improve
 
 ## Now
 - [ ] clear out all TODOs in this project
 - [ ] setup brew cask definition
-
 
 ## Soon
 - [ ] fix unit tests - re-enable those that are skipped
@@ -15,7 +14,6 @@ A list of "things" to improve
 - [ ] animate refresh icon
 - [ ] badge counts for each filter group
 - [ ] fix mark as read (product and account level) animation and state removal
-- [ ] prevent reordering when grouped by product
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
@@ -25,7 +23,11 @@ A list of "things" to improve
 - [ ] use atlaskit/tokens for colors
 - [ ] add "update available icons"
 - [ ] shrink app bundle size by moving dependencies around and adjusting files filter
+- [ ] user defined sorting of inbox when grouped by product
 
+# Atlassian Roadmap
+- https://www.atlassian.com/wac/roadmap/cloud?&search=Atlassian%20Home
+- https://www.atlassian.com/wac/roadmap/cloud/work-suggestions-for-atlassian-home?p=8721f558-a6
 
 <!-- LINK LABELS -->
 [website]: https://www.atlasify.io
