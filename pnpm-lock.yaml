@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@atlaskit/modal-dialog':
-        specifier: 12.15.7
-        version: 12.15.7(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.16.0
+        version: 12.16.0(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
@@ -320,8 +320,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.15.7':
-    resolution: {integrity: sha512-VzrL5ZWZRV7BlBZcNaG8jxf6rvg+fLGS0CeR64Ey/fuZQSqk46M/Bmoa45/bUNb1u0af6S1WGLktGxzCMYznpw==}
+  '@atlaskit/modal-dialog@12.16.0':
+    resolution: {integrity: sha512-VSrJWoEOcBjiBBOKRsumZB4uGUghgrb56qDJ5kiASpYWdsqlIYHVnp/1Y6wMef8S6UI8Z+Qyw/QscJWRd+l+4A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -349,6 +349,9 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/pragmatic-drag-and-drop@1.3.1':
+    resolution: {integrity: sha512-MptcLppK78B2eplL5fHk93kfCbZ6uCpt33YauBPrOwI5zcHYJhZGeaGEaAXoVAHnSJOdQUhy6kGVVC9qggz2Fg==}
 
   '@atlaskit/primitives@12.1.2':
     resolution: {integrity: sha512-lqTnEHNa918XDEIud/4fklg2+2hvlPSfX85BzCVD9qI5zkwnIlzr+osxDdgJcNWZ1bdUj+Uor4yN0VxdMt60DQ==}
@@ -4231,7 +4234,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.15.7(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.16.0(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.1(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4243,6 +4246,7 @@ snapshots:
       '@atlaskit/motion': 1.9.0(@types/react@18.3.7)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/portal': 4.9.1(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/pragmatic-drag-and-drop': 1.3.1
       '@atlaskit/primitives': 12.1.2(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.7)(react@18.3.1)
       '@atlaskit/tokens': 1.60.0(@types/react@18.3.7)(react@18.3.1)
@@ -4314,6 +4318,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
+
+  '@atlaskit/pragmatic-drag-and-drop@1.3.1':
+    dependencies:
+      '@babel/runtime': 7.24.1
+      bind-event-listener: 3.0.0
+      raf-schd: 4.0.3
 
   '@atlaskit/primitives@12.1.2(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
