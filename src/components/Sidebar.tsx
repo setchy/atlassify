@@ -9,7 +9,7 @@ import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { AtlasIcon } from '@atlaskit/logo';
-import { Box, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import Toggle from '@atlaskit/toggle';
@@ -161,26 +161,26 @@ export const Sidebar: FC = () => {
 
               <Tooltip content="Filters" position="right">
                 <Button
-                  iconBefore={(iconProps) => (
-                    <FilterIcon
-                      {...iconProps}
-                      size="small"
-                      primaryColor="white"
-                    />
-                  )}
                   appearance="subtle"
                   spacing="compact"
                   onClick={() => toggleFilters()}
                 >
-                  {filterCount > 0 && (
-                    <Text
-                      color="color.text.inverse"
+                  <Inline alignBlock="center" space="space.100">
+                    <FilterIcon
+                      label="Filters"
                       size="small"
-                      weight="semibold"
-                    >
-                      {filterCount}
-                    </Text>
-                  )}
+                      primaryColor="white"
+                    />
+                    {filterCount > 0 && (
+                      <Text
+                        color="color.text.inverse"
+                        size="small"
+                        weight="semibold"
+                      >
+                        {filterCount}
+                      </Text>
+                    )}
+                  </Inline>
                 </Button>
               </Tooltip>
             </>
