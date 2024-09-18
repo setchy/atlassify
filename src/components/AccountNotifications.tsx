@@ -86,7 +86,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Inline space="space.100" alignBlock="center">
-            <Tooltip content="Open account profile">
+            <Tooltip content="Open account profile" position="right">
               <AvatarItem
                 avatar={
                   <Avatar
@@ -108,46 +108,58 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           </Inline>
 
           <Inline space="space.100">
-            <IconButton
-              label="My pull requests"
-              title="My pull requests"
-              icon={(iconProps) => (
-                <BitbucketIcon {...iconProps} size="xsmall" />
-              )}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openMyPullRequests();
-              }}
-            />
+            <Tooltip content="My pull requests" position="bottom">
+              <IconButton
+                label="My pull requests"
+                icon={(iconProps) => (
+                  <BitbucketIcon {...iconProps} size="xsmall" />
+                )}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openMyPullRequests();
+                }}
+              />
+            </Tooltip>
 
-            <IconButton
-              label="Mark all account notifications as read"
-              title="Mark all account notifications as read"
-              icon={(iconProps) => (
-                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
-              )}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                markNotificationsAsRead(account, accountNotificationIDs);
-              }}
-            />
+            <Tooltip
+              content="Mark all account notifications as read"
+              position="bottom"
+            >
+              <IconButton
+                label="Mark all account notifications as read"
+                icon={(iconProps) => (
+                  <HipchatMediaAttachmentCountIcon
+                    {...iconProps}
+                    size="small"
+                  />
+                )}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  markNotificationsAsRead(account, accountNotificationIDs);
+                }}
+              />
+            </Tooltip>
 
-            <IconButton
-              label={toggleAccountNotificationsLabel}
-              title={toggleAccountNotificationsLabel}
-              icon={ChevronIcon}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-            />
+            <Tooltip
+              content={toggleAccountNotificationsLabel}
+              position="bottom"
+            >
+              <IconButton
+                label={toggleAccountNotificationsLabel}
+                icon={ChevronIcon}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+              />
+            </Tooltip>
           </Inline>
         </Flex>
       </Box>

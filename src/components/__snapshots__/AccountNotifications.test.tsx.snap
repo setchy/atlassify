@@ -25,7 +25,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   type="button"
                 >
                   <div
-                    aria-labelledby="27"
+                    aria-labelledby="38"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -43,7 +43,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                     </span>
                     <span
                       hidden=""
-                      id="27"
+                      id="38"
                     >
                       Atlassian
                     </span>
@@ -76,113 +76,122 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
             <div
               class="css-gokkc4"
             >
-              <button
-                class=" css-a8hcye"
-                title="My pull requests"
-                type="button"
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    class="css-1ka881b"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="css-1ka881b"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
-                      
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
       
-                      <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="inherit"
-                      />
-                      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="inherit"
+                        />
+                        
     
-                    </svg>
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      My pull requests
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    My pull requests
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Mark all account notifications as read"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all account notifications as read
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Mark all account notifications as read
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="No notifications for account"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <path
-                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      No notifications for account
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    No notifications for account
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -236,7 +245,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                 type="button"
               >
                 <div
-                  aria-labelledby="27"
+                  aria-labelledby="38"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -254,7 +263,7 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
                   </span>
                   <span
                     hidden=""
-                    id="27"
+                    id="38"
                   >
                     Atlassian
                   </span>
@@ -287,113 +296,122 @@ exports[`components/AccountNotifications.tsx should render itself - account erro
           <div
             class="css-gokkc4"
           >
-            <button
-              class=" css-a8hcye"
-              title="My pull requests"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  class="css-1ka881b"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    class="css-1ka881b"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
-                    
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="inherit"
-                    />
-                    
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="inherit"
+                      />
+                      
     
-                  </svg>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My pull requests
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  My pull requests
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Mark all account notifications as read"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark all account notifications as read
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="No notifications for account"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <path
-                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    No notifications for account
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  No notifications for account
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -504,7 +522,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   type="button"
                 >
                   <div
-                    aria-labelledby="7"
+                    aria-labelledby="10"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -522,7 +540,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                     </span>
                     <span
                       hidden=""
-                      id="7"
+                      id="10"
                     >
                       Atlassian
                     </span>
@@ -555,9 +573,579 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             <div
               class="css-gokkc4"
             >
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-a8hcye"
+                  type="button"
+                >
+                  <span
+                    class=" css-1spmf3f"
+                  >
+                    <span
+                      class="css-1ka881b"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
+      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="inherit"
+                        />
+                        
+    
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      My pull requests
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-a8hcye"
+                  type="button"
+                >
+                  <span
+                    class=" css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all account notifications as read
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-a8hcye"
+                  type="button"
+                >
+                  <span
+                    class=" css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Hide account notifications
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          id="138661096"
+        >
+          <div
+            class="mr-3 flex items-center justify-center"
+          >
+            <div
+              class="css-2k1qcz"
+            >
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="18"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-1hqd2wf"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="18"
+                  >
+                    atlasify-app
+                  </span>
+                </div>
+              </div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mr-3 flex flex-1 cursor-pointer text-wrap"
+          >
+            <div
+              class="flex flex-col gap-1"
+            >
+              <div
+                class="text-sm"
+                role="main"
+                title="I am a robot and this is a test!"
+              >
+                I am a robot and this is a test!
+                <span
+                  class="pl-2 text-xs text-gray-700"
+                  title="Updated 4 days ago"
+                >
+                  4 days ago
+                </span>
+              </div>
+              <div
+                class="flex flex-1 items-center gap-1 text-xs opacity-80"
+              >
+                <div
+                  aria-labelledby="20"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://github.atlasify.io/favicon.ico"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="20"
+                  >
+                    Repository
+                  </span>
+                </div>
+                Repository
+              </div>
+              <div
+                class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+              >
+                <span
+                  aria-label="Bitbucket"
+                  class="css-5vjqu0"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
+      
+                    <path
+                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                      fill="#1868DB"
+                    />
+                    
+    
+                  </svg>
+                </span>
+                Repository
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1barwao"
+          >
+            <div
+              role="presentation"
+            >
               <button
                 class=" css-a8hcye"
-                title="My pull requests"
+                title="Mark as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          id="148827438"
+        >
+          <div
+            class="mr-3 flex items-center justify-center"
+          >
+            <div
+              class="css-2k1qcz"
+            >
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="24"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-1hqd2wf"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="24"
+                  >
+                    atlasify-app
+                  </span>
+                </div>
+              </div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mr-3 flex flex-1 cursor-pointer text-wrap"
+          >
+            <div
+              class="flex flex-col gap-1"
+            >
+              <div
+                class="text-sm"
+                role="main"
+                title="I am a robot and this is a test!"
+              >
+                I am a robot and this is a test!
+                <span
+                  class="pl-2 text-xs text-gray-700"
+                  title="Updated 4 days ago"
+                >
+                  4 days ago
+                </span>
+              </div>
+              <div
+                class="flex flex-1 items-center gap-1 text-xs opacity-80"
+              >
+                <div
+                  aria-labelledby="26"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://github.atlasify.io/favicon.ico"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="26"
+                  >
+                    Repository
+                  </span>
+                </div>
+                Repository
+              </div>
+              <div
+                class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
+              >
+                <span
+                  aria-label="Bitbucket"
+                  class="css-5vjqu0"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
+      
+                    <path
+                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                      fill="#1868DB"
+                    />
+                    
+    
+                  </svg>
+                </span>
+                Repository
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1barwao"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-a8hcye"
+                title="Mark as read"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-1npayr"
+    >
+      <div
+        class="css-41uoy6"
+      >
+        <div
+          class="css-1a0x9v0"
+        >
+          <div
+            class="css-1v6wdk"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-1xq1pkg"
+                type="button"
+              >
+                <div
+                  aria-labelledby="10"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-vucx95"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatars.githubusercontent.com/u/583231?v=4"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="10"
+                  >
+                    Atlassian
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassian
+                  </span>
+                  <span
+                    class="css-km389f"
+                  />
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
+              >
+                2
+              </span>
+            </span>
+          </div>
+          <div
+            class="css-gokkc4"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-a8hcye"
                 type="button"
               >
                 <span
@@ -592,9 +1180,12 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                 </span>
               </button>
+            </div>
+            <div
+              role="presentation"
+            >
               <button
                 class=" css-a8hcye"
-                title="Mark all account notifications as read"
                 type="button"
               >
                 <span
@@ -628,9 +1219,12 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                   </span>
                 </span>
               </button>
+            </div>
+            <div
+              role="presentation"
+            >
               <button
                 class=" css-a8hcye"
-                title="Hide account notifications"
                 type="button"
               >
                 <span
@@ -665,556 +1259,6 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             </div>
           </div>
         </div>
-        <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
-          id="138661096"
-        >
-          <div
-            class="mr-3 flex items-center justify-center"
-          >
-            <div
-              class="css-2k1qcz"
-            >
-              <div
-                role="presentation"
-              >
-                <div
-                  aria-labelledby="12"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
-                >
-                  <span
-                    class="css-1hqd2wf"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="12"
-                  >
-                    atlasify-app
-                  </span>
-                </div>
-              </div>
-              <div
-                role="presentation"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          >
-            <div
-              class="flex flex-col gap-1"
-            >
-              <div
-                class="text-sm"
-                role="main"
-                title="I am a robot and this is a test!"
-              >
-                I am a robot and this is a test!
-                <span
-                  class="pl-2 text-xs text-gray-700"
-                  title="Updated 4 days ago"
-                >
-                  4 days ago
-                </span>
-              </div>
-              <div
-                class="flex flex-1 items-center gap-1 text-xs opacity-80"
-              >
-                <div
-                  aria-labelledby="14"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
-                >
-                  <span
-                    class="css-122fgfa"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://github.atlasify.io/favicon.ico"
-                      style="border-radius: 2px;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="14"
-                  >
-                    Repository
-                  </span>
-                </div>
-                Repository
-              </div>
-              <div
-                class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-              >
-                <span
-                  aria-label="Bitbucket"
-                  class="css-5vjqu0"
-                  role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-      
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="#1868DB"
-                    />
-                    
-    
-                  </svg>
-                </span>
-                Repository
-              </div>
-            </div>
-          </div>
-          <div
-            class="css-1barwao"
-          >
-            <button
-              class=" css-a8hcye"
-              title="Mark as read"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark as read
-                </span>
-              </span>
-            </button>
-          </div>
-        </div>
-        <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
-          id="148827438"
-        >
-          <div
-            class="mr-3 flex items-center justify-center"
-          >
-            <div
-              class="css-2k1qcz"
-            >
-              <div
-                role="presentation"
-              >
-                <div
-                  aria-labelledby="17"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
-                >
-                  <span
-                    class="css-1hqd2wf"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="17"
-                  >
-                    atlasify-app
-                  </span>
-                </div>
-              </div>
-              <div
-                role="presentation"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          >
-            <div
-              class="flex flex-col gap-1"
-            >
-              <div
-                class="text-sm"
-                role="main"
-                title="I am a robot and this is a test!"
-              >
-                I am a robot and this is a test!
-                <span
-                  class="pl-2 text-xs text-gray-700"
-                  title="Updated 4 days ago"
-                >
-                  4 days ago
-                </span>
-              </div>
-              <div
-                class="flex flex-1 items-center gap-1 text-xs opacity-80"
-              >
-                <div
-                  aria-labelledby="19"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
-                >
-                  <span
-                    class="css-122fgfa"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://github.atlasify.io/favicon.ico"
-                      style="border-radius: 2px;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="19"
-                  >
-                    Repository
-                  </span>
-                </div>
-                Repository
-              </div>
-              <div
-                class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-              >
-                <span
-                  aria-label="Bitbucket"
-                  class="css-5vjqu0"
-                  role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-      
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="#1868DB"
-                    />
-                    
-    
-                  </svg>
-                </span>
-                Repository
-              </div>
-            </div>
-          </div>
-          <div
-            class="css-1barwao"
-          >
-            <button
-              class=" css-a8hcye"
-              title="Mark as read"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark as read
-                </span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="css-1npayr"
-    >
-      <div
-        class="css-41uoy6"
-      >
-        <div
-          class="css-1a0x9v0"
-        >
-          <div
-            class="css-1v6wdk"
-          >
-            <div
-              role="presentation"
-            >
-              <button
-                class="css-1xq1pkg"
-                type="button"
-              >
-                <div
-                  aria-labelledby="7"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
-                >
-                  <span
-                    class="css-vucx95"
-                  >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/583231?v=4"
-                      style="border-radius: 50%;"
-                    />
-                  </span>
-                  <span
-                    hidden=""
-                    id="7"
-                  >
-                    Atlassian
-                  </span>
-                </div>
-                <div
-                  class="css-1orugy9"
-                >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassian
-                  </span>
-                  <span
-                    class="css-km389f"
-                  />
-                </div>
-              </button>
-            </div>
-             
-            <span
-              class="css-g73hg0"
-            >
-              <span
-                class="css-pvol9p"
-              >
-                2
-              </span>
-            </span>
-          </div>
-          <div
-            class="css-gokkc4"
-          >
-            <button
-              class=" css-a8hcye"
-              title="My pull requests"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  class="css-1ka881b"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-      
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="inherit"
-                    />
-                    
-    
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  My pull requests
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Mark all account notifications as read"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark all account notifications as read
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Hide account notifications"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Hide account notifications
-                </span>
-              </span>
-            </button>
-          </div>
-        </div>
       </div>
       <div
         class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
@@ -1230,7 +1274,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="12"
+                aria-labelledby="18"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1248,7 +1292,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="12"
+                  id="18"
                 >
                   atlasify-app
                 </span>
@@ -1302,7 +1346,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="14"
+                aria-labelledby="20"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1320,7 +1364,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="14"
+                  id="20"
                 >
                   Repository
                 </span>
@@ -1361,42 +1405,46 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         <div
           class="css-1barwao"
         >
-          <button
-            class=" css-a8hcye"
-            title="Mark as read"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-a8hcye"
+              title="Mark as read"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1wits42"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                    r="5"
-                  />
-                </svg>
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Mark as read
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -1413,7 +1461,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               role="presentation"
             >
               <div
-                aria-labelledby="17"
+                aria-labelledby="24"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1431,7 +1479,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="17"
+                  id="24"
                 >
                   atlasify-app
                 </span>
@@ -1485,7 +1533,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="19"
+                aria-labelledby="26"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -1503,7 +1551,7 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
                 </span>
                 <span
                   hidden=""
-                  id="19"
+                  id="26"
                 >
                   Repository
                 </span>
@@ -1544,42 +1592,46 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
         <div
           class="css-1barwao"
         >
-          <button
-            class=" css-a8hcye"
-            title="Mark as read"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-a8hcye"
+              title="Mark as read"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1wits42"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                    r="5"
-                  />
-                </svg>
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Mark as read
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1714,113 +1766,122 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
             <div
               class="css-gokkc4"
             >
-              <button
-                class=" css-a8hcye"
-                title="My pull requests"
-                type="button"
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    class="css-1ka881b"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="css-1ka881b"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
-                      
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
       
-                      <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="inherit"
-                      />
-                      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="inherit"
+                        />
+                        
     
-                    </svg>
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      My pull requests
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    My pull requests
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Mark all account notifications as read"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all account notifications as read
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Mark all account notifications as read
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Hide account notifications"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Hide account notifications
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Hide account notifications
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1902,113 +1963,122 @@ exports[`components/AccountNotifications.tsx should render itself - group notifi
           <div
             class="css-gokkc4"
           >
-            <button
-              class=" css-a8hcye"
-              title="My pull requests"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  class="css-1ka881b"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    class="css-1ka881b"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
-                    
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="inherit"
-                    />
-                    
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="inherit"
+                      />
+                      
     
-                  </svg>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My pull requests
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  My pull requests
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Mark all account notifications as read"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark all account notifications as read
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Hide account notifications"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <path
-                      d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Hide account notifications
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Hide account notifications
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -2096,7 +2166,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   type="button"
                 >
                   <div
-                    aria-labelledby="22"
+                    aria-labelledby="30"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -2114,7 +2184,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                     </span>
                     <span
                       hidden=""
-                      id="22"
+                      id="30"
                     >
                       Atlassian
                     </span>
@@ -2147,113 +2217,122 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
             <div
               class="css-gokkc4"
             >
-              <button
-                class=" css-a8hcye"
-                title="My pull requests"
-                type="button"
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    class="css-1ka881b"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      class="css-1ka881b"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
-                      
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
       
-                      <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="inherit"
-                      />
-                      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="inherit"
+                        />
+                        
     
-                    </svg>
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      My pull requests
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    My pull requests
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Mark all account notifications as read"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all account notifications as read
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Mark all account notifications as read
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="No notifications for account"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <path
-                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      No notifications for account
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    No notifications for account
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2302,7 +2381,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                 type="button"
               >
                 <div
-                  aria-labelledby="22"
+                  aria-labelledby="30"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -2320,7 +2399,7 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
                   </span>
                   <span
                     hidden=""
-                    id="22"
+                    id="30"
                   >
                     Atlassian
                   </span>
@@ -2353,113 +2432,122 @@ exports[`components/AccountNotifications.tsx should render itself - no notificat
           <div
             class="css-gokkc4"
           >
-            <button
-              class=" css-a8hcye"
-              title="My pull requests"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  class="css-1ka881b"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    class="css-1ka881b"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
-                    
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                    <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="inherit"
-                    />
-                    
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="inherit"
+                      />
+                      
     
-                  </svg>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My pull requests
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  My pull requests
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Mark all account notifications as read"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark all account notifications as read
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="No notifications for account"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <path
-                      d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M13.706 9.698a.99.99 0 0 0 0-1.407 1.01 1.01 0 0 0-1.419 0l-2.965 2.94a1.09 1.09 0 0 0 0 1.548l2.955 2.93a1.01 1.01 0 0 0 1.42 0 .99.99 0 0 0 0-1.407l-2.318-2.297z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    No notifications for account
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  No notifications for account
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>

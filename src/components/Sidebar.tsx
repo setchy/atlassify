@@ -71,21 +71,25 @@ export const Sidebar: FC = () => {
     <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
-          <IconButton
-            label="Home"
-            title="Home"
-            appearance="subtle"
-            isTooltipDisabled={false}
-            icon={(iconProps) => (
-              <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
-            )}
-            shape="circle"
-            onClick={() => navigate('/', { replace: true })}
-          />
+          <Tooltip content="Home" position="right">
+            <IconButton
+              label="Home"
+              title="Home"
+              appearance="subtle"
+              icon={(iconProps) => (
+                <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
+              )}
+              shape="circle"
+              onClick={() => navigate('/', { replace: true })}
+            />
+          </Tooltip>
         </div>
 
         <Stack alignInline="center" space="space.100">
-          <Tooltip content={`${notificationsLabel} unread notifications`}>
+          <Tooltip
+            content={`${notificationsLabel} unread notifications`}
+            position="right"
+          >
             <Button
               iconBefore={(iconProps) => (
                 <NotificationIcon
@@ -108,7 +112,10 @@ export const Sidebar: FC = () => {
 
           {isLoggedIn && (
             <>
-              <Tooltip content="Show only unread notifications">
+              <Tooltip
+                content="Show only unread notifications"
+                position="right"
+              >
                 <Toggle
                   id="toggle-unread-only"
                   size="regular"
@@ -123,31 +130,36 @@ export const Sidebar: FC = () => {
                 />
               </Tooltip>
 
-              <IconButton
-                label="Group notifications by products"
-                title="Group notifications by products"
-                isTooltipDisabled={false}
-                icon={() => (
-                  <ListIcon
-                    label="groupByProduct"
-                    size="small"
-                    primaryColor="white"
-                  />
-                )}
-                onClick={() => {
-                  updateSetting(
-                    'groupNotificationsByProduct',
-                    !settings.groupNotificationsByProduct,
-                  );
-                }}
-                appearance={
-                  settings.groupNotificationsByProduct ? 'discovery' : 'subtle'
-                }
-                spacing="compact"
-                shape="circle"
-              />
+              <Tooltip
+                content="Group notifications by products"
+                position="right"
+              >
+                <IconButton
+                  label="Group notifications by products"
+                  icon={() => (
+                    <ListIcon
+                      label="groupByProduct"
+                      size="small"
+                      primaryColor="white"
+                    />
+                  )}
+                  onClick={() => {
+                    updateSetting(
+                      'groupNotificationsByProduct',
+                      !settings.groupNotificationsByProduct,
+                    );
+                  }}
+                  appearance={
+                    settings.groupNotificationsByProduct
+                      ? 'discovery'
+                      : 'subtle'
+                  }
+                  spacing="compact"
+                  shape="circle"
+                />
+              </Tooltip>
 
-              <Tooltip content="Filters">
+              <Tooltip content="Filters" position="right">
                 <Button
                   iconBefore={(iconProps) => (
                     <FilterIcon
@@ -179,55 +191,55 @@ export const Sidebar: FC = () => {
       <Box paddingBlock="space.200">
         {isLoggedIn && (
           <Stack alignInline="center" space="space.150">
-            <IconButton
-              label="Refresh notifications"
-              title="Refresh notifications"
-              isTooltipDisabled={false}
-              icon={(iconProps) => (
-                <RefreshIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
-                />
-              )}
-              appearance="subtle"
-              shape="circle"
-              onClick={() => refreshNotifications()}
-            />
+            <Tooltip content="Refresh notifications" position="right">
+              <IconButton
+                label="Refresh notifications"
+                icon={(iconProps) => (
+                  <RefreshIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => refreshNotifications()}
+              />
+            </Tooltip>
 
-            <IconButton
-              label="Settings"
-              title="Settings"
-              isTooltipDisabled={false}
-              icon={(iconProps) => (
-                <SettingsIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
-                />
-              )}
-              appearance="subtle"
-              shape="circle"
-              onClick={() => toggleSettings()}
-            />
+            <Tooltip content="Settings" position="right">
+              <IconButton
+                label="Settings"
+                icon={(iconProps) => (
+                  <SettingsIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => toggleSettings()}
+              />
+            </Tooltip>
           </Stack>
         )}
 
         {!isLoggedIn && (
-          <IconButton
-            label="Quit Atlasify"
-            title="Quit Atlasify"
-            isTooltipDisabled={false}
-            icon={(iconProps) => (
-              <CrossCircleIcon
-                {...iconProps}
-                size="medium"
-                primaryColor="white"
-              />
-            )}
-            shape="circle"
-            onClick={() => quitApp()}
-          />
+          <Tooltip content="Quit Atlasify" position="right">
+            <IconButton
+              label="Quit Atlasify"
+              icon={(iconProps) => (
+                <CrossCircleIcon
+                  {...iconProps}
+                  size="medium"
+                  primaryColor="white"
+                />
+              )}
+              shape="circle"
+              onClick={() => quitApp()}
+            />
+          </Tooltip>
         )}
       </Box>
     </div>

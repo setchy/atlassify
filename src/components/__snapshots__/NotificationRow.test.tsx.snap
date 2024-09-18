@@ -150,42 +150,46 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         <div
           class="css-1barwao"
         >
-          <button
-            class=" css-a8hcye"
-            title="Mark as read"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-a8hcye"
+              title="Mark as read"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1wits42"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                    r="5"
-                  />
-                </svg>
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Mark as read
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -336,42 +340,46 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
       <div
         class="css-1barwao"
       >
-        <button
-          class=" css-a8hcye"
-          title="Mark as read"
-          type="button"
+        <div
+          role="presentation"
         >
-          <span
-            class=" css-1spmf3f"
+          <button
+            class=" css-a8hcye"
+            title="Mark as read"
+            type="button"
           >
             <span
-              aria-hidden="true"
-              class="css-1wits42"
-              data-vc="icon-undefined"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              class=" css-1spmf3f"
             >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                  r="5"
-                />
-              </svg>
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                    r="5"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Mark as read
+              </span>
             </span>
-            <span
-              class="css-b5o75w"
-            >
-              Mark as read
-            </span>
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>,
@@ -448,7 +456,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               role="presentation"
             >
               <div
-                aria-labelledby="7"
+                aria-labelledby="8"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -466,7 +474,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="7"
+                  id="8"
                 >
                   atlasify-app
                 </span>
@@ -520,7 +528,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               class="flex flex-1 items-center gap-1 text-xs opacity-80"
             >
               <div
-                aria-labelledby="9"
+                aria-labelledby="10"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -538,7 +546,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 </span>
                 <span
                   hidden=""
-                  id="9"
+                  id="10"
                 >
                   Repository
                 </span>
@@ -579,42 +587,46 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         <div
           class="css-1barwao"
         >
-          <button
-            class=" css-a8hcye"
-            title="Mark as read"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-a8hcye"
+              title="Mark as read"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1wits42"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                    r="5"
-                  />
-                </svg>
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Mark as read
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -634,7 +646,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             role="presentation"
           >
             <div
-              aria-labelledby="7"
+              aria-labelledby="8"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -652,7 +664,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="7"
+                id="8"
               >
                 atlasify-app
               </span>
@@ -706,7 +718,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
             class="flex flex-1 items-center gap-1 text-xs opacity-80"
           >
             <div
-              aria-labelledby="9"
+              aria-labelledby="10"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -724,7 +736,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
               </span>
               <span
                 hidden=""
-                id="9"
+                id="10"
               >
                 Repository
               </span>
@@ -765,42 +777,46 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
       <div
         class="css-1barwao"
       >
-        <button
-          class=" css-a8hcye"
-          title="Mark as read"
-          type="button"
+        <div
+          role="presentation"
         >
-          <span
-            class=" css-1spmf3f"
+          <button
+            class=" css-a8hcye"
+            title="Mark as read"
+            type="button"
           >
             <span
-              aria-hidden="true"
-              class="css-1wits42"
-              data-vc="icon-undefined"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              class=" css-1spmf3f"
             >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                  r="5"
-                />
-              </svg>
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                    r="5"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Mark as read
+              </span>
             </span>
-            <span
-              class="css-b5o75w"
-            >
-              Mark as read
-            </span>
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>,

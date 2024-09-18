@@ -7,6 +7,7 @@ import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
+import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../context/App';
 import type { AtlasifyNotification } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
@@ -75,35 +76,46 @@ export const ProductNotifications: FC<IProductNotifications> = ({
           </Button>
 
           <Inline space="space.100">
-            <IconButton
-              label="Mark all product notifications as read"
-              title="Mark all product notifications as read"
-              icon={(iconProps) => (
-                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
-              )}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-              onClick={(event: MouseEvent<HTMLElement>) => {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                setAnimateExit(!settings.delayNotificationState);
-                setShowAsRead(settings.delayNotificationState);
-                markNotificationsAsRead(
-                  productNotifications[0].account,
-                  productNotificationIDs,
-                );
-              }}
-            />
+            <Tooltip
+              content="Mark all product notifications as read"
+              position="bottom"
+            >
+              <IconButton
+                label="Mark all product notifications as read"
+                icon={(iconProps) => (
+                  <HipchatMediaAttachmentCountIcon
+                    {...iconProps}
+                    size="small"
+                  />
+                )}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  setAnimateExit(!settings.delayNotificationState);
+                  setShowAsRead(settings.delayNotificationState);
+                  markNotificationsAsRead(
+                    productNotifications[0].account,
+                    productNotificationIDs,
+                  );
+                }}
+              />
+            </Tooltip>
 
-            <IconButton
-              label={toggleProductNotificationsLabel}
-              title={toggleProductNotificationsLabel}
-              icon={ChevronIcon}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-            />
+            <Tooltip
+              content={toggleProductNotificationsLabel}
+              position="bottom"
+            >
+              <IconButton
+                label={toggleProductNotificationsLabel}
+                icon={ChevronIcon}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+              />
+            </Tooltip>
           </Inline>
         </Flex>
       </Box>

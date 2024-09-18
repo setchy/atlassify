@@ -69,76 +69,82 @@ exports[`components/ProductNotifications.tsx should render itself & its children
             <div
               class="css-gokkc4"
             >
-              <button
-                class=" css-a8hcye"
-                title="Mark all product notifications as read"
-                type="button"
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all product notifications as read
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Mark all product notifications as read
-                  </span>
-                </span>
-              </button>
-              <button
-                class=" css-a8hcye"
-                title="Hide product notifications"
-                type="button"
+                </button>
+              </div>
+              <div
+                role="presentation"
               >
-                <span
-                  class=" css-1spmf3f"
+                <button
+                  class=" css-a8hcye"
+                  type="button"
                 >
                   <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class=" css-1spmf3f"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
-                      <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Hide product notifications
+                    </span>
                   </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Hide product notifications
-                  </span>
-                </span>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -216,76 +222,82 @@ exports[`components/ProductNotifications.tsx should render itself & its children
           <div
             class="css-gokkc4"
           >
-            <button
-              class=" css-a8hcye"
-              title="Mark all product notifications as read"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1wits42"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                      r="5"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all product notifications as read
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Mark all product notifications as read
-                </span>
-              </span>
-            </button>
-            <button
-              class=" css-a8hcye"
-              title="Hide product notifications"
-              type="button"
+              </button>
+            </div>
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-a8hcye"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <path
-                      d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Hide product notifications
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Hide product notifications
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
