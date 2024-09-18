@@ -30,7 +30,7 @@ export const SettingsFooter: FC = () => {
       <Box padding="space.050">
         <Stack>
           <Inline grow="fill" spread="space-between">
-            <Tooltip content="View Atlasify release notes">
+            <Tooltip content="View Atlasify release notes" position="top">
               <Button
                 title="View Atlasify release notes"
                 appearance="subtle"
@@ -39,23 +39,28 @@ export const SettingsFooter: FC = () => {
                 Atlasify {appVersion}
               </Button>
             </Tooltip>
+
             <Inline space="space.200">
-              <IconButton
-                label="Accounts"
-                title="Accounts"
-                icon={PeopleGroupIcon}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => navigate('/accounts')}
-              />
-              <IconButton
-                label="Quit Atlasify"
-                title="Quit Atlasify"
-                icon={CrossCircleIcon}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => quitApp()}
-              />
+              <Tooltip content="Accounts" position="top">
+                <IconButton
+                  label="Accounts"
+                  title="Accounts"
+                  icon={PeopleGroupIcon}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => navigate('/accounts')}
+                />
+              </Tooltip>
+              <Tooltip content="Quit Atlasify" position="top">
+                <IconButton
+                  label="Quit Atlasify"
+                  title="Quit Atlasify"
+                  icon={CrossCircleIcon}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => quitApp()}
+                />
+              </Tooltip>
             </Inline>
           </Inline>
         </Stack>

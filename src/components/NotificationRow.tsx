@@ -62,14 +62,14 @@ export const NotificationRow: FC<INotificationRow> = ({
     >
       <div className="mr-3 flex items-center justify-center">
         <Stack space="space.100" alignInline="center">
-          <Tooltip content={notification.actor.displayName}>
+          <Tooltip content={notification.actor.displayName} position="right">
             <Avatar
               name={notification.actor.displayName}
               src={notification.actor.avatarURL}
               size="small"
             />
           </Tooltip>
-          <Tooltip content={categoryDetails.description}>
+          <Tooltip content={categoryDetails.description} position="right">
             <CategoryIcon {...CategoryIconProps} />
           </Tooltip>
         </Stack>
@@ -123,21 +123,23 @@ export const NotificationRow: FC<INotificationRow> = ({
 
       {!animateExit && !isRead && notification.unread && (
         <Flex alignItems="center">
-          <IconButton
-            label="Mark as read"
-            title="Mark as read"
-            icon={(iconProps) => (
-              <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
-            )}
-            shape="circle"
-            spacing="compact"
-            appearance="subtle"
-            onClick={() => {
-              setAnimateExit(!settings.delayNotificationState);
-              setShowAsRead(settings.delayNotificationState);
-              markNotificationRead(notification);
-            }}
-          />
+          <Tooltip content="Mark as read" position="left">
+            <IconButton
+              label="Mark as read"
+              title="Mark as read"
+              icon={(iconProps) => (
+                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
+              )}
+              shape="circle"
+              spacing="compact"
+              appearance="subtle"
+              onClick={() => {
+                setAnimateExit(!settings.delayNotificationState);
+                setShowAsRead(settings.delayNotificationState);
+                markNotificationRead(notification);
+              }}
+            />
+          </Tooltip>
         </Flex>
       )}
     </div>
