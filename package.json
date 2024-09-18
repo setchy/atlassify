@@ -87,7 +87,7 @@
     "afterSign": "scripts/notarize.js"
   },
   "dependencies": {
-    "@atlaskit/modal-dialog": "12.15.7",
+    "@atlaskit/modal-dialog": "12.16.0",
     "@discordapp/twemoji": "15.1.0",
     "@electron/remote": "2.1.2",
     "axios": "1.7.7",
