@@ -1,6 +1,6 @@
 {
   "name": "atlasify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Atlassian notifications on your menu bar.",
   "main": "src/electron/main.js",
   "scripts": {
