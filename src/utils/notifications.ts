@@ -88,7 +88,7 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = `${isWindows() ? '' : 'Atlasify - '}${notification.title}`;
+    title = isWindows() ? '' : notification.title;
     body = notification.entity.title; // TODO Confirm this mapping
   } else {
     title = 'Atlasify';
