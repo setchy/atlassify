@@ -13,6 +13,7 @@ import Badge from '@atlaskit/badge';
 import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
 import type { Account, AtlassifyError, AtlassifyNotification } from '../types';
+import { Constants } from '../utils/constants';
 import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
@@ -99,7 +100,12 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 }}
               />
             </Tooltip>{' '}
-            <Badge appearance="primary">{notifications.length}</Badge>
+            <Badge
+              appearance="primary"
+              max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT - 1}
+            >
+              {notifications.length}
+            </Badge>
           </Inline>
 
           <Inline space="space.100">
