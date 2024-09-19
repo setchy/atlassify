@@ -2,16 +2,14 @@
 
 A list of "things" to improve
 
-## Now
-- [ ] re-enable handful of skipped unit tests
-
-
 ## Soon
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
 - [ ] clear out all TODOs in this project
 - [ ] fix root of `findDOMNode is deprecated and will be removed in the next major release.` console error
 - [ ] improve product mapping coverage
+- [ ] re-enable handful of skipped unit tests
+
 
 
 ## Later

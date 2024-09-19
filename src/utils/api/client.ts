@@ -20,7 +20,7 @@ export function getAuthenticatedUser(
   account: Account,
 ): AxiosPromise<GraphQLResponse<MyUserDetails, unknown>> {
   const QUERY = gql`
-      query me {
+    query me {
       me {
         user {
           accountId
@@ -51,7 +51,6 @@ export function getNotificationsForUser(
       (
         $readState: InfluentsNotificationReadState, 
         $first: Int
-      #   # $product: String
       ) 
       {
       notifications {
@@ -61,7 +60,6 @@ export function getNotificationsForUser(
           first: $first,
           filter: {
             readStateFilter: $readState
-          #   # productFilter: $product
           }
         ) {
           pageInfo {
@@ -109,7 +107,6 @@ export function getNotificationsForUser(
     variables: {
       first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
       readState: settings.fetchOnlyUnreadNotifications ? 'unread' : null,
-      // product: settings.product,
     },
   });
 }
