@@ -1,7 +1,8 @@
 import EmojiFlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
 import WatchIcon from '@atlaskit/icon/glyph/watch';
 
-import type { BasicDetails, Category, ReadState } from './api/types';
+import type { AccountNotifications } from '../types';
+import type { BasicDetails, Category, Product, ReadState } from './api/types';
 
 export const CATEGORIES: Record<Category, BasicDetails> = {
   direct: {
@@ -33,4 +34,37 @@ export const READ_STATES: Record<ReadState, BasicDetails> = {
 
 export function getReadStateDetails(readState: ReadState): BasicDetails {
   return READ_STATES[readState];
+}
+
+export function getReadStateFilterCount(
+  notifications: AccountNotifications[],
+  readState: ReadState,
+) {
+  return notifications.reduce(
+    (memo, acc) =>
+      memo + acc.notifications.filter((n) => n.readState === readState).length,
+    0,
+  );
+}
+
+export function getCategoryFilterCount(
+  notifications: AccountNotifications[],
+  category: Category,
+) {
+  return notifications.reduce(
+    (memo, acc) =>
+      memo + acc.notifications.filter((n) => n.category === category).length,
+    0,
+  );
+}
+
+export function getProductFilterCount(
+  notifications: AccountNotifications[],
+  product: Product,
+) {
+  return notifications.reduce(
+    (memo, acc) =>
+      memo + acc.notifications.filter((n) => n.product.name === product).length,
+    0,
+  );
 }

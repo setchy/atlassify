@@ -10,7 +10,6 @@ A list of "things" to improve
 ## Soon
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
-- [ ] badge counts for each filter group
 - [ ] clear out all TODOs in this project
 
 ## Later

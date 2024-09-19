@@ -23,7 +23,11 @@ describe('routes/Filters.tsx', () => {
       await act(async () => {
         render(
           <AppContext.Provider
-            value={{ auth: mockAuth, settings: mockSettings }}
+            value={{
+              auth: mockAuth,
+              settings: mockSettings,
+              notifications: [],
+            }}
           >
             <MemoryRouter>
               <FiltersRoute />
@@ -43,6 +47,7 @@ describe('routes/Filters.tsx', () => {
               auth: mockAuth,
               settings: mockSettings,
               fetchNotifications,
+              notifications: [],
             }}
           >
             <MemoryRouter>
@@ -66,6 +71,7 @@ describe('routes/Filters.tsx', () => {
             value={{
               auth: mockAuth,
               settings: mockSettings,
+              notifications: [],
               clearFilters,
             }}
           >
