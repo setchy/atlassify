@@ -3,15 +3,15 @@
 A list of "things" to improve
 
 ## Now
-- [ ] clear out all TODOs in this project
-- [ ] setup brew cask definition
-
-## Soon
 - [ ] fix unit tests - re-enable those that are skipped
 - [ ] improve test coverage
+
+
+## Soon
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
 - [ ] badge counts for each filter group
+- [ ] clear out all TODOs in this project
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
@@ -19,7 +19,7 @@ A list of "things" to improve
 - [ ] atlaskit progress bar
 - [ ] ongoing refactor to replace any local html (divs+classNames) with atlaskit primitives
 - [ ] use atlaskit/tokens for colors
-- [ ] add "update available icons"
+- [ ] create "update available" menubar icon set
 - [ ] shrink app bundle size by moving dependencies around and adjusting files filter
 - [ ] user defined sorting of inbox when grouped by product
 
