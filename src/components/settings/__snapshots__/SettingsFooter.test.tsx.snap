@@ -3,6 +3,7 @@
 exports[`routes/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
 <button
   class=" css-1aearyh"
+  data-testid="settings-release-notes"
   title="View Atlassify release notes"
   type="button"
 >
@@ -18,6 +19,7 @@ exports[`routes/components/settings/SettingsFooter.tsx app version should show d
 exports[`routes/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
 <button
   class=" css-1aearyh"
+  data-testid="settings-release-notes"
   title="View Atlassify release notes"
   type="button"
 >

@@ -1,4 +1,4 @@
-import { BitbucketIcon } from '@atlaskit/logo';
+import { BitbucketIcon, ConfluenceIcon } from '@atlaskit/logo';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
 import type { AtlassifyNotification, Link } from '../../../types';
 
@@ -48,8 +48,8 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
       url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
     },
     product: {
-      name: 'bitbucket',
-      icon: BitbucketIcon,
+      name: 'confluence',
+      icon: ConfluenceIcon,
     },
     actor: {
       displayName: 'atlassify-app',

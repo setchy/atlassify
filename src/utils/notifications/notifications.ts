@@ -88,7 +88,7 @@ export async function getAllNotifications(
   return notifications;
 }
 
-export function mapAtlassianNotificationsToAtlassifyNotifications(
+function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
   notifications: AtlassianNotification[],
 ): AtlassifyNotification[] {

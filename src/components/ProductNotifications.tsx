@@ -58,7 +58,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             position="bottom"
           >
             <Button
-              testId="product-home-button"
               appearance="subtle"
               onClick={(event: MouseEvent<HTMLElement>) => {
                 if (productDetails.home) {
@@ -67,6 +66,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   openExternalLink(productDetails.home);
                 }
               }}
+              testId="product-home"
             >
               <Inline space="space.100" alignBlock="center">
                 <productNotification.icon size="xsmall" appearance="brand" />
@@ -83,7 +83,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label="Mark all product notifications as read"
-                title="Mark all product notifications as read"
                 icon={(iconProps) => (
                   <HipchatMediaAttachmentCountIcon
                     {...iconProps}
@@ -100,6 +99,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   setShowAsRead(settings.delayNotificationState);
                   markNotificationsRead(productNotifications);
                 }}
+                testId="product-mark-as-read"
               />
             </Tooltip>
 
@@ -109,11 +109,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label={toggleProductNotificationsLabel}
-                title={toggleProductNotificationsLabel}
                 icon={ChevronIcon}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
+                testId="product-toggle"
               />
             </Tooltip>
           </Inline>

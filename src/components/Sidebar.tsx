@@ -76,13 +76,13 @@ export const Sidebar: FC = () => {
           <Tooltip content="Home" position="right">
             <IconButton
               label="Home"
-              title="Home"
               appearance="subtle"
               icon={(iconProps) => (
                 <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
               )}
               shape="circle"
               onClick={() => navigate('/', { replace: true })}
+              testId="sidebar-home"
             />
           </Tooltip>
         </div>
@@ -103,6 +103,7 @@ export const Sidebar: FC = () => {
               appearance="subtle"
               spacing="compact"
               onClick={() => openMyNotifications()}
+              testId="sidebar-notifications"
             >
               {notificationsCount > 0 && (
                 <Text color="color.text.inverse" size="small" weight="semibold">
@@ -129,6 +130,7 @@ export const Sidebar: FC = () => {
                       evt.target.checked,
                     );
                   }}
+                  testId="sidebar-toggle-unread-only"
                 />
               </Tooltip>
 
@@ -158,6 +160,7 @@ export const Sidebar: FC = () => {
                   }
                   spacing="compact"
                   shape="circle"
+                  testId="sidebar-group-by-product"
                 />
               </Tooltip>
 
@@ -166,6 +169,7 @@ export const Sidebar: FC = () => {
                   appearance="subtle"
                   spacing="compact"
                   onClick={() => toggleFilters()}
+                  testId="sidebar-filters"
                 >
                   <Inline alignBlock="center" space="space.100">
                     <FilterIcon
@@ -216,6 +220,7 @@ export const Sidebar: FC = () => {
                   shape="circle"
                   onClick={() => refreshNotifications()}
                   isDisabled={status === 'loading'}
+                  testId="sidebar-refresh"
                 />
               </Tooltip>
 
@@ -232,6 +237,7 @@ export const Sidebar: FC = () => {
                   appearance="subtle"
                   shape="circle"
                   onClick={() => toggleSettings()}
+                  testId="sidebar-settings"
                 />
               </Tooltip>
             </>
@@ -248,6 +254,7 @@ export const Sidebar: FC = () => {
                 )}
                 shape="circle"
                 onClick={() => quitApp()}
+                testId="sidebar-quit"
               />
             </Tooltip>
           )}

@@ -8,6 +8,7 @@ import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
+import Tooltip from '@atlaskit/tooltip';
 
 import Heading from '@atlaskit/heading';
 import { AppContext } from '../../context/App';
@@ -76,39 +77,45 @@ export const AppearanceSettings: FC = () => {
         >
           Zoom:
         </label>
-        <IconButton
-          label="Zoom Out"
-          title="Zoom Out"
-          icon={MediaServicesZoomOutIcon}
-          shape="circle"
-          spacing="compact"
-          onClick={() =>
-            zoomPercentage > 0 &&
-            webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
-          }
-        />
+        <Tooltip content="Zoom Out" position="bottom">
+          <IconButton
+            label="Zoom Out"
+            icon={MediaServicesZoomOutIcon}
+            shape="circle"
+            spacing="compact"
+            onClick={() =>
+              zoomPercentage > 0 &&
+              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
+            }
+            testId="settings-zoom-out"
+          />
+        </Tooltip>
         <span className="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200">
           {zoomPercentage.toFixed(0)}%
         </span>
-        <IconButton
-          label="Zoom In"
-          title="Zoom In"
-          icon={MediaServicesZoomInIcon}
-          shape="circle"
-          spacing="compact"
-          onClick={() =>
-            zoomPercentage < 120 &&
-            webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
-          }
-        />
-        <IconButton
-          label="Reset Zoom"
-          title="Reset Zoom"
-          icon={SelectClearIcon}
-          shape="circle"
-          spacing="compact"
-          onClick={() => webFrame.setZoomLevel(0)}
-        />
+        <Tooltip content="Zoom In" position="bottom">
+          <IconButton
+            label="Zoom In"
+            icon={MediaServicesZoomInIcon}
+            shape="circle"
+            spacing="compact"
+            onClick={() =>
+              zoomPercentage < 120 &&
+              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
+            }
+            testId="settings-zoom-in"
+          />
+        </Tooltip>
+        <Tooltip content="Reset Zoom" position="bottom">
+          <IconButton
+            label="Reset Zoom"
+            icon={SelectClearIcon}
+            shape="circle"
+            spacing="compact"
+            onClick={() => webFrame.setZoomLevel(0)}
+            testId="settings-zoom-reset"
+          />
+        </Tooltip>
       </div>
     </Stack>
   );

@@ -55,7 +55,7 @@ describe('routes/Login.tsx', () => {
       </MemoryRouter>,
     );
 
-    fireEvent.click(screen.getByLabelText('Login'));
+    fireEvent.click(screen.getByTestId('login'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token');
   });

@@ -44,6 +44,7 @@ describe('context/App.tsx', () => {
 
     const fetchNotificationsMock = jest.fn();
     const markNotificationsReadMock = jest.fn();
+    const markNotificationsUnreadMock = jest.fn();
 
     const mockDefaultState = {
       auth: { accounts: [] },
@@ -54,6 +55,7 @@ describe('context/App.tsx', () => {
       (useNotifications as jest.Mock).mockReturnValue({
         fetchNotifications: fetchNotificationsMock,
         markNotificationsRead: markNotificationsReadMock,
+        markNotificationsUnread: markNotificationsUnreadMock,
       });
     });
 
@@ -128,6 +130,31 @@ describe('context/App.tsx', () => {
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
         mockSingleNotification,
       ]);
+    });
+
+    it('should call markNotificationsUnread', async () => {
+      const TestComponent = () => {
+        const { markNotificationsUnread } = useContext(AppContext);
+
+        return (
+          <button
+            type="button"
+            onClick={() => markNotificationsUnread([mockSingleNotification])}
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      fireEvent.click(getByText('Test Case'));
+
+      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
+        mockDefaultState,
+        [mockSingleNotification],
+      );
     });
   });
 

@@ -13,6 +13,7 @@ describe('components/Oops.tsx', () => {
       descriptions: ['Error description'],
       emojis: ['🔥'],
     };
+
     const tree = render(<Oops error={mockError} />);
 
     expect(tree).toMatchSnapshot();

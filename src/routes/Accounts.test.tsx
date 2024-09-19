@@ -67,7 +67,8 @@ describe('routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Go Back'));
+      fireEvent.click(screen.getByTestId('header-nav-back'));
+
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });
   });
@@ -95,7 +96,7 @@ describe('routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByLabelText('Open account profile'));
+      fireEvent.click(screen.getByTestId('account-profile--itemInner'));
 
       expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
       expect(openAccountProfileMock).toHaveBeenCalledWith(
@@ -123,7 +124,7 @@ describe('routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Refresh atlas'));
+      fireEvent.click(screen.getByTestId('account-refresh'));
 
       expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
       expect(apiRequestAuthMock).toHaveBeenCalledWith(
@@ -159,7 +160,7 @@ describe('routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Logout atlas'));
+      fireEvent.click(screen.getByTestId('account-logout'));
 
       expect(logoutFromAccountMock).toHaveBeenCalledTimes(1);
 
@@ -187,9 +188,8 @@ describe('routes/Accounts.tsx', () => {
       );
     });
 
-    expect(screen.getByTitle('Add new account').hidden).toBe(false);
+    fireEvent.click(screen.getByTestId('account-add-new'));
 
-    fireEvent.click(screen.getByTitle('Add new account'));
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token', {
       replace: true,
     });

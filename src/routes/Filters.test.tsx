@@ -58,7 +58,8 @@ describe('routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Go Back'));
+      fireEvent.click(screen.getByTestId('header-nav-back'));
+
       expect(fetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });
@@ -246,7 +247,7 @@ describe('routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTitle('Clear Filters'));
+      fireEvent.click(screen.getByTestId('filters-clear'));
 
       expect(clearFilters).toHaveBeenCalled();
     });

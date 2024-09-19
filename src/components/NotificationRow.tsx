@@ -128,7 +128,6 @@ export const NotificationRow: FC<INotificationRow> = ({
             <Tooltip content="Mark as read" position="left">
               <IconButton
                 label="Mark as read"
-                title="Mark as read"
                 icon={(iconProps) => (
                   <HipchatMediaAttachmentCountIcon
                     {...iconProps}
@@ -143,6 +142,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                   setShowAsRead(settings.delayNotificationState);
                   markNotificationsRead([notification]);
                 }}
+                testId="notification-mark-as-read"
               />
             </Tooltip>
           </Flex>
@@ -151,7 +151,6 @@ export const NotificationRow: FC<INotificationRow> = ({
             <Tooltip content="Mark as unread" position="left">
               <IconButton
                 label="Mark as unread"
-                title="Mark as unread"
                 icon={() => null}
                 shape="circle"
                 spacing="compact"
@@ -161,6 +160,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                   notification.unread = true;
                   notification.readState = 'unread';
                 }}
+                testId="notification-mark-as-unread"
               />
             </Tooltip>
           </Flex>

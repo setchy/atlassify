@@ -11,41 +11,45 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     <div
       class=" css-y272c0"
     >
-      <button
-        class=" css-1hmr5rx"
-        title="Go Back"
-        type="button"
+      <div
+        role="presentation"
       >
-        <span
-          class=" css-1spmf3f"
+        <button
+          class=" css-1hmr5rx"
+          data-testid="header-nav-back"
+          type="button"
         >
           <span
-            aria-hidden="true"
-            class="css-snhnyn"
-            data-vc="icon-undefined"
-            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            class=" css-1spmf3f"
           >
-            <svg
-              height="24"
-              role="presentation"
-              viewBox="0 0 24 24"
-              width="24"
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
             >
-              <path
-                clip-rule="evenodd"
-                d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                fill="currentcolor"
-                fill-rule="evenodd"
-              />
-            </svg>
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Go Back
+            </span>
           </span>
-          <span
-            class="css-b5o75w"
-          >
-            Go Back
-          </span>
-        </span>
-      </button>
+        </button>
+      </div>
       <h3
         class="css-rex7s6"
       >
@@ -1033,17 +1037,22 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
       <div
         class="css-hugz22"
       >
-        <button
-          class=" css-sxpr96"
-          title="Clear Filters"
-          type="button"
+        <div
+          role="presentation"
         >
-          <span
-            class=" css-1nqby2s"
+          <button
+            class=" css-sxpr96"
+            data-testid="filters-clear"
+            title="Clear Filters"
+            type="button"
           >
-            Clear Filters
-          </span>
-        </button>
+            <span
+              class=" css-1nqby2s"
+            >
+              Clear Filters
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1061,41 +1070,45 @@ exports[`routes/Filters.tsx filters product filters should filter by product - e
     <div
       class=" css-y272c0"
     >
-      <button
-        class=" css-1hmr5rx"
-        title="Go Back"
-        type="button"
+      <div
+        role="presentation"
       >
-        <span
-          class=" css-1spmf3f"
+        <button
+          class=" css-1hmr5rx"
+          data-testid="header-nav-back"
+          type="button"
         >
           <span
-            aria-hidden="true"
-            class="css-snhnyn"
-            data-vc="icon-undefined"
-            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            class=" css-1spmf3f"
           >
-            <svg
-              height="24"
-              role="presentation"
-              viewBox="0 0 24 24"
-              width="24"
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
             >
-              <path
-                clip-rule="evenodd"
-                d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                fill="currentcolor"
-                fill-rule="evenodd"
-              />
-            </svg>
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Go Back
+            </span>
           </span>
-          <span
-            class="css-b5o75w"
-          >
-            Go Back
-          </span>
-        </span>
-      </button>
+        </button>
+      </div>
       <h3
         class="css-rex7s6"
       >
@@ -2098,17 +2111,22 @@ exports[`routes/Filters.tsx filters product filters should filter by product - e
       <div
         class="css-hugz22"
       >
-        <button
-          class=" css-sxpr96"
-          title="Clear Filters"
-          type="button"
+        <div
+          role="presentation"
         >
-          <span
-            class=" css-1nqby2s"
+          <button
+            class=" css-sxpr96"
+            data-testid="filters-clear"
+            title="Clear Filters"
+            type="button"
           >
-            Clear Filters
-          </span>
-        </button>
+            <span
+              class=" css-1nqby2s"
+            >
+              Clear Filters
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

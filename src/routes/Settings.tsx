@@ -54,6 +54,7 @@ export const SettingsRoute: FC = () => {
                 aria-haspopup="dialog"
                 appearance="danger"
                 onClick={openModal}
+                testId="settings-reset-defaults"
               >
                 Reset Settings
               </Button>
@@ -73,6 +74,7 @@ export const SettingsRoute: FC = () => {
                             icon={CrossIcon}
                             label="Close Modal"
                             onClick={closeModal}
+                            testId="settings-reset-close"
                           />
                         </Flex>
                         <Flex
@@ -92,7 +94,11 @@ export const SettingsRoute: FC = () => {
                       </p>
                     </ModalBody>
                     <ModalFooter>
-                      <Button appearance="subtle" onClick={() => closeModal()}>
+                      <Button
+                        appearance="subtle"
+                        onClick={() => closeModal()}
+                        testId="settings-reset-cancel"
+                      >
                         Cancel
                       </Button>
                       <Button
@@ -101,6 +107,7 @@ export const SettingsRoute: FC = () => {
                           resetSettings();
                           closeModal();
                         }}
+                        testId="settings-reset-confirm"
                       >
                         Reset
                       </Button>

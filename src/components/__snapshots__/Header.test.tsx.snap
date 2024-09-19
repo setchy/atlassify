@@ -11,9 +11,67 @@ exports[`components/Header.tsx should render itself & its children 1`] = `
         <div
           class=" css-y272c0"
         >
+          <div
+            role="presentation"
+          >
+            <button
+              class=" css-1hmr5rx"
+              data-testid="header-nav-back"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-snhnyn"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Go Back
+                </span>
+              </span>
+            </button>
+          </div>
+          <h3
+            class="css-rex7s6"
+          >
+            Test Header
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-18bes35"
+    >
+      <div
+        class=" css-y272c0"
+      >
+        <div
+          role="presentation"
+        >
           <button
             class=" css-1hmr5rx"
-            title="Go Back"
+            data-testid="header-nav-back"
             type="button"
           >
             <span
@@ -46,57 +104,7 @@ exports[`components/Header.tsx should render itself & its children 1`] = `
               </span>
             </span>
           </button>
-          <h3
-            class="css-rex7s6"
-          >
-            Test Header
-          </h3>
         </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="css-18bes35"
-    >
-      <div
-        class=" css-y272c0"
-      >
-        <button
-          class=" css-1hmr5rx"
-          title="Go Back"
-          type="button"
-        >
-          <span
-            class=" css-1spmf3f"
-          >
-            <span
-              aria-hidden="true"
-              class="css-snhnyn"
-              data-vc="icon-undefined"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-            >
-              <svg
-                height="24"
-                role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-            <span
-              class="css-b5o75w"
-            >
-              Go Back
-            </span>
-          </span>
-        </button>
         <h3
           class="css-rex7s6"
         >

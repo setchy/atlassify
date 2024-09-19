@@ -5,6 +5,7 @@ import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
@@ -184,14 +185,17 @@ export const FiltersRoute: FC = () => {
       <div className="text-sm bg-gray-200 dark:bg-gray-darker">
         <Box padding="space.100">
           <Flex justifyContent="end">
-            <Button
-              title="Clear Filters"
-              onClick={clearFilters}
-              appearance="discovery"
-              spacing="compact"
-            >
-              Clear Filters
-            </Button>
+            <Tooltip content="Clear all filters" position="left">
+              <Button
+                title="Clear Filters"
+                onClick={clearFilters}
+                appearance="discovery"
+                spacing="compact"
+                testId="filters-clear"
+              >
+                Clear Filters
+              </Button>
+            </Tooltip>
           </Flex>
         </Box>
       </div>

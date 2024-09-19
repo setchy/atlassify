@@ -155,7 +155,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           >
             <button
               class=" css-a8hcye"
-              title="Mark as read"
+              data-testid="notification-mark-as-read"
               type="button"
             >
               <span
@@ -345,7 +345,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         >
           <button
             class=" css-a8hcye"
-            title="Mark as read"
+            data-testid="notification-mark-as-read"
             type="button"
           >
             <span
@@ -592,7 +592,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
           >
             <button
               class=" css-a8hcye"
-              title="Mark as read"
+              data-testid="notification-mark-as-read"
               type="button"
             >
               <span
@@ -782,7 +782,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         >
           <button
             class=" css-a8hcye"
-            title="Mark as read"
+            data-testid="notification-mark-as-read"
             type="button"
           >
             <span

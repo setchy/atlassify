@@ -24,7 +24,7 @@ describe('components/Header.tsx', () => {
   it('should navigate back', () => {
     render(<Header>Test Header</Header>);
 
-    fireEvent.click(screen.getByTitle('Go Back'));
+    fireEvent.click(screen.getByTestId('header-nav-back'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });
@@ -40,7 +40,7 @@ describe('components/Header.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTitle('Go Back'));
+    fireEvent.click(screen.getByTestId('header-nav-back'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     expect(fetchNotifications).toHaveBeenCalledTimes(1);

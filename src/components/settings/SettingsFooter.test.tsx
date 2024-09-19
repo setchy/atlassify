@@ -48,9 +48,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
         );
       });
 
-      expect(
-        screen.getByTitle('View Atlassify release notes'),
-      ).toMatchSnapshot();
+      expect(screen.getByTestId('settings-release-notes')).toMatchSnapshot();
     });
 
     it('should show development app version', async () => {
@@ -74,9 +72,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
         );
       });
 
-      expect(
-        screen.getByTitle('View Atlassify release notes'),
-      ).toMatchSnapshot();
+      expect(screen.getByTestId('settings-release-notes')).toMatchSnapshot();
     });
   });
 
@@ -104,7 +100,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('View Atlassify release notes'));
+    fireEvent.click(screen.getByTestId('settings-release-notes'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
@@ -128,7 +124,8 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Accounts'));
+    fireEvent.click(screen.getByTestId('settings-accounts'));
+
     expect(mockNavigate).toHaveBeenCalledWith('/accounts');
   });
 
@@ -150,7 +147,8 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Quit Atlassify'));
+    fireEvent.click(screen.getByTestId('settings-quit'));
+
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -19,79 +19,85 @@ describe('components/AccountNotifications.tsx', () => {
     mockDirectoryPath();
   });
 
-  it('should render itself - group notifications by products', () => {
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotifications,
-      error: null,
-    };
+  describe('account view types', () => {
+    it('should render itself - sort by date', () => {
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        error: null,
+      };
 
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings, groupNotificationsByProduct: true },
-        }}
-      >
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself - group notifications by products', () => {
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        error: null,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByProduct: true },
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself - no notifications', () => {
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: [],
+        error: null,
+      };
+
+      const tree = render(
+        <AppContext.Provider value={{ settings: mockSettings }}>
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself - account error', () => {
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: [],
+        error: {
+          title: 'Error title',
+          descriptions: ['Error description'],
+          emojis: ['🔥'],
+        },
+      };
+
+      const tree = render(
+        <AppContext.Provider value={{ settings: mockSettings }}>
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 
-  it('should render itself - group notifications by date', () => {
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotifications,
-      error: null,
-    };
-
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings, groupNotificationsByProduct: false },
-        }}
-      >
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render itself - no notifications', () => {
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: [],
-      error: null,
-    };
-
-    const tree = render(
-      <AppContext.Provider value={{ settings: mockSettings }}>
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render itself - account error', () => {
-    const props = {
-      account: mockAtlassianCloudAccount,
-      notifications: [],
-      error: {
-        title: 'Error title',
-        descriptions: ['Error description'],
-        emojis: ['🔥'],
-      },
-    };
-
-    const tree = render(
-      <AppContext.Provider value={{ settings: mockSettings }}>
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
-  it.skip('should open profile when clicked', async () => {
+  it('should open profile when clicked', async () => {
     const openAccountProfileMock = jest
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
@@ -110,7 +116,7 @@ describe('components/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Open Profile'));
+    fireEvent.click(screen.getByTestId('account-profile--itemInner'));
 
     expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
     expect(openAccountProfileMock).toHaveBeenCalledWith(
@@ -118,10 +124,14 @@ describe('components/AccountNotifications.tsx', () => {
     );
   });
 
-  it.skip('should toggle account notifications visibility', async () => {
+  it('should open my pull requests', async () => {
+    const openMyPullRequestsMock = jest
+      .spyOn(links, 'openMyPullRequests')
+      .mockImplementation();
+
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotifications,
+      notifications: [],
       error: null,
     };
 
@@ -133,10 +143,65 @@ describe('components/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Hide account notifications'));
+    fireEvent.click(screen.getByTestId('account-pull-requests'));
+
+    expect(openMyPullRequestsMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should mark all account notifications as read', async () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      notifications: mockAtlassifyNotifications,
+      error: null,
+    };
+
+    const markNotificationsReadMock = jest.fn();
+
+    await act(async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+            markNotificationsRead: markNotificationsReadMock,
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+    });
+
+    fireEvent.click(screen.getByTestId('account-mark-as-read'));
+
+    expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should toggle account notifications visibility', async () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      notifications: mockAtlassifyNotifications,
+      error: null,
+    };
+
+    await act(async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings },
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+    });
+
+    fireEvent.click(screen.getByTestId('account-toggle'));
 
     const tree = render(
-      <AppContext.Provider value={{ settings: mockSettings }}>
+      <AppContext.Provider
+        value={{
+          settings: { ...mockSettings },
+        }}
+      >
         <AccountNotifications {...props} />
       </AppContext.Provider>,
     );

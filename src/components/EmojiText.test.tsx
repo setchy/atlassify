@@ -11,7 +11,9 @@ describe('components/icons/Emoji.tsx', () => {
     const props: IEmojiText = {
       text: '🍺',
     };
+
     const tree = render(<EmojiText {...props} />);
+
     expect(tree).toMatchSnapshot();
   });
 });

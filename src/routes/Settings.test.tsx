@@ -51,7 +51,8 @@ describe('routes/Settings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Go Back'));
+    fireEvent.click(screen.getByTestId('header-nav-back'));
+
     expect(fetchNotifications).toHaveBeenCalledTimes(1);
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });
@@ -73,8 +74,9 @@ describe('routes/Settings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByText('Reset Settings'));
-    fireEvent.click(screen.getByText('Reset'));
+    fireEvent.click(screen.getByTestId('settings-reset-defaults'));
+    fireEvent.click(screen.getByTestId('settings-reset-confirm'));
+
     expect(resetSettings).toHaveBeenCalled();
   });
 
@@ -95,8 +97,9 @@ describe('routes/Settings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByText('Reset Settings'));
-    fireEvent.click(screen.getByText('Cancel'));
+    fireEvent.click(screen.getByTestId('settings-reset-defaults'));
+    fireEvent.click(screen.getByTestId('settings-reset-cancel'));
+
     expect(resetSettings).not.toHaveBeenCalled();
   });
 });

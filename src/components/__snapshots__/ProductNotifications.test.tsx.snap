@@ -19,7 +19,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
             >
               <button
                 class=" css-1aearyh"
-                data-testid="product-home-button"
+                data-testid="product-home"
                 type="button"
               >
                 <span
@@ -79,7 +79,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
               >
                 <button
                   class=" css-a8hcye"
-                  title="Mark all product notifications as read"
+                  data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
@@ -119,7 +119,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
               >
                 <button
                   class=" css-a8hcye"
-                  title="Hide product notifications"
+                  data-testid="product-toggle"
                   type="button"
                 >
                   <span
@@ -179,7 +179,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
           >
             <button
               class=" css-1aearyh"
-              data-testid="product-home-button"
+              data-testid="product-home"
               type="button"
             >
               <span
@@ -239,7 +239,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
             >
               <button
                 class=" css-a8hcye"
-                title="Mark all product notifications as read"
+                data-testid="product-mark-as-read"
                 type="button"
               >
                 <span
@@ -279,7 +279,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
             >
               <button
                 class=" css-a8hcye"
-                title="Hide product notifications"
+                data-testid="product-toggle"
                 type="button"
               >
                 <span
@@ -396,7 +396,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
             >
               <button
                 class=" css-1aearyh"
-                data-testid="product-home-button"
+                data-testid="product-home"
                 type="button"
               >
                 <span
@@ -456,7 +456,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
               >
                 <button
                   class=" css-a8hcye"
-                  title="Mark all product notifications as read"
+                  data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
@@ -496,7 +496,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
               >
                 <button
                   class=" css-a8hcye"
-                  title="Show product notifications"
+                  data-testid="product-toggle"
                   type="button"
                 >
                   <span
@@ -549,7 +549,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
             >
               <button
                 class=" css-1aearyh"
-                data-testid="product-home-button"
+                data-testid="product-home"
                 type="button"
               >
                 <span
@@ -609,7 +609,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
               >
                 <button
                   class=" css-a8hcye"
-                  title="Mark all product notifications as read"
+                  data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
@@ -649,7 +649,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
               >
                 <button
                   class=" css-a8hcye"
-                  title="Hide product notifications"
+                  data-testid="product-toggle"
                   type="button"
                 >
                   <span
@@ -709,7 +709,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
           >
             <button
               class=" css-1aearyh"
-              data-testid="product-home-button"
+              data-testid="product-home"
               type="button"
             >
               <span
@@ -769,7 +769,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
             >
               <button
                 class=" css-a8hcye"
-                title="Mark all product notifications as read"
+                data-testid="product-mark-as-read"
                 type="button"
               >
                 <span
@@ -809,7 +809,7 @@ exports[`components/ProductNotifications.tsx should toggle product notifications
             >
               <button
                 class=" css-a8hcye"
-                title="Hide product notifications"
+                data-testid="product-toggle"
                 type="button"
               >
                 <span

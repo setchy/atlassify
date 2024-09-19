@@ -224,9 +224,8 @@ exports[`routes/Login.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            aria-label="Login"
             class=" css-1ilq2uw"
-            title="Login"
+            data-testid="login"
             type="button"
           >
             <span
@@ -485,9 +484,8 @@ exports[`routes/Login.tsx should render itself & its children 1`] = `
         role="presentation"
       >
         <button
-          aria-label="Login"
           class=" css-1ilq2uw"
-          title="Login"
+          data-testid="login"
           type="button"
         >
           <span

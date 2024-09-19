@@ -22,6 +22,7 @@ describe('components/fields/FieldInput.tsx', () => {
         )}
       />,
     );
+
     expect(tree).toMatchSnapshot();
   });
 });

@@ -33,6 +33,7 @@ describe('routes/Notifications.tsx', () => {
         <NotificationsRoute />
       </AppContext.Provider>,
     );
+
     expect(tree).toMatchSnapshot();
   });
 

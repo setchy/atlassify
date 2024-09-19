@@ -38,6 +38,7 @@ describe('components/NotificationRow.tsx', () => {
         <NotificationRow {...props} />
       </AppContext.Provider>,
     );
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -60,6 +61,7 @@ describe('components/NotificationRow.tsx', () => {
         <NotificationRow {...props} />
       </AppContext.Provider>,
     );
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -85,6 +87,7 @@ describe('components/NotificationRow.tsx', () => {
       );
 
       fireEvent.click(screen.getByRole('main'));
+
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
@@ -113,31 +116,7 @@ describe('components/NotificationRow.tsx', () => {
       );
 
       fireEvent.click(screen.getByRole('main'));
-      expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-    });
 
-    it('should open a notification in the browser - key down', () => {
-      const markNotificationsReadMock = jest.fn();
-
-      const props = {
-        notification: mockSingleNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.click(screen.getByRole('main'));
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
@@ -161,7 +140,8 @@ describe('components/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTitle('Mark as read'));
+      fireEvent.click(screen.getByTestId('notification-mark-as-read'));
+
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
@@ -188,7 +168,8 @@ describe('components/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTitle('Mark as unread'));
+      fireEvent.click(screen.getByTestId('notification-mark-as-unread'));
+
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
     });
   });

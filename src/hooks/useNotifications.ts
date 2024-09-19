@@ -137,16 +137,6 @@ export const useNotifications = (): NotificationsState => {
 
       try {
         await markNotificationsAsUnread(account, notificationIDs);
-
-        // FIXME
-        // const updatedNotifications = unreadNotifications.map((notification) => {
-        //   notification.unread = true;
-        //   notification.readState = 'unread';
-        //   return notification;
-        // });
-
-        // setNotifications(updatedNotifications);
-        // setTrayIconColor(updatedNotifications);
       } catch (err) {
         log.error('Error occurred while marking notifications as read', err);
       }

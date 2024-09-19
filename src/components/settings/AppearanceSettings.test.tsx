@@ -88,7 +88,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByLabelText('Zoom Out'));
+      fireEvent.click(screen.getByTestId('settings-zoom-out'));
       await zoomTimeout();
     });
 
@@ -96,7 +96,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 90);
 
     await act(async () => {
-      fireEvent.click(screen.getByLabelText('Zoom Out'));
+      fireEvent.click(screen.getByTestId('settings-zoom-out'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(2);
@@ -104,7 +104,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByLabelText('Zoom In'));
+      fireEvent.click(screen.getByTestId('settings-zoom-in'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(3);
@@ -112,7 +112,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByLabelText('Reset Zoom'));
+      fireEvent.click(screen.getByTestId('settings-zoom-reset'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(4);

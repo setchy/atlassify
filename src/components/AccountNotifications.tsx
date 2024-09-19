@@ -36,7 +36,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     useState(true);
 
   const groupedNotifications = Object.values(
-    notifications.reduce(
+    notifications?.reduce(
       (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
         const key = notification.product.name;
         if (!acc[key]) acc[key] = [];
@@ -98,6 +98,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   event.stopPropagation();
                   openAccountProfile(account);
                 }}
+                testId="account-profile"
               />
             </Tooltip>{' '}
             <Badge
@@ -123,6 +124,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   event.stopPropagation();
                   openMyPullRequests();
                 }}
+                testId="account-pull-requests"
               />
             </Tooltip>
 
@@ -146,6 +148,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   event.stopPropagation();
                   markNotificationsRead(notifications);
                 }}
+                testId="account-mark-as-read"
               />
             </Tooltip>
 
@@ -159,6 +162,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
+                testId="account-toggle"
               />
             </Tooltip>
           </Inline>

@@ -18,52 +18,66 @@ const openExternalLinkMock = jest
   .mockImplementation();
 
 describe('components/ProductNotifications.tsx', () => {
-  const props = {
-    account: mockAtlassianCloudAccount,
-    product: 'bitbucket' as Product,
-    productNotifications: mockAtlassifyNotifications,
-  };
-
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render itself & its children', () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      product: 'bitbucket' as Product,
+      productNotifications: mockAtlassifyNotifications,
+    };
+
     const tree = render(
       <AppContext.Provider value={{}}>
         <ProductNotifications {...props} />
       </AppContext.Provider>,
     );
+
     expect(tree).toMatchSnapshot();
   });
 
   it('should open product home when available', async () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      product: 'bitbucket' as Product,
+      productNotifications: mockAtlassifyNotifications,
+    };
+
     await act(async () => {
       render(<ProductNotifications {...props} />);
     });
 
-    fireEvent.click(screen.getByTestId('product-home-button'));
+    fireEvent.click(screen.getByTestId('product-home'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
   });
 
   it('should toggle product notifications visibility', async () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      product: 'bitbucket' as Product,
+      productNotifications: mockAtlassifyNotifications,
+    };
+
     await act(async () => {
       render(<ProductNotifications {...props} />);
     });
 
-    fireEvent.click(screen.getByTitle('Hide product notifications'));
+    fireEvent.click(screen.getByTestId('product-toggle'));
 
     const tree = render(<ProductNotifications {...props} />);
+
     expect(tree).toMatchSnapshot();
   });
 
   it('should mark all product notifications as read', async () => {
-    const markNotificationsReadMock = jest.fn();
-
     const props = {
       productNotifications: mockAtlassifyNotifications,
     };
+
+    const markNotificationsReadMock = jest.fn();
 
     render(
       <AppContext.Provider
@@ -76,9 +90,8 @@ describe('components/ProductNotifications.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(
-      screen.getByTitle('Mark all product notifications as read'),
-    );
+    fireEvent.click(screen.getByTestId('product-mark-as-read'));
+
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });
 });

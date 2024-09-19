@@ -11,6 +11,15 @@ export const mockAccountNotifications: AccountNotifications[] = [
   },
 ];
 
+export const mockAccountNotificationsWithMorePages: AccountNotifications[] = [
+  {
+    account: mockAtlassianCloudAccount,
+    notifications: mockAtlassifyNotifications,
+    hasNextPage: true,
+    error: null,
+  },
+];
+
 export const mockSingleAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,

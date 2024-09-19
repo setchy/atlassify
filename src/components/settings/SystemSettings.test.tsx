@@ -11,7 +11,7 @@ describe('routes/components/settings/SystemSettings.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it.skip('should change the open links radio group', async () => {
+  it('should change the open links radio group', async () => {
     await act(async () => {
       render(
         <AppContext.Provider

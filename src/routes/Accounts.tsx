@@ -61,7 +61,7 @@ export const AccountsRoute: FC = () => {
                 className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
               >
                 <Inline grow="fill" spread="space-between" alignBlock="center">
-                  <Tooltip content="Open account profile">
+                  <Tooltip content="Open account profile" position="bottom">
                     <AvatarItem
                       label="Open account profile"
                       avatar={
@@ -75,39 +75,52 @@ export const AccountsRoute: FC = () => {
                       primaryText={account.user.name}
                       secondaryText={account.user.login}
                       onClick={() => openAccountProfile(account)}
+                      testId="account-profile"
                     />
                   </Tooltip>
 
                   <Inline>
-                    <IconButton
-                      label={accountLabel}
-                      title={accountLabel}
-                      icon={(iconProps) => (
-                        <AccountIcon {...iconProps} primaryColor="gold" />
-                      )}
-                      appearance="subtle"
-                      isDisabled={isPrimaryAccount}
-                      onClick={() => setAsPrimaryAccount(account)}
-                    />
+                    <Tooltip content={accountLabel} position="bottom">
+                      <IconButton
+                        label={accountLabel}
+                        icon={(iconProps) => (
+                          <AccountIcon {...iconProps} primaryColor="gold" />
+                        )}
+                        appearance="subtle"
+                        isDisabled={isPrimaryAccount}
+                        onClick={() => setAsPrimaryAccount(account)}
+                        testId="account-type"
+                      />
+                    </Tooltip>
 
-                    <IconButton
-                      label={`Refresh ${account.user.login}`}
-                      title={`Refresh ${account.user.login}`}
-                      icon={RefreshIcon}
-                      appearance="subtle"
-                      onClick={async () => {
-                        await refreshAccount(account);
-                        navigate('/accounts', { replace: true });
-                      }}
-                    />
+                    <Tooltip
+                      content={`Refresh ${account.user.login}`}
+                      position="bottom"
+                    >
+                      <IconButton
+                        label={`Refresh ${account.user.login}`}
+                        icon={RefreshIcon}
+                        appearance="subtle"
+                        onClick={async () => {
+                          await refreshAccount(account);
+                          navigate('/accounts', { replace: true });
+                        }}
+                        testId="account-refresh"
+                      />
+                    </Tooltip>
 
-                    <IconButton
-                      label={`Logout ${account.user.login}`}
-                      title={`Logout ${account.user.login}`}
-                      icon={SignOutIcon}
-                      appearance="subtle"
-                      onClick={() => logoutAccount(account)}
-                    />
+                    <Tooltip
+                      content={`Logout ${account.user.login}`}
+                      position="bottom"
+                    >
+                      <IconButton
+                        label={`Logout ${account.user.login}`}
+                        icon={SignOutIcon}
+                        appearance="subtle"
+                        onClick={() => logoutAccount(account)}
+                        testId="account-logout"
+                      />
+                    </Tooltip>
                   </Inline>
                 </Inline>
               </div>
@@ -119,14 +132,16 @@ export const AccountsRoute: FC = () => {
       <div className="text-sm px-8 bg-gray-200 dark:bg-gray-darker">
         <Box padding="space.050">
           <Flex justifyContent="end">
-            <IconButton
-              label="Add new account"
-              title="Add new account"
-              icon={InviteTeamIcon}
-              appearance="subtle"
-              shape="circle"
-              onClick={() => login()}
-            />
+            <Tooltip content="Add new account" position="left">
+              <IconButton
+                label="Add new account"
+                icon={InviteTeamIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => login()}
+                testId="account-add-new"
+              />
+            </Tooltip>
           </Flex>
         </Box>
       </div>

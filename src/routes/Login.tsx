@@ -51,14 +51,13 @@ export const LoginRoute: FC = () => {
 
       <Tooltip content="Login with Atlassian">
         <Button
-          title="Login"
-          aria-label="Login"
           appearance="primary"
           spacing="default"
           iconBefore={(iconProps) => (
             <AtlassianIcon {...iconProps} size="small" />
           )}
           onClick={() => navigate('/login-api-token')}
+          testId="login"
         >
           Login
         </Button>

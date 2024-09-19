@@ -35,6 +35,7 @@ export const SettingsFooter: FC = () => {
                 title="View Atlassify release notes"
                 appearance="subtle"
                 onClick={() => openAtlassifyReleaseNotes(appVersion)}
+                testId="settings-release-notes"
               >
                 Atlassify {appVersion}
               </Button>
@@ -44,21 +45,21 @@ export const SettingsFooter: FC = () => {
               <Tooltip content="Accounts" position="top">
                 <IconButton
                   label="Accounts"
-                  title="Accounts"
                   icon={PeopleGroupIcon}
                   appearance="subtle"
                   shape="circle"
                   onClick={() => navigate('/accounts')}
+                  testId="settings-accounts"
                 />
               </Tooltip>
               <Tooltip content="Quit Atlassify" position="top">
                 <IconButton
                   label="Quit Atlassify"
-                  title="Quit Atlassify"
                   icon={CrossCircleIcon}
                   appearance="subtle"
                   shape="circle"
                   onClick={() => quitApp()}
+                  testId="settings-quit"
                 />
               </Tooltip>
             </Inline>
