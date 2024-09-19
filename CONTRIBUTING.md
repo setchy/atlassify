@@ -1,6 +1,6 @@
-# Atlasify Contributing Guide
+# Atlassify Contributing Guide
 
-Hi! We're really excited that you're interested in contributing to Atlasify! Before submitting your contribution, please read through the following guide.
+Hi! We're really excited that you're interested in contributing to Atlassify! Before submitting your contribution, please read through the following guide.
 
 ### Installation
 
@@ -71,10 +71,10 @@ This project is a tool for monitoring new notifications from Atlassian.
 
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/
-[github-dependency-dashboard]: https://github.com/setchy/atlasify/issues/1
-[github-milestones]: https://github.com/setchy/atlasify/milestones
-[github-new-milestone]: https://github.com/setchy/atlasify/milestones/new
-[github-new-release]: https://github.com/setchy/atlasify/releases/new
+[github-dependency-dashboard]: https://github.com/setchy/atlassify/issues/1
+[github-milestones]: https://github.com/setchy/atlassify/milestones
+[github-new-milestone]: https://github.com/setchy/atlassify/milestones/new
+[github-new-release]: https://github.com/setchy/atlassify/releases/new
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
 [jest-website]: https://jestjs.io/
 

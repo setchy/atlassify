@@ -1,9 +1,9 @@
 import { type FC, useMemo } from 'react';
-import type { AtlasifyError } from '../types';
+import type { AtlassifyError } from '../types';
 import { EmojiText } from './EmojiText';
 
 interface IOops {
-  error: AtlasifyError;
+  error: AtlassifyError;
 }
 
 export const Oops: FC<IOops> = ({ error }: IOops) => {

@@ -49,7 +49,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       });
 
       expect(
-        screen.getByTitle('View Atlasify release notes'),
+        screen.getByTitle('View Atlassify release notes'),
       ).toMatchSnapshot();
     });
 
@@ -75,7 +75,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       });
 
       expect(
-        screen.getByTitle('View Atlasify release notes'),
+        screen.getByTitle('View Atlassify release notes'),
       ).toMatchSnapshot();
     });
   });
@@ -104,11 +104,11 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('View Atlasify release notes'));
+    fireEvent.click(screen.getByTitle('View Atlassify release notes'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/setchy/atlasify/releases/tag/v0.0.1',
+      'https://github.com/setchy/atlassify/releases/tag/v0.0.1',
     );
   });
 
@@ -150,7 +150,7 @@ describe('routes/components/settings/SettingsFooter.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTitle('Quit Atlasify'));
+    fireEvent.click(screen.getByTitle('Quit Atlassify'));
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -5,6 +5,6 @@ import solidJs from '@astrojs/solid-js';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://atlasify.io',
+  site: 'https://atlassify.io',
   integrations: [tailwind({ applyBaseStyles: false }), solidJs()],
 });

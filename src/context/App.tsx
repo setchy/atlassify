@@ -12,8 +12,8 @@ import { useNotifications } from '../hooks/useNotifications';
 import {
   type Account,
   type AccountNotifications,
-  type AtlasifyError,
-  type AtlasifyNotification,
+  type AtlassifyError,
+  type AtlassifyNotification,
   type AuthState,
   OpenPreference,
   type SettingsState,
@@ -89,20 +89,22 @@ interface AppContextState {
   logoutFromAccount: (account: Account) => void;
 
   status: Status;
-  globalError: AtlasifyError;
+  globalError: AtlassifyError;
 
   notifications: AccountNotifications[];
   fetchNotifications: () => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
 
-  markNotificationRead: (notification: AtlasifyNotification) => Promise<void>;
-  markNotificationUnread: (notification: AtlasifyNotification) => Promise<void>;
+  markNotificationRead: (notification: AtlassifyNotification) => Promise<void>;
+  markNotificationUnread: (
+    notification: AtlassifyNotification,
+  ) => Promise<void>;
 
   markProductNotificationsRead: (
-    notification: AtlasifyNotification,
+    notification: AtlassifyNotification,
   ) => Promise<void>;
   markProductNotificationsUnread: (
-    notification: AtlasifyNotification,
+    notification: AtlassifyNotification,
   ) => Promise<void>;
 
   settings: SettingsState;
@@ -165,7 +167,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.keyboardShortcutEnabled]);
 
   useEffect(() => {
-    ipcRenderer.on('atlasify:reset-app', () => {
+    ipcRenderer.on('atlassify:reset-app', () => {
       clearState();
       setAuth(defaultAuth);
       setSettings(defaultSettings);
@@ -256,13 +258,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const markNotificationReadWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
+    async (notification: AtlassifyNotification) =>
       await markNotificationRead({ auth, settings }, notification),
     [auth, settings, markNotificationRead],
   );
 
   const markProductNotificationsReadWithAccounts = useCallback(
-    async (notification: AtlasifyNotification) =>
+    async (notification: AtlassifyNotification) =>
       await markProductNotificationsRead({ auth, settings }, notification),
     [auth, settings, markProductNotificationsRead],
   );

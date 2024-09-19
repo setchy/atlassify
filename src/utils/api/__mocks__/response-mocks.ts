@@ -1,8 +1,8 @@
 import { BitbucketIcon } from '@atlaskit/logo';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
-import type { AtlasifyNotification, Link } from '../../../types';
+import type { AtlassifyNotification, Link } from '../../../types';
 
-export const mockAtlasifyNotification: AtlasifyNotification[] = [
+export const mockAtlassifyNotification: AtlassifyNotification[] = [
   {
     account: mockAtlassianCloudAccount,
     id: '138661096',
@@ -11,20 +11,20 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
     updated_at: '2024-09-13T21:12:16.662Z',
     entity: {
       title: 'Repository',
-      iconUrl: 'https://github.atlasify.io/favicon.ico' as Link,
-      url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
+      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
+      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
     },
     path: {
       title: 'Repository',
-      iconUrl: 'https://github.atlasify.io/favicon.ico' as Link,
-      url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
+      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
+      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
     },
     product: {
       name: 'bitbucket',
       icon: BitbucketIcon,
     },
     actor: {
-      displayName: 'atlasify-app',
+      displayName: 'atlassify-app',
       avatarURL:
         'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
     },
@@ -39,20 +39,20 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
     updated_at: '2024-09-13T21:12:16.662Z',
     entity: {
       title: 'Repository',
-      iconUrl: 'https://github.atlasify.io/favicon.ico' as Link,
-      url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
+      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
+      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
     },
     path: {
       title: 'Repository',
-      iconUrl: 'https://github.atlasify.io/favicon.ico' as Link,
-      url: 'https://github.atlasify.io/myorg/notifications-test' as Link,
+      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
+      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
     },
     product: {
       name: 'bitbucket',
       icon: BitbucketIcon,
     },
     actor: {
-      displayName: 'atlasify-app',
+      displayName: 'atlassify-app',
       avatarURL:
         'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
     },
@@ -63,5 +63,5 @@ export const mockAtlasifyNotification: AtlasifyNotification[] = [
   },
 ];
 
-export const mockSingleNotification: AtlasifyNotification =
-  mockAtlasifyNotification[0];
+export const mockSingleNotification: AtlassifyNotification =
+  mockAtlassifyNotification[0];

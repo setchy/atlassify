@@ -39,7 +39,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                   hidden=""
                   id="2"
                 >
-                  atlasify-app
+                  atlassify-app
                 </span>
               </div>
             </div>
@@ -103,7 +103,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlasify.io/favicon.ico"
+                    src="https://github.atlassify.io/favicon.ico"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -229,7 +229,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 hidden=""
                 id="2"
               >
-                atlasify-app
+                atlassify-app
               </span>
             </div>
           </div>
@@ -293,7 +293,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                   aria-hidden="true"
                   class="css-13ep12v"
                   data-vc="avatar-image"
-                  src="https://github.atlasify.io/favicon.ico"
+                  src="https://github.atlassify.io/favicon.ico"
                   style="border-radius: 2px;"
                 />
               </span>
@@ -476,7 +476,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                   hidden=""
                   id="8"
                 >
-                  atlasify-app
+                  atlassify-app
                 </span>
               </div>
             </div>
@@ -540,7 +540,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlasify.io/favicon.ico"
+                    src="https://github.atlassify.io/favicon.ico"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -666,7 +666,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                 hidden=""
                 id="8"
               >
-                atlasify-app
+                atlassify-app
               </span>
             </div>
           </div>
@@ -730,7 +730,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
                   aria-hidden="true"
                   class="css-13ep12v"
                   data-vc="avatar-image"
-                  src="https://github.atlasify.io/favicon.ico"
+                  src="https://github.atlassify.io/favicon.ico"
                   style="border-radius: 2px;"
                 />
               </span>

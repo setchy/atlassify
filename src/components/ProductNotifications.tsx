@@ -9,14 +9,14 @@ import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
 import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../context/App';
-import type { AtlasifyNotification } from '../types';
+import type { AtlassifyNotification } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
 import { openExternalLink } from '../utils/comms';
 import { getProductDetails } from '../utils/products';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
-  productNotifications: AtlasifyNotification[];
+  productNotifications: AtlassifyNotification[];
 }
 
 export const ProductNotifications: FC<IProductNotifications> = ({

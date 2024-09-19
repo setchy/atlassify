@@ -88,7 +88,7 @@ export const SettingsRoute: FC = () => {
                     <ModalBody>
                       <p>
                         Please confirm that you want to reset all settings to
-                        the <strong>Atlasify defaults</strong>.
+                        the <strong>Atlassify defaults</strong>.
                       </p>
                     </ModalBody>
                     <ModalFooter>

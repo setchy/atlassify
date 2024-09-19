@@ -12,12 +12,12 @@ const content = [
     id: '1',
     question: 'Something looks wrong - How can I debug?',
     answer:
-      'You can debug Atlasify by pressing:\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nThis will open the dev tools and then you can see any logs, network requests etc.',
+      'You can debug Atlassify by pressing:\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nThis will open the dev tools and then you can see any logs, network requests etc.',
   },
   {
     id: '2',
-    question: 'How can I contribute to Atlasify?',
-    answer: `You can contribute to Atlasify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
+    question: 'How can I contribute to Atlassify?',
+    answer: `You can contribute to Atlassify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
   },
 ];
 

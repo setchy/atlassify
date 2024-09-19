@@ -62,7 +62,7 @@ export const SystemSettings: FC = () => {
             <span className="text-orange-600">
               {Constants.DEFAULT_KEYBOARD_SHORTCUT}
             </span>{' '}
-            to show or hide Atlasify.
+            to show or hide Atlassify.
           </div>
         </InlineMessage>
       </Inline>
@@ -108,8 +108,8 @@ export const SystemSettings: FC = () => {
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
             <p>
-              Use a white Atlasify logo (instead of the default black logo) when
-              all notifications are read.
+              Use a white Atlassify logo (instead of the default black logo)
+              when all notifications are read.
             </p>
             <p>
               This setting is particularly useful for devices which have a

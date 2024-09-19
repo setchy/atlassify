@@ -3,7 +3,7 @@ import { mockSingleNotification } from './api/__mocks__/response-mocks';
 import * as comms from './comms';
 import {
   openAccountProfile,
-  openAtlasifyReleaseNotes,
+  openAtlassifyReleaseNotes,
   openMyNotifications,
   openMyPullRequests,
   openNotification,
@@ -18,10 +18,10 @@ describe('utils/links.ts', () => {
     jest.clearAllMocks();
   });
 
-  it('openAtlasifyReleaseNotes', () => {
-    openAtlasifyReleaseNotes('v1.0.0');
+  it('openAtlassifyReleaseNotes', () => {
+    openAtlassifyReleaseNotes('v1.0.0');
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://github.com/setchy/atlasify/releases/tag/v1.0.0',
+      'https://github.com/setchy/atlassify/releases/tag/v1.0.0',
     );
   });
 

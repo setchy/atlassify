@@ -1,9 +1,9 @@
 import type { Link } from '../types';
 
 export const Constants = {
-  REPO_SLUG: 'setchy/atlasify',
+  REPO_SLUG: 'setchy/atlassify',
 
-  STORAGE_KEY: 'atlasify-storage',
+  STORAGE_KEY: 'atlassify-storage',
 
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
 

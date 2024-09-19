@@ -1,8 +1,8 @@
-import type { Account, AtlasifyNotification, Link } from '../types';
+import type { Account, AtlassifyNotification, Link } from '../types';
 import { openExternalLink } from './comms';
 import { Constants } from './constants';
 
-export function openAtlasifyReleaseNotes(version: string) {
+export function openAtlassifyReleaseNotes(version: string) {
   openExternalLink(
     `https://github.com/${Constants.REPO_SLUG}/releases/tag/${version}` as Link,
   );
@@ -35,6 +35,6 @@ export function openAccountProfile(account: Account) {
   openExternalLink(url.toString() as Link);
 }
 
-export async function openNotification(notification: AtlasifyNotification) {
+export async function openNotification(notification: AtlassifyNotification) {
   openExternalLink(notification.entity.url);
 }

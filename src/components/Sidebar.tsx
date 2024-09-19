@@ -189,58 +189,58 @@ export const Sidebar: FC = () => {
       </div>
 
       <Box paddingBlock="space.200">
-        {isLoggedIn && (
-          <Stack alignInline="center" space="space.150">
-            <Tooltip content="Refresh notifications" position="right">
-              <IconButton
-                label="Refresh notifications"
-                icon={(iconProps) => (
-                  <RefreshIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                  />
-                )}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => refreshNotifications()}
-              />
-            </Tooltip>
-
-            <Tooltip content="Settings" position="right">
-              <IconButton
-                label="Settings"
-                icon={(iconProps) => (
-                  <SettingsIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                  />
-                )}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => toggleSettings()}
-              />
-            </Tooltip>
-          </Stack>
-        )}
-
-        {!isLoggedIn && (
-          <Tooltip content="Quit Atlasify" position="right">
-            <IconButton
-              label="Quit Atlasify"
-              icon={(iconProps) => (
-                <CrossCircleIcon
-                  {...iconProps}
-                  size="medium"
-                  primaryColor="white"
+        <Stack alignInline="center" space="space.150">
+          {isLoggedIn ? (
+            <>
+              <Tooltip content="Refresh notifications" position="right">
+                <IconButton
+                  label="Refresh notifications"
+                  icon={(iconProps) => (
+                    <RefreshIcon
+                      {...iconProps}
+                      size="medium"
+                      primaryColor="white"
+                    />
+                  )}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => refreshNotifications()}
                 />
-              )}
-              shape="circle"
-              onClick={() => quitApp()}
-            />
-          </Tooltip>
-        )}
+              </Tooltip>
+
+              <Tooltip content="Settings" position="right">
+                <IconButton
+                  label="Settings"
+                  icon={(iconProps) => (
+                    <SettingsIcon
+                      {...iconProps}
+                      size="medium"
+                      primaryColor="white"
+                    />
+                  )}
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => toggleSettings()}
+                />
+              </Tooltip>
+            </>
+          ) : (
+            <Tooltip content="Quit Atlassify" position="right">
+              <IconButton
+                label="Quit Atlassify"
+                icon={(iconProps) => (
+                  <CrossCircleIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                  />
+                )}
+                shape="circle"
+                onClick={() => quitApp()}
+              />
+            </Tooltip>
+          )}
+        </Stack>
       </Box>
     </div>
   );

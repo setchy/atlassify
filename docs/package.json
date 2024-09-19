@@ -1,7 +1,7 @@
 {
-  "name": "atlasify-website",
+  "name": "atlassify-website",
   "version": "latest",
-  "description": "The source code of atlasify.io",
+  "description": "The source code of atlassify.io",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/setchy/atlasify"
+    "url": "https://github.com/setchy/atlassify"
   },
   "keywords": [
-    "atlasify",
+    "atlassify",
     "atlassian",
     "notifier",
     "notifications",
@@ -34,9 +34,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/setchy/atlasify/issues"
+    "url": "https://github.com/setchy/atlassify/issues"
   },
-  "homepage": "https://www.atlasify.io/",
+  "homepage": "https://www.atlassify.io/",
   "dependencies": {
     "@astrojs/solid-js": "4.4.2",
     "@astrojs/tailwind": "5.1.1",

@@ -104,7 +104,7 @@ const contextMenu = Menu.buildFromTemplate([
   },
   { type: 'separator' },
   {
-    label: 'Quit Atlasify',
+    label: 'Quit Atlassify',
     accelerator: 'CommandOrControl+Q',
     click: () => {
       app.quit();
@@ -126,10 +126,10 @@ app.whenReady().then(async () => {
   await onFirstRunMaybe();
 
   mb.on('ready', () => {
-    mb.app.setAppUserModelId('com.electron.atlasify');
+    mb.app.setAppUserModelId('com.electron.atlassify');
 
     // Tray configuration
-    mb.tray.setToolTip('Atlasify');
+    mb.tray.setToolTip('Atlassify');
     mb.tray.setIgnoreDoubleClickEvents(true);
     mb.tray.on('right-click', (_event, bounds) => {
       mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
@@ -161,28 +161,28 @@ app.whenReady().then(async () => {
 
   nativeTheme.on('updated', () => {
     if (nativeTheme.shouldUseDarkColors) {
-      mb.window.webContents.send('atlasify:update-theme', 'DARK');
+      mb.window.webContents.send('atlassify:update-theme', 'DARK');
     } else {
-      mb.window.webContents.send('atlasify:update-theme', 'LIGHT');
+      mb.window.webContents.send('atlassify:update-theme', 'LIGHT');
     }
   });
 
   /**
-   * Atlasify custom IPC events
+   * Atlassify custom IPC events
    */
-  ipc.handle('atlasify:version', () => app.getVersion());
+  ipc.handle('atlassify:version', () => app.getVersion());
 
-  ipc.on('atlasify:window-show', () => mb.showWindow());
+  ipc.on('atlassify:window-show', () => mb.showWindow());
 
-  ipc.on('atlasify:window-hide', () => mb.hideWindow());
+  ipc.on('atlassify:window-hide', () => mb.hideWindow());
 
-  ipc.on('atlasify:quit', () => mb.app.quit());
+  ipc.on('atlassify:quit', () => mb.app.quit());
 
-  ipc.on('atlasify:use-alternate-idle-icon', (_, useAlternateIdleIcon) => {
+  ipc.on('atlassify:use-alternate-idle-icon', (_, useAlternateIdleIcon) => {
     shouldUseAlternateIdleIcon = useAlternateIdleIcon;
   });
 
-  ipc.on('atlasify:icon-active', () => {
+  ipc.on('atlassify:icon-active', () => {
     if (!mb.tray.isDestroyed()) {
       // mb.tray.setImage(
       //   updateAvailableMenuItem.visible
@@ -193,7 +193,7 @@ app.whenReady().then(async () => {
     }
   });
 
-  ipc.on('atlasify:icon-idle', () => {
+  ipc.on('atlassify:icon-idle', () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
         // mb.tray.setImage(
@@ -211,14 +211,14 @@ app.whenReady().then(async () => {
     }
   });
 
-  ipc.on('atlasify:update-title', (_, title) => {
+  ipc.on('atlassify:update-title', (_, title) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);
     }
   });
 
   ipc.on(
-    'atlasify:update-keyboard-shortcut',
+    'atlassify:update-keyboard-shortcut',
     (_, { enabled, keyboardShortcut }) => {
       if (!enabled) {
         globalShortcut.unregister(keyboardShortcut);
@@ -235,7 +235,7 @@ app.whenReady().then(async () => {
     },
   );
 
-  ipc.on('atlasify:update-auto-launch', (_, settings) => {
+  ipc.on('atlassify:update-auto-launch', (_, settings) => {
     app.setLoginItemSettings(settings);
   });
 
@@ -258,13 +258,13 @@ app.whenReady().then(async () => {
   autoUpdater.on('update-available', () => {
     log.info('Auto Updater: New update available');
     updateAvailableMenuItem.visible = true;
-    mb.tray.setToolTip('Atlasify\nA new update is available');
+    mb.tray.setToolTip('Atlassify\nA new update is available');
   });
 
   autoUpdater.on('update-downloaded', () => {
     log.info('Auto Updater: Update downloaded');
     updateReadyForInstallMenuItem.visible = true;
-    mb.tray.setToolTip('Atlasify\nA new update is ready to install');
+    mb.tray.setToolTip('Atlassify\nA new update is ready to install');
   });
 
   autoUpdater.on('update-not-available', () => {
@@ -277,7 +277,7 @@ function takeScreenshot() {
   const date = new Date();
   const dateStr = date.toISOString().replace(/:/g, '-');
 
-  const capturedPicFilePath = `${os.homedir()}/${dateStr}-atlasify-screenshot.png`;
+  const capturedPicFilePath = `${os.homedir()}/${dateStr}-atlassify-screenshot.png`;
   mb.window.capturePage().then((img) => {
     fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
       log.info(`Screenshot saved ${capturedPicFilePath}`),
@@ -291,16 +291,16 @@ function resetApp() {
 
   const response = dialog.showMessageBoxSync(mb.window, {
     type: 'warning',
-    title: 'Reset Atlasify',
+    title: 'Reset Atlassify',
     message:
-      'Are you sure you want to reset Atlasify? You will be logged out of all accounts',
+      'Are you sure you want to reset Atlassify? You will be logged out of all accounts',
     buttons: ['Cancel', 'Reset'],
     defaultId: cancelButtonId,
     cancelId: cancelButtonId,
   });
 
   if (response === resetButtonId) {
-    mb.window.webContents.send('atlasify:reset-app');
+    mb.window.webContents.send('atlassify:reset-app');
     mb.app.quit();
   }
 }

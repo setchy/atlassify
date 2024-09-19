@@ -1,7 +1,7 @@
 import {
   type Account,
-  type AtlasifyState,
-  type AtlasifyUser,
+  type AtlassifyState,
+  type AtlassifyUser,
   type AuthState,
   type Link,
   OpenPreference,
@@ -10,7 +10,7 @@ import {
   type Token,
 } from '../types';
 
-export const mockAtlasifyUser: AtlasifyUser = {
+export const mockAtlassifyUser: AtlassifyUser = {
   login: 'atlas',
   name: 'Atlassian',
   id: '123456789',
@@ -21,7 +21,7 @@ export const mockAtlassianCloudAccount: Account = {
   platform: 'Atlassian Cloud',
   method: 'API Token',
   token: 'token-123-456' as Token,
-  user: mockAtlasifyUser,
+  user: mockAtlassifyUser,
 };
 
 export const mockAuth: AuthState = {
@@ -63,7 +63,7 @@ export const mockSettings: SettingsState = {
   ...mockFilters,
 };
 
-export const mockState: AtlasifyState = {
+export const mockState: AtlassifyState = {
   auth: mockAuth,
   settings: mockSettings,
 };

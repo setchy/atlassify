@@ -20,34 +20,34 @@ export function openExternalLink(url: Link): void {
 }
 
 export async function getAppVersion(): Promise<string> {
-  return await ipcRenderer.invoke('atlasify:version');
+  return await ipcRenderer.invoke('atlassify:version');
 }
 
 export function quitApp(): void {
-  ipcRenderer.send('atlasify:quit');
+  ipcRenderer.send('atlassify:quit');
 }
 
 export function showWindow(): void {
-  ipcRenderer.send('atlasify:window-show');
+  ipcRenderer.send('atlassify:window-show');
 }
 
 export function hideWindow(): void {
-  ipcRenderer.send('atlasify:window-hide');
+  ipcRenderer.send('atlassify:window-hide');
 }
 
 export function setAutoLaunch(value: boolean): void {
-  ipcRenderer.send('atlasify:update-auto-launch', {
+  ipcRenderer.send('atlassify:update-auto-launch', {
     openAtLogin: value,
     openAsHidden: value,
   });
 }
 
 export function setAlternateIdleIcon(value: boolean): void {
-  ipcRenderer.send('atlasify:use-alternate-idle-icon', value);
+  ipcRenderer.send('atlassify:use-alternate-idle-icon', value);
 }
 
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
-  ipcRenderer.send('atlasify:update-keyboard-shortcut', {
+  ipcRenderer.send('atlassify:update-keyboard-shortcut', {
     enabled: keyboardShortcut,
     keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
   });
@@ -55,12 +55,12 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
 
 export function updateTrayIcon(notificationsLength = 0): void {
   if (notificationsLength > 0) {
-    ipcRenderer.send('atlasify:icon-active');
+    ipcRenderer.send('atlassify:icon-active');
   } else {
-    ipcRenderer.send('atlasify:icon-idle');
+    ipcRenderer.send('atlassify:icon-idle');
   }
 }
 
 export function updateTrayTitle(title = ''): void {
-  ipcRenderer.send('atlasify:update-title', title);
+  ipcRenderer.send('atlassify:update-title', title);
 }

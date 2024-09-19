@@ -316,7 +316,7 @@ describe('components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTitle('Quit Atlasify'));
+    fireEvent.click(screen.getByTitle('Quit Atlassify'));
 
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });

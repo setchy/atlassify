@@ -1,13 +1,13 @@
 import type {
   AccountNotifications,
-  AtlasifyNotification,
+  AtlassifyNotification,
   SettingsState,
 } from '../types';
 import { getAccountUUID } from './auth/utils';
 
 export function removeNotification(
   settings: SettingsState,
-  notification: AtlasifyNotification,
+  notification: AtlassifyNotification,
   notifications: AccountNotifications[],
 ): AccountNotifications[] {
   if (settings.delayNotificationState) {

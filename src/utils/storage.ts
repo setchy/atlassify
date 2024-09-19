@@ -1,15 +1,15 @@
-import type { AtlasifyState } from '../types';
+import type { AtlassifyState } from '../types';
 import { Constants } from './constants';
 
-export function loadState(): AtlasifyState {
+export function loadState(): AtlassifyState {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
   const { auth, settings } = (existing && JSON.parse(existing)) || {};
   return { auth, settings };
 }
 
-export function saveState(atlasifyState: AtlasifyState) {
-  const auth = atlasifyState.auth;
-  const settings = atlasifyState.settings;
+export function saveState(atlassifyState: AtlassifyState) {
+  const auth = atlassifyState.auth;
+  const settings = atlassifyState.settings;
   const settingsString = JSON.stringify({ auth, settings });
   localStorage.setItem(Constants.STORAGE_KEY, settingsString);
 }
