@@ -1,5 +1,5 @@
 import { mockSettings } from '../../__mocks__/state-mocks';
-import { mockAtlassifyNotification } from '../api/__mocks__/response-mocks';
+import { mockAtlassifyNotifications } from '../api/__mocks__/response-mocks';
 import { filterNotifications } from './filters';
 
 describe('utils/notifications/filters.ts', () => {
@@ -9,42 +9,42 @@ describe('utils/notifications/filters.ts', () => {
 
   describe('filterNotifications', () => {
     it('should filter notifications by read state when provided', async () => {
-      mockAtlassifyNotification[0].readState = 'read';
-      mockAtlassifyNotification[1].readState = 'unread';
-      const result = filterNotifications(mockAtlassifyNotification, {
+      mockAtlassifyNotifications[0].readState = 'read';
+      mockAtlassifyNotifications[1].readState = 'unread';
+      const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
         filterReadStates: ['unread'],
       });
 
-      expect(mockAtlassifyNotification.length).toBe(2);
+      expect(mockAtlassifyNotifications.length).toBe(2);
       expect(result.length).toBe(1);
-      expect(result).toEqual([mockAtlassifyNotification[1]]);
+      expect(result).toEqual([mockAtlassifyNotifications[1]]);
     });
 
     it('should filter notifications by category when provided', async () => {
-      mockAtlassifyNotification[0].category = 'watching';
-      mockAtlassifyNotification[1].category = 'direct';
-      const result = filterNotifications(mockAtlassifyNotification, {
+      mockAtlassifyNotifications[0].category = 'watching';
+      mockAtlassifyNotifications[1].category = 'direct';
+      const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
         filterCategories: ['direct'],
       });
 
-      expect(mockAtlassifyNotification.length).toBe(2);
+      expect(mockAtlassifyNotifications.length).toBe(2);
       expect(result.length).toBe(1);
-      expect(result).toEqual([mockAtlassifyNotification[1]]);
+      expect(result).toEqual([mockAtlassifyNotifications[1]]);
     });
 
     it('should filter notifications by product when provided', async () => {
-      mockAtlassifyNotification[0].product.name = 'bitbucket';
-      mockAtlassifyNotification[1].product.name = 'compass';
-      const result = filterNotifications(mockAtlassifyNotification, {
+      mockAtlassifyNotifications[0].product.name = 'bitbucket';
+      mockAtlassifyNotifications[1].product.name = 'compass';
+      const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
         filterProducts: ['compass'],
       });
 
-      expect(mockAtlassifyNotification.length).toBe(2);
+      expect(mockAtlassifyNotifications.length).toBe(2);
       expect(result.length).toBe(1);
-      expect(result).toEqual([mockAtlassifyNotification[1]]);
+      expect(result).toEqual([mockAtlassifyNotifications[1]]);
     });
   });
 });

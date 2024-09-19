@@ -27,4 +27,39 @@ describe('utils/notifications/remove.ts', () => {
 
     expect(result[0].notifications.length).toBe(1);
   });
+
+  it('should skip notification removal if none match', () => {
+    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+
+    const result = removeNotifications(
+      { ...mockSettings },
+      [],
+      mockSingleAccountNotifications,
+    );
+
+    expect(result[0].notifications.length).toBe(1);
+  });
+
+  it('should skip notification removal if no matching accounts found', () => {
+    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+
+    const result = removeNotifications(
+      { ...mockSettings },
+      [
+        {
+          ...mockSingleNotification,
+          account: {
+            ...mockSingleNotification.account,
+            user: {
+              ...mockSingleNotification.account.user,
+              id: 'some-unknown-account',
+            },
+          },
+        },
+      ],
+      mockSingleAccountNotifications,
+    );
+
+    expect(result[0].notifications.length).toBe(1);
+  });
 });

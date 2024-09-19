@@ -1,11 +1,11 @@
 import { type FC, useContext } from 'react';
 
+import Badge from '@atlaskit/badge';
 import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
-import Badge from '@atlaskit/badge';
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
 import type { Category, Product, ReadState } from '../utils/api/types';
@@ -97,6 +97,7 @@ export const FiltersRoute: FC = () => {
                       <Checkbox
                         key={category}
                         name={category}
+                        title={category}
                         label={formatProperCase(categoryDetails.name)}
                         isChecked={shouldShowCategory(category)}
                         onChange={(evt) =>
@@ -127,6 +128,7 @@ export const FiltersRoute: FC = () => {
                       <Checkbox
                         key={readState}
                         name={readState}
+                        title={readState}
                         label={formatProperCase(
                           getReadStateDetails(readState).name,
                         )}
@@ -160,6 +162,7 @@ export const FiltersRoute: FC = () => {
                       <Checkbox
                         name={product}
                         label={formatProperCase(productDetails.name)}
+                        title={product}
                         isChecked={shouldShowProduct(product)}
                         onChange={(evt) =>
                           updateProductFilter(product, evt.target.checked)

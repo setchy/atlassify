@@ -6,6 +6,7 @@ import {
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
+import type { ReadState } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { NotificationRow } from './NotificationRow';
@@ -162,6 +163,33 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByTitle('Mark as read'));
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('should mark a notification as unread', () => {
+      const markNotificationsUnreadMock = jest.fn();
+
+      const props = {
+        notification: {
+          ...mockSingleNotification,
+          unread: false,
+          readState: 'read' as ReadState,
+        },
+        account: mockAtlassianCloudAccount,
+      };
+
+      render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+            markNotificationsUnread: markNotificationsUnreadMock,
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
+
+      fireEvent.click(screen.getByTitle('Mark as unread'));
+      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
     });
   });
 });

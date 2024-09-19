@@ -53,22 +53,28 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         backgroundColor="color.background.brand.subtlest.hovered"
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Button
-            appearance="subtle"
-            onClick={(event: MouseEvent<HTMLElement>) => {
-              if (productDetails.home) {
-                // Don't trigger onClick of parent element.
-                event.stopPropagation();
-                openExternalLink(productDetails.home);
-              }
-            }}
+          <Tooltip
+            content={productDetails.home ? 'Open product home' : ''}
+            position="bottom"
           >
-            <Inline space="space.100" alignBlock="center">
-              <productNotification.icon size="xsmall" appearance="brand" />
-              <span className="capitalize">{productNotification.name}</span>
-              <Badge max={false}>{productNotifications.length}</Badge>
-            </Inline>{' '}
-          </Button>
+            <Button
+              testId="product-home-button"
+              appearance="subtle"
+              onClick={(event: MouseEvent<HTMLElement>) => {
+                if (productDetails.home) {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openExternalLink(productDetails.home);
+                }
+              }}
+            >
+              <Inline space="space.100" alignBlock="center">
+                <productNotification.icon size="xsmall" appearance="brand" />
+                <span className="capitalize">{productNotification.name}</span>
+                <Badge max={false}>{productNotifications.length}</Badge>
+              </Inline>{' '}
+            </Button>
+          </Tooltip>
 
           <Inline space="space.100">
             <Tooltip
@@ -77,6 +83,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label="Mark all product notifications as read"
+                title="Mark all product notifications as read"
                 icon={(iconProps) => (
                   <HipchatMediaAttachmentCountIcon
                     {...iconProps}
@@ -102,6 +109,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label={toggleProductNotificationsLabel}
+                title={toggleProductNotificationsLabel}
                 icon={ChevronIcon}
                 shape="circle"
                 spacing="compact"
