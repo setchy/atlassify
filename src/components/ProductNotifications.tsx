@@ -11,6 +11,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../context/App';
 import type { AtlassifyNotification } from '../types';
 import { openExternalLink } from '../utils/comms';
+import { formatProperCase } from '../utils/helpers';
 import { getProductDetails } from '../utils/products';
 import { NotificationRow } from './NotificationRow';
 
@@ -54,8 +55,12 @@ export const ProductNotifications: FC<IProductNotifications> = ({
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip
-            content={productDetails.home ? 'Open product home' : ''}
-            position="bottom"
+            content={
+              productDetails.home
+                ? `Open ${formatProperCase(productDetails.name)}`
+                : ''
+            }
+            position="right"
           >
             <Button
               appearance="subtle"

@@ -4,13 +4,13 @@ A list of "things" to improve
 
 ## Now
 - [ ] fix unit tests - re-enable those that are skipped
-- [ ] improve test coverage
 
 
 ## Soon
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
 - [ ] clear out all TODOs in this project
+- [ ] fix root of `findDOMNode is deprecated and will be removed in the next major release.` console error
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
