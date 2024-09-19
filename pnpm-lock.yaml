@@ -11,6 +11,9 @@ importers:
       '@atlaskit/modal-dialog':
         specifier: 12.16.0
         version: 12.16.0(@types/react@18.3.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/spinner':
+        specifier: 16.3.1
+        version: 16.3.1(@types/react@18.3.7)(react@18.3.1)
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0

@@ -12,6 +12,7 @@ import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
@@ -29,6 +30,7 @@ export const Sidebar: FC = () => {
     isLoggedIn,
     settings,
     updateSetting,
+    status,
   } = useContext(AppContext);
 
   const toggleFilters = () => {
@@ -195,16 +197,25 @@ export const Sidebar: FC = () => {
               <Tooltip content="Refresh notifications" position="right">
                 <IconButton
                   label="Refresh notifications"
-                  icon={(iconProps) => (
-                    <RefreshIcon
-                      {...iconProps}
-                      size="medium"
-                      primaryColor="white"
-                    />
-                  )}
+                  icon={(iconProps) =>
+                    status === 'loading' ? (
+                      <Spinner
+                        label="Refresh notifications"
+                        size={'medium'}
+                        appearance="invert"
+                      />
+                    ) : (
+                      <RefreshIcon
+                        {...iconProps}
+                        size="medium"
+                        primaryColor="white"
+                      />
+                    )
+                  }
                   appearance="subtle"
                   shape="circle"
                   onClick={() => refreshNotifications()}
+                  isDisabled={status === 'loading'}
                 />
               </Tooltip>
 

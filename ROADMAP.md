@@ -11,9 +11,7 @@ A list of "things" to improve
 - [ ] improve test coverage
 - [ ] make filters a dropdown overlay
 - [ ] theme: restore ability to toggle theme (DARK and System)
-- [ ] animate refresh icon
 - [ ] badge counts for each filter group
-- [ ] fix mark as read (product and account level) animation and state removal
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
