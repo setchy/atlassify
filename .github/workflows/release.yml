@@ -25,12 +25,12 @@ jobs:
       - run: pnpm build
       - run: pnpm make:macos --publish onTagOrDraft
         env:
-          APPLE_ID_USERNAME: ${{ secrets.appleid_username }}
-          APPLE_ID_PASSWORD: ${{ secrets.appleid_password }}
-          APPLE_TEAM_ID: ${{ secrets.appleid_teamid }}
-          CSC_LINK: ${{ secrets.csc_link }}
-          CSC_KEY_PASSWORD: ${{ secrets.csc_key_password }}
-          GH_TOKEN: ${{ secrets.github_token }}
+          APPLE_ID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLEID_TEAMID }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NOTARIZE: true
       - uses: actions/upload-artifact@v4
         with:
@@ -53,7 +53,7 @@ jobs:
       - run: pnpm build
       - run: pnpm make:win --publish onTagOrDraft
         env:
-          GH_TOKEN: ${{ secrets.github_token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-win
@@ -75,7 +75,7 @@ jobs:
       - run: pnpm build
       - run: pnpm make:linux --publish onTagOrDraft
         env:
-          GH_TOKEN: ${{ secrets.github_token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-linux
