@@ -8,10 +8,10 @@
 
 ### Download
 
-You can download Atlassify for **free** from the website [www.atlassify.io][website], and (hopefully soon) via [Homebrew Cask][brew].
+You can download Atlassify for **free** from the website [www.atlassify.io][website], or via [Homebrew][brew].
 
 ```shell
-brew install --cask atlassify
+brew install setchy/atlassify/atlassify
 ```
 
 Atlassify supports macOS, Windows and Linux.
