@@ -5,6 +5,7 @@ import type {
 } from '../../types';
 import { getAccountUUID } from '../auth/utils';
 import { hideWindow, showWindow } from '../comms';
+import { formatNotificationFooterText } from '../helpers';
 import { openNotification } from '../links';
 import { isWindows } from '../platform';
 import { setTrayIconColor } from './notifications';
@@ -63,8 +64,8 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = isWindows() ? '' : notification.entity.title;
-    body = notification.title;
+    title = isWindows() ? '' : notification.title;
+    body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
   } else {
     title = 'Atlassify';
     body = `You have ${notifications.length} notifications.`;
