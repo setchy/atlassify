@@ -130,6 +130,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   />
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -194,6 +203,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   </g>
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
           </div>
         </div>
@@ -212,76 +230,102 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
           <div
             class="css-k5cxwk"
           >
-            <label
-              class="css-k8x29e"
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="unread"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="unread"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Unread
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                class="css-1wkl091"
               >
-                Unread
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
               </span>
-            </label>
-            <label
-              class="css-k8x29e"
+            </div>
+            <div
+              class="css-bsfd3j"
             >
-              <input
-                class="css-f3myyk"
-                name="read"
-                tabindex="0"
-                type="checkbox"
-                value=""
-              />
-              <svg
-                class="css-1dr55qw"
-                role="presentation"
-                style="fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
+              <label
+                class="css-k8x29e"
               >
-                <g
-                  fill-rule="evenodd"
+                <input
+                  class="css-f3myyk"
+                  name="read"
+                  tabindex="0"
+                  type="checkbox"
+                  value=""
+                />
+                <svg
+                  class="css-1dr55qw"
+                  role="presentation"
+                  style="fill: var(--checkbox-tick-color);"
+                  viewBox="0 0 24 24"
                 >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
+                  <g
+                    fill-rule="evenodd"
+                  >
+                    <rect
+                      fill="currentColor"
+                      height="12"
+                      rx="2"
+                      width="12"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="css-1odt9zb"
+                >
+                  Read
+                </span>
+              </label>
               <span
-                class="css-1odt9zb"
+                class="css-1wkl091"
               >
-                Read
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
               </span>
-            </label>
+            </div>
           </div>
         </div>
       </div>
@@ -361,6 +405,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -426,6 +479,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                 
     
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -488,6 +550,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   
     
                 </svg>
+              </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
               </span>
             </div>
             <div
@@ -552,6 +623,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -615,6 +695,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -677,6 +766,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   
     
                 </svg>
+              </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
               </span>
             </div>
             <div
@@ -752,6 +850,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
   
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -817,6 +924,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
     
                 </svg>
               </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
+              </span>
             </div>
             <div
               class="css-bsfd3j"
@@ -879,6 +995,15 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
                   
     
                 </svg>
+              </span>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  0
+                </span>
               </span>
             </div>
           </div>

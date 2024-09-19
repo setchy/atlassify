@@ -5,6 +5,7 @@ import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 
+import Badge from '@atlaskit/badge';
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
 import type { Category, Product, ReadState } from '../utils/api/types';
@@ -12,13 +13,17 @@ import {
   CATEGORIES,
   READ_STATES,
   getCategoryDetails,
+  getCategoryFilterCount,
+  getProductFilterCount,
   getReadStateDetails,
+  getReadStateFilterCount,
 } from '../utils/filters';
 import { formatProperCase } from '../utils/helpers';
 import { PRODUCTS, getProductDetails } from '../utils/products';
 
 export const FiltersRoute: FC = () => {
-  const { settings, clearFilters, updateSetting } = useContext(AppContext);
+  const { settings, clearFilters, updateSetting, notifications } =
+    useContext(AppContext);
 
   const shouldShowCategory = (category: Category) => {
     return settings.filterCategories.includes(category);
@@ -99,6 +104,9 @@ export const FiltersRoute: FC = () => {
                         }
                       />
                       <categoryDetails.icon {...categoryIconProps} />
+                      <Badge max={false}>
+                        {getCategoryFilterCount(notifications, category)}
+                      </Badge>
                     </Inline>
                   );
                 })}
@@ -111,17 +119,26 @@ export const FiltersRoute: FC = () => {
               <Box>
                 {Object.keys(READ_STATES).map((readState: ReadState) => {
                   return (
-                    <Checkbox
+                    <Inline
                       key={readState}
-                      name={readState}
-                      label={formatProperCase(
-                        getReadStateDetails(readState).name,
-                      )}
-                      isChecked={shouldShowReadState(readState)}
-                      onChange={(evt) =>
-                        updateReadStateFilter(readState, evt.target.checked)
-                      }
-                    />
+                      space="space.050"
+                      alignBlock="center"
+                    >
+                      <Checkbox
+                        key={readState}
+                        name={readState}
+                        label={formatProperCase(
+                          getReadStateDetails(readState).name,
+                        )}
+                        isChecked={shouldShowReadState(readState)}
+                        onChange={(evt) =>
+                          updateReadStateFilter(readState, evt.target.checked)
+                        }
+                      />
+                      <Badge max={false}>
+                        {getReadStateFilterCount(notifications, readState)}
+                      </Badge>
+                    </Inline>
                   );
                 })}
               </Box>
@@ -149,6 +166,9 @@ export const FiltersRoute: FC = () => {
                         }
                       />
                       <productDetails.icon {...productIconProps} />
+                      <Badge max={false}>
+                        {getProductFilterCount(notifications, product)}
+                      </Badge>
                     </Inline>
                   );
                 })}
