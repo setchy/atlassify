@@ -8,7 +8,10 @@ import type {
   AtlassifyState,
   Status,
 } from '../types';
-import { markNotificationsAsRead } from '../utils/api/client';
+import {
+  markNotificationsAsRead,
+  markNotificationsAsUnread,
+} from '../utils/api/client';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
@@ -21,6 +24,10 @@ interface NotificationsState {
   removeAccountNotifications: (account: Account) => Promise<void>;
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
   markNotificationsRead: (
+    state: AtlassifyState,
+    notifications: AtlassifyNotification[],
+  ) => Promise<void>;
+  markNotificationsUnread: (
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
@@ -116,6 +123,39 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
+  const markNotificationsUnread = useCallback(
+    async (
+      _state: AtlassifyState,
+      unreadNotifications: AtlassifyNotification[],
+    ) => {
+      setStatus('loading');
+
+      const account = unreadNotifications[0].account;
+      const notificationIDs = unreadNotifications.map(
+        (notification) => notification.id,
+      );
+
+      try {
+        await markNotificationsAsUnread(account, notificationIDs);
+
+        // FIXME
+        // const updatedNotifications = unreadNotifications.map((notification) => {
+        //   notification.unread = true;
+        //   notification.readState = 'unread';
+        //   return notification;
+        // });
+
+        // setNotifications(updatedNotifications);
+        // setTrayIconColor(updatedNotifications);
+      } catch (err) {
+        log.error('Error occurred while marking notifications as read', err);
+      }
+
+      setStatus('success');
+    },
+    [notifications],
+  );
+
   return {
     status,
     globalError,
@@ -124,5 +164,6 @@ export const useNotifications = (): NotificationsState => {
     removeAccountNotifications,
     fetchNotifications,
     markNotificationsRead,
+    markNotificationsUnread,
   };
 };

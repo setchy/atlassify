@@ -98,8 +98,8 @@ interface AppContextState {
   markNotificationsRead: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
-  markNotificationUnread: (
-    notification: AtlassifyNotification,
+  markNotificationsUnread: (
+    notifications: AtlassifyNotification[],
   ) => Promise<void>;
 
   settings: SettingsState;
@@ -120,6 +120,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     status,
     globalError,
     markNotificationsRead,
+    markNotificationsUnread,
   } = useNotifications();
 
   useEffect(() => {
@@ -257,6 +258,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationsRead],
   );
 
+  const markNotificationsUnreadWithAccounts = useCallback(
+    async (notifications: AtlassifyNotification[]) =>
+      await markNotificationsUnread({ auth, settings }, notifications),
+    [auth, settings, markNotificationsUnread],
+  );
+
   return (
     <AppContext.Provider
       value={{
@@ -272,6 +279,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         fetchNotifications: fetchNotificationsWithAccounts,
 
         markNotificationsRead: markNotificationsReadWithAccounts,
+        markNotificationsUnread: markNotificationsUnreadWithAccounts,
 
         settings,
         clearFilters,
