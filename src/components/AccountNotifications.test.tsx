@@ -5,7 +5,7 @@ import {
 } from '../__mocks__/state-mocks';
 import { ensureStableEmojis, mockDirectoryPath } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
-import { mockAtlassifyNotification } from '../utils/api/__mocks__/response-mocks';
+import { mockAtlassifyNotifications } from '../utils/api/__mocks__/response-mocks';
 import * as links from '../utils/links';
 import { AccountNotifications } from './AccountNotifications';
 
@@ -22,7 +22,7 @@ describe('components/AccountNotifications.tsx', () => {
   it('should render itself - group notifications by products', () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotification,
+      notifications: mockAtlassifyNotifications,
       error: null,
     };
 
@@ -41,7 +41,7 @@ describe('components/AccountNotifications.tsx', () => {
   it('should render itself - group notifications by date', () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotification,
+      notifications: mockAtlassifyNotifications,
       error: null,
     };
 
@@ -121,7 +121,7 @@ describe('components/AccountNotifications.tsx', () => {
   it.skip('should toggle account notifications visibility', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      notifications: mockAtlassifyNotification,
+      notifications: mockAtlassifyNotifications,
       error: null,
     };
 

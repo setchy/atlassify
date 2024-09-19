@@ -2,7 +2,7 @@ import { BitbucketIcon } from '@atlaskit/logo';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
 import type { AtlassifyNotification, Link } from '../../../types';
 
-export const mockAtlassifyNotification: AtlassifyNotification[] = [
+export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {
     account: mockAtlassianCloudAccount,
     id: '138661096',
@@ -64,4 +64,4 @@ export const mockAtlassifyNotification: AtlassifyNotification[] = [
 ];
 
 export const mockSingleNotification: AtlassifyNotification =
-  mockAtlassifyNotification[0];
+  mockAtlassifyNotifications[0];
