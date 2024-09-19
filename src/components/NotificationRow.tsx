@@ -27,7 +27,8 @@ export const NotificationRow: FC<INotificationRow> = ({
   isAnimated = false,
   isRead = false,
 }: INotificationRow) => {
-  const { markNotificationsRead, settings } = useContext(AppContext);
+  const { markNotificationsRead, markNotificationsUnread, settings } =
+    useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
 
@@ -121,27 +122,49 @@ export const NotificationRow: FC<INotificationRow> = ({
         </div>
       </div>
 
-      {!animateExit && !isRead && notification.unread && (
-        <Flex alignItems="center">
-          <Tooltip content="Mark as read" position="left">
-            <IconButton
-              label="Mark as read"
-              title="Mark as read"
-              icon={(iconProps) => (
-                <HipchatMediaAttachmentCountIcon {...iconProps} size="small" />
-              )}
-              shape="circle"
-              spacing="compact"
-              appearance="subtle"
-              onClick={() => {
-                setAnimateExit(!settings.delayNotificationState);
-                setShowAsRead(settings.delayNotificationState);
-                markNotificationsRead([notification]);
-              }}
-            />
-          </Tooltip>
-        </Flex>
-      )}
+      {!animateExit &&
+        (notification.unread ? (
+          <Flex alignItems="center">
+            <Tooltip content="Mark as read" position="left">
+              <IconButton
+                label="Mark as read"
+                title="Mark as read"
+                icon={(iconProps) => (
+                  <HipchatMediaAttachmentCountIcon
+                    {...iconProps}
+                    size="small"
+                  />
+                )}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+                onClick={() => {
+                  setAnimateExit(!settings.delayNotificationState);
+                  setShowAsRead(settings.delayNotificationState);
+                  markNotificationsRead([notification]);
+                }}
+              />
+            </Tooltip>
+          </Flex>
+        ) : (
+          <Flex alignItems="center">
+            <Tooltip content="Mark as unread" position="left">
+              <IconButton
+                label="Mark as unread"
+                title="Mark as unread"
+                icon={() => null}
+                shape="circle"
+                spacing="compact"
+                appearance="subtle"
+                onClick={() => {
+                  markNotificationsUnread([notification]);
+                  notification.unread = true;
+                  notification.readState = 'unread';
+                }}
+              />
+            </Tooltip>
+          </Flex>
+        ))}
     </div>
   );
 };
