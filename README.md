@@ -32,8 +32,10 @@ For more information, see [LICENSE](LICENSE).
 
 ### Attribution
 
-1. [Gitify][attribution-gitify]
-2. [Atlassian Design System][attribution-atlassian]
+I would like to acknowledge the following projects and resources that have inspired and contributed to the development of Atlassify:
+
+1. [Gitify][attribution-gitify] - An open-source GitHub notification app which I also maintain and served as an launchpad for Atlassify.
+2. [Atlassian Design System][attribution-atlassian] - The design principles and components from Atlassian that helped shape the user interface of Atlassify.
 
 
 <!-- LINK LABELS -->
