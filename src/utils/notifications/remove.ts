@@ -14,6 +14,10 @@ export function removeNotifications(
     return allNotifications;
   }
 
+  if (notificationsToRemove.length === 0) {
+    return allNotifications;
+  }
+
   const removeNotificationAccount = notificationsToRemove[0].account;
   const removeNotificationIDs = notificationsToRemove.map(
     (notification) => notification.id,
