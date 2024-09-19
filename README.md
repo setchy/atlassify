@@ -1,6 +1,6 @@
 # Atlassify 
 
-[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases] [![Homebrew Cask][homebrew-cask-badge]][homebrew-cask]
+[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases]
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
@@ -47,7 +47,6 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-website]: https://github.com/setchy/atlassify-website
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls
 [brew]: https://brew.sh/
-[homebrew-cask]: https://formulae.brew.sh/cask/atlassify
 [coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
@@ -62,7 +61,6 @@ I would like to acknowledge the following projects and resources that have inspi
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/setchy/atlassify?logo=github
 [github-release-badge]: https://img.shields.io/github/v/release/setchy/atlassify?logo=github
-[homebrew-cask-badge]: https://img.shields.io/homebrew/cask/v/atlassify?logo=homebrew
 [renovate]: https://renovatebot.com/
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
 
