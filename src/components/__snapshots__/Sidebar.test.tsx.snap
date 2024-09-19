@@ -117,54 +117,58 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
           class="css-sitfir"
         >
           <div
-            role="presentation"
+            class="css-bcf5ys"
           >
-            <button
-              class=" css-1lwcrd3"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-1lwcrd3"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1afrefi"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <g
-                      fill-rule="evenodd"
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
-                  </svg>
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          r="10"
+                        />
+                        <path
+                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                          fill="inherit"
+                        />
+                        <path
+                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                          fill="inherit"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Quit Atlassify
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Quit Atlasify
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -283,54 +287,58 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
         class="css-sitfir"
       >
         <div
-          role="presentation"
+          class="css-bcf5ys"
         >
-          <button
-            class=" css-1lwcrd3"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-1lwcrd3"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1afrefi"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1afrefi"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <g
-                    fill-rule="evenodd"
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      r="10"
-                    />
-                    <path
-                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                      fill="inherit"
-                    />
-                    <path
-                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                      fill="inherit"
-                    />
-                  </g>
-                </svg>
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        r="10"
+                      />
+                      <path
+                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                        fill="inherit"
+                      />
+                      <path
+                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                        fill="inherit"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Quit Atlassify
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Quit Atlasify
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -506,54 +514,58 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
           class="css-sitfir"
         >
           <div
-            role="presentation"
+            class="css-bcf5ys"
           >
-            <button
-              class=" css-1lwcrd3"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-1lwcrd3"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-1afrefi"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <g
-                      fill-rule="evenodd"
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
-                  </svg>
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          r="10"
+                        />
+                        <path
+                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                          fill="inherit"
+                        />
+                        <path
+                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                          fill="inherit"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Quit Atlassify
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Quit Atlasify
-                </span>
-              </span>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -672,54 +684,58 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
         class="css-sitfir"
       >
         <div
-          role="presentation"
+          class="css-bcf5ys"
         >
-          <button
-            class=" css-1lwcrd3"
-            type="button"
+          <div
+            role="presentation"
           >
-            <span
-              class=" css-1spmf3f"
+            <button
+              class=" css-1lwcrd3"
+              type="button"
             >
               <span
-                aria-hidden="true"
-                class="css-1afrefi"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class=" css-1spmf3f"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-hidden="true"
+                  class="css-1afrefi"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
-                  <g
-                    fill-rule="evenodd"
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      fill="currentcolor"
-                      r="10"
-                    />
-                    <path
-                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                      fill="inherit"
-                    />
-                    <path
-                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                      fill="inherit"
-                    />
-                  </g>
-                </svg>
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        r="10"
+                      />
+                      <path
+                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                        fill="inherit"
+                      />
+                      <path
+                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                        fill="inherit"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Quit Atlassify
+                </span>
               </span>
-              <span
-                class="css-b5o75w"
-              >
-                Quit Atlasify
-              </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>

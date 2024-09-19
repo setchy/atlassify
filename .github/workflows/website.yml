@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Website
 
 on:
   # Trigger the workflow every time you push to the `main` branch

@@ -2,8 +2,8 @@ import log from 'electron-log';
 import type {
   Account,
   AccountNotifications,
-  AtlasifyNotification,
-  AtlasifyState,
+  AtlassifyNotification,
+  AtlassifyState,
   SettingsState,
 } from '../types';
 import { getNotificationsForUser } from './api/client';
@@ -37,7 +37,7 @@ export function hasMoreNotifications(notifications: AccountNotifications[]) {
 export const triggerNativeNotifications = (
   previousNotifications: AccountNotifications[],
   newNotifications: AccountNotifications[],
-  state: AtlasifyState,
+  state: AtlassifyState,
 ) => {
   const diffNotifications = newNotifications
     .map((accountNotifications) => {
@@ -81,7 +81,7 @@ export const triggerNativeNotifications = (
 };
 
 export const raiseNativeNotification = (
-  notifications: AtlasifyNotification[],
+  notifications: AtlassifyNotification[],
 ) => {
   let title: string;
   let body: string;
@@ -91,7 +91,7 @@ export const raiseNativeNotification = (
     title = isWindows() ? '' : notification.title;
     body = notification.entity.title; // TODO Confirm this mapping
   } else {
-    title = 'Atlasify';
+    title = 'Atlassify';
     body = `You have ${notifications.length} notifications.`;
   }
 
@@ -113,12 +113,12 @@ export const raiseNativeNotification = (
 };
 
 export const raiseSoundNotification = () => {
-  const audio = new Audio('../../assets/sounds/tone.wav');
+  const audio = new Audio('../../assets/sounds/notification.wav');
   audio.volume = 0.2;
   audio.play();
 };
 
-function getNotifications(state: AtlasifyState) {
+function getNotifications(state: AtlassifyState) {
   return state.auth.accounts.map((account) => {
     return {
       account,
@@ -128,7 +128,7 @@ function getNotifications(state: AtlasifyState) {
 }
 
 export async function getAllNotifications(
-  state: AtlasifyState,
+  state: AtlassifyState,
 ): Promise<AccountNotifications[]> {
   const responses = await Promise.all([...getNotifications(state)]);
 
@@ -142,7 +142,7 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
-          let notifications = mapAtlassianNotificationsToAtlasifyNotifications(
+          let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
             accountNotifications.account,
             rawNotifications,
           );
@@ -175,10 +175,10 @@ export async function getAllNotifications(
   return notifications;
 }
 
-export function mapAtlassianNotificationsToAtlasifyNotifications(
+export function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
   notifications: AtlassianNotification[],
-): AtlasifyNotification[] {
+): AtlassifyNotification[] {
   return notifications?.map((notification: AtlassianNotification) => ({
     // TODO Improve the fidelity of this mapping
     id: notification.headNotification.notificationId,
@@ -197,9 +197,9 @@ export function mapAtlassianNotificationsToAtlasifyNotifications(
 }
 
 export function filterNotifications(
-  notifications: AtlasifyNotification[],
+  notifications: AtlassifyNotification[],
   settings: SettingsState,
-): AtlasifyNotification[] {
+): AtlassifyNotification[] {
   return notifications.filter((notification) => {
     if (
       settings.filterCategories.length > 0 &&

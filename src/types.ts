@@ -23,7 +23,7 @@ export interface Account {
   method: AuthMethod;
   platform: PlatformType;
   token: Token;
-  user: AtlasifyUser;
+  user: AtlassifyUser;
 }
 
 export type SettingsValue =
@@ -68,7 +68,7 @@ interface FilterSettingsState {
   filterProducts: Product[];
 }
 
-export interface AtlasifyState {
+export interface AtlassifyState {
   auth?: AuthState;
   settings?: SettingsState;
 }
@@ -91,12 +91,12 @@ export type RadioGroupItem = {
 
 export interface AccountNotifications {
   account: Account;
-  notifications: AtlasifyNotification[];
+  notifications: AtlassifyNotification[];
   hasNextPage: boolean;
-  error: AtlasifyError | null;
+  error: AtlassifyError | null;
 }
 
-export interface AtlasifyNotification {
+export interface AtlassifyNotification {
   id: string;
   title: string;
   readState: ReadState;
@@ -126,14 +126,14 @@ export interface AtlasifyNotification {
   account: Account;
 }
 
-export interface AtlasifyUser {
+export interface AtlassifyUser {
   login: string;
   name: string | null;
   avatar: Link | null;
   id: string;
 }
 
-export interface AtlasifyError {
+export interface AtlassifyError {
   title: string;
   descriptions: string[];
   emojis: string[];

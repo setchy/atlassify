@@ -1,6 +1,6 @@
-# atlasify.io 
+# atlassify.io 
 
-> The source code for our atlasify.io website
+> The source code for our atlassify.io website
 
 > Made with Astro.
 

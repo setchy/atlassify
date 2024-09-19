@@ -1,6 +1,6 @@
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 import { defaultSettings } from '../context/App';
-import type { AtlasifyNotification, SettingsState } from '../types';
+import type { AtlassifyNotification, SettingsState } from '../types';
 
 export function formatProperCase(text: string) {
   return text.replace(/\w+/g, (word) => {
@@ -9,12 +9,12 @@ export function formatProperCase(text: string) {
   });
 }
 
-export function getRepositoryName(notification: AtlasifyNotification): string {
+export function getRepositoryName(notification: AtlassifyNotification): string {
   return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 
 export function formatNotificationFooterText(
-  notification: AtlasifyNotification,
+  notification: AtlassifyNotification,
 ): string {
   if (notification.path?.title) {
     return notification.path.title;
@@ -29,7 +29,7 @@ export function formatNotificationFooterText(
 }
 
 export function formatNotificationUpdatedAt(
-  notification: AtlasifyNotification,
+  notification: AtlassifyNotification,
 ): string {
   try {
     return formatDistanceToNowStrict(parseISO(notification.updated_at), {

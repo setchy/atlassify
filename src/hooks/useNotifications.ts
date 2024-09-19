@@ -3,9 +3,9 @@ import { useCallback, useState } from 'react';
 import type {
   Account,
   AccountNotifications,
-  AtlasifyError,
-  AtlasifyNotification,
-  AtlasifyState,
+  AtlassifyError,
+  AtlassifyNotification,
+  AtlassifyState,
   Status,
 } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
@@ -20,22 +20,22 @@ import { removeNotifications } from '../utils/remove-notifications';
 interface NotificationsState {
   notifications: AccountNotifications[];
   removeAccountNotifications: (account: Account) => Promise<void>;
-  fetchNotifications: (state: AtlasifyState) => Promise<void>;
+  fetchNotifications: (state: AtlassifyState) => Promise<void>;
   markNotificationRead: (
-    state: AtlasifyState,
-    notification: AtlasifyNotification,
+    state: AtlassifyState,
+    notification: AtlassifyNotification,
   ) => Promise<void>;
   markProductNotificationsRead: (
-    state: AtlasifyState,
-    notification: AtlasifyNotification,
+    state: AtlassifyState,
+    notification: AtlassifyNotification,
   ) => Promise<void>;
   status: Status;
-  globalError: AtlasifyError;
+  globalError: AtlassifyError;
 }
 
 export const useNotifications = (): NotificationsState => {
   const [status, setStatus] = useState<Status>('success');
-  const [globalError, setGlobalError] = useState<AtlasifyError>();
+  const [globalError, setGlobalError] = useState<AtlassifyError>();
 
   const [notifications, setNotifications] = useState<AccountNotifications[]>(
     [],
@@ -57,7 +57,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const fetchNotifications = useCallback(
-    async (state: AtlasifyState) => {
+    async (state: AtlassifyState) => {
       setStatus('loading');
       setGlobalError(null);
 
@@ -90,7 +90,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markNotificationRead = useCallback(
-    async (state: AtlasifyState, notification: AtlasifyNotification) => {
+    async (state: AtlassifyState, notification: AtlassifyNotification) => {
       setStatus('loading');
 
       try {
@@ -114,7 +114,7 @@ export const useNotifications = (): NotificationsState => {
   );
 
   const markProductNotificationsRead = useCallback(
-    async (state: AtlasifyState, notification: AtlasifyNotification) => {
+    async (state: AtlassifyState, notification: AtlassifyNotification) => {
       setStatus('loading');
 
       // const repoSlug = notification.repository.full_name;

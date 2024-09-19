@@ -1,11 +1,11 @@
 export const SITE_URL = import.meta.env.SITE_URL || 'http://localhost:3000';
 
 export const siteMetadata = {
-  title: 'Atlasify',
+  title: 'Atlassify',
   description: 'Your Atlassian notifications on your menu bar.',
-  repo: 'setchy/atlasify',
+  repo: 'setchy/atlassify',
   keywords:
-    'atlasify,desktop,application,atlassian,notifications,unread,menu bar,electron,open source,setchy,mac,osx',
+    'atlassify,desktop,application,atlassian,notifications,unread,menu bar,electron,open source,setchy,mac,osx',
   author: {
     name: 'Adam Setch (@setchy)',
     site: 'https://setchy.io',
@@ -23,7 +23,7 @@ export const siteMetadata = {
 };
 
 export const manifest = {
-  name: 'Atlasify',
+  name: 'Atlassify',
   short_name: 'starter',
   themeColor: '#24292e',
   display: 'minimal-ui',

@@ -7,7 +7,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Flex, Stack } from '@atlaskit/primitives';
 import { AppContext } from '../context/App';
-import { type AtlasifyNotification, Opacity } from '../types';
+import { type AtlassifyNotification, Opacity } from '../types';
 import { cn } from '../utils/cn';
 import { getCategoryDetails } from '../utils/filters';
 import {
@@ -17,7 +17,7 @@ import {
 import { openNotification } from '../utils/links';
 
 interface INotificationRow {
-  notification: AtlasifyNotification;
+  notification: AtlassifyNotification;
   isAnimated?: boolean;
   isRead?: boolean;
 }

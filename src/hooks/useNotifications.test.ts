@@ -87,7 +87,7 @@ describe('hooks/useNotifications.ts', () => {
           },
         });
 
-      nock('https://github.atlasify.io/api/v3/')
+      nock('https://github.atlassify.io/api/v3/')
         .get('/notifications?participating=false')
         .replyWithError({
           code,
@@ -130,7 +130,7 @@ describe('hooks/useNotifications.ts', () => {
           },
         });
 
-      nock('https://github.atlasify.io/api/v3/')
+      nock('https://github.atlassify.io/api/v3/')
         .get('/notifications?participating=false')
         .replyWithError({
           code,

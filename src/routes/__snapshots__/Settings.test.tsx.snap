@@ -890,13 +890,13 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
           >
             <button
               class=" css-1aearyh"
-              title="View Atlasify release notes"
+              title="View Atlassify release notes"
               type="button"
             >
               <span
                 class=" css-1nqby2s"
               >
-                Atlasify 
+                Atlassify 
                 v0.0.1
               </span>
             </button>
@@ -958,7 +958,7 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             >
               <button
                 class=" css-1hmr5rx"
-                title="Quit Atlasify"
+                title="Quit Atlassify"
                 type="button"
               >
                 <span
@@ -999,7 +999,7 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
                   <span
                     class="css-b5o75w"
                   >
-                    Quit Atlasify
+                    Quit Atlassify
                   </span>
                 </span>
               </button>

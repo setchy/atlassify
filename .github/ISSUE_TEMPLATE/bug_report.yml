@@ -35,8 +35,8 @@ body:
   - type: dropdown
     id: environment-version
     attributes:
-      label: Atlasify Version
-      description: What version of Atlasify are you using?
+      label: Atlassify Version
+      description: What version of Atlassify are you using?
       options:
         - 1.0.0
         - Other

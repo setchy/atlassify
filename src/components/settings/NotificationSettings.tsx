@@ -35,7 +35,7 @@ export const NotificationSettings: FC = () => {
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
             <div>
-              Keep the notification within Atlasify window upon interaction
+              Keep the notification within Atlassify window upon interaction
               (click, mark as read, mark as done, etc) until the next refresh
               window (scheduled or user initiated).
             </div>

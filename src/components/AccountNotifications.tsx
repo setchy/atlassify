@@ -12,7 +12,7 @@ import Tooltip from '@atlaskit/tooltip';
 import Badge from '@atlaskit/badge';
 import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
-import type { Account, AtlasifyError, AtlasifyNotification } from '../types';
+import type { Account, AtlassifyError, AtlassifyNotification } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
 import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
@@ -21,8 +21,8 @@ import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
 interface IAccountNotifications {
   account: Account;
-  notifications: AtlasifyNotification[];
-  error: AtlasifyError | null;
+  notifications: AtlassifyNotification[];
+  error: AtlassifyError | null;
 }
 
 export const AccountNotifications: FC<IAccountNotifications> = (
@@ -41,7 +41,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const groupedNotifications = Object.values(
     notifications.reduce(
-      (acc: { [key: string]: AtlasifyNotification[] }, notification) => {
+      (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
         const key = notification.product.name;
         if (!acc[key]) acc[key] = [];
         acc[key].push(notification);

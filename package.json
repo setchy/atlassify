@@ -1,5 +1,5 @@
 {
-  "name": "atlasify",
+  "name": "atlassify",
   "version": "0.2.0",
   "description": "Atlassian notifications on your menu bar.",
   "main": "src/electron/main.js",
@@ -21,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/setchy/atlasify.git"
+    "url": "https://github.com/setchy/atlassify.git"
   },
   "keywords": [
-    "atlasify",
+    "atlassify",
     "atlassian",
     "bitbucket",
     "confluence",
@@ -44,12 +44,12 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/setchy/atlasify/issues"
+    "url": "https://github.com/setchy/atlassify/issues"
   },
-  "homepage": "https://www.atlasify.io/",
+  "homepage": "https://www.atlassify.io/",
   "build": {
-    "appId": "com.electron.atlasify",
-    "productName": "Atlasify",
+    "appId": "com.electron.atlassify",
+    "productName": "Atlassify",
     "copyright": "Copyright © 2024 Adam Setch",
     "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
     "mac": {

@@ -31,10 +31,10 @@ describe('utils/comms.ts', () => {
         .spyOn(storage, 'loadState')
         .mockReturnValue({ settings: mockSettings });
 
-      openExternalLink('https://www.atlasify.io/' as Link);
+      openExternalLink('https://www.atlassify.io/' as Link);
       expect(shell.openExternal).toHaveBeenCalledTimes(1);
       expect(shell.openExternal).toHaveBeenCalledWith(
-        'https://www.atlasify.io/',
+        'https://www.atlassify.io/',
         {
           activate: true,
         },
@@ -44,10 +44,10 @@ describe('utils/comms.ts', () => {
     it('should use default open preference if user settings not found', () => {
       jest.spyOn(storage, 'loadState').mockReturnValue({ settings: null });
 
-      openExternalLink('https://www.atlasify.io/' as Link);
+      openExternalLink('https://www.atlassify.io/' as Link);
       expect(shell.openExternal).toHaveBeenCalledTimes(1);
       expect(shell.openExternal).toHaveBeenCalledWith(
-        'https://www.atlasify.io/',
+        'https://www.atlassify.io/',
         {
           activate: true,
         },
@@ -63,32 +63,32 @@ describe('utils/comms.ts', () => {
   it('should get app version', async () => {
     await getAppVersion();
     expect(ipcRenderer.invoke).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.invoke).toHaveBeenCalledWith('atlasify:version');
+    expect(ipcRenderer.invoke).toHaveBeenCalledWith('atlassify:version');
   });
 
   it('should quit the app', () => {
     quitApp();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlasify:quit');
+    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:quit');
   });
 
   it('should show the window', () => {
     showWindow();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlasify:window-show');
+    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:window-show');
   });
 
   it('should hide the window', () => {
     hideWindow();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlasify:window-hide');
+    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:window-hide');
   });
 
   it('should setAutoLaunch (true)', () => {
     setAutoLaunch(true);
 
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlasify:update-auto-launch',
+      'atlassify:update-auto-launch',
       {
         openAtLogin: true,
         openAsHidden: true,
@@ -100,7 +100,7 @@ describe('utils/comms.ts', () => {
     setAutoLaunch(false);
 
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlasify:update-auto-launch',
+      'atlassify:update-auto-launch',
       {
         openAsHidden: false,
         openAtLogin: false,
@@ -112,7 +112,7 @@ describe('utils/comms.ts', () => {
     setAlternateIdleIcon(true);
 
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlasify:use-alternate-idle-icon',
+      'atlassify:use-alternate-idle-icon',
       true,
     );
   });
@@ -121,7 +121,7 @@ describe('utils/comms.ts', () => {
     setKeyboardShortcut(true);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlasify:update-keyboard-shortcut',
+      'atlassify:update-keyboard-shortcut',
       {
         enabled: true,
         keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
@@ -133,7 +133,7 @@ describe('utils/comms.ts', () => {
     setKeyboardShortcut(false);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlasify:update-keyboard-shortcut',
+      'atlassify:update-keyboard-shortcut',
       {
         enabled: false,
         keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
@@ -145,13 +145,13 @@ describe('utils/comms.ts', () => {
     const notificationsLength = 3;
     updateTrayIcon(notificationsLength);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlasify:icon-active');
+    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:icon-active');
   });
 
   it('should send mark the icons as idle', () => {
     const notificationsLength = 0;
     updateTrayIcon(notificationsLength);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlasify:icon-idle');
+    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:icon-idle');
   });
 });

@@ -1,6 +1,6 @@
-import type { AtlasifyError, ErrorType } from '../types';
+import type { AtlassifyError, ErrorType } from '../types';
 
-export const Errors: Record<ErrorType, AtlasifyError> = {
+export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
     title: 'Bad Credentials',
     descriptions: ['Your credentials are either invalid or expired.'],

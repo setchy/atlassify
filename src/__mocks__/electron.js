@@ -39,7 +39,7 @@ module.exports = {
       switch (channel) {
         case 'get-platform':
           return Promise.resolve('darwin');
-        case 'atlasify:version':
+        case 'atlassify:version':
           return Promise.resolve('0.0.1');
         default:
           return Promise.reject(new Error(`Unknown channel: ${channel}`));

@@ -6,6 +6,6 @@ import '@atlaskit/css-reset';
 
 import { App } from './app';
 
-const container = document.getElementById('atlasify');
+const container = document.getElementById('atlassify');
 const root = createRoot(container);
 root.render(<App />);

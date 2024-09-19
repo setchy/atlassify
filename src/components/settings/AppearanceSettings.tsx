@@ -25,7 +25,7 @@ export const AppearanceSettings: FC = () => {
   );
 
   useEffect(() => {
-    ipcRenderer.on('atlasify:update-theme', (_, updatedTheme: Theme) => {
+    ipcRenderer.on('atlassify:update-theme', (_, updatedTheme: Theme) => {
       if (settings.theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
       }
