@@ -64,7 +64,7 @@ describe('components/NotificationRow.tsx', () => {
 
   describe('notification interactions', () => {
     it('should open a notification in the browser - click', () => {
-      const markNotificationRead = jest.fn();
+      const markNotificationsReadMock = jest.fn();
 
       const props = {
         notification: mockSingleNotification,
@@ -75,7 +75,7 @@ describe('components/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationRead,
+            markNotificationsRead: markNotificationsReadMock,
             auth: mockAuth,
           }}
         >
@@ -85,11 +85,11 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByRole('main'));
       expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationRead).toHaveBeenCalledTimes(1);
+      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
     it('should open a notification in the browser - delay notification setting enabled', () => {
-      const markNotificationRead = jest.fn();
+      const markNotificationsReadMock = jest.fn();
 
       const props = {
         notification: mockSingleNotification,
@@ -103,7 +103,7 @@ describe('components/NotificationRow.tsx', () => {
               ...mockSettings,
               delayNotificationState: true,
             },
-            markNotificationRead,
+            markNotificationsRead: markNotificationsReadMock,
             auth: mockAuth,
           }}
         >
@@ -113,11 +113,11 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByRole('main'));
       expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationRead).toHaveBeenCalledTimes(1);
+      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
     it('should open a notification in the browser - key down', () => {
-      const markNotificationRead = jest.fn();
+      const markNotificationsReadMock = jest.fn();
 
       const props = {
         notification: mockSingleNotification,
@@ -128,7 +128,7 @@ describe('components/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationRead,
+            markNotificationsRead: markNotificationsReadMock,
             auth: mockAuth,
           }}
         >
@@ -138,11 +138,11 @@ describe('components/NotificationRow.tsx', () => {
 
       fireEvent.click(screen.getByRole('main'));
       expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationRead).toHaveBeenCalledTimes(1);
+      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
     it('should mark a notification as read', () => {
-      const markNotificationRead = jest.fn();
+      const markNotificationsReadMock = jest.fn();
 
       const props = {
         notification: mockSingleNotification,
@@ -153,7 +153,7 @@ describe('components/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationRead,
+            markNotificationsRead: markNotificationsReadMock,
           }}
         >
           <NotificationRow {...props} />
@@ -161,7 +161,7 @@ describe('components/NotificationRow.tsx', () => {
       );
 
       fireEvent.click(screen.getByTitle('Mark as read'));
-      expect(markNotificationRead).toHaveBeenCalledTimes(1);
+      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
   });
 });

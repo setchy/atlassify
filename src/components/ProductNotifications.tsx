@@ -10,7 +10,6 @@ import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../context/App';
 import type { AtlassifyNotification } from '../types';
-import { markNotificationsAsRead } from '../utils/api/client';
 import { openExternalLink } from '../utils/comms';
 import { getProductDetails } from '../utils/products';
 import { NotificationRow } from './NotificationRow';
@@ -22,7 +21,7 @@ interface IProductNotifications {
 export const ProductNotifications: FC<IProductNotifications> = ({
   productNotifications,
 }) => {
-  const { settings } = useContext(AppContext);
+  const { markNotificationsRead, settings } = useContext(AppContext);
 
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
@@ -31,10 +30,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
 
   const productNotification = productNotifications[0].product;
   const productDetails = getProductDetails(productNotification.name);
-
-  const productNotificationIDs = productNotifications.map(
-    (notification) => notification.id,
-  );
 
   const toggleProductNotifications = () => {
     setShowProductNotifications(!showProductNotifications);
@@ -96,10 +91,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   event.stopPropagation();
                   setAnimateExit(!settings.delayNotificationState);
                   setShowAsRead(settings.delayNotificationState);
-                  markNotificationsAsRead(
-                    productNotifications[0].account,
-                    productNotificationIDs,
-                  );
+                  markNotificationsRead(productNotifications);
                 }}
               />
             </Tooltip>

@@ -13,7 +13,6 @@ import Badge from '@atlaskit/badge';
 import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
 import type { Account, AtlassifyError, AtlassifyNotification } from '../types';
-import { markNotificationsAsRead } from '../utils/api/client';
 import { openAccountProfile, openMyPullRequests } from '../utils/links';
 import { AllRead } from './AllRead';
 import { NotificationRow } from './NotificationRow';
@@ -30,14 +29,10 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 ) => {
   const { account, notifications } = props;
 
-  const { settings } = useContext(AppContext);
+  const { markNotificationsRead, settings } = useContext(AppContext);
 
   const [showAccountNotifications, setShowAccountNotifications] =
     useState(true);
-
-  const accountNotificationIDs = notifications.map(
-    (notification) => notification.id,
-  );
 
   const groupedNotifications = Object.values(
     notifications.reduce(
@@ -143,7 +138,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  markNotificationsAsRead(account, accountNotificationIDs);
+                  markNotificationsRead(notifications);
                 }}
               />
             </Tooltip>

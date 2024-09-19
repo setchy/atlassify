@@ -159,8 +159,8 @@ describe('hooks/useNotifications.ts', () => {
     });
   });
 
-  describe.skip('markNotificationRead', () => {
-    it('should mark a notification as read with success', async () => {
+  describe.skip('markNotificationsRead', () => {
+    it('should mark a notifications as read with success', async () => {
       nock('https://api.github.com/')
         .patch(`/notifications/threads/${id}`)
         .reply(200);
@@ -168,7 +168,9 @@ describe('hooks/useNotifications.ts', () => {
       const { result } = renderHook(() => useNotifications());
 
       act(() => {
-        result.current.markNotificationRead(mockState, mockSingleNotification);
+        result.current.markNotificationsRead(mockState, [
+          mockSingleNotification,
+        ]);
       });
 
       await waitFor(() => {
@@ -178,7 +180,7 @@ describe('hooks/useNotifications.ts', () => {
       expect(result.current.notifications.length).toBe(0);
     });
 
-    it('should mark a notification as read with failure', async () => {
+    it('should mark a notifications as read with failure', async () => {
       nock('https://api.github.com/')
         .patch(`/notifications/threads/${id}`)
         .reply(400);
@@ -186,7 +188,9 @@ describe('hooks/useNotifications.ts', () => {
       const { result } = renderHook(() => useNotifications());
 
       act(() => {
-        result.current.markNotificationRead(mockState, mockSingleNotification);
+        result.current.markNotificationsRead(mockState, [
+          mockSingleNotification,
+        ]);
       });
 
       await waitFor(() => {

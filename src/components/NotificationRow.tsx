@@ -27,7 +27,7 @@ export const NotificationRow: FC<INotificationRow> = ({
   isAnimated = false,
   isRead = false,
 }: INotificationRow) => {
-  const { settings, markNotificationRead } = useContext(AppContext);
+  const { markNotificationsRead, settings } = useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
   const [showAsRead, setShowAsRead] = useState(false);
 
@@ -36,11 +36,11 @@ export const NotificationRow: FC<INotificationRow> = ({
 
     if (settings.markAsReadOnOpen) {
       setShowAsRead(settings.delayNotificationState);
-      markNotificationRead(notification);
+      markNotificationsRead([notification]);
     }
 
     openNotification(notification);
-  }, [notification, markNotificationRead, settings]);
+  }, [notification, markNotificationsRead, settings]);
 
   const updatedAt = formatNotificationUpdatedAt(notification);
 
@@ -136,7 +136,7 @@ export const NotificationRow: FC<INotificationRow> = ({
               onClick={() => {
                 setAnimateExit(!settings.delayNotificationState);
                 setShowAsRead(settings.delayNotificationState);
-                markNotificationRead(notification);
+                markNotificationsRead([notification]);
               }}
             />
           </Tooltip>

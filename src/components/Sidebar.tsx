@@ -17,7 +17,7 @@ import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/helpers';
 import { openMyNotifications } from '../utils/links';
-import { getNotificationCount } from '../utils/notifications';
+import { getNotificationCount } from '../utils/notifications/notifications';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
