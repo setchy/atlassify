@@ -57,7 +57,7 @@ I would like to acknowledge the following projects and resources that have inspi
 [downloads-latest-badge]: https://img.shields.io/github/downloads/setchy/atlassify/latest/total?logo=github
 [contributors-badge]: https://img.shields.io/github/contributors/setchy/atlassify?logo=github
 [librariesio]: https://libraries.io/
-[librariesio-badge]: https://img.shields.io/librariesio/github/setchy/atlassify?logo=librariesdotio
+[librariesio-badge]: https://img.shields.io/librariesio/github/setchy/atlasify?logo=librariesdotio
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/setchy/atlassify?logo=github
 [github-release-badge]: https://img.shields.io/github/v/release/setchy/atlassify?logo=github
