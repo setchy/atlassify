@@ -5,7 +5,7 @@ import { Oops } from '../components/Oops';
 import { AppContext } from '../context/App';
 import { getAccountUUID } from '../utils/auth/utils';
 import { Errors } from '../utils/errors';
-import { getNotificationCount } from '../utils/notifications';
+import { getNotificationCount } from '../utils/notifications/notifications';
 
 export const NotificationsRoute: FC = () => {
   const { notifications, status, globalError } = useContext(AppContext);

@@ -38,7 +38,7 @@ import { Constants } from '../utils/constants';
 import {
   getNotificationCount,
   hasMoreNotifications,
-} from '../utils/notifications';
+} from '../utils/notifications/notifications';
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { zoomPercentageToLevel } from '../utils/zoom';
@@ -95,15 +95,10 @@ interface AppContextState {
   fetchNotifications: () => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
 
-  markNotificationRead: (notification: AtlassifyNotification) => Promise<void>;
+  markNotificationsRead: (
+    notifications: AtlassifyNotification[],
+  ) => Promise<void>;
   markNotificationUnread: (
-    notification: AtlassifyNotification,
-  ) => Promise<void>;
-
-  markProductNotificationsRead: (
-    notification: AtlassifyNotification,
-  ) => Promise<void>;
-  markProductNotificationsUnread: (
     notification: AtlassifyNotification,
   ) => Promise<void>;
 
@@ -124,8 +119,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     removeAccountNotifications,
     status,
     globalError,
-    markNotificationRead,
-    markProductNotificationsRead,
+    markNotificationsRead,
   } = useNotifications();
 
   useEffect(() => {
@@ -257,16 +251,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, fetchNotifications],
   );
 
-  const markNotificationReadWithAccounts = useCallback(
-    async (notification: AtlassifyNotification) =>
-      await markNotificationRead({ auth, settings }, notification),
-    [auth, settings, markNotificationRead],
-  );
-
-  const markProductNotificationsReadWithAccounts = useCallback(
-    async (notification: AtlassifyNotification) =>
-      await markProductNotificationsRead({ auth, settings }, notification),
-    [auth, settings, markProductNotificationsRead],
+  const markNotificationsReadWithAccounts = useCallback(
+    async (notifications: AtlassifyNotification[]) =>
+      await markNotificationsRead({ auth, settings }, notifications),
+    [auth, settings, markNotificationsRead],
   );
 
   return (
@@ -283,8 +271,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         notifications,
         fetchNotifications: fetchNotificationsWithAccounts,
 
-        markNotificationRead: markNotificationReadWithAccounts,
-        markProductNotificationsRead: markProductNotificationsReadWithAccounts,
+        markNotificationsRead: markNotificationsReadWithAccounts,
 
         settings,
         clearFilters,

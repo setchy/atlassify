@@ -123,7 +123,7 @@ export interface AtlassifyNotification {
     avatarURL: Link;
   };
   category: Category;
-  account: Account;
+  account: Account; // TODO - can we remove this?
 }
 
 export interface AtlassifyUser {

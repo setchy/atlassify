@@ -9,25 +9,20 @@ import type {
   Status,
 } from '../types';
 import { markNotificationsAsRead } from '../utils/api/client';
+import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
   setTrayIconColor,
-  triggerNativeNotifications,
-} from '../utils/notifications';
-import { removeNotification } from '../utils/remove-notification';
-import { removeNotifications } from '../utils/remove-notifications';
+} from '../utils/notifications/notifications';
+import { removeNotifications } from '../utils/notifications/remove';
 
 interface NotificationsState {
   notifications: AccountNotifications[];
   removeAccountNotifications: (account: Account) => Promise<void>;
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
-  markNotificationRead: (
+  markNotificationsRead: (
     state: AtlassifyState,
-    notification: AtlassifyNotification,
-  ) => Promise<void>;
-  markProductNotificationsRead: (
-    state: AtlassifyState,
-    notification: AtlassifyNotification,
+    notifications: AtlassifyNotification[],
   ) => Promise<void>;
   status: Status;
   globalError: AtlassifyError;
@@ -89,55 +84,31 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  const markNotificationRead = useCallback(
-    async (state: AtlassifyState, notification: AtlassifyNotification) => {
+  const markNotificationsRead = useCallback(
+    async (
+      state: AtlassifyState,
+      readNotifications: AtlassifyNotification[],
+    ) => {
       setStatus('loading');
 
-      try {
-        await markNotificationsAsRead(notification.account, [notification.id]);
-
-        const updatedNotifications = removeNotification(
-          state.settings,
-          notification,
-          notifications,
-        );
-
-        setNotifications(updatedNotifications);
-        setTrayIconColor(updatedNotifications);
-      } catch (err) {
-        log.error('Error occurred while marking notification as read', err);
-      }
-
-      setStatus('success');
-    },
-    [notifications],
-  );
-
-  const markProductNotificationsRead = useCallback(
-    async (state: AtlassifyState, notification: AtlassifyNotification) => {
-      setStatus('loading');
-
-      // const repoSlug = notification.repository.full_name;
+      const account = readNotifications[0].account;
+      const notificationIDs = readNotifications.map(
+        (notification) => notification.id,
+      );
 
       try {
-        // await markRepositoryNotificationsAsRead(
-        //   repoSlug,
-        //   notification.account.token,
-        // );
+        await markNotificationsAsRead(account, notificationIDs);
 
         const updatedNotifications = removeNotifications(
           state.settings,
-          notification,
+          readNotifications,
           notifications,
         );
 
         setNotifications(updatedNotifications);
         setTrayIconColor(updatedNotifications);
       } catch (err) {
-        log.error(
-          'Error occurred while marking repository notifications as read',
-          err,
-        );
+        log.error('Error occurred while marking notifications as read', err);
       }
 
       setStatus('success');
@@ -152,7 +123,6 @@ export const useNotifications = (): NotificationsState => {
 
     removeAccountNotifications,
     fetchNotifications,
-    markNotificationRead,
-    markProductNotificationsRead,
+    markNotificationsRead,
   };
 };

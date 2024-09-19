@@ -1,16 +1,16 @@
 import {
   mockAccountNotifications,
   mockSingleAccountNotifications,
-} from '../__mocks__/notifications-mocks';
-import { mockAuth } from '../__mocks__/state-mocks';
-import { defaultSettings } from '../context/App';
-import type { SettingsState } from '../types';
-import { mockAtlassifyNotification } from './api/__mocks__/response-mocks';
-import * as comms from './comms';
-import * as links from './links';
-import * as notificationsHelpers from './notifications';
+} from '../../__mocks__/notifications-mocks';
+import { mockAuth } from '../../__mocks__/state-mocks';
+import { defaultSettings } from '../../context/App';
+import type { SettingsState } from '../../types';
+import { mockAtlassifyNotification } from '../api/__mocks__/response-mocks';
+import * as comms from '../comms';
+import * as links from '../links';
+import * as notificationsHelpers from './native';
 
-describe('utils/notifications.ts', () => {
+describe('utils/notifications/native.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -140,40 +140,5 @@ describe('utils/notifications.ts', () => {
     jest.spyOn(window.Audio.prototype, 'play');
     notificationsHelpers.raiseSoundNotification();
     expect(window.Audio.prototype.play).toHaveBeenCalledTimes(1);
-  });
-
-  describe('filterNotifications', () => {
-    // const mockNotifications = [
-    //   partialMockNotification({
-    //     title: 'User authored notification',
-    //     user: {
-    //       login: 'user',
-    //       html_url: 'https://github.com/user' as Link,
-    //       avatar_url:
-    //         'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
-    //       type: 'User',
-    //     },
-    //   }),
-    //   partialMockNotification({
-    //     title: 'Bot authored notification',
-    //     user: {
-    //       login: 'bot',
-    //       html_url: 'https://github.com/bot' as Link,
-    //       avatar_url:
-    //         'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
-    //       type: 'Bot',
-    //     },
-    //   }),
-    // ];
-    // it('should filter notifications by reasons when provided', async () => {
-    //   mockNotifications[0].reason = 'subscribed';
-    //   mockNotifications[1].reason = 'manual';
-    //   const result = filterNotifications(mockNotifications, {
-    //     ...mockSettings,
-    //     filterReasons: ['manual'],
-    //   });
-    //   expect(result.length).toBe(1);
-    //   expect(result).toEqual([mockNotifications[1]]);
-    // });
   });
 });
