@@ -120,6 +120,7 @@ export const FiltersRoute: FC = () => {
               <Heading size="small">Read State</Heading>
               <Box>
                 {Object.keys(READ_STATES).map((readState: ReadState) => {
+                  const readStateDetails = getReadStateDetails(readState);
                   return (
                     <Inline
                       key={readState}
@@ -130,9 +131,7 @@ export const FiltersRoute: FC = () => {
                         key={readState}
                         name={readState}
                         title={readState}
-                        label={formatProperCase(
-                          getReadStateDetails(readState).name,
-                        )}
+                        label={formatProperCase(readStateDetails.name)}
                         isChecked={shouldShowReadState(readState)}
                         onChange={(evt) =>
                           updateReadStateFilter(readState, evt.target.checked)
