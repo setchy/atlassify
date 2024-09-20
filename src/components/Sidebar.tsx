@@ -234,7 +234,10 @@ export const Sidebar: FC = () => {
               <IconButton
                 label="Quit Atlassify"
                 icon={(iconProps) => (
-                  <CrossCircleIcon {...iconProps} size="medium" />
+                  <CrossCircleIcon
+                    {...iconProps}
+                    size="medium"
+                  />
                 )}
                 shape="circle"
                 onClick={() => quitApp()}
