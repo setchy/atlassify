@@ -5,7 +5,7 @@ import {
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import type { Product } from '../utils/api/types';
+import type { ProductName } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import { ProductNotifications } from './ProductNotifications';
 
@@ -25,7 +25,7 @@ describe('components/ProductNotifications.tsx', () => {
   it('should render itself & its children', () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as Product,
+      product: 'bitbucket' as ProductName,
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -41,7 +41,7 @@ describe('components/ProductNotifications.tsx', () => {
   it('should open product home when available', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as Product,
+      product: 'bitbucket' as ProductName,
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -57,7 +57,7 @@ describe('components/ProductNotifications.tsx', () => {
   it('should toggle product notifications visibility', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as Product,
+      product: 'bitbucket' as ProductName,
       productNotifications: mockAtlassifyNotifications,
     };
 

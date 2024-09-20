@@ -17,7 +17,7 @@ import Toggle from '@atlaskit/toggle';
 import { colors } from '../../tailwind.config';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { getFilterCount } from '../utils/filters';
+import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 
@@ -66,8 +66,8 @@ export const Sidebar: FC = () => {
     return `${notificationsCount}${hasMore ? '+' : ''}`;
   }, [notifications]);
 
-  const filterCount = useMemo(() => {
-    return getFilterCount(settings);
+  const hasFilters = useMemo(() => {
+    return hasFiltersSet(settings);
   }, [settings]);
 
   return (
@@ -171,7 +171,7 @@ export const Sidebar: FC = () => {
                       primaryColor="white"
                     />
                   )}
-                  appearance={filterCount > 0 ? 'discovery' : 'subtle'}
+                  appearance={hasFilters ? 'discovery' : 'subtle'}
                   spacing="compact"
                   shape="circle"
                   onClick={() => toggleFilters()}

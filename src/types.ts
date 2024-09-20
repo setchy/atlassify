@@ -1,4 +1,4 @@
-import type { Category, Product, ReadState } from './utils/api/types';
+import type { Category, ProductName, ReadState } from './utils/api/types';
 import type { AuthMethod, PlatformType } from './utils/auth/types';
 
 declare const __brand: unique symbol;
@@ -32,7 +32,7 @@ export type SettingsValue =
   | OpenPreference
   | Category[]
   | ReadState[]
-  | Product[]
+  | ProductName[]
   | Theme;
 
 export type SettingsState = AppearanceSettingsState &
@@ -65,7 +65,7 @@ interface SystemSettingsState {
 interface FilterSettingsState {
   filterCategories: Category[];
   filterReadStates: ReadState[];
-  filterProducts: Product[];
+  filterProducts: ProductName[];
 }
 
 export interface AtlassifyState {
@@ -100,7 +100,6 @@ export interface AtlassifyNotification {
   id: string;
   title: string;
   readState: ReadState;
-  unread: boolean; // TODO - Redundant?
   updated_at: string;
   url: Link;
   path: {
@@ -114,7 +113,7 @@ export interface AtlassifyNotification {
     url: Link;
   };
   product: {
-    name: Product;
+    name: ProductName;
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     icon: any;
   };
@@ -123,7 +122,7 @@ export interface AtlassifyNotification {
     avatarURL: Link;
   };
   category: Category;
-  account: Account; // TODO - can we remove this?
+  account: Account;
 }
 
 export interface AtlassifyUser {

@@ -3,9 +3,6 @@
 A list of "things" to improve
 
 ## Soon
-- [ ] make filters a dropdown overlay
-- [ ] clear out all TODOs in this project
-- [ ] improve product mapping coverage
 - [ ] re-enable handful of skipped unit tests
 
 ## Later
@@ -19,6 +16,7 @@ A list of "things" to improve
 - [ ] user defined sorting of inbox when grouped by product
 - [ ] use secure local storage
 - [ ] fix `findDOMNode is deprecated and will be removed in the next major release.` console error - depends on update to InlineMessage ADS component
+- [ ] improve product mapping coverage
 
 
 # Atlassian Roadmap
