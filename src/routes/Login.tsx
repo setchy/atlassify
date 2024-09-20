@@ -2,6 +2,7 @@ import { type FC, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
+import Heading from '@atlaskit/heading';
 import {
   AtlasIcon,
   AtlassianIcon,
@@ -11,7 +12,9 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  TrelloIcon,
 } from '@atlaskit/logo';
+import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -29,38 +32,36 @@ export const LoginRoute: FC = () => {
   }, [isLoggedIn]);
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center p-4">
-      <div>
-        <AtlasIcon appearance="brand" size="xlarge" />{' '}
-      </div>
-
-      <div className="my-2 px-2.5 py-1.5 text-center font-semibold">
-        <div>
-          Atlassian notifications <br /> on your menu bar
-        </div>
-        <div className="my-2 flex items-center justify-center gap-2">
+    <div className="flex flex-1 justify-center">
+      <Stack alignBlock="center" alignInline="center" space="space.200">
+        <AtlasIcon appearance="brand" size="xlarge" />
+        <Stack alignInline="center">
+          <Heading size="large">Atlassian notifications</Heading>
+          <Text size="large">on your menu bar</Text>
+        </Stack>
+        <Inline space="space.100">
           <BitbucketIcon size="small" appearance="neutral" />
-          <ConfluenceIcon size="small" appearance="neutral" />
           <CompassIcon size="small" appearance="neutral" />
+          <ConfluenceIcon size="small" appearance="neutral" />
           <JiraIcon size="small" appearance="neutral" />
           <JiraProductDiscoveryIcon size="small" appearance="neutral" />
           <JiraServiceManagementIcon size="small" appearance="neutral" />
-        </div>
-      </div>
-
-      <Tooltip content="Login with Atlassian">
-        <Button
-          appearance="primary"
-          spacing="default"
-          iconBefore={(iconProps) => (
-            <AtlassianIcon {...iconProps} size="small" />
-          )}
-          onClick={() => navigate('/login-api-token')}
-          testId="login"
-        >
-          Login
-        </Button>
-      </Tooltip>
+          <TrelloIcon size="small" appearance="neutral" />
+        </Inline>
+        <Tooltip content="Login with Atlassian">
+          <Button
+            appearance="primary"
+            spacing="default"
+            iconBefore={(iconProps) => (
+              <AtlassianIcon {...iconProps} size="small" />
+            )}
+            onClick={() => navigate('/login-api-token')}
+            testId="login"
+          >
+            Login
+          </Button>
+        </Tooltip>
+      </Stack>
     </div>
   );
 };
