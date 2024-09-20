@@ -89,9 +89,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             >
               <label
                 class="css-exvs2c"
+                data-testid="theme-system--radio-label"
               >
                 <input
                   class="css-t4vzni"
+                  data-testid="theme-system--radio-input"
                   name="theme"
                   tabindex="0"
                   type="radio"
@@ -105,10 +107,12 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               </label>
               <label
                 class="css-exvs2c"
+                data-testid="theme-light--radio-label"
               >
                 <input
                   checked=""
                   class="css-t4vzni"
+                  data-testid="theme-light--radio-input"
                   name="theme"
                   tabindex="0"
                   type="radio"
@@ -122,9 +126,11 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               </label>
               <label
                 class="css-exvs2c"
+                data-testid="theme-dark--radio-label"
               >
                 <input
                   class="css-t4vzni"
+                  data-testid="theme-dark--radio-input"
                   name="theme"
                   tabindex="0"
                   type="radio"

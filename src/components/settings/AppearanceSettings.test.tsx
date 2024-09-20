@@ -15,7 +15,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it.skip('should change the theme radio group', async () => {
+  it('should change the theme radio group', async () => {
     await act(async () => {
       render(
         <AppContext.Provider
@@ -32,10 +32,10 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Light'));
+    fireEvent.click(screen.getByTestId('theme-dark--radio-label'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('theme', 'LIGHT');
+    expect(updateSetting).toHaveBeenCalledWith('theme', 'DARK');
   });
 
   it('should update the zoom value when using CMD + and CMD -', async () => {
@@ -64,7 +64,7 @@ describe('routes/components/settings/AppearanceSettings.tsx', () => {
     expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 50);
   });
 
-  it.skip('should update the zoom values when using the zoom buttons', async () => {
+  it('should update the zoom values when using the zoom buttons', async () => {
     webFrame.getZoomLevel = jest.fn().mockReturnValue(0);
     webFrame.setZoomLevel = jest.fn().mockImplementation((level) => {
       webFrame.getZoomLevel = jest.fn().mockReturnValue(level);
