@@ -86,11 +86,9 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
           >
             <label
               class="css-exvs2c"
-              data-disabled="true"
             >
               <input
                 class="css-t4vzni"
-                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"
@@ -104,12 +102,10 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             </label>
             <label
               class="css-exvs2c"
-              data-disabled="true"
             >
               <input
                 checked=""
                 class="css-t4vzni"
-                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"
@@ -123,11 +119,9 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             </label>
             <label
               class="css-exvs2c"
-              data-disabled="true"
             >
               <input
                 class="css-t4vzni"
-                disabled=""
                 name="theme"
                 tabindex="0"
                 type="radio"
@@ -142,142 +136,150 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center mt-3 mb-2 text-sm"
+          class="css-gokkc4"
         >
-          <label
-            class="mr-3 content-center font-medium text-gray-700 dark:text-gray-200"
-            for="Zoom"
+          <span
+            class="css-19g3t4k"
+            id="theme-label"
           >
             Zoom:
-          </label>
-          <div
-            role="presentation"
-          >
-            <button
-              class=" css-1h9zni"
-              data-testid="settings-zoom-out"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path
-                      d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Zoom Out
-                </span>
-              </span>
-            </button>
-          </div>
-          <span
-            class="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200"
-          >
-            100
-            %
           </span>
           <div
-            role="presentation"
+            class="css-mrgpd6"
           >
-            <button
-              class=" css-1h9zni"
-              data-testid="settings-zoom-in"
-              type="button"
+            <div
+              role="presentation"
             >
-              <span
-                class=" css-1spmf3f"
+              <button
+                class=" css-1h9zni"
+                data-testid="settings-zoom-out"
+                type="button"
               >
                 <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class=" css-1spmf3f"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <path
-                      d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Zoom In
-                </span>
-              </span>
-            </button>
-          </div>
-          <div
-            role="presentation"
-          >
-            <button
-              class=" css-1h9zni"
-              data-testid="settings-zoom-reset"
-              type="button"
-            >
-              <span
-                class=" css-1spmf3f"
-              >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill-rule="evenodd"
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
                     >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="9"
-                      />
                       <path
-                        d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.17 1.17 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12z"
-                        fill="inherit"
+                        d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
-                    </g>
-                  </svg>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Zoom Out
+                  </span>
                 </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Reset Zoom
-                </span>
+              </button>
+            </div>
+            <span
+              class="css-1wkl091"
+            >
+              <span
+                class="css-f9etm4"
+              >
+                100
+                %
               </span>
-            </button>
+            </span>
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-1h9zni"
+                data-testid="settings-zoom-in"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Zoom In
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class=" css-1h9zni"
+                data-testid="settings-zoom-reset"
+                type="button"
+              >
+                <span
+                  class=" css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: red; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          r="9"
+                        />
+                        <path
+                          d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.17 1.17 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12z"
+                          fill="inherit"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Reset Zoom
+                  </span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -891,7 +893,7 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
     </div>
   </div>
   <div
-    class="text-sm  px-2 bg-gray-200 dark:bg-gray-darker"
+    class="text-sm  px-2 bg-gray-200"
   >
     <div
       class="css-1s54rt6"

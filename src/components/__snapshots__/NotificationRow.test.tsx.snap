@@ -6,7 +6,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
   "baseElement": <body>
     <div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="138661096"
       >
         <div
@@ -196,7 +196,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
   </body>,
   "container": <div>
     <div
-      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
       id="138661096"
     >
       <div
@@ -443,7 +443,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
   "baseElement": <body>
     <div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="138661096"
       >
         <div
@@ -633,7 +633,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
   </body>,
   "container": <div>
     <div
-      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+      class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
       id="138661096"
     >
       <div

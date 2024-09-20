@@ -12,7 +12,7 @@ export const AllRead: FC = () => {
   );
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black dark:bg-gray-dark dark:text-white">
+    <div className="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black">
       <div className="mt-2 mb-5 text-5xl">
         <EmojiText text={emoji} />
       </div>

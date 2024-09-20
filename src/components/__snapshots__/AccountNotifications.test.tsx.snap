@@ -1170,7 +1170,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
           </div>
         </div>
         <div
-          class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black dark:bg-gray-dark dark:text-white"
+          class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
         >
           <div
             class="mt-2 mb-5 text-5xl"
@@ -1389,7 +1389,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black dark:bg-gray-dark dark:text-white"
+        class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
       >
         <div
           class="mt-2 mb-5 text-5xl"
@@ -1665,7 +1665,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
           id="138661096"
         >
           <div
@@ -1852,7 +1852,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
           id="148827438"
         >
           <div
@@ -2237,7 +2237,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="138661096"
       >
         <div
@@ -2424,7 +2424,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="148827438"
       >
         <div
@@ -3063,7 +3063,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
           id="138661096"
         >
           <div
@@ -3250,7 +3250,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
           id="148827438"
         >
           <div
@@ -3635,7 +3635,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="138661096"
       >
         <div
@@ -3822,7 +3822,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100 dark:border-gray-darker dark:bg-gray-dark dark:text-white dark:hover:bg-gray-darker"
+        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
         id="148827438"
       >
         <div

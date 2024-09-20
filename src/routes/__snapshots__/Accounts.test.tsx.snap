@@ -262,7 +262,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
     </div>
   </div>
   <div
-    class="text-sm px-8 bg-gray-200 dark:bg-gray-darker"
+    class="text-sm px-8 bg-gray-200"
   >
     <div
       class="css-1s54rt6"
