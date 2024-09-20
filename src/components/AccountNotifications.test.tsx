@@ -1,11 +1,11 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import { mockAtlassifyNotifications } from '../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { ensureStableEmojis, mockDirectoryPath } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
-import { mockAtlassifyNotifications } from '../utils/api/__mocks__/response-mocks';
 import * as links from '../utils/links';
 import { AccountNotifications } from './AccountNotifications';
 

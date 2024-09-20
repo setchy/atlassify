@@ -1,10 +1,10 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import { mockAtlassifyNotifications } from '../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import { mockAtlassifyNotifications } from '../utils/api/__mocks__/response-mocks';
 import type { Product } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import { ProductNotifications } from './ProductNotifications';

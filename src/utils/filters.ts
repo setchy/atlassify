@@ -1,7 +1,8 @@
 import EmojiFlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
 import WatchIcon from '@atlaskit/icon/glyph/watch';
 
-import type { AccountNotifications } from '../types';
+import { defaultSettings } from '../context/App';
+import type { AccountNotifications, SettingsState } from '../types';
 import type { BasicDetails, Category, Product, ReadState } from './api/types';
 
 export const CATEGORIES: Record<Category, BasicDetails> = {
@@ -67,4 +68,29 @@ export function getProductFilterCount(
       memo + acc.notifications.filter((n) => n.product.name === product).length,
     0,
   );
+}
+
+// TODO: implementation is primitive.  Should be comparing a intersection of the filter arrays.  Perhaps only needs to be a hasFilters function, too.
+export function getFilterCount(settings: SettingsState): number {
+  let count = 0;
+
+  if (
+    settings.filterCategories.length !== defaultSettings.filterCategories.length
+  ) {
+    count += settings.filterCategories.length;
+  }
+
+  if (
+    settings.filterReadStates.length !== defaultSettings.filterReadStates.length
+  ) {
+    count += settings.filterReadStates.length;
+  }
+
+  if (
+    settings.filterProducts.length !== defaultSettings.filterProducts.length
+  ) {
+    count += settings.filterProducts.length;
+  }
+
+  return count;
 }

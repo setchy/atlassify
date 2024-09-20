@@ -3,8 +3,8 @@ import axios, { AxiosError } from 'axios';
 import nock from 'nock';
 
 import log from 'electron-log';
+import { mockSingleNotification } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings, mockState } from '../__mocks__/state-mocks';
-import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import { Errors } from '../utils/errors';
 import { useNotifications } from './useNotifications';
 
