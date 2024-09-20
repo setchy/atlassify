@@ -151,7 +151,6 @@ describe('components/NotificationRow.tsx', () => {
       const props = {
         notification: {
           ...mockSingleNotification,
-          unread: false,
           readState: 'read' as ReadState,
         },
         account: mockAtlassianCloudAccount,
