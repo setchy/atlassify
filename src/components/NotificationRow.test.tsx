@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { mockSingleNotification } from '../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockAuth,
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import type { ReadState } from '../utils/api/types';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';

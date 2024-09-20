@@ -16,7 +16,7 @@ import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { getFilterCount } from '../utils/helpers';
+import { getFilterCount } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 

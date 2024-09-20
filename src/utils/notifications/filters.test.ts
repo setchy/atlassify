@@ -1,5 +1,5 @@
+import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
-import { mockAtlassifyNotifications } from '../api/__mocks__/response-mocks';
 import { filterNotifications } from './filters';
 
 describe('utils/notifications/filters.ts', () => {

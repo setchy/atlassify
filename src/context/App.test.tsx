@@ -1,10 +1,10 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import type { AxiosPromise, AxiosResponse } from 'axios';
 import { useContext } from 'react';
+import { mockSingleNotification } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { useNotifications } from '../hooks/useNotifications';
 import type { AuthState, SettingsState, Token, Username } from '../types';
-import { mockSingleNotification } from '../utils/api/__mocks__/response-mocks';
 import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
 import { Constants } from '../utils/constants';

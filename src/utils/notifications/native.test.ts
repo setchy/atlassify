@@ -1,11 +1,12 @@
 import {
   mockAccountNotifications,
+  mockAtlassifyNotifications,
   mockSingleAccountNotifications,
+  mockSingleNotification,
 } from '../../__mocks__/notifications-mocks';
 import { mockAuth } from '../../__mocks__/state-mocks';
 import { defaultSettings } from '../../context/App';
 import type { SettingsState } from '../../types';
-import { mockAtlassifyNotifications } from '../api/__mocks__/response-mocks';
 import * as comms from '../comms';
 import * as links from '../links';
 import * as notificationsHelpers from './native';
@@ -113,14 +114,12 @@ describe('utils/notifications/native.ts', () => {
     jest.spyOn(links, 'openNotification');
 
     const nativeNotification: Notification =
-      notificationsHelpers.raiseNativeNotification([
-        mockAtlassifyNotifications[0],
-      ]);
+      notificationsHelpers.raiseNativeNotification([mockSingleNotification]);
     nativeNotification.onclick(null);
 
     expect(links.openNotification).toHaveBeenCalledTimes(1);
     expect(links.openNotification).toHaveBeenLastCalledWith(
-      mockAtlassifyNotifications[0],
+      mockSingleNotification,
     );
     expect(hideWindowMock).toHaveBeenCalledTimes(1);
   });

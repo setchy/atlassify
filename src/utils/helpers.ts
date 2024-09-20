@@ -1,6 +1,5 @@
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
-import { defaultSettings } from '../context/App';
-import type { AtlassifyNotification, SettingsState } from '../types';
+import type { AtlassifyNotification } from '../types';
 
 export function formatProperCase(text: string) {
   return text.replace(/\w+/g, (word) => {
@@ -38,30 +37,6 @@ export function formatNotificationUpdatedAt(
   } catch (e) {}
 
   return '';
-}
-
-export function getFilterCount(settings: SettingsState): number {
-  let count = 0;
-
-  if (
-    settings.filterCategories.length !== defaultSettings.filterCategories.length
-  ) {
-    count += settings.filterCategories.length;
-  }
-
-  if (
-    settings.filterReadStates.length !== defaultSettings.filterReadStates.length
-  ) {
-    count += settings.filterReadStates.length;
-  }
-
-  if (
-    settings.filterProducts.length !== defaultSettings.filterProducts.length
-  ) {
-    count += settings.filterProducts.length;
-  }
-
-  return count;
 }
 
 export function getDirectoryPath(): string {
