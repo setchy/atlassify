@@ -15,7 +15,7 @@ export function getRepositoryName(notification: AtlassifyNotification): string {
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
 ): string {
-  if (notification.path?.title) {
+  if (notification.path) {
     return notification.path.title;
   }
 
@@ -23,7 +23,7 @@ export function formatNotificationFooterText(
     case 'bitbucket':
       return getRepositoryName(notification);
     default:
-      formatProperCase(notification.product.name);
+      return formatProperCase(notification.product.name);
   }
 }
 
@@ -39,6 +39,7 @@ export function formatNotificationUpdatedAt(
   return '';
 }
 
+/* istanbul ignore next */
 export function getDirectoryPath(): string {
   return `${__dirname}`;
 }

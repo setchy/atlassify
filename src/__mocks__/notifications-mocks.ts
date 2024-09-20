@@ -10,18 +10,15 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {
     account: mockAtlassianCloudAccount,
     id: '138661096',
-    title: 'I am a robot and this is a test!',
+    title: '#103: chore(deps): update dependency eslint',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {
-      title: 'Repository',
-      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
-      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
+      title: '#103: chore(deps): update dependency eslint',
+      iconUrl:
+        'https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico' as Link,
+      url: 'https://bitbucket.org/myorg/notifications-test/pull-requests/103?link_source=platform' as Link,
     },
-    path: {
-      title: 'Repository',
-      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
-      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
-    },
+    path: null,
     product: {
       name: 'bitbucket',
       icon: BitbucketIcon,
@@ -29,25 +26,26 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     actor: {
       displayName: 'atlassify-app',
       avatarURL:
-        'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
+        'https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123' as Link,
     },
     category: 'direct',
     readState: 'unread',
-    url: 'https://api.github.com/notifications/threads/138661096' as Link,
+    url: 'https://bitbucket.org/myorg/notifications-test/pull-requests/103?link_source=platform' as Link,
   },
   {
     id: '148827438',
-    title: 'I am a robot and this is a test!',
+    title: 'atlassify-app edited your page',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {
-      title: 'Repository',
-      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
-      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
+      title: 'Atlassify Home',
+      iconUrl:
+        'https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg' as Link,
+      url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify/pages/3752329340/Atlassify+Home' as Link,
     },
     path: {
-      title: 'Repository',
-      iconUrl: 'https://github.atlassify.io/favicon.ico' as Link,
-      url: 'https://github.atlassify.io/myorg/notifications-test' as Link,
+      title: 'Atlassify Space',
+      iconUrl: null,
+      url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify' as Link,
     },
     product: {
       name: 'confluence',
@@ -56,12 +54,12 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     actor: {
       displayName: 'atlassify-app',
       avatarURL:
-        'https://avatars.githubusercontent.com/u/133795385?s=200&v=4' as Link,
+        'https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123' as Link,
     },
     category: 'direct',
     readState: 'unread',
     account: mockAtlassianCloudAccount,
-    url: 'https://api.github.com/notifications/threads/148827438' as Link,
+    url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify/pages/3752329340/Atlassify+Home' as Link,
   },
 ];
 

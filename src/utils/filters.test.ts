@@ -1,6 +1,12 @@
+import { mockSingleAccountNotifications } from '../__mocks__/notifications-mocks';
 import { defaultSettings } from '../context/App';
 import type { SettingsState } from '../types';
-import { hasFiltersSet } from './filters';
+import {
+  getCategoryFilterCount,
+  getProductFilterCount,
+  getReadStateFilterCount,
+  hasFiltersSet,
+} from './filters';
 
 describe('utils/filters.ts', () => {
   describe('has filters', () => {
@@ -31,5 +37,23 @@ describe('utils/filters.ts', () => {
       } as SettingsState;
       expect(hasFiltersSet(settings)).toBe(true);
     });
+  });
+
+  it('filter count - read state', () => {
+    expect(
+      getReadStateFilterCount(mockSingleAccountNotifications, 'unread'),
+    ).toBe(1);
+  });
+
+  it('filter count - category', () => {
+    expect(
+      getCategoryFilterCount(mockSingleAccountNotifications, 'direct'),
+    ).toBe(1);
+  });
+
+  it('filter count - product', () => {
+    expect(
+      getProductFilterCount(mockSingleAccountNotifications, 'bitbucket'),
+    ).toBe(1);
   });
 });

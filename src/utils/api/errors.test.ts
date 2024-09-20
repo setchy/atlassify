@@ -17,7 +17,7 @@ describe('utils/api/errors.ts', () => {
   });
 
   describe('bad request errors', () => {
-    it('bad credentials', async () => {
+    it('bad credentials - 401', async () => {
       const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
         status: 401,
@@ -31,18 +31,18 @@ describe('utils/api/errors.ts', () => {
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
 
-    it('unhandled bad request error', async () => {
+    it('bad credentials - 404', async () => {
       const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
-        status: 400,
-        response: createMockResponse(403, 'Oops! Something went wrong.'),
+        status: 404,
+        response: createMockResponse(404, 'Bad credentials'),
       };
 
       const result = determineFailureType(
         mockError as AxiosError<AtlassianAPIError>,
       );
 
-      expect(result).toBe(Errors.UNKNOWN);
+      expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
   });
 

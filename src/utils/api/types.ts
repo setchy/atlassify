@@ -59,39 +59,37 @@ export type ProductName =
 
 export interface AtlassianNotification {
   groupId: string;
-  headNotification: {
-    notificationId: string;
-    timestamp: string;
-    readState: string;
-    category: string;
-    content: {
-      type: string;
-      message: string;
+  headNotification: AtlassianHeadNotification;
+}
+
+export interface AtlassianHeadNotification {
+  notificationId: string;
+  timestamp: string;
+  readState: string;
+  category: string;
+  content: {
+    type: string;
+    message: string;
+    url: Link;
+    path: {
+      title: string;
       url: Link;
-      path: [
-        {
-          title: string;
-          url: Link;
-          iconUrl: Link | null;
-        },
-      ];
-      entity: {
-        title: string;
-        iconUrl: Link;
-        url: Link;
-      };
-      actor: {
-        displayName: string;
-        avatarURL: Link;
-      };
+      iconUrl: Link | null;
+    }[];
+    entity: {
+      title: string;
+      iconUrl: Link;
+      url: Link;
     };
-    analyticsAttributes: [
-      {
-        key: string;
-        value: string;
-      },
-    ];
+    actor: {
+      displayName: string;
+      avatarURL: Link;
+    };
   };
+  analyticsAttributes: {
+    key: string;
+    value: string;
+  }[];
 }
 
 export interface GraphQLResponse<T, U> {

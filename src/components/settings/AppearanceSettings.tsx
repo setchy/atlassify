@@ -46,9 +46,19 @@ export const AppearanceSettings: FC = () => {
   });
 
   const themeOptions: OptionsPropType = [
-    { name: 'theme', label: 'System', value: Theme.SYSTEM },
-    { name: 'theme', label: 'Light', value: Theme.LIGHT },
-    { name: 'theme', label: 'Dark', value: Theme.DARK },
+    {
+      name: 'theme',
+      label: 'System',
+      value: Theme.SYSTEM,
+      testId: 'theme-system',
+    },
+    {
+      name: 'theme',
+      label: 'Light',
+      value: Theme.LIGHT,
+      testId: 'theme-light',
+    },
+    { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
   ];
 
   return (
@@ -63,7 +73,6 @@ export const AppearanceSettings: FC = () => {
           options={themeOptions}
           defaultValue={settings.theme}
           value={settings.theme}
-          // isDisabled={true}
           onChange={(evt) => {
             updateSetting('theme', evt.target.value as Theme);
           }}

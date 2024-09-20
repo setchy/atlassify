@@ -4,6 +4,7 @@ A list of "things" to improve
 
 ## Soon
 - [ ] re-enable handful of skipped unit tests
+- [ ] use content.type in notification row experience
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
