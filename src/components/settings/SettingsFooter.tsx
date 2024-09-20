@@ -26,7 +26,7 @@ export const SettingsFooter: FC = () => {
   }, []);
 
   return (
-    <div className="text-sm  px-2 bg-gray-200 dark:bg-gray-darker">
+    <div className="text-sm  px-2 bg-gray-200">
       <Box padding="space.050">
         <Stack>
           <Inline grow="fill" spread="space-between">

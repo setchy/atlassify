@@ -182,7 +182,7 @@ export const FiltersRoute: FC = () => {
         </Stack>
       </div>
 
-      <div className="text-sm bg-gray-200 dark:bg-gray-darker">
+      <div className="text-sm bg-gray-200">
         <Box padding="space.100">
           <Flex justifyContent="end">
             <Tooltip content="Clear all filters" position="left">

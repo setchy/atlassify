@@ -1,7 +1,9 @@
 import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
 
+import Badge from '@atlaskit/badge';
 import { IconButton } from '@atlaskit/button/new';
+import Heading from '@atlaskit/heading';
 import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
@@ -10,7 +12,6 @@ import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 import Tooltip from '@atlaskit/tooltip';
 
-import Heading from '@atlaskit/heading';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
@@ -62,7 +63,7 @@ export const AppearanceSettings: FC = () => {
           options={themeOptions}
           defaultValue={settings.theme}
           value={settings.theme}
-          isDisabled={true}
+          // isDisabled={true}
           onChange={(evt) => {
             updateSetting('theme', evt.target.value as Theme);
           }}
@@ -70,53 +71,56 @@ export const AppearanceSettings: FC = () => {
         />
       </Inline>
 
-      <div className="flex items-center mt-3 mb-2 text-sm">
-        <label
-          htmlFor="Zoom"
-          className="mr-3 content-center font-medium text-gray-700 dark:text-gray-200"
-        >
+      <Inline space="space.100">
+        <Text id="theme-label" weight="medium">
           Zoom:
-        </label>
-        <Tooltip content="Zoom Out" position="bottom">
-          <IconButton
-            label="Zoom Out"
-            icon={MediaServicesZoomOutIcon}
-            shape="circle"
-            spacing="compact"
-            onClick={() =>
-              zoomPercentage > 0 &&
-              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage - 10))
-            }
-            testId="settings-zoom-out"
-          />
-        </Tooltip>
-        <span className="flex w-16 h-5 items-center justify-center rounded-none border border-gray-300 bg-transparent text-xs text-gray-700 dark:text-gray-200">
-          {zoomPercentage.toFixed(0)}%
-        </span>
-        <Tooltip content="Zoom In" position="bottom">
-          <IconButton
-            label="Zoom In"
-            icon={MediaServicesZoomInIcon}
-            shape="circle"
-            spacing="compact"
-            onClick={() =>
-              zoomPercentage < 120 &&
-              webFrame.setZoomLevel(zoomPercentageToLevel(zoomPercentage + 10))
-            }
-            testId="settings-zoom-in"
-          />
-        </Tooltip>
-        <Tooltip content="Reset Zoom" position="bottom">
-          <IconButton
-            label="Reset Zoom"
-            icon={SelectClearIcon}
-            shape="circle"
-            spacing="compact"
-            onClick={() => webFrame.setZoomLevel(0)}
-            testId="settings-zoom-reset"
-          />
-        </Tooltip>
-      </div>
+        </Text>
+        <Inline alignBlock="center">
+          <Tooltip content="Zoom Out" position="bottom">
+            <IconButton
+              label="Zoom Out"
+              icon={MediaServicesZoomOutIcon}
+              shape="circle"
+              spacing="compact"
+              onClick={() =>
+                zoomPercentage > 0 &&
+                webFrame.setZoomLevel(
+                  zoomPercentageToLevel(zoomPercentage - 10),
+                )
+              }
+              testId="settings-zoom-out"
+            />
+          </Tooltip>
+          <Badge max={false}>{zoomPercentage.toFixed(0)}%</Badge>
+          <Tooltip content="Zoom In" position="bottom">
+            <IconButton
+              label="Zoom In"
+              icon={MediaServicesZoomInIcon}
+              shape="circle"
+              spacing="compact"
+              onClick={() =>
+                zoomPercentage < 120 &&
+                webFrame.setZoomLevel(
+                  zoomPercentageToLevel(zoomPercentage + 10),
+                )
+              }
+              testId="settings-zoom-in"
+            />
+          </Tooltip>
+          <Tooltip content="Reset Zoom" position="bottom">
+            <IconButton
+              label="Reset Zoom"
+              icon={(iconProps) => (
+                <SelectClearIcon {...iconProps} primaryColor="red" />
+              )}
+              shape="circle"
+              spacing="compact"
+              onClick={() => webFrame.setZoomLevel(0)}
+              testId="settings-zoom-reset"
+            />
+          </Tooltip>
+        </Inline>
+      </Inline>
     </Stack>
   );
 };

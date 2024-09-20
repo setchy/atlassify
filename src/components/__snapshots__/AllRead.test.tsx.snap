@@ -6,7 +6,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black dark:bg-gray-dark dark:text-white"
+        class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
       >
         <div
           class="mt-2 mb-5 text-5xl"
@@ -30,7 +30,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
   </body>,
   "container": <div>
     <div
-      class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black dark:bg-gray-dark dark:text-white"
+      class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
     >
       <div
         class="mt-2 mb-5 text-5xl"
