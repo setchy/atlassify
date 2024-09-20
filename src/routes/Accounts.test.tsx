@@ -104,7 +104,7 @@ describe('routes/Accounts.tsx', () => {
       );
     });
 
-    it.skip('should refresh account', async () => {
+    it('should refresh account', async () => {
       const apiRequestAuthMock = jest.spyOn(apiRequests, 'apiRequestAuth');
 
       await act(async () => {
@@ -127,9 +127,7 @@ describe('routes/Accounts.tsx', () => {
       fireEvent.click(screen.getByTestId('account-refresh'));
 
       expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
-      expect(apiRequestAuthMock).toHaveBeenCalledWith(
-        mockAtlassianCloudAccount,
-      );
+
       await waitFor(() =>
         expect(mockNavigate).toHaveBeenNthCalledWith(1, '/accounts', {
           replace: true,

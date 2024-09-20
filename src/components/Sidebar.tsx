@@ -1,7 +1,7 @@
 import { type FC, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import Button, { IconButton } from '@atlaskit/button/new';
+import { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import ListIcon from '@atlaskit/icon/glyph/list';
@@ -9,7 +9,7 @@ import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { AtlasIcon } from '@atlaskit/logo';
-import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import Spinner from '@atlaskit/spinner';
@@ -92,25 +92,21 @@ export const Sidebar: FC = () => {
             content={`${notificationsLabel} unread notifications`}
             position="right"
           >
-            <Button
-              iconBefore={(iconProps) => (
+            <IconButton
+              label="Notifications"
+              icon={(iconProps) => (
                 <NotificationIcon
                   {...iconProps}
                   size="small"
                   primaryColor="white"
                 />
               )}
-              appearance="subtle"
+              appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
               spacing="compact"
+              shape="circle"
               onClick={() => openMyNotifications()}
               testId="sidebar-notifications"
-            >
-              {notificationsCount > 0 && (
-                <Text color="color.text.inverse" size="small" weight="semibold">
-                  {notificationsCount}
-                </Text>
-              )}
-            </Button>
+            />
           </Tooltip>
 
           {isLoggedIn && (
@@ -165,29 +161,21 @@ export const Sidebar: FC = () => {
               </Tooltip>
 
               <Tooltip content="Filters" position="right">
-                <Button
-                  appearance="subtle"
-                  spacing="compact"
-                  onClick={() => toggleFilters()}
-                  testId="sidebar-filters"
-                >
-                  <Inline alignBlock="center" space="space.100">
+                <IconButton
+                  label="Filters"
+                  icon={(iconProps) => (
                     <FilterIcon
-                      label="Filters"
+                      {...iconProps}
                       size="small"
                       primaryColor="white"
                     />
-                    {filterCount > 0 && (
-                      <Text
-                        color="color.text.inverse"
-                        size="small"
-                        weight="semibold"
-                      >
-                        {filterCount}
-                      </Text>
-                    )}
-                  </Inline>
-                </Button>
+                  )}
+                  appearance={filterCount > 0 ? 'discovery' : 'subtle'}
+                  spacing="compact"
+                  shape="circle"
+                  onClick={() => toggleFilters()}
+                  testId="sidebar-filters"
+                />
               </Tooltip>
             </>
           )}

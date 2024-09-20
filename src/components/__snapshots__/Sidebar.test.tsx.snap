@@ -2,116 +2,111 @@
 
 exports[`components/Sidebar.tsx Filters go to the filters route 1`] = `
 <button
-  class=" css-utfauu"
+  class=" css-a8hcye"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1nqby2s"
+    class=" css-1spmf3f"
   >
-    <div
-      class="css-1v6wdk"
+    <span
+      aria-hidden="true"
+      class="css-1wits42"
+      data-vc="icon-undefined"
+      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
-      <span
-        aria-label="Filters"
-        class="css-1wits42"
-        data-vc="icon-undefined"
-        role="img"
-        style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      <svg
+        height="24"
+        role="presentation"
+        viewBox="0 0 24 24"
+        width="24"
       >
-        <svg
-          height="24"
-          role="presentation"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <path
-            d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-            fill="currentcolor"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </span>
-    </div>
+        <path
+          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
+          fill="currentcolor"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
+      class="css-b5o75w"
+    >
+      Filters
+    </span>
   </span>
 </button>
 `;
 
 exports[`components/Sidebar.tsx Filters go to the home if filters path already shown 1`] = `
 <button
-  class=" css-utfauu"
+  class=" css-a8hcye"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1nqby2s"
+    class=" css-1spmf3f"
   >
-    <div
-      class="css-1v6wdk"
+    <span
+      aria-hidden="true"
+      class="css-1wits42"
+      data-vc="icon-undefined"
+      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
-      <span
-        aria-label="Filters"
-        class="css-1wits42"
-        data-vc="icon-undefined"
-        role="img"
-        style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      <svg
+        height="24"
+        role="presentation"
+        viewBox="0 0 24 24"
+        width="24"
       >
-        <svg
-          height="24"
-          role="presentation"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <path
-            d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-            fill="currentcolor"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </span>
-    </div>
+        <path
+          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
+          fill="currentcolor"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
+      class="css-b5o75w"
+    >
+      Filters
+    </span>
   </span>
 </button>
 `;
 
 exports[`components/Sidebar.tsx Filters show filters count if any are saved 1`] = `
 <button
-  class=" css-utfauu"
+  class=" css-1pe4njs"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1nqby2s"
+    class=" css-1spmf3f"
   >
-    <div
-      class="css-1v6wdk"
+    <span
+      aria-hidden="true"
+      class="css-1wits42"
+      data-vc="icon-undefined"
+      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
-      <span
-        aria-label="Filters"
-        class="css-1wits42"
-        data-vc="icon-undefined"
-        role="img"
-        style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      <svg
+        height="24"
+        role="presentation"
+        viewBox="0 0 24 24"
+        width="24"
       >
-        <svg
-          height="24"
-          role="presentation"
-          viewBox="0 0 24 24"
-          width="24"
-        >
-          <path
-            d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-            fill="currentcolor"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </span>
-      <span
-        class="css-17r4cdi"
-      >
-        1
-      </span>
-    </div>
+        <path
+          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
+          fill="currentcolor"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
+      class="css-b5o75w"
+    >
+      Filters
+    </span>
   </span>
 </button>
 `;
@@ -192,12 +187,12 @@ exports[`components/Sidebar.tsx Group by products should order notifications by 
 
 exports[`components/Sidebar.tsx notifications icon renders correct icon when there are more notifications available 1`] = `
 <button
-  class=" css-nw65qk"
+  class=" css-1srvl33"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-12rb8n9"
+    class=" css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -218,14 +213,10 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
         />
       </svg>
     </span>
-  </span>
-  <span
-    class=" css-1nqby2s"
-  >
     <span
-      class="css-17r4cdi"
+      class="css-b5o75w"
     >
-      2
+      Notifications
     </span>
   </span>
 </button>
@@ -233,12 +224,12 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
 
 exports[`components/Sidebar.tsx notifications icon renders correct icon when there are no notifications 1`] = `
 <button
-  class=" css-nw65qk"
+  class=" css-a8hcye"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-12rb8n9"
+    class=" css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -258,6 +249,11 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
           fill-rule="evenodd"
         />
       </svg>
+    </span>
+    <span
+      class="css-b5o75w"
+    >
+      Notifications
     </span>
   </span>
 </button>
@@ -265,12 +261,12 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
 
 exports[`components/Sidebar.tsx notifications icon renders correct icon when there are notifications 1`] = `
 <button
-  class=" css-nw65qk"
+  class=" css-1srvl33"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-12rb8n9"
+    class=" css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -291,14 +287,10 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
         />
       </svg>
     </span>
-  </span>
-  <span
-    class=" css-1nqby2s"
-  >
     <span
-      class="css-17r4cdi"
+      class="css-b5o75w"
     >
-      2
+      Notifications
     </span>
   </span>
 </button>
@@ -378,12 +370,12 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               role="presentation"
             >
               <button
-                class=" css-nw65qk"
+                class=" css-1srvl33"
                 data-testid="sidebar-notifications"
                 type="button"
               >
                 <span
-                  class=" css-12rb8n9"
+                  class=" css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -404,14 +396,10 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                       />
                     </svg>
                   </span>
-                </span>
-                <span
-                  class=" css-1nqby2s"
-                >
                   <span
-                    class="css-17r4cdi"
+                    class="css-b5o75w"
                   >
-                    2
+                    Notifications
                   </span>
                 </span>
               </button>
@@ -550,12 +538,12 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             role="presentation"
           >
             <button
-              class=" css-nw65qk"
+              class=" css-1srvl33"
               data-testid="sidebar-notifications"
               type="button"
             >
               <span
-                class=" css-12rb8n9"
+                class=" css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -576,14 +564,10 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                     />
                   </svg>
                 </span>
-              </span>
-              <span
-                class=" css-1nqby2s"
-              >
                 <span
-                  class="css-17r4cdi"
+                  class="css-b5o75w"
                 >
-                  2
+                  Notifications
                 </span>
               </span>
             </button>
@@ -779,12 +763,12 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               role="presentation"
             >
               <button
-                class=" css-nw65qk"
+                class=" css-1srvl33"
                 data-testid="sidebar-notifications"
                 type="button"
               >
                 <span
-                  class=" css-12rb8n9"
+                  class=" css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -805,14 +789,10 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                       />
                     </svg>
                   </span>
-                </span>
-                <span
-                  class=" css-1nqby2s"
-                >
                   <span
-                    class="css-17r4cdi"
+                    class="css-b5o75w"
                   >
-                    2
+                    Notifications
                   </span>
                 </span>
               </button>
@@ -951,12 +931,12 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             role="presentation"
           >
             <button
-              class=" css-nw65qk"
+              class=" css-1srvl33"
               data-testid="sidebar-notifications"
               type="button"
             >
               <span
-                class=" css-12rb8n9"
+                class=" css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -977,14 +957,10 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                     />
                   </svg>
                 </span>
-              </span>
-              <span
-                class=" css-1nqby2s"
-              >
                 <span
-                  class="css-17r4cdi"
+                  class="css-b5o75w"
                 >
-                  2
+                  Notifications
                 </span>
               </span>
             </button>

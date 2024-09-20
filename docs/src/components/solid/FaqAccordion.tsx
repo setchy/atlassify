@@ -16,6 +16,12 @@ const content = [
   },
   {
     id: '2',
+    question: 'Are there local log files?',
+    answer:
+      'There sure is! You can find them on your device at:\n- macOS: `~/Library/Logs/atlassify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\atlassify`.',
+  },
+  {
+    id: '3',
     question: 'How can I contribute to Atlassify?',
     answer: `You can contribute to Atlassify by opening a pull request @[${siteMetadata.repo}](https://github.com/${siteMetadata.repo})! Check out our open issues and see if there's anything you'd like to work on.`,
   },

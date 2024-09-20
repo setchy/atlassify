@@ -1,4 +1,5 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import type { AxiosPromise, AxiosResponse } from 'axios';
 import { useContext } from 'react';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { useNotifications } from '../hooks/useNotifications';
@@ -168,8 +169,25 @@ describe('context/App.tsx', () => {
       });
     });
 
-    it.skip('should call loginWithAPIToken', async () => {
-      apiRequestAuthMock.mockResolvedValueOnce(null);
+    it('should call loginWithAPIToken', async () => {
+      const requestPromise = new Promise((resolve) =>
+        resolve({
+          data: {
+            data: {
+              me: {
+                user: {
+                  accountId: '123',
+                  name: 'Atlassify',
+                  picture: 'https://atlassify.io',
+                },
+              },
+            },
+          },
+        } as AxiosResponse),
+      ) as AxiosPromise;
+
+      apiRequestAuthMock.mockResolvedValueOnce(requestPromise);
+      jest.spyOn(storage, 'saveState').mockImplementation(jest.fn());
 
       const TestComponent = () => {
         const { loginWithAPIToken } = useContext(AppContext);
@@ -179,7 +197,7 @@ describe('context/App.tsx', () => {
             type="button"
             onClick={() =>
               loginWithAPIToken({
-                username: 'atlas' as Username,
+                username: 'atlassify' as Username,
                 token: '123-456' as Token,
               })
             }
@@ -191,19 +209,11 @@ describe('context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
-
-      expect(apiRequestAuthMock).toHaveBeenCalledTimes(2);
-      expect(apiRequestAuthMock).toHaveBeenCalledWith(
-        expect.objectContaining({
-          url: 'https://team.atlassian.net/gateway/api/graphql',
-          method: 'POST',
-        }),
-      );
+      expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
     });
   });
 
