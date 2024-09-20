@@ -1690,7 +1690,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
                     />
                   </span>
@@ -1736,9 +1736,9 @@ exports[`components/AccountNotifications.tsx account view types should render it
               <div
                 class="text-sm"
                 role="main"
-                title="I am a robot and this is a test!"
+                title="#103: chore(deps): update dependency eslint"
               >
-                I am a robot and this is a test!
+                #103: chore(deps): update dependency eslint
                 <span
                   class="pl-2 text-xs text-gray-700"
                   title="Updated 4 years ago"
@@ -1762,7 +1762,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://github.atlassify.io/favicon.ico"
+                      src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
                     />
                   </span>
@@ -1770,10 +1770,10 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="12"
                   >
-                    Repository
+                    #103: chore(deps): update dependency eslint
                   </span>
                 </div>
-                Repository
+                #103: chore(deps): update dependency eslint
               </div>
               <div
                 class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -1802,7 +1802,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
     
                   </svg>
                 </span>
-                Repository
+                myorg/notifications-test
               </div>
             </div>
           </div>
@@ -1877,7 +1877,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
                     />
                   </span>
@@ -1923,9 +1923,9 @@ exports[`components/AccountNotifications.tsx account view types should render it
               <div
                 class="text-sm"
                 role="main"
-                title="I am a robot and this is a test!"
+                title="atlassify-app edited your page"
               >
-                I am a robot and this is a test!
+                atlassify-app edited your page
                 <span
                   class="pl-2 text-xs text-gray-700"
                   title="Updated 4 years ago"
@@ -1949,7 +1949,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://github.atlassify.io/favicon.ico"
+                      src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                       style="border-radius: 2px;"
                     />
                   </span>
@@ -1957,10 +1957,10 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="18"
                   >
-                    Repository
+                    Atlassify Home
                   </span>
                 </div>
-                Repository
+                Atlassify Home
               </div>
               <div
                 class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -1989,7 +1989,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
     
                   </svg>
                 </span>
-                Repository
+                Atlassify Space
               </div>
             </div>
           </div>
@@ -2262,7 +2262,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
                   />
                 </span>
@@ -2308,9 +2308,9 @@ exports[`components/AccountNotifications.tsx account view types should render it
             <div
               class="text-sm"
               role="main"
-              title="I am a robot and this is a test!"
+              title="#103: chore(deps): update dependency eslint"
             >
-              I am a robot and this is a test!
+              #103: chore(deps): update dependency eslint
               <span
                 class="pl-2 text-xs text-gray-700"
                 title="Updated 4 years ago"
@@ -2334,7 +2334,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlassify.io/favicon.ico"
+                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -2342,10 +2342,10 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   hidden=""
                   id="12"
                 >
-                  Repository
+                  #103: chore(deps): update dependency eslint
                 </span>
               </div>
-              Repository
+              #103: chore(deps): update dependency eslint
             </div>
             <div
               class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -2374,7 +2374,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
     
                 </svg>
               </span>
-              Repository
+              myorg/notifications-test
             </div>
           </div>
         </div>
@@ -2449,7 +2449,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
                   />
                 </span>
@@ -2495,9 +2495,9 @@ exports[`components/AccountNotifications.tsx account view types should render it
             <div
               class="text-sm"
               role="main"
-              title="I am a robot and this is a test!"
+              title="atlassify-app edited your page"
             >
-              I am a robot and this is a test!
+              atlassify-app edited your page
               <span
                 class="pl-2 text-xs text-gray-700"
                 title="Updated 4 years ago"
@@ -2521,7 +2521,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlassify.io/favicon.ico"
+                    src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -2529,10 +2529,10 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   hidden=""
                   id="18"
                 >
-                  Repository
+                  Atlassify Home
                 </span>
               </div>
-              Repository
+              Atlassify Home
             </div>
             <div
               class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -2561,7 +2561,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
     
                 </svg>
               </span>
-              Repository
+              Atlassify Space
             </div>
           </div>
         </div>
@@ -3088,7 +3088,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
                     />
                   </span>
@@ -3134,9 +3134,9 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
               <div
                 class="text-sm"
                 role="main"
-                title="I am a robot and this is a test!"
+                title="#103: chore(deps): update dependency eslint"
               >
-                I am a robot and this is a test!
+                #103: chore(deps): update dependency eslint
                 <span
                   class="pl-2 text-xs text-gray-700"
                   title="Updated 4 years ago"
@@ -3160,7 +3160,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://github.atlassify.io/favicon.ico"
+                      src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
                     />
                   </span>
@@ -3168,10 +3168,10 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     hidden=""
                     id="112"
                   >
-                    Repository
+                    #103: chore(deps): update dependency eslint
                   </span>
                 </div>
-                Repository
+                #103: chore(deps): update dependency eslint
               </div>
               <div
                 class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -3200,7 +3200,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
     
                   </svg>
                 </span>
-                Repository
+                myorg/notifications-test
               </div>
             </div>
           </div>
@@ -3275,7 +3275,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
                     />
                   </span>
@@ -3321,9 +3321,9 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
               <div
                 class="text-sm"
                 role="main"
-                title="I am a robot and this is a test!"
+                title="atlassify-app edited your page"
               >
-                I am a robot and this is a test!
+                atlassify-app edited your page
                 <span
                   class="pl-2 text-xs text-gray-700"
                   title="Updated 4 years ago"
@@ -3347,7 +3347,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       aria-hidden="true"
                       class="css-13ep12v"
                       data-vc="avatar-image"
-                      src="https://github.atlassify.io/favicon.ico"
+                      src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                       style="border-radius: 2px;"
                     />
                   </span>
@@ -3355,10 +3355,10 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     hidden=""
                     id="118"
                   >
-                    Repository
+                    Atlassify Home
                   </span>
                 </div>
-                Repository
+                Atlassify Home
               </div>
               <div
                 class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -3387,7 +3387,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
     
                   </svg>
                 </span>
-                Repository
+                Atlassify Space
               </div>
             </div>
           </div>
@@ -3660,7 +3660,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
                   />
                 </span>
@@ -3706,9 +3706,9 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
             <div
               class="text-sm"
               role="main"
-              title="I am a robot and this is a test!"
+              title="#103: chore(deps): update dependency eslint"
             >
-              I am a robot and this is a test!
+              #103: chore(deps): update dependency eslint
               <span
                 class="pl-2 text-xs text-gray-700"
                 title="Updated 4 years ago"
@@ -3732,7 +3732,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlassify.io/favicon.ico"
+                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -3740,10 +3740,10 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                   hidden=""
                   id="112"
                 >
-                  Repository
+                  #103: chore(deps): update dependency eslint
                 </span>
               </div>
-              Repository
+              #103: chore(deps): update dependency eslint
             </div>
             <div
               class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -3772,7 +3772,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
     
                 </svg>
               </span>
-              Repository
+              myorg/notifications-test
             </div>
           </div>
         </div>
@@ -3847,7 +3847,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://avatars.githubusercontent.com/u/133795385?s=200&v=4"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
                   />
                 </span>
@@ -3893,9 +3893,9 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
             <div
               class="text-sm"
               role="main"
-              title="I am a robot and this is a test!"
+              title="atlassify-app edited your page"
             >
-              I am a robot and this is a test!
+              atlassify-app edited your page
               <span
                 class="pl-2 text-xs text-gray-700"
                 title="Updated 4 years ago"
@@ -3919,7 +3919,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     aria-hidden="true"
                     class="css-13ep12v"
                     data-vc="avatar-image"
-                    src="https://github.atlassify.io/favicon.ico"
+                    src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                     style="border-radius: 2px;"
                   />
                 </span>
@@ -3927,10 +3927,10 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                   hidden=""
                   id="118"
                 >
-                  Repository
+                  Atlassify Home
                 </span>
               </div>
-              Repository
+              Atlassify Home
             </div>
             <div
               class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
@@ -3959,7 +3959,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
     
                 </svg>
               </span>
-              Repository
+              Atlassify Space
             </div>
           </div>
         </div>

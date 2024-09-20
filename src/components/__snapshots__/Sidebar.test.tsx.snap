@@ -113,7 +113,7 @@ exports[`components/Sidebar.tsx Filters show filters count if any are saved 1`] 
 
 exports[`components/Sidebar.tsx Group by products should group notifications by product 1`] = `
 <button
-  class=" css-a8hcye"
+  class=" css-1pe4njs"
   data-testid="sidebar-group-by-product"
   type="button"
 >
@@ -149,6 +149,43 @@ exports[`components/Sidebar.tsx Group by products should group notifications by 
 `;
 
 exports[`components/Sidebar.tsx Group by products should order notifications by date 1`] = `
+<button
+  class=" css-a8hcye"
+  data-testid="sidebar-group-by-product"
+  type="button"
+>
+  <span
+    class=" css-1spmf3f"
+  >
+    <span
+      aria-label="groupByProduct"
+      class="css-1wits42"
+      data-vc="icon-undefined"
+      role="img"
+      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+    >
+      <svg
+        height="24"
+        role="presentation"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+          fill="currentcolor"
+        />
+      </svg>
+    </span>
+    <span
+      class="css-b5o75w"
+    >
+      Group notifications by products
+    </span>
+  </span>
+</button>
+`;
+
+exports[`components/Sidebar.tsx Group by products should toggle group by products 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-group-by-product"
@@ -1080,4 +1117,16 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
   "rerender": [Function],
   "unmount": [Function],
 }
+`;
+
+exports[`components/Sidebar.tsx show only unread notifications should toggle show only unread notifications 1`] = `
+<input
+  aria-labelledby="80"
+  checked=""
+  data-testid="sidebar-toggle-unread-only--input"
+  id="toggle-unread-only"
+  name=""
+  type="checkbox"
+  value=""
+/>
 `;

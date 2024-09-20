@@ -1,8 +1,44 @@
-import { mockSingleNotification } from '../__mocks__/notifications-mocks';
-import { formatNotificationUpdatedAt } from './helpers';
+import {
+  mockAtlassifyNotifications,
+  mockSingleNotification,
+} from '../__mocks__/notifications-mocks';
+import {
+  formatNotificationFooterText,
+  formatNotificationUpdatedAt,
+  getRepositoryName,
+} from './helpers';
 
 describe('utils/helpers.ts', () => {
+  it('getRepositoryName', () => {
+    expect(getRepositoryName(mockSingleNotification)).toBe(
+      'myorg/notifications-test',
+    );
+  });
+
   describe('formatting', () => {
+    describe('formatNotificationFooterText', () => {
+      it('use product name if available mapping', () => {
+        expect(
+          formatNotificationFooterText(mockAtlassifyNotifications[1]),
+        ).toBe('Atlassify Space');
+      });
+
+      it('bitbucket mapping', () => {
+        expect(
+          formatNotificationFooterText(mockAtlassifyNotifications[0]),
+        ).toBe('myorg/notifications-test');
+      });
+
+      it('default mapping', () => {
+        const mockNotification = mockAtlassifyNotifications[1];
+        mockNotification.path = null;
+
+        expect(formatNotificationFooterText(mockNotification)).toBe(
+          'Confluence',
+        );
+      });
+    });
+
     describe('formatNotificationUpdatedAt', () => {
       it('should use updated_at if last_read_at is null', () => {
         const notification = {

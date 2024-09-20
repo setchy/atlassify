@@ -1,8 +1,11 @@
 import { mockSingleNotification } from '../__mocks__/notifications-mocks';
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import * as comms from './comms';
+import { Constants } from './constants';
 import {
   openAccountProfile,
+  openAtlassianCreateToken,
+  openAtlassianSecurityDocs,
   openAtlassifyReleaseNotes,
   openMyNotifications,
   openMyPullRequests,
@@ -25,10 +28,24 @@ describe('utils/links.ts', () => {
     );
   });
 
+  it('openAtlassianSecurityDocs', () => {
+    openAtlassianSecurityDocs();
+    expect(openExternalLinkMock).toHaveBeenCalledWith(
+      Constants.ATLASSIAN_URLS.DOCS.API_TOKEN_URL,
+    );
+  });
+
+  it('openAtlassianCreateToken', () => {
+    openAtlassianCreateToken();
+    expect(openExternalLinkMock).toHaveBeenCalledWith(
+      Constants.ATLASSIAN_URLS.WEB.SECURITY_TOKENS,
+    );
+  });
+
   it('openMyNotifications', () => {
     openMyNotifications();
     expect(openExternalLinkMock).toHaveBeenCalledWith(
-      'https://team.atlassian.com/notifications',
+      Constants.ATLASSIAN_URLS.WEB.MY_NOTIFICATIONS,
     );
   });
 

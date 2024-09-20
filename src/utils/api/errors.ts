@@ -12,17 +12,9 @@ export function determineFailureType(
     return Errors.NETWORK;
   }
 
-  if (code !== AxiosError.ERR_BAD_REQUEST) {
-    return Errors.UNKNOWN;
-  }
+  const status = err.response?.status;
 
-  const status = err.response.status;
-
-  if (status === 401) {
-    return Errors.BAD_CREDENTIALS;
-  }
-
-  if (status === 404) {
+  if (status === 401 || status === 404) {
     return Errors.BAD_CREDENTIALS;
   }
 
