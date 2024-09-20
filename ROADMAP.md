@@ -20,6 +20,7 @@ A list of "things" to improve
 - [ ] create "update available" menubar icon set
 - [ ] shrink app bundle size by moving dependencies around and adjusting files filter
 - [ ] user defined sorting of inbox when grouped by product
+- [ ] use secure local storage
 
 # Atlassian Roadmap
 - https://www.atlassian.com/wac/roadmap/cloud?&search=Atlassian%20Home
