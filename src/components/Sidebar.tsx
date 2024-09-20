@@ -14,6 +14,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
+import { colors } from '../../tailwind.config';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/filters';
@@ -238,9 +239,11 @@ export const Sidebar: FC = () => {
                     {...iconProps}
                     size="medium"
                     primaryColor="white"
+                    secondaryColor={colors.sidebar}
                   />
                 )}
                 shape="circle"
+                appearance="subtle"
                 onClick={() => quitApp()}
                 testId="sidebar-quit"
               />

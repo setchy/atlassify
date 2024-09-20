@@ -2,8 +2,8 @@ import { type FC, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
-import NotificationAllIcon from '@atlaskit/icon/glyph/notification-all';
 import {
+  AtlasIcon,
   AtlassianIcon,
   BitbucketIcon,
   CompassIcon,
@@ -31,15 +31,14 @@ export const LoginRoute: FC = () => {
   return (
     <div className="flex flex-1 flex-col items-center justify-center p-4">
       <div>
-        <AtlassianIcon appearance="brand" size="xlarge" />{' '}
-        <NotificationAllIcon label="" size="xlarge" />
+        <AtlasIcon appearance="brand" size="xlarge" />{' '}
       </div>
 
-      <div className="my-4 px-2.5 py-1.5 text-center font-semibold">
+      <div className="my-2 px-2.5 py-1.5 text-center font-semibold">
         <div>
-          Atlassian Notifications <br /> on your menu bar.
+          Atlassian notifications <br /> on your menu bar
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="my-2 flex items-center justify-center gap-2">
           <BitbucketIcon size="small" appearance="neutral" />
           <ConfluenceIcon size="small" appearance="neutral" />
           <CompassIcon size="small" appearance="neutral" />
