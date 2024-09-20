@@ -9,8 +9,7 @@ A list of "things" to improve
 - [ ] fix root of `findDOMNode is deprecated and will be removed in the next major release.` console error
 - [ ] improve product mapping coverage
 - [ ] re-enable handful of skipped unit tests
-
-
+- [ ] improve product mapping coverage
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
