@@ -1,6 +1,6 @@
 # Atlassify 
 
-[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases]
+[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio] [![Contributors][contributors-badge]][github] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![OSS License][license-badge]][license] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime-project]
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
@@ -41,12 +41,17 @@ I would like to acknowledge the following projects and resources that have inspi
 <!-- LINK LABELS -->
 [website]: https://www.atlassify.io
 [faqs]: https://www.atlassify.io/faq/
+
+[attribution-gitify]: https://gitify.io
+[attribution-atlassian]: https://atlassian.design/
+
 [github]: https://github.com/setchy/atlassify
 [github-actions]: https://github.com/setchy/atlassify/actions
 [github-releases]: https://github.com/setchy/atlassify/releases/latest
 [github-website]: https://github.com/setchy/atlassify-website
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls
 [brew]: https://brew.sh/
+
 [coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
@@ -63,6 +68,6 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-release-badge]: https://img.shields.io/github/v/release/setchy/atlassify?logo=github
 [renovate]: https://renovatebot.com/
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate
+[wakatime-badge]: https://wakatime.com/badge/user/2b948ae2-4be1-4020-8a57-7de60b53fe1d/project/60db4d24-0691-43a4-8762-9823d1ad5784.svg
+[watatime-project]: https://wakatime.com/badge/user/2b948ae2-4be1-4020-8a57-7de60b53fe1d/project/60db4d24-0691-43a4-8762-9823d1ad5784
 
-[attribution-gitify]: https://gitify.io
-[attribution-atlassian]: https://atlassian.design/
