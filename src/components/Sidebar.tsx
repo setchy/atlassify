@@ -237,6 +237,8 @@ export const Sidebar: FC = () => {
                   <CrossCircleIcon
                     {...iconProps}
                     size="medium"
+                    primaryColor="white"
+                    secondaryColor="#388BFF"
                   />
                 )}
                 shape="circle"
