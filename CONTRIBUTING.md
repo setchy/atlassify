@@ -2,6 +2,10 @@
 
 Hi! We're really excited that you're interested in contributing to Atlassify! Before submitting your contribution, please read through the following guide.
 
+### Project Philosophy
+
+This project is a tool for monitoring new notifications from Atlassian.
+
 ### Installation
 
 To get started, you'll need to clone the repository and install the dependencies.
@@ -65,9 +69,6 @@ The release process is automated. Follow the steps below.
 8. Create a [New Milestone][github-new-milestone] for upcoming release.
 9. A new homebrew cask will be [automatically published][homebrew-cask-autobump-workflow] (workflow runs ~3 hours)
 
-### Project Philosophy
-
-This project is a tool for monitoring new notifications from Atlassian.
 
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/
