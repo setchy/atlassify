@@ -1,7 +1,8 @@
+import { B200 } from '@atlaskit/theme/colors';
 import type { Config } from 'tailwindcss';
 
 export const colors = {
-  sidebar: '#388BFF',
+  sidebar: B200,
 };
 
 const config: Config = {
