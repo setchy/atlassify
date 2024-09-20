@@ -427,7 +427,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
                     <svg
                       height="24"
@@ -595,7 +595,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
                   <svg
                     height="24"
@@ -820,7 +820,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
                     <svg
                       height="24"
@@ -988,7 +988,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                 >
                   <svg
                     height="24"
