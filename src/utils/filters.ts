@@ -1,9 +1,13 @@
 import EmojiFlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
 import WatchIcon from '@atlaskit/icon/glyph/watch';
 
-import { defaultSettings } from '../context/App';
 import type { AccountNotifications, SettingsState } from '../types';
-import type { BasicDetails, Category, Product, ReadState } from './api/types';
+import type {
+  BasicDetails,
+  Category,
+  ProductName,
+  ReadState,
+} from './api/types';
 
 export const CATEGORIES: Record<Category, BasicDetails> = {
   direct: {
@@ -61,7 +65,7 @@ export function getCategoryFilterCount(
 
 export function getProductFilterCount(
   notifications: AccountNotifications[],
-  product: Product,
+  product: ProductName,
 ) {
   return notifications.reduce(
     (memo, acc) =>
@@ -70,27 +74,10 @@ export function getProductFilterCount(
   );
 }
 
-// TODO: implementation is primitive.  Should be comparing a intersection of the filter arrays.  Perhaps only needs to be a hasFilters function, too.
-export function getFilterCount(settings: SettingsState): number {
-  let count = 0;
-
-  if (
-    settings.filterCategories.length !== defaultSettings.filterCategories.length
-  ) {
-    count += settings.filterCategories.length;
-  }
-
-  if (
-    settings.filterReadStates.length !== defaultSettings.filterReadStates.length
-  ) {
-    count += settings.filterReadStates.length;
-  }
-
-  if (
-    settings.filterProducts.length !== defaultSettings.filterProducts.length
-  ) {
-    count += settings.filterProducts.length;
-  }
-
-  return count;
+export function hasFiltersSet(settings: SettingsState): boolean {
+  return (
+    settings.filterCategories.length > 0 ||
+    settings.filterReadStates.length > 0 ||
+    settings.filterProducts.length > 0
+  );
 }
