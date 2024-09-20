@@ -7,7 +7,7 @@ A list of "things" to improve
 - [ ] clear out all TODOs in this project
 - [ ] improve product mapping coverage
 - [ ] re-enable handful of skipped unit tests
-- [ ] use content.type
+- [ ] use content.type in notification row experience
 
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
