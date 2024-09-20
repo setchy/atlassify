@@ -58,346 +58,200 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
     </div>
   </div>
   <div
-    class="flex flex-col flex-grow overflow-x-auto px-8"
+    class="flex flex-col flex-grow overflow-x-auto"
   >
     <div
-      class="css-1qcqice"
+      class="css-8mzmlv"
     >
       <div
-        class="css-t8lj6l"
+        class="css-1ub26k9"
       >
-        <h4
-          class="css-1skdotg"
-        >
-          Appearance
-        </h4>
         <div
-          class="css-gokkc4"
+          class="css-t8lj6l"
         >
-          <span
-            class="css-19g3t4k"
-            id="theme-label"
+          <h4
+            class="css-1skdotg"
           >
-            Theme:
-          </span>
+            Appearance
+          </h4>
           <div
-            aria-labelledby="theme-label"
-            role="radiogroup"
+            class="css-gokkc4"
           >
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                class="css-t4vzni"
-                name="theme"
-                tabindex="0"
-                type="radio"
-                value="SYSTEM"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                System
-              </span>
-            </label>
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                checked=""
-                class="css-t4vzni"
-                name="theme"
-                tabindex="0"
-                type="radio"
-                value="LIGHT"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Light
-              </span>
-            </label>
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                class="css-t4vzni"
-                name="theme"
-                tabindex="0"
-                type="radio"
-                value="DARK"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Dark
-              </span>
-            </label>
-          </div>
-        </div>
-        <div
-          class="css-gokkc4"
-        >
-          <span
-            class="css-19g3t4k"
-            id="theme-label"
-          >
-            Zoom:
-          </span>
-          <div
-            class="css-mrgpd6"
-          >
-            <div
-              role="presentation"
-            >
-              <button
-                class=" css-1h9zni"
-                data-testid="settings-zoom-out"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Zoom Out
-                  </span>
-                </span>
-              </button>
-            </div>
             <span
-              class="css-1wkl091"
+              class="css-19g3t4k"
+              id="theme-label"
             >
-              <span
-                class="css-f9etm4"
-              >
-                100
-                %
-              </span>
+              Theme:
             </span>
             <div
-              role="presentation"
+              aria-labelledby="theme-label"
+              role="radiogroup"
             >
-              <button
-                class=" css-1h9zni"
-                data-testid="settings-zoom-in"
-                type="button"
+              <label
+                class="css-exvs2c"
               >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Zoom In
-                  </span>
-                </span>
-              </button>
-            </div>
-            <div
-              role="presentation"
-            >
-              <button
-                class=" css-1h9zni"
-                data-testid="settings-zoom-reset"
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: red; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <g
-                        fill-rule="evenodd"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          r="9"
-                        />
-                        <path
-                          d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.17 1.17 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12z"
-                          fill="inherit"
-                        />
-                      </g>
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Reset Zoom
-                  </span>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="css-t8lj6l"
-      >
-        <h4
-          class="css-1skdotg"
-        >
-          Notifications
-        </h4>
-        <label
-          class="css-k8x29e"
-        >
-          <input
-            checked=""
-            class="css-f3myyk"
-            name="markAsReadOnOpen"
-            tabindex="0"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            class="css-1dr55qw"
-            role="presentation"
-            style="fill: var(--checkbox-tick-color);"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill-rule="evenodd"
-            >
-              <rect
-                fill="currentColor"
-                height="12"
-                rx="2"
-                width="12"
-                x="6"
-                y="6"
-              />
-              <path
-                d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                fill="inherit"
-              />
-            </g>
-          </svg>
-          <span
-            class="css-1odt9zb"
-          >
-            Mark as read on open
-          </span>
-        </label>
-        <div
-          class="css-gokkc4"
-        >
-          <label
-            class="css-k8x29e"
-          >
-            <input
-              class="css-f3myyk"
-              name="delayNotificationState"
-              tabindex="0"
-              type="checkbox"
-              value=""
-            />
-            <svg
-              class="css-1dr55qw"
-              role="presentation"
-              style="fill: var(--checkbox-tick-color);"
-              viewBox="0 0 24 24"
-            >
-              <g
-                fill-rule="evenodd"
-              >
-                <rect
-                  fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
+                <input
+                  class="css-t4vzni"
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="SYSTEM"
                 />
-              </g>
-            </svg>
-            <span
-              class="css-1odt9zb"
-            >
-              Delay notification state
-            </span>
-          </label>
-          <div
-            class="css-ssyr0c"
-            style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
-          >
-            <button
-              aria-expanded="false"
-              class="css-1au32bq"
-              data-ds--inline-message--button="true"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="css-1gd7hga"
+                <span
+                  class="css-b9c6gp"
+                >
+                  System
+                </span>
+              </label>
+              <label
+                class="css-exvs2c"
               >
-                <div
-                  class="css-bsfd3j"
+                <input
+                  checked=""
+                  class="css-t4vzni"
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="LIGHT"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Light
+                </span>
+              </label>
+              <label
+                class="css-exvs2c"
+              >
+                <input
+                  class="css-t4vzni"
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="DARK"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Dark
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="css-gokkc4"
+          >
+            <span
+              class="css-19g3t4k"
+              id="theme-label"
+            >
+              Zoom:
+            </span>
+            <div
+              class="css-mrgpd6"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-1h9zni"
+                  data-testid="settings-zoom-out"
+                  type="button"
                 >
                   <span
-                    class="css-q0v5v7"
-                    data-ds--inline-message--icon="true"
-                    style="--icon-color: var(--ds-icon-discovery, #6554C0);"
+                    class=" css-1spmf3f"
                   >
                     <span
-                      aria-label="info inline message"
-                      class="css-1afrefi"
-                      data-testid="inline-message-icon"
-                      data-vc="icon-inline-message-icon"
-                      role="img"
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
                       style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Zoom Out
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <span
+                class="css-1wkl091"
+              >
+                <span
+                  class="css-f9etm4"
+                >
+                  100
+                  %
+                </span>
+              </span>
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-1h9zni"
+                  data-testid="settings-zoom-in"
+                  type="button"
+                >
+                  <span
+                    class=" css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Zoom In
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-1h9zni"
+                  data-testid="settings-zoom-reset"
+                  type="button"
+                >
+                  <span
+                    class=" css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: red; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
                       <svg
                         height="24"
@@ -408,103 +262,45 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
                         <g
                           fill-rule="evenodd"
                         >
-                          <path
-                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                            fill="currentcolor"
-                          />
-                          <rect
-                            fill="inherit"
-                            height="7"
-                            rx="1"
-                            width="2"
-                            x="11"
-                            y="10"
-                          />
                           <circle
                             cx="12"
-                            cy="8"
+                            cy="12"
+                            fill="currentcolor"
+                            r="9"
+                          />
+                          <path
+                            d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.17 1.17 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12z"
                             fill="inherit"
-                            r="1"
                           />
                         </g>
                       </svg>
                     </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Reset Zoom
+                    </span>
                   </span>
-                  <div
-                    class="css-gokkc4"
-                  />
-                </div>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="css-t8lj6l"
-      >
-        <h4
-          class="css-1skdotg"
-        >
-          System
-        </h4>
-        <div
-          class="css-gokkc4"
-        >
-          <span
-            class="css-19g3t4k"
-            id="openLinks-label"
-          >
-            Open Links:
-          </span>
-          <div
-            aria-labelledby="openLinks-label"
-            role="radiogroup"
-          >
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                checked=""
-                class="css-t4vzni"
-                name="openLinks"
-                tabindex="0"
-                type="radio"
-                value="FOREGROUND"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Foreground
-              </span>
-            </label>
-            <label
-              class="css-exvs2c"
-            >
-              <input
-                class="css-t4vzni"
-                name="openLinks"
-                tabindex="0"
-                type="radio"
-                value="BACKGROUND"
-              />
-              <span
-                class="css-b9c6gp"
-              >
-                Background
-              </span>
-            </label>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div
-          class="css-gokkc4"
+          class="css-t8lj6l"
         >
+          <h4
+            class="css-1skdotg"
+          >
+            Notifications
+          </h4>
           <label
             class="css-k8x29e"
           >
             <input
               checked=""
               class="css-f3myyk"
-              name="keyboardShortcutEnabled"
+              name="markAsReadOnOpen"
               tabindex="0"
               type="checkbox"
               value=""
@@ -535,207 +331,518 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             <span
               class="css-1odt9zb"
             >
-              Enable keyboard shortcut
+              Mark as read on open
             </span>
           </label>
           <div
-            class="css-ssyr0c"
-            style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
+            class="css-gokkc4"
           >
-            <button
-              aria-expanded="false"
-              class="css-1au32bq"
-              data-ds--inline-message--button="true"
-              tabindex="0"
-              type="button"
+            <label
+              class="css-k8x29e"
             >
-              <span
-                class="css-1gd7hga"
+              <input
+                class="css-f3myyk"
+                name="delayNotificationState"
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <svg
+                class="css-1dr55qw"
+                role="presentation"
+                style="fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
               >
-                <div
-                  class="css-bsfd3j"
+                <g
+                  fill-rule="evenodd"
                 >
-                  <span
-                    class="css-q0v5v7"
-                    data-ds--inline-message--icon="true"
-                    style="--icon-color: var(--ds-icon-discovery, #6554C0);"
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                </g>
+              </svg>
+              <span
+                class="css-1odt9zb"
+              >
+                Delay notification state
+              </span>
+            </label>
+            <div
+              class="css-ssyr0c"
+              style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
+            >
+              <button
+                aria-expanded="false"
+                class="css-1au32bq"
+                data-ds--inline-message--button="true"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="css-1gd7hga"
+                >
+                  <div
+                    class="css-bsfd3j"
                   >
                     <span
-                      aria-label="info inline message"
-                      class="css-1afrefi"
-                      data-testid="inline-message-icon"
-                      data-vc="icon-inline-message-icon"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-q0v5v7"
+                      data-ds--inline-message--icon="true"
+                      style="--icon-color: var(--ds-icon-discovery, #6554C0);"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                      <span
+                        aria-label="info inline message"
+                        class="css-1afrefi"
+                        data-testid="inline-message-icon"
+                        data-vc="icon-inline-message-icon"
+                        role="img"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                       >
-                        <g
-                          fill-rule="evenodd"
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
                         >
-                          <path
-                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                            fill="currentcolor"
-                          />
-                          <rect
-                            fill="inherit"
-                            height="7"
-                            rx="1"
-                            width="2"
-                            x="11"
-                            y="10"
-                          />
-                          <circle
-                            cx="12"
-                            cy="8"
-                            fill="inherit"
-                            r="1"
-                          />
-                        </g>
-                      </svg>
+                          <g
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                              fill="currentcolor"
+                            />
+                            <rect
+                              fill="inherit"
+                              height="7"
+                              rx="1"
+                              width="2"
+                              x="11"
+                              y="10"
+                            />
+                            <circle
+                              cx="12"
+                              cy="8"
+                              fill="inherit"
+                              r="1"
+                            />
+                          </g>
+                        </svg>
+                      </span>
                     </span>
-                  </span>
-                  <div
-                    class="css-gokkc4"
-                  />
-                </div>
-              </span>
-            </button>
+                    <div
+                      class="css-gokkc4"
+                    />
+                  </div>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
-        <label
-          class="css-k8x29e"
-        >
-          <input
-            checked=""
-            class="css-f3myyk"
-            name="showNotificationsCountInTray"
-            tabindex="0"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            class="css-1dr55qw"
-            role="presentation"
-            style="fill: var(--checkbox-tick-color);"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill-rule="evenodd"
-            >
-              <rect
-                fill="currentColor"
-                height="12"
-                rx="2"
-                width="12"
-                x="6"
-                y="6"
-              />
-              <path
-                d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                fill="inherit"
-              />
-            </g>
-          </svg>
-          <span
-            class="css-1odt9zb"
-          >
-            Show notifications count in tray
-          </span>
-        </label>
-        <label
-          class="css-k8x29e"
-        >
-          <input
-            checked=""
-            class="css-f3myyk"
-            name="showNotifications"
-            tabindex="0"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            class="css-1dr55qw"
-            role="presentation"
-            style="fill: var(--checkbox-tick-color);"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill-rule="evenodd"
-            >
-              <rect
-                fill="currentColor"
-                height="12"
-                rx="2"
-                width="12"
-                x="6"
-                y="6"
-              />
-              <path
-                d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                fill="inherit"
-              />
-            </g>
-          </svg>
-          <span
-            class="css-1odt9zb"
-          >
-            Show system notifications
-          </span>
-        </label>
-        <label
-          class="css-k8x29e"
-        >
-          <input
-            checked=""
-            class="css-f3myyk"
-            name="playSoundNewNotifications"
-            tabindex="0"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            class="css-1dr55qw"
-            role="presentation"
-            style="fill: var(--checkbox-tick-color);"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill-rule="evenodd"
-            >
-              <rect
-                fill="currentColor"
-                height="12"
-                rx="2"
-                width="12"
-                x="6"
-                y="6"
-              />
-              <path
-                d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                fill="inherit"
-              />
-            </g>
-          </svg>
-          <span
-            class="css-1odt9zb"
-          >
-            Play sound for new notifications
-          </span>
-        </label>
         <div
-          class="css-gokkc4"
+          class="css-t8lj6l"
         >
+          <h4
+            class="css-1skdotg"
+          >
+            System
+          </h4>
+          <div
+            class="css-gokkc4"
+          >
+            <span
+              class="css-19g3t4k"
+              id="openLinks-label"
+            >
+              Open Links:
+            </span>
+            <div
+              aria-labelledby="openLinks-label"
+              role="radiogroup"
+            >
+              <label
+                class="css-exvs2c"
+              >
+                <input
+                  checked=""
+                  class="css-t4vzni"
+                  name="openLinks"
+                  tabindex="0"
+                  type="radio"
+                  value="FOREGROUND"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Foreground
+                </span>
+              </label>
+              <label
+                class="css-exvs2c"
+              >
+                <input
+                  class="css-t4vzni"
+                  name="openLinks"
+                  tabindex="0"
+                  type="radio"
+                  value="BACKGROUND"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Background
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="css-gokkc4"
+          >
+            <label
+              class="css-k8x29e"
+            >
+              <input
+                checked=""
+                class="css-f3myyk"
+                name="keyboardShortcutEnabled"
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <svg
+                class="css-1dr55qw"
+                role="presentation"
+                style="fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                  <path
+                    d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                    fill="inherit"
+                  />
+                </g>
+              </svg>
+              <span
+                class="css-1odt9zb"
+              >
+                Enable keyboard shortcut
+              </span>
+            </label>
+            <div
+              class="css-ssyr0c"
+              style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
+            >
+              <button
+                aria-expanded="false"
+                class="css-1au32bq"
+                data-ds--inline-message--button="true"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="css-1gd7hga"
+                >
+                  <div
+                    class="css-bsfd3j"
+                  >
+                    <span
+                      class="css-q0v5v7"
+                      data-ds--inline-message--icon="true"
+                      style="--icon-color: var(--ds-icon-discovery, #6554C0);"
+                    >
+                      <span
+                        aria-label="info inline message"
+                        class="css-1afrefi"
+                        data-testid="inline-message-icon"
+                        data-vc="icon-inline-message-icon"
+                        role="img"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      >
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <g
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                              fill="currentcolor"
+                            />
+                            <rect
+                              fill="inherit"
+                              height="7"
+                              rx="1"
+                              width="2"
+                              x="11"
+                              y="10"
+                            />
+                            <circle
+                              cx="12"
+                              cy="8"
+                              fill="inherit"
+                              r="1"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </span>
+                    <div
+                      class="css-gokkc4"
+                    />
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
+          <label
+            class="css-k8x29e"
+          >
+            <input
+              checked=""
+              class="css-f3myyk"
+              name="showNotificationsCountInTray"
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <svg
+              class="css-1dr55qw"
+              role="presentation"
+              style="fill: var(--checkbox-tick-color);"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill-rule="evenodd"
+              >
+                <rect
+                  fill="currentColor"
+                  height="12"
+                  rx="2"
+                  width="12"
+                  x="6"
+                  y="6"
+                />
+                <path
+                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                  fill="inherit"
+                />
+              </g>
+            </svg>
+            <span
+              class="css-1odt9zb"
+            >
+              Show notifications count in tray
+            </span>
+          </label>
+          <label
+            class="css-k8x29e"
+          >
+            <input
+              checked=""
+              class="css-f3myyk"
+              name="showNotifications"
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <svg
+              class="css-1dr55qw"
+              role="presentation"
+              style="fill: var(--checkbox-tick-color);"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill-rule="evenodd"
+              >
+                <rect
+                  fill="currentColor"
+                  height="12"
+                  rx="2"
+                  width="12"
+                  x="6"
+                  y="6"
+                />
+                <path
+                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                  fill="inherit"
+                />
+              </g>
+            </svg>
+            <span
+              class="css-1odt9zb"
+            >
+              Show system notifications
+            </span>
+          </label>
+          <label
+            class="css-k8x29e"
+          >
+            <input
+              checked=""
+              class="css-f3myyk"
+              name="playSoundNewNotifications"
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <svg
+              class="css-1dr55qw"
+              role="presentation"
+              style="fill: var(--checkbox-tick-color);"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill-rule="evenodd"
+              >
+                <rect
+                  fill="currentColor"
+                  height="12"
+                  rx="2"
+                  width="12"
+                  x="6"
+                  y="6"
+                />
+                <path
+                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                  fill="inherit"
+                />
+              </g>
+            </svg>
+            <span
+              class="css-1odt9zb"
+            >
+              Play sound for new notifications
+            </span>
+          </label>
+          <div
+            class="css-gokkc4"
+          >
+            <label
+              class="css-k8x29e"
+            >
+              <input
+                class="css-f3myyk"
+                name="useAlternateIdleIcon"
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <svg
+                class="css-1dr55qw"
+                role="presentation"
+                style="fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                </g>
+              </svg>
+              <span
+                class="css-1odt9zb"
+              >
+                Use alternate idle icon
+              </span>
+            </label>
+            <div
+              class="css-ssyr0c"
+              style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
+            >
+              <button
+                aria-expanded="false"
+                class="css-1au32bq"
+                data-ds--inline-message--button="true"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="css-1gd7hga"
+                >
+                  <div
+                    class="css-bsfd3j"
+                  >
+                    <span
+                      class="css-q0v5v7"
+                      data-ds--inline-message--icon="true"
+                      style="--icon-color: var(--ds-icon-discovery, #6554C0);"
+                    >
+                      <span
+                        aria-label="info inline message"
+                        class="css-1afrefi"
+                        data-testid="inline-message-icon"
+                        data-vc="icon-inline-message-icon"
+                        role="img"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      >
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <g
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                              fill="currentcolor"
+                            />
+                            <rect
+                              fill="inherit"
+                              height="7"
+                              rx="1"
+                              width="2"
+                              x="11"
+                              y="10"
+                            />
+                            <circle
+                              cx="12"
+                              cy="8"
+                              fill="inherit"
+                              r="1"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </span>
+                    <div
+                      class="css-gokkc4"
+                    />
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
           <label
             class="css-k8x29e"
           >
             <input
               class="css-f3myyk"
-              name="useAlternateIdleIcon"
+              name="openAtStartUp"
               tabindex="0"
               type="checkbox"
               value=""
@@ -762,119 +869,12 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
             <span
               class="css-1odt9zb"
             >
-              Use alternate idle icon
+              Open at startup
             </span>
           </label>
-          <div
-            class="css-ssyr0c"
-            style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
-          >
-            <button
-              aria-expanded="false"
-              class="css-1au32bq"
-              data-ds--inline-message--button="true"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="css-1gd7hga"
-              >
-                <div
-                  class="css-bsfd3j"
-                >
-                  <span
-                    class="css-q0v5v7"
-                    data-ds--inline-message--icon="true"
-                    style="--icon-color: var(--ds-icon-discovery, #6554C0);"
-                  >
-                    <span
-                      aria-label="info inline message"
-                      class="css-1afrefi"
-                      data-testid="inline-message-icon"
-                      data-vc="icon-inline-message-icon"
-                      role="img"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <g
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                            fill="currentcolor"
-                          />
-                          <rect
-                            fill="inherit"
-                            height="7"
-                            rx="1"
-                            width="2"
-                            x="11"
-                            y="10"
-                          />
-                          <circle
-                            cx="12"
-                            cy="8"
-                            fill="inherit"
-                            r="1"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                  </span>
-                  <div
-                    class="css-gokkc4"
-                  />
-                </div>
-              </span>
-            </button>
-          </div>
         </div>
-        <label
-          class="css-k8x29e"
-        >
-          <input
-            class="css-f3myyk"
-            name="openAtStartUp"
-            tabindex="0"
-            type="checkbox"
-            value=""
-          />
-          <svg
-            class="css-1dr55qw"
-            role="presentation"
-            style="fill: var(--checkbox-tick-color);"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill-rule="evenodd"
-            >
-              <rect
-                fill="currentColor"
-                height="12"
-                rx="2"
-                width="12"
-                x="6"
-                y="6"
-              />
-            </g>
-          </svg>
-          <span
-            class="css-1odt9zb"
-          >
-            Open at startup
-          </span>
-        </label>
-      </div>
-      <div
-        class="css-ze0mo2"
-      >
         <div
-          class="css-1g56j5j"
+          class="css-ze0mo2"
         >
           <button
             aria-haspopup="dialog"

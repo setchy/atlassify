@@ -42,14 +42,14 @@ export const SettingsRoute: FC = () => {
     <div className="flex h-screen flex-col" data-testid="settings">
       <Header fetchOnBack>Settings</Header>
 
-      <div className="flex flex-col flex-grow overflow-x-auto px-8">
-        <Stack space="space.400">
-          <AppearanceSettings />
-          <NotificationSettings />
-          <SystemSettings />
+      <div className="flex flex-col flex-grow overflow-x-auto">
+        <Box paddingInline="space.400" paddingBlockEnd="space.200">
+          <Stack space="space.200">
+            <AppearanceSettings />
+            <NotificationSettings />
+            <SystemSettings />
 
-          <Inline alignInline="center">
-            <Box paddingBlockEnd="space.400">
+            <Inline alignInline="center">
               <Button
                 aria-haspopup="dialog"
                 appearance="danger"
@@ -115,11 +115,10 @@ export const SettingsRoute: FC = () => {
                   </Modal>
                 )}
               </ModalTransition>
-            </Box>
-          </Inline>
-        </Stack>
+            </Inline>
+          </Stack>
+        </Box>
       </div>
-
       <SettingsFooter />
     </div>
   );
