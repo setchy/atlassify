@@ -30,6 +30,7 @@
     "confluence",
     "compass",
     "jira",
+    "trello",
     "notifier",
     "notifications",
     "electron",
