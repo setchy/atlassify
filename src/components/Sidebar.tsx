@@ -19,6 +19,7 @@ import { quitApp } from '../utils/comms';
 import { getFilterCount } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
+import { colors } from '../../tailwind.config';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -238,7 +239,7 @@ export const Sidebar: FC = () => {
                     {...iconProps}
                     size="medium"
                     primaryColor="white"
-                    secondaryColor="#388BFF"
+                    secondaryColor={colors['sidebar']}
                   />
                 )}
                 shape="circle"
