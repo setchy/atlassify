@@ -240,6 +240,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 shape="circle"
+                appearance="subtle"
                 onClick={() => quitApp()}
                 testId="sidebar-quit"
               />
