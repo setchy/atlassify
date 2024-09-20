@@ -3,15 +3,15 @@ import { defaultSettings } from '../context/App';
 import type { SettingsState } from '../types';
 import {
   getCategoryFilterCount,
-  getFilterCount,
   getProductFilterCount,
   getReadStateFilterCount,
+  hasFiltersSet,
 } from './filters';
 
 describe('utils/filters.ts', () => {
-  describe('filter count', () => {
+  describe('has filters', () => {
     it('default filter settings', () => {
-      expect(getFilterCount(defaultSettings)).toBe(0);
+      expect(hasFiltersSet(defaultSettings)).toBe(false);
     });
 
     it('non-default category filters', () => {
@@ -19,7 +19,7 @@ describe('utils/filters.ts', () => {
         ...defaultSettings,
         filterCategories: ['direct'],
       } as SettingsState;
-      expect(getFilterCount(settings)).toBe(1);
+      expect(hasFiltersSet(settings)).toBe(true);
     });
 
     it('non-default read state filters', () => {
@@ -27,7 +27,7 @@ describe('utils/filters.ts', () => {
         ...defaultSettings,
         filterReadStates: ['read'],
       } as SettingsState;
-      expect(getFilterCount(settings)).toBe(1);
+      expect(hasFiltersSet(settings)).toBe(true);
     });
 
     it('non-default product filters', () => {
@@ -35,7 +35,7 @@ describe('utils/filters.ts', () => {
         ...defaultSettings,
         filterProducts: ['bitbucket'],
       } as SettingsState;
-      expect(getFilterCount(settings)).toBe(1);
+      expect(hasFiltersSet(settings)).toBe(true);
     });
   });
 

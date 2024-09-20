@@ -10,7 +10,6 @@ import { determineFailureType } from '../api/errors';
 import type { AtlassianNotification, Category, ReadState } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
-import { READ_STATES } from '../filters';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';
 
@@ -65,9 +64,10 @@ export async function getAllNotifications(
           return {
             account: accountNotifications.account,
             notifications: notifications,
+            // TODO - there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
             hasNextPage:
               res.extensions.notifications.response_info.responseSize ===
-              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT, // TODO - there is a bug in the Atlassian GraphQL response
+              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
             error: null,
           };
         } catch (error) {
@@ -97,7 +97,6 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     id: notification.headNotification.notificationId,
     title: notification.headNotification.content.message,
     readState: notification.headNotification.readState as ReadState,
-    unread: notification.headNotification.readState === READ_STATES.unread.name,
     updated_at: notification.headNotification.timestamp,
     url: notification.headNotification.content.url,
     path: notification.headNotification.content.path[0],
@@ -105,6 +104,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     category: notification.headNotification.category as Category,
     actor: notification.headNotification.content.actor,
     product: getAtlassianProduct(notification),
+    // TODO - can we avoid settings the account at the notification level?
     account: account,
   }));
 }

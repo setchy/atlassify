@@ -3,13 +3,13 @@ import { type FC, useCallback, useContext, useState } from 'react';
 import Avatar from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import { Flex, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { Flex, Stack } from '@atlaskit/primitives';
 import { AppContext } from '../context/App';
 import { type AtlassifyNotification, Opacity } from '../types';
 import { cn } from '../utils/cn';
-import { getCategoryDetails } from '../utils/filters';
+import { READ_STATES, getCategoryDetails } from '../utils/filters';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
@@ -50,6 +50,8 @@ export const NotificationRow: FC<INotificationRow> = ({
   const CategoryIconProps: Record<string, string> = {
     size: 'small',
   };
+
+  const isUnread = notification.readState === READ_STATES.unread.name;
 
   return (
     <div
@@ -123,7 +125,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       </div>
 
       {!animateExit &&
-        (notification.unread ? (
+        (isUnread ? (
           <Flex alignItems="center">
             <Tooltip content="Mark as read" position="left">
               <IconButton
@@ -157,7 +159,6 @@ export const NotificationRow: FC<INotificationRow> = ({
                 appearance="subtle"
                 onClick={() => {
                   markNotificationsUnread([notification]);
-                  notification.unread = true;
                   notification.readState = 'unread';
                 }}
                 testId="notification-mark-as-unread"

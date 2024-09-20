@@ -1,8 +1,7 @@
 import type { Link } from '../../types';
 
 export interface AtlassianProduct {
-  name: Product;
-  description: string;
+  name: ProductName;
   icon: React.ComponentType;
   home?: Link;
 }
@@ -47,7 +46,7 @@ export type Category = 'direct' | 'watching';
 
 export type ReadState = 'unread' | 'read';
 
-export type Product =
+export type ProductName =
   | 'bitbucket'
   | 'confluence'
   | 'compass'

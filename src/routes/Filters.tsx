@@ -9,7 +9,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
-import type { Category, Product, ReadState } from '../utils/api/types';
+import type { Category, ProductName, ReadState } from '../utils/api/types';
 import {
   CATEGORIES,
   READ_STATES,
@@ -58,12 +58,12 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterReadStates', readStates);
   };
 
-  const shouldShowProduct = (product: Product) => {
+  const shouldShowProduct = (product: ProductName) => {
     return settings.filterProducts.includes(product);
   };
 
-  const updateProductFilter = (product: Product, checked: boolean) => {
-    let products: Product[] = settings.filterProducts;
+  const updateProductFilter = (product: ProductName, checked: boolean) => {
+    let products: ProductName[] = settings.filterProducts;
 
     if (checked) {
       products.push(product);
@@ -150,7 +150,7 @@ export const FiltersRoute: FC = () => {
             <Stack space="space.100">
               <Heading size="small">Products</Heading>
               <Box>
-                {Object.keys(PRODUCTS).map((product: Product) => {
+                {Object.keys(PRODUCTS).map((product: ProductName) => {
                   const productDetails = getProductDetails(product);
                   const productIconProps: Record<string, string> = {
                     size: 'xsmall',

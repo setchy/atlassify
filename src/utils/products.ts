@@ -1,7 +1,7 @@
 import type {
   AtlassianNotification,
   AtlassianProduct,
-  Product,
+  ProductName,
 } from './api/types';
 import { Constants } from './constants';
 
@@ -17,55 +17,47 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
-export const PRODUCTS: Record<Product, AtlassianProduct> = {
+export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
-    description: 'Bitbucket description',
     icon: BitbucketIcon,
     home: Constants.ATLASSIAN_URLS.WEB.BITBUCKET_HOME,
   },
   compass: {
     name: 'compass',
-    description: 'Compass description',
     icon: CompassIcon,
   },
   confluence: {
     name: 'confluence',
-    description: 'Confluence description',
     icon: ConfluenceIcon,
   },
   jira: {
     name: 'jira',
-    description: 'Jira description',
     icon: JiraIcon,
   },
   'jira product discovery': {
     name: 'jira product discovery',
-    description: 'Jira product discovery description',
     icon: JiraProductDiscoveryIcon,
   },
   'jira service management': {
     name: 'jira service management',
-    description: 'Jira service management description',
     icon: JiraServiceManagementIcon,
   },
   'team central (atlas)': {
     name: 'team central (atlas)',
-    description: 'Team central (atlas) description',
     icon: AtlasIcon,
   },
   trello: {
     name: 'trello',
-    description: 'Trello description',
     icon: TrelloIcon,
   },
   unknown: {
     name: 'unknown',
-    description: 'Unknown description',
     icon: AtlassianIcon,
   },
 };
 
+// TODO - ideally we could get this from a response field instead of String manipulation
 export function getAtlassianProduct(
   notification: AtlassianNotification,
 ): AtlassianProduct {
@@ -100,6 +92,6 @@ export function getAtlassianProduct(
   }
 }
 
-export function getProductDetails(product: Product): AtlassianProduct {
+export function getProductDetails(product: ProductName): AtlassianProduct {
   return PRODUCTS[product];
 }
