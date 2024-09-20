@@ -416,7 +416,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
               role="presentation"
             >
               <button
-                class=" css-1lwcrd3"
+                class=" css-1hmr5rx"
                 data-testid="sidebar-quit"
                 type="button"
               >
@@ -427,7 +427,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: white; --icon-secondary-color: #388BFF;"
                   >
                     <svg
                       height="24"
@@ -584,7 +584,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
             role="presentation"
           >
             <button
-              class=" css-1lwcrd3"
+              class=" css-1hmr5rx"
               data-testid="sidebar-quit"
               type="button"
             >
@@ -595,7 +595,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  style="--icon-primary-color: white; --icon-secondary-color: #388BFF;"
                 >
                   <svg
                     height="24"
@@ -809,7 +809,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
               role="presentation"
             >
               <button
-                class=" css-1lwcrd3"
+                class=" css-1hmr5rx"
                 data-testid="sidebar-quit"
                 type="button"
               >
@@ -820,7 +820,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: white; --icon-secondary-color: #388BFF;"
                   >
                     <svg
                       height="24"
@@ -977,7 +977,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
             role="presentation"
           >
             <button
-              class=" css-1lwcrd3"
+              class=" css-1hmr5rx"
               data-testid="sidebar-quit"
               type="button"
             >
@@ -988,7 +988,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  style="--icon-primary-color: white; --icon-secondary-color: #388BFF;"
                 >
                   <svg
                     height="24"
