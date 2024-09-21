@@ -57,7 +57,7 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   },
 };
 
-// TODO - ideally we could get this from a response field instead of String manipulation
+// TODO - ideally we could get this from a response field instead of String manipulation. See issue #97
 export function getAtlassianProduct(
   notification: AtlassianNotification,
 ): AtlassianProduct {

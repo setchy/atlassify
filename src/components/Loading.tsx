@@ -2,6 +2,8 @@ import NProgress from 'nprogress';
 import { type FC, useContext, useEffect } from 'react';
 import { AppContext } from '../context/App';
 
+// See issue #94
+
 export const Loading: FC = () => {
   const { status } = useContext(AppContext);
 

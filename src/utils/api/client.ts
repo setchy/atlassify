@@ -11,6 +11,8 @@ import type {
   NotificationsExtensions,
 } from './types';
 
+// See issue #95
+
 /**
  * Get the authenticated user
  *

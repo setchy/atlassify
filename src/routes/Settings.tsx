@@ -32,6 +32,8 @@ const titleContainerStyles = xcss({
   gridArea: 'title',
 });
 
+// FIXME: InlineMessage findDOMNode errors. See issue #90
+
 export const SettingsRoute: FC = () => {
   const { resetSettings } = useContext(AppContext);
   const [isOpen, setIsOpen] = useState(false);
