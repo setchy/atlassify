@@ -1,21 +1,14 @@
 # Atlassify Roadmap 
 
-A list of "things" to improve
+Please see our [GitHub Issues registry][github-issues] for items we want to incorporate into the product offering in the near future.  
 
-## Later
-- [ ] advanced feature for Bitbucket "Your Work" queue
-- [ ] use graphql codegen to help with client types
-- [ ] atlaskit progress bar
-- [ ] ongoing refactor to replace any local html (divs+classNames) with atlaskit primitives
-- [ ] use atlaskit/tokens for colors (and dark mode control)
-- [ ] create "update available" menubar icon set
-- [ ] shrink app bundle size by moving dependencies around and adjusting files filter
-- [ ] user defined sorting of inbox when grouped by product
-- [ ] use secure local storage
-- [ ] fix `findDOMNode is deprecated and will be removed in the next major release.` console error - depends on update to InlineMessage ADS component
-- [ ] improve product mapping coverage
-
+[Contributions][contributing] are always welcomed!
 
 # Atlassian Roadmap
 - https://www.atlassian.com/wac/roadmap/cloud?&search=Atlassian%20Home
 - https://www.atlassian.com/wac/roadmap/cloud/work-suggestions-for-atlassian-home?p=8721f558-a6
+
+
+<!-- Label Links -->
+[contributing]: CONTRIBUTING
+[github-issues]: https://github.com/setchy/atlassify/issues
