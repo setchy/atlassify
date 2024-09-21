@@ -44,7 +44,6 @@ const browserWindowOpts = {
   minHeight: 400,
   resizable: false,
   webPreferences: {
-    enableRemoteModule: true,
     nodeIntegration: true,
     contextIsolation: false,
   },
