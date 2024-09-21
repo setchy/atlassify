@@ -1,16 +1,16 @@
 import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
+import Badge from '@atlaskit/badge';
 import { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import { BitbucketIcon } from '@atlaskit/logo';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import Badge from '@atlaskit/badge';
-import { BitbucketIcon } from '@atlaskit/logo';
 import { AppContext } from '../context/App';
 import type { Account, AtlassifyError, AtlassifyNotification } from '../types';
 import { Constants } from '../utils/constants';

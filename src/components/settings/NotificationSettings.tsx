@@ -2,9 +2,9 @@ import { type FC, useContext } from 'react';
 
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
+import InlineMessage from '@atlaskit/inline-message';
 import { Inline, Stack } from '@atlaskit/primitives';
 
-import InlineMessage from '@atlaskit/inline-message';
 import { AppContext } from '../../context/App';
 
 export const NotificationSettings: FC = () => {

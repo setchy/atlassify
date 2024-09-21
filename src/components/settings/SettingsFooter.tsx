@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
-
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
+
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
 

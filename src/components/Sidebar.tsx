@@ -10,10 +10,10 @@ import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Stack } from '@atlaskit/primitives';
-import Tooltip from '@atlaskit/tooltip';
-
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
+import Tooltip from '@atlaskit/tooltip';
+
 import { colors } from '../../tailwind.config';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
