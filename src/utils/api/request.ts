@@ -1,10 +1,11 @@
 import axios, { type Method, type AxiosPromise } from 'axios';
 import type { Account, Token, Username } from '../../types';
 import { Constants } from '../constants';
+import type { GraphQLRequest } from './types';
 
 export function performPostRequest(
   account: Account,
-  data = {},
+  data: GraphQLRequest,
 ): AxiosPromise | null {
   const auth = btoa(`${account.user.login}:${account.token}`);
 
@@ -21,7 +22,7 @@ export function performHeadRequest(
 
   const method: Method = 'HEAD';
 
-  return performApiRequest(auth, method, {});
+  return performApiRequest(auth, method);
 }
 
 function performApiRequest(

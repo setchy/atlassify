@@ -1,20 +1,26 @@
 import axios from 'axios';
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { Link } from '../../types';
-import { performPostRequest } from './request';
+import { performHeadRequest, performPostRequest } from './request';
+import type { GraphQLRequest } from './types';
 
 jest.mock('axios');
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
-const method = 'POST';
 
 describe('utils/api/request.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('should make a request with the correct parameters', async () => {
-    const data = { key: 'value' };
+  it('should make a post request with the correct parameters', async () => {
+    const data: GraphQLRequest = {
+      query: 'foo',
+      variables: {
+        key: 'value',
+      },
+    };
+    const method = 'POST';
 
     await performPostRequest(mockAtlassianCloudAccount, data);
 
@@ -27,9 +33,14 @@ describe('utils/api/request.ts', () => {
     expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
-  it('should make a request with the correct parameters and default data', async () => {
+  it('should make a head request with the correct parameters', async () => {
     const data = {};
-    await performPostRequest(mockAtlassianCloudAccount, data);
+    const method = 'HEAD';
+
+    await performHeadRequest(
+      mockAtlassianCloudAccount.user.login,
+      mockAtlassianCloudAccount.token,
+    );
 
     expect(axios).toHaveBeenCalledWith({
       method,
