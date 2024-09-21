@@ -5,7 +5,7 @@
     ":separateMultipleMajorReleases",
     ":enableVulnerabilityAlerts",
     "schedule:daily",
-    "regexManagers:biomeVersions"
+    "customManagers:biomeVersions"
   ],
   "labels": ["dependency"],
   "prConcurrentLimit": 5,
@@ -23,7 +23,7 @@
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
       "description": "Update sonar.projectVersion variables in sonar-project.properties",
-      "fileMatch": ["(^|/)sonar-project.properties$"],
+      "fileMatch": ["sonar-project.properties"],
       "matchStrings": ["^sonar.projectVersion=(?<currentValue>.+?)\\s"]
     }
   ]
