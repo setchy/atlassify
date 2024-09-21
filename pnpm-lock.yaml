@@ -11,9 +11,6 @@ importers:
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
-      '@electron/remote':
-        specifier: 2.1.2
-        version: 2.1.2(electron@32.1.2)
       axios:
         specifier: 1.7.7
         version: 1.7.7
@@ -660,11 +657,6 @@ packages:
     resolution: {integrity: sha512-zF4x3QupRU3uNGaP5X1wjpmcjfw1H87kyqZ00Tc3HvriV+4gmOGuvQjGNkrJuXdsApssdNyVwLsy+TaeTGGcVw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-
-  '@electron/remote@2.1.2':
-    resolution: {integrity: sha512-EPwNx+nhdrTBxyCqXt/pftoQg/ybtWDW3DUWHafejvnB1ZGGfMpv6e15D8KeempocjXe78T7WreyGGb3mlZxdA==}
-    peerDependencies:
-      electron: '>= 13.0.0'
 
   '@electron/universal@1.5.1':
     resolution: {integrity: sha512-kbgXxyEauPJiQQUNG2VgUeyfQNFk6hBF11ISN2PNI6agUgPl55pv4eQmaqHzTAzchBvqZ2tQuRVaPStGf0mxGw==}
@@ -4711,10 +4703,6 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - supports-color
-
-  '@electron/remote@2.1.2(electron@32.1.2)':
-    dependencies:
-      electron: 32.1.2
 
   '@electron/universal@1.5.1':
     dependencies:
