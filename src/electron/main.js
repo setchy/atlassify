@@ -35,6 +35,7 @@ const browserWindowOpts = {
   minWidth: 500,
   minHeight: 400,
   resizable: false,
+  // TODO ideally we would disable this as use a preload script with a context bridge
   webPreferences: {
     nodeIntegration: true,
     contextIsolation: false,
