@@ -160,7 +160,7 @@ describe('context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const apiRequestAuthMock = jest.spyOn(apiRequests, 'apiRequestAuth');
+    const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
     const fetchNotificationsMock = jest.fn();
 
     beforeEach(() => {
@@ -186,7 +186,7 @@ describe('context/App.tsx', () => {
         } as AxiosResponse),
       ) as AxiosPromise;
 
-      apiRequestAuthMock.mockResolvedValueOnce(requestPromise);
+      apiRequestMock.mockResolvedValueOnce(requestPromise);
       jest.spyOn(storage, 'saveState').mockImplementation(jest.fn());
 
       const TestComponent = () => {
@@ -213,7 +213,7 @@ describe('context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
+      expect(apiRequestMock).toHaveBeenCalledTimes(1);
     });
   });
 

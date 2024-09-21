@@ -10,8 +10,8 @@ import { Sidebar } from './components/Sidebar';
 import { AppContext, AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
+import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
-import { LoginWithAPIToken } from './routes/LoginWithAPIToken';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
 
@@ -22,7 +22,7 @@ function RequireAuth({ children }) {
   return isLoggedIn ? (
     children
   ) : (
-    <Navigate to="/login" replace state={{ from: location }} />
+    <Navigate to="/landing" replace state={{ from: location }} />
   );
 }
 
@@ -65,8 +65,8 @@ export const App = () => {
                 </RequireAuth>
               }
             />
+            <Route path="/landing" element={<LandingRoute />} />
             <Route path="/login" element={<LoginRoute />} />
-            <Route path="/login-api-token" element={<LoginWithAPIToken />} />
           </Routes>
         </div>
       </Router>

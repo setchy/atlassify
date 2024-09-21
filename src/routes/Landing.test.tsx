@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
-import { LoginRoute } from './Login';
+import { LandingRoute } from './Landing';
 
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('routes/Login.tsx', () => {
+describe('routes/Landing.tsx', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -18,7 +18,7 @@ describe('routes/Login.tsx', () => {
   it('should render itself & its children', () => {
     const tree = render(
       <MemoryRouter>
-        <LoginRoute />
+        <LandingRoute />
       </MemoryRouter>,
     );
 
@@ -31,7 +31,7 @@ describe('routes/Login.tsx', () => {
     const { rerender } = render(
       <AppContext.Provider value={{ isLoggedIn: false }}>
         <MemoryRouter>
-          <LoginRoute />
+          <LandingRoute />
         </MemoryRouter>
       </AppContext.Provider>,
     );
@@ -39,7 +39,7 @@ describe('routes/Login.tsx', () => {
     rerender(
       <AppContext.Provider value={{ isLoggedIn: true }}>
         <MemoryRouter>
-          <LoginRoute />
+          <LandingRoute />
         </MemoryRouter>
       </AppContext.Provider>,
     );
@@ -51,12 +51,12 @@ describe('routes/Login.tsx', () => {
   it('should navigate to login with api token', () => {
     render(
       <MemoryRouter>
-        <LoginRoute />
+        <LandingRoute />
       </MemoryRouter>,
     );
 
     fireEvent.click(screen.getByTestId('login'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token');
+    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login');
   });
 });

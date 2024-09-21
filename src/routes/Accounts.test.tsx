@@ -105,7 +105,7 @@ describe('routes/Accounts.tsx', () => {
     });
 
     it('should refresh account', async () => {
-      const apiRequestAuthMock = jest.spyOn(apiRequests, 'apiRequestAuth');
+      const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
 
       await act(async () => {
         render(
@@ -126,7 +126,7 @@ describe('routes/Accounts.tsx', () => {
 
       fireEvent.click(screen.getByTestId('account-refresh'));
 
-      expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
+      expect(apiRequestMock).toHaveBeenCalledTimes(1);
 
       await waitFor(() =>
         expect(mockNavigate).toHaveBeenNthCalledWith(1, '/accounts', {
@@ -188,7 +188,7 @@ describe('routes/Accounts.tsx', () => {
 
     fireEvent.click(screen.getByTestId('account-add-new'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token', {
+    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login', {
       replace: true,
     });
   });

@@ -8,10 +8,11 @@ import {
   type SettingsState,
   Theme,
   type Token,
+  type Username,
 } from '../types';
 
 export const mockAtlassifyUser: AtlassifyUser = {
-  login: 'atlas',
+  login: 'atlas' as Username,
   name: 'Atlassian',
   id: '123456789',
   avatar: 'https://avatars.githubusercontent.com/u/583231?v=4' as Link,

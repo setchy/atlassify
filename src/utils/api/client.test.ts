@@ -4,6 +4,7 @@ import {
   mockSettings,
 } from '../../__mocks__/state-mocks';
 import {
+  checkIfCredentialsAreValid,
   getAuthenticatedUser,
   getNotificationsForUser,
   markNotificationsAsRead,
@@ -20,8 +21,26 @@ describe('utils/api/client.ts', () => {
     jest.clearAllMocks();
   });
 
+  describe('checkIfCredentialsAreValid', () => {
+    it('should validate credentials', async () => {
+      await checkIfCredentialsAreValid(
+        mockAtlassianCloudAccount.user.login,
+        mockAtlassianCloudAccount.token,
+      );
+
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'HEAD',
+        }),
+      );
+
+      expect(axios.defaults.headers.common).toMatchSnapshot();
+    });
+  });
+
   describe('getAuthenticatedUser', () => {
-    it('should fetch authenticated user - github', async () => {
+    it('should fetch authenticated user details', async () => {
       await getAuthenticatedUser(mockAtlassianCloudAccount);
 
       expect(axios).toHaveBeenCalledWith(
