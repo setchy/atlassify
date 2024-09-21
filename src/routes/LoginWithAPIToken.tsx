@@ -114,7 +114,7 @@ export const LoginWithAPIToken: FC = () => {
     async (data: IValues) => {
       setIsValidToken(true);
       try {
-        await loginWithAPIToken(data as LoginAPITokenOptions);
+        loginWithAPIToken(data as LoginAPITokenOptions);
         navigate(-1);
       } catch (err) {
         log.error('Auth: failed to login with personal access token', err);
