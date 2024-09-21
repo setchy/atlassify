@@ -2,9 +2,6 @@
 
 A list of "things" to improve
 
-## Soon
-- [ ] re-enable handful of skipped unit tests
-
 ## Later
 - [ ] advanced feature for Bitbucket "Your Work" queue
 - [ ] use graphql codegen to help with client types

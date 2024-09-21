@@ -16,7 +16,7 @@ describe('utils/notifications/notifications.ts', () => {
     });
 
     it('should return true if additional pages available', () => {
-      mockSingleAccountNotifications[0].hasNextPage = true;
+      mockSingleAccountNotifications[0].hasMoreNotifications = true;
       const result = hasMoreNotifications(mockSingleAccountNotifications);
 
       expect(result).toBe(true);

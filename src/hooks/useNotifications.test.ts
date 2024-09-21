@@ -1,11 +1,10 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import nock from 'nock';
 
 import log from 'electron-log';
 import { mockSingleNotification } from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings, mockState } from '../__mocks__/state-mocks';
-import { Errors } from '../utils/errors';
+import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';
 
 describe('hooks/useNotifications.ts', () => {
@@ -18,38 +17,22 @@ describe('hooks/useNotifications.ts', () => {
     logErrorSpy.mockReset();
   });
 
-  const id = mockSingleNotification.id;
-
-  describe.skip('fetchNotifications', () => {
-    it('should fetch notifications with success', async () => {
-      const mockState = {
-        auth: mockAuth,
-        settings: {
-          ...mockSettings,
-          detailedNotifications: false,
-        },
-      };
-
-      nock('https://team.atlassian.net')
-        .post('/gateway/api/graphql')
+  describe('fetchNotifications', () => {
+    it('fetchNotifications - unread only', async () => {
+      nock('https://team.atlassian.net//')
+        .post('gateway/api/graphql')
         .reply(200, {
           data: {
             notifications: {
               notificationFeed: {
-                nodes: [
-                  {
-                    headNotification: {
-                      notificationId: 1,
-                      title: 'This is a notification.',
-                    },
-                  },
-                  {
-                    headNotification: {
-                      notificationId: 2,
-                      title: 'This is another notification.',
-                    },
-                  },
-                ],
+                nodes: [],
+              },
+            },
+          },
+          extensions: {
+            notifications: {
+              response_info: {
+                responseSize: 0,
               },
             },
           },
@@ -61,40 +44,73 @@ describe('hooks/useNotifications.ts', () => {
         result.current.fetchNotifications(mockState);
       });
 
-      expect(result.current.status).toBe('loading');
+      await waitFor(() => {
+        expect(result.current.status).toBe('success');
+      });
+
+      expect(result.current.notifications).toEqual([
+        {
+          account: mockState.auth.accounts[0],
+          notifications: [],
+          error: null,
+          hasMoreNotifications: false,
+        },
+      ]);
+    });
+
+    it('fetchNotifications - all notifications read/unread', async () => {
+      mockState.settings.fetchOnlyUnreadNotifications = false;
+
+      nock('https://team.atlassian.net//')
+        .post('gateway/api/graphql')
+        .reply(200, {
+          data: {
+            notifications: {
+              notificationFeed: {
+                nodes: [],
+              },
+            },
+          },
+          extensions: {
+            notifications: {
+              response_info: {
+                responseSize: 0,
+              },
+            },
+          },
+        });
+
+      const { result } = renderHook(() => useNotifications());
+
+      act(() => {
+        result.current.fetchNotifications(mockState);
+      });
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
       });
 
-      expect(result.current.notifications[0].notifications.length).toBe(2);
+      expect(result.current.notifications).toEqual([
+        {
+          account: mockState.auth.accounts[0],
+          notifications: [],
+          error: null,
+          hasMoreNotifications: false,
+        },
+      ]);
     });
 
-    it('should fetch notifications with same failures', async () => {
-      const code = AxiosError.ERR_BAD_REQUEST;
-      const status = 401;
-      const message = 'Bad credentials';
+    it('fetchNotifications - handles missing extensions response object', async () => {
+      mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://api.github.com/')
-        .get('/notifications?participating=false')
-        .replyWithError({
-          code,
-          response: {
-            status,
-            data: {
-              message,
-            },
-          },
-        });
-
-      nock('https://github.atlassify.io/api/v3/')
-        .get('/notifications?participating=false')
-        .replyWithError({
-          code,
-          response: {
-            status,
-            data: {
-              message,
+      nock('https://team.atlassian.net//')
+        .post('gateway/api/graphql')
+        .reply(200, {
+          data: {
+            notifications: {
+              notificationFeed: {
+                nodes: [],
+              },
             },
           },
         });
@@ -105,100 +121,52 @@ describe('hooks/useNotifications.ts', () => {
         result.current.fetchNotifications(mockState);
       });
 
-      expect(result.current.status).toBe('loading');
-
       await waitFor(() => {
-        expect(result.current.status).toBe('error');
+        expect(result.current.status).toBe('success');
       });
 
-      expect(result.current.globalError).toBe(Errors.BAD_CREDENTIALS);
-      expect(logErrorSpy).toHaveBeenCalledTimes(2);
-    });
-
-    it('should fetch notifications with different failures', async () => {
-      const code = AxiosError.ERR_BAD_REQUEST;
-
-      nock('https://api.github.com/')
-        .get('/notifications?participating=false')
-        .replyWithError({
-          code,
-          response: {
-            status: 400,
-            data: {
-              message: 'Oops! Something went wrong.',
-            },
-          },
-        });
-
-      nock('https://github.atlassify.io/api/v3/')
-        .get('/notifications?participating=false')
-        .replyWithError({
-          code,
-          response: {
-            status: 401,
-            data: {
-              message: 'Bad credentials',
-            },
-          },
-        });
-
-      const { result } = renderHook(() => useNotifications());
-
-      act(() => {
-        result.current.fetchNotifications(mockState);
-      });
-
-      expect(result.current.status).toBe('loading');
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('error');
-      });
-
-      expect(result.current.globalError).toBeNull();
-      expect(logErrorSpy).toHaveBeenCalledTimes(2);
+      expect(result.current.notifications).toEqual([
+        {
+          account: mockState.auth.accounts[0],
+          notifications: [],
+          error: null,
+          hasMoreNotifications: false,
+        },
+      ]);
     });
   });
 
-  describe.skip('markNotificationsRead', () => {
-    it('should mark a notifications as read with success', async () => {
-      nock('https://api.github.com/')
-        .patch(`/notifications/threads/${id}`)
-        .reply(200);
+  it('markNotificationsRead', async () => {
+    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
 
-      const { result } = renderHook(() => useNotifications());
+    const { result } = renderHook(() => useNotifications());
 
-      act(() => {
-        result.current.markNotificationsRead(mockState, [
-          mockSingleNotification,
-        ]);
-      });
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('success');
-      });
-
-      expect(result.current.notifications.length).toBe(0);
+    act(() => {
+      result.current.markNotificationsRead(mockState, [mockSingleNotification]);
     });
 
-    it('should mark a notifications as read with failure', async () => {
-      nock('https://api.github.com/')
-        .patch(`/notifications/threads/${id}`)
-        .reply(400);
-
-      const { result } = renderHook(() => useNotifications());
-
-      act(() => {
-        result.current.markNotificationsRead(mockState, [
-          mockSingleNotification,
-        ]);
-      });
-
-      await waitFor(() => {
-        expect(result.current.status).toBe('success');
-      });
-
-      expect(result.current.notifications.length).toBe(0);
-      expect(logErrorSpy).toHaveBeenCalledTimes(1);
+    await waitFor(() => {
+      expect(result.current.status).toBe('success');
     });
+
+    expect(result.current.notifications.length).toBe(0);
+  });
+
+  it('markNotificationsUnRead', async () => {
+    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+
+    const { result } = renderHook(() => useNotifications());
+
+    act(() => {
+      result.current.markNotificationsUnread(mockState, [
+        mockSingleNotification,
+      ]);
+    });
+
+    await waitFor(() => {
+      expect(result.current.status).toBe('success');
+    });
+
+    expect(result.current.notifications.length).toBe(0);
   });
 });

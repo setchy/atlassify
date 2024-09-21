@@ -39,7 +39,7 @@ export function formatNotificationUpdatedAt(
   return '';
 }
 
-/* istanbul ignore next */
+/* istanbul ignore next - testing this is not important */
 export function getDirectoryPath(): string {
   return `${__dirname}`;
 }

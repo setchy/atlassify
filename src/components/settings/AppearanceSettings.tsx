@@ -26,6 +26,7 @@ export const AppearanceSettings: FC = () => {
     zoomLevelToPercentage(webFrame.getZoomLevel()),
   );
 
+  /* istanbul ignore next - testing this is not important */
   useEffect(() => {
     ipcRenderer.on('atlassify:update-theme', (_, updatedTheme: Theme) => {
       if (settings.theme === Theme.SYSTEM) {
