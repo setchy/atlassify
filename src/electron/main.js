@@ -17,25 +17,17 @@ const { autoUpdater } = require('electron-updater');
 const { updateElectronApp } = require('update-electron-app');
 
 log.initialize();
+
 // Tray Icons
 const idleIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-idleTemplate.png`,
 );
-// const idleUpdateAvailableIcon = path.resolve(
-//   `${__dirname}/../../assets/images/tray-idle-update.png`,
-// );
 const idleAlternateIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-idle-white.png`,
 );
-// const idleAlternateUpdateAvailableIcon = path.resolve(
-//   `${__dirname}/../../assets/images/tray-idle-white-update.png`,
-// );
 const activeIcon = path.resolve(
   `${__dirname}/../../assets/images/tray-active.png`,
 );
-// const activeUpdateAvailableIcon = path.resolve(
-//   `${__dirname}/../../assets/images/tray-active-update.png`,
-// );
 
 const browserWindowOpts = {
   width: 500,
@@ -184,11 +176,6 @@ app.whenReady().then(async () => {
 
   ipc.on('atlassify:icon-active', () => {
     if (!mb.tray.isDestroyed()) {
-      // mb.tray.setImage(
-      //   updateAvailableMenuItem.visible
-      //     ? activeUpdateAvailableIcon
-      //     : activeIcon,
-      // );
       mb.tray.setImage(activeIcon);
     }
   });
@@ -196,16 +183,8 @@ app.whenReady().then(async () => {
   ipc.on('atlassify:icon-idle', () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
-        // mb.tray.setImage(
-        //   updateAvailableMenuItem.visible
-        //     ? idleAlternateUpdateAvailableIcon
-        //     : idleAlternateIcon,
-        // );
         mb.tray.setImage(idleAlternateIcon);
       } else {
-        // mb.tray.setImage(
-        //   updateAvailableMenuItem.visible ? idleUpdateAvailableIcon : idleIcon,
-        // );
         mb.tray.setImage(idleIcon);
       }
     }
