@@ -31,6 +31,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     category: 'direct',
     readState: 'unread',
     url: 'https://bitbucket.org/myorg/notifications-test/pull-requests/103?link_source=platform' as Link,
+    type: 'unknown',
   },
   {
     id: '148827438',
@@ -60,6 +61,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     readState: 'unread',
     account: mockAtlassianCloudAccount,
     url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify/pages/3752329340/Atlassify+Home' as Link,
+    type: 'Create',
   },
 ];
 

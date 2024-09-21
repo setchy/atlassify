@@ -101,6 +101,7 @@ export interface AtlassifyNotification {
   title: string;
   readState: ReadState;
   updated_at: string;
+  type: string;
   url: Link;
   path: {
     title: string;
