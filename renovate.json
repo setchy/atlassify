@@ -24,7 +24,7 @@
       "versioningTemplate": "loose",
       "description": "Update sonar.projectVersion variables in sonar-project.properties",
       "fileMatch": ["sonar-project.properties"],
-      "matchStrings": ["^sonar.projectVersion=(?<currentValue>.+?)\\s"]
+      "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"]
     }
   ]
 }
