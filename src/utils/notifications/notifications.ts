@@ -98,6 +98,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     title: notification.headNotification.content.message,
     readState: notification.headNotification.readState as ReadState,
     updated_at: notification.headNotification.timestamp,
+    type: notification.headNotification.content.type,
     url: notification.headNotification.content.url,
     path: notification.headNotification.content.path[0],
     entity: notification.headNotification.content.entity,
