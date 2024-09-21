@@ -1,6 +1,6 @@
 import {
   mockSingleAccountNotifications,
-  mockSingleNotification,
+  mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 import { removeNotifications } from './remove';
@@ -11,7 +11,7 @@ describe('utils/notifications/remove.ts', () => {
 
     const result = removeNotifications(
       { ...mockSettings, delayNotificationState: false },
-      [mockSingleNotification],
+      [mockSingleAtlassifyNotification],
       mockSingleAccountNotifications,
     );
 
@@ -23,7 +23,7 @@ describe('utils/notifications/remove.ts', () => {
 
     const result = removeNotifications(
       { ...mockSettings, delayNotificationState: true },
-      [mockSingleNotification],
+      [mockSingleAtlassifyNotification],
       mockSingleAccountNotifications,
     );
 
@@ -49,11 +49,11 @@ describe('utils/notifications/remove.ts', () => {
       { ...mockSettings },
       [
         {
-          ...mockSingleNotification,
+          ...mockSingleAtlassifyNotification,
           account: {
-            ...mockSingleNotification.account,
+            ...mockSingleAtlassifyNotification.account,
             user: {
-              ...mockSingleNotification.account.user,
+              ...mockSingleAtlassifyNotification.account.user,
               id: 'some-unknown-account',
             },
           },

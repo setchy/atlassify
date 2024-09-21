@@ -1,6 +1,6 @@
 import {
   mockAtlassifyNotifications,
-  mockSingleNotification,
+  mockSingleAtlassifyNotification,
 } from '../__mocks__/notifications-mocks';
 import {
   formatNotificationFooterText,
@@ -10,7 +10,7 @@ import {
 
 describe('utils/helpers.ts', () => {
   it('getRepositoryName', () => {
-    expect(getRepositoryName(mockSingleNotification)).toBe(
+    expect(getRepositoryName(mockSingleAtlassifyNotification)).toBe(
       'myorg/notifications-test',
     );
   });
@@ -42,7 +42,7 @@ describe('utils/helpers.ts', () => {
     describe('formatNotificationUpdatedAt', () => {
       it('should use updated_at if last_read_at is null', () => {
         const notification = {
-          ...mockSingleNotification,
+          ...mockSingleAtlassifyNotification,
           last_read_at: null,
           updated_at: '2021-06-23T17:00:00Z',
         };
@@ -52,7 +52,7 @@ describe('utils/helpers.ts', () => {
 
       it('should return empty if all dates are null', () => {
         const notification = {
-          ...mockSingleNotification,
+          ...mockSingleAtlassifyNotification,
           last_read_at: null,
           updated_at: null,
         };
@@ -62,7 +62,7 @@ describe('utils/helpers.ts', () => {
 
       it('should return empty if unable to parse dates', () => {
         const notification = {
-          ...mockSingleNotification,
+          ...mockSingleAtlassifyNotification,
           last_read_at: 'not an iso date',
           updated_at: 'not an iso date',
         };

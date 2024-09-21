@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
@@ -12,8 +13,6 @@ import {
 } from './client';
 
 jest.mock('axios');
-
-const mockNotificationID = '1234';
 
 // TODO - Improve assertions of data request object sent
 describe('utils/api/client.ts', () => {
@@ -72,7 +71,7 @@ describe('utils/api/client.ts', () => {
   describe('markNotificationsAsRead', () => {
     it('should mark notifications as read', async () => {
       await markNotificationsAsRead(mockAtlassianCloudAccount, [
-        mockNotificationID,
+        mockSingleAtlassifyNotification.id,
       ]);
 
       expect(axios).toHaveBeenCalledWith(
@@ -89,7 +88,7 @@ describe('utils/api/client.ts', () => {
   describe('markNotificationsAsUnread', () => {
     it('should mark repository notifications as read - github', async () => {
       await markNotificationsAsUnread(mockAtlassianCloudAccount, [
-        mockNotificationID,
+        mockSingleAtlassifyNotification.id,
       ]);
 
       expect(axios).toHaveBeenCalledWith(

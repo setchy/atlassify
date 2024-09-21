@@ -1,4 +1,4 @@
-import { mockSingleNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import * as comms from './comms';
 import { Constants } from './constants';
@@ -62,8 +62,8 @@ describe('utils/links.ts', () => {
   });
 
   it('openNotification', async () => {
-    const mockNotificationUrl = mockSingleNotification.entity.url;
-    await openNotification(mockSingleNotification);
+    const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
+    await openNotification(mockSingleAtlassifyNotification);
     expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
   });
 });

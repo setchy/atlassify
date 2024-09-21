@@ -1,0 +1,712 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes/Login.tsx should render itself & its children 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="css-18bes35"
+      >
+        <div
+          class=" css-y272c0"
+        >
+          <div
+            role="presentation"
+          >
+            <button
+              class=" css-1hmr5rx"
+              data-testid="header-nav-back"
+              type="button"
+            >
+              <span
+                class=" css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-snhnyn"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Go Back
+                </span>
+              </span>
+            </button>
+          </div>
+          <h3
+            class="css-rex7s6"
+          >
+            Login with Atlassian
+          </h3>
+        </div>
+      </div>
+      <div
+        class="css-1rd5nai"
+      >
+        <form>
+          <div
+            class="css-2pqcrg"
+          >
+            <div
+              class="css-wwet8f"
+              data-testid="login-username"
+            >
+              <label
+                class="css-g6a23j"
+                data-testid="login-username--label"
+                for="username-uid1"
+                id="username-uid1-label"
+              >
+                Username
+                <span
+                  aria-hidden="true"
+                  class="css-1qy5j0p"
+                  title="required"
+                >
+                  *
+                </span>
+              </label>
+              <div
+                class="css-17nf42q"
+                data-ds--text-field--container="true"
+                role="presentation"
+              >
+                <input
+                  aria-describedby="username-uid1-valid username-uid1-helper"
+                  aria-labelledby="username-uid1-label"
+                  autocomplete="off"
+                  class="css-1kxou5n"
+                  data-ds--text-field--input="true"
+                  id="username-uid1"
+                  name="username"
+                  required=""
+                  value=""
+                />
+              </div>
+              <div
+                aria-live="polite"
+                class="css-bkrtfl"
+                id="username-uid1-helper"
+              >
+                Your Atlassian username / email address
+              </div>
+            </div>
+            <div
+              class="css-wwet8f"
+              data-testid="login-token"
+            >
+              <label
+                class="css-g6a23j"
+                data-testid="login-token--label"
+                for="token-uid2"
+                id="token-uid2-label"
+              >
+                API Token
+                <span
+                  aria-hidden="true"
+                  class="css-1qy5j0p"
+                  title="required"
+                >
+                  *
+                </span>
+              </label>
+              <div
+                class="css-17nf42q"
+                data-ds--text-field--container="true"
+                role="presentation"
+              >
+                <input
+                  aria-describedby="token-uid2-valid token-uid2-helper"
+                  aria-labelledby="token-uid2-label"
+                  class="css-1kxou5n"
+                  data-ds--text-field--input="true"
+                  id="token-uid2"
+                  name="token"
+                  required=""
+                  type="password"
+                  value=""
+                />
+              </div>
+              <div
+                aria-live="polite"
+                class="css-bkrtfl"
+                id="token-uid2-helper"
+              >
+                <span>
+                  <div
+                    class="css-bsfd3j"
+                  >
+                    <div
+                      role="presentation"
+                    >
+                      <button
+                        class=" css-ht7o2z"
+                        data-testid="login-create-token"
+                        type="button"
+                      >
+                        <span
+                          class=" css-12rb8n9"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="css-snhnyn"
+                            data-vc="icon-undefined"
+                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                          >
+                            <svg
+                              height="24"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <g
+                                fill="currentcolor"
+                              >
+                                <path
+                                  d="M16 11V9h-2V7.002A2 2 0 0 0 12 5c-1.102 0-2 .898-2 2.002V9H8v2H7v8h10v-8zm-2 0h-4V9h4zM8 9V7.002A4.004 4.004 0 0 1 12 3a4 4 0 0 1 4 4.002V9h.994A2.01 2.01 0 0 1 19 11.009v7.982c0 1.11-.897 2.009-2.006 2.009H7.006A2.01 2.01 0 0 1 5 18.991V11.01C5 9.899 5.897 9 7.006 9zm0 0h2v2H8zm6 0h2v2h-2z"
+                                />
+                                <circle
+                                  cx="12"
+                                  cy="15"
+                                  r="2"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          class=" css-1nqby2s"
+                        >
+                          Create an API Token
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                    >
+                      for your account and paste above
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1rw5qv2"
+          >
+            <div
+              class="css-kxmhz3"
+            >
+              <div
+                class="css-1gbz6oi"
+              >
+                <div
+                  role="presentation"
+                >
+                  <button
+                    class=" css-1ly2vbj"
+                    data-testid="login-docs"
+                    type="button"
+                  >
+                    <span
+                      class=" css-12rb8n9"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="css-snhnyn"
+                        data-vc="icon-undefined"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      >
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <g
+                            fill="currentcolor"
+                          >
+                            <path
+                              d="M5 19.01V19zM5 4.99V5zM19 19v-6h2v6a2 2 0 0 1-1.99 2H5a2 2 0 0 1-2-1.99V4.99C3 3.89 3.9 3 5 3h6v2H5v14zM5 4.99V5zM11 5H5v14h14v-6h2v6a2 2 0 0 1-1.99 2H5a2 2 0 0 1-2-1.99V4.99C3 3.89 3.9 3 5 3h6zm8 0v3a1 1 0 0 0 2 0V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"
+                            />
+                            <path
+                              d="m12.707 12.707 8-8a1 1 0 1 0-1.414-1.414l-8 8a1 1 0 0 0 1.414 1.414"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class=" css-1nqby2s"
+                    >
+                      Docs
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <footer
+                class="css-kwugxo"
+              >
+                <div
+                  aria-label="Form submit options"
+                  class="css-1oy5iav"
+                  role="group"
+                >
+                  <button
+                    class=" css-1aearyh"
+                    data-testid="login-cancel"
+                    type="button"
+                  >
+                    <span
+                      class=" css-1nqby2s"
+                    >
+                      Cancel
+                    </span>
+                  </button>
+                  <button
+                    class=" css-1ilq2uw"
+                    data-testid="login-submit"
+                    type="submit"
+                  >
+                    <span
+                      class=" css-12rb8n9"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="css-snhnyn"
+                        data-vc="icon-undefined"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      >
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <g
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M15.503 3H12v2h7v14h-7v2h7.006c1.1 0 1.994-.893 1.994-1.995V4.995A1.993 1.993 0 0 0 19.006 3z"
+                            />
+                            <path
+                              d="M3.977 11A.99.99 0 0 0 3 12.001c0 .551.437.999.977.999h11.047a.99.99 0 0 0 .976-.999.99.99 0 0 0-.976-1.001z"
+                            />
+                            <path
+                              d="M12.303 8.305a1.053 1.053 0 0 0 0 1.478L14.5 12l-2.197 2.217a1.05 1.05 0 0 0 0 1.476c.404.409 1.06.409 1.465 0l2.93-2.955a1.055 1.055 0 0 0 0-1.477l-2.93-2.956a1.034 1.034 0 0 0-1.465 0"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class=" css-1nqby2s"
+                    >
+                      Login
+                    </span>
+                  </button>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-18bes35"
+    >
+      <div
+        class=" css-y272c0"
+      >
+        <div
+          role="presentation"
+        >
+          <button
+            class=" css-1hmr5rx"
+            data-testid="header-nav-back"
+            type="button"
+          >
+            <span
+              class=" css-1spmf3f"
+            >
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Go Back
+              </span>
+            </span>
+          </button>
+        </div>
+        <h3
+          class="css-rex7s6"
+        >
+          Login with Atlassian
+        </h3>
+      </div>
+    </div>
+    <div
+      class="css-1rd5nai"
+    >
+      <form>
+        <div
+          class="css-2pqcrg"
+        >
+          <div
+            class="css-wwet8f"
+            data-testid="login-username"
+          >
+            <label
+              class="css-g6a23j"
+              data-testid="login-username--label"
+              for="username-uid1"
+              id="username-uid1-label"
+            >
+              Username
+              <span
+                aria-hidden="true"
+                class="css-1qy5j0p"
+                title="required"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="css-17nf42q"
+              data-ds--text-field--container="true"
+              role="presentation"
+            >
+              <input
+                aria-describedby="username-uid1-valid username-uid1-helper"
+                aria-labelledby="username-uid1-label"
+                autocomplete="off"
+                class="css-1kxou5n"
+                data-ds--text-field--input="true"
+                id="username-uid1"
+                name="username"
+                required=""
+                value=""
+              />
+            </div>
+            <div
+              aria-live="polite"
+              class="css-bkrtfl"
+              id="username-uid1-helper"
+            >
+              Your Atlassian username / email address
+            </div>
+          </div>
+          <div
+            class="css-wwet8f"
+            data-testid="login-token"
+          >
+            <label
+              class="css-g6a23j"
+              data-testid="login-token--label"
+              for="token-uid2"
+              id="token-uid2-label"
+            >
+              API Token
+              <span
+                aria-hidden="true"
+                class="css-1qy5j0p"
+                title="required"
+              >
+                *
+              </span>
+            </label>
+            <div
+              class="css-17nf42q"
+              data-ds--text-field--container="true"
+              role="presentation"
+            >
+              <input
+                aria-describedby="token-uid2-valid token-uid2-helper"
+                aria-labelledby="token-uid2-label"
+                class="css-1kxou5n"
+                data-ds--text-field--input="true"
+                id="token-uid2"
+                name="token"
+                required=""
+                type="password"
+                value=""
+              />
+            </div>
+            <div
+              aria-live="polite"
+              class="css-bkrtfl"
+              id="token-uid2-helper"
+            >
+              <span>
+                <div
+                  class="css-bsfd3j"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <button
+                      class=" css-ht7o2z"
+                      data-testid="login-create-token"
+                      type="button"
+                    >
+                      <span
+                        class=" css-12rb8n9"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="css-snhnyn"
+                          data-vc="icon-undefined"
+                          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        >
+                          <svg
+                            height="24"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <g
+                              fill="currentcolor"
+                            >
+                              <path
+                                d="M16 11V9h-2V7.002A2 2 0 0 0 12 5c-1.102 0-2 .898-2 2.002V9H8v2H7v8h10v-8zm-2 0h-4V9h4zM8 9V7.002A4.004 4.004 0 0 1 12 3a4 4 0 0 1 4 4.002V9h.994A2.01 2.01 0 0 1 19 11.009v7.982c0 1.11-.897 2.009-2.006 2.009H7.006A2.01 2.01 0 0 1 5 18.991V11.01C5 9.899 5.897 9 7.006 9zm0 0h2v2H8zm6 0h2v2h-2z"
+                              />
+                              <circle
+                                cx="12"
+                                cy="15"
+                                r="2"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </span>
+                      <span
+                        class=" css-1nqby2s"
+                      >
+                        Create an API Token
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    class="css-k5cxwk"
+                  >
+                    for your account and paste above
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-1rw5qv2"
+        >
+          <div
+            class="css-kxmhz3"
+          >
+            <div
+              class="css-1gbz6oi"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class=" css-1ly2vbj"
+                  data-testid="login-docs"
+                  type="button"
+                >
+                  <span
+                    class=" css-12rb8n9"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <g
+                          fill="currentcolor"
+                        >
+                          <path
+                            d="M5 19.01V19zM5 4.99V5zM19 19v-6h2v6a2 2 0 0 1-1.99 2H5a2 2 0 0 1-2-1.99V4.99C3 3.89 3.9 3 5 3h6v2H5v14zM5 4.99V5zM11 5H5v14h14v-6h2v6a2 2 0 0 1-1.99 2H5a2 2 0 0 1-2-1.99V4.99C3 3.89 3.9 3 5 3h6zm8 0v3a1 1 0 0 0 2 0V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"
+                          />
+                          <path
+                            d="m12.707 12.707 8-8a1 1 0 1 0-1.414-1.414l-8 8a1 1 0 0 0 1.414 1.414"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class=" css-1nqby2s"
+                  >
+                    Docs
+                  </span>
+                </button>
+              </div>
+            </div>
+            <footer
+              class="css-kwugxo"
+            >
+              <div
+                aria-label="Form submit options"
+                class="css-1oy5iav"
+                role="group"
+              >
+                <button
+                  class=" css-1aearyh"
+                  data-testid="login-cancel"
+                  type="button"
+                >
+                  <span
+                    class=" css-1nqby2s"
+                  >
+                    Cancel
+                  </span>
+                </button>
+                <button
+                  class=" css-1ilq2uw"
+                  data-testid="login-submit"
+                  type="submit"
+                >
+                  <span
+                    class=" css-12rb8n9"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <g
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        >
+                          <path
+                            d="M15.503 3H12v2h7v14h-7v2h7.006c1.1 0 1.994-.893 1.994-1.995V4.995A1.993 1.993 0 0 0 19.006 3z"
+                          />
+                          <path
+                            d="M3.977 11A.99.99 0 0 0 3 12.001c0 .551.437.999.977.999h11.047a.99.99 0 0 0 .976-.999.99.99 0 0 0-.976-1.001z"
+                          />
+                          <path
+                            d="M12.303 8.305a1.053 1.053 0 0 0 0 1.478L14.5 12l-2.197 2.217a1.05 1.05 0 0 0 0 1.476c.404.409 1.06.409 1.465 0l2.93-2.955a1.055 1.055 0 0 0 0-1.477l-2.93-2.956a1.034 1.034 0 0 0-1.465 0"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class=" css-1nqby2s"
+                  >
+                    Login
+                  </span>
+                </button>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

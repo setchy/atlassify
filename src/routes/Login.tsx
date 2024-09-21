@@ -68,6 +68,7 @@ export const LoginRoute: FC = () => {
                   label="Username"
                   defaultValue={''}
                   isRequired
+                  testId="login-username"
                 >
                   {({ fieldProps }) => (
                     <Fragment>
@@ -84,6 +85,7 @@ export const LoginRoute: FC = () => {
                   label="API Token"
                   defaultValue={''}
                   isRequired
+                  testId="login-token"
                 >
                   {({ fieldProps }) => (
                     <Fragment>
@@ -96,6 +98,7 @@ export const LoginRoute: FC = () => {
                               spacing="compact"
                               iconBefore={LockIcon}
                               onClick={() => openAtlassianCreateToken()}
+                              testId="login-create-token"
                             >
                               Create an API Token
                             </Button>
@@ -125,6 +128,7 @@ export const LoginRoute: FC = () => {
                         appearance="subtle"
                         iconBefore={ShortcutIcon}
                         onClick={() => openAtlassianSecurityDocs()}
+                        testId="login-docs"
                       >
                         Docs
                       </Button>
@@ -132,7 +136,11 @@ export const LoginRoute: FC = () => {
                   </Box>
                   <FormFooter>
                     <ButtonGroup label="Form submit options">
-                      <Button appearance="subtle" onClick={() => navigate(-1)}>
+                      <Button
+                        appearance="subtle"
+                        onClick={() => navigate(-1)}
+                        testId="login-cancel"
+                      >
                         Cancel
                       </Button>
                       <Button
@@ -140,6 +148,7 @@ export const LoginRoute: FC = () => {
                         iconBefore={SignInIcon}
                         appearance="primary"
                         isLoading={submitting}
+                        testId="login-submit"
                       >
                         Login
                       </Button>
