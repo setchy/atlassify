@@ -36,7 +36,7 @@ export function getNotificationCount(notifications: AccountNotifications[]) {
 }
 
 export function hasMoreNotifications(notifications: AccountNotifications[]) {
-  return notifications?.some((n) => n.hasNextPage);
+  return notifications?.some((n) => n.hasMoreNotifications);
 }
 
 export async function getAllNotifications(
@@ -61,13 +61,23 @@ export async function getAllNotifications(
 
           notifications = filterNotifications(notifications, state.settings);
 
+          let hasMorePages = false;
+          try {
+            // TODO - there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
+            hasMorePages =
+              res.extensions.notifications.response_info.responseSize ===
+              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
+          } catch (error) {
+            log.warn(
+              'Response did not contain extensions object, assuming no more pages',
+              error,
+            );
+          }
+
           return {
             account: accountNotifications.account,
             notifications: notifications,
-            // TODO - there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
-            hasNextPage:
-              res.extensions.notifications.response_info.responseSize ===
-              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+            hasMoreNotifications: hasMorePages,
             error: null,
           };
         } catch (error) {
@@ -78,7 +88,7 @@ export async function getAllNotifications(
           return {
             account: accountNotifications.account,
             notifications: [],
-            hasNextPage: false,
+            hasMoreNotifications: false,
             error: determineFailureType(error),
           };
         }

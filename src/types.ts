@@ -92,7 +92,7 @@ export type RadioGroupItem = {
 export interface AccountNotifications {
   account: Account;
   notifications: AtlassifyNotification[];
-  hasNextPage: boolean;
+  hasMoreNotifications: boolean;
   error: AtlassifyError | null;
 }
 

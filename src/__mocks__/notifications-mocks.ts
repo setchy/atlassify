@@ -72,7 +72,7 @@ export const mockAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: mockAtlassifyNotifications,
-    hasNextPage: false,
+    hasMoreNotifications: false,
     error: null,
   },
 ];
@@ -81,7 +81,7 @@ export const mockAccountNotificationsWithMorePages: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: mockAtlassifyNotifications,
-    hasNextPage: true,
+    hasMoreNotifications: true,
     error: null,
   },
 ];
@@ -90,7 +90,7 @@ export const mockSingleAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: [mockAtlassifyNotifications[0]],
-    hasNextPage: false,
+    hasMoreNotifications: false,
     error: null,
   },
 ];

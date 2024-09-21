@@ -61,9 +61,11 @@ export const Sidebar: FC = () => {
   }, [notifications]);
 
   const notificationsLabel = useMemo(() => {
-    const hasMore = notifications.some((n) => n.hasNextPage);
+    const hasMoreNotifications = notifications.some(
+      (n) => n.hasMoreNotifications,
+    );
 
-    return `${notificationsCount}${hasMore ? '+' : ''}`;
+    return `${notificationsCount}${hasMoreNotifications ? '+' : ''}`;
   }, [notifications]);
 
   const hasFilters = useMemo(() => {
