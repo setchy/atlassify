@@ -6,7 +6,6 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom';
-import { Loading } from './components/Loading';
 import { Sidebar } from './components/Sidebar';
 import { AppContext, AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
@@ -32,7 +31,6 @@ export const App = () => {
     <AppProvider>
       <Router>
         <div className="flex h-full overflow-y-auto flex-col pl-14">
-          <Loading />
           <Sidebar />
           <Routes>
             <Route

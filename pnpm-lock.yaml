@@ -35,9 +35,6 @@ importers:
       menubar:
         specifier: 9.5.0
         version: 9.5.0(electron@32.1.2)
-      nprogress:
-        specifier: 0.2.0
-        version: 0.2.0
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -96,6 +93,9 @@ importers:
       '@atlaskit/primitives':
         specifier: 12.2.0
         version: 12.2.0(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/progress-bar':
+        specifier: ^2.3.1
+        version: 2.3.1(@types/react@18.3.8)(react@18.3.1)
       '@atlaskit/radio':
         specifier: 6.5.1
         version: 6.5.1(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -126,9 +126,6 @@ importers:
       '@types/node':
         specifier: 20.16.5
         version: 20.16.5
-      '@types/nprogress':
-        specifier: 0.2.3
-        version: 0.2.3
       '@types/react':
         specifier: 18.3.8
         version: 18.3.8
@@ -342,6 +339,11 @@ packages:
 
   '@atlaskit/primitives@12.2.0':
     resolution: {integrity: sha512-gY7fLFRKKj1dOiumjKwaPhg7AllTHQYSpJm2jnRXW6kh8BmKa00DD79XfQ7CwleFUEhOCxaYIbUjksVdTbncHw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/progress-bar@2.3.1':
+    resolution: {integrity: sha512-ixbrk0rAeEt5sQQ1Cu+mugqhgkX58tWYlC0vT9NPwBJzu5NDTIcKbrlii6Zr5bGTAD3Xv4la51U74Dwzn0wObg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -981,9 +983,6 @@ packages:
 
   '@types/node@20.16.5':
     resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
-
-  '@types/nprogress@0.2.3':
-    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
@@ -2848,9 +2847,6 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     deprecated: This package is no longer supported.
 
-  nprogress@0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-
   nwsapi@2.2.7:
     resolution: {integrity: sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==}
 
@@ -4271,6 +4267,17 @@ snapshots:
       - react-dom
       - supports-color
 
+  '@atlaskit/progress-bar@2.3.1(@types/react@18.3.8)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/theme': 13.0.0(@types/react@18.3.8)(react@18.3.1)
+      '@atlaskit/tokens': 1.60.0(@types/react@18.3.8)(react@18.3.1)
+      '@babel/runtime': 7.24.1
+      '@emotion/react': 11.13.3(@types/react@18.3.8)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/radio@6.5.1(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5185,8 +5192,6 @@ snapshots:
   '@types/node@20.16.5':
     dependencies:
       undici-types: 6.19.6
-
-  '@types/nprogress@0.2.3': {}
 
   '@types/parse-json@4.0.2': {}
 
@@ -7466,8 +7471,6 @@ snapshots:
       console-control-strings: 1.1.0
       gauge: 4.0.4
       set-blocking: 2.0.0
-
-  nprogress@0.2.0: {}
 
   nwsapi@2.2.7: {}
 
