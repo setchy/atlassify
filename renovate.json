@@ -15,5 +15,17 @@
       "matchDepTypes": ["engines"],
       "rangeStrategy": "auto"
     }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "setchy/atlassify",
+      "description": "Update sonar.projectVersion variables in sonar-project.properties",
+      "fileMatch": ["^sonar-project.properties$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? sonar.projectVersion=(?<currentValue>.+?)\\s"
+      ]
+    }
   ]
 }
