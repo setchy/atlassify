@@ -70,80 +70,99 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
+          role="main"
         >
           <div
-            class="flex flex-col gap-1"
+            class="css-2mvdbp"
           >
             <div
-              class="text-sm"
-              role="main"
-              title="#103: chore(deps): update dependency eslint"
+              class="css-k5cxwk"
             >
-              #103: chore(deps): update dependency eslint
               <span
-                class="pl-2 text-xs text-gray-700"
-                title="Updated 3 years ago"
+                class="css-b0hel9"
+              >
+                #103: chore(deps): update dependency eslint
+              </span>
+                
+              <em
+                class="css-1ot9q9i"
               >
                 3 years ago
-              </span>
+              </em>
             </div>
             <div
-              class="flex flex-1 items-center gap-1 text-xs opacity-80"
+              class="css-k5cxwk"
             >
               <div
-                aria-labelledby="4"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+                class="css-1w1rt7h"
               >
-                <span
-                  class="css-122fgfa"
+                <div
+                  aria-labelledby="4"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                    style="border-radius: 2px;"
-                  />
-                </span>
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="4"
+                  >
+                    #103: chore(deps): update dependency eslint
+                  </span>
+                </div>
                 <span
-                  hidden=""
-                  id="4"
+                  class="css-lym9kh"
                 >
                   #103: chore(deps): update dependency eslint
                 </span>
               </div>
-              #103: chore(deps): update dependency eslint
-            </div>
-            <div
-              class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-            >
-              <span
-                aria-label="Bitbucket"
-                class="css-5vjqu0"
-                role="img"
-                style="--logo-color: inherit; --logo-fill: currentColor;"
+              <div
+                class="css-1yqbixt"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  focusable="false"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="css-f86pb"
                 >
-                  
+                  <span
+                    aria-label="Bitbucket"
+                    class="css-5vjqu0"
+                    role="img"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                  <path
-                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                    fill="#1868DB"
-                  />
-                  
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="#1868DB"
+                      />
+                      
     
-                </svg>
-              </span>
-              myorg/notifications-test
+                    </svg>
+                  </span>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    myorg/notifications-test
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -260,80 +279,99 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
       </div>
       <div
         class="mr-3 flex flex-1 cursor-pointer text-wrap"
+        role="main"
       >
         <div
-          class="flex flex-col gap-1"
+          class="css-2mvdbp"
         >
           <div
-            class="text-sm"
-            role="main"
-            title="#103: chore(deps): update dependency eslint"
+            class="css-k5cxwk"
           >
-            #103: chore(deps): update dependency eslint
             <span
-              class="pl-2 text-xs text-gray-700"
-              title="Updated 3 years ago"
+              class="css-b0hel9"
+            >
+              #103: chore(deps): update dependency eslint
+            </span>
+              
+            <em
+              class="css-1ot9q9i"
             >
               3 years ago
-            </span>
+            </em>
           </div>
           <div
-            class="flex flex-1 items-center gap-1 text-xs opacity-80"
+            class="css-k5cxwk"
           >
             <div
-              aria-labelledby="4"
-              role="img"
-              style="display: inline-block; position: relative; outline: 0;"
+              class="css-1w1rt7h"
             >
-              <span
-                class="css-122fgfa"
+              <div
+                aria-labelledby="4"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
               >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  class="css-13ep12v"
-                  data-vc="avatar-image"
-                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                  style="border-radius: 2px;"
-                />
-              </span>
+                <span
+                  class="css-122fgfa"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                    style="border-radius: 2px;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="4"
+                >
+                  #103: chore(deps): update dependency eslint
+                </span>
+              </div>
               <span
-                hidden=""
-                id="4"
+                class="css-lym9kh"
               >
                 #103: chore(deps): update dependency eslint
               </span>
             </div>
-            #103: chore(deps): update dependency eslint
-          </div>
-          <div
-            class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-          >
-            <span
-              aria-label="Bitbucket"
-              class="css-5vjqu0"
-              role="img"
-              style="--logo-color: inherit; --logo-fill: currentColor;"
+            <div
+              class="css-1yqbixt"
             >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                focusable="false"
-                height="32"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="css-f86pb"
               >
-                
+                <span
+                  aria-label="Bitbucket"
+                  class="css-5vjqu0"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
       
-                <path
-                  d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                  fill="#1868DB"
-                />
-                
+                    <path
+                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                      fill="#1868DB"
+                    />
+                    
     
-              </svg>
-            </span>
-            myorg/notifications-test
+                  </svg>
+                </span>
+                <span
+                  class="css-lym9kh"
+                >
+                  myorg/notifications-test
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -507,80 +545,99 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
+          role="main"
         >
           <div
-            class="flex flex-col gap-1"
+            class="css-2mvdbp"
           >
             <div
-              class="text-sm"
-              role="main"
-              title="#103: chore(deps): update dependency eslint"
+              class="css-k5cxwk"
             >
-              #103: chore(deps): update dependency eslint
               <span
-                class="pl-2 text-xs text-gray-700"
-                title="Updated 3 years ago"
+                class="css-b0hel9"
+              >
+                #103: chore(deps): update dependency eslint
+              </span>
+                
+              <em
+                class="css-1ot9q9i"
               >
                 3 years ago
-              </span>
+              </em>
             </div>
             <div
-              class="flex flex-1 items-center gap-1 text-xs opacity-80"
+              class="css-k5cxwk"
             >
               <div
-                aria-labelledby="10"
-                role="img"
-                style="display: inline-block; position: relative; outline: 0;"
+                class="css-1w1rt7h"
               >
-                <span
-                  class="css-122fgfa"
+                <div
+                  aria-labelledby="10"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
                 >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    class="css-13ep12v"
-                    data-vc="avatar-image"
-                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                    style="border-radius: 2px;"
-                  />
-                </span>
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="10"
+                  >
+                    #103: chore(deps): update dependency eslint
+                  </span>
+                </div>
                 <span
-                  hidden=""
-                  id="10"
+                  class="css-lym9kh"
                 >
                   #103: chore(deps): update dependency eslint
                 </span>
               </div>
-              #103: chore(deps): update dependency eslint
-            </div>
-            <div
-              class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-            >
-              <span
-                aria-label="Bitbucket"
-                class="css-5vjqu0"
-                role="img"
-                style="--logo-color: inherit; --logo-fill: currentColor;"
+              <div
+                class="css-1yqbixt"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="none"
-                  focusable="false"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="css-f86pb"
                 >
-                  
+                  <span
+                    aria-label="Bitbucket"
+                    class="css-5vjqu0"
+                    role="img"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
       
-                  <path
-                    d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                    fill="#1868DB"
-                  />
-                  
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="#1868DB"
+                      />
+                      
     
-                </svg>
-              </span>
-              myorg/notifications-test
+                    </svg>
+                  </span>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    myorg/notifications-test
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -697,80 +754,99 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
       </div>
       <div
         class="mr-3 flex flex-1 cursor-pointer text-wrap"
+        role="main"
       >
         <div
-          class="flex flex-col gap-1"
+          class="css-2mvdbp"
         >
           <div
-            class="text-sm"
-            role="main"
-            title="#103: chore(deps): update dependency eslint"
+            class="css-k5cxwk"
           >
-            #103: chore(deps): update dependency eslint
             <span
-              class="pl-2 text-xs text-gray-700"
-              title="Updated 3 years ago"
+              class="css-b0hel9"
+            >
+              #103: chore(deps): update dependency eslint
+            </span>
+              
+            <em
+              class="css-1ot9q9i"
             >
               3 years ago
-            </span>
+            </em>
           </div>
           <div
-            class="flex flex-1 items-center gap-1 text-xs opacity-80"
+            class="css-k5cxwk"
           >
             <div
-              aria-labelledby="10"
-              role="img"
-              style="display: inline-block; position: relative; outline: 0;"
+              class="css-1w1rt7h"
             >
-              <span
-                class="css-122fgfa"
+              <div
+                aria-labelledby="10"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
               >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  class="css-13ep12v"
-                  data-vc="avatar-image"
-                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                  style="border-radius: 2px;"
-                />
-              </span>
+                <span
+                  class="css-122fgfa"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                    style="border-radius: 2px;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="10"
+                >
+                  #103: chore(deps): update dependency eslint
+                </span>
+              </div>
               <span
-                hidden=""
-                id="10"
+                class="css-lym9kh"
               >
                 #103: chore(deps): update dependency eslint
               </span>
             </div>
-            #103: chore(deps): update dependency eslint
-          </div>
-          <div
-            class="flex flex-1 items-center pl-0.5 gap-1.5 text-xs opacity-80"
-          >
-            <span
-              aria-label="Bitbucket"
-              class="css-5vjqu0"
-              role="img"
-              style="--logo-color: inherit; --logo-fill: currentColor;"
+            <div
+              class="css-1yqbixt"
             >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                focusable="false"
-                height="32"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                class="css-f86pb"
               >
-                
+                <span
+                  aria-label="Bitbucket"
+                  class="css-5vjqu0"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
       
-                <path
-                  d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                  fill="#1868DB"
-                />
-                
+                    <path
+                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                      fill="#1868DB"
+                    />
+                    
     
-              </svg>
-            </span>
-            myorg/notifications-test
+                  </svg>
+                </span>
+                <span
+                  class="css-lym9kh"
+                >
+                  myorg/notifications-test
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

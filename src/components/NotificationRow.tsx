@@ -3,7 +3,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 import Avatar from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
-import { Flex, Stack } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -79,49 +79,38 @@ export const NotificationRow: FC<INotificationRow> = ({
       </div>
 
       <div
+        role="main"
         className="mr-3 flex flex-1 cursor-pointer text-wrap"
         onClick={() => handleNotification()}
       >
-        <div className="flex flex-col gap-1">
-          <div
-            className="text-sm"
-            role="main"
-            title={notification.title.trim()}
-          >
-            {notification.title}
-            <span
-              className="pl-2 text-xs text-gray-700"
-              title={`Updated ${updatedAt}`}
-            >
+        <Stack space="space.025">
+          <Box>
+            <Text>{notification.title}</Text>
+            &nbsp;&nbsp;
+            <Text size="small" as="em" align="end">
               {updatedAt}
-            </span>
-          </div>
-
-          <div
-            className={cn(
-              'flex flex-1 items-center gap-1 text-xs',
-              Opacity.MEDIUM,
-            )}
-          >
-            <Avatar
-              name={notification.entity.title}
-              src={notification.entity.iconUrl}
-              size="xsmall"
-              appearance="square"
-            />
-            {notification.entity.title}
-          </div>
-
-          <div
-            className={cn(
-              'flex flex-1 items-center pl-0.5 gap-1.5 text-xs',
-              Opacity.MEDIUM,
-            )}
-          >
-            <notification.product.icon size="xsmall" appearance="brand" />
-            {formatNotificationFooterText(notification)}
-          </div>
-        </div>
+            </Text>
+          </Box>
+          <Box>
+            <Inline space="space.050">
+              <Avatar
+                name={notification.entity.title}
+                src={notification.entity.iconUrl}
+                size="xsmall"
+                appearance="square"
+              />
+              <Text size="small">{notification.entity.title}</Text>
+            </Inline>
+            <Box paddingInlineStart="space.025">
+              <Inline space="space.075">
+                <notification.product.icon size="xsmall" appearance="brand" />
+                <Text size="small">
+                  {formatNotificationFooterText(notification)}
+                </Text>
+              </Inline>
+            </Box>
+          </Box>
+        </Stack>
       </div>
 
       {!animateExit &&
