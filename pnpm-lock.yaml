@@ -93,9 +93,6 @@ importers:
       '@atlaskit/primitives':
         specifier: 12.2.0
         version: 12.2.0(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/progress-bar':
-        specifier: ^2.3.1
-        version: 2.3.1(@types/react@18.3.8)(react@18.3.1)
       '@atlaskit/radio':
         specifier: 6.5.1
         version: 6.5.1(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -339,11 +336,6 @@ packages:
 
   '@atlaskit/primitives@12.2.0':
     resolution: {integrity: sha512-gY7fLFRKKj1dOiumjKwaPhg7AllTHQYSpJm2jnRXW6kh8BmKa00DD79XfQ7CwleFUEhOCxaYIbUjksVdTbncHw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-
-  '@atlaskit/progress-bar@2.3.1':
-    resolution: {integrity: sha512-ixbrk0rAeEt5sQQ1Cu+mugqhgkX58tWYlC0vT9NPwBJzu5NDTIcKbrlii6Zr5bGTAD3Xv4la51U74Dwzn0wObg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4265,17 +4257,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - react-dom
-      - supports-color
-
-  '@atlaskit/progress-bar@2.3.1(@types/react@18.3.8)(react@18.3.1)':
-    dependencies:
-      '@atlaskit/theme': 13.0.0(@types/react@18.3.8)(react@18.3.1)
-      '@atlaskit/tokens': 1.60.0(@types/react@18.3.8)(react@18.3.1)
-      '@babel/runtime': 7.24.1
-      '@emotion/react': 11.13.3(@types/react@18.3.8)(react@18.3.1)
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@types/react'
       - supports-color
 
   '@atlaskit/radio@6.5.1(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':

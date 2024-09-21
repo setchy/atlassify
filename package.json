@@ -118,7 +118,6 @@
     "@atlaskit/logo": "14.2.2",
     "@atlaskit/modal-dialog": "12.16.0",
     "@atlaskit/primitives": "12.2.0",
-    "@atlaskit/progress-bar": "^2.3.1",
     "@atlaskit/radio": "6.5.1",
     "@atlaskit/spinner": "16.3.1",
     "@atlaskit/toggle": "13.4.1",
