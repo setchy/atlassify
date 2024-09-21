@@ -1,7 +1,7 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import type { AxiosPromise, AxiosResponse } from 'axios';
 import { useContext } from 'react';
-import { mockSingleNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { useNotifications } from '../hooks/useNotifications';
 import type { AuthState, SettingsState, Token, Username } from '../types';
@@ -116,7 +116,9 @@ describe('context/App.tsx', () => {
         return (
           <button
             type="button"
-            onClick={() => markNotificationsRead([mockSingleNotification])}
+            onClick={() =>
+              markNotificationsRead([mockSingleAtlassifyNotification])
+            }
           >
             Test Case
           </button>
@@ -129,7 +131,7 @@ describe('context/App.tsx', () => {
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
-        mockSingleNotification,
+        mockSingleAtlassifyNotification,
       ]);
     });
 
@@ -140,7 +142,9 @@ describe('context/App.tsx', () => {
         return (
           <button
             type="button"
-            onClick={() => markNotificationsUnread([mockSingleNotification])}
+            onClick={() =>
+              markNotificationsUnread([mockSingleAtlassifyNotification])
+            }
           >
             Test Case
           </button>
@@ -154,13 +158,13 @@ describe('context/App.tsx', () => {
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
         mockDefaultState,
-        [mockSingleNotification],
+        [mockSingleAtlassifyNotification],
       );
     });
   });
 
   describe('authentication methods', () => {
-    const apiRequestAuthMock = jest.spyOn(apiRequests, 'apiRequestAuth');
+    const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
     const fetchNotificationsMock = jest.fn();
 
     beforeEach(() => {
@@ -186,7 +190,7 @@ describe('context/App.tsx', () => {
         } as AxiosResponse),
       ) as AxiosPromise;
 
-      apiRequestAuthMock.mockResolvedValueOnce(requestPromise);
+      apiRequestMock.mockResolvedValueOnce(requestPromise);
       jest.spyOn(storage, 'saveState').mockImplementation(jest.fn());
 
       const TestComponent = () => {
@@ -213,7 +217,7 @@ describe('context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(apiRequestAuthMock).toHaveBeenCalledTimes(1);
+      expect(apiRequestMock).toHaveBeenCalledTimes(1);
     });
   });
 

@@ -65,7 +65,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   },
 ];
 
-export const mockSingleNotification: AtlassifyNotification =
+export const mockSingleAtlassifyNotification: AtlassifyNotification =
   mockAtlassifyNotifications[0];
 
 export const mockAccountNotifications: AccountNotifications[] = [

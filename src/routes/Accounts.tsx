@@ -40,7 +40,7 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const login = useCallback(() => {
-    return navigate('/login-api-token', { replace: true });
+    return navigate('/login', { replace: true });
   }, []);
 
   return (

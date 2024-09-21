@@ -1,6 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
 
@@ -25,38 +24,54 @@ describe('routes/Login.tsx', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should redirect to notifications once logged in', () => {
-    const showWindowMock = jest.spyOn(comms, 'showWindow');
+  describe('login web pages', () => {
+    it('should open create new token page', async () => {
+      const openExternalLinkMock = jest
+        .spyOn(comms, 'openExternalLink')
+        .mockImplementation();
 
-    const { rerender } = render(
-      <AppContext.Provider value={{ isLoggedIn: false }}>
-        <MemoryRouter>
-          <LoginRoute />
-        </MemoryRouter>
-      </AppContext.Provider>,
-    );
+      await act(async () => {
+        render(
+          <MemoryRouter>
+            <LoginRoute />
+          </MemoryRouter>,
+        );
+      });
 
-    rerender(
-      <AppContext.Provider value={{ isLoggedIn: true }}>
-        <MemoryRouter>
-          <LoginRoute />
-        </MemoryRouter>
-      </AppContext.Provider>,
-    );
+      fireEvent.click(screen.getByTestId('login-create-token'));
 
-    expect(showWindowMock).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
+      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+    });
+    it('should open login docs', async () => {
+      const openExternalLinkMock = jest
+        .spyOn(comms, 'openExternalLink')
+        .mockImplementation();
+
+      await act(async () => {
+        render(
+          <MemoryRouter>
+            <LoginRoute />
+          </MemoryRouter>,
+        );
+      });
+
+      fireEvent.click(screen.getByTestId('login-docs'));
+
+      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+    });
   });
 
-  it('should navigate to login with api token', () => {
-    render(
-      <MemoryRouter>
-        <LoginRoute />
-      </MemoryRouter>,
-    );
+  it('should navigate back to landing page on cancel', async () => {
+    await act(async () => {
+      render(
+        <MemoryRouter>
+          <LoginRoute />
+        </MemoryRouter>,
+      );
+    });
 
-    fireEvent.click(screen.getByTestId('login'));
+    fireEvent.click(screen.getByTestId('login-cancel'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login-api-token');
+    expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });
 });

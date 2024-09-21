@@ -1,67 +1,165 @@
-import { type FC, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import log from 'electron-log';
+import { type FC, Fragment, useCallback, useContext, useState } from 'react';
 
+import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
-import Heading from '@atlaskit/heading';
-import {
-  AtlasIcon,
-  AtlassianIcon,
-  BitbucketIcon,
-  CompassIcon,
-  ConfluenceIcon,
-  JiraIcon,
-  JiraProductDiscoveryIcon,
-  JiraServiceManagementIcon,
-  TrelloIcon,
-} from '@atlaskit/logo';
-import { Inline, Stack, Text } from '@atlaskit/primitives';
+import Form, {
+  ErrorMessage,
+  Field,
+  FormFooter,
+  FormSection,
+  HelperMessage,
+} from '@atlaskit/form';
+import LockIcon from '@atlaskit/icon/glyph/lock';
+import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
+import SignInIcon from '@atlaskit/icon/glyph/sign-in';
+import { Box, Inline } from '@atlaskit/primitives';
+import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
+import { useNavigate } from 'react-router-dom';
+import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
-import { showWindow } from '../utils/comms';
+import type { Token, Username } from '../types';
+import { checkIfCredentialsAreValid } from '../utils/api/client';
+import type { LoginAPITokenOptions } from '../utils/auth/types';
+import {
+  openAtlassianCreateToken,
+  openAtlassianSecurityDocs,
+} from '../utils/links';
+
+interface IValues {
+  username: Username;
+  token: Token;
+}
 
 export const LoginRoute: FC = () => {
+  const { loginWithAPIToken } = useContext(AppContext);
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AppContext);
+  const [isValidToken, setIsValidToken] = useState<boolean>(true);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      showWindow();
-      navigate('/', { replace: true });
-    }
-  }, [isLoggedIn]);
+  const login = useCallback(
+    async (data: IValues) => {
+      try {
+        await checkIfCredentialsAreValid(data.username, data.token);
+
+        await loginWithAPIToken(data as LoginAPITokenOptions);
+        navigate(-1);
+      } catch (err) {
+        log.error('Auth: failed to login with provided credentials', err);
+        setIsValidToken(false);
+      }
+    },
+    [loginWithAPIToken],
+  );
 
   return (
-    <div className="flex flex-1 justify-center">
-      <Stack alignBlock="center" alignInline="center" space="space.200">
-        <AtlasIcon appearance="brand" size="xlarge" />
-        <Stack alignInline="center">
-          <Heading size="large">Atlassian notifications</Heading>
-          <Text size="large">on your menu bar</Text>
-        </Stack>
-        <Inline space="space.100">
-          <BitbucketIcon size="small" appearance="neutral" />
-          <CompassIcon size="small" appearance="neutral" />
-          <ConfluenceIcon size="small" appearance="neutral" />
-          <JiraIcon size="small" appearance="neutral" />
-          <JiraProductDiscoveryIcon size="small" appearance="neutral" />
-          <JiraServiceManagementIcon size="small" appearance="neutral" />
-          <TrelloIcon size="small" appearance="neutral" />
-        </Inline>
-        <Tooltip content="Login with Atlassian">
-          <Button
-            appearance="primary"
-            spacing="default"
-            iconBefore={(iconProps) => (
-              <AtlassianIcon {...iconProps} size="small" />
-            )}
-            onClick={() => navigate('/login-api-token')}
-            testId="login"
-          >
-            Login
-          </Button>
-        </Tooltip>
-      </Stack>
-    </div>
+    <Fragment>
+      <Header>Login with Atlassian</Header>
+
+      <Box paddingInline="space.400">
+        <Form<IValues> onSubmit={login}>
+          {({ formProps, submitting }) => (
+            <form {...formProps}>
+              <FormSection>
+                <Field
+                  aria-required={true}
+                  name="username"
+                  label="Username"
+                  defaultValue={''}
+                  isRequired
+                  testId="login-username"
+                >
+                  {({ fieldProps }) => (
+                    <Fragment>
+                      <TextField autoComplete="off" {...fieldProps} />
+                      <HelperMessage>
+                        Your Atlassian username / email address
+                      </HelperMessage>
+                    </Fragment>
+                  )}
+                </Field>
+                <Field
+                  aria-required={true}
+                  name="token"
+                  label="API Token"
+                  defaultValue={''}
+                  isRequired
+                  testId="login-token"
+                >
+                  {({ fieldProps }) => (
+                    <Fragment>
+                      <TextField type="password" {...fieldProps} />
+                      <HelperMessage>
+                        <Inline alignBlock="center" space="space.050">
+                          <Tooltip content="Create an API Token">
+                            <Button
+                              appearance="discovery"
+                              spacing="compact"
+                              iconBefore={LockIcon}
+                              onClick={() => openAtlassianCreateToken()}
+                              testId="login-create-token"
+                            >
+                              Create an API Token
+                            </Button>
+                          </Tooltip>
+                          <Box>for your account and paste above</Box>
+                        </Inline>
+                      </HelperMessage>
+                    </Fragment>
+                  )}
+                </Field>
+              </FormSection>
+
+              <Box paddingBlock="space.050">
+                {!isValidToken && (
+                  <ErrorMessage>
+                    Oops! The username + token combination provided are not
+                    valid. Please try again.
+                  </ErrorMessage>
+                )}
+                <Inline alignBlock="center" spread="space-between">
+                  <Box paddingBlockStart="space.300">
+                    <Tooltip
+                      content="See Atlassian documentation"
+                      position="top"
+                    >
+                      <Button
+                        appearance="subtle"
+                        iconBefore={ShortcutIcon}
+                        onClick={() => openAtlassianSecurityDocs()}
+                        testId="login-docs"
+                      >
+                        Docs
+                      </Button>
+                    </Tooltip>
+                  </Box>
+                  <FormFooter>
+                    <ButtonGroup label="Form submit options">
+                      <Button
+                        appearance="subtle"
+                        onClick={() => navigate(-1)}
+                        testId="login-cancel"
+                      >
+                        Cancel
+                      </Button>
+                      <Button
+                        type="submit"
+                        iconBefore={SignInIcon}
+                        appearance="primary"
+                        isLoading={submitting}
+                        testId="login-submit"
+                      >
+                        Login
+                      </Button>
+                    </ButtonGroup>
+                  </FormFooter>
+                </Inline>
+              </Box>
+            </form>
+          )}
+        </Form>
+      </Box>
+    </Fragment>
   );
 };

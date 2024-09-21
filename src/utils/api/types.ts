@@ -97,6 +97,11 @@ export interface GraphQLResponse<T, U> {
   extensions: U;
 }
 
+export interface GraphQLRequest {
+  query: string;
+  variables: Record<string, unknown>;
+}
+
 export type AtlassianAPIError =
   | AtlassianHTTPError
   | AtlassianAuthError

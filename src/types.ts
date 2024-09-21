@@ -127,7 +127,7 @@ export interface AtlassifyNotification {
 }
 
 export interface AtlassifyUser {
-  login: string;
+  login: Username;
   name: string | null;
   avatar: Link | null;
   id: string;

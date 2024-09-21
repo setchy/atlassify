@@ -1,15 +1,26 @@
 import type { AxiosPromise } from 'axios';
 import gql from 'graphql-tag';
 import { print } from 'graphql/language/printer';
-import type { Account, SettingsState } from '../../types';
+import type { Account, SettingsState, Token, Username } from '../../types';
 import { Constants } from '../constants';
-import { apiRequestAuth } from './request';
+import { performHeadRequest, performPostRequest } from './request';
 import type {
   GraphQLResponse,
   MyNotifications,
   MyUserDetails,
   NotificationsExtensions,
-} from './types';
+} from './types'; /**
+ * Check if provided credentials (username and token) are valid.
+ *
+ * @param account
+ * @returns
+ */
+export function checkIfCredentialsAreValid(
+  username: Username,
+  token: Token,
+): AxiosPromise<GraphQLResponse<boolean, unknown>> {
+  return performHeadRequest(username, token);
+}
 
 // See issue #95
 
@@ -33,7 +44,7 @@ export function getAuthenticatedUser(
     }
   `;
 
-  return apiRequestAuth(account, {
+  return performPostRequest(account, {
     query: print(QUERY),
     variables: {},
   });
@@ -104,7 +115,7 @@ export function getNotificationsForUser(
     }
   `;
 
-  return apiRequestAuth(account, {
+  return performPostRequest(account, {
     query: print(QUERY),
     variables: {
       first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
@@ -130,7 +141,7 @@ export function markNotificationsAsRead(
     }
   `;
 
-  return apiRequestAuth(account, {
+  return performPostRequest(account, {
     query: print(MUTATION),
     variables: {
       notificationIDs: notificationIds,
@@ -155,7 +166,7 @@ export function markNotificationsAsUnread(
     }
   `;
 
-  return apiRequestAuth(account, {
+  return performPostRequest(account, {
     query: print(MUTATION),
     variables: {
       notificationIDs: notificationIds,

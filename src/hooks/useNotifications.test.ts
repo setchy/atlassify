@@ -3,7 +3,7 @@ import axios from 'axios';
 import nock from 'nock';
 
 import log from 'electron-log';
-import { mockSingleNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';
 
@@ -142,7 +142,9 @@ describe('hooks/useNotifications.ts', () => {
     const { result } = renderHook(() => useNotifications());
 
     act(() => {
-      result.current.markNotificationsRead(mockState, [mockSingleNotification]);
+      result.current.markNotificationsRead(mockState, [
+        mockSingleAtlassifyNotification,
+      ]);
     });
 
     await waitFor(() => {
@@ -159,7 +161,7 @@ describe('hooks/useNotifications.ts', () => {
 
     act(() => {
       result.current.markNotificationsUnread(mockState, [
-        mockSingleNotification,
+        mockSingleAtlassifyNotification,
       ]);
     });
 

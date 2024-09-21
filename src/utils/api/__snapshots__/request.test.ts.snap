@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils/api/request.ts should make a request with the correct parameters 1`] = `
+exports[`utils/api/request.ts should make a head request with the correct parameters 1`] = `
 {
-  "Accept": "application/json",
+  "Accept": "*/*",
   "Authorization": "Basic YXRsYXM6dG9rZW4tMTIzLTQ1Ng==",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",
 }
 `;
 
-exports[`utils/api/request.ts should make a request with the correct parameters and default data 1`] = `
+exports[`utils/api/request.ts should make a post request with the correct parameters 1`] = `
 {
-  "Accept": "application/json",
+  "Accept": "*/*",
   "Authorization": "Basic YXRsYXM6dG9rZW4tMTIzLTQ1Ng==",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",

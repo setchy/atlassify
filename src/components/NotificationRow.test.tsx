@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { mockSingleNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockAuth,
@@ -25,7 +25,7 @@ describe('components/NotificationRow.tsx', () => {
       .mockImplementation(() => new Date('2024').valueOf());
 
     const props = {
-      notification: mockSingleNotification,
+      notification: mockSingleAtlassifyNotification,
       account: mockAtlassianCloudAccount,
     };
 
@@ -48,7 +48,7 @@ describe('components/NotificationRow.tsx', () => {
       .mockImplementation(() => new Date('2024').valueOf());
 
     const props = {
-      notification: mockSingleNotification,
+      notification: mockSingleAtlassifyNotification,
       account: mockAtlassianCloudAccount,
     };
 
@@ -70,7 +70,7 @@ describe('components/NotificationRow.tsx', () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
-        notification: mockSingleNotification,
+        notification: mockSingleAtlassifyNotification,
         account: mockAtlassianCloudAccount,
       };
 
@@ -96,7 +96,7 @@ describe('components/NotificationRow.tsx', () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
-        notification: mockSingleNotification,
+        notification: mockSingleAtlassifyNotification,
         account: mockAtlassianCloudAccount,
       };
 
@@ -125,7 +125,7 @@ describe('components/NotificationRow.tsx', () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
-        notification: mockSingleNotification,
+        notification: mockSingleAtlassifyNotification,
         account: mockAtlassianCloudAccount,
       };
 
@@ -150,7 +150,7 @@ describe('components/NotificationRow.tsx', () => {
 
       const props = {
         notification: {
-          ...mockSingleNotification,
+          ...mockSingleAtlassifyNotification,
           readState: 'read' as ReadState,
         },
         account: mockAtlassianCloudAccount,

@@ -1,9 +1,11 @@
 import axios from 'axios';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
 import {
+  checkIfCredentialsAreValid,
   getAuthenticatedUser,
   getNotificationsForUser,
   markNotificationsAsRead,
@@ -12,16 +14,32 @@ import {
 
 jest.mock('axios');
 
-const mockNotificationID = '1234';
-
 // TODO - Improve assertions of data request object sent
 describe('utils/api/client.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
+  describe('checkIfCredentialsAreValid', () => {
+    it('should validate credentials', async () => {
+      await checkIfCredentialsAreValid(
+        mockAtlassianCloudAccount.user.login,
+        mockAtlassianCloudAccount.token,
+      );
+
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'HEAD',
+        }),
+      );
+
+      expect(axios.defaults.headers.common).toMatchSnapshot();
+    });
+  });
+
   describe('getAuthenticatedUser', () => {
-    it('should fetch authenticated user - github', async () => {
+    it('should fetch authenticated user details', async () => {
       await getAuthenticatedUser(mockAtlassianCloudAccount);
 
       expect(axios).toHaveBeenCalledWith(
@@ -53,7 +71,7 @@ describe('utils/api/client.ts', () => {
   describe('markNotificationsAsRead', () => {
     it('should mark notifications as read', async () => {
       await markNotificationsAsRead(mockAtlassianCloudAccount, [
-        mockNotificationID,
+        mockSingleAtlassifyNotification.id,
       ]);
 
       expect(axios).toHaveBeenCalledWith(
@@ -70,7 +88,7 @@ describe('utils/api/client.ts', () => {
   describe('markNotificationsAsUnread', () => {
     it('should mark repository notifications as read - github', async () => {
       await markNotificationsAsUnread(mockAtlassianCloudAccount, [
-        mockNotificationID,
+        mockSingleAtlassifyNotification.id,
       ]);
 
       expect(axios).toHaveBeenCalledWith(
