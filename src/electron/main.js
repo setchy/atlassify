@@ -221,11 +221,11 @@ app.whenReady().then(async () => {
 
   // Safe Storage
   ipc.handle('atlassify:safe-storage-encrypt', (_, settings) => {
-    safeStorage.encryptString(settings).toString('base64');
+    return safeStorage.encryptString(settings).toString('base64');
   });
 
   ipc.handle('atlassify:safe-storage-decrypt', (_, settings) => {
-    safeStorage.decryptString(Buffer.from(settings, 'base64'));
+    return safeStorage.decryptString(Buffer.from(settings, 'base64'));
   });
 
   // Auto Updater

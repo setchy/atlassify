@@ -3,7 +3,10 @@ import type { AtlassifyError, ErrorType } from '../types';
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
     title: 'Bad Credentials',
-    descriptions: ['Your credentials are either invalid or expired.'],
+    descriptions: [
+      'Your credentials are either invalid or expired.',
+      'Please try removing your account and authenticating again.',
+    ],
     emojis: ['🔓'],
   },
   BAD_REQUEST: {
