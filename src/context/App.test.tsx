@@ -67,8 +67,6 @@ describe('context/App.tsx', () => {
     it('fetch notifications every minute', async () => {
       customRender(null);
 
-      // Wait for the useEffects, for settings.participating and accounts, to run.
-      // Those aren't what we're testing
       await waitFor(() =>
         expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
       );
