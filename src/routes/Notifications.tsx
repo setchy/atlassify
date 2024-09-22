@@ -3,7 +3,6 @@ import { AccountNotifications } from '../components/AccountNotifications';
 import { AllRead } from '../components/AllRead';
 import { Oops } from '../components/Oops';
 import { AppContext } from '../context/App';
-import { getAccountUUID } from '../utils/auth/utils';
 import { Errors } from '../utils/errors';
 import { getNotificationCount } from '../utils/notifications/notifications';
 
@@ -32,7 +31,7 @@ export const NotificationsRoute: FC = () => {
     <div className="flex flex-col">
       {notifications.map((accountNotifications) => (
         <AccountNotifications
-          key={getAccountUUID(accountNotifications.account)}
+          key={accountNotifications.account.id}
           account={accountNotifications.account}
           notifications={accountNotifications.notifications}
           error={accountNotifications.error}

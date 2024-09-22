@@ -46,7 +46,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       hidden=""
                       id="38"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -55,7 +55,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -270,7 +270,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="38"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                 </div>
                 <div
@@ -279,7 +279,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   <span
                     class="css-pbo52v"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                   <span
                     class="css-km389f"
@@ -551,7 +551,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       hidden=""
                       id="22"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -560,7 +560,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -755,7 +755,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="22"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                 </div>
                 <div
@@ -764,7 +764,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   <span
                     class="css-pbo52v"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                   <span
                     class="css-km389f"
@@ -1016,7 +1016,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       hidden=""
                       id="30"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -1025,7 +1025,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -1235,7 +1235,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="30"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                 </div>
                 <div
@@ -1244,7 +1244,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   <span
                     class="css-pbo52v"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                   <span
                     class="css-km389f"
@@ -1511,7 +1511,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                       hidden=""
                       id="2"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -1520,7 +1520,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -2121,7 +2121,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                     hidden=""
                     id="2"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                 </div>
                 <div
@@ -2130,7 +2130,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
                   <span
                     class="css-pbo52v"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                   <span
                     class="css-km389f"
@@ -2788,7 +2788,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       hidden=""
                       id="82"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -2797,7 +2797,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -2985,7 +2985,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                       hidden=""
                       id="102"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                   </div>
                   <div
@@ -2994,7 +2994,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     <span
                       class="css-pbo52v"
                     >
-                      Atlassian
+                      Atlassify
                     </span>
                     <span
                       class="css-km389f"
@@ -3595,7 +3595,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                     hidden=""
                     id="102"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                 </div>
                 <div
@@ -3604,7 +3604,7 @@ exports[`components/AccountNotifications.tsx should toggle account notifications
                   <span
                     class="css-pbo52v"
                   >
-                    Atlassian
+                    Atlassify
                   </span>
                   <span
                     class="css-km389f"

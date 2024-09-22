@@ -23,7 +23,7 @@ describe('utils/api/client.ts', () => {
   describe('checkIfCredentialsAreValid', () => {
     it('should validate credentials', async () => {
       await checkIfCredentialsAreValid(
-        mockAtlassianCloudAccount.user.login,
+        mockAtlassianCloudAccount.username,
         mockAtlassianCloudAccount.token,
       );
 

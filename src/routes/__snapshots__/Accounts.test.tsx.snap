@@ -99,7 +99,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                   hidden=""
                   id="4"
                 >
-                  Atlassian
+                  Atlassify
                 </span>
               </div>
               <div
@@ -108,12 +108,12 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                 <span
                   class="css-pbo52v"
                 >
-                  Atlassian
+                  Atlassify
                 </span>
                 <span
                   class="css-km389f"
                 >
-                  atlas
+                  user@atlassify.io
                 </span>
               </div>
             </button>
@@ -207,7 +207,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                   <span
                     class="css-b5o75w"
                   >
-                    Refresh atlas
+                    Refresh user@atlassify.io
                   </span>
                 </span>
               </button>
@@ -251,7 +251,7 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
                   <span
                     class="css-b5o75w"
                   >
-                    Logout atlas
+                    Logout user@atlassify.io
                   </span>
                 </span>
               </button>

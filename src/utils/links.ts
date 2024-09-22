@@ -29,9 +29,7 @@ export function openMyPullRequests() {
 }
 
 export function openAccountProfile(account: Account) {
-  const url = new URL(
-    `${Constants.ATLASSIAN_URLS.WEB.PEOPLE}/${account.user.id}`,
-  );
+  const url = new URL(`${Constants.ATLASSIAN_URLS.WEB.PEOPLE}/${account.id}`);
   openExternalLink(url.toString() as Link);
 }
 

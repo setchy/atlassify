@@ -52,10 +52,7 @@ describe('utils/notifications/remove.ts', () => {
           ...mockSingleAtlassifyNotification,
           account: {
             ...mockSingleAtlassifyNotification.account,
-            user: {
-              ...mockSingleAtlassifyNotification.account.user,
-              id: 'some-unknown-account',
-            },
+            id: 'some-unknown-account',
           },
         },
       ],

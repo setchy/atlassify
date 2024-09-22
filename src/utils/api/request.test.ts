@@ -38,7 +38,7 @@ describe('utils/api/request.ts', () => {
     const method = 'HEAD';
 
     await performHeadRequest(
-      mockAtlassianCloudAccount.user.login,
+      mockAtlassianCloudAccount.username,
       mockAtlassianCloudAccount.token,
     );
 

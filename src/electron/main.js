@@ -15,6 +15,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const { autoUpdater } = require('electron-updater');
 const { updateElectronApp } = require('update-electron-app');
+const { safeStorage } = require('electron');
 
 log.initialize();
 
@@ -216,6 +217,15 @@ app.whenReady().then(async () => {
 
   ipc.on('atlassify:update-auto-launch', (_, settings) => {
     app.setLoginItemSettings(settings);
+  });
+
+  // Safe Storage
+  ipc.handle('atlassify:safe-storage-encrypt', (_, settings) => {
+    safeStorage.encryptString(settings).toString('base64');
+  });
+
+  ipc.handle('atlassify:safe-storage-decrypt', (_, settings) => {
+    safeStorage.decryptString(Buffer.from(settings, 'base64'));
   });
 
   // Auto Updater

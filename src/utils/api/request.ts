@@ -1,17 +1,18 @@
 import axios, { type Method, type AxiosPromise } from 'axios';
 import type { Account, Token, Username } from '../../types';
+import { decryptValue } from '../comms';
 import { Constants } from '../constants';
 import type { GraphQLRequest } from './types';
 
-export function performPostRequest(
+export async function performPostRequest(
   account: Account,
   data: GraphQLRequest,
-): AxiosPromise | null {
-  const auth = btoa(`${account.user.login}:${account.token}`);
+): AxiosPromise {
+  // TODO - consider storing the decrypted token in memory
+  const decryptedToken = await decryptValue(account.token);
+  const auth = btoa(`${account.username}:${decryptedToken}`);
 
-  const method: Method = 'POST';
-
-  return performApiRequest(auth, method, data);
+  return performApiRequest(auth, 'POST', data);
 }
 
 export function performHeadRequest(
@@ -20,9 +21,7 @@ export function performHeadRequest(
 ): AxiosPromise | null {
   const auth = btoa(`${username}:${token}`);
 
-  const method: Method = 'HEAD';
-
-  return performApiRequest(auth, method);
+  return performApiRequest(auth, 'HEAD');
 }
 
 function performApiRequest(

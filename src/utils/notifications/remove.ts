@@ -3,7 +3,6 @@ import type {
   AtlassifyNotification,
   SettingsState,
 } from '../../types';
-import { getAccountUUID } from '../auth/utils';
 
 export function removeNotifications(
   settings: SettingsState,
@@ -25,8 +24,7 @@ export function removeNotifications(
 
   const accountIndex = allNotifications.findIndex(
     (accountNotifications) =>
-      getAccountUUID(accountNotifications.account) ===
-      getAccountUUID(removeNotificationAccount),
+      accountNotifications.account.id === removeNotificationAccount.id,
   );
 
   if (accountIndex !== -1) {

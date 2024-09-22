@@ -1,28 +1,21 @@
 import {
   type Account,
   type AtlassifyState,
-  type AtlassifyUser,
   type AuthState,
+  type EncryptedToken,
   type Link,
   OpenPreference,
   type SettingsState,
   Theme,
-  type Token,
   type Username,
 } from '../types';
 
-export const mockAtlassifyUser: AtlassifyUser = {
-  login: 'atlas' as Username,
-  name: 'Atlassian',
-  id: '123456789',
-  avatar: 'https://avatars.githubusercontent.com/u/583231?v=4' as Link,
-};
-
 export const mockAtlassianCloudAccount: Account = {
-  platform: 'Atlassian Cloud',
-  method: 'API Token',
-  token: 'token-123-456' as Token,
-  user: mockAtlassifyUser,
+  id: '123456789',
+  username: 'user@atlassify.io' as Username,
+  token: 'token-123-456' as EncryptedToken,
+  name: 'Atlassify',
+  avatar: 'https://avatar.atlassify.io' as Link,
 };
 
 export const mockAuth: AuthState = {

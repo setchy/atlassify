@@ -3,7 +3,6 @@ import type {
   AtlassifyNotification,
   AtlassifyState,
 } from '../../types';
-import { getAccountUUID } from '../auth/utils';
 import { hideWindow, showWindow } from '../comms';
 import { formatNotificationFooterText } from '../helpers';
 import { openNotification } from '../links';
@@ -18,9 +17,7 @@ export const triggerNativeNotifications = (
   const diffNotifications = newNotifications
     .map((accountNotifications) => {
       const accountPreviousNotifications = previousNotifications.find(
-        (item) =>
-          getAccountUUID(item.account) ===
-          getAccountUUID(accountNotifications.account),
+        (item) => item.account.id === accountNotifications.account.id,
       );
 
       if (!accountPreviousNotifications) {
