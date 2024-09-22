@@ -32,14 +32,12 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: environment-version
+  - type: input
+    id: app-version
     attributes:
       label: Atlassify Version
       description: What version of Atlassify are you using?
-      options:
-        - 1.0.0
-        - Other
+      placeholder: 1.0.0
     validations:
       required: true
 
