@@ -86,13 +86,13 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <AvatarItem
                 avatar={
                   <Avatar
-                    name={account.user.name}
-                    src={account.user.avatar}
+                    name={account.name}
+                    src={account.avatar}
                     size="xsmall"
                     appearance="circle"
                   />
                 }
-                primaryText={account.user.name}
+                primaryText={account.name}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();

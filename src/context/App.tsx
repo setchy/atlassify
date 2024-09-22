@@ -21,7 +21,7 @@ import {
   type Status,
   Theme,
 } from '../types';
-import type { LoginAPITokenOptions } from '../utils/auth/types';
+import type { LoginOptions } from '../utils/auth/types';
 import {
   addAccount,
   hasAccounts,
@@ -85,7 +85,7 @@ export const defaultSettings: SettingsState = {
 interface AppContextState {
   auth: AuthState;
   isLoggedIn: boolean;
-  loginWithAPIToken: (data: LoginAPITokenOptions) => void;
+  login: (data: LoginOptions) => void;
   logoutFromAccount: (account: Account) => void;
 
   status: Status;
@@ -200,8 +200,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     return hasAccounts(auth);
   }, [auth]);
 
-  const loginWithAPIToken = useCallback(
-    async ({ username, token }: LoginAPITokenOptions) => {
+  const login = useCallback(
+    async ({ username, token }: LoginOptions) => {
       const updatedAuth = await addAccount(auth, username, token);
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
@@ -219,7 +219,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },
-    [auth, settings],
+    [auth, settings, removeAccountNotifications],
   );
 
   const restoreSettings = useCallback(async () => {
@@ -267,7 +267,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       value={{
         auth,
         isLoggedIn,
-        loginWithAPIToken,
+        login,
         logoutFromAccount,
 
         status,

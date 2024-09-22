@@ -22,7 +22,7 @@ import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
 import { checkIfCredentialsAreValid } from '../utils/api/client';
-import type { LoginAPITokenOptions } from '../utils/auth/types';
+import type { LoginOptions } from '../utils/auth/types';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -34,23 +34,23 @@ interface IValues {
 }
 
 export const LoginRoute: FC = () => {
-  const { loginWithAPIToken } = useContext(AppContext);
+  const { login } = useContext(AppContext);
   const navigate = useNavigate();
   const [isValidToken, setIsValidToken] = useState<boolean>(true);
 
-  const login = useCallback(
+  const loginUser = useCallback(
     async (data: IValues) => {
       try {
         await checkIfCredentialsAreValid(data.username, data.token);
 
-        await loginWithAPIToken(data as LoginAPITokenOptions);
+        await login(data as LoginOptions);
         navigate(-1);
       } catch (err) {
         log.error('Auth: failed to login with provided credentials', err);
         setIsValidToken(false);
       }
     },
-    [loginWithAPIToken],
+    [login],
   );
 
   return (
@@ -58,7 +58,7 @@ export const LoginRoute: FC = () => {
       <Header>Login with Atlassian</Header>
 
       <Box paddingInline="space.400">
-        <Form<IValues> onSubmit={login}>
+        <Form<IValues> onSubmit={loginUser}>
           {({ formProps, submitting }) => (
             <form {...formProps}>
               <FormSection>

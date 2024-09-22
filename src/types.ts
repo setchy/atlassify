@@ -1,5 +1,4 @@
 import type { Category, ProductName, ReadState } from './utils/api/types';
-import type { AuthMethod, PlatformType } from './utils/auth/types';
 
 declare const __brand: unique symbol;
 
@@ -15,15 +14,21 @@ export type Username = Branded<string, 'Username'>;
 
 export type Token = Branded<string, 'Token'>;
 
+/**
+ * A token encrypted using the electron safe storage API.
+ */
+export type EncryptedToken = Branded<string, 'Token'>;
+
 export type Link = Branded<string, 'WebUrl'>;
 
 export type Status = 'loading' | 'success' | 'error';
 
 export interface Account {
-  method: AuthMethod;
-  platform: PlatformType;
-  token: Token;
-  user: AtlassifyUser;
+  id: string;
+  username: Username;
+  token: EncryptedToken;
+  name: string;
+  avatar: Link | null;
 }
 
 export type SettingsValue =

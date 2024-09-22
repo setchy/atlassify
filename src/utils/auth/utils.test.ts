@@ -17,7 +17,7 @@ describe('utils/auth/utils.ts', () => {
 
     it('should do nothing if no accounts match', async () => {
       const mockAccount = {
-        token: 'unknown-token',
+        id: 'some-id',
       } as Account;
 
       expect(mockAuth.accounts.length).toBe(1);

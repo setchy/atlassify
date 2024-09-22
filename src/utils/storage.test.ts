@@ -1,5 +1,5 @@
 import { mockSettings } from '../__mocks__/state-mocks';
-import type { Token } from '../types';
+import type { Token, Username } from '../types';
 import { clearState, loadState, saveState } from './storage';
 
 describe('utils/storage.ts', () => {
@@ -48,10 +48,11 @@ describe('utils/storage.ts', () => {
       auth: {
         accounts: [
           {
-            platform: 'Atlassian Cloud',
-            method: 'API Token',
+            id: '123',
+            username: 'user@atlassify.io' as Username,
             token: '123-456' as Token,
-            user: null,
+            name: 'Atlassify',
+            avatar: null,
           },
         ],
       },

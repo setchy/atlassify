@@ -1,18 +1,18 @@
 import type { AtlassifyState } from '../types';
 import { Constants } from './constants';
 
-//TODO use safeStorage to encrypt/decrypt secrets. See issue #98
-
 export function loadState(): AtlassifyState {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
   const { auth, settings } = (existing && JSON.parse(existing)) || {};
+
   return { auth, settings };
 }
 
-export function saveState(atlassifyState: AtlassifyState) {
+export async function saveState(atlassifyState: AtlassifyState) {
   const auth = atlassifyState.auth;
   const settings = atlassifyState.settings;
   const settingsString = JSON.stringify({ auth, settings });
+
   localStorage.setItem(Constants.STORAGE_KEY, settingsString);
 }
 

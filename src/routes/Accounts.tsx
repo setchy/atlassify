@@ -14,7 +14,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
 import type { Account } from '../types';
-import { getAccountUUID, refreshAccount } from '../utils/auth/utils';
+import { refreshAccount } from '../utils/auth/utils';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
 import { saveState } from '../utils/storage';
@@ -57,7 +57,7 @@ export const AccountsRoute: FC = () => {
 
             return (
               <div
-                key={getAccountUUID(account)}
+                key={account.id}
                 className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
               >
                 <Inline grow="fill" spread="space-between" alignBlock="center">
@@ -66,14 +66,14 @@ export const AccountsRoute: FC = () => {
                       label="Open account profile"
                       avatar={
                         <Avatar
-                          name={account.user.name}
-                          src={account.user.avatar}
+                          name={account.name}
+                          src={account.avatar}
                           size="medium"
                           appearance="circle"
                         />
                       }
-                      primaryText={account.user.name}
-                      secondaryText={account.user.login}
+                      primaryText={account.name}
+                      secondaryText={account.username}
                       onClick={() => openAccountProfile(account)}
                       testId="account-profile"
                     />
@@ -94,11 +94,11 @@ export const AccountsRoute: FC = () => {
                     </Tooltip>
 
                     <Tooltip
-                      content={`Refresh ${account.user.login}`}
+                      content={`Refresh ${account.username}`}
                       position="bottom"
                     >
                       <IconButton
-                        label={`Refresh ${account.user.login}`}
+                        label={`Refresh ${account.username}`}
                         icon={RefreshIcon}
                         appearance="subtle"
                         onClick={async () => {
@@ -110,11 +110,11 @@ export const AccountsRoute: FC = () => {
                     </Tooltip>
 
                     <Tooltip
-                      content={`Logout ${account.user.login}`}
+                      content={`Logout ${account.username}`}
                       position="bottom"
                     >
                       <IconButton
-                        label={`Logout ${account.user.login}`}
+                        label={`Logout ${account.username}`}
                         icon={SignOutIcon}
                         appearance="subtle"
                         onClick={() => logoutAccount(account)}
