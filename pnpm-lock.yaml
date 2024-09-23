@@ -29,9 +29,9 @@ importers:
       electron-updater:
         specifier: 6.3.4
         version: 6.3.4
-      jsonutils:
-        specifier: 0.1.0
-        version: 0.1.0
+      final-form:
+        specifier: 4.20.10
+        version: 4.20.10
       menubar:
         specifier: 9.5.0
         version: 9.5.0(electron@32.1.2)
@@ -41,6 +41,9 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
+      react-final-form:
+        specifier: 6.5.9
+        version: 6.5.9(final-form@4.20.10)(react@18.3.1)
       react-router-dom:
         specifier: 6.26.2
         version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2560,9 +2563,6 @@ packages:
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
-  jsonutils@0.1.0:
-    resolution: {integrity: sha512-qTn/D5HFRW7YvHVyiRWDSSCPGm7+kr48zrc59FQuBcgFeC55H9F+Fqgz1KKOr690WkecYDAxVGrbrw/upJKXiQ==}
-
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -3144,6 +3144,12 @@ packages:
 
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+
+  react-final-form@6.5.9:
+    resolution: {integrity: sha512-x3XYvozolECp3nIjly+4QqxdjSSWfcnpGEL5K8OBT6xmGrq5kBqbA6+/tOqoom9NwqIPPbxPNsOViFlbKgowbA==}
+    peerDependencies:
+      final-form: ^4.20.4
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   react-focus-lock@2.13.2:
     resolution: {integrity: sha512-T/7bsofxYqnod2xadvuwjGKHOoL5GH7/EIPI5UyEvaU/c2CcphvGI371opFtuY/SYdbMsNiuF4HsHQ50nA/TKQ==}
@@ -7229,8 +7235,6 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsonutils@0.1.0: {}
-
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -7760,6 +7764,12 @@ snapshots:
       scheduler: 0.23.2
 
   react-fast-compare@3.2.2: {}
+
+  react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.1
+      final-form: 4.20.10
+      react: 18.3.1
 
   react-focus-lock@2.13.2(@types/react@18.3.8)(react@18.3.1):
     dependencies:
