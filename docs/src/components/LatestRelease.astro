@@ -4,7 +4,6 @@ import { format, parseISO } from 'date-fns';
 import { siteMetadata } from '~/constants';
 import DownloadIcon from '../icons/Download.astro';
 import type { Assets, DownloadLink, DownloadLinks, HeroData } from '../types';
-import { Fragment } from 'react';
 
 const REPO_API_URL = `https://api.github.com/repos/${siteMetadata.repo}/releases/latest`;
 const REPO_RELEASES_URL = `https://github.com/${siteMetadata.repo}/releases/latest`;
@@ -93,7 +92,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
 <div class={releaseDetailsClassName}>
   {
     version ? (
-      <Fragment>
+      <>
         <div class="sm:flex md:grid md:grid-cols-2">
           {downloadLinks.primary.map((item, index) => (
             <a
@@ -122,9 +121,9 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
             </p>
           )}
         </div>
-      </Fragment>
+      </>
     ) : (
-      <Fragment>
+      <>
         <div class="flex">
           <a
             class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
@@ -137,7 +136,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
         <div>
           <div>Couldn&apos;t get latest version.</div>
         </div>
-      </Fragment>
+      </>
     )
   }
 </div>
