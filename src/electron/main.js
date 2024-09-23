@@ -38,6 +38,7 @@ const browserWindowOpts = {
   resizable: false,
   // TODO ideally we would disable this as use a preload script with a context bridge
   webPreferences: {
+    // TODO: confirm if this can be removed.  Believe it is key for safeStorage access to work via @electron/remote
     enableRemoteModule: true,
     nodeIntegration: true,
     contextIsolation: false,
