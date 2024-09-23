@@ -1,5 +1,9 @@
 import { type FC, useMemo } from 'react';
+
+import { Box, Stack } from '@atlaskit/primitives';
+
 import type { AtlassifyError } from '../types';
+import { Centered } from './Centered';
 import { EmojiText } from './EmojiText';
 
 interface IOops {
@@ -13,20 +17,25 @@ export const Oops: FC<IOops> = ({ error }: IOops) => {
   );
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center p-4">
-      <div className="mt-2 mb-5 text-5xl">
-        <EmojiText text={emoji} />
-      </div>
+    <Centered>
+      <Box paddingBlockEnd="space.100">
+        <Stack space="space.300" alignInline="center">
+          <span className="text-5xl">
+            <EmojiText text={emoji} />
+          </span>
 
-      <div className="mb-2 text-xl font-semibold">{error.title}</div>
-      {error.descriptions.map((description, i) => {
-        return (
-          // biome-ignore lint/suspicious/noArrayIndexKey: using index for key to keep the error constants clean
-          <div className="mb-2 text-center" key={`error_description_${i}`}>
-            {description}
-          </div>
-        );
-      })}
-    </div>
+          <span className="text-xl font-semibold">{error.title}</span>
+        </Stack>
+      </Box>
+      <Stack space="space.100">
+        {error.descriptions.map((description) => {
+          return (
+            <span className="text-center" key={description}>
+              {description}
+            </span>
+          );
+        })}
+      </Stack>
+    </Centered>
   );
 };

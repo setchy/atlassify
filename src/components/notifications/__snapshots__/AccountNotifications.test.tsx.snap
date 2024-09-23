@@ -200,29 +200,41 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
           </div>
         </div>
         <div
-          class="flex flex-1 flex-col items-center justify-center p-4"
+          class="flex flex-1 flex-col items-center justify-center"
         >
           <div
-            class="mt-2 mb-5 text-5xl"
+            class="css-1h715ms"
           >
-            <span>
-              <img
-                alt="🔥"
-                class="emoji"
-                draggable="false"
-                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
-              />
+            <div
+              class="css-ybkmal"
+            >
+              <span
+                class="text-5xl"
+              >
+                <span>
+                  <img
+                    alt="🔥"
+                    class="emoji"
+                    draggable="false"
+                    src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
+                  />
+                </span>
+              </span>
+              <span
+                class="text-xl font-semibold"
+              >
+                Error title
+              </span>
+            </div>
+          </div>
+          <div
+            class="css-t8lj6l"
+          >
+            <span
+              class="text-center"
+            >
+              Error description
             </span>
-          </div>
-          <div
-            class="mb-2 text-xl font-semibold"
-          >
-            Error title
-          </div>
-          <div
-            class="mb-2 text-center"
-          >
-            Error description
           </div>
         </div>
       </div>
@@ -424,29 +436,41 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col items-center justify-center p-4"
+        class="flex flex-1 flex-col items-center justify-center"
       >
         <div
-          class="mt-2 mb-5 text-5xl"
+          class="css-1h715ms"
         >
-          <span>
-            <img
-              alt="🔥"
-              class="emoji"
-              draggable="false"
-              src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
-            />
+          <div
+            class="css-ybkmal"
+          >
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🔥"
+                  class="emoji"
+                  draggable="false"
+                  src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
+                />
+              </span>
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Error title
+            </span>
+          </div>
+        </div>
+        <div
+          class="css-t8lj6l"
+        >
+          <span
+            class="text-center"
+          >
+            Error description
           </span>
-        </div>
-        <div
-          class="mb-2 text-xl font-semibold"
-        >
-          Error title
-        </div>
-        <div
-          class="mb-2 text-center"
-        >
-          Error description
         </div>
       </div>
     </div>
@@ -1170,24 +1194,28 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
           </div>
         </div>
         <div
-          class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
+          class="flex flex-1 flex-col items-center justify-center"
         >
           <div
-            class="mt-2 mb-5 text-5xl"
+            class="css-ybkmal"
           >
-            <span>
-              <img
-                alt="🎊"
-                class="emoji"
-                draggable="false"
-                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
-              />
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🎊"
+                  class="emoji"
+                  draggable="false"
+                  src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
+                />
+              </span>
             </span>
-          </div>
-          <div
-            class="mb-2 text-xl font-semibold"
-          >
-            No new notifications
+            <span
+              class="text-xl font-semibold"
+            >
+              No new notifications
+            </span>
           </div>
         </div>
       </div>
@@ -1389,24 +1417,28 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black"
+        class="flex flex-1 flex-col items-center justify-center"
       >
         <div
-          class="mt-2 mb-5 text-5xl"
+          class="css-ybkmal"
         >
-          <span>
-            <img
-              alt="🎊"
-              class="emoji"
-              draggable="false"
-              src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
-            />
+          <span
+            class="text-5xl"
+          >
+            <span>
+              <img
+                alt="🎊"
+                class="emoji"
+                draggable="false"
+                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
+              />
+            </span>
           </span>
-        </div>
-        <div
-          class="mb-2 text-xl font-semibold"
-        >
-          No new notifications
+          <span
+            class="text-xl font-semibold"
+          >
+            No new notifications
+          </span>
         </div>
       </div>
     </div>

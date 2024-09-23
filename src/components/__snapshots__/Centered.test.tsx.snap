@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/AllRead.tsx should render itself & its children 1`] = `
+exports[`components/Centered.tsx should render itself & its children 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -8,27 +8,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
       <div
         class="flex flex-1 flex-col items-center justify-center"
       >
-        <div
-          class="css-ybkmal"
-        >
-          <span
-            class="text-5xl"
-          >
-            <span>
-              <img
-                alt="🎊"
-                class="emoji"
-                draggable="false"
-                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
-              />
-            </span>
-          </span>
-          <span
-            class="text-xl font-semibold"
-          >
-            No new notifications
-          </span>
-        </div>
+        Test
       </div>
     </div>
   </body>,
@@ -36,27 +16,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
     <div
       class="flex flex-1 flex-col items-center justify-center"
     >
-      <div
-        class="css-ybkmal"
-      >
-        <span
-          class="text-5xl"
-        >
-          <span>
-            <img
-              alt="🎊"
-              class="emoji"
-              draggable="false"
-              src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
-            />
-          </span>
-        </span>
-        <span
-          class="text-xl font-semibold"
-        >
-          No new notifications
-        </span>
-      </div>
+      Test
     </div>
   </div>,
   "debug": [Function],

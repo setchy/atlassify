@@ -1,5 +1,9 @@
 import { type FC, useMemo } from 'react';
+
+import { Stack } from '@atlaskit/primitives';
+
 import { Constants } from '../utils/constants';
+import { Centered } from './Centered';
 import { EmojiText } from './EmojiText';
 
 export const AllRead: FC = () => {
@@ -12,12 +16,13 @@ export const AllRead: FC = () => {
   );
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-white p-4 text-black">
-      <div className="mt-2 mb-5 text-5xl">
-        <EmojiText text={emoji} />
-      </div>
-
-      <div className="mb-2 text-xl font-semibold">No new notifications</div>
-    </div>
+    <Centered>
+      <Stack space="space.300" alignInline="center">
+        <span className="text-5xl">
+          <EmojiText text={emoji} />
+        </span>
+        <span className="text-xl font-semibold">No new notifications</span>
+      </Stack>
+    </Centered>
   );
 };
