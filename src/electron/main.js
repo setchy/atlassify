@@ -38,6 +38,7 @@ const browserWindowOpts = {
   resizable: false,
   // TODO ideally we would disable this as use a preload script with a context bridge
   webPreferences: {
+    enableRemoteModule: true,
     nodeIntegration: true,
     contextIsolation: false,
   },
