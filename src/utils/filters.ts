@@ -1,15 +1,15 @@
 import EmojiFlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
 import WatchIcon from '@atlaskit/icon/glyph/watch';
 
-import type { AccountNotifications, SettingsState } from '../types';
 import type {
-  BasicDetails,
-  Category,
+  AccountNotifications,
+  FilterDetails,
   ProductName,
-  ReadState,
-} from './api/types';
+  SettingsState,
+} from '../types';
+import type { Category, ReadState } from './api/types';
 
-export const CATEGORIES: Record<Category, BasicDetails> = {
+export const CATEGORIES: Record<Category, FilterDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notification',
@@ -22,11 +22,11 @@ export const CATEGORIES: Record<Category, BasicDetails> = {
   },
 };
 
-export function getCategoryDetails(category: Category): BasicDetails {
+export function getCategoryDetails(category: Category): FilterDetails {
   return CATEGORIES[category];
 }
 
-export const READ_STATES: Record<ReadState, BasicDetails> = {
+export const READ_STATES: Record<ReadState, FilterDetails> = {
   unread: {
     name: 'unread',
     description: 'Unread notification',
@@ -37,7 +37,7 @@ export const READ_STATES: Record<ReadState, BasicDetails> = {
   },
 };
 
-export function getReadStateDetails(readState: ReadState): BasicDetails {
+export function getReadStateDetails(readState: ReadState): FilterDetails {
   return READ_STATES[readState];
 }
 

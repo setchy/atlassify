@@ -5,7 +5,7 @@ import {
   mockSettings,
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
-import type { ProductName } from '../utils/api/types';
+import type { ProductName } from '../types';
 import * as comms from '../utils/comms';
 import { ProductNotifications } from './ProductNotifications';
 
