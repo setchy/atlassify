@@ -6,8 +6,6 @@ import { IconButton } from '@atlaskit/button/new';
 import InviteTeamIcon from '@atlaskit/icon/glyph/invite-team';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
-import StarIcon from '@atlaskit/icon/glyph/star';
-import StarFilledIcon from '@atlaskit/icon/glyph/star-filled';
 import { Box, Flex, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -17,10 +15,9 @@ import type { Account } from '../types';
 import { refreshAccount } from '../utils/auth/utils';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
-import { saveState } from '../utils/storage';
 
 export const AccountsRoute: FC = () => {
-  const { auth, settings, logoutFromAccount } = useContext(AppContext);
+  const { auth, logoutFromAccount } = useContext(AppContext);
   const navigate = useNavigate();
 
   const logoutAccount = useCallback(
@@ -33,12 +30,6 @@ export const AccountsRoute: FC = () => {
     [logoutFromAccount],
   );
 
-  const setAsPrimaryAccount = useCallback((account: Account) => {
-    auth.accounts = [account, ...auth.accounts.filter((a) => a !== account)];
-    saveState({ auth, settings });
-    navigate('/accounts', { replace: true });
-  }, []);
-
   const login = useCallback(() => {
     return navigate('/login', { replace: true });
   }, []);
@@ -48,13 +39,7 @@ export const AccountsRoute: FC = () => {
       <Header>Accounts</Header>
       <div className="flex-grow overflow-x-auto px-8">
         <div className="mt-4 flex flex-col text-sm">
-          {auth.accounts.map((account, i) => {
-            const isPrimaryAccount = i === 0;
-            const AccountIcon = isPrimaryAccount ? StarFilledIcon : StarIcon;
-            const accountLabel = isPrimaryAccount
-              ? 'Primary account'
-              : 'Set as primary account';
-
+          {auth.accounts.map((account) => {
             return (
               <div
                 key={account.id}
@@ -80,19 +65,6 @@ export const AccountsRoute: FC = () => {
                   </Tooltip>
 
                   <Inline>
-                    <Tooltip content={accountLabel} position="bottom">
-                      <IconButton
-                        label={accountLabel}
-                        icon={(iconProps) => (
-                          <AccountIcon {...iconProps} primaryColor="gold" />
-                        )}
-                        appearance="subtle"
-                        isDisabled={isPrimaryAccount}
-                        onClick={() => setAsPrimaryAccount(account)}
-                        testId="account-type"
-                      />
-                    </Tooltip>
-
                     <Tooltip
                       content={`Refresh ${account.username}`}
                       position="bottom"

@@ -125,45 +125,6 @@ exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
               role="presentation"
             >
               <button
-                class=" css-1uxpsra"
-                data-testid="account-type"
-                disabled=""
-                type="button"
-              >
-                <span
-                  class=" css-1spmf3f"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: gold; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                  >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <path
-                        d="m12.072 17.284-3.905 2.053a1 1 0 0 1-1.451-1.054l.745-4.349-3.159-3.08a1 1 0 0 1 .554-1.705l4.366-.635 1.953-3.956a1 1 0 0 1 1.794 0l1.952 3.956 4.366.635a1 1 0 0 1 .555 1.705l-3.16 3.08.746 4.349a1 1 0 0 1-1.45 1.054z"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    class="css-b5o75w"
-                  >
-                    Primary account
-                  </span>
-                </span>
-              </button>
-            </div>
-            <div
-              role="presentation"
-            >
-              <button
                 class=" css-1l7n0sn"
                 data-testid="account-refresh"
                 type="button"
