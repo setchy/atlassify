@@ -1187,7 +1187,7 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
           <div
             class="mb-2 text-xl font-semibold"
           >
-            No new notifications.
+            No new notifications
           </div>
         </div>
       </div>
@@ -1406,7 +1406,7 @@ exports[`components/notifications/AccountNotifications.tsx account view types sh
         <div
           class="mb-2 text-xl font-semibold"
         >
-          No new notifications.
+          No new notifications
         </div>
       </div>
     </div>
