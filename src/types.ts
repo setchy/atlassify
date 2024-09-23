@@ -155,13 +155,6 @@ export interface FormattedReason {
   description: string;
 }
 
-export enum Opacity {
-  READ = 'opacity-50',
-  LOW = 'opacity-70',
-  MEDIUM = 'opacity-80',
-  HIGH = 'opacity-90',
-}
-
 export interface AtlassianProduct {
   name: ProductName;
   icon: React.ComponentType;
