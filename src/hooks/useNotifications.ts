@@ -106,14 +106,21 @@ export const useNotifications = (): NotificationsState => {
       try {
         await markNotificationsAsRead(account, notificationIDs);
 
-        const updatedNotifications = removeNotifications(
-          state.settings,
-          readNotifications,
-          notifications,
-        );
+        for (const notification of readNotifications) {
+          notification.readState = 'read';
+        }
 
-        setNotifications(updatedNotifications);
-        setTrayIconColor(updatedNotifications);
+        // Only remove notifications from state if we're
+        if (state.settings.fetchOnlyUnreadNotifications) {
+          const updatedNotifications = removeNotifications(
+            state.settings,
+            readNotifications,
+            notifications,
+          );
+
+          setNotifications(updatedNotifications);
+          setTrayIconColor(updatedNotifications);
+        }
       } catch (err) {
         log.error('Error occurred while marking notifications as read', err);
       }
@@ -137,6 +144,10 @@ export const useNotifications = (): NotificationsState => {
 
       try {
         await markNotificationsAsUnread(account, notificationIDs);
+
+        for (const notification of unreadNotifications) {
+          notification.readState = 'unread';
+        }
       } catch (err) {
         log.error('Error occurred while marking notifications as read', err);
       }

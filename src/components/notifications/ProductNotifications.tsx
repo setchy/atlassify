@@ -25,7 +25,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   const { markNotificationsRead, settings } = useContext(AppContext);
 
   const [animateExit, setAnimateExit] = useState(false);
-  const [showAsRead, setShowAsRead] = useState(false);
   const [showProductNotifications, setShowProductNotifications] =
     useState(true);
 
@@ -100,8 +99,10 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  setAnimateExit(!settings.delayNotificationState);
-                  setShowAsRead(settings.delayNotificationState);
+                  setAnimateExit(
+                    settings.fetchOnlyUnreadNotifications &&
+                      !settings.delayNotificationState,
+                  );
                   markNotificationsRead(productNotifications);
                 }}
                 testId="product-mark-as-read"
@@ -131,7 +132,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             key={notification.id}
             notification={notification}
             isAnimated={animateExit}
-            isRead={showAsRead}
           />
         ))}
     </Stack>

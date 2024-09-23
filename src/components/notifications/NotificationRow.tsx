@@ -7,7 +7,7 @@ import { Box, Flex, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
-import { type AtlassifyNotification, Opacity } from '../../types';
+import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import { READ_STATES, getCategoryDetails } from '../../utils/filters';
 import {
@@ -19,24 +19,22 @@ import { openNotification } from '../../utils/links';
 interface INotificationRow {
   notification: AtlassifyNotification;
   isAnimated?: boolean;
-  isRead?: boolean;
 }
 
 export const NotificationRow: FC<INotificationRow> = ({
   notification,
   isAnimated = false,
-  isRead = false,
 }: INotificationRow) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
-  const [showAsRead, setShowAsRead] = useState(false);
 
-  const handleNotification = useCallback(() => {
-    setAnimateExit(!settings.delayNotificationState);
+  const handleNotificationInteraction = useCallback(() => {
+    setAnimateExit(
+      settings.fetchOnlyUnreadNotifications && !settings.delayNotificationState,
+    );
 
     if (settings.markAsReadOnOpen) {
-      setShowAsRead(settings.delayNotificationState);
       markNotificationsRead([notification]);
     }
 
@@ -51,7 +49,8 @@ export const NotificationRow: FC<INotificationRow> = ({
     size: 'small',
   };
 
-  const isUnread = notification.readState === READ_STATES.unread.name;
+  const isNotificationUnread =
+    notification.readState === READ_STATES.unread.name; //&& !showAsRead;
 
   return (
     <div
@@ -60,7 +59,6 @@ export const NotificationRow: FC<INotificationRow> = ({
         'group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
-        (isRead || showAsRead) && Opacity.READ,
       )}
     >
       <div className="mr-3 flex items-center justify-center">
@@ -81,7 +79,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       <div
         role="main"
         className="mr-3 flex flex-1 cursor-pointer text-wrap"
-        onClick={() => handleNotification()}
+        onClick={() => handleNotificationInteraction()}
       >
         <Stack space="space.025">
           <Box>
@@ -114,7 +112,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       </div>
 
       {!animateExit &&
-        (isUnread ? (
+        (isNotificationUnread ? (
           <Flex alignItems="center">
             <Tooltip content="Mark as read" position="left">
               <IconButton
@@ -129,8 +127,10 @@ export const NotificationRow: FC<INotificationRow> = ({
                 spacing="compact"
                 appearance="subtle"
                 onClick={() => {
-                  setAnimateExit(!settings.delayNotificationState);
-                  setShowAsRead(settings.delayNotificationState);
+                  setAnimateExit(
+                    settings.fetchOnlyUnreadNotifications &&
+                      !settings.delayNotificationState,
+                  );
                   markNotificationsRead([notification]);
                 }}
                 testId="notification-mark-as-read"
@@ -148,7 +148,6 @@ export const NotificationRow: FC<INotificationRow> = ({
                 appearance="subtle"
                 onClick={() => {
                   markNotificationsUnread([notification]);
-                  notification.readState = 'unread';
                 }}
                 testId="notification-mark-as-unread"
               />
