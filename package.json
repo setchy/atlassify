@@ -1,6 +1,6 @@
 {
   "name": "atlassify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Atlassian notifications on your menu bar.",
   "main": "src/electron/main.js",
   "scripts": {
@@ -89,13 +89,11 @@
   },
   "dependencies": {
     "@discordapp/twemoji": "15.1.0",
-    "@electron/remote": "2.1.2",
     "axios": "1.7.7",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
     "electron-log": "5.2.0",
     "electron-updater": "6.3.4",
-    "jsonutils": "0.1.0",
     "menubar": "9.5.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

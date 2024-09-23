@@ -11,9 +11,6 @@ importers:
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
-      '@electron/remote':
-        specifier: 2.1.2
-        version: 2.1.2(electron@32.1.2)
       axios:
         specifier: 1.7.7
         version: 1.7.7
@@ -29,9 +26,6 @@ importers:
       electron-updater:
         specifier: 6.3.4
         version: 6.3.4
-      jsonutils:
-        specifier: ^0.1.0
-        version: 0.1.0
       menubar:
         specifier: 9.5.0
         version: 9.5.0(electron@32.1.2)
@@ -667,11 +661,6 @@ packages:
     resolution: {integrity: sha512-zF4x3QupRU3uNGaP5X1wjpmcjfw1H87kyqZ00Tc3HvriV+4gmOGuvQjGNkrJuXdsApssdNyVwLsy+TaeTGGcVw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-
-  '@electron/remote@2.1.2':
-    resolution: {integrity: sha512-EPwNx+nhdrTBxyCqXt/pftoQg/ybtWDW3DUWHafejvnB1ZGGfMpv6e15D8KeempocjXe78T7WreyGGb3mlZxdA==}
-    peerDependencies:
-      electron: '>= 13.0.0'
 
   '@electron/universal@1.5.1':
     resolution: {integrity: sha512-kbgXxyEauPJiQQUNG2VgUeyfQNFk6hBF11ISN2PNI6agUgPl55pv4eQmaqHzTAzchBvqZ2tQuRVaPStGf0mxGw==}
@@ -2559,9 +2548,6 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
-
-  jsonutils@0.1.0:
-    resolution: {integrity: sha512-qTn/D5HFRW7YvHVyiRWDSSCPGm7+kr48zrc59FQuBcgFeC55H9F+Fqgz1KKOr690WkecYDAxVGrbrw/upJKXiQ==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -4747,10 +4733,6 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - supports-color
-
-  '@electron/remote@2.1.2(electron@32.1.2)':
-    dependencies:
-      electron: 32.1.2
 
   '@electron/universal@1.5.1':
     dependencies:
@@ -7228,8 +7210,6 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
-
-  jsonutils@0.1.0: {}
 
   keyv@4.5.4:
     dependencies:
