@@ -8,7 +8,7 @@ exports[`components/Centered.tsx should render itself & its children 1`] = `
       <div
         class="flex flex-1 flex-col items-center justify-center"
       >
-        Test Header
+        Test
       </div>
     </div>
   </body>,
@@ -16,7 +16,7 @@ exports[`components/Centered.tsx should render itself & its children 1`] = `
     <div
       class="flex flex-1 flex-col items-center justify-center"
     >
-      Test Header
+      Test
     </div>
   </div>,
   "debug": [Function],

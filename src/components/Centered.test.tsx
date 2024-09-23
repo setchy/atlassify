@@ -3,7 +3,7 @@ import { Centered } from './Centered';
 
 describe('components/Centered.tsx', () => {
   it('should render itself & its children', () => {
-    const tree = render(<Centered>Test Header</Centered>);
+    const tree = render(<Centered>Test</Centered>);
 
     expect(tree).toMatchSnapshot();
   });
