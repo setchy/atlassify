@@ -1,4 +1,4 @@
-import type { Category, ProductName, ReadState } from './utils/api/types';
+import type { Category, ReadState } from './utils/api/types';
 
 declare const __brand: unique symbol;
 
@@ -161,3 +161,26 @@ export enum Opacity {
   MEDIUM = 'opacity-80',
   HIGH = 'opacity-90',
 }
+
+export interface AtlassianProduct {
+  name: ProductName;
+  icon: React.ComponentType;
+  home?: Link;
+}
+
+export interface FilterDetails {
+  name: string;
+  description: string;
+  icon?: React.ComponentType;
+}
+
+export type ProductName =
+  | 'bitbucket'
+  | 'confluence'
+  | 'compass'
+  | 'jira'
+  | 'jira product discovery'
+  | 'jira service management'
+  | 'team central (atlas)'
+  | 'trello'
+  | 'unknown';

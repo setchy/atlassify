@@ -1,15 +1,14 @@
 import type { Link } from '../../types';
 
-export interface AtlassianProduct {
-  name: ProductName;
-  icon: React.ComponentType;
-  home?: Link;
+export interface GraphQLResponse<T, U> {
+  data: T;
+  extensions: U;
+  errors?: AtlassianGraphQLAPIError[];
 }
 
-export interface BasicDetails {
-  name: string;
-  description: string;
-  icon?: React.ComponentType;
+export interface GraphQLRequest {
+  query: string;
+  variables: Record<string, unknown>;
 }
 
 export interface MyUserDetails {
@@ -46,17 +45,6 @@ export type Category = 'direct' | 'watching';
 
 export type ReadState = 'unread' | 'read';
 
-export type ProductName =
-  | 'bitbucket'
-  | 'confluence'
-  | 'compass'
-  | 'jira'
-  | 'jira product discovery'
-  | 'jira service management'
-  | 'team central (atlas)'
-  | 'trello'
-  | 'unknown';
-
 export interface AtlassianNotification {
   groupId: string;
   headNotification: AtlassianHeadNotification;
@@ -65,8 +53,8 @@ export interface AtlassianNotification {
 export interface AtlassianHeadNotification {
   notificationId: string;
   timestamp: string;
-  readState: string;
-  category: string;
+  readState: ReadState;
+  category: Category;
   content: {
     type: string;
     message: string;
@@ -92,20 +80,10 @@ export interface AtlassianHeadNotification {
   }[];
 }
 
-export interface GraphQLResponse<T, U> {
-  data: T;
-  extensions: U;
-}
-
-export interface GraphQLRequest {
-  query: string;
-  variables: Record<string, unknown>;
-}
-
 export type AtlassianAPIError =
   | AtlassianHTTPError
   | AtlassianAuthError
-  | AtlassianGraphQLAPIError;
+  | AtlassianGraphQLAPIErrors;
 
 export interface AtlassianAuthError {
   code: number;
@@ -117,13 +95,15 @@ export interface AtlassianHTTPError {
   message: string;
 }
 
+export interface AtlassianGraphQLAPIErrors {
+  errors: AtlassianGraphQLAPIError[];
+}
+
 export interface AtlassianGraphQLAPIError {
-  errors: {
-    message: string;
-    extensions: {
-      classification: string;
-      errorType: string;
-      statusCode: number;
-    };
-  }[];
+  message: string;
+  extensions: {
+    classification: string;
+    errorType: string;
+    statusCode: number;
+  };
 }

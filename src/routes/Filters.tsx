@@ -9,7 +9,8 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/Header';
 import { AppContext } from '../context/App';
-import type { Category, ProductName, ReadState } from '../utils/api/types';
+import type { ProductName } from '../types';
+import type { Category, ReadState } from '../utils/api/types';
 import {
   CATEGORIES,
   READ_STATES,

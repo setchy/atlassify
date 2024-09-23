@@ -1,8 +1,5 @@
-import type {
-  AtlassianNotification,
-  AtlassianProduct,
-  ProductName,
-} from './api/types';
+import type { AtlassianProduct, ProductName } from '../types';
+import type { AtlassianNotification } from './api/types';
 import { Constants } from './constants';
 
 import {
