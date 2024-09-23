@@ -66,7 +66,7 @@ export const Sidebar: FC = () => {
     );
 
     return `${notificationsCount}${hasMoreNotifications ? '+' : ''}`;
-  }, [notifications]);
+  }, [notifications, notificationsCount]);
 
   const hasFilters = useMemo(() => {
     return hasFiltersSet(settings);
