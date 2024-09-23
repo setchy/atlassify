@@ -44,6 +44,21 @@ describe('utils/api/errors.ts', () => {
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
+
+    it('bad credentials - safe storage', async () => {
+      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
+        code: AxiosError.ERR_BAD_REQUEST,
+        status: 404,
+        message:
+          "Error invoking remote method 'atlassify:safe-storage-decrypt': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.",
+      };
+
+      const result = determineFailureType(
+        mockError as AxiosError<AtlassianAPIError>,
+      );
+
+      expect(result).toBe(Errors.BAD_CREDENTIALS);
+    });
   });
 
   it('unknown error', async () => {

@@ -14,7 +14,11 @@ export function determineFailureType(
 
   const status = err.response?.status;
 
-  if (status === 401 || status === 404) {
+  if (
+    status === 401 ||
+    status === 404 ||
+    err.message?.includes('safeStorage')
+  ) {
     return Errors.BAD_CREDENTIALS;
   }
 
