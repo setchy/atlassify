@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/ProductNotifications.tsx should render itself & its children 1`] = `
+exports[`components/notifications/ProductNotifications.tsx should render itself & its children 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -377,7 +377,7 @@ exports[`components/ProductNotifications.tsx should render itself & its children
 }
 `;
 
-exports[`components/ProductNotifications.tsx should toggle product notifications visibility 1`] = `
+exports[`components/notifications/ProductNotifications.tsx should toggle product notifications visibility 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

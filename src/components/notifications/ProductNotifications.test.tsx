@@ -1,12 +1,12 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { mockAtlassifyNotifications } from '../__mocks__/notifications-mocks';
+import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
-} from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
-import type { ProductName } from '../types';
-import * as comms from '../utils/comms';
+} from '../../__mocks__/state-mocks';
+import { AppContext } from '../../context/App';
+import type { ProductName } from '../../types';
+import * as comms from '../../utils/comms';
 import { ProductNotifications } from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
@@ -17,7 +17,7 @@ const openExternalLinkMock = jest
   .spyOn(comms, 'openExternalLink')
   .mockImplementation();
 
-describe('components/ProductNotifications.tsx', () => {
+describe('components/notifications/ProductNotifications.tsx', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

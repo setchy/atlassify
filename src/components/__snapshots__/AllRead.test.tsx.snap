@@ -23,7 +23,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
         <div
           class="mb-2 text-xl font-semibold"
         >
-          No new notifications.
+          No new notifications
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
       <div
         class="mb-2 text-xl font-semibold"
       >
-        No new notifications.
+        No new notifications
       </div>
     </div>
   </div>,

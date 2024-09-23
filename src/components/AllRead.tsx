@@ -17,7 +17,7 @@ export const AllRead: FC = () => {
         <EmojiText text={emoji} />
       </div>
 
-      <div className="mb-2 text-xl font-semibold">No new notifications.</div>
+      <div className="mb-2 text-xl font-semibold">No new notifications</div>
     </div>
   );
 };

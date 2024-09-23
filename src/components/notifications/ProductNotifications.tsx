@@ -8,11 +8,11 @@ import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
-import type { AtlassifyNotification } from '../types';
-import { openExternalLink } from '../utils/comms';
-import { formatProperCase } from '../utils/helpers';
-import { getProductDetails } from '../utils/products';
+import { AppContext } from '../../context/App';
+import type { AtlassifyNotification } from '../../types';
+import { openExternalLink } from '../../utils/comms';
+import { formatProperCase } from '../../utils/helpers';
+import { getProductDetails } from '../../utils/products';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
