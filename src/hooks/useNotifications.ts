@@ -143,7 +143,7 @@ export const useNotifications = (): NotificationsState => {
 
       setStatus('success');
     },
-    [notifications],
+    [],
   );
 
   return {
