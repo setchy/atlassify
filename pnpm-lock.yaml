@@ -30,7 +30,7 @@ importers:
         specifier: 6.3.4
         version: 6.3.4
       jsonutils:
-        specifier: ^0.1.0
+        specifier: 0.1.0
         version: 0.1.0
       menubar:
         specifier: 9.5.0
