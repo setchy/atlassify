@@ -1,17 +1,17 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockAuth,
   mockSettings,
-} from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
-import type { ReadState } from '../utils/api/types';
-import * as comms from '../utils/comms';
-import * as links from '../utils/links';
+} from '../../__mocks__/state-mocks';
+import { AppContext } from '../../context/App';
+import type { ReadState } from '../../utils/api/types';
+import * as comms from '../../utils/comms';
+import * as links from '../../utils/links';
 import { NotificationRow } from './NotificationRow';
 
-describe('components/NotificationRow.tsx', () => {
+describe('components/notifications/NotificationRow.tsx', () => {
   jest.spyOn(links, 'openNotification');
   jest.spyOn(comms, 'openExternalLink').mockImplementation();
 

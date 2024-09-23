@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/AccountNotifications.tsx account view types should render itself - account error 1`] = `
+exports[`components/notifications/AccountNotifications.tsx account view types should render itself - account error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -505,7 +505,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
 }
 `;
 
-exports[`components/AccountNotifications.tsx account view types should render itself - group notifications by products 1`] = `
+exports[`components/notifications/AccountNotifications.tsx account view types should render itself - group notifications by products 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -970,7 +970,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
 }
 `;
 
-exports[`components/AccountNotifications.tsx account view types should render itself - no notifications 1`] = `
+exports[`components/notifications/AccountNotifications.tsx account view types should render itself - no notifications 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1465,7 +1465,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
 }
 `;
 
-exports[`components/AccountNotifications.tsx account view types should render itself - sort by date 1`] = `
+exports[`components/notifications/AccountNotifications.tsx account view types should render itself - sort by date 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -2742,7 +2742,7 @@ exports[`components/AccountNotifications.tsx account view types should render it
 }
 `;
 
-exports[`components/AccountNotifications.tsx should toggle account notifications visibility 1`] = `
+exports[`components/notifications/AccountNotifications.tsx should toggle account notifications visibility 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

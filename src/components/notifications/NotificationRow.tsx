@@ -6,15 +6,15 @@ import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-
 import { Box, Flex, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
-import { type AtlassifyNotification, Opacity } from '../types';
-import { cn } from '../utils/cn';
-import { READ_STATES, getCategoryDetails } from '../utils/filters';
+import { AppContext } from '../../context/App';
+import { type AtlassifyNotification, Opacity } from '../../types';
+import { cn } from '../../utils/cn';
+import { READ_STATES, getCategoryDetails } from '../../utils/filters';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
-} from '../utils/helpers';
-import { openNotification } from '../utils/links';
+} from '../../utils/helpers';
+import { openNotification } from '../../utils/links';
 
 interface INotificationRow {
   notification: AtlassifyNotification;

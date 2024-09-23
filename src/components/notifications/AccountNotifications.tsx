@@ -18,13 +18,17 @@ import { BitbucketIcon } from '@atlaskit/logo';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
-import type { Account, AtlassifyError, AtlassifyNotification } from '../types';
-import { Constants } from '../utils/constants';
-import { openAccountProfile, openMyPullRequests } from '../utils/links';
-import { AllRead } from './AllRead';
+import { AppContext } from '../../context/App';
+import type {
+  Account,
+  AtlassifyError,
+  AtlassifyNotification,
+} from '../../types';
+import { Constants } from '../../utils/constants';
+import { openAccountProfile, openMyPullRequests } from '../../utils/links';
+import { AllRead } from '../AllRead';
+import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
-import { Oops } from './Oops';
 import { ProductNotifications } from './ProductNotifications';
 interface IAccountNotifications {
   account: Account;

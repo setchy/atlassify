@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/NotificationRow.tsx should render itself & its children - group by date 1`] = `
+exports[`components/notifications/NotificationRow.tsx should render itself & its children - group by date 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -475,7 +475,7 @@ exports[`components/NotificationRow.tsx should render itself & its children - gr
 }
 `;
 
-exports[`components/NotificationRow.tsx should render itself & its children - group by products 1`] = `
+exports[`components/notifications/NotificationRow.tsx should render itself & its children - group by products 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
