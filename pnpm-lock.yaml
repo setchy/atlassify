@@ -11,9 +11,6 @@ importers:
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
-      '@electron/remote':
-        specifier: 2.1.2
-        version: 2.1.2(electron@32.1.2)
       axios:
         specifier: 1.7.7
         version: 1.7.7
@@ -29,9 +26,6 @@ importers:
       electron-updater:
         specifier: 6.3.4
         version: 6.3.4
-      final-form:
-        specifier: 4.20.10
-        version: 4.20.10
       menubar:
         specifier: 9.5.0
         version: 9.5.0(electron@32.1.2)
@@ -41,9 +35,6 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
-      react-final-form:
-        specifier: 6.5.9
-        version: 6.5.9(final-form@4.20.10)(react@18.3.1)
       react-router-dom:
         specifier: 6.26.2
         version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -670,11 +661,6 @@ packages:
     resolution: {integrity: sha512-zF4x3QupRU3uNGaP5X1wjpmcjfw1H87kyqZ00Tc3HvriV+4gmOGuvQjGNkrJuXdsApssdNyVwLsy+TaeTGGcVw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-
-  '@electron/remote@2.1.2':
-    resolution: {integrity: sha512-EPwNx+nhdrTBxyCqXt/pftoQg/ybtWDW3DUWHafejvnB1ZGGfMpv6e15D8KeempocjXe78T7WreyGGb3mlZxdA==}
-    peerDependencies:
-      electron: '>= 13.0.0'
 
   '@electron/universal@1.5.1':
     resolution: {integrity: sha512-kbgXxyEauPJiQQUNG2VgUeyfQNFk6hBF11ISN2PNI6agUgPl55pv4eQmaqHzTAzchBvqZ2tQuRVaPStGf0mxGw==}
@@ -3145,12 +3131,6 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-final-form@6.5.9:
-    resolution: {integrity: sha512-x3XYvozolECp3nIjly+4QqxdjSSWfcnpGEL5K8OBT6xmGrq5kBqbA6+/tOqoom9NwqIPPbxPNsOViFlbKgowbA==}
-    peerDependencies:
-      final-form: ^4.20.4
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-
   react-focus-lock@2.13.2:
     resolution: {integrity: sha512-T/7bsofxYqnod2xadvuwjGKHOoL5GH7/EIPI5UyEvaU/c2CcphvGI371opFtuY/SYdbMsNiuF4HsHQ50nA/TKQ==}
     peerDependencies:
@@ -4753,10 +4733,6 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - supports-color
-
-  '@electron/remote@2.1.2(electron@32.1.2)':
-    dependencies:
-      electron: 32.1.2
 
   '@electron/universal@1.5.1':
     dependencies:
@@ -7764,12 +7740,6 @@ snapshots:
       scheduler: 0.23.2
 
   react-fast-compare@3.2.2: {}
-
-  react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1):
-    dependencies:
-      '@babel/runtime': 7.24.1
-      final-form: 4.20.10
-      react: 18.3.1
 
   react-focus-lock@2.13.2(@types/react@18.3.8)(react@18.3.1):
     dependencies:
