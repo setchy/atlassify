@@ -1,4 +1,11 @@
-import { type FC, type MouseEvent, useContext, useMemo, useState } from 'react';
+import {
+  type FC,
+  Fragment,
+  type MouseEvent,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
@@ -170,7 +177,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       </Box>
 
       {showAccountNotifications && (
-        <>
+        <Fragment>
           {props.error && <Oops error={props.error} />}
           {!hasNotifications && !props.error && <AllRead />}
           {settings.groupNotificationsByProduct
@@ -190,7 +197,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   notification={notification}
                 />
               ))}
-        </>
+        </Fragment>
       )}
     </Stack>
   );

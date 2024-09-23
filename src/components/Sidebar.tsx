@@ -1,4 +1,4 @@
-import { type FC, useContext, useMemo } from 'react';
+import { type FC, Fragment, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -113,7 +113,7 @@ export const Sidebar: FC = () => {
           </Tooltip>
 
           {isLoggedIn && (
-            <>
+            <Fragment>
               <Tooltip
                 content="Show only unread notifications"
                 position="right"
@@ -180,7 +180,7 @@ export const Sidebar: FC = () => {
                   testId="sidebar-filters"
                 />
               </Tooltip>
-            </>
+            </Fragment>
           )}
         </Stack>
       </div>
@@ -188,7 +188,7 @@ export const Sidebar: FC = () => {
       <Box paddingBlock="space.200">
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
-            <>
+            <Fragment>
               <Tooltip content="Refresh notifications" position="right">
                 <IconButton
                   label="Refresh notifications"
@@ -231,7 +231,7 @@ export const Sidebar: FC = () => {
                   testId="sidebar-settings"
                 />
               </Tooltip>
-            </>
+            </Fragment>
           ) : (
             <Tooltip content="Quit Atlassify" position="right">
               <IconButton
