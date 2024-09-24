@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+    branches-ignore:
+      - 'release/v**'
   pull_request:
     branches:
       - main
+    branches-ignore:
+      - 'release/v**'
 
 jobs:
   build-macos:
