@@ -169,7 +169,7 @@ export const FiltersRoute: FC = () => {
                           updateProductFilter(product, evt.target.checked)
                         }
                       />
-                      <productDetails.icon {...productIconProps} />
+                      <productDetails.logo {...productIconProps} />
                       <Badge max={false}>
                         {getProductFilterCount(notifications, product)}
                       </Badge>

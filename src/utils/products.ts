@@ -17,40 +17,40 @@ import {
 export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
-    icon: BitbucketIcon,
+    logo: BitbucketIcon,
     home: Constants.ATLASSIAN_URLS.WEB.BITBUCKET_HOME,
   },
   compass: {
     name: 'compass',
-    icon: CompassIcon,
+    logo: CompassIcon,
   },
   confluence: {
     name: 'confluence',
-    icon: ConfluenceIcon,
+    logo: ConfluenceIcon,
   },
   jira: {
     name: 'jira',
-    icon: JiraIcon,
+    logo: JiraIcon,
   },
   'jira product discovery': {
     name: 'jira product discovery',
-    icon: JiraProductDiscoveryIcon,
+    logo: JiraProductDiscoveryIcon,
   },
   'jira service management': {
     name: 'jira service management',
-    icon: JiraServiceManagementIcon,
+    logo: JiraServiceManagementIcon,
   },
   'team central (atlas)': {
     name: 'team central (atlas)',
-    icon: AtlasIcon,
+    logo: AtlasIcon,
   },
   trello: {
     name: 'trello',
-    icon: TrelloIcon,
+    logo: TrelloIcon,
   },
   unknown: {
     name: 'unknown',
-    icon: AtlassianIcon,
+    logo: AtlassianIcon,
   },
 };
 
