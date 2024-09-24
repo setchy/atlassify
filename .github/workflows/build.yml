@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - main
-    branches-ignore:
-      - 'release/v**'
 
 jobs:
   build-macos:
