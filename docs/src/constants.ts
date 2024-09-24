@@ -1,7 +1,6 @@
-export const SITE_URL = import.meta.env.SITE_URL || 'http://localhost:3000';
-
 export const siteMetadata = {
   title: 'Atlassify',
+  url: 'https://atlassify.io',
   description: 'Your Atlassian notifications on your menu bar.',
   repo: 'setchy/atlassify',
   keywords:

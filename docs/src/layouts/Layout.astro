@@ -4,7 +4,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import Navbar from '../components/Navbar.astro';
 import '../app.css';
 
-import { SITE_URL, siteMetadata } from '../constants';
+import { siteMetadata } from '../constants';
 
 export interface Props {
   title: string;
@@ -13,7 +13,7 @@ export interface Props {
 
 const { title, hideFooter = false } = Astro.props;
 const pageTitle = `${title} - Atlassify`;
-const ogImage = `${SITE_URL}/images/social.png`;
+const ogImage = `${siteMetadata.url}/images/social.png`;
 ---
 
 <!doctype html>
@@ -49,7 +49,7 @@ const ogImage = `${SITE_URL}/images/social.png`;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={siteMetadata.description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:url" content={siteMetadata.url} />
     <meta property="og:image" content={ogImage} />
 
     <meta
