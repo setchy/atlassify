@@ -101,7 +101,7 @@ export const NotificationRow: FC<INotificationRow> = ({
             </Inline>
             <Box paddingInlineStart="space.025">
               <Inline space="space.075">
-                <notification.product.icon size="xsmall" appearance="brand" />
+                <notification.product.logo size="xsmall" appearance="brand" />
                 <Text size="small">
                   {formatNotificationFooterText(notification)}
                 </Text>

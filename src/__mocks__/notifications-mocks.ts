@@ -21,7 +21,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     path: null,
     product: {
       name: 'bitbucket',
-      icon: BitbucketIcon,
+      logo: BitbucketIcon,
     },
     actor: {
       displayName: 'atlassify-app',
@@ -50,7 +50,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     },
     product: {
       name: 'confluence',
-      icon: ConfluenceIcon,
+      logo: ConfluenceIcon,
     },
     actor: {
       displayName: 'atlassify-app',

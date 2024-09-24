@@ -3,7 +3,7 @@ import type { Link } from '../../types';
 export interface GraphQLResponse<T, U> {
   data: T;
   extensions: U;
-  errors?: AtlassianGraphQLAPIError[];
+  errors?: GraphQLAPIError[];
 }
 
 export interface GraphQLRequest {
@@ -11,6 +11,42 @@ export interface GraphQLRequest {
   variables: Record<string, unknown>;
 }
 
+export interface GraphQLAPIError {
+  message: string;
+  extensions: {
+    classification: string;
+    errorType: string;
+    statusCode: number;
+  };
+}
+
+export interface NotificationsExtensions {
+  notifications: {
+    response_info: {
+      responseSize: number;
+    };
+  };
+}
+
+/**
+ * The notification category.
+ *
+ * - `direct` - A direct notification event.
+ * - `watching` - A watched notification event.
+ */
+export type Category = 'direct' | 'watching';
+
+/**
+ * The read state of the notification.
+ *
+ * - `unread` - The notification has not been read.
+ * - `read` - The notification has been read.
+ */
+export type ReadState = 'unread' | 'read';
+
+/**
+ * Response shape for the `me` query.
+ */
 export interface MyUserDetails {
   me: {
     user: {
@@ -21,6 +57,9 @@ export interface MyUserDetails {
   };
 }
 
+/**
+ * Response shape for the `notifications` query.
+ */
 export interface MyNotifications {
   notifications: {
     unseenNotificationCount: number;
@@ -33,23 +72,14 @@ export interface MyNotifications {
   };
 }
 
-export interface NotificationsExtensions {
-  notifications: {
-    response_info: {
-      responseSize: number;
-    };
-  };
-}
-
-export type Category = 'direct' | 'watching';
-
-export type ReadState = 'unread' | 'read';
-
 export interface AtlassianNotification {
   groupId: string;
   headNotification: AtlassianHeadNotification;
 }
 
+/**
+ * An Atlassian Notification record.
+ */
 export interface AtlassianHeadNotification {
   notificationId: string;
   timestamp: string;
@@ -66,20 +96,29 @@ export interface AtlassianHeadNotification {
     }[];
     entity: {
       title: string;
-      iconUrl: Link;
       url: Link;
+      iconUrl: Link;
     };
+    /**
+     * The actor who triggered the notification.
+     */
     actor: {
       displayName: string;
       avatarURL: Link;
     };
   };
+  /**
+   * An array of key-value pairs that represent the analytics attributes of the notification.
+   */
   analyticsAttributes: {
     key: string;
     value: string;
   }[];
 }
 
+/**
+ * The different types of API errors which may be encountered.
+ */
 export type AtlassianAPIError =
   | AtlassianHTTPError
   | AtlassianAuthError
@@ -96,14 +135,5 @@ export interface AtlassianHTTPError {
 }
 
 export interface AtlassianGraphQLAPIErrors {
-  errors: AtlassianGraphQLAPIError[];
-}
-
-export interface AtlassianGraphQLAPIError {
-  message: string;
-  extensions: {
-    classification: string;
-    errorType: string;
-    statusCode: number;
-  };
+  errors: GraphQLAPIError[];
 }

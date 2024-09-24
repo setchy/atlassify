@@ -73,7 +73,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               testId="product-home"
             >
               <Inline space="space.100" alignBlock="center">
-                <productNotification.icon size="xsmall" appearance="brand" />
+                <productNotification.logo size="xsmall" appearance="brand" />
                 <span className="capitalize">{productNotification.name}</span>
                 <Badge max={false}>{productNotifications.length}</Badge>
               </Inline>{' '}
