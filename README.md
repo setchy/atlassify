@@ -34,8 +34,8 @@ For more information, see [LICENSE](LICENSE).
 
 I would like to acknowledge the following projects and resources that have inspired and contributed to the development of Atlassify:
 
-1. [Gitify][attribution-gitify] - An open-source GitHub notification app which I also maintain and served as an launchpad for Atlassify.
-2. [Atlassian Design System][attribution-atlassian] - The design principles and components from Atlassian that helped shape the user interface of Atlassify.
+1. [Gitify][attribution-gitify] - An open-source GitHub notification app (which I also maintai) served as the launchpad for Atlassify.
+2. [Atlassian Design System][attribution-atlassian] - The design principles and UI components (@atlaskit) from Atlassian have helped shape the user interface of Atlassify.
 
 
 <!-- LINK LABELS -->
