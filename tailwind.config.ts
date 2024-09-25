@@ -13,9 +13,6 @@ const config: Config = {
       colors: colors,
     },
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
 };
 
