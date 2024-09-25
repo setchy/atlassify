@@ -106,7 +106,7 @@
   "devDependencies": {
     "@atlaskit/avatar": "21.15.1",
     "@atlaskit/badge": "16.4.0",
-    "@atlaskit/button": "20.1.2",
+    "@atlaskit/button": "20.2.0",
     "@atlaskit/checkbox": "14.0.1",
     "@atlaskit/css-reset": "6.11.0",
     "@atlaskit/form": "10.5.3",
