@@ -7,7 +7,7 @@ import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
 import { Box, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
+import { AppContext } from '../../context/App';
 
 interface IHeader {
   children: string;

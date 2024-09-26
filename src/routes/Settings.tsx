@@ -13,7 +13,7 @@ import Modal, {
   ModalTransition,
 } from '@atlaskit/modal-dialog';
 
-import { Header } from '../components/Header';
+import { Header } from '../components/primitives/Header';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';

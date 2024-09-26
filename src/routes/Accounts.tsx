@@ -9,7 +9,7 @@ import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
 import { Box, Flex, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { Header } from '../components/Header';
+import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { Account } from '../types';
 import { refreshAccount } from '../utils/auth/utils';

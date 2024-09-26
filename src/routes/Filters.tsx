@@ -7,7 +7,7 @@ import Heading from '@atlaskit/heading';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { Header } from '../components/Header';
+import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { ProductName } from '../types';
 import type { Category, ReadState } from '../utils/api/types';

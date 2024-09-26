@@ -3,8 +3,8 @@ import { type FC, useMemo } from 'react';
 import { Box, Stack } from '@atlaskit/primitives';
 
 import type { AtlassifyError } from '../types';
-import { Centered } from './Centered';
-import { EmojiText } from './EmojiText';
+import { Centered } from './primitives/Centered';
+import { EmojiText } from './primitives/EmojiText';
 
 interface IOops {
   error: AtlassifyError;

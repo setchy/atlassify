@@ -18,7 +18,7 @@ import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useNavigate } from 'react-router-dom';
-import { Header } from '../components/Header';
+import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
 import { checkIfCredentialsAreValid } from '../utils/api/client';

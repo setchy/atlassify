@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Centered.tsx should render itself & its children 1`] = `
+exports[`components/primitives/Centered.tsx should render itself & its children 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
