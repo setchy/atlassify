@@ -57,10 +57,11 @@
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
       "identity": "Adam Setch (5KD23H9729)",
+      "type": "distribution",
       "hardenedRuntime": true,
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist",
       "gatekeeperAssess": false,
-      "entitlements": "./entitlements/entitlements.mac.plist",
-      "entitlementsInherit": "./entitlements/entitlements.mac.plist",
       "publish": ["github"],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
