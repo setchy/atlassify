@@ -3,8 +3,8 @@ import { type FC, useMemo } from 'react';
 import { Stack } from '@atlaskit/primitives';
 
 import { Constants } from '../utils/constants';
-import { Centered } from './Centered';
-import { EmojiText } from './EmojiText';
+import { Centered } from './primitives/Centered';
+import { EmojiText } from './primitives/EmojiText';
 
 export const AllRead: FC = () => {
   const emoji = useMemo(

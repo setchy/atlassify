@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { AppContext } from '../context/App';
+import { AppContext } from '../../context/App';
 import { Header } from './Header';
 
 const mockNavigate = jest.fn();
@@ -8,7 +8,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('components/Header.tsx', () => {
+describe('components/primitives/Header.tsx', () => {
   const fetchNotifications = jest.fn();
 
   afterEach(() => {
