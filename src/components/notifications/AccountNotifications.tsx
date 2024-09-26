@@ -178,7 +178,11 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
-                onClick={openModal}
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  // Don't trigger onClick of parent element.
+                  event.stopPropagation();
+                  openModal();
+                }}
                 testId="account-mark-as-read"
               />
             </Tooltip>
@@ -210,21 +214,27 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   </ModalHeader>
                   <ModalBody>
                     <p>
-                      Please confirm that you want to
-                      mark <strong>all account notifications</strong> as read
+                      Please confirm that you want to mark{' '}
+                      <strong>all account notifications</strong> as read
                     </p>
                   </ModalBody>
                   <ModalFooter>
                     <Button
                       appearance="subtle"
-                      onClick={() => closeModal()}
+                      onClick={(event: MouseEvent<HTMLElement>) => {
+                        // Don't trigger onClick of parent element.
+                        event.stopPropagation();
+                        closeModal();
+                      }}
                       testId="account-mark-as-read-cancel"
                     >
                       Cancel
                     </Button>
                     <Button
                       appearance="warning"
-                      onClick={() => {
+                      onClick={(event: MouseEvent<HTMLElement>) => {
+                        // Don't trigger onClick of parent element.
+                        event.stopPropagation();
                         markNotificationsRead(notifications);
                         closeModal();
                       }}
