@@ -1,6 +1,9 @@
 name: Triage PR
 
 on:
+  pull_request_target:
+  # for OSS with public contributions (forked PR)
+
   pull_request:
     types: [opened, edited, synchronize, ready_for_review]
     branches: [main]
