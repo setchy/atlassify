@@ -179,74 +179,12 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 spacing="compact"
                 appearance="subtle"
                 onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
                   event.stopPropagation();
                   openModal();
                 }}
                 testId="account-mark-as-read"
               />
             </Tooltip>
-
-            <ModalTransition>
-              {isOpen && (
-                <Modal onClose={closeModal}>
-                  <ModalHeader>
-                    <Grid
-                      gap="space.200"
-                      templateAreas={['title close']}
-                      xcss={gridStyles}
-                    >
-                      <Flex xcss={closeContainerStyles} justifyContent="end">
-                        <IconButton
-                          appearance="subtle"
-                          icon={CrossIcon}
-                          label="Close"
-                          onClick={() => closeModal()}
-                          testId="account-mark-as-read-close"
-                        />
-                      </Flex>
-                      <Flex xcss={titleContainerStyles} justifyContent="start">
-                        <ModalTitle appearance="warning">
-                          Are you sure?
-                        </ModalTitle>
-                      </Flex>
-                    </Grid>
-                  </ModalHeader>
-                  <ModalBody>
-                    <p>
-                      Please confirm that you want to mark{' '}
-                      <strong>all account notifications</strong> as read
-                    </p>
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      appearance="subtle"
-                      onClick={(event: MouseEvent<HTMLElement>) => {
-                        // Don't trigger onClick of parent element.
-                        event.stopPropagation();
-                        closeModal();
-                      }}
-                      testId="account-mark-as-read-cancel"
-                    >
-                      Cancel
-                    </Button>
-                    <Button
-                      appearance="warning"
-                      onClick={(event: MouseEvent<HTMLElement>) => {
-                        // Don't trigger onClick of parent element.
-                        event.stopPropagation();
-                        markNotificationsRead(notifications);
-                        closeModal();
-                      }}
-                      testId="account-mark-as-read-confirm"
-                    >
-                      Proceed
-                    </Button>
-                  </ModalFooter>
-                </Modal>
-              )}
-            </ModalTransition>
-
             <Tooltip
               content={toggleAccountNotificationsLabel}
               position="bottom"
@@ -287,6 +225,70 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               ))}
         </Fragment>
       )}
+
+      <ModalTransition>
+        {isOpen && (
+          <Modal
+            onClose={(event: MouseEvent<HTMLElement>) => {
+              event.stopPropagation();
+              closeModal();
+            }}
+          >
+            <ModalHeader>
+              <Grid
+                gap="space.200"
+                templateAreas={['title close']}
+                xcss={gridStyles}
+              >
+                <Flex xcss={closeContainerStyles} justifyContent="end">
+                  <IconButton
+                    appearance="subtle"
+                    icon={CrossIcon}
+                    label="Close"
+                    onClick={(event: MouseEvent<HTMLElement>) => {
+                      event.stopPropagation();
+                      closeModal();
+                    }}
+                    testId="account-mark-as-read-close"
+                  />
+                </Flex>
+                <Flex xcss={titleContainerStyles} justifyContent="start">
+                  <ModalTitle appearance="warning">Are you sure?</ModalTitle>
+                </Flex>
+              </Grid>
+            </ModalHeader>
+            <ModalBody>
+              <p>
+                Please confirm that you want to mark{' '}
+                <strong>all account notifications</strong> as read
+              </p>
+            </ModalBody>
+            <ModalFooter>
+              <Button
+                appearance="subtle"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  event.stopPropagation();
+                  closeModal();
+                }}
+                testId="account-mark-as-read-cancel"
+              >
+                Cancel
+              </Button>
+              <Button
+                appearance="warning"
+                onClick={(event: MouseEvent<HTMLElement>) => {
+                  event.stopPropagation();
+                  markNotificationsRead(notifications);
+                  closeModal();
+                }}
+                testId="account-mark-as-read-confirm"
+              >
+                Proceed
+              </Button>
+            </ModalFooter>
+          </Modal>
+        )}
+      </ModalTransition>
     </Stack>
   );
 };
