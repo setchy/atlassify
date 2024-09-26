@@ -107,7 +107,7 @@
   "devDependencies": {
     "@atlaskit/avatar": "21.15.1",
     "@atlaskit/badge": "16.4.0",
-    "@atlaskit/button": "20.1.2",
+    "@atlaskit/button": "20.2.0",
     "@atlaskit/checkbox": "14.0.1",
     "@atlaskit/css-reset": "6.11.0",
     "@atlaskit/form": "10.5.3",
@@ -127,7 +127,7 @@
     "@electron/notarize": "2.5.0",
     "@testing-library/react": "16.0.1",
     "@types/jest": "29.5.13",
-    "@types/node": "20.16.6",
+    "@types/node": "20.16.7",
     "@types/react": "18.3.9",
     "@types/react-router-dom": "5.3.3",
     "autoprefixer": "10.4.20",
