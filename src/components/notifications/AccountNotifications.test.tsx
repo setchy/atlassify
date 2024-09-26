@@ -148,7 +148,7 @@ describe('components/notifications/AccountNotifications.tsx', () => {
     expect(openMyPullRequestsMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should mark all account notifications as read', async () => {
+  it('should mark all account notifications as read when `confirmed`', async () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
@@ -171,8 +171,37 @@ describe('components/notifications/AccountNotifications.tsx', () => {
     });
 
     fireEvent.click(screen.getByTestId('account-mark-as-read'));
+    fireEvent.click(screen.getByTestId('account-mark-as-read-confirm'));
 
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should skip marking all account notifications as read when `cancelled`', async () => {
+    const props = {
+      account: mockAtlassianCloudAccount,
+      notifications: mockAtlassifyNotifications,
+      error: null,
+    };
+
+    const markNotificationsReadMock = jest.fn();
+
+    await act(async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+            markNotificationsRead: markNotificationsReadMock,
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+    });
+
+    fireEvent.click(screen.getByTestId('account-mark-as-read'));
+    fireEvent.click(screen.getByTestId('account-mark-as-read-cancel'));
+
+    expect(markNotificationsReadMock).not.toHaveBeenCalled();
   });
 
   it('should toggle account notifications visibility', async () => {

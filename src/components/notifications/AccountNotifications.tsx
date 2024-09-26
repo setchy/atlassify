@@ -2,6 +2,7 @@ import {
   type FC,
   Fragment,
   type MouseEvent,
+  useCallback,
   useContext,
   useMemo,
   useState,
@@ -9,13 +10,21 @@ import {
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
-import { IconButton } from '@atlaskit/button/new';
+import Button, { IconButton } from '@atlaskit/button/new';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
+import CrossIcon from '@atlaskit/icon/glyph/cross';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { BitbucketIcon } from '@atlaskit/logo';
-import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import Modal, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '@atlaskit/modal-dialog';
+import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -45,6 +54,21 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   const [showAccountNotifications, setShowAccountNotifications] =
     useState(true);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = useCallback(() => setIsOpen(true), []);
+  const closeModal = useCallback(() => setIsOpen(false), []);
+  const gridStyles = xcss({
+    width: '100%',
+  });
+
+  const closeContainerStyles = xcss({
+    gridArea: 'close',
+  });
+
+  const titleContainerStyles = xcss({
+    gridArea: 'title',
+  });
 
   const groupedNotifications = Object.values(
     notifications?.reduce(
@@ -154,14 +178,64 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
-                  event.stopPropagation();
-                  markNotificationsRead(notifications);
-                }}
+                onClick={openModal}
                 testId="account-mark-as-read"
               />
             </Tooltip>
+
+            <ModalTransition>
+              {isOpen && (
+                <Modal onClose={closeModal}>
+                  <ModalHeader>
+                    <Grid
+                      gap="space.200"
+                      templateAreas={['title close']}
+                      xcss={gridStyles}
+                    >
+                      <Flex xcss={closeContainerStyles} justifyContent="end">
+                        <IconButton
+                          appearance="subtle"
+                          icon={CrossIcon}
+                          label="Close"
+                          onClick={() => closeModal()}
+                          testId="account-mark-as-read-close"
+                        />
+                      </Flex>
+                      <Flex xcss={titleContainerStyles} justifyContent="start">
+                        <ModalTitle appearance="warning">
+                          Are you sure?
+                        </ModalTitle>
+                      </Flex>
+                    </Grid>
+                  </ModalHeader>
+                  <ModalBody>
+                    <p>
+                      Please confirm that you want to
+                      mark <strong>all account notifications</strong> as read
+                    </p>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button
+                      appearance="subtle"
+                      onClick={() => closeModal()}
+                      testId="account-mark-as-read-cancel"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      appearance="warning"
+                      onClick={() => {
+                        markNotificationsRead(notifications);
+                        closeModal();
+                      }}
+                      testId="account-mark-as-read-confirm"
+                    >
+                      Proceed
+                    </Button>
+                  </ModalFooter>
+                </Modal>
+              )}
+            </ModalTransition>
 
             <Tooltip
               content={toggleAccountNotificationsLabel}

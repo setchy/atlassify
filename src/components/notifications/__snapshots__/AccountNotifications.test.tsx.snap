@@ -2778,6 +2778,10 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
 {
   "asFragment": [Function],
   "baseElement": <body>
+    <div
+      class="atlaskit-portal-container"
+      style="display: flex;"
+    />
     <div>
       <div
         class="css-1npayr"
@@ -2800,7 +2804,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   type="button"
                 >
                   <div
-                    aria-labelledby="82"
+                    aria-labelledby="134"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -2818,7 +2822,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                     </span>
                     <span
                       hidden=""
-                      id="82"
+                      id="134"
                     >
                       Atlassify
                     </span>
@@ -2997,7 +3001,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   type="button"
                 >
                   <div
-                    aria-labelledby="102"
+                    aria-labelledby="154"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -3015,7 +3019,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                     </span>
                     <span
                       hidden=""
-                      id="102"
+                      id="154"
                     >
                       Atlassify
                     </span>
@@ -3184,7 +3188,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 role="presentation"
               >
                 <div
-                  aria-labelledby="110"
+                  aria-labelledby="162"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3202,7 +3206,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   </span>
                   <span
                     hidden=""
-                    id="110"
+                    id="162"
                   >
                     atlassify-app
                   </span>
@@ -3262,7 +3266,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   class="css-1w1rt7h"
                 >
                   <div
-                    aria-labelledby="112"
+                    aria-labelledby="164"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -3280,7 +3284,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                     </span>
                     <span
                       hidden=""
-                      id="112"
+                      id="164"
                     >
                       #103: chore(deps): update dependency eslint
                     </span>
@@ -3390,7 +3394,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 role="presentation"
               >
                 <div
-                  aria-labelledby="116"
+                  aria-labelledby="168"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3408,7 +3412,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   </span>
                   <span
                     hidden=""
-                    id="116"
+                    id="168"
                   >
                     atlassify-app
                   </span>
@@ -3468,7 +3472,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   class="css-1w1rt7h"
                 >
                   <div
-                    aria-labelledby="118"
+                    aria-labelledby="170"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -3486,7 +3490,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                     </span>
                     <span
                       hidden=""
-                      id="118"
+                      id="170"
                     >
                       Atlassify Home
                     </span>
@@ -3607,7 +3611,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 type="button"
               >
                 <div
-                  aria-labelledby="102"
+                  aria-labelledby="154"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3625,7 +3629,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   </span>
                   <span
                     hidden=""
-                    id="102"
+                    id="154"
                   >
                     Atlassify
                   </span>
@@ -3794,7 +3798,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
               role="presentation"
             >
               <div
-                aria-labelledby="110"
+                aria-labelledby="162"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -3812,7 +3816,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 </span>
                 <span
                   hidden=""
-                  id="110"
+                  id="162"
                 >
                   atlassify-app
                 </span>
@@ -3872,7 +3876,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="112"
+                  aria-labelledby="164"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3890,7 +3894,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   </span>
                   <span
                     hidden=""
-                    id="112"
+                    id="164"
                   >
                     #103: chore(deps): update dependency eslint
                   </span>
@@ -4000,7 +4004,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
               role="presentation"
             >
               <div
-                aria-labelledby="116"
+                aria-labelledby="168"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -4018,7 +4022,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 </span>
                 <span
                   hidden=""
-                  id="116"
+                  id="168"
                 >
                   atlassify-app
                 </span>
@@ -4078,7 +4082,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="118"
+                  aria-labelledby="170"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -4096,7 +4100,7 @@ exports[`components/notifications/AccountNotifications.tsx should toggle account
                   </span>
                   <span
                     hidden=""
-                    id="118"
+                    id="170"
                   >
                     Atlassify Home
                   </span>
