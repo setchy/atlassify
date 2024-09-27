@@ -8,8 +8,6 @@ import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
-import { RadioGroup } from '@atlaskit/radio';
-import type { OptionsPropType } from '@atlaskit/radio/types';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -46,6 +44,10 @@ export const AppearanceSettings: FC = () => {
     }, DELAY);
   });
 
+  /**
+   * TODO: support theme selection #92
+   */
+  /*
   const themeOptions: OptionsPropType = [
     {
       name: 'theme',
@@ -61,12 +63,13 @@ export const AppearanceSettings: FC = () => {
     },
     { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
   ];
+  */
 
   return (
     <Stack space="space.100">
       <Heading size="small">Appearance</Heading>
 
-      <Inline space="space.100">
+      {/* <Inline space="space.100">
         <Text id="theme-label" weight="medium">
           Theme:
         </Text>
@@ -79,7 +82,7 @@ export const AppearanceSettings: FC = () => {
           }}
           aria-labelledby="theme-label"
         />
-      </Inline>
+      </Inline> */}
 
       <Inline space="space.100">
         <Text id="theme-label" weight="medium">
