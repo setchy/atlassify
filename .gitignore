@@ -5,12 +5,16 @@ build/
 # Dependency directories
 node_modules/
 
-# Astro Docs
+# Astro Docs - generated
 .astro/
 
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
+
+# Mac Files
+.DS_Store
+
 
 # Mac Files
 .DS_Store
