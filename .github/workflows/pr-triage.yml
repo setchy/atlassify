@@ -17,5 +17,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: fuxingloh/multi-labeler@v4
-        with:
-          github-token: ${{secrets.GH_TOKEN_LABELER}} 
