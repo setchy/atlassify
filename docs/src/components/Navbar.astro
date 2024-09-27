@@ -1,7 +1,7 @@
 ---
 import { siteMetadata } from '~/constants';
-import GithubIcon from '../icons/Github.astro';
-import Logo from './Logo.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import { Image } from 'astro:assets';
 
 const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
@@ -14,7 +14,13 @@ const isHomepage = currentPathname === '/';
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" aria-label="Atlassify">
-          <Logo />
+          <Image
+            width="50"
+            height="50"
+            class="w-8 sm:w-12"
+            src={import('../assets/logos/atlassify-white.svg')}
+            alt="Altassify Logo"
+          />
         </a>
       </div>
 
@@ -44,7 +50,7 @@ const isHomepage = currentPathname === '/';
               href=`https://github.com/${siteMetadata.repo}`
               aria-label="GitHub Repository"
             >
-              <GithubIcon className="w-4 h-4" />
+              <GitHubIcon className="w-6" />
             </a>
           </li>
         </ul>
