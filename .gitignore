@@ -1,6 +1,3 @@
-# Mac Files
-.DS_Store
-
 # Build files
 dist/
 build/
@@ -8,6 +5,12 @@ build/
 # Dependency directories
 node_modules/
 
+# Astro Docs
+.astro/
+
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
+
+# Mac Files
+.DS_Store
