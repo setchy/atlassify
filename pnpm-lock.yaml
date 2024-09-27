@@ -97,8 +97,8 @@ importers:
         specifier: 6.5.1
         version: 6.5.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: 13.4.1
-        version: 13.4.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 13.4.2
+        version: 13.4.2(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 1.61.0
         version: 1.61.0(@types/react@18.3.9)(react@18.3.1)
@@ -361,8 +361,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/toggle@13.4.1':
-    resolution: {integrity: sha512-zgDuHFAJoKy0oCqYKV90rLhXuKAdv0syFncCTys78umkDiKylNNl1tZjA3P16lSsX7IG25LbEbqRnZUl4aPVew==}
+  '@atlaskit/toggle@13.4.2':
+    resolution: {integrity: sha512-eaUCrR4IvJCzcDKC+otZvT6val0F1bndZovbKdIU1iOH1oXAgAq+D0YSda/Hsu/Ehp8mZH/pCxuKbqy5HuOTCA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4335,15 +4335,15 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@13.4.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/toggle@13.4.2(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 2.5.0(@types/react@18.3.9)(react@18.3.1)
+      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/icon': 22.18.1(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 12.2.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.9)(react@18.3.1)
-      '@atlaskit/tokens': 1.61.0(@types/react@18.3.9)(react@18.3.1)
+      '@atlaskit/tokens': 2.0.0(@types/react@18.3.9)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.9)(react@18.3.1)
       react: 18.3.1
