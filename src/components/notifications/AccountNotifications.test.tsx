@@ -40,7 +40,7 @@ describe('components/notifications/AccountNotifications.tsx', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render itself - group notifications by products', () => {
+    it('should render itself - group notifications by products - ordered by datetime', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -50,7 +50,35 @@ describe('components/notifications/AccountNotifications.tsx', () => {
       const tree = render(
         <AppContext.Provider
           value={{
-            settings: { ...mockSettings, groupNotificationsByProduct: true },
+            settings: {
+              ...mockSettings,
+              groupNotificationsByProduct: true,
+              groupNotificationsByProductAlphabetically: false,
+            },
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself - group notifications by products - ordered by products alphabetically', () => {
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        error: null,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: {
+              ...mockSettings,
+              groupNotificationsByProduct: true,
+              groupNotificationsByProductAlphabetically: true,
+            },
           }}
         >
           <AccountNotifications {...props} />
