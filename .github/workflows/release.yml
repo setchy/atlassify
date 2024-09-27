@@ -21,6 +21,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
+      - run: pnpm clean
       - run: pnpm install
       - run: pnpm build
       - run: pnpm make:macos --publish onTagOrDraft
@@ -49,6 +50,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
+      - run: pnpm clean
       - run: pnpm install
       - run: pnpm build
       - run: pnpm make:win --publish onTagOrDraft
@@ -71,6 +73,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
+      - run: pnpm clean
       - run: pnpm install
       - run: pnpm build
       - run: pnpm make:linux --publish onTagOrDraft
