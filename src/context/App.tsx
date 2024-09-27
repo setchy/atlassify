@@ -66,7 +66,7 @@ const defaultSystemSettings = {
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   useAlternateIdleIcon: false,
-  openAtStartup: false,
+  openAtStartup: true,
 };
 
 export const defaultFilters = {
