@@ -8,32 +8,27 @@ const openSourceLibs = [
   {
     name: 'Electron',
     link: 'https://www.electronjs.org/',
-    image: import('../assets/logos/electron.png'),
+    image: import('../assets/logos/electron.svg'),
   },
   {
-    name: 'React JS',
-    link: 'https://reactjs.org/',
-    image: import('../assets/logos/react.png'),
+    name: 'React',
+    link: 'https://react.dev/',
+    image: import('../assets/logos/react.svg'),
   },
   {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
-    image: import('../assets/logos/tailwindcss.png'),
-  },
-  {
-    name: 'Jest',
-    link: 'https://jestjs.io/',
-    image: import('../assets/logos/jest.png'),
+    image: import('../assets/logos/tailwindcss.svg'),
   },
   {
     name: 'Typescript',
     link: 'https://www.typescriptlang.org/',
-    image: import('../assets/logos/typescript.png'),
+    image: import('../assets/logos/typescript.svg'),
   },
   {
-    name: 'GitHub',
-    link: 'https://www.github.com/',
-    image: import('../assets/logos/github.png'),
+    name: 'Atlassian',
+    link: 'https://www.atlassian.com/',
+    image: import('../assets/logos/atlassian.svg'),
   },
 ];
 ---
@@ -44,16 +39,27 @@ const openSourceLibs = [
 
     <SectionRow
       title="All your Atlassian notifications on your desktop."
-      description="<p>Ever got lost with Atlassian notifications? Too many emails? Miss something important?</p><br /><p>Atlassify is all about making your life easier.</p><br /><p>Sitting on your menu bar, it informs you of notifications from your favorite Atlassian products such as Bitbucket, Confluence, Compass, Jira, and many more!</p>"
+      description="<p>Atlassify is all about making your life easier.</p><br /><p>Sitting on your menu bar, it informs you of notifications from your favorite Atlassian products such as Bitbucket, Compass, Confluence, Jira, and many more!</p>"
       screenshot={{
         path: 'products',
         alt: 'Screenshot when notifications are grouped by Atlassian products',
       }}
+      isReversed
+    />
+
+    <SectionRow
+      title="Stay in control of your work."
+      description="<p>Ever got lost with Atlassian notifications? Too many emails? Miss something important?</p><br /><p>Never again with Atlassify!</p>"
+      screenshot={{
+        path: 'all-read',
+        alt: 'Screenshot when all notifications have been read',
+      }}
+      isDark
     />
  
     <SectionRow
       title="It's about your preferences."
-      description="<p>Atlassify will notify you every time you receive a notification by playing a sound (not an annoying one - it's a promise), showing native OS notifications or by just turning its tray icon to blue.</p><br /><p>It is not there to interupt your workflow or distract you, you can customize your settings to your preference.</p>"
+      description="<p>Atlassify will notify you every time you receive a new notification by playing a sound (not an annoying one - it's a promise), showing native OS notifications or by just turning its tray icon to blue.</p><br /><p>It is not there to interupt your workflow or distract you, and offers many settings so you can customize to your preference.</p>"
       screenshot={{
         path: 'settings',
         alt: 'Your Preferences, Settings',
@@ -64,7 +70,7 @@ const openSourceLibs = [
 
     <SectionRow
       title="Free & Open Source."
-      description="Atlassify is based on Electron, React, Tailwind CSS and more awesome open source libraries. Written in Typescript."
+      description="<p>Atlassify is based on Electron, React, Tailwind CSS and more awesome open source libraries.</p><br /><p>Written in Typescript.</p>"
     >
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {

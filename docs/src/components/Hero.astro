@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import Logo from './Logo.astro';
 
 import notifications from '../assets/notifications.png';
 import LatestRelease from './LatestRelease.astro';
@@ -11,7 +10,14 @@ import LatestRelease from './LatestRelease.astro';
     class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
   >
     <div class="flex flex-col justify-center flex-grow">
-      <Logo />
+      
+      <Image
+        width="50"
+        height="50"
+        class="w-8 sm:w-12"
+        src={import('../assets/logos/atlassify-blue.svg')}
+        alt="Altassify Logo"
+      />
 
       <h1 class="text-2xl lg:text-4xl font-semibold">Atlassify</h1>
 

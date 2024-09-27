@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         gray: {
-          navbar: '#24292e',
+          navbar: '#2684FF',
         },
       },
       keyframes: {
