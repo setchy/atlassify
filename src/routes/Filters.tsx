@@ -82,71 +82,73 @@ export const FiltersRoute: FC = () => {
       <div className="flex-grow overflow-x-auto px-8">
         <Stack space="space.300">
           <Box>
-            <Stack space="space.100">
-              <Heading size="small">Category</Heading>
-              <Box>
-                {Object.keys(CATEGORIES).map((category: Category) => {
-                  const categoryDetails = getCategoryDetails(category);
-                  const categoryIconProps: Record<string, string> = {
-                    size: 'small',
-                  };
-                  return (
-                    <Inline
-                      key={category}
-                      space="space.050"
-                      alignBlock="center"
-                    >
-                      <Checkbox
+            <Inline space="space.600">
+              <Stack space="space.100">
+                <Heading size="small">Category</Heading>
+                <Box>
+                  {Object.keys(CATEGORIES).map((category: Category) => {
+                    const categoryDetails = getCategoryDetails(category);
+                    const categoryIconProps: Record<string, string> = {
+                      size: 'small',
+                    };
+                    return (
+                      <Inline
                         key={category}
-                        name={category}
-                        title={category}
-                        label={formatProperCase(categoryDetails.name)}
-                        isChecked={shouldShowCategory(category)}
-                        onChange={(evt) =>
-                          updateCategoryFilter(category, evt.target.checked)
-                        }
-                      />
-                      <categoryDetails.icon {...categoryIconProps} />
-                      <Badge max={false}>
-                        {getCategoryFilterCount(notifications, category)}
-                      </Badge>
-                    </Inline>
-                  );
-                })}
-              </Box>
-            </Stack>
-          </Box>
-          <Box>
-            <Stack space="space.100">
-              <Heading size="small">Read State</Heading>
-              <Box>
-                {Object.keys(READ_STATES).map((readState: ReadState) => {
-                  const readStateDetails = getReadStateDetails(readState);
-                  return (
-                    <Inline
-                      key={readState}
-                      space="space.050"
-                      alignBlock="center"
-                    >
-                      <Checkbox
+                        space="space.050"
+                        alignBlock="center"
+                      >
+                        <Checkbox
+                          key={category}
+                          name={category}
+                          title={category}
+                          label={formatProperCase(categoryDetails.name)}
+                          isChecked={shouldShowCategory(category)}
+                          onChange={(evt) =>
+                            updateCategoryFilter(category, evt.target.checked)
+                          }
+                        />
+                        <categoryDetails.icon {...categoryIconProps} />
+                        <Badge max={false}>
+                          {getCategoryFilterCount(notifications, category)}
+                        </Badge>
+                      </Inline>
+                    );
+                  })}
+                </Box>
+              </Stack>
+
+              <Stack space="space.100">
+                <Heading size="small">Read State</Heading>
+                <Box>
+                  {Object.keys(READ_STATES).map((readState: ReadState) => {
+                    const readStateDetails = getReadStateDetails(readState);
+                    return (
+                      <Inline
                         key={readState}
-                        name={readState}
-                        title={readState}
-                        label={formatProperCase(readStateDetails.name)}
-                        isChecked={shouldShowReadState(readState)}
-                        onChange={(evt) =>
-                          updateReadStateFilter(readState, evt.target.checked)
-                        }
-                      />
-                      <Badge max={false}>
-                        {getReadStateFilterCount(notifications, readState)}
-                      </Badge>
-                    </Inline>
-                  );
-                })}
-              </Box>
-            </Stack>
+                        space="space.050"
+                        alignBlock="center"
+                      >
+                        <Checkbox
+                          key={readState}
+                          name={readState}
+                          title={readState}
+                          label={formatProperCase(readStateDetails.name)}
+                          isChecked={shouldShowReadState(readState)}
+                          onChange={(evt) =>
+                            updateReadStateFilter(readState, evt.target.checked)
+                          }
+                        />
+                        <Badge max={false}>
+                          {getReadStateFilterCount(notifications, readState)}
+                        </Badge>
+                      </Inline>
+                    );
+                  })}
+                </Box>
+              </Stack>
+            </Inline>
           </Box>
+
           <Box>
             <Stack space="space.100">
               <Heading size="small">Products</Heading>
