@@ -80,7 +80,13 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       },
       {},
     ),
-  ).sort((a, b) => a[0].product.name.localeCompare(b[0].product.name));
+  );
+
+  if (settings.groupNotificationsByProductAlphabetically) {
+    groupedNotifications.sort((a, b) =>
+      a[0].product.name.localeCompare(b[0].product.name),
+    );
+  }
 
   const toggleAccountNotifications = () => {
     setShowAccountNotifications(!showAccountNotifications);

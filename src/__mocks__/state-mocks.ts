@@ -1,11 +1,15 @@
 import {
   type Account,
+  type AppearanceSettingsState,
   type AtlassifyState,
   type AuthState,
   type EncryptedToken,
+  type FilterSettingsState,
   type Link,
+  type NotificationSettingsState,
   OpenPreference,
   type SettingsState,
+  type SystemSettingsState,
   Theme,
   type Username,
 } from '../types';
@@ -22,19 +26,20 @@ export const mockAuth: AuthState = {
   accounts: [mockAtlassianCloudAccount],
 };
 
-const mockAppearanceSettings = {
+const mockAppearanceSettings: AppearanceSettingsState = {
   theme: Theme.LIGHT,
   zoomPercentage: 100,
 };
 
-const mockNotificationSettings = {
+const mockNotificationSettings: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
   fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
+  groupNotificationsByProductAlphabetically: false,
 };
 
-const mockSystemSettings = {
+const mockSystemSettings: SystemSettingsState = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcutEnabled: true,
   showNotificationsCountInTray: true,
@@ -44,7 +49,7 @@ const mockSystemSettings = {
   openAtStartup: true,
 };
 
-const mockFilters = {
+const mockFilters: FilterSettingsState = {
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],

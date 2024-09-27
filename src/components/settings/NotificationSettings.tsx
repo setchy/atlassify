@@ -23,6 +23,18 @@ export const NotificationSettings: FC = () => {
         }
       />
 
+      <Checkbox
+        name="groupNotificationsByProductAlphabetically"
+        label="Group product notifications alphabetically"
+        isChecked={settings.groupNotificationsByProductAlphabetically}
+        onChange={(evt) =>
+          updateSetting(
+            'groupNotificationsByProductAlphabetically',
+            evt.target.checked,
+          )
+        }
+      />
+
       <Inline space="space.100">
         <Checkbox
           name="delayNotificationState"
