@@ -82,8 +82,8 @@ importers:
         specifier: 14.3.0
         version: 14.3.0(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 12.17.0
-        version: 12.17.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.17.1
+        version: 12.17.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 12.2.0
         version: 12.2.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -309,8 +309,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.17.0':
-    resolution: {integrity: sha512-2/5ItqiZsYAyEIM1jZOZ7YNb+wT044UoUvQVfo0stkSeHeJlWlnWY7/ziFPuOrsVhKik18YIgPv61VmYywfBjA==}
+  '@atlaskit/modal-dialog@12.17.1':
+    resolution: {integrity: sha512-he3Hr0a29TI7Iilw0CLWohADy575HgXCEPYT8Lwy9buwCoCWQWlewBxuQficmjah2Vjtk1F7xkDTm6N4JbjUJA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4196,7 +4196,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.17.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.17.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4211,7 +4211,7 @@ snapshots:
       '@atlaskit/pragmatic-drag-and-drop': 1.3.1
       '@atlaskit/primitives': 12.2.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.9)(react@18.3.1)
-      '@atlaskit/tokens': 1.61.0(@types/react@18.3.9)(react@18.3.1)
+      '@atlaskit/tokens': 2.0.0(@types/react@18.3.9)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.9)(react@18.3.1)
       bind-event-listener: 3.0.0
