@@ -79,8 +79,8 @@ importers:
         specifier: 12.3.4
         version: 12.3.4(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
-        specifier: 14.3.0
-        version: 14.3.0(@types/react@18.3.9)(react@18.3.1)
+        specifier: 14.3.1
+        version: 14.3.1(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/modal-dialog':
         specifier: 12.17.1
         version: 12.17.1(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -304,8 +304,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/logo@14.3.0':
-    resolution: {integrity: sha512-kZwZ/5QtjY+xOv876PQos58ADMUmFv7sAZCW/59sYDF80oAWpcPZyEOsaL+E1WX0wydIU1g53sm5hJkhA1nHgA==}
+  '@atlaskit/logo@14.3.1':
+    resolution: {integrity: sha512-tp8iWr3UEjiHUMDB1jQs5yk4eW3QE4Ja785HpsEoC6W0wRMT9uxOqAhE38y0QGr49Jky9xBAJnPjvBfn+QYNHg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4184,11 +4184,11 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@atlaskit/logo@14.3.0(@types/react@18.3.9)(react@18.3.1)':
+  '@atlaskit/logo@14.3.1(@types/react@18.3.9)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.9)(react@18.3.1)
-      '@atlaskit/tokens': 1.61.0(@types/react@18.3.9)(react@18.3.1)
+      '@atlaskit/tokens': 2.0.0(@types/react@18.3.9)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.9)(react@18.3.1)
       react: 18.3.1
