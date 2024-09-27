@@ -2,12 +2,7 @@ name: Triage PR
 
 on:
   pull_request_target:
-  # for OSS with public contributions (forked PR)
-
-  pull_request:
-    types: [opened, edited, synchronize, ready_for_review]
-    branches: [main]
-
+  
 permissions:
   contents: read # the config file
   pull-requests: write # for labeling pull requests (on: pull_request_target or on: pull_request)
@@ -20,3 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: fuxingloh/multi-labeler@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
