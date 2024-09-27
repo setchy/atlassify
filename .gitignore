@@ -5,7 +5,7 @@ build/
 # Dependency directories
 node_modules/
 
-# Astro Docs
+# Astro Docs - generated
 .astro/
 
 # Coverage directory used by tools like istanbul
