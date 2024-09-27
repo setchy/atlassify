@@ -41,7 +41,7 @@ const mockSystemSettings = {
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   useAlternateIdleIcon: false,
-  openAtStartup: false,
+  openAtStartup: true,
 };
 
 const mockFilters = {
