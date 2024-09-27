@@ -26,9 +26,6 @@ importers:
       electron-updater:
         specifier: 6.3.4
         version: 6.3.4
-      jsonfile:
-        specifier: 6.1.0
-        version: 6.1.0
       menubar:
         specifier: 9.5.0
         version: 9.5.0(electron@32.1.2)
