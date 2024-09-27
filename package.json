@@ -122,7 +122,7 @@
     "@atlaskit/textfield": "6.5.1",
     "@atlaskit/toggle": "13.4.1",
     "@atlaskit/tokens": "1.61.0",
-    "@atlaskit/tooltip": "18.7.2",
+    "@atlaskit/tooltip": "18.7.3",
     "@biomejs/biome": "1.9.2",
     "@electron/notarize": "2.5.0",
     "@testing-library/react": "16.0.1",
