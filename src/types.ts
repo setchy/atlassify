@@ -84,7 +84,7 @@ export type SettingsState = AppearanceSettingsState &
 /**
  * Settings related to the appearance of the application.
  */
-interface AppearanceSettingsState {
+export interface AppearanceSettingsState {
   /**
    * The theme of the application.
    */
@@ -99,7 +99,7 @@ interface AppearanceSettingsState {
 /**
  * Settings related to the notifications within the application.
  */
-interface NotificationSettingsState {
+export interface NotificationSettingsState {
   /**
    * Whether to mark notifications as read when they are opened.
    */
@@ -119,12 +119,17 @@ interface NotificationSettingsState {
    * Whether to group notifications by product.
    */
   groupNotificationsByProduct: boolean;
+
+  /**
+   * Whether to sort grouped notifications by product alphabetically or time.
+   */
+  groupNotificationsByProductAlphabetically: boolean;
 }
 
 /**
  * Settings related to the system behavior of the application.
  */
-interface SystemSettingsState {
+export interface SystemSettingsState {
   /**
    * The preference for opening links upon notification interactions
    */
@@ -164,7 +169,7 @@ interface SystemSettingsState {
 /**
  * Settings related to the filtering of notifications within the application.
  */
-interface FilterSettingsState {
+export interface FilterSettingsState {
   /**
    * The categories to filter notifications by.
    */

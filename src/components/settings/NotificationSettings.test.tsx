@@ -36,6 +36,37 @@ describe('routes/components/settings/NotificationSettings.tsx', () => {
     expect(updateSetting).toHaveBeenCalledWith('markAsReadOnOpen', false);
   });
 
+  it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox', async () => {
+    await act(async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <NotificationSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+    });
+
+    fireEvent.click(
+      screen.getByLabelText('Group product notifications alphabetically'),
+      {
+        target: { checked: true },
+      },
+    );
+
+    expect(updateSetting).toHaveBeenCalledTimes(1);
+    expect(updateSetting).toHaveBeenCalledWith(
+      'groupNotificationsByProductAlphabetically',
+      false,
+    );
+  });
+
   it('should toggle the delayNotificationState checkbox', async () => {
     await act(async () => {
       render(

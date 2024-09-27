@@ -12,13 +12,17 @@ import { useNotifications } from '../hooks/useNotifications';
 import {
   type Account,
   type AccountNotifications,
+  type AppearanceSettingsState,
   type AtlassifyError,
   type AtlassifyNotification,
   type AuthState,
+  type FilterSettingsState,
+  type NotificationSettingsState,
   OpenPreference,
   type SettingsState,
   type SettingsValue,
   type Status,
+  type SystemSettingsState,
   Theme,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
@@ -47,19 +51,20 @@ export const defaultAuth: AuthState = {
   accounts: [],
 };
 
-const defaultAppearanceSettings = {
+const defaultAppearanceSettings: AppearanceSettingsState = {
   theme: Theme.LIGHT,
   zoomPercentage: 100,
 };
 
-const defaultNotificationSettings = {
+const defaultNotificationSettings: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
   fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
+  groupNotificationsByProductAlphabetically: false,
 };
 
-const defaultSystemSettings = {
+const defaultSystemSettings: SystemSettingsState = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcutEnabled: true,
   showNotificationsCountInTray: true,
@@ -69,7 +74,7 @@ const defaultSystemSettings = {
   openAtStartup: false,
 };
 
-export const defaultFilters = {
+export const defaultFilters: FilterSettingsState = {
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],

@@ -340,6 +340,41 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               Mark as read on open
             </span>
           </label>
+          <label
+            class="css-k8x29e"
+          >
+            <input
+              class="css-f3myyk"
+              name="groupNotificationsByProductAlphabetically"
+              tabindex="0"
+              type="checkbox"
+              value=""
+            />
+            <svg
+              class="css-1dr55qw"
+              role="presentation"
+              style="fill: var(--checkbox-tick-color);"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill-rule="evenodd"
+              >
+                <rect
+                  fill="currentColor"
+                  height="12"
+                  rx="2"
+                  width="12"
+                  x="6"
+                  y="6"
+                />
+              </g>
+            </svg>
+            <span
+              class="css-1odt9zb"
+            >
+              Group product notifications alphabetically
+            </span>
+          </label>
           <div
             class="css-gokkc4"
           >
