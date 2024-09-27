@@ -3,7 +3,7 @@
   "componentDir": "./src/components/ui",
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "src/app.css"
+    "css": "src/styles/app.css"
   },
   "aliases": {
     "path": "~/*"
