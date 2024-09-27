@@ -76,8 +76,8 @@ importers:
         specifier: 22.18.1
         version: 22.18.1(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: 12.3.3
-        version: 12.3.3(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.3.4
+        version: 12.3.4(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 14.3.0
         version: 14.3.0(@types/react@18.3.9)(react@18.3.1)
@@ -289,8 +289,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/inline-message@12.3.3':
-    resolution: {integrity: sha512-O7BX3JBzE03Hej0LK650GnIf2GMigeAJtyOruAOBOMEu7bbj49JTplCNOc+LAZ9PYCORYVgqOTf6JmOp36QWKg==}
+  '@atlaskit/inline-message@12.3.4':
+    resolution: {integrity: sha512-JuINJ1ecGXFgD1VHxktvl6A1KWwqtydoGF5J5JWOCOx4VusYOPi4iFEMc/VMWIc7zCTsQ34j0B/W2XNC+O7kfg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4154,14 +4154,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/inline-message@12.3.3(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-message@12.3.4(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 20.2.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 22.18.1(@types/react@18.3.9)(react@18.3.1)
       '@atlaskit/inline-dialog': 15.0.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 12.2.0(@types/react@18.3.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.9)(react@18.3.1)
-      '@atlaskit/tokens': 1.61.0(@types/react@18.3.9)(react@18.3.1)
+      '@atlaskit/tokens': 2.0.0(@types/react@18.3.9)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.9)(react@18.3.1)
       react: 18.3.1
