@@ -129,7 +129,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 }
                 primaryText={account.name}
                 onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
                   event.stopPropagation();
                   openAccountProfile(account);
                 }}
@@ -155,7 +154,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 spacing="compact"
                 appearance="subtle"
                 onClick={(event: MouseEvent<HTMLElement>) => {
-                  // Don't trigger onClick of parent element.
                   event.stopPropagation();
                   openMyPullRequests();
                 }}
@@ -228,12 +226,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
       <ModalTransition>
         {isOpen && (
-          <Modal
-            onClose={(event: MouseEvent<HTMLElement>) => {
-              event.stopPropagation();
-              closeModal();
-            }}
-          >
+          <Modal onClose={() => closeModal()}>
             <ModalHeader>
               <Grid
                 gap="space.200"
@@ -245,10 +238,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                     appearance="subtle"
                     icon={CrossIcon}
                     label="Close"
-                    onClick={(event: MouseEvent<HTMLElement>) => {
-                      event.stopPropagation();
-                      closeModal();
-                    }}
+                    onClick={() => closeModal()}
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
@@ -266,18 +256,14 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             <ModalFooter>
               <Button
                 appearance="subtle"
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  event.stopPropagation();
-                  closeModal();
-                }}
+                onClick={() => closeModal()}
                 testId="account-mark-as-read-cancel"
               >
                 Cancel
               </Button>
               <Button
                 appearance="warning"
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  event.stopPropagation();
+                onClick={() => {
                   markNotificationsRead(notifications);
                   closeModal();
                 }}
