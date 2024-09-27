@@ -20,15 +20,9 @@ const { safeStorage } = require('electron');
 log.initialize();
 
 // Tray Icons
-const idleIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-idleTemplate.png`,
-);
-const idleAlternateIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-idle-white.png`,
-);
-const activeIcon = path.resolve(
-  `${__dirname}/../../assets/images/tray-active.png`,
-);
+const idleIcon = getIconPath('tray-idleTemplate.png');
+const idleAlternateIcon = getIconPath('tray-idle-white.png');
+const activeIcon = getIconPath('tray-active.png');
 
 const browserWindowOpts = {
   width: 500,
@@ -293,4 +287,8 @@ function resetApp() {
     mb.window.webContents.send('atlassify:reset-app');
     mb.app.quit();
   }
+}
+
+function getIconPath(iconName) {
+  return path.resolve(__dirname, '../../assets/images', iconName);
 }
