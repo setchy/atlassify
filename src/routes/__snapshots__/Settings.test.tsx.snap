@@ -270,41 +270,113 @@ exports[`routes/Settings.tsx should render itself & its children 1`] = `
               Mark as read on open
             </span>
           </label>
-          <label
-            class="css-k8x29e"
+          <div
+            class="css-gokkc4"
           >
-            <input
-              class="css-f3myyk"
-              name="groupNotificationsByProductAlphabetically"
-              tabindex="0"
-              type="checkbox"
-              value=""
-            />
-            <svg
-              class="css-1dr55qw"
-              role="presentation"
-              style="fill: var(--checkbox-tick-color);"
-              viewBox="0 0 24 24"
+            <label
+              class="css-k8x29e"
             >
-              <g
-                fill-rule="evenodd"
+              <input
+                class="css-f3myyk"
+                name="groupNotificationsByProductAlphabetically"
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <svg
+                class="css-1dr55qw"
+                role="presentation"
+                style="fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
               >
-                <rect
-                  fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
-                />
-              </g>
-            </svg>
-            <span
-              class="css-1odt9zb"
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                </g>
+              </svg>
+              <span
+                class="css-1odt9zb"
+              >
+                Group product notifications alphabetically
+              </span>
+            </label>
+            <div
+              class="css-ssyr0c"
+              style="--icon-accent-color: var(--ds-icon-discovery, #8777D9);"
             >
-              Group product notifications alphabetically
-            </span>
-          </label>
+              <button
+                aria-expanded="false"
+                class="css-1au32bq"
+                data-ds--inline-message--button="true"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="css-1gd7hga"
+                >
+                  <div
+                    class="css-bsfd3j"
+                  >
+                    <span
+                      class="css-q0v5v7"
+                      data-ds--inline-message--icon="true"
+                      style="--icon-color: var(--ds-icon-discovery, #6554C0);"
+                    >
+                      <span
+                        aria-label="info inline message"
+                        class="css-1afrefi"
+                        data-testid="inline-message-icon"
+                        data-vc="icon-inline-message-icon"
+                        role="img"
+                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      >
+                        <svg
+                          height="24"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <g
+                            fill-rule="evenodd"
+                          >
+                            <path
+                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                              fill="currentcolor"
+                            />
+                            <rect
+                              fill="inherit"
+                              height="7"
+                              rx="1"
+                              width="2"
+                              x="11"
+                              y="10"
+                            />
+                            <circle
+                              cx="12"
+                              cy="8"
+                              fill="inherit"
+                              r="1"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </span>
+                    <div
+                      class="css-gokkc4"
+                    />
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
           <div
             class="css-gokkc4"
           >

@@ -23,17 +23,27 @@ export const NotificationSettings: FC = () => {
         }
       />
 
-      <Checkbox
-        name="groupNotificationsByProductAlphabetically"
-        label="Group product notifications alphabetically"
-        isChecked={settings.groupNotificationsByProductAlphabetically}
-        onChange={(evt) =>
-          updateSetting(
-            'groupNotificationsByProductAlphabetically',
-            evt.target.checked,
-          )
-        }
-      />
+      <Inline space="space.100">
+        <Checkbox
+          name="groupNotificationsByProductAlphabetically"
+          label="Group product notifications alphabetically"
+          isChecked={settings.groupNotificationsByProductAlphabetically}
+          onChange={(evt) =>
+            updateSetting(
+              'groupNotificationsByProductAlphabetically',
+              evt.target.checked,
+            )
+          }
+        />
+        <InlineMessage appearance="info">
+          <div className="w-60 text-xs">
+            <div>
+              When notifications are <strong>grouped by products</strong>, this
+              setting will sort products in alphabetical order.
+            </div>
+          </div>
+        </InlineMessage>
+      </Inline>
 
       <Inline space="space.100">
         <Checkbox
