@@ -91,8 +91,8 @@ importers:
         specifier: 6.5.2
         version: 6.5.2(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
-        specifier: 16.3.1
-        version: 16.3.1(@types/react@18.3.10)(react@18.3.1)
+        specifier: 16.3.2
+        version: 16.3.2(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 6.5.2
         version: 6.5.2(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -341,8 +341,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/spinner@16.3.1':
-    resolution: {integrity: sha512-z62H6hiMMQNMBa6QiFkpE4hBpodOq2r4BswDMtMK87IydyWbJbYnKHZFeHXpp2UgFQ6ngzr65YMF5b0EMC3jEw==}
+  '@atlaskit/spinner@16.3.2':
+    resolution: {integrity: sha512-uzhqnClu8II5GdbvM9RwQ9BSnMlxReIqTZaDNFxss3ev8Li+k2SJG7I1rleU2x84QkFVQFiMj/NuXsb+BxEJoQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4004,7 +4004,7 @@ snapshots:
       '@atlaskit/interaction-context': 2.1.5(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 12.2.1(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 16.3.1(@types/react@18.3.10)(react@18.3.1)
+      '@atlaskit/spinner': 16.3.2(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/tokens': 2.0.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/tooltip': 18.7.3(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4284,11 +4284,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/spinner@16.3.1(@types/react@18.3.10)(react@18.3.1)':
+  '@atlaskit/spinner@16.3.2(@types/react@18.3.10)(react@18.3.1)':
     dependencies:
       '@atlaskit/interaction-context': 2.1.5(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.10)(react@18.3.1)
-      '@atlaskit/tokens': 1.61.0(@types/react@18.3.10)(react@18.3.1)
+      '@atlaskit/tokens': 2.0.0(@types/react@18.3.10)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.10)(react@18.3.1)
       react: 18.3.1
