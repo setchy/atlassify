@@ -1,21 +1,21 @@
-const {
-  ipcMain: ipc,
-  app,
-  nativeTheme,
-  globalShortcut,
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {
   Menu,
-  dialog,
   MenuItem,
+  app,
+  dialog,
+  globalShortcut,
+  ipcMain as ipc,
+  nativeTheme,
   safeStorage,
-} = require('electron');
-const { menubar } = require('menubar');
-const { onFirstRunMaybe } = require('./first-run');
-const path = require('node:path');
-const log = require('electron-log');
-const fs = require('node:fs');
-const os = require('node:os');
-const { autoUpdater } = require('electron-updater');
-const { updateElectronApp } = require('update-electron-app');
+} from 'electron';
+import log from 'electron-log';
+import { autoUpdater } from 'electron-updater';
+import { menubar } from 'menubar';
+import { updateElectronApp } from 'update-electron-app';
+import { onFirstRunMaybe } from './first-run';
 
 log.initialize();
 
@@ -24,10 +24,7 @@ const idleIcon = getIconPath('tray-idleTemplate.png');
 const idleAlternateIcon = getIconPath('tray-idle-white.png');
 const activeIcon = getIconPath('tray-active.png');
 
-/**
- * @type {Electron.BrowserWindowConstructorOptions}
- */
-const browserWindowOpts = {
+const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
   minWidth: 500,
@@ -293,5 +290,5 @@ function resetApp() {
 }
 
 function getIconPath(iconName) {
-  return path.resolve(__dirname, '../../assets/images', iconName);
+  return path.resolve(__dirname, '../assets/images', iconName);
 }

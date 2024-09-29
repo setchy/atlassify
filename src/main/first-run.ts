@@ -1,9 +1,9 @@
-const { app, dialog } = require('electron');
-const fs = require('node:fs');
-const path = require('node:path');
-const log = require('electron-log');
+import fs from 'node:fs';
+import path from 'node:path';
+import { app, dialog } from 'electron';
+import log from 'electron-log';
 
-async function onFirstRunMaybe() {
+export async function onFirstRunMaybe() {
   if (isFirstRun()) {
     await promptMoveToApplicationsFolder();
   }
@@ -54,5 +54,3 @@ function isFirstRun() {
 
   return true;
 }
-
-module.exports = { onFirstRunMaybe };

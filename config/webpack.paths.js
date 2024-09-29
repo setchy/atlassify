@@ -11,7 +11,6 @@ const releasePath = path.join(rootPath, 'release');
 const distPath = path.join(rootPath, 'dist');
 
 const buildPath = path.join(rootPath, 'build');
-const buildRendererPath = path.join(buildPath, 'js');
 
 module.exports = {
   rootPath,
@@ -21,5 +20,4 @@ module.exports = {
   releasePath,
   distPath,
   buildPath,
-  buildRendererPath,
 };

@@ -24,7 +24,7 @@ export const EmojiText: FC<IEmojiText> = ({ text }) => {
         callback: (icon: string, options: TwemojiOptions, _variant: string) => {
           const source = path.resolve(
             getDirectoryPath(),
-            '../../node_modules/@discordapp/twemoji/dist',
+            '../node_modules/@discordapp/twemoji/dist',
           );
 
           return ''.concat(source, '/', options.size, '/', icon, options.ext);
