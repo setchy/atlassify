@@ -6,8 +6,6 @@ const srcPath = path.join(rootPath, 'src');
 const srcMainPath = path.join(srcPath, 'main');
 const srcRendererPath = path.join(srcPath, 'renderer');
 
-const releasePath = path.join(rootPath, 'release');
-
 const distPath = path.join(rootPath, 'dist');
 
 const buildPath = path.join(rootPath, 'build');
@@ -17,7 +15,6 @@ export default {
   srcPath,
   srcMainPath,
   srcRendererPath,
-  releasePath,
   distPath,
   buildPath,
 };

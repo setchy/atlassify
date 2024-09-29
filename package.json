@@ -8,7 +8,7 @@
     "build": "concurrently --names \"main,renderer\" --prefix-colors \"blue,green\" \"pnpm build:main\" \"pnpm build:renderer\" && pnpm build:remove-maps",
     "build:main": "webpack --config ./config/webpack.config.main.prod.ts",
     "build:renderer": "webpack --config ./config/webpack.config.renderer.prod.ts",
-    "build:remove-maps": "rimraf build/*.map",
+    "build:remove-maps": "ts-node ./scripts/delete-source-maps.ts",
     "watch": "concurrently --names \"main,renderer\" --prefix-colors \"blue,green\" \"pnpm watch:main\" \"pnpm watch:renderer\"",
     "watch:main": "webpack --watch --config ./config/webpack.config.main.base.ts",
     "watch:renderer": "webpack --watch --config ./config/webpack.config.renderer.base.ts",
