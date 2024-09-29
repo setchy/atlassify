@@ -1,14 +1,11 @@
-const path = require('node:path');
-const webpack = require('webpack');
-const webpackPaths = require('./webpack.paths');
-const baseConfig = require('./webpack.config.common');
-const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'node:path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import type webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import baseConfig from './webpack.config.common';
+import webpackPaths from './webpack.paths';
 
-/**
- * @type {webpack.Configuration}
- */
-const configuration = {
+const configuration: webpack.Configuration = {
   devtool: 'inline-source-map',
 
   mode: 'development',
@@ -20,6 +17,9 @@ const configuration = {
   output: {
     path: webpackPaths.buildPath,
     filename: 'renderer.js',
+    library: {
+      type: 'umd',
+    },
   },
 
   plugins: [
@@ -32,11 +32,8 @@ const configuration = {
         removeComments: true,
       },
       isBrowser: false,
-      // env: process.env.NODE_ENV,
-      // isDevelopment: process.env.NODE_ENV !== 'production',
-      // nodeModules: webpackPaths.appNodeModulesPath,
     }),
   ],
 };
 
-module.exports = merge(baseConfig, configuration);
+export default merge(baseConfig, configuration);

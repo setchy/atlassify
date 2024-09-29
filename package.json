@@ -6,11 +6,11 @@
   "scripts": {
     "clean": "rimraf build coverage node_modules",
     "build": "concurrently --names 'main,renderer' --prefix-colors 'blue,green' 'pnpm build:main' 'pnpm build:renderer'",
-    "build:main": "webpack --config ./config/webpack.config.main.prod.js",
-    "build:renderer": "webpack --config ./config/webpack.config.renderer.prod.js",
+    "build:main": "webpack --config ./config/webpack.config.main.prod.ts",
+    "build:renderer": "webpack --config ./config/webpack.config.renderer.prod.ts",
     "watch": "concurrently --names 'main,renderer' --prefix-colors 'blue,green' 'pnpm watch:main' 'pnpm watch:renderer'",
-    "watch:main": "webpack --watch --config ./config/webpack.config.main.base.js",
-    "watch:renderer": "webpack --watch --config ./config/webpack.config.renderer.base.js",
+    "watch:main": "webpack --watch --config ./config/webpack.config.main.base.ts",
+    "watch:renderer": "webpack --watch --config ./config/webpack.config.renderer.base.ts",
     "make:linux": "electron-builder --linux",
     "make:macos": "electron-builder --mac",
     "make:win": "electron-builder --win",
@@ -59,7 +59,6 @@
     "asar": true,
     "files": [
       "build/**/*",
-      "src/main/**/*",
       "assets/**/*",
       "node_modules/**/*",
       "package.json",

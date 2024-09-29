@@ -22,7 +22,7 @@ exports[`components/Oops.tsx should render itself & its children 1`] = `
                   alt="🔥"
                   class="emoji"
                   draggable="false"
-                  src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
+                  src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
                 />
               </span>
             </span>
@@ -63,7 +63,7 @@ exports[`components/Oops.tsx should render itself & its children 1`] = `
                 alt="🔥"
                 class="emoji"
                 draggable="false"
-                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
+                src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f525.svg"
               />
             </span>
           </span>

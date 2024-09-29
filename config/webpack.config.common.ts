@@ -1,9 +1,6 @@
-const webpack = require('webpack');
+import type webpack from 'webpack';
 
-/**
- * @type {webpack.Configuration}
- */
-const configuration = {
+const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
@@ -30,4 +27,4 @@ const configuration = {
   },
 };
 
-module.exports = configuration;
+export default configuration;

@@ -1,4 +1,4 @@
-const path = require('node:path');
+import path from 'node:path';
 
 const rootPath = path.join(__dirname, '..');
 
@@ -12,7 +12,7 @@ const distPath = path.join(rootPath, 'dist');
 
 const buildPath = path.join(rootPath, 'build');
 
-module.exports = {
+export default {
   rootPath,
   srcPath,
   srcMainPath,
