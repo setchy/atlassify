@@ -1,11 +1,7 @@
-import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
 import {
   Menu,
   MenuItem,
   app,
-  dialog,
   globalShortcut,
   ipcMain as ipc,
   nativeTheme,
@@ -16,6 +12,7 @@ import { autoUpdater } from 'electron-updater';
 import { menubar } from 'menubar';
 import { updateElectronApp } from 'update-electron-app';
 import { onFirstRunMaybe } from './first-run';
+import { getIconPath, resetApp, takeScreenshot } from './utils';
 
 log.initialize();
 
@@ -80,12 +77,12 @@ const contextMenu = Menu.buildFromTemplate([
       {
         label: 'Take Screenshot',
         accelerator: 'CommandOrControl+S',
-        click: () => takeScreenshot(),
+        click: () => takeScreenshot(mb),
       },
       {
         label: 'Reset App',
         click: () => {
-          resetApp();
+          resetApp(mb);
         },
       },
     ],
@@ -95,7 +92,7 @@ const contextMenu = Menu.buildFromTemplate([
     label: 'Quit Atlassify',
     accelerator: 'CommandOrControl+Q',
     click: () => {
-      app.quit();
+      mb.app.quit();
     },
   },
 ]);
@@ -256,39 +253,3 @@ app.whenReady().then(async () => {
     checkForUpdatesMenuItem.enabled = true;
   });
 });
-
-function takeScreenshot() {
-  const date = new Date();
-  const dateStr = date.toISOString().replace(/:/g, '-');
-
-  const capturedPicFilePath = `${os.homedir()}/${dateStr}-atlassify-screenshot.png`;
-  mb.window.capturePage().then((img) => {
-    fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
-      log.info(`Screenshot saved ${capturedPicFilePath}`),
-    );
-  });
-}
-
-function resetApp() {
-  const cancelButtonId = 0;
-  const resetButtonId = 1;
-
-  const response = dialog.showMessageBoxSync(mb.window, {
-    type: 'warning',
-    title: 'Reset Atlassify',
-    message:
-      'Are you sure you want to reset Atlassify? You will be logged out of all accounts',
-    buttons: ['Cancel', 'Reset'],
-    defaultId: cancelButtonId,
-    cancelId: cancelButtonId,
-  });
-
-  if (response === resetButtonId) {
-    mb.window.webContents.send('atlassify:reset-app');
-    mb.app.quit();
-  }
-}
-
-function getIconPath(iconName) {
-  return path.resolve(__dirname, '../assets/images', iconName);
-}
