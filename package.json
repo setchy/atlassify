@@ -8,7 +8,7 @@
     "clean": "rimraf build coverage node_modules",
     "watch": "webpack --watch --config ./config/webpack.config.common.js",
     "make:linux": "electron-builder --linux",
-    "make:macos": "electron-builder --mac --universal",
+    "make:macos": "electron-builder --mac",
     "make:win": "electron-builder --win",
     "lint:check": "biome check",
     "lint": "biome check --fix",
@@ -53,12 +53,24 @@
     "appId": "com.electron.atlassify",
     "copyright": "Copyright © 2024 Adam Setch",
     "asar": true,
-    "files": ["build/**/*", "assets/**/*", "src/main/*", "LICENSE"],
+    "files": [
+      "build/**/*",
+      "src/main/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "LICENSE"
+    ],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
       "identity": "Adam Setch (5KD23H9729)",
       "type": "distribution",
+      "notarize": false,
+      "target": {
+        "target": "default",
+        "arch": ["universal", "arm64", "x64"]
+      },
       "hardenedRuntime": true,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
