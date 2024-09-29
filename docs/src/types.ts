@@ -2,6 +2,7 @@ export interface DownloadLink {
   os: string;
   name: string;
   url: string;
+  isPrimary?: boolean;
 }
 
 export interface DownloadLinks {

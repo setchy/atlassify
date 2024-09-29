@@ -20,6 +20,7 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
       os: 'macOS',
       name: 'macOS (Apple Silicon)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+-arm64.dmg/g),
+      isPrimary: true,
     },
     {
       os: 'macOS',
@@ -35,11 +36,13 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
       os: 'Windows',
       name: 'Windows',
       url: getAssetLink(/Atlassify-Setup-\d+.\d+.\d+.exe/g),
+      isPrimary: true,
     },
     {
       os: 'Linux',
       name: 'Linux (AppImage)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+.AppImage/g),
+      isPrimary: true,
     },
     {
       os: 'Linux',
@@ -53,22 +56,19 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
     },
   ];
 
-  const isWindowAvailable = typeof window !== 'undefined' && window.navigator;
-  const currentOs = isWindowAvailable
-    ? Bowser.parse(window.navigator.userAgent).os.name
-    : 'macOS'; // macOS, Windows, Linux
-
-  const primaryLinks = supportedOSs.filter(
-    ({ os, url }) => url && os === currentOs,
+  const primaryDownloadLinks = supportedOSs.filter(
+    ({ isPrimary, url }) => url && isPrimary,
   );
-  const primaryLinksOSs = primaryLinks.map(({ os }) => os);
-  const alt = supportedOSs.filter(
-    ({ os, url }) => !primaryLinksOSs.includes(os) && url,
+
+  const altDownloadLinks = supportedOSs.filter(
+    ({ isPrimary, url }) => url && !isPrimary,
   );
 
   return {
-    primary: primaryLinks.length ? primaryLinks : [supportedOSs[0]],
-    alt,
+    primary: primaryDownloadLinks.length
+      ? primaryDownloadLinks
+      : [supportedOSs[0]],
+    alt: altDownloadLinks,
   };
 };
 
