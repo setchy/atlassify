@@ -6,7 +6,8 @@ const {
   Menu,
   dialog,
   MenuItem,
-} = require('electron/main');
+  safeStorage,
+} = require('electron');
 const { menubar } = require('menubar');
 const { onFirstRunMaybe } = require('./first-run');
 const path = require('node:path');
@@ -15,7 +16,6 @@ const fs = require('node:fs');
 const os = require('node:os');
 const { autoUpdater } = require('electron-updater');
 const { updateElectronApp } = require('update-electron-app');
-const { safeStorage } = require('electron');
 
 log.initialize();
 

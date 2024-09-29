@@ -14,7 +14,7 @@ import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
 
-import { colors } from '../../tailwind.config';
+import { colors } from '../../../tailwind.config';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
