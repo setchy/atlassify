@@ -1,20 +1,24 @@
-// @ts-check
-
 const path = require('node:path');
 const webpack = require('webpack');
+const webpackPaths = require('./webpack.paths');
 
 /**
- * @typedef {import('webpack').Configuration} WebpackConfig
+ * @type {webpack.Configuration}
  */
-
-/**
- * @type {WebpackConfig}
- */
-const config = {
-  mode: 'development',
-  entry: './src/index.tsx',
+const configuration = {
   devtool: 'inline-source-map',
+
+  mode: 'development',
+
   target: 'electron-renderer',
+
+  entry: [path.join(webpackPaths.srcRendererPath, 'index.tsx')],
+
+  output: {
+    path: webpackPaths.buildRendererPath,
+    filename: 'renderer.js',
+  },
+
   module: {
     rules: [
       {
@@ -28,14 +32,17 @@ const config = {
       },
     ],
   },
+
   plugins: [],
+
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'build', 'js'),
+
+  node: {
+    __dirname: false,
+    __filename: false,
   },
 };
 
-module.exports = config;
+module.exports = configuration;

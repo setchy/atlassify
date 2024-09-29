@@ -2,11 +2,11 @@
   "name": "atlassify",
   "version": "1.2.0",
   "description": "Atlassian notifications on your menu bar.",
-  "main": "src/electron/main.js",
+  "main": "src/main/main.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config ./config/webpack.config.prod.js",
     "clean": "rimraf build coverage node_modules",
-    "watch": "webpack --config webpack.common.js --watch",
+    "watch": "webpack --watch --config ./config/webpack.config.common.js",
     "make:linux": "electron-builder --linux",
     "make:macos": "electron-builder --mac --universal",
     "make:win": "electron-builder --win",
@@ -49,10 +49,11 @@
   },
   "homepage": "https://www.atlassify.io/",
   "build": {
-    "appId": "com.electron.atlassify",
     "productName": "Atlassify",
+    "appId": "com.electron.atlassify",
     "copyright": "Copyright © 2024 Adam Setch",
-    "files": ["build/**/*", "assets/**/*", "src/electron/*", "LICENSE"],
+    "asar": true,
+    "files": ["build/**/*", "assets/**/*", "src/main/*", "LICENSE"],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",
@@ -62,7 +63,6 @@
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
       "gatekeeperAssess": false,
-      "publish": ["github"],
       "extendInfo": {
         "NSBluetoothAlwaysUsageDescription": null,
         "NSBluetoothPeripheralUsageDescription": null,
@@ -85,6 +85,11 @@
       "target": ["AppImage", "deb", "rpm"],
       "category": "Productivity",
       "maintainer": "Adam Setch"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "setchy",
+      "repo": "atlassify"
     },
     "afterSign": "scripts/notarize.js"
   },
