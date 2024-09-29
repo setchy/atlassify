@@ -5,11 +5,11 @@
   "main": "build/main.js",
   "scripts": {
     "clean": "rimraf build coverage node_modules",
-    "build": "concurrently --names 'main,renderer' --prefix-colors 'blue,green' 'pnpm build:main' 'pnpm build:renderer' && pnpm build:remove-maps",
+    "build": "concurrently --names \"main,renderer\" --prefix-colors \"blue,green\" \"pnpm build:main\" \"pnpm build:renderer\" && pnpm build:remove-maps",
     "build:main": "webpack --config ./config/webpack.config.main.prod.ts",
     "build:renderer": "webpack --config ./config/webpack.config.renderer.prod.ts",
     "build:remove-maps": "rimraf build/*.map",
-    "watch": "concurrently --names 'main,renderer' --prefix-colors 'blue,green' 'pnpm watch:main' 'pnpm watch:renderer'",
+    "watch": "concurrently --names \"main,renderer\" --prefix-colors \"blue,green\" \"pnpm watch:main\" \"pnpm watch:renderer\"",
     "watch:main": "webpack --watch --config ./config/webpack.config.main.base.ts",
     "watch:renderer": "webpack --watch --config ./config/webpack.config.renderer.base.ts",
     "make:linux": "electron-builder --linux",
