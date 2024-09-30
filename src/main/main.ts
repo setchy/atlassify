@@ -1,6 +1,4 @@
 import {
-  Menu,
-  MenuItem,
   app,
   globalShortcut,
   ipcMain as ipc,
@@ -8,18 +6,13 @@ import {
   safeStorage,
 } from 'electron';
 import log from 'electron-log';
-import { autoUpdater } from 'electron-updater';
 import { menubar } from 'menubar';
-import { updateElectronApp } from 'update-electron-app';
 import { onFirstRunMaybe } from './first-run';
-import { getIconPath, resetApp, takeScreenshot } from './utils';
+import { activeIcon, idleAlternateIcon, idleIcon } from './icons';
+import MenuBuilder from './menu';
+import Updater from './updater';
 
 log.initialize();
-
-// Tray Icons
-const idleIcon = getIconPath('tray-idleTemplate.png');
-const idleAlternateIcon = getIconPath('tray-idle-white.png');
-const activeIcon = getIconPath('tray-active.png');
 
 const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   width: 500,
@@ -35,68 +28,6 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   },
 };
 
-const checkForUpdatesMenuItem = new MenuItem({
-  label: 'Check for updates',
-  enabled: true,
-  click: () => {
-    autoUpdater.checkForUpdatesAndNotify();
-  },
-});
-
-const updateAvailableMenuItem = new MenuItem({
-  label: 'An update is available',
-  enabled: false,
-  visible: false,
-});
-
-const updateReadyForInstallMenuItem = new MenuItem({
-  label: 'Restart to update',
-  visible: false,
-  click: () => {
-    autoUpdater.quitAndInstall();
-  },
-});
-
-const contextMenu = Menu.buildFromTemplate([
-  checkForUpdatesMenuItem,
-  updateAvailableMenuItem,
-  updateReadyForInstallMenuItem,
-  { type: 'separator' },
-  {
-    label: 'Developer',
-    submenu: [
-      {
-        role: 'reload',
-        accelerator: 'CommandOrControl+R',
-      },
-      {
-        role: 'toggleDevTools',
-        accelerator:
-          process.platform === 'darwin' ? 'Alt+Cmd+I' : 'Ctrl+Shift+I',
-      },
-      {
-        label: 'Take Screenshot',
-        accelerator: 'CommandOrControl+S',
-        click: () => takeScreenshot(mb),
-      },
-      {
-        label: 'Reset App',
-        click: () => {
-          resetApp(mb);
-        },
-      },
-    ],
-  },
-  { type: 'separator' },
-  {
-    label: 'Quit Atlassify',
-    accelerator: 'CommandOrControl+Q',
-    click: () => {
-      mb.app.quit();
-    },
-  },
-]);
-
 const mb = menubar({
   icon: idleIcon,
   index: `file://${__dirname}/index.html`,
@@ -104,6 +35,11 @@ const mb = menubar({
   preloadWindow: true,
   showDockIcon: false, // Hide the app from the macOS dock
 });
+
+const menuBuilder = new MenuBuilder(mb);
+const contextMenu = menuBuilder.buildMenu();
+
+new Updater(mb, menuBuilder);
 
 let shouldUseAlternateIdleIcon = false;
 
@@ -218,38 +154,5 @@ app.whenReady().then(async () => {
 
   ipc.handle('atlassify:safe-storage-decrypt', (_, settings) => {
     return safeStorage.decryptString(Buffer.from(settings, 'base64'));
-  });
-
-  // Auto Updater
-  updateElectronApp({
-    updateInterval: '24 hours',
-    logger: log,
-  });
-
-  autoUpdater.on('checking-for-update', () => {
-    log.info('Auto Updater: Checking for update');
-    checkForUpdatesMenuItem.enabled = false;
-  });
-
-  autoUpdater.on('error', (error) => {
-    log.error('Auto Updater: error checking for update', error);
-    checkForUpdatesMenuItem.enabled = true;
-  });
-
-  autoUpdater.on('update-available', () => {
-    log.info('Auto Updater: New update available');
-    updateAvailableMenuItem.visible = true;
-    mb.tray.setToolTip('Atlassify\nA new update is available');
-  });
-
-  autoUpdater.on('update-downloaded', () => {
-    log.info('Auto Updater: Update downloaded');
-    updateReadyForInstallMenuItem.visible = true;
-    mb.tray.setToolTip('Atlassify\nA new update is ready to install');
-  });
-
-  autoUpdater.on('update-not-available', () => {
-    log.info('Auto Updater: update not available');
-    checkForUpdatesMenuItem.enabled = true;
   });
 });
