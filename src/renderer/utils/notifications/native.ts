@@ -1,3 +1,4 @@
+import path from 'node:path';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -86,7 +87,9 @@ export const raiseNativeNotification = (
 };
 
 export const raiseSoundNotification = () => {
-  const audio = new Audio('assets/sounds/notification.wav');
+  const audio = new Audio(
+    path.resolve(__dirname, '..', 'assets', 'sounds', 'notification.wav'),
+  );
   audio.volume = 0.2;
   audio.play();
 };
