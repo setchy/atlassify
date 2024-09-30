@@ -8,14 +8,8 @@ const configuration: webpack.Configuration = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
     ],
   },
-
-  plugins: [],
 
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
