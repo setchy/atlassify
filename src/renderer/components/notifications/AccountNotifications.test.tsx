@@ -13,7 +13,7 @@ jest.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>Product Notifications</div>,
 }));
 
-describe('components/notifications/AccountNotifications.tsx', () => {
+describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
     mockDirectoryPath();

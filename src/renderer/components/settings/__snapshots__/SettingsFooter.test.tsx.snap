@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`routes/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
+exports[`renderer/routes/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
 <button
   class=" css-1aearyh"
   data-testid="settings-release-notes"
@@ -16,7 +16,7 @@ exports[`routes/components/settings/SettingsFooter.tsx app version should show d
 </button>
 `;
 
-exports[`routes/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
+exports[`renderer/routes/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
 <button
   class=" css-1aearyh"
   data-testid="settings-release-notes"

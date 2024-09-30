@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { ensureStableEmojis, mockDirectoryPath } from '../__mocks__/utils';
 import { AllRead } from './AllRead';
 
-describe('components/AllRead.tsx', () => {
+describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
     mockDirectoryPath();

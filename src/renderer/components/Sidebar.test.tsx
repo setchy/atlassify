@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('components/Sidebar.tsx', () => {
+describe('renderer/components/Sidebar.tsx', () => {
   const updateSetting = jest.fn();
   const fetchNotifications = jest.fn();
   const openExternalLinkMock = jest

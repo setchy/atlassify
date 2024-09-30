@@ -5,7 +5,7 @@ import {
 import { mockSettings } from '../../__mocks__/state-mocks';
 import { removeNotifications } from './remove';
 
-describe('utils/notifications/remove.ts', () => {
+describe('renderer/utils/notifications/remove.ts', () => {
   it('should remove a notification if it exists', () => {
     expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 

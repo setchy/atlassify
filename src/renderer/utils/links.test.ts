@@ -12,7 +12,7 @@ import {
   openNotification,
 } from './links';
 
-describe('utils/links.ts', () => {
+describe('renderer/utils/links.ts', () => {
   const openExternalLinkMock = jest
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();

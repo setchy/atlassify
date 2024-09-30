@@ -8,7 +8,7 @@ import {
   hasFiltersSet,
 } from './filters';
 
-describe('utils/filters.ts', () => {
+describe('renderer/utils/filters.ts', () => {
   describe('has filters', () => {
     it('default filter settings', () => {
       expect(hasFiltersSet(defaultSettings)).toBe(false);

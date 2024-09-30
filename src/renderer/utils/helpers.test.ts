@@ -8,7 +8,7 @@ import {
   getRepositoryName,
 } from './helpers';
 
-describe('utils/helpers.ts', () => {
+describe('renderer/utils/helpers.ts', () => {
   it('getRepositoryName', () => {
     expect(getRepositoryName(mockSingleAtlassifyNotification)).toBe(
       'myorg/notifications-test',

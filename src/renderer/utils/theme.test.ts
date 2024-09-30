@@ -1,7 +1,7 @@
 import { Theme } from '../types';
 import { getTheme, setTheme } from './theme';
 
-describe('utils/theme.ts', () => {
+describe('renderer/utils/theme.ts', () => {
   const htmlElement = document.createElement('html');
 
   beforeEach(() => {

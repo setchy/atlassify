@@ -3,7 +3,7 @@ import { Errors } from '../errors';
 import { determineFailureType } from './errors';
 import type { AtlassianAPIError } from './types';
 
-describe('utils/api/errors.ts', () => {
+describe('renderer/utils/api/errors.ts', () => {
   it('network error', async () => {
     const mockError: Partial<AxiosError<AtlassianAPIError>> = {
       code: AxiosError.ERR_NETWORK,

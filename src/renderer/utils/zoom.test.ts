@@ -1,6 +1,6 @@
 import { zoomLevelToPercentage, zoomPercentageToLevel } from './zoom';
 
-describe('utils/zoom.ts', () => {
+describe('renderer/utils/zoom.ts', () => {
   it('should convert percentage to zoom level', () => {
     expect(zoomPercentageToLevel(100)).toBe(0);
     expect(zoomPercentageToLevel(50)).toBe(-1);

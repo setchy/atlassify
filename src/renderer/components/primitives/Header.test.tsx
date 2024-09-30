@@ -8,7 +8,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('components/primitives/Header.tsx', () => {
+describe('renderer/components/primitives/Header.tsx', () => {
   const fetchNotifications = jest.fn();
 
   afterEach(() => {

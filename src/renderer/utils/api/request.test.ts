@@ -8,7 +8,7 @@ jest.mock('axios');
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
-describe('utils/api/request.ts', () => {
+describe('renderer/utils/api/request.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

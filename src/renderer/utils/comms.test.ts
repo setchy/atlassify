@@ -17,7 +17,7 @@ import {
 import { Constants } from './constants';
 import * as storage from './storage';
 
-describe('utils/comms.ts', () => {
+describe('renderer/utils/comms.ts', () => {
   beforeEach(() => {
     jest.spyOn(ipcRenderer, 'send');
     jest.spyOn(ipcRenderer, 'invoke');
