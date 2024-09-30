@@ -19,15 +19,12 @@ export const EmojiText: FC<IEmojiText> = ({ text }) => {
   useEffect(() => {
     if (ref.current) {
       ref.current.innerHTML = twemoji.parse(text, {
-        folder: 'svg',
-        ext: '.svg',
-        callback: (icon: string, options: TwemojiOptions, _variant: string) => {
-          const source = path.resolve(
-            getDirectoryPath(),
-            '../node_modules/@discordapp/twemoji/dist',
-          );
-
-          return ''.concat(source, '/', options.size, '/', icon, options.ext);
+        callback: (
+          icon: string,
+          _options: TwemojiOptions,
+          _variant: string,
+        ) => {
+          return path.join(getDirectoryPath(), 'twemoji', `${icon}.svg`);
         },
       });
     }

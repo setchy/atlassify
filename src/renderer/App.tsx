@@ -14,6 +14,7 @@ import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
+import './App.css';
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useContext(AppContext);

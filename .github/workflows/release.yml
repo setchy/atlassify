@@ -23,7 +23,8 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm make:macos --publish onTagOrDraft
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:macos --publish onTagOrDraft
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
@@ -51,7 +52,8 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm make:win --publish onTagOrDraft
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:win --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
@@ -73,7 +75,8 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm make:linux --publish onTagOrDraft
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:linux --publish onTagOrDraft
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
