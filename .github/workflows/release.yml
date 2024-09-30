@@ -61,9 +61,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-win
-          path: |
-            dist/*
-            !dist/**/*.dmg
+          path: dist/
           overwrite: true
 
   release-linux:
@@ -86,7 +84,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-linux
-          path: |
-            dist/*
-            !dist/**/*.dmg
+          path: dist/
           overwrite: true

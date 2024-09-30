@@ -57,9 +57,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-dist-win
-          path: |
-            dist/*
-            !dist/**/*.dmg
+          path: dist/
           overwrite: true
 
   build-linux:
@@ -82,7 +80,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-dist-linux
-          path: |
-            dist/*
-            !dist/**/*.dmg
+          path: dist/
           overwrite: true
