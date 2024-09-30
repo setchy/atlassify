@@ -4,7 +4,7 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
-import { ensureStableEmojis, mockDirectoryPath } from '../../__mocks__/utils';
+import { ensureStableEmojis } from '../../__mocks__/utils';
 import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
 import { AccountNotifications } from './AccountNotifications';
@@ -16,7 +16,6 @@ jest.mock('./ProductNotifications', () => ({
 describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
-    mockDirectoryPath();
   });
 
   describe('account view types', () => {
