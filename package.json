@@ -58,13 +58,7 @@
     "appId": "com.electron.atlassify",
     "copyright": "Copyright © 2024 Adam Setch",
     "asar": true,
-    "files": [
-      "build/**/*",
-      "assets/**/*",
-      "node_modules/**/*",
-      "package.json",
-      "LICENSE"
-    ],
+    "files": ["build/**/*", "node_modules/**/*", "package.json", "LICENSE"],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/app-icon.icns",

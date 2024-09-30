@@ -22,7 +22,7 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
                   alt="🔥"
                   class="emoji"
                   draggable="false"
-                  src="/mocked/dir/name/twemoji/1f525.svg"
+                  src="/mocked/dir/name/assets/twemoji/1f525.svg"
                 />
               </span>
             </span>
@@ -63,7 +63,7 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
                 alt="🔥"
                 class="emoji"
                 draggable="false"
-                src="/mocked/dir/name/twemoji/1f525.svg"
+                src="/mocked/dir/name/assets/twemoji/1f525.svg"
               />
             </span>
           </span>

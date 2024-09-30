@@ -55,9 +55,19 @@ const configuration: webpack.Configuration = {
       isBrowser: false,
     }),
 
-    // Copy Twemoji SVGs to the build directory
     new CopyWebpackPlugin({
       patterns: [
+        // Image Assets
+        {
+          from: webpackPaths.assetsImagesPath,
+          to: 'assets/images',
+        },
+        // Sound Assets
+        {
+          from: webpackPaths.assetsSoundsPath,
+          to: 'assets/sounds',
+        },
+        // Twemoji SVGs for Emojis
         {
           from: path.join(
             webpackPaths.nodeModulesPath,
@@ -65,7 +75,7 @@ const configuration: webpack.Configuration = {
             'dist',
             'svg',
           ),
-          to: 'twemoji', // Output to dist/twemoji
+          to: 'assets/twemoji',
         },
       ],
     }),
