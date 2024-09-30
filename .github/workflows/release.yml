@@ -36,7 +36,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-mac
-          path: dist/
+          path: dist/*
           overwrite: true
 
   release-windows:
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-win
-          path: dist/
+          path: dist/*
           overwrite: true
 
   release-linux:
@@ -82,5 +82,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Atlassify-release-linux
-          path: dist/
+          path: dist/*
           overwrite: true
