@@ -15,7 +15,7 @@ import {
 jest.mock('axios');
 
 // TODO - Improve assertions of data request object sent
-describe('utils/api/client.ts', () => {
+describe('renderer/utils/api/client.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

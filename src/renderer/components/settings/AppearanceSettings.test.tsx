@@ -7,7 +7,7 @@ import { AppearanceSettings } from './AppearanceSettings';
 
 global.ResizeObserver = require('resize-observer-polyfill');
 
-describe('routes/components/settings/AppearanceSettings.tsx', () => {
+describe('renderer/routes/components/settings/AppearanceSettings.tsx', () => {
   const updateSetting = jest.fn();
   const zoomTimeout = () => new Promise((r) => setTimeout(r, 300));
 

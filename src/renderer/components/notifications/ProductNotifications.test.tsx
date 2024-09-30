@@ -17,7 +17,7 @@ const openExternalLinkMock = jest
   .spyOn(comms, 'openExternalLink')
   .mockImplementation();
 
-describe('components/notifications/ProductNotifications.tsx', () => {
+describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

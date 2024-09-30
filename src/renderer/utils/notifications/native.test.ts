@@ -11,7 +11,7 @@ import * as comms from '../comms';
 import * as links from '../links';
 import * as notificationsHelpers from './native';
 
-describe('utils/notifications/native.ts', () => {
+describe('renderer/utils/notifications/native.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

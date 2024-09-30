@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Sidebar.tsx Filters go to the filters route 1`] = `
+exports[`renderer/components/Sidebar.tsx Filters go to the filters route 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-filters"
@@ -37,7 +37,7 @@ exports[`components/Sidebar.tsx Filters go to the filters route 1`] = `
 </button>
 `;
 
-exports[`components/Sidebar.tsx Filters go to the home if filters path already shown 1`] = `
+exports[`renderer/components/Sidebar.tsx Filters go to the home if filters path already shown 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-filters"
@@ -74,7 +74,7 @@ exports[`components/Sidebar.tsx Filters go to the home if filters path already s
 </button>
 `;
 
-exports[`components/Sidebar.tsx Filters show filters count if any are saved 1`] = `
+exports[`renderer/components/Sidebar.tsx Filters show filters count if any are saved 1`] = `
 <button
   class=" css-1pe4njs"
   data-testid="sidebar-filters"
@@ -111,7 +111,7 @@ exports[`components/Sidebar.tsx Filters show filters count if any are saved 1`] 
 </button>
 `;
 
-exports[`components/Sidebar.tsx Group by products should group notifications by product 1`] = `
+exports[`renderer/components/Sidebar.tsx Group by products should group notifications by product 1`] = `
 <button
   class=" css-1pe4njs"
   data-testid="sidebar-group-by-product"
@@ -148,7 +148,7 @@ exports[`components/Sidebar.tsx Group by products should group notifications by 
 </button>
 `;
 
-exports[`components/Sidebar.tsx Group by products should order notifications by date 1`] = `
+exports[`renderer/components/Sidebar.tsx Group by products should order notifications by date 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-group-by-product"
@@ -185,7 +185,7 @@ exports[`components/Sidebar.tsx Group by products should order notifications by 
 </button>
 `;
 
-exports[`components/Sidebar.tsx Group by products should toggle group by products 1`] = `
+exports[`renderer/components/Sidebar.tsx Group by products should toggle group by products 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-group-by-product"
@@ -222,7 +222,7 @@ exports[`components/Sidebar.tsx Group by products should toggle group by product
 </button>
 `;
 
-exports[`components/Sidebar.tsx notifications icon renders correct icon when there are more notifications available 1`] = `
+exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are more notifications available 1`] = `
 <button
   class=" css-1srvl33"
   data-testid="sidebar-notifications"
@@ -259,7 +259,7 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
 </button>
 `;
 
-exports[`components/Sidebar.tsx notifications icon renders correct icon when there are no notifications 1`] = `
+exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are no notifications 1`] = `
 <button
   class=" css-a8hcye"
   data-testid="sidebar-notifications"
@@ -296,7 +296,7 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
 </button>
 `;
 
-exports[`components/Sidebar.tsx notifications icon renders correct icon when there are notifications 1`] = `
+exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are notifications 1`] = `
 <button
   class=" css-1srvl33"
   data-testid="sidebar-notifications"
@@ -333,7 +333,7 @@ exports[`components/Sidebar.tsx notifications icon renders correct icon when the
 </button>
 `;
 
-exports[`components/Sidebar.tsx should render itself & its children (logged in) 1`] = `
+exports[`renderer/components/Sidebar.tsx should render itself & its children (logged in) 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -726,7 +726,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged in) 
 }
 `;
 
-exports[`components/Sidebar.tsx should render itself & its children (logged out) 1`] = `
+exports[`renderer/components/Sidebar.tsx should render itself & its children (logged out) 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1119,7 +1119,7 @@ exports[`components/Sidebar.tsx should render itself & its children (logged out)
 }
 `;
 
-exports[`components/Sidebar.tsx show only unread notifications should toggle show only unread notifications 1`] = `
+exports[`renderer/components/Sidebar.tsx show only unread notifications should toggle show only unread notifications 1`] = `
 <input
   aria-labelledby="80"
   checked=""

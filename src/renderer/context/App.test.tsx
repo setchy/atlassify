@@ -26,7 +26,7 @@ const customRender = (
   );
 };
 
-describe('context/App.tsx', () => {
+describe('renderer/context/App.tsx', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });

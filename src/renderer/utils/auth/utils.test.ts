@@ -5,7 +5,7 @@ import {
 import type { Account } from '../../types';
 import * as auth from './utils';
 
-describe('utils/auth/utils.ts', () => {
+describe('renderer/utils/auth/utils.ts', () => {
   describe('removeAccount', () => {
     it('should remove account with matching token', async () => {
       expect(mockAuth.accounts.length).toBe(1);

@@ -2,7 +2,7 @@ import { mockSettings } from '../__mocks__/state-mocks';
 import type { Token, Username } from '../types';
 import { clearState, loadState, saveState } from './storage';
 
-describe('utils/storage.ts', () => {
+describe('renderer/utils/storage.ts', () => {
   it('should load the state from localstorage - existing', () => {
     jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValueOnce(
       JSON.stringify({

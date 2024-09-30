@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { mockDirectoryPath } from '../__mocks__/utils';
 import { Oops } from './Oops';
 
-describe('components/Oops.tsx', () => {
+describe('renderer/components/Oops.tsx', () => {
   beforeEach(() => {
     mockDirectoryPath();
   });

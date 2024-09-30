@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`routes/Accounts.tsx General should render itself & its children 1`] = `
+exports[`renderer/routes/Accounts.tsx General should render itself & its children 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="accounts"

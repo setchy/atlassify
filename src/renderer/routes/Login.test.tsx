@@ -9,7 +9,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('routes/Login.tsx', () => {
+describe('renderer/routes/Login.tsx', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });

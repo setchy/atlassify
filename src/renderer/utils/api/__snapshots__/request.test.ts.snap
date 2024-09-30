@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils/api/request.ts should make a head request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts should make a head request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",
@@ -9,7 +9,7 @@ exports[`utils/api/request.ts should make a head request with the correct parame
 }
 `;
 
-exports[`utils/api/request.ts should make a post request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts should make a post request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",

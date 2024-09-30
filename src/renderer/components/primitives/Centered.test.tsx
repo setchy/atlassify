@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Centered } from './Centered';
 
-describe('components/primitives/Centered.tsx', () => {
+describe('renderer/components/primitives/Centered.tsx', () => {
   it('should render itself & its children', () => {
     const tree = render(<Centered>Test</Centered>);
 

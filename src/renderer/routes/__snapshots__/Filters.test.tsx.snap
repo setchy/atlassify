@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`routes/Filters.tsx General should render itself & its children 1`] = `
+exports[`renderer/routes/Filters.tsx General should render itself & its children 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="filters"
@@ -1059,7 +1059,7 @@ exports[`routes/Filters.tsx General should render itself & its children 1`] = `
 </div>
 `;
 
-exports[`routes/Filters.tsx filters product filters should filter by product - existing filter set 1`] = `
+exports[`renderer/routes/Filters.tsx filters product filters should filter by product - existing filter set 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="filters"

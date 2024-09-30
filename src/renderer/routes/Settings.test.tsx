@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('routes/Settings.tsx', () => {
+describe('renderer/routes/Settings.tsx', () => {
   const fetchNotifications = jest.fn();
   const resetSettings = jest.fn();
 

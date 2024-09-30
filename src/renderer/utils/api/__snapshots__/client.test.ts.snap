@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils/api/client.ts checkIfCredentialsAreValid should validate credentials 1`] = `
+exports[`renderer/utils/api/client.ts checkIfCredentialsAreValid should validate credentials 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",
@@ -9,7 +9,7 @@ exports[`utils/api/client.ts checkIfCredentialsAreValid should validate credenti
 }
 `;
 
-exports[`utils/api/client.ts getAuthenticatedUser should fetch authenticated user details 1`] = `
+exports[`renderer/utils/api/client.ts getAuthenticatedUser should fetch authenticated user details 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
@@ -18,7 +18,7 @@ exports[`utils/api/client.ts getAuthenticatedUser should fetch authenticated use
 }
 `;
 
-exports[`utils/api/client.ts listNotificationsForAuthenticatedUser should list notifications for user 1`] = `
+exports[`renderer/utils/api/client.ts listNotificationsForAuthenticatedUser should list notifications for user 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
@@ -27,7 +27,7 @@ exports[`utils/api/client.ts listNotificationsForAuthenticatedUser should list n
 }
 `;
 
-exports[`utils/api/client.ts markNotificationsAsRead should mark notifications as read 1`] = `
+exports[`renderer/utils/api/client.ts markNotificationsAsRead should mark notifications as read 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
@@ -36,7 +36,7 @@ exports[`utils/api/client.ts markNotificationsAsRead should mark notifications a
 }
 `;
 
-exports[`utils/api/client.ts markNotificationsAsUnread should mark repository notifications as read - github 1`] = `
+exports[`renderer/utils/api/client.ts markNotificationsAsUnread should mark repository notifications as read - github 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",

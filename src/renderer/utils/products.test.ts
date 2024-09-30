@@ -4,7 +4,7 @@ import type {
 } from './api/types';
 import { PRODUCTS, getAtlassianProduct } from './products';
 
-describe('utils/products.ts', () => {
+describe('renderer/utils/products.ts', () => {
   it('getAtlassianProduct - should map to correct products', () => {
     expect(
       getAtlassianProduct(createProductNotificationMock('bitbucket')),

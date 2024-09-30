@@ -7,7 +7,7 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';
 
-describe('hooks/useNotifications.ts', () => {
+describe('renderer/hooks/useNotifications.ts', () => {
   const logErrorSpy = jest.spyOn(log, 'error').mockImplementation();
 
   beforeEach(() => {

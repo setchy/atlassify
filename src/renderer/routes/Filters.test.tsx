@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('routes/Filters.tsx', () => {
+describe('renderer/routes/Filters.tsx', () => {
   const updateSetting = jest.fn();
   const clearFilters = jest.fn();
   const fetchNotifications = jest.fn();

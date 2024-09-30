@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => ({
 
 global.ResizeObserver = require('resize-observer-polyfill');
 
-describe('routes/components/settings/SettingsFooter.tsx', () => {
+describe('renderer/routes/components/settings/SettingsFooter.tsx', () => {
   let originalEnv: NodeJS.ProcessEnv;
 
   beforeEach(() => {

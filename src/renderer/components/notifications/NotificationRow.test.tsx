@@ -11,7 +11,7 @@ import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { NotificationRow } from './NotificationRow';
 
-describe('components/notifications/NotificationRow.tsx', () => {
+describe('renderer/components/notifications/NotificationRow.tsx', () => {
   jest.spyOn(links, 'openNotification');
   jest.spyOn(comms, 'openExternalLink').mockImplementation();
 
