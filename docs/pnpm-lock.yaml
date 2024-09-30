@@ -23,9 +23,6 @@ importers:
       astro:
         specifier: 4.15.9
         version: 4.15.9(rollup@4.21.2)(typescript@5.5.4)
-      bowser:
-        specifier: 2.11.0
-        version: 2.11.0
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -875,9 +872,6 @@ packages:
   binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
-
-  bowser@2.11.0:
-    resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}
 
   boxen@7.1.1:
     resolution: {integrity: sha512-2hCgjEmP8YLWQ130n2FerGv7rYpfBmnmp9Uy2Le1vge6X3gZIfSmEzP5QTDElFxcvVcXlEn8Aq6MU/PZygIOog==}
@@ -3205,8 +3199,6 @@ snapshots:
   base-64@1.0.0: {}
 
   binary-extensions@2.2.0: {}
-
-  bowser@2.11.0: {}
 
   boxen@7.1.1:
     dependencies:
