@@ -75,7 +75,7 @@ const configuration: webpack.Configuration = {
             'dist',
             'svg',
           ),
-          to: 'twemoji',
+          to: 'assets/twemoji',
         },
       ],
     }),
