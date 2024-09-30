@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import os from 'node:os';
-import path from 'node:path';
 import { dialog } from 'electron';
 import log from 'electron-log';
 import type { Menubar } from 'menubar';
@@ -35,8 +34,4 @@ export function resetApp(mb: Menubar) {
     mb.window.webContents.send('atlassify:reset-app');
     mb.app.quit();
   }
-}
-
-export function getIconPath(iconName: string) {
-  return path.resolve(__dirname, '../assets/images', iconName);
 }
