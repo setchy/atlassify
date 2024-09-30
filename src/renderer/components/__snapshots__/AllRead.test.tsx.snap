@@ -19,7 +19,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
                 alt="🎊"
                 class="emoji"
                 draggable="false"
-                src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
+                src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
               />
             </span>
           </span>
@@ -47,7 +47,7 @@ exports[`components/AllRead.tsx should render itself & its children 1`] = `
               alt="🎊"
               class="emoji"
               draggable="false"
-              src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
+              src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f38a.svg"
             />
           </span>
         </span>

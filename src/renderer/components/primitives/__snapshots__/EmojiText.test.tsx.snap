@@ -10,7 +10,7 @@ exports[`components/primitives/Emoji.tsx should render 1`] = `
           alt="🍺"
           class="emoji"
           draggable="false"
-          src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f37a.svg"
+          src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f37a.svg"
         />
       </span>
     </div>
@@ -21,7 +21,7 @@ exports[`components/primitives/Emoji.tsx should render 1`] = `
         alt="🍺"
         class="emoji"
         draggable="false"
-        src="/mocked/node_modules/@discordapp/twemoji/dist/svg/1f37a.svg"
+        src="/mocked/dir/node_modules/@discordapp/twemoji/dist/svg/1f37a.svg"
       />
     </span>
   </div>,
