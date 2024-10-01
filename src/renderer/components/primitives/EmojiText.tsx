@@ -23,7 +23,7 @@ export const EmojiText: FC<IEmojiText> = ({ text }) => {
           _options: TwemojiOptions,
           _variant: string,
         ) => {
-          return path.join('assets', 'twemoji', `${icon}.svg`);
+          return path.join(__dirname, 'images', 'twemoji', `${icon}.svg`);
         },
       });
     }

@@ -88,7 +88,7 @@ export const raiseNativeNotification = (
 
 export const raiseSoundNotification = () => {
   const audio = new Audio(
-    path.resolve(__dirname, '..', 'assets', 'sounds', 'notification.wav'),
+    path.join(__dirname, '..', 'assets', 'sounds', 'notification.wav'),
   );
   audio.volume = 0.2;
   audio.play();
