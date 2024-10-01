@@ -31,7 +31,9 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const handleNotificationInteraction = useCallback(() => {
     setAnimateExit(
-      settings.fetchOnlyUnreadNotifications && !settings.delayNotificationState,
+      settings.fetchOnlyUnreadNotifications &&
+        !settings.delayNotificationState &&
+        settings.markAsReadOnOpen,
     );
 
     if (settings.markAsReadOnOpen) {
