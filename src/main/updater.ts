@@ -5,8 +5,8 @@ import { updateElectronApp } from 'update-electron-app';
 import type MenuBuilder from './menu';
 
 export default class Updater {
-  menubar: Menubar;
-  menuBuilder: MenuBuilder;
+  private readonly menubar: Menubar;
+  private readonly menuBuilder: MenuBuilder;
 
   constructor(menubar: Menubar, menuBuilder: MenuBuilder) {
     this.menubar = menubar;
