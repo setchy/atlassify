@@ -5,6 +5,7 @@ import type {
   AtlassifyState,
 } from '../../types';
 import { hideWindow, showWindow } from '../comms';
+import { Constants } from '../constants';
 import { formatNotificationFooterText } from '../helpers';
 import { openNotification } from '../links';
 import { isWindows } from '../platform';
@@ -88,7 +89,13 @@ export const raiseNativeNotification = (
 
 export const raiseSoundNotification = () => {
   const audio = new Audio(
-    path.resolve(__dirname, '..', 'assets', 'sounds', 'notification.wav'),
+    path.join(
+      __dirname,
+      '..',
+      'assets',
+      'sounds',
+      Constants.NOTIFICATION_SOUND,
+    ),
   );
   audio.volume = 0.2;
   audio.play();

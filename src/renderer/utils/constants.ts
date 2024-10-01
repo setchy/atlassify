@@ -5,6 +5,8 @@ export const Constants = {
 
   STORAGE_KEY: 'atlassify-storage',
 
+  NOTIFICATION_SOUND: 'notification.wav',
+
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
 
   FETCH_NOTIFICATIONS_INTERVAL: 60000,
