@@ -108,7 +108,12 @@ export const FiltersRoute: FC = () => {
                           }
                         />
                         <categoryDetails.icon {...categoryIconProps} />
-                        <Badge max={false}>
+                        <Badge
+                          max={false}
+                          appearance={
+                            shouldShowCategory(category) ? 'primary' : 'default'
+                          }
+                        >
                           {getCategoryFilterCount(notifications, category)}
                         </Badge>
                       </Inline>
@@ -138,7 +143,14 @@ export const FiltersRoute: FC = () => {
                             updateReadStateFilter(readState, evt.target.checked)
                           }
                         />
-                        <Badge max={false}>
+                        <Badge
+                          max={false}
+                          appearance={
+                            shouldShowReadState(readState)
+                              ? 'primary'
+                              : 'default'
+                          }
+                        >
                           {getReadStateFilterCount(notifications, readState)}
                         </Badge>
                       </Inline>
@@ -157,7 +169,9 @@ export const FiltersRoute: FC = () => {
                   const productDetails = getProductDetails(product);
                   const productIconProps: Record<string, string> = {
                     size: 'xsmall',
-                    appearance: 'subtle',
+                    appearance: shouldShowProduct(product)
+                      ? 'brand'
+                      : 'neutral',
                   };
 
                   return (
@@ -172,7 +186,12 @@ export const FiltersRoute: FC = () => {
                         }
                       />
                       <productDetails.logo {...productIconProps} />
-                      <Badge max={false}>
+                      <Badge
+                        max={false}
+                        appearance={
+                          shouldShowProduct(product) ? 'primary' : 'default'
+                        }
+                      >
                         {getProductFilterCount(notifications, product)}
                       </Badge>
                     </Inline>
