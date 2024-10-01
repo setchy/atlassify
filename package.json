@@ -138,7 +138,7 @@
     "@atlaskit/toggle": "13.4.2",
     "@atlaskit/tokens": "2.0.1",
     "@atlaskit/tooltip": "18.7.3",
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@discordapp/twemoji": "15.1.0",
     "@electron/notarize": "2.5.0",
     "@testing-library/react": "16.0.1",
