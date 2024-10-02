@@ -4,11 +4,11 @@ import type { Menubar } from 'menubar';
 import { resetApp, takeScreenshot } from './utils';
 
 export default class MenuBuilder {
-  private checkForUpdatesMenuItem: MenuItem;
-  private updateAvailableMenuItem: MenuItem;
-  private updateReadyForInstallMenuItem: MenuItem;
+  private readonly checkForUpdatesMenuItem: MenuItem;
+  private readonly updateAvailableMenuItem: MenuItem;
+  private readonly updateReadyForInstallMenuItem: MenuItem;
 
-  menubar: Menubar;
+  private readonly menubar: Menubar;
 
   constructor(menubar: Menubar) {
     this.menubar = menubar;
