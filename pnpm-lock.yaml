@@ -61,8 +61,8 @@ importers:
         specifier: 14.3.1
         version: 14.3.1(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 12.17.1
-        version: 12.17.1(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.17.2
+        version: 12.17.2(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 12.2.2
         version: 12.2.2(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -311,13 +311,18 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  '@atlaskit/layering@0.5.0':
+    resolution: {integrity: sha512-SU2shlObjaDURpwp+bthrgFANEVqprqrPY3dBCAMT3A99Xs0MCex5HOfl43D5bVa0FoeqT+c///CGL+8kDVuvg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   '@atlaskit/logo@14.3.1':
     resolution: {integrity: sha512-tp8iWr3UEjiHUMDB1jQs5yk4eW3QE4Ja785HpsEoC6W0wRMT9uxOqAhE38y0QGr49Jky9xBAJnPjvBfn+QYNHg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.17.1':
-    resolution: {integrity: sha512-he3Hr0a29TI7Iilw0CLWohADy575HgXCEPYT8Lwy9buwCoCWQWlewBxuQficmjah2Vjtk1F7xkDTm6N4JbjUJA==}
+  '@atlaskit/modal-dialog@12.17.2':
+    resolution: {integrity: sha512-DCRwAhbB9GFPfEPdiSh6Tk4R6XKQBDwwtSycAEkTIW8NU9j/Wl2aaX1YG0sXZ5a4LL8VUm6NbWj4ckXM6BxbKw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4629,6 +4634,16 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
+  '@atlaskit/layering@0.5.0(@types/react@18.3.10)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.10)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.24.1
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+
   '@atlaskit/logo@14.3.1(@types/react@18.3.10)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.10)(react@18.3.1)
@@ -4641,7 +4656,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.17.1(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.17.2(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.1(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4649,7 +4664,7 @@ snapshots:
       '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/icon': 22.20.1(@types/react@18.3.10)(react@18.3.1)
-      '@atlaskit/layering': 0.4.1(@types/react@18.3.10)(react@18.3.1)
+      '@atlaskit/layering': 0.5.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/motion': 1.9.0(@types/react@18.3.10)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/portal': 4.9.1(@types/react@18.3.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
