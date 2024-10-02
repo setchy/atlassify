@@ -1,6 +1,6 @@
 # Atlassify 
 
-[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio]  [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
+[![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Website Workflow][website-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio]  [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
@@ -58,6 +58,7 @@ I would like to acknowledge the following projects and resources that have inspi
 [quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [build-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/build.yml/badge.svg
 [release-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/release.yml/badge.svg
+[website-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/website.yml/badge.svg
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlassify/total?label=downloads@all&logo=github
 [downloads-latest-badge]: https://img.shields.io/github/downloads/setchy/atlassify/latest/total?logo=github
 [contributors-badge]: https://img.shields.io/github/contributors/setchy/atlassify?logo=github
