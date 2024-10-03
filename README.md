@@ -2,8 +2,7 @@
 
 [![Build Workflow][build-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Website Workflow][website-workflow-badge]][github-actions] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Libraries.io dependency status][librariesio-badge]][librariesio]  [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
 
-> Atlassian notifications on your menu bar.
-> Available on macOS, Windows and Linux.
+> Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
 ![Atlassify](docs/public//images//social.png)
 
