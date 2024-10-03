@@ -47,6 +47,9 @@ pnpm test
 # If you want to pass arguments to jest (or other `pnpm` commands)
 # like `--watch`, you can prepend `--` to the command
 pnpm test -- --watch
+
+# Or if you want to update jest snapshots
+pnpm test -- -u
 ```
 
 ### Releases
@@ -57,8 +60,7 @@ The release process is automated. Follow the steps below.
 2. Check the [Renovate Dependency Dashboard][github-dependency-dashboard] to see if there are any updates you want included.
 3. Create a [new **draft** release][github-new-release]. Set the tag version to something with the format of `v1.2.3`. Save as a **draft** before moving to the next step
 4. Create a branch that starts with `release/vX.X.X` (ie. `release/v1.2.3`).  In this branch you need to:
-  * Run `pnpm version <new-version-number` to **bump the version** of the app . 
-  * Update `./github/ISSUE_TEMPLATE/bug_report.yml` to have the new app version.
+  * Run `pnpm version <new-version-number` to **bump the version** of the app. 
   * Commit these changes and open a PR. A GitHub Actions workflow will build, sign and upload the release assets for each commit to that branch as long as a branch is named like `release/vX.X.X` and there is a draft release with the same version number(`package.json`).
 5. Merge your release branch into `main`.
 6. Publish the release once you've finalized the release notes and confirmed all assets are there.
@@ -67,7 +69,6 @@ The release process is automated. Follow the steps below.
    * due date: date of release
    * close milestone
 8. Create a [New Milestone][github-new-milestone] for upcoming release.
-9. A new homebrew cask will be [automatically published][homebrew-cask-autobump-workflow] (workflow runs ~3 hours)
 
 
 <!-- LINK LABELS -->
