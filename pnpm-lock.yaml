@@ -61,8 +61,8 @@ importers:
         specifier: 14.3.1
         version: 14.3.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 12.17.2
-        version: 12.17.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.17.3
+        version: 12.17.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 12.2.2
         version: 12.2.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -271,6 +271,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  '@atlaskit/ds-lib@2.7.0':
+    resolution: {integrity: sha512-+U4aPE2dBRFUBYWCM9vkrwJGrLAYVcK30ZpEiQDNpM2D7K41223TfEijC8azaN4VM3tsCgwSKBWwniloNxqYbA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   '@atlaskit/focus-ring@1.6.0':
     resolution: {integrity: sha512-5lvBUSSwQ892qMUjLNXKQ1MCOcywaDpa3AIVriBOGpzQscEpqwPO7qmr4HrYoHBYhrWQcKQ9XJURfsJAfm0V+A==}
     peerDependencies:
@@ -321,8 +326,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.17.2':
-    resolution: {integrity: sha512-DCRwAhbB9GFPfEPdiSh6Tk4R6XKQBDwwtSycAEkTIW8NU9j/Wl2aaX1YG0sXZ5a4LL8VUm6NbWj4ckXM6BxbKw==}
+  '@atlaskit/modal-dialog@12.17.3':
+    resolution: {integrity: sha512-n044SxMOtOolZyVVpvcR0G0DJMQjQx1OaVwB0/ipMCKpEec1/vBg2n2P22lrEd0xQ6VDPkwdMpfO86vLbYQDLg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4449,7 +4454,7 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/theme': 13.0.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/tokens': 1.61.0(@types/react@18.3.11)(react@18.3.1)
       '@babel/runtime': 7.24.1
@@ -4523,6 +4528,16 @@ snapshots:
       - supports-color
 
   '@atlaskit/ds-lib@2.6.0(@types/react@18.3.11)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.24.1
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+      react-uid: 2.3.3(@types/react@18.3.11)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@atlaskit/ds-lib@2.7.0(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.24.1
@@ -4636,7 +4651,7 @@ snapshots:
 
   '@atlaskit/layering@0.5.0(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.24.1
       bind-event-listener: 3.0.0
@@ -4656,12 +4671,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.17.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.17.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/icon': 22.20.2(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/layering': 0.5.0(@types/react@18.3.11)(react@18.3.1)
@@ -4687,7 +4702,7 @@ snapshots:
 
   '@atlaskit/motion@1.9.0(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 2.6.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
       '@babel/runtime': 7.24.1
       '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.1)
       bind-event-listener: 3.0.0
