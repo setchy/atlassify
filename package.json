@@ -120,7 +120,7 @@
     "update-electron-app": "3.0.0"
   },
   "devDependencies": {
-    "@atlaskit/avatar": "21.15.2",
+    "@atlaskit/avatar": "21.15.3",
     "@atlaskit/badge": "16.4.1",
     "@atlaskit/button": "20.2.2",
     "@atlaskit/checkbox": "14.0.2",
