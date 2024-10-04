@@ -240,12 +240,12 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             role="presentation"
           >
             <button
-              class=" css-1ilq2uw"
+              class="css-1ilq2uw"
               data-testid="login"
               type="button"
             >
               <span
-                class=" css-12rb8n9"
+                class="css-12rb8n9"
               >
                 <span
                   class="css-1gskvga"
@@ -271,7 +271,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
                 </span>
               </span>
               <span
-                class=" css-1nqby2s"
+                class="css-1nqby2s"
               >
                 Login
               </span>
@@ -517,12 +517,12 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            class=" css-1ilq2uw"
+            class="css-1ilq2uw"
             data-testid="login"
             type="button"
           >
             <span
-              class=" css-12rb8n9"
+              class="css-12rb8n9"
             >
               <span
                 class="css-1gskvga"
@@ -548,7 +548,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
               </span>
             </span>
             <span
-              class=" css-1nqby2s"
+              class="css-1nqby2s"
             >
               Login
             </span>

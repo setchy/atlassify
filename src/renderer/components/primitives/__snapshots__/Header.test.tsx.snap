@@ -9,18 +9,18 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
         class="css-18bes35"
       >
         <div
-          class=" css-y272c0"
+          class="css-y272c0"
         >
           <div
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="header-nav-back"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -64,18 +64,18 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
       class="css-18bes35"
     >
       <div
-        class=" css-y272c0"
+        class="css-y272c0"
       >
         <div
           role="presentation"
         >
           <button
-            class=" css-1hmr5rx"
+            class="css-1hmr5rx"
             data-testid="header-nav-back"
             type="button"
           >
             <span
-              class=" css-1spmf3f"
+              class="css-1spmf3f"
             >
               <span
                 aria-hidden="true"

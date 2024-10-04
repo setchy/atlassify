@@ -18,12 +18,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class=" css-1aearyh"
+                class="css-1aearyh"
                 data-testid="product-home"
                 type="button"
               >
                 <span
-                  class=" css-1nqby2s"
+                  class="css-1nqby2s"
                 >
                   <div
                     class="css-1v6wdk"
@@ -78,12 +78,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -118,12 +118,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -178,12 +178,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             role="presentation"
           >
             <button
-              class=" css-1aearyh"
+              class="css-1aearyh"
               data-testid="product-home"
               type="button"
             >
               <span
-                class=" css-1nqby2s"
+                class="css-1nqby2s"
               >
                 <div
                   class="css-1v6wdk"
@@ -238,12 +238,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="product-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -278,12 +278,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="product-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -395,12 +395,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-1aearyh"
+                class="css-1aearyh"
                 data-testid="product-home"
                 type="button"
               >
                 <span
-                  class=" css-1nqby2s"
+                  class="css-1nqby2s"
                 >
                   <div
                     class="css-1v6wdk"
@@ -455,12 +455,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -495,12 +495,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -548,12 +548,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-1aearyh"
+                class="css-1aearyh"
                 data-testid="product-home"
                 type="button"
               >
                 <span
-                  class=" css-1nqby2s"
+                  class="css-1nqby2s"
                 >
                   <div
                     class="css-1v6wdk"
@@ -608,12 +608,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -648,12 +648,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="product-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -708,12 +708,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class=" css-1aearyh"
+              class="css-1aearyh"
               data-testid="product-home"
               type="button"
             >
               <span
-                class=" css-1nqby2s"
+                class="css-1nqby2s"
               >
                 <div
                   class="css-1v6wdk"
@@ -768,12 +768,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="product-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -808,12 +808,12 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="product-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"

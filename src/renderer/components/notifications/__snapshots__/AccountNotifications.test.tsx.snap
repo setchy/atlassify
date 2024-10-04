@@ -81,12 +81,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -122,12 +122,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -162,12 +162,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -317,12 +317,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -358,12 +358,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -398,12 +398,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -610,12 +610,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -651,12 +651,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -691,12 +691,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -814,12 +814,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -855,12 +855,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -895,12 +895,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -1075,12 +1075,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -1116,12 +1116,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -1156,12 +1156,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -1279,12 +1279,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -1320,12 +1320,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -1360,12 +1360,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -1540,12 +1540,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -1581,12 +1581,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -1621,12 +1621,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -1763,12 +1763,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -1804,12 +1804,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -1844,12 +1844,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -2043,12 +2043,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -2084,12 +2084,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -2124,12 +2124,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -2329,12 +2329,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -2535,12 +2535,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -2653,12 +2653,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -2694,12 +2694,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -2734,12 +2734,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -2939,12 +2939,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -3145,12 +3145,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -3324,12 +3324,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -3365,12 +3365,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -3405,12 +3405,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -3521,12 +3521,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-pull-requests"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       class="css-1ka881b"
@@ -3562,12 +3562,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -3602,12 +3602,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class=" css-a8hcye"
+                  class="css-a8hcye"
                   data-testid="account-toggle"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -3807,12 +3807,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -4013,12 +4013,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -4131,12 +4131,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-pull-requests"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-1ka881b"
@@ -4172,12 +4172,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-mark-as-read"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -4212,12 +4212,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class=" css-a8hcye"
+                class="css-a8hcye"
                 data-testid="account-toggle"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -4417,12 +4417,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -4623,12 +4623,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"

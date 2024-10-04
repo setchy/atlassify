@@ -9,18 +9,18 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     class="css-18bes35"
   >
     <div
-      class=" css-y272c0"
+      class="css-y272c0"
     >
       <div
         role="presentation"
       >
         <button
-          class=" css-1hmr5rx"
+          class="css-1hmr5rx"
           data-testid="header-nav-back"
           type="button"
         >
           <span
-            class=" css-1spmf3f"
+            class="css-1spmf3f"
           >
             <span
               aria-hidden="true"
@@ -90,12 +90,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class=" css-1h9zni"
+                  class="css-1h9zni"
                   data-testid="settings-zoom-out"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -138,12 +138,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class=" css-1h9zni"
+                  class="css-1h9zni"
                   data-testid="settings-zoom-in"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -176,12 +176,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class=" css-1h9zni"
+                  class="css-1h9zni"
                   data-testid="settings-zoom-reset"
                   type="button"
                 >
                   <span
-                    class=" css-1spmf3f"
+                    class="css-1spmf3f"
                   >
                     <span
                       aria-hidden="true"
@@ -926,12 +926,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         >
           <button
             aria-haspopup="dialog"
-            class=" css-hyamds"
+            class="css-hyamds"
             data-testid="settings-reset-defaults"
             type="button"
           >
             <span
-              class=" css-1nqby2s"
+              class="css-1nqby2s"
             >
               Reset Settings
             </span>
@@ -950,19 +950,19 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         class="css-1npayr"
       >
         <div
-          class=" css-uwvn2m"
+          class="css-uwvn2m"
         >
           <div
             role="presentation"
           >
             <button
-              class=" css-1aearyh"
+              class="css-1aearyh"
               data-testid="settings-release-notes"
               title="View Atlassify release notes"
               type="button"
             >
               <span
-                class=" css-1nqby2s"
+                class="css-1nqby2s"
               >
                 Atlassify 
                 v0.0.1
@@ -976,12 +976,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="settings-accounts"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -1025,12 +1025,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="settings-quit"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"

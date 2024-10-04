@@ -2,12 +2,12 @@
 
 exports[`renderer/components/Sidebar.tsx Filters go to the filters route 1`] = `
 <button
-  class=" css-a8hcye"
+  class="css-a8hcye"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -39,12 +39,12 @@ exports[`renderer/components/Sidebar.tsx Filters go to the filters route 1`] = `
 
 exports[`renderer/components/Sidebar.tsx Filters go to the home if filters path already shown 1`] = `
 <button
-  class=" css-a8hcye"
+  class="css-a8hcye"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -76,12 +76,12 @@ exports[`renderer/components/Sidebar.tsx Filters go to the home if filters path 
 
 exports[`renderer/components/Sidebar.tsx Filters show filters count if any are saved 1`] = `
 <button
-  class=" css-1pe4njs"
+  class="css-1pe4njs"
   data-testid="sidebar-filters"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -113,12 +113,12 @@ exports[`renderer/components/Sidebar.tsx Filters show filters count if any are s
 
 exports[`renderer/components/Sidebar.tsx Group by products should group notifications by product 1`] = `
 <button
-  class=" css-1pe4njs"
+  class="css-1pe4njs"
   data-testid="sidebar-group-by-product"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-label="groupByProduct"
@@ -150,12 +150,12 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
 
 exports[`renderer/components/Sidebar.tsx Group by products should order notifications by date 1`] = `
 <button
-  class=" css-a8hcye"
+  class="css-a8hcye"
   data-testid="sidebar-group-by-product"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-label="groupByProduct"
@@ -187,12 +187,12 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
 
 exports[`renderer/components/Sidebar.tsx Group by products should toggle group by products 1`] = `
 <button
-  class=" css-a8hcye"
+  class="css-a8hcye"
   data-testid="sidebar-group-by-product"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-label="groupByProduct"
@@ -224,12 +224,12 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
 
 exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are more notifications available 1`] = `
 <button
-  class=" css-1srvl33"
+  class="css-1srvl33"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -261,12 +261,12 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
 
 exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are no notifications 1`] = `
 <button
-  class=" css-a8hcye"
+  class="css-a8hcye"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -298,12 +298,12 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
 
 exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon when there are notifications 1`] = `
 <button
-  class=" css-1srvl33"
+  class="css-1srvl33"
   data-testid="sidebar-notifications"
   type="button"
 >
   <span
-    class=" css-1spmf3f"
+    class="css-1spmf3f"
   >
     <span
       aria-hidden="true"
@@ -351,12 +351,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="sidebar-home"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-12mte9y"
@@ -407,12 +407,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1srvl33"
+                class="css-1srvl33"
                 data-testid="sidebar-notifications"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -453,12 +453,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="sidebar-quit"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -519,12 +519,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="sidebar-home"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   class="css-12mte9y"
@@ -575,12 +575,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1srvl33"
+              class="css-1srvl33"
               data-testid="sidebar-notifications"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -621,12 +621,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="sidebar-quit"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -744,12 +744,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="sidebar-home"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     class="css-12mte9y"
@@ -800,12 +800,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1srvl33"
+                class="css-1srvl33"
                 data-testid="sidebar-notifications"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -846,12 +846,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
               role="presentation"
             >
               <button
-                class=" css-1hmr5rx"
+                class="css-1hmr5rx"
                 data-testid="sidebar-quit"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -912,12 +912,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="sidebar-home"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   class="css-12mte9y"
@@ -968,12 +968,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1srvl33"
+              class="css-1srvl33"
               data-testid="sidebar-notifications"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -1014,12 +1014,12 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="sidebar-quit"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"

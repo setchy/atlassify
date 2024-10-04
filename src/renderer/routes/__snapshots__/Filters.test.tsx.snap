@@ -9,18 +9,18 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     class="css-18bes35"
   >
     <div
-      class=" css-y272c0"
+      class="css-y272c0"
     >
       <div
         role="presentation"
       >
         <button
-          class=" css-1hmr5rx"
+          class="css-1hmr5rx"
           data-testid="header-nav-back"
           type="button"
         >
           <span
-            class=" css-1spmf3f"
+            class="css-1spmf3f"
           >
             <span
               aria-hidden="true"
@@ -1041,13 +1041,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
           role="presentation"
         >
           <button
-            class=" css-sxpr96"
+            class="css-sxpr96"
             data-testid="filters-clear"
             title="Clear Filters"
             type="button"
           >
             <span
-              class=" css-1nqby2s"
+              class="css-1nqby2s"
             >
               Clear Filters
             </span>
@@ -1068,18 +1068,18 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     class="css-18bes35"
   >
     <div
-      class=" css-y272c0"
+      class="css-y272c0"
     >
       <div
         role="presentation"
       >
         <button
-          class=" css-1hmr5rx"
+          class="css-1hmr5rx"
           data-testid="header-nav-back"
           type="button"
         >
           <span
-            class=" css-1spmf3f"
+            class="css-1spmf3f"
           >
             <span
               aria-hidden="true"
@@ -2115,13 +2115,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
           role="presentation"
         >
           <button
-            class=" css-sxpr96"
+            class="css-sxpr96"
             data-testid="filters-clear"
             title="Clear Filters"
             type="button"
           >
             <span
-              class=" css-1nqby2s"
+              class="css-1nqby2s"
             >
               Clear Filters
             </span>

@@ -9,18 +9,18 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="css-18bes35"
   >
     <div
-      class=" css-y272c0"
+      class="css-y272c0"
     >
       <div
         role="presentation"
       >
         <button
-          class=" css-1hmr5rx"
+          class="css-1hmr5rx"
           data-testid="header-nav-back"
           type="button"
         >
           <span
-            class=" css-1spmf3f"
+            class="css-1spmf3f"
           >
             <span
               aria-hidden="true"
@@ -67,7 +67,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         class="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
       >
         <div
-          class=" css-y272c0"
+          class="css-y272c0"
         >
           <div
             role="presentation"
@@ -125,12 +125,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class=" css-1l7n0sn"
+                class="css-1l7n0sn"
                 data-testid="account-refresh"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -177,12 +177,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class=" css-1l7n0sn"
+                class="css-1l7n0sn"
                 data-testid="account-logout"
                 type="button"
               >
                 <span
-                  class=" css-1spmf3f"
+                  class="css-1spmf3f"
                 >
                   <span
                     aria-hidden="true"
@@ -235,12 +235,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
           role="presentation"
         >
           <button
-            class=" css-1hmr5rx"
+            class="css-1hmr5rx"
             data-testid="account-add-new"
             type="button"
           >
             <span
-              class=" css-1spmf3f"
+              class="css-1spmf3f"
             >
               <span
                 aria-hidden="true"

@@ -9,18 +9,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
         class="css-18bes35"
       >
         <div
-          class=" css-y272c0"
+          class="css-y272c0"
         >
           <div
             role="presentation"
           >
             <button
-              class=" css-1hmr5rx"
+              class="css-1hmr5rx"
               data-testid="header-nav-back"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -157,12 +157,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       role="presentation"
                     >
                       <button
-                        class=" css-ht7o2z"
+                        class="css-ht7o2z"
                         data-testid="login-create-token"
                         type="button"
                       >
                         <span
-                          class=" css-12rb8n9"
+                          class="css-12rb8n9"
                         >
                           <span
                             aria-hidden="true"
@@ -192,7 +192,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                           </span>
                         </span>
                         <span
-                          class=" css-1nqby2s"
+                          class="css-1nqby2s"
                         >
                           Create an API Token
                         </span>
@@ -221,12 +221,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="presentation"
                 >
                   <button
-                    class=" css-1ly2vbj"
+                    class="css-1ly2vbj"
                     data-testid="login-docs"
                     type="button"
                   >
                     <span
-                      class=" css-12rb8n9"
+                      class="css-12rb8n9"
                     >
                       <span
                         aria-hidden="true"
@@ -254,7 +254,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       </span>
                     </span>
                     <span
-                      class=" css-1nqby2s"
+                      class="css-1nqby2s"
                     >
                       Docs
                     </span>
@@ -270,23 +270,23 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="group"
                 >
                   <button
-                    class=" css-1aearyh"
+                    class="css-1aearyh"
                     data-testid="login-cancel"
                     type="button"
                   >
                     <span
-                      class=" css-1nqby2s"
+                      class="css-1nqby2s"
                     >
                       Cancel
                     </span>
                   </button>
                   <button
-                    class=" css-1ilq2uw"
+                    class="css-1ilq2uw"
                     data-testid="login-submit"
                     type="submit"
                   >
                     <span
-                      class=" css-12rb8n9"
+                      class="css-12rb8n9"
                     >
                       <span
                         aria-hidden="true"
@@ -318,7 +318,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       </span>
                     </span>
                     <span
-                      class=" css-1nqby2s"
+                      class="css-1nqby2s"
                     >
                       Login
                     </span>
@@ -336,18 +336,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       class="css-18bes35"
     >
       <div
-        class=" css-y272c0"
+        class="css-y272c0"
       >
         <div
           role="presentation"
         >
           <button
-            class=" css-1hmr5rx"
+            class="css-1hmr5rx"
             data-testid="header-nav-back"
             type="button"
           >
             <span
-              class=" css-1spmf3f"
+              class="css-1spmf3f"
             >
               <span
                 aria-hidden="true"
@@ -484,12 +484,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     role="presentation"
                   >
                     <button
-                      class=" css-ht7o2z"
+                      class="css-ht7o2z"
                       data-testid="login-create-token"
                       type="button"
                     >
                       <span
-                        class=" css-12rb8n9"
+                        class="css-12rb8n9"
                       >
                         <span
                           aria-hidden="true"
@@ -519,7 +519,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                         </span>
                       </span>
                       <span
-                        class=" css-1nqby2s"
+                        class="css-1nqby2s"
                       >
                         Create an API Token
                       </span>
@@ -548,12 +548,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="presentation"
               >
                 <button
-                  class=" css-1ly2vbj"
+                  class="css-1ly2vbj"
                   data-testid="login-docs"
                   type="button"
                 >
                   <span
-                    class=" css-12rb8n9"
+                    class="css-12rb8n9"
                   >
                     <span
                       aria-hidden="true"
@@ -581,7 +581,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </span>
                   <span
-                    class=" css-1nqby2s"
+                    class="css-1nqby2s"
                   >
                     Docs
                   </span>
@@ -597,23 +597,23 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="group"
               >
                 <button
-                  class=" css-1aearyh"
+                  class="css-1aearyh"
                   data-testid="login-cancel"
                   type="button"
                 >
                   <span
-                    class=" css-1nqby2s"
+                    class="css-1nqby2s"
                   >
                     Cancel
                   </span>
                 </button>
                 <button
-                  class=" css-1ilq2uw"
+                  class="css-1ilq2uw"
                   data-testid="login-submit"
                   type="submit"
                 >
                   <span
-                    class=" css-12rb8n9"
+                    class="css-12rb8n9"
                   >
                     <span
                       aria-hidden="true"
@@ -645,7 +645,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </span>
                   <span
-                    class=" css-1nqby2s"
+                    class="css-1nqby2s"
                   >
                     Login
                   </span>

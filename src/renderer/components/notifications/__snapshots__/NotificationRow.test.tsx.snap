@@ -173,12 +173,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -382,12 +382,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           role="presentation"
         >
           <button
-            class=" css-a8hcye"
+            class="css-a8hcye"
             data-testid="notification-mark-as-read"
             type="button"
           >
             <span
-              class=" css-1spmf3f"
+              class="css-1spmf3f"
             >
               <span
                 aria-hidden="true"
@@ -648,12 +648,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <button
-              class=" css-a8hcye"
+              class="css-a8hcye"
               data-testid="notification-mark-as-read"
               type="button"
             >
               <span
-                class=" css-1spmf3f"
+                class="css-1spmf3f"
               >
                 <span
                   aria-hidden="true"
@@ -857,12 +857,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           role="presentation"
         >
           <button
-            class=" css-a8hcye"
+            class="css-a8hcye"
             data-testid="notification-mark-as-read"
             type="button"
           >
             <span
-              class=" css-1spmf3f"
+              class="css-1spmf3f"
             >
               <span
                 aria-hidden="true"

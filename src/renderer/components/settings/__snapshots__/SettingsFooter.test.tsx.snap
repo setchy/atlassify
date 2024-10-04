@@ -2,13 +2,13 @@
 
 exports[`renderer/routes/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
 <button
-  class=" css-1aearyh"
+  class="css-1aearyh"
   data-testid="settings-release-notes"
   title="View Atlassify release notes"
   type="button"
 >
   <span
-    class=" css-1nqby2s"
+    class="css-1nqby2s"
   >
     Atlassify 
     dev
@@ -18,13 +18,13 @@ exports[`renderer/routes/components/settings/SettingsFooter.tsx app version shou
 
 exports[`renderer/routes/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
 <button
-  class=" css-1aearyh"
+  class="css-1aearyh"
   data-testid="settings-release-notes"
   title="View Atlassify release notes"
   type="button"
 >
   <span
-    class=" css-1nqby2s"
+    class="css-1nqby2s"
   >
     Atlassify 
     v0.0.1
