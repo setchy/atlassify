@@ -2,8 +2,6 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
@@ -11,7 +9,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
-import { formatProperCase } from '../../utils/helpers';
+import { formatProperCase, getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
 import { NotificationRow } from './NotificationRow';
 
@@ -35,13 +33,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
     setShowProductNotifications(!showProductNotifications);
   };
 
-  const ChevronIcon = showProductNotifications
-    ? ChevronDownIcon
-    : ChevronRightIcon;
-
-  const toggleProductNotificationsLabel = showProductNotifications
-    ? 'Hide product notifications'
-    : 'Show product notifications';
+  const Chevron = getChevronDetails(true, showProductNotifications, 'product');
 
   return (
     <Stack>
@@ -109,13 +101,10 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               />
             </Tooltip>
 
-            <Tooltip
-              content={toggleProductNotificationsLabel}
-              position="bottom"
-            >
+            <Tooltip content={Chevron.label} position="bottom">
               <IconButton
-                label={toggleProductNotificationsLabel}
-                icon={ChevronIcon}
+                label={Chevron.label}
+                icon={Chevron.icon}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

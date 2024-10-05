@@ -356,3 +356,20 @@ export type ProductName =
   | 'team central (atlas)'
   | 'trello'
   | 'unknown';
+
+/**
+ * Details for Chevron header accordion.
+ */
+export type Chevron = {
+  /**
+   * The chevron icon.
+   * @see {@link https://atlassian.design/components/icon/examples} for available icons.
+   */
+  // biome-ignore lint/suspicious/noExplicitAny: Requires a proper type
+  icon: any;
+
+  /**
+   * The chevron label.
+   */
+  label: string;
+};

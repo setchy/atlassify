@@ -1,3 +1,7 @@
+import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
+import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
+import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
+
 import {
   mockAtlassifyNotifications,
   mockSingleAtlassifyNotification,
@@ -5,6 +9,7 @@ import {
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
+  getChevronDetails,
   getRepositoryName,
 } from './helpers';
 
@@ -68,6 +73,25 @@ describe('renderer/utils/helpers.ts', () => {
         };
 
         expect(formatNotificationUpdatedAt(notification)).toBe('');
+      });
+    });
+  });
+
+  describe('getChevronDetails', () => {
+    it('should return correct chevron details', () => {
+      expect(getChevronDetails(true, true, 'account')).toEqual({
+        icon: ChevronDownIcon,
+        label: 'Hide account notifications',
+      });
+
+      expect(getChevronDetails(true, false, 'account')).toEqual({
+        icon: ChevronRightIcon,
+        label: 'Show account notifications',
+      });
+
+      expect(getChevronDetails(false, false, 'account')).toEqual({
+        icon: ChevronLeftIcon,
+        label: 'No notifications for account',
       });
     });
   });
