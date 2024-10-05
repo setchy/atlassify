@@ -8,6 +8,10 @@ exports.default = async (context) => {
   const appName = context.packager.appInfo.productFilename;
   const appOutDir = context.appOutDir;
 
+  if (context.platform.name !== 'mac') {
+    return;
+  }
+
   const resourcesPath = path.join(
     appOutDir,
     `${appName}.app`,
