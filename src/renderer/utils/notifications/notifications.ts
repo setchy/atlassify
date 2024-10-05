@@ -7,7 +7,7 @@ import type {
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type { AtlassianNotification, Category, ReadState } from '../api/types';
+import type { AtlassianNotification } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
 import { getAtlassianProduct } from '../products';
@@ -106,13 +106,13 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     // TODO Improve the fidelity of this mapping
     id: notification.headNotification.notificationId,
     title: notification.headNotification.content.message,
-    readState: notification.headNotification.readState as ReadState,
+    readState: notification.headNotification.readState,
     updated_at: notification.headNotification.timestamp,
     type: notification.headNotification.content.type,
     url: notification.headNotification.content.url,
     path: notification.headNotification.content.path[0],
     entity: notification.headNotification.content.entity,
-    category: notification.headNotification.category as Category,
+    category: notification.headNotification.category,
     actor: notification.headNotification.content.actor,
     product: getAtlassianProduct(notification),
     // TODO - can we avoid settings the account at the notification level?
