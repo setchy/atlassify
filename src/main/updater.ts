@@ -11,7 +11,9 @@ export default class Updater {
   constructor(menubar: Menubar, menuBuilder: MenuBuilder) {
     this.menubar = menubar;
     this.menuBuilder = menuBuilder;
+  }
 
+  initialize(): void {
     updateElectronApp({
       updateInterval: '24 hours',
       logger: log,
@@ -29,13 +31,13 @@ export default class Updater {
 
     autoUpdater.on('update-available', () => {
       log.info('Auto Updater: New update available');
-      menuBuilder.setUpdateAvailableMenuEnabled(true);
+      this.menuBuilder.setUpdateAvailableMenuEnabled(true);
       this.menubar.tray.setToolTip('Atlassify\nA new update is available');
     });
 
     autoUpdater.on('update-downloaded', () => {
       log.info('Auto Updater: Update downloaded');
-      menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
+      this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
       this.menubar.tray.setToolTip(
         'Atlassify\nA new update is ready to install',
       );

@@ -39,7 +39,8 @@ const mb = menubar({
 const menuBuilder = new MenuBuilder(mb);
 const contextMenu = menuBuilder.buildMenu();
 
-new Updater(mb, menuBuilder);
+const updater = new Updater(mb, menuBuilder);
+updater.initialize();
 
 let shouldUseAlternateIdleIcon = false;
 
