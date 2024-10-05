@@ -71,6 +71,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
           data-testid="notification-row"
+          role="button"
+          tabindex="0"
         >
           <div
             class="css-2mvdbp"
@@ -280,6 +282,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
       <div
         class="mr-3 flex flex-1 cursor-pointer text-wrap"
         data-testid="notification-row"
+        role="button"
+        tabindex="0"
       >
         <div
           class="css-2mvdbp"
@@ -546,6 +550,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
           data-testid="notification-row"
+          role="button"
+          tabindex="0"
         >
           <div
             class="css-2mvdbp"
@@ -755,6 +761,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
       <div
         class="mr-3 flex flex-1 cursor-pointer text-wrap"
         data-testid="notification-row"
+        role="button"
+        tabindex="0"
       >
         <div
           class="css-2mvdbp"

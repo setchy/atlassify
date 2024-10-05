@@ -82,6 +82,8 @@ export const NotificationRow: FC<INotificationRow> = ({
         className="mr-3 flex flex-1 cursor-pointer text-wrap"
         onClick={() => handleNotificationInteraction()}
         data-testid="notification-row"
+        role="button"
+        tabIndex={0}
       >
         <Stack space="space.025">
           <Box>
