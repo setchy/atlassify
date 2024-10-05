@@ -1,5 +1,9 @@
+import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
+import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
+import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
+
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
-import type { AtlassifyNotification } from '../types';
+import type { AtlassifyNotification, Chevron } from '../types';
 
 export function formatProperCase(text: string) {
   return text.replace(/\w+/g, (word) => {
@@ -37,4 +41,29 @@ export function formatNotificationUpdatedAt(
   } catch (e) {}
 
   return '';
+}
+
+export function getChevronDetails(
+  hasNotifications: boolean,
+  isVisible: boolean,
+  type: 'account' | 'product',
+): Chevron {
+  if (!hasNotifications) {
+    return {
+      icon: ChevronLeftIcon,
+      label: `No notifications for ${type}`,
+    };
+  }
+
+  if (isVisible) {
+    return {
+      icon: ChevronDownIcon,
+      label: `Hide ${type} notifications`,
+    };
+  }
+
+  return {
+    icon: ChevronRightIcon,
+    label: `Show ${type} notifications`,
+  };
 }

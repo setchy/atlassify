@@ -11,9 +11,6 @@ import {
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
-import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 import CrossIcon from '@atlaskit/icon/glyph/cross';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { BitbucketIcon } from '@atlaskit/logo';
@@ -34,6 +31,7 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 import { Constants } from '../../utils/constants';
+import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -97,17 +95,11 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     [notifications],
   );
 
-  const ChevronIcon = !hasNotifications
-    ? ChevronLeftIcon
-    : showAccountNotifications
-      ? ChevronDownIcon
-      : ChevronRightIcon;
-
-  const toggleAccountNotificationsLabel = !hasNotifications
-    ? 'No notifications for account'
-    : showAccountNotifications
-      ? 'Hide account notifications'
-      : 'Show account notifications';
+  const Chevron = getChevronDetails(
+    hasNotifications,
+    showAccountNotifications,
+    'account',
+  );
 
   return (
     <Stack>
@@ -189,13 +181,10 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 testId="account-mark-as-read"
               />
             </Tooltip>
-            <Tooltip
-              content={toggleAccountNotificationsLabel}
-              position="bottom"
-            >
+            <Tooltip content={Chevron.label} position="bottom">
               <IconButton
-                label={toggleAccountNotificationsLabel}
-                icon={ChevronIcon}
+                label={Chevron.label}
+                icon={Chevron.icon}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
