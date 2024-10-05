@@ -2226,7 +2226,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
           <div
             class="mr-3 flex flex-1 cursor-pointer text-wrap"
-            role="main"
+            data-testid="notification-row"
           >
             <div
               class="css-2mvdbp"
@@ -2432,7 +2432,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
           <div
             class="mr-3 flex flex-1 cursor-pointer text-wrap"
-            role="main"
+            data-testid="notification-row"
           >
             <div
               class="css-2mvdbp"
@@ -2836,7 +2836,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          role="main"
+          data-testid="notification-row"
         >
           <div
             class="css-2mvdbp"
@@ -3042,7 +3042,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          role="main"
+          data-testid="notification-row"
         >
           <div
             class="css-2mvdbp"
@@ -3704,7 +3704,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
           <div
             class="mr-3 flex flex-1 cursor-pointer text-wrap"
-            role="main"
+            data-testid="notification-row"
           >
             <div
               class="css-2mvdbp"
@@ -3910,7 +3910,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
           <div
             class="mr-3 flex flex-1 cursor-pointer text-wrap"
-            role="main"
+            data-testid="notification-row"
           >
             <div
               class="css-2mvdbp"
@@ -4314,7 +4314,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          role="main"
+          data-testid="notification-row"
         >
           <div
             class="css-2mvdbp"
@@ -4520,7 +4520,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
         <div
           class="mr-3 flex flex-1 cursor-pointer text-wrap"
-          role="main"
+          data-testid="notification-row"
         >
           <div
             class="css-2mvdbp"

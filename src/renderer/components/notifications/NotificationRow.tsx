@@ -79,9 +79,9 @@ export const NotificationRow: FC<INotificationRow> = ({
       </div>
 
       <div
-        role="main"
         className="mr-3 flex flex-1 cursor-pointer text-wrap"
         onClick={() => handleNotificationInteraction()}
+        data-testid="notification-row"
       >
         <Stack space="space.025">
           <Box>
