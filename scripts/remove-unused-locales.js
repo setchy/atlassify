@@ -7,8 +7,9 @@ const electronLanguages = packageJson.build.electronLanguages;
 exports.default = async (context) => {
   const appName = context.packager.appInfo.productFilename;
   const appOutDir = context.appOutDir;
+  const platform = context.electronPlatformName;
 
-  if (context.platform.name !== 'mac') {
+  if (platform !== 'darwin') {
     return;
   }
 
