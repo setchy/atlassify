@@ -267,30 +267,46 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationsUnread],
   );
 
+  const contextValues = useMemo(
+    () => ({
+      auth,
+      isLoggedIn,
+      login,
+      logoutFromAccount,
+
+      status,
+      globalError,
+
+      notifications,
+      fetchNotifications: fetchNotificationsWithAccounts,
+
+      markNotificationsRead: markNotificationsReadWithAccounts,
+      markNotificationsUnread: markNotificationsUnreadWithAccounts,
+
+      settings,
+      clearFilters,
+      resetSettings,
+      updateSetting,
+    }),
+    [
+      auth,
+      isLoggedIn,
+      login,
+      logoutFromAccount,
+      status,
+      globalError,
+      notifications,
+      fetchNotificationsWithAccounts,
+      markNotificationsReadWithAccounts,
+      markNotificationsUnreadWithAccounts,
+      settings,
+      clearFilters,
+      resetSettings,
+      updateSetting,
+    ],
+  );
+
   return (
-    <AppContext.Provider
-      value={{
-        auth,
-        isLoggedIn,
-        login,
-        logoutFromAccount,
-
-        status,
-        globalError,
-
-        notifications,
-        fetchNotifications: fetchNotificationsWithAccounts,
-
-        markNotificationsRead: markNotificationsReadWithAccounts,
-        markNotificationsUnread: markNotificationsUnreadWithAccounts,
-
-        settings,
-        clearFilters,
-        resetSettings,
-        updateSetting,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>
   );
 };
