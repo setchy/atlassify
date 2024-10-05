@@ -81,6 +81,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       <div
         className="mr-3 flex flex-1 cursor-pointer text-wrap"
         onClick={() => handleNotificationInteraction()}
+        onKeyDown={() => handleNotificationInteraction()}
         data-testid="notification-row"
         role="button"
         tabIndex={0}
