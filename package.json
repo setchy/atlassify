@@ -109,7 +109,8 @@
       "owner": "setchy",
       "repo": "atlassify"
     },
-    "afterSign": "scripts/notarize.js"
+    "afterSign": "scripts/notarize.js",
+    "afterPack": "scripts/remove-unused-locales.js"
   },
   "dependencies": {
     "electron-log": "5.2.0",
