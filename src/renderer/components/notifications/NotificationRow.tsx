@@ -88,7 +88,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       >
         <Stack space="space.025">
           <Box>
-            <Text>{notification.title}</Text>
+            <Text>{notification.message}</Text>
             &nbsp;&nbsp;
             <Text size="small" as="em" align="end">
               {updatedAt}

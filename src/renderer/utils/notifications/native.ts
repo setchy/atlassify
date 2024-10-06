@@ -63,7 +63,7 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = isWindows() ? '' : notification.title;
+    title = isWindows() ? '' : notification.message;
     body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
   } else {
     title = 'Atlassify';

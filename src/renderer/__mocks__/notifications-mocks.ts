@@ -10,7 +10,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {
     account: mockAtlassianCloudAccount,
     id: '138661096',
-    title: '#103: chore(deps): update dependency eslint',
+    message: '#103: chore(deps): update dependency eslint',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {
       title: '#103: chore(deps): update dependency eslint',
@@ -35,7 +35,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   },
   {
     id: '148827438',
-    title: 'atlassify-app edited your page',
+    message: 'atlassify-app edited your page',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {
       title: 'Atlassify Home',

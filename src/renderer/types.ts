@@ -244,31 +244,80 @@ export interface AccountNotifications {
   error: AtlassifyError | null;
 }
 
-// TODO Improve types
+/**
+ * An Atlassify notification.
+ */
 export interface AtlassifyNotification {
+  /**
+   * The unique identifier for the notification.
+   */
+
   id: string;
-  title: string;
-  readState: ReadState;
+  /**
+   * The update message for the notification.
+   */
+  message: string;
+
+  /**
+   * The timestamp for the notification.
+   */
   updated_at: string;
+
+  /**
+   * The read state for the notification (read, unread).
+   */
+  readState: ReadState;
+
+  /**
+   * The category for the notification (direct, watching).
+   */
+  category: Category;
+
+  /**
+   * The Atlassian product associated with the notification.
+   */
+  product: AtlassianProduct;
+
+  /**
+   * The type of the notification.
+   */
   type: string;
+
+  /**
+   * The URL for the notification.
+   */
   url: Link;
+
+  /**
+   * The parent details for the notification entity
+   */
   path: {
     title: string;
     url: Link;
     iconUrl: Link | null;
   };
+
+  /**
+   * The entity for which the notification is for.
+   */
   entity: {
     title: string;
     iconUrl: Link;
     url: Link;
   };
-  product: AtlassianProduct;
+
+  /**
+   * The actor who created the notification.
+   */
   actor: {
     displayName: string;
     avatarURL: Link;
   };
-  category: Category;
-  account: Account; // The account that the notification belongs to.
+
+  /**
+   * The account that the notification belongs to.
+   */
+  account: Account;
 }
 
 /**

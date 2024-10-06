@@ -103,9 +103,8 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
   notifications: AtlassianNotification[],
 ): AtlassifyNotification[] {
   return notifications?.map((notification: AtlassianNotification) => ({
-    // TODO Improve the fidelity of this mapping
     id: notification.headNotification.notificationId,
-    title: notification.headNotification.content.message,
+    message: notification.headNotification.content.message,
     readState: notification.headNotification.readState,
     updated_at: notification.headNotification.timestamp,
     type: notification.headNotification.content.type,
@@ -115,7 +114,6 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     category: notification.headNotification.category,
     actor: notification.headNotification.content.actor,
     product: getAtlassianProduct(notification),
-    // TODO can we avoid settings the account at the notification level?
     account: account,
   }));
 }
