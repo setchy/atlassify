@@ -4,6 +4,7 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
+import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,
@@ -14,7 +15,6 @@ import {
 
 jest.mock('axios');
 
-// TODO - Improve assertions of data request object sent
 describe('renderer/utils/api/client.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
@@ -31,6 +31,7 @@ describe('renderer/utils/api/client.ts', () => {
         expect.objectContaining({
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'HEAD',
+          data: {},
         }),
       );
 
@@ -46,6 +47,10 @@ describe('renderer/utils/api/client.ts', () => {
         expect.objectContaining({
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
+          data: {
+            query: expect.stringContaining('query me'),
+            variables: {},
+          },
         }),
       );
 
@@ -61,6 +66,13 @@ describe('renderer/utils/api/client.ts', () => {
         expect.objectContaining({
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
+          data: {
+            query: expect.stringContaining('query myNotifications'),
+            variables: {
+              first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+              readState: 'unread',
+            },
+          },
         }),
       );
 
@@ -78,6 +90,12 @@ describe('renderer/utils/api/client.ts', () => {
         expect.objectContaining({
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
+          data: {
+            query: expect.stringContaining('mutation markAsRead'),
+            variables: {
+              notificationIDs: [mockSingleAtlassifyNotification.id],
+            },
+          },
         }),
       );
 
@@ -95,6 +113,12 @@ describe('renderer/utils/api/client.ts', () => {
         expect.objectContaining({
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
+          data: {
+            query: expect.stringContaining('mutation markAsUnread'),
+            variables: {
+              notificationIDs: [mockSingleAtlassifyNotification.id],
+            },
+          },
         }),
       );
 
