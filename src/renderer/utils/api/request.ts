@@ -8,7 +8,7 @@ export async function performPostRequest(
   account: Account,
   data: GraphQLRequest,
 ): AxiosPromise {
-  // TODO - consider storing the decrypted token in memory
+  // TODO consider storing the decrypted token in memory
   const decryptedToken = await decryptValue(account.token);
   const auth = btoa(`${account.username}:${decryptedToken}`);
 

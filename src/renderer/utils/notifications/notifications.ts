@@ -63,7 +63,7 @@ export async function getAllNotifications(
 
           let hasMorePages = false;
           try {
-            // TODO - there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
+            // TODO there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
             hasMorePages =
               res.extensions.notifications.response_info.responseSize ===
               Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
@@ -115,7 +115,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     category: notification.headNotification.category,
     actor: notification.headNotification.content.actor,
     product: getAtlassianProduct(notification),
-    // TODO - can we avoid settings the account at the notification level?
+    // TODO can we avoid settings the account at the notification level?
     account: account,
   }));
 }

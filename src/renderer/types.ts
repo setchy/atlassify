@@ -244,7 +244,7 @@ export interface AccountNotifications {
   error: AtlassifyError | null;
 }
 
-// TODO - Improve types
+// TODO Improve types
 export interface AtlassifyNotification {
   id: string;
   title: string;
