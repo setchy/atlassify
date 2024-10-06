@@ -37,7 +37,7 @@ body:
     attributes:
       label: Atlassify Version
       description: What version of Atlassify are you using?
-      placeholder: 1.0.0
+      placeholder: 1.x.x
     validations:
       required: true
 
