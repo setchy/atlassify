@@ -37,8 +37,8 @@ importers:
         specifier: 16.4.1
         version: 16.4.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
-        specifier: 20.2.3
-        version: 20.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 20.2.4
+        version: 20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
         specifier: 14.0.2
         version: 14.0.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -243,8 +243,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/button@20.2.3':
-    resolution: {integrity: sha512-TaxlHjchDNaba/JX3vI/1GLQPwCXv4TsFJoFn+MefEuvbnMrYVuZQXfxC2VJMlO/WieO+s6isZMIsltGI0OzZw==}
+  '@atlaskit/button@20.2.4':
+    resolution: {integrity: sha512-thBORFxQqw7tXMb/Hnr6nT1ZXDR2q0rlZ3bo49N1ufp0GU5im4zwu+Xb1GKTtBpF2C7xxhjioL9Aye69uUlWng==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -268,6 +268,11 @@ packages:
 
   '@atlaskit/ds-lib@2.7.0':
     resolution: {integrity: sha512-+U4aPE2dBRFUBYWCM9vkrwJGrLAYVcK30ZpEiQDNpM2D7K41223TfEijC8azaN4VM3tsCgwSKBWwniloNxqYbA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/ds-lib@3.0.0':
+    resolution: {integrity: sha512-5p9VoC0pafkSOQTBzdd7c+kJrE2EFTkDhskdGoSrZzC4/Eq1LJFBfRepWbanRUtKeYoKG/S7vqD/lbWKxq8RVA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4377,10 +4382,10 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/button@20.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/button@20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.0.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/icon': 22.20.2(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/interaction-context': 2.1.6(react@18.3.1)
@@ -4440,6 +4445,16 @@ snapshots:
       - supports-color
 
   '@atlaskit/ds-lib@2.7.0(@types/react@18.3.11)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.25.7
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+      react-uid: 2.3.3(@types/react@18.3.11)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@atlaskit/ds-lib@3.0.0(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.25.7
@@ -4523,7 +4538,7 @@ snapshots:
 
   '@atlaskit/inline-message@12.3.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/button': 20.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/button': 20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 22.20.2(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/inline-dialog': 15.0.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 12.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
