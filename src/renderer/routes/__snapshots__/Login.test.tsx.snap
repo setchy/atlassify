@@ -102,7 +102,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
               <div
                 aria-live="polite"
-                class="css-bkrtfl"
+                class="css-5cg24a"
                 id="username-uid1-helper"
               >
                 Your Atlassian username / email address
@@ -146,7 +146,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
               <div
                 aria-live="polite"
-                class="css-bkrtfl"
+                class="css-5cg24a"
                 id="token-uid2-helper"
               >
                 <span>
@@ -429,7 +429,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
             <div
               aria-live="polite"
-              class="css-bkrtfl"
+              class="css-5cg24a"
               id="username-uid1-helper"
             >
               Your Atlassian username / email address
@@ -473,7 +473,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
             <div
               aria-live="polite"
-              class="css-bkrtfl"
+              class="css-5cg24a"
               id="token-uid2-helper"
             >
               <span>
