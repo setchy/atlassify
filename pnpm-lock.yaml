@@ -37,8 +37,8 @@ importers:
         specifier: 16.4.1
         version: 16.4.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
-        specifier: 20.2.4
-        version: 20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 20.2.5
+        version: 20.2.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
         specifier: 14.0.3
         version: 14.0.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -243,8 +243,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/button@20.2.4':
-    resolution: {integrity: sha512-thBORFxQqw7tXMb/Hnr6nT1ZXDR2q0rlZ3bo49N1ufp0GU5im4zwu+Xb1GKTtBpF2C7xxhjioL9Aye69uUlWng==}
+  '@atlaskit/button@20.2.5':
+    resolution: {integrity: sha512-y6MOeAcxRI1VRzH0gV9+DX00XMHcHzjtX3fY/xSuPC+ISJN417R6woBUmRz4iqamBzfyl50x2dggEsh98NFztw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -4387,12 +4387,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/button@20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/button@20.2.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.0.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.1(@types/react@18.3.11)(react@18.3.1)
-      '@atlaskit/icon': 22.20.2(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/icon': 22.21.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/interaction-context': 2.1.6(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 12.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4554,7 +4554,7 @@ snapshots:
 
   '@atlaskit/inline-message@12.3.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/button': 20.2.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/button': 20.2.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 22.21.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/inline-dialog': 15.0.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 12.2.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
