@@ -132,7 +132,7 @@
     "@atlaskit/icon": "22.20.2",
     "@atlaskit/inline-message": "12.3.5",
     "@atlaskit/logo": "14.3.3",
-    "@atlaskit/modal-dialog": "12.17.3",
+    "@atlaskit/modal-dialog": "12.17.4",
     "@atlaskit/primitives": "12.2.3",
     "@atlaskit/radio": "6.5.2",
     "@atlaskit/spinner": "16.3.2",
