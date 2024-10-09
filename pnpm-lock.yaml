@@ -82,8 +82,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/tooltip':
-        specifier: 18.8.1
-        version: 18.8.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 18.8.2
+        version: 18.8.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@biomejs/biome':
         specifier: 1.9.3
         version: 1.9.3
@@ -388,8 +388,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/tooltip@18.8.1':
-    resolution: {integrity: sha512-XhYOGTbsd8TaTIeKRxQ8uLFgC6qcbj9PKDosFbvJvR2TwqyNkGT1TFVoC9MXr0+ubM+zOBnkHb1b9gEbOHl4ow==}
+  '@atlaskit/tooltip@18.8.2':
+    resolution: {integrity: sha512-TAOFMWQnX2e1poUtpkJzw28xg2d/I25I1fmjYz7is5iX1DEfPSY/Wh+SblNeYAqjqlPOtNeXqXNdjpHtDiSBoA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -4399,7 +4399,7 @@ snapshots:
       '@atlaskit/spinner': 16.3.2(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/theme': 13.0.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/tokens': 2.0.1(@types/react@18.3.11)(react@18.3.1)
-      '@atlaskit/tooltip': 18.8.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/tooltip': 18.8.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/visually-hidden': 1.5.0(@types/react@18.3.11)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.1)
@@ -4765,10 +4765,10 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/tooltip@18.8.1(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/tooltip@18.8.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.0.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/layering': 0.5.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/motion': 1.9.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/popper': 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
