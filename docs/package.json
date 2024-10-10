@@ -39,10 +39,10 @@
   "homepage": "https://www.atlassify.io/",
   "dependencies": {
     "@astrojs/solid-js": "4.4.2",
-    "@astrojs/tailwind": "5.1.1",
+    "@astrojs/tailwind": "5.1.2",
     "@kobalte/core": "0.13.7",
     "@tailwindcss/typography": "0.5.15",
-    "astro": "4.15.12",
+    "astro": "4.16.0",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
