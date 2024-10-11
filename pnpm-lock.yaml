@@ -61,8 +61,8 @@ importers:
         specifier: 14.3.3
         version: 14.3.3(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 12.17.4
-        version: 12.17.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.17.5
+        version: 12.17.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 12.2.5
         version: 12.2.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -276,6 +276,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  '@atlaskit/ds-lib@3.1.0':
+    resolution: {integrity: sha512-1os/bwBxDkR1bqrnuW2fZR1uAm/tncI8W55fR31GKfpzI/WgmWABzzY9MdWim2kXjR4rsE0GvfjoNMJhJvfUVQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   '@atlaskit/focus-ring@1.6.1':
     resolution: {integrity: sha512-WuZL6DFOISPR3RZvaO6Mj47Jq4ClrLJGeSJmwib272VSDou79/4FRjKrIQxyEzsrSAx8beoBUPzEXdgw/vNeVQ==}
     peerDependencies:
@@ -321,8 +326,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.17.4':
-    resolution: {integrity: sha512-oF9j7bl+J4Lz6LAzvGJ8hNUBzk87natuhgaEOz2Itl5QIevvzkWaTPfRwiQAzF7YwFNhBHwuwaI4qYHV6OSxog==}
+  '@atlaskit/modal-dialog@12.17.5':
+    resolution: {integrity: sha512-0kHGOZdEI5XTrqoyyLaeSH863DpNXAdWiJJQYRxwi6usJIKOqfV1j8217ER1dWOMhIsoY8lWJxfZP00DzCCk7A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -345,8 +350,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/pragmatic-drag-and-drop@1.3.1':
-    resolution: {integrity: sha512-MptcLppK78B2eplL5fHk93kfCbZ6uCpt33YauBPrOwI5zcHYJhZGeaGEaAXoVAHnSJOdQUhy6kGVVC9qggz2Fg==}
+  '@atlaskit/pragmatic-drag-and-drop@1.4.0':
+    resolution: {integrity: sha512-qRY3PTJIcxfl/QB8Gwswz+BRvlmgAC5pB+J2hL6dkIxgqAgVwOhAamMUKsrOcFU/axG2Q7RbNs1xfoLKDuhoPg==}
 
   '@atlaskit/primitives@12.2.5':
     resolution: {integrity: sha512-0cAr9sTU4kbsfpUdCvtd7AdQJqlnzcVfcRuHAjhBZ5Eux3zK1+nX/xblkNzna0Z5OC8NFafEcJIr+wu1zp1N2g==}
@@ -4464,6 +4469,16 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
+  '@atlaskit/ds-lib@3.1.0(@types/react@18.3.11)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.25.7
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+      react-uid: 2.3.3(@types/react@18.3.11)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+
   '@atlaskit/focus-ring@1.6.1(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
       '@atlaskit/tokens': 2.0.2(@types/react@18.3.11)(react@18.3.1)
@@ -4579,19 +4594,19 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.17.4(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.17.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/ds-lib': 3.0.0(@types/react@18.3.11)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.1.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/focus-ring': 1.6.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/icon': 22.22.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/layering': 0.5.0(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/motion': 1.9.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/portal': 4.9.2(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/pragmatic-drag-and-drop': 1.3.1
+      '@atlaskit/pragmatic-drag-and-drop': 1.4.0
       '@atlaskit/primitives': 12.2.5(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 13.0.1(@types/react@18.3.11)(react@18.3.1)
       '@atlaskit/tokens': 2.0.2(@types/react@18.3.11)(react@18.3.1)
@@ -4643,7 +4658,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/pragmatic-drag-and-drop@1.3.1':
+  '@atlaskit/pragmatic-drag-and-drop@1.4.0':
     dependencies:
       '@babel/runtime': 7.25.7
       bind-event-listener: 3.0.0
