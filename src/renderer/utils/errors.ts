@@ -25,6 +25,6 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
   UNKNOWN: {
     title: 'Oops! Something went wrong',
     descriptions: ['Please try again later.'],
-    emojis: ['🤔', '🥲', '😳', '🫠', '🙃', '🙈'],
+    emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
   },
 };
