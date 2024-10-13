@@ -13,7 +13,7 @@ importers:
         version: 4.4.2(solid-js@1.9.2)(vite@5.4.8)
       '@astrojs/tailwind':
         specifier: 5.1.2
-        version: 5.1.2(astro@4.16.1(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.13)
+        version: 5.1.2(astro@4.16.2(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.13)
       '@kobalte/core':
         specifier: 0.13.7
         version: 0.13.7(solid-js@1.9.2)
@@ -21,8 +21,8 @@ importers:
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.13)
       astro:
-        specifier: 4.16.1
-        version: 4.16.1(rollup@4.21.2)(typescript@5.5.4)
+        specifier: 4.16.2
+        version: 4.16.2(rollup@4.21.2)(typescript@5.5.4)
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -896,8 +896,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@4.16.1:
-    resolution: {integrity: sha512-ZeZd+L147HHgHmvoSkve7KM3EutV+hY0mOCa4PwARHEFAAh+omo4MUNoTWsFkfq7ozTgR0PCXQwslrZduoWHNg==}
+  astro@4.16.2:
+    resolution: {integrity: sha512-Dfkpyt6sA+nv6LnOJr+7bt+gQF5Qh02yqVgyes4c4SvcPScteq1bLX22/z/XW+VU0vlciJOMiM8GWtcDiF6gUQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2481,9 +2481,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.1(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.13)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.2(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.13)':
     dependencies:
-      astro: 4.16.1(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.16.2(rollup@4.21.2)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)
@@ -3273,7 +3273,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.16.1(rollup@4.21.2)(typescript@5.5.4):
+  astro@4.16.2(rollup@4.21.2)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
