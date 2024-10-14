@@ -163,7 +163,7 @@ export const Sidebar: FC = () => {
                 />
               </Tooltip>
 
-              <Tooltip content="Filters" position="right">
+              <Tooltip content="Filter notifications" position="right">
                 <IconButton
                   label="Filters"
                   icon={(iconProps) => (

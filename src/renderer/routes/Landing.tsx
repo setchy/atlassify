@@ -17,6 +17,7 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { Centered } from '../components/primitives/Centered';
 import { AppContext } from '../context/App';
 import { showWindow } from '../utils/comms';
 
@@ -32,7 +33,7 @@ export const LandingRoute: FC = () => {
   }, [isLoggedIn]);
 
   return (
-    <div className="flex flex-1 justify-center">
+    <Centered>
       <Stack alignBlock="center" alignInline="center" space="space.200">
         <AtlasIcon appearance="brand" size="xlarge" />
         <Stack alignInline="center">
@@ -62,6 +63,6 @@ export const LandingRoute: FC = () => {
           </Button>
         </Tooltip>
       </Stack>
-    </div>
+    </Centered>
   );
 };
