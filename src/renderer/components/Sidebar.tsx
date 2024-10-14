@@ -74,118 +74,122 @@ export const Sidebar: FC = () => {
 
   return (
     <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar">
-      <div className="flex flex-1 flex-col items-center py-4">
-        <div className="mx-auto my-3">
-          <Tooltip content="Home" position="right">
-            <IconButton
-              label="Home"
-              appearance="subtle"
-              icon={(iconProps) => (
-                <AtlasIcon {...iconProps} size="medium" appearance="inverse" />
-              )}
-              shape="circle"
-              onClick={() => navigate('/', { replace: true })}
-              testId="sidebar-home"
-            />
-          </Tooltip>
-        </div>
+      <div className="flex flex-1 flex-col items-center">
+        <Box paddingBlockStart="space.200">
+          <Stack alignInline="center" space="space.100">
+            <Tooltip content="Home" position="right">
+              <IconButton
+                label="Home"
+                appearance="subtle"
+                icon={(iconProps) => (
+                  <AtlasIcon
+                    {...iconProps}
+                    size="medium"
+                    appearance="inverse"
+                  />
+                )}
+                shape="circle"
+                onClick={() => navigate('/', { replace: true })}
+                testId="sidebar-home"
+              />
+            </Tooltip>
 
-        <Stack alignInline="center" space="space.100">
-          <Tooltip
-            content={`${notificationsLabel} unread notifications`}
-            position="right"
-          >
-            <IconButton
-              label="Notifications"
-              icon={(iconProps) => (
-                <NotificationIcon
-                  {...iconProps}
-                  size="small"
-                  primaryColor="white"
-                />
-              )}
-              appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
-              spacing="compact"
-              shape="circle"
-              onClick={() => openMyNotifications()}
-              testId="sidebar-notifications"
-            />
-          </Tooltip>
+            <Tooltip
+              content={`${notificationsLabel} unread notifications`}
+              position="right"
+            >
+              <IconButton
+                label="Notifications"
+                icon={(iconProps) => (
+                  <NotificationIcon
+                    {...iconProps}
+                    size="small"
+                    primaryColor="white"
+                  />
+                )}
+                appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
+                spacing="compact"
+                shape="circle"
+                onClick={() => openMyNotifications()}
+                testId="sidebar-notifications"
+              />
+            </Tooltip>
 
-          {isLoggedIn && (
-            <Fragment>
-              <Tooltip
-                content="Show only unread notifications"
-                position="right"
-              >
-                <Toggle
-                  id="toggle-unread-only"
-                  size="regular"
-                  label="Show only unread toggle"
-                  isChecked={settings.fetchOnlyUnreadNotifications}
-                  onChange={async (evt) => {
-                    updateSetting(
-                      'fetchOnlyUnreadNotifications',
-                      evt.target.checked,
-                    );
-                  }}
-                  testId="sidebar-toggle-unread-only"
-                />
-              </Tooltip>
+            {isLoggedIn && (
+              <Fragment>
+                <Tooltip
+                  content="Show only unread notifications"
+                  position="right"
+                >
+                  <Toggle
+                    id="toggle-unread-only"
+                    size="regular"
+                    label="Show only unread toggle"
+                    isChecked={settings.fetchOnlyUnreadNotifications}
+                    onChange={async (evt) => {
+                      updateSetting(
+                        'fetchOnlyUnreadNotifications',
+                        evt.target.checked,
+                      );
+                    }}
+                    testId="sidebar-toggle-unread-only"
+                  />
+                </Tooltip>
 
-              <Tooltip
-                content="Group notifications by products"
-                position="right"
-              >
-                <IconButton
-                  label="Group notifications by products"
-                  icon={() => (
-                    <ListIcon
-                      label="groupByProduct"
-                      size="small"
-                      primaryColor="white"
-                    />
-                  )}
-                  onClick={() => {
-                    updateSetting(
-                      'groupNotificationsByProduct',
-                      !settings.groupNotificationsByProduct,
-                    );
-                  }}
-                  appearance={
-                    settings.groupNotificationsByProduct
-                      ? 'discovery'
-                      : 'subtle'
-                  }
-                  spacing="compact"
-                  shape="circle"
-                  testId="sidebar-group-by-product"
-                />
-              </Tooltip>
+                <Tooltip
+                  content="Group notifications by products"
+                  position="right"
+                >
+                  <IconButton
+                    label="Group notifications by products"
+                    icon={() => (
+                      <ListIcon
+                        label="groupByProduct"
+                        size="small"
+                        primaryColor="white"
+                      />
+                    )}
+                    onClick={() => {
+                      updateSetting(
+                        'groupNotificationsByProduct',
+                        !settings.groupNotificationsByProduct,
+                      );
+                    }}
+                    appearance={
+                      settings.groupNotificationsByProduct
+                        ? 'discovery'
+                        : 'subtle'
+                    }
+                    spacing="compact"
+                    shape="circle"
+                    testId="sidebar-group-by-product"
+                  />
+                </Tooltip>
 
-              <Tooltip content="Filter notifications" position="right">
-                <IconButton
-                  label="Filters"
-                  icon={(iconProps) => (
-                    <FilterIcon
-                      {...iconProps}
-                      size="small"
-                      primaryColor="white"
-                    />
-                  )}
-                  appearance={hasFilters ? 'discovery' : 'subtle'}
-                  spacing="compact"
-                  shape="circle"
-                  onClick={() => toggleFilters()}
-                  testId="sidebar-filters"
-                />
-              </Tooltip>
-            </Fragment>
-          )}
-        </Stack>
+                <Tooltip content="Filter notifications" position="right">
+                  <IconButton
+                    label="Filters"
+                    icon={(iconProps) => (
+                      <FilterIcon
+                        {...iconProps}
+                        size="small"
+                        primaryColor="white"
+                      />
+                    )}
+                    appearance={hasFilters ? 'discovery' : 'subtle'}
+                    spacing="compact"
+                    shape="circle"
+                    onClick={() => toggleFilters()}
+                    testId="sidebar-filters"
+                  />
+                </Tooltip>
+              </Fragment>
+            )}
+          </Stack>
+        </Box>
       </div>
 
-      <Box paddingBlock="space.200">
+      <Box paddingBlockEnd="space.200">
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
             <Fragment>
