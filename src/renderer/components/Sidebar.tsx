@@ -180,7 +180,7 @@ export const Sidebar: FC = () => {
                     spacing="compact"
                     shape="circle"
                     onClick={() => toggleFilters()}
-                    testId="sidebar-filters"
+                    testId="sidebar-filter-notifications"
                   />
                 </Tooltip>
               </Fragment>

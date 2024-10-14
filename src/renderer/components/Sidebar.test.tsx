@@ -261,7 +261,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
   });
 
-  describe('Filters', () => {
+  describe('Filter notifications', () => {
     it('go to the filters route', () => {
       render(
         <AppContext.Provider
@@ -278,9 +278,11 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-filters'));
+      fireEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
-      expect(screen.getByTestId('sidebar-filters')).toMatchSnapshot();
+      expect(
+        screen.getByTestId('sidebar-filter-notifications'),
+      ).toMatchSnapshot();
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/filters');
     });
 
@@ -300,9 +302,11 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-filters'));
+      fireEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
-      expect(screen.getByTestId('sidebar-filters')).toMatchSnapshot();
+      expect(
+        screen.getByTestId('sidebar-filter-notifications'),
+      ).toMatchSnapshot();
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
     });
 
@@ -325,7 +329,9 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      expect(screen.getByTestId('sidebar-filters')).toMatchSnapshot();
+      expect(
+        screen.getByTestId('sidebar-filter-notifications'),
+      ).toMatchSnapshot();
     });
   });
 

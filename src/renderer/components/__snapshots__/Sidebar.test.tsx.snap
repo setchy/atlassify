@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderer/components/Sidebar.tsx Filters go to the filters route 1`] = `
+exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters route 1`] = `
 <button
   class="css-a8hcye"
-  data-testid="sidebar-filters"
+  data-testid="sidebar-filter-notifications"
   type="button"
 >
   <span
@@ -37,10 +37,10 @@ exports[`renderer/components/Sidebar.tsx Filters go to the filters route 1`] = `
 </button>
 `;
 
-exports[`renderer/components/Sidebar.tsx Filters go to the home if filters path already shown 1`] = `
+exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if filters path already shown 1`] = `
 <button
   class="css-a8hcye"
-  data-testid="sidebar-filters"
+  data-testid="sidebar-filter-notifications"
   type="button"
 >
   <span
@@ -74,10 +74,10 @@ exports[`renderer/components/Sidebar.tsx Filters go to the home if filters path 
 </button>
 `;
 
-exports[`renderer/components/Sidebar.tsx Filters show filters count if any are saved 1`] = `
+exports[`renderer/components/Sidebar.tsx Filter notifications show filters count if any are saved 1`] = `
 <button
   class="css-1pe4njs"
-  data-testid="sidebar-filters"
+  data-testid="sidebar-filter-notifications"
   type="button"
 >
   <span
