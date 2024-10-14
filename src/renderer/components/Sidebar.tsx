@@ -73,7 +73,7 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-14 -ml-14 flex h-full w-14 flex-col overflow-y-auto bg-sidebar">
+    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar">
       <div className="flex flex-1 flex-col items-center py-4">
         <div className="mx-auto my-3">
           <Tooltip content="Home" position="right">
