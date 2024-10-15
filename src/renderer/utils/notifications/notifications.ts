@@ -11,7 +11,7 @@ import type { AtlassianNotification } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
 import { getAtlassianProduct } from '../products';
-import { filterNotifications } from './filters';
+import { filterNotifications } from './filter';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);

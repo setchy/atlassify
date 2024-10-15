@@ -1,8 +1,8 @@
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
-import { filterNotifications } from './filters';
+import { filterNotifications } from './filter';
 
-describe('renderer/utils/notifications/filters.ts', () => {
+describe('renderer/utils/notifications/filter.ts', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
