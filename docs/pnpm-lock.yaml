@@ -33,8 +33,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       marked:
-        specifier: 14.1.2
-        version: 14.1.2
+        specifier: 14.1.3
+        version: 14.1.3
       sharp:
         specifier: 0.33.5
         version: 0.33.5
@@ -45,8 +45,8 @@ importers:
         specifier: 2.0.13
         version: 2.0.13(solid-js@1.9.2)
       tailwind-merge:
-        specifier: 2.5.3
-        version: 2.5.3
+        specifier: 2.5.4
+        version: 2.5.4
       tailwindcss:
         specifier: 3.4.13
         version: 3.4.13
@@ -1474,8 +1474,8 @@ packages:
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
 
-  marked@14.1.2:
-    resolution: {integrity: sha512-f3r0yqpz31VXiDB/wj9GaOB0a2PRLQl6vJmXiFrniNwjkKdvakqJRULhjFKJpxOchlCRiG5fcacoUZY5Xa6PEQ==}
+  marked@14.1.3:
+    resolution: {integrity: sha512-ZibJqTULGlt9g5k4VMARAktMAjXoVnnr+Y3aCqW1oDftcV4BA3UmrBifzXoZyenHRk75csiPu9iwsTj4VNBT0g==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -2163,8 +2163,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwind-merge@2.5.3:
-    resolution: {integrity: sha512-d9ZolCAIzom1nf/5p4LdD5zvjmgSxY0BGgdSvmXIoMYAiPdAW/dSpP7joCDYFY7r/HkEa2qmPtkgsu0xjQeQtw==}
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -3907,7 +3907,7 @@ snapshots:
 
   markdown-table@3.0.3: {}
 
-  marked@14.1.2: {}
+  marked@14.1.3: {}
 
   mdast-util-definitions@5.1.2:
     dependencies:
@@ -5054,7 +5054,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tailwind-merge@2.5.3: {}
+  tailwind-merge@2.5.4: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.13):
     dependencies:

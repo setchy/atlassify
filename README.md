@@ -32,7 +32,7 @@ Atlassify is licensed under the MIT Open Source license.
 For more information, see [LICENSE](LICENSE).
 
 
-### Attribution
+### Acknowledgements
 
 I would like to acknowledge the following projects and resources that have inspired and contributed to the development of Atlassify:
 
