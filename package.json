@@ -145,7 +145,7 @@
     "@electron/notarize": "2.5.0",
     "@testing-library/react": "16.0.1",
     "@types/jest": "29.5.13",
-    "@types/node": "20.16.11",
+    "@types/node": "20.16.12",
     "@types/react": "18.3.11",
     "@types/react-router-dom": "5.3.3",
     "autoprefixer": "10.4.20",
