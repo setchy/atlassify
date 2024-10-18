@@ -140,7 +140,7 @@
     "@atlaskit/toggle": "13.4.5",
     "@atlaskit/tokens": "2.0.3",
     "@atlaskit/tooltip": "18.8.3",
-    "@biomejs/biome": "1.9.3",
+    "@biomejs/biome": "1.9.4",
     "@discordapp/twemoji": "15.1.0",
     "@electron/notarize": "2.5.0",
     "@testing-library/react": "16.0.1",
