@@ -12,7 +12,13 @@
     "allowJs": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "outDir": "./build/"
+    "outDir": "./build/",
+    "plugins": [
+      {
+        "name": "@0no-co/graphqlsp",
+        "schema": "./src/renderer/utils/api/gql/schema.graphql"
+      }
+    ]
   },
   "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.tsx"]
 }

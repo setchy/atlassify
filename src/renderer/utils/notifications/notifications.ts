@@ -9,7 +9,6 @@ import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
 import type { AtlassianNotification } from '../api/types';
 import { updateTrayIcon } from '../comms';
-import { Constants } from '../constants';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filter';
 
@@ -49,14 +48,20 @@ export async function getAllNotifications(
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
-          const res = (await accountNotifications.notifications).data;
+          const res = await accountNotifications.notifications;
 
-          const rawNotifications =
-            res.data.notifications.notificationFeed.nodes;
+          // console.log('ADAM - res', JSON.stringify(res, null, 2));
+
+          const rawNotifications = res.notifications.notificationFeed.nodes;
+
+          console.log(
+            'ADAM - rawNotifications',
+            JSON.stringify(rawNotifications, null, 2),
+          );
 
           let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
             accountNotifications.account,
-            rawNotifications,
+            rawNotifications, // TODO REMOVE THIS CAST
           );
 
           notifications = filterNotifications(notifications, state.settings);
@@ -64,9 +69,9 @@ export async function getAllNotifications(
           let hasMorePages = false;
           try {
             // TODO there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
-            hasMorePages =
-              res.extensions.notifications.response_info.responseSize ===
-              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
+            hasMorePages = false; // TODO FIX THIS
+            // res.extensions.notifications.response_info.responseSize ===
+            // Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
           } catch (error) {
             log.warn(
               'Response did not contain extensions object, assuming no more pages',
@@ -100,7 +105,8 @@ export async function getAllNotifications(
 
 function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  notifications: AtlassianNotification[],
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  notifications: any, // TODO REMOVE THIS CAST
 ): AtlassifyNotification[] {
   return notifications?.map((notification: AtlassianNotification) => ({
     id: notification.headNotification.notificationId,
