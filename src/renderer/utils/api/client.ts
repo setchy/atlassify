@@ -1,16 +1,15 @@
 import type { AxiosPromise } from 'axios';
 import type { Account, SettingsState, Token, Username } from '../../types';
 import { Constants } from '../constants';
-import { graphql } from './gql';
+import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,
   type MarkAsReadMutation,
   type MarkAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
-} from './gql/graphql';
-import { execute, performHeadRequest } from './request';
-import type { GraphQLResponse } from './types';
+} from './graphql/generated/graphql';
+import { performHeadRequest, performPostRequest } from './request';
 
 /**
  * Check if provided credentials (username and token) are valid.
@@ -21,7 +20,7 @@ import type { GraphQLResponse } from './types';
 export function checkIfCredentialsAreValid(
   username: Username,
   token: Token,
-): AxiosPromise<GraphQLResponse<boolean, unknown>> {
+): AxiosPromise<unknown> {
   return performHeadRequest(username, token);
 }
 
@@ -30,9 +29,11 @@ export function checkIfCredentialsAreValid(
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
-export function getAuthenticatedUser(account: Account): Promise<MeQuery> {
-  const QUERY = graphql(`
-    query me {
+export function getAuthenticatedUser(
+  account: Account,
+): AxiosPromise<{ data: MeQuery }> {
+  const MeQuery = graphql(`
+    query Me {
       me {
         user {
           accountId
@@ -43,7 +44,7 @@ export function getAuthenticatedUser(account: Account): Promise<MeQuery> {
     }
   `);
 
-  return execute(account, QUERY);
+  return performPostRequest(account, MeQuery);
 }
 
 /**
@@ -54,9 +55,46 @@ export function getAuthenticatedUser(account: Account): Promise<MeQuery> {
 export function getNotificationsForUser(
   account: Account,
   settings: SettingsState,
-): Promise<MyNotificationsQuery> {
-  const QUERY = graphql(`
-    query myNotifications
+): AxiosPromise<{ data: MyNotificationsQuery }> {
+  const MyNotificationsQuery = graphql(`
+    fragment AtlassianHeadNotification on InfluentsNotificationItem {  
+      notificationId
+      timestamp
+      readState
+      category
+      content {
+        type
+        message
+        url
+        entity {
+          title
+          iconUrl
+          url
+        }
+        path {
+          title
+          iconUrl
+          url
+        }
+        actor {
+          displayName
+          avatarURL
+        }
+      }
+      analyticsAttributes {
+        key
+        value
+      }
+    }
+
+    fragment AtlassianNotification on InfluentsNotificationHeadItem {
+      groupId
+      headNotification {
+        ...AtlassianHeadNotification
+      }
+    }
+
+    query MyNotifications
       (
         $readState: InfluentsNotificationReadState, 
         $first: Int
@@ -75,43 +113,14 @@ export function getNotificationsForUser(
             hasNextPage
           }
           nodes {
-            groupId
-            headNotification {
-              notificationId
-              timestamp
-              readState
-              category
-              content {
-                type
-                message
-                url
-                entity {
-                  title
-                  iconUrl
-                  url
-                }
-                path {
-                  title
-                  iconUrl
-                  url
-                }
-                actor {
-                  displayName
-                  avatarURL
-                }
-              }
-              analyticsAttributes {
-                key
-                value
-              }
-            }
+            ...AtlassianNotification
           }
         }
       }
     }
   `);
 
-  return execute(account, QUERY, {
+  return performPostRequest(account, MyNotificationsQuery, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread
@@ -127,16 +136,16 @@ export function getNotificationsForUser(
 export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
-): Promise<MarkAsReadMutation> {
-  const MUTATION = graphql(`
-    mutation markAsRead($notificationIDs: [String!]!) {
+): AxiosPromise<{ data: MarkAsReadMutation }> {
+  const MarkAsReadMutation = graphql(`
+    mutation MarkAsRead($notificationIDs: [String!]!) {
       notifications {
         markNotificationsByIdsAsRead(ids: $notificationIDs) 
       }
     }
   `);
 
-  return execute(account, MUTATION, {
+  return performPostRequest(account, MarkAsReadMutation, {
     notificationIDs: notificationIds,
   });
 }
@@ -149,16 +158,16 @@ export function markNotificationsAsRead(
 export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
-): Promise<MarkAsUnreadMutation> {
-  const MUTATION = graphql(`
-    mutation markAsUnread($notificationIDs: [String!]!) {
+): AxiosPromise<{ data: MarkAsUnreadMutation }> {
+  const MarkAsUnreadMutation = graphql(`
+    mutation MarkAsUnread($notificationIDs: [String!]!) {
       notifications {
         markNotificationsByIdsAsUnread(ids: $notificationIDs) 
       }
     }
   `);
 
-  return execute(account, MUTATION, {
+  return performPostRequest(account, MarkAsUnreadMutation, {
     notificationIDs: notificationIds,
   });
 }

@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "biomejs.biome",
-    "bradlc.vscode-tailwindcss",
-    "capaj.graphql-codegen-vscode"
-  ]
+  "recommendations": ["biomejs.biome", "bradlc.vscode-tailwindcss"]
 }

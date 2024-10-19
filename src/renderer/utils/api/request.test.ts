@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { Link } from '../../types';
+import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
-import type { GraphQLRequest } from './types';
 
 jest.mock('axios');
 
@@ -13,8 +13,8 @@ describe('renderer/utils/api/request.ts', () => {
     jest.clearAllMocks();
   });
 
-  it('should make a post request with the correct parameters', async () => {
-    const data: GraphQLRequest = {
+  it('should execute graphql request with the correct parameters', async () => {
+    const data = {
       query: 'foo',
       variables: {
         key: 'value',
@@ -22,7 +22,13 @@ describe('renderer/utils/api/request.ts', () => {
     };
     const method = 'POST';
 
-    await performPostRequest(mockAtlassianCloudAccount, data);
+    await performPostRequest(
+      mockAtlassianCloudAccount,
+      'foo' as unknown as TypedDocumentString<MeQuery, unknown>,
+      {
+        key: 'value',
+      },
+    );
 
     expect(axios).toHaveBeenCalledWith({
       method,

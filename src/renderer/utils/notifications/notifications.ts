@@ -3,11 +3,16 @@ import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
+  AtlassifyNotificationPath,
   AtlassifyState,
+  Link,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type { AtlassianNotification } from '../api/types';
+import type {
+  AtlassianHeadNotificationFragment,
+  AtlassianNotificationFragment,
+} from '../api/graphql/generated/graphql';
 import { updateTrayIcon } from '../comms';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filter';
@@ -48,16 +53,10 @@ export async function getAllNotifications(
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
-          const res = await accountNotifications.notifications;
+          const res = (await accountNotifications.notifications).data;
 
-          // console.log('ADAM - res', JSON.stringify(res, null, 2));
-
-          const rawNotifications = res.notifications.notificationFeed.nodes;
-
-          console.log(
-            'ADAM - rawNotifications',
-            JSON.stringify(rawNotifications, null, 2),
-          );
+          const rawNotifications =
+            res.data.notifications.notificationFeed.nodes;
 
           let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
             accountNotifications.account,
@@ -105,21 +104,38 @@ export async function getAllNotifications(
 
 function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  notifications: any, // TODO REMOVE THIS CAST
+  notifications: AtlassianNotificationFragment[],
 ): AtlassifyNotification[] {
-  return notifications?.map((notification: AtlassianNotification) => ({
-    id: notification.headNotification.notificationId,
-    message: notification.headNotification.content.message,
-    readState: notification.headNotification.readState,
-    updated_at: notification.headNotification.timestamp,
-    type: notification.headNotification.content.type,
-    url: notification.headNotification.content.url,
-    path: notification.headNotification.content.path[0],
-    entity: notification.headNotification.content.entity,
-    category: notification.headNotification.category,
-    actor: notification.headNotification.content.actor,
-    product: getAtlassianProduct(notification),
-    account: account,
-  }));
+  return notifications?.map((notification: AtlassianNotificationFragment) => {
+    const headNotification =
+      notification.headNotification as AtlassianHeadNotificationFragment;
+
+    let notificationPath: AtlassifyNotificationPath;
+    if (headNotification.content.path[0]) {
+      notificationPath = {
+        title: headNotification.content.path[0].title,
+        url: headNotification.content.path[0].url as Link,
+        iconUrl: headNotification.content.path[0].iconUrl as Link,
+      };
+    }
+
+    return {
+      id: headNotification.notificationId,
+      message: headNotification.content.message,
+      readState: headNotification.readState,
+      updated_at: headNotification.timestamp,
+      type: headNotification.content.type,
+      url: headNotification.content.url as Link,
+      path: notificationPath,
+      entity: {
+        title: headNotification.content.entity.title,
+        url: headNotification.content.entity.url as Link,
+        iconUrl: headNotification.content.entity.iconUrl as Link,
+      },
+      category: headNotification.category,
+      actor: headNotification.content.actor,
+      product: getAtlassianProduct(headNotification),
+      account: account,
+    };
+  });
 }

@@ -71,8 +71,8 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               <label
                 class="css-g6a23j"
                 data-testid="login-username--label"
-                for="username-uid1"
-                id="username-uid1-label"
+                for="username-uid3"
+                id="username-uid3-label"
               >
                 Username
                 <span
@@ -89,12 +89,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="presentation"
               >
                 <input
-                  aria-describedby="username-uid1-valid username-uid1-helper"
-                  aria-labelledby="username-uid1-label"
+                  aria-describedby="username-uid3-valid username-uid3-helper"
+                  aria-labelledby="username-uid3-label"
                   autocomplete="off"
                   class="css-1kxou5n"
                   data-ds--text-field--input="true"
-                  id="username-uid1"
+                  id="username-uid3"
                   name="username"
                   required=""
                   value=""
@@ -103,7 +103,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               <div
                 aria-live="polite"
                 class="css-5cg24a"
-                id="username-uid1-helper"
+                id="username-uid3-helper"
               >
                 Your Atlassian username / email address
               </div>
@@ -115,8 +115,8 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               <label
                 class="css-g6a23j"
                 data-testid="login-token--label"
-                for="token-uid2"
-                id="token-uid2-label"
+                for="token-uid4"
+                id="token-uid4-label"
               >
                 API Token
                 <span
@@ -133,11 +133,11 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="presentation"
               >
                 <input
-                  aria-describedby="token-uid2-valid token-uid2-helper"
-                  aria-labelledby="token-uid2-label"
+                  aria-describedby="token-uid4-valid token-uid4-helper"
+                  aria-labelledby="token-uid4-label"
                   class="css-1kxou5n"
                   data-ds--text-field--input="true"
-                  id="token-uid2"
+                  id="token-uid4"
                   name="token"
                   required=""
                   type="password"
@@ -147,7 +147,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               <div
                 aria-live="polite"
                 class="css-5cg24a"
-                id="token-uid2-helper"
+                id="token-uid4-helper"
               >
                 <span>
                   <div
@@ -398,8 +398,8 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             <label
               class="css-g6a23j"
               data-testid="login-username--label"
-              for="username-uid1"
-              id="username-uid1-label"
+              for="username-uid3"
+              id="username-uid3-label"
             >
               Username
               <span
@@ -416,12 +416,12 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               role="presentation"
             >
               <input
-                aria-describedby="username-uid1-valid username-uid1-helper"
-                aria-labelledby="username-uid1-label"
+                aria-describedby="username-uid3-valid username-uid3-helper"
+                aria-labelledby="username-uid3-label"
                 autocomplete="off"
                 class="css-1kxou5n"
                 data-ds--text-field--input="true"
-                id="username-uid1"
+                id="username-uid3"
                 name="username"
                 required=""
                 value=""
@@ -430,7 +430,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             <div
               aria-live="polite"
               class="css-5cg24a"
-              id="username-uid1-helper"
+              id="username-uid3-helper"
             >
               Your Atlassian username / email address
             </div>
@@ -442,8 +442,8 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             <label
               class="css-g6a23j"
               data-testid="login-token--label"
-              for="token-uid2"
-              id="token-uid2-label"
+              for="token-uid4"
+              id="token-uid4-label"
             >
               API Token
               <span
@@ -460,11 +460,11 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               role="presentation"
             >
               <input
-                aria-describedby="token-uid2-valid token-uid2-helper"
-                aria-labelledby="token-uid2-label"
+                aria-describedby="token-uid4-valid token-uid4-helper"
+                aria-labelledby="token-uid4-label"
                 class="css-1kxou5n"
                 data-ds--text-field--input="true"
-                id="token-uid2"
+                id="token-uid4"
                 name="token"
                 required=""
                 type="password"
@@ -474,7 +474,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             <div
               aria-live="polite"
               class="css-5cg24a"
-              id="token-uid2-helper"
+              id="token-uid4-helper"
             >
               <span>
                 <div

@@ -1,7 +1,4 @@
-import type {
-  AtlassianHeadNotification,
-  AtlassianNotification,
-} from './api/types';
+import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { PRODUCTS, getAtlassianProduct } from './products';
 
 describe('renderer/utils/products.ts', () => {
@@ -43,8 +40,8 @@ describe('renderer/utils/products.ts', () => {
 function createProductNotificationMock(
   registrationProduct: string,
   subProduct?: string,
-): AtlassianNotification {
-  const mockHeadNotification: Partial<AtlassianHeadNotification> = {
+): AtlassianHeadNotificationFragment {
+  const mockHeadNotification: Partial<AtlassianHeadNotificationFragment> = {
     analyticsAttributes: [
       {
         key: 'registrationProduct',
@@ -57,9 +54,5 @@ function createProductNotificationMock(
     ],
   };
 
-  const mockAtlassianNotification: Partial<AtlassianNotification> = {
-    headNotification: mockHeadNotification as AtlassianHeadNotification,
-  };
-
-  return mockAtlassianNotification as AtlassianNotification;
+  return mockHeadNotification as AtlassianHeadNotificationFragment;
 }

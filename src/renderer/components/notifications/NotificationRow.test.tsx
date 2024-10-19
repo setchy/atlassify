@@ -6,7 +6,7 @@ import {
   mockSettings,
 } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
-import type { ReadState } from '../../utils/api/types';
+import type { ReadState } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { NotificationRow } from './NotificationRow';

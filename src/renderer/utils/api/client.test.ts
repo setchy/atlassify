@@ -48,8 +48,8 @@ describe('renderer/utils/api/client.ts', () => {
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
           data: {
-            query: expect.stringContaining('query me'),
-            variables: {},
+            query: expect.stringContaining('query Me'),
+            variables: undefined,
           },
         }),
       );
@@ -67,7 +67,7 @@ describe('renderer/utils/api/client.ts', () => {
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
           data: {
-            query: expect.stringContaining('query myNotifications'),
+            query: expect.stringContaining('query MyNotifications'),
             variables: {
               first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
               readState: 'unread',
@@ -91,7 +91,7 @@ describe('renderer/utils/api/client.ts', () => {
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
           data: {
-            query: expect.stringContaining('mutation markAsRead'),
+            query: expect.stringContaining('mutation MarkAsRead'),
             variables: {
               notificationIDs: [mockSingleAtlassifyNotification.id],
             },
@@ -114,7 +114,7 @@ describe('renderer/utils/api/client.ts', () => {
           url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
           data: {
-            query: expect.stringContaining('mutation markAsUnread'),
+            query: expect.stringContaining('mutation MarkAsUnread'),
             variables: {
               notificationIDs: [mockSingleAtlassifyNotification.id],
             },

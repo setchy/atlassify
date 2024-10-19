@@ -1,5 +1,5 @@
 import type { AtlassianProduct, ProductName } from '../types';
-import type { AtlassianNotification } from './api/types';
+import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { Constants } from './constants';
 
 import {
@@ -56,13 +56,13 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
 
 // TODO ideally we could get this from a response field instead of String manipulation. See issue #97
 export function getAtlassianProduct(
-  notification: AtlassianNotification,
+  headNotification: AtlassianHeadNotificationFragment,
 ): AtlassianProduct {
-  const registrationProduct = notification.headNotification.analyticsAttributes
+  const registrationProduct = headNotification.analyticsAttributes
     .filter((attribute) => attribute.key === 'registrationProduct')[0]
     .value?.toLowerCase();
 
-  const subProduct = notification.headNotification.analyticsAttributes
+  const subProduct = headNotification.analyticsAttributes
     .filter((attribute) => attribute.key === 'subProduct')[0]
     .value?.toLowerCase();
 
