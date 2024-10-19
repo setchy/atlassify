@@ -16,9 +16,11 @@ import * as types from './graphql';
  */
 const documents = {
     "\n    query Me {\n      me {\n        user {\n          accountId\n          name\n          picture\n        }\n      }\n    }\n  ": types.MeDocument,
-    "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {  \n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": types.AtlassianHeadNotificationFragmentDoc,
+    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": types.MyNotificationsDocument,
     "\n    mutation MarkAsRead($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsRead(ids: $notificationIDs) \n      }\n    }\n  ": types.MarkAsReadDocument,
     "\n    mutation MarkAsUnread($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsUnread(ids: $notificationIDs) \n      }\n    }\n  ": types.MarkAsUnreadDocument,
+    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": types.AtlassianNotificationFragmentDoc,
+    "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": types.AtlassianHeadNotificationFragmentDoc,
 };
 
 /**
@@ -28,7 +30,7 @@ export function graphql(source: "\n    query Me {\n      me {\n        user {\n 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {  \n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  "): typeof import('./graphql').AtlassianHeadNotificationFragmentDoc;
+export function graphql(source: "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  "): typeof import('./graphql').MyNotificationsDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -37,6 +39,14 @@ export function graphql(source: "\n    mutation MarkAsRead($notificationIDs: [St
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n    mutation MarkAsUnread($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsUnread(ids: $notificationIDs) \n      }\n    }\n  "): typeof import('./graphql').MarkAsUnreadDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  "): typeof import('./graphql').AtlassianNotificationFragmentDoc;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  "): typeof import('./graphql').AtlassianHeadNotificationFragmentDoc;
 
 
 export function graphql(source: string) {

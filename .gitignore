@@ -5,6 +5,9 @@ build/
 # Dependency directories
 node_modules/
 
+# Generated GraphQL Files
+schema.graphql
+
 # Astro Docs - generated
 .astro/
 

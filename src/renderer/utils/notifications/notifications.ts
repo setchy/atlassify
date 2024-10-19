@@ -1,11 +1,14 @@
 import log from 'electron-log';
+
 import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
   AtlassifyNotificationPath,
   AtlassifyState,
+  Category,
   Link,
+  ReadState,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -55,12 +58,14 @@ export async function getAllNotifications(
         try {
           const res = (await accountNotifications.notifications).data;
 
-          const rawNotifications =
-            res.data.notifications.notificationFeed.nodes;
+          console.log('ADAM   res', JSON.stringify(res.data, null, 2));
+
+          const rawNotifications = res.data.notifications.notificationFeed
+            .nodes as AtlassianNotificationFragment[];
 
           let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
             accountNotifications.account,
-            rawNotifications, // TODO REMOVE THIS CAST
+            rawNotifications,
           );
 
           notifications = filterNotifications(notifications, state.settings);
@@ -106,7 +111,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
   notifications: AtlassianNotificationFragment[],
 ): AtlassifyNotification[] {
-  return notifications?.map((notification: AtlassianNotificationFragment) => {
+  return notifications?.map((notification) => {
     const headNotification =
       notification.headNotification as AtlassianHeadNotificationFragment;
 
@@ -122,7 +127,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     return {
       id: headNotification.notificationId,
       message: headNotification.content.message,
-      readState: headNotification.readState,
+      readState: headNotification.readState as ReadState,
       updated_at: headNotification.timestamp,
       type: headNotification.content.type,
       url: headNotification.content.url as Link,
@@ -132,8 +137,11 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
         url: headNotification.content.entity.url as Link,
         iconUrl: headNotification.content.entity.iconUrl as Link,
       },
-      category: headNotification.category,
-      actor: headNotification.content.actor,
+      category: headNotification.category as Category,
+      actor: {
+        displayName: headNotification.content.actor.displayName,
+        avatarURL: headNotification.content.actor.avatarURL as Link,
+      },
       product: getAtlassianProduct(headNotification),
       account: account,
     };

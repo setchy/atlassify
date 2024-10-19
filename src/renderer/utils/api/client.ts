@@ -57,43 +57,6 @@ export function getNotificationsForUser(
   settings: SettingsState,
 ): AxiosPromise<{ data: MyNotificationsQuery }> {
   const MyNotificationsQuery = graphql(`
-    fragment AtlassianHeadNotification on InfluentsNotificationItem {  
-      notificationId
-      timestamp
-      readState
-      category
-      content {
-        type
-        message
-        url
-        entity {
-          title
-          iconUrl
-          url
-        }
-        path {
-          title
-          iconUrl
-          url
-        }
-        actor {
-          displayName
-          avatarURL
-        }
-      }
-      analyticsAttributes {
-        key
-        value
-      }
-    }
-
-    fragment AtlassianNotification on InfluentsNotificationHeadItem {
-      groupId
-      headNotification {
-        ...AtlassianHeadNotification
-      }
-    }
-
     query MyNotifications
       (
         $readState: InfluentsNotificationReadState, 
@@ -171,3 +134,47 @@ export function markNotificationsAsUnread(
     notificationIDs: notificationIds,
   });
 }
+
+/**
+ * GraphQL Fragments used for generating types
+ */
+export const AtlassianNotificationFragment = graphql(`
+    fragment AtlassianNotification on InfluentsNotificationHeadItem {
+      groupId
+      headNotification {
+        ...AtlassianHeadNotification
+      }
+    }
+  `);
+
+export const AtlassianHeadNotificationFragment = graphql(`
+    fragment AtlassianHeadNotification on InfluentsNotificationItem {
+      notificationId
+      timestamp
+      readState
+      category
+      content {
+        type
+        message
+        url
+        entity {
+          title
+          iconUrl
+          url
+        }
+        path {
+          title
+          iconUrl
+          url
+        }
+        actor {
+          displayName
+          avatarURL
+        }
+      }
+      analyticsAttributes {
+        key
+        value
+      }
+    }
+  `);

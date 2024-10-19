@@ -13941,6 +13941,17 @@ export type HelpCenterNameInput = {
   translations?: InputMaybe<Array<InputMaybe<HelpCenterTranslationInput>>>;
 };
 
+export type HelpCenterPermissionsInput = {
+  /** Type of access control for Help Center */
+  accessControlType: HelpCenterAccessControlType;
+  /** List of groups that needs to be added for Help Center access */
+  addedAllowedAccessGroups?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** List of groups whose access to Help Center needs to be deleted */
+  deletedAllowedAccessGroups?: InputMaybe<Array<Scalars['String']['input']>>;
+  /**  HelpCenterARI can be used to get the correct help center node  */
+  helpCenterAri: Scalars['String']['input'];
+};
+
 export type HelpCenterPortalFilter = {
   /** Give a list of type of portals to be given */
   typeFilter?: InputMaybe<Array<HelpCenterPortalsType>>;
@@ -21150,7 +21161,7 @@ export type MarketplaceConsoleAppVersionCreateRequestInput = {
 };
 
 export type MarketplaceConsoleAppVersionDeleteRequestInput = {
-  appId?: InputMaybe<Scalars['ID']['input']>;
+  appKey?: InputMaybe<Scalars['ID']['input']>;
   appSoftwareId?: InputMaybe<Scalars['ID']['input']>;
   buildNumber: Scalars['ID']['input'];
 };
@@ -21159,6 +21170,11 @@ export type MarketplaceConsoleConnectFrameworkAttributesInput = {
   descriptorId: Scalars['String']['input'];
   href: Scalars['String']['input'];
   scopes?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+export type MarketplaceConsoleDeploymentInstructionInput = {
+  body?: InputMaybe<Scalars['String']['input']>;
+  screenshotImageUrl?: InputMaybe<Scalars['String']['input']>;
 };
 
 export enum MarketplaceConsoleDevSpaceProgram {
@@ -21255,6 +21271,62 @@ export enum MarketplaceConsoleLegacyMongoStatus {
   Rejected = 'REJECTED',
   Submitted = 'SUBMITTED'
 }
+
+export type MarketplaceConsoleListingHighLightInput = {
+  caption?: InputMaybe<Scalars['String']['input']>;
+  screenshotUrl: Scalars['String']['input'];
+  summary: Scalars['String']['input'];
+  thumbnailUrl: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+};
+
+export type MarketplaceConsoleListingScreenshotInput = {
+  caption?: InputMaybe<Scalars['String']['input']>;
+  imageUrl: Scalars['String']['input'];
+};
+
+/** For the nullable fields in request, null value means that the input was not provided and therefore would not be updated */
+export type MarketplaceConsoleMakeAppVersionPublicRequest = {
+  appKey: Scalars['ID']['input'];
+  appSoftwareId: Scalars['ID']['input'];
+  appStatusPageUrl?: InputMaybe<Scalars['String']['input']>;
+  binaryUrl?: InputMaybe<Scalars['String']['input']>;
+  buildNumber: Scalars['ID']['input'];
+  categories?: InputMaybe<Array<Scalars['String']['input']>>;
+  communityEnabled?: InputMaybe<Scalars['Boolean']['input']>;
+  compatibilities?: InputMaybe<Array<MarketplaceConsoleAppSoftwareVersionCompatibilityInput>>;
+  dataCenterReviewIssueKey?: InputMaybe<Scalars['String']['input']>;
+  deploymentInstructions?: InputMaybe<Array<MarketplaceConsoleDeploymentInstructionInput>>;
+  documentationUrl?: InputMaybe<Scalars['String']['input']>;
+  eulaUrl?: InputMaybe<Scalars['String']['input']>;
+  forumsUrl?: InputMaybe<Scalars['String']['input']>;
+  googleAnalytics4Id?: InputMaybe<Scalars['String']['input']>;
+  googleAnalyticsId?: InputMaybe<Scalars['String']['input']>;
+  heroImageUrl?: InputMaybe<Scalars['String']['input']>;
+  highlights?: InputMaybe<Array<MarketplaceConsoleListingHighLightInput>>;
+  isBeta?: InputMaybe<Scalars['Boolean']['input']>;
+  isSupported?: InputMaybe<Scalars['Boolean']['input']>;
+  issueTrackerUrl?: InputMaybe<Scalars['String']['input']>;
+  keywords?: InputMaybe<Array<Scalars['String']['input']>>;
+  learnMoreUrl?: InputMaybe<Scalars['String']['input']>;
+  licenseType?: InputMaybe<MarketplaceConsoleAppSoftwareVersionLicenseTypeId>;
+  logoUrl?: InputMaybe<Scalars['String']['input']>;
+  moreDetails?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  paymentModel?: InputMaybe<MarketplaceConsolePaymentModel>;
+  privacyUrl?: InputMaybe<Scalars['String']['input']>;
+  productId: Scalars['ID']['input'];
+  releaseNotes?: InputMaybe<Scalars['String']['input']>;
+  releaseSummary?: InputMaybe<Scalars['String']['input']>;
+  screenshots?: InputMaybe<Array<MarketplaceConsoleListingScreenshotInput>>;
+  segmentWriteKey?: InputMaybe<Scalars['String']['input']>;
+  sourceCodeLicenseUrl?: InputMaybe<Scalars['String']['input']>;
+  storesPersonalData?: InputMaybe<Scalars['Boolean']['input']>;
+  summary?: InputMaybe<Scalars['String']['input']>;
+  supportTicketSystemUrl?: InputMaybe<Scalars['String']['input']>;
+  tagLine?: InputMaybe<Scalars['String']['input']>;
+  youtubeId?: InputMaybe<Scalars['String']['input']>;
+};
 
 export enum MarketplaceConsoleParentSoftwareState {
   Active = 'ACTIVE',
@@ -22550,6 +22622,7 @@ export enum RateLimitingCurrency {
   TeamRoleGrantsMutatePrincipalsCurrency = 'TEAM_ROLE_GRANTS_MUTATE_PRINCIPALS_CURRENCY',
   TeamRoleGrantsQueryPrincipalsCurrency = 'TEAM_ROLE_GRANTS_QUERY_PRINCIPALS_CURRENCY',
   TeamSearchCurrency = 'TEAM_SEARCH_CURRENCY',
+  /** This isn't used anywhere but we're keeping it around so pipelines don't break */
   TeamSearchV2Currency = 'TEAM_SEARCH_V2_CURRENCY',
   TeamV2Currency = 'TEAM_V2_CURRENCY',
   TestingService = 'TESTING_SERVICE',
@@ -26072,13 +26145,6 @@ export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type MeQuery = { __typename?: 'Query', me: { __typename?: 'AuthenticationContext', user?: { __typename?: 'AppUser', accountId: string, name: string, picture: any } | { __typename?: 'AtlassianAccountUser', accountId: string, name: string, picture: any } | { __typename?: 'CustomerUser', accountId: string, name: string, picture: any } | null } };
 
-export type AtlassianHeadNotificationFragment = { __typename?: 'InfluentsNotificationItem', notificationId: string, timestamp: any, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { __typename?: 'InfluentsNotificationContent', type: string, message: string, url?: string | null, entity?: { __typename?: 'InfluentsNotificationEntity', title?: string | null, iconUrl?: string | null, url?: string | null } | null, path?: Array<{ __typename?: 'InfluentsNotificationPath', title?: string | null, iconUrl?: string | null, url?: string | null }> | null, actor: { __typename?: 'InfluentsNotificationActor', displayName?: string | null, avatarURL?: string | null } }, analyticsAttributes?: Array<{ __typename?: 'InfluentsNotificationAnalyticsAttribute', key?: string | null, value?: string | null }> | null } & { ' $fragmentName'?: 'AtlassianHeadNotificationFragment' };
-
-export type AtlassianNotificationFragment = { __typename?: 'InfluentsNotificationHeadItem', groupId: string, headNotification: (
-    { __typename?: 'InfluentsNotificationItem' }
-    & { ' $fragmentRefs'?: { 'AtlassianHeadNotificationFragment': AtlassianHeadNotificationFragment } }
-  ) } & { ' $fragmentName'?: 'AtlassianNotificationFragment' };
-
 export type MyNotificationsQueryVariables = Exact<{
   readState?: InputMaybe<InfluentsNotificationReadState>;
   first?: InputMaybe<Scalars['Int']['input']>;
@@ -26103,6 +26169,13 @@ export type MarkAsUnreadMutationVariables = Exact<{
 
 
 export type MarkAsUnreadMutation = { __typename?: 'Mutation', notifications?: { __typename?: 'InfluentsNotificationMutation', markNotificationsByIdsAsUnread?: string | null } | null };
+
+export type AtlassianNotificationFragment = { __typename?: 'InfluentsNotificationHeadItem', groupId: string, headNotification: (
+    { __typename?: 'InfluentsNotificationItem' }
+    & { ' $fragmentRefs'?: { 'AtlassianHeadNotificationFragment': AtlassianHeadNotificationFragment } }
+  ) } & { ' $fragmentName'?: 'AtlassianNotificationFragment' };
+
+export type AtlassianHeadNotificationFragment = { __typename?: 'InfluentsNotificationItem', notificationId: string, timestamp: any, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { __typename?: 'InfluentsNotificationContent', type: string, message: string, url?: string | null, entity?: { __typename?: 'InfluentsNotificationEntity', title?: string | null, iconUrl?: string | null, url?: string | null } | null, path?: Array<{ __typename?: 'InfluentsNotificationPath', title?: string | null, iconUrl?: string | null, url?: string | null }> | null, actor: { __typename?: 'InfluentsNotificationActor', displayName?: string | null, avatarURL?: string | null } }, analyticsAttributes?: Array<{ __typename?: 'InfluentsNotificationAnalyticsAttribute', key?: string | null, value?: string | null }> | null } & { ' $fragmentName'?: 'AtlassianHeadNotificationFragment' };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -26214,7 +26287,13 @@ export const MyNotificationsDocument = new TypedDocumentString(`
     }
   }
 }
-    fragment AtlassianHeadNotification on InfluentsNotificationItem {
+    fragment AtlassianNotification on InfluentsNotificationHeadItem {
+  groupId
+  headNotification {
+    ...AtlassianHeadNotification
+  }
+}
+fragment AtlassianHeadNotification on InfluentsNotificationItem {
   notificationId
   timestamp
   readState
@@ -26241,12 +26320,6 @@ export const MyNotificationsDocument = new TypedDocumentString(`
   analyticsAttributes {
     key
     value
-  }
-}
-fragment AtlassianNotification on InfluentsNotificationHeadItem {
-  groupId
-  headNotification {
-    ...AtlassianHeadNotification
   }
 }`) as unknown as TypedDocumentString<MyNotificationsQuery, MyNotificationsQueryVariables>;
 export const MarkAsReadDocument = new TypedDocumentString(`
