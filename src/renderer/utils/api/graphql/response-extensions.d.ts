@@ -1,15 +1,13 @@
 import { ExecutionResult } from 'graphql';
+import type {
+  AtlassianGraphQLAPIError,
+  AtlassianGraphQLExtensions,
+} from '../types';
 
 // Extend ExecutionResult to include `extensions`
 declare module 'graphql' {
-  // biome-ignore lint/suspicious/noExplicitAny:
-  interface ExecutionResult<TData = any> {
-    extensions?: {
-      notifications: {
-        response_info: {
-          responseSize: number;
-        };
-      };
-    };
+  interface ExecutionResult<TData = unknown> {
+    extensions?: AtlassianGraphQLExtensions;
+    errors?: AtlassianGraphQLAPIError[];
   }
 }

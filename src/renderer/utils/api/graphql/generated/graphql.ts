@@ -24064,6 +24064,31 @@ export enum ShepherdRateThresholdValue {
   Medium = 'MEDIUM'
 }
 
+export enum ShepherdRedactedContentStatus {
+  Redacted = 'REDACTED',
+  RedactionFailed = 'REDACTION_FAILED',
+  RedactionPending = 'REDACTION_PENDING'
+}
+
+/** Input used when redacting content */
+export type ShepherdRedactionInput = {
+  /** The alert ARI that the redaction is associated with */
+  alertId: Scalars['ID']['input'];
+  /** The list of `contentId`s to redact. `contentId`s should be taken from `ShepherdAlertSnippet` objects. */
+  redactions: Array<Scalars['ID']['input']>;
+  /** Whether or not to delete previous versions that contain the redacted content */
+  removeHistory: Scalars['Boolean']['input'];
+  /** The creation timestamp for the version of the document that is intended to be redacted */
+  timestamp: Scalars['String']['input'];
+};
+
+export enum ShepherdRedactionStatus {
+  Failed = 'FAILED',
+  PartiallyRedacted = 'PARTIALLY_REDACTED',
+  Pending = 'PENDING',
+  Redacted = 'REDACTED'
+}
+
 export enum ShepherdRemediationActionType {
   AnonAccessDspRemediation = 'ANON_ACCESS_DSP_REMEDIATION',
   ApplyClassificationRemediation = 'APPLY_CLASSIFICATION_REMEDIATION',

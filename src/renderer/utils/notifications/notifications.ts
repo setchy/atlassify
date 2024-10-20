@@ -58,8 +58,6 @@ export async function getAllNotifications(
         try {
           const res = (await accountNotifications.notifications).data;
 
-          console.log('ADAM   res', JSON.stringify(res.data, null, 2));
-
           const rawNotifications = res.data.notifications.notificationFeed
             .nodes as AtlassianNotificationFragment[];
 

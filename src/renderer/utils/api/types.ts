@@ -4,7 +4,7 @@
 export type AtlassianAPIError =
   | AtlassianHTTPError
   | AtlassianAuthError
-  | AtlassianGraphQLAPIErrors;
+  | AtlassianGraphQLErrors;
 
 interface AtlassianAuthError {
   code: number;
@@ -16,15 +16,23 @@ interface AtlassianHTTPError {
   message: string;
 }
 
-interface AtlassianGraphQLAPIErrors {
-  errors: GraphQLAPIError[];
+interface AtlassianGraphQLErrors {
+  errors: AtlassianGraphQLError[];
 }
 
-interface GraphQLAPIError {
+export interface AtlassianGraphQLError {
   message: string;
   extensions: {
     classification: string;
     errorType: string;
     statusCode: number;
+  };
+}
+
+export interface AtlassianGraphQLExtensions {
+  notifications: {
+    response_info: {
+      responseSize: number;
+    };
   };
 }

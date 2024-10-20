@@ -22,5 +22,7 @@ export function determineFailureType(
     return Errors.BAD_CREDENTIALS;
   }
 
+  // TODO add Bad Request error handling
+
   return Errors.UNKNOWN;
 }
