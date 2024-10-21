@@ -16,7 +16,9 @@ import type {
   AtlassianHeadNotificationFragment,
   AtlassianNotificationFragment,
 } from '../api/graphql/generated/graphql';
+import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
+import { Constants } from '../constants';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filter';
 
@@ -56,7 +58,7 @@ export async function getAllNotifications(
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
-          const res = (await accountNotifications.notifications).data;
+          const res = await accountNotifications.notifications;
 
           const rawNotifications = res.data.notifications.notificationFeed
             .nodes as AtlassianNotificationFragment[];
@@ -68,23 +70,10 @@ export async function getAllNotifications(
 
           notifications = filterNotifications(notifications, state.settings);
 
-          let hasMorePages = false;
-          try {
-            // TODO there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
-            hasMorePages = false; // TODO FIX THIS
-            // res.extensions.notifications.response_info.responseSize ===
-            // Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
-          } catch (error) {
-            log.warn(
-              'Response did not contain extensions object, assuming no more pages',
-              error,
-            );
-          }
-
           return {
             account: accountNotifications.account,
             notifications: notifications,
-            hasMoreNotifications: hasMorePages,
+            hasMoreNotifications: determineIfMorePagesAvailable(res),
             error: null,
           };
         } catch (error) {
@@ -144,4 +133,26 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
       account: account,
     };
   });
+}
+
+/**
+ * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.
+ * Instead we can check the extensions response size to determine if there are more notifications.
+ */
+function determineIfMorePagesAvailable<T>(
+  res: AtlassianGraphQLResponse<T>,
+): boolean {
+  try {
+    return (
+      res.extensions.notifications.response_info.responseSize ===
+      Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
+    );
+  } catch (error) {
+    log.warn(
+      'Response did not contain extensions object, assuming no more pages',
+      error,
+    );
+  }
+
+  return false;
 }

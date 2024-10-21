@@ -1,4 +1,3 @@
-import type { AxiosPromise } from 'axios';
 import type { Account, SettingsState, Token, Username } from '../../types';
 import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
@@ -10,6 +9,7 @@ import {
   type MyNotificationsQuery,
 } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
+import type { AtlassianGraphQLResponse } from './types';
 
 /**
  * Check if provided credentials (username and token) are valid.
@@ -20,7 +20,7 @@ import { performHeadRequest, performPostRequest } from './request';
 export function checkIfCredentialsAreValid(
   username: Username,
   token: Token,
-): AxiosPromise<unknown> {
+): Promise<AtlassianGraphQLResponse<unknown>> {
   return performHeadRequest(username, token);
 }
 
@@ -31,7 +31,7 @@ export function checkIfCredentialsAreValid(
  */
 export function getAuthenticatedUser(
   account: Account,
-): AxiosPromise<{ data: MeQuery }> {
+): Promise<AtlassianGraphQLResponse<MeQuery>> {
   const MeQuery = graphql(`
     query Me {
       me {
@@ -55,7 +55,7 @@ export function getAuthenticatedUser(
 export function getNotificationsForUser(
   account: Account,
   settings: SettingsState,
-): AxiosPromise<{ data: MyNotificationsQuery }> {
+): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
   const MyNotificationsQuery = graphql(`
     query MyNotifications
       (
@@ -99,7 +99,7 @@ export function getNotificationsForUser(
 export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
-): AxiosPromise<{ data: MarkAsReadMutation }> {
+): Promise<AtlassianGraphQLResponse<MarkAsReadMutation>> {
   const MarkAsReadMutation = graphql(`
     mutation MarkAsRead($notificationIDs: [String!]!) {
       notifications {
@@ -121,7 +121,7 @@ export function markNotificationsAsRead(
 export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
-): AxiosPromise<{ data: MarkAsUnreadMutation }> {
+): Promise<AtlassianGraphQLResponse<MarkAsUnreadMutation>> {
   const MarkAsUnreadMutation = graphql(`
     mutation MarkAsUnread($notificationIDs: [String!]!) {
       notifications {

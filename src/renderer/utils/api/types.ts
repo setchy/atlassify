@@ -20,7 +20,16 @@ interface AtlassianGraphQLErrors {
   errors: AtlassianGraphQLError[];
 }
 
-export interface AtlassianGraphQLError {
+/**
+ * The response from an Atlassian API request.
+ */
+export interface AtlassianGraphQLResponse<TData> {
+  data: TData;
+  errors?: AtlassianGraphQLError[];
+  extensions?: AtlassianGraphQLExtensions;
+}
+
+interface AtlassianGraphQLError {
   message: string;
   extensions: {
     classification: string;
@@ -29,7 +38,7 @@ export interface AtlassianGraphQLError {
   };
 }
 
-export interface AtlassianGraphQLExtensions {
+interface AtlassianGraphQLExtensions {
   notifications: {
     response_info: {
       responseSize: number;

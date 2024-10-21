@@ -22,6 +22,7 @@ export function determineFailureType(
     return Errors.BAD_CREDENTIALS;
   }
 
+  console.log('ADAM ERROR', JSON.stringify(err.response?.data, null, 2));
   // TODO add Bad Request error handling
 
   return Errors.UNKNOWN;
