@@ -81,6 +81,82 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-19g3t4k"
               id="theme-label"
             >
+              Theme:
+            </span>
+            <div
+              aria-labelledby="theme-label"
+              role="radiogroup"
+            >
+              <label
+                class="css-exvs2c"
+                data-disabled="true"
+                data-testid="theme-system--radio-label"
+              >
+                <input
+                  class="css-t4vzni"
+                  data-testid="theme-system--radio-input"
+                  disabled=""
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="SYSTEM"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  System
+                </span>
+              </label>
+              <label
+                class="css-exvs2c"
+                data-disabled="true"
+                data-testid="theme-light--radio-label"
+              >
+                <input
+                  checked=""
+                  class="css-t4vzni"
+                  data-testid="theme-light--radio-input"
+                  disabled=""
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="LIGHT"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Light
+                </span>
+              </label>
+              <label
+                class="css-exvs2c"
+                data-disabled="true"
+                data-testid="theme-dark--radio-label"
+              >
+                <input
+                  class="css-t4vzni"
+                  data-testid="theme-dark--radio-input"
+                  disabled=""
+                  name="theme"
+                  tabindex="0"
+                  type="radio"
+                  value="DARK"
+                />
+                <span
+                  class="css-b9c6gp"
+                >
+                  Dark
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="css-gokkc4"
+          >
+            <span
+              class="css-19g3t4k"
+              id="theme-label"
+            >
               Zoom:
             </span>
             <div
@@ -187,7 +263,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                       aria-hidden="true"
                       class="css-snhnyn"
                       data-vc="icon-undefined"
-                      style="--icon-primary-color: red; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      style="--icon-primary-color: var(--ds-icon-accent-red); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
                       <svg
                         height="24"

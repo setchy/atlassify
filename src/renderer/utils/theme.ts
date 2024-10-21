@@ -1,19 +1,23 @@
+import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 import { Theme } from '../types';
 
 export function getTheme(): Theme {
-  if (document.querySelector('html').classList.contains('dark')) {
-    return Theme.DARK;
+  switch (getGlobalTheme().colorMode) {
+    case 'dark':
+      return Theme.DARK;
+    default:
+      return Theme.LIGHT;
   }
-
-  return Theme.LIGHT;
 }
 
 export function setLightMode() {
-  document.querySelector('html').classList.remove('dark');
+  // document.querySelector('html').classList.remove('dark');
+  setGlobalTheme({ colorMode: 'light' });
 }
 
 export function setDarkMode() {
-  document.querySelector('html').classList.add('dark');
+  // document.querySelector('html').classList.add('dark');
+  setGlobalTheme({ colorMode: 'dark' });
 }
 
 export function setTheme(mode?: Theme) {
