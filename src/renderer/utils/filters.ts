@@ -3,11 +3,12 @@ import WatchIcon from '@atlaskit/icon/glyph/watch';
 
 import type {
   AccountNotifications,
+  Category,
   FilterDetails,
   ProductName,
+  ReadState,
   SettingsState,
 } from '../types';
-import type { Category, ReadState } from './api/types';
 
 export const CATEGORIES: Record<Category, FilterDetails> = {
   direct: {

@@ -51,6 +51,6 @@
   },
 
   "files": {
-    "ignore": ["docs/*"]
+    "ignore": ["docs/*", "**/generated/*"]
   }
 }

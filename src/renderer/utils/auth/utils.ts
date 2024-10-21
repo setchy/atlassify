@@ -35,9 +35,9 @@ export async function refreshAccount(account: Account): Promise<Account> {
   try {
     const res = await getAuthenticatedUser(account);
 
-    account.id = res.data.data.me.user.accountId;
-    account.name = res.data.data.me.user.name;
-    account.avatar = res.data.data.me.user.picture;
+    account.id = res.data.me.user.accountId;
+    account.name = res.data.me.user.name;
+    account.avatar = res.data.me.user.picture;
   } catch (error) {
     log.error('Failed to refresh account', error);
   }

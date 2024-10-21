@@ -1,15 +1,26 @@
 import log from 'electron-log';
+
+import { AxiosError } from 'axios';
 import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
+  AtlassifyNotificationPath,
   AtlassifyState,
+  Category,
+  Link,
+  ReadState,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type { AtlassianNotification } from '../api/types';
+import type {
+  AtlassianHeadNotificationFragment,
+  AtlassianNotificationFragment,
+} from '../api/graphql/generated/graphql';
+import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
+import { Errors } from '../errors';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filter';
 
@@ -49,10 +60,14 @@ export async function getAllNotifications(
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
-          const res = (await accountNotifications.notifications).data;
+          const res = await accountNotifications.notifications;
 
-          const rawNotifications =
-            res.data.notifications.notificationFeed.nodes;
+          if (res.errors) {
+            throw new AxiosError(Errors.BAD_REQUEST.title);
+          }
+
+          const rawNotifications = res.data.notifications.notificationFeed
+            .nodes as AtlassianNotificationFragment[];
 
           let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
             accountNotifications.account,
@@ -61,23 +76,10 @@ export async function getAllNotifications(
 
           notifications = filterNotifications(notifications, state.settings);
 
-          let hasMorePages = false;
-          try {
-            // TODO there is a bug in the Atlassian GraphQL response where the relay pageInfo is not accurate
-            hasMorePages =
-              res.extensions.notifications.response_info.responseSize ===
-              Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
-          } catch (error) {
-            log.warn(
-              'Response did not contain extensions object, assuming no more pages',
-              error,
-            );
-          }
-
           return {
             account: accountNotifications.account,
             notifications: notifications,
-            hasMoreNotifications: hasMorePages,
+            hasMoreNotifications: determineIfMorePagesAvailable(res),
             error: null,
           };
         } catch (error) {
@@ -85,6 +87,7 @@ export async function getAllNotifications(
             'Error occurred while fetching account notifications',
             error,
           );
+
           return {
             account: accountNotifications.account,
             notifications: [],
@@ -100,20 +103,63 @@ export async function getAllNotifications(
 
 function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  notifications: AtlassianNotification[],
+  notifications: AtlassianNotificationFragment[],
 ): AtlassifyNotification[] {
-  return notifications?.map((notification: AtlassianNotification) => ({
-    id: notification.headNotification.notificationId,
-    message: notification.headNotification.content.message,
-    readState: notification.headNotification.readState,
-    updated_at: notification.headNotification.timestamp,
-    type: notification.headNotification.content.type,
-    url: notification.headNotification.content.url,
-    path: notification.headNotification.content.path[0],
-    entity: notification.headNotification.content.entity,
-    category: notification.headNotification.category,
-    actor: notification.headNotification.content.actor,
-    product: getAtlassianProduct(notification),
-    account: account,
-  }));
+  return notifications?.map((notification) => {
+    const headNotification =
+      notification.headNotification as AtlassianHeadNotificationFragment;
+
+    let notificationPath: AtlassifyNotificationPath;
+    if (headNotification.content.path[0]) {
+      notificationPath = {
+        title: headNotification.content.path[0].title,
+        url: headNotification.content.path[0].url as Link,
+        iconUrl: headNotification.content.path[0].iconUrl as Link,
+      };
+    }
+
+    return {
+      id: headNotification.notificationId,
+      message: headNotification.content.message,
+      readState: headNotification.readState as ReadState,
+      updated_at: headNotification.timestamp,
+      type: headNotification.content.type,
+      url: headNotification.content.url as Link,
+      path: notificationPath,
+      entity: {
+        title: headNotification.content.entity.title,
+        url: headNotification.content.entity.url as Link,
+        iconUrl: headNotification.content.entity.iconUrl as Link,
+      },
+      category: headNotification.category as Category,
+      actor: {
+        displayName: headNotification.content.actor.displayName,
+        avatarURL: headNotification.content.actor.avatarURL as Link,
+      },
+      product: getAtlassianProduct(headNotification),
+      account: account,
+    };
+  });
+}
+
+/**
+ * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.
+ * Instead we can check the extensions response size to determine if there are more notifications.
+ */
+function determineIfMorePagesAvailable<T>(
+  res: AtlassianGraphQLResponse<T>,
+): boolean {
+  try {
+    return (
+      res.extensions.notifications.response_info.responseSize ===
+      Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
+    );
+  } catch (error) {
+    log.warn(
+      'Response did not contain extensions object, assuming no more pages',
+      error,
+    );
+  }
+
+  return false;
 }

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderer/utils/api/request.ts should make a head request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts should execute graphql request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",
+  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",
 }
 `;
 
-exports[`renderer/utils/api/request.ts should make a post request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts should make a head request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
+  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",
   "Cache-Control": "no-cache",
   "Content-Type": "application/json",
 }

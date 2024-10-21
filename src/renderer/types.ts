@@ -1,5 +1,3 @@
-import type { Category, ReadState } from './utils/api/types';
-
 declare const __brand: unique symbol;
 
 type Brand<B> = { [__brand]: B };
@@ -291,20 +289,12 @@ export interface AtlassifyNotification {
   /**
    * The parent details for the notification entity
    */
-  path: {
-    title: string;
-    url: Link;
-    iconUrl: Link | null;
-  };
+  path: AtlassifyNotificationPath;
 
   /**
    * The entity for which the notification is for.
    */
-  entity: {
-    title: string;
-    iconUrl: Link;
-    url: Link;
-  };
+  entity: AtlassifyNotificationEntity;
 
   /**
    * The actor who created the notification.
@@ -318,6 +308,24 @@ export interface AtlassifyNotification {
    * The account that the notification belongs to.
    */
   account: Account;
+}
+
+/**
+ * The parent details for the notification entity
+ */
+export interface AtlassifyNotificationPath {
+  title: string;
+  url: Link;
+  iconUrl: Link | null;
+}
+
+/**
+ * The entity for which the notification is for.
+ */
+export interface AtlassifyNotificationEntity {
+  title: string;
+  iconUrl: Link;
+  url: Link;
 }
 
 /**
@@ -422,3 +430,19 @@ export type Chevron = {
    */
   label: string;
 };
+
+/**
+ * The notification category.
+ *
+ * - `direct` - A direct notification event.
+ * - `watching` - A watched notification event.
+ */
+export type Category = 'direct' | 'watching';
+
+/**
+ * The read state of the notification.
+ *
+ * - `unread` - The notification has not been read.
+ * - `read` - The notification has been read.
+ */
+export type ReadState = 'unread' | 'read';

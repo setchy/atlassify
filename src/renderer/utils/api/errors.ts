@@ -6,9 +6,11 @@ import type { AtlassianAPIError } from './types';
 export function determineFailureType(
   err: AxiosError<AtlassianAPIError>,
 ): AtlassifyError {
-  const code = err.code;
+  if (err.message === Errors.BAD_REQUEST.title) {
+    return Errors.BAD_REQUEST;
+  }
 
-  if (code === AxiosError.ERR_NETWORK) {
+  if (err.code === AxiosError.ERR_NETWORK) {
     return Errors.NETWORK;
   }
 
