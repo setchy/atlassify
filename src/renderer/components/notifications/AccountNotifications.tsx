@@ -110,7 +110,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
-            : 'color.background.brand.subtlest'
+            : 'color.background.brand.subtlest.pressed'
         }
       >
         <Flex alignItems="center" justifyContent="space-between">

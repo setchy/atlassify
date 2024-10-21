@@ -8,6 +8,9 @@ import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { RadioGroup } from '@atlaskit/radio';
+import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
+import { setGlobalTheme, token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -29,6 +32,7 @@ export const AppearanceSettings: FC = () => {
     ipcRenderer.on('atlassify:update-theme', (_, updatedTheme: Theme) => {
       if (settings.theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
+        setGlobalTheme({ colorMode: 'auto' });
       }
     });
   }, [settings.theme]);
@@ -47,7 +51,6 @@ export const AppearanceSettings: FC = () => {
   /**
    * TODO: support theme selection #92
    */
-  /*
   const themeOptions: OptionsPropType = [
     {
       name: 'theme',
@@ -63,26 +66,27 @@ export const AppearanceSettings: FC = () => {
     },
     { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
   ];
-  */
 
   return (
     <Stack space="space.100">
       <Heading size="small">Appearance</Heading>
 
-      {/* <Inline space="space.100">
+      <Inline space="space.100">
         <Text id="theme-label" weight="medium">
           Theme:
         </Text>
         <RadioGroup
           options={themeOptions}
-          defaultValue={settings.theme}
+          // defaultValue={settings.theme}
+          defaultValue="LIGHT"
+          isDisabled={true}
           value={settings.theme}
           onChange={(evt) => {
             updateSetting('theme', evt.target.value as Theme);
           }}
           aria-labelledby="theme-label"
         />
-      </Inline> */}
+      </Inline>
 
       <Inline space="space.100">
         <Text id="theme-label" weight="medium">
@@ -124,7 +128,10 @@ export const AppearanceSettings: FC = () => {
             <IconButton
               label="Reset Zoom"
               icon={(iconProps) => (
-                <SelectClearIcon {...iconProps} primaryColor="red" />
+                <SelectClearIcon
+                  {...iconProps}
+                  primaryColor={token('color.icon.accent.red')}
+                />
               )}
               shape="circle"
               spacing="compact"

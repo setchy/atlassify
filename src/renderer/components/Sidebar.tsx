@@ -12,6 +12,7 @@ import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
@@ -104,7 +105,7 @@ export const Sidebar: FC = () => {
                   <NotificationIcon
                     {...iconProps}
                     size="small"
-                    primaryColor="white"
+                    primaryColor={token('color.icon.inverse')}
                   />
                 )}
                 appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
@@ -146,7 +147,7 @@ export const Sidebar: FC = () => {
                       <ListIcon
                         label="groupByProduct"
                         size="small"
-                        primaryColor="white"
+                        primaryColor={token('color.icon.inverse')}
                       />
                     )}
                     onClick={() => {
@@ -173,7 +174,7 @@ export const Sidebar: FC = () => {
                       <FilterIcon
                         {...iconProps}
                         size="small"
-                        primaryColor="white"
+                        primaryColor={token('color.icon.inverse')}
                       />
                     )}
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -207,7 +208,7 @@ export const Sidebar: FC = () => {
                       <RefreshIcon
                         {...iconProps}
                         size="medium"
-                        primaryColor="white"
+                        primaryColor={token('color.icon.inverse')}
                       />
                     )
                   }
@@ -226,7 +227,7 @@ export const Sidebar: FC = () => {
                     <SettingsIcon
                       {...iconProps}
                       size="medium"
-                      primaryColor="white"
+                      primaryColor={token('color.icon.inverse')}
                     />
                   )}
                   appearance="subtle"
@@ -244,7 +245,7 @@ export const Sidebar: FC = () => {
                   <CrossCircleIcon
                     {...iconProps}
                     size="medium"
-                    primaryColor="white"
+                    primaryColor={token('color.icon.inverse')}
                     secondaryColor={colors.sidebar}
                   />
                 )}

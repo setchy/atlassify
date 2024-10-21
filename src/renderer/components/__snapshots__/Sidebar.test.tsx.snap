@@ -13,7 +13,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -50,7 +50,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -87,7 +87,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -125,7 +125,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
       class="css-1wits42"
       data-vc="icon-undefined"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -162,7 +162,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
       class="css-1wits42"
       data-vc="icon-undefined"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -199,7 +199,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
       class="css-1wits42"
       data-vc="icon-undefined"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -235,7 +235,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -272,7 +272,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -309,7 +309,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       aria-hidden="true"
       class="css-1wits42"
       data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
         height="24"
@@ -417,7 +417,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                       aria-hidden="true"
                       class="css-1wits42"
                       data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
                       <svg
                         height="24"
@@ -464,7 +464,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                    style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: #2684FF;"
                   >
                     <svg
                       height="24"
@@ -585,7 +585,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                     aria-hidden="true"
                     class="css-1wits42"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
                     <svg
                       height="24"
@@ -632,7 +632,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                  style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: #2684FF;"
                 >
                   <svg
                     height="24"
@@ -810,7 +810,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                       aria-hidden="true"
                       class="css-1wits42"
                       data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
                       <svg
                         height="24"
@@ -857,7 +857,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                     aria-hidden="true"
                     class="css-1afrefi"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                    style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: #2684FF;"
                   >
                     <svg
                       height="24"
@@ -978,7 +978,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                     aria-hidden="true"
                     class="css-1wits42"
                     data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
                     <svg
                       height="24"
@@ -1025,7 +1025,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
                   aria-hidden="true"
                   class="css-1afrefi"
                   data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                  style="--icon-primary-color: var(--ds-icon-inverse); --icon-secondary-color: #2684FF;"
                 >
                   <svg
                     height="24"
