@@ -79,7 +79,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               type="button"
             >
               <div
-                aria-labelledby="4"
+                aria-labelledby="uid4"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -97,7 +97,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                 </span>
                 <span
                   hidden=""
-                  id="4"
+                  id="uid4"
                 >
                   Atlassify
                 </span>

@@ -1121,7 +1121,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
 
 exports[`renderer/components/Sidebar.tsx show only unread notifications should toggle show only unread notifications 1`] = `
 <input
-  aria-labelledby="80"
+  aria-labelledby="uid80"
   checked=""
   data-testid="sidebar-toggle-unread-only--input"
   id="toggle-unread-only"

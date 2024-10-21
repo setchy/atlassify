@@ -19,7 +19,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               role="presentation"
             >
               <div
-                aria-labelledby="2"
+                aria-labelledby="uid2"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -37,7 +37,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 </span>
                 <span
                   hidden=""
-                  id="2"
+                  id="uid2"
                 >
                   atlassify-app
                 </span>
@@ -99,7 +99,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="4"
+                  aria-labelledby="uid4"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -117,7 +117,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   </span>
                   <span
                     hidden=""
-                    id="4"
+                    id="uid4"
                   >
                     #103: chore(deps): update dependency eslint
                   </span>
@@ -230,7 +230,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <div
-              aria-labelledby="2"
+              aria-labelledby="uid2"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -248,7 +248,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               </span>
               <span
                 hidden=""
-                id="2"
+                id="uid2"
               >
                 atlassify-app
               </span>
@@ -310,7 +310,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               class="css-1w1rt7h"
             >
               <div
-                aria-labelledby="4"
+                aria-labelledby="uid4"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -328,7 +328,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 </span>
                 <span
                   hidden=""
-                  id="4"
+                  id="uid4"
                 >
                   #103: chore(deps): update dependency eslint
                 </span>
@@ -498,7 +498,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               role="presentation"
             >
               <div
-                aria-labelledby="8"
+                aria-labelledby="uid8"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -516,7 +516,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 </span>
                 <span
                   hidden=""
-                  id="8"
+                  id="uid8"
                 >
                   atlassify-app
                 </span>
@@ -578,7 +578,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="10"
+                  aria-labelledby="uid10"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -596,7 +596,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   </span>
                   <span
                     hidden=""
-                    id="10"
+                    id="uid10"
                   >
                     #103: chore(deps): update dependency eslint
                   </span>
@@ -709,7 +709,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <div
-              aria-labelledby="8"
+              aria-labelledby="uid8"
               role="img"
               style="display: inline-block; position: relative; outline: 0;"
             >
@@ -727,7 +727,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               </span>
               <span
                 hidden=""
-                id="8"
+                id="uid8"
               >
                 atlassify-app
               </span>
@@ -789,7 +789,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               class="css-1w1rt7h"
             >
               <div
-                aria-labelledby="10"
+                aria-labelledby="uid10"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -807,7 +807,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 </span>
                 <span
                   hidden=""
-                  id="10"
+                  id="uid10"
                 >
                   #103: chore(deps): update dependency eslint
                 </span>
