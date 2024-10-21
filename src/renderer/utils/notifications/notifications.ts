@@ -88,8 +88,6 @@ export async function getAllNotifications(
             error,
           );
 
-          console.log('ADAM ERROR', JSON.stringify(error, null, 2));
-
           return {
             account: accountNotifications.account,
             notifications: [],
