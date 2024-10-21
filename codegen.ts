@@ -9,8 +9,6 @@ const config: CodegenConfig = {
       preset: 'client',
       config: {
         documentMode: 'string',
-        customResponseType: true, // Enable custom response type so we can include extensions in the response
-        exportFragmentSpreadSubTypes: true,
       },
     },
     'src/renderer/utils/api/graphql/generated/schema.graphql': {
