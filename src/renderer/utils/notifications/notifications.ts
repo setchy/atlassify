@@ -19,6 +19,7 @@ import type {
 import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
+import { Errors } from '../errors';
 import { getAtlassianProduct } from '../products';
 import { filterNotifications } from './filter';
 
@@ -60,6 +61,12 @@ export async function getAllNotifications(
         try {
           const res = await accountNotifications.notifications;
 
+          if (res.errors) {
+            throw new Error(Errors.BAD_REQUEST.title);
+          }
+
+          // console.log('ADAM RESPONSE', JSON.stringify(res, null, 2));
+
           const rawNotifications = res.data.notifications.notificationFeed
             .nodes as AtlassianNotificationFragment[];
 
@@ -81,6 +88,9 @@ export async function getAllNotifications(
             'Error occurred while fetching account notifications',
             error,
           );
+
+          console.log('ADAM ERROR', JSON.stringify(error, null, 2));
+
           return {
             account: accountNotifications.account,
             notifications: [],
