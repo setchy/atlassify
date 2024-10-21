@@ -4,28 +4,24 @@ import { Errors } from '../errors';
 import type { AtlassianAPIError } from './types';
 
 export function determineFailureType(
-  err: AxiosError<AtlassianAPIError> | Error,
+  err: AxiosError<AtlassianAPIError>,
 ): AtlassifyError {
-  if (err instanceof Error && err.message === Errors.BAD_REQUEST.title) {
+  if (err.message === Errors.BAD_REQUEST.title) {
     return Errors.BAD_REQUEST;
   }
 
-  if (err instanceof AxiosError) {
-    const code = err.code;
+  if (err.code === AxiosError.ERR_NETWORK) {
+    return Errors.NETWORK;
+  }
 
-    if (code === AxiosError.ERR_NETWORK) {
-      return Errors.NETWORK;
-    }
+  const status = err.response?.status;
 
-    const status = err.response?.status;
-
-    if (
-      status === 401 ||
-      status === 404 ||
-      err.message?.includes('safeStorage')
-    ) {
-      return Errors.BAD_CREDENTIALS;
-    }
+  if (
+    status === 401 ||
+    status === 404 ||
+    err.message?.includes('safeStorage')
+  ) {
+    return Errors.BAD_CREDENTIALS;
   }
 
   return Errors.UNKNOWN;

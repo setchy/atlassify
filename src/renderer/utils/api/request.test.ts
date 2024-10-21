@@ -9,6 +9,14 @@ jest.mock('axios');
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
+  beforeEach(() => {
+    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+      data: {
+        data: {},
+      },
+    });
+  });
+
   afterEach(() => {
     jest.clearAllMocks();
   });

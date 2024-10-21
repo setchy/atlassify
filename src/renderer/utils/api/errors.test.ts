@@ -4,19 +4,7 @@ import { determineFailureType } from './errors';
 import type { AtlassianAPIError } from './types';
 
 describe('renderer/utils/api/errors.ts', () => {
-  it('network error', async () => {
-    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-      code: AxiosError.ERR_NETWORK,
-    };
-
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
-
-    expect(result).toBe(Errors.NETWORK);
-  });
-
-  describe('bad request errors', () => {
+  describe('bad credentials errors', () => {
     it('bad credentials - 401', async () => {
       const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
@@ -59,6 +47,30 @@ describe('renderer/utils/api/errors.ts', () => {
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
+  });
+
+  it('bad request error', async () => {
+    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
+      message: Errors.BAD_REQUEST.title,
+    };
+
+    const result = determineFailureType(
+      mockError as AxiosError<AtlassianAPIError>,
+    );
+
+    expect(result).toBe(Errors.BAD_REQUEST);
+  });
+
+  it('network error', async () => {
+    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
+      code: AxiosError.ERR_NETWORK,
+    };
+
+    const result = determineFailureType(
+      mockError as AxiosError<AtlassianAPIError>,
+    );
+
+    expect(result).toBe(Errors.NETWORK);
   });
 
   it('unknown error', async () => {

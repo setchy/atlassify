@@ -1,10 +1,7 @@
 /**
  * The different types of API errors which may be encountered.
  */
-export type AtlassianAPIError =
-  | AtlassianHTTPError
-  | AtlassianAuthError
-  | AtlassianGraphQLErrors;
+export type AtlassianAPIError = AtlassianHTTPError | AtlassianAuthError;
 
 interface AtlassianAuthError {
   code: number;
@@ -14,10 +11,6 @@ interface AtlassianAuthError {
 interface AtlassianHTTPError {
   status: number;
   message: string;
-}
-
-interface AtlassianGraphQLErrors {
-  errors: AtlassianGraphQLError[];
 }
 
 /**

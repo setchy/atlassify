@@ -1,5 +1,6 @@
 import log from 'electron-log';
 
+import { AxiosError } from 'axios';
 import type {
   Account,
   AccountNotifications,
@@ -62,10 +63,8 @@ export async function getAllNotifications(
           const res = await accountNotifications.notifications;
 
           if (res.errors) {
-            throw new Error(Errors.BAD_REQUEST.title);
+            throw new AxiosError(Errors.BAD_REQUEST.title);
           }
-
-          // console.log('ADAM RESPONSE', JSON.stringify(res, null, 2));
 
           const rawNotifications = res.data.notifications.notificationFeed
             .nodes as AtlassianNotificationFragment[];
