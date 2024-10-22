@@ -6,7 +6,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   "baseElement": <body>
     <div>
       <div
-        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex border-b border-notification-light dark:border-notification-dark px-3 py-2 hover:notification-light dark:hover:notification-dark"
         id="138661096"
       >
         <div
@@ -217,7 +217,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   </body>,
   "container": <div>
     <div
-      class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+      class="group flex border-b border-notification-light dark:border-notification-dark px-3 py-2 hover:notification-light dark:hover:notification-dark"
       id="138661096"
     >
       <div
@@ -485,7 +485,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   "baseElement": <body>
     <div>
       <div
-        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex border-b border-notification-light dark:border-notification-dark px-3 py-2 hover:notification-light dark:hover:notification-dark"
         id="138661096"
       >
         <div
@@ -696,7 +696,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   </body>,
   "container": <div>
     <div
-      class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+      class="group flex border-b border-notification-light dark:border-notification-dark px-3 py-2 hover:notification-light dark:hover:notification-dark"
       id="138661096"
     >
       <div

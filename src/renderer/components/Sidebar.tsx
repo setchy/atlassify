@@ -16,10 +16,12 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
 import { AppContext } from '../context/App';
+import { Theme } from '../types';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
+import { getTheme } from '../utils/theme';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -73,7 +75,7 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar dark:bg-dark-sidebar">
+    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
@@ -245,7 +247,11 @@ export const Sidebar: FC = () => {
                     {...iconProps}
                     size="medium"
                     primaryColor="white"
-                    secondaryColor={colors.sidebar}
+                    secondaryColor={
+                      getTheme() === Theme.LIGHT
+                        ? colors['sidebar-light']
+                        : colors['sidebar-dark']
+                    }
                   />
                 )}
                 shape="circle"

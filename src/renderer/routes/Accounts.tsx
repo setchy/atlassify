@@ -43,7 +43,7 @@ export const AccountsRoute: FC = () => {
             return (
               <div
                 key={account.id}
-                className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-800"
+                className="mb-4 flex items-center justify-between rounded-md p-2 bg-accounts-light dark:accounts-dark"
               >
                 <Inline grow="fill" spread="space-between" alignBlock="center">
                   <Tooltip content="Open account profile" position="bottom">
