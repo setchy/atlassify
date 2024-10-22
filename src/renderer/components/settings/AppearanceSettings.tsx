@@ -18,8 +18,8 @@ import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
 
-let timeout: NodeJS.Timeout;
-const DELAY = 200;
+let zoomResizeTimeout: NodeJS.Timeout;
+const ZOOM_RESIZE_DELAY = 200;
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
@@ -39,18 +39,15 @@ export const AppearanceSettings: FC = () => {
 
   window.addEventListener('resize', () => {
     // clear the timeout
-    clearTimeout(timeout);
+    clearTimeout(zoomResizeTimeout);
     // start timing for event "completion"
-    timeout = setTimeout(() => {
+    zoomResizeTimeout = setTimeout(() => {
       const zoomPercentage = zoomLevelToPercentage(webFrame.getZoomLevel());
       setZoomPercentage(zoomPercentage);
       updateSetting('zoomPercentage', zoomPercentage);
-    }, DELAY);
+    }, ZOOM_RESIZE_DELAY);
   });
 
-  /**
-   * TODO: support theme selection #92
-   */
   const themeOptions: OptionsPropType = [
     {
       name: 'theme',

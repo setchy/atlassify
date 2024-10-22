@@ -4,11 +4,8 @@ import { createRoot } from 'react-dom/client';
 import 'tailwindcss/tailwind.css';
 import '@atlaskit/css-reset';
 
-/**
- * TODO: support theme selection #92
- */
 setGlobalTheme({
-  light: 'light',
+  light: 'light-future',
   dark: 'dark',
   colorMode: 'light',
 });

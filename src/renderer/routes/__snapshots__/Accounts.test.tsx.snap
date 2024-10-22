@@ -64,162 +64,158 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
       class="mt-4 flex flex-col text-sm"
     >
       <div
-        class="css-1e13sq9"
+        class="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-800"
       >
         <div
-          class="mb-4 flex items-center justify-between rounded-md"
+          class="css-y272c0"
         >
           <div
-            class="css-y272c0"
+            role="presentation"
+          >
+            <button
+              aria-label="Open account profile"
+              class="css-1xq1pkg"
+              data-testid="account-profile--itemInner"
+              type="button"
+            >
+              <div
+                aria-labelledby="uid4"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-1i6qr0h"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatar.atlassify.io"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="uid4"
+                >
+                  Atlassify
+                </span>
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassify
+                </span>
+                <span
+                  class="css-km389f"
+                >
+                  user@atlassify.io
+                </span>
+              </div>
+            </button>
+          </div>
+          <div
+            class="css-1au07qt"
           >
             <div
               role="presentation"
             >
               <button
-                aria-label="Open account profile"
-                class="css-1xq1pkg"
-                data-testid="account-profile--itemInner"
+                class="css-1l7n0sn"
+                data-testid="account-refresh"
                 type="button"
               >
-                <div
-                  aria-labelledby="uid4"
-                  role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
+                <span
+                  class="css-1spmf3f"
                 >
                   <span
-                    class="css-1i6qr0h"
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <img
-                      alt=""
-                      aria-hidden="true"
-                      class="css-13ep12v"
-                      data-vc="avatar-image"
-                      src="https://avatar.atlassify.io"
-                      style="border-radius: 50%;"
-                    />
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M8 6.003v2.995a1 1 0 1 0 2 0V5.102C10 4.494 9.507 4 8.9 4H5a1 1 0 0 0 0 2.003z"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M9.428 18.018C7.351 16.989 6 14.807 6 12.37c0-2.266 1.167-4.319 3.02-5.425.48-.286.646-.922.371-1.421a.98.98 0 0 0-1.364-.386C5.557 6.611 4 9.35 4 12.37c0 3.248 1.802 6.158 4.57 7.529.498.247 1.095.026 1.332-.493.237-.52.025-1.141-.474-1.388"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M14 15.002v3.896c0 .608.493 1.102 1.1 1.102H19a1 1 0 0 0 0-2.003h-3v-2.995a1 1 0 1 0-2 0"
+                        />
+                        <path
+                          d="M14.097 4.596c-.237.52-.025 1.14.474 1.387 2.077 1.029 3.428 3.21 3.428 5.647 0 2.266-1.167 4.32-3.021 5.425a1.063 1.063 0 0 0-.37 1.42c.274.5.885.673 1.364.387 2.47-1.473 4.027-4.212 4.027-7.232 0-3.248-1.802-6.158-4.57-7.528A.96.96 0 0 0 15.002 4a1 1 0 0 0-.905.596"
+                        />
+                      </g>
+                    </svg>
                   </span>
                   <span
-                    hidden=""
-                    id="uid4"
+                    class="css-b5o75w"
                   >
-                    Atlassify
+                    Refresh user@atlassify.io
                   </span>
-                </div>
-                <div
-                  class="css-1orugy9"
-                >
-                  <span
-                    class="css-pbo52v"
-                  >
-                    Atlassify
-                  </span>
-                  <span
-                    class="css-km389f"
-                  >
-                    user@atlassify.io
-                  </span>
-                </div>
+                </span>
               </button>
             </div>
             <div
-              class="css-1au07qt"
+              role="presentation"
             >
-              <div
-                role="presentation"
+              <button
+                class="css-1l7n0sn"
+                data-testid="account-logout"
+                type="button"
               >
-                <button
-                  class="css-1l7n0sn"
-                  data-testid="account-refresh"
-                  type="button"
+                <span
+                  class="css-1spmf3f"
                 >
                   <span
-                    class="css-1spmf3f"
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       >
-                        <g
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M8 6.003v2.995a1 1 0 1 0 2 0V5.102C10 4.494 9.507 4 8.9 4H5a1 1 0 0 0 0 2.003z"
-                            fill-rule="nonzero"
-                          />
-                          <path
-                            d="M9.428 18.018C7.351 16.989 6 14.807 6 12.37c0-2.266 1.167-4.319 3.02-5.425.48-.286.646-.922.371-1.421a.98.98 0 0 0-1.364-.386C5.557 6.611 4 9.35 4 12.37c0 3.248 1.802 6.158 4.57 7.529.498.247 1.095.026 1.332-.493.237-.52.025-1.141-.474-1.388"
-                            fill-rule="nonzero"
-                          />
-                          <path
-                            d="M14 15.002v3.896c0 .608.493 1.102 1.1 1.102H19a1 1 0 0 0 0-2.003h-3v-2.995a1 1 0 1 0-2 0"
-                          />
-                          <path
-                            d="M14.097 4.596c-.237.52-.025 1.14.474 1.387 2.077 1.029 3.428 3.21 3.428 5.647 0 2.266-1.167 4.32-3.021 5.425a1.063 1.063 0 0 0-.37 1.42c.274.5.885.673 1.364.387 2.47-1.473 4.027-4.212 4.027-7.232 0-3.248-1.802-6.158-4.57-7.528A.96.96 0 0 0 15.002 4a1 1 0 0 0-.905.596"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      Refresh user@atlassify.io
-                    </span>
+                        <path
+                          d="M4.977 11A.99.99 0 0 0 4 12c0 .551.437 1 .977 1h11.046A.99.99 0 0 0 17 12a.99.99 0 0 0-.977-1z"
+                        />
+                        <path
+                          d="M6.23 8.31 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96a1.03 1.03 0 0 0 1.47 0 1.05 1.05 0 0 0 0-1.48L5.5 12l2.2-2.22a1.05 1.05 0 0 0 0-1.48 1.03 1.03 0 0 0-1.47 0M15.5 3H12v2h7v14h-7v2h7.01c1.1 0 1.99-.89 1.99-1.99V5a1.99 1.99 0 0 0-1.99-2z"
+                        />
+                      </g>
+                    </svg>
                   </span>
-                </button>
-              </div>
-              <div
-                role="presentation"
-              >
-                <button
-                  class="css-1l7n0sn"
-                  data-testid="account-logout"
-                  type="button"
-                >
                   <span
-                    class="css-1spmf3f"
+                    class="css-b5o75w"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <g
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M4.977 11A.99.99 0 0 0 4 12c0 .551.437 1 .977 1h11.046A.99.99 0 0 0 17 12a.99.99 0 0 0-.977-1z"
-                          />
-                          <path
-                            d="M6.23 8.31 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96a1.03 1.03 0 0 0 1.47 0 1.05 1.05 0 0 0 0-1.48L5.5 12l2.2-2.22a1.05 1.05 0 0 0 0-1.48 1.03 1.03 0 0 0-1.47 0M15.5 3H12v2h7v14h-7v2h7.01c1.1 0 1.99-.89 1.99-1.99V5a1.99 1.99 0 0 0-1.99-2z"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      Logout user@atlassify.io
-                    </span>
+                    Logout user@atlassify.io
                   </span>
-                </button>
-              </div>
+                </span>
+              </button>
             </div>
           </div>
         </div>

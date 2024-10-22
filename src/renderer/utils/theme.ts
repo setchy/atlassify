@@ -2,12 +2,7 @@ import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 import { Theme } from '../types';
 
 export function getTheme(): Theme {
-  switch (getGlobalTheme().colorMode) {
-    case 'dark':
-      return Theme.DARK;
-    default:
-      return Theme.LIGHT;
-  }
+  return getGlobalTheme().colorMode === 'dark' ? Theme.DARK : Theme.LIGHT;
 }
 
 export function setLightMode() {

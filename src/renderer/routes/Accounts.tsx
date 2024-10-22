@@ -41,71 +41,61 @@ export const AccountsRoute: FC = () => {
         <div className="mt-4 flex flex-col text-sm">
           {auth.accounts.map((account) => {
             return (
-              <Box
+              <div
                 key={account.id}
-                padding="space.050"
-                backgroundColor="color.background.accent.gray.subtlest"
+                className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-800"
               >
-                <div
-                  key={account.id}
-                  className="mb-4 flex items-center justify-between rounded-md"
-                >
-                  <Inline
-                    grow="fill"
-                    spread="space-between"
-                    alignBlock="center"
-                  >
-                    <Tooltip content="Open account profile" position="bottom">
-                      <AvatarItem
-                        label="Open account profile"
-                        avatar={
-                          <Avatar
-                            name={account.name}
-                            src={account.avatar}
-                            size="medium"
-                            appearance="circle"
-                          />
-                        }
-                        primaryText={account.name}
-                        secondaryText={account.username}
-                        onClick={() => openAccountProfile(account)}
-                        testId="account-profile"
+                <Inline grow="fill" spread="space-between" alignBlock="center">
+                  <Tooltip content="Open account profile" position="bottom">
+                    <AvatarItem
+                      label="Open account profile"
+                      avatar={
+                        <Avatar
+                          name={account.name}
+                          src={account.avatar}
+                          size="medium"
+                          appearance="circle"
+                        />
+                      }
+                      primaryText={account.name}
+                      secondaryText={account.username}
+                      onClick={() => openAccountProfile(account)}
+                      testId="account-profile"
+                    />
+                  </Tooltip>
+
+                  <Inline>
+                    <Tooltip
+                      content={`Refresh ${account.username}`}
+                      position="bottom"
+                    >
+                      <IconButton
+                        label={`Refresh ${account.username}`}
+                        icon={RefreshIcon}
+                        appearance="subtle"
+                        onClick={async () => {
+                          await refreshAccount(account);
+                          navigate('/accounts', { replace: true });
+                        }}
+                        testId="account-refresh"
                       />
                     </Tooltip>
 
-                    <Inline>
-                      <Tooltip
-                        content={`Refresh ${account.username}`}
-                        position="bottom"
-                      >
-                        <IconButton
-                          label={`Refresh ${account.username}`}
-                          icon={RefreshIcon}
-                          appearance="subtle"
-                          onClick={async () => {
-                            await refreshAccount(account);
-                            navigate('/accounts', { replace: true });
-                          }}
-                          testId="account-refresh"
-                        />
-                      </Tooltip>
-
-                      <Tooltip
-                        content={`Logout ${account.username}`}
-                        position="bottom"
-                      >
-                        <IconButton
-                          label={`Logout ${account.username}`}
-                          icon={SignOutIcon}
-                          appearance="subtle"
-                          onClick={() => logoutAccount(account)}
-                          testId="account-logout"
-                        />
-                      </Tooltip>
-                    </Inline>
+                    <Tooltip
+                      content={`Logout ${account.username}`}
+                      position="bottom"
+                    >
+                      <IconButton
+                        label={`Logout ${account.username}`}
+                        icon={SignOutIcon}
+                        appearance="subtle"
+                        onClick={() => logoutAccount(account)}
+                        testId="account-logout"
+                      />
+                    </Tooltip>
                   </Inline>
-                </div>
-              </Box>
+                </Inline>
+              </div>
             );
           })}
         </div>
