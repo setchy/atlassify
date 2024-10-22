@@ -12,17 +12,14 @@ import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
-import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
 import { AppContext } from '../context/App';
-import { Theme } from '../types';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { getTheme } from '../utils/theme';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -76,16 +73,9 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto ">
+    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar dark:bg-dark-sidebar">
       <div className="flex flex-1 flex-col items-center">
-        <Box
-          paddingBlockStart="space.200"
-          backgroundColor={
-            getTheme() === Theme.DARK
-              ? 'color.background.accent.blue.subtlest'
-              : 'color.background.accent.blue.subtlest.hovered'
-          }
-        >
+        <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
@@ -114,7 +104,7 @@ export const Sidebar: FC = () => {
                   <NotificationIcon
                     {...iconProps}
                     size="small"
-                    primaryColor={token('color.icon.inverse')}
+                    primaryColor="white"
                   />
                 )}
                 appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
@@ -156,7 +146,7 @@ export const Sidebar: FC = () => {
                       <ListIcon
                         label="groupByProduct"
                         size="small"
-                        primaryColor={token('color.icon.inverse')}
+                        primaryColor="white"
                       />
                     )}
                     onClick={() => {
@@ -183,7 +173,7 @@ export const Sidebar: FC = () => {
                       <FilterIcon
                         {...iconProps}
                         size="small"
-                        primaryColor={token('color.icon.inverse')}
+                        primaryColor="white"
                       />
                     )}
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -199,14 +189,7 @@ export const Sidebar: FC = () => {
         </Box>
       </div>
 
-      <Box
-        paddingBlockEnd="space.200"
-        backgroundColor={
-          getTheme() === Theme.DARK
-            ? 'color.background.accent.gray.subtlest'
-            : 'color.background.accent.blue.subtle'
-        }
-      >
+      <Box paddingBlockEnd="space.200">
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
             <Fragment>
@@ -224,7 +207,7 @@ export const Sidebar: FC = () => {
                       <RefreshIcon
                         {...iconProps}
                         size="medium"
-                        primaryColor={token('color.icon.inverse')}
+                        primaryColor="white"
                       />
                     )
                   }
@@ -240,7 +223,11 @@ export const Sidebar: FC = () => {
                 <IconButton
                   label="Settings"
                   icon={(iconProps) => (
-                    <SettingsIcon {...iconProps} size="medium" />
+                    <SettingsIcon
+                      {...iconProps}
+                      size="medium"
+                      primaryColor="white"
+                    />
                   )}
                   appearance="subtle"
                   shape="circle"
@@ -257,7 +244,7 @@ export const Sidebar: FC = () => {
                   <CrossCircleIcon
                     {...iconProps}
                     size="medium"
-                    primaryColor={token('color.icon.inverse')}
+                    primaryColor="white"
                     secondaryColor={colors.sidebar}
                   />
                 )}
