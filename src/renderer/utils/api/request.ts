@@ -1,4 +1,5 @@
 import axios, { type Method } from 'axios';
+
 import type { Account, Token, Username } from '../../types';
 import { decryptValue } from '../comms';
 import { Constants } from '../constants';

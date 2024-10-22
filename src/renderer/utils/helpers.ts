@@ -3,6 +3,7 @@ import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
 
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
+
 import type { AtlassifyNotification, Chevron } from '../types';
 
 export function formatProperCase(text: string) {

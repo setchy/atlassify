@@ -11,12 +11,12 @@ export function getTheme(): Theme {
 }
 
 export function setLightMode() {
-  // document.querySelector('html').classList.remove('dark');
+  document.querySelector('html').classList.remove('dark');
   setGlobalTheme({ colorMode: 'light' });
 }
 
 export function setDarkMode() {
-  // document.querySelector('html').classList.add('dark');
+  document.querySelector('html').classList.add('dark');
   setGlobalTheme({ colorMode: 'dark' });
 }
 

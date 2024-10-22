@@ -1,5 +1,6 @@
 import log from 'electron-log';
 import { useCallback, useState } from 'react';
+
 import type {
   Account,
   AccountNotifications,

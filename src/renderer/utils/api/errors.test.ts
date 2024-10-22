@@ -1,4 +1,5 @@
 import { AxiosError, type AxiosResponse } from 'axios';
+
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
 import type { AtlassianAPIError } from './types';

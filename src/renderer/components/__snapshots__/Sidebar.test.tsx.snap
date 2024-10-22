@@ -339,13 +339,13 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
   "baseElement": <body>
     <div>
       <div
-        class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar"
+        class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto "
       >
         <div
           class="flex flex-1 flex-col items-center"
         >
           <div
-            class="css-qae7qe"
+            class="css-1jkwatc"
           >
             <div
               class="css-2k1qcz"
@@ -444,7 +444,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
           </div>
         </div>
         <div
-          class="css-1qsxb5u"
+          class="css-g6rmdi"
         >
           <div
             class="css-bcf5ys"
@@ -507,13 +507,13 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
   </body>,
   "container": <div>
     <div
-      class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar"
+      class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto "
     >
       <div
         class="flex flex-1 flex-col items-center"
       >
         <div
-          class="css-qae7qe"
+          class="css-1jkwatc"
         >
           <div
             class="css-2k1qcz"
@@ -612,7 +612,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
         </div>
       </div>
       <div
-        class="css-1qsxb5u"
+        class="css-g6rmdi"
       >
         <div
           class="css-bcf5ys"
@@ -732,13 +732,13 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
   "baseElement": <body>
     <div>
       <div
-        class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar"
+        class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto "
       >
         <div
           class="flex flex-1 flex-col items-center"
         >
           <div
-            class="css-qae7qe"
+            class="css-1jkwatc"
           >
             <div
               class="css-2k1qcz"
@@ -837,7 +837,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
           </div>
         </div>
         <div
-          class="css-1qsxb5u"
+          class="css-g6rmdi"
         >
           <div
             class="css-bcf5ys"
@@ -900,13 +900,13 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
   </body>,
   "container": <div>
     <div
-      class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar"
+      class="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto "
     >
       <div
         class="flex flex-1 flex-col items-center"
       >
         <div
-          class="css-qae7qe"
+          class="css-1jkwatc"
         >
           <div
             class="css-2k1qcz"
@@ -1005,7 +1005,7 @@ exports[`renderer/components/Sidebar.tsx should render itself & its children (lo
         </div>
       </div>
       <div
-        class="css-1qsxb5u"
+        class="css-g6rmdi"
       >
         <div
           class="css-bcf5ys"

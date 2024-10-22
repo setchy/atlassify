@@ -42,7 +42,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         paddingInlineStart="space.050"
         paddingInlineEnd="space.100"
         paddingBlock="space.050"
-        backgroundColor="color.background.brand.subtlest.hovered"
+        backgroundColor="color.background.brand.subtlest"
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip

@@ -17,10 +17,12 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
 import { AppContext } from '../context/App';
+import { Theme } from '../types';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
+import { getTheme } from '../utils/theme';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -74,9 +76,16 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar">
+    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto ">
       <div className="flex flex-1 flex-col items-center">
-        <Box paddingBlockStart="space.200">
+        <Box
+          paddingBlockStart="space.200"
+          backgroundColor={
+            getTheme() === Theme.DARK
+              ? 'color.background.accent.blue.subtlest'
+              : 'color.background.accent.blue.subtlest.hovered'
+          }
+        >
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
@@ -190,7 +199,14 @@ export const Sidebar: FC = () => {
         </Box>
       </div>
 
-      <Box paddingBlockEnd="space.200">
+      <Box
+        paddingBlockEnd="space.200"
+        backgroundColor={
+          getTheme() === Theme.DARK
+            ? 'color.background.accent.gray.subtlest'
+            : 'color.background.accent.blue.subtle'
+        }
+      >
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
             <Fragment>
@@ -224,11 +240,7 @@ export const Sidebar: FC = () => {
                 <IconButton
                   label="Settings"
                   icon={(iconProps) => (
-                    <SettingsIcon
-                      {...iconProps}
-                      size="medium"
-                      primaryColor={token('color.icon.inverse')}
-                    />
+                    <SettingsIcon {...iconProps} size="medium" />
                   )}
                   appearance="subtle"
                   shape="circle"

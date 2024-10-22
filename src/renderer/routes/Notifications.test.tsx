@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 import { AppContext } from '../context/App';
 import { Errors } from '../utils/errors';

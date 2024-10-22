@@ -41,82 +41,93 @@ export const AccountsRoute: FC = () => {
         <div className="mt-4 flex flex-col text-sm">
           {auth.accounts.map((account) => {
             return (
-              <div
+              <Box
                 key={account.id}
-                className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
+                padding="space.050"
+                backgroundColor="color.background.accent.gray.subtlest"
               >
-                <Inline grow="fill" spread="space-between" alignBlock="center">
-                  <Tooltip content="Open account profile" position="bottom">
-                    <AvatarItem
-                      label="Open account profile"
-                      avatar={
-                        <Avatar
-                          name={account.name}
-                          src={account.avatar}
-                          size="medium"
-                          appearance="circle"
+                <div
+                  key={account.id}
+                  className="mb-4 flex items-center justify-between rounded-md"
+                >
+                  <Inline
+                    grow="fill"
+                    spread="space-between"
+                    alignBlock="center"
+                  >
+                    <Tooltip content="Open account profile" position="bottom">
+                      <AvatarItem
+                        label="Open account profile"
+                        avatar={
+                          <Avatar
+                            name={account.name}
+                            src={account.avatar}
+                            size="medium"
+                            appearance="circle"
+                          />
+                        }
+                        primaryText={account.name}
+                        secondaryText={account.username}
+                        onClick={() => openAccountProfile(account)}
+                        testId="account-profile"
+                      />
+                    </Tooltip>
+
+                    <Inline>
+                      <Tooltip
+                        content={`Refresh ${account.username}`}
+                        position="bottom"
+                      >
+                        <IconButton
+                          label={`Refresh ${account.username}`}
+                          icon={RefreshIcon}
+                          appearance="subtle"
+                          onClick={async () => {
+                            await refreshAccount(account);
+                            navigate('/accounts', { replace: true });
+                          }}
+                          testId="account-refresh"
                         />
-                      }
-                      primaryText={account.name}
-                      secondaryText={account.username}
-                      onClick={() => openAccountProfile(account)}
-                      testId="account-profile"
-                    />
-                  </Tooltip>
+                      </Tooltip>
 
-                  <Inline>
-                    <Tooltip
-                      content={`Refresh ${account.username}`}
-                      position="bottom"
-                    >
-                      <IconButton
-                        label={`Refresh ${account.username}`}
-                        icon={RefreshIcon}
-                        appearance="subtle"
-                        onClick={async () => {
-                          await refreshAccount(account);
-                          navigate('/accounts', { replace: true });
-                        }}
-                        testId="account-refresh"
-                      />
-                    </Tooltip>
-
-                    <Tooltip
-                      content={`Logout ${account.username}`}
-                      position="bottom"
-                    >
-                      <IconButton
-                        label={`Logout ${account.username}`}
-                        icon={SignOutIcon}
-                        appearance="subtle"
-                        onClick={() => logoutAccount(account)}
-                        testId="account-logout"
-                      />
-                    </Tooltip>
+                      <Tooltip
+                        content={`Logout ${account.username}`}
+                        position="bottom"
+                      >
+                        <IconButton
+                          label={`Logout ${account.username}`}
+                          icon={SignOutIcon}
+                          appearance="subtle"
+                          onClick={() => logoutAccount(account)}
+                          testId="account-logout"
+                        />
+                      </Tooltip>
+                    </Inline>
                   </Inline>
-                </Inline>
-              </div>
+                </div>
+              </Box>
             );
           })}
         </div>
       </div>
 
-      <div className="text-sm px-8 bg-gray-200">
-        <Box padding="space.050">
-          <Flex justifyContent="end">
-            <Tooltip content="Add new account" position="left">
-              <IconButton
-                label="Add new account"
-                icon={InviteTeamIcon}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => login()}
-                testId="account-add-new"
-              />
-            </Tooltip>
-          </Flex>
-        </Box>
-      </div>
+      <Box
+        padding="space.050"
+        backgroundColor="color.background.accent.gray.subtlest"
+      >
+        <Flex justifyContent="end">
+          <Tooltip content="Add new account" position="left">
+            <IconButton
+              label="Add new account"
+              icon={InviteTeamIcon}
+              appearance="subtle"
+              shape="circle"
+              onClick={() => login()}
+              testId="account-add-new"
+            />
+          </Tooltip>
+        </Flex>
+      </Box>
     </div>
   );
 };

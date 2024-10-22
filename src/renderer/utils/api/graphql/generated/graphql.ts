@@ -14634,12 +14634,6 @@ export type InvokeAuxEffectsInput = {
   /** An identifier for an alternative entry point function to invoke */
   entryPoint?: InputMaybe<Scalars['String']['input']>;
   /**
-   * Information needed to look up an extension
-   *
-   * Note: Either `extensionDetails` or `extensionId` must be provided
-   */
-  extensionDetails?: InputMaybe<ExtensionDetailsInput>;
-  /**
    * An identifier for the extension to invoke
    *
    * Note: Either `extensionDetails` or `extensionId` must be provided
@@ -14663,12 +14657,6 @@ export type InvokeExtensionInput = {
   contextIds: Array<Scalars['ID']['input']>;
   /** An identifier for an alternative entry point function to invoke */
   entryPoint?: InputMaybe<Scalars['String']['input']>;
-  /**
-   * Information needed to look up an extension
-   *
-   * Note: Either `extensionDetails` or `extensionId` must be provided
-   */
-  extensionDetails?: InputMaybe<ExtensionDetailsInput>;
   /**
    * An identifier for the extension to invoke
    *
@@ -15841,6 +15829,19 @@ export type JiraContainerNavigationQueryInput = {
   scopeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type JiraCreateActivityConfigurationInput = {
+  /** Id of the activity configuration */
+  id: Scalars['ID']['input'];
+  /** Name of the activity */
+  issueTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Name of the activity */
+  name: Scalars['String']['input'];
+  /** Name of the activity */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Name of the activity */
+  requestTypeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
 /**
  * Input for creating a navigation item of type `JiraNavigationItemTypeKey.APP`. The related app is identified by
  * the `appId` input field.
@@ -15957,6 +15958,17 @@ export type JiraCreateFormattingRuleInput = {
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Key of the project to create a formatting rule for. Must provide either project key or id. */
   projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JiraCreateJourneyConfigurationInput = {
+  /** List of new activity configuration */
+  createActivityConfigurations?: InputMaybe<Array<InputMaybe<JiraCreateActivityConfigurationInput>>>;
+  /** Name of the journey */
+  name: Scalars['String']['input'];
+  /** Parent issue of the journey configuration */
+  parentIssue: JiraJourneyParentIssueInput;
+  /** The trigger of this journey */
+  trigger: JiraJourneyTriggerInput;
 };
 
 /** The input for creating the release notes in Confluence for the given version */
@@ -17040,6 +17052,8 @@ export type JiraIssueTransitionFieldLevelInput = {
   JiraDatePickerField?: InputMaybe<Array<JiraUpdateDateFieldInput>>;
   /** An entry corresponding for input for JiraDateTimePickerField */
   JiraDateTimePickerField?: InputMaybe<Array<JiraUpdateDateTimeFieldInput>>;
+  /** An entry corresponding for input for JiraForgeStringField */
+  JiraForgeStringField?: InputMaybe<Array<JiraUpdateSingleLineTextFieldInput>>;
   /** An entry corresponding for input for JiraIssueLinkField */
   JiraIssueLinkField?: InputMaybe<Array<JiraUpdateIssueLinkFieldInputForIssueTransitions>>;
   /** An entry corresponding for input for JiraIssueTypeField */
@@ -17183,6 +17197,41 @@ export type JiraJqlContextFieldsFilter = {
    */
   shouldShowInContext?: InputMaybe<Scalars['Boolean']['input']>;
 };
+
+export type JiraJourneyParentIssueInput = {
+  /** The id of the project which the parent issue belongs to */
+  projectId: Scalars['ID']['input'];
+  /** The type of the parent issue, e.g. 'request' */
+  type: JiraJourneyParentIssueType;
+  /** The value of the parent issue, e.g. '10000' */
+  value: Scalars['String']['input'];
+};
+
+export enum JiraJourneyParentIssueType {
+  /** Jira issue */
+  Request = 'REQUEST'
+}
+
+export enum JiraJourneyStatus {
+  /** The journey is archived and can not be triggered or modified */
+  Archived = 'ARCHIVED',
+  /** The journey is disabled and can not be triggered */
+  Disabled = 'DISABLED',
+  /** The journey is in draft status and can not be triggered */
+  Draft = 'DRAFT',
+  /** The journey is enabled and can be triggered */
+  Published = 'PUBLISHED'
+}
+
+export type JiraJourneyTriggerInput = {
+  /** The type of the trigger, e.g. 'parentIssueCreated' */
+  type: JiraJourneyTriggerType;
+};
+
+export enum JiraJourneyTriggerType {
+  /** When a parent issue is created */
+  ParentIssueCreated = 'PARENT_ISSUE_CREATED'
+}
 
 /**
  * The autocomplete types available for Jira fields in the context of the Jira Query Language.
@@ -18339,6 +18388,13 @@ export type JiraProjectsMappedToHelpCenterFilterInput = {
   helpCenterId: Scalars['ID']['input'];
   /** Filter the results based on whether the user wants linked, unlinked or all the projects. */
   helpCenterMappingStatus?: InputMaybe<JiraProjectsHelpCenterMappingStatus>;
+};
+
+export type JiraPublishJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
 };
 
 /** Possible states for Pull Requests */
@@ -19710,6 +19766,28 @@ export type JiraUpdateIssueTypeFieldInput = {
   id: Scalars['ID']['input'];
   /** The operation to perform on the IssueType field. */
   operation: JiraIssueTypeFieldOperationInput;
+};
+
+export type JiraUpdateJourneyActivityConfigurationInput = {
+  /** List of new activity configuration */
+  createActivityConfigurations?: InputMaybe<Array<InputMaybe<JiraCreateActivityConfigurationInput>>>;
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
+};
+
+export type JiraUpdateJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** Name of the journey configuration */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Parent issue of the journey configuration */
+  parentIssue?: InputMaybe<JiraJourneyParentIssueInput>;
+  /** The trigger of this journey */
+  trigger?: InputMaybe<JiraJourneyTriggerInput>;
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
 };
 
 export type JiraUpdateLabelsFieldInput = {
@@ -21724,6 +21802,24 @@ export enum MercuryEntityType {
   Program = 'PROGRAM',
   ProgramStatusUpdate = 'PROGRAM_STATUS_UPDATE'
 }
+
+export enum MercuryEventType {
+  Create = 'CREATE',
+  Delete = 'DELETE',
+  Import = 'IMPORT',
+  Link = 'LINK',
+  Unlink = 'UNLINK',
+  Update = 'UPDATE'
+}
+
+/**
+ *  ----------------------------------------
+ *   Focus Area Activity
+ *  ----------------------------------------
+ */
+export type MercuryFocusAreaActivitySort = {
+  order: SortOrder;
+};
 
 export enum MercuryFocusAreaHealthColor {
   Green = 'GREEN',

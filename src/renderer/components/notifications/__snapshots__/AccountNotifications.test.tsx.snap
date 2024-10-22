@@ -2162,7 +2162,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+          class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
           id="138661096"
         >
           <div
@@ -2370,7 +2370,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+          class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
           id="148827438"
         >
           <div
@@ -2776,7 +2776,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
         id="138661096"
       >
         <div
@@ -2984,7 +2984,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
         id="148827438"
       >
         <div
@@ -3648,7 +3648,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+          class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
           id="138661096"
         >
           <div
@@ -3856,7 +3856,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+          class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
           id="148827438"
         >
           <div
@@ -4262,7 +4262,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
         id="138661096"
       >
         <div
@@ -4470,7 +4470,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex border-b border-gray-100 bg-white px-3 py-2 hover:bg-gray-100"
+        class="group flex border-b border-gray-100 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
         id="148827438"
       >
         <div

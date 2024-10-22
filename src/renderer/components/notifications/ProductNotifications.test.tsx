@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,

@@ -1,6 +1,6 @@
+import { AxiosError } from 'axios';
 import log from 'electron-log';
 
-import { AxiosError } from 'axios';
 import type {
   Account,
   AccountNotifications,

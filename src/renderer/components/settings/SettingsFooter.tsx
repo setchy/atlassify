@@ -26,46 +26,47 @@ export const SettingsFooter: FC = () => {
   }, []);
 
   return (
-    <div className="text-sm  px-2 bg-gray-200">
-      <Box padding="space.050">
-        <Stack>
-          <Inline grow="fill" spread="space-between">
-            <Tooltip content="View Atlassify release notes" position="top">
-              <Button
-                title="View Atlassify release notes"
-                appearance="subtle"
-                onClick={() => openAtlassifyReleaseNotes(appVersion)}
-                testId="settings-release-notes"
-              >
-                Atlassify {appVersion}
-              </Button>
-            </Tooltip>
+    <Box
+      padding="space.050"
+      backgroundColor="color.background.accent.gray.subtlest"
+    >
+      <Stack>
+        <Inline grow="fill" spread="space-between">
+          <Tooltip content="View Atlassify release notes" position="top">
+            <Button
+              title="View Atlassify release notes"
+              appearance="subtle"
+              onClick={() => openAtlassifyReleaseNotes(appVersion)}
+              testId="settings-release-notes"
+            >
+              Atlassify {appVersion}
+            </Button>
+          </Tooltip>
 
-            <Inline space="space.200">
-              <Tooltip content="Accounts" position="top">
-                <IconButton
-                  label="Accounts"
-                  icon={PeopleGroupIcon}
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => navigate('/accounts')}
-                  testId="settings-accounts"
-                />
-              </Tooltip>
-              <Tooltip content="Quit Atlassify" position="top">
-                <IconButton
-                  label="Quit Atlassify"
-                  icon={CrossCircleIcon}
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => quitApp()}
-                  testId="settings-quit"
-                />
-              </Tooltip>
-            </Inline>
+          <Inline space="space.200">
+            <Tooltip content="Accounts" position="top">
+              <IconButton
+                label="Accounts"
+                icon={PeopleGroupIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => navigate('/accounts')}
+                testId="settings-accounts"
+              />
+            </Tooltip>
+            <Tooltip content="Quit Atlassify" position="top">
+              <IconButton
+                label="Quit Atlassify"
+                icon={CrossCircleIcon}
+                appearance="subtle"
+                shape="circle"
+                onClick={() => quitApp()}
+                testId="settings-quit"
+              />
+            </Tooltip>
           </Inline>
-        </Stack>
-      </Box>
-    </div>
+        </Inline>
+      </Stack>
+    </Box>
   );
 };

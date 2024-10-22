@@ -1,4 +1,5 @@
 import { ipcRenderer, shell } from 'electron';
+
 import { mockSettings } from '../__mocks__/state-mocks';
 import type { Link } from '../types';
 import {
