@@ -5,6 +5,10 @@ export function getTheme(): Theme {
   return getGlobalTheme().colorMode === 'dark' ? Theme.DARK : Theme.LIGHT;
 }
 
+export function isLightMode(): boolean {
+  return getTheme() === Theme.LIGHT;
+}
+
 export function setLightMode() {
   document.querySelector('html').classList.remove('dark');
   setGlobalTheme({ colorMode: 'light' });

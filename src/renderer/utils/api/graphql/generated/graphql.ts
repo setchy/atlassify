@@ -14665,8 +14665,6 @@ export type InvokeExtensionInput = {
   extensionId?: InputMaybe<Scalars['ID']['input']>;
   /** The payload to send as part of the invocation */
   payload: Scalars['JSON']['input'];
-  /** An identifier for a schema to validate the response against */
-  schema?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type InvokePolarisObjectInput = {
@@ -16982,6 +16980,16 @@ export type JiraIssueSearchStaticViewInput = {
   isHierarchyEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/**
+ * The view config data used for an issue search.
+ * E.g. we can load different results depending on the hierarchy toggle value for a specific namespace/experience or view.
+ * In NIN, if the hierarchy toggle is enabled, we will return only the top level issues or the issues with no parent satisfying the given JQL/filter.
+ */
+export type JiraIssueSearchViewConfigInput = {
+  staticViewInput?: InputMaybe<JiraIssueSearchStaticViewInput>;
+  viewInput?: InputMaybe<JiraIssueSearchViewInput>;
+};
+
 export type JiraIssueSearchViewFieldSetsContext = {
   projectContext?: InputMaybe<JiraIssueSearchViewFieldSetsProjectContext>;
 };
@@ -16989,6 +16997,19 @@ export type JiraIssueSearchViewFieldSetsContext = {
 export type JiraIssueSearchViewFieldSetsProjectContext = {
   issueType?: InputMaybe<Scalars['ID']['input']>;
   project?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/**
+ * The view details used for an issue search.
+ * We can use this input on initial load to avoid waterfall requests on the FE.
+ * E.g. FE doesn't know if the hierarchy toggle is enabled or not, so it can pass the view details to the backend
+ * to get the flag for the given experience.
+ */
+export type JiraIssueSearchViewInput = {
+  /** A subscoping that affects where this view's last used data is stored and grouped by. If null, this view is in the global namespace. */
+  namespace?: InputMaybe<Scalars['String']['input']>;
+  /** A unique identifier for this view within its namespace, or the global namespace if no namespace is defined. */
+  viewId?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Input type for Jira comment, which may be optional input to perform a transition for the issue */
@@ -17886,6 +17907,14 @@ export type JiraOrganizationFieldInput = {
 export type JiraOrganizationsInput = {
   /** An identifier for the organization */
   organizationId: Scalars['ID']['input'];
+};
+
+/** Input type for updating the Original Time Estimate field of a Jira issue. */
+export type JiraOriginalTimeEstimateFieldInput = {
+  /** Accepts ARI(s): issuefieldvalue */
+  id: Scalars['ID']['input'];
+  /** The new value to be placed in the Original Time Estimate field */
+  originalEstimate: JiraEstimateInput;
 };
 
 /** Possible changeboarding statuses. */
@@ -20729,6 +20758,11 @@ export type JiraWorklogFieldOperationInputForIssueTransitions = {
   timeSpentInMinutes?: InputMaybe<Scalars['Long']['input']>;
 };
 
+export enum JsmChatChannelExperienceId {
+  Helpcenter = 'HELPCENTER',
+  Widget = 'WIDGET'
+}
+
 export enum JsmChatChannelType {
   Agent = 'AGENT',
   Request = 'REQUEST'
@@ -20794,9 +20828,20 @@ export type JsmChatCreateConversationAnalyticsInput = {
   messageId?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type JsmChatCreateConversationInput = {
+  channelExperienceId: JsmChatChannelExperienceId;
+  conversationContextAri: Scalars['ID']['input'];
+  isTestChannel?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export enum JsmChatCreateWebConversationMessageContentType {
   Adf = 'ADF'
 }
+
+export type JsmChatCreateWebConversationMessageInput = {
+  /** The text content of the message */
+  message: Scalars['String']['input'];
+};
 
 export enum JsmChatCreateWebConversationUserRole {
   Init = 'Init',
@@ -20872,6 +20917,13 @@ export type JsmChatUpdatedProjectSettings = {
   requesterThreadMessageDisabled: Scalars['Boolean']['input'];
 };
 
+export type JsmChatWebAddConversationInteractionInput = {
+  authorId: Scalars['String']['input'];
+  interactionType: JsmChatWebInteractionType;
+  jiraFieldId?: InputMaybe<Scalars['String']['input']>;
+  selectedValue: Scalars['String']['input'];
+};
+
 export enum JsmChatWebConversationMessageContentType {
   Adf = 'ADF'
 }
@@ -20881,6 +20933,12 @@ export enum JsmChatWebConversationUserRole {
   Participant = 'Participant',
   Reporter = 'Reporter',
   VirtualAgent = 'VirtualAgent'
+}
+
+export enum JsmChatWebInteractionType {
+  Buttons = 'BUTTONS',
+  Dropdown = 'DROPDOWN',
+  JiraField = 'JIRA_FIELD'
 }
 
 export enum KnowledgeBaseSpacePermissionType {
@@ -24302,11 +24360,7 @@ export type ShepherdUpdateAlertInput = {
 };
 
 export type ShepherdUpdateSlackInput = {
-  authToken?: InputMaybe<Scalars['String']['input']>;
-  callbackURL?: InputMaybe<Scalars['URL']['input']>;
-  channelId?: InputMaybe<Scalars['String']['input']>;
-  status?: InputMaybe<ShepherdSubscriptionStatus>;
-  teamId?: InputMaybe<Scalars['String']['input']>;
+  status: ShepherdSubscriptionStatus;
 };
 
 export type ShepherdUpdateWebhookInput = {

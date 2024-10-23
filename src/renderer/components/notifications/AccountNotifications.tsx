@@ -33,6 +33,7 @@ import type {
 import { Constants } from '../../utils/constants';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
+import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
@@ -110,7 +111,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
-            : 'color.background.brand.subtlest.pressed'
+            : isLightMode()
+              ? 'color.background.accent.blue.subtler'
+              : 'color.background.accent.blue.subtlest'
         }
       >
         <Flex alignItems="center" justifyContent="space-between">
