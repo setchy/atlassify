@@ -9,16 +9,6 @@ export function isLightMode(): boolean {
   return getTheme() === Theme.LIGHT;
 }
 
-export function setLightMode() {
-  document.querySelector('html').classList.remove('dark');
-  setGlobalTheme({ colorMode: 'light' });
-}
-
-export function setDarkMode() {
-  document.querySelector('html').classList.add('dark');
-  setGlobalTheme({ colorMode: 'dark' });
-}
-
 export function setTheme(mode?: Theme) {
   switch (mode) {
     case Theme.LIGHT:
@@ -35,5 +25,15 @@ export function setTheme(mode?: Theme) {
       } else {
         setLightMode();
       }
+  }
+
+  function setLightMode() {
+    document.querySelector('html').classList.remove('dark');
+    setGlobalTheme({ colorMode: 'light' });
+  }
+
+  function setDarkMode() {
+    document.querySelector('html').classList.add('dark');
+    setGlobalTheme({ colorMode: 'dark' });
   }
 }
