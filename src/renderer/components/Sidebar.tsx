@@ -200,7 +200,7 @@ export const Sidebar: FC = () => {
                       status === 'loading' ? (
                         <Spinner
                           label="Refresh notifications"
-                          size={'medium'}
+                          size="medium"
                           appearance="invert"
                         />
                       ) : (
