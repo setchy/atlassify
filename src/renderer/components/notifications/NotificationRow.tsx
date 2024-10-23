@@ -58,7 +58,7 @@ export const NotificationRow: FC<INotificationRow> = ({
     <div
       id={notification.id}
       className={cn(
-        'group flex px-3 py-2',
+        'group flex px-2 py-2',
         'border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
@@ -80,7 +80,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       </div>
 
       <div
-        className="mr-3 flex flex-1 cursor-pointer text-wrap"
+        className="flex flex-1 cursor-pointer text-wrap"
         onClick={() => handleNotificationInteraction()}
         onKeyDown={() => handleNotificationInteraction()}
         data-testid="notification-row"
