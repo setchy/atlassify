@@ -64,7 +64,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
       class="mt-4 flex flex-col text-sm"
     >
       <div
-        class="mb-4 flex items-center justify-between rounded-md p-2 bg-accounts-light dark:bg-accounts-dark"
+        class="css-swavor"
       >
         <div
           class="css-y272c0"
@@ -84,7 +84,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1i6qr0h"
+                  class="css-jka4za"
                 >
                   <img
                     alt=""
@@ -125,7 +125,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1l7n0sn"
+                class="css-1hmr5rx"
                 data-testid="account-refresh"
                 type="button"
               >
@@ -177,7 +177,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1l7n0sn"
+                class="css-1hmr5rx"
                 data-testid="account-logout"
                 type="button"
               >
