@@ -66,7 +66,7 @@ export const AccountsRoute: FC = () => {
                           src={account.avatar}
                           size="medium"
                           appearance="circle"
-                          borderColor="white"
+                          borderColor={isLightMode() ? 'white' : 'gray'}
                         />
                       }
                       primaryText={account.name}

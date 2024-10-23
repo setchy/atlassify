@@ -136,7 +136,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                     src={account.avatar}
                     size="xsmall"
                     appearance="circle"
-                    borderColor="white"
+                    borderColor={isLightMode() ? 'white' : 'gray'}
                   />
                 }
                 primaryText={account.name}

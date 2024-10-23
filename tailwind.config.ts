@@ -11,10 +11,6 @@ export const colors = {
     light: N10,
     dark: DN40,
   },
-  accounts: {
-    light: N10,
-    dark: DN40,
-  },
 };
 
 const config: Config = {
@@ -22,11 +18,7 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        sidebar: colors.sidebar,
-        notifications: colors.notifications,
-        accounts: colors.accounts,
-      },
+      colors,
     },
   },
   plugins: [],
