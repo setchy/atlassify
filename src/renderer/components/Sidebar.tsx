@@ -8,7 +8,6 @@ import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
-import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -21,7 +20,8 @@ import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { getTheme } from '../utils/theme';
+import { getTheme, isLightMode } from '../utils/theme';
+import { LogoIcon } from './icons/LogoIcon';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -75,21 +75,22 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
-      <div className="flex flex-1 flex-col items-center">
-        <Box paddingBlockStart="space.200">
+    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto">
+      <Box
+        paddingBlock="space.200"
+        backgroundColor={
+          isLightMode()
+            ? 'color.background.accent.blue.subtle'
+            : 'color.background.accent.gray.subtlest'
+        }
+      >
+        <Stack spread="space-between" alignInline="center" alignBlock="stretch">
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
                 label="Home"
                 appearance="subtle"
-                icon={(iconProps) => (
-                  <AtlasIcon
-                    {...iconProps}
-                    size="medium"
-                    appearance="inverse"
-                  />
-                )}
+                icon={() => <LogoIcon width={32} height={32} />}
                 shape="circle"
                 onClick={() => navigate('/', { replace: true })}
                 testId="sidebar-home"
@@ -188,79 +189,77 @@ export const Sidebar: FC = () => {
               </Fragment>
             )}
           </Stack>
-        </Box>
-      </div>
 
-      <Box paddingBlockEnd="space.200">
-        <Stack alignInline="center" space="space.150">
-          {isLoggedIn ? (
-            <Fragment>
-              <Tooltip content="Refresh notifications" position="right">
-                <IconButton
-                  label="Refresh notifications"
-                  icon={(iconProps) =>
-                    status === 'loading' ? (
-                      <Spinner
-                        label="Refresh notifications"
-                        size={'medium'}
-                        appearance="invert"
-                      />
-                    ) : (
-                      <RefreshIcon
+          <Stack alignInline="center" space="space.150">
+            {isLoggedIn ? (
+              <Fragment>
+                <Tooltip content="Refresh notifications" position="right">
+                  <IconButton
+                    label="Refresh notifications"
+                    icon={(iconProps) =>
+                      status === 'loading' ? (
+                        <Spinner
+                          label="Refresh notifications"
+                          size={'medium'}
+                          appearance="invert"
+                        />
+                      ) : (
+                        <RefreshIcon
+                          {...iconProps}
+                          size="medium"
+                          primaryColor="white"
+                        />
+                      )
+                    }
+                    appearance="subtle"
+                    shape="circle"
+                    onClick={() => refreshNotifications()}
+                    isDisabled={status === 'loading'}
+                    testId="sidebar-refresh"
+                  />
+                </Tooltip>
+
+                <Tooltip content="Settings" position="right">
+                  <IconButton
+                    label="Settings"
+                    icon={(iconProps) => (
+                      <SettingsIcon
                         {...iconProps}
                         size="medium"
                         primaryColor="white"
                       />
-                    )
-                  }
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => refreshNotifications()}
-                  isDisabled={status === 'loading'}
-                  testId="sidebar-refresh"
-                />
-              </Tooltip>
-
-              <Tooltip content="Settings" position="right">
+                    )}
+                    appearance="subtle"
+                    shape="circle"
+                    onClick={() => toggleSettings()}
+                    testId="sidebar-settings"
+                  />
+                </Tooltip>
+              </Fragment>
+            ) : (
+              <Tooltip content="Quit Atlassify" position="right">
                 <IconButton
-                  label="Settings"
+                  label="Quit Atlassify"
                   icon={(iconProps) => (
-                    <SettingsIcon
+                    <CrossCircleIcon
                       {...iconProps}
                       size="medium"
                       primaryColor="white"
+                      secondaryColor={
+                        getTheme() === Theme.LIGHT
+                          ? colors['sidebar-light']
+                          : colors['sidebar-dark']
+                      }
                     />
                   )}
-                  appearance="subtle"
                   shape="circle"
-                  onClick={() => toggleSettings()}
-                  testId="sidebar-settings"
+                  appearance="subtle"
+                  onClick={() => quitApp()}
+                  testId="sidebar-quit"
                 />
               </Tooltip>
-            </Fragment>
-          ) : (
-            <Tooltip content="Quit Atlassify" position="right">
-              <IconButton
-                label="Quit Atlassify"
-                icon={(iconProps) => (
-                  <CrossCircleIcon
-                    {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                    secondaryColor={
-                      getTheme() === Theme.LIGHT
-                        ? colors['sidebar-light']
-                        : colors['sidebar-dark']
-                    }
-                  />
-                )}
-                shape="circle"
-                appearance="subtle"
-                onClick={() => quitApp()}
-                testId="sidebar-quit"
-              />
-            </Tooltip>
-          )}
+            )}
+          </Stack>
         </Stack>
       </Box>
     </div>

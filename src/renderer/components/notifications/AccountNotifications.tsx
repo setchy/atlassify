@@ -113,7 +113,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             ? 'color.background.accent.red.subtler'
             : isLightMode()
               ? 'color.background.accent.blue.subtler'
-              : 'color.background.accent.blue.subtlest'
+              : 'color.background.accent.gray.subtlest'
         }
       >
         <Flex alignItems="center" justifyContent="space-between">

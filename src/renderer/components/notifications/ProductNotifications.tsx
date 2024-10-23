@@ -11,7 +11,6 @@ import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
 import { formatProperCase, getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
-import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
@@ -43,11 +42,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         paddingInlineStart="space.050"
         paddingInlineEnd="space.100"
         paddingBlock="space.050"
-        backgroundColor={
-          isLightMode()
-            ? 'color.background.accent.blue.subtlest'
-            : 'color.background.accent.gray.subtlest'
-        }
+        backgroundColor="color.background.accent.blue.subtlest"
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip

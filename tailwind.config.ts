@@ -1,10 +1,10 @@
-import { B200, N800 } from '@atlaskit/theme/colors';
+import { B200, DN300A } from '@atlaskit/theme/colors';
 
 import type { Config } from 'tailwindcss';
 
 export const colors = {
   'sidebar-light': B200,
-  'sidebar-dark': N800,
+  'sidebar-dark': DN300A,
   'notification-light': 'gray-100',
   'notification-dark': 'gray-700',
   'accounts-light': 'gray-100',
