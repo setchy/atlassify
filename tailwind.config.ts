@@ -1,14 +1,20 @@
-import { B200, DN300A } from '@atlaskit/theme/colors';
+import { B200, DN40, DN50, N10 } from '@atlaskit/theme/colors';
 
 import type { Config } from 'tailwindcss';
 
 export const colors = {
-  'sidebar-light': B200,
-  'sidebar-dark': DN300A,
-  'notification-light': 'gray-100',
-  'notification-dark': 'gray-700',
-  'accounts-light': 'gray-100',
-  'accounts-dark': 'gray-700',
+  sidebar: {
+    light: B200,
+    dark: DN50,
+  },
+  notifications: {
+    light: N10,
+    dark: DN40,
+  },
+  accounts: {
+    light: N10,
+    dark: DN40,
+  },
 };
 
 const config: Config = {
@@ -16,7 +22,11 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: colors,
+      colors: {
+        sidebar: colors.sidebar,
+        notifications: colors.notifications,
+        accounts: colors.accounts,
+      },
     },
   },
   plugins: [],

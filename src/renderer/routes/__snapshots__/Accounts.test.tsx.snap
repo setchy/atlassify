@@ -64,7 +64,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
       class="mt-4 flex flex-col text-sm"
     >
       <div
-        class="mb-4 flex items-center justify-between rounded-md p-2 bg-accounts-light dark:accounts-dark"
+        class="mb-4 flex items-center justify-between rounded-md p-2 bg-accounts-light dark:bg-accounts-dark"
       >
         <div
           class="css-y272c0"

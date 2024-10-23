@@ -52,14 +52,14 @@ export const NotificationRow: FC<INotificationRow> = ({
   };
 
   const isNotificationUnread =
-    notification.readState === READ_STATES.unread.name; //&& !showAsRead;
+    notification.readState === READ_STATES.unread.name;
 
   return (
     <div
       id={notification.id}
       className={cn(
-        'group flex border-b px-3 py-2',
-        'border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700',
+        'group flex px-3 py-2',
+        'border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
       )}

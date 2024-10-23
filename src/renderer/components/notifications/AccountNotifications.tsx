@@ -102,6 +102,15 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     'account',
   );
 
+  const boxStyles = xcss({
+    transitionDuration: '200ms',
+    ':hover': {
+      backgroundColor: isLightMode()
+        ? 'color.background.accent.blue.subtler.hovered'
+        : 'color.background.accent.gray.subtler.hovered',
+    },
+  });
+
   return (
     <Stack>
       <Box
@@ -113,8 +122,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             ? 'color.background.accent.red.subtler'
             : isLightMode()
               ? 'color.background.accent.blue.subtler'
-              : 'color.background.accent.gray.subtlest'
+              : 'color.background.accent.gray.subtler'
         }
+        xcss={boxStyles}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Inline space="space.100" alignBlock="center">

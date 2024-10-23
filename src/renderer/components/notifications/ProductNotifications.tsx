@@ -3,7 +3,7 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
-import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -11,6 +11,7 @@ import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
 import { formatProperCase, getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
+import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
@@ -35,6 +36,15 @@ export const ProductNotifications: FC<IProductNotifications> = ({
 
   const Chevron = getChevronDetails(true, showProductNotifications, 'product');
 
+  const boxStyles = xcss({
+    transitionDuration: '200ms',
+    ':hover': {
+      backgroundColor: isLightMode()
+        ? 'color.background.accent.blue.subtlest.hovered'
+        : 'color.background.accent.gray.subtlest.hovered',
+    },
+  });
+
   return (
     <Stack>
       <Box
@@ -42,7 +52,12 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         paddingInlineStart="space.050"
         paddingInlineEnd="space.100"
         paddingBlock="space.050"
-        backgroundColor="color.background.accent.blue.subtlest"
+        backgroundColor={
+          isLightMode()
+            ? 'color.background.accent.blue.subtlest'
+            : 'color.background.accent.gray.subtlest'
+        }
+        xcss={boxStyles}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip

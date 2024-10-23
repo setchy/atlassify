@@ -9,7 +9,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-13kpl6f"
+          class="css-dy88kq"
         >
           <div
             class="css-1a0x9v0"
@@ -245,7 +245,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-13kpl6f"
+        class="css-dy88kq"
       >
         <div
           class="css-1a0x9v0"
@@ -538,7 +538,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -742,7 +742,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-41e7jo"
+        class="css-jw6f40"
       >
         <div
           class="css-1a0x9v0"
@@ -1003,7 +1003,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -1207,7 +1207,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-41e7jo"
+        class="css-jw6f40"
       >
         <div
           class="css-1a0x9v0"
@@ -1468,7 +1468,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -1691,7 +1691,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-41e7jo"
+        class="css-jw6f40"
       >
         <div
           class="css-1a0x9v0"
@@ -1971,7 +1971,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -2162,7 +2162,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="138661096"
         >
           <div
@@ -2370,7 +2370,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="148827438"
         >
           <div
@@ -2585,7 +2585,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-41e7jo"
+        class="css-jw6f40"
       >
         <div
           class="css-1a0x9v0"
@@ -2776,7 +2776,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -2984,7 +2984,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="148827438"
       >
         <div
@@ -3260,7 +3260,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -3457,7 +3457,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         class="css-1npayr"
       >
         <div
-          class="css-41e7jo"
+          class="css-jw6f40"
         >
           <div
             class="css-1a0x9v0"
@@ -3648,7 +3648,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="138661096"
         >
           <div
@@ -3856,7 +3856,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="148827438"
         >
           <div
@@ -4071,7 +4071,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
       class="css-1npayr"
     >
       <div
-        class="css-41e7jo"
+        class="css-jw6f40"
       >
         <div
           class="css-1a0x9v0"
@@ -4262,7 +4262,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -4470,7 +4470,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex border-b px-3 py-2 border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="148827438"
       >
         <div

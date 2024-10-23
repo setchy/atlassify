@@ -20,7 +20,7 @@ import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { getTheme, isLightMode } from '../utils/theme';
+import { getTheme } from '../utils/theme';
 import { LogoIcon } from './icons/LogoIcon';
 
 export const Sidebar: FC = () => {
@@ -75,16 +75,10 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto">
-      <Box
-        paddingBlock="space.200"
-        backgroundColor={
-          isLightMode()
-            ? 'color.background.accent.blue.subtle'
-            : 'color.background.accent.gray.subtlest'
-        }
-      >
-        <Stack spread="space-between" alignInline="center" alignBlock="stretch">
+    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
+      <div className="flex flex-1 flex-col items-center">
+        <Box paddingBlockStart="space.200">
+          {/* <Stack spread="space-between" alignInline="center" alignBlock="stretch"> */}
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
@@ -189,78 +183,80 @@ export const Sidebar: FC = () => {
               </Fragment>
             )}
           </Stack>
-
-          <Stack alignInline="center" space="space.150">
-            {isLoggedIn ? (
-              <Fragment>
-                <Tooltip content="Refresh notifications" position="right">
-                  <IconButton
-                    label="Refresh notifications"
-                    icon={(iconProps) =>
-                      status === 'loading' ? (
-                        <Spinner
-                          label="Refresh notifications"
-                          size="medium"
-                          appearance="invert"
-                        />
-                      ) : (
-                        <RefreshIcon
-                          {...iconProps}
-                          size="medium"
-                          primaryColor="white"
-                        />
-                      )
-                    }
-                    appearance="subtle"
-                    shape="circle"
-                    onClick={() => refreshNotifications()}
-                    isDisabled={status === 'loading'}
-                    testId="sidebar-refresh"
-                  />
-                </Tooltip>
-
-                <Tooltip content="Settings" position="right">
-                  <IconButton
-                    label="Settings"
-                    icon={(iconProps) => (
-                      <SettingsIcon
+        </Box>
+      </div>
+      <Box paddingBlockEnd="space.200">
+        <Stack alignInline="center" space="space.150">
+          {isLoggedIn ? (
+            <Fragment>
+              <Tooltip content="Refresh notifications" position="right">
+                <IconButton
+                  label="Refresh notifications"
+                  icon={(iconProps) =>
+                    status === 'loading' ? (
+                      <Spinner
+                        label="Refresh notifications"
+                        size="medium"
+                        appearance="invert"
+                      />
+                    ) : (
+                      <RefreshIcon
                         {...iconProps}
                         size="medium"
                         primaryColor="white"
                       />
-                    )}
-                    appearance="subtle"
-                    shape="circle"
-                    onClick={() => toggleSettings()}
-                    testId="sidebar-settings"
-                  />
-                </Tooltip>
-              </Fragment>
-            ) : (
-              <Tooltip content="Quit Atlassify" position="right">
+                    )
+                  }
+                  appearance="subtle"
+                  shape="circle"
+                  onClick={() => refreshNotifications()}
+                  isDisabled={status === 'loading'}
+                  testId="sidebar-refresh"
+                />
+              </Tooltip>
+
+              <Tooltip content="Settings" position="right">
                 <IconButton
-                  label="Quit Atlassify"
+                  label="Settings"
                   icon={(iconProps) => (
-                    <CrossCircleIcon
+                    <SettingsIcon
                       {...iconProps}
                       size="medium"
                       primaryColor="white"
-                      secondaryColor={
-                        getTheme() === Theme.LIGHT
-                          ? colors['sidebar-light']
-                          : colors['sidebar-dark']
-                      }
                     />
                   )}
-                  shape="circle"
                   appearance="subtle"
-                  onClick={() => quitApp()}
-                  testId="sidebar-quit"
+                  shape="circle"
+                  onClick={() => toggleSettings()}
+                  testId="sidebar-settings"
                 />
               </Tooltip>
-            )}
-          </Stack>
+            </Fragment>
+          ) : (
+            <Tooltip content="Quit Atlassify" position="right">
+              <IconButton
+                label="Quit Atlassify"
+                icon={(iconProps) => (
+                  <CrossCircleIcon
+                    {...iconProps}
+                    size="medium"
+                    primaryColor="white"
+                    secondaryColor={
+                      getTheme() === Theme.LIGHT
+                        ? colors['sidebar-light']
+                        : colors['sidebar-dark']
+                    }
+                  />
+                )}
+                shape="circle"
+                appearance="subtle"
+                onClick={() => quitApp()}
+                testId="sidebar-quit"
+              />
+            </Tooltip>
+          )}
         </Stack>
+        {/* </Stack> */}
       </Box>
     </div>
   );
