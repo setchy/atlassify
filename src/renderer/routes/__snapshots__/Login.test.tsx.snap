@@ -15,7 +15,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             role="presentation"
           >
             <button
-              class="css-1hmr5rx"
+              class="css-1t6wxle"
               data-testid="header-nav-back"
               type="button"
             >
@@ -157,7 +157,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       role="presentation"
                     >
                       <button
-                        class="css-ht7o2z"
+                        class="css-9v2r3w"
                         data-testid="login-create-token"
                         type="button"
                       >
@@ -221,7 +221,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="css-1ly2vbj"
+                    class="css-vgqjed"
                     data-testid="login-docs"
                     type="button"
                   >
@@ -270,7 +270,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="group"
                 >
                   <button
-                    class="css-1aearyh"
+                    class="css-eu6vk3"
                     data-testid="login-cancel"
                     type="button"
                   >
@@ -281,7 +281,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </button>
                   <button
-                    class="css-1ilq2uw"
+                    class="css-1vvzp1k"
                     data-testid="login-submit"
                     type="submit"
                   >
@@ -342,7 +342,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            class="css-1hmr5rx"
+            class="css-1t6wxle"
             data-testid="header-nav-back"
             type="button"
           >
@@ -484,7 +484,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="css-ht7o2z"
+                      class="css-9v2r3w"
                       data-testid="login-create-token"
                       type="button"
                     >
@@ -548,7 +548,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="presentation"
               >
                 <button
-                  class="css-1ly2vbj"
+                  class="css-vgqjed"
                   data-testid="login-docs"
                   type="button"
                 >
@@ -597,7 +597,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="group"
               >
                 <button
-                  class="css-1aearyh"
+                  class="css-eu6vk3"
                   data-testid="login-cancel"
                   type="button"
                 >
@@ -608,7 +608,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </span>
                 </button>
                 <button
-                  class="css-1ilq2uw"
+                  class="css-1vvzp1k"
                   data-testid="login-submit"
                   type="submit"
                 >

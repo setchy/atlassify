@@ -18,7 +18,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1aearyh"
+                class="css-eu6vk3"
                 data-testid="product-home"
                 type="button"
               >
@@ -78,7 +78,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
@@ -118,7 +118,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-toggle"
                   type="button"
                 >
@@ -178,7 +178,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             role="presentation"
           >
             <button
-              class="css-1aearyh"
+              class="css-eu6vk3"
               data-testid="product-home"
               type="button"
             >
@@ -238,7 +238,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-mark-as-read"
                 type="button"
               >
@@ -278,7 +278,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-toggle"
                 type="button"
               >
@@ -395,7 +395,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1aearyh"
+                class="css-eu6vk3"
                 data-testid="product-home"
                 type="button"
               >
@@ -455,7 +455,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
@@ -495,7 +495,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-toggle"
                   type="button"
                 >
@@ -555,7 +555,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             role="presentation"
           >
             <button
-              class="css-1aearyh"
+              class="css-eu6vk3"
               data-testid="product-home"
               type="button"
             >
@@ -615,7 +615,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-mark-as-read"
                 type="button"
               >
@@ -655,7 +655,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-toggle"
                 type="button"
               >
@@ -772,7 +772,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1aearyh"
+                class="css-eu6vk3"
                 data-testid="product-home"
                 type="button"
               >
@@ -832,7 +832,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
@@ -872,7 +872,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-toggle"
                   type="button"
                 >
@@ -925,7 +925,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1aearyh"
+                class="css-eu6vk3"
                 data-testid="product-home"
                 type="button"
               >
@@ -985,7 +985,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-mark-as-read"
                   type="button"
                 >
@@ -1025,7 +1025,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="product-toggle"
                   type="button"
                 >
@@ -1085,7 +1085,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class="css-1aearyh"
+              class="css-eu6vk3"
               data-testid="product-home"
               type="button"
             >
@@ -1145,7 +1145,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-mark-as-read"
                 type="button"
               >
@@ -1185,7 +1185,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="product-toggle"
                 type="button"
               >

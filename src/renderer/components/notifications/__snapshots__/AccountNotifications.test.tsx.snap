@@ -81,7 +81,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -122,7 +122,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -162,7 +162,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -317,7 +317,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -358,7 +358,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -398,7 +398,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -610,7 +610,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -651,7 +651,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -691,7 +691,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -814,7 +814,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -855,7 +855,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -895,7 +895,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -1075,7 +1075,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -1116,7 +1116,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -1156,7 +1156,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -1279,7 +1279,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -1320,7 +1320,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -1360,7 +1360,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -1540,7 +1540,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -1581,7 +1581,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -1621,7 +1621,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -1763,7 +1763,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -1804,7 +1804,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -1844,7 +1844,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -2043,7 +2043,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -2084,7 +2084,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -2124,7 +2124,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -2331,7 +2331,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -2539,7 +2539,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -2657,7 +2657,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -2698,7 +2698,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -2738,7 +2738,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -2945,7 +2945,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -3153,7 +3153,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -3328,7 +3328,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -3369,7 +3369,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -3409,7 +3409,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -3616,7 +3616,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -3824,7 +3824,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -3942,7 +3942,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -3983,7 +3983,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -4023,7 +4023,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -4230,7 +4230,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -4438,7 +4438,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -4617,7 +4617,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -4658,7 +4658,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -4698,7 +4698,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -4814,7 +4814,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-pull-requests"
                   type="button"
                 >
@@ -4855,7 +4855,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-mark-as-read"
                   type="button"
                 >
@@ -4895,7 +4895,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-a8hcye"
+                  class="css-1vyxgfe"
                   data-testid="account-toggle"
                   type="button"
                 >
@@ -5102,7 +5102,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -5310,7 +5310,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -5428,7 +5428,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-pull-requests"
                 type="button"
               >
@@ -5469,7 +5469,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-mark-as-read"
                 type="button"
               >
@@ -5509,7 +5509,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-a8hcye"
+                class="css-1vyxgfe"
                 data-testid="account-toggle"
                 type="button"
               >
@@ -5716,7 +5716,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -5924,7 +5924,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >

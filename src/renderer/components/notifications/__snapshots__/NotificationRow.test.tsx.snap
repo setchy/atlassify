@@ -175,7 +175,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -386,7 +386,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           role="presentation"
         >
           <button
-            class="css-a8hcye"
+            class="css-1vyxgfe"
             data-testid="notification-mark-as-read"
             type="button"
           >
@@ -654,7 +654,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             role="presentation"
           >
             <button
-              class="css-a8hcye"
+              class="css-1vyxgfe"
               data-testid="notification-mark-as-read"
               type="button"
             >
@@ -865,7 +865,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           role="presentation"
         >
           <button
-            class="css-a8hcye"
+            class="css-1vyxgfe"
             data-testid="notification-mark-as-read"
             type="button"
           >

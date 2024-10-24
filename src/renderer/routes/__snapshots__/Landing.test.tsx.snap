@@ -240,7 +240,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             role="presentation"
           >
             <button
-              class="css-1ilq2uw"
+              class="css-1vvzp1k"
               data-testid="login"
               type="button"
             >
@@ -517,7 +517,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            class="css-1ilq2uw"
+            class="css-1vvzp1k"
             data-testid="login"
             type="button"
           >

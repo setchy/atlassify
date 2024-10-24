@@ -15,7 +15,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="header-nav-back"
           type="button"
         >
@@ -160,7 +160,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class="css-1h9zni"
+                  class="css-vueuiv"
                   data-testid="settings-zoom-out"
                   type="button"
                 >
@@ -208,7 +208,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class="css-1h9zni"
+                  class="css-vueuiv"
                   data-testid="settings-zoom-in"
                   type="button"
                 >
@@ -246,7 +246,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 role="presentation"
               >
                 <button
-                  class="css-1h9zni"
+                  class="css-vueuiv"
                   data-testid="settings-zoom-reset"
                   type="button"
                 >
@@ -996,7 +996,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         >
           <button
             aria-haspopup="dialog"
-            class="css-hyamds"
+            class="css-b8gwjc"
             data-testid="settings-reset-defaults"
             type="button"
           >
@@ -1023,7 +1023,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           role="presentation"
         >
           <button
-            class="css-1aearyh"
+            class="css-eu6vk3"
             data-testid="settings-release-notes"
             title="View Atlassify release notes"
             type="button"
@@ -1043,7 +1043,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             role="presentation"
           >
             <button
-              class="css-1hmr5rx"
+              class="css-1t6wxle"
               data-testid="settings-accounts"
               type="button"
             >
@@ -1092,7 +1092,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             role="presentation"
           >
             <button
-              class="css-1hmr5rx"
+              class="css-1t6wxle"
               data-testid="settings-quit"
               type="button"
             >

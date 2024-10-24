@@ -15,7 +15,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="header-nav-back"
           type="button"
         >
@@ -125,7 +125,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1hmr5rx"
+                class="css-1t6wxle"
                 data-testid="account-refresh"
                 type="button"
               >
@@ -177,7 +177,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1hmr5rx"
+                class="css-1t6wxle"
                 data-testid="account-logout"
                 type="button"
               >
@@ -232,7 +232,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="account-add-new"
           type="button"
         >
@@ -308,7 +308,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="header-nav-back"
           type="button"
         >
@@ -418,7 +418,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1hmr5rx"
+                class="css-1t6wxle"
                 data-testid="account-refresh"
                 type="button"
               >
@@ -470,7 +470,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1hmr5rx"
+                class="css-1t6wxle"
                 data-testid="account-logout"
                 type="button"
               >
@@ -525,7 +525,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="account-add-new"
           type="button"
         >

@@ -15,7 +15,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="header-nav-back"
           type="button"
         >
@@ -1038,7 +1038,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
         role="presentation"
       >
         <button
-          class="css-sxpr96"
+          class="css-18yzeap"
           data-testid="filters-clear"
           title="Clear Filters"
           type="button"
@@ -1070,7 +1070,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
         role="presentation"
       >
         <button
-          class="css-1hmr5rx"
+          class="css-1t6wxle"
           data-testid="header-nav-back"
           type="button"
         >
@@ -2108,7 +2108,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
         role="presentation"
       >
         <button
-          class="css-sxpr96"
+          class="css-18yzeap"
           data-testid="filters-clear"
           title="Clear Filters"
           type="button"
