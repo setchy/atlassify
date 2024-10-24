@@ -1,8 +1,8 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import axios from 'axios';
+import log from 'electron-log';
 import nock from 'nock';
 
-import log from 'electron-log';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';

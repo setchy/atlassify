@@ -14634,12 +14634,6 @@ export type InvokeAuxEffectsInput = {
   /** An identifier for an alternative entry point function to invoke */
   entryPoint?: InputMaybe<Scalars['String']['input']>;
   /**
-   * Information needed to look up an extension
-   *
-   * Note: Either `extensionDetails` or `extensionId` must be provided
-   */
-  extensionDetails?: InputMaybe<ExtensionDetailsInput>;
-  /**
    * An identifier for the extension to invoke
    *
    * Note: Either `extensionDetails` or `extensionId` must be provided
@@ -14664,12 +14658,6 @@ export type InvokeExtensionInput = {
   /** An identifier for an alternative entry point function to invoke */
   entryPoint?: InputMaybe<Scalars['String']['input']>;
   /**
-   * Information needed to look up an extension
-   *
-   * Note: Either `extensionDetails` or `extensionId` must be provided
-   */
-  extensionDetails?: InputMaybe<ExtensionDetailsInput>;
-  /**
    * An identifier for the extension to invoke
    *
    * Note: Either `extensionDetails` or `extensionId` must be provided
@@ -14677,8 +14665,6 @@ export type InvokeExtensionInput = {
   extensionId?: InputMaybe<Scalars['ID']['input']>;
   /** The payload to send as part of the invocation */
   payload: Scalars['JSON']['input'];
-  /** An identifier for a schema to validate the response against */
-  schema?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type InvokePolarisObjectInput = {
@@ -15841,6 +15827,19 @@ export type JiraContainerNavigationQueryInput = {
   scopeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type JiraCreateActivityConfigurationInput = {
+  /** Id of the activity configuration */
+  id: Scalars['ID']['input'];
+  /** Name of the activity */
+  issueTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Name of the activity */
+  name: Scalars['String']['input'];
+  /** Name of the activity */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Name of the activity */
+  requestTypeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
 /**
  * Input for creating a navigation item of type `JiraNavigationItemTypeKey.APP`. The related app is identified by
  * the `appId` input field.
@@ -15957,6 +15956,17 @@ export type JiraCreateFormattingRuleInput = {
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Key of the project to create a formatting rule for. Must provide either project key or id. */
   projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JiraCreateJourneyConfigurationInput = {
+  /** List of new activity configuration */
+  createActivityConfigurations?: InputMaybe<Array<InputMaybe<JiraCreateActivityConfigurationInput>>>;
+  /** Name of the journey */
+  name: Scalars['String']['input'];
+  /** Parent issue of the journey configuration */
+  parentIssue: JiraJourneyParentIssueInput;
+  /** The trigger of this journey */
+  trigger: JiraJourneyTriggerInput;
 };
 
 /** The input for creating the release notes in Confluence for the given version */
@@ -16970,6 +16980,16 @@ export type JiraIssueSearchStaticViewInput = {
   isHierarchyEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/**
+ * The view config data used for an issue search.
+ * E.g. we can load different results depending on the hierarchy toggle value for a specific namespace/experience or view.
+ * In NIN, if the hierarchy toggle is enabled, we will return only the top level issues or the issues with no parent satisfying the given JQL/filter.
+ */
+export type JiraIssueSearchViewConfigInput = {
+  staticViewInput?: InputMaybe<JiraIssueSearchStaticViewInput>;
+  viewInput?: InputMaybe<JiraIssueSearchViewInput>;
+};
+
 export type JiraIssueSearchViewFieldSetsContext = {
   projectContext?: InputMaybe<JiraIssueSearchViewFieldSetsProjectContext>;
 };
@@ -16977,6 +16997,19 @@ export type JiraIssueSearchViewFieldSetsContext = {
 export type JiraIssueSearchViewFieldSetsProjectContext = {
   issueType?: InputMaybe<Scalars['ID']['input']>;
   project?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/**
+ * The view details used for an issue search.
+ * We can use this input on initial load to avoid waterfall requests on the FE.
+ * E.g. FE doesn't know if the hierarchy toggle is enabled or not, so it can pass the view details to the backend
+ * to get the flag for the given experience.
+ */
+export type JiraIssueSearchViewInput = {
+  /** A subscoping that affects where this view's last used data is stored and grouped by. If null, this view is in the global namespace. */
+  namespace?: InputMaybe<Scalars['String']['input']>;
+  /** A unique identifier for this view within its namespace, or the global namespace if no namespace is defined. */
+  viewId?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Input type for Jira comment, which may be optional input to perform a transition for the issue */
@@ -17040,6 +17073,8 @@ export type JiraIssueTransitionFieldLevelInput = {
   JiraDatePickerField?: InputMaybe<Array<JiraUpdateDateFieldInput>>;
   /** An entry corresponding for input for JiraDateTimePickerField */
   JiraDateTimePickerField?: InputMaybe<Array<JiraUpdateDateTimeFieldInput>>;
+  /** An entry corresponding for input for JiraForgeStringField */
+  JiraForgeStringField?: InputMaybe<Array<JiraUpdateSingleLineTextFieldInput>>;
   /** An entry corresponding for input for JiraIssueLinkField */
   JiraIssueLinkField?: InputMaybe<Array<JiraUpdateIssueLinkFieldInputForIssueTransitions>>;
   /** An entry corresponding for input for JiraIssueTypeField */
@@ -17183,6 +17218,41 @@ export type JiraJqlContextFieldsFilter = {
    */
   shouldShowInContext?: InputMaybe<Scalars['Boolean']['input']>;
 };
+
+export type JiraJourneyParentIssueInput = {
+  /** The id of the project which the parent issue belongs to */
+  projectId: Scalars['ID']['input'];
+  /** The type of the parent issue, e.g. 'request' */
+  type: JiraJourneyParentIssueType;
+  /** The value of the parent issue, e.g. '10000' */
+  value: Scalars['String']['input'];
+};
+
+export enum JiraJourneyParentIssueType {
+  /** Jira issue */
+  Request = 'REQUEST'
+}
+
+export enum JiraJourneyStatus {
+  /** The journey is archived and can not be triggered or modified */
+  Archived = 'ARCHIVED',
+  /** The journey is disabled and can not be triggered */
+  Disabled = 'DISABLED',
+  /** The journey is in draft status and can not be triggered */
+  Draft = 'DRAFT',
+  /** The journey is enabled and can be triggered */
+  Published = 'PUBLISHED'
+}
+
+export type JiraJourneyTriggerInput = {
+  /** The type of the trigger, e.g. 'parentIssueCreated' */
+  type: JiraJourneyTriggerType;
+};
+
+export enum JiraJourneyTriggerType {
+  /** When a parent issue is created */
+  ParentIssueCreated = 'PARENT_ISSUE_CREATED'
+}
 
 /**
  * The autocomplete types available for Jira fields in the context of the Jira Query Language.
@@ -17839,6 +17909,14 @@ export type JiraOrganizationsInput = {
   organizationId: Scalars['ID']['input'];
 };
 
+/** Input type for updating the Original Time Estimate field of a Jira issue. */
+export type JiraOriginalTimeEstimateFieldInput = {
+  /** Accepts ARI(s): issuefieldvalue */
+  id: Scalars['ID']['input'];
+  /** The new value to be placed in the Original Time Estimate field */
+  originalEstimate: JiraEstimateInput;
+};
+
 /** Possible changeboarding statuses. */
 export enum JiraOverviewPlanMigrationChangeboardingStatus {
   /** Indicate that the user has completed the changeboarding flow. */
@@ -18339,6 +18417,13 @@ export type JiraProjectsMappedToHelpCenterFilterInput = {
   helpCenterId: Scalars['ID']['input'];
   /** Filter the results based on whether the user wants linked, unlinked or all the projects. */
   helpCenterMappingStatus?: InputMaybe<JiraProjectsHelpCenterMappingStatus>;
+};
+
+export type JiraPublishJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
 };
 
 /** Possible states for Pull Requests */
@@ -19712,6 +19797,28 @@ export type JiraUpdateIssueTypeFieldInput = {
   operation: JiraIssueTypeFieldOperationInput;
 };
 
+export type JiraUpdateJourneyActivityConfigurationInput = {
+  /** List of new activity configuration */
+  createActivityConfigurations?: InputMaybe<Array<InputMaybe<JiraCreateActivityConfigurationInput>>>;
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
+};
+
+export type JiraUpdateJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** Name of the journey configuration */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Parent issue of the journey configuration */
+  parentIssue?: InputMaybe<JiraJourneyParentIssueInput>;
+  /** The trigger of this journey */
+  trigger?: InputMaybe<JiraJourneyTriggerInput>;
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
+};
+
 export type JiraUpdateLabelsFieldInput = {
   /** Accepts ARI(s): issuefieldvalue */
   id: Scalars['ID']['input'];
@@ -20651,6 +20758,11 @@ export type JiraWorklogFieldOperationInputForIssueTransitions = {
   timeSpentInMinutes?: InputMaybe<Scalars['Long']['input']>;
 };
 
+export enum JsmChatChannelExperienceId {
+  Helpcenter = 'HELPCENTER',
+  Widget = 'WIDGET'
+}
+
 export enum JsmChatChannelType {
   Agent = 'AGENT',
   Request = 'REQUEST'
@@ -20716,9 +20828,20 @@ export type JsmChatCreateConversationAnalyticsInput = {
   messageId?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type JsmChatCreateConversationInput = {
+  channelExperienceId: JsmChatChannelExperienceId;
+  conversationContextAri: Scalars['ID']['input'];
+  isTestChannel?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export enum JsmChatCreateWebConversationMessageContentType {
   Adf = 'ADF'
 }
+
+export type JsmChatCreateWebConversationMessageInput = {
+  /** The text content of the message */
+  message: Scalars['String']['input'];
+};
 
 export enum JsmChatCreateWebConversationUserRole {
   Init = 'Init',
@@ -20794,6 +20917,13 @@ export type JsmChatUpdatedProjectSettings = {
   requesterThreadMessageDisabled: Scalars['Boolean']['input'];
 };
 
+export type JsmChatWebAddConversationInteractionInput = {
+  authorId: Scalars['String']['input'];
+  interactionType: JsmChatWebInteractionType;
+  jiraFieldId?: InputMaybe<Scalars['String']['input']>;
+  selectedValue: Scalars['String']['input'];
+};
+
 export enum JsmChatWebConversationMessageContentType {
   Adf = 'ADF'
 }
@@ -20803,6 +20933,12 @@ export enum JsmChatWebConversationUserRole {
   Participant = 'Participant',
   Reporter = 'Reporter',
   VirtualAgent = 'VirtualAgent'
+}
+
+export enum JsmChatWebInteractionType {
+  Buttons = 'BUTTONS',
+  Dropdown = 'DROPDOWN',
+  JiraField = 'JIRA_FIELD'
 }
 
 export enum KnowledgeBaseSpacePermissionType {
@@ -21724,6 +21860,24 @@ export enum MercuryEntityType {
   Program = 'PROGRAM',
   ProgramStatusUpdate = 'PROGRAM_STATUS_UPDATE'
 }
+
+export enum MercuryEventType {
+  Create = 'CREATE',
+  Delete = 'DELETE',
+  Import = 'IMPORT',
+  Link = 'LINK',
+  Unlink = 'UNLINK',
+  Update = 'UPDATE'
+}
+
+/**
+ *  ----------------------------------------
+ *   Focus Area Activity
+ *  ----------------------------------------
+ */
+export type MercuryFocusAreaActivitySort = {
+  order: SortOrder;
+};
 
 export enum MercuryFocusAreaHealthColor {
   Green = 'GREEN',
@@ -24206,11 +24360,7 @@ export type ShepherdUpdateAlertInput = {
 };
 
 export type ShepherdUpdateSlackInput = {
-  authToken?: InputMaybe<Scalars['String']['input']>;
-  callbackURL?: InputMaybe<Scalars['URL']['input']>;
-  channelId?: InputMaybe<Scalars['String']['input']>;
-  status?: InputMaybe<ShepherdSubscriptionStatus>;
-  teamId?: InputMaybe<Scalars['String']['input']>;
+  status: ShepherdSubscriptionStatus;
 };
 
 export type ShepherdUpdateWebhookInput = {

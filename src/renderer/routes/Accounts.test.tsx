@@ -6,6 +6,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+
 import {
   mockAtlassianCloudAccount,
   mockAuth,
@@ -15,6 +16,7 @@ import { AppContext } from '../context/App';
 import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
+import * as theme from '../utils/theme';
 
 import { AccountsRoute } from './Accounts';
 
@@ -30,7 +32,32 @@ describe('renderer/routes/Accounts.tsx', () => {
   });
 
   describe('General', () => {
-    it('should render itself & its children', async () => {
+    it('should render itself & its children - light mode', async () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+
+      await act(async () => {
+        render(
+          <AppContext.Provider
+            value={{
+              auth: {
+                accounts: [mockAtlassianCloudAccount],
+              },
+              settings: mockSettings,
+            }}
+          >
+            <MemoryRouter>
+              <AccountsRoute />
+            </MemoryRouter>
+          </AppContext.Provider>,
+        );
+      });
+
+      expect(screen.getByTestId('accounts')).toMatchSnapshot();
+    });
+
+    it('should render itself & its children - dark mode', async () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+
       await act(async () => {
         render(
           <AppContext.Provider

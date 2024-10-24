@@ -8,6 +8,9 @@ import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { RadioGroup } from '@atlaskit/radio';
+import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
+import { setGlobalTheme, token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -15,8 +18,8 @@ import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
 
-let timeout: NodeJS.Timeout;
-const DELAY = 200;
+let zoomResizeTimeout: NodeJS.Timeout;
+const ZOOM_RESIZE_DELAY = 200;
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
@@ -29,25 +32,22 @@ export const AppearanceSettings: FC = () => {
     ipcRenderer.on('atlassify:update-theme', (_, updatedTheme: Theme) => {
       if (settings.theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
+        setGlobalTheme({ colorMode: 'auto' });
       }
     });
   }, [settings.theme]);
 
   window.addEventListener('resize', () => {
     // clear the timeout
-    clearTimeout(timeout);
+    clearTimeout(zoomResizeTimeout);
     // start timing for event "completion"
-    timeout = setTimeout(() => {
+    zoomResizeTimeout = setTimeout(() => {
       const zoomPercentage = zoomLevelToPercentage(webFrame.getZoomLevel());
       setZoomPercentage(zoomPercentage);
       updateSetting('zoomPercentage', zoomPercentage);
-    }, DELAY);
+    }, ZOOM_RESIZE_DELAY);
   });
 
-  /**
-   * TODO: support theme selection #92
-   */
-  /*
   const themeOptions: OptionsPropType = [
     {
       name: 'theme',
@@ -63,13 +63,12 @@ export const AppearanceSettings: FC = () => {
     },
     { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
   ];
-  */
 
   return (
     <Stack space="space.100">
       <Heading size="small">Appearance</Heading>
 
-      {/* <Inline space="space.100">
+      <Inline space="space.100">
         <Text id="theme-label" weight="medium">
           Theme:
         </Text>
@@ -82,7 +81,7 @@ export const AppearanceSettings: FC = () => {
           }}
           aria-labelledby="theme-label"
         />
-      </Inline> */}
+      </Inline>
 
       <Inline space="space.100">
         <Text id="theme-label" weight="medium">
@@ -124,7 +123,10 @@ export const AppearanceSettings: FC = () => {
             <IconButton
               label="Reset Zoom"
               icon={(iconProps) => (
-                <SelectClearIcon {...iconProps} primaryColor="red" />
+                <SelectClearIcon
+                  {...iconProps}
+                  primaryColor={token('color.icon.accent.red')}
+                />
               )}
               shape="circle"
               spacing="compact"

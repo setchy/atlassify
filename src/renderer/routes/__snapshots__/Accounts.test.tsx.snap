@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderer/routes/Accounts.tsx General should render itself & its children 1`] = `
+exports[`renderer/routes/Accounts.tsx General should render itself & its children - dark mode 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="accounts"
@@ -64,7 +64,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
       class="mt-4 flex flex-col text-sm"
     >
       <div
-        class="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
+        class="css-74cmu6"
       >
         <div
           class="css-y272c0"
@@ -79,12 +79,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               type="button"
             >
               <div
-                aria-labelledby="uid4"
+                aria-labelledby="uid14"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1i6qr0h"
+                  class="css-zoks5i"
                 >
                   <img
                     alt=""
@@ -97,7 +97,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                 </span>
                 <span
                   hidden=""
-                  id="uid4"
+                  id="uid14"
                 >
                   Atlassify
                 </span>
@@ -125,7 +125,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1l7n0sn"
+                class="css-1hmr5rx"
                 data-testid="account-refresh"
                 type="button"
               >
@@ -177,7 +177,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="presentation"
             >
               <button
-                class="css-1l7n0sn"
+                class="css-1hmr5rx"
                 data-testid="account-logout"
                 type="button"
               >
@@ -223,74 +223,363 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="text-sm px-8 bg-gray-200"
+    class="css-1e13sq9"
   >
     <div
-      class="css-1s54rt6"
+      class="css-hugz22"
     >
       <div
-        class="css-hugz22"
+        role="presentation"
       >
-        <div
-          role="presentation"
+        <button
+          class="css-1hmr5rx"
+          data-testid="account-add-new"
+          type="button"
         >
-          <button
-            class="css-1hmr5rx"
-            data-testid="account-add-new"
-            type="button"
+          <span
+            class="css-1spmf3f"
           >
             <span
-              class="css-1spmf3f"
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
             >
-              <span
-                aria-hidden="true"
-                class="css-snhnyn"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <g
+                  fill="currentcolor"
+                  fill-rule="evenodd"
                 >
-                  <g
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                  >
-                    <rect
-                      height="6"
-                      rx="1"
-                      width="2"
-                      x="18"
-                      y="5"
-                    />
-                    <rect
-                      height="2"
-                      rx="1"
-                      width="6"
-                      x="16"
-                      y="7"
-                    />
-                    <path
-                      d="M5 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                    />
-                    <circle
-                      cx="11"
-                      cy="7"
-                      r="4"
-                    />
-                  </g>
-                </svg>
-              </span>
-              <span
-                class="css-b5o75w"
-              >
-                Add new account
-              </span>
+                  <rect
+                    height="6"
+                    rx="1"
+                    width="2"
+                    x="18"
+                    y="5"
+                  />
+                  <rect
+                    height="2"
+                    rx="1"
+                    width="6"
+                    x="16"
+                    y="7"
+                  />
+                  <path
+                    d="M5 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                  />
+                  <circle
+                    cx="11"
+                    cy="7"
+                    r="4"
+                  />
+                </g>
+              </svg>
             </span>
-          </button>
+            <span
+              class="css-b5o75w"
+            >
+              Add new account
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renderer/routes/Accounts.tsx General should render itself & its children - light mode 1`] = `
+<div
+  class="flex h-screen flex-col"
+  data-testid="accounts"
+>
+  <div
+    class="css-18bes35"
+  >
+    <div
+      class="css-y272c0"
+    >
+      <div
+        role="presentation"
+      >
+        <button
+          class="css-1hmr5rx"
+          data-testid="header-nav-back"
+          type="button"
+        >
+          <span
+            class="css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Go Back
+            </span>
+          </span>
+        </button>
+      </div>
+      <h3
+        class="css-rex7s6"
+      >
+        Accounts
+      </h3>
+    </div>
+  </div>
+  <div
+    class="flex-grow overflow-x-auto px-8"
+  >
+    <div
+      class="mt-4 flex flex-col text-sm"
+    >
+      <div
+        class="css-swavor"
+      >
+        <div
+          class="css-y272c0"
+        >
+          <div
+            role="presentation"
+          >
+            <button
+              aria-label="Open account profile"
+              class="css-1xq1pkg"
+              data-testid="account-profile--itemInner"
+              type="button"
+            >
+              <div
+                aria-labelledby="uid4"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-jka4za"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatar.atlassify.io"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="uid4"
+                >
+                  Atlassify
+                </span>
+              </div>
+              <div
+                class="css-1orugy9"
+              >
+                <span
+                  class="css-pbo52v"
+                >
+                  Atlassify
+                </span>
+                <span
+                  class="css-km389f"
+                >
+                  user@atlassify.io
+                </span>
+              </div>
+            </button>
+          </div>
+          <div
+            class="css-1au07qt"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-1hmr5rx"
+                data-testid="account-refresh"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M8 6.003v2.995a1 1 0 1 0 2 0V5.102C10 4.494 9.507 4 8.9 4H5a1 1 0 0 0 0 2.003z"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M9.428 18.018C7.351 16.989 6 14.807 6 12.37c0-2.266 1.167-4.319 3.02-5.425.48-.286.646-.922.371-1.421a.98.98 0 0 0-1.364-.386C5.557 6.611 4 9.35 4 12.37c0 3.248 1.802 6.158 4.57 7.529.498.247 1.095.026 1.332-.493.237-.52.025-1.141-.474-1.388"
+                          fill-rule="nonzero"
+                        />
+                        <path
+                          d="M14 15.002v3.896c0 .608.493 1.102 1.1 1.102H19a1 1 0 0 0 0-2.003h-3v-2.995a1 1 0 1 0-2 0"
+                        />
+                        <path
+                          d="M14.097 4.596c-.237.52-.025 1.14.474 1.387 2.077 1.029 3.428 3.21 3.428 5.647 0 2.266-1.167 4.32-3.021 5.425a1.063 1.063 0 0 0-.37 1.42c.274.5.885.673 1.364.387 2.47-1.473 4.027-4.212 4.027-7.232 0-3.248-1.802-6.158-4.57-7.528A.96.96 0 0 0 15.002 4a1 1 0 0 0-.905.596"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Refresh user@atlassify.io
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-1hmr5rx"
+                data-testid="account-logout"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <g
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      >
+                        <path
+                          d="M4.977 11A.99.99 0 0 0 4 12c0 .551.437 1 .977 1h11.046A.99.99 0 0 0 17 12a.99.99 0 0 0-.977-1z"
+                        />
+                        <path
+                          d="M6.23 8.31 3.3 11.27a1.05 1.05 0 0 0 0 1.48l2.93 2.96a1.03 1.03 0 0 0 1.47 0 1.05 1.05 0 0 0 0-1.48L5.5 12l2.2-2.22a1.05 1.05 0 0 0 0-1.48 1.03 1.03 0 0 0-1.47 0M15.5 3H12v2h7v14h-7v2h7.01c1.1 0 1.99-.89 1.99-1.99V5a1.99 1.99 0 0 0-1.99-2z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Logout user@atlassify.io
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="css-1e13sq9"
+  >
+    <div
+      class="css-hugz22"
+    >
+      <div
+        role="presentation"
+      >
+        <button
+          class="css-1hmr5rx"
+          data-testid="account-add-new"
+          type="button"
+        >
+          <span
+            class="css-1spmf3f"
+          >
+            <span
+              aria-hidden="true"
+              class="css-snhnyn"
+              data-vc="icon-undefined"
+              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+            >
+              <svg
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <g
+                  fill="currentcolor"
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    height="6"
+                    rx="1"
+                    width="2"
+                    x="18"
+                    y="5"
+                  />
+                  <rect
+                    height="2"
+                    rx="1"
+                    width="6"
+                    x="16"
+                    y="7"
+                  />
+                  <path
+                    d="M5 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                  />
+                  <circle
+                    cx="11"
+                    cy="7"
+                    r="4"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span
+              class="css-b5o75w"
+            >
+              Add new account
+            </span>
+          </span>
+        </button>
       </div>
     </div>
   </div>

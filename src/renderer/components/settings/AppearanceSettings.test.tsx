@@ -1,6 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { webFrame } from 'electron';
 import { MemoryRouter } from 'react-router-dom';
+
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
 import { AppearanceSettings } from './AppearanceSettings';
@@ -13,7 +14,7 @@ describe('renderer/routes/components/settings/AppearanceSettings.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it.skip('should change the theme radio group', async () => {
+  it('should change the theme radio group', async () => {
     await act(async () => {
       render(
         <AppContext.Provider

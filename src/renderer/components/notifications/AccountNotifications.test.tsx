@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
@@ -7,6 +8,7 @@ import {
 import { ensureStableEmojis } from '../../__mocks__/utils';
 import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
+import * as theme from '../../utils/theme';
 import { AccountNotifications } from './AccountNotifications';
 
 jest.mock('./ProductNotifications', () => ({
@@ -19,7 +21,31 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   describe('account view types', () => {
-    it('should render itself - sort by date', () => {
+    it('should render itself - sort by date - light mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+
+      const props = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        error: null,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+          }}
+        >
+          <AccountNotifications {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself - sort by date - dark mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,

@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
@@ -7,6 +8,7 @@ import {
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
+import * as theme from '../utils/theme';
 import { Sidebar } from './Sidebar';
 
 const mockNavigate = jest.fn();
@@ -26,41 +28,90 @@ describe('renderer/components/Sidebar.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it('should render itself & its children (logged in)', () => {
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          notifications: mockAccountNotifications,
-          auth: mockAuth,
-          settings: mockSettings,
-        }}
-      >
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>
-      </AppContext.Provider>,
-    );
+  describe('logged in', () => {
+    it('should render itself & its children - light mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-    expect(tree).toMatchSnapshot();
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            notifications: mockAccountNotifications,
+            auth: mockAuth,
+            settings: mockSettings,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself & its children - dark mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            notifications: mockAccountNotifications,
+            auth: mockAuth,
+            settings: mockSettings,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 
-  it('should render itself & its children (logged out)', () => {
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          isLoggedIn: false,
-          notifications: mockAccountNotifications,
-          auth: mockAuth,
-          settings: mockSettings,
-        }}
-      >
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>
-      </AppContext.Provider>,
-    );
+  describe('logged out', () => {
+    it('should render itself & its children - light mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-    expect(tree).toMatchSnapshot();
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: false,
+            notifications: mockAccountNotifications,
+            auth: mockAuth,
+            settings: mockSettings,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render itself & its children - dark mode', () => {
+      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: false,
+            notifications: mockAccountNotifications,
+            auth: mockAuth,
+            settings: mockSettings,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   it('should navigate to home', () => {

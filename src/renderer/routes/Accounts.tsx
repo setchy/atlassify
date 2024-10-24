@@ -6,7 +6,7 @@ import { IconButton } from '@atlaskit/button/new';
 import InviteTeamIcon from '@atlaskit/icon/glyph/invite-team';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
-import { Box, Flex, Inline } from '@atlaskit/primitives';
+import { Box, Flex, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/primitives/Header';
@@ -15,6 +15,7 @@ import type { Account } from '../types';
 import { refreshAccount } from '../utils/auth/utils';
 import { updateTrayIcon, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
+import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
   const { auth, logoutFromAccount } = useContext(AppContext);
@@ -34,6 +35,10 @@ export const AccountsRoute: FC = () => {
     return navigate('/login', { replace: true });
   }, []);
 
+  const boxStyles = xcss({
+    borderRadius: 'border.radius.200',
+  });
+
   return (
     <div className="flex h-screen flex-col" data-testid="accounts">
       <Header>Accounts</Header>
@@ -41,9 +46,15 @@ export const AccountsRoute: FC = () => {
         <div className="mt-4 flex flex-col text-sm">
           {auth.accounts.map((account) => {
             return (
-              <div
+              <Box
                 key={account.id}
-                className="mb-4 flex items-center justify-between rounded-md bg-gray-100 p-2 dark:bg-gray-sidebar"
+                padding="space.150"
+                backgroundColor={
+                  isLightMode()
+                    ? 'color.background.accent.blue.subtlest'
+                    : 'color.background.accent.gray.subtlest'
+                }
+                xcss={boxStyles}
               >
                 <Inline grow="fill" spread="space-between" alignBlock="center">
                   <Tooltip content="Open account profile" position="bottom">
@@ -55,6 +66,7 @@ export const AccountsRoute: FC = () => {
                           src={account.avatar}
                           size="medium"
                           appearance="circle"
+                          borderColor={isLightMode() ? 'white' : 'gray'}
                         />
                       }
                       primaryText={account.name}
@@ -72,6 +84,7 @@ export const AccountsRoute: FC = () => {
                       <IconButton
                         label={`Refresh ${account.username}`}
                         icon={RefreshIcon}
+                        shape="circle"
                         appearance="subtle"
                         onClick={async () => {
                           await refreshAccount(account);
@@ -88,6 +101,7 @@ export const AccountsRoute: FC = () => {
                       <IconButton
                         label={`Logout ${account.username}`}
                         icon={SignOutIcon}
+                        shape="circle"
                         appearance="subtle"
                         onClick={() => logoutAccount(account)}
                         testId="account-logout"
@@ -95,28 +109,29 @@ export const AccountsRoute: FC = () => {
                     </Tooltip>
                   </Inline>
                 </Inline>
-              </div>
+              </Box>
             );
           })}
         </div>
       </div>
 
-      <div className="text-sm px-8 bg-gray-200">
-        <Box padding="space.050">
-          <Flex justifyContent="end">
-            <Tooltip content="Add new account" position="left">
-              <IconButton
-                label="Add new account"
-                icon={InviteTeamIcon}
-                appearance="subtle"
-                shape="circle"
-                onClick={() => login()}
-                testId="account-add-new"
-              />
-            </Tooltip>
-          </Flex>
-        </Box>
-      </div>
+      <Box
+        padding="space.050"
+        backgroundColor="color.background.accent.gray.subtlest"
+      >
+        <Flex justifyContent="end">
+          <Tooltip content="Add new account" position="left">
+            <IconButton
+              label="Add new account"
+              icon={InviteTeamIcon}
+              appearance="subtle"
+              shape="circle"
+              onClick={() => login()}
+              testId="account-add-new"
+            />
+          </Tooltip>
+        </Flex>
+      </Box>
     </div>
   );
 };

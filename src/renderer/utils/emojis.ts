@@ -1,5 +1,6 @@
 import path from 'node:path';
 import twemoji, { type TwemojiOptions } from '@discordapp/twemoji';
+
 import { Constants } from './constants';
 import { Errors } from './errors';
 

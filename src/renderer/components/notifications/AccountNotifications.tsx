@@ -33,6 +33,7 @@ import type {
 import { Constants } from '../../utils/constants';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
+import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
@@ -101,17 +102,30 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     'account',
   );
 
+  const boxStyles = xcss({
+    transitionDuration: '200ms',
+    ':hover': {
+      backgroundColor: isLightMode()
+        ? 'color.background.accent.blue.subtler.hovered'
+        : 'color.background.accent.gray.subtler.hovered',
+    },
+  });
+
   return (
     <Stack>
       <Box
         onClick={toggleAccountNotifications}
-        paddingInline="space.100"
+        paddingInlineStart="space.100"
+        paddingInlineEnd="space.150"
         paddingBlock="space.050"
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
-            : 'color.background.brand.subtlest'
+            : isLightMode()
+              ? 'color.background.accent.blue.subtler'
+              : 'color.background.accent.gray.subtler'
         }
+        xcss={boxStyles}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Inline space="space.100" alignBlock="center">
@@ -123,6 +137,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                     src={account.avatar}
                     size="xsmall"
                     appearance="circle"
+                    borderColor={isLightMode() ? 'white' : 'gray'}
                   />
                 }
                 primaryText={account.name}

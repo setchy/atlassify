@@ -8,7 +8,6 @@ import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
-import { AtlasIcon } from '@atlaskit/logo';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -20,6 +19,8 @@ import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
+import { isLightMode } from '../utils/theme';
+import { LogoIcon } from './icons/LogoIcon';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -73,21 +74,16 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed left-12 -ml-12 flex h-full w-12 flex-col overflow-y-auto bg-sidebar">
+    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
+          {/* <Stack spread="space-between" alignInline="center" alignBlock="stretch"> */}
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
                 label="Home"
                 appearance="subtle"
-                icon={(iconProps) => (
-                  <AtlasIcon
-                    {...iconProps}
-                    size="medium"
-                    appearance="inverse"
-                  />
-                )}
+                icon={() => <LogoIcon width={32} height={32} />}
                 shape="circle"
                 onClick={() => navigate('/', { replace: true })}
                 testId="sidebar-home"
@@ -188,7 +184,6 @@ export const Sidebar: FC = () => {
           </Stack>
         </Box>
       </div>
-
       <Box paddingBlockEnd="space.200">
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
@@ -200,7 +195,7 @@ export const Sidebar: FC = () => {
                     status === 'loading' ? (
                       <Spinner
                         label="Refresh notifications"
-                        size={'medium'}
+                        size="medium"
                         appearance="invert"
                       />
                     ) : (
@@ -245,7 +240,9 @@ export const Sidebar: FC = () => {
                     {...iconProps}
                     size="medium"
                     primaryColor="white"
-                    secondaryColor={colors.sidebar}
+                    secondaryColor={
+                      isLightMode() ? colors.sidebar.light : colors.sidebar.dark
+                    }
                   />
                 )}
                 shape="circle"
@@ -256,6 +253,7 @@ export const Sidebar: FC = () => {
             </Tooltip>
           )}
         </Stack>
+        {/* </Stack> */}
       </Box>
     </div>
   );

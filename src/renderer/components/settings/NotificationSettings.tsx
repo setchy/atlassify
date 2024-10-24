@@ -37,10 +37,8 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            <div>
-              When notifications are <strong>grouped by products</strong>, this
-              setting will sort products in alphabetical order.
-            </div>
+            When notifications are <strong>grouped by products</strong>, this
+            setting will sort products in alphabetical order.
           </div>
         </InlineMessage>
       </Inline>
@@ -56,11 +54,9 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            <div>
-              Keep the notification within Atlassify upon interaction (ie: open
-              notification, mark as read) until the next refresh window
-              (scheduled or user initiated).
-            </div>
+            Keep the notification within Atlassify upon interaction (ie: open
+            notification, mark as read) until the next refresh window (scheduled
+            or user initiated).
           </div>
         </InlineMessage>
       </Inline>

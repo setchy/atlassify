@@ -202,23 +202,24 @@ export const FiltersRoute: FC = () => {
         </Stack>
       </div>
 
-      <div className="text-sm bg-gray-200">
-        <Box padding="space.100">
-          <Flex justifyContent="end">
-            <Tooltip content="Clear all filters" position="left">
-              <Button
-                title="Clear Filters"
-                onClick={clearFilters}
-                appearance="discovery"
-                spacing="compact"
-                testId="filters-clear"
-              >
-                Clear Filters
-              </Button>
-            </Tooltip>
-          </Flex>
-        </Box>
-      </div>
+      <Box
+        padding="space.050"
+        backgroundColor="color.background.accent.gray.subtlest"
+      >
+        <Flex justifyContent="end">
+          <Tooltip content="Clear all filters" position="left">
+            <Button
+              title="Clear Filters"
+              onClick={clearFilters}
+              appearance="discovery"
+              spacing="compact"
+              testId="filters-clear"
+            >
+              Clear Filters
+            </Button>
+          </Tooltip>
+        </Flex>
+      </Box>
     </div>
   );
 };

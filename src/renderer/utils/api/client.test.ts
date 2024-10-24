@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
