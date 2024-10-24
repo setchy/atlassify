@@ -75,8 +75,6 @@ export const AppearanceSettings: FC = () => {
         <RadioGroup
           options={themeOptions}
           defaultValue={settings.theme}
-          // defaultValue="LIGHT"
-          // isDisabled={true}
           value={settings.theme}
           onChange={(evt) => {
             updateSetting('theme', evt.target.value as Theme);

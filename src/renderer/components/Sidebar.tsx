@@ -15,12 +15,11 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
 import { AppContext } from '../context/App';
-import { Theme } from '../types';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { getTheme } from '../utils/theme';
+import { isLightMode } from '../utils/theme';
 import { LogoIcon } from './icons/LogoIcon';
 
 export const Sidebar: FC = () => {
@@ -242,9 +241,7 @@ export const Sidebar: FC = () => {
                     size="medium"
                     primaryColor="white"
                     secondaryColor={
-                      getTheme() === Theme.LIGHT
-                        ? colors['sidebar-light']
-                        : colors['sidebar-dark']
+                      isLightMode() ? colors.sidebar.light : colors.sidebar.dark
                     }
                   />
                 )}
