@@ -21281,9 +21281,7 @@ export type MarketplaceConsoleAppVersionDeleteRequestInput = {
 };
 
 export type MarketplaceConsoleConnectFrameworkAttributesInput = {
-  descriptorId: Scalars['String']['input'];
   href: Scalars['String']['input'];
-  scopes?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type MarketplaceConsoleDeploymentInstructionInput = {
@@ -21462,7 +21460,6 @@ export enum MarketplaceConsolePaymentModel {
 }
 
 export type MarketplaceConsolePluginFrameworkAttributesInput = {
-  artifactId: Scalars['String']['input'];
   href: Scalars['String']['input'];
 };
 
@@ -21496,7 +21493,6 @@ export enum MarketplaceConsolePricingPlanStatus {
 }
 
 export type MarketplaceConsoleWorkflowFrameworkAttributesInput = {
-  artifactId: Scalars['String']['input'];
   href: Scalars['String']['input'];
 };
 
@@ -22469,20 +22465,7 @@ export type PolarisDeleteReactionInput = {
 
 /** # Types */
 export enum PolarisFieldType {
-  PolarisIdeaDateField = 'PolarisIdeaDateField',
-  PolarisIdeaDateTimeField = 'PolarisIdeaDateTimeField',
-  PolarisIdeaExternalReferenceField = 'PolarisIdeaExternalReferenceField',
-  PolarisIdeaExternalReferencePropertyField = 'PolarisIdeaExternalReferencePropertyField',
-  PolarisIdeaIntervalField = 'PolarisIdeaIntervalField',
-  PolarisIdeaLabelsField = 'PolarisIdeaLabelsField',
-  PolarisIdeaNumberField = 'PolarisIdeaNumberField',
-  PolarisIdeaOptionField = 'PolarisIdeaOptionField',
-  PolarisIdeaOptionsField = 'PolarisIdeaOptionsField',
   PolarisIdeaPlayField = 'PolarisIdeaPlayField',
-  PolarisIdeaReactionsField = 'PolarisIdeaReactionsField',
-  PolarisIdeaStringField = 'PolarisIdeaStringField',
-  PolarisIdeaUserField = 'PolarisIdeaUserField',
-  PolarisIdeaUsersField = 'PolarisIdeaUsersField',
   PolarisJiraField = 'PolarisJiraField'
 }
 
@@ -22641,7 +22624,9 @@ export type PolarisViewTableColumnSizeInput = {
 
 export enum PolarisVisualizationType {
   Board = 'BOARD',
+  Collection = 'COLLECTION',
   Matrix = 'MATRIX',
+  Section = 'SECTION',
   Table = 'TABLE',
   Timeline = 'TIMELINE',
   Twoxtwo = 'TWOXTWO'
