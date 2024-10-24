@@ -50,7 +50,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
       <Box
         onClick={toggleProductNotifications}
         paddingInlineStart="space.050"
-        paddingInlineEnd="space.100"
+        paddingInlineEnd="space.150"
         paddingBlock="space.050"
         backgroundColor={
           isLightMode()
