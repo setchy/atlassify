@@ -115,8 +115,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     <Stack>
       <Box
         onClick={toggleAccountNotifications}
-        paddingInlineStart="space.100"
-        paddingInlineEnd="space.150"
+        paddingInline="space.100"
         paddingBlock="space.050"
         backgroundColor={
           props.error
