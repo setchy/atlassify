@@ -5,8 +5,7 @@
   "main": "build/main.js",
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
-    "build": "concurrently --names \"main,renderer,codegen\" --prefix-colors \"blue,green,magenta\" \"pnpm build:main\" \"pnpm build:renderer\" \"pnpm codegen\"",
-    "build:codegen": "pnpm codegen",
+    "build": "concurrently --names \"main,renderer\" --prefix-colors \"blue,green,magenta\" \"pnpm build:main\" \"pnpm build:renderer\"",
     "build:main": "webpack --config ./config/webpack.config.main.prod.ts",
     "build:renderer": "webpack --config ./config/webpack.config.renderer.prod.ts",
     "watch": "concurrently --names \"main,renderer,codegen\" --prefix-colors \"blue,green,magenta\" \"pnpm watch:main\" \"pnpm watch:renderer\" \"pnpm watch:codegen\"",
