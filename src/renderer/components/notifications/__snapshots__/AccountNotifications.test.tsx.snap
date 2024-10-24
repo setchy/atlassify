@@ -9,7 +9,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-1y6db9g"
+          class="css-v96ezl"
         >
           <div
             class="css-1a0x9v0"
@@ -26,12 +26,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid46"
+                    aria-labelledby="uid66"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -44,7 +44,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid46"
+                      id="uid66"
                     >
                       Atlassify
                     </span>
@@ -245,7 +245,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-1y6db9g"
+        class="css-v96ezl"
       >
         <div
           class="css-1a0x9v0"
@@ -262,12 +262,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid46"
+                  aria-labelledby="uid66"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-14lk1a2"
                   >
                     <img
                       alt=""
@@ -280,7 +280,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid46"
+                    id="uid66"
                   >
                     Atlassify
                   </span>
@@ -538,7 +538,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-1x49fmi"
+          class="css-1xyevk2"
         >
           <div
             class="css-1a0x9v0"
@@ -555,12 +555,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid22"
+                    aria-labelledby="uid42"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -573,7 +573,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid22"
+                      id="uid42"
                     >
                       Atlassify
                     </span>
@@ -742,7 +742,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-1x49fmi"
+        class="css-1xyevk2"
       >
         <div
           class="css-1a0x9v0"
@@ -759,12 +759,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid22"
+                  aria-labelledby="uid42"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-14lk1a2"
                   >
                     <img
                       alt=""
@@ -777,7 +777,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid22"
+                    id="uid42"
                   >
                     Atlassify
                   </span>
@@ -1003,7 +1003,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-1x49fmi"
+          class="css-1xyevk2"
         >
           <div
             class="css-1a0x9v0"
@@ -1020,12 +1020,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid30"
+                    aria-labelledby="uid50"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -1038,7 +1038,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid30"
+                      id="uid50"
                     >
                       Atlassify
                     </span>
@@ -1207,7 +1207,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-1x49fmi"
+        class="css-1xyevk2"
       >
         <div
           class="css-1a0x9v0"
@@ -1224,12 +1224,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid30"
+                  aria-labelledby="uid50"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-14lk1a2"
                   >
                     <img
                       alt=""
@@ -1242,7 +1242,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid30"
+                    id="uid50"
                   >
                     Atlassify
                   </span>
@@ -1468,7 +1468,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="css-1npayr"
       >
         <div
-          class="css-1x49fmi"
+          class="css-1xyevk2"
         >
           <div
             class="css-1a0x9v0"
@@ -1485,12 +1485,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid38"
+                    aria-labelledby="uid58"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -1503,7 +1503,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid38"
+                      id="uid58"
                     >
                       Atlassify
                     </span>
@@ -1691,7 +1691,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
       class="css-1npayr"
     >
       <div
-        class="css-1x49fmi"
+        class="css-1xyevk2"
       >
         <div
           class="css-1a0x9v0"
@@ -1708,12 +1708,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid38"
+                  aria-labelledby="uid58"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-14lk1a2"
                   >
                     <img
                       alt=""
@@ -1726,7 +1726,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid38"
+                    id="uid58"
                   >
                     Atlassify
                   </span>
@@ -1962,7 +1962,1292 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - sort by date 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - sort by date - dark mode 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="css-1npayr"
+      >
+        <div
+          class="css-1xyevk2"
+        >
+          <div
+            class="css-1a0x9v0"
+          >
+            <div
+              class="css-1v6wdk"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="css-1xq1pkg"
+                  data-testid="account-profile--itemInner"
+                  type="button"
+                >
+                  <div
+                    aria-labelledby="uid22"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
+                  >
+                    <span
+                      class="css-14lk1a2"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://avatar.atlassify.io"
+                        style="border-radius: 50%;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid22"
+                    >
+                      Atlassify
+                    </span>
+                  </div>
+                  <div
+                    class="css-1orugy9"
+                  >
+                    <span
+                      class="css-pbo52v"
+                    >
+                      Atlassify
+                    </span>
+                    <span
+                      class="css-km389f"
+                    />
+                  </div>
+                </button>
+              </div>
+               
+              <span
+                class="css-g73hg0"
+              >
+                <span
+                  class="css-pvol9p"
+                >
+                  2
+                </span>
+              </span>
+            </div>
+            <div
+              class="css-gokkc4"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="css-a8hcye"
+                  data-testid="account-pull-requests"
+                  type="button"
+                >
+                  <span
+                    class="css-1spmf3f"
+                  >
+                    <span
+                      class="css-1ka881b"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
+      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="inherit"
+                        />
+                        
+    
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      My pull requests
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                role="presentation"
+              >
+                <button
+                  class="css-a8hcye"
+                  data-testid="account-mark-as-read"
+                  type="button"
+                >
+                  <span
+                    class="css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1wits42"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                          r="5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Mark all account notifications as read
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                role="presentation"
+              >
+                <button
+                  class="css-a8hcye"
+                  data-testid="account-toggle"
+                  type="button"
+                >
+                  <span
+                    class="css-1spmf3f"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-snhnyn"
+                      data-vc="icon-undefined"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <path
+                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="css-b5o75w"
+                    >
+                      Hide account notifications
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          id="138661096"
+        >
+          <div
+            class="mr-3 flex items-center justify-center"
+          >
+            <div
+              class="css-2k1qcz"
+            >
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="uid30"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-1hqd2wf"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="uid30"
+                  >
+                    atlassify-app
+                  </span>
+                </div>
+              </div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-1 cursor-pointer text-wrap"
+            data-testid="notification-row"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="css-2mvdbp"
+            >
+              <div
+                class="css-k5cxwk"
+              >
+                <span
+                  class="css-b0hel9"
+                >
+                  #103: chore(deps): update dependency eslint
+                </span>
+                  
+                <em
+                  class="css-1ot9q9i"
+                >
+                  4 years ago
+                </em>
+              </div>
+              <div
+                class="css-k5cxwk"
+              >
+                <div
+                  class="css-1w1rt7h"
+                >
+                  <div
+                    aria-labelledby="uid32"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
+                  >
+                    <span
+                      class="css-122fgfa"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                        style="border-radius: 2px;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid32"
+                    >
+                      #103: chore(deps): update dependency eslint
+                    </span>
+                  </div>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    #103: chore(deps): update dependency eslint
+                  </span>
+                </div>
+                <div
+                  class="css-1yqbixt"
+                >
+                  <div
+                    class="css-f86pb"
+                  >
+                    <span
+                      aria-label="Bitbucket"
+                      class="css-5vjqu0"
+                      role="img"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
+      
+                        <path
+                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                          fill="#1868DB"
+                        />
+                        
+    
+                      </svg>
+                    </span>
+                    <span
+                      class="css-lym9kh"
+                    >
+                      myorg/notifications-test
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1barwao"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-a8hcye"
+                data-testid="notification-mark-as-read"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          id="148827438"
+        >
+          <div
+            class="mr-3 flex items-center justify-center"
+          >
+            <div
+              class="css-2k1qcz"
+            >
+              <div
+                role="presentation"
+              >
+                <div
+                  aria-labelledby="uid36"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-1hqd2wf"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="uid36"
+                  >
+                    atlassify-app
+                  </span>
+                </div>
+              </div>
+              <div
+                role="presentation"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-1 cursor-pointer text-wrap"
+            data-testid="notification-row"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="css-2mvdbp"
+            >
+              <div
+                class="css-k5cxwk"
+              >
+                <span
+                  class="css-b0hel9"
+                >
+                  atlassify-app edited your page
+                </span>
+                  
+                <em
+                  class="css-1ot9q9i"
+                >
+                  4 years ago
+                </em>
+              </div>
+              <div
+                class="css-k5cxwk"
+              >
+                <div
+                  class="css-1w1rt7h"
+                >
+                  <div
+                    aria-labelledby="uid38"
+                    role="img"
+                    style="display: inline-block; position: relative; outline: 0;"
+                  >
+                    <span
+                      class="css-122fgfa"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="css-13ep12v"
+                        data-vc="avatar-image"
+                        src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
+                        style="border-radius: 2px;"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid38"
+                    >
+                      Atlassify Home
+                    </span>
+                  </div>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    Atlassify Home
+                  </span>
+                </div>
+                <div
+                  class="css-1yqbixt"
+                >
+                  <div
+                    class="css-f86pb"
+                  >
+                    <span
+                      aria-label="Confluence"
+                      class="css-5vjqu0"
+                      role="img"
+                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        focusable="false"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        
+      
+                        <path
+                          d="M25.769 20.234c-6.584-3.183-8.507-3.66-11.282-3.66-3.254 0-6.028 1.355-8.507 5.16l-.406.622c-.333.513-.407.696-.407.915s.11.403.517.659l4.18 2.598c.222.146.407.22.592.22.222 0 .37-.11.592-.44l.665-1.024c1.036-1.574 1.96-2.086 3.144-2.086 1.036 0 2.257.293 3.773 1.025l4.365 2.049c.443.22.924.11 1.146-.403l2.071-4.537c.222-.512.074-.842-.444-1.098M6.572 12.22c6.584 3.184 8.507 3.66 11.281 3.66 3.255 0 6.03-1.354 8.507-5.16l.407-.622c.333-.512.407-.695.407-.915s-.11-.402-.518-.658l-4.18-2.598c-.221-.147-.406-.22-.591-.22-.222 0-.37.11-.592.44l-.666 1.024c-1.035 1.573-1.96 2.086-3.144 2.086-1.035 0-2.256-.293-3.772-1.025L9.346 6.183c-.444-.22-.924-.11-1.146.402l-2.072 4.538c-.222.512-.074.841.444 1.098"
+                          fill="#1868DB"
+                        />
+                        
+    
+                      </svg>
+                    </span>
+                    <span
+                      class="css-lym9kh"
+                    >
+                      Atlassify Space
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1barwao"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-a8hcye"
+                data-testid="notification-mark-as-read"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-1npayr"
+    >
+      <div
+        class="css-1xyevk2"
+      >
+        <div
+          class="css-1a0x9v0"
+        >
+          <div
+            class="css-1v6wdk"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-1xq1pkg"
+                data-testid="account-profile--itemInner"
+                type="button"
+              >
+                <div
+                  aria-labelledby="uid22"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-14lk1a2"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://avatar.atlassify.io"
+                      style="border-radius: 50%;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="uid22"
+                  >
+                    Atlassify
+                  </span>
+                </div>
+                <div
+                  class="css-1orugy9"
+                >
+                  <span
+                    class="css-pbo52v"
+                  >
+                    Atlassify
+                  </span>
+                  <span
+                    class="css-km389f"
+                  />
+                </div>
+              </button>
+            </div>
+             
+            <span
+              class="css-g73hg0"
+            >
+              <span
+                class="css-pvol9p"
+              >
+                2
+              </span>
+            </span>
+          </div>
+          <div
+            class="css-gokkc4"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-a8hcye"
+                data-testid="account-pull-requests"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    class="css-1ka881b"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
+      
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="inherit"
+                      />
+                      
+    
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    My pull requests
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-a8hcye"
+                data-testid="account-mark-as-read"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-1wits42"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                        r="5"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Mark all account notifications as read
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div
+              role="presentation"
+            >
+              <button
+                class="css-a8hcye"
+                data-testid="account-toggle"
+                type="button"
+              >
+                <span
+                  class="css-1spmf3f"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="css-snhnyn"
+                    data-vc="icon-undefined"
+                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  >
+                    <svg
+                      height="24"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="css-b5o75w"
+                  >
+                    Hide account notifications
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        id="138661096"
+      >
+        <div
+          class="mr-3 flex items-center justify-center"
+        >
+          <div
+            class="css-2k1qcz"
+          >
+            <div
+              role="presentation"
+            >
+              <div
+                aria-labelledby="uid30"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-1hqd2wf"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="uid30"
+                >
+                  atlassify-app
+                </span>
+              </div>
+            </div>
+            <div
+              role="presentation"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-1 cursor-pointer text-wrap"
+          data-testid="notification-row"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="css-2mvdbp"
+          >
+            <div
+              class="css-k5cxwk"
+            >
+              <span
+                class="css-b0hel9"
+              >
+                #103: chore(deps): update dependency eslint
+              </span>
+                
+              <em
+                class="css-1ot9q9i"
+              >
+                4 years ago
+              </em>
+            </div>
+            <div
+              class="css-k5cxwk"
+            >
+              <div
+                class="css-1w1rt7h"
+              >
+                <div
+                  aria-labelledby="uid32"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="uid32"
+                  >
+                    #103: chore(deps): update dependency eslint
+                  </span>
+                </div>
+                <span
+                  class="css-lym9kh"
+                >
+                  #103: chore(deps): update dependency eslint
+                </span>
+              </div>
+              <div
+                class="css-1yqbixt"
+              >
+                <div
+                  class="css-f86pb"
+                >
+                  <span
+                    aria-label="Bitbucket"
+                    class="css-5vjqu0"
+                    role="img"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
+      
+                      <path
+                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
+                        fill="#1868DB"
+                      />
+                      
+    
+                    </svg>
+                  </span>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    myorg/notifications-test
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-1barwao"
+        >
+          <div
+            role="presentation"
+          >
+            <button
+              class="css-a8hcye"
+              data-testid="notification-mark-as-read"
+              type="button"
+            >
+              <span
+                class="css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group flex px-3 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        id="148827438"
+      >
+        <div
+          class="mr-3 flex items-center justify-center"
+        >
+          <div
+            class="css-2k1qcz"
+          >
+            <div
+              role="presentation"
+            >
+              <div
+                aria-labelledby="uid36"
+                role="img"
+                style="display: inline-block; position: relative; outline: 0;"
+              >
+                <span
+                  class="css-1hqd2wf"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    class="css-13ep12v"
+                    data-vc="avatar-image"
+                    src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                    style="border-radius: 50%;"
+                  />
+                </span>
+                <span
+                  hidden=""
+                  id="uid36"
+                >
+                  atlassify-app
+                </span>
+              </div>
+            </div>
+            <div
+              role="presentation"
+            >
+              <span
+                aria-hidden="true"
+                class="css-1wits42"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-1 cursor-pointer text-wrap"
+          data-testid="notification-row"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="css-2mvdbp"
+          >
+            <div
+              class="css-k5cxwk"
+            >
+              <span
+                class="css-b0hel9"
+              >
+                atlassify-app edited your page
+              </span>
+                
+              <em
+                class="css-1ot9q9i"
+              >
+                4 years ago
+              </em>
+            </div>
+            <div
+              class="css-k5cxwk"
+            >
+              <div
+                class="css-1w1rt7h"
+              >
+                <div
+                  aria-labelledby="uid38"
+                  role="img"
+                  style="display: inline-block; position: relative; outline: 0;"
+                >
+                  <span
+                    class="css-122fgfa"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      class="css-13ep12v"
+                      data-vc="avatar-image"
+                      src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
+                      style="border-radius: 2px;"
+                    />
+                  </span>
+                  <span
+                    hidden=""
+                    id="uid38"
+                  >
+                    Atlassify Home
+                  </span>
+                </div>
+                <span
+                  class="css-lym9kh"
+                >
+                  Atlassify Home
+                </span>
+              </div>
+              <div
+                class="css-1yqbixt"
+              >
+                <div
+                  class="css-f86pb"
+                >
+                  <span
+                    aria-label="Confluence"
+                    class="css-5vjqu0"
+                    role="img"
+                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      
+      
+                      <path
+                        d="M25.769 20.234c-6.584-3.183-8.507-3.66-11.282-3.66-3.254 0-6.028 1.355-8.507 5.16l-.406.622c-.333.513-.407.696-.407.915s.11.403.517.659l4.18 2.598c.222.146.407.22.592.22.222 0 .37-.11.592-.44l.665-1.024c1.036-1.574 1.96-2.086 3.144-2.086 1.036 0 2.257.293 3.773 1.025l4.365 2.049c.443.22.924.11 1.146-.403l2.071-4.537c.222-.512.074-.842-.444-1.098M6.572 12.22c6.584 3.184 8.507 3.66 11.281 3.66 3.255 0 6.03-1.354 8.507-5.16l.407-.622c.333-.512.407-.695.407-.915s-.11-.402-.518-.658l-4.18-2.598c-.221-.147-.406-.22-.591-.22-.222 0-.37.11-.592.44l-.666 1.024c-1.035 1.573-1.96 2.086-3.144 2.086-1.035 0-2.256-.293-3.772-1.025L9.346 6.183c-.444-.22-.924-.11-1.146.402l-2.072 4.538c-.222.512-.074.841.444 1.098"
+                        fill="#1868DB"
+                      />
+                      
+    
+                    </svg>
+                  </span>
+                  <span
+                    class="css-lym9kh"
+                  >
+                    Atlassify Space
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-1barwao"
+        >
+          <div
+            role="presentation"
+          >
+            <button
+              class="css-a8hcye"
+              data-testid="notification-mark-as-read"
+              type="button"
+            >
+              <span
+                class="css-1spmf3f"
+              >
+                <span
+                  aria-hidden="true"
+                  class="css-1wits42"
+                  data-vc="icon-undefined"
+                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                >
+                  <svg
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                      r="5"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="css-b5o75w"
+                >
+                  Mark as read
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - sort by date - light mode 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -3260,7 +4545,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         class="css-1npayr"
       >
         <div
-          class="css-1x49fmi"
+          class="css-1xyevk2"
         >
           <div
             class="css-1a0x9v0"
@@ -3277,12 +4562,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid118"
+                    aria-labelledby="uid138"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -3295,7 +4580,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid118"
+                      id="uid138"
                     >
                       Atlassify
                     </span>
@@ -3457,7 +4742,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         class="css-1npayr"
       >
         <div
-          class="css-1x49fmi"
+          class="css-1xyevk2"
         >
           <div
             class="css-1a0x9v0"
@@ -3474,12 +4759,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid138"
+                    aria-labelledby="uid158"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-14lk1a2"
                     >
                       <img
                         alt=""
@@ -3492,7 +4777,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid138"
+                      id="uid158"
                     >
                       Atlassify
                     </span>
@@ -3661,7 +4946,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <div
-                  aria-labelledby="uid146"
+                  aria-labelledby="uid166"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3679,7 +4964,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid146"
+                    id="uid166"
                   >
                     atlassify-app
                   </span>
@@ -3741,7 +5026,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   class="css-1w1rt7h"
                 >
                   <div
-                    aria-labelledby="uid148"
+                    aria-labelledby="uid168"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -3759,7 +5044,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid148"
+                      id="uid168"
                     >
                       #103: chore(deps): update dependency eslint
                     </span>
@@ -3869,7 +5154,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <div
-                  aria-labelledby="uid152"
+                  aria-labelledby="uid172"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -3887,7 +5172,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid152"
+                    id="uid172"
                   >
                     atlassify-app
                   </span>
@@ -3949,7 +5234,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   class="css-1w1rt7h"
                 >
                   <div
-                    aria-labelledby="uid154"
+                    aria-labelledby="uid174"
                     role="img"
                     style="display: inline-block; position: relative; outline: 0;"
                   >
@@ -3967,7 +5252,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid154"
+                      id="uid174"
                     >
                       Atlassify Home
                     </span>
@@ -4071,7 +5356,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
       class="css-1npayr"
     >
       <div
-        class="css-1x49fmi"
+        class="css-1xyevk2"
       >
         <div
           class="css-1a0x9v0"
@@ -4088,12 +5373,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 type="button"
               >
                 <div
-                  aria-labelledby="uid138"
+                  aria-labelledby="uid158"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-14lk1a2"
                   >
                     <img
                       alt=""
@@ -4106,7 +5391,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid138"
+                    id="uid158"
                   >
                     Atlassify
                   </span>
@@ -4275,7 +5560,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <div
-                aria-labelledby="uid146"
+                aria-labelledby="uid166"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -4293,7 +5578,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 </span>
                 <span
                   hidden=""
-                  id="uid146"
+                  id="uid166"
                 >
                   atlassify-app
                 </span>
@@ -4355,7 +5640,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="uid148"
+                  aria-labelledby="uid168"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -4373,7 +5658,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid148"
+                    id="uid168"
                   >
                     #103: chore(deps): update dependency eslint
                   </span>
@@ -4483,7 +5768,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <div
-                aria-labelledby="uid152"
+                aria-labelledby="uid172"
                 role="img"
                 style="display: inline-block; position: relative; outline: 0;"
               >
@@ -4501,7 +5786,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 </span>
                 <span
                   hidden=""
-                  id="uid152"
+                  id="uid172"
                 >
                   atlassify-app
                 </span>
@@ -4563,7 +5848,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 class="css-1w1rt7h"
               >
                 <div
-                  aria-labelledby="uid154"
+                  aria-labelledby="uid174"
                   role="img"
                   style="display: inline-block; position: relative; outline: 0;"
                 >
@@ -4581,7 +5866,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid154"
+                    id="uid174"
                   >
                     Atlassify Home
                   </span>

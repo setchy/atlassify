@@ -8,6 +8,7 @@ import {
 import { AppContext } from '../../context/App';
 import type { ProductName } from '../../types';
 import * as comms from '../../utils/comms';
+import * as theme from '../../utils/theme';
 import { ProductNotifications } from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
@@ -23,7 +24,27 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it('should render itself & its children', () => {
+  it('should render itself & its children - light mode', () => {
+    jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+
+    const props = {
+      account: mockAtlassianCloudAccount,
+      product: 'bitbucket' as ProductName,
+      productNotifications: mockAtlassifyNotifications,
+    };
+
+    const tree = render(
+      <AppContext.Provider value={{}}>
+        <ProductNotifications {...props} />
+      </AppContext.Provider>,
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render itself & its children - dark mode', () => {
+    jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+
     const props = {
       account: mockAtlassianCloudAccount,
       product: 'bitbucket' as ProductName,
