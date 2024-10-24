@@ -10823,22 +10823,6 @@ export type GraphStoreCreateComponentImpactedByIncidentRelationshipObjectMetadat
   status?: InputMaybe<GraphStoreCreateComponentImpactedByIncidentJiraIncidentStatusInput>;
 };
 
-export type GraphStoreCreateFocusAreaHasAtlasGoalInput = {
-  /** The list of relationships of type focus-area-has-atlas-goal to persist */
-  relationships: Array<GraphStoreCreateFocusAreaHasAtlasGoalRelationshipInput>;
-};
-
-export type GraphStoreCreateFocusAreaHasAtlasGoalRelationshipInput = {
-  /** An ARI of type ati:cloud:townsquare:goal */
-  from: Scalars['ID']['input'];
-  /** Sequence number of this relationship, used for versioning. updatedAt as millis will be used if omitted */
-  sequenceNumber?: InputMaybe<Scalars['Long']['input']>;
-  /** An ARI of type ati:cloud:townsquare:goal */
-  to: Scalars['ID']['input'];
-  /** Time at which these relationships were last observed. Current time will be assumed if omitted. */
-  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
 export type GraphStoreCreateIncidentAssociatedPostIncidentReviewLinkInput = {
   /** The list of relationships of type incident-associated-post-incident-review-link to persist */
   relationships: Array<GraphStoreCreateIncidentAssociatedPostIncidentReviewLinkRelationshipInput>;
@@ -11201,20 +11185,6 @@ export type GraphStoreDeleteComponentImpactedByIncidentRelationshipInput = {
   to: Scalars['ID']['input'];
 };
 
-export type GraphStoreDeleteFocusAreaHasAtlasGoalInput = {
-  /** The list of relationships of type focus-area-has-atlas-goal to delete */
-  relationships: Array<GraphStoreDeleteFocusAreaHasAtlasGoalRelationshipInput>;
-  /** If true, the request will wait until the relationship is deleted before returning. This will make the request twice as expensive and should not be used unless really needed. */
-  synchronousWrite?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type GraphStoreDeleteFocusAreaHasAtlasGoalRelationshipInput = {
-  /** An ARI of type ati:cloud:mercury:focus-area */
-  from: Scalars['ID']['input'];
-  /** An ARI of type ati:cloud:townsquare:goal */
-  to: Scalars['ID']['input'];
-};
-
 export type GraphStoreDeleteIncidentAssociatedPostIncidentReviewLinkInput = {
   /** The list of relationships of type incident-associated-post-incident-review-link to delete */
   relationships: Array<GraphStoreDeleteIncidentAssociatedPostIncidentReviewLinkRelationshipInput>;
@@ -11496,14 +11466,8 @@ export type GraphStoreFocusAreaAssociatedToProjectSortInput = {
 };
 
 export type GraphStoreFocusAreaHasAtlasGoalSortInput = {
-  /** Sort by the creation date of the relationship */
-  createdAt?: InputMaybe<GraphStoreSortInput>;
-  /** Sort by the ATI of the from node */
-  fromAti?: InputMaybe<GraphStoreSortInput>;
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
-  /** Sort by the ATI of the to node */
-  toAti?: InputMaybe<GraphStoreSortInput>;
 };
 
 export type GraphStoreFocusAreaHasFocusAreaSortInput = {
@@ -20918,7 +20882,6 @@ export type JsmChatUpdatedProjectSettings = {
 };
 
 export type JsmChatWebAddConversationInteractionInput = {
-  authorId: Scalars['String']['input'];
   interactionType: JsmChatWebInteractionType;
   jiraFieldId?: InputMaybe<Scalars['String']['input']>;
   selectedValue: Scalars['String']['input'];
@@ -21256,6 +21219,20 @@ export enum MarketplaceCloudFortifiedStatus {
   Rejected = 'REJECTED'
 }
 
+export enum MarketplaceConsoleAsvlLegacyVersionApprovalStatus {
+  Approved = 'APPROVED',
+  Archived = 'ARCHIVED',
+  Deleted = 'DELETED',
+  Rejected = 'REJECTED',
+  Submitted = 'SUBMITTED',
+  Uninitiated = 'UNINITIATED'
+}
+
+export enum MarketplaceConsoleAsvlLegacyVersionStatus {
+  Private = 'PRIVATE',
+  Public = 'PUBLIC'
+}
+
 export type MarketplaceConsoleAppSoftwareVersionCompatibilityInput = {
   hosting: MarketplaceConsoleHosting;
   maxBuildNumber?: InputMaybe<Scalars['Int']['input']>;
@@ -21296,6 +21273,7 @@ export type MarketplaceConsoleAppVersionCreateRequestInput = {
   versionNumber?: InputMaybe<Scalars['String']['input']>;
 };
 
+/**  --------------------------------------------------------------------------------------------- */
 export type MarketplaceConsoleAppVersionDeleteRequestInput = {
   appKey?: InputMaybe<Scalars['ID']['input']>;
   appSoftwareId?: InputMaybe<Scalars['ID']['input']>;
@@ -21381,6 +21359,13 @@ export type MarketplaceConsoleFrameworkAttributesInput = {
   forge?: InputMaybe<MarketplaceConsoleForgeFrameworkAttributesInput>;
   plugin?: InputMaybe<MarketplaceConsolePluginFrameworkAttributesInput>;
   workflow?: InputMaybe<MarketplaceConsoleWorkflowFrameworkAttributesInput>;
+};
+
+export type MarketplaceConsoleGetVersionsListInput = {
+  appSoftwareIds: Array<Scalars['ID']['input']>;
+  cursor?: InputMaybe<Scalars['Int']['input']>;
+  legacyAppVersionApprovalStatus?: InputMaybe<Array<MarketplaceConsoleAsvlLegacyVersionApprovalStatus>>;
+  legacyAppVersionStatus?: InputMaybe<Array<MarketplaceConsoleAsvlLegacyVersionStatus>>;
 };
 
 /**
