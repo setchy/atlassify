@@ -31,12 +31,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -267,12 +268,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -560,12 +562,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -764,12 +767,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -1025,12 +1029,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -1229,12 +1234,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -1490,12 +1496,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -1713,12 +1720,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -1993,12 +2001,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -2180,12 +2189,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -2260,12 +2270,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                         style="border-radius: 2px;"
@@ -2388,12 +2399,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -2468,12 +2480,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                         style="border-radius: 2px;"
@@ -2607,12 +2620,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -2794,12 +2808,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -2874,12 +2889,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
@@ -3002,12 +3018,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -3082,12 +3099,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                       style="border-radius: 2px;"
@@ -3278,12 +3296,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1mz126u"
+                      class="css-8n3d7m"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -3465,12 +3484,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -3545,12 +3565,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                         style="border-radius: 2px;"
@@ -3673,12 +3694,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -3753,12 +3775,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                         style="border-radius: 2px;"
@@ -3892,12 +3915,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1mz126u"
+                    class="css-8n3d7m"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -4079,12 +4103,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -4159,12 +4184,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
@@ -4287,12 +4313,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -4367,12 +4394,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                       style="border-radius: 2px;"
@@ -4567,12 +4595,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -4764,12 +4793,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-14lk1a2"
+                      class="css-t4a0zx"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar.atlassify.io"
                         style="border-radius: 50%;"
@@ -4951,12 +4981,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -5031,12 +5062,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                         style="border-radius: 2px;"
@@ -5159,12 +5191,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-1hqd2wf"
+                    class="css-1fpnclv"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                       style="border-radius: 50%;"
@@ -5239,12 +5272,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-122fgfa"
+                      class="css-1jon4ae"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
                         class="css-13ep12v"
+                        data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                         style="border-radius: 2px;"
@@ -5378,12 +5412,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-14lk1a2"
+                    class="css-t4a0zx"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://avatar.atlassify.io"
                       style="border-radius: 50%;"
@@ -5565,12 +5600,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -5645,12 +5681,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
@@ -5773,12 +5810,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -5853,12 +5891,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://home-static.us-east-1.prod.public.atl-paas.net/confluence-page-icon.svg"
                       style="border-radius: 2px;"

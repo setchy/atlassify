@@ -84,12 +84,13 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-zoks5i"
+                  class="css-1lxbsnd"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar.atlassify.io"
                     style="border-radius: 50%;"
@@ -377,12 +378,13 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-jka4za"
+                  class="css-m9ooyq"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar.atlassify.io"
                     style="border-radius: 50%;"

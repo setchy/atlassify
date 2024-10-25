@@ -24,12 +24,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -104,12 +105,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
@@ -235,12 +237,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               style="display: inline-block; position: relative; outline: 0;"
             >
               <span
-                class="css-1hqd2wf"
+                class="css-1fpnclv"
               >
                 <img
                   alt=""
                   aria-hidden="true"
                   class="css-13ep12v"
+                  data-ssr-placeholder-ignored="true"
                   data-vc="avatar-image"
                   src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                   style="border-radius: 50%;"
@@ -315,12 +318,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-122fgfa"
+                  class="css-1jon4ae"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                     style="border-radius: 2px;"
@@ -503,12 +507,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1hqd2wf"
+                  class="css-1fpnclv"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                     style="border-radius: 50%;"
@@ -583,12 +588,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-122fgfa"
+                    class="css-1jon4ae"
                   >
                     <img
                       alt=""
                       aria-hidden="true"
                       class="css-13ep12v"
+                      data-ssr-placeholder-ignored="true"
                       data-vc="avatar-image"
                       src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                       style="border-radius: 2px;"
@@ -714,12 +720,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               style="display: inline-block; position: relative; outline: 0;"
             >
               <span
-                class="css-1hqd2wf"
+                class="css-1fpnclv"
               >
                 <img
                   alt=""
                   aria-hidden="true"
                   class="css-13ep12v"
+                  data-ssr-placeholder-ignored="true"
                   data-vc="avatar-image"
                   src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
                   style="border-radius: 50%;"
@@ -794,12 +801,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-122fgfa"
+                  class="css-1jon4ae"
                 >
                   <img
                     alt=""
                     aria-hidden="true"
                     class="css-13ep12v"
+                    data-ssr-placeholder-ignored="true"
                     data-vc="avatar-image"
                     src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
                     style="border-radius: 2px;"
