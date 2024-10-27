@@ -2,6 +2,7 @@ import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 import { updateElectronApp } from 'update-electron-app';
+
 import type MenuBuilder from './menu';
 
 export default class Updater {

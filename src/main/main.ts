@@ -7,6 +7,7 @@ import {
 } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
+
 import { onFirstRunMaybe } from './first-run';
 import { activeIcon, idleAlternateIcon, idleIcon } from './icons';
 import MenuBuilder from './menu';

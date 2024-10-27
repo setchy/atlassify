@@ -2197,9 +2197,12 @@ export type CompassFieldValueInput = {
 
 /** Accepts input to find filtered components count */
 export type CompassFilteredComponentsCountQuery = {
+  componentCreationTimeFilter?: InputMaybe<CompassComponentCreationTimeFilterInput>;
   fields?: InputMaybe<Array<CompassScorecardAppliedToComponentsFieldFilter>>;
   labels?: InputMaybe<CompassScorecardAppliedToComponentsLabelsFilter>;
+  lifecycleFilter?: InputMaybe<CompassLifecycleFilterInput>;
   ownerIds?: InputMaybe<CompassScorecardAppliedToComponentsOwnerFilter>;
+  repositoryLinkFilter?: InputMaybe<CompassRepositoryValueInput>;
   types?: InputMaybe<CompassScorecardAppliedToComponentsTypesFilter>;
 };
 
@@ -14858,6 +14861,13 @@ export type JiraApproveJiraBitbucketWorkspaceAccessRequestInput = {
   workspaceId: Scalars['ID']['input'];
 };
 
+export type JiraArchiveJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
+};
+
 /** Input type to filter archived issues */
 export type JiraArchivedIssuesFilterInput = {
   /** Filter By archival date range. */
@@ -16195,6 +16205,13 @@ export type JiraDevOpsUpdateAssociationsInput = {
   providerId: Scalars['String']['input'];
 };
 
+export type JiraDisableJourneyConfigurationInput = {
+  /** Id of the journey configuration */
+  id: Scalars['ID']['input'];
+  /** The version number of the entity. */
+  version: Scalars['Long']['input'];
+};
+
 /** The response payload to dismiss the banner that displays workspaces that are pending acceptance of access requests */
 export type JiraDismissBitbucketPendingAccessRequestBannerInput = {
   /** if the banner should be dismissed. The default is true, if not given */
@@ -16936,7 +16953,7 @@ export type JiraIssueSearchOptions = {
 /**
  * The input used for an issue search when FE needs to tell the BE the specific view configuration to be used for an issue search query.
  * E.g. this can be used on pagination to make sure that the same view configuration calculated on initial load is used for the subsequent queries.
- * This would prevent scenrios where an user has two tabs open (one with hierarchy enabled and one with hierarchy disabled) and the BE needs to return
+ * This would prevent scenarios where an user has two tabs open (one with hierarchy enabled and one with hierarchy disabled) and the BE needs to return
  * different results to respect the view configuration used on the initial load of each tab.
  */
 export type JiraIssueSearchStaticViewInput = {
@@ -17037,8 +17054,20 @@ export type JiraIssueTransitionFieldLevelInput = {
   JiraDatePickerField?: InputMaybe<Array<JiraUpdateDateFieldInput>>;
   /** An entry corresponding for input for JiraDateTimePickerField */
   JiraDateTimePickerField?: InputMaybe<Array<JiraUpdateDateTimeFieldInput>>;
+  /** An entry corresponding for input for JiraForgeDateField */
+  JiraForgeDateField?: InputMaybe<Array<JiraUpdateDateFieldInput>>;
+  /** An entry corresponding for input for JiraForgeDatetimeField */
+  JiraForgeDatetimeField?: InputMaybe<Array<JiraUpdateDateTimeFieldInput>>;
+  /** An entry corresponding for input for JiraForgeNumberField */
+  JiraForgeNumberField?: InputMaybe<Array<JiraUpdateNumberFieldInput>>;
+  /** An entry corresponding for input for JiraForgeObjectField */
+  JiraForgeObjectField?: InputMaybe<Array<JiraUpdateForgeObjectFieldInput>>;
   /** An entry corresponding for input for JiraForgeStringField */
   JiraForgeStringField?: InputMaybe<Array<JiraUpdateSingleLineTextFieldInput>>;
+  /** An entry corresponding for input for JiraForgeStringsField */
+  JiraForgeStringsField?: InputMaybe<Array<JiraUpdateLabelsFieldInput>>;
+  /** An entry corresponding for input for JiraForgeUserField */
+  JiraForgeUserField?: InputMaybe<Array<JiraUpdateSingleSelectUserPickerFieldInput>>;
   /** An entry corresponding for input for JiraIssueLinkField */
   JiraIssueLinkField?: InputMaybe<Array<JiraUpdateIssueLinkFieldInputForIssueTransitions>>;
   /** An entry corresponding for input for JiraIssueTypeField */
@@ -21006,6 +21035,15 @@ export enum KnowledgeDiscoveryRelatedEntityActionType {
   Persist = 'PERSIST'
 }
 
+export type KnowledgeDiscoveryRelatedEntityRequest = {
+  count: Scalars['Int']['input'];
+  entityType: KnowledgeDiscoveryEntityType;
+};
+
+export type KnowledgeDiscoveryRelatedEntityRequests = {
+  requests?: InputMaybe<Array<KnowledgeDiscoveryRelatedEntityRequest>>;
+};
+
 export enum KnowledgeDiscoverySearchQueryClassification {
   KeywordOrAcronym = 'KEYWORD_OR_ACRONYM',
   NaturalLanguageQuery = 'NATURAL_LANGUAGE_QUERY',
@@ -22281,18 +22319,22 @@ export type PeapConfluenceSiteEnrollmentQueryInput = {
 };
 
 /**
- * input PEAPUserSiteEnrollmentQueryInput {
+ * input PEAPSiteEnrollmentQueryInput {
  *   programId: ID!
  *   cloudId: ID! #@ARI(....)
  * }
- * input PEAPOrgEnrollmentQueryInput {
- *   programId: ID!
- *   orgId: ID! @ARI(type: "org", owner: "platform")
- * }
- * input PEAPOrgUserEnrollmentQueryInput {
- *   programId: ID!
- *   orgId: ID! @ARI(type: "org", owner: "platform")
- * }
+ *  input PEAPUserSiteEnrollmentQueryInput {
+ *    programId: ID!
+ *    cloudId: ID! #@ARI(....)
+ *  }
+ *  input PEAPOrgEnrollmentQueryInput {
+ *    programId: ID!
+ *    orgId: ID! @ARI(type: "org", owner: "platform")
+ *  }
+ *  input PEAPOrgUserEnrollmentQueryInput {
+ *    programId: ID!
+ *    orgId: ID! @ARI(type: "org", owner: "platform")
+ *  }
  */
 export type PeapJiraSiteEnrollmentMutationInput = {
   cloudId: Scalars['ID']['input'];
@@ -22307,15 +22349,8 @@ export type PeapJiraSiteEnrollmentQueryInput = {
 
 /** Parameters that can be used to create new EAPs */
 export type PeapNewProgramInput = {
-  /** A description of the EAP */
-  description: Scalars['String']['input'];
-  /** A URL where partners can find the documentation of the features under EAP */
-  documentationURL: Scalars['String']['input'];
   /** A short name that provides a crisp summary of the EAP */
   name: Scalars['String']['input'];
-  serviceId?: InputMaybe<Scalars['String']['input']>;
-  /** Slack channel for owning team */
-  teamChannel?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** All status values for EAPs */
@@ -22323,36 +22358,21 @@ export enum PeapProgramStatus {
   Abandoned = 'ABANDONED',
   Active = 'ACTIVE',
   Ended = 'ENDED',
-  New = 'NEW',
-  Planned = 'PLANNED'
+  New = 'NEW'
 }
 
 /** Query Parameters when looking for EAPs */
 export type PeapQueryParams = {
-  /** Any term that should be used to lookup EAPs by description */
-  description?: InputMaybe<Scalars['String']['input']>;
   /** Any term that should be used to lookup EAPs by name */
   name?: InputMaybe<Scalars['String']['input']>;
   /** An array of statuses, to lookup EAPs that are only in any of the given statuses */
   status?: InputMaybe<Array<PeapProgramStatus>>;
 };
 
-export type PeapSiteEnrollmentQueryInput = {
-  cloudId: Scalars['ID']['input'];
-  programId: Scalars['ID']['input'];
-};
-
 /** Parameters that can be used to update existing EAPs */
 export type PeapUpdateProgramInput = {
-  /** A description of the EAP */
-  description?: InputMaybe<Scalars['String']['input']>;
-  /** A URL where partners can find the documentation of the features under EAP */
-  documentationURL?: InputMaybe<Scalars['String']['input']>;
   /** A short name that provides a crisp summary of the EAP */
   name?: InputMaybe<Scalars['String']['input']>;
-  serviceId?: InputMaybe<Scalars['String']['input']>;
-  /** Slack channel for owning team */
-  teamChannel?: InputMaybe<Scalars['String']['input']>;
 };
 
 export enum PartnerBtfLicenseType {
@@ -23491,6 +23511,8 @@ export enum SearchBoardProductType {
 }
 
 export type SearchCommonFilter = {
+  /** 1P AccountIds of the users. */
+  contributorsFilter?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Search for only entities that have match the date range for the specified field */
   range?: InputMaybe<SearchCommonRangeFilter>;
 };
@@ -25257,10 +25279,34 @@ export type TrelloMemberWorkspaceFilter = {
   tier: TrelloWorkspaceTier;
 };
 
+/** ADS color options for planner calendars */
+export enum TrelloPlannerCalendarColor {
+  BlueSubtler = 'BLUE_SUBTLER',
+  BlueSubtlest = 'BLUE_SUBTLEST',
+  GraySubtler = 'GRAY_SUBTLER',
+  GreenSubtler = 'GREEN_SUBTLER',
+  GreenSubtlest = 'GREEN_SUBTLEST',
+  LimeSubtler = 'LIME_SUBTLER',
+  LimeSubtlest = 'LIME_SUBTLEST',
+  MagentaSubtler = 'MAGENTA_SUBTLER',
+  MagentaSubtlest = 'MAGENTA_SUBTLEST',
+  OrangeSubtler = 'ORANGE_SUBTLER',
+  OrangeSubtlest = 'ORANGE_SUBTLEST',
+  PurpleSubtlest = 'PURPLE_SUBTLEST',
+  RedSubtler = 'RED_SUBTLER',
+  RedSubtlest = 'RED_SUBTLEST',
+  YellowBolder = 'YELLOW_BOLDER',
+  YellowSubtler = 'YELLOW_SUBTLER',
+  YellowSubtlest = 'YELLOW_SUBTLEST'
+}
+
 /** Status of the event (confirmed/tentative/cancelled) */
 export enum TrelloPlannerCalendarEventStatus {
+  Accepted = 'ACCEPTED',
   Cancelled = 'CANCELLED',
   Confirmed = 'CONFIRMED',
+  Declined = 'DECLINED',
+  NeedsAction = 'NEEDS_ACTION',
   Tentative = 'TENTATIVE'
 }
 
@@ -25273,8 +25319,8 @@ export enum TrelloPlannerCalendarEventVisibility {
 
 /** The input filters for fetching events */
 export type TrelloPlannerCalendarEventsFilter = {
-  end: Scalars['DateTime']['input'];
-  start: Scalars['DateTime']['input'];
+  end?: InputMaybe<Scalars['DateTime']['input']>;
+  start?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
 /** TrelloPowerUpData visibility */
@@ -26013,6 +26059,7 @@ export enum VirtualAgentConversationActionType {
 export enum VirtualAgentConversationChannel {
   HelpCenter = 'HELP_CENTER',
   JsmPortal = 'JSM_PORTAL',
+  JsmWidget = 'JSM_WIDGET',
   MsTeams = 'MS_TEAMS',
   Slack = 'SLACK'
 }

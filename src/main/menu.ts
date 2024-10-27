@@ -1,6 +1,7 @@
 import { Menu, MenuItem } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
+
 import { resetApp, takeScreenshot } from './utils';
 
 export default class MenuBuilder {
