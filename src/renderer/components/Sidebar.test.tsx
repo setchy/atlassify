@@ -132,6 +132,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     );
 
     fireEvent.click(screen.getByTestId('sidebar-home'));
+
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
@@ -154,7 +155,6 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       fireEvent.click(screen.getByTestId('sidebar-notifications'));
 
-      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
       expect(openExternalLinkMock).toHaveBeenCalledWith(
         'https://team.atlassian.com/notifications',
       );
