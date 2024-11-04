@@ -8,9 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gray: {
-          navbar: '#2684FF',
-        },
+        navbar: '#2684FF',
       },
       keyframes: {
         'accordion-down': {
