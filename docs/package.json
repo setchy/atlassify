@@ -42,7 +42,7 @@
     "@astrojs/tailwind": "5.1.2",
     "@kobalte/core": "0.13.7",
     "@tailwindcss/typography": "0.5.15",
-    "astro": "4.16.8",
+    "astro": "4.16.9",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
