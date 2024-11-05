@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import os from 'node:os';
+import path from 'node:path';
 import { dialog, shell } from 'electron';
 import log from 'electron-log';
 import type { Menubar } from 'menubar';
-import { logDirectoryPaths } from '../renderer/utils/platform';
 
 export function takeScreenshot(mb: Menubar) {
   const date = new Date();
@@ -38,12 +38,10 @@ export function resetApp(mb: Menubar) {
 }
 
 export function openLogsDirectory() {
-  const logDirectory = logDirectoryPaths[process.platform];
+  const logDirectory = path.dirname(log.transports.file?.getFile()?.path);
 
   if (!logDirectory) {
-    log.error(
-      `Unsupported platform: ${process.platform}! Cannot open logs directory`,
-    );
+    log.error('Could not find log directory!');
     return;
   }
 
