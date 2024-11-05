@@ -16,6 +16,8 @@ export const Constants = {
 
   DEFAULT_KEYBOARD_SHORTCUT: 'CommandOrControl+Shift+G',
 
+  APP_NAME: 'atlassify',
+
   ATLASSIAN_URLS: {
     API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
     DOCS: {
