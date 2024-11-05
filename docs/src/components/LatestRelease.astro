@@ -113,15 +113,15 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           ))}
         </div>
         <div class="w-80">
-          <p>Current Version: {version}.</p>
-          <p>Released on {releaseDate}.</p>
+          <p>Latest version: <a href={REPO_RELEASES_URL}>{version}</a></p>
+          <p class="mt-1">Released on: {releaseDate}</p>
           {downloadLinks.alt.length > 0 && (
-            <p>
+            <p class="mt-1">
               Also available on:
                 <ul class="list-disc list-inside ml-4">
                   {downloadLinks.alt.map((platform, index) => (
                     <li>
-                      <a href={platform.url || REPO_RELEASES_URL} class="hover:text-blue-600 hover:underline">
+                      <a href={platform.url || REPO_RELEASES_URL}>
                         {platform.name}
                       </a>
                     </li>

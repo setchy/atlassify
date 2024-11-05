@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+a {
+  @apply font-semibold hover:text-blue-600 hover:underline;
+}
+
 .markdown ul {
   @apply list-disc m-4;
 }
 
 .markdown ul > li {
   @apply m-2;
+}
+
+.markdown p + ul {
+  padding-top: 0; /* Remove padding if <p> is followed by <ul> */
+}
+
+.markdown p:not(:last-child):not(:has(+ ul)) {
+  padding-bottom: 1rem;
 }
