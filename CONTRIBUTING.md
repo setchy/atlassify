@@ -1,6 +1,8 @@
 # Atlassify Contributing Guide
 
-Hi! We're really excited that you're interested in contributing to Atlassify! Before submitting your contribution, please read through the following guide.
+Hi, we're really excited that you're interested in contributing to Atlassify! 
+
+Before submitting your contribution, please read through the following guide.
 
 ### Project Philosophy
 
