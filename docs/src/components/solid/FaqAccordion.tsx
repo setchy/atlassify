@@ -19,7 +19,7 @@ const content = [
 		question:
 			"Something is not working as expected, how can I debug Atlassify?",
 		answer:
-			"Using **Chrome Developer Tools** (console logs, network requests, etc):\n- All platforms: right click tray icon then _Developer → Toggle Developer Tools_\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nUsing **Application Log Files**:\n- macOS: `~/Library/Logs/atlassify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\atlassify`",
+			"Using **Chrome Developer Tools** (console logs, network requests, etc):\n- All platforms: right click tray icon then _Developer → Toggle Developer Tools_\n- macOS: `command + opt + i`\n- Windows + Linux: `ctrl + shift + i`\n\nUsing **Application Log Files**:\n- All platforms: right click tray icon then _Developer → View Application Logs_\n- macOS: `~/Library/Logs/atlassify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\atlassify`",
 	},
 	{
 		id: "4",
