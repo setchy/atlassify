@@ -106,7 +106,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           {downloadLinks.primary.map((item, index) => (
             <a
               href={item.url}
-              class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 mr-4`}
+              class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 hover:text-white mr-4`}
             >
               <DownloadIcon className="w-4 h-4 mr-2" /> <span>{item.name}</span>
             </a>
