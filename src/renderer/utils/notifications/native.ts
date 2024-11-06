@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import { APPLICATION } from '../../../shared/constants';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -67,7 +68,7 @@ export const raiseNativeNotification = (
     title = isWindows() ? '' : notification.message;
     body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
   } else {
-    title = 'Atlassify';
+    title = APPLICATION.NAME;
     body = `You have ${notifications.length} notifications.`;
   }
 

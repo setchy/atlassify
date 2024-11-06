@@ -1,5 +1,6 @@
 import { ipcRenderer, shell } from 'electron';
 
+import { namespacedEvent } from '../../shared/utils';
 import { defaultSettings } from '../context/App';
 import { type Link, OpenPreference } from '../types';
 import { Constants } from './constants';
@@ -21,42 +22,48 @@ export function openExternalLink(url: Link): void {
 }
 
 export async function getAppVersion(): Promise<string> {
-  return await ipcRenderer.invoke('atlassify:version');
+  return await ipcRenderer.invoke(namespacedEvent('version'));
 }
 
 export async function encryptValue(value: string): Promise<string> {
-  return await ipcRenderer.invoke('atlassify:safe-storage-encrypt', value);
+  return await ipcRenderer.invoke(
+    namespacedEvent('safe-storage-encrypt'),
+    value,
+  );
 }
 
 export async function decryptValue(value: string): Promise<string> {
-  return await ipcRenderer.invoke('atlassify:safe-storage-decrypt', value);
+  return await ipcRenderer.invoke(
+    namespacedEvent('safe-storage-decrypt'),
+    value,
+  );
 }
 
 export function quitApp(): void {
-  ipcRenderer.send('atlassify:quit');
+  ipcRenderer.send(namespacedEvent('quit'));
 }
 
 export function showWindow(): void {
-  ipcRenderer.send('atlassify:window-show');
+  ipcRenderer.send(namespacedEvent('window-show'));
 }
 
 export function hideWindow(): void {
-  ipcRenderer.send('atlassify:window-hide');
+  ipcRenderer.send(namespacedEvent('window-hide'));
 }
 
 export function setAutoLaunch(value: boolean): void {
-  ipcRenderer.send('atlassify:update-auto-launch', {
+  ipcRenderer.send(namespacedEvent('update-auto-launch'), {
     openAtLogin: value,
     openAsHidden: value,
   });
 }
 
 export function setAlternateIdleIcon(value: boolean): void {
-  ipcRenderer.send('atlassify:use-alternate-idle-icon', value);
+  ipcRenderer.send(namespacedEvent('use-alternate-idle-icon'), value);
 }
 
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
-  ipcRenderer.send('atlassify:update-keyboard-shortcut', {
+  ipcRenderer.send(namespacedEvent('update-keyboard-shortcut'), {
     enabled: keyboardShortcut,
     keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
   });
@@ -64,12 +71,12 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
 
 export function updateTrayIcon(notificationsLength = 0): void {
   if (notificationsLength > 0) {
-    ipcRenderer.send('atlassify:icon-active');
+    ipcRenderer.send(namespacedEvent('icon-active'));
   } else {
-    ipcRenderer.send('atlassify:icon-idle');
+    ipcRenderer.send(namespacedEvent('icon-idle'));
   }
 }
 
 export function updateTrayTitle(title = ''): void {
-  ipcRenderer.send('atlassify:update-title', title);
+  ipcRenderer.send(namespacedEvent('update-title'), title);
 }

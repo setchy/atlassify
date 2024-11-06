@@ -14,6 +14,7 @@ import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
+import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { hasFiltersSet } from '../utils/filters';
@@ -232,9 +233,9 @@ export const Sidebar: FC = () => {
               </Tooltip>
             </Fragment>
           ) : (
-            <Tooltip content="Quit Atlassify" position="right">
+            <Tooltip content={`Quit ${APPLICATION.NAME}`} position="right">
               <IconButton
-                label="Quit Atlassify"
+                label={`Quit ${APPLICATION.NAME}`}
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}

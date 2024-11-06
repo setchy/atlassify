@@ -5,6 +5,7 @@ import Heading from '@atlaskit/heading';
 import InlineMessage from '@atlaskit/inline-message';
 import { Inline, Stack } from '@atlaskit/primitives';
 
+import { APPLICATION } from '../../../shared/constants';
 import { AppContext } from '../../context/App';
 
 export const NotificationSettings: FC = () => {
@@ -54,9 +55,9 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            Keep the notification within Atlassify upon interaction (ie: open
-            notification, mark as read) until the next refresh window (scheduled
-            or user initiated).
+            Keep the notification within {APPLICATION.NAME} upon interaction
+            (ie: open notification, mark as read) until the next refresh window
+            (scheduled or user initiated).
           </div>
         </InlineMessage>
       </Inline>

@@ -20,10 +20,3 @@ export const siteMetadata = {
     },
   ],
 };
-
-export const manifest = {
-  name: 'Atlassify',
-  short_name: 'starter',
-  themeColor: '#24292e',
-  display: 'minimal-ui',
-};

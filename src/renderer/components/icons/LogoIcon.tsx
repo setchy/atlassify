@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { APPLICATION } from '../../../shared/constants';
 
 interface ILogoIcon {
   width?: number;
@@ -16,7 +17,7 @@ export const LogoIcon: FC<ILogoIcon> = ({
     height={height}
     viewBox="0 0 48 48"
     role="img"
-    aria-label="Atlassify Logo"
+    aria-label={`${APPLICATION.NAME} Logo`}
   >
     <defs>
       <linearGradient

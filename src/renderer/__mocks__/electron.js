@@ -1,3 +1,5 @@
+const { namespacedEvent } = require('../../shared/utils');
+
 // @ts-ignore
 window.Notification = function (title) {
   this.title = title;
@@ -39,11 +41,11 @@ module.exports = {
       switch (channel) {
         case 'get-platform':
           return Promise.resolve('darwin');
-        case 'atlassify:version':
+        case namespacedEvent('version'):
           return Promise.resolve('0.0.1');
-        case 'atlassify:safe-storage-encrypt':
+        case namespacedEvent('safe-storage-encrypt'):
           return Promise.resolve('encrypted');
-        case 'atlassify:safe-storage-decrypt':
+        case namespacedEvent('safe-storage-decrypt'):
           return Promise.resolve('decrypted');
         default:
           return Promise.reject(new Error(`Unknown channel: ${channel}`));

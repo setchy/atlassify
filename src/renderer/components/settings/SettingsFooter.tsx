@@ -7,6 +7,7 @@ import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { APPLICATION } from '../../../shared/constants';
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
 
@@ -32,14 +33,17 @@ export const SettingsFooter: FC = () => {
     >
       <Stack>
         <Inline grow="fill" spread="space-between">
-          <Tooltip content="View Atlassify release notes" position="top">
+          <Tooltip
+            content={`View ${APPLICATION.NAME} release notes`}
+            position="top"
+          >
             <Button
-              title="View Atlassify release notes"
+              title={`View ${APPLICATION.NAME} release notes`}
               appearance="subtle"
               onClick={() => openAtlassifyReleaseNotes(appVersion)}
               testId="settings-release-notes"
             >
-              Atlassify {appVersion}
+              {APPLICATION.NAME} {appVersion}
             </Button>
           </Tooltip>
 
@@ -54,9 +58,9 @@ export const SettingsFooter: FC = () => {
                 testId="settings-accounts"
               />
             </Tooltip>
-            <Tooltip content="Quit Atlassify" position="top">
+            <Tooltip content={`Quit ${APPLICATION.NAME}`} position="top">
               <IconButton
-                label="Quit Atlassify"
+                label={`Quit ${APPLICATION.NAME}`}
                 icon={CrossCircleIcon}
                 appearance="subtle"
                 shape="circle"
