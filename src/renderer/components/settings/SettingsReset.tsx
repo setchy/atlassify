@@ -11,6 +11,7 @@ import Modal, {
 } from '@atlaskit/modal-dialog';
 import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
+import { APPLICATION } from '../../../shared/constants';
 import { AppContext } from '../../context/App';
 
 const gridStyles = xcss({
@@ -68,7 +69,7 @@ export const SettingsReset: FC = () => {
             <ModalBody>
               <p>
                 Please confirm that you want to reset all settings to the{' '}
-                <strong>Atlassify defaults</strong>.
+                <strong>{APPLICATION.NAME} defaults</strong>.
               </p>
             </ModalBody>
             <ModalFooter>

@@ -8,6 +8,7 @@ import {
   useState,
 } from 'react';
 
+import { namespacedEvent } from '../../shared/utils';
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import {
@@ -168,7 +169,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.keyboardShortcutEnabled]);
 
   useEffect(() => {
-    ipcRenderer.on('atlassify:reset-app', () => {
+    ipcRenderer.on(namespacedEvent('reset-app'), () => {
       clearState();
       setAuth(defaultAuth);
       setSettings(defaultSettings);

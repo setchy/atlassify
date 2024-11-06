@@ -2,6 +2,7 @@ import { Menu, MenuItem } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
+import { APPLICATION } from '../shared/constants';
 import { openLogsDirectory, resetApp, takeScreenshot } from './utils';
 
 export default class MenuBuilder {
@@ -65,7 +66,7 @@ export default class MenuBuilder {
             click: () => openLogsDirectory(),
           },
           {
-            label: 'Reset App',
+            label: `Reset ${APPLICATION.NAME}`,
             click: () => {
               resetApp(this.menubar);
             },
@@ -74,7 +75,7 @@ export default class MenuBuilder {
       },
       { type: 'separator' },
       {
-        label: 'Quit Atlassify',
+        label: `Quit ${APPLICATION.NAME}`,
         accelerator: 'CommandOrControl+Q',
         click: () => {
           this.menubar.app.quit();

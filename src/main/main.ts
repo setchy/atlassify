@@ -8,8 +8,10 @@ import {
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
+import { APPLICATION } from '../shared/constants';
+import { namespacedEvent } from '../shared/utils';
 import { onFirstRunMaybe } from './first-run';
-import { activeIcon, idleAlternateIcon, idleIcon } from './icons';
+import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
 import Updater from './updater';
 
@@ -30,7 +32,7 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
 };
 
 const mb = menubar({
-  icon: idleIcon,
+  icon: TrayIcons.idle,
   index: `file://${__dirname}/index.html`,
   browserWindow: browserWindowOpts,
   preloadWindow: true,
@@ -49,10 +51,10 @@ app.whenReady().then(async () => {
   await onFirstRunMaybe();
 
   mb.on('ready', () => {
-    mb.app.setAppUserModelId('com.electron.atlassify');
+    mb.app.setAppUserModelId(APPLICATION.ID);
 
     // Tray configuration
-    mb.tray.setToolTip('Atlassify');
+    mb.tray.setToolTip(APPLICATION.NAME);
     mb.tray.setIgnoreDoubleClickEvents(true);
     mb.tray.on('right-click', (_event, bounds) => {
       mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
@@ -84,51 +86,54 @@ app.whenReady().then(async () => {
 
   nativeTheme.on('updated', () => {
     if (nativeTheme.shouldUseDarkColors) {
-      mb.window.webContents.send('atlassify:update-theme', 'DARK');
+      mb.window.webContents.send(namespacedEvent('update-theme'), 'DARK');
     } else {
-      mb.window.webContents.send('atlassify:update-theme', 'LIGHT');
+      mb.window.webContents.send(namespacedEvent('update-theme'), 'LIGHT');
     }
   });
 
   /**
    * Atlassify custom IPC events
    */
-  ipc.handle('atlassify:version', () => app.getVersion());
+  ipc.handle(namespacedEvent('version'), () => app.getVersion());
 
-  ipc.on('atlassify:window-show', () => mb.showWindow());
+  ipc.on(namespacedEvent('window-show'), () => mb.showWindow());
 
-  ipc.on('atlassify:window-hide', () => mb.hideWindow());
+  ipc.on(namespacedEvent('window-hide'), () => mb.hideWindow());
 
-  ipc.on('atlassify:quit', () => mb.app.quit());
+  ipc.on(namespacedEvent('quit'), () => mb.app.quit());
 
-  ipc.on('atlassify:use-alternate-idle-icon', (_, useAlternateIdleIcon) => {
-    shouldUseAlternateIdleIcon = useAlternateIdleIcon;
-  });
+  ipc.on(
+    namespacedEvent('use-alternate-idle-icon'),
+    (_, useAlternateIdleIcon) => {
+      shouldUseAlternateIdleIcon = useAlternateIdleIcon;
+    },
+  );
 
-  ipc.on('atlassify:icon-active', () => {
+  ipc.on(namespacedEvent('icon-active'), () => {
     if (!mb.tray.isDestroyed()) {
-      mb.tray.setImage(activeIcon);
+      mb.tray.setImage(TrayIcons.active);
     }
   });
 
-  ipc.on('atlassify:icon-idle', () => {
+  ipc.on(namespacedEvent('icon-idle'), () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
-        mb.tray.setImage(idleAlternateIcon);
+        mb.tray.setImage(TrayIcons.idleAlternate);
       } else {
-        mb.tray.setImage(idleIcon);
+        mb.tray.setImage(TrayIcons.idle);
       }
     }
   });
 
-  ipc.on('atlassify:update-title', (_, title) => {
+  ipc.on(namespacedEvent('update-title'), (_, title) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);
     }
   });
 
   ipc.on(
-    'atlassify:update-keyboard-shortcut',
+    namespacedEvent('update-keyboard-shortcut'),
     (_, { enabled, keyboardShortcut }) => {
       if (!enabled) {
         globalShortcut.unregister(keyboardShortcut);
@@ -145,16 +150,16 @@ app.whenReady().then(async () => {
     },
   );
 
-  ipc.on('atlassify:update-auto-launch', (_, settings) => {
+  ipc.on(namespacedEvent('update-auto-launch'), (_, settings) => {
     app.setLoginItemSettings(settings);
   });
 
   // Safe Storage
-  ipc.handle('atlassify:safe-storage-encrypt', (_, settings) => {
+  ipc.handle(namespacedEvent('safe-storage-encrypt'), (_, settings) => {
     return safeStorage.encryptString(settings).toString('base64');
   });
 
-  ipc.handle('atlassify:safe-storage-decrypt', (_, settings) => {
+  ipc.handle(namespacedEvent('safe-storage-decrypt'), (_, settings) => {
     return safeStorage.decryptString(Buffer.from(settings, 'base64'));
   });
 });

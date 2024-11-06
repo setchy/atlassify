@@ -3,6 +3,7 @@ import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 import { updateElectronApp } from 'update-electron-app';
 
+import { APPLICATION } from '../shared/constants';
 import type MenuBuilder from './menu';
 
 export default class Updater {
@@ -26,26 +27,30 @@ export default class Updater {
     });
 
     autoUpdater.on('error', (error) => {
-      log.error('Auto Updater: error checking for update', error);
+      log.error('Auto Updater: Error checking for new updates', error);
       this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
     });
 
     autoUpdater.on('update-available', () => {
       log.info('Auto Updater: New update available');
       this.menuBuilder.setUpdateAvailableMenuEnabled(true);
-      this.menubar.tray.setToolTip('Atlassify\nA new update is available');
+      this.menubar.tray.setToolTip(
+        `${APPLICATION.NAME}\nA new update is available`,
+      );
     });
 
     autoUpdater.on('update-downloaded', () => {
-      log.info('Auto Updater: Update downloaded');
+      log.info('Auto Updater: Update downloaded, ready to install');
       this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
       this.menubar.tray.setToolTip(
-        'Atlassify\nA new update is ready to install',
+        `${APPLICATION.NAME}\nA new update is ready to install`,
       );
     });
 
     autoUpdater.on('update-not-available', () => {
-      log.info('Auto Updater: update not available');
+      log.info(
+        'Auto Updater: No updates available, already using latest version.',
+      );
       this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
     });
   }

@@ -1,6 +1,6 @@
 import type { AtlassianProduct, ProductName } from '../types';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
-import { Constants } from './constants';
+import { URLs } from './links';
 
 import {
   AtlasIcon,
@@ -18,7 +18,7 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
     logo: BitbucketIcon,
-    home: Constants.ATLASSIAN_URLS.WEB.BITBUCKET_HOME,
+    home: URLs.ATLASSIAN.WEB.BITBUCKET_HOME,
   },
   compass: {
     name: 'compass',

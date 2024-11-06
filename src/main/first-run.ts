@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { app, dialog } from 'electron';
 import log from 'electron-log';
+import { APPLICATION } from '../shared/constants';
 
 export async function onFirstRunMaybe() {
   if (isFirstRun()) {
@@ -30,7 +31,7 @@ async function promptMoveToApplicationsFolder() {
 
 const getConfigPath = () => {
   const userDataPath = app.getPath('userData');
-  return path.join(userDataPath, 'FirstRun', 'atlassify-first-run');
+  return path.join(userDataPath, 'FirstRun', APPLICATION.FIRST_RUN_FOLDER);
 };
 
 // Whether or not the app is being run for the first time.

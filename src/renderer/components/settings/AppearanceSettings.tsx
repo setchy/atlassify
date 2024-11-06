@@ -13,6 +13,7 @@ import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
 import { setGlobalTheme, token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
+import { namespacedEvent } from '../../../shared/utils';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
@@ -29,12 +30,15 @@ export const AppearanceSettings: FC = () => {
 
   /* istanbul ignore next - testing this is not important */
   useEffect(() => {
-    ipcRenderer.on('atlassify:update-theme', (_, updatedTheme: Theme) => {
-      if (settings.theme === Theme.SYSTEM) {
-        setTheme(updatedTheme);
-        setGlobalTheme({ colorMode: 'auto' });
-      }
-    });
+    ipcRenderer.on(
+      namespacedEvent('update-theme'),
+      (_, updatedTheme: Theme) => {
+        if (settings.theme === Theme.SYSTEM) {
+          setTheme(updatedTheme);
+          setGlobalTheme({ colorMode: 'auto' });
+        }
+      },
+    );
   }, [settings.theme]);
 
   window.addEventListener('resize', () => {

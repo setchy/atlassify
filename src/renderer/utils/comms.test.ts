@@ -1,5 +1,6 @@
 import { ipcRenderer, shell } from 'electron';
 
+import { namespacedEvent } from '../../shared/utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 import type { Link } from '../types';
 import {
@@ -66,14 +67,14 @@ describe('renderer/utils/comms.ts', () => {
   it('should get app version', async () => {
     await getAppVersion();
     expect(ipcRenderer.invoke).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.invoke).toHaveBeenCalledWith('atlassify:version');
+    expect(ipcRenderer.invoke).toHaveBeenCalledWith(namespacedEvent('version'));
   });
 
   it('should encrypt a value', async () => {
     await encryptValue('value');
     expect(ipcRenderer.invoke).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.invoke).toHaveBeenCalledWith(
-      'atlassify:safe-storage-encrypt',
+      namespacedEvent('safe-storage-encrypt'),
       'value',
     );
   });
@@ -82,7 +83,7 @@ describe('renderer/utils/comms.ts', () => {
     await decryptValue('value');
     expect(ipcRenderer.invoke).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.invoke).toHaveBeenCalledWith(
-      'atlassify:safe-storage-decrypt',
+      namespacedEvent('safe-storage-decrypt'),
       'value',
     );
   });
@@ -90,26 +91,30 @@ describe('renderer/utils/comms.ts', () => {
   it('should quit the app', () => {
     quitApp();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:quit');
+    expect(ipcRenderer.send).toHaveBeenCalledWith(namespacedEvent('quit'));
   });
 
   it('should show the window', () => {
     showWindow();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:window-show');
+    expect(ipcRenderer.send).toHaveBeenCalledWith(
+      namespacedEvent('window-show'),
+    );
   });
 
   it('should hide the window', () => {
     hideWindow();
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:window-hide');
+    expect(ipcRenderer.send).toHaveBeenCalledWith(
+      namespacedEvent('window-hide'),
+    );
   });
 
   it('should setAutoLaunch (true)', () => {
     setAutoLaunch(true);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlassify:update-auto-launch',
+      namespacedEvent('update-auto-launch'),
       {
         openAtLogin: true,
         openAsHidden: true,
@@ -121,7 +126,7 @@ describe('renderer/utils/comms.ts', () => {
     setAutoLaunch(false);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlassify:update-auto-launch',
+      namespacedEvent('update-auto-launch'),
       {
         openAsHidden: false,
         openAtLogin: false,
@@ -133,7 +138,7 @@ describe('renderer/utils/comms.ts', () => {
     setAlternateIdleIcon(true);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlassify:use-alternate-idle-icon',
+      namespacedEvent('use-alternate-idle-icon'),
       true,
     );
   });
@@ -142,7 +147,7 @@ describe('renderer/utils/comms.ts', () => {
     setKeyboardShortcut(true);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlassify:update-keyboard-shortcut',
+      namespacedEvent('update-keyboard-shortcut'),
       {
         enabled: true,
         keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
@@ -154,7 +159,7 @@ describe('renderer/utils/comms.ts', () => {
     setKeyboardShortcut(false);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
     expect(ipcRenderer.send).toHaveBeenCalledWith(
-      'atlassify:update-keyboard-shortcut',
+      namespacedEvent('update-keyboard-shortcut'),
       {
         enabled: false,
         keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
@@ -166,13 +171,15 @@ describe('renderer/utils/comms.ts', () => {
     const notificationsLength = 3;
     updateTrayIcon(notificationsLength);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:icon-active');
+    expect(ipcRenderer.send).toHaveBeenCalledWith(
+      namespacedEvent('icon-active'),
+    );
   });
 
   it('should send mark the icons as idle', () => {
     const notificationsLength = 0;
     updateTrayIcon(notificationsLength);
     expect(ipcRenderer.send).toHaveBeenCalledTimes(1);
-    expect(ipcRenderer.send).toHaveBeenCalledWith('atlassify:icon-idle');
+    expect(ipcRenderer.send).toHaveBeenCalledWith(namespacedEvent('icon-idle'));
   });
 });

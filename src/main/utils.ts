@@ -4,12 +4,17 @@ import path from 'node:path';
 import { dialog, shell } from 'electron';
 import log from 'electron-log';
 import type { Menubar } from 'menubar';
+import { APPLICATION } from '../shared/constants';
+import { namespacedEvent } from '../shared/utils';
 
 export function takeScreenshot(mb: Menubar) {
   const date = new Date();
   const dateStr = date.toISOString().replace(/:/g, '-');
 
-  const capturedPicFilePath = `${os.homedir()}/${dateStr}-atlassify-screenshot.png`;
+  const capturedPicFilePath = path.join(
+    os.homedir(),
+    `${dateStr}-${APPLICATION.NAME}-screenshot.png`,
+  );
   mb.window.capturePage().then((img) => {
     fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
       log.info(`Screenshot saved ${capturedPicFilePath}`),
@@ -23,16 +28,15 @@ export function resetApp(mb: Menubar) {
 
   const response = dialog.showMessageBoxSync(mb.window, {
     type: 'warning',
-    title: 'Reset Atlassify',
-    message:
-      'Are you sure you want to reset Atlassify? You will be logged out of all accounts',
+    title: `Reset ${APPLICATION.NAME}`,
+    message: `Are you sure you want to reset ${APPLICATION.NAME}? You will be logged out of all accounts`,
     buttons: ['Cancel', 'Reset'],
     defaultId: cancelButtonId,
     cancelId: cancelButtonId,
   });
 
   if (response === resetButtonId) {
-    mb.window.webContents.send('atlassify:reset-app');
+    mb.window.webContents.send(namespacedEvent('reset-app'));
     mb.app.quit();
   }
 }

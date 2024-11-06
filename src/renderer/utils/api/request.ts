@@ -2,7 +2,7 @@ import axios, { type Method } from 'axios';
 
 import type { Account, Token, Username } from '../../types';
 import { decryptValue } from '../comms';
-import { Constants } from '../constants';
+import { URLs } from '../links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from './types';
 
@@ -25,7 +25,7 @@ export function performHeadRequest(username: Username, token: Token) {
 }
 
 function performApiRequest<T>(auth: string, method: Method, data = {}) {
-  const url = Constants.ATLASSIAN_URLS.API;
+  const url = URLs.ATLASSIAN.API;
 
   axios.defaults.headers.common.Accept = '*/*';
   axios.defaults.headers.common.Authorization = `Basic ${auth}`;
