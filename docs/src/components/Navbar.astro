@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { siteMetadata } from '~/constants';
-import GitHubIcon from '../icons/GitHub.astro';
+import GitHubRepo from './GitHubRepo.astro';
 
 const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
@@ -44,15 +44,8 @@ const isHomepage = currentPathname === '/';
           }
 
           <li>
-            <a
-              class="flex flex-1 py-2 px-2 text-white hover:text-blue-300"
-              rel="noopener noreferrer"
-              href=`https://github.com/${siteMetadata.repo}`
-              aria-label="GitHub Repository"
-            >
-              <GitHubIcon className="w-6" />
-            </a>
-          </li>
+            <GitHubRepo />
+          </li> 
         </ul>
       </div>
     </div>

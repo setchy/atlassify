@@ -16,6 +16,22 @@ export interface HeroData {
   releaseDate: string;
 }
 
+export interface RepoStats {
+  forksCount: number;
+  stargazersCount: number;
+  latestReleaseName: string;
+}
+
+export interface Repository {
+  name: string;
+  full_name: string;
+  description: string;
+  html_url: string;
+  stargazers_count: number;
+  watchers_count: number;
+  forks_count: number;
+}
+
 export interface LatestRelease {
   url: string;
   assets_url: string;

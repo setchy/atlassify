@@ -1,17 +1,19 @@
 ---
 import { format, parseISO } from 'date-fns';
-import { siteMetadata } from '~/constants';
-import DownloadIcon from '../icons/Download.astro';
-import type { Assets, DownloadLink, DownloadLinks, HeroData } from '../types';
-
-const REPO_API_URL = `https://api.github.com/repos/${siteMetadata.repo}/releases/latest`;
-const REPO_RELEASES_URL = `https://github.com/${siteMetadata.repo}/releases/latest`;
-const releaseDetailsClassName = 'text-sm mt-4';
+import { URLs } from '~/constants';
+import { Icon } from 'astro-icon/components';
+import type {
+  Assets,
+  DownloadLink,
+  DownloadLinks,
+  HeroData,
+  LatestRelease,
+} from '../types';
 
 const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
-    return asset ? asset.browser_download_url : REPO_RELEASES_URL;
+    return asset ? asset.browser_download_url : URLs.HTML.LATEST_RELEASE;
   };
 
   const supportedOSs: DownloadLink[] = [
@@ -73,8 +75,8 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
 
 const loadInitialData = async (): Promise<HeroData> => {
   try {
-    const response = await fetch(REPO_API_URL);
-    const data = await response.json();
+    const response = await fetch(URLs.API.LATEST_RELEASE);
+    const data: LatestRelease = await response.json();
     const parsedDate = parseISO(data.published_at.slice(0, -1));
     const downloadLinks = getDownloadLinks(data.assets);
 
@@ -98,7 +100,7 @@ const loadInitialData = async (): Promise<HeroData> => {
 const { downloadLinks, version, releaseDate } = await loadInitialData();
 ---
 
-<div class={releaseDetailsClassName}>
+<div class="text-sm mt-4">
   {
     version ? (
       <>
@@ -108,20 +110,23 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
               href={item.url}
               class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 hover:text-white mr-4`}
             >
-              <DownloadIcon className="w-4 h-4 mr-2" /> <span>{item.name}</span>
+              <div class="flex flex-row gap-2 items-center">
+                <Icon name="mdi:cloud-download" size={24} />
+                <span>{item.name}</span>
+              </div>
             </a>
           ))}
         </div>
         <div class="w-80">
-          <p>Latest version: <a href={REPO_RELEASES_URL}>{version}</a></p>
+          <p>Latest version: <a href={URLs.HTML.LATEST_RELEASE}>{version}</a></p>
           <p class="mt-1">Released on: {releaseDate}</p>
           {downloadLinks.alt.length > 0 && (
             <p class="mt-1">
               Also available on:
                 <ul class="list-disc list-inside ml-4">
-                  {downloadLinks.alt.map((platform, index) => (
+                  {downloadLinks.alt.map((platform) => (
                     <li>
-                      <a href={platform.url || REPO_RELEASES_URL}>
+                      <a href={platform.url || URLs.HTML.LATEST_RELEASE}>
                         {platform.name}
                       </a>
                     </li>
@@ -136,9 +141,9 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
         <div class="flex">
           <a
             class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
-            href={REPO_RELEASES_URL}
+            href={URLs.HTML.LATEST_RELEASE}
           >
-            <DownloadIcon className="w-4 h-4 mr-2" />{' '}
+            <Icon name="mdi:cloud-download" size={16} />
             <span>View GitHub Releases</span>
           </a>
         </div>

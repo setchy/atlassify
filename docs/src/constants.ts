@@ -20,3 +20,14 @@ export const siteMetadata = {
     },
   ],
 };
+
+export const URLs = {
+  API: {
+    REPO: `https://api.github.com/repos/${siteMetadata.repo}`,
+    LATEST_RELEASE: `https://api.github.com/repos/${siteMetadata.repo}/releases/latest`,
+  },
+  HTML: {
+    REPO: `https://github.com/${siteMetadata.repo}`,
+    LATEST_RELEASE: `https://github.com/${siteMetadata.repo}/releases/latest`,
+  },
+};
