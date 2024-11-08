@@ -11,6 +11,8 @@ on:
       - package.json
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # Run every Sunday at 00:00 UTC
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
