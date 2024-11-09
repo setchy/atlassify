@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { siteMetadata, URLs } from '../constants';
+import { URLs, siteMetadata } from '../constants';
 
 const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
@@ -16,7 +16,7 @@ const isHomepage = currentPathname === '/';
     <a
       target="_blank"
       rel="noopener noreferrer"
-      href=`${URLs.HTML.REPO}`
+      href=`${URLs.GITHUB.REPO}`
       aria-label="GitHub Repository"
       class="mt-1 mb-4 mx-2 p-1 text-white hover:text-gray-400"
     >

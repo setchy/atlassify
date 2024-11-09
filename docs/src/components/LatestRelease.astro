@@ -1,19 +1,22 @@
 ---
-import { format, parseISO } from 'date-fns';
-import { URLs } from '~/constants';
 import { Icon } from 'astro-icon/components';
+import { format } from 'date-fns';
+import { Octokit } from 'octokit';
+
+import { URLs, siteMetadata } from '~/constants';
 import type {
-  Assets,
   DownloadLink,
   DownloadLinks,
   HeroData,
-  LatestRelease,
+  ReleaseAsset,
 } from '../types';
 
-const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
+const octokit = new Octokit();
+
+const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
     const asset = assets.find((item) => item.name.match(filenameRegex));
-    return asset ? asset.browser_download_url : URLs.HTML.LATEST_RELEASE;
+    return asset ? asset.browser_download_url : URLs.GITHUB.LATEST_RELEASE;
   };
 
   const supportedOSs: DownloadLink[] = [
@@ -75,15 +78,19 @@ const getDownloadLinks = (assets: Assets[]): DownloadLinks => {
 
 const loadInitialData = async (): Promise<HeroData> => {
   try {
-    const response = await fetch(URLs.API.LATEST_RELEASE);
-    const data: LatestRelease = await response.json();
-    const parsedDate = parseISO(data.published_at.slice(0, -1));
-    const downloadLinks = getDownloadLinks(data.assets);
+    const latestRelease = await octokit.rest.repos.getLatestRelease({
+      owner: siteMetadata.repo.owner,
+      repo: siteMetadata.repo.name,
+    });
+
+    const downloadLinks = getDownloadLinks(latestRelease.data.assets);
 
     return {
       downloadLinks,
-      version: data.tag_name,
-      releaseDate: format(parsedDate, 'dd/MM/yyyy'),
+      version: latestRelease.data.name,
+      releaseDate: latestRelease.data.published_at
+        ? format(latestRelease.data.published_at, 'dd/MM/yyyy')
+        : '',
     };
   } catch (error) {
     return {
@@ -118,7 +125,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           ))}
         </div>
         <div class="w-80">
-          <p>Latest version: <a href={URLs.HTML.LATEST_RELEASE}>{version}</a></p>
+          <p>Latest version: <a href={URLs.GITHUB.LATEST_RELEASE}>{version}</a></p>
           <p class="mt-1">Released on: {releaseDate}</p>
           {downloadLinks.alt.length > 0 && (
             <p class="mt-1">
@@ -126,7 +133,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
                 <ul class="list-disc list-inside ml-4">
                   {downloadLinks.alt.map((platform) => (
                     <li>
-                      <a href={platform.url || URLs.HTML.LATEST_RELEASE}>
+                      <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
                         {platform.name}
                       </a>
                     </li>
@@ -141,7 +148,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
         <div class="flex">
           <a
             class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
-            href={URLs.HTML.LATEST_RELEASE}
+            href={URLs.GITHUB.LATEST_RELEASE}
           >
             <Icon name="mdi:cloud-download" size={16} />
             <span>View GitHub Releases</span>

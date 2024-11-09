@@ -1,8 +1,12 @@
 export const siteMetadata = {
   title: 'Atlassify',
   url: 'https://atlassify.io',
-  description: 'Your Atlassian notifications on your menu bar.',
-  repo: 'setchy/atlassify',
+  description: 'Your Atlassian notifications on your menu bar',
+  repo: {
+    fullName: 'setchy/atlassify',
+    owner: 'setchy',
+    name: 'atlassify',
+  },
   keywords:
     'atlassify,desktop,application,atlassian,notifications,unread,menu bar,electron,open source,setchy,mac,osx',
   author: {
@@ -22,12 +26,13 @@ export const siteMetadata = {
 };
 
 export const URLs = {
-  API: {
-    REPO: `https://api.github.com/repos/${siteMetadata.repo}`,
-    LATEST_RELEASE: `https://api.github.com/repos/${siteMetadata.repo}/releases/latest`,
+  ATLASSIAN: {
+    API_TOKEN:
+      'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/',
   },
-  HTML: {
-    REPO: `https://github.com/${siteMetadata.repo}`,
-    LATEST_RELEASE: `https://github.com/${siteMetadata.repo}/releases/latest`,
+  GITHUB: {
+    REPO: `https://github.com/${siteMetadata.repo.fullName}`,
+    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
+    LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
   },
 };
