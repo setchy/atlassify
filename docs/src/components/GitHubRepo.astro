@@ -50,11 +50,14 @@ const { forksCount, stargazersCount, latestReleaseName } =
       <div class="text-sm">{siteMetadata.repo.fullName}</div>
       <div class="flex flex-row gap-2 text-xs">
         <div class="flex flex-row gap-0.5 items-center">
-          <Icon name="mdi:tag-outline" />
-          {latestReleaseName}
+          <Icon name="mdi:tag-outline" /> {latestReleaseName}
         </div>
-        <div class="flex flex-1 gap-0.5 items-center"><Icon name="mdi:star-outline" /> {stargazersCount}</div>
-        <div class="flex flex-1 gap-0.5 items-center"><Icon name="mdi:source-branch" /> {forksCount}</div>
+        <div class="flex flex-1 gap-0.5 items-center">
+          <Icon name="mdi:star-outline" /> {stargazersCount}
+        </div>
+        <div class="flex flex-1 gap-0.5 items-center">
+          <Icon name="mdi:source-branch" /> {forksCount}
+        </div>
       </div>
     </div>
   </section>
