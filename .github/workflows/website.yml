@@ -12,7 +12,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0' # Run every Sunday at 00:00 UTC
+    - cron: '0 0 * * 0' # Redeploy every Sunday at 00:00 UTC to refresh repository stats
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
