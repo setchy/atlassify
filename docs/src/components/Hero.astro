@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
+import { siteMetadata } from '~/constants';
 import notifications from '../assets/notifications.png';
 import LatestRelease from './LatestRelease.astro';
 ---
@@ -13,11 +14,9 @@ import LatestRelease from './LatestRelease.astro';
     <div class="flex flex-col justify-center flex-grow">
       <Icon name="atlassify-blue" title="Atlassify Logo" size={48} class="w-8 sm:w-12" />
     
-      <h1 class="text-2xl lg:text-4xl font-semibold">Atlassify</h1>
+      <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
 
-      <h2 class="mt-2 text-xl lg:text-2xl font-light">
-        Your Atlassian notifications <br /> on your menu bar.
-      </h2>
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">{siteMetadata.description}.</h2>
 
       <LatestRelease />
     </div>
