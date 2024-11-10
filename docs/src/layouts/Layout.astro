@@ -12,7 +12,7 @@ export interface Props {
 }
 
 const { title, hideFooter = false } = Astro.props;
-const pageTitle = `${title} - Atlassify`;
+const pageTitle = `${title} - ${siteMetadata.title}`;
 const ogImage = `${siteMetadata.url}/images/social.png`;
 ---
 
@@ -54,7 +54,7 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
 
     <meta
       name="google-site-verification"
-      content="jJNnPZ2wu7F1tlSab57og1N3RNrMqhzTCzRrbztY8WU"
+      content={siteMetadata.google.siteVerification}
     />
   </head>
   <body class="flex flex-col min-h-screen">

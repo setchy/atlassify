@@ -1,13 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components';
 
+import { siteMetadata } from '~/constants';
+import { openSourceLibs } from '~/icons/icons';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionRow from '../layouts/SectionRow.astro';
-import { openSourceLibs } from '~/icons/icons';
 ---
 
-<Layout title="Atlassian notifications on your menu bar">
+<Layout title={siteMetadata.description}>
   <main>
     <Hero />
 

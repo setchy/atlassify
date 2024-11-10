@@ -5,6 +5,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://atlassify.io',
   integrations: [tailwind({ applyBaseStyles: false }), solidJs(), icon()],
 });
