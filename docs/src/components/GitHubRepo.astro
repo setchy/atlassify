@@ -7,6 +7,13 @@ import type { RepoStats } from '~/types';
 
 const octokit = new Octokit();
 
+const formatCount = (count: number) => {
+  return new Intl.NumberFormat('en', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(count);
+};
+
 const loadRepoStats = async (): Promise<RepoStats> => {
   try {
     const repository = await octokit.rest.repos.get({
@@ -20,22 +27,21 @@ const loadRepoStats = async (): Promise<RepoStats> => {
     });
 
     return {
-      stargazersCount: repository.data.stargazers_count,
-      forksCount: repository.data.forks_count,
-      latestReleaseName: latestRelease.data.name,
+      forks: formatCount(repository.data.forks_count),
+      stars: formatCount(repository.data.stargazers_count),
+      latestReleaseName: latestRelease.data.name?.replace('v', '') ?? '',
     };
   } catch (error) {
     console.error('Failed to load repo stats', error);
     return {
-      stargazersCount: 0,
-      forksCount: 0,
+      forks: '',
+      stars: '',
       latestReleaseName: '',
     };
   }
 };
 
-const { forksCount, stargazersCount, latestReleaseName } =
-  await loadRepoStats();
+const { forks, stars, latestReleaseName } = await loadRepoStats();
 ---
 
 <a href={URLs.GITHUB.REPO} 
@@ -53,10 +59,10 @@ const { forksCount, stargazersCount, latestReleaseName } =
           <Icon name="mdi:tag-outline" /> {latestReleaseName}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:star-outline" /> {stargazersCount}
+          <Icon name="mdi:star-outline" /> {stars}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:source-branch" /> {forksCount}
+          <Icon name="mdi:source-branch" /> {forks}
         </div>
       </div>
     </div>

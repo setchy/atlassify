@@ -19,8 +19,8 @@ export interface HeroData {
 }
 
 export interface RepoStats {
-  forksCount: number;
-  stargazersCount: number;
+  forks: string;
+  stars: string;
   latestReleaseName: string | null;
 }
 
