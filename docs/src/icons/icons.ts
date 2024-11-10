@@ -1,4 +1,6 @@
-export const openSourceLibs = [
+import type { IconDetails } from '~/types';
+
+export const openSourceLibs: IconDetails[] = [
   {
     name: 'Electron',
     link: 'https://electronjs.org/',

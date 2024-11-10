@@ -24,5 +24,11 @@ export interface RepoStats {
   latestReleaseName: string | null;
 }
 
+export interface IconDetails {
+  name: string;
+  link: string;
+  svg: string;
+}
+
 // GitHub API types
 export type ReleaseAsset = components['schemas']['release-asset'];
