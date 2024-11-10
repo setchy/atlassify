@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 import { siteMetadata } from '~/constants';
 import GitHubRepo from './GitHubRepo.astro';
@@ -15,13 +15,7 @@ const isHomepage = currentPathname === '/';
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" aria-label="Atlassify">
-          <Image
-            width="50"
-            height="50"
-            class="w-8 sm:w-12"
-            src={import('../assets/logos/atlassify-white.svg')}
-            alt="Altassify Logo"
-          />
+          <Icon name="atlassify-white" size={48} class="w-8 sm:w-12" />
         </a>
       </div>
 
