@@ -4,34 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionRow from '../layouts/SectionRow.astro';
-
-const openSourceLibs = [
-  {
-    name: 'Electron',
-    link: 'https://electronjs.org/',
-    svg: 'electron',
-  },
-  {
-    name: 'React',
-    link: 'https://react.dev/',
-    svg: 'react',
-  },
-  {
-    name: 'Tailwind CSS',
-    link: 'https://tailwindcss.com/',
-    svg: 'tailwindcss',
-  },
-  {
-    name: 'Typescript',
-    link: 'https://typescriptlang.org/',
-    svg: 'typescript',
-  },
-  {
-    name: 'Atlassian',
-    link: 'https://atlassian.design/',
-    svg: 'atlassian',
-  },
-];
+import { openSourceLibs } from '~/icons/icons';
 ---
 
 <Layout title="Atlassian notifications on your menu bar">
