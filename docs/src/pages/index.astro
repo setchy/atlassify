@@ -1,5 +1,6 @@
 ---
-import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionRow from '../layouts/SectionRow.astro';
@@ -8,27 +9,27 @@ const openSourceLibs = [
   {
     name: 'Electron',
     link: 'https://electronjs.org/',
-    image: import('../assets/logos/electron.svg'),
+    svg: 'electron',
   },
   {
     name: 'React',
     link: 'https://react.dev/',
-    image: import('../assets/logos/react.svg'),
+    svg: 'react',
   },
   {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
-    image: import('../assets/logos/tailwindcss.svg'),
+    svg: 'tailwindcss',
   },
   {
     name: 'Typescript',
     link: 'https://typescriptlang.org/',
-    image: import('../assets/logos/typescript.svg'),
+    svg: 'typescript',
   },
   {
     name: 'Atlassian',
     link: 'https://atlassian.design/',
-    image: import('../assets/logos/atlassian.svg'),
+    svg: 'atlassian',
   },
 ];
 ---
@@ -83,15 +84,9 @@ const openSourceLibs = [
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
         {
           openSourceLibs.map((item) => (
-            <div class="hover:bg-gray-200 px-2 py-2 m-2">
+            <div class="hover:bg-gray-200 p-2 m-2 rounded-lg">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <Image
-                  width="50"
-                  height="50"
-                  class="w-8 sm:w-12"
-                  src={item.image}
-                  alt={item.name}
-                />
+                <Icon name={item.svg} title={item.name} size={32} class="w-8 sm:w-12" />
               </a>
             </div>
           ))
