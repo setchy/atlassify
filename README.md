@@ -4,6 +4,8 @@
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
+please skip this
+
 ![Atlassify](docs/public//images//social.png)
 
 ### Download
