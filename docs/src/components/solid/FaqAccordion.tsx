@@ -25,6 +25,12 @@ const content = [
     question: 'How can I contribute to Atlassify?',
     answer: `You can contribute to Atlassify by opening an issue or pull request on GitHub at [${siteMetadata.repo.fullName}](${URLs.GITHUB.REPO}).\n\nCheck out our [open issues](${URLs.GITHUB.ISSUES}) and see if there is any existing ideas that you would like to work on.`,
   },
+  {
+    id: '5',
+    question: 'Is Netlify preview branches working?',
+    answer:
+      'Yes, Netlify preview branches are working. You can view the preview branch by navigating to the Netlify URL provided in the pull request.',
+  }
 ];
 
 export const FaqAccordion = () => {
