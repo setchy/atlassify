@@ -13,7 +13,7 @@ importers:
         version: 4.4.2(solid-js@1.9.3)(vite@5.4.10(@types/node@22.9.0))
       '@astrojs/tailwind':
         specifier: 5.1.2
-        version: 5.1.2(astro@4.16.10(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.14)
+        version: 5.1.2(astro@4.16.11(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.14)
       '@iconify-json/mdi':
         specifier: 1.2.1
         version: 1.2.1
@@ -27,8 +27,8 @@ importers:
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.14)
       astro:
-        specifier: 4.16.10
-        version: 4.16.10(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4)
+        specifier: 4.16.11
+        version: 4.16.11(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.2
         version: 1.1.2
@@ -1057,8 +1057,8 @@ packages:
   astro-icon@1.1.2:
     resolution: {integrity: sha512-2qAHBtZLYuFEIMP0Ck0edyLi5fQmJjwP2Qbv41f8L4KAJ2sra/dH7q5lCOn4q0DHVtS0w3tPG8UKQRits3UPcg==}
 
-  astro@4.16.10:
-    resolution: {integrity: sha512-a+nB4bZE50NXHLzVXUHtx/lYct2Aa8kbqZnWNrWqkU97RuhBuWJ5H5/LQbKRnBWGvqChKfJBiMWJe53TY9ieYQ==}
+  astro@4.16.11:
+    resolution: {integrity: sha512-Pm0ATut4f8kM2OKbSDbatO5Q/f2ynt1dbc5UGQN8I5bFnJvDbJj3R1NE513BOXXv4GQBKJZUshcZEMvlZpA61g==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2883,9 +2883,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.10(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.14)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.11(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.14)':
     dependencies:
-      astro: 4.16.10(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4)
+      astro: 4.16.11(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)
@@ -3882,7 +3882,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@4.16.10(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4):
+  astro@4.16.11(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
