@@ -4,4 +4,4 @@
   publish = "docs/dist" 
 
 [build.ignore]
-  command = "git diff --quiet HEAD^ HEAD -- ./docs || echo 'Changes in /docs detected'"
+  command = "git diff --quiet HEAD^ HEAD -- ./docs || (echo 'Changes in /docs detected' && exit 1)"
