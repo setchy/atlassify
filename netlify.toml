@@ -1,7 +1,0 @@
-[build]
-  base = "docs" 
-  command = "pnpm build"
-  publish = "docs/dist" 
-
-[build.ignore]
-  command = "git diff --quiet HEAD^ HEAD -- ./docs || echo 'Changes in /docs detected'"
