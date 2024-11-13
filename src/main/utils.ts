@@ -4,6 +4,7 @@ import path from 'node:path';
 import { dialog, shell } from 'electron';
 import log from 'electron-log';
 import type { Menubar } from 'menubar';
+
 import { APPLICATION } from '../shared/constants';
 import { namespacedEvent } from '../shared/utils';
 
