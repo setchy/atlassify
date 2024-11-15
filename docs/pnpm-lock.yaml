@@ -14,6 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: 5.1.2
         version: 5.1.2(astro@4.16.12(@types/node@22.9.0)(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.15)
+      '@iconify-json/line-md':
+        specifier: 1.2.2
+        version: 1.2.2
       '@iconify-json/mdi':
         specifier: 1.2.1
         version: 1.2.1
@@ -486,6 +489,9 @@ packages:
 
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
+  '@iconify-json/line-md@1.2.2':
+    resolution: {integrity: sha512-UCYTTO5aARoVbOOPCaomOoXDC8maSolIV8KVDmK9VuzfjpqkMg/vJo/nWaoQPIf310SZjdvAqHvIwsbzr6J+sw==}
 
   '@iconify-json/mdi@1.2.1':
     resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
@@ -3275,6 +3281,10 @@ snapshots:
   '@floating-ui/utils@0.2.2': {}
 
   '@floating-ui/utils@0.2.8': {}
+
+  '@iconify-json/line-md@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.2.1':
     dependencies:
