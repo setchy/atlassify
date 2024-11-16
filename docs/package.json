@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/setchy/atlassify/issues"
   },
-  "homepage": "https://www.atlassify.io/",
+  "homepage": "https://atlassify.io/",
   "dependencies": {
     "@astrojs/solid-js": "4.4.3",
     "@astrojs/tailwind": "5.1.2",
