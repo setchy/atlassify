@@ -26,7 +26,7 @@ const isHomepage = currentPathname === '/';
     </a>
 
     <div class="my-3">
-      Copyright © <a href=`${siteMetadata.author.site}`
+      Copyright © <a href={siteMetadata.author.site}
         >{siteMetadata.author.name}</a
       >
       {new Date().getFullYear()}.
