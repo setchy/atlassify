@@ -125,20 +125,22 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           ))}
         </div>
         <div class="w-80">
-          <p>Latest version: <a href={URLs.GITHUB.LATEST_RELEASE}>{version}</a></p>
+          <p>
+            Latest version: <a href={URLs.GITHUB.LATEST_RELEASE}>{version}</a>
+          </p>
           <p class="mt-1">Released on: {releaseDate}</p>
           {downloadLinks.alt.length > 0 && (
             <p class="mt-1">
               Also available on:
-                <ul class="list-disc list-inside ml-4">
-                  {downloadLinks.alt.map((platform) => (
-                    <li>
-                      <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
-                        {platform.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <ul class="list-disc list-inside ml-4">
+                {downloadLinks.alt.map((platform) => (
+                  <li>
+                    <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
+                      {platform.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </p>
           )}
         </div>

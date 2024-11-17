@@ -12,11 +12,18 @@ import LatestRelease from './LatestRelease.astro';
     class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
   >
     <div class="flex flex-col justify-center flex-grow">
-      <Icon name="atlassify-blue" title="Atlassify Logo" size={48} class="w-8 sm:w-12" />
-    
+      <Icon
+        name="atlassify-blue"
+        title="Atlassify Logo"
+        size={48}
+        class="w-8 sm:w-12"
+      />
+
       <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
 
-      <h2 class="mt-2 text-xl lg:text-2xl font-light">{siteMetadata.description}.</h2>
+      <h2 class="mt-2 text-xl lg:text-2xl font-light">
+        {siteMetadata.description}.
+      </h2>
 
       <LatestRelease />
     </div>

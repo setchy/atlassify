@@ -8,9 +8,11 @@ const isHomepage = currentPathname === '/';
 ---
 
 <div
-  class={`bg-gray-800 text-white text-sm py-10 px-3 ${
-    isHomepage ? 'mt-0' : 'mt-12'
-  }`}
+  class:list={[
+    "bg-gray-800 text-white text-sm py-10 px-3",
+
+    isHomepage ? "mt-0" : "mt-12",
+  ]}
 >
   <div class="container mx-auto flex flex-col items-center text-center">
     <a
@@ -24,7 +26,9 @@ const isHomepage = currentPathname === '/';
     </a>
 
     <div class="my-3">
-      Copyright © <a href=`${siteMetadata.author.site}`>{siteMetadata.author.name}</a>
+      Copyright © <a href=`${siteMetadata.author.site}`
+        >{siteMetadata.author.name}</a
+      >
       {new Date().getFullYear()}.
     </div>
   </div>

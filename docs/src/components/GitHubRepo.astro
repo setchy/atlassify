@@ -44,11 +44,12 @@ const loadRepoStats = async (): Promise<RepoStats> => {
 const { forks, stars, latestReleaseName } = await loadRepoStats();
 ---
 
-<a href={URLs.GITHUB.REPO} 
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub Repository"
-    class="text-white hover:text-blue-300 hover:no-underline"
+<a
+  href={URLs.GITHUB.REPO}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="GitHub Repository"
+  class="text-white hover:text-blue-300 hover:no-underline"
 >
   <section class="flex flex-row gap-2 items-center">
     <Icon name="mdi:github" size={32} class="w-6 sm:w-10" />
@@ -56,13 +57,16 @@ const { forks, stars, latestReleaseName } = await loadRepoStats();
       <div class="text-sm">{siteMetadata.repo.fullName}</div>
       <div class="flex flex-row gap-2 text-xs">
         <div class="flex flex-row gap-0.5 items-center">
-          <Icon name="mdi:tag-outline" /> {latestReleaseName}
+          <Icon name="mdi:tag-outline" />
+          {latestReleaseName}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:star-outline" /> {stars}
+          <Icon name="mdi:star-outline" />
+          {stars}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:source-branch" /> {forks}
+          <Icon name="mdi:source-branch" />
+          {forks}
         </div>
       </div>
     </div>
