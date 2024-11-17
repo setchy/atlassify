@@ -115,7 +115,11 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           {downloadLinks.primary.map((item) => (
             <a
               href={item.url}
-              class={`flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800 hover:text-white mr-4`}
+              class:list={[
+                "flex items-center mb-3 px-4 py-3 mr-4",
+                "font-semibold text-white rounded-md",
+                "bg-green-700 hover:bg-green-800 hover:text-white",
+              ]}
             >
               <div class="flex flex-row gap-2 items-center">
                 <Icon name="line-md:cloud-alt-download-filled" size={24} />
