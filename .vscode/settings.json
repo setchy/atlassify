@@ -4,16 +4,19 @@
     "source.organizeImports.biome": "explicit"
   },
   "editor.defaultFormatter": "biomejs.biome",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   },
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
   "cSpell.words": ["Atlassify"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
