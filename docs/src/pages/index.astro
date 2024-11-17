@@ -16,17 +16,18 @@ import SectionRow from '../layouts/SectionRow.astro';
       title="All your Atlassian notifications, right on your desktop."
       description="<p>Atlassify is here to simplify your workflow.</p><br /><p>Always visible on your menu bar, it delivers real-time notifications from your favorite Atlassian products such as Bitbucket, Compass, Confluence, Jira, and many more!</p>"
       screenshot={{
-        path: 'products',
-        alt: 'Screenshot when notifications are grouped by Atlassian products',
+        path: "products",
+        alt: "Screenshot when notifications are grouped by Atlassian products",
       }}
       isReversed
     />
 
     <SectionRow
       title="Stay on top of your work, effortlessly."
-      description="<p>Overwhelmed by Atlassian notifications? Emails piling up? Missing important updates?</p><br /><p>Never again with Atlassify!</p>"      screenshot={{
-        path: 'all-read',
-        alt: 'Screenshot when all notifications have been read',
+      description="<p>Overwhelmed by Atlassian notifications? Emails piling up? Missing important updates?</p><br /><p>Never again with Atlassify!</p>"
+      screenshot={{
+        path: "all-read",
+        alt: "Screenshot when all notifications have been read",
       }}
       isDark
     />
@@ -35,18 +36,18 @@ import SectionRow from '../layouts/SectionRow.astro';
       title="Cut through the noise, focus on what matters."
       description="<p>Inbox overflowing?</p><br /><p>Atlassify helps you filter notifications so you can quickly zero in on what’s important.</p>"
       screenshot={{
-        path: 'filters',
-        alt: 'Screenshot for notification filters',
+        path: "filters",
+        alt: "Screenshot for notification filters",
       }}
       isReversed
     />
- 
+
     <SectionRow
       title="Your notifications, your way."
-      description="<p>Atlassify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change it's appearance.</p><br /><p>It’s designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>" 
+      description="<p>Atlassify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change it's appearance.</p><br /><p>It’s designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
-        path: 'settings',
-        alt: 'Screenshot for user preferences, settings',
+        path: "settings",
+        alt: "Screenshot for user preferences, settings",
       }}
       isDark
     />
@@ -60,7 +61,12 @@ import SectionRow from '../layouts/SectionRow.astro';
           openSourceLibs.map((item) => (
             <div class="hover:bg-gray-200 p-2 m-2 rounded-lg">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
-                <Icon name={item.svg} title={item.name} size={32} class="w-8 sm:w-12" />
+                <Icon
+                  name={item.svg}
+                  title={item.name}
+                  size={32}
+                  class="w-8 sm:w-12"
+                />
               </a>
             </div>
           ))

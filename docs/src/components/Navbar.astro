@@ -26,11 +26,13 @@ const isHomepage = currentPathname === '/';
               <li>
                 <a
                   href={item.path}
-                  class={`py-1.5 lg:py-2 px-2 lg:px-3 font-light ${
+                  class:list={[
+                    "py-1.5 lg:py-2 px-2 lg:px-3",
+                    "font-light text-white hover:text-blue-300",
                     currentPathname === item.path
-                      ? "border rounded-lg border-white text-white"
-                      : "text-white"
-                  } hover:text-blue-300`}
+                      ? "border rounded-lg border-white"
+                      : "",
+                  ]}
                 >
                   {item.name}
                 </a>
@@ -40,7 +42,7 @@ const isHomepage = currentPathname === '/';
 
           <li>
             <GitHubRepo />
-          </li> 
+          </li>
         </ul>
       </div>
     </div>

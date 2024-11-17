@@ -3,13 +3,16 @@ import { siteMetadata } from '~/constants';
 ---
 
 <!-- Google tag (gtag.js) -->
-<script async src=`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.google.analytics}`></script>
+<script
+  async
+  src=`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.google.analytics}`
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){
+  function gtag() {
     dataLayer.push(arguments);
   }
-  gtag('js', new Date());
+  gtag("js", new Date());
 
-  gtag('config', siteMetadata.google.analytics);
+  gtag("config", siteMetadata.google.analytics);
 </script>
