@@ -1,4 +1,4 @@
-name: Netlify
+name: Website
 
 on:
   workflow_dispatch: # For manually verify
