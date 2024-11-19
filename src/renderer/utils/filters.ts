@@ -1,7 +1,7 @@
-import CommentIcon from '@atlaskit/icon/core/comment';
-import EyeOpenIcon from '@atlaskit/icon/core/eye-open';
-import FlagsIcon from '@atlaskit/icon/core/flag';
-import MentionIcon from '@atlaskit/icon/core/mention';
+import CommentIcon from '@atlaskit/icon/glyph/comment';
+import MentionIcon from '@atlaskit/icon/glyph/editor/mention';
+import FlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
+import WatchIcon from '@atlaskit/icon/glyph/watch';
 
 import type {
   AccountNotifications,
@@ -57,7 +57,7 @@ export const CATEGORIES: Record<Category, FilterDetails> = {
   watching: {
     name: 'watching',
     description: 'Watching notification',
-    icon: EyeOpenIcon,
+    icon: WatchIcon,
   },
 };
 

@@ -3,12 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
+import FrequentIcon from '@atlaskit/icon/glyph/emoji/frequent';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
-import StopwatchIcon from '@atlaskit/icon/glyph/stopwatch';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -202,7 +202,7 @@ export const Sidebar: FC = () => {
                   <IconButton
                     label="Time Sensitive Toggle"
                     icon={(iconProps) => (
-                      <StopwatchIcon
+                      <FrequentIcon
                         {...iconProps}
                         size="small"
                         primaryColor="white"

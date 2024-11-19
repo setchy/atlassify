@@ -100,8 +100,8 @@ export const FiltersRoute: FC = () => {
     <div className="flex h-screen flex-col" data-testid="filters">
       <Header fetchOnBack={true}>Filters</Header>
 
-      <div className="flex-grow overflow-x-auto px-8">
-        <Box>
+      <div className="flex-grow overflow-x-auto">
+        <Box paddingInline="space.300">
           <Inline space="space.200">
             <Stack space="space.300">
               <Stack space="space.100">
@@ -112,12 +112,12 @@ export const FiltersRoute: FC = () => {
                       const timeSensitiveDetails =
                         getTimeSensitiveDetails(timeSensitive);
                       const timeSensitiveIconProps: Record<string, string> = {
-                        LEGACY_size: 'small',
+                        size: 'small',
                       };
                       return (
                         <Inline
                           key={timeSensitive}
-                          space="space.100"
+                          space="space.025"
                           alignBlock="center"
                         >
                           <Checkbox
@@ -167,7 +167,7 @@ export const FiltersRoute: FC = () => {
                     return (
                       <Inline
                         key={category}
-                        space="space.100"
+                        space="space.050"
                         alignBlock="center"
                       >
                         <Checkbox
@@ -203,7 +203,7 @@ export const FiltersRoute: FC = () => {
                     return (
                       <Inline
                         key={readState}
-                        space="space.100"
+                        space="space.025"
                         alignBlock="center"
                       >
                         <Checkbox
@@ -242,7 +242,7 @@ export const FiltersRoute: FC = () => {
                       {Object.keys(PRODUCTS).map((product: ProductName) => {
                         const productDetails = getProductDetails(product);
                         const productIconProps: Record<string, string> = {
-                          size: 'small',
+                          size: 'xsmall',
                           appearance: shouldShowProduct(product)
                             ? 'brand'
                             : 'neutral',
@@ -251,7 +251,7 @@ export const FiltersRoute: FC = () => {
                         return (
                           <Inline
                             key={product}
-                            space="space.100"
+                            space="space.025"
                             alignBlock="center"
                           >
                             <Checkbox
