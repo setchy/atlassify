@@ -18,7 +18,10 @@ import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { hasFiltersSet, hasTimeSensitiveFiltersSet } from '../utils/filters';
+import {
+  hasAnyFiltersSet,
+  hasAnyTimeSensitiveFiltersSet,
+} from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { isLightMode } from '../utils/theme';
@@ -51,7 +54,6 @@ export const Sidebar: FC = () => {
     } else {
       updateSetting('filterTimeSensitive', []);
     }
-    fetchNotifications();
   };
 
   const toggleSettings = () => {
@@ -81,11 +83,11 @@ export const Sidebar: FC = () => {
   }, [notifications, notificationsCount]);
 
   const hasFilters = useMemo(() => {
-    return hasFiltersSet(settings);
+    return hasAnyFiltersSet(settings);
   }, [settings]);
 
   const hasTimeSensitiveFilters = useMemo(() => {
-    return hasTimeSensitiveFiltersSet(settings);
+    return hasAnyTimeSensitiveFiltersSet(settings);
   }, [settings]);
 
   return (

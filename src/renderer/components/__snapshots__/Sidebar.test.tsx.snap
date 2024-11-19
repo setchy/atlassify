@@ -3315,7 +3315,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
 
 exports[`renderer/components/Sidebar.tsx show only unread notifications should toggle show only unread notifications 1`] = `
 <input
-  aria-labelledby="uid92"
+  aria-labelledby="uid100"
   checked=""
   data-testid="sidebar-toggle-unread-only--input"
   id="toggle-unread-only"

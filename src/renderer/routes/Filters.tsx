@@ -9,18 +9,23 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
-import type { Category, ProductName, ReadState, TimeSensitive } from '../types';
+import type {
+  CategoryFilterType,
+  ProductName,
+  ReadStateFilterType,
+  TimeSensitiveFilterType,
+} from '../types';
 import {
-  CATEGORIES,
-  READ_STATES,
-  TIME_SENSITIVE,
-  getCategoryDetails,
+  CATEGORIES_FILTERS,
+  READ_STATES_FILTERS,
+  TIME_SENSITIVE_FILTERS,
   getCategoryFilterCount,
+  getCategoryFilterDetails,
   getProductFilterCount,
-  getReadStateDetails,
   getReadStateFilterCount,
-  getTimeSensitiveDetails,
+  getReadStateFilterDetails,
   getTimeSensitiveFilterCount,
+  getTimeSensitiveFilterDetails,
 } from '../utils/filters';
 import { formatProperCase } from '../utils/helpers';
 import { PRODUCTS, getProductDetails } from '../utils/products';
@@ -29,15 +34,16 @@ export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting, notifications } =
     useContext(AppContext);
 
-  const shouldShowTimeSensitive = (timeSensitive: TimeSensitive) => {
+  const shouldShowTimeSensitive = (timeSensitive: TimeSensitiveFilterType) => {
     return settings.filterTimeSensitive.includes(timeSensitive);
   };
 
   const updateTimeSensitiveFilter = (
-    timeSensitive: TimeSensitive,
+    timeSensitive: TimeSensitiveFilterType,
     checked: boolean,
   ) => {
-    let timeSensitives: TimeSensitive[] = settings.filterTimeSensitive;
+    let timeSensitives: TimeSensitiveFilterType[] =
+      settings.filterTimeSensitive;
 
     if (checked) {
       timeSensitives.push(timeSensitive);
@@ -48,12 +54,15 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterTimeSensitive', timeSensitives);
   };
 
-  const shouldShowCategory = (category: Category) => {
+  const shouldShowCategory = (category: CategoryFilterType) => {
     return settings.filterCategories.includes(category);
   };
 
-  const updateCategoryFilter = (category: Category, checked: boolean) => {
-    let categories: Category[] = settings.filterCategories;
+  const updateCategoryFilter = (
+    category: CategoryFilterType,
+    checked: boolean,
+  ) => {
+    let categories: CategoryFilterType[] = settings.filterCategories;
 
     if (checked) {
       categories.push(category);
@@ -64,12 +73,15 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterCategories', categories);
   };
 
-  const shouldShowReadState = (readState: ReadState) => {
+  const shouldShowReadState = (readState: ReadStateFilterType) => {
     return settings.filterReadStates.includes(readState);
   };
 
-  const updateReadStateFilter = (readState: ReadState, checked: boolean) => {
-    let readStates: ReadState[] = settings.filterReadStates;
+  const updateReadStateFilter = (
+    readState: ReadStateFilterType,
+    checked: boolean,
+  ) => {
+    let readStates: ReadStateFilterType[] = settings.filterReadStates;
 
     if (checked) {
       readStates.push(readState);
@@ -107,10 +119,10 @@ export const FiltersRoute: FC = () => {
               <Stack space="space.100">
                 <Heading size="small">Time Sensitive</Heading>
                 <Box>
-                  {Object.keys(TIME_SENSITIVE).map(
-                    (timeSensitive: TimeSensitive) => {
+                  {Object.keys(TIME_SENSITIVE_FILTERS).map(
+                    (timeSensitive: TimeSensitiveFilterType) => {
                       const timeSensitiveDetails =
-                        getTimeSensitiveDetails(timeSensitive);
+                        getTimeSensitiveFilterDetails(timeSensitive);
                       const timeSensitiveIconProps: Record<string, string> = {
                         size: 'small',
                       };
@@ -159,76 +171,87 @@ export const FiltersRoute: FC = () => {
               <Stack space="space.100">
                 <Heading size="small">Category</Heading>
                 <Box>
-                  {Object.keys(CATEGORIES).map((category: Category) => {
-                    const categoryDetails = getCategoryDetails(category);
-                    const categoryIconProps: Record<string, string> = {
-                      size: 'small',
-                    };
-                    return (
-                      <Inline
-                        key={category}
-                        space="space.050"
-                        alignBlock="center"
-                      >
-                        <Checkbox
+                  {Object.keys(CATEGORIES_FILTERS).map(
+                    (category: CategoryFilterType) => {
+                      const categoryDetails =
+                        getCategoryFilterDetails(category);
+                      const categoryIconProps: Record<string, string> = {
+                        size: 'small',
+                      };
+                      return (
+                        <Inline
                           key={category}
-                          name={category}
-                          title={category}
-                          label={formatProperCase(categoryDetails.name)}
-                          isChecked={shouldShowCategory(category)}
-                          onChange={(evt) =>
-                            updateCategoryFilter(category, evt.target.checked)
-                          }
-                        />
-                        <categoryDetails.icon {...categoryIconProps} />
-                        <Badge
-                          max={false}
-                          appearance={
-                            shouldShowCategory(category) ? 'primary' : 'default'
-                          }
+                          space="space.050"
+                          alignBlock="center"
                         >
-                          {getCategoryFilterCount(notifications, category)}
-                        </Badge>
-                      </Inline>
-                    );
-                  })}
+                          <Checkbox
+                            key={category}
+                            name={category}
+                            title={category}
+                            label={formatProperCase(categoryDetails.name)}
+                            isChecked={shouldShowCategory(category)}
+                            onChange={(evt) =>
+                              updateCategoryFilter(category, evt.target.checked)
+                            }
+                          />
+                          <categoryDetails.icon {...categoryIconProps} />
+                          <Badge
+                            max={false}
+                            appearance={
+                              shouldShowCategory(category)
+                                ? 'primary'
+                                : 'default'
+                            }
+                          >
+                            {getCategoryFilterCount(notifications, category)}
+                          </Badge>
+                        </Inline>
+                      );
+                    },
+                  )}
                 </Box>
               </Stack>
 
               <Stack space="space.100">
                 <Heading size="small">Read State</Heading>
                 <Box>
-                  {Object.keys(READ_STATES).map((readState: ReadState) => {
-                    const readStateDetails = getReadStateDetails(readState);
-                    return (
-                      <Inline
-                        key={readState}
-                        space="space.025"
-                        alignBlock="center"
-                      >
-                        <Checkbox
+                  {Object.keys(READ_STATES_FILTERS).map(
+                    (readState: ReadStateFilterType) => {
+                      const readStateDetails =
+                        getReadStateFilterDetails(readState);
+                      return (
+                        <Inline
                           key={readState}
-                          name={readState}
-                          title={readState}
-                          label={formatProperCase(readStateDetails.name)}
-                          isChecked={shouldShowReadState(readState)}
-                          onChange={(evt) =>
-                            updateReadStateFilter(readState, evt.target.checked)
-                          }
-                        />
-                        <Badge
-                          max={false}
-                          appearance={
-                            shouldShowReadState(readState)
-                              ? 'primary'
-                              : 'default'
-                          }
+                          space="space.025"
+                          alignBlock="center"
                         >
-                          {getReadStateFilterCount(notifications, readState)}
-                        </Badge>
-                      </Inline>
-                    );
-                  })}
+                          <Checkbox
+                            key={readState}
+                            name={readState}
+                            title={readState}
+                            label={formatProperCase(readStateDetails.name)}
+                            isChecked={shouldShowReadState(readState)}
+                            onChange={(evt) =>
+                              updateReadStateFilter(
+                                readState,
+                                evt.target.checked,
+                              )
+                            }
+                          />
+                          <Badge
+                            max={false}
+                            appearance={
+                              shouldShowReadState(readState)
+                                ? 'primary'
+                                : 'default'
+                            }
+                          >
+                            {getReadStateFilterCount(notifications, readState)}
+                          </Badge>
+                        </Inline>
+                      );
+                    },
+                  )}
                 </Box>
               </Stack>
             </Stack>

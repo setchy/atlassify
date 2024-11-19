@@ -6,7 +6,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
   data-testid="accounts"
 >
   <div
-    class="css-18bes35"
+    class="css-2x24vx"
   >
     <div
       class="css-y272c0"
@@ -300,7 +300,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
   data-testid="accounts"
 >
   <div
-    class="css-18bes35"
+    class="css-2x24vx"
   >
     <div
       class="css-y272c0"

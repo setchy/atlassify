@@ -6,7 +6,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
   data-testid="settings"
 >
   <div
-    class="css-18bes35"
+    class="css-2x24vx"
   >
     <div
       class="css-y272c0"
@@ -61,7 +61,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     class="flex flex-col flex-grow overflow-x-auto"
   >
     <div
-      class="css-8mzmlv"
+      class="css-288io5"
     >
       <div
         class="css-1ub26k9"

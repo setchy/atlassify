@@ -5,15 +5,18 @@ import WatchIcon from '@atlaskit/icon/glyph/watch';
 
 import type {
   AccountNotifications,
-  Category,
+  CategoryFilterType,
   FilterDetails,
   ProductName,
-  ReadState,
+  ReadStateFilterType,
   SettingsState,
-  TimeSensitive,
+  TimeSensitiveFilterType,
 } from '../types';
 
-export const TIME_SENSITIVE: Record<TimeSensitive, FilterDetails> = {
+export const TIME_SENSITIVE_FILTERS: Record<
+  TimeSensitiveFilterType,
+  FilterDetails
+> = {
   mention: {
     name: 'mention',
     description: 'Mentions',
@@ -28,10 +31,10 @@ export const TIME_SENSITIVE: Record<TimeSensitive, FilterDetails> = {
   },
 };
 
-export function getTimeSensitiveDetails(
-  timeSensitive: TimeSensitive,
+export function getTimeSensitiveFilterDetails(
+  timeSensitive: TimeSensitiveFilterType,
 ): FilterDetails {
-  return TIME_SENSITIVE[timeSensitive];
+  return TIME_SENSITIVE_FILTERS[timeSensitive];
 }
 
 export function getTimeSensitiveFilterCount(
@@ -48,7 +51,7 @@ export function getTimeSensitiveFilterCount(
   );
 }
 
-export const CATEGORIES: Record<Category, FilterDetails> = {
+export const CATEGORIES_FILTERS: Record<CategoryFilterType, FilterDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notification',
@@ -61,13 +64,15 @@ export const CATEGORIES: Record<Category, FilterDetails> = {
   },
 };
 
-export function getCategoryDetails(category: Category): FilterDetails {
-  return CATEGORIES[category];
+export function getCategoryFilterDetails(
+  category: CategoryFilterType,
+): FilterDetails {
+  return CATEGORIES_FILTERS[category];
 }
 
 export function getCategoryFilterCount(
   notifications: AccountNotifications[],
-  category: Category,
+  category: CategoryFilterType,
 ) {
   return notifications.reduce(
     (memo, acc) =>
@@ -76,7 +81,7 @@ export function getCategoryFilterCount(
   );
 }
 
-export const READ_STATES: Record<ReadState, FilterDetails> = {
+export const READ_STATES_FILTERS: Record<ReadStateFilterType, FilterDetails> = {
   unread: {
     name: 'unread',
     description: 'Unread notification',
@@ -87,13 +92,15 @@ export const READ_STATES: Record<ReadState, FilterDetails> = {
   },
 };
 
-export function getReadStateDetails(readState: ReadState): FilterDetails {
-  return READ_STATES[readState];
+export function getReadStateFilterDetails(
+  readState: ReadStateFilterType,
+): FilterDetails {
+  return READ_STATES_FILTERS[readState];
 }
 
 export function getReadStateFilterCount(
   notifications: AccountNotifications[],
-  readState: ReadState,
+  readState: ReadStateFilterType,
 ) {
   return notifications.reduce(
     (memo, acc) =>
@@ -113,7 +120,7 @@ export function getProductFilterCount(
   );
 }
 
-export function hasFiltersSet(settings: SettingsState): boolean {
+export function hasAnyFiltersSet(settings: SettingsState): boolean {
   return (
     settings.filterTimeSensitive.length > 0 ||
     settings.filterCategories.length > 0 ||
@@ -122,6 +129,8 @@ export function hasFiltersSet(settings: SettingsState): boolean {
   );
 }
 
-export function hasTimeSensitiveFiltersSet(settings: SettingsState): boolean {
+export function hasAnyTimeSensitiveFiltersSet(
+  settings: SettingsState,
+): boolean {
   return settings.filterTimeSensitive.length > 0;
 }

@@ -142,7 +142,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: We only want fetchNotifications to be called for certain changes
   useEffect(() => {
     fetchNotifications({ auth, settings });
-  }, [auth.accounts, settings.fetchOnlyUnreadNotifications]);
+  }, [
+    auth.accounts,
+    settings.fetchOnlyUnreadNotifications,
+    settings.filterTimeSensitive,
+  ]);
 
   useInterval(() => {
     fetchNotifications({ auth, settings });

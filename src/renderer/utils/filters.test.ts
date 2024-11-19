@@ -5,13 +5,13 @@ import {
   getCategoryFilterCount,
   getProductFilterCount,
   getReadStateFilterCount,
-  hasFiltersSet,
+  hasAnyFiltersSet,
 } from './filters';
 
 describe('renderer/utils/filters.ts', () => {
   describe('has filters', () => {
     it('default filter settings', () => {
-      expect(hasFiltersSet(defaultSettings)).toBe(false);
+      expect(hasAnyFiltersSet(defaultSettings)).toBe(false);
     });
 
     it('non-default category filters', () => {
@@ -19,7 +19,7 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterCategories: ['direct'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default read state filters', () => {
@@ -27,7 +27,7 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterReadStates: ['read'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default product filters', () => {
@@ -35,7 +35,7 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterProducts: ['bitbucket'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
   });
 

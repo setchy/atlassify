@@ -7,9 +7,9 @@ import type {
   AtlassifyNotification,
   AtlassifyNotificationPath,
   AtlassifyState,
-  Category,
+  CategoryFilterType,
   Link,
-  ReadState,
+  ReadStateFilterType,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -121,7 +121,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     return {
       id: headNotification.notificationId,
       message: headNotification.content.message,
-      readState: headNotification.readState as ReadState,
+      readState: headNotification.readState as ReadStateFilterType,
       updated_at: headNotification.timestamp,
       type: headNotification.content.type,
       url: headNotification.content.url as Link,
@@ -131,7 +131,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
         url: headNotification.content.entity.url as Link,
         iconUrl: headNotification.content.entity.iconUrl as Link,
       },
-      category: headNotification.category as Category,
+      category: headNotification.category as CategoryFilterType,
       actor: {
         displayName: headNotification.content.actor.displayName,
         avatarURL: headNotification.content.actor.avatarURL as Link,
