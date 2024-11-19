@@ -8,6 +8,7 @@ import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
 import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
+import StopwatchIcon from '@atlaskit/icon/glyph/stopwatch';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -17,7 +18,7 @@ import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { hasFiltersSet } from '../utils/filters';
+import { hasFiltersSet, hasTimeSensitiveFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { isLightMode } from '../utils/theme';
@@ -42,6 +43,15 @@ export const Sidebar: FC = () => {
     } else {
       navigate('/filters');
     }
+  };
+
+  const toggleTimeSensitiveFilters = () => {
+    if (settings.filterTimeSensitive.length === 0) {
+      updateSetting('filterTimeSensitive', ['mention', 'comment']);
+    } else {
+      updateSetting('filterTimeSensitive', []);
+    }
+    fetchNotifications();
   };
 
   const toggleSettings = () => {
@@ -72,6 +82,10 @@ export const Sidebar: FC = () => {
 
   const hasFilters = useMemo(() => {
     return hasFiltersSet(settings);
+  }, [settings]);
+
+  const hasTimeSensitiveFilters = useMemo(() => {
+    return hasTimeSensitiveFiltersSet(settings);
   }, [settings]);
 
   return (
@@ -178,6 +192,29 @@ export const Sidebar: FC = () => {
                     shape="circle"
                     onClick={() => toggleFilters()}
                     testId="sidebar-filter-notifications"
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  content="Quick toggle time sensitive notifications"
+                  position="right"
+                >
+                  <IconButton
+                    label="Time Sensitive Toggle"
+                    icon={(iconProps) => (
+                      <StopwatchIcon
+                        {...iconProps}
+                        size="small"
+                        primaryColor="white"
+                      />
+                    )}
+                    appearance={
+                      hasTimeSensitiveFilters ? 'discovery' : 'subtle'
+                    }
+                    spacing="compact"
+                    shape="circle"
+                    onClick={() => toggleTimeSensitiveFilters()}
+                    testId="sidebar-time-sensitive-notifications"
                   />
                 </Tooltip>
               </Fragment>

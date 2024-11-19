@@ -69,6 +69,7 @@ export type SettingsValue =
   | Category[]
   | ReadState[]
   | ProductName[]
+  | TimeSensitive[]
   | Theme;
 
 /**
@@ -168,6 +169,11 @@ export interface SystemSettingsState {
  * Settings related to the filtering of notifications within the application.
  */
 export interface FilterSettingsState {
+  /**
+   * The categories to filter time sensitive notifications by.
+   */
+  filterTimeSensitive: TimeSensitive[];
+
   /**
    * The categories to filter notifications by.
    */
@@ -394,6 +400,11 @@ export interface FilterDetails {
   description: string;
 
   /**
+   * The notification title contains this phrase
+   */
+  contains?: string;
+
+  /**
    * The icon for the filter.
    * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
    */
@@ -446,3 +457,11 @@ export type Category = 'direct' | 'watching';
  * - `read` - The notification has been read.
  */
 export type ReadState = 'unread' | 'read';
+
+/**
+ * Filters for time-sensitive notifications.
+ *
+ * - 'mention' - A user has mentioned you as part of the notification.
+ * - 'comment' - A user has commented on your prior work.
+ */
+export type TimeSensitive = 'mention' | 'comment';

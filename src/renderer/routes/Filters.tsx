@@ -9,15 +9,18 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
-import type { Category, ProductName, ReadState } from '../types';
+import type { Category, ProductName, ReadState, TimeSensitive } from '../types';
 import {
   CATEGORIES,
   READ_STATES,
+  TIME_SENSITIVE,
   getCategoryDetails,
   getCategoryFilterCount,
   getProductFilterCount,
   getReadStateDetails,
   getReadStateFilterCount,
+  getTimeSensitiveDetails,
+  getTimeSensitiveFilterCount,
 } from '../utils/filters';
 import { formatProperCase } from '../utils/helpers';
 import { PRODUCTS, getProductDetails } from '../utils/products';
@@ -25,6 +28,25 @@ import { PRODUCTS, getProductDetails } from '../utils/products';
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting, notifications } =
     useContext(AppContext);
+
+  const shouldShowTimeSensitive = (timeSensitive: TimeSensitive) => {
+    return settings.filterTimeSensitive.includes(timeSensitive);
+  };
+
+  const updateTimeSensitiveFilter = (
+    timeSensitive: TimeSensitive,
+    checked: boolean,
+  ) => {
+    let timeSensitives: TimeSensitive[] = settings.filterTimeSensitive;
+
+    if (checked) {
+      timeSensitives.push(timeSensitive);
+    } else {
+      timeSensitives = timeSensitives.filter((t) => t !== timeSensitive);
+    }
+
+    updateSetting('filterTimeSensitive', timeSensitives);
+  };
 
   const shouldShowCategory = (category: Category) => {
     return settings.filterCategories.includes(category);
@@ -79,9 +101,61 @@ export const FiltersRoute: FC = () => {
       <Header fetchOnBack={true}>Filters</Header>
 
       <div className="flex-grow overflow-x-auto px-8">
-        <Stack space="space.300">
-          <Box>
-            <Inline space="space.600">
+        <Box>
+          <Inline space="space.200">
+            <Stack space="space.300">
+              <Stack space="space.100">
+                <Heading size="small">Time Sensitive</Heading>
+                <Box>
+                  {Object.keys(TIME_SENSITIVE).map(
+                    (timeSensitive: TimeSensitive) => {
+                      const timeSensitiveDetails =
+                        getTimeSensitiveDetails(timeSensitive);
+                      const timeSensitiveIconProps: Record<string, string> = {
+                        LEGACY_size: 'small',
+                      };
+                      return (
+                        <Inline
+                          key={timeSensitive}
+                          space="space.100"
+                          alignBlock="center"
+                        >
+                          <Checkbox
+                            key={timeSensitive}
+                            name={timeSensitive}
+                            title={timeSensitive}
+                            label={formatProperCase(timeSensitiveDetails.name)}
+                            isChecked={shouldShowTimeSensitive(timeSensitive)}
+                            onChange={(evt) =>
+                              updateTimeSensitiveFilter(
+                                timeSensitive,
+                                evt.target.checked,
+                              )
+                            }
+                          />
+                          <timeSensitiveDetails.icon
+                            {...timeSensitiveIconProps}
+                          />
+                          <Badge
+                            max={false}
+                            appearance={
+                              shouldShowTimeSensitive(timeSensitive)
+                                ? 'primary'
+                                : 'default'
+                            }
+                          >
+                            {getTimeSensitiveFilterCount(
+                              notifications,
+                              timeSensitiveDetails,
+                            )}
+                          </Badge>
+                        </Inline>
+                      );
+                    },
+                  )}
+                </Box>
+              </Stack>
+
               <Stack space="space.100">
                 <Heading size="small">Category</Heading>
                 <Box>
@@ -93,7 +167,7 @@ export const FiltersRoute: FC = () => {
                     return (
                       <Inline
                         key={category}
-                        space="space.050"
+                        space="space.100"
                         alignBlock="center"
                       >
                         <Checkbox
@@ -129,7 +203,7 @@ export const FiltersRoute: FC = () => {
                     return (
                       <Inline
                         key={readState}
-                        space="space.050"
+                        space="space.100"
                         alignBlock="center"
                       >
                         <Checkbox
@@ -157,49 +231,59 @@ export const FiltersRoute: FC = () => {
                   })}
                 </Box>
               </Stack>
-            </Inline>
-          </Box>
+            </Stack>
 
-          <Box>
-            <Stack space="space.100">
-              <Heading size="small">Products</Heading>
+            <Stack space="space.300">
               <Box>
-                {Object.keys(PRODUCTS).map((product: ProductName) => {
-                  const productDetails = getProductDetails(product);
-                  const productIconProps: Record<string, string> = {
-                    size: 'xsmall',
-                    appearance: shouldShowProduct(product)
-                      ? 'brand'
-                      : 'neutral',
-                  };
+                <Inline space="space.600">
+                  <Stack space="space.100">
+                    <Heading size="small">Products</Heading>
+                    <Box>
+                      {Object.keys(PRODUCTS).map((product: ProductName) => {
+                        const productDetails = getProductDetails(product);
+                        const productIconProps: Record<string, string> = {
+                          size: 'small',
+                          appearance: shouldShowProduct(product)
+                            ? 'brand'
+                            : 'neutral',
+                        };
 
-                  return (
-                    <Inline key={product} space="space.050" alignBlock="center">
-                      <Checkbox
-                        name={product}
-                        label={formatProperCase(productDetails.name)}
-                        title={product}
-                        isChecked={shouldShowProduct(product)}
-                        onChange={(evt) =>
-                          updateProductFilter(product, evt.target.checked)
-                        }
-                      />
-                      <productDetails.logo {...productIconProps} />
-                      <Badge
-                        max={false}
-                        appearance={
-                          shouldShowProduct(product) ? 'primary' : 'default'
-                        }
-                      >
-                        {getProductFilterCount(notifications, product)}
-                      </Badge>
-                    </Inline>
-                  );
-                })}
+                        return (
+                          <Inline
+                            key={product}
+                            space="space.100"
+                            alignBlock="center"
+                          >
+                            <Checkbox
+                              name={product}
+                              label={formatProperCase(productDetails.name)}
+                              title={product}
+                              isChecked={shouldShowProduct(product)}
+                              onChange={(evt) =>
+                                updateProductFilter(product, evt.target.checked)
+                              }
+                            />
+                            <productDetails.logo {...productIconProps} />
+                            <Badge
+                              max={false}
+                              appearance={
+                                shouldShowProduct(product)
+                                  ? 'primary'
+                                  : 'default'
+                              }
+                            >
+                              {getProductFilterCount(notifications, product)}
+                            </Badge>
+                          </Inline>
+                        );
+                      })}
+                    </Box>
+                  </Stack>
+                </Inline>
               </Box>
             </Stack>
-          </Box>
-        </Stack>
+          </Inline>
+        </Box>
       </div>
 
       <Box
