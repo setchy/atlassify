@@ -9,7 +9,10 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
-import { READ_STATES, getCategoryDetails } from '../../utils/filters';
+import {
+  FILTERS_READ_STATES,
+  getCategoryFilterDetails,
+} from '../../utils/filters';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
@@ -45,20 +48,20 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const updatedAt = formatNotificationUpdatedAt(notification);
 
-  const categoryDetails = getCategoryDetails(notification.category);
+  const categoryDetails = getCategoryFilterDetails(notification.category);
   const CategoryIcon = categoryDetails.icon;
   const CategoryIconProps: Record<string, string> = {
     size: 'small',
   };
 
   const isNotificationUnread =
-    notification.readState === READ_STATES.unread.name;
+    notification.readState === FILTERS_READ_STATES.unread.name;
 
   return (
     <div
       id={notification.id}
       className={cn(
-        'group flex px-2 py-2',
+        'group flex pl-3 pr-2 py-2',
         'border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',

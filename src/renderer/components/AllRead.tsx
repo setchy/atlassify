@@ -4,14 +4,14 @@ import { Stack } from '@atlaskit/primitives';
 
 import { AppContext } from '../context/App';
 import { Constants } from '../utils/constants';
-import { hasFiltersSet } from '../utils/filters';
+import { hasAnyFiltersSet } from '../utils/filters';
 import { Centered } from './primitives/Centered';
 import { EmojiText } from './primitives/EmojiText';
 
 export const AllRead: FC = () => {
   const { settings } = useContext(AppContext);
 
-  const hasFilters = hasFiltersSet(settings);
+  const hasFilters = hasAnyFiltersSet(settings);
 
   const emoji = useMemo(
     () =>

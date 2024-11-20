@@ -2,16 +2,26 @@ import { mockSingleAccountNotifications } from '../__mocks__/notifications-mocks
 import { defaultSettings } from '../context/App';
 import type { SettingsState } from '../types';
 import {
+  FILTERS_TIME_SENSITIVE,
   getCategoryFilterCount,
   getProductFilterCount,
   getReadStateFilterCount,
-  hasFiltersSet,
+  getTimeSensitiveFilterCount,
+  hasAnyFiltersSet,
 } from './filters';
 
 describe('renderer/utils/filters.ts', () => {
   describe('has filters', () => {
     it('default filter settings', () => {
-      expect(hasFiltersSet(defaultSettings)).toBe(false);
+      expect(hasAnyFiltersSet(defaultSettings)).toBe(false);
+    });
+
+    it('non-default time sensitive filters', () => {
+      const settings = {
+        ...defaultSettings,
+        filterTimeSensitive: ['mention'],
+      } as SettingsState;
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default category filters', () => {
@@ -19,7 +29,7 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterCategories: ['direct'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default read state filters', () => {
@@ -27,7 +37,7 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterReadStates: ['read'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default product filters', () => {
@@ -35,25 +45,36 @@ describe('renderer/utils/filters.ts', () => {
         ...defaultSettings,
         filterProducts: ['bitbucket'],
       } as SettingsState;
-      expect(hasFiltersSet(settings)).toBe(true);
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
   });
 
-  it('filter count - read state', () => {
-    expect(
-      getReadStateFilterCount(mockSingleAccountNotifications, 'unread'),
-    ).toBe(1);
-  });
+  describe('filter counts', () => {
+    it('read state', () => {
+      expect(
+        getTimeSensitiveFilterCount(
+          mockSingleAccountNotifications,
+          FILTERS_TIME_SENSITIVE.mention,
+        ),
+      ).toBe(0);
+    });
 
-  it('filter count - category', () => {
-    expect(
-      getCategoryFilterCount(mockSingleAccountNotifications, 'direct'),
-    ).toBe(1);
-  });
+    it('read state', () => {
+      expect(
+        getReadStateFilterCount(mockSingleAccountNotifications, 'unread'),
+      ).toBe(1);
+    });
 
-  it('filter count - product', () => {
-    expect(
-      getProductFilterCount(mockSingleAccountNotifications, 'bitbucket'),
-    ).toBe(1);
+    it('category', () => {
+      expect(
+        getCategoryFilterCount(mockSingleAccountNotifications, 'direct'),
+      ).toBe(1);
+    });
+
+    it('product', () => {
+      expect(
+        getProductFilterCount(mockSingleAccountNotifications, 'bitbucket'),
+      ).toBe(1);
+    });
   });
 });
