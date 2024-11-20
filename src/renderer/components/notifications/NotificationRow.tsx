@@ -10,7 +10,7 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import {
-  READ_STATES_FILTERS,
+  FILTERS_READ_STATES,
   getCategoryFilterDetails,
 } from '../../utils/filters';
 import {
@@ -55,13 +55,13 @@ export const NotificationRow: FC<INotificationRow> = ({
   };
 
   const isNotificationUnread =
-    notification.readState === READ_STATES_FILTERS.unread.name;
+    notification.readState === FILTERS_READ_STATES.unread.name;
 
   return (
     <div
       id={notification.id}
       className={cn(
-        'group flex px-2 py-2',
+        'group flex pl-3 pr-2 py-2',
         'border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',

@@ -16,9 +16,9 @@ import type {
   TimeSensitiveFilterType,
 } from '../types';
 import {
-  CATEGORIES_FILTERS,
-  READ_STATES_FILTERS,
-  TIME_SENSITIVE_FILTERS,
+  FILTERS_CATEGORIES,
+  FILTERS_READ_STATES,
+  FILTERS_TIME_SENSITIVE,
   getCategoryFilterCount,
   getCategoryFilterDetails,
   getProductFilterCount,
@@ -33,6 +33,9 @@ import { PRODUCTS, getProductDetails } from '../utils/products';
 export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateSetting, notifications } =
     useContext(AppContext);
+
+  const checkboxPaddingHorizontal = 'space.050';
+  const checkboxPaddingVertical = 'space.025';
 
   const shouldShowTimeSensitive = (timeSensitive: TimeSensitiveFilterType) => {
     return settings.filterTimeSensitive.includes(timeSensitive);
@@ -113,13 +116,13 @@ export const FiltersRoute: FC = () => {
       <Header fetchOnBack={true}>Filters</Header>
 
       <div className="flex-grow overflow-x-auto">
-        <Box paddingInline="space.300">
+        <Box paddingInlineStart="space.400">
           <Inline space="space.200">
-            <Stack space="space.300">
+            <Stack space="space.200">
               <Stack space="space.100">
                 <Heading size="small">Time Sensitive</Heading>
                 <Box>
-                  {Object.keys(TIME_SENSITIVE_FILTERS).map(
+                  {Object.keys(FILTERS_TIME_SENSITIVE).map(
                     (timeSensitive: TimeSensitiveFilterType) => {
                       const timeSensitiveDetails =
                         getTimeSensitiveFilterDetails(timeSensitive);
@@ -127,41 +130,47 @@ export const FiltersRoute: FC = () => {
                         size: 'small',
                       };
                       return (
-                        <Inline
+                        <Box
                           key={timeSensitive}
-                          space="space.025"
-                          alignBlock="center"
+                          paddingBlock={checkboxPaddingVertical}
                         >
-                          <Checkbox
-                            key={timeSensitive}
-                            name={timeSensitive}
-                            title={timeSensitive}
-                            label={formatProperCase(timeSensitiveDetails.name)}
-                            isChecked={shouldShowTimeSensitive(timeSensitive)}
-                            onChange={(evt) =>
-                              updateTimeSensitiveFilter(
-                                timeSensitive,
-                                evt.target.checked,
-                              )
-                            }
-                          />
-                          <timeSensitiveDetails.icon
-                            {...timeSensitiveIconProps}
-                          />
-                          <Badge
-                            max={false}
-                            appearance={
-                              shouldShowTimeSensitive(timeSensitive)
-                                ? 'primary'
-                                : 'default'
-                            }
+                          <Inline
+                            space={checkboxPaddingHorizontal}
+                            alignBlock="center"
                           >
-                            {getTimeSensitiveFilterCount(
-                              notifications,
-                              timeSensitiveDetails,
-                            )}
-                          </Badge>
-                        </Inline>
+                            <Checkbox
+                              key={timeSensitive}
+                              name={timeSensitive}
+                              aria-label={timeSensitive}
+                              label={formatProperCase(
+                                timeSensitiveDetails.name,
+                              )}
+                              isChecked={shouldShowTimeSensitive(timeSensitive)}
+                              onChange={(evt) =>
+                                updateTimeSensitiveFilter(
+                                  timeSensitive,
+                                  evt.target.checked,
+                                )
+                              }
+                            />
+                            <timeSensitiveDetails.icon
+                              {...timeSensitiveIconProps}
+                            />
+                            <Badge
+                              max={false}
+                              appearance={
+                                shouldShowTimeSensitive(timeSensitive)
+                                  ? 'primary'
+                                  : 'default'
+                              }
+                            >
+                              {getTimeSensitiveFilterCount(
+                                notifications,
+                                timeSensitiveDetails,
+                              )}
+                            </Badge>
+                          </Inline>
+                        </Box>
                       );
                     },
                   )}
@@ -171,7 +180,7 @@ export const FiltersRoute: FC = () => {
               <Stack space="space.100">
                 <Heading size="small">Category</Heading>
                 <Box>
-                  {Object.keys(CATEGORIES_FILTERS).map(
+                  {Object.keys(FILTERS_CATEGORIES).map(
                     (category: CategoryFilterType) => {
                       const categoryDetails =
                         getCategoryFilterDetails(category);
@@ -179,33 +188,39 @@ export const FiltersRoute: FC = () => {
                         size: 'small',
                       };
                       return (
-                        <Inline
+                        <Box
                           key={category}
-                          space="space.050"
-                          alignBlock="center"
+                          paddingBlock={checkboxPaddingVertical}
                         >
-                          <Checkbox
-                            key={category}
-                            name={category}
-                            title={category}
-                            label={formatProperCase(categoryDetails.name)}
-                            isChecked={shouldShowCategory(category)}
-                            onChange={(evt) =>
-                              updateCategoryFilter(category, evt.target.checked)
-                            }
-                          />
-                          <categoryDetails.icon {...categoryIconProps} />
-                          <Badge
-                            max={false}
-                            appearance={
-                              shouldShowCategory(category)
-                                ? 'primary'
-                                : 'default'
-                            }
+                          <Inline
+                            space={checkboxPaddingHorizontal}
+                            alignBlock="center"
                           >
-                            {getCategoryFilterCount(notifications, category)}
-                          </Badge>
-                        </Inline>
+                            <Checkbox
+                              name={category}
+                              aria-label={category}
+                              label={formatProperCase(categoryDetails.name)}
+                              isChecked={shouldShowCategory(category)}
+                              onChange={(evt) =>
+                                updateCategoryFilter(
+                                  category,
+                                  evt.target.checked,
+                                )
+                              }
+                            />
+                            <categoryDetails.icon {...categoryIconProps} />
+                            <Badge
+                              max={false}
+                              appearance={
+                                shouldShowCategory(category)
+                                  ? 'primary'
+                                  : 'default'
+                              }
+                            >
+                              {getCategoryFilterCount(notifications, category)}
+                            </Badge>
+                          </Inline>
+                        </Box>
                       );
                     },
                   )}
@@ -215,40 +230,46 @@ export const FiltersRoute: FC = () => {
               <Stack space="space.100">
                 <Heading size="small">Read State</Heading>
                 <Box>
-                  {Object.keys(READ_STATES_FILTERS).map(
+                  {Object.keys(FILTERS_READ_STATES).map(
                     (readState: ReadStateFilterType) => {
                       const readStateDetails =
                         getReadStateFilterDetails(readState);
                       return (
-                        <Inline
+                        <Box
                           key={readState}
-                          space="space.025"
-                          alignBlock="center"
+                          paddingBlock={checkboxPaddingVertical}
                         >
-                          <Checkbox
-                            key={readState}
-                            name={readState}
-                            title={readState}
-                            label={formatProperCase(readStateDetails.name)}
-                            isChecked={shouldShowReadState(readState)}
-                            onChange={(evt) =>
-                              updateReadStateFilter(
-                                readState,
-                                evt.target.checked,
-                              )
-                            }
-                          />
-                          <Badge
-                            max={false}
-                            appearance={
-                              shouldShowReadState(readState)
-                                ? 'primary'
-                                : 'default'
-                            }
+                          <Inline
+                            space={checkboxPaddingHorizontal}
+                            alignBlock="center"
                           >
-                            {getReadStateFilterCount(notifications, readState)}
-                          </Badge>
-                        </Inline>
+                            <Checkbox
+                              name={readState}
+                              aria-label={readState}
+                              label={formatProperCase(readStateDetails.name)}
+                              isChecked={shouldShowReadState(readState)}
+                              onChange={(evt) =>
+                                updateReadStateFilter(
+                                  readState,
+                                  evt.target.checked,
+                                )
+                              }
+                            />
+                            <Badge
+                              max={false}
+                              appearance={
+                                shouldShowReadState(readState)
+                                  ? 'primary'
+                                  : 'default'
+                              }
+                            >
+                              {getReadStateFilterCount(
+                                notifications,
+                                readState,
+                              )}
+                            </Badge>
+                          </Inline>
+                        </Box>
                       );
                     },
                   )}
@@ -256,53 +277,46 @@ export const FiltersRoute: FC = () => {
               </Stack>
             </Stack>
 
-            <Stack space="space.300">
+            <Stack space="space.100">
+              <Heading size="small">Products</Heading>
               <Box>
-                <Inline space="space.600">
-                  <Stack space="space.100">
-                    <Heading size="small">Products</Heading>
-                    <Box>
-                      {Object.keys(PRODUCTS).map((product: ProductName) => {
-                        const productDetails = getProductDetails(product);
-                        const productIconProps: Record<string, string> = {
-                          size: 'xsmall',
-                          appearance: shouldShowProduct(product)
-                            ? 'brand'
-                            : 'neutral',
-                        };
+                {Object.keys(PRODUCTS).map((product: ProductName) => {
+                  const productDetails = getProductDetails(product);
+                  const productIconProps: Record<string, string> = {
+                    size: 'xsmall',
+                    appearance: shouldShowProduct(product)
+                      ? 'brand'
+                      : 'neutral',
+                  };
 
-                        return (
-                          <Inline
-                            key={product}
-                            space="space.025"
-                            alignBlock="center"
-                          >
-                            <Checkbox
-                              name={product}
-                              label={formatProperCase(productDetails.name)}
-                              title={product}
-                              isChecked={shouldShowProduct(product)}
-                              onChange={(evt) =>
-                                updateProductFilter(product, evt.target.checked)
-                              }
-                            />
-                            <productDetails.logo {...productIconProps} />
-                            <Badge
-                              max={false}
-                              appearance={
-                                shouldShowProduct(product)
-                                  ? 'primary'
-                                  : 'default'
-                              }
-                            >
-                              {getProductFilterCount(notifications, product)}
-                            </Badge>
-                          </Inline>
-                        );
-                      })}
+                  return (
+                    <Box key={product} paddingBlock={checkboxPaddingVertical}>
+                      <Inline
+                        space={checkboxPaddingHorizontal}
+                        alignBlock="center"
+                      >
+                        <Checkbox
+                          name={product}
+                          aria-label={product}
+                          label={formatProperCase(productDetails.name)}
+                          isChecked={shouldShowProduct(product)}
+                          onChange={(evt) =>
+                            updateProductFilter(product, evt.target.checked)
+                          }
+                        />
+                        <productDetails.logo {...productIconProps} />
+                        <Badge
+                          max={false}
+                          appearance={
+                            shouldShowProduct(product) ? 'primary' : 'default'
+                          }
+                        >
+                          {getProductFilterCount(notifications, product)}
+                        </Badge>
+                      </Inline>
                     </Box>
-                  </Stack>
-                </Inline>
+                  );
+                })}
               </Box>
             </Stack>
           </Inline>

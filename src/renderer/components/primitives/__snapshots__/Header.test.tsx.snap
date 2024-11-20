@@ -6,7 +6,7 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="css-2x24vx"
+        class="css-18bes35"
       >
         <div
           class="css-y272c0"
@@ -61,7 +61,7 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="css-2x24vx"
+      class="css-18bes35"
     >
       <div
         class="css-y272c0"

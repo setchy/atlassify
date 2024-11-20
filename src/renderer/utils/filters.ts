@@ -13,7 +13,7 @@ import type {
   TimeSensitiveFilterType,
 } from '../types';
 
-export const TIME_SENSITIVE_FILTERS: Record<
+export const FILTERS_TIME_SENSITIVE: Record<
   TimeSensitiveFilterType,
   FilterDetails
 > = {
@@ -34,7 +34,7 @@ export const TIME_SENSITIVE_FILTERS: Record<
 export function getTimeSensitiveFilterDetails(
   timeSensitive: TimeSensitiveFilterType,
 ): FilterDetails {
-  return TIME_SENSITIVE_FILTERS[timeSensitive];
+  return FILTERS_TIME_SENSITIVE[timeSensitive];
 }
 
 export function getTimeSensitiveFilterCount(
@@ -51,7 +51,7 @@ export function getTimeSensitiveFilterCount(
   );
 }
 
-export const CATEGORIES_FILTERS: Record<CategoryFilterType, FilterDetails> = {
+export const FILTERS_CATEGORIES: Record<CategoryFilterType, FilterDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notification',
@@ -67,7 +67,7 @@ export const CATEGORIES_FILTERS: Record<CategoryFilterType, FilterDetails> = {
 export function getCategoryFilterDetails(
   category: CategoryFilterType,
 ): FilterDetails {
-  return CATEGORIES_FILTERS[category];
+  return FILTERS_CATEGORIES[category];
 }
 
 export function getCategoryFilterCount(
@@ -81,7 +81,7 @@ export function getCategoryFilterCount(
   );
 }
 
-export const READ_STATES_FILTERS: Record<ReadStateFilterType, FilterDetails> = {
+export const FILTERS_READ_STATES: Record<ReadStateFilterType, FilterDetails> = {
   unread: {
     name: 'unread',
     description: 'Unread notification',
@@ -95,7 +95,7 @@ export const READ_STATES_FILTERS: Record<ReadStateFilterType, FilterDetails> = {
 export function getReadStateFilterDetails(
   readState: ReadStateFilterType,
 ): FilterDetails {
-  return READ_STATES_FILTERS[readState];
+  return FILTERS_READ_STATES[readState];
 }
 
 export function getReadStateFilterCount(
@@ -127,10 +127,4 @@ export function hasAnyFiltersSet(settings: SettingsState): boolean {
     settings.filterReadStates.length > 0 ||
     settings.filterProducts.length > 0
   );
-}
-
-export function hasAnyTimeSensitiveFiltersSet(
-  settings: SettingsState,
-): boolean {
-  return settings.filterTimeSensitive.length > 0;
 }

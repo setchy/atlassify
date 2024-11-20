@@ -86,7 +86,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('direct'));
+        fireEvent.click(screen.getByLabelText('direct'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterCategories', [
           'direct',
@@ -114,7 +114,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('direct'));
+        fireEvent.click(screen.getByLabelText('direct'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterCategories', []);
       });
@@ -139,7 +139,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('unread'));
+        fireEvent.click(screen.getByLabelText('unread'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterReadStates', [
           'unread',
@@ -167,7 +167,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('unread'));
+        fireEvent.click(screen.getByLabelText('unread'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterReadStates', []);
       });
@@ -192,7 +192,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('bitbucket'));
+        fireEvent.click(screen.getByLabelText('bitbucket'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterProducts', [
           'bitbucket',
@@ -220,7 +220,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByTitle('bitbucket'));
+        fireEvent.click(screen.getByLabelText('bitbucket'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterProducts', []);
 

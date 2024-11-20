@@ -1,5 +1,5 @@
 import type { AtlassifyNotification, SettingsState } from '../../types';
-import { TIME_SENSITIVE_FILTERS } from '../filters';
+import { FILTERS_TIME_SENSITIVE } from '../filters';
 
 export function filterNotifications(
   notifications: AtlassifyNotification[],
@@ -8,7 +8,7 @@ export function filterNotifications(
   return notifications.filter((notification) => {
     if (settings.filterTimeSensitive.length > 0) {
       return settings.filterTimeSensitive.some((ts) =>
-        notification.message.includes(TIME_SENSITIVE_FILTERS[ts].contains),
+        notification.message.includes(FILTERS_TIME_SENSITIVE[ts].contains),
       );
     }
 

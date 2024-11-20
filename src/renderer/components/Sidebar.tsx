@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import FrequentIcon from '@atlaskit/icon/glyph/emoji/frequent';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import ListIcon from '@atlaskit/icon/glyph/list';
 import NotificationIcon from '@atlaskit/icon/glyph/notification';
@@ -18,10 +17,7 @@ import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import {
-  hasAnyFiltersSet,
-  hasAnyTimeSensitiveFiltersSet,
-} from '../utils/filters';
+import { hasAnyFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { isLightMode } from '../utils/theme';
@@ -45,14 +41,6 @@ export const Sidebar: FC = () => {
       navigate('/', { replace: true });
     } else {
       navigate('/filters');
-    }
-  };
-
-  const toggleTimeSensitiveFilters = () => {
-    if (settings.filterTimeSensitive.length === 0) {
-      updateSetting('filterTimeSensitive', ['mention', 'comment']);
-    } else {
-      updateSetting('filterTimeSensitive', []);
     }
   };
 
@@ -84,10 +72,6 @@ export const Sidebar: FC = () => {
 
   const hasFilters = useMemo(() => {
     return hasAnyFiltersSet(settings);
-  }, [settings]);
-
-  const hasTimeSensitiveFilters = useMemo(() => {
-    return hasAnyTimeSensitiveFiltersSet(settings);
   }, [settings]);
 
   return (
@@ -194,29 +178,6 @@ export const Sidebar: FC = () => {
                     shape="circle"
                     onClick={() => toggleFilters()}
                     testId="sidebar-filter-notifications"
-                  />
-                </Tooltip>
-
-                <Tooltip
-                  content="Quick toggle time sensitive notifications"
-                  position="right"
-                >
-                  <IconButton
-                    label="Time Sensitive Toggle"
-                    icon={(iconProps) => (
-                      <FrequentIcon
-                        {...iconProps}
-                        size="small"
-                        primaryColor="white"
-                      />
-                    )}
-                    appearance={
-                      hasTimeSensitiveFilters ? 'discovery' : 'subtle'
-                    }
-                    spacing="compact"
-                    shape="circle"
-                    onClick={() => toggleTimeSensitiveFilters()}
-                    testId="sidebar-time-sensitive-notifications"
                   />
                 </Tooltip>
               </Fragment>

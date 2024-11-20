@@ -6,7 +6,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   "baseElement": <body>
     <div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -219,7 +219,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   </body>,
   "container": <div>
     <div
-      class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+      class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
       id="138661096"
     >
       <div
@@ -489,7 +489,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   "baseElement": <body>
     <div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -702,7 +702,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
   </body>,
   "container": <div>
     <div
-      class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+      class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
       id="138661096"
     >
       <div

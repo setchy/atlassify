@@ -21,7 +21,7 @@ export const Header: FC<IHeader> = (props: IHeader) => {
 
   return (
     <Box
-      paddingInlineStart="space.200"
+      paddingInlineStart="space.300"
       paddingInlineEnd="space.500"
       paddingBlock="space.200"
     >

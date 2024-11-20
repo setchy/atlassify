@@ -16,7 +16,7 @@ export const SettingsRoute: FC = () => {
       <Header fetchOnBack>Settings</Header>
 
       <div className="flex flex-col flex-grow overflow-x-auto">
-        <Box paddingInline="space.300" paddingBlockEnd="space.200">
+        <Box paddingInline="space.400" paddingBlockEnd="space.200">
           <Stack space="space.200">
             <AppearanceSettings />
             <NotificationSettings />
