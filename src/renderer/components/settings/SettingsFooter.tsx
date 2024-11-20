@@ -2,8 +2,8 @@ import { type FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
+import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
+import PeopleGroupIcon from '@atlaskit/icon/core/people-group';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 

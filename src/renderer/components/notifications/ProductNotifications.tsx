@@ -2,7 +2,7 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import NodeIcon from '@atlaskit/icon/core/node';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -95,10 +95,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               <IconButton
                 label="Mark all product notifications as read"
                 icon={(iconProps) => (
-                  <HipchatMediaAttachmentCountIcon
-                    {...iconProps}
-                    size="small"
-                  />
+                  <NodeIcon {...iconProps} LEGACY_size="small" />
                 )}
                 shape="circle"
                 spacing="compact"

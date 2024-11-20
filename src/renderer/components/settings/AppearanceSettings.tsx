@@ -4,9 +4,9 @@ import { type FC, useContext, useEffect, useState } from 'react';
 import Badge from '@atlaskit/badge';
 import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
-import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
-import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
-import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
+import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
+import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
+import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
@@ -95,7 +95,7 @@ export const AppearanceSettings: FC = () => {
           <Tooltip content="Zoom Out" position="bottom">
             <IconButton
               label="Zoom Out"
-              icon={MediaServicesZoomOutIcon}
+              icon={ZoomOutIcon}
               shape="circle"
               spacing="compact"
               onClick={() =>
@@ -111,7 +111,7 @@ export const AppearanceSettings: FC = () => {
           <Tooltip content="Zoom In" position="bottom">
             <IconButton
               label="Zoom In"
-              icon={MediaServicesZoomInIcon}
+              icon={ZoomInIcon}
               shape="circle"
               spacing="compact"
               onClick={() =>
@@ -127,9 +127,9 @@ export const AppearanceSettings: FC = () => {
             <IconButton
               label="Reset Zoom"
               icon={(iconProps) => (
-                <SelectClearIcon
+                <CrossCircleIcon
                   {...iconProps}
-                  primaryColor={token('color.icon.accent.red')}
+                  LEGACY_primaryColor={token('color.icon.accent.red')}
                 />
               )}
               shape="circle"

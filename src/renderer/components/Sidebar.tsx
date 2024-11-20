@@ -2,12 +2,12 @@ import { type FC, Fragment, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import FilterIcon from '@atlaskit/icon/glyph/filter';
-import ListIcon from '@atlaskit/icon/glyph/list';
-import NotificationIcon from '@atlaskit/icon/glyph/notification';
-import RefreshIcon from '@atlaskit/icon/glyph/refresh';
-import SettingsIcon from '@atlaskit/icon/glyph/settings';
+import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
+import FilterIcon from '@atlaskit/icon/core/filter';
+import ListIcon from '@atlaskit/icon/core/list-bulleted';
+import NotificationIcon from '@atlaskit/icon/core/notification';
+import RefreshIcon from '@atlaskit/icon/core/refresh';
+import SettingsIcon from '@atlaskit/icon/core/settings';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -100,8 +100,8 @@ export const Sidebar: FC = () => {
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}
-                    size="small"
-                    primaryColor="white"
+                    LEGACY_size="small"
+                    LEGACY_primaryColor="white"
                   />
                 )}
                 appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
@@ -142,8 +142,8 @@ export const Sidebar: FC = () => {
                     icon={() => (
                       <ListIcon
                         label="groupByProduct"
-                        size="small"
-                        primaryColor="white"
+                        LEGACY_size="small"
+                        LEGACY_primaryColor="white"
                       />
                     )}
                     onClick={() => {
@@ -169,8 +169,8 @@ export const Sidebar: FC = () => {
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}
-                        size="small"
-                        primaryColor="white"
+                        LEGACY_size="small"
+                        LEGACY_primaryColor="white"
                       />
                     )}
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -202,8 +202,8 @@ export const Sidebar: FC = () => {
                     ) : (
                       <RefreshIcon
                         {...iconProps}
-                        size="medium"
-                        primaryColor="white"
+                        LEGACY_size="medium"
+                        LEGACY_primaryColor="white"
                       />
                     )
                   }
@@ -221,8 +221,8 @@ export const Sidebar: FC = () => {
                   icon={(iconProps) => (
                     <SettingsIcon
                       {...iconProps}
-                      size="medium"
-                      primaryColor="white"
+                      LEGACY_size="medium"
+                      LEGACY_primaryColor="white"
                     />
                   )}
                   appearance="subtle"
@@ -239,9 +239,9 @@ export const Sidebar: FC = () => {
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                    secondaryColor={
+                    LEGACY_size="medium"
+                    LEGACY_primaryColor="white"
+                    LEGACY_secondaryColor={
                       isLightMode() ? colors.sidebar.light : colors.sidebar.dark
                     }
                   />
