@@ -37,7 +37,7 @@ export const FiltersRoute: FC = () => {
   const checkboxPaddingHorizontal = 'space.050';
   const checkboxPaddingVertical = 'space.025';
   const checkboxIconProps: Record<string, string> = {
-    label: '',
+    size: 'small',
   };
 
   const shouldShowTimeSensitive = (timeSensitive: TimeSensitiveFilterType) => {
