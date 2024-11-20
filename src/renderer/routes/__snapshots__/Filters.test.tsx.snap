@@ -124,7 +124,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -196,7 +196,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -298,7 +298,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -370,7 +370,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -1368,6 +1368,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   >
                     <input
                       aria-label="mention"
+                      checked=""
                       class="css-f3myyk"
                       name="mention"
                       tabindex="0"
@@ -1391,6 +1392,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                           x="6"
                           y="6"
                         />
+                        <path
+                          d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                          fill="inherit"
+                        />
                       </g>
                     </svg>
                     <span
@@ -1401,7 +1406,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -1419,10 +1424,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </svg>
                   </span>
                   <span
-                    class="css-1wkl091"
+                    class="css-g73hg0"
                   >
                     <span
-                      class="css-f9etm4"
+                      class="css-pvol9p"
                     >
                       0
                     </span>
@@ -1473,7 +1478,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -1580,7 +1585,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >
@@ -1652,7 +1657,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </label>
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
+                    class="css-snhnyn"
                     data-vc="icon-undefined"
                     style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                   >

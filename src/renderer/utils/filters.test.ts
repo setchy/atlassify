@@ -2,9 +2,11 @@ import { mockSingleAccountNotifications } from '../__mocks__/notifications-mocks
 import { defaultSettings } from '../context/App';
 import type { SettingsState } from '../types';
 import {
+  FILTERS_TIME_SENSITIVE,
   getCategoryFilterCount,
   getProductFilterCount,
   getReadStateFilterCount,
+  getTimeSensitiveFilterCount,
   hasAnyFiltersSet,
 } from './filters';
 
@@ -12,6 +14,14 @@ describe('renderer/utils/filters.ts', () => {
   describe('has filters', () => {
     it('default filter settings', () => {
       expect(hasAnyFiltersSet(defaultSettings)).toBe(false);
+    });
+
+    it('non-default time sensitive filters', () => {
+      const settings = {
+        ...defaultSettings,
+        filterTimeSensitive: ['mention'],
+      } as SettingsState;
+      expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default category filters', () => {
@@ -39,21 +49,32 @@ describe('renderer/utils/filters.ts', () => {
     });
   });
 
-  it('filter count - read state', () => {
-    expect(
-      getReadStateFilterCount(mockSingleAccountNotifications, 'unread'),
-    ).toBe(1);
-  });
+  describe('filter counts', () => {
+    it('read state', () => {
+      expect(
+        getTimeSensitiveFilterCount(
+          mockSingleAccountNotifications,
+          FILTERS_TIME_SENSITIVE.mention,
+        ),
+      ).toBe(0);
+    });
 
-  it('filter count - category', () => {
-    expect(
-      getCategoryFilterCount(mockSingleAccountNotifications, 'direct'),
-    ).toBe(1);
-  });
+    it('read state', () => {
+      expect(
+        getReadStateFilterCount(mockSingleAccountNotifications, 'unread'),
+      ).toBe(1);
+    });
 
-  it('filter count - product', () => {
-    expect(
-      getProductFilterCount(mockSingleAccountNotifications, 'bitbucket'),
-    ).toBe(1);
+    it('category', () => {
+      expect(
+        getCategoryFilterCount(mockSingleAccountNotifications, 'direct'),
+      ).toBe(1);
+    });
+
+    it('product', () => {
+      expect(
+        getProductFilterCount(mockSingleAccountNotifications, 'bitbucket'),
+      ).toBe(1);
+    });
   });
 });

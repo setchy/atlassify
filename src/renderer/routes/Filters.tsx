@@ -36,6 +36,9 @@ export const FiltersRoute: FC = () => {
 
   const checkboxPaddingHorizontal = 'space.050';
   const checkboxPaddingVertical = 'space.025';
+  const checkboxIconProps: Record<string, string> = {
+    label: '',
+  };
 
   const shouldShowTimeSensitive = (timeSensitive: TimeSensitiveFilterType) => {
     return settings.filterTimeSensitive.includes(timeSensitive);
@@ -126,9 +129,7 @@ export const FiltersRoute: FC = () => {
                     (timeSensitive: TimeSensitiveFilterType) => {
                       const timeSensitiveDetails =
                         getTimeSensitiveFilterDetails(timeSensitive);
-                      const timeSensitiveIconProps: Record<string, string> = {
-                        size: 'small',
-                      };
+
                       return (
                         <Box
                           key={timeSensitive}
@@ -153,9 +154,7 @@ export const FiltersRoute: FC = () => {
                                 )
                               }
                             />
-                            <timeSensitiveDetails.icon
-                              {...timeSensitiveIconProps}
-                            />
+                            <timeSensitiveDetails.icon {...checkboxIconProps} />
                             <Badge
                               max={false}
                               appearance={
@@ -184,9 +183,7 @@ export const FiltersRoute: FC = () => {
                     (category: CategoryFilterType) => {
                       const categoryDetails =
                         getCategoryFilterDetails(category);
-                      const categoryIconProps: Record<string, string> = {
-                        size: 'small',
-                      };
+
                       return (
                         <Box
                           key={category}
@@ -208,7 +205,7 @@ export const FiltersRoute: FC = () => {
                                 )
                               }
                             />
-                            <categoryDetails.icon {...categoryIconProps} />
+                            <categoryDetails.icon {...checkboxIconProps} />
                             <Badge
                               max={false}
                               appearance={

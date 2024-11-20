@@ -67,6 +67,59 @@ describe('renderer/routes/Filters.tsx', () => {
   });
 
   describe('filters', () => {
+    describe('time sensitive filters', () => {
+      it('should filter by time sensitive - no existing filters set', async () => {
+        await act(async () => {
+          render(
+            <AppContext.Provider
+              value={{
+                auth: mockAuth,
+                settings: mockSettings,
+                notifications: [],
+                updateSetting,
+              }}
+            >
+              <MemoryRouter>
+                <FiltersRoute />
+              </MemoryRouter>
+            </AppContext.Provider>,
+          );
+        });
+
+        fireEvent.click(screen.getByLabelText('mention'));
+
+        expect(updateSetting).toHaveBeenCalledWith('filterTimeSensitive', [
+          'mention',
+        ]);
+      });
+
+      it('should filter by time sensitive - existing filter set', async () => {
+        await act(async () => {
+          render(
+            <AppContext.Provider
+              value={{
+                auth: mockAuth,
+                settings: {
+                  ...mockSettings,
+                  filterTimeSensitive: ['mention'],
+                },
+                notifications: [],
+                updateSetting,
+              }}
+            >
+              <MemoryRouter>
+                <FiltersRoute />
+              </MemoryRouter>
+            </AppContext.Provider>,
+          );
+        });
+
+        fireEvent.click(screen.getByLabelText('mention'));
+
+        expect(updateSetting).toHaveBeenCalledWith('filterTimeSensitive', []);
+      });
+    });
+
     describe('category filters', () => {
       it('should filter by category - no existing filters set', async () => {
         await act(async () => {
