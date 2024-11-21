@@ -60,7 +60,7 @@
     "@biomejs/biome": "1.9.4",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@9.14.1",
+  "packageManager": "pnpm@9.14.2",
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }
