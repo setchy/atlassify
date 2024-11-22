@@ -9,7 +9,7 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
         class="flex flex-1 flex-col items-center justify-center"
       >
         <div
-          class="css-1h715ms"
+          class="css-1amd086"
         >
           <div
             class="css-ybkmal"
@@ -31,16 +31,16 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
             >
               Error title
             </span>
+            <div
+              class="css-t8lj6l"
+            >
+              <span
+                class="text-center"
+              >
+                Error description
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          class="css-t8lj6l"
-        >
-          <span
-            class="text-center"
-          >
-            Error description
-          </span>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
       class="flex flex-1 flex-col items-center justify-center"
     >
       <div
-        class="css-1h715ms"
+        class="css-1amd086"
       >
         <div
           class="css-ybkmal"
@@ -72,16 +72,16 @@ exports[`renderer/components/Oops.tsx should render itself & its children 1`] = 
           >
             Error title
           </span>
+          <div
+            class="css-t8lj6l"
+          >
+            <span
+              class="text-center"
+            >
+              Error description
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        class="css-t8lj6l"
-      >
-        <span
-          class="text-center"
-        >
-          Error description
-        </span>
       </div>
     </div>
   </div>,

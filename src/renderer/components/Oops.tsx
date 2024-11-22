@@ -18,24 +18,24 @@ export const Oops: FC<IOops> = ({ error }: IOops) => {
 
   return (
     <Centered>
-      <Box paddingBlockEnd="space.100">
+      <Box paddingInline="space.500">
         <Stack space="space.300" alignInline="center">
           <span className="text-5xl">
             <EmojiText text={emoji} />
           </span>
 
           <span className="text-xl font-semibold">{error.title}</span>
+          <Stack space="space.100">
+            {error.descriptions.map((description) => {
+              return (
+                <span className="text-center" key={description}>
+                  {description}
+                </span>
+              );
+            })}
+          </Stack>
         </Stack>
       </Box>
-      <Stack space="space.100">
-        {error.descriptions.map((description) => {
-          return (
-            <span className="text-center" key={description}>
-              {description}
-            </span>
-          );
-        })}
-      </Stack>
     </Centered>
   );
 };
