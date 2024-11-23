@@ -66,9 +66,10 @@ export type SettingsValue =
   | boolean
   | number
   | OpenPreference
-  | Category[]
-  | ReadState[]
+  | CategoryFilterType[]
+  | ReadStateFilterType[]
   | ProductName[]
+  | TimeSensitiveFilterType[]
   | Theme;
 
 /**
@@ -169,14 +170,19 @@ export interface SystemSettingsState {
  */
 export interface FilterSettingsState {
   /**
+   * The categories to filter time sensitive notifications by.
+   */
+  filterTimeSensitive: TimeSensitiveFilterType[];
+
+  /**
    * The categories to filter notifications by.
    */
-  filterCategories: Category[];
+  filterCategories: CategoryFilterType[];
 
   /**
    * The read states to filter notifications by.
    */
-  filterReadStates: ReadState[];
+  filterReadStates: ReadStateFilterType[];
 
   /**
    * The products to filter notifications by.
@@ -264,12 +270,12 @@ export interface AtlassifyNotification {
   /**
    * The read state for the notification (read, unread).
    */
-  readState: ReadState;
+  readState: ReadStateFilterType;
 
   /**
    * The category for the notification (direct, watching).
    */
-  category: Category;
+  category: CategoryFilterType;
 
   /**
    * The Atlassian product associated with the notification.
@@ -394,6 +400,11 @@ export interface FilterDetails {
   description: string;
 
   /**
+   * The notification title contains this phrase
+   */
+  contains?: string;
+
+  /**
    * The icon for the filter.
    * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
    */
@@ -437,7 +448,7 @@ export type Chevron = {
  * - `direct` - A direct notification event.
  * - `watching` - A watched notification event.
  */
-export type Category = 'direct' | 'watching';
+export type CategoryFilterType = 'direct' | 'watching';
 
 /**
  * The read state of the notification.
@@ -445,4 +456,12 @@ export type Category = 'direct' | 'watching';
  * - `unread` - The notification has not been read.
  * - `read` - The notification has been read.
  */
-export type ReadState = 'unread' | 'read';
+export type ReadStateFilterType = 'unread' | 'read';
+
+/**
+ * Filters for time-sensitive notifications.
+ *
+ * - 'mention' - A user has mentioned you as part of the notification.
+ * - 'comment' - A user has commented on your prior work.
+ */
+export type TimeSensitiveFilterType = 'mention' | 'comment';

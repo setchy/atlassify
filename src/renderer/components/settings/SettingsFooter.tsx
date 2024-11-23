@@ -28,7 +28,8 @@ export const SettingsFooter: FC = () => {
 
   return (
     <Box
-      padding="space.050"
+      paddingBlock="space.050"
+      paddingInline="space.200"
       backgroundColor="color.background.accent.gray.subtlest"
     >
       <Stack>

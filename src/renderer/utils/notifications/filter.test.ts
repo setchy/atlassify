@@ -8,6 +8,18 @@ describe('renderer/utils/notifications/filter.ts', () => {
   });
 
   describe('filterNotifications', () => {
+    it('should filter notifications by time sensitive when provided', async () => {
+      mockAtlassifyNotifications[0].message = 'Some message';
+      mockAtlassifyNotifications[1].message = 'mentioned you on a page';
+      const result = filterNotifications(mockAtlassifyNotifications, {
+        ...mockSettings,
+        filterTimeSensitive: ['mention'],
+      });
+
+      expect(mockAtlassifyNotifications.length).toBe(2);
+      expect(result.length).toBe(1);
+      expect(result).toEqual([mockAtlassifyNotifications[1]]);
+    });
     it('should filter notifications by read state when provided', async () => {
       mockAtlassifyNotifications[0].readState = 'read';
       mockAtlassifyNotifications[1].readState = 'unread';

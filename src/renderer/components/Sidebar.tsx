@@ -17,7 +17,7 @@ import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { hasFiltersSet } from '../utils/filters';
+import { hasAnyFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { isLightMode } from '../utils/theme';
@@ -71,7 +71,7 @@ export const Sidebar: FC = () => {
   }, [notifications, notificationsCount]);
 
   const hasFilters = useMemo(() => {
-    return hasFiltersSet(settings);
+    return hasAnyFiltersSet(settings);
   }, [settings]);
 
   return (

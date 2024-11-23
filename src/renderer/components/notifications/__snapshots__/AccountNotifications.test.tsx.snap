@@ -204,7 +204,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="flex flex-1 flex-col items-center justify-center"
         >
           <div
-            class="css-1h715ms"
+            class="css-1amd086"
           >
             <div
               class="css-ybkmal"
@@ -226,16 +226,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 Error title
               </span>
+              <div
+                class="css-t8lj6l"
+              >
+                <span
+                  class="text-center"
+                >
+                  Error description
+                </span>
+              </div>
             </div>
-          </div>
-          <div
-            class="css-t8lj6l"
-          >
-            <span
-              class="text-center"
-            >
-              Error description
-            </span>
           </div>
         </div>
       </div>
@@ -441,7 +441,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="flex flex-1 flex-col items-center justify-center"
       >
         <div
-          class="css-1h715ms"
+          class="css-1amd086"
         >
           <div
             class="css-ybkmal"
@@ -463,16 +463,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             >
               Error title
             </span>
+            <div
+              class="css-t8lj6l"
+            >
+              <span
+                class="text-center"
+              >
+                Error description
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          class="css-t8lj6l"
-        >
-          <span
-            class="text-center"
-          >
-            Error description
-          </span>
         </div>
       </div>
     </div>
@@ -2171,7 +2171,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="138661096"
         >
           <div
@@ -2381,7 +2381,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="148827438"
         >
           <div
@@ -2790,7 +2790,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -3000,7 +3000,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="148827438"
       >
         <div
@@ -3466,7 +3466,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="138661096"
         >
           <div
@@ -3676,7 +3676,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="148827438"
         >
           <div
@@ -4085,7 +4085,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -4295,7 +4295,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="148827438"
       >
         <div
@@ -4963,7 +4963,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="138661096"
         >
           <div
@@ -5173,7 +5173,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           </div>
         </div>
         <div
-          class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+          class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
           id="148827438"
         >
           <div
@@ -5582,7 +5582,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="138661096"
       >
         <div
@@ -5792,7 +5792,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
         </div>
       </div>
       <div
-        class="group flex px-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
+        class="group flex pl-3 pr-2 py-2 border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark"
         id="148827438"
       >
         <div
