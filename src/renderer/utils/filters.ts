@@ -20,13 +20,13 @@ export const FILTERS_TIME_SENSITIVE: Record<
   mention: {
     name: 'mention',
     description: 'Mentions',
-    contains: 'mentioned',
+    contains: ' mentioned ',
     icon: MentionIcon,
   },
   comment: {
     name: 'comment',
     description: 'Comments',
-    contains: 'replied',
+    contains: ' replied ',
     icon: CommentIcon,
   },
 };
