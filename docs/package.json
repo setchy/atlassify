@@ -52,7 +52,7 @@
     "sharp": "0.33.5",
     "solid-js": "1.9.3",
     "solid-markdown": "2.0.13",
-    "tailwind-merge": "2.5.4",
+    "tailwind-merge": "2.5.5",
     "tailwindcss": "3.4.15",
     "tailwindcss-animate": "1.0.7"
   },
