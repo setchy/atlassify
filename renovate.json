@@ -17,99 +17,10 @@
       "rangeStrategy": "auto"
     },
     {
-      "matchPackageNames": ["@atlaskit/avatar"],
+      "description": "Rule to fetch changelog for Atlassian atlaskit packages",
+      "extends": ["packages:atlaskit"],
       "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/avatar"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/badge"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/badge"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/button"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/button"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/checkbox"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/checkbox"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/css-reset"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/css-reset"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/form"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/form"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/heading"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/heading"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/icon"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/icon"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/inline-message"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/inline-message"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/logo"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/logo"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/modal-dialog"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/modal-dialog"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/primitives"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/primitives"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/primitives"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/primitives"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/radio"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/radio"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/spinner"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/spinner"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/textfield"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/textfield"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/toggle"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/toggle"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/tokens"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/tokens"
-    },
-    {
-      "matchPackageNames": ["@atlaskit/tooltip"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/tooltip"
+      "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
     }
   ],
   "customManagers": [
