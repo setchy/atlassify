@@ -42,7 +42,7 @@
     "@kobalte/core": "0.13.7",
     "@octokit/openapi-types": "22.2.0",
     "@tailwindcss/typography": "0.5.15",
-    "astro": "4.16.14",
+    "astro": "4.16.15",
     "astro-icon": "1.1.4",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
