@@ -10,7 +10,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
   describe('filterNotifications', () => {
     it('should filter notifications by time sensitive when provided', async () => {
       mockAtlassifyNotifications[0].message = 'Some message';
-      mockAtlassifyNotifications[1].message = 'mentioned you on a page';
+      mockAtlassifyNotifications[1].message = 'someone mentioned you on a page';
       const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
         filterTimeSensitive: ['mention'],

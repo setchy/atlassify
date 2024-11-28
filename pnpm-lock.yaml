@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       electron-log:
-        specifier: 5.2.2
-        version: 5.2.2
+        specifier: 5.2.3
+        version: 5.2.3
       electron-updater:
         specifier: 6.3.9
         version: 6.3.9
       menubar:
         specifier: 9.5.1
-        version: 9.5.1(electron@33.2.0)
+        version: 9.5.1(electron@33.2.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -32,13 +32,13 @@ importers:
     devDependencies:
       '@0no-co/graphqlsp':
         specifier: 1.12.16
-        version: 1.12.16(graphql@16.9.0)(typescript@5.6.3)
+        version: 1.12.16(graphql@16.9.0)(typescript@5.7.2)
       '@atlaskit/avatar':
-        specifier: 21.17.2
-        version: 21.17.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 21.17.3
+        version: 21.17.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
-        specifier: 16.4.2
-        version: 16.4.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.4.3
+        version: 16.4.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
         specifier: 20.3.2
         version: 20.3.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -49,32 +49,32 @@ importers:
         specifier: 6.11.2
         version: 6.11.2(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/form':
-        specifier: 10.5.11
-        version: 10.5.11(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 10.5.12
+        version: 10.5.12(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
         specifier: 3.1.0
         version: 3.1.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: 22.24.3
-        version: 22.24.3(@types/react@18.3.12)(react@18.3.1)
+        specifier: 22.25.0
+        version: 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/inline-message':
         specifier: 12.4.2
         version: 12.4.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
-        specifier: 14.3.4
-        version: 14.3.4(@types/react@18.3.12)(react@18.3.1)
+        specifier: 14.3.5
+        version: 14.3.5(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 12.17.10
-        version: 12.17.10(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.17.13
+        version: 12.17.13(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 13.2.0
         version: 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/radio':
-        specifier: 6.5.4
-        version: 6.5.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.5.5
+        version: 6.5.5(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
-        specifier: 16.3.3
-        version: 16.3.3(@types/react@18.3.12)(react@18.3.1)
+        specifier: 16.3.4
+        version: 16.3.4(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 6.5.5
         version: 6.5.5(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -82,11 +82,11 @@ importers:
         specifier: 13.4.8
         version: 13.4.8(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
-        specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.12)(react@18.3.1)
+        specifier: 2.3.0
+        version: 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/tooltip':
-        specifier: 18.9.2
-        version: 18.9.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 18.9.3
+        version: 18.9.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -98,10 +98,10 @@ importers:
         version: 2.5.0
       '@graphql-codegen/cli':
         specifier: 5.0.3
-        version: 5.0.3(@parcel/watcher@2.5.0)(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.6.3)
+        version: 5.0.3(@parcel/watcher@2.5.0)(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.7.2)
       '@graphql-codegen/client-preset':
-        specifier: 4.5.0
-        version: 4.5.0(encoding@0.1.13)(graphql@16.9.0)
+        specifier: 4.5.1
+        version: 4.5.1(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-codegen/schema-ast':
         specifier: 4.1.0
         version: 4.1.0(graphql@16.9.0)
@@ -115,8 +115,8 @@ importers:
         specifier: 29.5.14
         version: 29.5.14
       '@types/node':
-        specifier: 22.9.1
-        version: 22.9.1
+        specifier: 22.10.1
+        version: 22.10.1
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
@@ -127,8 +127,8 @@ importers:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
       axios:
-        specifier: 1.7.7
-        version: 1.7.7
+        specifier: 1.7.8
+        version: 1.7.8
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -148,8 +148,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       electron:
-        specifier: 33.2.0
-        version: 33.2.0
+        specifier: 33.2.1
+        version: 33.2.1
       electron-builder:
         specifier: 25.1.8
         version: 25.1.8(electron-builder-squirrel-windows@25.1.7)
@@ -164,7 +164,7 @@ importers:
         version: 9.1.7
       jest:
         specifier: 29.7.0
-        version: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+        version: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       jest-environment-jsdom:
         specifier: 29.7.0
         version: 29.7.0
@@ -179,31 +179,31 @@ importers:
         version: 8.4.49
       postcss-loader:
         specifier: 8.1.1
-        version: 8.1.1(postcss@8.4.49)(typescript@5.6.3)(webpack@5.96.1)
+        version: 8.1.1(postcss@8.4.49)(typescript@5.7.2)(webpack@5.96.1)
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
       tailwind-merge:
-        specifier: 2.5.4
-        version: 2.5.4
+        specifier: 2.5.5
+        version: 2.5.5
       tailwindcss:
         specifier: 3.4.15
-        version: 3.4.15(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+        version: 3.4.15(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       terser-webpack-plugin:
         specifier: 5.3.10
         version: 5.3.10(webpack@5.96.1)
       ts-jest:
         specifier: 29.2.5
-        version: 29.2.5(@babel/core@7.25.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.7))(jest@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)))(typescript@5.6.3)
+        version: 29.2.5(@babel/core@7.25.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.7))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(typescript@5.7.2)
       ts-loader:
         specifier: 9.5.1
-        version: 9.5.1(typescript@5.6.3)(webpack@5.96.1)
+        version: 9.5.1(typescript@5.7.2)(webpack@5.96.1)
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@types/node@22.9.1)(typescript@5.6.3)
+        version: 10.9.2(@types/node@22.10.1)(typescript@5.7.2)
       typescript:
-        specifier: 5.6.3
-        version: 5.6.3
+        specifier: 5.7.2
+        version: 5.7.2
       webpack:
         specifier: 5.96.1
         version: 5.96.1(webpack-cli@5.1.4)
@@ -267,13 +267,13 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/avatar@21.17.2':
-    resolution: {integrity: sha512-5uMnADPjmazU7FcKrGAd6ugl8kDBaYfVvdioJh+INOKRJDyaX6+XzPidy8Qt0qEjMfhiXwP3uf6MNZNDeKZ8rw==}
+  '@atlaskit/avatar@21.17.3':
+    resolution: {integrity: sha512-zQTkUPlfnKBIghlDtBwGpbvIapGnOun0Cz2CaBxJHbRjiat71ZV5gblsOe7MvQrVYJkXgbTyir3XnnfbtoqZzw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/badge@16.4.2':
-    resolution: {integrity: sha512-SODDBbojgH+pfXmZ2bVSAMBny8rmWzmpGIvSag5KlMizhKqRd2mVbhd0o0ttkzxOmlM4sPxrXvIvmf0/bah5lw==}
+  '@atlaskit/badge@16.4.3':
+    resolution: {integrity: sha512-4rdvRD2rPO5DsjHYoziR3DrcmAhk6wLMn8D8cfK9tc1F378zDOU4z2A9myf0a3xd9svWEqBF5VxK0SlVXkdMMQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -310,11 +310,6 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/ds-lib@3.1.0':
-    resolution: {integrity: sha512-1os/bwBxDkR1bqrnuW2fZR1uAm/tncI8W55fR31GKfpzI/WgmWABzzY9MdWim2kXjR4rsE0GvfjoNMJhJvfUVQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-
   '@atlaskit/ds-lib@3.2.0':
     resolution: {integrity: sha512-AKdaXUK9tjapS2OecJIWKwpz/Zb9qGU4Iv2NxcR0PSwvQ5a4ucZyqdY3gBsJY9fvEAKUZsyRZb0KzxwsRH97AQ==}
     peerDependencies:
@@ -325,8 +320,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/form@10.5.11':
-    resolution: {integrity: sha512-PpBWaWBJDtLq8aqSSHX8BbMgj5BhCQYNvrQtbegqzxhqCvwVDnmAf8Du20wjhLxJr0psutUWjWuxMGm1Ne85ng==}
+  '@atlaskit/form@10.5.12':
+    resolution: {integrity: sha512-He2vRdvJ57STGh+zEFEc5ZBvYLIIYTIrghm7oLRmaPwtfPBbHVJPrvuIc00lKPfVkrkcUC/+EDI6mFNvhL7OuA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -335,8 +330,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/icon@22.24.3':
-    resolution: {integrity: sha512-B3ZmrB4Qq9EdFruY5L2G1oKDqRst6xCabcoVJVN0zCB+esSGHM0AJVPB/+XEDHSOEYu17vRfc3cAVSOXY+w1Mg==}
+  '@atlaskit/icon@22.25.0':
+    resolution: {integrity: sha512-KmmtvLKKoHauR3754cmtDbY/nMOzQIbEEEzMgVh7SqA0zHWQiG2dNvjkGdTRHk/02qsjv6xVa0eK8tKoD689Wg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -360,13 +355,18 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/logo@14.3.4':
-    resolution: {integrity: sha512-cY2jNIvQfcx55QA3CLeiVCq9zISyrLNIAMKkrJnzfAhcqB0hTNDlzrt2PvtLrUMaRpP8iXmkJ3rNm3jgaadrhg==}
+  '@atlaskit/layering@0.8.0':
+    resolution: {integrity: sha512-0DzIhEh1PjZ1o/lfJ3XUd8YmAP9CBidsbUu6fIlLZ/XcIimSgCLjsgwVSfXf+yxjYcfsalByEpjXPF+RSA3uSA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/modal-dialog@12.17.10':
-    resolution: {integrity: sha512-p8IYwgelht29xQG6obVSGplpaStVOQAxaPoVWUtGBZF3mrxR/6H1OZUTVCXfeMudPXyISuah6geNdeogulpEwQ==}
+  '@atlaskit/logo@14.3.5':
+    resolution: {integrity: sha512-3KsbCyHCTUFqQjxmqbzOVeDXMLeOtyVgxygIwnkEHVudlEfvHhJgw8JBPhduprku5QzaDuMVzBaXhY9K8FVTsg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/modal-dialog@12.17.13':
+    resolution: {integrity: sha512-edUIoth0C9Oa2uGN5qorgdDB1o7do9qYH8mHGYAIYNjfuZx6e+2QBrQCOTx32dtUFdhzNw494+EtP8l5SP2wxg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -397,13 +397,13 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/radio@6.5.4':
-    resolution: {integrity: sha512-BiFGLNtPOWazzY45b+k4qzw9+o2KGuUaLiqHioSVQDRKvmKIceOdquo+THGJHX6TDQMnG8lP53MpIw0enhLxZw==}
+  '@atlaskit/radio@6.5.5':
+    resolution: {integrity: sha512-7vQQCpf0eYxmnxUvTrLjm4LAr9QzvXHLahwWmn5sywdeLinzkyCKuGbqs6P82Se5/oyhD9tkBjG1s71dYc9kGA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/spinner@16.3.3':
-    resolution: {integrity: sha512-x3kJG4LLz0KyIt1agvHY3sHw/7zTJ3QG/vOpJ8imPRZwvECDoVN7rgl+lyluWqvGulsBoK7TDlo0TMcTUVwiqA==}
+  '@atlaskit/spinner@16.3.4':
+    resolution: {integrity: sha512-e8KMhYIMHHr96hYd3MH8sleWkFRcHQMYaea/0DDKNSBeOFaGuO0uwqKbgh6ZC46gIzIcdGSKc/3HhTVp/joGCA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -427,13 +427,13 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/tokens@2.2.0':
-    resolution: {integrity: sha512-MaK+MRzLbh9YjGAjzzYifYIjjqd3ZloW2+p9eBskQGkGWleRJXbj+7mcwEbD9v8OLWYzLgKpfINi/1BHylEv3g==}
+  '@atlaskit/tokens@2.3.0':
+    resolution: {integrity: sha512-trtYLU1TQ2HPK0Ej3pJ8vLPz+madd55cRbxqm9tE9TjtHtsA2aiLN79Ab1fXnQ+zFX2FGIDcJf81iz9/OexuZQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/tooltip@18.9.2':
-    resolution: {integrity: sha512-YXIMo9vhRpx0rtFSAROBg2SCUgz6euFZ3jqJlniIPAt9DwWPoDlgm+UHZhHgxJm774SRirvopHNku4Ne/XYVRA==}
+  '@atlaskit/tooltip@18.9.3':
+    resolution: {integrity: sha512-EIgWvcsBNlC9psHO+yaNlrT2/yh53MT7qjdzLl6VjchxlkhySMDefLbHReU/VErlghaedI6RnarD6L3Vc8vkmA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -956,8 +956,8 @@ packages:
       '@parcel/watcher':
         optional: true
 
-  '@graphql-codegen/client-preset@4.5.0':
-    resolution: {integrity: sha512-0fFGSjpDhB7Jp6v+FQWDIeNJhL8VEiy3zeazyus3mGUELPaRQsoos2NczkDWnyMjSB1NHn4GrI53DB4TXkTAog==}
+  '@graphql-codegen/client-preset@4.5.1':
+    resolution: {integrity: sha512-UE2/Kz2eaxv35HIXFwlm2QwoUH77am6+qp54aeEWYq+T+WPwmIc6+YzqtGiT/VcaXgoOUSgidREGm9R6jKcf9g==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -967,8 +967,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/gql-tag-operations@4.0.11':
-    resolution: {integrity: sha512-EUQuBsYB5RtNlzBb/O0nJvbWC8HvPRWwVTHRf0ElOoQlJfRgfDom2GWmEM5hXa2afzMqB7AWxOH24ibOqiYnMQ==}
+  '@graphql-codegen/gql-tag-operations@4.0.12':
+    resolution: {integrity: sha512-v279i49FJ5dMmQXIGUgm6FtnnkxtJjVJWDNYh9JK4ppvOixdHp+PmEzW227DkLN6avhVxNnYdp/1gdRBwdWypw==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -989,26 +989,26 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/typed-document-node@5.0.11':
-    resolution: {integrity: sha512-btENKrSIUZ5UllS8sFhVZ+Y91VL0knK9gHxW/6/WzaCTxBQ+wOk07vQNeoWlvMrkl0QeUsGt6YvSo0SoPtsKdA==}
+  '@graphql-codegen/typed-document-node@5.0.12':
+    resolution: {integrity: sha512-Wsbc1AqC+MFp3maWPzrmmyHLuWCPB63qBBFLTKtO6KSsnn0KnLocBp475wkfBZnFISFvzwpJ0e6LV71gKfTofQ==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/typescript-operations@4.3.1':
-    resolution: {integrity: sha512-yW5Iia6IK1VKiPm3oeukYMQN5pEBLwRlG8ZzQA9beeLQ8PskKyz6mjar6U7dJ2hc8pv/qT4R8kcJOQ2RloniAQ==}
+  '@graphql-codegen/typescript-operations@4.4.0':
+    resolution: {integrity: sha512-oVlos2ySx8xIbbe8r5ZI6mOpI+OTeP14RmS2MchBJ6DL+S9G16O6+9V3Y8V22fTnmBTZkTfAAaBv4HYhhDGWVA==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/typescript@4.1.1':
-    resolution: {integrity: sha512-+o5LOT71K9hdO4lDVnRGkkET5RdlKvxlQGug8dZgRGrhE2/xoPBsKfLhg9AoJGYMauNZxKj3blABQxHOKEku6Q==}
+  '@graphql-codegen/typescript@4.1.2':
+    resolution: {integrity: sha512-GhPgfxgWEkBrvKR2y77OThus3K8B6U3ESo68l7+sHH1XiL2WapK5DdClViblJWKQerJRjfJu8tcaxQ8Wpk6Ogw==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/visitor-plugin-common@5.5.0':
-    resolution: {integrity: sha512-FSkxe/o4qKbpK+ipIT/jxZLYH0+3+XdIrJWsKlCW9wwJMF9mEJLJtzZNcxHSjz7+Eny6SUElAT2dqZ5XByxkog==}
+  '@graphql-codegen/visitor-plugin-common@5.6.0':
+    resolution: {integrity: sha512-PowcVPJbUqMC9xTJ/ZRX1p/fsdMZREc+69CM1YY+AlFng2lL0zsdBskFJSRoviQk2Ch9IPhKGyHxlJCy9X22tg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -1536,8 +1536,8 @@ packages:
   '@types/node@20.17.2':
     resolution: {integrity: sha512-OOHK4sjXqkL7yQ7VEEHcf6+0jSvKjWqwnaCtY7AKD/VLEvRHMsxxu7eI8ErnjxHS8VwmekD4PeVCpu4qZEZSxg==}
 
-  '@types/node@22.9.1':
-    resolution: {integrity: sha512-p8Yy/8sw1caA8CdRIQBG5tiLHmxtQKObCijiAa9Ez+d4+PRffM4054xbju0msf+cvhJpnFEeNjxmVT/0ipktrg==}
+  '@types/node@22.10.1':
+    resolution: {integrity: sha512-qKgsUwfHZV2WCWLAnVP1JqnpE6Im6h3Y0+fYgMTasNQ7V++CBX5OT1as0g0f+OyubbFqhf6XVNIsmN4IIhEgGQ==}
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
@@ -1860,8 +1860,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  axios@1.7.7:
-    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+  axios@1.7.8:
+    resolution: {integrity: sha512-Uu0wb7KNqK2t5K+YQyVCLM76prD5sRFjKHbJYCP1J7JFGEQ6nN7HWn9+04LAeiJ3ji54lgS/gZCH1oxyrf1SPw==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -2551,8 +2551,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  electron-log@5.2.2:
-    resolution: {integrity: sha512-fgvx6srjIHDowJD8WAAjoAXmiTyOz6JnGQoxOtk1mXw7o4S+HutuPHLCsk24xTXqWZgy4uO63NbedG+oEvldLw==}
+  electron-log@5.2.3:
+    resolution: {integrity: sha512-BabCiEV+p362LzY0EFE8hyzeGknzKDWSbhS0VFfRYQGA4FHWXWSfaKJlvTR9LFepNoORXxc/BWvqBXIPgsVFgA==}
     engines: {node: '>= 14'}
 
   electron-positioner@4.1.0:
@@ -2567,8 +2567,8 @@ packages:
   electron-updater@6.3.9:
     resolution: {integrity: sha512-2PJNONi+iBidkoC5D1nzT9XqsE8Q1X28Fn6xRQhO3YX8qRRyJ3mkV4F1aQsuRnYPqq6Hw+E51y27W75WgDoofw==}
 
-  electron@33.2.0:
-    resolution: {integrity: sha512-PVw1ICAQDPsnnsmpNFX/b1i/49h67pbSPxuIENd9K9WpGO1tsRaQt+K2bmXqTuoMJsbzIc75Ce8zqtuwBPqawA==}
+  electron@33.2.1:
+    resolution: {integrity: sha512-SG/nmSsK9Qg1p6wAW+ZfqU+AV8cmXMTIklUL18NnOKfZLlum4ZsDoVdmmmlL39ZmeCaq27dr7CgslRPahfoVJg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -4794,8 +4794,8 @@ packages:
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
-  tailwind-merge@2.5.4:
-    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
+  tailwind-merge@2.5.5:
+    resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
 
   tailwindcss@3.4.15:
     resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
@@ -4970,8 +4970,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  typescript@5.6.3:
-    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4985,6 +4985,9 @@ packages:
 
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -5285,11 +5288,11 @@ snapshots:
     optionalDependencies:
       graphql: 16.9.0
 
-  '@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.6.3)':
+  '@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.7.2)':
     dependencies:
-      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.6.3)
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.7.2)
       graphql: 16.9.0
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -5345,7 +5348,7 @@ snapshots:
 
   '@atlaskit/app-provider@1.4.1(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       bind-event-listener: 3.0.0
       react: 18.3.1
@@ -5353,16 +5356,16 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/avatar@21.17.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@21.17.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/focus-ring': 1.7.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       '@emotion/serialize': 1.3.2
@@ -5372,12 +5375,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/badge@16.4.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/badge@16.4.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5392,7 +5395,7 @@ snapshots:
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/ds-lib': 2.7.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/theme': 13.1.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5406,14 +5409,14 @@ snapshots:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/focus-ring': 1.7.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/interaction-context': 2.1.6(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 16.3.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/spinner': 16.3.4(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tooltip': 18.9.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tooltip': 18.9.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/visually-hidden': 1.5.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
@@ -5428,9 +5431,9 @@ snapshots:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.6.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5446,7 +5449,7 @@ snapshots:
   '@atlaskit/css-reset@6.11.2(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       react: 18.3.1
     transitivePeerDependencies:
@@ -5455,7 +5458,7 @@ snapshots:
 
   '@atlaskit/css@0.6.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@compiled/react': 0.18.1(react@18.3.1)
       react: 18.3.1
@@ -5464,16 +5467,6 @@ snapshots:
       - supports-color
 
   '@atlaskit/ds-lib@2.7.0(@types/react@18.3.12)(react@18.3.1)':
-    dependencies:
-      '@atlaskit/platform-feature-flags': 0.3.0
-      '@babel/runtime': 7.25.7
-      bind-event-listener: 3.0.0
-      react: 18.3.1
-      react-uid: 2.3.3(@types/react@18.3.12)(react@18.3.1)
-    transitivePeerDependencies:
-      - '@types/react'
-
-  '@atlaskit/ds-lib@3.1.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.25.7
@@ -5495,7 +5488,7 @@ snapshots:
 
   '@atlaskit/focus-ring@1.7.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@compiled/react': 0.18.1(react@18.3.1)
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
@@ -5504,14 +5497,14 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@10.5.11(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/form@10.5.12(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/heading': 3.1.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       final-form: 4.20.10
@@ -5527,7 +5520,7 @@ snapshots:
   '@atlaskit/heading@3.1.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5536,10 +5529,10 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/icon@22.24.3(@types/react@18.3.12)(react@18.3.1)':
+  '@atlaskit/icon@22.25.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5555,7 +5548,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/popper': 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       bind-event-listener: 3.0.0
@@ -5569,11 +5562,11 @@ snapshots:
   '@atlaskit/inline-message@12.4.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 20.3.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/inline-dialog': 15.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5598,11 +5591,22 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@atlaskit/logo@14.3.4(@types/react@18.3.12)(react@18.3.1)':
+  '@atlaskit/layering@0.8.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.25.7
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+      tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@atlaskit/logo@14.3.5(@types/react@18.3.12)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5610,29 +5614,28 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@12.17.10(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@12.17.13(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 13.3.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/focus-ring': 1.7.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/layering': 0.7.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/layering': 0.8.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/motion': 1.9.1(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/portal': 4.9.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/pragmatic-drag-and-drop': 1.4.0
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       bind-event-listener: 3.0.0
       raf-schd: 4.0.3
       react: 18.3.1
       react-focus-lock: 2.13.2(@types/react@18.3.12)(react@18.3.1)
-      react-focus-lock-next: react-focus-lock@2.13.2(@types/react@18.3.12)(react@18.3.1)
       react-scrolllock: 5.0.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
@@ -5688,7 +5691,7 @@ snapshots:
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/interaction-context': 2.1.6(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/visually-hidden': 1.5.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@compiled/react': 0.18.1(react@18.3.1)
@@ -5702,12 +5705,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/radio@6.5.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/radio@6.5.5(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5716,11 +5719,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/spinner@16.3.3(@types/react@18.3.12)(react@18.3.1)':
+  '@atlaskit/spinner@16.3.4(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@atlaskit/interaction-context': 2.1.6(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5732,7 +5735,7 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5745,7 +5748,7 @@ snapshots:
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       react: 18.3.1
     transitivePeerDependencies:
@@ -5756,7 +5759,7 @@ snapshots:
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       react: 18.3.1
     transitivePeerDependencies:
@@ -5767,11 +5770,11 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/icon': 22.24.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/icon': 22.25.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 13.2.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       react: 18.3.1
@@ -5780,9 +5783,9 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/tokens@2.2.0(@types/react@18.3.12)(react@18.3.1)':
+  '@atlaskit/tokens@2.3.0(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.25.7
       '@babel/traverse': 7.25.7
@@ -5793,16 +5796,16 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/tooltip@18.9.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/tooltip@18.9.3(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/layering': 0.7.3(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/layering': 0.8.0(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/motion': 1.9.1(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/popper': 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/portal': 4.9.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.12)(react@18.3.1)
-      '@atlaskit/tokens': 2.2.0(@types/react@18.3.12)(react@18.3.1)
+      '@atlaskit/tokens': 2.3.0(@types/react@18.3.12)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
       bind-event-listener: 3.0.0
@@ -6425,11 +6428,11 @@ snapshots:
 
   '@gar/promisify@1.1.3': {}
 
-  '@gql.tada/internal@1.0.8(graphql@16.9.0)(typescript@5.6.3)':
+  '@gql.tada/internal@1.0.8(graphql@16.9.0)(typescript@5.7.2)':
     dependencies:
       '@0no-co/graphql.web': 1.0.8(graphql@16.9.0)
       graphql: 16.9.0
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   '@graphql-codegen/add@5.0.3(graphql@16.9.0)':
     dependencies:
@@ -6437,31 +6440,31 @@ snapshots:
       graphql: 16.9.0
       tslib: 2.6.3
 
-  '@graphql-codegen/cli@5.0.3(@parcel/watcher@2.5.0)(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.6.3)':
+  '@graphql-codegen/cli@5.0.3(@parcel/watcher@2.5.0)(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.7.2)':
     dependencies:
       '@babel/generator': 7.25.7
       '@babel/template': 7.25.7
       '@babel/types': 7.25.7
-      '@graphql-codegen/client-preset': 4.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/client-preset': 4.5.1(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-codegen/core': 4.0.2(graphql@16.9.0)
       '@graphql-codegen/plugin-helpers': 5.0.4(graphql@16.9.0)
       '@graphql-tools/apollo-engine-loader': 8.0.2(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/code-file-loader': 8.1.4(graphql@16.9.0)
       '@graphql-tools/git-loader': 8.0.8(graphql@16.9.0)
-      '@graphql-tools/github-loader': 8.0.2(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-tools/github-loader': 8.0.2(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/graphql-file-loader': 8.0.2(graphql@16.9.0)
       '@graphql-tools/json-file-loader': 8.0.2(graphql@16.9.0)
       '@graphql-tools/load': 8.0.3(graphql@16.9.0)
-      '@graphql-tools/prisma-loader': 8.0.9(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-tools/url-loader': 8.0.7(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-tools/prisma-loader': 8.0.9(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-tools/url-loader': 8.0.7(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@whatwg-node/fetch': 0.9.21
       chalk: 4.1.2
-      cosmiconfig: 8.3.6(typescript@5.6.3)
+      cosmiconfig: 8.3.6(typescript@5.7.2)
       debounce: 1.2.1
       detect-indent: 6.1.0
       graphql: 16.9.0
-      graphql-config: 5.1.3(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.6.3)
+      graphql-config: 5.1.3(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.7.2)
       inquirer: 8.2.6
       is-glob: 4.0.3
       jiti: 1.21.6
@@ -6487,17 +6490,17 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@graphql-codegen/client-preset@4.5.0(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/client-preset@4.5.1(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@babel/helper-plugin-utils': 7.25.7
       '@babel/template': 7.25.7
       '@graphql-codegen/add': 5.0.3(graphql@16.9.0)
-      '@graphql-codegen/gql-tag-operations': 4.0.11(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/gql-tag-operations': 4.0.12(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
-      '@graphql-codegen/typed-document-node': 5.0.11(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/typescript': 4.1.1(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/typescript-operations': 4.3.1(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 5.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/typed-document-node': 5.0.12(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/typescript': 4.1.2(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/typescript-operations': 4.4.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/visitor-plugin-common': 5.6.0(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/documents': 1.0.1(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
@@ -6515,10 +6518,10 @@ snapshots:
       graphql: 16.9.0
       tslib: 2.6.3
 
-  '@graphql-codegen/gql-tag-operations@4.0.11(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/gql-tag-operations@4.0.12(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 5.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/visitor-plugin-common': 5.6.0(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       auto-bind: 4.0.0
       graphql: 16.9.0
@@ -6554,10 +6557,10 @@ snapshots:
       graphql: 16.9.0
       tslib: 2.6.3
 
-  '@graphql-codegen/typed-document-node@5.0.11(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/typed-document-node@5.0.12(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 5.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/visitor-plugin-common': 5.6.0(encoding@0.1.13)(graphql@16.9.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       graphql: 16.9.0
@@ -6566,11 +6569,11 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript-operations@4.3.1(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/typescript-operations@4.4.0(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
-      '@graphql-codegen/typescript': 4.1.1(encoding@0.1.13)(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 5.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/typescript': 4.1.2(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/visitor-plugin-common': 5.6.0(encoding@0.1.13)(graphql@16.9.0)
       auto-bind: 4.0.0
       graphql: 16.9.0
       tslib: 2.6.3
@@ -6578,11 +6581,11 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript@4.1.1(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/typescript@4.1.2(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
       '@graphql-codegen/schema-ast': 4.1.0(graphql@16.9.0)
-      '@graphql-codegen/visitor-plugin-common': 5.5.0(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-codegen/visitor-plugin-common': 5.6.0(encoding@0.1.13)(graphql@16.9.0)
       auto-bind: 4.0.0
       graphql: 16.9.0
       tslib: 2.6.3
@@ -6590,7 +6593,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/visitor-plugin-common@5.5.0(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-codegen/visitor-plugin-common@5.6.0(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@16.9.0)
       '@graphql-tools/optimize': 2.0.0(graphql@16.9.0)
@@ -6666,14 +6669,14 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@graphql-tools/executor-http@1.1.7(@types/node@22.9.1)(graphql@16.9.0)':
+  '@graphql-tools/executor-http@1.1.7(@types/node@22.10.1)(graphql@16.9.0)':
     dependencies:
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@repeaterjs/repeater': 3.0.6
       '@whatwg-node/fetch': 0.9.21
       extract-files: 11.0.0
       graphql: 16.9.0
-      meros: 1.3.0(@types/node@22.9.1)
+      meros: 1.3.0(@types/node@22.10.1)
       tslib: 2.7.0
       value-or-promise: 1.0.12
     transitivePeerDependencies:
@@ -6712,10 +6715,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/github-loader@8.0.2(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-tools/github-loader@8.0.2(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@ardatan/sync-fetch': 0.0.1(encoding@0.1.13)
-      '@graphql-tools/executor-http': 1.1.7(@types/node@22.9.1)(graphql@16.9.0)
+      '@graphql-tools/executor-http': 1.1.7(@types/node@22.10.1)(graphql@16.9.0)
       '@graphql-tools/graphql-tag-pluck': 8.3.3(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@whatwg-node/fetch': 0.9.21
@@ -6783,9 +6786,9 @@ snapshots:
       graphql: 16.9.0
       tslib: 2.7.0
 
-  '@graphql-tools/prisma-loader@8.0.9(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-tools/prisma-loader@8.0.9(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
-      '@graphql-tools/url-loader': 8.0.7(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-tools/url-loader': 8.0.7(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@types/js-yaml': 4.0.9
       '@whatwg-node/fetch': 0.9.21
@@ -6827,12 +6830,12 @@ snapshots:
       tslib: 2.7.0
       value-or-promise: 1.0.12
 
-  '@graphql-tools/url-loader@8.0.7(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)':
+  '@graphql-tools/url-loader@8.0.7(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)':
     dependencies:
       '@ardatan/sync-fetch': 0.0.1(encoding@0.1.13)
       '@graphql-tools/delegate': 10.0.26(graphql@16.9.0)
       '@graphql-tools/executor-graphql-ws': 1.3.1(graphql@16.9.0)
-      '@graphql-tools/executor-http': 1.1.7(@types/node@22.9.1)(graphql@16.9.0)
+      '@graphql-tools/executor-http': 1.1.7(@types/node@22.10.1)(graphql@16.9.0)
       '@graphql-tools/executor-legacy-ws': 1.1.1(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
       '@graphql-tools/wrap': 10.0.10(graphql@16.9.0)
@@ -6892,27 +6895,27 @@ snapshots:
   '@jest/console@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       jest-message-util: 29.7.0
       jest-util: 29.7.0
       slash: 3.0.0
 
-  '@jest/core@29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))':
+  '@jest/core@29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))':
     dependencies:
       '@jest/console': 29.7.0
       '@jest/reporters': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       ci-info: 3.9.0
       exit: 0.1.2
       graceful-fs: 4.2.11
       jest-changed-files: 29.7.0
-      jest-config: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      jest-config: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       jest-haste-map: 29.7.0
       jest-message-util: 29.7.0
       jest-regex-util: 29.6.3
@@ -6937,7 +6940,7 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-mock: 29.7.0
 
   '@jest/expect-utils@29.7.0':
@@ -6955,7 +6958,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -6977,7 +6980,7 @@ snapshots:
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
       '@jridgewell/trace-mapping': 0.3.25
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       collect-v8-coverage: 1.0.2
       exit: 0.1.2
@@ -7047,7 +7050,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -7263,7 +7266,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       '@types/responselike': 1.0.3
 
   '@types/debug@4.1.12':
@@ -7284,16 +7287,16 @@ snapshots:
 
   '@types/fs-extra@9.0.13':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/history@4.7.11': {}
 
@@ -7320,7 +7323,7 @@ snapshots:
 
   '@types/jsdom@20.0.1':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       '@types/tough-cookie': 4.0.5
       parse5: 7.1.2
 
@@ -7328,7 +7331,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/minimatch@5.1.2': {}
 
@@ -7338,15 +7341,15 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@22.9.1':
+  '@types/node@22.10.1':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.20.0
 
   '@types/parse-json@4.0.2': {}
 
   '@types/plist@3.0.5':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       xmlbuilder: 15.1.1
     optional: true
 
@@ -7370,7 +7373,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/stack-utils@2.0.3': {}
 
@@ -7381,7 +7384,7 @@ snapshots:
 
   '@types/ws@8.5.12':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -7391,7 +7394,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
     optional: true
 
   '@webassemblyjs/ast@1.12.1':
@@ -7763,7 +7766,7 @@ snapshots:
       postcss: 8.4.49
       postcss-value-parser: 4.2.0
 
-  axios@1.7.7:
+  axios@1.7.8:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.0
@@ -8198,7 +8201,7 @@ snapshots:
   config-file-ts@0.2.8-rc1:
     dependencies:
       glob: 10.4.5
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   console-control-strings@1.1.0: {}
 
@@ -8235,23 +8238,23 @@ snapshots:
       path-type: 4.0.0
       yaml: 1.10.2
 
-  cosmiconfig@8.3.6(typescript@5.6.3):
+  cosmiconfig@8.3.6(typescript@5.7.2):
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
-      typescript: 5.6.3
+      typescript: 5.7.2
 
-  cosmiconfig@9.0.0(typescript@5.6.3):
+  cosmiconfig@9.0.0(typescript@5.7.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   crc-32@1.2.2: {}
 
@@ -8265,13 +8268,13 @@ snapshots:
       buffer: 5.7.1
     optional: true
 
-  create-jest@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  create-jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
       '@jest/types': 29.6.3
       chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.11
-      jest-config: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      jest-config: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       jest-util: 29.7.0
       prompts: 2.4.2
     transitivePeerDependencies:
@@ -8619,7 +8622,7 @@ snapshots:
       - electron-builder-squirrel-windows
       - supports-color
 
-  electron-log@5.2.2: {}
+  electron-log@5.2.3: {}
 
   electron-positioner@4.1.0: {}
 
@@ -8650,7 +8653,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@33.2.0:
+  electron@33.2.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.17.2
@@ -9059,15 +9062,15 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-config@5.1.3(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.6.3):
+  graphql-config@5.1.3(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)(typescript@5.7.2):
     dependencies:
       '@graphql-tools/graphql-file-loader': 8.0.2(graphql@16.9.0)
       '@graphql-tools/json-file-loader': 8.0.2(graphql@16.9.0)
       '@graphql-tools/load': 8.0.3(graphql@16.9.0)
       '@graphql-tools/merge': 9.0.8(graphql@16.9.0)
-      '@graphql-tools/url-loader': 8.0.7(@types/node@22.9.1)(encoding@0.1.13)(graphql@16.9.0)
+      '@graphql-tools/url-loader': 8.0.7(@types/node@22.10.1)(encoding@0.1.13)(graphql@16.9.0)
       '@graphql-tools/utils': 10.5.5(graphql@16.9.0)
-      cosmiconfig: 8.3.6(typescript@5.6.3)
+      cosmiconfig: 8.3.6(typescript@5.7.2)
       graphql: 16.9.0
       jiti: 2.3.3
       minimatch: 9.0.5
@@ -9439,7 +9442,7 @@ snapshots:
       '@jest/expect': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.5.3(babel-plugin-macros@3.1.0)
@@ -9459,16 +9462,16 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  jest-cli@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
-      '@jest/core': 29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      '@jest/core': 29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
       chalk: 4.1.2
-      create-jest: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      create-jest: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       exit: 0.1.2
       import-local: 3.2.0
-      jest-config: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      jest-config: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       jest-util: 29.7.0
       jest-validate: 29.7.0
       yargs: 17.7.2
@@ -9478,7 +9481,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jest-config@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  jest-config@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
       '@babel/core': 7.25.7
       '@jest/test-sequencer': 29.7.0
@@ -9503,8 +9506,8 @@ snapshots:
       slash: 3.0.0
       strip-json-comments: 3.1.1
     optionalDependencies:
-      '@types/node': 22.9.1
-      ts-node: 10.9.2(@types/node@22.9.1)(typescript@5.6.3)
+      '@types/node': 22.10.1
+      ts-node: 10.9.2(@types/node@22.10.1)(typescript@5.7.2)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -9534,7 +9537,7 @@ snapshots:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
       '@types/jsdom': 20.0.1
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-mock: 29.7.0
       jest-util: 29.7.0
       jsdom: 20.0.3
@@ -9548,7 +9551,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -9558,7 +9561,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -9597,7 +9600,7 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-util: 29.7.0
 
   jest-pnp-resolver@1.2.3(jest-resolve@29.7.0):
@@ -9632,7 +9635,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       emittery: 0.13.1
       graceful-fs: 4.2.11
@@ -9660,7 +9663,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       cjs-module-lexer: 1.4.1
       collect-v8-coverage: 1.0.2
@@ -9706,7 +9709,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -9725,7 +9728,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.13.1
@@ -9734,23 +9737,23 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
-      '@jest/core': 29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      '@jest/core': 29.7.0(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       '@jest/types': 29.6.3
       import-local: 3.2.0
-      jest-cli: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      jest-cli: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -9990,18 +9993,18 @@ snapshots:
 
   mdn-data@2.0.30: {}
 
-  menubar@9.5.1(electron@33.2.0):
+  menubar@9.5.1(electron@33.2.1):
     dependencies:
-      electron: 33.2.0
+      electron: 33.2.1
       electron-positioner: 4.1.0
 
   merge-stream@2.0.0: {}
 
   merge2@1.4.1: {}
 
-  meros@1.3.0(@types/node@22.9.1):
+  meros@1.3.0(@types/node@22.10.1):
     optionalDependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
 
   micromatch@4.0.8:
     dependencies:
@@ -10377,17 +10380,17 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.49
 
-  postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.1
     optionalDependencies:
       postcss: 8.4.49
-      ts-node: 10.9.2(@types/node@22.9.1)(typescript@5.6.3)
+      ts-node: 10.9.2(@types/node@22.10.1)(typescript@5.7.2)
 
-  postcss-loader@8.1.1(postcss@8.4.49)(typescript@5.6.3)(webpack@5.96.1):
+  postcss-loader@8.1.1(postcss@8.4.49)(typescript@5.7.2)(webpack@5.96.1):
     dependencies:
-      cosmiconfig: 9.0.0(typescript@5.6.3)
+      cosmiconfig: 9.0.0(typescript@5.7.2)
       jiti: 1.21.6
       postcss: 8.4.49
       semver: 7.6.3
@@ -11078,9 +11081,9 @@ snapshots:
 
   symbol-tree@3.2.4: {}
 
-  tailwind-merge@2.5.4: {}
+  tailwind-merge@2.5.5: {}
 
-  tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)):
+  tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -11099,7 +11102,7 @@ snapshots:
       postcss: 8.4.49
       postcss-import: 15.1.0(postcss@8.4.49)
       postcss-js: 4.0.1(postcss@8.4.49)
-      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       postcss-nested: 6.2.0(postcss@8.4.49)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
@@ -11210,18 +11213,18 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-jest@29.2.5(@babel/core@7.25.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.7))(jest@29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3)))(typescript@5.6.3):
+  ts-jest@29.2.5(@babel/core@7.25.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.25.7))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(typescript@5.7.2):
     dependencies:
       bs-logger: 0.2.6
       ejs: 3.1.10
       fast-json-stable-stringify: 2.1.0
-      jest: 29.7.0(@types/node@22.9.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3))
+      jest: 29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2))
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.6.3
-      typescript: 5.6.3
+      typescript: 5.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
       '@babel/core': 7.25.7
@@ -11229,33 +11232,33 @@ snapshots:
       '@jest/types': 29.6.3
       babel-jest: 29.7.0(@babel/core@7.25.7)
 
-  ts-loader@9.5.1(typescript@5.6.3)(webpack@5.96.1):
+  ts-loader@9.5.1(typescript@5.7.2)(webpack@5.96.1):
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.17.1
       micromatch: 4.0.8
       semver: 7.6.3
       source-map: 0.7.4
-      typescript: 5.6.3
+      typescript: 5.7.2
       webpack: 5.96.1(webpack-cli@5.1.4)
 
   ts-log@2.2.7: {}
 
-  ts-node@10.9.2(@types/node@22.9.1)(typescript@5.6.3):
+  ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.9.1
+      '@types/node': 22.10.1
       acorn: 8.12.1
       acorn-walk: 8.3.4
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.6.3
+      typescript: 5.7.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -11270,13 +11273,15 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typescript@5.6.3: {}
+  typescript@5.7.2: {}
 
   ua-parser-js@1.0.39: {}
 
   unc-path-regex@0.1.2: {}
 
   undici-types@6.19.8: {}
+
+  undici-types@6.20.0: {}
 
   unicorn-magic@0.1.0: {}
 

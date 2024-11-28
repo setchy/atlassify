@@ -35,24 +35,24 @@
   },
   "homepage": "https://atlassify.io/",
   "dependencies": {
-    "@astrojs/solid-js": "4.4.3",
+    "@astrojs/solid-js": "4.4.4",
     "@astrojs/tailwind": "5.1.2",
     "@iconify-json/line-md": "1.2.2",
     "@iconify-json/mdi": "1.2.1",
     "@kobalte/core": "0.13.7",
     "@octokit/openapi-types": "22.2.0",
     "@tailwindcss/typography": "0.5.15",
-    "astro": "4.16.13",
-    "astro-icon": "1.1.2",
-    "class-variance-authority": "0.7.0",
+    "astro": "4.16.16",
+    "astro-icon": "1.1.4",
+    "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "marked": "15.0.1",
+    "marked": "15.0.2",
     "octokit": "4.0.2",
     "sharp": "0.33.5",
     "solid-js": "1.9.3",
-    "solid-markdown": "2.0.13",
-    "tailwind-merge": "2.5.4",
+    "solid-markdown": "2.0.14",
+    "tailwind-merge": "2.5.5",
     "tailwindcss": "3.4.15",
     "tailwindcss-animate": "1.0.7"
   },
@@ -60,7 +60,7 @@
     "@biomejs/biome": "1.9.4",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@9.14.1",
+  "packageManager": "pnpm@9.14.2",
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }
