@@ -45,8 +45,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       marked:
-        specifier: 15.0.2
-        version: 15.0.2
+        specifier: 15.0.3
+        version: 15.0.3
       octokit:
         specifier: 4.0.2
         version: 4.0.2
@@ -1669,8 +1669,8 @@ packages:
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
 
-  marked@15.0.2:
-    resolution: {integrity: sha512-85RUkoYKIVB21PbMKrnD6aCl9ws+XKEyhJNMbLn206NyD3jbBo7Ec7Wi4Jrsn4dV1a2ng7K/jfkmIN0DNoS41w==}
+  marked@15.0.3:
+    resolution: {integrity: sha512-Ai0cepvl2NHnTcO9jYDtcOEtVBNVYR31XnEA3BndO7f5As1wzpcOceSUM8FDkNLJNIODcLpDTWay/qQhqbuMvg==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -4323,7 +4323,7 @@ snapshots:
 
   markdown-table@3.0.3: {}
 
-  marked@15.0.2: {}
+  marked@15.0.3: {}
 
   mdast-util-definitions@6.0.0:
     dependencies:
