@@ -92,7 +92,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 data-testid="theme-system--radio-label"
               >
                 <input
-                  class="css-t4vzni"
+                  class="css-3sn8x3"
                   data-testid="theme-system--radio-input"
                   name="theme"
                   tabindex="0"
@@ -111,7 +111,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               >
                 <input
                   checked=""
-                  class="css-t4vzni"
+                  class="css-3sn8x3"
                   data-testid="theme-light--radio-input"
                   name="theme"
                   tabindex="0"
@@ -129,7 +129,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 data-testid="theme-dark--radio-label"
               >
                 <input
-                  class="css-t4vzni"
+                  class="css-3sn8x3"
                   data-testid="theme-dark--radio-input"
                   name="theme"
                   tabindex="0"
@@ -581,7 +581,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               >
                 <input
                   checked=""
-                  class="css-t4vzni"
+                  class="css-3sn8x3"
                   name="openLinks"
                   tabindex="0"
                   type="radio"
@@ -597,7 +597,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-exvs2c"
               >
                 <input
-                  class="css-t4vzni"
+                  class="css-3sn8x3"
                   name="openLinks"
                   tabindex="0"
                   type="radio"
