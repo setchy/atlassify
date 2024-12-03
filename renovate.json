@@ -17,20 +17,25 @@
       "rangeStrategy": "auto"
     },
     {
-      "description": "Rule to fetch changelog for Atlassian atlaskit packages",
+      "description": "Wait 7 days before suggesting new updates",
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "7 days",
+      "internalChecksFilter": "strict"
+    },
+    {
+      "description": "Fetch changelog details for Atlassian atlaskit packages",
       "extends": ["packages:atlaskit"],
       "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
-      "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}",
-      "minimumReleaseAge": "3 days"
+      "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
     }
   ],
   "customManagers": [
     {
+      "description": "Keep sonar.projectVersion variables in sonar-project.properties in-sync",
       "customType": "regex",
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
-      "description": "Update sonar.projectVersion variables in sonar-project.properties",
       "fileMatch": ["sonar-project.properties"],
       "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"]
     }
