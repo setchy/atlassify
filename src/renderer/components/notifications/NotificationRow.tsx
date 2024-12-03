@@ -2,7 +2,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 
 import Avatar from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
-import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import NodeIcon from '@atlaskit/icon/core/node';
 import { Box, Flex, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -127,10 +127,7 @@ export const NotificationRow: FC<INotificationRow> = ({
               <IconButton
                 label="Mark as read"
                 icon={(iconProps) => (
-                  <HipchatMediaAttachmentCountIcon
-                    {...iconProps}
-                    size="small"
-                  />
+                  <NodeIcon {...iconProps} LEGACY_size="small" />
                 )}
                 shape="circle"
                 spacing="compact"

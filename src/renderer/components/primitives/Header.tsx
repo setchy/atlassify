@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
-import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
+import ArrowLeftIcon from '@atlaskit/icon/utility/arrow-left';
 import { Box, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 

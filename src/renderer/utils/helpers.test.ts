@@ -1,6 +1,6 @@
-import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronLeftIcon from '@atlaskit/icon/glyph/chevron-left';
-import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right';
+import ChevronDownIcon from '@atlaskit/icon/utility/chevron-down';
+import ChevronLeftIcon from '@atlaskit/icon/utility/chevron-left';
+import ChevronRightIcon from '@atlaskit/icon/utility/chevron-right';
 
 import {
   mockAtlassifyNotifications,

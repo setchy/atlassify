@@ -11,8 +11,8 @@ import {
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import CrossIcon from '@atlaskit/icon/glyph/cross';
-import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import CloseIcon from '@atlaskit/icon/core/close';
+import NodeIcon from '@atlaskit/icon/core/node';
 import { BitbucketIcon } from '@atlaskit/logo';
 import Modal, {
   ModalBody,
@@ -180,10 +180,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <IconButton
                 label="Mark all account notifications as read"
                 icon={(iconProps) => (
-                  <HipchatMediaAttachmentCountIcon
-                    {...iconProps}
-                    size="small"
-                  />
+                  <NodeIcon {...iconProps} LEGACY_size="small" />
                 )}
                 shape="circle"
                 spacing="compact"
@@ -245,7 +242,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 <Flex xcss={closeContainerStyles} justifyContent="end">
                   <IconButton
                     appearance="subtle"
-                    icon={CrossIcon}
+                    icon={CloseIcon}
                     label="Close"
                     onClick={() => closeModal()}
                     testId="account-mark-as-read-close"
