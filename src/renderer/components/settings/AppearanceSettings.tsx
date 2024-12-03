@@ -6,11 +6,11 @@ import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
-import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
+import RetryIcon from '@atlaskit/icon/glyph/retry';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
-import { setGlobalTheme, token } from '@atlaskit/tokens';
+import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { namespacedEvent } from '../../../shared/utils';
@@ -126,12 +126,7 @@ export const AppearanceSettings: FC = () => {
           <Tooltip content="Reset Zoom" position="bottom">
             <IconButton
               label="Reset Zoom"
-              icon={(iconProps) => (
-                <SelectClearIcon
-                  {...iconProps}
-                  primaryColor={token('color.icon.accent.red')}
-                />
-              )}
+              icon={RetryIcon}
               shape="circle"
               spacing="compact"
               onClick={() => webFrame.setZoomLevel(0)}
