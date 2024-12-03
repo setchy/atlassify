@@ -257,7 +257,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                       aria-hidden="true"
                       class="css-snhnyn"
                       data-vc="icon-undefined"
-                      style="--icon-primary-color: var(--ds-icon-accent-red); --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                     >
                       <svg
                         height="24"
@@ -266,17 +266,21 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         width="24"
                       >
                         <g
+                          fill="currentcolor"
                           fill-rule="evenodd"
                         >
-                          <circle
-                            cx="12"
-                            cy="12"
-                            fill="currentcolor"
-                            r="9"
+                          <path
+                            d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
+                            fill-rule="nonzero"
                           />
                           <path
-                            d="M16.155 14.493a1.174 1.174 0 1 1-1.662 1.663L12 13.662l-2.494 2.494a1.17 1.17 0 0 1-1.662 0 1.176 1.176 0 0 1 0-1.663L10.337 12 7.844 9.507a1.176 1.176 0 0 1 1.662-1.662L12 10.338l2.493-2.493a1.174 1.174 0 1 1 1.662 1.662L13.662 12z"
-                            fill="inherit"
+                            d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
+                            fill-rule="nonzero"
+                          />
+                          <circle
+                            cx="7"
+                            cy="15.61"
+                            r="1"
                           />
                         </g>
                       </svg>
