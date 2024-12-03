@@ -145,7 +145,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </div>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-1v6wdk"
           >
             <span
               class="css-19g3t4k"
@@ -154,144 +154,163 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               Zoom:
             </span>
             <div
-              class="css-mrgpd6"
+              class="css-1cdf62i"
             >
               <div
-                role="presentation"
+                class="css-1w8rrjt"
               >
-                <button
-                  class="css-vueuiv"
-                  data-testid="settings-zoom-out"
-                  type="button"
+                <div
+                  class="css-1s736x3"
                 >
-                  <span
-                    class="css-1spmf3f"
+                  <div
+                    class="css-mrgpd6"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <div
+                      class="css-13secbl"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                      <span
+                        class="css-b0hel9"
                       >
-                        <path
-                          d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
+                        100
+                        %
+                      </span>
+                    </div>
+                    <div
+                      role="presentation"
                     >
-                      Zoom Out
-                    </span>
-                  </span>
-                </button>
-              </div>
-              <span
-                class="css-1wkl091"
-              >
-                <span
-                  class="css-f9etm4"
-                >
-                  100
-                  %
-                </span>
-              </span>
-              <div
-                role="presentation"
-              >
-                <button
-                  class="css-vueuiv"
-                  data-testid="settings-zoom-in"
-                  type="button"
-                >
-                  <span
-                    class="css-1spmf3f"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                      <button
+                        class="css-1mbcrti"
+                        data-testid="settings-zoom-out"
+                        type="button"
                       >
-                        <path
-                          d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
-                    >
-                      Zoom In
-                    </span>
-                  </span>
-                </button>
-              </div>
-              <div
-                role="presentation"
-              >
-                <button
-                  class="css-vueuiv"
-                  data-testid="settings-zoom-reset"
-                  type="button"
-                >
-                  <span
-                    class="css-1spmf3f"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <g
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                        <span
+                          class="css-1spmf3f"
                         >
-                          <path
-                            d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
-                            fill-rule="nonzero"
-                          />
-                          <path
-                            d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
-                            fill-rule="nonzero"
-                          />
-                          <circle
-                            cx="7"
-                            cy="15.61"
-                            r="1"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                    <span
-                      class="css-b5o75w"
+                          <span
+                            aria-hidden="true"
+                            class="css-snhnyn"
+                            data-vc="icon-undefined"
+                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                          >
+                            <svg
+                              height="24"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <path
+                                d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="css-b5o75w"
+                          >
+                            Zoom out
+                          </span>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      role="presentation"
                     >
-                      Reset Zoom
-                    </span>
-                  </span>
-                </button>
+                      <button
+                        class="css-1mbcrti"
+                        data-testid="settings-zoom-in"
+                        type="button"
+                      >
+                        <span
+                          class="css-1spmf3f"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="css-snhnyn"
+                            data-vc="icon-undefined"
+                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                          >
+                            <svg
+                              height="24"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <path
+                                d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="css-b5o75w"
+                          >
+                            Zoom in
+                          </span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="css-hfhhah"
+                />
+                <div
+                  class="css-1uzrn2e"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <button
+                      class="css-1mbcrti"
+                      data-testid="settings-zoom-reset"
+                      type="button"
+                    >
+                      <span
+                        class="css-1spmf3f"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="css-snhnyn"
+                          data-vc="icon-undefined"
+                          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        >
+                          <svg
+                            height="24"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <g
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            >
+                              <path
+                                d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
+                                fill-rule="nonzero"
+                              />
+                              <path
+                                d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
+                                fill-rule="nonzero"
+                              />
+                              <circle
+                                cx="7"
+                                cy="15.61"
+                                r="1"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="css-b5o75w"
+                        >
+                          Reset zoom
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
