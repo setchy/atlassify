@@ -1,13 +1,12 @@
 import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
 
-import Badge from '@atlaskit/badge';
-import { IconButton } from '@atlaskit/button/new';
+import { IconButton, SplitButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
 import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import RetryIcon from '@atlaskit/icon/glyph/retry';
-import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
 import { setGlobalTheme } from '@atlaskit/tokens';
@@ -27,6 +26,10 @@ export const AppearanceSettings: FC = () => {
   const [zoomPercentage, setZoomPercentage] = useState(
     zoomLevelToPercentage(webFrame.getZoomLevel()),
   );
+
+  const zoomBoxStyles = xcss({
+    backgroundColor: 'color.background.accent.gray.subtlest',
+  });
 
   /* istanbul ignore next - testing this is not important */
   useEffect(() => {
@@ -72,7 +75,7 @@ export const AppearanceSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">Appearance</Heading>
 
-      <Inline space="space.100">
+      <Inline space="space.100" alignBlock="start">
         <Text id="theme-label" weight="medium">
           Theme:
         </Text>
@@ -87,52 +90,58 @@ export const AppearanceSettings: FC = () => {
         />
       </Inline>
 
-      <Inline space="space.100">
+      <Inline space="space.100" alignBlock="center">
         <Text id="theme-label" weight="medium">
           Zoom:
         </Text>
-        <Inline alignBlock="center">
-          <Tooltip content="Zoom Out" position="bottom">
-            <IconButton
-              label="Zoom Out"
-              icon={MediaServicesZoomOutIcon}
-              shape="circle"
-              spacing="compact"
-              onClick={() =>
-                zoomPercentage > 0 &&
-                webFrame.setZoomLevel(
-                  zoomPercentageToLevel(zoomPercentage - 10),
-                )
-              }
-              testId="settings-zoom-out"
-            />
-          </Tooltip>
-          <Badge max={false}>{zoomPercentage.toFixed(0)}%</Badge>
-          <Tooltip content="Zoom In" position="bottom">
-            <IconButton
-              label="Zoom In"
-              icon={MediaServicesZoomInIcon}
-              shape="circle"
-              spacing="compact"
-              onClick={() =>
-                zoomPercentage < 120 &&
-                webFrame.setZoomLevel(
-                  zoomPercentageToLevel(zoomPercentage + 10),
-                )
-              }
-              testId="settings-zoom-in"
-            />
-          </Tooltip>
-          <Tooltip content="Reset Zoom" position="bottom">
-            <IconButton
-              label="Reset Zoom"
-              icon={RetryIcon}
-              shape="circle"
-              spacing="compact"
-              onClick={() => webFrame.setZoomLevel(0)}
-              testId="settings-zoom-reset"
-            />
-          </Tooltip>
+        <Inline xcss={zoomBoxStyles}>
+          <SplitButton spacing="compact">
+            <Inline alignBlock="center">
+              <Box paddingInline="space.150">
+                <Text>{zoomPercentage.toFixed(0)}%</Text>
+              </Box>
+              <Tooltip content="Zoom out" position="bottom">
+                <IconButton
+                  label="Zoom out"
+                  icon={MediaServicesZoomOutIcon}
+                  shape="circle"
+                  spacing="compact"
+                  onClick={() =>
+                    zoomPercentage > 0 &&
+                    webFrame.setZoomLevel(
+                      zoomPercentageToLevel(zoomPercentage - 10),
+                    )
+                  }
+                  testId="settings-zoom-out"
+                />
+              </Tooltip>
+              <Tooltip content="Zoom in" position="bottom">
+                <IconButton
+                  label="Zoom in"
+                  icon={MediaServicesZoomInIcon}
+                  shape="circle"
+                  spacing="compact"
+                  onClick={() =>
+                    zoomPercentage < 120 &&
+                    webFrame.setZoomLevel(
+                      zoomPercentageToLevel(zoomPercentage + 10),
+                    )
+                  }
+                  testId="settings-zoom-in"
+                />
+              </Tooltip>
+            </Inline>
+            <Tooltip content="Reset zoom" position="bottom">
+              <IconButton
+                label="Reset zoom"
+                icon={RetryIcon}
+                shape="circle"
+                spacing="compact"
+                onClick={() => webFrame.setZoomLevel(0)}
+                testId="settings-zoom-reset"
+              />
+            </Tooltip>
+          </SplitButton>
         </Inline>
       </Inline>
     </Stack>
