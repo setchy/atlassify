@@ -14,7 +14,6 @@ export const siteMetadata = {
     site: 'https://setchy.io',
   },
   google: {
-    analytics: 'G-JRB90LB5N9',
     siteVerification: 'rnCO5LIKeWKdhMaGo6FtO8U_g7ndm56Y1VG',
   },
   menuLinks: [
