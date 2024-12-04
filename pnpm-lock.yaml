@@ -55,8 +55,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: 22.28.0
-        version: 22.28.0(@types/react@18.3.12)(react@18.3.1)
+        specifier: 23.0.1
+        version: 23.0.1(@types/react@18.3.12)(react@18.3.1)
       '@atlaskit/inline-message':
         specifier: 12.4.2
         version: 12.4.2(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -337,6 +337,11 @@ packages:
 
   '@atlaskit/icon@22.28.0':
     resolution: {integrity: sha512-ugCFHgSnu4oT0Oh/E1gMizlkXo5CcWl4FuZ84TmnpEn0Nj4RkPNBmT6lM1K8kvy3OkKNdJBmVDjc5ccx9+nYmA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/icon@23.0.1':
+    resolution: {integrity: sha512-rHKP0qdjVTKtRwQJnWMgD6yfreVpd5EpuPpVk2j4n3v0oXAV4oH6HME/5XJNt9BOK6+LL8aBcgEJVicWejIHBw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5546,6 +5551,17 @@ snapshots:
       - supports-color
 
   '@atlaskit/icon@22.28.0(@types/react@18.3.12)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@atlaskit/tokens': 2.4.0(@types/react@18.3.12)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@emotion/react': 11.13.3(@types/react@18.3.12)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/icon@23.0.1(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.12)(react@18.3.1)
