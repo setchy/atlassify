@@ -136,7 +136,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           {downloadLinks.alt.length > 0 && (
             <div>
               Also available on:
-              <ul class="list-disc list-inside ml-4">
+              <ul class="list-disc list-inside mt-2 ml-4">
                 {downloadLinks.alt.map((platform) => (
                   <li class="mb-2.5">
                     <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
