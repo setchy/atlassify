@@ -153,7 +153,7 @@
     "@testing-library/react": "16.1.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.10.1",
-    "@types/react": "18.3.13",
+    "@types/react": "18.3.14",
     "@types/react-router-dom": "5.3.3",
     "autoprefixer": "10.4.20",
     "axios": "1.7.9",
