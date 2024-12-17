@@ -116,7 +116,8 @@ export const AccountsRoute: FC = () => {
       </div>
 
       <Box
-        padding="space.050"
+        paddingBlock="space.050"
+        paddingInline="space.200"
         backgroundColor="color.background.accent.gray.subtlest"
       >
         <Flex justifyContent="end">
