@@ -137,7 +137,7 @@
     "@atlaskit/logo": "14.3.5",
     "@atlaskit/modal-dialog": "12.18.0",
     "@atlaskit/primitives": "13.3.0",
-    "@atlaskit/radio": "6.6.0",
+    "@atlaskit/radio": "7.0.0",
     "@atlaskit/spinner": "16.3.4",
     "@atlaskit/textfield": "6.6.0",
     "@atlaskit/toggle": "13.4.8",
