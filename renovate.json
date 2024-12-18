@@ -30,7 +30,7 @@
       "description": "Override renovate atlaskit preset for cleaner PRs",
       "extends": ["packages:atlaskit"],
       "groupName": "@atlaskit",
-      "additionalBranchPrefix": "{{depName}}-"
+      "additionalBranchPrefix": "{{depNameSanitized}}-"
     },
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
