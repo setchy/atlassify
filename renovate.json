@@ -23,6 +23,13 @@
       "internalChecksFilter": "strict"
     },
     {
+      "description": "Override renovate atlaskit preset for cleaner PRs",
+      "extends": ["packages:atlaskit"],
+      "groupName": "@atlaskit",
+      "additionalBranchPrefix": "{{depName}}-",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
       "extends": ["packages:atlaskit"],
       "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
