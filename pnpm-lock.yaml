@@ -43,8 +43,8 @@ importers:
         specifier: 20.3.3
         version: 20.3.3(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 15.2.0
-        version: 15.2.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.2.2
+        version: 15.2.2(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 6.11.2
         version: 6.11.2(@types/react@18.3.17)(react@18.3.1)
@@ -290,8 +290,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/checkbox@15.2.0':
-    resolution: {integrity: sha512-BpOLBSoVnJSDx2TwMFsl3n7Du5Eb8ENhY9reTqLf5CWiz9VYmT+4GermJZyWzz5PKQm4QrqZQOV7rrEAKz1G+g==}
+  '@atlaskit/checkbox@15.2.2':
+    resolution: {integrity: sha512-4Ux6tPaDvYS5wGVQgVpLXQdue1x8WbwswOOlW+O3lHKchPj+d5KSAC5dtQXp7c+UqVg8FMCi/ThiQ8OL5cyGmQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -305,6 +305,11 @@ packages:
 
   '@atlaskit/css@0.6.0':
     resolution: {integrity: sha512-UtV4U262FjeiIvsrCtQkum1ZLVXrtKIMS3WDFmJQxfKUxsrxMmIAAKY/CIK4FGGzuRN87uCxYwnWOaUfu/b8Ww==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/css@0.7.2':
+    resolution: {integrity: sha512-dE1gDG7D9L6LZNUZeZIA4AUCIuPNVsvopAsyeeHqicYUo6uhpcZ3YuoBugDrcSNRmhr/D3uI9PF/ULQRAbe71g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -855,6 +860,9 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@compiled/jest@0.10.5':
+    resolution: {integrity: sha512-8H/FEgfcIWzmnYZ3Sezl3dv14huymhEHMtgSuX3BBw4+gxmn/xVJxFFlVLYgU1GqHr16nY+ouViCTDHLnAf8bA==}
 
   '@compiled/react@0.18.1':
     resolution: {integrity: sha512-sL2UqrWaErILSPdnkg1Mt7CyVIET+j9+TArVSU609/wE/72KN3THFIUiMMmI1P8kX7CskPY7JdkcU6q70vPmVQ==}
@@ -1866,6 +1874,11 @@ packages:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
 
+  atob@2.1.2:
+    resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
+    engines: {node: '>= 4.5.0'}
+    hasBin: true
+
   auto-bind@4.0.0:
     resolution: {integrity: sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==}
     engines: {node: '>=8'}
@@ -2339,6 +2352,9 @@ packages:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
 
+  css@3.0.0:
+    resolution: {integrity: sha512-DG9pFfwOrzc+hawpmqX/dHYHJG+Bsdb0klhyi1sDneOgGOXy9wQIC8hzyVp1e4NRYDBdxcylvywPkkXCHAzTyQ==}
+
   cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
@@ -2407,6 +2423,10 @@ packages:
 
   decimal.js@10.4.3:
     resolution: {integrity: sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==}
+
+  decode-uri-component@0.2.2:
+    resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
+    engines: {node: '>=0.10'}
 
   decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
@@ -4697,6 +4717,10 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  source-map-resolve@0.6.0:
+    resolution: {integrity: sha512-KXBr9d/fO/bWo97NXsPIAW1bFSBOuCnjbNTBMO7N59hsv5i9yzRDfcYwwt0l04+VqnKC+EwzvJZIP/qkuMgR/w==}
+    deprecated: See https://github.com/lydell/source-map-resolve#deprecated
+
   source-map-support@0.5.13:
     resolution: {integrity: sha512-SHSKFHadjVA5oR4PPqhtAVdcBWwRYVd6g6cAXnIbRiIwc2EhPrTuKUBdSLvlEKyIP3GCf89fltvcZiP9MMFA1w==}
 
@@ -5461,12 +5485,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@15.2.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@15.2.2(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.6.0(@types/react@18.3.17)(react@18.3.1)
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.17)(react@18.3.1)
-      '@atlaskit/icon': 22.28.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/css': 0.7.2(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/icon': 23.0.1(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/theme': 14.0.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
@@ -5496,6 +5520,17 @@ snapshots:
     dependencies:
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
       '@babel/runtime': 7.25.7
+      '@compiled/react': 0.18.1(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/css@0.7.2(@types/react@18.3.17)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@compiled/jest': 0.10.5
       '@compiled/react': 0.18.1(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
@@ -6326,6 +6361,10 @@ snapshots:
 
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
+
+  '@compiled/jest@0.10.5':
+    dependencies:
+      css: 3.0.0
 
   '@compiled/react@0.18.1(react@18.3.1)':
     dependencies:
@@ -7819,6 +7858,8 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
+  atob@2.1.2: {}
+
   auto-bind@4.0.0: {}
 
   autoprefixer@10.4.20(postcss@8.4.49):
@@ -8423,6 +8464,12 @@ snapshots:
 
   css-what@6.1.0: {}
 
+  css@3.0.0:
+    dependencies:
+      inherits: 2.0.4
+      source-map: 0.6.1
+      source-map-resolve: 0.6.0
+
   cssesc@3.0.0: {}
 
   cssnano-preset-default@7.0.6(postcss@8.4.49):
@@ -8502,6 +8549,8 @@ snapshots:
   decamelize@1.2.0: {}
 
   decimal.js@10.4.3: {}
+
+  decode-uri-component@0.2.2: {}
 
   decompress-response@6.0.0:
     dependencies:
@@ -11029,6 +11078,11 @@ snapshots:
       smart-buffer: 4.2.0
 
   source-map-js@1.2.1: {}
+
+  source-map-resolve@0.6.0:
+    dependencies:
+      atob: 2.1.2
+      decode-uri-component: 0.2.2
 
   source-map-support@0.5.13:
     dependencies:
