@@ -34,8 +34,8 @@ importers:
         specifier: 1.12.16
         version: 1.12.16(graphql@16.10.0)(typescript@5.7.2)
       '@atlaskit/avatar':
-        specifier: 21.17.4
-        version: 21.17.4(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 21.17.5
+        version: 21.17.5(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
         specifier: 16.4.3
         version: 16.4.3(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -270,8 +270,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/avatar@21.17.4':
-    resolution: {integrity: sha512-36DCJZUm5nl5hcywgrHCF2RPQmtriDmJzqB6Vedp4ccuXoZb8uNxMzz7f7CvAArVxWVlsPkRKU9nxUDsCgRmUg==}
+  '@atlaskit/avatar@21.17.5':
+    resolution: {integrity: sha512-ZT6P1xJEoLf28FVVGCR6HtL/mdb4KVSmajqkEiNebX+JBALtyBD3ULl+N6dByR6P0pMMSpaqbxdle+AP5HiXJw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5391,12 +5391,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/avatar@21.17.4(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@21.17.5(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/focus-ring': 2.0.0(@types/react@18.3.17)(react@18.3.1)
-      '@atlaskit/icon': 22.28.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/icon': 23.0.1(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/primitives': 13.3.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.17)(react@18.3.1)
@@ -5600,7 +5600,7 @@ snapshots:
   '@atlaskit/inline-dialog@15.2.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/layering': 0.7.3(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/popper': 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5639,7 +5639,7 @@ snapshots:
 
   '@atlaskit/layering@0.7.3(@types/react@18.3.17)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@babel/runtime': 7.25.7
       bind-event-listener: 3.0.0
@@ -5818,7 +5818,7 @@ snapshots:
   '@atlaskit/theme@14.0.0(@types/react@18.3.17)(react@18.3.1)':
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
       '@babel/runtime': 7.25.7
       react: 18.3.1
