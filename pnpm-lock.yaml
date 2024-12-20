@@ -58,8 +58,8 @@ importers:
         specifier: 23.0.1
         version: 23.0.1(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: 12.4.2
-        version: 12.4.2(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.4.3
+        version: 12.4.3(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 14.3.5
         version: 14.3.5(@types/react@18.3.17)(react@18.3.1)
@@ -265,6 +265,12 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  '@atlaskit/analytics-next@10.2.1':
+    resolution: {integrity: sha512-KpabZa6OxKoz4sABtbU6nSzZk12RmnUD+CDQKRq50TUWXOsaOBFZ5iXJPQA4gD0gl4WMGHO/9RG//JYXHLK3fg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.2.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.2.0
+
   '@atlaskit/app-provider@1.4.1':
     resolution: {integrity: sha512-nlpRs2umkVhSgc4RBnKO9sT35XoAqJvjy0De/vxw7t7X7bzRAktwk9fOLa9PrNdILJFi0qhJusKFl6S7ewpcJA==}
     peerDependencies:
@@ -353,13 +359,13 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/inline-dialog@15.2.0':
-    resolution: {integrity: sha512-x0Xp8xS+WvOJ6RU8ILysFu9Aqx0VdYAryUSU7pguPrjMAPOzJLIg1EfJJsHyaly6rQLP5IcURMMoF6JE/RyKDw==}
+  '@atlaskit/inline-dialog@15.3.1':
+    resolution: {integrity: sha512-3Unkrb4hJA0bUyKveTM1eLD/AhNa+SUudCcHDmLNvveRLEK0UAjQFzFcysgLFXeFXx+HAy4x6CPukTWH19Enaw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/inline-message@12.4.2':
-    resolution: {integrity: sha512-DexnRV4BCqVnsWn/ihl0gdVwNgrem/VaCJss19tqIplA0+Tml/eAn0lkImndDgtcNGdIKEBebuWeH5GeJaCGhQ==}
+  '@atlaskit/inline-message@12.4.3':
+    resolution: {integrity: sha512-GOP/Mv88IZ9MwyzcWBNZYzG+xgVi8xJH8HzTVIB4C3sp5Tlhq+Q+IfcQg9CS1Q+cageXaZwLgsJzWNiugBs1mw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -368,13 +374,13 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/layering@0.7.3':
-    resolution: {integrity: sha512-nUTPRNnKoi0UnL6o/5K2kkJXxhpvfCbD4RhuW9+IS68q/6vxXUiyk0m2i91akvhSdyeHk/dkbQn1ST6DCX2i4w==}
+  '@atlaskit/layering@0.8.0':
+    resolution: {integrity: sha512-0DzIhEh1PjZ1o/lfJ3XUd8YmAP9CBidsbUu6fIlLZ/XcIimSgCLjsgwVSfXf+yxjYcfsalByEpjXPF+RSA3uSA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/layering@0.8.0':
-    resolution: {integrity: sha512-0DzIhEh1PjZ1o/lfJ3XUd8YmAP9CBidsbUu6fIlLZ/XcIimSgCLjsgwVSfXf+yxjYcfsalByEpjXPF+RSA3uSA==}
+  '@atlaskit/layering@1.0.0':
+    resolution: {integrity: sha512-lcSfDBHbu3wOkVOfRChqhwlbCEALTDXwMuJ/YUrclBzloB6bGWh/i6yJdWhheDJgnIo8RcWhYDe/fu//9uOYEw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5405,6 +5411,16 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-memo-one: 1.1.3(react@18.3.1)
 
+  '@atlaskit/analytics-next@10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@atlaskit/analytics-next-stable-react-context': 1.0.1(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 0.3.0
+      '@babel/runtime': 7.25.7
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      use-memo-one: 1.1.3(react@18.3.1)
+
   '@atlaskit/app-provider@1.4.1(@types/react@18.3.17)(react@18.3.1)':
     dependencies:
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
@@ -5632,11 +5648,11 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/inline-dialog@15.2.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-dialog@15.3.1(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/analytics-next': 10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
-      '@atlaskit/layering': 0.7.3(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/layering': 1.0.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
       '@atlaskit/popper': 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.17)(react@18.3.1)
@@ -5651,11 +5667,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/inline-message@12.4.2(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-message@12.4.3(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 20.3.3(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/icon': 22.28.0(@types/react@18.3.17)(react@18.3.1)
-      '@atlaskit/inline-dialog': 15.2.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/icon': 23.0.1(@types/react@18.3.17)(react@18.3.1)
+      '@atlaskit/inline-dialog': 15.3.1(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 13.3.0(@types/react@18.3.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 14.0.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/tokens': 2.4.0(@types/react@18.3.17)(react@18.3.1)
@@ -5672,7 +5688,7 @@ snapshots:
       '@babel/runtime': 7.25.7
       react: 18.3.1
 
-  '@atlaskit/layering@0.7.3(@types/react@18.3.17)(react@18.3.1)':
+  '@atlaskit/layering@0.8.0(@types/react@18.3.17)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
@@ -5683,7 +5699,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@atlaskit/layering@0.8.0(@types/react@18.3.17)(react@18.3.1)':
+  '@atlaskit/layering@1.0.0(@types/react@18.3.17)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.17)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
