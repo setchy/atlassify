@@ -34,8 +34,8 @@ importers:
         specifier: 1.12.16
         version: 1.12.16(graphql@16.10.0)(typescript@5.7.2)
       '@atlaskit/avatar':
-        specifier: 21.17.5
-        version: 21.17.5(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 21.17.6
+        version: 21.17.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
         specifier: 16.4.3
         version: 16.4.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -276,8 +276,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/avatar@21.17.5':
-    resolution: {integrity: sha512-ZT6P1xJEoLf28FVVGCR6HtL/mdb4KVSmajqkEiNebX+JBALtyBD3ULl+N6dByR6P0pMMSpaqbxdle+AP5HiXJw==}
+  '@atlaskit/avatar@21.17.6':
+    resolution: {integrity: sha512-3DgWNqb4kspJMuRikyyveUE7QYMcV4ckqOl1YF3RR9/ZaYxAzDlC1vJA9xWTz5I86IYvtzro1Na7KdzvgiBXrg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5429,9 +5429,9 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/avatar@21.17.5(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@21.17.6(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/analytics-next': 10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/focus-ring': 2.0.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/icon': 23.1.0(@types/react@18.3.18)(react@18.3.1)
