@@ -9,7 +9,6 @@
     "group:atlaskit"
   ],
   "labels": ["dependency"],
-  "prConcurrentLimit": 5,
   "rangeStrategy": "pin",
   "packageRules": [
     {
