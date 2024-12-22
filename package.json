@@ -139,7 +139,7 @@
     "@atlaskit/primitives": "13.3.5",
     "@atlaskit/radio": "6.6.0",
     "@atlaskit/spinner": "16.3.4",
-    "@atlaskit/textfield": "6.6.0",
+    "@atlaskit/textfield": "6.7.0",
     "@atlaskit/toggle": "13.4.10",
     "@atlaskit/tokens": "2.4.0",
     "@atlaskit/tooltip": "18.9.3",
