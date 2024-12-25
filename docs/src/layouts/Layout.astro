@@ -22,8 +22,8 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={siteMetadata.description} />
     <title>{pageTitle}</title>
-    <GoogleAnalytics />
 
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <link rel="icon" href="/images/favicon.ico" />
     <link
@@ -44,13 +44,15 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
       href="/images/apple-touch-icon.png"
     />
 
-    {/* Open Graph Meta Tags for Social Media */}
+    <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={siteMetadata.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteMetadata.url} />
     <meta property="og:image" content={ogImage} />
 
+    <!-- Google Analytics and Site Verification -->
+    <GoogleAnalytics />
     <meta
       name="google-site-verification"
       content={siteMetadata.google.siteVerification}
