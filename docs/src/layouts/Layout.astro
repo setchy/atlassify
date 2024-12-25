@@ -1,17 +1,16 @@
 ---
-import Footer from "../components/Footer.astro";
-import GoogleAnalytics from "../components/GoogleAnalytics.astro";
-import Navbar from "../components/Navbar.astro";
-import "../styles/app.css";
+import Footer from "~/components/Footer.astro";
+import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
+import Navbar from "~/components/Navbar.astro";
 
-import { siteMetadata } from "../constants";
+import "~/styles/app.css";
+import { siteMetadata } from "~/constants";
 
 export interface Props {
   title: string;
-  hideFooter?: boolean;
 }
 
-const { title, hideFooter = false } = Astro.props;
+const { title } = Astro.props;
 const pageTitle = `${title} - ${siteMetadata.title}`;
 const ogImage = `${siteMetadata.url}/images/social.png`;
 ---
@@ -60,6 +59,6 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
   <body class="flex flex-col min-h-screen">
     <Navbar currentPathname={Astro.url.pathname} />
     <slot />
-    {!hideFooter && <Footer currentPathname={Astro.url.pathname} />}
+    <Footer currentPathname={Astro.url.pathname} />
   </body>
 </html>
