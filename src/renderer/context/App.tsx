@@ -61,7 +61,6 @@ const defaultAppearanceSettings: AppearanceSettingsState = {
 const defaultNotificationSettings: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
-  fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
 };
@@ -79,7 +78,7 @@ const defaultSystemSettings: SystemSettingsState = {
 export const defaultFilters: FilterSettingsState = {
   filterTimeSensitive: [],
   filterCategories: [],
-  filterReadStates: [],
+  filterReadStates: ['unread'],
   filterProducts: [],
 };
 
@@ -142,11 +141,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: We only want fetchNotifications to be called for certain changes
   useEffect(() => {
     fetchNotifications({ auth, settings });
-  }, [
-    auth.accounts,
-    settings.fetchOnlyUnreadNotifications,
-    settings.filterTimeSensitive,
-  ]);
+  }, [auth.accounts, settings.filterReadStates, settings.filterTimeSensitive]);
 
   useInterval(() => {
     fetchNotifications({ auth, settings });

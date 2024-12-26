@@ -13,6 +13,7 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import { isUnreadOnlyFilterSet } from '../utils/filters';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
@@ -112,7 +113,7 @@ export const useNotifications = (): NotificationsState => {
         }
 
         // Only remove notifications from state if we're
-        if (state.settings.fetchOnlyUnreadNotifications) {
+        if (isUnreadOnlyFilterSet(state.settings)) {
           const updatedNotifications = removeNotifications(
             state.settings,
             readNotifications,

@@ -218,34 +218,6 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
   });
 
-  describe('show only unread notifications', () => {
-    it('should toggle show only unread notifications', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
-      );
-
-      fireEvent.click(
-        screen.getByTestId('sidebar-toggle-unread-only--toggle-cross-icon'),
-      );
-
-      expect(
-        screen.getByTestId('sidebar-toggle-unread-only--input'),
-      ).toMatchSnapshot();
-    });
-  });
-
   describe('Group by products', () => {
     it('should order notifications by date', () => {
       render(

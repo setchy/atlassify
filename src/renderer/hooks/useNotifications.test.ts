@@ -59,7 +59,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - all notifications read/unread', async () => {
-      mockState.settings.fetchOnlyUnreadNotifications = false;
+      mockState.settings.filterReadStates = ['read', 'unread'];
 
       nock('https://team.atlassian.net//')
         .post('gateway/api/graphql')
@@ -101,7 +101,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - handles missing extensions response object', async () => {
-      mockState.settings.fetchOnlyUnreadNotifications = false;
+      mockState.settings.filterReadStates = ['read', 'unread'];
 
       nock('https://team.atlassian.net//')
         .post('gateway/api/graphql')

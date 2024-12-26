@@ -34,7 +34,6 @@ const mockAppearanceSettings: AppearanceSettingsState = {
 const mockNotificationSettings: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
-  fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
 };

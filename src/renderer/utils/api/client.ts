@@ -1,5 +1,6 @@
 import type { Account, SettingsState, Token, Username } from '../../types';
 import { Constants } from '../constants';
+import { isReadOnlyFilterSet, isUnreadOnlyFilterSet } from '../filters';
 import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,
@@ -83,11 +84,19 @@ export function getNotificationsForUser(
     }
   `);
 
+  let readStateQueryVariable = null;
+
+  if (isUnreadOnlyFilterSet(settings)) {
+    readStateQueryVariable = InfluentsNotificationReadState.Unread;
+  }
+
+  if (isReadOnlyFilterSet(settings)) {
+    readStateQueryVariable = InfluentsNotificationReadState.Read;
+  }
+
   return performPostRequest(account, MyNotificationsQuery, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-    readState: settings.fetchOnlyUnreadNotifications
-      ? InfluentsNotificationReadState.Unread
-      : null,
+    readState: readStateQueryVariable,
   });
 }
 
