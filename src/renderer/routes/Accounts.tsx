@@ -86,9 +86,22 @@ export const AccountsRoute: FC = () => {
                         icon={RefreshIcon}
                         shape="circle"
                         appearance="subtle"
-                        onClick={async () => {
+                        onClick={async (e) => {
+                          const button = e.currentTarget;
+                          button.classList.add('animate-spin');
+
                           await refreshAccount(account);
-                          navigate('/accounts', { replace: true });
+                          navigate('/accounts', {
+                            replace: true,
+                          });
+
+                          /**
+                           * Typically the above refresh API call completes very quickly,
+                           * so we add an brief artificial delay to allow the icon to spin a few times
+                           */
+                          setTimeout(() => {
+                            button.classList.remove('animate-spin');
+                          }, 250);
                         }}
                         testId="account-refresh"
                       />
