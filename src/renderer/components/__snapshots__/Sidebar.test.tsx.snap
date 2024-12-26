@@ -2,7 +2,7 @@
 
 exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters route 1`] = `
 <button
-  class="css-1vyxgfe"
+  class="css-nmb8kj"
   data-testid="sidebar-filter-notifications"
   type="button"
 >
@@ -39,7 +39,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
 
 exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if filters path already shown 1`] = `
 <button
-  class="css-1vyxgfe"
+  class="css-nmb8kj"
   data-testid="sidebar-filter-notifications"
   type="button"
 >

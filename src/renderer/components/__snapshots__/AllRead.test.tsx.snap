@@ -26,7 +26,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
           <span
             class="text-xl font-semibold"
           >
-            No new notifications
+            No new filtered notifications
           </span>
         </div>
       </div>
@@ -54,7 +54,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
         <span
           class="text-xl font-semibold"
         >
-          No new notifications
+          No new filtered notifications
         </span>
       </div>
     </div>
