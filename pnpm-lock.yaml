@@ -78,9 +78,6 @@ importers:
       '@atlaskit/textfield':
         specifier: 6.6.0
         version: 6.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/toggle':
-        specifier: 13.4.10
-        version: 13.4.10(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 2.5.0
         version: 2.5.0(@types/react@18.3.18)(react@18.3.1)
@@ -438,11 +435,6 @@ packages:
 
   '@atlaskit/theme@14.0.0':
     resolution: {integrity: sha512-r5hYbLbxSJDqtMHJ7bCTSoFY8dnKpcFOUkcysjWtXkjbkXF1sM5ph0GD8lWmt9734soFNJNY+i4wo//CfTpcag==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-
-  '@atlaskit/toggle@13.4.10':
-    resolution: {integrity: sha512-xThhtN/OwhYyRcEMUg8zXDx7DWFMmaUOFSGxenFM+egLBxqjL+6tNWVk9YB0Bew5kXblIT84Ne1UgeYMDCLkEw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5847,24 +5839,6 @@ snapshots:
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
-      - supports-color
-
-  '@atlaskit/toggle@13.4.10(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@atlaskit/analytics-next': 10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/icon': 23.1.1(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/primitives': 13.3.5(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/theme': 14.0.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/tokens': 2.5.0(@types/react@18.3.18)(react@18.3.1)
-      '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
-      bind-event-listener: 3.0.0
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - react-dom
       - supports-color
 
   '@atlaskit/tokens@2.5.0(@types/react@18.3.18)(react@18.3.1)':
