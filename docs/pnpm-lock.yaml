@@ -33,8 +33,8 @@ importers:
         specifier: 5.1.1
         version: 5.1.1(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       astro-icon:
-        specifier: 1.1.4
-        version: 1.1.4
+        specifier: 1.1.5
+        version: 1.1.5
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -1223,8 +1223,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro-icon@1.1.4:
-    resolution: {integrity: sha512-sMLkQaevIQLv38WBzb/RDbsmxhg5+X+KcNmpTi9cE6MLurNWU1MPnlO87d9Vwg4HxTenKpDlYp81A3syXFW/gw==}
+  astro-icon@1.1.5:
+    resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
   astro@5.1.1:
     resolution: {integrity: sha512-prpWC2PRs4P3FKQg6gZaU+VNMqbZi5pDvORGB2nrjfRjkrvF6/l4BqhvkJ6YQ0Ohm5rIMVz8ljgaRI77mLHbwg==}
@@ -1914,10 +1914,6 @@ packages:
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
-
-  lru-cache@10.2.0:
-    resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
-    engines: {node: 14 || >=16.14}
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -4018,7 +4014,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro-icon@1.1.4:
+  astro-icon@1.1.5:
     dependencies:
       '@iconify/tools': 4.0.7
       '@iconify/types': 2.0.0
@@ -4874,8 +4870,6 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  lru-cache@10.2.0: {}
-
   lru-cache@10.4.3: {}
 
   lru-cache@5.1.1:
@@ -5392,7 +5386,7 @@ snapshots:
 
   path-scurry@1.10.1:
     dependencies:
-      lru-cache: 10.2.0
+      lru-cache: 10.4.3
       minipass: 7.0.4
 
   pathe@1.1.2: {}

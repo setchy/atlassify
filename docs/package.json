@@ -43,7 +43,7 @@
     "@octokit/openapi-types": "22.2.0",
     "@tailwindcss/typography": "0.5.15",
     "astro": "5.1.1",
-    "astro-icon": "1.1.4",
+    "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
