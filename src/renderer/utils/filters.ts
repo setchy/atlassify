@@ -109,6 +109,20 @@ export function getReadStateFilterCount(
   );
 }
 
+export function isUnreadOnlyFilterSet(settings: SettingsState): boolean {
+  return (
+    settings.filterReadStates.length === 1 &&
+    settings.filterReadStates.includes('unread')
+  );
+}
+
+export function isReadOnlyFilterSet(settings: SettingsState): boolean {
+  return (
+    settings.filterReadStates.length === 1 &&
+    settings.filterReadStates.includes('read')
+  );
+}
+
 export function getProductFilterCount(
   notifications: AccountNotifications[],
   product: ProductName,

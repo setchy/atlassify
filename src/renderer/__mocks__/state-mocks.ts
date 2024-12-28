@@ -34,7 +34,6 @@ const mockAppearanceSettings: AppearanceSettingsState = {
 const mockNotificationSettings: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
-  fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
 };
@@ -52,7 +51,7 @@ const mockSystemSettings: SystemSettingsState = {
 const mockFilters: FilterSettingsState = {
   filterTimeSensitive: [],
   filterCategories: [],
-  filterReadStates: [],
+  filterReadStates: ['unread'],
   filterProducts: [],
 };
 

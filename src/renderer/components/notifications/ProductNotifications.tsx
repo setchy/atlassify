@@ -9,6 +9,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
+import { isUnreadOnlyFilterSet } from '../../utils/filters';
 import { formatProperCase, getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
 import { isLightMode } from '../../utils/theme';
@@ -107,7 +108,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
                   setAnimateExit(
-                    settings.fetchOnlyUnreadNotifications &&
+                    isUnreadOnlyFilterSet(settings) &&
                       !settings.delayNotificationState,
                   );
                   markNotificationsRead(productNotifications);

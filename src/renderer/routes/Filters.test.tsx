@@ -192,10 +192,11 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('unread'));
+        fireEvent.click(screen.getByLabelText('read'));
 
         expect(updateSetting).toHaveBeenCalledWith('filterReadStates', [
           'unread',
+          'read',
         ]);
       });
 

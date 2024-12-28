@@ -10,7 +10,6 @@ import RefreshIcon from '@atlaskit/icon/glyph/refresh';
 import SettingsIcon from '@atlaskit/icon/glyph/settings';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
-import Toggle from '@atlaskit/toggle';
 import Tooltip from '@atlaskit/tooltip';
 
 import { colors } from '../../../tailwind.config';
@@ -114,25 +113,6 @@ export const Sidebar: FC = () => {
 
             {isLoggedIn && (
               <Fragment>
-                <Tooltip
-                  content="Show only unread notifications"
-                  position="right"
-                >
-                  <Toggle
-                    id="toggle-unread-only"
-                    size="regular"
-                    label="Show only unread toggle"
-                    isChecked={settings.fetchOnlyUnreadNotifications}
-                    onChange={async (evt) => {
-                      updateSetting(
-                        'fetchOnlyUnreadNotifications',
-                        evt.target.checked,
-                      );
-                    }}
-                    testId="sidebar-toggle-unread-only"
-                  />
-                </Tooltip>
-
                 <Tooltip
                   content="Group notifications by products"
                   position="right"

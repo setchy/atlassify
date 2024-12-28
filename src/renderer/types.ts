@@ -110,11 +110,6 @@ export interface NotificationSettingsState {
   delayNotificationState: boolean;
 
   /**
-   * Whether to fetch only unread notifications, or all notifications.
-   */
-  fetchOnlyUnreadNotifications: boolean;
-
-  /**
    * Whether to group notifications by product.
    */
   groupNotificationsByProduct: boolean;

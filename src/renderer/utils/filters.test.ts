@@ -13,7 +13,15 @@ import {
 describe('renderer/utils/filters.ts', () => {
   describe('has filters', () => {
     it('default filter settings', () => {
-      expect(hasAnyFiltersSet(defaultSettings)).toBe(false);
+      expect(hasAnyFiltersSet(defaultSettings)).toBe(true);
+    });
+
+    it('no filters settings', () => {
+      const settings = {
+        ...defaultSettings,
+        filterReadStates: [],
+      } as SettingsState;
+      expect(hasAnyFiltersSet(settings)).toBe(false);
     });
 
     it('non-default time sensitive filters', () => {

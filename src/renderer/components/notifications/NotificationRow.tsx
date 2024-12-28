@@ -12,6 +12,7 @@ import { cn } from '../../utils/cn';
 import {
   FILTERS_READ_STATES,
   getCategoryFilterDetails,
+  isUnreadOnlyFilterSet,
 } from '../../utils/filters';
 import {
   formatNotificationFooterText,
@@ -34,7 +35,7 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const handleNotificationInteraction = useCallback(() => {
     setAnimateExit(
-      settings.fetchOnlyUnreadNotifications &&
+      isUnreadOnlyFilterSet(settings) &&
         !settings.delayNotificationState &&
         settings.markAsReadOnOpen,
     );
@@ -137,7 +138,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                 appearance="subtle"
                 onClick={() => {
                   setAnimateExit(
-                    settings.fetchOnlyUnreadNotifications &&
+                    isUnreadOnlyFilterSet(settings) &&
                       !settings.delayNotificationState,
                   );
                   markNotificationsRead([notification]);
