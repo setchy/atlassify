@@ -47,7 +47,7 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "marked": "15.0.4",
+    "marked": "15.0.5",
     "octokit": "4.0.3",
     "sharp": "0.33.5",
     "solid-js": "1.9.3",
