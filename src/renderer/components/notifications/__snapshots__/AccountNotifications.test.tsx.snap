@@ -21,7 +21,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -258,7 +258,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -552,7 +552,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -757,7 +757,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -1019,7 +1019,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -1224,7 +1224,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -1486,7 +1486,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -1710,7 +1710,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -1991,7 +1991,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -2610,7 +2610,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -3286,7 +3286,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -3905,7 +3905,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >
@@ -4585,7 +4585,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -4783,7 +4783,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1xq1pkg"
+                  class="css-1vqst9f"
                   data-testid="account-profile--itemInner"
                   type="button"
                 >
@@ -5402,7 +5402,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1xq1pkg"
+                class="css-1vqst9f"
                 data-testid="account-profile--itemInner"
                 type="button"
               >

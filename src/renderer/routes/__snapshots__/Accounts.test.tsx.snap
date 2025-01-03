@@ -74,7 +74,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
           >
             <button
               aria-label="Open account profile"
-              class="css-1xq1pkg"
+              class="css-1vqst9f"
               data-testid="account-profile--itemInner"
               type="button"
             >
@@ -368,7 +368,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
           >
             <button
               aria-label="Open account profile"
-              class="css-1xq1pkg"
+              class="css-1vqst9f"
               data-testid="account-profile--itemInner"
               type="button"
             >
