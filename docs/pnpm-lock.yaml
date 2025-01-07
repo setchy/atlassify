@@ -13,7 +13,7 @@ importers:
         version: 5.0.1(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.3)
       '@astrojs/tailwind':
         specifier: 5.1.4
-        version: 5.1.4(astro@5.1.2(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
+        version: 5.1.4(astro@5.1.3(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
       '@iconify-json/line-md':
         specifier: 1.2.4
         version: 1.2.4
@@ -30,8 +30,8 @@ importers:
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.17)
       astro:
-        specifier: 5.1.2
-        version: 5.1.2(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+        specifier: 5.1.3
+        version: 5.1.3(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.5
         version: 1.1.5
@@ -1226,8 +1226,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.1.2:
-    resolution: {integrity: sha512-+U5lXPEJZ6cQx0botGbPhzN6XGWRgDtXgy/RUkpTmUj18LW6pbzYo0O0k3hFWOazlI039bZ+4P2e/oSNlKzm0Q==}
+  astro@5.1.3:
+    resolution: {integrity: sha512-Zl/B4hmueJmlI5FJQcwbBRhHbRvbTWaTJzimkbH+jYczR5blt4uSh0DheyAt/+NwcnGfiC11z/XXJYIBR4LPUw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3011,9 +3011,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@5.1.4(astro@5.1.2(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@5.1.4(astro@5.1.3(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.1.2(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+      astro: 5.1.3(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -4023,7 +4023,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.1.2(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
+  astro@5.1.3(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
