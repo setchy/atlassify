@@ -24,8 +24,8 @@ importers:
         specifier: 0.13.7
         version: 0.13.7(solid-js@1.9.3)
       '@octokit/openapi-types':
-        specifier: 22.2.0
-        version: 22.2.0
+        specifier: 23.0.1
+        version: 23.0.1
       '@tailwindcss/typography':
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -786,9 +786,6 @@ packages:
   '@octokit/oauth-methods@5.1.3':
     resolution: {integrity: sha512-M+bDBi5H8FnH0xhCTg0m9hvcnppdDnxUqbZyOkxlLblKpLAR+eT2nbDPvJDp0eLrvJWA1I8OX0KHf/sBMQARRA==}
     engines: {node: '>= 18'}
-
-  '@octokit/openapi-types@22.2.0':
-    resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
 
   '@octokit/openapi-types@23.0.1':
     resolution: {integrity: sha512-izFjMJ1sir0jn0ldEKhZ7xegCTj/ObmEDlEfpFrx4k/JyZSMRHbO3/rBwgE7f3m2DHt+RrNGIVw4wSmwnm3t/g==}
@@ -3631,8 +3628,6 @@ snapshots:
       '@octokit/request': 9.1.4
       '@octokit/request-error': 6.1.6
       '@octokit/types': 13.7.0
-
-  '@octokit/openapi-types@22.2.0': {}
 
   '@octokit/openapi-types@23.0.1': {}
 
