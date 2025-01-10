@@ -37,7 +37,7 @@
   "dependencies": {
     "@astrojs/solid-js": "5.0.1",
     "@astrojs/tailwind": "5.1.4",
-    "@iconify-json/line-md": "1.2.4",
+    "@iconify-json/line-md": "1.2.5",
     "@iconify-json/mdi": "1.2.2",
     "@kobalte/core": "0.13.7",
     "@octokit/openapi-types": "23.0.1",
