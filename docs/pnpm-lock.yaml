@@ -15,8 +15,8 @@ importers:
         specifier: 5.1.4
         version: 5.1.4(astro@5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
       '@iconify-json/line-md':
-        specifier: 1.2.4
-        version: 1.2.4
+        specifier: 1.2.5
+        version: 1.2.5
       '@iconify-json/mdi':
         specifier: 1.2.2
         version: 1.2.2
@@ -565,8 +565,8 @@ packages:
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
-  '@iconify-json/line-md@1.2.4':
-    resolution: {integrity: sha512-zapvr+PM17evfekZwarZaNp4szd/2ELuFhNKqLw3hGqY4by8DWIE4c97yue9ooUJN54CQXPfVGFnxNEXeeZctQ==}
+  '@iconify-json/line-md@1.2.5':
+    resolution: {integrity: sha512-6zFKhs6g++kFJLLi+ye5nPoHgjYh44yVLjua0tmbxH1HdImMQZ6rkRsPnBgxADY4bQWiapXBzfoiz7+UBXgtWg==}
 
   '@iconify-json/mdi@1.2.2':
     resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
@@ -3354,7 +3354,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.8': {}
 
-  '@iconify-json/line-md@1.2.4':
+  '@iconify-json/line-md@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 
