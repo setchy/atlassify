@@ -141,7 +141,7 @@
     "@atlaskit/spinner": "16.3.5",
     "@atlaskit/textfield": "6.7.1",
     "@atlaskit/toggle": "13.4.10",
-    "@atlaskit/tokens": "2.5.1",
+    "@atlaskit/tokens": "3.0.0",
     "@atlaskit/tooltip": "18.9.4",
     "@biomejs/biome": "1.9.4",
     "@discordapp/twemoji": "15.1.0",
