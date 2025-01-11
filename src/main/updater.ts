@@ -28,19 +28,22 @@ export default class Updater {
 
     autoUpdater.on('error', (error) => {
       log.error('Auto Updater: Error checking for new updates', error);
-      this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
+
+      this.resetState();
     });
 
     autoUpdater.on('update-available', () => {
       log.info('Auto Updater: New update available');
-      this.menuBuilder.setUpdateAvailableMenuEnabled(true);
+
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is available`,
       );
+      this.menuBuilder.setUpdateAvailableMenuEnabled(true);
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
       const downloadProgress = `${progressObj.percent} % (${progressObj.transferred}/${progressObj.total})`;
+
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nDownloaded: ${downloadProgress}`,
       );
@@ -48,21 +51,32 @@ export default class Updater {
 
     autoUpdater.on('update-downloaded', () => {
       log.info('Auto Updater: Update downloaded, ready to install');
-      this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
+
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is ready to install`,
       );
+      this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
     });
 
     autoUpdater.on('update-not-available', () => {
       log.info(
         'Auto Updater: No updates available, already using latest version.',
       );
-      this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
+
+      this.resetState();
     });
 
     autoUpdater.on('update-cancelled', () => {
       log.warn('Auto Updater: Update cancelled');
+
+      this.resetState();
     });
+  }
+
+  private resetState() {
+    this.menubar.tray.setToolTip(APPLICATION.NAME);
+    this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
+    this.menuBuilder.setUpdateAvailableMenuEnabled(false);
+    this.menuBuilder.setUpdateReadyForInstallMenuEnabled(false);
   }
 }
