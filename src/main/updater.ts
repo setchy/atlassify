@@ -23,13 +23,8 @@ export default class Updater {
 
     autoUpdater.on('checking-for-update', () => {
       log.info('Auto Updater: Checking for update');
+
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
-    });
-
-    autoUpdater.on('error', (error) => {
-      log.error('Auto Updater: Error checking for new updates', error);
-
-      this.resetState();
     });
 
     autoUpdater.on('update-available', () => {
@@ -42,10 +37,8 @@ export default class Updater {
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
-      const downloadProgress = `${progressObj.percent} % (${progressObj.transferred}/${progressObj.total})`;
-
       this.menubar.tray.setToolTip(
-        `${APPLICATION.NAME}\nDownloaded: ${downloadProgress}`,
+        `${APPLICATION.NAME}\nDownloaded: ${progressObj.percent} %`,
       );
     });
 
@@ -68,6 +61,12 @@ export default class Updater {
 
     autoUpdater.on('update-cancelled', () => {
       log.warn('Auto Updater: Update cancelled');
+
+      this.resetState();
+    });
+
+    autoUpdater.on('error', (error) => {
+      log.error('Auto Updater: Error checking for new updates', error);
 
       this.resetState();
     });
