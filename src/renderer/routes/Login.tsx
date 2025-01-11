@@ -1,4 +1,3 @@
-import log from 'electron-log';
 import { type FC, Fragment, useCallback, useContext, useState } from 'react';
 
 import ButtonGroup from '@atlaskit/button/button-group';
@@ -18,6 +17,7 @@ import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useNavigate } from 'react-router-dom';
+import { logError } from '../../shared/logger';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
@@ -46,7 +46,8 @@ export const LoginRoute: FC = () => {
         await login(data as LoginOptions);
         navigate(-1);
       } catch (err) {
-        log.error('Auth: failed to login with provided credentials', err);
+        logError('loginUser', 'failed to login with provided credentials', err);
+
         setIsValidToken(false);
       }
     },

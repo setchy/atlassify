@@ -4,6 +4,7 @@ import type { Menubar } from 'menubar';
 import { updateElectronApp } from 'update-electron-app';
 
 import { APPLICATION } from '../shared/constants';
+import { logError, logInfo } from '../shared/logger';
 import type MenuBuilder from './menu';
 
 export default class Updater {
@@ -22,13 +23,13 @@ export default class Updater {
     });
 
     autoUpdater.on('checking-for-update', () => {
-      log.info('Auto Updater: Checking for update');
+      logInfo('auto updater', 'Checking for update');
 
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
     });
 
     autoUpdater.on('update-available', () => {
-      log.info('Auto Updater: New update available');
+      logInfo('auto updater', 'New update available');
 
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is available`,
@@ -43,7 +44,7 @@ export default class Updater {
     });
 
     autoUpdater.on('update-downloaded', () => {
-      log.info('Auto Updater: Update downloaded, ready to install');
+      logInfo('auto updater', 'Update downloaded');
 
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is ready to install`,
@@ -52,21 +53,19 @@ export default class Updater {
     });
 
     autoUpdater.on('update-not-available', () => {
-      log.info(
-        'Auto Updater: No updates available, already using latest version.',
-      );
+      logInfo('auto updater', 'Update not available');
 
       this.resetState();
     });
 
     autoUpdater.on('update-cancelled', () => {
-      log.warn('Auto Updater: Update cancelled');
+      logInfo('auto updater', 'Update cancelled');
 
       this.resetState();
     });
 
-    autoUpdater.on('error', (error) => {
-      log.error('Auto Updater: Error checking for new updates', error);
+    autoUpdater.on('error', (err) => {
+      logError('auto updater', 'Error checking for update', err);
 
       this.resetState();
     });

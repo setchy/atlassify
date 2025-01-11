@@ -2,10 +2,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { dialog, shell } from 'electron';
-import log from 'electron-log';
 import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
+import { logError, logInfo } from '../shared/logger';
 import { namespacedEvent } from '../shared/utils';
 
 export function takeScreenshot(mb: Menubar) {
@@ -18,7 +18,7 @@ export function takeScreenshot(mb: Menubar) {
   );
   mb.window.capturePage().then((img) => {
     fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
-      log.info(`Screenshot saved ${capturedPicFilePath}`),
+      logInfo('takeScreenshot', `Screenshot saved ${capturedPicFilePath}`),
     );
   });
 }
@@ -46,7 +46,11 @@ export function openLogsDirectory() {
   const logDirectory = path.dirname(log.transports.file?.getFile()?.path);
 
   if (!logDirectory) {
-    log.error('Could not find log directory!');
+    logError(
+      'openLogsDirectory',
+      'Could not find log directory!',
+      new Error('Directory not found'),
+    );
     return;
   }
 

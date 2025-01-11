@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { app, dialog } from 'electron';
-import log from 'electron-log';
+
 import { APPLICATION } from '../shared/constants';
+import { logError } from '../shared/logger';
 
 export async function onFirstRunMaybe() {
   if (isFirstRun()) {
@@ -49,8 +50,8 @@ function isFirstRun() {
     }
 
     fs.writeFileSync(configPath, '');
-  } catch (error) {
-    log.error('First run: Unable to write firstRun file', error);
+  } catch (err) {
+    logError('isFirstRun', 'Unable to write firstRun file', err);
   }
 
   return true;
