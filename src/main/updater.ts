@@ -39,6 +39,13 @@ export default class Updater {
       );
     });
 
+    autoUpdater.on('download-progress', (progressObj) => {
+      const downloadProgress = `${progressObj.percent} % (${progressObj.transferred}/${progressObj.total})`;
+      this.menubar.tray.setToolTip(
+        `${APPLICATION.NAME}\nDownloaded: ${downloadProgress}`,
+      );
+    });
+
     autoUpdater.on('update-downloaded', () => {
       log.info('Auto Updater: Update downloaded, ready to install');
       this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
@@ -52,6 +59,10 @@ export default class Updater {
         'Auto Updater: No updates available, already using latest version.',
       );
       this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
+    });
+
+    autoUpdater.on('update-cancelled', () => {
+      log.warn('Auto Updater: Update cancelled');
     });
   }
 }
