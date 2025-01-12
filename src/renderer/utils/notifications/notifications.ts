@@ -159,7 +159,6 @@ function determineIfMorePagesAvailable<T>(
     logWarn(
       'determineIfMorePagesAvailable',
       'Response did not contain extensions object, assuming no more pages',
-      err,
     );
   }
 
