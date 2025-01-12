@@ -1,6 +1,6 @@
 import log from 'electron-log';
 
-import { mockSingleNotification } from '../renderer/utils/api/__mocks__/response-mocks';
+import { mockSingleAtlassifyNotification } from '../renderer/__mocks__/notifications-mocks';
 import { logError, logInfo, logWarn } from './logger';
 
 describe('renderer/utils/logger.ts', () => {
@@ -25,13 +25,13 @@ describe('renderer/utils/logger.ts', () => {
     });
 
     it('log info with notification', () => {
-      logInfo('foo', 'bar', mockSingleNotification);
+      logInfo('foo', 'bar', mockSingleAtlassifyNotification);
 
       expect(logInfoSpy).toHaveBeenCalledTimes(1);
       expect(logInfoSpy).toHaveBeenCalledWith(
         '[foo]',
         'bar',
-        '[Issue >> gitify-app/notifications-test >> I am a robot and this is a test!]',
+        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
       );
     });
   });
@@ -45,13 +45,13 @@ describe('renderer/utils/logger.ts', () => {
     });
 
     it('log warn with notification', () => {
-      logWarn('foo', 'bar', mockSingleNotification);
+      logWarn('foo', 'bar', mockSingleAtlassifyNotification);
 
       expect(logWarnSpy).toHaveBeenCalledTimes(1);
       expect(logWarnSpy).toHaveBeenCalledWith(
         '[foo]',
         'bar',
-        '[Issue >> gitify-app/notifications-test >> I am a robot and this is a test!]',
+        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
       );
     });
   });
@@ -65,13 +65,13 @@ describe('renderer/utils/logger.ts', () => {
     });
 
     it('log error with notification', () => {
-      logError('foo', 'bar', mockError, mockSingleNotification);
+      logError('foo', 'bar', mockError, mockSingleAtlassifyNotification);
 
       expect(logErrorSpy).toHaveBeenCalledTimes(1);
       expect(logErrorSpy).toHaveBeenCalledWith(
         '[foo]',
         'bar',
-        '[Issue >> gitify-app/notifications-test >> I am a robot and this is a test!]',
+        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
         mockError,
       );
     });
