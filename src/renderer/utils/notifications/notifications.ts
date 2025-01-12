@@ -1,6 +1,6 @@
 import { AxiosError } from 'axios';
-import log from 'electron-log';
 
+import { logError, logWarn } from '../../../shared/logger';
 import type {
   Account,
   AccountNotifications,
@@ -82,17 +82,18 @@ export async function getAllNotifications(
             hasMoreNotifications: determineIfMorePagesAvailable(res),
             error: null,
           };
-        } catch (error) {
-          log.error(
-            'Error occurred while fetching account notifications',
-            error,
+        } catch (err) {
+          logError(
+            'getAllNotifications',
+            'error occurred while fetching account notifications',
+            err,
           );
 
           return {
             account: accountNotifications.account,
             notifications: [],
             hasMoreNotifications: false,
-            error: determineFailureType(error),
+            error: determineFailureType(err),
           };
         }
       }),
@@ -154,10 +155,10 @@ function determineIfMorePagesAvailable<T>(
       res.extensions.notifications.response_info.responseSize ===
       Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
     );
-  } catch (error) {
-    log.warn(
+  } catch (err) {
+    logWarn(
+      'determineIfMorePagesAvailable',
       'Response did not contain extensions object, assuming no more pages',
-      error,
     );
   }
 

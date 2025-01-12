@@ -1,6 +1,6 @@
-import log from 'electron-log';
 import { useCallback, useState } from 'react';
 
+import { logError } from '../../shared/logger';
 import type {
   Account,
   AccountNotifications,
@@ -125,7 +125,11 @@ export const useNotifications = (): NotificationsState => {
           setTrayIconColor(updatedNotifications);
         }
       } catch (err) {
-        log.error('Error occurred while marking notifications as read', err);
+        logError(
+          'markNotificationsRead',
+          'Error occurred while marking notifications as read',
+          err,
+        );
       }
 
       setStatus('success');
@@ -152,7 +156,11 @@ export const useNotifications = (): NotificationsState => {
           notification.readState = 'unread';
         }
       } catch (err) {
-        log.error('Error occurred while marking notifications as read', err);
+        logError(
+          'markNotificationsUnread',
+          'Error occurred while marking notifications as unread',
+          err,
+        );
       }
 
       setStatus('success');

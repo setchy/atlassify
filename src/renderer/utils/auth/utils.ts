@@ -1,5 +1,4 @@
-import log from 'electron-log';
-
+import { logError } from '../../../shared/logger';
 import type { Account, AuthState, Token, Username } from '../../types';
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';
@@ -39,8 +38,12 @@ export async function refreshAccount(account: Account): Promise<Account> {
     account.id = res.data.me.user.accountId;
     account.name = res.data.me.user.name;
     account.avatar = res.data.me.user.picture;
-  } catch (error) {
-    log.error('Failed to refresh account', error);
+  } catch (err) {
+    logError(
+      'refreshAccount',
+      `failed to refresh account for user ${account.username}`,
+      err,
+    );
   }
 
   return account;
