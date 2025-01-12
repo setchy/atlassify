@@ -70,8 +70,10 @@ export const useNotifications = (): NotificationsState => {
       const allAccountsHaveErrors = fetchedNotifications.every((account) => {
         return account.error !== null;
       });
+
       let accountErrorsAreAllSame = true;
       const accountError = fetchedNotifications[0]?.error;
+
       for (const fetchedNotification of fetchedNotifications) {
         if (accountError !== fetchedNotification.error) {
           accountErrorsAreAllSame = false;
