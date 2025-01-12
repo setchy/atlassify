@@ -38,7 +38,7 @@ export default class Updater {
 
     autoUpdater.on('download-progress', (progressObj) => {
       this.menubar.tray.setToolTip(
-        `${APPLICATION.NAME}\nDownloaded: ${progressObj.percent} %`,
+        `${APPLICATION.NAME}\nDownloading update: ${progressObj.percent} %`,
       );
     });
 
