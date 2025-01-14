@@ -2,10 +2,15 @@ name: Lint
 
 on:
   workflow_call:
+    inputs:
+      directory:
+        type: string
+        required: true
+        description: 'The directory to lint'
 
 jobs:
-  lint-app:
-    name: Lint App (biomejs)
+  lint:
+    name: biomejs
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +21,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
       - run: pnpm install
+        working-directory: ${{ github.event.inputs.directory }}
       - run: pnpm lint:check
+        working-directory: ${{ github.event.inputs.directory }}
+          

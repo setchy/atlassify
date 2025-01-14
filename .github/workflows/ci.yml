@@ -13,21 +13,23 @@ on:
       - 'docs/**'
 
 jobs:
-  lint-app:
-    name: Lint App (biomejs)
+  lint:
+    name: Lint App
     uses: ./.github/workflows/lint.yml
+    with:
+      directory: '.'
 
-  run-unit-tests:
-    name: Run Tests
+  tests:
+    name: Tests
     uses: ./.github/workflows/test.yml
-    needs: lint-app
+    needs: lint
     secrets: inherit
 
   build-macos:
     name: Build macOS (electron-builder)
     runs-on: macos-latest
-    needs: run-unit-tests
-    if: ${{ !startsWith(github.head_ref, 'feat/github') }}
+    needs: tests
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
     steps:
       - uses: actions/checkout@v4
