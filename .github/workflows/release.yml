@@ -10,16 +10,22 @@ permissions:
   contents: write
 
 jobs:
-  lint:
+  lint-app:
     name: Lint App
     uses: ./.github/workflows/lint.yml
     with:
       directory: '.'
 
+  lint-docs:
+    name: Lint Docs
+    uses: ./.github/workflows/lint.yml
+    with:
+      directory: 'docs'
+
   tests:
     name: Tests
     uses: ./.github/workflows/test.yml
-    needs: lint
+    needs: [lint-app, lint-docs]
     secrets: inherit
     
   release-macos:
