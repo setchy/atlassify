@@ -1,4 +1,4 @@
-name: Release (electron-builder)
+name: Release
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   release-macos:
-    name: macOS
+    name: Publish macOS (electron-builder)
     runs-on: macos-latest
 
     steps:
@@ -42,7 +42,7 @@ jobs:
           overwrite: true
 
   release-windows:
-    name: Windows
+    name: Publish Windows (electron-builder)
     runs-on: windows-latest
 
     steps:
@@ -65,7 +65,7 @@ jobs:
           overwrite: true
 
   release-linux:
-    name: Linux
+    name: Publish Linux (electron-builder)
     runs-on: ubuntu-latest
 
     steps:
