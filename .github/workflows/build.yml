@@ -1,4 +1,4 @@
-name: Build
+name: Build (electron-builder)
 
 on:
   workflow_run:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-macos:
-    name: Build macOS (electron-builder)
+    name: macOS
     runs-on: macos-latest
 
     steps:
@@ -36,7 +36,7 @@ jobs:
           overwrite: true
 
   build-windows:
-    name: Build Windows (electron-builder)
+    name: Windows
     runs-on: windows-latest
 
     steps:
@@ -59,7 +59,7 @@ jobs:
           overwrite: true
 
   build-linux:
-    name: Build Linux (electron-builder)
+    name: Linux
     runs-on: ubuntu-latest
 
     steps:
