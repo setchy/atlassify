@@ -1,0 +1,86 @@
+name: Publish
+
+on:
+  workflow_call:
+  workflow_dispatch: # For manually running release process to verify code-signing of artifacts
+
+permissions:
+  contents: write
+
+jobs:
+  release-macos:
+    name: Publish macOS (electron-builder)
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:macos --publish onTagOrDraft
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLEID_TEAMID }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NOTARIZE: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Atlassify-release-mac
+          path: |
+            dist/*
+            !dist/**/*.dmg
+          overwrite: true
+
+  release-windows:
+    name: Publish Windows (electron-builder)
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:win --publish onTagOrDraft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Atlassify-release-win
+          path: dist/
+          overwrite: true
+
+  release-linux:
+    name: Publish Linux (electron-builder)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm prepare:remove-source-maps
+      - run: pnpm package:linux --publish onTagOrDraft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Atlassify-release-linux
+          path: dist/
+          overwrite: true
