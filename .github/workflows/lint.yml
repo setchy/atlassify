@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint-app:
-    name: biomejs-app
+    name: App
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       - run: pnpm lint:check
 
   lint-docs:
-    name: biomejs-docs
+    name: Docs
     runs-on: ubuntu-latest
 
     steps:
@@ -33,6 +33,6 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
       - run: pnpm install
-        working-directory: .docs
+        working-directory: docs
       - run: pnpm lint:check
-        working-directory: .docs
+        working-directory: docs
