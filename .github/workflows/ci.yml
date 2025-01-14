@@ -19,6 +19,7 @@ jobs:
   run-unit-tests:
     uses: ./.github/workflows/test.yml
     needs: lint-app
+    secrets: inherit
 
   build-macos:
     name: Build macOS (electron-builder)
