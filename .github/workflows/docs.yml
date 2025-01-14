@@ -1,14 +1,18 @@
-name: Linting
+name: Docs
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
   pull_request:
+    paths:
+      - 'docs/**'
 
 jobs:
-  lint:
-    name: biomejs
+  lint-docs:
+    name: Lint Check (biomejs)
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +23,6 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
       - run: pnpm install
+        working-directory: docs
       - run: pnpm lint:check
+        working-directory: docs
