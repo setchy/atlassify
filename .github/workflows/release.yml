@@ -11,9 +11,11 @@ permissions:
 
 jobs:
   lint-app:
+    name: Lint App (biomejs)
     uses: ./.github/workflows/lint.yml
 
   run-unit-tests:
+    name: Run Tests
     uses: ./.github/workflows/test.yml
     needs: lint-app
     secrets: inherit

@@ -14,9 +14,11 @@ on:
 
 jobs:
   lint-app:
+    name: Lint App (biomejs)
     uses: ./.github/workflows/lint.yml
 
   run-unit-tests:
+    name: Run Tests
     uses: ./.github/workflows/test.yml
     needs: lint-app
     secrets: inherit
@@ -25,7 +27,7 @@ jobs:
     name: Build macOS (electron-builder)
     runs-on: macos-latest
     needs: run-unit-tests
-    if: ${{ !startsWith(github.head_ref, 'release/v') }}
+    if: ${{ !startsWith(github.head_ref, 'feat/github') }}
 
     steps:
       - uses: actions/checkout@v4
