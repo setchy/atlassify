@@ -1,14 +1,10 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'docs/**'
-  pull_request:
-    paths-ignore:
-      - 'docs/**'
+  workflow_run:
+    workflows: ["Tests"]
+    types:
+      - completed
 
 jobs:
   build-macos:
