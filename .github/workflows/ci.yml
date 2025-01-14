@@ -13,9 +13,24 @@ on:
       - 'docs/**'
 
 jobs:
+  lint-app:
+    name: Lint Check (biomejs)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm lint:check
+
   run-unit-tests:
     name: Run Tests
     runs-on: macos-latest
+    needs: lint-app
 
     steps:
       - uses: actions/checkout@v4

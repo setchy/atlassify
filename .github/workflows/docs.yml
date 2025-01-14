@@ -1,4 +1,4 @@
-name: Linting (biomejs)
+name: Docs
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint-docs:
-    name: Docs
+    name: Lint Check (biomejs)
     runs-on: ubuntu-latest
 
     steps:

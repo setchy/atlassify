@@ -36,7 +36,7 @@ jobs:
               core.setFailed('Missing subject in PR title');
             }
 
-  labeler:
+  auto-labeler:
     name: Auto-label PR
     runs-on: ubuntu-latest
     steps:

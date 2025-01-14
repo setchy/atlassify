@@ -1,4 +1,4 @@
-name: Validators
+name: Renovate
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   renovate-config-validator:
-    name: Validate Renovate config
+    name: Config validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
