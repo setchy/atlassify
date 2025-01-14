@@ -5,7 +5,7 @@ on:
 
 jobs:
   redeploy-website:
+    name: Deploy Website
     runs-on: ubuntu-latest
     steps:
-      - name: Redeploy Website
-        run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+      - run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
