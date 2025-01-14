@@ -1,26 +1,16 @@
-name: Linting
+name: Linting (biomejs)
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
   pull_request:
+    paths:
+      - 'docs/**'
 
 jobs:
-  lint-app:
-    name: App
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm lint:check
-
   lint-docs:
     name: Docs
     runs-on: ubuntu-latest
