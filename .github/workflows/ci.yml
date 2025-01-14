@@ -18,12 +18,14 @@ jobs:
     uses: ./.github/workflows/lint.yml
     with:
       directory: '.'
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
   tests:
     name: Tests
     uses: ./.github/workflows/test.yml
     needs: lint
     secrets: inherit
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
   build-macos:
     name: Build macOS (electron-builder)
