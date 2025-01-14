@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@astrojs/solid-js':
-        specifier: 5.0.1
-        version: 5.0.1(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.4)
+        specifier: 5.0.2
+        version: 5.0.2(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.4)
       '@astrojs/tailwind':
         specifier: 5.1.4
-        version: 5.1.4(astro@5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
+        version: 5.1.4(astro@5.1.6(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
       '@iconify-json/line-md':
         specifier: 1.2.5
         version: 1.2.5
@@ -30,8 +30,8 @@ importers:
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
       astro:
-        specifier: 5.1.5
-        version: 5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+        specifier: 5.1.6
+        version: 5.1.6(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.5
         version: 1.1.5
@@ -105,8 +105,8 @@ packages:
     resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/solid-js@5.0.1':
-    resolution: {integrity: sha512-8II1SIEgV0uyeijntAmNgUZu/n1e/A7OW2ofzp0MLYoxCRSOuu5QlQB3A4QOSCqRFtgrT03rvhMDmEd/JRPgUA==}
+  '@astrojs/solid-js@5.0.2':
+    resolution: {integrity: sha512-qNCJr8o6iy0+5MK6VspCpDiz1NqDIHMNxRS+kJj12m5X+ZTN2eMZmq1n827zF1ctPN3gDlfl1NvR0MvqIxiZpg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       solid-devtools: ^0.30.1
@@ -1222,8 +1222,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.1.5:
-    resolution: {integrity: sha512-Q9TE4aNlczxVoPDoXR3UcjLezL+70z0KbTRXovE4ybpx0mgNL1jsmSWtF3UFXB5+GTf9JK7om5fbIaaMReKcUg==}
+  astro@5.1.6:
+    resolution: {integrity: sha512-LpTazCIW6syxFePi65gg2ptqqC2kR+PDRym3V23hEQj5yCf+T0t5v9qtp3fW0/+6G+JvP0EprCfCRTt7h/hexg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2994,7 +2994,7 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/solid-js@5.0.1(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.4)':
+  '@astrojs/solid-js@5.0.2(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.4)':
     dependencies:
       solid-js: 1.9.4
       vite: 6.0.5(@types/node@22.9.0)(jiti@2.4.2)
@@ -3014,9 +3014,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@5.1.4(astro@5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@5.1.4(astro@5.1.6(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+      astro: 5.1.6(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -4025,7 +4025,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.1.5(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
+  astro@5.1.6(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
