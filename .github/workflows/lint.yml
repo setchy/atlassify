@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  lint:
-    name: biomejs
+  lint-app:
+    name: biomejs-app
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +20,19 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm lint:check
+
+  lint-docs:
+    name: biomejs-docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+        working-directory: .docs
+      - run: pnpm lint:check
+        working-directory: .docs

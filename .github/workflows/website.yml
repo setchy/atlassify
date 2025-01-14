@@ -1,7 +1,7 @@
 name: Website
 
 on:
-  workflow_dispatch: # For manually verify
+  workflow_dispatch: # For manually running website deployment
 
 jobs:
   redeploy-website:
