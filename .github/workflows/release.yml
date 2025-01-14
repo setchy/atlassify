@@ -10,6 +10,14 @@ permissions:
   contents: write
 
 jobs:
+  lint-app:
+    uses: ./.github/workflows/lint.yml
+
+  run-unit-tests:
+    uses: ./.github/workflows/test.yml
+    needs: lint-app
+    secrets: inherit
+    
   release-macos:
     name: Publish macOS (electron-builder)
     runs-on: macos-latest
