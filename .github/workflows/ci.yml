@@ -14,7 +14,7 @@ on:
 
 jobs:
   lint-app:
-    name: Lint Check (biomejs)
+    name: Lint (biomejs)
     runs-on: ubuntu-latest
 
     steps:

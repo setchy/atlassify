@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint-docs:
-    name: Lint Check (biomejs)
+    name: Lint (biomejs)
     runs-on: ubuntu-latest
 
     steps:
