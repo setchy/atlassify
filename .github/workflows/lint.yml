@@ -1,18 +1,11 @@
-name: Docs
+name: Lint
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-  pull_request:
-    paths:
-      - 'docs/**'
+  workflow_call:
 
 jobs:
-  lint-docs:
-    name: Lint Docs (biomejs)
+  lint-app:
+    name: Lint App (biomejs)
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +16,4 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
       - run: pnpm install
-        working-directory: docs
       - run: pnpm lint:check
-        working-directory: docs
