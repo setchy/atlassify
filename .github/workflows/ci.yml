@@ -13,70 +13,23 @@ on:
       - 'docs/**'
 
 jobs:
-  lint-app:
-    name: Lint (biomejs)
-    runs-on: ubuntu-latest
+  lint:
+    name: Lint App
+    uses: ./.github/workflows/lint.yml
+    with:
+      directory: '.'
 
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm lint:check
-
-  run-unit-tests:
-    name: Run Tests
-    runs-on: macos-latest
-    needs: lint-app
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm tsc --noEmit
-      - run: pnpm test -- --coverage --runInBand --verbose
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v4
-        with:
-          name: code-coverage-report
-          path: coverage/lcov.info
-
-  sonarcloud:
-    name: SonarCloud Analysis
-    runs-on: ubuntu-latest
-    needs: run-unit-tests
-    if: github.event.pull_request.head.repo.fork == false  # Only analyze PRs from the same repository. Limitation of SonarCloud
-    
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: code-coverage-report
-          path: coverage/
-      - name: list all files
-        run: ls -la
-      - name: list coverage folder
-        run: ls -la coverage/
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  tests:
+    name: Tests
+    uses: ./.github/workflows/test.yml
+    needs: lint
+    secrets: inherit
 
   build-macos:
     name: Build macOS (electron-builder)
     runs-on: macos-latest
-    needs: run-unit-tests
+    needs: tests
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
     steps:
       - uses: actions/checkout@v4
@@ -88,7 +41,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm prepare:remove-source-maps
-      - run: pnpm package:macos --publish=never -c.mac.identity=null
+      - run: pnpm package:macos --publish never -c.mac.identity=null
         env:
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
@@ -105,8 +58,8 @@ jobs:
   build-windows:
     name: Build Windows (electron-builder)
     runs-on: windows-latest
-    needs: run-unit-tests
-
+    needs: tests
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
     steps:
       - uses: actions/checkout@v4
@@ -118,7 +71,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm prepare:remove-source-maps
-      - run: pnpm package:win --publish=never
+      - run: pnpm package:win --publish never
       - name: Clean up builds
         run: Remove-Item dist/win-unpacked -Recurse
       - uses: actions/upload-artifact@v4
@@ -130,7 +83,8 @@ jobs:
   build-linux:
     name: Build Linux (electron-builder)
     runs-on: ubuntu-latest
-    needs: run-unit-tests
+    needs: tests
+    if: ${{ !startsWith(github.head_ref, 'release/v') }}
 
     steps:
       - uses: actions/checkout@v4
@@ -142,7 +96,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm prepare:remove-source-maps
-      - run: pnpm package:linux --publish=never
+      - run: pnpm package:linux --publish never
       - name: Clean up builds
         run: rm -rfv dist/linux-unpacked
       - uses: actions/upload-artifact@v4

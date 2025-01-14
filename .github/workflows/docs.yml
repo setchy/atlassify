@@ -11,18 +11,9 @@ on:
       - 'docs/**'
 
 jobs:
-  lint-docs:
-    name: Lint (biomejs)
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - run: pnpm install
-        working-directory: docs
-      - run: pnpm lint:check
-        working-directory: docs
+  lint:
+    name: Lint Docs
+    uses: ./.github/workflows/lint.yml
+    with:
+      directory: 'docs'
+  

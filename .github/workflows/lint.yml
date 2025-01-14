@@ -1,0 +1,27 @@
+name: Lint
+
+on:
+  workflow_call:
+    inputs:
+      directory:
+        type: string
+        required: true
+        description: 'The directory to lint'
+
+jobs:
+  lint:
+    name: biomejs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+        working-directory: ${{ github.event.inputs.directory }}
+      - run: pnpm lint:check
+        working-directory: ${{ github.event.inputs.directory }}
+          
