@@ -150,7 +150,7 @@
     "@graphql-codegen/client-preset": "4.5.1",
     "@graphql-codegen/schema-ast": "4.1.0",
     "@parcel/watcher": "2.5.0",
-    "@testing-library/react": "16.1.0",
+    "@testing-library/react": "16.2.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.10.6",
     "@types/react": "18.3.18",
