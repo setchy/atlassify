@@ -201,7 +201,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="flex flex-1 flex-col items-center justify-center"
+          class="flex flex-1 flex-col items-center justify-center min-h-screen"
         >
           <div
             class="css-1amd086"
@@ -438,7 +438,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col items-center justify-center"
+        class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
           class="css-1amd086"
@@ -1666,7 +1666,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           </div>
         </div>
         <div
-          class="flex flex-1 flex-col items-center justify-center"
+          class="flex flex-1 flex-col items-center justify-center min-h-screen"
         >
           <div
             class="css-ybkmal"
@@ -1890,7 +1890,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         </div>
       </div>
       <div
-        class="flex flex-1 flex-col items-center justify-center"
+        class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
           class="css-ybkmal"

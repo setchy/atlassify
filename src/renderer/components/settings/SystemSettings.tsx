@@ -3,7 +3,7 @@ import { type FC, useContext } from 'react';
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import InlineMessage from '@atlaskit/inline-message';
-import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 
@@ -33,20 +33,22 @@ export const SystemSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">System</Heading>
 
-      <Inline space="space.100">
-        <Text id="openLinks-label" weight="medium">
-          Open Links:
-        </Text>
-        <RadioGroup
-          options={openLinksOptions}
-          defaultValue={settings.openLinks}
-          value={settings.openLinks}
-          onChange={(evt) => {
-            updateSetting('openLinks', evt.target.value as OpenPreference);
-          }}
-          aria-labelledby="openLinks-label"
-        />
-      </Inline>
+      <Box paddingInlineStart="space.050">
+        <Inline space="space.100">
+          <Text id="openLinks-label" weight="medium">
+            Open Links:
+          </Text>
+          <RadioGroup
+            options={openLinksOptions}
+            defaultValue={settings.openLinks}
+            value={settings.openLinks}
+            onChange={(evt) => {
+              updateSetting('openLinks', evt.target.value as OpenPreference);
+            }}
+            aria-labelledby="openLinks-label"
+          />
+        </Inline>
+      </Box>
 
       <Inline space="space.100">
         <Checkbox

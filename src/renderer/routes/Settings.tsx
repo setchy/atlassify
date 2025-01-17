@@ -2,7 +2,9 @@ import type { FC } from 'react';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
+import { Contents } from '../components/primitives/Contents';
 import { Header } from '../components/primitives/Header';
+import { Page } from '../components/primitives/Page';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';
@@ -12,10 +14,10 @@ import { SystemSettings } from '../components/settings/SystemSettings';
 // FIXME: InlineMessage findDOMNode errors. See issue #90
 export const SettingsRoute: FC = () => {
   return (
-    <div className="flex h-screen flex-col" data-testid="settings">
+    <Page id="settings">
       <Header fetchOnBack>Settings</Header>
 
-      <div className="flex flex-col flex-grow overflow-x-auto">
+      <Contents>
         <Box paddingInline="space.400" paddingBlockEnd="space.200">
           <Stack space="space.200">
             <AppearanceSettings />
@@ -24,9 +26,9 @@ export const SettingsRoute: FC = () => {
             <SettingsReset />
           </Stack>
         </Box>
-      </div>
+      </Contents>
 
       <SettingsFooter />
-    </div>
+    </Page>
   );
 };

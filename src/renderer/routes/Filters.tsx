@@ -4,10 +4,13 @@ import Badge from '@atlaskit/badge';
 import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
-import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { Contents } from '../components/primitives/Contents';
+import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
+import { Page } from '../components/primitives/Page';
 import { AppContext } from '../context/App';
 import type {
   CategoryFilterType,
@@ -115,10 +118,10 @@ export const FiltersRoute: FC = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col" data-testid="filters">
+    <Page id="filters">
       <Header fetchOnBack={true}>Filters</Header>
 
-      <div className="flex-grow overflow-x-auto">
+      <Contents>
         <Box paddingInlineStart="space.400">
           <Inline space="space.200">
             <Stack space="space.200">
@@ -318,26 +321,21 @@ export const FiltersRoute: FC = () => {
             </Stack>
           </Inline>
         </Box>
-      </div>
+      </Contents>
 
-      <Box
-        padding="space.050"
-        backgroundColor="color.background.accent.gray.subtlest"
-      >
-        <Flex justifyContent="end">
-          <Tooltip content="Clear all filters" position="left">
-            <Button
-              title="Clear Filters"
-              onClick={clearFilters}
-              appearance="discovery"
-              spacing="compact"
-              testId="filters-clear"
-            >
-              Clear Filters
-            </Button>
-          </Tooltip>
-        </Flex>
-      </Box>
-    </div>
+      <Footer justify="end">
+        <Tooltip content="Clear all filters" position="left">
+          <Button
+            title="Clear Filters"
+            onClick={clearFilters}
+            appearance="discovery"
+            spacing="compact"
+            testId="filters-clear"
+          >
+            Clear Filters
+          </Button>
+        </Tooltip>
+      </Footer>
+    </Page>
   );
 };

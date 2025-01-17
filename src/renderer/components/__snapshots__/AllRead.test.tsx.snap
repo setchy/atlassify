@@ -6,7 +6,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
   "baseElement": <body>
     <div>
       <div
-        class="flex flex-1 flex-col items-center justify-center"
+        class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
           class="css-ybkmal"
@@ -34,7 +34,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
   </body>,
   "container": <div>
     <div
-      class="flex flex-1 flex-col items-center justify-center"
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
     >
       <div
         class="css-ybkmal"
@@ -119,7 +119,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - w
   "baseElement": <body>
     <div>
       <div
-        class="flex flex-1 flex-col items-center justify-center"
+        class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
           class="css-ybkmal"
@@ -147,7 +147,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - w
   </body>,
   "container": <div>
     <div
-      class="flex flex-1 flex-col items-center justify-center"
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
     >
       <div
         class="css-ybkmal"

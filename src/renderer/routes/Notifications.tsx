@@ -3,6 +3,7 @@ import { type FC, useContext, useMemo } from 'react';
 import { AllRead } from '../components/AllRead';
 import { Oops } from '../components/Oops';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
+import { Page } from '../components/primitives/Page';
 import { AppContext } from '../context/App';
 import { Errors } from '../utils/errors';
 import { getNotificationCount } from '../utils/notifications/notifications';
@@ -29,7 +30,7 @@ export const NotificationsRoute: FC = () => {
   }
 
   return (
-    <div className="flex flex-col">
+    <Page id="notifications">
       {notifications.map((accountNotifications) => (
         <AccountNotifications
           key={accountNotifications.account.id}
@@ -38,6 +39,6 @@ export const NotificationsRoute: FC = () => {
           error={accountNotifications.error}
         />
       ))}
-    </div>
+    </Page>
   );
 };
