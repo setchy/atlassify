@@ -32,24 +32,18 @@ export default class Updater {
     autoUpdater.on('update-available', () => {
       logInfo('auto updater', 'New update available');
 
-      this.menubar.tray.setToolTip(
-        `${APPLICATION.NAME}\nA new update is available`,
-      );
+      this.setTooltipWithStatus('A new update is available');
       this.menuBuilder.setUpdateAvailableMenuVisibility(true);
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
-      this.menubar.tray.setToolTip(
-        `${APPLICATION.NAME}\nDownloading update: ${progressObj.percent} %`,
-      );
+      this.setTooltipWithStatus(`Downloading update: ${progressObj.percent}%`);
     });
 
     autoUpdater.on('update-downloaded', () => {
       logInfo('auto updater', 'Update downloaded');
 
-      this.menubar.tray.setToolTip(
-        `${APPLICATION.NAME}\nA new update is ready to install`,
-      );
+      this.setTooltipWithStatus('A new update is ready to install');
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
     });
 
@@ -73,6 +67,10 @@ export default class Updater {
 
       this.resetState();
     });
+  }
+
+  private setTooltipWithStatus(status: string) {
+    this.menubar.tray.setToolTip(`${APPLICATION.NAME}\n${status}`);
   }
 
   private resetState() {
