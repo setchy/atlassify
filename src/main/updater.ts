@@ -44,6 +44,7 @@ export default class Updater {
       logInfo('auto updater', 'Update downloaded');
 
       this.setTooltipWithStatus('A new update is ready to install');
+      this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
     });
 
