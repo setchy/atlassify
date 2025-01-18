@@ -34,7 +34,6 @@ describe('main/menu.ts', () => {
       label: 'An update is available',
       enabled: false,
       visible: false,
-      click: expect.any(Function),
     });
 
     expect(MenuItem).toHaveBeenCalledWith({
