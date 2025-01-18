@@ -26,6 +26,7 @@ export default class Updater {
       logInfo('auto updater', 'Checking for update');
 
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
+      this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     });
 
     autoUpdater.on('update-available', () => {
@@ -34,7 +35,7 @@ export default class Updater {
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is available`,
       );
-      this.menuBuilder.setUpdateAvailableMenuEnabled(true);
+      this.menuBuilder.setUpdateAvailableMenuVisibility(true);
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
@@ -49,13 +50,16 @@ export default class Updater {
       this.menubar.tray.setToolTip(
         `${APPLICATION.NAME}\nA new update is ready to install`,
       );
-      this.menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
+      this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
     });
 
     autoUpdater.on('update-not-available', () => {
       logInfo('auto updater', 'Update not available');
 
-      this.resetState();
+      this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
+      this.menuBuilder.setNoUpdateAvailableMenuVisibility(true);
+      this.menuBuilder.setUpdateAvailableMenuVisibility(false);
+      this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
     });
 
     autoUpdater.on('update-cancelled', () => {
@@ -74,7 +78,8 @@ export default class Updater {
   private resetState() {
     this.menubar.tray.setToolTip(APPLICATION.NAME);
     this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
-    this.menuBuilder.setUpdateAvailableMenuEnabled(false);
-    this.menuBuilder.setUpdateReadyForInstallMenuEnabled(false);
+    this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
+    this.menuBuilder.setUpdateAvailableMenuVisibility(false);
+    this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
   }
 }
