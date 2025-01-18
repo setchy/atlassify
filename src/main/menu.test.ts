@@ -25,7 +25,7 @@ describe('main/menu.ts', () => {
     });
 
     expect(MenuItem).toHaveBeenCalledWith({
-      label: 'You are already on the latest version',
+      label: 'No updates available',
       enabled: false,
       visible: false,
     });
