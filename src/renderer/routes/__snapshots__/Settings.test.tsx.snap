@@ -58,7 +58,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     </div>
   </div>
   <div
-    class="flex flex-col flex-grow overflow-x-auto"
+    class="flex-grow overflow-x-auto"
   >
     <div
       class="css-8mzmlv"
@@ -75,240 +75,248 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             Appearance
           </h4>
           <div
-            class="css-gokkc4"
+            class="css-5shg4o"
           >
-            <span
-              class="css-19g3t4k"
-              id="theme-label"
-            >
-              Theme:
-            </span>
             <div
-              aria-labelledby="theme-label"
-              role="radiogroup"
+              class="css-gokkc4"
             >
-              <label
-                class="css-exvs2c"
-                data-testid="theme-system--radio-label"
+              <span
+                class="css-19g3t4k"
+                id="theme-label"
               >
-                <input
-                  class="css-3sn8x3"
-                  data-testid="theme-system--radio-input"
-                  name="theme"
-                  tabindex="0"
-                  type="radio"
-                  value="SYSTEM"
-                />
-                <span
-                  class="css-b9c6gp"
-                >
-                  System
-                </span>
-              </label>
-              <label
-                class="css-exvs2c"
-                data-testid="theme-light--radio-label"
+                Theme:
+              </span>
+              <div
+                aria-labelledby="theme-label"
+                role="radiogroup"
               >
-                <input
-                  checked=""
-                  class="css-3sn8x3"
-                  data-testid="theme-light--radio-input"
-                  name="theme"
-                  tabindex="0"
-                  type="radio"
-                  value="LIGHT"
-                />
-                <span
-                  class="css-b9c6gp"
+                <label
+                  class="css-exvs2c"
+                  data-testid="theme-system--radio-label"
                 >
-                  Light
-                </span>
-              </label>
-              <label
-                class="css-exvs2c"
-                data-testid="theme-dark--radio-label"
-              >
-                <input
-                  class="css-3sn8x3"
-                  data-testid="theme-dark--radio-input"
-                  name="theme"
-                  tabindex="0"
-                  type="radio"
-                  value="DARK"
-                />
-                <span
-                  class="css-b9c6gp"
+                  <input
+                    class="css-3sn8x3"
+                    data-testid="theme-system--radio-input"
+                    name="theme"
+                    tabindex="0"
+                    type="radio"
+                    value="SYSTEM"
+                  />
+                  <span
+                    class="css-b9c6gp"
+                  >
+                    System
+                  </span>
+                </label>
+                <label
+                  class="css-exvs2c"
+                  data-testid="theme-light--radio-label"
                 >
-                  Dark
-                </span>
-              </label>
+                  <input
+                    checked=""
+                    class="css-3sn8x3"
+                    data-testid="theme-light--radio-input"
+                    name="theme"
+                    tabindex="0"
+                    type="radio"
+                    value="LIGHT"
+                  />
+                  <span
+                    class="css-b9c6gp"
+                  >
+                    Light
+                  </span>
+                </label>
+                <label
+                  class="css-exvs2c"
+                  data-testid="theme-dark--radio-label"
+                >
+                  <input
+                    class="css-3sn8x3"
+                    data-testid="theme-dark--radio-input"
+                    name="theme"
+                    tabindex="0"
+                    type="radio"
+                    value="DARK"
+                  />
+                  <span
+                    class="css-b9c6gp"
+                  >
+                    Dark
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
           <div
-            class="css-1v6wdk"
+            class="css-5shg4o"
           >
-            <span
-              class="css-19g3t4k"
-              id="theme-label"
-            >
-              Zoom:
-            </span>
             <div
-              class="css-1cdf62i"
+              class="css-1v6wdk"
             >
+              <span
+                class="css-19g3t4k"
+                id="theme-label"
+              >
+                Zoom:
+              </span>
               <div
-                class="css-1w8rrjt"
+                class="css-1cdf62i"
               >
                 <div
-                  class="css-1s736x3"
+                  class="css-1w8rrjt"
                 >
                   <div
-                    class="css-mrgpd6"
+                    class="css-1s736x3"
                   >
                     <div
-                      class="css-13secbl"
+                      class="css-mrgpd6"
                     >
-                      <span
-                        class="css-b0hel9"
-                      >
-                        100
-                        %
-                      </span>
-                    </div>
-                    <div
-                      role="presentation"
-                    >
-                      <button
-                        class="css-1mbcrti"
-                        data-testid="settings-zoom-out"
-                        type="button"
+                      <div
+                        class="css-13secbl"
                       >
                         <span
-                          class="css-1spmf3f"
+                          class="css-b0hel9"
                         >
-                          <span
-                            aria-hidden="true"
-                            class="css-snhnyn"
-                            data-vc="icon-undefined"
-                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                          >
-                            <svg
-                              height="24"
-                              role="presentation"
-                              viewBox="0 0 24 24"
-                              width="24"
-                            >
-                              <path
-                                d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
-                                fill="currentcolor"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="css-b5o75w"
-                          >
-                            Zoom out
-                          </span>
+                          100
+                          %
                         </span>
-                      </button>
-                    </div>
-                    <div
-                      role="presentation"
-                    >
-                      <button
-                        class="css-1mbcrti"
-                        data-testid="settings-zoom-in"
-                        type="button"
+                      </div>
+                      <div
+                        role="presentation"
                       >
-                        <span
-                          class="css-1spmf3f"
+                        <button
+                          class="css-1mbcrti"
+                          data-testid="settings-zoom-out"
+                          type="button"
                         >
                           <span
-                            aria-hidden="true"
-                            class="css-snhnyn"
-                            data-vc="icon-undefined"
-                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                            class="css-1spmf3f"
                           >
-                            <svg
-                              height="24"
-                              role="presentation"
-                              viewBox="0 0 24 24"
-                              width="24"
+                            <span
+                              aria-hidden="true"
+                              class="css-snhnyn"
+                              data-vc="icon-undefined"
+                              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                             >
-                              <path
-                                d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
-                                fill="currentcolor"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
+                              <svg
+                                height="24"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                                width="24"
+                              >
+                                <path
+                                  d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
+                                  fill="currentcolor"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="css-b5o75w"
+                            >
+                              Zoom out
+                            </span>
                           </span>
+                        </button>
+                      </div>
+                      <div
+                        role="presentation"
+                      >
+                        <button
+                          class="css-1mbcrti"
+                          data-testid="settings-zoom-in"
+                          type="button"
+                        >
                           <span
-                            class="css-b5o75w"
+                            class="css-1spmf3f"
                           >
-                            Zoom in
+                            <span
+                              aria-hidden="true"
+                              class="css-snhnyn"
+                              data-vc="icon-undefined"
+                              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                            >
+                              <svg
+                                height="24"
+                                role="presentation"
+                                viewBox="0 0 24 24"
+                                width="24"
+                              >
+                                <path
+                                  d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
+                                  fill="currentcolor"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="css-b5o75w"
+                            >
+                              Zoom in
+                            </span>
                           </span>
-                        </span>
-                      </button>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-hfhhah"
-                />
-                <div
-                  class="css-1uzrn2e"
-                >
                   <div
-                    role="presentation"
+                    class="css-hfhhah"
+                  />
+                  <div
+                    class="css-1uzrn2e"
                   >
-                    <button
-                      class="css-1mbcrti"
-                      data-testid="settings-zoom-reset"
-                      type="button"
+                    <div
+                      role="presentation"
                     >
-                      <span
-                        class="css-1spmf3f"
+                      <button
+                        class="css-1mbcrti"
+                        data-testid="settings-zoom-reset"
+                        type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="css-snhnyn"
-                          data-vc="icon-undefined"
-                          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                          class="css-1spmf3f"
                         >
-                          <svg
-                            height="24"
-                            role="presentation"
-                            viewBox="0 0 24 24"
-                            width="24"
+                          <span
+                            aria-hidden="true"
+                            class="css-snhnyn"
+                            data-vc="icon-undefined"
+                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
                           >
-                            <g
-                              fill="currentcolor"
-                              fill-rule="evenodd"
+                            <svg
+                              height="24"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                              width="24"
                             >
-                              <path
-                                d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
-                                fill-rule="nonzero"
-                              />
-                              <path
-                                d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
-                                fill-rule="nonzero"
-                              />
-                              <circle
-                                cx="7"
-                                cy="15.61"
-                                r="1"
-                              />
-                            </g>
-                          </svg>
+                              <g
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              >
+                                <path
+                                  d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
+                                  fill-rule="nonzero"
+                                />
+                                <path
+                                  d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
+                                  fill-rule="nonzero"
+                                />
+                                <circle
+                                  cx="7"
+                                  cy="15.61"
+                                  r="1"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                          <span
+                            class="css-b5o75w"
+                          >
+                            Reset zoom
+                          </span>
                         </span>
-                        <span
-                          class="css-b5o75w"
-                        >
-                          Reset zoom
-                        </span>
-                      </span>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -587,51 +595,55 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             System
           </h4>
           <div
-            class="css-gokkc4"
+            class="css-5shg4o"
           >
-            <span
-              class="css-19g3t4k"
-              id="openLinks-label"
-            >
-              Open Links:
-            </span>
             <div
-              aria-labelledby="openLinks-label"
-              role="radiogroup"
+              class="css-gokkc4"
             >
-              <label
-                class="css-exvs2c"
+              <span
+                class="css-19g3t4k"
+                id="openLinks-label"
               >
-                <input
-                  checked=""
-                  class="css-3sn8x3"
-                  name="openLinks"
-                  tabindex="0"
-                  type="radio"
-                  value="FOREGROUND"
-                />
-                <span
-                  class="css-b9c6gp"
-                >
-                  Foreground
-                </span>
-              </label>
-              <label
-                class="css-exvs2c"
+                Open Links:
+              </span>
+              <div
+                aria-labelledby="openLinks-label"
+                role="radiogroup"
               >
-                <input
-                  class="css-3sn8x3"
-                  name="openLinks"
-                  tabindex="0"
-                  type="radio"
-                  value="BACKGROUND"
-                />
-                <span
-                  class="css-b9c6gp"
+                <label
+                  class="css-exvs2c"
                 >
-                  Background
-                </span>
-              </label>
+                  <input
+                    checked=""
+                    class="css-3sn8x3"
+                    name="openLinks"
+                    tabindex="0"
+                    type="radio"
+                    value="FOREGROUND"
+                  />
+                  <span
+                    class="css-b9c6gp"
+                  >
+                    Foreground
+                  </span>
+                </label>
+                <label
+                  class="css-exvs2c"
+                >
+                  <input
+                    class="css-3sn8x3"
+                    name="openLinks"
+                    tabindex="0"
+                    type="radio"
+                    value="BACKGROUND"
+                  />
+                  <span
+                    class="css-b9c6gp"
+                  >
+                    Background
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
           <div
@@ -1037,132 +1049,128 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     class="css-156yo0n"
   >
     <div
-      class="css-1npayr"
+      class="css-fx4jsa"
     >
       <div
-        class="css-uwvn2m"
+        role="presentation"
+      >
+        <button
+          class="css-eu6vk3"
+          data-testid="settings-release-notes"
+          title="View Atlassify release notes"
+          type="button"
+        >
+          <span
+            class="css-1nqby2s"
+          >
+            Atlassify
+             
+            v0.0.1
+          </span>
+        </button>
+      </div>
+      <div
+        class="css-srvzt9"
       >
         <div
           role="presentation"
         >
           <button
-            class="css-eu6vk3"
-            data-testid="settings-release-notes"
-            title="View Atlassify release notes"
+            class="css-1t6wxle"
+            data-testid="settings-accounts"
             type="button"
           >
             <span
-              class="css-1nqby2s"
+              class="css-1spmf3f"
             >
-              Atlassify
-               
-              v0.0.1
+              <span
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              >
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <g
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M8.13 10H4a2 2 0 0 0-2 2v3.73c0 1.31 1.87 2.05 4 2.23V15a3 3 0 0 1 3-3h.35a4 4 0 0 1-1.23-2m7.75 0H20c1.11 0 2 .89 2 2v3.73c0 1.31-1.87 2.05-4 2.23V15a3 3 0 0 0-3-3h-.35a4 4 0 0 0 1.23-2M9.97 5.55a3 3 0 1 0-1.96 3.27 4 4 0 0 1 1.96-3.27M16 8.83a3 3 0 1 0-1.96-3.28A4 4 0 0 1 16 8.83"
+                    />
+                    <path
+                      d="M7 15c0-1.105.887-2 2-2h6c1.105 0 2 .885 2 2v3.73c0 3.027-10 3.027-10 0z"
+                    />
+                    <circle
+                      cx="12"
+                      cy="9"
+                      r="3"
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span
+                class="css-b5o75w"
+              >
+                Accounts
+              </span>
             </span>
           </button>
         </div>
         <div
-          class="css-srvzt9"
+          role="presentation"
         >
-          <div
-            role="presentation"
+          <button
+            class="css-1t6wxle"
+            data-testid="settings-quit"
+            type="button"
           >
-            <button
-              class="css-1t6wxle"
-              data-testid="settings-accounts"
-              type="button"
+            <span
+              class="css-1spmf3f"
             >
               <span
-                class="css-1spmf3f"
+                aria-hidden="true"
+                class="css-snhnyn"
+                data-vc="icon-undefined"
+                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
               >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                <svg
+                  height="24"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                  width="24"
                 >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                  <g
+                    fill-rule="evenodd"
                   >
-                    <g
+                    <circle
+                      cx="12"
+                      cy="12"
                       fill="currentcolor"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M8.13 10H4a2 2 0 0 0-2 2v3.73c0 1.31 1.87 2.05 4 2.23V15a3 3 0 0 1 3-3h.35a4 4 0 0 1-1.23-2m7.75 0H20c1.11 0 2 .89 2 2v3.73c0 1.31-1.87 2.05-4 2.23V15a3 3 0 0 0-3-3h-.35a4 4 0 0 0 1.23-2M9.97 5.55a3 3 0 1 0-1.96 3.27 4 4 0 0 1 1.96-3.27M16 8.83a3 3 0 1 0-1.96-3.28A4 4 0 0 1 16 8.83"
-                      />
-                      <path
-                        d="M7 15c0-1.105.887-2 2-2h6c1.105 0 2 .885 2 2v3.73c0 3.027-10 3.027-10 0z"
-                      />
-                      <circle
-                        cx="12"
-                        cy="9"
-                        r="3"
-                      />
-                    </g>
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Accounts
-                </span>
+                      r="10"
+                    />
+                    <path
+                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
+                      fill="inherit"
+                    />
+                    <path
+                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
+                      fill="inherit"
+                    />
+                  </g>
+                </svg>
               </span>
-            </button>
-          </div>
-          <div
-            role="presentation"
-          >
-            <button
-              class="css-1t6wxle"
-              data-testid="settings-quit"
-              type="button"
-            >
               <span
-                class="css-1spmf3f"
+                class="css-b5o75w"
               >
-                <span
-                  aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
-                >
-                  <svg
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill-rule="evenodd"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
-                  </svg>
-                </span>
-                <span
-                  class="css-b5o75w"
-                >
-                  Quit Atlassify
-                </span>
+                Quit Atlassify
               </span>
-            </button>
-          </div>
+            </span>
+          </button>
         </div>
       </div>
     </div>

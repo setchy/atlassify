@@ -75,75 +75,79 @@ export const AppearanceSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">Appearance</Heading>
 
-      <Inline space="space.100" alignBlock="start">
-        <Text id="theme-label" weight="medium">
-          Theme:
-        </Text>
-        <RadioGroup
-          options={themeOptions}
-          defaultValue={settings.theme}
-          value={settings.theme}
-          onChange={(evt) => {
-            updateSetting('theme', evt.target.value as Theme);
-          }}
-          aria-labelledby="theme-label"
-        />
-      </Inline>
-
-      <Inline space="space.100" alignBlock="center">
-        <Text id="theme-label" weight="medium">
-          Zoom:
-        </Text>
-        <Inline xcss={zoomBoxStyles}>
-          <SplitButton spacing="compact">
-            <Inline alignBlock="center">
-              <Box paddingInline="space.150">
-                <Text>{zoomPercentage.toFixed(0)}%</Text>
-              </Box>
-              <Tooltip content="Zoom out" position="bottom">
-                <IconButton
-                  label="Zoom out"
-                  icon={MediaServicesZoomOutIcon}
-                  shape="circle"
-                  spacing="compact"
-                  onClick={() =>
-                    zoomPercentage > 0 &&
-                    webFrame.setZoomLevel(
-                      zoomPercentageToLevel(zoomPercentage - 10),
-                    )
-                  }
-                  testId="settings-zoom-out"
-                />
-              </Tooltip>
-              <Tooltip content="Zoom in" position="bottom">
-                <IconButton
-                  label="Zoom in"
-                  icon={MediaServicesZoomInIcon}
-                  shape="circle"
-                  spacing="compact"
-                  onClick={() =>
-                    zoomPercentage < 120 &&
-                    webFrame.setZoomLevel(
-                      zoomPercentageToLevel(zoomPercentage + 10),
-                    )
-                  }
-                  testId="settings-zoom-in"
-                />
-              </Tooltip>
-            </Inline>
-            <Tooltip content="Reset zoom" position="bottom">
-              <IconButton
-                label="Reset zoom"
-                icon={RetryIcon}
-                shape="circle"
-                spacing="compact"
-                onClick={() => webFrame.setZoomLevel(0)}
-                testId="settings-zoom-reset"
-              />
-            </Tooltip>
-          </SplitButton>
+      <Box paddingInlineStart="space.050">
+        <Inline space="space.100" alignBlock="start">
+          <Text id="theme-label" weight="medium">
+            Theme:
+          </Text>
+          <RadioGroup
+            options={themeOptions}
+            defaultValue={settings.theme}
+            value={settings.theme}
+            onChange={(evt) => {
+              updateSetting('theme', evt.target.value as Theme);
+            }}
+            aria-labelledby="theme-label"
+          />
         </Inline>
-      </Inline>
+      </Box>
+
+      <Box paddingInlineStart="space.050">
+        <Inline space="space.100" alignBlock="center">
+          <Text id="theme-label" weight="medium">
+            Zoom:
+          </Text>
+          <Inline xcss={zoomBoxStyles}>
+            <SplitButton spacing="compact">
+              <Inline alignBlock="center">
+                <Box paddingInline="space.150">
+                  <Text>{zoomPercentage.toFixed(0)}%</Text>
+                </Box>
+                <Tooltip content="Zoom out" position="bottom">
+                  <IconButton
+                    label="Zoom out"
+                    icon={MediaServicesZoomOutIcon}
+                    shape="circle"
+                    spacing="compact"
+                    onClick={() =>
+                      zoomPercentage > 0 &&
+                      webFrame.setZoomLevel(
+                        zoomPercentageToLevel(zoomPercentage - 10),
+                      )
+                    }
+                    testId="settings-zoom-out"
+                  />
+                </Tooltip>
+                <Tooltip content="Zoom in" position="bottom">
+                  <IconButton
+                    label="Zoom in"
+                    icon={MediaServicesZoomInIcon}
+                    shape="circle"
+                    spacing="compact"
+                    onClick={() =>
+                      zoomPercentage < 120 &&
+                      webFrame.setZoomLevel(
+                        zoomPercentageToLevel(zoomPercentage + 10),
+                      )
+                    }
+                    testId="settings-zoom-in"
+                  />
+                </Tooltip>
+              </Inline>
+              <Tooltip content="Reset zoom" position="bottom">
+                <IconButton
+                  label="Reset zoom"
+                  icon={RetryIcon}
+                  shape="circle"
+                  spacing="compact"
+                  onClick={() => webFrame.setZoomLevel(0)}
+                  testId="settings-zoom-reset"
+                />
+              </Tooltip>
+            </SplitButton>
+          </Inline>
+        </Inline>
+      </Box>
     </Stack>
   );
 };

@@ -6,7 +6,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="flex flex-1 flex-col items-center justify-center"
+        class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
           class="css-11aluc9"
@@ -283,7 +283,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
   </body>,
   "container": <div>
     <div
-      class="flex flex-1 flex-col items-center justify-center"
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
     >
       <div
         class="css-11aluc9"

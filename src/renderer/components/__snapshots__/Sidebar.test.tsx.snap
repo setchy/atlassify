@@ -228,7 +228,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -572,7 +572,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -973,7 +973,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1317,7 +1317,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -1718,7 +1718,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -2062,7 +2062,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -2463,7 +2463,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -2807,7 +2807,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark"
+      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"

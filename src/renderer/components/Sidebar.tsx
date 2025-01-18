@@ -75,10 +75,9 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
+    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
-          {/* <Stack spread="space-between" alignInline="center" alignBlock="stretch"> */}
           <Stack alignInline="center" space="space.100">
             <Tooltip content="Home" position="right">
               <IconButton
@@ -185,6 +184,7 @@ export const Sidebar: FC = () => {
           </Stack>
         </Box>
       </div>
+
       <Box paddingBlockEnd="space.200">
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
@@ -254,7 +254,6 @@ export const Sidebar: FC = () => {
             </Tooltip>
           )}
         </Stack>
-        {/* </Stack> */}
       </Box>
     </div>
   );
