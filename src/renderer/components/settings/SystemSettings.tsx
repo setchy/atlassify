@@ -62,7 +62,7 @@ export const SystemSettings: FC = () => {
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
             When enabled, you can use the hotkeys{' '}
-            <span className="text-orange-600">
+            <span className="text-atlassify-attention">
               {Constants.DEFAULT_KEYBOARD_SHORTCUT}
             </span>{' '}
             to show or hide {APPLICATION.NAME}.

@@ -75,7 +75,7 @@ export const Sidebar: FC = () => {
   }, [settings]);
 
   return (
-    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-sidebar-light dark:bg-sidebar-dark">
+    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">

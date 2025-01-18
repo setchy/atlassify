@@ -62,7 +62,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       id={notification.id}
       className={cn(
         'group flex pl-3 pr-2 py-2',
-        'border-b border-notifications-light dark:border-notifications-dark hover:bg-notifications-light dark:hover:bg-notifications-dark',
+        'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
       )}
