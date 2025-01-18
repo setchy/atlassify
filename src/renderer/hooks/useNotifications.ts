@@ -13,6 +13,7 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import { updateTrayIcon } from '../utils/comms';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
@@ -84,6 +85,7 @@ export const useNotifications = (): NotificationsState => {
       if (allAccountsHaveErrors) {
         setStatus('error');
         setGlobalError(accountErrorsAreAllSame ? accountError : null);
+        updateTrayIcon(-1);
         return;
       }
 

@@ -110,6 +110,12 @@ app.whenReady().then(async () => {
     },
   );
 
+  ipc.on(namespacedEvent('icon-error'), () => {
+    if (!mb.tray.isDestroyed()) {
+      mb.tray.setImage(TrayIcons.error);
+    }
+  });
+
   ipc.on(namespacedEvent('icon-active'), () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.active);
