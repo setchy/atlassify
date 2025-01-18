@@ -25,13 +25,21 @@ describe('main/menu.ts', () => {
     });
 
     expect(MenuItem).toHaveBeenCalledWith({
-      label: 'An update is available',
+      label: 'You are already on the latest version',
       enabled: false,
       visible: false,
     });
 
     expect(MenuItem).toHaveBeenCalledWith({
-      label: 'Restart to update',
+      label: 'An update is available',
+      enabled: false,
+      visible: false,
+      click: expect.any(Function),
+    });
+
+    expect(MenuItem).toHaveBeenCalledWith({
+      label: 'Restart to install update',
+      enabled: true,
       visible: false,
       click: expect.any(Function),
     });
@@ -54,27 +62,39 @@ describe('main/menu.ts', () => {
     expect(menuBuilder['checkForUpdatesMenuItem'].enabled).toBe(false);
   });
 
-  it('should enable update available menu item', () => {
-    menuBuilder.setUpdateAvailableMenuEnabled(true);
+  it('should show no update available menu item', () => {
+    menuBuilder.setNoUpdateAvailableMenuVisibility(true);
     // biome-ignore lint/complexity/useLiteralKeys: This is a test
-    expect(menuBuilder['updateAvailableMenuItem'].enabled).toBe(true);
+    expect(menuBuilder['noUpdateAvailableMenuItem'].visible).toBe(true);
   });
 
-  it('should disable update available menu item', () => {
-    menuBuilder.setUpdateAvailableMenuEnabled(false);
+  it('should hide no update available  menu item', () => {
+    menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     // biome-ignore lint/complexity/useLiteralKeys: This is a test
-    expect(menuBuilder['updateAvailableMenuItem'].enabled).toBe(false);
+    expect(menuBuilder['noUpdateAvailableMenuItem'].visible).toBe(false);
   });
 
-  it('should enable update ready for install menu item', () => {
-    menuBuilder.setUpdateReadyForInstallMenuEnabled(true);
+  it('should show update available menu item', () => {
+    menuBuilder.setUpdateAvailableMenuVisibility(true);
     // biome-ignore lint/complexity/useLiteralKeys: This is a test
-    expect(menuBuilder['updateReadyForInstallMenuItem'].enabled).toBe(true);
+    expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(true);
   });
 
-  it('should disable update ready for install menu item', () => {
-    menuBuilder.setUpdateReadyForInstallMenuEnabled(false);
+  it('should hide update available menu item', () => {
+    menuBuilder.setUpdateAvailableMenuVisibility(false);
     // biome-ignore lint/complexity/useLiteralKeys: This is a test
-    expect(menuBuilder['updateReadyForInstallMenuItem'].enabled).toBe(false);
+    expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(false);
+  });
+
+  it('should show update ready for install menu item', () => {
+    menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
+    // biome-ignore lint/complexity/useLiteralKeys: This is a test
+    expect(menuBuilder['updateReadyForInstallMenuItem'].visible).toBe(true);
+  });
+
+  it('should show update ready for install menu item', () => {
+    menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+    // biome-ignore lint/complexity/useLiteralKeys: This is a test
+    expect(menuBuilder['updateReadyForInstallMenuItem'].visible).toBe(false);
   });
 });
