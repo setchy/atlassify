@@ -76,8 +76,8 @@ importers:
         specifier: 16.3.5
         version: 16.3.5(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/textfield':
-        specifier: 6.7.1
-        version: 6.7.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.7.2
+        version: 6.7.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
         specifier: 13.4.10
         version: 13.4.10(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -431,8 +431,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/textfield@6.7.1':
-    resolution: {integrity: sha512-jb17KzFfaJ8zkbAwEfGtpuv1Qn9ypuN19u0UoBCwo2ty77ogvRI25pYOXel+z3us1btS2omQt/WulPrcnalsNA==}
+  '@atlaskit/textfield@6.7.2':
+    resolution: {integrity: sha512-/T0Iwky+SlZpNiEqO9QhiDZ7xd/pi+PdpzzZBAmOT67MYUVNNtJmIS1WU8dlRpz2touMzPC6D8nZO0cYVbKeAQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5835,7 +5835,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/textfield@6.7.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/textfield@6.7.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
