@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  item: {
+    url: string;
+    name: string;
+  };
+}
+
+const { item } = Astro.props;
+---
+
+<a
+  href={item.url}
+  class:list={[
+    "mb-3 px-4 py-3 mr-4",
+    "font-semibold rounded-md",
+    "bg-atlassify-docs-download-rest",
+    "hover:bg-atlassify-docs-download-hover",
+  ]}
+>
+  <div class="flex flex-row gap-2 items-center">
+    <Icon name="line-md:cloud-alt-download-filled" size={24} />
+    <span>{item.name}</span>
+  </div>
+</a>
