@@ -12,7 +12,7 @@ import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import { namespacedEvent } from '../../../shared/utils';
+import { namespacedEvent } from '../../../shared/events';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';

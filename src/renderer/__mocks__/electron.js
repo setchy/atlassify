@@ -1,4 +1,4 @@
-const { namespacedEvent } = require('../../shared/utils');
+const { namespacedEvent } = require('../../shared/events');
 
 // @ts-ignore
 window.Notification = function (title) {

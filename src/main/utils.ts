@@ -6,8 +6,8 @@ import log from 'electron-log';
 import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
+import { namespacedEvent } from '../shared/events';
 import { logError, logInfo } from '../shared/logger';
-import { namespacedEvent } from '../shared/utils';
 
 export function takeScreenshot(mb: Menubar) {
   const date = new Date();

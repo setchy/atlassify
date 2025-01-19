@@ -1,6 +1,6 @@
 import { AxiosError, type AxiosResponse } from 'axios';
 
-import { namespacedEvent } from '../../../shared/utils';
+import { namespacedEvent } from '../../../shared/events';
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
 import type { AtlassianAPIError } from './types';
