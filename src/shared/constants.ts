@@ -1,3 +1,5 @@
+const packageJson = require('../../package.json');
+
 export const APPLICATION = {
   ID: 'com.electron.atlassify',
 
@@ -6,4 +8,6 @@ export const APPLICATION = {
   EVENT_PREFIX: 'atlassify:',
 
   FIRST_RUN_FOLDER: 'atlassify-first-run',
+
+  WEBSITE: packageJson.homepage,
 };
