@@ -10,6 +10,7 @@ import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { namespacedEvent } from '../shared/events';
+import { isMacOS, isWindows } from '../shared/platform';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
@@ -46,7 +47,7 @@ const contextMenu = menuBuilder.buildMenu();
  * Electron Auto Updater only supports macOS and Windows
  * https://github.com/electron/update-electron-app
  */
-if (process.platform === 'darwin' || process.platform === 'win32') {
+if (isMacOS() || isWindows()) {
   const updater = new Updater(mb, menuBuilder);
   updater.initialize();
 }
