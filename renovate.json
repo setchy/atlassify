@@ -49,8 +49,7 @@
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
       "fileMatch": ["sonar-project.properties"],
-      "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"],
-      "automerge": true
+      "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"]
     }
   ]
 }
