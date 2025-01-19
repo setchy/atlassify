@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { format } from "date-fns";
 import { Octokit } from "octokit";
 
+import DownloadButton from "~/components/DownloadButton.astro";
 import { URLs, siteMetadata } from "~/constants";
 import type {
   DownloadLink,
@@ -113,19 +114,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
       <>
         <div class="sm:flex md:grid md:grid-cols-2">
           {downloadLinks.primary.map((item) => (
-            <a
-              href={item.url}
-              class:list={[
-                "flex items-center mb-3 px-4 py-3 mr-4",
-                "font-semibold text-white rounded-md",
-                "bg-green-700 hover:bg-green-800 hover:text-white",
-              ]}
-            >
-              <div class="flex flex-row gap-2 items-center">
-                <Icon name="line-md:cloud-alt-download-filled" size={24} />
-                <span>{item.name}</span>
-              </div>
-            </a>
+            <DownloadButton item={item} />
           ))}
         </div>
         <div class="w-80 flex flex-col gap-2">
@@ -139,7 +128,10 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
               <ul class="list-disc list-inside mt-2 ml-4">
                 {downloadLinks.alt.map((platform) => (
                   <li class="mb-2.5">
-                    <a href={platform.url || URLs.GITHUB.LATEST_RELEASE}>
+                    <a
+                      class="text-atlassify-docs-download-link"
+                      href={platform.url || URLs.GITHUB.LATEST_RELEASE}
+                    >
                       {platform.name}
                     </a>
                   </li>
@@ -152,18 +144,12 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
     ) : (
       <>
         <div class="flex">
-          <a
-            class="flex items-center mb-3 px-4 py-3 font-semibold text-white rounded-md bg-green-700 hover:bg-green-800"
-            href={URLs.GITHUB.LATEST_RELEASE}
-          >
-            <div class="flex flex-row gap-2 items-center">
-              <Icon name="line-md:cloud-alt-download-filled" size={24} />
-              <span>View GitHub Releases</span>
-            </div>
-          </a>
-        </div>
-        <div>
-          <div>Couldn&apos;t get latest version.</div>
+          <DownloadButton
+            item={{
+              url: URLs.GITHUB.LATEST_RELEASE,
+              name: "View GitHub Releases",
+            }}
+          />
         </div>
       </>
     )

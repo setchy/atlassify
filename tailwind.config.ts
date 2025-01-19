@@ -16,8 +16,8 @@ const config: Config = {
     extend: {
       colors: {
         atlassify: {
-          sidebar: 'var(--color-atlassify-sidebar)',
-          notifications: 'var(--color-atlassify-notifications)',
+          sidebar: 'var(--atlassify-background-sidebar)',
+          notifications: 'var(--atlassify-background-notifications)',
           attention: R300,
         },
       },
@@ -27,12 +27,26 @@ const config: Config = {
     ({ addBase }) => {
       addBase({
         ':root': {
-          '--color-atlassify-sidebar': colors.sidebar.light,
-          '--color-atlassify-notifications': N10,
+          '--atlassify-background-sidebar': colors.sidebar.light,
+          '--atlassify-background-notifications': N10,
+
+          '--atlassify-scrollbar-track':
+            'var(--ds-background-accent-blue-subtlest)',
+          '--atlassify-scrollbar-thumb':
+            'var(--ds-background-accent-blue-subtler)',
+          '--atlassify-scrollbar-thumb-hover':
+            'var(--ds-background-accent-blue-subtler-hovered)',
         },
         '.dark': {
-          '--color-atlassify-sidebar': colors.sidebar.dark,
-          '--color-atlassify-notifications': DN40,
+          '--atlassify-background-sidebar': colors.sidebar.dark,
+          '--atlassify-background-notifications': DN40,
+
+          '--atlassify-scrollbar-track':
+            'var(--ds-background-accent-gray-subtlest)',
+          '--atlassify-scrollbar-thumb':
+            'var(--ds-background-accent-gray-subtler)',
+          '--atlassify-scrollbar-thumb-hover':
+            'var(--ds-background-accent-gray-subtler-hovered)',
         },
       });
     },

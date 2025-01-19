@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 a {
-  @apply font-semibold hover:text-blue-600 hover:underline;
+  @apply text-atlassify-docs-link font-semibold hover:underline;
 }
 
 .markdown ul {
