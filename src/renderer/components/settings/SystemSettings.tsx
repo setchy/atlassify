@@ -8,10 +8,10 @@ import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 
 import { APPLICATION } from '../../../shared/constants';
+import { isLinux, isMacOS } from '../../../shared/platform';
 import { AppContext } from '../../context/App';
 import { OpenPreference } from '../../types';
 import { Constants } from '../../utils/constants';
-import { isLinux, isMacOS } from '../../utils/platform';
 
 export const SystemSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);

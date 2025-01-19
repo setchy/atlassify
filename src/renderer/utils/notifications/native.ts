@@ -1,6 +1,7 @@
 import path from 'node:path';
 
 import { APPLICATION } from '../../../shared/constants';
+import { isWindows } from '../../../shared/platform';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -10,7 +11,6 @@ import { hideWindow, showWindow } from '../comms';
 import { Constants } from '../constants';
 import { formatNotificationFooterText } from '../helpers';
 import { openNotification } from '../links';
-import { isWindows } from '../platform';
 import { setTrayIconColor } from './notifications';
 
 export const triggerNativeNotifications = (
