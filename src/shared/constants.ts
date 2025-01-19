@@ -1,5 +1,3 @@
-const packageJson = require('../../package.json');
-
 export const APPLICATION = {
   ID: 'com.electron.atlassify',
 
@@ -9,5 +7,5 @@ export const APPLICATION = {
 
   FIRST_RUN_FOLDER: 'atlassify-first-run',
 
-  WEBSITE: packageJson.homepage,
+  WEBSITE: 'https://atlassify.io',
 };
