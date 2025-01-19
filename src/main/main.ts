@@ -9,8 +9,8 @@ import log from 'electron-log';
 import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
+import { namespacedEvent } from '../shared/events';
 import { isMacOS, isWindows } from '../shared/platform';
-import { namespacedEvent } from '../shared/utils';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';

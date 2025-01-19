@@ -1,6 +1,6 @@
 import { ipcRenderer, shell } from 'electron';
 
-import { namespacedEvent } from '../../shared/utils';
+import { namespacedEvent } from '../../shared/events';
 import { defaultSettings } from '../context/App';
 import { type Link, OpenPreference } from '../types';
 import { Constants } from './constants';
