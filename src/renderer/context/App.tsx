@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { namespacedEvent } from '../../shared/utils';
+import { namespacedEvent } from '../../shared/events';
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import {
