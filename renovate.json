@@ -6,7 +6,9 @@
     ":enableVulnerabilityAlerts",
     "schedule:daily",
     "customManagers:biomeVersions",
-    "group:atlaskit"
+    "group:atlaskit",
+    ":prConcurrentLimitNone",
+    ":prHourlyLimitNone"
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
