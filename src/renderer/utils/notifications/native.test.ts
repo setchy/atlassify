@@ -16,7 +16,7 @@ describe('renderer/utils/notifications/native.ts', () => {
     jest.clearAllMocks();
   });
 
-  it('should raise a system notification (settings - on)', () => {
+  it('should raise a native notification (settings - on)', () => {
     const settings: SettingsState = {
       ...defaultSettings,
       playSoundNewNotifications: true,
@@ -43,7 +43,7 @@ describe('renderer/utils/notifications/native.ts', () => {
     );
   });
 
-  it('should not raise a system notification (settings - off)', () => {
+  it('should not raise a native notification (settings - off)', () => {
     const settings = {
       ...defaultSettings,
       playSoundNewNotifications: false,
@@ -66,7 +66,7 @@ describe('renderer/utils/notifications/native.ts', () => {
     expect(notificationsHelpers.raiseSoundNotification).not.toHaveBeenCalled();
   });
 
-  it('should not raise a notification or play a sound (no new notifications)', () => {
+  it('should not raise a native notification or play a sound (no new notifications)', () => {
     const settings = {
       ...defaultSettings,
       playSound: true,
@@ -86,7 +86,7 @@ describe('renderer/utils/notifications/native.ts', () => {
     expect(notificationsHelpers.raiseSoundNotification).not.toHaveBeenCalled();
   });
 
-  it('should not raise a notification (because of 0(zero) notifications)', () => {
+  it('should not raise a native notification (because of 0(zero) notifications)', () => {
     const settings = {
       ...defaultSettings,
       playSound: true,
