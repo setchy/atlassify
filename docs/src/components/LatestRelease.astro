@@ -142,16 +142,14 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
         </div>
       </>
     ) : (
-      <>
-        <div class="flex">
-          <DownloadButton
-            item={{
-              url: URLs.GITHUB.LATEST_RELEASE,
-              name: "View GitHub Releases",
-            }}
-          />
-        </div>
-      </>
+      <div class="flex">
+        <DownloadButton
+          item={{
+            url: URLs.GITHUB.LATEST_RELEASE,
+            name: "View GitHub Releases",
+          }}
+        />
+      </div>
     )
   }
 </div>
