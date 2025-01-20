@@ -9,7 +9,7 @@ import { defaultSettings } from '../../context/App';
 import type { SettingsState } from '../../types';
 import * as comms from '../comms';
 import * as links from '../links';
-import * as notificationsHelpers from './native';
+import * as native from './native';
 
 describe('renderer/utils/notifications/native.ts', () => {
   afterEach(() => {
@@ -24,24 +24,16 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: true,
       };
 
-      jest.spyOn(notificationsHelpers, 'raiseNativeNotification');
-      jest.spyOn(notificationsHelpers, 'raiseSoundNotification');
+      jest.spyOn(native, 'raiseNativeNotification');
+      jest.spyOn(native, 'raiseSoundNotification');
 
-      notificationsHelpers.triggerNativeNotifications(
-        [],
-        mockAccountNotifications,
-        {
-          auth: mockAuth,
-          settings,
-        },
-      );
+      native.triggerNativeNotifications([], mockAccountNotifications, {
+        auth: mockAuth,
+        settings,
+      });
 
-      expect(
-        notificationsHelpers.raiseNativeNotification,
-      ).toHaveBeenCalledTimes(1);
-      expect(notificationsHelpers.raiseSoundNotification).toHaveBeenCalledTimes(
-        1,
-      );
+      expect(native.raiseNativeNotification).toHaveBeenCalledTimes(1);
+      expect(native.raiseSoundNotification).toHaveBeenCalledTimes(1);
     });
 
     it('should not raise a native notification (settings - off)', () => {
@@ -51,24 +43,16 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: false,
       };
 
-      jest.spyOn(notificationsHelpers, 'raiseNativeNotification');
-      jest.spyOn(notificationsHelpers, 'raiseSoundNotification');
+      jest.spyOn(native, 'raiseNativeNotification');
+      jest.spyOn(native, 'raiseSoundNotification');
 
-      notificationsHelpers.triggerNativeNotifications(
-        [],
-        mockAccountNotifications,
-        {
-          auth: mockAuth,
-          settings,
-        },
-      );
+      native.triggerNativeNotifications([], mockAccountNotifications, {
+        auth: mockAuth,
+        settings,
+      });
 
-      expect(
-        notificationsHelpers.raiseNativeNotification,
-      ).not.toHaveBeenCalled();
-      expect(
-        notificationsHelpers.raiseSoundNotification,
-      ).not.toHaveBeenCalled();
+      expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(native.raiseSoundNotification).not.toHaveBeenCalled();
     });
 
     it('should not raise a native notification or play a sound (no new notifications)', () => {
@@ -78,21 +62,17 @@ describe('renderer/utils/notifications/native.ts', () => {
         showNotifications: true,
       };
 
-      jest.spyOn(notificationsHelpers, 'raiseNativeNotification');
-      jest.spyOn(notificationsHelpers, 'raiseSoundNotification');
+      jest.spyOn(native, 'raiseNativeNotification');
+      jest.spyOn(native, 'raiseSoundNotification');
 
-      notificationsHelpers.triggerNativeNotifications(
+      native.triggerNativeNotifications(
         mockSingleAccountNotifications,
         mockSingleAccountNotifications,
         { auth: mockAuth, settings },
       );
 
-      expect(
-        notificationsHelpers.raiseNativeNotification,
-      ).not.toHaveBeenCalled();
-      expect(
-        notificationsHelpers.raiseSoundNotification,
-      ).not.toHaveBeenCalled();
+      expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(native.raiseSoundNotification).not.toHaveBeenCalled();
     });
   });
 
@@ -103,20 +83,20 @@ describe('renderer/utils/notifications/native.ts', () => {
       showNotifications: true,
     };
 
-    jest.spyOn(notificationsHelpers, 'raiseNativeNotification');
-    jest.spyOn(notificationsHelpers, 'raiseSoundNotification');
+    jest.spyOn(native, 'raiseNativeNotification');
+    jest.spyOn(native, 'raiseSoundNotification');
 
-    notificationsHelpers.triggerNativeNotifications([], [], {
+    native.triggerNativeNotifications([], [], {
       auth: mockAuth,
       settings,
     });
-    notificationsHelpers.triggerNativeNotifications([], [], {
+    native.triggerNativeNotifications([], [], {
       auth: mockAuth,
       settings,
     });
 
-    expect(notificationsHelpers.raiseNativeNotification).not.toHaveBeenCalled();
-    expect(notificationsHelpers.raiseSoundNotification).not.toHaveBeenCalled();
+    expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+    expect(native.raiseSoundNotification).not.toHaveBeenCalled();
   });
 
   describe('raiseNativeNotification', () => {
@@ -124,10 +104,9 @@ describe('renderer/utils/notifications/native.ts', () => {
       const hideWindowMock = jest.spyOn(comms, 'hideWindow');
       jest.spyOn(links, 'openNotification');
 
-      const nativeNotification: Notification =
-        notificationsHelpers.raiseNativeNotification([
-          mockSingleAtlassifyNotification,
-        ]);
+      const nativeNotification: Notification = native.raiseNativeNotification([
+        mockSingleAtlassifyNotification,
+      ]);
       nativeNotification.onclick(null);
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
@@ -140,7 +119,7 @@ describe('renderer/utils/notifications/native.ts', () => {
     it('should click on a native notification (with more than 1 notification)', () => {
       const showWindowMock = jest.spyOn(comms, 'showWindow');
 
-      const nativeNotification = notificationsHelpers.raiseNativeNotification(
+      const nativeNotification = native.raiseNativeNotification(
         mockAtlassifyNotifications,
       );
       nativeNotification.onclick(null);
@@ -152,7 +131,7 @@ describe('renderer/utils/notifications/native.ts', () => {
   describe('raiseSoundNotification', () => {
     it('should play a sound', () => {
       jest.spyOn(window.Audio.prototype, 'play');
-      notificationsHelpers.raiseSoundNotification();
+      native.raiseSoundNotification();
       expect(window.Audio.prototype.play).toHaveBeenCalledTimes(1);
     });
   });
