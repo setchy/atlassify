@@ -18,8 +18,8 @@ importers:
         specifier: 1.2.5
         version: 1.2.5
       '@iconify-json/mdi':
-        specifier: 1.2.2
-        version: 1.2.2
+        specifier: 1.2.3
+        version: 1.2.3
       '@kobalte/core':
         specifier: 0.13.7
         version: 0.13.7(solid-js@1.9.4)
@@ -436,8 +436,8 @@ packages:
   '@iconify-json/line-md@1.2.5':
     resolution: {integrity: sha512-6zFKhs6g++kFJLLi+ye5nPoHgjYh44yVLjua0tmbxH1HdImMQZ6rkRsPnBgxADY4bQWiapXBzfoiz7+UBXgtWg==}
 
-  '@iconify-json/mdi@1.2.2':
-    resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
 
   '@iconify/tools@4.0.7':
     resolution: {integrity: sha512-zOJxKIfZn96ZRGGvIWzDRLD9vb2CsxjcLuM+QIdvwWbv6SWhm49gECzUnd4d2P0sq9sfodT7yCNobWK8nvavxQ==}
@@ -3006,7 +3006,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/mdi@1.2.2':
+  '@iconify-json/mdi@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 
