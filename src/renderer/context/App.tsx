@@ -75,6 +75,7 @@ const defaultSystemSettings: SystemSettingsState = {
   useAlternateIdleIcon: false,
   openAtStartup: true,
 };
+// fake comment
 
 export const defaultFilters: FilterSettingsState = {
   filterTimeSensitive: [],
