@@ -5,7 +5,6 @@ import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
-import Tooltip from '@atlaskit/tooltip';
 
 import { Contents } from '../components/primitives/Contents';
 import { Footer } from '../components/primitives/Footer';
@@ -51,8 +50,9 @@ export const FiltersRoute: FC = () => {
     timeSensitive: TimeSensitiveFilterType,
     checked: boolean,
   ) => {
-    let timeSensitives: TimeSensitiveFilterType[] =
-      settings.filterTimeSensitive;
+    let timeSensitives: TimeSensitiveFilterType[] = [
+      ...settings.filterTimeSensitive,
+    ];
 
     if (checked) {
       timeSensitives.push(timeSensitive);
@@ -71,7 +71,7 @@ export const FiltersRoute: FC = () => {
     category: CategoryFilterType,
     checked: boolean,
   ) => {
-    let categories: CategoryFilterType[] = settings.filterCategories;
+    let categories: CategoryFilterType[] = [...settings.filterCategories];
 
     if (checked) {
       categories.push(category);
@@ -90,7 +90,7 @@ export const FiltersRoute: FC = () => {
     readState: ReadStateFilterType,
     checked: boolean,
   ) => {
-    let readStates: ReadStateFilterType[] = settings.filterReadStates;
+    let readStates: ReadStateFilterType[] = [...settings.filterReadStates];
 
     if (checked) {
       readStates.push(readState);
@@ -106,7 +106,7 @@ export const FiltersRoute: FC = () => {
   };
 
   const updateProductFilter = (product: ProductName, checked: boolean) => {
-    let products: ProductName[] = settings.filterProducts;
+    let products: ProductName[] = [...settings.filterProducts];
 
     if (checked) {
       products.push(product);
@@ -324,17 +324,15 @@ export const FiltersRoute: FC = () => {
       </Contents>
 
       <Footer justify="end">
-        <Tooltip content="Clear all filters" position="left">
-          <Button
-            title="Clear Filters"
-            onClick={clearFilters}
-            appearance="discovery"
-            spacing="compact"
-            testId="filters-clear"
-          >
-            Clear Filters
-          </Button>
-        </Tooltip>
+        <Button
+          title="Clear Filters"
+          onClick={clearFilters}
+          appearance="discovery"
+          spacing="compact"
+          testId="filters-clear"
+        >
+          Clear Filters
+        </Button>
       </Footer>
     </Page>
   );
