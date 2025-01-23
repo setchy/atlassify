@@ -1256,22 +1256,18 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     <div
       class="css-hugz22"
     >
-      <div
-        role="presentation"
+      <button
+        class="css-18yzeap"
+        data-testid="filters-clear"
+        title="Clear Filters"
+        type="button"
       >
-        <button
-          class="css-18yzeap"
-          data-testid="filters-clear"
-          title="Clear Filters"
-          type="button"
+        <span
+          class="css-1nqby2s"
         >
-          <span
-            class="css-1nqby2s"
-          >
-            Clear Filters
-          </span>
-        </button>
-      </div>
+          Clear Filters
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -1368,7 +1364,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   >
                     <input
                       aria-label="mention"
-                      checked=""
                       class="css-f3myyk"
                       name="mention"
                       tabindex="0"
@@ -1391,10 +1386,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                           width="12"
                           x="6"
                           y="6"
-                        />
-                        <path
-                          d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                          fill="inherit"
                         />
                       </g>
                     </svg>
@@ -1424,10 +1415,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </svg>
                   </span>
                   <span
-                    class="css-g73hg0"
+                    class="css-1wkl091"
                   >
                     <span
-                      class="css-pvol9p"
+                      class="css-f9etm4"
                     >
                       0
                     </span>
@@ -1547,7 +1538,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   >
                     <input
                       aria-label="direct"
-                      checked=""
                       class="css-f3myyk"
                       name="direct"
                       tabindex="0"
@@ -1570,10 +1560,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                           width="12"
                           x="6"
                           y="6"
-                        />
-                        <path
-                          d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                          fill="inherit"
                         />
                       </g>
                     </svg>
@@ -1603,10 +1589,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </svg>
                   </span>
                   <span
-                    class="css-g73hg0"
+                    class="css-1wkl091"
                   >
                     <span
-                      class="css-pvol9p"
+                      class="css-f9etm4"
                     >
                       0
                     </span>
@@ -1715,7 +1701,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   >
                     <input
                       aria-label="unread"
-                      checked=""
                       class="css-f3myyk"
                       name="unread"
                       tabindex="0"
@@ -1739,10 +1724,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                           x="6"
                           y="6"
                         />
-                        <path
-                          d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                          fill="inherit"
-                        />
                       </g>
                     </svg>
                     <span
@@ -1752,10 +1733,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </span>
                   </label>
                   <span
-                    class="css-g73hg0"
+                    class="css-1wkl091"
                   >
                     <span
-                      class="css-pvol9p"
+                      class="css-f9etm4"
                     >
                       0
                     </span>
@@ -2553,22 +2534,18 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     <div
       class="css-hugz22"
     >
-      <div
-        role="presentation"
+      <button
+        class="css-18yzeap"
+        data-testid="filters-clear"
+        title="Clear Filters"
+        type="button"
       >
-        <button
-          class="css-18yzeap"
-          data-testid="filters-clear"
-          title="Clear Filters"
-          type="button"
+        <span
+          class="css-1nqby2s"
         >
-          <span
-            class="css-1nqby2s"
-          >
-            Clear Filters
-          </span>
-        </button>
-      </div>
+          Clear Filters
+        </span>
+      </button>
     </div>
   </div>
 </div>
