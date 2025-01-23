@@ -13,7 +13,7 @@ importers:
         version: 5.0.4(@types/node@22.9.0)(jiti@2.4.2)(solid-js@1.9.4)
       '@astrojs/tailwind':
         specifier: 5.1.5
-        version: 5.1.5(astro@5.1.8(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
+        version: 5.1.5(astro@5.1.9(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)
       '@iconify-json/line-md':
         specifier: 1.2.5
         version: 1.2.5
@@ -30,8 +30,8 @@ importers:
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
       astro:
-        specifier: 5.1.8
-        version: 5.1.8(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+        specifier: 5.1.9
+        version: 5.1.9(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.5
         version: 1.1.5
@@ -1008,8 +1008,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.1.8:
-    resolution: {integrity: sha512-7fNNceI/dXqGIkkZQjxhH31alAfgf33cDv34cPLCGFVSHHOpYG0NSrofnxdYf0BvWRlddqkq393UqDM5cJlv1w==}
+  astro@5.1.9:
+    resolution: {integrity: sha512-QB3MH7Ul3gEvmHXEfvPkGpTZyyB/TBKQbm0kTHpo0BTEB7BvaY+wrcWiGEJBVDpVdEAKY9fM3zrJ0c7hZSXVlw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1223,15 +1223,6 @@ packages:
 
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
-
-  debug@4.3.7:
-    resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -2321,9 +2312,6 @@ packages:
   thenify@3.3.1:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
 
-  tinyexec@0.3.1:
-    resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
-
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
@@ -2672,7 +2660,7 @@ snapshots:
   '@antfu/install-pkg@0.4.1':
     dependencies:
       package-manager-detector: 0.2.2
-      tinyexec: 0.3.1
+      tinyexec: 0.3.2
 
   '@antfu/utils@0.7.10': {}
 
@@ -2728,9 +2716,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@5.1.5(astro@5.1.8(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@5.1.5(astro@5.1.9(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.1.8(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
+      astro: 5.1.9(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4)
       autoprefixer: 10.4.20(postcss@8.5.1)
       postcss: 8.5.1
       postcss-load-config: 4.0.2(postcss@8.5.1)
@@ -3034,7 +3022,7 @@ snapshots:
       '@antfu/install-pkg': 0.4.1
       '@antfu/utils': 0.7.10
       '@iconify/types': 2.0.0
-      debug: 4.3.7
+      debug: 4.4.0
       kolorist: 1.8.0
       local-pkg: 0.5.0
       mlly: 1.7.2
@@ -3616,7 +3604,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.1.8(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
+  astro@5.1.9(@types/node@22.9.0)(jiti@2.4.2)(rollup@4.28.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
@@ -3932,10 +3920,6 @@ snapshots:
 
   date-fns@4.1.0: {}
 
-  debug@4.3.7:
-    dependencies:
-      ms: 2.1.3
-
   debug@4.4.0:
     dependencies:
       ms: 2.1.3
@@ -4061,7 +4045,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -5365,8 +5349,6 @@ snapshots:
   thenify@3.3.1:
     dependencies:
       any-promise: 1.3.0
-
-  tinyexec@0.3.1: {}
 
   tinyexec@0.3.2: {}
 
