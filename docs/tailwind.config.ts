@@ -4,7 +4,6 @@ import TailwindCSSAnimate from 'tailwindcss-animate';
 import colors from 'tailwindcss/colors';
 
 const config: Config = {
-  darkMode: ['class', '[data-kb-theme="dark"]'],
   content: ['./src/**/*.{astro,ts,tsx}'],
   theme: {
     extend: {
