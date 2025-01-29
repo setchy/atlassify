@@ -50,7 +50,7 @@ describe('renderer/utils/filters.ts', () => {
   });
 
   describe('filter counts', () => {
-    it('read state', () => {
+    it('time sensitive', () => {
       expect(
         getTimeSensitiveFilterCount(
           mockSingleAccountNotifications,
