@@ -1,6 +1,6 @@
 # Atlassify 
 
-[![CI Workflow][ci-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Netlify Status][netlify-badge]][netlify] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
+[![CI Workflow][ci-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Netlify Status][netlify-badge]][netlify] [![Coverage][coverage-badge]][coverage] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
@@ -56,8 +56,6 @@ I would like to acknowledge the following projects and resources that have inspi
 
 [coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
-[quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
-[quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [ci-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/ci.yml/badge.svg
 [release-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/release.yml/badge.svg
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlassify/total?label=downloads@all&logo=github
