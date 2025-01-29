@@ -19,6 +19,12 @@ const content = [
       'Something is not working as expected, how can I debug Atlassify?',
     answer:
       'Using **Chrome Developer Tools** (console logs, network requests, etc):\n- All platforms: right click tray icon then _Developer → Toggle Developer Tools_\n- macOS: `command + opt + i`\n- Windows: `ctrl + shift + i`\n- Linux: `ctrl + shift + i`\n\nUsing **Application Log Files**:\n- All platforms: right click tray icon then _Developer → View Application Logs_\n- macOS: `~/Library/Logs/atlassify`\n- Windows: `%USERPROFILE%\\AppData\\Roaming\\atlassify\\logs`\n- Linux: `~/.config/atlassify/logs`',
+  },  {
+    id: '3',
+    question:
+      'Does Atlassify support Atlassian Data Center or Server products?',
+    answer:
+      `Currently Atlassify supports Atlassian Cloud products. If you would like to see support for other product types, please raise a [GitHub issue](${URLs.GITHUB.ISSUES}).`,
   },
   {
     id: '4',
