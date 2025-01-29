@@ -92,7 +92,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="mention"
                       class="css-f3myyk"
-                      name="mention"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -164,7 +163,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="comment"
                       class="css-f3myyk"
-                      name="comment"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -266,7 +264,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="direct"
                       class="css-f3myyk"
-                      name="direct"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -338,7 +335,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="watching"
                       class="css-f3myyk"
-                      name="watching"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -429,7 +425,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="unread"
                       class="css-f3myyk"
-                      name="unread"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -482,7 +477,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     <input
                       aria-label="read"
                       class="css-f3myyk"
-                      name="read"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -549,7 +543,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="bitbucket"
                     class="css-f3myyk"
-                    name="bitbucket"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -626,7 +619,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="compass"
                     class="css-f3myyk"
-                    name="compass"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -705,7 +697,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="confluence"
                     class="css-f3myyk"
-                    name="confluence"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -782,7 +773,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="jira"
                     class="css-f3myyk"
-                    name="jira"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -859,7 +849,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="jira product discovery"
                     class="css-f3myyk"
-                    name="jira product discovery"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -936,7 +925,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="jira service management"
                     class="css-f3myyk"
-                    name="jira service management"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1013,7 +1001,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="team central (atlas)"
                     class="css-f3myyk"
-                    name="team central (atlas)"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1101,7 +1088,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="trello"
                     class="css-f3myyk"
-                    name="trello"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1180,7 +1166,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <input
                     aria-label="unknown"
                     class="css-f3myyk"
-                    name="unknown"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1365,7 +1350,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="mention"
                       class="css-f3myyk"
-                      name="mention"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1437,7 +1421,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="comment"
                       class="css-f3myyk"
-                      name="comment"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1539,7 +1522,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="direct"
                       class="css-f3myyk"
-                      name="direct"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1611,7 +1593,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="watching"
                       class="css-f3myyk"
-                      name="watching"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1702,7 +1683,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="unread"
                       class="css-f3myyk"
-                      name="unread"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1755,7 +1735,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <input
                       aria-label="read"
                       class="css-f3myyk"
-                      name="read"
                       tabindex="0"
                       type="checkbox"
                       value=""
@@ -1823,7 +1802,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     aria-label="bitbucket"
                     checked=""
                     class="css-f3myyk"
-                    name="bitbucket"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1904,7 +1882,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="compass"
                     class="css-f3myyk"
-                    name="compass"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1983,7 +1960,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="confluence"
                     class="css-f3myyk"
-                    name="confluence"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2060,7 +2036,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="jira"
                     class="css-f3myyk"
-                    name="jira"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2137,7 +2112,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="jira product discovery"
                     class="css-f3myyk"
-                    name="jira product discovery"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2214,7 +2188,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="jira service management"
                     class="css-f3myyk"
-                    name="jira service management"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2291,7 +2264,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="team central (atlas)"
                     class="css-f3myyk"
-                    name="team central (atlas)"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2379,7 +2351,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="trello"
                     class="css-f3myyk"
-                    name="trello"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2458,7 +2429,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <input
                     aria-label="unknown"
                     class="css-f3myyk"
-                    name="unknown"
                     tabindex="0"
                     type="checkbox"
                     value=""

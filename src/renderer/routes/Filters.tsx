@@ -132,6 +132,15 @@ export const FiltersRoute: FC = () => {
                     (timeSensitive: TimeSensitiveFilterType) => {
                       const timeSensitiveDetails =
                         getTimeSensitiveFilterDetails(timeSensitive);
+                      const timeSensitiveLabel = formatProperCase(
+                        timeSensitiveDetails.name,
+                      );
+                      const timeSensitiveShown =
+                        shouldShowTimeSensitive(timeSensitive);
+                      const timeSensitiveCount = getTimeSensitiveFilterCount(
+                        notifications,
+                        timeSensitiveDetails,
+                      );
 
                       return (
                         <Box
@@ -143,13 +152,9 @@ export const FiltersRoute: FC = () => {
                             alignBlock="center"
                           >
                             <Checkbox
-                              key={timeSensitive}
-                              name={timeSensitive}
-                              aria-label={timeSensitive}
-                              label={formatProperCase(
-                                timeSensitiveDetails.name,
-                              )}
-                              isChecked={shouldShowTimeSensitive(timeSensitive)}
+                              aria-label={timeSensitiveDetails.name}
+                              label={timeSensitiveLabel}
+                              isChecked={timeSensitiveShown}
                               onChange={(evt) =>
                                 updateTimeSensitiveFilter(
                                   timeSensitive,
@@ -161,15 +166,10 @@ export const FiltersRoute: FC = () => {
                             <Badge
                               max={false}
                               appearance={
-                                shouldShowTimeSensitive(timeSensitive)
-                                  ? 'primary'
-                                  : 'default'
+                                timeSensitiveShown ? 'primary' : 'default'
                               }
                             >
-                              {getTimeSensitiveFilterCount(
-                                notifications,
-                                timeSensitiveDetails,
-                              )}
+                              {timeSensitiveCount}
                             </Badge>
                           </Inline>
                         </Box>
@@ -186,6 +186,14 @@ export const FiltersRoute: FC = () => {
                     (category: CategoryFilterType) => {
                       const categoryDetails =
                         getCategoryFilterDetails(category);
+                      const categoryLabel = formatProperCase(
+                        categoryDetails.name,
+                      );
+                      const categoryShown = shouldShowCategory(category);
+                      const categoryCount = getCategoryFilterCount(
+                        notifications,
+                        category,
+                      );
 
                       return (
                         <Box
@@ -197,10 +205,9 @@ export const FiltersRoute: FC = () => {
                             alignBlock="center"
                           >
                             <Checkbox
-                              name={category}
-                              aria-label={category}
-                              label={formatProperCase(categoryDetails.name)}
-                              isChecked={shouldShowCategory(category)}
+                              aria-label={categoryDetails.name}
+                              label={categoryLabel}
+                              isChecked={categoryShown}
                               onChange={(evt) =>
                                 updateCategoryFilter(
                                   category,
@@ -211,13 +218,9 @@ export const FiltersRoute: FC = () => {
                             <categoryDetails.icon {...checkboxIconProps} />
                             <Badge
                               max={false}
-                              appearance={
-                                shouldShowCategory(category)
-                                  ? 'primary'
-                                  : 'default'
-                              }
+                              appearance={categoryShown ? 'primary' : 'default'}
                             >
-                              {getCategoryFilterCount(notifications, category)}
+                              {categoryCount}
                             </Badge>
                           </Inline>
                         </Box>
@@ -234,6 +237,15 @@ export const FiltersRoute: FC = () => {
                     (readState: ReadStateFilterType) => {
                       const readStateDetails =
                         getReadStateFilterDetails(readState);
+                      const readStateLabel = formatProperCase(
+                        readStateDetails.name,
+                      );
+                      const readStateShown = shouldShowReadState(readState);
+                      const readStateCount = getReadStateFilterCount(
+                        notifications,
+                        readState,
+                      );
+
                       return (
                         <Box
                           key={readState}
@@ -244,10 +256,9 @@ export const FiltersRoute: FC = () => {
                             alignBlock="center"
                           >
                             <Checkbox
-                              name={readState}
-                              aria-label={readState}
-                              label={formatProperCase(readStateDetails.name)}
-                              isChecked={shouldShowReadState(readState)}
+                              aria-label={readStateDetails.name}
+                              label={readStateLabel}
+                              isChecked={readStateShown}
                               onChange={(evt) =>
                                 updateReadStateFilter(
                                   readState,
@@ -258,15 +269,10 @@ export const FiltersRoute: FC = () => {
                             <Badge
                               max={false}
                               appearance={
-                                shouldShowReadState(readState)
-                                  ? 'primary'
-                                  : 'default'
+                                readStateShown ? 'primary' : 'default'
                               }
                             >
-                              {getReadStateFilterCount(
-                                notifications,
-                                readState,
-                              )}
+                              {readStateCount}
                             </Badge>
                           </Inline>
                         </Box>
@@ -288,6 +294,12 @@ export const FiltersRoute: FC = () => {
                       ? 'brand'
                       : 'neutral',
                   };
+                  const productLabel = formatProperCase(productDetails.name);
+                  const productShown = shouldShowProduct(product);
+                  const productCount = getProductFilterCount(
+                    notifications,
+                    product,
+                  );
 
                   return (
                     <Box key={product} paddingBlock={checkboxPaddingVertical}>
@@ -296,10 +308,9 @@ export const FiltersRoute: FC = () => {
                         alignBlock="center"
                       >
                         <Checkbox
-                          name={product}
-                          aria-label={product}
-                          label={formatProperCase(productDetails.name)}
-                          isChecked={shouldShowProduct(product)}
+                          aria-label={productDetails.name}
+                          label={productLabel}
+                          isChecked={productShown}
                           onChange={(evt) =>
                             updateProductFilter(product, evt.target.checked)
                           }
@@ -307,11 +318,9 @@ export const FiltersRoute: FC = () => {
                         <productDetails.logo {...productIconProps} />
                         <Badge
                           max={false}
-                          appearance={
-                            shouldShowProduct(product) ? 'primary' : 'default'
-                          }
+                          appearance={productShown ? 'primary' : 'default'}
                         >
-                          {getProductFilterCount(notifications, product)}
+                          {productCount}
                         </Badge>
                       </Inline>
                     </Box>
