@@ -61,7 +61,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="flex-grow overflow-x-auto px-8"
   >
     <div
-      class="mt-4 flex flex-col text-sm"
+      class="mt-4 flex flex-col text-sm gap-4"
     >
       <div
         class="css-74cmu6"
@@ -355,7 +355,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="flex-grow overflow-x-auto px-8"
   >
     <div
-      class="mt-4 flex flex-col text-sm"
+      class="mt-4 flex flex-col text-sm gap-4"
     >
       <div
         class="css-swavor"

@@ -43,7 +43,7 @@ export const AccountsRoute: FC = () => {
     <div className="flex h-screen flex-col" data-testid="accounts">
       <Header>Accounts</Header>
       <div className="flex-grow overflow-x-auto px-8">
-        <div className="mt-4 flex flex-col text-sm">
+        <div className="mt-4 flex flex-col text-sm gap-4">
           {auth.accounts.map((account) => {
             return (
               <Box
