@@ -11,7 +11,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('renderer/routes/components/settings/SettingsReset.tsx', () => {
+describe('renderer/components/settings/SettingsReset.tsx', () => {
   const resetSettings = jest.fn();
 
   afterEach(() => {

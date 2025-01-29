@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-describe('renderer/routes/components/settings/SettingsFooter.tsx', () => {
+describe('renderer/components/settings/SettingsFooter.tsx', () => {
   let originalEnv: NodeJS.ProcessEnv;
 
   beforeEach(() => {
