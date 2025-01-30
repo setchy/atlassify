@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  const updateSetting = jest.fn();
+  const updateFilter = jest.fn();
   const clearFilters = jest.fn();
   const fetchNotifications = jest.fn();
 
@@ -76,7 +76,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -88,9 +88,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('mention'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterTimeSensitive', [
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterTimeSensitive',
           'mention',
-        ]);
+          true,
+        );
       });
 
       it('should filter by time sensitive - existing filter set', async () => {
@@ -104,7 +106,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterTimeSensitive: ['mention'],
                 },
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -116,7 +118,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('mention'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterTimeSensitive', []);
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterTimeSensitive',
+          'mention',
+          false,
+        );
       });
     });
 
@@ -129,7 +135,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -141,9 +147,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('direct'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterCategories', [
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterCategories',
           'direct',
-        ]);
+          true,
+        );
       });
 
       it('should filter by category - existing filter set', async () => {
@@ -157,7 +165,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterCategories: ['direct'],
                 },
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -169,7 +177,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('direct'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterCategories', []);
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterCategories',
+          'direct',
+          false,
+        );
       });
     });
 
@@ -182,7 +194,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -194,9 +206,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('unread'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterReadStates', [
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterReadStates',
           'unread',
-        ]);
+          true,
+        );
       });
 
       it('should filter by read state - existing filter set', async () => {
@@ -210,7 +224,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterReadStates: ['unread'],
                 },
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -222,7 +236,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('unread'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterReadStates', []);
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterReadStates',
+          'unread',
+          false,
+        );
       });
     });
 
@@ -235,7 +253,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -247,9 +265,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('bitbucket'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterProducts', [
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterProducts',
           'bitbucket',
-        ]);
+          true,
+        );
       });
 
       it('should filter by product - existing filter set', async () => {
@@ -263,7 +283,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterProducts: ['bitbucket'],
                 },
                 notifications: [],
-                updateSetting,
+                updateFilter,
               }}
             >
               <MemoryRouter>
@@ -275,7 +295,11 @@ describe('renderer/routes/Filters.tsx', () => {
 
         fireEvent.click(screen.getByLabelText('bitbucket'));
 
-        expect(updateSetting).toHaveBeenCalledWith('filterProducts', []);
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterProducts',
+          'bitbucket',
+          false,
+        );
 
         expect(screen.getByTestId('filters')).toMatchSnapshot();
       });

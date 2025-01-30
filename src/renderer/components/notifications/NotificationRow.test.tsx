@@ -7,7 +7,7 @@ import {
   mockSettings,
 } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
-import type { ReadStateFilterType } from '../../types';
+import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { NotificationRow } from './NotificationRow';
@@ -178,7 +178,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       const props = {
         notification: {
           ...mockSingleAtlassifyNotification,
-          readState: 'read' as ReadStateFilterType,
+          readState: 'read' as ReadStateType,
         },
         account: mockAtlassianCloudAccount,
       };

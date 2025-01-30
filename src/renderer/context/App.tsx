@@ -19,6 +19,7 @@ import {
   type AtlassifyNotification,
   type AuthState,
   type FilterSettingsState,
+  type FilterValue,
   type NotificationSettingsState,
   OpenPreference,
   type SettingsState,
@@ -114,6 +115,11 @@ interface AppContextState {
   clearFilters: () => void;
   resetSettings: () => void;
   updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+  updateFilter: (
+    name: keyof FilterSettingsState,
+    value: FilterValue,
+    checked: boolean,
+  ) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState>>({});
@@ -211,6 +217,17 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings],
   );
 
+  const updateFilter = useCallback(
+    (name: keyof FilterSettingsState, value: FilterValue, checked: boolean) => {
+      const updatedFilters = checked
+        ? [...settings[name], value]
+        : settings[name].filter((item) => item !== value);
+
+      updateSetting(name, updatedFilters);
+    },
+    [updateSetting, settings],
+  );
+
   const isLoggedIn = useMemo(() => {
     return hasAccounts(auth);
   }, [auth]);
@@ -297,6 +314,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       clearFilters,
       resetSettings,
       updateSetting,
+      updateFilter,
     }),
     [
       auth,

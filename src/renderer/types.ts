@@ -66,11 +66,18 @@ export type SettingsValue =
   | boolean
   | number
   | OpenPreference
-  | CategoryFilterType[]
-  | ReadStateFilterType[]
-  | ProductName[]
-  | TimeSensitiveFilterType[]
-  | Theme;
+  | Theme
+  | FilterValue[];
+
+/**
+ * The different types of allowed Filter values to be stored in the application.
+ */
+export type FilterValue =
+  | CategoryType
+  | ReadStateType
+  | ActorType
+  | ProductName
+  | TimeSensitiveType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
@@ -172,17 +179,17 @@ export interface FilterSettingsState {
   /**
    * The categories to filter time sensitive notifications by.
    */
-  filterTimeSensitive: TimeSensitiveFilterType[];
+  filterTimeSensitive: TimeSensitiveType[];
 
   /**
    * The categories to filter notifications by.
    */
-  filterCategories: CategoryFilterType[];
+  filterCategories: CategoryType[];
 
   /**
    * The read states to filter notifications by.
    */
-  filterReadStates: ReadStateFilterType[];
+  filterReadStates: ReadStateType[];
 
   /**
    * The products to filter notifications by.
@@ -270,12 +277,12 @@ export interface AtlassifyNotification {
   /**
    * The read state for the notification (read, unread).
    */
-  readState: ReadStateFilterType;
+  readState: ReadStateType;
 
   /**
    * The category for the notification (direct, watching).
    */
-  category: CategoryFilterType;
+  category: CategoryType;
 
   /**
    * The Atlassian product associated with the notification.
@@ -386,32 +393,6 @@ export interface AtlassianProduct {
 }
 
 /**
- * Details for a specific notification filter.
- */
-export interface FilterDetails {
-  /**
-   * The name of the filter.
-   */
-  name: string;
-
-  /**
-   * The description of the filter.
-   */
-  description: string;
-
-  /**
-   * The notification title contains this phrase
-   */
-  contains?: string;
-
-  /**
-   * The icon for the filter.
-   * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
-   */
-  icon?: React.ComponentType;
-}
-
-/**
  * The differentAtlassian products which are supported by Atlassify (currently).
  */
 export type ProductName =
@@ -448,7 +429,7 @@ export type Chevron = {
  * - `direct` - A direct notification event.
  * - `watching` - A watched notification event.
  */
-export type CategoryFilterType = 'direct' | 'watching';
+export type CategoryType = 'direct' | 'watching';
 
 /**
  * The read state of the notification.
@@ -456,12 +437,20 @@ export type CategoryFilterType = 'direct' | 'watching';
  * - `unread` - The notification has not been read.
  * - `read` - The notification has been read.
  */
-export type ReadStateFilterType = 'unread' | 'read';
+export type ReadStateType = 'unread' | 'read';
 
 /**
- * Filters for time-sensitive notifications.
+ * The sensitivity (ie: importance) of a notification.
  *
  * - 'mention' - A user has mentioned you as part of the notification.
  * - 'comment' - A user has commented on your prior work.
  */
-export type TimeSensitiveFilterType = 'mention' | 'comment';
+export type TimeSensitiveType = 'mention' | 'comment';
+
+/**
+ * The actor type.
+ *
+ * - 'user' - A user actor created the notification.
+ * - 'automation' - An automation actor created the notification.
+ */
+export type ActorType = 'user' | 'automation';

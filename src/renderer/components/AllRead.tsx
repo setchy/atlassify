@@ -4,7 +4,7 @@ import { Stack } from '@atlaskit/primitives';
 
 import { AppContext } from '../context/App';
 import { Constants } from '../utils/constants';
-import { hasAnyFiltersSet } from '../utils/filters';
+import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
 import { Centered } from './primitives/Centered';
 import { EmojiText } from './primitives/EmojiText';
 
