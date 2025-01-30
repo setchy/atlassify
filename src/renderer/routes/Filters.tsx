@@ -42,7 +42,7 @@ export const FiltersRoute: FC = () => {
     size: 'small',
   };
 
-  const shouldShowTimeSensitive = (timeSensitive: TimeSensitiveFilterType) => {
+  const isTimeSensitiveFilterSet = (timeSensitive: TimeSensitiveFilterType) => {
     return settings.filterTimeSensitive.includes(timeSensitive);
   };
 
@@ -63,7 +63,7 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterTimeSensitive', timeSensitives);
   };
 
-  const shouldShowCategory = (category: CategoryFilterType) => {
+  const isCategoryFilterSet = (category: CategoryFilterType) => {
     return settings.filterCategories.includes(category);
   };
 
@@ -82,7 +82,7 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterCategories', categories);
   };
 
-  const shouldShowReadState = (readState: ReadStateFilterType) => {
+  const isReadStateFilterSet = (readState: ReadStateFilterType) => {
     return settings.filterReadStates.includes(readState);
   };
 
@@ -101,7 +101,7 @@ export const FiltersRoute: FC = () => {
     updateSetting('filterReadStates', readStates);
   };
 
-  const shouldShowProduct = (product: ProductName) => {
+  const isProductFilterSet = (product: ProductName) => {
     return settings.filterProducts.includes(product);
   };
 
@@ -135,8 +135,8 @@ export const FiltersRoute: FC = () => {
                       const timeSensitiveLabel = formatProperCase(
                         timeSensitiveDetails.name,
                       );
-                      const timeSensitiveShown =
-                        shouldShowTimeSensitive(timeSensitive);
+                      const isTimeSensitiveChecked =
+                        isTimeSensitiveFilterSet(timeSensitive);
                       const timeSensitiveCount = getTimeSensitiveFilterCount(
                         notifications,
                         timeSensitiveDetails,
@@ -154,7 +154,7 @@ export const FiltersRoute: FC = () => {
                             <Checkbox
                               aria-label={timeSensitiveDetails.name}
                               label={timeSensitiveLabel}
-                              isChecked={timeSensitiveShown}
+                              isChecked={isTimeSensitiveChecked}
                               onChange={(evt) =>
                                 updateTimeSensitiveFilter(
                                   timeSensitive,
@@ -166,7 +166,7 @@ export const FiltersRoute: FC = () => {
                             <Badge
                               max={false}
                               appearance={
-                                timeSensitiveShown ? 'primary' : 'default'
+                                isTimeSensitiveChecked ? 'primary' : 'default'
                               }
                             >
                               {timeSensitiveCount}
@@ -189,7 +189,7 @@ export const FiltersRoute: FC = () => {
                       const categoryLabel = formatProperCase(
                         categoryDetails.name,
                       );
-                      const categoryShown = shouldShowCategory(category);
+                      const isCategoryChecked = isCategoryFilterSet(category);
                       const categoryCount = getCategoryFilterCount(
                         notifications,
                         category,
@@ -207,7 +207,7 @@ export const FiltersRoute: FC = () => {
                             <Checkbox
                               aria-label={categoryDetails.name}
                               label={categoryLabel}
-                              isChecked={categoryShown}
+                              isChecked={isCategoryChecked}
                               onChange={(evt) =>
                                 updateCategoryFilter(
                                   category,
@@ -218,7 +218,9 @@ export const FiltersRoute: FC = () => {
                             <categoryDetails.icon {...checkboxIconProps} />
                             <Badge
                               max={false}
-                              appearance={categoryShown ? 'primary' : 'default'}
+                              appearance={
+                                isCategoryChecked ? 'primary' : 'default'
+                              }
                             >
                               {categoryCount}
                             </Badge>
@@ -240,7 +242,8 @@ export const FiltersRoute: FC = () => {
                       const readStateLabel = formatProperCase(
                         readStateDetails.name,
                       );
-                      const readStateShown = shouldShowReadState(readState);
+                      const isReadStateChecked =
+                        isReadStateFilterSet(readState);
                       const readStateCount = getReadStateFilterCount(
                         notifications,
                         readState,
@@ -258,7 +261,7 @@ export const FiltersRoute: FC = () => {
                             <Checkbox
                               aria-label={readStateDetails.name}
                               label={readStateLabel}
-                              isChecked={readStateShown}
+                              isChecked={isReadStateChecked}
                               onChange={(evt) =>
                                 updateReadStateFilter(
                                   readState,
@@ -269,7 +272,7 @@ export const FiltersRoute: FC = () => {
                             <Badge
                               max={false}
                               appearance={
-                                readStateShown ? 'primary' : 'default'
+                                isReadStateChecked ? 'primary' : 'default'
                               }
                             >
                               {readStateCount}
@@ -290,12 +293,12 @@ export const FiltersRoute: FC = () => {
                   const productDetails = getProductDetails(product);
                   const productIconProps: Record<string, string> = {
                     size: 'xsmall',
-                    appearance: shouldShowProduct(product)
+                    appearance: isProductFilterSet(product)
                       ? 'brand'
                       : 'neutral',
                   };
                   const productLabel = formatProperCase(productDetails.name);
-                  const productShown = shouldShowProduct(product);
+                  const isProductChecked = isProductFilterSet(product);
                   const productCount = getProductFilterCount(
                     notifications,
                     product,
@@ -310,7 +313,7 @@ export const FiltersRoute: FC = () => {
                         <Checkbox
                           aria-label={productDetails.name}
                           label={productLabel}
-                          isChecked={productShown}
+                          isChecked={isProductChecked}
                           onChange={(evt) =>
                             updateProductFilter(product, evt.target.checked)
                           }
@@ -318,7 +321,7 @@ export const FiltersRoute: FC = () => {
                         <productDetails.logo {...productIconProps} />
                         <Badge
                           max={false}
-                          appearance={productShown ? 'primary' : 'default'}
+                          appearance={isProductChecked ? 'primary' : 'default'}
                         >
                           {productCount}
                         </Badge>
