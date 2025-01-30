@@ -8,6 +8,7 @@ import {
   filterNotificationByTimeSensitive,
   getTimeSensitiveFilterCount,
   hasTimeSensitiveFilters,
+  inferNotificationSensitivity,
   isTimeSensitiveFilterSet,
 } from './timeSensitive';
 
@@ -61,5 +62,34 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
     expect(filterNotificationByTimeSensitive(mockNotification, 'mention')).toBe(
       true,
     );
+  });
+
+  describe('inferNotificationSensitivity', () => {
+    it('should infer mention sensitivity', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        message: 'someone mentioned you on a page',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationSensitivity(mockNotification)).toBe('mention');
+    });
+
+    it('should infer comment sensitivity', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        message: 'someone replied on a page',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationSensitivity(mockNotification)).toBe('comment');
+    });
+
+    it('should return undefined if no sensitivity', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        message: 'mentionedreplied on a page',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationSensitivity(mockNotification)).toBeUndefined();
+    });
   });
 });
