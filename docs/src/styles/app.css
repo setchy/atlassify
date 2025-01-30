@@ -1,23 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-a {
-  @apply text-atlassify-docs-link font-semibold hover:underline;
+a:not(.atlassify-navbar) {
+  @apply font-semibold;
 }
 
-.markdown ul {
-  @apply list-disc m-4;
+a:not(.atlassify-repo) {
+  @apply hover:underline;
 }
 
-.markdown ul > li {
+.faq ul > li {
   @apply m-2;
 }
 
-.markdown p + ul {
-  padding-top: 0; /* Remove padding if <p> is followed by <ul> */
+
+.accordion__title {
+  h3 {
+    @apply text-base font-medium;
+  }
 }
 
-.markdown p:not(:last-child):not(:has(+ ul)) {
-  padding-bottom: 1rem;
+.accordion__content {
+  @apply text-sm;
 }

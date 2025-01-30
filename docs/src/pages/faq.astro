@@ -1,6 +1,18 @@
 ---
-import { FaqAccordion } from "~/components/solid/FaqAccordion";
+import { Accordion, AccordionItem } from "accessible-astro-components";
+
 import Layout from "~/layouts/Layout.astro";
+
+const faqs: FAQFrontmatter[] = Object.values(
+  import.meta.glob("~/faqs/*.md", { eager: true })
+);
+
+interface FAQFrontmatter {
+  frontmatter: {
+    title: string;
+  };
+  compiledContent: () => string;
+}
 ---
 
 <Layout title="Frequently Asked Questions">
@@ -9,6 +21,14 @@ import Layout from "~/layouts/Layout.astro";
       Frequently Asked Questions
     </div>
 
-    <FaqAccordion client:load />
+    <Accordion>
+      {
+        faqs.map((faq) => (
+          <AccordionItem title={faq.frontmatter.title}>
+            <div class="faq" set:html={faq.compiledContent()} />
+          </AccordionItem>
+        ))
+      }
+    </Accordion>
   </div>
 </Layout>
