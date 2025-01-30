@@ -9,6 +9,10 @@ a:not(.atlassify-repo) {
   @apply hover:underline;
 }
 
+.faq ul {
+  @apply list-disc m-4;
+}
+
 .faq ul > li {
   @apply m-2;
 }
