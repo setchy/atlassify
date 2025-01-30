@@ -28,6 +28,10 @@ const customRender = (
 };
 
 describe('renderer/context/App.tsx', () => {
+  const saveStateMock = jest
+    .spyOn(storage, 'saveState')
+    .mockImplementation(jest.fn());
+
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -190,7 +194,6 @@ describe('renderer/context/App.tsx', () => {
       ) as AxiosPromise;
 
       apiRequestMock.mockResolvedValueOnce(requestPromise);
-      jest.spyOn(storage, 'saveState').mockImplementation(jest.fn());
 
       const TestComponent = () => {
         const { login } = useContext(AppContext);
@@ -230,10 +233,6 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set playSoundNewNotifications', async () => {
-      const saveStateMock = jest
-        .spyOn(storage, 'saveState')
-        .mockImplementation(jest.fn());
-
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
 
@@ -266,9 +265,6 @@ describe('renderer/context/App.tsx', () => {
 
     it('should call updateSetting and set openAtStartup', async () => {
       const setAutoLaunchMock = jest.spyOn(comms, 'setAutoLaunch');
-      const saveStateMock = jest
-        .spyOn(storage, 'saveState')
-        .mockImplementation(jest.fn());
 
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
@@ -302,11 +298,134 @@ describe('renderer/context/App.tsx', () => {
       });
     });
 
-    it('should clear filters back to default', async () => {
-      const saveStateMock = jest
-        .spyOn(storage, 'saveState')
-        .mockImplementation(jest.fn());
+    it('should call updateSetting and set useAlternateIdleIcon', async () => {
+      const setAlternateIdleIconMock = jest.spyOn(
+        comms,
+        'setAlternateIdleIcon',
+      );
 
+      const TestComponent = () => {
+        const { updateSetting } = useContext(AppContext);
+
+        return (
+          <button
+            type="button"
+            onClick={() => updateSetting('useAlternateIdleIcon', true)}
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
+
+      expect(setAlternateIdleIconMock).toHaveBeenCalledWith(true);
+
+      expect(saveStateMock).toHaveBeenCalledWith({
+        auth: {
+          accounts: [],
+        } as AuthState,
+        settings: {
+          ...defaultSettings,
+          useAlternateIdleIcon: true,
+        } as SettingsState,
+      });
+    });
+
+    it('should call resetSettings', async () => {
+      const TestComponent = () => {
+        const { resetSettings } = useContext(AppContext);
+
+        return (
+          <button type="button" onClick={() => resetSettings()}>
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
+
+      expect(saveStateMock).toHaveBeenCalledWith({
+        auth: {
+          accounts: [],
+        } as AuthState,
+        settings: defaultSettings,
+      });
+    });
+  });
+
+  describe('filter methods', () => {
+    it('should update filter - checked', async () => {
+      const TestComponent = () => {
+        const { updateFilter } = useContext(AppContext);
+
+        return (
+          <button
+            type="button"
+            onClick={() => updateFilter('filterCategories', 'direct', true)}
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
+
+      expect(saveStateMock).toHaveBeenCalledWith({
+        auth: {
+          accounts: [],
+        } as AuthState,
+        settings: {
+          ...mockSettings,
+          filterCategories: ['direct'],
+        },
+      });
+    });
+
+    it('should update filter - unchecked', async () => {
+      const TestComponent = () => {
+        const { updateFilter } = useContext(AppContext);
+
+        return (
+          <button
+            type="button"
+            onClick={() => updateFilter('filterCategories', 'direct', false)}
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
+
+      expect(saveStateMock).toHaveBeenCalledWith({
+        auth: {
+          accounts: [],
+        } as AuthState,
+        settings: {
+          ...mockSettings,
+          filterCategories: [],
+        },
+      });
+    });
+
+    it('should clear filters back to default', async () => {
       const TestComponent = () => {
         const { clearFilters } = useContext(AppContext);
 
@@ -329,39 +448,11 @@ describe('renderer/context/App.tsx', () => {
         } as AuthState,
         settings: {
           ...mockSettings,
+          filterTimeSensitive: defaultSettings.filterTimeSensitive,
           filterCategories: defaultSettings.filterCategories,
           filterReadStates: defaultSettings.filterReadStates,
           filterProducts: defaultSettings.filterProducts,
         },
-      });
-    });
-
-    it('should call resetSettings', async () => {
-      const saveStateMock = jest
-        .spyOn(storage, 'saveState')
-        .mockImplementation(jest.fn());
-
-      const TestComponent = () => {
-        const { resetSettings } = useContext(AppContext);
-
-        return (
-          <button type="button" onClick={() => resetSettings()}>
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
-
-      expect(saveStateMock).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: defaultSettings,
       });
     });
   });
