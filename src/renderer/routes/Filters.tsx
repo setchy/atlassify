@@ -12,109 +12,51 @@ import { Header } from '../components/primitives/Header';
 import { Page } from '../components/primitives/Page';
 import { AppContext } from '../context/App';
 import type {
-  CategoryFilterType,
+  AuthorFilterType,
+  CategoryType,
   ProductName,
-  ReadStateFilterType,
+  ReadStateType,
   TimeSensitiveFilterType,
 } from '../types';
+import { formatProperCase } from '../utils/helpers';
+import {
+  FILTERS_AUTHORS,
+  getAuthorFilterCount,
+  getAuthorFilterDetails,
+  isAuthorFilterSet,
+} from '../utils/notifications/filters/author';
 import {
   FILTERS_CATEGORIES,
-  FILTERS_READ_STATES,
-  FILTERS_TIME_SENSITIVE,
   getCategoryFilterCount,
   getCategoryFilterDetails,
+  isCategoryFilterSet,
+} from '../utils/notifications/filters/category';
+import {
   getProductFilterCount,
+  isProductFilterSet,
+} from '../utils/notifications/filters/product';
+import {
+  FILTERS_READ_STATES,
   getReadStateFilterCount,
   getReadStateFilterDetails,
+  isReadStateFilterSet,
+} from '../utils/notifications/filters/readState';
+import {
+  FILTERS_TIME_SENSITIVE,
   getTimeSensitiveFilterCount,
   getTimeSensitiveFilterDetails,
-} from '../utils/filters';
-import { formatProperCase } from '../utils/helpers';
+  isTimeSensitiveFilterSet,
+} from '../utils/notifications/filters/timeSensitive';
 import { PRODUCTS, getProductDetails } from '../utils/products';
 
 export const FiltersRoute: FC = () => {
-  const { settings, clearFilters, updateSetting, notifications } =
+  const { settings, clearFilters, updateFilter, notifications } =
     useContext(AppContext);
 
   const checkboxPaddingHorizontal = 'space.050';
   const checkboxPaddingVertical = 'space.025';
   const checkboxIconProps: Record<string, string> = {
     size: 'small',
-  };
-
-  const isTimeSensitiveFilterSet = (timeSensitive: TimeSensitiveFilterType) => {
-    return settings.filterTimeSensitive.includes(timeSensitive);
-  };
-
-  const updateTimeSensitiveFilter = (
-    timeSensitive: TimeSensitiveFilterType,
-    checked: boolean,
-  ) => {
-    let timeSensitives: TimeSensitiveFilterType[] = [
-      ...settings.filterTimeSensitive,
-    ];
-
-    if (checked) {
-      timeSensitives.push(timeSensitive);
-    } else {
-      timeSensitives = timeSensitives.filter((t) => t !== timeSensitive);
-    }
-
-    updateSetting('filterTimeSensitive', timeSensitives);
-  };
-
-  const isCategoryFilterSet = (category: CategoryFilterType) => {
-    return settings.filterCategories.includes(category);
-  };
-
-  const updateCategoryFilter = (
-    category: CategoryFilterType,
-    checked: boolean,
-  ) => {
-    let categories: CategoryFilterType[] = [...settings.filterCategories];
-
-    if (checked) {
-      categories.push(category);
-    } else {
-      categories = categories.filter((c) => c !== category);
-    }
-
-    updateSetting('filterCategories', categories);
-  };
-
-  const isReadStateFilterSet = (readState: ReadStateFilterType) => {
-    return settings.filterReadStates.includes(readState);
-  };
-
-  const updateReadStateFilter = (
-    readState: ReadStateFilterType,
-    checked: boolean,
-  ) => {
-    let readStates: ReadStateFilterType[] = [...settings.filterReadStates];
-
-    if (checked) {
-      readStates.push(readState);
-    } else {
-      readStates = readStates.filter((rs) => rs !== readState);
-    }
-
-    updateSetting('filterReadStates', readStates);
-  };
-
-  const isProductFilterSet = (product: ProductName) => {
-    return settings.filterProducts.includes(product);
-  };
-
-  const updateProductFilter = (product: ProductName, checked: boolean) => {
-    let products: ProductName[] = [...settings.filterProducts];
-
-    if (checked) {
-      products.push(product);
-    } else {
-      products = products.filter((p) => p !== product);
-    }
-
-    updateSetting('filterProducts', products);
   };
 
   return (
@@ -135,16 +77,18 @@ export const FiltersRoute: FC = () => {
                       const timeSensitiveLabel = formatProperCase(
                         timeSensitiveDetails.name,
                       );
-                      const isTimeSensitiveChecked =
-                        isTimeSensitiveFilterSet(timeSensitive);
+                      const isTimeSensitiveChecked = isTimeSensitiveFilterSet(
+                        settings,
+                        timeSensitive,
+                      );
                       const timeSensitiveCount = getTimeSensitiveFilterCount(
                         notifications,
-                        timeSensitiveDetails,
+                        timeSensitive,
                       );
 
                       return (
                         <Box
-                          key={timeSensitive}
+                          key={timeSensitiveDetails.name}
                           paddingBlock={checkboxPaddingVertical}
                         >
                           <Inline
@@ -156,7 +100,8 @@ export const FiltersRoute: FC = () => {
                               label={timeSensitiveLabel}
                               isChecked={isTimeSensitiveChecked}
                               onChange={(evt) =>
-                                updateTimeSensitiveFilter(
+                                updateFilter(
+                                  'filterTimeSensitive',
                                   timeSensitive,
                                   evt.target.checked,
                                 )
@@ -183,13 +128,16 @@ export const FiltersRoute: FC = () => {
                 <Heading size="small">Category</Heading>
                 <Box>
                   {Object.keys(FILTERS_CATEGORIES).map(
-                    (category: CategoryFilterType) => {
+                    (category: CategoryType) => {
                       const categoryDetails =
                         getCategoryFilterDetails(category);
                       const categoryLabel = formatProperCase(
                         categoryDetails.name,
                       );
-                      const isCategoryChecked = isCategoryFilterSet(category);
+                      const isCategoryChecked = isCategoryFilterSet(
+                        settings,
+                        category,
+                      );
                       const categoryCount = getCategoryFilterCount(
                         notifications,
                         category,
@@ -197,7 +145,7 @@ export const FiltersRoute: FC = () => {
 
                       return (
                         <Box
-                          key={category}
+                          key={categoryDetails.name}
                           paddingBlock={checkboxPaddingVertical}
                         >
                           <Inline
@@ -209,7 +157,8 @@ export const FiltersRoute: FC = () => {
                               label={categoryLabel}
                               isChecked={isCategoryChecked}
                               onChange={(evt) =>
-                                updateCategoryFilter(
+                                updateFilter(
+                                  'filterCategories',
                                   category,
                                   evt.target.checked,
                                 )
@@ -236,14 +185,16 @@ export const FiltersRoute: FC = () => {
                 <Heading size="small">Read State</Heading>
                 <Box>
                   {Object.keys(FILTERS_READ_STATES).map(
-                    (readState: ReadStateFilterType) => {
+                    (readState: ReadStateType) => {
                       const readStateDetails =
                         getReadStateFilterDetails(readState);
                       const readStateLabel = formatProperCase(
                         readStateDetails.name,
                       );
-                      const isReadStateChecked =
-                        isReadStateFilterSet(readState);
+                      const isReadStateChecked = isReadStateFilterSet(
+                        settings,
+                        readState,
+                      );
                       const readStateCount = getReadStateFilterCount(
                         notifications,
                         readState,
@@ -251,7 +202,7 @@ export const FiltersRoute: FC = () => {
 
                       return (
                         <Box
-                          key={readState}
+                          key={readStateDetails.name}
                           paddingBlock={checkboxPaddingVertical}
                         >
                           <Inline
@@ -263,7 +214,8 @@ export const FiltersRoute: FC = () => {
                               label={readStateLabel}
                               isChecked={isReadStateChecked}
                               onChange={(evt) =>
-                                updateReadStateFilter(
+                                updateFilter(
+                                  'filterReadStates',
                                   readState,
                                   evt.target.checked,
                                 )
@@ -284,6 +236,59 @@ export const FiltersRoute: FC = () => {
                   )}
                 </Box>
               </Stack>
+
+              <Stack space="space.100">
+                <Heading size="small">Authors</Heading>
+                <Box>
+                  {Object.keys(FILTERS_AUTHORS).map(
+                    (author: AuthorFilterType) => {
+                      const authorDetails = getAuthorFilterDetails(author);
+                      const authorLabel = formatProperCase(authorDetails.name);
+                      const isAuthorChecked = isAuthorFilterSet(
+                        settings,
+                        author,
+                      );
+                      const authorCount = getAuthorFilterCount(
+                        notifications,
+                        author,
+                      );
+
+                      return (
+                        <Box
+                          key={authorDetails.name}
+                          paddingBlock={checkboxPaddingVertical}
+                        >
+                          <Inline
+                            space={checkboxPaddingHorizontal}
+                            alignBlock="center"
+                          >
+                            <Checkbox
+                              aria-label={authorDetails.name}
+                              label={authorLabel}
+                              isChecked={isAuthorChecked}
+                              onChange={(evt) =>
+                                updateFilter(
+                                  'filterAuthors',
+                                  author,
+                                  evt.target.checked,
+                                )
+                              }
+                            />
+                            <Badge
+                              max={false}
+                              appearance={
+                                isAuthorChecked ? 'primary' : 'default'
+                              }
+                            >
+                              {authorCount}
+                            </Badge>
+                          </Inline>
+                        </Box>
+                      );
+                    },
+                  )}
+                </Box>
+              </Stack>
             </Stack>
 
             <Stack space="space.100">
@@ -291,21 +296,25 @@ export const FiltersRoute: FC = () => {
               <Box>
                 {Object.keys(PRODUCTS).map((product: ProductName) => {
                   const productDetails = getProductDetails(product);
+                  const productLabel = formatProperCase(productDetails.name);
+                  const isProductChecked = isProductFilterSet(
+                    settings,
+                    product,
+                  );
                   const productIconProps: Record<string, string> = {
                     size: 'xsmall',
-                    appearance: isProductFilterSet(product)
-                      ? 'brand'
-                      : 'neutral',
+                    appearance: isProductChecked ? 'brand' : 'neutral',
                   };
-                  const productLabel = formatProperCase(productDetails.name);
-                  const isProductChecked = isProductFilterSet(product);
                   const productCount = getProductFilterCount(
                     notifications,
                     product,
                   );
 
                   return (
-                    <Box key={product} paddingBlock={checkboxPaddingVertical}>
+                    <Box
+                      key={productDetails.name}
+                      paddingBlock={checkboxPaddingVertical}
+                    >
                       <Inline
                         space={checkboxPaddingHorizontal}
                         alignBlock="center"
@@ -315,7 +324,11 @@ export const FiltersRoute: FC = () => {
                           label={productLabel}
                           isChecked={isProductChecked}
                           onChange={(evt) =>
-                            updateProductFilter(product, evt.target.checked)
+                            updateFilter(
+                              'filterProducts',
+                              product,
+                              evt.target.checked,
+                            )
                           }
                         />
                         <productDetails.logo {...productIconProps} />

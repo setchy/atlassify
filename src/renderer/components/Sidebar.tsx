@@ -17,8 +17,8 @@ import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
-import { hasAnyFiltersSet } from '../utils/filters';
 import { openMyNotifications } from '../utils/links';
+import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { isLightMode } from '../utils/theme';
 import { LogoIcon } from './icons/LogoIcon';
@@ -70,9 +70,7 @@ export const Sidebar: FC = () => {
     return `${notificationsCount}${hasMoreNotifications ? '+' : ''}`;
   }, [notifications, notificationsCount]);
 
-  const hasFilters = useMemo(() => {
-    return hasAnyFiltersSet(settings);
-  }, [settings]);
+  const hasFilters = hasAnyFiltersSet(settings);
 
   return (
     <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar">

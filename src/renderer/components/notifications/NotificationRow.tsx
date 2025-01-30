@@ -9,15 +9,14 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
-import {
-  FILTERS_READ_STATES,
-  getCategoryFilterDetails,
-} from '../../utils/filters';
+
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
 } from '../../utils/helpers';
 import { openNotification } from '../../utils/links';
+import { getCategoryFilterDetails } from '../../utils/notifications/filters/category';
+import { filterNotificationByReadState } from '../../utils/notifications/filters/readState';
 
 interface INotificationRow {
   notification: AtlassifyNotification;
@@ -54,8 +53,10 @@ export const NotificationRow: FC<INotificationRow> = ({
     size: 'small',
   };
 
-  const isNotificationUnread =
-    notification.readState === FILTERS_READ_STATES.unread.name;
+  const isNotificationUnread = filterNotificationByReadState(
+    notification,
+    'unread',
+  );
 
   return (
     <div

@@ -7,9 +7,9 @@ import type {
   AtlassifyNotification,
   AtlassifyNotificationPath,
   AtlassifyState,
-  CategoryFilterType,
+  CategoryType,
   Link,
-  ReadStateFilterType,
+  ReadStateType,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -22,7 +22,7 @@ import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
 import { Errors } from '../errors';
 import { getAtlassianProduct } from '../products';
-import { filterNotifications } from './filter';
+import { filterNotifications } from './filters/filter';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);
@@ -122,7 +122,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
     return {
       id: headNotification.notificationId,
       message: headNotification.content.message,
-      readState: headNotification.readState as ReadStateFilterType,
+      readState: headNotification.readState as ReadStateType,
       updated_at: headNotification.timestamp,
       type: headNotification.content.type,
       url: headNotification.content.url as Link,
@@ -132,7 +132,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
         url: headNotification.content.entity.url as Link,
         iconUrl: headNotification.content.entity.iconUrl as Link,
       },
-      category: headNotification.category as CategoryFilterType,
+      category: headNotification.category as CategoryType,
       actor: {
         displayName: headNotification.content.actor.displayName,
         avatarURL: headNotification.content.actor.avatarURL as Link,
