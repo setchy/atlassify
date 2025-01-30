@@ -13,21 +13,6 @@ export interface FilterDetails {
   description: string;
 
   /**
-   * The notification title contains this phrase
-   */
-  contains?: string;
-
-  /**
-   * The notification title starts with this phrase
-   */
-  startsWith?: string;
-
-  /**
-   * The notification title does not start with this phrase
-   */
-  doesNotStartWith?: string;
-
-  /**
    * The icon for the filter.
    * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
    */

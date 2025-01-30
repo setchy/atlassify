@@ -75,9 +75,9 @@ export type SettingsValue =
 export type FilterValue =
   | CategoryType
   | ReadStateType
-  | AuthorFilterType
+  | ActorType
   | ProductName
-  | TimeSensitiveFilterType;
+  | TimeSensitiveType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
@@ -179,7 +179,7 @@ export interface FilterSettingsState {
   /**
    * The categories to filter time sensitive notifications by.
    */
-  filterTimeSensitive: TimeSensitiveFilterType[];
+  filterTimeSensitive: TimeSensitiveType[];
 
   /**
    * The categories to filter notifications by.
@@ -195,11 +195,6 @@ export interface FilterSettingsState {
    * The products to filter notifications by.
    */
   filterProducts: ProductName[];
-
-  /**
-   * The authors to filter notifications by.
-   */
-  filterAuthors: AuthorFilterType[];
 }
 
 export interface AuthState {
@@ -445,17 +440,17 @@ export type CategoryType = 'direct' | 'watching';
 export type ReadStateType = 'unread' | 'read';
 
 /**
- * Filters for time-sensitive notifications.
+ * The sensitivity (ie: importance) of a notification.
  *
  * - 'mention' - A user has mentioned you as part of the notification.
  * - 'comment' - A user has commented on your prior work.
  */
-export type TimeSensitiveFilterType = 'mention' | 'comment';
+export type TimeSensitiveType = 'mention' | 'comment';
 
 /**
- * Filters for author of notification.
+ * The actor type.
  *
- * - 'user' - A user action created the notification.
- * - 'automation' - An automation action created the notification.
+ * - 'user' - A user actor created the notification.
+ * - 'automation' - An automation actor created the notification.
  */
-export type AuthorFilterType = 'user' | 'automation';
+export type ActorType = 'user' | 'automation';

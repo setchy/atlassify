@@ -5,30 +5,26 @@ import type {
   AccountNotifications,
   AtlassifyNotification,
   SettingsState,
-  TimeSensitiveFilterType,
+  TimeSensitiveType,
 } from '../../../types';
 import type { FilterDetails } from './types';
 
-export const FILTERS_TIME_SENSITIVE: Record<
-  TimeSensitiveFilterType,
-  FilterDetails
-> = {
-  mention: {
-    name: 'mention',
-    description: 'Mentions',
-    contains: ' mentioned ',
-    icon: MentionIcon,
-  },
-  comment: {
-    name: 'comment',
-    description: 'Comments',
-    contains: ' replied ',
-    icon: CommentIcon,
-  },
-};
+export const FILTERS_TIME_SENSITIVE: Record<TimeSensitiveType, FilterDetails> =
+  {
+    mention: {
+      name: 'mention',
+      description: 'Mentions',
+      icon: MentionIcon,
+    },
+    comment: {
+      name: 'comment',
+      description: 'Comments',
+      icon: CommentIcon,
+    },
+  };
 
 export function getTimeSensitiveFilterDetails(
-  timeSensitive: TimeSensitiveFilterType,
+  timeSensitive: TimeSensitiveType,
 ): FilterDetails {
   return FILTERS_TIME_SENSITIVE[timeSensitive];
 }
@@ -39,14 +35,14 @@ export function hasTimeSensitiveFilters(settings: SettingsState) {
 
 export function isTimeSensitiveFilterSet(
   settings: SettingsState,
-  timeSensitive: TimeSensitiveFilterType,
+  timeSensitive: TimeSensitiveType,
 ) {
   return settings.filterTimeSensitive.includes(timeSensitive);
 }
 
 export function getTimeSensitiveFilterCount(
   notifications: AccountNotifications[],
-  timeSensitive: TimeSensitiveFilterType,
+  timeSensitive: TimeSensitiveType,
 ) {
   return notifications.reduce(
     (memo, acc) =>
@@ -60,9 +56,19 @@ export function getTimeSensitiveFilterCount(
 
 export function filterNotificationByTimeSensitive(
   notification: AtlassifyNotification,
-  timeSensitive: TimeSensitiveFilterType,
+  timeSensitive: TimeSensitiveType,
 ): boolean {
-  const timeSensitiveDetails = getTimeSensitiveFilterDetails(timeSensitive);
+  return inferNotificationSensitivity(notification) === timeSensitive;
+}
 
-  return notification.message.includes(timeSensitiveDetails.contains);
+export function inferNotificationSensitivity(
+  notification: AtlassifyNotification,
+): TimeSensitiveType | null {
+  if (notification.message.includes(' mentioned ')) {
+    return 'mention';
+  }
+
+  if (notification.message.includes(' replied ')) {
+    return 'comment';
+  }
 }

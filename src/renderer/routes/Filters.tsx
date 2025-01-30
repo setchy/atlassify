@@ -12,19 +12,12 @@ import { Header } from '../components/primitives/Header';
 import { Page } from '../components/primitives/Page';
 import { AppContext } from '../context/App';
 import type {
-  AuthorFilterType,
   CategoryType,
   ProductName,
   ReadStateType,
-  TimeSensitiveFilterType,
+  TimeSensitiveType,
 } from '../types';
 import { formatProperCase } from '../utils/helpers';
-import {
-  FILTERS_AUTHORS,
-  getAuthorFilterCount,
-  getAuthorFilterDetails,
-  isAuthorFilterSet,
-} from '../utils/notifications/filters/author';
 import {
   FILTERS_CATEGORIES,
   getCategoryFilterCount,
@@ -71,7 +64,7 @@ export const FiltersRoute: FC = () => {
                 <Heading size="small">Time Sensitive</Heading>
                 <Box>
                   {Object.keys(FILTERS_TIME_SENSITIVE).map(
-                    (timeSensitive: TimeSensitiveFilterType) => {
+                    (timeSensitive: TimeSensitiveType) => {
                       const timeSensitiveDetails =
                         getTimeSensitiveFilterDetails(timeSensitive);
                       const timeSensitiveLabel = formatProperCase(
@@ -228,59 +221,6 @@ export const FiltersRoute: FC = () => {
                               }
                             >
                               {readStateCount}
-                            </Badge>
-                          </Inline>
-                        </Box>
-                      );
-                    },
-                  )}
-                </Box>
-              </Stack>
-
-              <Stack space="space.100">
-                <Heading size="small">Authors</Heading>
-                <Box>
-                  {Object.keys(FILTERS_AUTHORS).map(
-                    (author: AuthorFilterType) => {
-                      const authorDetails = getAuthorFilterDetails(author);
-                      const authorLabel = formatProperCase(authorDetails.name);
-                      const isAuthorChecked = isAuthorFilterSet(
-                        settings,
-                        author,
-                      );
-                      const authorCount = getAuthorFilterCount(
-                        notifications,
-                        author,
-                      );
-
-                      return (
-                        <Box
-                          key={authorDetails.name}
-                          paddingBlock={checkboxPaddingVertical}
-                        >
-                          <Inline
-                            space={checkboxPaddingHorizontal}
-                            alignBlock="center"
-                          >
-                            <Checkbox
-                              aria-label={authorDetails.name}
-                              label={authorLabel}
-                              isChecked={isAuthorChecked}
-                              onChange={(evt) =>
-                                updateFilter(
-                                  'filterAuthors',
-                                  author,
-                                  evt.target.checked,
-                                )
-                              }
-                            />
-                            <Badge
-                              max={false}
-                              appearance={
-                                isAuthorChecked ? 'primary' : 'default'
-                              }
-                            >
-                              {authorCount}
                             </Badge>
                           </Inline>
                         </Box>

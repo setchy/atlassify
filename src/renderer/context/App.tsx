@@ -82,7 +82,6 @@ export const defaultFilters: FilterSettingsState = {
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],
-  filterAuthors: [],
 };
 
 export const defaultSettings: SettingsState = {

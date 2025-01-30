@@ -1,5 +1,4 @@
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import { filterNotificationByAuthor, hasAuthorFilters } from './author';
 import { filterNotificationByCategory, hasCategoryFilters } from './category';
 import { filterNotificationByProduct, hasProductFilters } from './product';
 import {
@@ -34,12 +33,6 @@ export function filterNotifications(
       );
     }
 
-    if (hasAuthorFilters(settings)) {
-      return settings.filterAuthors.some((a) => {
-        filterNotificationByAuthor(notification, a);
-      });
-    }
-
     if (hasProductFilters(settings)) {
       return settings.filterProducts.some((p) =>
         filterNotificationByProduct(notification, p),
@@ -55,7 +48,6 @@ export function hasAnyFiltersSet(settings: SettingsState): boolean {
     hasTimeSensitiveFilters(settings) ||
     hasCategoryFilters(settings) ||
     hasReadStateFilters(settings) ||
-    hasAuthorFilters(settings) ||
     hasProductFilters(settings)
   );
 }
