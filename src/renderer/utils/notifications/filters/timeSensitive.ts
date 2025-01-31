@@ -1,5 +1,5 @@
-import CommentIcon from '@atlaskit/icon/glyph/comment';
-import MentionIcon from '@atlaskit/icon/glyph/editor/mention';
+import CommentIcon from '@atlaskit/icon/core/comment';
+import MentionIcon from '@atlaskit/icon/core/mention';
 
 import type {
   AccountNotifications,

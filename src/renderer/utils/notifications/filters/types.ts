@@ -1,3 +1,5 @@
+import type { NewCoreIconProps, NewUtilityIconProps } from '@atlaskit/icon';
+
 /**
  * Details for a specific notification filter.
  */
@@ -16,5 +18,7 @@ export interface FilterDetails {
    * The icon for the filter.
    * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
    */
-  icon?: React.ComponentType;
+  icon?:
+    | React.ComponentType<NewUtilityIconProps>
+    | React.ComponentType<NewCoreIconProps>;
 }

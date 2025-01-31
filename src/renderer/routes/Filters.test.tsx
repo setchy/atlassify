@@ -185,6 +185,65 @@ describe('renderer/routes/Filters.tsx', () => {
       });
     });
 
+    describe('actor filters', () => {
+      it('should filter by actor - no existing filters set', async () => {
+        await act(async () => {
+          render(
+            <AppContext.Provider
+              value={{
+                auth: mockAuth,
+                settings: mockSettings,
+                notifications: [],
+                updateFilter,
+              }}
+            >
+              <MemoryRouter>
+                <FiltersRoute />
+              </MemoryRouter>
+            </AppContext.Provider>,
+          );
+        });
+
+        fireEvent.click(screen.getByLabelText('automation'));
+
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterActors',
+          'automation',
+          true,
+        );
+      });
+
+      it('should filter by actor - existing filter set', async () => {
+        await act(async () => {
+          render(
+            <AppContext.Provider
+              value={{
+                auth: mockAuth,
+                settings: {
+                  ...mockSettings,
+                  filterActors: ['automation'],
+                },
+                notifications: [],
+                updateFilter,
+              }}
+            >
+              <MemoryRouter>
+                <FiltersRoute />
+              </MemoryRouter>
+            </AppContext.Provider>,
+          );
+        });
+
+        fireEvent.click(screen.getByLabelText('automation'));
+
+        expect(updateFilter).toHaveBeenCalledWith(
+          'filterActors',
+          'automation',
+          false,
+        );
+      });
+    });
+
     describe('read state filters', () => {
       it('should filter by read state - no existing filters set', async () => {
         await act(async () => {

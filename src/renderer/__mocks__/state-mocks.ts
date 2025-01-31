@@ -54,6 +54,7 @@ const mockFilters: FilterSettingsState = {
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],
+  filterActors: [],
 };
 
 export const mockSettings: SettingsState = {
