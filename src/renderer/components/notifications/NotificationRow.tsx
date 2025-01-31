@@ -55,6 +55,8 @@ export const NotificationRow: FC<INotificationRow> = ({
     'unread',
   );
 
+  const spaceBetweenSections = 'space.100';
+
   return (
     <div
       id={notification.id}
@@ -65,62 +67,75 @@ export const NotificationRow: FC<INotificationRow> = ({
       )}
     >
       <Box padding="space.100">
-        {/* <Flex justifyContent="stretch"> */}
-        <Inline space="space.200" grow="fill" alignBlock="center">
-          <Stack space="space.050" alignBlock="center" alignInline="center">
-            <Tooltip content={notification.actor.displayName} position="right">
-              <Avatar
-                name={notification.actor.displayName}
-                src={notification.actor.avatarURL}
-                size="medium"
-              />
-            </Tooltip>
-            <Tooltip content={categoryDetails.description} position="right">
-              <CategoryIcon label={categoryDetails.description} />
-            </Tooltip>
-          </Stack>
-
-          {/* Notification Message & Details (Stretch to fill space) */}
-          <Inline grow="fill">
-            <Box
-              onClick={handleNotificationInteraction}
-              testId="notification-row"
-            >
-              <Stack space="space.025">
-                <Box>
-                  <Text>{notification.message}</Text>
-                  &nbsp;&nbsp;
-                  <Text size="small" as="em" align="end">
-                    {updatedAt}
-                  </Text>
-                </Box>
-                <Box>
-                  <Inline space="space.050">
-                    <Avatar
-                      name={notification.entity.title}
-                      src={notification.entity.iconUrl}
-                      size="xsmall"
-                      appearance="square"
-                    />
-                    <Text size="small">{notification.entity.title}</Text>
-                  </Inline>
-                  <Box paddingInlineStart="space.025">
-                    <Inline space="space.075">
-                      <notification.product.logo
-                        size="xsmall"
-                        appearance="brand"
-                      />
-                      <Text size="small">
-                        {formatNotificationFooterText(notification)}
-                      </Text>
-                    </Inline>
-                  </Box>
-                </Box>
+        <Inline space={spaceBetweenSections} alignBlock="center">
+          <Inline space={spaceBetweenSections} grow="fill" alignBlock="start">
+            <Box id="notification-avatar">
+              <Stack space="space.050" alignInline="center">
+                <Tooltip
+                  content={notification.actor.displayName}
+                  position="right"
+                >
+                  <Avatar
+                    name={notification.actor.displayName}
+                    src={notification.actor.avatarURL}
+                    size="medium"
+                  />
+                </Tooltip>
+                <Tooltip content={categoryDetails.description} position="right">
+                  <CategoryIcon label={categoryDetails.description} />
+                </Tooltip>
               </Stack>
             </Box>
+
+            <Inline grow="fill">
+              <Box
+                id="notification-details"
+                onClick={handleNotificationInteraction}
+                testId="notification-details"
+              >
+                <div className="cursor-pointer">
+                  <Stack space="space.025">
+                    <Box id="notification-title">
+                      <Text>{notification.message}</Text>
+                      &nbsp;&nbsp;
+                      <Text size="small" as="em" align="end">
+                        {updatedAt}
+                      </Text>
+                    </Box>
+                    <Box id="notification-metadata">
+                      <Box id="notification-entity">
+                        <Inline space="space.050">
+                          <Avatar
+                            name={notification.entity.title}
+                            src={notification.entity.iconUrl}
+                            size="xsmall"
+                            appearance="square"
+                          />
+                          <Text size="small">{notification.entity.title}</Text>
+                        </Inline>
+                      </Box>
+                      <Box
+                        id="notification-product"
+                        paddingInlineStart="space.025"
+                      >
+                        <Inline space="space.075">
+                          <notification.product.logo
+                            size="xsmall"
+                            appearance="brand"
+                          />
+                          <Text size="small">
+                            {formatNotificationFooterText(notification)}
+                          </Text>
+                        </Inline>
+                      </Box>
+                    </Box>
+                  </Stack>
+                </div>
+              </Box>
+            </Inline>
           </Inline>
 
-          <Inline alignInline="center">
+          <Box id="notification-actions">
             {!animateExit &&
               (isNotificationUnread ? (
                 <Tooltip content="Mark as read" position="left">
@@ -155,9 +170,8 @@ export const NotificationRow: FC<INotificationRow> = ({
                   />
                 </Tooltip>
               ))}
-          </Inline>
+          </Box>
         </Inline>
-        {/* </Flex> */}
       </Box>
     </div>
   );

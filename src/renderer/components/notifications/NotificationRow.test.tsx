@@ -87,7 +87,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-row'));
+      fireEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -116,7 +116,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-row'));
+      fireEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);

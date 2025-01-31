@@ -2,7 +2,7 @@ import { B200, DN40, DN50, N10, R300 } from '@atlaskit/theme/colors';
 
 import type { Config } from 'tailwindcss';
 
-const sidebarWidth = '2.75rem'; // 44px
+const sidebarWidth = '3rem'; // 48px
 
 const config: Config = {
   content: ['./src/**/*.js', './src/**/*.ts', './src/**/*.tsx'],
