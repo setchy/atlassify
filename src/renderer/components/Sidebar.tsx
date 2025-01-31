@@ -2,25 +2,24 @@ import { type FC, Fragment, useContext, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import FilterIcon from '@atlaskit/icon/glyph/filter';
-import ListIcon from '@atlaskit/icon/glyph/list';
-import NotificationIcon from '@atlaskit/icon/glyph/notification';
-import RefreshIcon from '@atlaskit/icon/glyph/refresh';
-import SettingsIcon from '@atlaskit/icon/glyph/settings';
+import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
+import FilterIcon from '@atlaskit/icon/core/filter';
+import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
+import NotificationIcon from '@atlaskit/icon/core/notification';
+import RefreshIcon from '@atlaskit/icon/core/refresh';
+import SettingsIcon from '@atlaskit/icon/core/settings';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
+import { token, useThemeObserver } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import { colors } from '../../../tailwind.config';
 import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { isLightMode } from '../utils/theme';
 import { LogoIcon } from './icons/LogoIcon';
 
 export const Sidebar: FC = () => {
@@ -72,8 +71,14 @@ export const Sidebar: FC = () => {
 
   const hasFilters = hasAnyFiltersSet(settings);
 
+  const theme = useThemeObserver();
+  const sidebarIconColorToken =
+    theme.colorMode === 'light'
+      ? token('color.text.inverse')
+      : token('color.text.accent.gray.bolder');
+
   return (
-    <div className="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar">
+    <div className="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
@@ -97,8 +102,7 @@ export const Sidebar: FC = () => {
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}
-                    size="small"
-                    primaryColor="white"
+                    color={sidebarIconColorToken}
                   />
                 )}
                 appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
@@ -137,10 +141,9 @@ export const Sidebar: FC = () => {
                   <IconButton
                     label="Group notifications by products"
                     icon={() => (
-                      <ListIcon
+                      <ListBulletedIcon
                         label="groupByProduct"
-                        size="small"
-                        primaryColor="white"
+                        color={sidebarIconColorToken}
                       />
                     )}
                     onClick={() => {
@@ -166,8 +169,7 @@ export const Sidebar: FC = () => {
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}
-                        size="small"
-                        primaryColor="white"
+                        color={sidebarIconColorToken}
                       />
                     )}
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -200,8 +202,7 @@ export const Sidebar: FC = () => {
                     ) : (
                       <RefreshIcon
                         {...iconProps}
-                        size="medium"
-                        primaryColor="white"
+                        color={sidebarIconColorToken}
                       />
                     )
                   }
@@ -219,8 +220,7 @@ export const Sidebar: FC = () => {
                   icon={(iconProps) => (
                     <SettingsIcon
                       {...iconProps}
-                      size="medium"
-                      primaryColor="white"
+                      color={sidebarIconColorToken}
                     />
                   )}
                   appearance="subtle"
@@ -237,11 +237,7 @@ export const Sidebar: FC = () => {
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}
-                    size="medium"
-                    primaryColor="white"
-                    secondaryColor={
-                      isLightMode() ? colors.sidebar.light : colors.sidebar.dark
-                    }
+                    color={sidebarIconColorToken}
                   />
                 )}
                 shape="circle"

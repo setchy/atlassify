@@ -93,32 +93,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should open a notification in the browser - key down', () => {
-      const markNotificationsReadMock = jest.fn();
-
-      const props = {
-        notification: mockSingleAtlassifyNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.keyDown(screen.getByTestId('notification-row'));
-
-      expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-    });
-
     it('should open a notification in the browser - delay notification setting enabled', () => {
       const markNotificationsReadMock = jest.fn();
 

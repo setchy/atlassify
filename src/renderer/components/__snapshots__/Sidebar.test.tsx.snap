@@ -11,20 +11,18 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M3 8h10M1 2.75h14M5 13.25h6"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -48,20 +46,18 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M3 8h10M1 2.75h14M5 13.25h6"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -85,20 +81,18 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M7 13h10l1-2H6zM3.99 6c-.55 0-.79.41-.55.9L4 8h16l.55-1.1c.25-.5.01-.9-.54-.9zm6.79 11.56a.87.87 0 0 0 .73.44h.99c.28 0 .61-.2.73-.44L14 16h-4z"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M3 8h10M1 2.75h14M5 13.25h6"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -122,20 +116,23 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
   >
     <span
       aria-label="groupByProduct"
-      class="css-1wits42"
-      data-vc="icon-undefined"
+      class="css-kxjlgc"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
           fill="currentcolor"
+        />
+        <path
+          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -159,20 +156,23 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
   >
     <span
       aria-label="groupByProduct"
-      class="css-1wits42"
-      data-vc="icon-undefined"
+      class="css-kxjlgc"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
           fill="currentcolor"
+        />
+        <path
+          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -196,20 +196,23 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
   >
     <span
       aria-label="groupByProduct"
-      class="css-1wits42"
-      data-vc="icon-undefined"
+      class="css-kxjlgc"
       role="img"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M3 18a1 1 0 0 0 .99 1H20a.99.99 0 0 0 1-1v-1H3zm0-7h18V9H3zm0-4h18V6c0-.55-.44-1-.99-1H3.99A.99.99 0 0 0 3 6zm0 8h18v-2H3z"
+          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
           fill="currentcolor"
+        />
+        <path
+          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+          stroke="currentcolor"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -228,7 +231,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -480,20 +483,19 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   >
                     <span
                       aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-kxjlgc"
                     >
                       <svg
-                        height="24"
+                        class="css-1t4wpzr"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -527,34 +529,20 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1afrefi"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #283447;"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
-                      <g
+                      <path
+                        clip-rule="evenodd"
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                        fill="currentcolor"
                         fill-rule="evenodd"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          r="10"
-                        />
-                        <path
-                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                          fill="inherit"
-                        />
-                        <path
-                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                          fill="inherit"
-                        />
-                      </g>
+                      />
                     </svg>
                   </span>
                   <span
@@ -572,7 +560,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -824,20 +812,19 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -871,34 +858,20 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               >
                 <span
                   aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #283447;"
+                  class="css-kxjlgc"
                 >
                   <svg
-                    height="24"
+                    class="css-1t4wpzr"
+                    fill="none"
                     role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                    viewBox="0 0 16 16"
                   >
-                    <g
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                      fill="currentcolor"
                       fill-rule="evenodd"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
+                    />
                   </svg>
                 </span>
                 <span
@@ -973,7 +946,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1225,20 +1198,19 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   >
                     <span
                       aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-kxjlgc"
                     >
                       <svg
-                        height="24"
+                        class="css-1t4wpzr"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -1272,34 +1244,20 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1afrefi"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
-                      <g
+                      <path
+                        clip-rule="evenodd"
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                        fill="currentcolor"
                         fill-rule="evenodd"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          r="10"
-                        />
-                        <path
-                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                          fill="inherit"
-                        />
-                        <path
-                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                          fill="inherit"
-                        />
-                      </g>
+                      />
                     </svg>
                   </span>
                   <span
@@ -1317,7 +1275,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -1569,20 +1527,19 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -1616,34 +1573,20 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               >
                 <span
                   aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                  class="css-kxjlgc"
                 >
                   <svg
-                    height="24"
+                    class="css-1t4wpzr"
+                    fill="none"
                     role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                    viewBox="0 0 16 16"
                   >
-                    <g
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                      fill="currentcolor"
                       fill-rule="evenodd"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
+                    />
                   </svg>
                 </span>
                 <span
@@ -1718,7 +1661,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1970,20 +1913,19 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   >
                     <span
                       aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-kxjlgc"
                     >
                       <svg
-                        height="24"
+                        class="css-1t4wpzr"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -2017,34 +1959,20 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1afrefi"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #283447;"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
-                      <g
+                      <path
+                        clip-rule="evenodd"
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                        fill="currentcolor"
                         fill-rule="evenodd"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          r="10"
-                        />
-                        <path
-                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                          fill="inherit"
-                        />
-                        <path
-                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                          fill="inherit"
-                        />
-                      </g>
+                      />
                     </svg>
                   </span>
                   <span
@@ -2062,7 +1990,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -2314,20 +2242,19 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -2361,34 +2288,20 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
               >
                 <span
                   aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #283447;"
+                  class="css-kxjlgc"
                 >
                   <svg
-                    height="24"
+                    class="css-1t4wpzr"
+                    fill="none"
                     role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                    viewBox="0 0 16 16"
                   >
-                    <g
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                      fill="currentcolor"
                       fill-rule="evenodd"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
+                    />
                   </svg>
                 </span>
                 <span
@@ -2463,7 +2376,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -2715,20 +2628,19 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   >
                     <span
                       aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-kxjlgc"
                     >
                       <svg
-                        height="24"
+                        class="css-1t4wpzr"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -2762,34 +2674,20 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1afrefi"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
-                      <g
+                      <path
+                        clip-rule="evenodd"
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                        fill="currentcolor"
                         fill-rule="evenodd"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          r="10"
-                        />
-                        <path
-                          d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                          fill="inherit"
-                        />
-                        <path
-                          d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                          fill="inherit"
-                        />
-                      </g>
+                      />
                     </svg>
                   </span>
                   <span
@@ -2807,7 +2705,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-12 -ml-12 w-12 h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -3059,20 +2957,19 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-kxjlgc"
                   >
                     <svg
-                      height="24"
+                      class="css-1t4wpzr"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -3106,34 +3003,20 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
               >
                 <span
                   aria-hidden="true"
-                  class="css-1afrefi"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: white; --icon-secondary-color: #2684FF;"
+                  class="css-kxjlgc"
                 >
                   <svg
-                    height="24"
+                    class="css-1t4wpzr"
+                    fill="none"
                     role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                    viewBox="0 0 16 16"
                   >
-                    <g
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                      fill="currentcolor"
                       fill-rule="evenodd"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        r="10"
-                      />
-                      <path
-                        d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                        fill="inherit"
-                      />
-                      <path
-                        d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                        fill="inherit"
-                      />
-                    </g>
+                    />
                   </svg>
                 </span>
                 <span
@@ -3213,20 +3096,19 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+          stroke="currentcolor"
+          stroke-linejoin="round"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -3250,20 +3132,19 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+          stroke="currentcolor"
+          stroke-linejoin="round"
+          stroke-width="1.5"
         />
       </svg>
     </span>
@@ -3287,20 +3168,19 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-1wits42"
-      data-vc="icon-undefined"
-      style="--icon-primary-color: white; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+      class="css-kxjlgc"
     >
       <svg
-        height="24"
+        class="css-1t4wpzr"
+        fill="none"
         role="presentation"
-        viewBox="0 0 24 24"
-        width="24"
+        viewBox="0 0 16 16"
       >
         <path
-          d="M6.49 17.67a2 2 0 0 0 2.83 0l-2.83-2.83a2 2 0 0 0 0 2.83m4.89-12.19-.72.73c-.78.78-2.21 1.81-3.21 2.31l-3.02 1.51c-.49.25-.58.77-.19 1.17l8.56 8.56c.4.4.92.31 1.17-.19l1.51-3.02c.49-.99 1.53-2.42 2.31-3.21l.73-.73a5.05 5.05 0 0 0 .64-6.36 1.01 1.01 0 1 0-1.35-1.49q-.04.04-.07.08A5.04 5.04 0 0 0 14.95 4a5.04 5.04 0 0 0-3.57 1.48"
-          fill="currentcolor"
-          fill-rule="evenodd"
+          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
+          stroke="currentcolor"
+          stroke-linejoin="round"
+          stroke-width="1.5"
         />
       </svg>
     </span>

@@ -3,9 +3,9 @@ import { type FC, useContext, useEffect, useState } from 'react';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
-import MediaServicesZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
-import MediaServicesZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
-import RetryIcon from '@atlaskit/icon/glyph/retry';
+import RetryIcon from '@atlaskit/icon/core/retry';
+import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
+import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
@@ -106,7 +106,7 @@ export const AppearanceSettings: FC = () => {
                 <Tooltip content="Zoom out" position="bottom">
                   <IconButton
                     label="Zoom out"
-                    icon={MediaServicesZoomOutIcon}
+                    icon={ZoomOutIcon}
                     shape="circle"
                     spacing="compact"
                     onClick={() =>
@@ -121,7 +121,7 @@ export const AppearanceSettings: FC = () => {
                 <Tooltip content="Zoom in" position="bottom">
                   <IconButton
                     label="Zoom in"
-                    icon={MediaServicesZoomInIcon}
+                    icon={ZoomInIcon}
                     shape="circle"
                     spacing="compact"
                     onClick={() =>
