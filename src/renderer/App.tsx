@@ -6,6 +6,7 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom';
+
 import { Sidebar } from './components/Sidebar';
 import { AppContext, AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
@@ -14,6 +15,7 @@ import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
+
 import './App.css';
 
 function RequireAuth({ children }) {
