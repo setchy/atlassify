@@ -24,21 +24,20 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
               >
                 <span
                   aria-hidden="true"
-                  class="css-snhnyn"
-                  data-vc="icon-undefined"
-                  style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  class="css-kxjlgc"
+                  style="color: currentColor;"
                 >
                   <svg
-                    height="24"
+                    class="css-1t4wpzr"
+                    fill="none"
                     role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
+                    viewBox="0 0 16 16"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
+                      d="M15 8H2.25m4.5-5-5 5 5 5"
+                      stroke="currentcolor"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
                     />
                   </svg>
                 </span>
@@ -79,21 +78,20 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
             >
               <span
                 aria-hidden="true"
-                class="css-snhnyn"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class="css-kxjlgc"
+                style="color: currentColor;"
               >
                 <svg
-                  height="24"
+                  class="css-1t4wpzr"
+                  fill="none"
                   role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                  viewBox="0 0 16 16"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
+                    d="M15 8H2.25m4.5-5-5 5 5 5"
+                    stroke="currentcolor"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
                   />
                 </svg>
               </span>

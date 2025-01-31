@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
-import InviteTeamIcon from '@atlaskit/icon/glyph/invite-team';
-import RefreshIcon from '@atlaskit/icon/glyph/refresh';
-import SignOutIcon from '@atlaskit/icon/glyph/sign-out';
+import LogOutIcon from '@atlaskit/icon/core/log-out';
+import PersonAddIcon from '@atlaskit/icon/core/person-add';
+import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Flex, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -113,7 +113,7 @@ export const AccountsRoute: FC = () => {
                     >
                       <IconButton
                         label={`Logout ${account.username}`}
-                        icon={SignOutIcon}
+                        icon={LogOutIcon}
                         shape="circle"
                         appearance="subtle"
                         onClick={() => logoutAccount(account)}
@@ -137,7 +137,7 @@ export const AccountsRoute: FC = () => {
           <Tooltip content="Add new account" position="left">
             <IconButton
               label="Add new account"
-              icon={InviteTeamIcon}
+              icon={PersonAddIcon}
               appearance="subtle"
               shape="circle"
               onClick={() => login()}

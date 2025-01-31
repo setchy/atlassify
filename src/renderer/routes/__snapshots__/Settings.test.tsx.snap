@@ -24,21 +24,20 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           >
             <span
               aria-hidden="true"
-              class="css-snhnyn"
-              data-vc="icon-undefined"
-              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+              class="css-kxjlgc"
+              style="color: currentColor;"
             >
               <svg
-                height="24"
+                class="css-1t4wpzr"
+                fill="none"
                 role="presentation"
-                viewBox="0 0 24 24"
-                width="24"
+                viewBox="0 0 16 16"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M12.207 5.793a1 1 0 0 1 0 1.414L8.414 11H18a1 1 0 1 1 0 2H8.414l3.793 3.793a1 1 0 1 1-1.415 1.414l-5.499-5.5A1 1 0 0 1 5 12.028v-.057a1 1 0 0 1 .293-.678l5.499-5.5a1 1 0 0 1 1.415 0"
-                  fill="currentcolor"
-                  fill-rule="evenodd"
+                  d="M15 8H2.25m4.5-5-5 5 5 5"
+                  stroke="currentcolor"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
                 />
               </svg>
             </span>
@@ -195,20 +194,19 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           >
                             <span
                               aria-hidden="true"
-                              class="css-snhnyn"
-                              data-vc="icon-undefined"
-                              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                              class="css-kxjlgc"
+                              style="color: currentColor;"
                             >
                               <svg
-                                height="24"
+                                class="css-1t4wpzr"
+                                fill="none"
                                 role="presentation"
-                                viewBox="0 0 24 24"
-                                width="24"
+                                viewBox="0 0 16 16"
                               >
                                 <path
-                                  d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5h-6a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2"
-                                  fill="currentcolor"
-                                  fill-rule="evenodd"
+                                  d="m14.5 14.5-3.788-3.788m0 0a5.25 5.25 0 1 0-7.425-7.425 5.25 5.25 0 0 0 7.425 7.425ZM4 7h6"
+                                  stroke="currentcolor"
+                                  stroke-width="1.5"
                                 />
                               </svg>
                             </span>
@@ -233,20 +231,19 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           >
                             <span
                               aria-hidden="true"
-                              class="css-snhnyn"
-                              data-vc="icon-undefined"
-                              style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                              class="css-kxjlgc"
+                              style="color: currentColor;"
                             >
                               <svg
-                                height="24"
+                                class="css-1t4wpzr"
+                                fill="none"
                                 role="presentation"
-                                viewBox="0 0 24 24"
-                                width="24"
+                                viewBox="0 0 16 16"
                               >
                                 <path
-                                  d="m16.436 15.085 3.94 4.01a1 1 0 0 1-1.425 1.402l-3.938-4.006a7.5 7.5 0 1 1 1.423-1.406M13.5 11.5a1 1 0 0 0 0-2h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2z"
-                                  fill="currentcolor"
-                                  fill-rule="evenodd"
+                                  d="m14.5 14.5-3.788-3.788m0 0a5.25 5.25 0 1 0-7.425-7.425 5.25 5.25 0 0 0 7.425 7.425ZM4 7h3m3 0H7m0 0V4m0 3v3"
+                                  stroke="currentcolor"
+                                  stroke-width="1.5"
                                 />
                               </svg>
                             </span>
@@ -279,34 +276,21 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         >
                           <span
                             aria-hidden="true"
-                            class="css-snhnyn"
-                            data-vc="icon-undefined"
-                            style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                            class="css-kxjlgc"
+                            style="color: currentColor;"
                           >
                             <svg
-                              height="24"
+                              class="css-1t4wpzr"
+                              fill="none"
                               role="presentation"
-                              viewBox="0 0 24 24"
-                              width="24"
+                              viewBox="0 0 16 16"
                             >
-                              <g
-                                fill="currentcolor"
-                                fill-rule="evenodd"
-                              >
-                                <path
-                                  d="M6 10h2.954a1 1 0 0 1 0 2H5.099A1.1 1.1 0 0 1 4 10.9V7a1 1 0 1 1 2 0z"
-                                  fill-rule="nonzero"
-                                />
-                                <path
-                                  d="M7.39 10.09H5.3a8 8 0 1 1 .818 6H7.84v-1.02a6 6 0 1 0-.45-4.98"
-                                  fill-rule="nonzero"
-                                />
-                                <circle
-                                  cx="7"
-                                  cy="15.61"
-                                  r="1"
-                                />
-                              </g>
+                              <path
+                                d="M6.75 14a6 6 0 1 1 6-6v2.5m2.625-2.125L12.75 11l-2.625-2.625"
+                                stroke="currentcolor"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
                             </svg>
                           </span>
                           <span
@@ -1084,34 +1068,28 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-1spmf3f"
             >
               <span
-                aria-hidden="true"
-                class="css-snhnyn"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class="css-my19lg"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-label="Accounts"
+                  class="css-1dbakxj"
+                  role="img"
+                  style="color: currentColor;"
                 >
-                  <g
-                    fill="currentcolor"
-                    fill-rule="evenodd"
+                  <svg
+                    class="css-u7v0tx"
+                    fill="none"
+                    role="presentation"
+                    viewBox="-4 -4 24 24"
                   >
                     <path
-                      d="M8.13 10H4a2 2 0 0 0-2 2v3.73c0 1.31 1.87 2.05 4 2.23V15a3 3 0 0 1 3-3h.35a4 4 0 0 1-1.23-2m7.75 0H20c1.11 0 2 .89 2 2v3.73c0 1.31-1.87 2.05-4 2.23V15a3 3 0 0 0-3-3h-.35a4 4 0 0 0 1.23-2M9.97 5.55a3 3 0 1 0-1.96 3.27 4 4 0 0 1 1.96-3.27M16 8.83a3 3 0 1 0-1.96-3.28A4 4 0 0 1 16 8.83"
+                      d="M5 9.75H2.625C1.59 9.75.75 10.59.75 11.625V13m14.5 1v-1.5a2.75 2.75 0 0 0-2.75-2.75h-3a2.75 2.75 0 0 0-2.75 2.75V14m7-9.5a2.75 2.75 0 1 1-5.5 0 2.75 2.75 0 0 1 5.5 0Zm-8 1a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z"
+                      stroke="currentcolor"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
                     />
-                    <path
-                      d="M7 15c0-1.105.887-2 2-2h6c1.105 0 2 .885 2 2v3.73c0 3.027-10 3.027-10 0z"
-                    />
-                    <circle
-                      cx="12"
-                      cy="9"
-                      r="3"
-                    />
-                  </g>
-                </svg>
+                  </svg>
+                </span>
               </span>
               <span
                 class="css-b5o75w"
@@ -1133,36 +1111,28 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-1spmf3f"
             >
               <span
-                aria-hidden="true"
-                class="css-snhnyn"
-                data-vc="icon-undefined"
-                style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                class="css-hybpiu"
               >
-                <svg
-                  height="24"
-                  role="presentation"
-                  viewBox="0 0 24 24"
-                  width="24"
+                <span
+                  aria-label="Quit Atlassify"
+                  class="css-1dbakxj"
+                  role="img"
+                  style="color: currentColor;"
                 >
-                  <g
-                    fill-rule="evenodd"
+                  <svg
+                    class="css-u7v0tx"
+                    fill="none"
+                    role="presentation"
+                    viewBox="-4 -4 24 24"
                   >
-                    <circle
-                      cx="12"
-                      cy="12"
+                    <path
+                      clip-rule="evenodd"
+                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
                       fill="currentcolor"
-                      r="10"
+                      fill-rule="evenodd"
                     />
-                    <path
-                      d="m13.477 9.113-4.36 4.386a1 1 0 1 0 1.418 1.41l4.36-4.386a1 1 0 0 0-1.418-1.41"
-                      fill="inherit"
-                    />
-                    <path
-                      d="m9.084 10.501 4.358 4.377a1 1 0 1 0 1.418-1.411L10.5 9.09a1 1 0 0 0-1.417 1.411"
-                      fill="inherit"
-                    />
-                  </g>
-                </svg>
+                  </svg>
+                </span>
               </span>
               <span
                 class="css-b5o75w"

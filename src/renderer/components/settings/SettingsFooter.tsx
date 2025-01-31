@@ -2,11 +2,12 @@ import { type FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import PeopleGroupIcon from '@atlaskit/icon/glyph/people-group';
+import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
+import PeopleGroupIcon from '@atlaskit/icon/core/people-group';
 import { Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { IconTile } from '@atlaskit/icon';
 import { APPLICATION } from '../../../shared/constants';
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
@@ -47,7 +48,14 @@ export const SettingsFooter: FC = () => {
         <Tooltip content="Accounts" position="top">
           <IconButton
             label="Accounts"
-            icon={PeopleGroupIcon}
+            icon={() => (
+              <IconTile
+                icon={PeopleGroupIcon}
+                label={'Accounts'}
+                appearance="blue"
+                shape="circle"
+              />
+            )}
             appearance="subtle"
             shape="circle"
             onClick={() => navigate('/accounts')}
@@ -57,7 +65,14 @@ export const SettingsFooter: FC = () => {
         <Tooltip content={`Quit ${APPLICATION.NAME}`} position="top">
           <IconButton
             label={`Quit ${APPLICATION.NAME}`}
-            icon={CrossCircleIcon}
+            icon={() => (
+              <IconTile
+                icon={CrossCircleIcon}
+                label={`Quit ${APPLICATION.NAME}`}
+                appearance="red"
+                shape="circle"
+              />
+            )}
             appearance="subtle"
             shape="circle"
             onClick={() => quitApp()}

@@ -5,9 +5,10 @@ import 'tailwindcss/tailwind.css';
 import '@atlaskit/css-reset';
 
 setGlobalTheme({
-  light: 'light-future',
-  dark: 'dark',
   colorMode: 'light',
+  light: 'light-brand-refresh',
+  dark: 'dark-brand-refresh',
+  typography: 'typography-modernized',
 });
 
 import { App } from './App';

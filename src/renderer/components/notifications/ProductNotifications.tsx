@@ -2,7 +2,6 @@ import { type FC, type MouseEvent, useContext, useState } from 'react';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -12,6 +11,7 @@ import { openExternalLink } from '../../utils/comms';
 import { formatProperCase, getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
 import { isLightMode } from '../../utils/theme';
+import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 
 interface IProductNotifications {
@@ -94,12 +94,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label="Mark all product notifications as read"
-                icon={(iconProps) => (
-                  <HipchatMediaAttachmentCountIcon
-                    {...iconProps}
-                    size="small"
-                  />
-                )}
+                icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

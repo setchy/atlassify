@@ -9,9 +9,9 @@ import Form, {
   FormSection,
   HelperMessage,
 } from '@atlaskit/form';
-import LockIcon from '@atlaskit/icon/glyph/lock';
-import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
-import SignInIcon from '@atlaskit/icon/glyph/sign-in';
+import LinkExternalIcon from '@atlaskit/icon/core/link-external';
+import LogInIcon from '@atlaskit/icon/core/log-in';
+import LockLockedIcon from '@atlaskit/icon/utility/lock-locked';
 import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
@@ -97,7 +97,7 @@ export const LoginRoute: FC = () => {
                             <Button
                               appearance="discovery"
                               spacing="compact"
-                              iconBefore={LockIcon}
+                              iconBefore={LockLockedIcon}
                               onClick={() => openAtlassianCreateToken()}
                               testId="login-create-token"
                             >
@@ -127,7 +127,7 @@ export const LoginRoute: FC = () => {
                     >
                       <Button
                         appearance="subtle"
-                        iconBefore={ShortcutIcon}
+                        iconBefore={LinkExternalIcon}
                         onClick={() => openAtlassianSecurityDocs()}
                         testId="login-docs"
                       >
@@ -146,7 +146,7 @@ export const LoginRoute: FC = () => {
                       </Button>
                       <Button
                         type="submit"
-                        iconBefore={SignInIcon}
+                        iconBefore={LogInIcon}
                         appearance="primary"
                         isLoading={submitting}
                         testId="login-submit"

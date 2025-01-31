@@ -87,33 +87,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-row'));
-
-      expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-    });
-
-    it('should open a notification in the browser - key down', () => {
-      const markNotificationsReadMock = jest.fn();
-
-      const props = {
-        notification: mockSingleAtlassifyNotification,
-        account: mockAtlassianCloudAccount,
-      };
-
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
-
-      fireEvent.keyDown(screen.getByTestId('notification-row'));
+      fireEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -142,7 +116,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-row'));
+      fireEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);

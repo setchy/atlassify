@@ -2,18 +2,19 @@ import { B200, DN40, DN50, N10, R300 } from '@atlaskit/theme/colors';
 
 import type { Config } from 'tailwindcss';
 
-export const colors = {
-  sidebar: {
-    light: B200,
-    dark: DN50,
-  },
-};
+const sidebarWidth = '3rem'; // 48px
 
 const config: Config = {
   content: ['./src/**/*.js', './src/**/*.ts', './src/**/*.tsx'],
   darkMode: 'class',
   theme: {
     extend: {
+      spacing: {
+        sidebar: sidebarWidth,
+      },
+      width: {
+        sidebar: sidebarWidth,
+      },
       colors: {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
@@ -27,7 +28,7 @@ const config: Config = {
     ({ addBase }) => {
       addBase({
         ':root': {
-          '--atlassify-background-sidebar': colors.sidebar.light,
+          '--atlassify-background-sidebar': B200,
           '--atlassify-background-notifications': N10,
 
           '--atlassify-scrollbar-track':
@@ -38,7 +39,7 @@ const config: Config = {
             'var(--ds-background-accent-blue-subtler-hovered)',
         },
         '.dark': {
-          '--atlassify-background-sidebar': colors.sidebar.dark,
+          '--atlassify-background-sidebar': DN50,
           '--atlassify-background-notifications': DN40,
 
           '--atlassify-scrollbar-track':

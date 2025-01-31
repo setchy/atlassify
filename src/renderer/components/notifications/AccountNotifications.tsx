@@ -11,8 +11,7 @@ import {
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import CrossIcon from '@atlaskit/icon/glyph/cross';
-import HipchatMediaAttachmentCountIcon from '@atlaskit/icon/glyph/hipchat/media-attachment-count';
+import CloseIcon from '@atlaskit/icon/core/close';
 import { BitbucketIcon } from '@atlaskit/logo';
 import Modal, {
   ModalBody,
@@ -36,6 +35,7 @@ import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
+import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 interface IAccountNotifications {
@@ -179,12 +179,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             >
               <IconButton
                 label="Mark all account notifications as read"
-                icon={(iconProps) => (
-                  <HipchatMediaAttachmentCountIcon
-                    {...iconProps}
-                    size="small"
-                  />
-                )}
+                icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
@@ -245,7 +240,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 <Flex xcss={closeContainerStyles} justifyContent="end">
                   <IconButton
                     appearance="subtle"
-                    icon={CrossIcon}
+                    icon={CloseIcon}
                     label="Close"
                     onClick={() => closeModal()}
                     testId="account-mark-as-read-close"

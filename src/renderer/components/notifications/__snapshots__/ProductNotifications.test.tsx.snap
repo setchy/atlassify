@@ -85,27 +85,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   <span
                     class="css-1spmf3f"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                          r="5"
-                        />
-                      </svg>
-                    </span>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-text)"
+                        r="4"
+                      />
+                    </svg>
                     <span
                       class="css-b5o75w"
                     >
@@ -127,20 +122,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-9693te"
+                      style="color: currentColor;"
                     >
                       <svg
-                        height="24"
+                        class="css-1a5x76h"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 12 12"
                       >
                         <path
-                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -245,27 +240,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 <span
                   class="css-1spmf3f"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
-                  </span>
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-text)"
+                      r="4"
+                    />
+                  </svg>
                   <span
                     class="css-b5o75w"
                   >
@@ -287,20 +277,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-9693te"
+                    style="color: currentColor;"
                   >
                     <svg
-                      height="24"
+                      class="css-1a5x76h"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 12 12"
                     >
                       <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -462,27 +452,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   <span
                     class="css-1spmf3f"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                          r="5"
-                        />
-                      </svg>
-                    </span>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-text)"
+                        r="4"
+                      />
+                    </svg>
                     <span
                       class="css-b5o75w"
                     >
@@ -504,20 +489,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-9693te"
+                      style="color: currentColor;"
                     >
                       <svg
-                        height="24"
+                        class="css-1a5x76h"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 12 12"
                       >
                         <path
-                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -622,27 +607,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 <span
                   class="css-1spmf3f"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
-                  </span>
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-text)"
+                      r="4"
+                    />
+                  </svg>
                   <span
                     class="css-b5o75w"
                   >
@@ -664,20 +644,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-9693te"
+                    style="color: currentColor;"
                   >
                     <svg
-                      height="24"
+                      class="css-1a5x76h"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 12 12"
                     >
                       <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
@@ -839,27 +819,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   <span
                     class="css-1spmf3f"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                          r="5"
-                        />
-                      </svg>
-                    </span>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-text)"
+                        r="4"
+                      />
+                    </svg>
                     <span
                       class="css-b5o75w"
                     >
@@ -881,20 +856,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-9693te"
+                      style="color: currentColor;"
                     >
                       <svg
-                        height="24"
+                        class="css-1a5x76h"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.294 9.698a.99.99 0 0 1 0-1.407 1.01 1.01 0 0 1 1.419 0l2.965 2.94a1.09 1.09 0 0 1 0 1.548l-2.955 2.93a1.01 1.01 0 0 1-1.42 0 .99.99 0 0 1 0-1.407l2.318-2.297z"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M4.5 10.5 9 6 4.5 1.5"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -992,27 +967,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   <span
                     class="css-1spmf3f"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="css-1wits42"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                          r="5"
-                        />
-                      </svg>
-                    </span>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-text)"
+                        r="4"
+                      />
+                    </svg>
                     <span
                       class="css-b5o75w"
                     >
@@ -1034,20 +1004,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-hidden="true"
-                      class="css-snhnyn"
-                      data-vc="icon-undefined"
-                      style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                      class="css-9693te"
+                      style="color: currentColor;"
                     >
                       <svg
-                        height="24"
+                        class="css-1a5x76h"
+                        fill="none"
                         role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
+                        viewBox="0 0 12 12"
                       >
                         <path
-                          d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
+                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                       </svg>
                     </span>
@@ -1152,27 +1122,22 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 <span
                   class="css-1spmf3f"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                        r="5"
-                      />
-                    </svg>
-                  </span>
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-text)"
+                      r="4"
+                    />
+                  </svg>
                   <span
                     class="css-b5o75w"
                   >
@@ -1194,20 +1159,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 >
                   <span
                     aria-hidden="true"
-                    class="css-snhnyn"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-9693te"
+                    style="color: currentColor;"
                   >
                     <svg
-                      height="24"
+                      class="css-1a5x76h"
+                      fill="none"
                       role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                      viewBox="0 0 12 12"
                     >
                       <path
-                        d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
+                        stroke="currentcolor"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
                       />
                     </svg>
                   </span>
