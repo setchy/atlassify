@@ -10,6 +10,7 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 
+import { IconTile } from '@atlaskit/icon';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
@@ -49,9 +50,6 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const categoryDetails = getCategoryFilterDetails(notification.category);
   const CategoryIcon = categoryDetails.icon;
-  const CategoryIconProps: Record<string, string> = {
-    size: 'small',
-  };
 
   const isNotificationUnread = filterNotificationByReadState(
     notification,
@@ -78,7 +76,13 @@ export const NotificationRow: FC<INotificationRow> = ({
             />
           </Tooltip>
           <Tooltip content={categoryDetails.description} position="right">
-            <CategoryIcon {...CategoryIconProps} />
+            <IconTile
+              icon={CategoryIcon}
+              label={categoryDetails.description}
+              appearance="gray"
+              shape="square"
+              size="16"
+            />
           </Tooltip>
         </Stack>
       </div>

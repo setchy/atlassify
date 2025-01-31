@@ -70,7 +70,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
           class="css-1ub26k9"
         >
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -81,7 +81,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -122,23 +122,26 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <path
-                        d="M12.062 13.93c-.904 0-1.451-.734-1.451-1.945 0-1.226.538-1.952 1.467-1.952.928 0 1.422.764 1.422 1.967 0 1.195-.502 1.93-1.438 1.93M12 5c-3.925 0-7 3.075-7 7 0 4.596 3.521 7 7 7 .874 0 1.613-.09 2.258-.279a.751.751 0 0 0-.42-1.44c-.506.147-1.108.22-1.838.22-2.649 0-5.5-1.722-5.5-5.5 0-3.085 2.415-5.5 5.5-5.5 3.239 0 5.5 1.952 5.5 4.75 0 2.045-1.044 3-1.75 3-.007 0-.75-.11-.75-.75v-4a.75.75 0 1 0-1.5 0v.187c-.347-.585-1.017-.952-1.796-.952C10.103 8.736 9 10.04 9 11.938c0 1.984 1.103 3.312 2.753 3.312.865 0 1.51-.387 1.865-1.076.334 1.016 1.37 1.576 2.132 1.576 1.598 0 3.25-1.683 3.25-4.5C19 7.628 16.058 5 12 5"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M11.625 14.28A7.25 7.25 0 1 1 15.25 8c0 1.381-.932 3.107-2.59 3.107-1.656 0-1.782-1.976-1.782-3.357l.005-.125m0 0c.022-1.019-.42-1.956-1.258-2.44-1.315-.759-3.11-.114-4.007 1.44s-.558 3.43.757 4.19c1.315.759 3.11.115 4.007-1.44a3.7 3.7 0 0 0 .5-1.75Z"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -152,7 +155,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -193,40 +196,25 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <g
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
                       >
                         <path
-                          d="M4.998 11.513c0-3.038 3.141-5.51 7.002-5.51s7.002 2.472 7.002 5.51c0 3.039-3.141 5.51-7.002 5.51s-7.002-2.471-7.002-5.51m14.84 7.771v-.001s-1.564-2.26-.767-3.116l-.037.02C20.261 14.902 21 13.279 21 11.513 21 7.371 16.963 4 12 4s-9 3.37-9 7.513 4.037 7.514 9 7.514c1.42 0 2.76-.285 3.957-.776 1.003 1.022 2.287 1.572 3.24 1.719l.002-.003a.5.5 0 0 0 .164.033.515.515 0 0 0 .474-.716"
+                          d="M4.25 13.25v-.75h-.2l-.172.099zm-3.5 2H0a.75.75 0 0 0 1.122.651zM2.625 2h10.75V.5H2.625zM14.5 3.125v8.25H16v-8.25zM13.375 12.5H4.25V14h9.125zm-9.497.099-3.5 2 .744 1.302 3.5-2zM1.5 15.25V3.125H0V15.25zM4 6.5h8V5H4zm0 3h5V8H4zm10.5 1.875c0 .621-.504 1.125-1.125 1.125V14A2.625 2.625 0 0 0 16 11.375zM13.375 2c.621 0 1.125.504 1.125 1.125H16A2.625 2.625 0 0 0 13.375.5zM2.625.5A2.625 2.625 0 0 0 0 3.125h1.5C1.5 2.504 2.004 2 2.625 2z"
+                          fill="currentcolor"
                         />
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="10"
-                          x="7"
-                          y="9"
-                        />
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="5"
-                          x="7"
-                          y="12"
-                        />
-                      </g>
-                    </svg>
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -242,7 +230,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             </div>
           </div>
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -253,7 +241,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -294,23 +282,27 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <path
-                        d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -324,7 +316,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -365,29 +357,33 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <g
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
                       >
                         <path
-                          d="M12 18c-4.536 0-7.999-4.26-7.999-6 0-2.001 3.459-6 8-6 4.376 0 7.998 3.973 7.998 6 0 1.74-3.462 6-7.998 6m0-14C6.48 4 2 8.841 2 12c0 3.086 4.576 8 10 8 5.423 0 10-4.914 10-8 0-3.159-4.48-8-10-8"
+                          d="M8 2.75c-3.255 0-6.086 2.039-7.13 4.888a1.06 1.06 0 0 0 0 .724C1.914 11.212 4.745 13.25 8 13.25s6.086-2.039 7.129-4.888a1.06 1.06 0 0 0 0-.724c-1.043-2.85-3.874-4.888-7.13-4.888Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                         <path
-                          d="M11.978 13.984c-1.104 0-2-.897-2-2s.896-2 2-2c1.103 0 2 .897 2 2s-.897 2-2 2m0-6c-2.206 0-4 1.794-4 4s1.793 4 4 4 4-1.794 4-4-1.794-4-4-4"
+                          d="M10.25 8a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
-                      </g>
-                    </svg>
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -403,7 +399,168 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             </div>
           </div>
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
+          >
+            <h4
+              class="css-1skdotg"
+            >
+              Actors
+            </h4>
+            <div
+              class="css-k5cxwk"
+            >
+              <div
+                class="css-15j65b1"
+              >
+                <div
+                  class="css-bsfd3j"
+                >
+                  <label
+                    class="css-k8x29e"
+                  >
+                    <input
+                      aria-label="user"
+                      class="css-f3myyk"
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      class="css-1dr55qw"
+                      role="presentation"
+                      style="fill: var(--checkbox-tick-color);"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="12"
+                          rx="2"
+                          width="12"
+                          x="6"
+                          y="6"
+                        />
+                      </g>
+                    </svg>
+                    <span
+                      class="css-1odt9zb"
+                    >
+                      User
+                    </span>
+                  </label>
+                  <span
+                    class="css-144dypm"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
+                    >
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M13.25 15v-2.25a3 3 0 0 0-3-3h-4.5a3 3 0 0 0-3 3V15m8.5-11a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="css-1wkl091"
+                  >
+                    <span
+                      class="css-f9etm4"
+                    >
+                      0
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div
+                class="css-15j65b1"
+              >
+                <div
+                  class="css-bsfd3j"
+                >
+                  <label
+                    class="css-k8x29e"
+                  >
+                    <input
+                      aria-label="automation"
+                      class="css-f3myyk"
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      class="css-1dr55qw"
+                      role="presentation"
+                      style="fill: var(--checkbox-tick-color);"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="12"
+                          rx="2"
+                          width="12"
+                          x="6"
+                          y="6"
+                        />
+                      </g>
+                    </svg>
+                    <span
+                      class="css-1odt9zb"
+                    >
+                      Automation
+                    </span>
+                  </label>
+                  <span
+                    class="css-144dypm"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
+                    >
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="m6 15.25-.723-.2a.75.75 0 0 0 1.253.73zM13.25 8l.53.53a.75.75 0 0 0-.53-1.28zM10 .75l.723.2A.75.75 0 0 0 9.47.22zM2.75 8l-.53-.53a.75.75 0 0 0 .53 1.28zm3.78 7.78 7.25-7.25-1.06-1.06-7.25 7.25zm6.72-8.53H8v1.5h5.25zm-4.527.95 2-7.25-1.446-.4-2 7.25zM9.47.22 2.22 7.47l1.06 1.06 7.25-7.25zM2.75 8.75H8v-1.5H2.75zm4.527-.95-2 7.25 1.446.4 2-7.25z"
+                          fill="currentcolor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="css-1wkl091"
+                  >
+                    <span
+                      class="css-f9etm4"
+                    >
+                      0
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -414,7 +571,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -466,7 +623,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -521,7 +678,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
           </div>
         </div>
         <div
-          class="css-t8lj6l"
+          class="css-11u50rl"
         >
           <h4
             class="css-1skdotg"
@@ -532,7 +689,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-k5cxwk"
           >
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -608,7 +765,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -686,7 +843,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -762,7 +919,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -838,7 +995,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -914,7 +1071,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -990,7 +1147,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -1077,7 +1234,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -1155,7 +1312,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -1328,7 +1485,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
           class="css-1ub26k9"
         >
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -1339,7 +1496,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1380,23 +1537,26 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <path
-                        d="M12.062 13.93c-.904 0-1.451-.734-1.451-1.945 0-1.226.538-1.952 1.467-1.952.928 0 1.422.764 1.422 1.967 0 1.195-.502 1.93-1.438 1.93M12 5c-3.925 0-7 3.075-7 7 0 4.596 3.521 7 7 7 .874 0 1.613-.09 2.258-.279a.751.751 0 0 0-.42-1.44c-.506.147-1.108.22-1.838.22-2.649 0-5.5-1.722-5.5-5.5 0-3.085 2.415-5.5 5.5-5.5 3.239 0 5.5 1.952 5.5 4.75 0 2.045-1.044 3-1.75 3-.007 0-.75-.11-.75-.75v-4a.75.75 0 1 0-1.5 0v.187c-.347-.585-1.017-.952-1.796-.952C10.103 8.736 9 10.04 9 11.938c0 1.984 1.103 3.312 2.753 3.312.865 0 1.51-.387 1.865-1.076.334 1.016 1.37 1.576 2.132 1.576 1.598 0 3.25-1.683 3.25-4.5C19 7.628 16.058 5 12 5"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M11.625 14.28A7.25 7.25 0 1 1 15.25 8c0 1.381-.932 3.107-2.59 3.107-1.656 0-1.782-1.976-1.782-3.357l.005-.125m0 0c.022-1.019-.42-1.956-1.258-2.44-1.315-.759-3.11-.114-4.007 1.44s-.558 3.43.757 4.19c1.315.759 3.11.115 4.007-1.44a3.7 3.7 0 0 0 .5-1.75Z"
+                          stroke="currentcolor"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -1410,7 +1570,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1451,40 +1611,25 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <g
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
                       >
                         <path
-                          d="M4.998 11.513c0-3.038 3.141-5.51 7.002-5.51s7.002 2.472 7.002 5.51c0 3.039-3.141 5.51-7.002 5.51s-7.002-2.471-7.002-5.51m14.84 7.771v-.001s-1.564-2.26-.767-3.116l-.037.02C20.261 14.902 21 13.279 21 11.513 21 7.371 16.963 4 12 4s-9 3.37-9 7.513 4.037 7.514 9 7.514c1.42 0 2.76-.285 3.957-.776 1.003 1.022 2.287 1.572 3.24 1.719l.002-.003a.5.5 0 0 0 .164.033.515.515 0 0 0 .474-.716"
+                          d="M4.25 13.25v-.75h-.2l-.172.099zm-3.5 2H0a.75.75 0 0 0 1.122.651zM2.625 2h10.75V.5H2.625zM14.5 3.125v8.25H16v-8.25zM13.375 12.5H4.25V14h9.125zm-9.497.099-3.5 2 .744 1.302 3.5-2zM1.5 15.25V3.125H0V15.25zM4 6.5h8V5H4zm0 3h5V8H4zm10.5 1.875c0 .621-.504 1.125-1.125 1.125V14A2.625 2.625 0 0 0 16 11.375zM13.375 2c.621 0 1.125.504 1.125 1.125H16A2.625 2.625 0 0 0 13.375.5zM2.625.5A2.625 2.625 0 0 0 0 3.125h1.5C1.5 2.504 2.004 2 2.625 2z"
+                          fill="currentcolor"
                         />
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="10"
-                          x="7"
-                          y="9"
-                        />
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="5"
-                          x="7"
-                          y="12"
-                        />
-                      </g>
-                    </svg>
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -1500,7 +1645,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             </div>
           </div>
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -1511,7 +1656,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1552,23 +1697,27 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <path
-                        d="M6 12.235v6.446c0 .537.45.977 1 .977s1-.44 1-.977v-5.778c1.17-.341 2.389-.045 3.768.29.982.238 2.036.495 3.13.495a5.7 5.7 0 0 0 2.547-.567 1 1 0 0 0 .563-.9V5.466a.998.998 0 0 0-1.437-.9c-1.345.654-2.731.317-4.331-.071-1.729-.42-3.687-.895-5.678.072A1 1 0 0 0 6 5.466zm3.111-1.48c1.094 0 2.148.256 3.129.495 1.381.335 2.6.63 3.768.289V6.836c-1.488.27-2.93-.08-4.24-.398-1.379-.335-2.598-.632-3.768-.29v4.704a6 6 0 0 1 1.111-.097"
-                        fill="currentcolor"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -1582,7 +1731,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1623,29 +1772,33 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </span>
                   </label>
                   <span
-                    aria-hidden="true"
-                    class="css-1wits42"
-                    data-vc="icon-undefined"
-                    style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                    class="css-144dypm"
                   >
-                    <svg
-                      height="24"
-                      role="presentation"
-                      viewBox="0 0 24 24"
-                      width="24"
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
                     >
-                      <g
-                        fill="currentcolor"
-                        fill-rule="evenodd"
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
                       >
                         <path
-                          d="M12 18c-4.536 0-7.999-4.26-7.999-6 0-2.001 3.459-6 8-6 4.376 0 7.998 3.973 7.998 6 0 1.74-3.462 6-7.998 6m0-14C6.48 4 2 8.841 2 12c0 3.086 4.576 8 10 8 5.423 0 10-4.914 10-8 0-3.159-4.48-8-10-8"
+                          d="M8 2.75c-3.255 0-6.086 2.039-7.13 4.888a1.06 1.06 0 0 0 0 .724C1.914 11.212 4.745 13.25 8 13.25s6.086-2.039 7.129-4.888a1.06 1.06 0 0 0 0-.724c-1.043-2.85-3.874-4.888-7.13-4.888Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
                         <path
-                          d="M11.978 13.984c-1.104 0-2-.897-2-2s.896-2 2-2c1.103 0 2 .897 2 2s-.897 2-2 2m0-6c-2.206 0-4 1.794-4 4s1.793 4 4 4 4-1.794 4-4-1.794-4-4-4"
+                          d="M10.25 8a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
                         />
-                      </g>
-                    </svg>
+                      </svg>
+                    </span>
                   </span>
                   <span
                     class="css-1wkl091"
@@ -1661,7 +1814,168 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             </div>
           </div>
           <div
-            class="css-t8lj6l"
+            class="css-11u50rl"
+          >
+            <h4
+              class="css-1skdotg"
+            >
+              Actors
+            </h4>
+            <div
+              class="css-k5cxwk"
+            >
+              <div
+                class="css-15j65b1"
+              >
+                <div
+                  class="css-bsfd3j"
+                >
+                  <label
+                    class="css-k8x29e"
+                  >
+                    <input
+                      aria-label="user"
+                      class="css-f3myyk"
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      class="css-1dr55qw"
+                      role="presentation"
+                      style="fill: var(--checkbox-tick-color);"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="12"
+                          rx="2"
+                          width="12"
+                          x="6"
+                          y="6"
+                        />
+                      </g>
+                    </svg>
+                    <span
+                      class="css-1odt9zb"
+                    >
+                      User
+                    </span>
+                  </label>
+                  <span
+                    class="css-144dypm"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
+                    >
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="M13.25 15v-2.25a3 3 0 0 0-3-3h-4.5a3 3 0 0 0-3 3V15m8.5-11a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0Z"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="css-1wkl091"
+                  >
+                    <span
+                      class="css-f9etm4"
+                    >
+                      0
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div
+                class="css-15j65b1"
+              >
+                <div
+                  class="css-bsfd3j"
+                >
+                  <label
+                    class="css-k8x29e"
+                  >
+                    <input
+                      aria-label="automation"
+                      class="css-f3myyk"
+                      tabindex="0"
+                      type="checkbox"
+                      value=""
+                    />
+                    <svg
+                      class="css-1dr55qw"
+                      role="presentation"
+                      style="fill: var(--checkbox-tick-color);"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill-rule="evenodd"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="12"
+                          rx="2"
+                          width="12"
+                          x="6"
+                          y="6"
+                        />
+                      </g>
+                    </svg>
+                    <span
+                      class="css-1odt9zb"
+                    >
+                      Automation
+                    </span>
+                  </label>
+                  <span
+                    class="css-144dypm"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="css-1dbakxj"
+                      style="color: currentColor;"
+                    >
+                      <svg
+                        class="css-u7v0tx"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          d="m6 15.25-.723-.2a.75.75 0 0 0 1.253.73zM13.25 8l.53.53a.75.75 0 0 0-.53-1.28zM10 .75l.723.2A.75.75 0 0 0 9.47.22zM2.75 8l-.53-.53a.75.75 0 0 0 .53 1.28zm3.78 7.78 7.25-7.25-1.06-1.06-7.25 7.25zm6.72-8.53H8v1.5h5.25zm-4.527.95 2-7.25-1.446-.4-2 7.25zM9.47.22 2.22 7.47l1.06 1.06 7.25-7.25zM2.75 8.75H8v-1.5H2.75zm4.527-.95-2 7.25 1.446.4 2-7.25z"
+                          fill="currentcolor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="css-1wkl091"
+                  >
+                    <span
+                      class="css-f9etm4"
+                    >
+                      0
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-11u50rl"
           >
             <h4
               class="css-1skdotg"
@@ -1672,7 +1986,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1724,7 +2038,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </div>
               </div>
               <div
-                class="css-duf34"
+                class="css-15j65b1"
               >
                 <div
                   class="css-bsfd3j"
@@ -1779,7 +2093,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
           </div>
         </div>
         <div
-          class="css-t8lj6l"
+          class="css-11u50rl"
         >
           <h4
             class="css-1skdotg"
@@ -1790,7 +2104,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-k5cxwk"
           >
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -1871,7 +2185,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -1949,7 +2263,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2025,7 +2339,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2101,7 +2415,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2177,7 +2491,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2253,7 +2567,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2340,7 +2654,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"
@@ -2418,7 +2732,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </div>
             </div>
             <div
-              class="css-duf34"
+              class="css-15j65b1"
             >
               <div
                 class="css-bsfd3j"

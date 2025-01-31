@@ -1,5 +1,5 @@
-import FlagsIcon from '@atlaskit/icon/glyph/emoji/flags';
-import WatchIcon from '@atlaskit/icon/glyph/watch';
+import EyeOpenIcon from '@atlaskit/icon/core/eye-open';
+import FlagIcon from '@atlaskit/icon/core/flag';
 
 import type {
   AccountNotifications,
@@ -13,12 +13,12 @@ export const FILTERS_CATEGORIES: Record<CategoryType, FilterDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notification',
-    icon: FlagsIcon,
+    icon: FlagIcon,
   },
   watching: {
     name: 'watching',
     description: 'Watching notification',
-    icon: WatchIcon,
+    icon: EyeOpenIcon,
   },
 };
 

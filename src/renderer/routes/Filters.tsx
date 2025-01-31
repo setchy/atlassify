@@ -4,6 +4,7 @@ import Badge from '@atlaskit/badge';
 import Button from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
+import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { Contents } from '../components/primitives/Contents';
@@ -12,12 +13,19 @@ import { Header } from '../components/primitives/Header';
 import { Page } from '../components/primitives/Page';
 import { AppContext } from '../context/App';
 import type {
+  ActorType,
   CategoryType,
   ProductName,
   ReadStateType,
   TimeSensitiveType,
 } from '../types';
 import { formatProperCase } from '../utils/helpers';
+import {
+  FILTERS_ACTORS,
+  getActorFilterCount,
+  getActorFilterDetails,
+  isActorFilterSet,
+} from '../utils/notifications/filters/actor';
 import {
   FILTERS_CATEGORIES,
   getCategoryFilterCount,
@@ -46,11 +54,9 @@ export const FiltersRoute: FC = () => {
   const { settings, clearFilters, updateFilter, notifications } =
     useContext(AppContext);
 
+  const headingPaddingVertical = 'space.050';
   const checkboxPaddingHorizontal = 'space.050';
-  const checkboxPaddingVertical = 'space.025';
-  const checkboxIconProps: Record<string, string> = {
-    size: 'small',
-  };
+  const checkboxPaddingVertical = 'space.0';
 
   return (
     <Page id="filters">
@@ -60,7 +66,7 @@ export const FiltersRoute: FC = () => {
         <Box paddingInlineStart="space.400">
           <Inline space="space.200">
             <Stack space="space.200">
-              <Stack space="space.100">
+              <Stack space={headingPaddingVertical}>
                 <Heading size="small">Time Sensitive</Heading>
                 <Box>
                   {Object.keys(FILTERS_TIME_SENSITIVE).map(
@@ -100,7 +106,15 @@ export const FiltersRoute: FC = () => {
                                 )
                               }
                             />
-                            <timeSensitiveDetails.icon {...checkboxIconProps} />
+                            <IconTile
+                              icon={timeSensitiveDetails.icon}
+                              label=""
+                              appearance={
+                                isTimeSensitiveChecked ? 'blue' : 'gray'
+                              }
+                              shape="square"
+                              size="16"
+                            />
                             <Badge
                               max={false}
                               appearance={
@@ -117,7 +131,7 @@ export const FiltersRoute: FC = () => {
                 </Box>
               </Stack>
 
-              <Stack space="space.100">
+              <Stack space={headingPaddingVertical}>
                 <Heading size="small">Category</Heading>
                 <Box>
                   {Object.keys(FILTERS_CATEGORIES).map(
@@ -157,7 +171,13 @@ export const FiltersRoute: FC = () => {
                                 )
                               }
                             />
-                            <categoryDetails.icon {...checkboxIconProps} />
+                            <IconTile
+                              icon={categoryDetails.icon}
+                              label=""
+                              appearance={isCategoryChecked ? 'blue' : 'gray'}
+                              shape="square"
+                              size="16"
+                            />
                             <Badge
                               max={false}
                               appearance={
@@ -174,7 +194,60 @@ export const FiltersRoute: FC = () => {
                 </Box>
               </Stack>
 
-              <Stack space="space.100">
+              <Stack space={headingPaddingVertical}>
+                <Heading size="small">Actors</Heading>
+                <Box>
+                  {Object.keys(FILTERS_ACTORS).map((actor: ActorType) => {
+                    const actorDetails = getActorFilterDetails(actor);
+                    const actorLabel = formatProperCase(actorDetails.name);
+                    const isActorChecked = isActorFilterSet(settings, actor);
+                    const actorCount = getActorFilterCount(
+                      notifications,
+                      actor,
+                    );
+
+                    return (
+                      <Box
+                        key={actorDetails.name}
+                        paddingBlock={checkboxPaddingVertical}
+                      >
+                        <Inline
+                          space={checkboxPaddingHorizontal}
+                          alignBlock="center"
+                        >
+                          <Checkbox
+                            aria-label={actorDetails.name}
+                            label={actorLabel}
+                            isChecked={isActorChecked}
+                            onChange={(evt) =>
+                              updateFilter(
+                                'filterActors',
+                                actor,
+                                evt.target.checked,
+                              )
+                            }
+                          />
+                          <IconTile
+                            icon={actorDetails.icon}
+                            label=""
+                            appearance={isActorChecked ? 'blue' : 'gray'}
+                            shape="square"
+                            size="16"
+                          />
+                          <Badge
+                            max={false}
+                            appearance={isActorChecked ? 'primary' : 'default'}
+                          >
+                            {actorCount}
+                          </Badge>
+                        </Inline>
+                      </Box>
+                    );
+                  })}
+                </Box>
+              </Stack>
+
+              <Stack space={headingPaddingVertical}>
                 <Heading size="small">Read State</Heading>
                 <Box>
                   {Object.keys(FILTERS_READ_STATES).map(
@@ -231,7 +304,7 @@ export const FiltersRoute: FC = () => {
               </Stack>
             </Stack>
 
-            <Stack space="space.100">
+            <Stack space={headingPaddingVertical}>
               <Heading size="small">Products</Heading>
               <Box>
                 {Object.keys(PRODUCTS).map((product: ProductName) => {

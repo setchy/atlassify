@@ -77,7 +77,8 @@ export type FilterValue =
   | ReadStateType
   | ActorType
   | ProductName
-  | TimeSensitiveType;
+  | TimeSensitiveType
+  | ActorType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
@@ -195,6 +196,11 @@ export interface FilterSettingsState {
    * The products to filter notifications by.
    */
   filterProducts: ProductName[];
+
+  /**
+   * The notification actors / authors .
+   */
+  filterActors: ActorType[];
 }
 
 export interface AuthState {
