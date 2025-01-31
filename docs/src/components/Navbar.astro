@@ -11,7 +11,7 @@ const isHomepage = currentPathname === "/";
 <nav class:list={["py-8 px-8", isHomepage && "bg-atlassify-docs-hero"]}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
-      class="bg-atlassify-docs-navbar rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
+      class="bg-atlassify-docs-navbar text-atlassify-docs-link rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
@@ -28,7 +28,7 @@ const isHomepage = currentPathname === "/";
                   href={item.path}
                   class:list={[
                     "py-1.5 lg:py-2 px-2 lg:px-3",
-                    "font-light",
+                    "atlassify-navbar font-light",
                     currentPathname === item.path
                       ? "border rounded-lg border-white"
                       : "",

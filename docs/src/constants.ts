@@ -29,13 +29,8 @@ export const siteMetadata = {
 };
 
 export const URLs = {
-  ATLASSIAN: {
-    API_TOKEN:
-      'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/',
-  },
   GITHUB: {
     REPO: `https://github.com/${siteMetadata.repo.fullName}`,
-    ISSUES: `https://github.com/${siteMetadata.repo.fullName}/issues`,
     LATEST_RELEASE: `https://github.com/${siteMetadata.repo.fullName}/releases/latest`,
   },
 };
