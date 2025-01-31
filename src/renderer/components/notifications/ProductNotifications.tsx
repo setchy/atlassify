@@ -94,7 +94,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 label="Mark all product notifications as read"
-                icon={() => <UnreadIcon color="default" />}
+                icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

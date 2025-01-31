@@ -179,7 +179,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             >
               <IconButton
                 label="Mark all account notifications as read"
-                icon={() => <UnreadIcon color="default" />}
+                icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

@@ -6,13 +6,13 @@ token('color.icon.brand');
 interface IUnreadIcon {
   width?: number;
   height?: number;
-  color: 'brand' | 'default';
+  color?: 'brand' | 'default';
 }
 
 export const UnreadIcon: FC<IUnreadIcon> = ({
   width = 24,
   height = 24,
-  color,
+  color = 'default',
 }: IUnreadIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
