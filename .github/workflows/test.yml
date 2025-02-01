@@ -24,11 +24,11 @@ jobs:
           name: code-coverage-report
           path: coverage/lcov.info
 
-  sonarcloud:
-    name: SonarCloud Analysis
+  sonarqube:
+    name: SonarQube Cloud Analysis
     runs-on: ubuntu-latest
     needs: run-unit-tests
-    if: github.event.pull_request.head.repo.fork == false  # Only analyze PRs from the same repository. Limitation of SonarCloud
+    if: github.event.pull_request.head.repo.fork == false  # Only analyze PRs from the same repository. Limitation of SonarQube Cloud
     
     steps:
       - uses: actions/checkout@v4
@@ -43,8 +43,8 @@ jobs:
         run: ls -la
       - name: list coverage folder
         run: ls -la coverage/
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@master
+      - name: SonarQube Cloud Scan
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
