@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
+import logo from "~/icons/atlassify-blue.svg";
 import notifications from "~/assets/notifications.png";
 import LatestRelease from "~/components/LatestRelease.astro";
 import { siteMetadata } from "~/constants";
@@ -16,7 +16,7 @@ import { siteMetadata } from "~/constants";
       <Image
         width="48"
         height="48"
-        src={import(`../icons/atlassify-blue.svg`)}
+        src={logo}
         alt="Atlassify - Notifications"
       />
 
