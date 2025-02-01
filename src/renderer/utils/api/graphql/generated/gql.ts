@@ -14,7 +14,15 @@ import * as types from './graphql';
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
-const documents = {
+type Documents = {
+    "\n    query Me {\n      me {\n        user {\n          accountId\n          name\n          picture\n        }\n      }\n    }\n  ": typeof types.MeDocument,
+    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": typeof types.MyNotificationsDocument,
+    "\n    mutation MarkAsRead($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsRead(ids: $notificationIDs) \n      }\n    }\n  ": typeof types.MarkAsReadDocument,
+    "\n    mutation MarkAsUnread($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsUnread(ids: $notificationIDs) \n      }\n    }\n  ": typeof types.MarkAsUnreadDocument,
+    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": typeof types.AtlassianNotificationFragmentDoc,
+    "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": typeof types.AtlassianHeadNotificationFragmentDoc,
+};
+const documents: Documents = {
     "\n    query Me {\n      me {\n        user {\n          accountId\n          name\n          picture\n        }\n      }\n    }\n  ": types.MeDocument,
     "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": types.MyNotificationsDocument,
     "\n    mutation MarkAsRead($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsRead(ids: $notificationIDs) \n      }\n    }\n  ": types.MarkAsReadDocument,
