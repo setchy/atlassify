@@ -43,8 +43,8 @@ importers:
         specifier: 20.3.3
         version: 20.3.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 15.2.5
-        version: 15.2.5(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.3.0
+        version: 15.3.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 6.11.5
         version: 6.11.5(@types/react@18.3.18)(react@18.3.1)
@@ -307,8 +307,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/checkbox@15.2.5':
-    resolution: {integrity: sha512-+YfjydsMajJ1w+GkPnkycBxVynyiIO1c6wRpcL8oXq/L9XgsLXxBx4vtL7G0yQUQvWZ4JmXlkvQlY234xa9TSw==}
+  '@atlaskit/checkbox@15.3.0':
+    resolution: {integrity: sha512-xrimc/3glTjF4AEX7SucgfuGDWqblOhVHVDKKG812zMUgsaXxjFXAsW/G7xj8ZbUULDwfHBaboTzdYAl1hMqVg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5575,14 +5575,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@15.2.5(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@15.3.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/analytics-next': 10.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.7.2(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/analytics-next': 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/css': 0.8.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/icon': 23.5.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/theme': 14.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/theme': 14.1.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/tokens': 3.3.0(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
