@@ -62,6 +62,6 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
     <slot />
     <Footer currentPathname={Astro.url.pathname} />
     <!-- Down here to prevent Firefox FOUC - see https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer -->
-    <link rel="stylesheet" href="/styles/app.css" />
+    <link rel="stylesheet" href={import("../styles/app.css")} />
   </body>
 </html>
