@@ -3,7 +3,6 @@ import Footer from "~/components/Footer.astro";
 import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
 import Navbar from "~/components/Navbar.astro";
 
-import "~/styles/app.css";
 import { siteMetadata } from "~/constants";
 
 export interface Props {
@@ -62,5 +61,7 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
     <Navbar currentPathname={Astro.url.pathname} />
     <slot />
     <Footer currentPathname={Astro.url.pathname} />
+    <!-- Down here to prevent Firefox FOUC - see https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer -->
+    <link rel="stylesheet" href="/styles/app.css" />
   </body>
 </html>
