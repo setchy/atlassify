@@ -12,11 +12,12 @@ import { siteMetadata } from "~/constants";
     class="container flex flex-col md:flex-row lg:items-center max-w-5xl mx-auto px-12 py-8 lg:py-16"
   >
     <div class="flex flex-col justify-center flex-grow">
-      <Icon
-        name="atlassify-blue"
-        title="Atlassify Logo"
-        size={48}
-        class="w-8 sm:w-12"
+      <!-- FIXME: For some reason using <Icon /> didn't render correct colors in Google Chrome -->
+      <Image
+        width="48"
+        height="48"
+        src={import(`../icons/atlassify-blue.svg`)}
+        alt="Atlassify - Notifications"
       />
 
       <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
