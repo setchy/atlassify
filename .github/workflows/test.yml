@@ -39,10 +39,7 @@ jobs:
         with:
           name: code-coverage-report
           path: coverage/
-      - name: list all files
-        run: ls -la
-      - name: list coverage folder
-        run: ls -la coverage/
+      - run: pnpm install
       - name: SonarQube Cloud Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
