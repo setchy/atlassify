@@ -49,7 +49,7 @@ export function getActorFilterCount(
 
 export function filterNotificationByActor(
   notification: AtlassifyNotification,
-  actor,
+  actor: ActorType,
 ): boolean {
   return inferNotificationActor(notification) === actor;
 }
