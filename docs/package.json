@@ -45,7 +45,7 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "marked": "15.0.6",
+    "marked": "15.0.7",
     "octokit": "4.1.1",
     "sharp": "0.33.5",
     "tailwind-merge": "3.0.1",
