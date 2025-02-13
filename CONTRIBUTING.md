@@ -46,12 +46,8 @@ pnpm lint:check
 # Run unit tests with coverage
 pnpm test
 
-# If you want to pass arguments to jest (or other `pnpm` commands)
-# like `--watch`, you can prepend `--` to the command
-pnpm test -- --watch
-
-# Or if you want to update jest snapshots
-pnpm test -- -u
+# Update jest snapshots
+pnpm test -u
 ```
 
 ### Releases
