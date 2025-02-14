@@ -191,5 +191,8 @@
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
     "*.{js,ts,tsx}": "pnpm test -- --findRelatedTests -u --passWithNoTests"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "electron"]
   }
 }
