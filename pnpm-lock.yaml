@@ -73,8 +73,8 @@ importers:
         specifier: 6.6.0
         version: 6.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
-        specifier: 16.3.6
-        version: 16.3.6(@types/react@18.3.18)(react@18.3.1)
+        specifier: 17.1.0
+        version: 17.1.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 6.8.2
         version: 6.8.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -455,6 +455,11 @@ packages:
 
   '@atlaskit/spinner@16.3.6':
     resolution: {integrity: sha512-H+/I0Xlnmit+kfl5ijqONHXEZAuZqXjmIl9e8TTinYtrWS8zAOTDVOuvnGaO0WPgnKRLzdlHbIg7/WEgOgywyw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/spinner@17.1.0':
+    resolution: {integrity: sha512-6JTrK9w8UZQLNml2S7mt/qumwKcTZRiYI8PnZ+DqGipKp8QNnGNmeP1re7e66fh0lMZ7/E/OvMxm2re/J1yEaw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5963,6 +5968,18 @@ snapshots:
       '@atlaskit/tokens': 3.3.1(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/spinner@17.1.0(@types/react@18.3.18)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/interaction-context': 2.6.0(react@18.3.1)
+      '@atlaskit/theme': 14.1.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 3.3.1(@types/react@18.3.18)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@compiled/react': 0.18.1(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
