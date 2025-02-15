@@ -1,6 +1,6 @@
 import { namespacedEvent } from '../../shared/events';
 
-// Mock `window.Notification`
+// Mock `window.Notification` - native notifications
 vi.stubGlobal('Notification', function (title: string) {
   this.title = title;
   return {
@@ -30,13 +30,9 @@ vi.stubGlobal('localStorage', {
   removeItem: vi.fn(),
 });
 
-// Mock `window.alert`
-vi.stubGlobal('alert', vi.fn());
-
 export const ipcRenderer = {
   send: vi.fn(),
   on: vi.fn(),
-  sendSync: vi.fn(),
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   invoke: vi.fn((channel: string, ..._args: any[]) => {
     switch (channel) {
