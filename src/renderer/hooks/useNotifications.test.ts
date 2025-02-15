@@ -2,8 +2,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import axios from 'axios';
 import nock from 'nock';
 
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockState } from '../__mocks__/state-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
+import { mockState } from '../__mocks__/state';
 import { useNotifications } from './useNotifications';
 
 describe('renderer/hooks/useNotifications.ts', () => {

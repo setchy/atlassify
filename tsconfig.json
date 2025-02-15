@@ -18,7 +18,8 @@
         "name": "@0no-co/graphqlsp",
         "schema": "./src/renderer/utils/api/gql/schema.graphql"
       }
-    ]
+    ],
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.tsx"]
 }

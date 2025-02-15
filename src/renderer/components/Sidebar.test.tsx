@@ -1,36 +1,32 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { mockNavigate } from '../__mocks__/navigation';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
-} from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+} from '../__mocks__/notifications';
+import { mockAuth, mockSettings } from '../__mocks__/state';
+
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
 import { Sidebar } from './Sidebar';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/components/Sidebar.tsx', () => {
-  const updateSetting = jest.fn();
-  const fetchNotifications = jest.fn();
-  const openExternalLinkMock = jest
+  const updateSetting = vi.fn();
+  const fetchNotifications = vi.fn();
+  const openExternalLinkMock = vi
     .spyOn(comms, 'openExternalLink')
-    .mockImplementation();
+    .mockImplementation(vi.fn());
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       const tree = render(
         <AppContext.Provider
@@ -50,7 +46,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should render itself & its children - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       const tree = render(
         <AppContext.Provider
@@ -72,7 +68,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('logged out', () => {
     it('should render itself & its children - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       const tree = render(
         <AppContext.Provider
@@ -93,7 +89,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should render itself & its children - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       const tree = render(
         <AppContext.Provider
@@ -481,7 +477,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   it('should quit the app', () => {
-    const quitAppMock = jest.spyOn(comms, 'quitApp');
+    const quitAppMock = vi.spyOn(comms, 'quitApp');
 
     render(
       <AppContext.Provider

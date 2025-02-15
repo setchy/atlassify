@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
+exports[`renderer/components/settings/SettingsFooter.tsx > app version > should show development app version 1`] = `
 <button
   class="css-eu6vk3"
   data-testid="settings-release-notes"
@@ -17,7 +17,7 @@ exports[`renderer/components/settings/SettingsFooter.tsx app version should show
 </button>
 `;
 
-exports[`renderer/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
+exports[`renderer/components/settings/SettingsFooter.tsx > app version > should show production app version 1`] = `
 <button
   class="css-eu6vk3"
   data-testid="settings-release-notes"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/routes/Filters.tsx General should render itself & its children 1`] = `
+exports[`renderer/routes/Filters.tsx > General > should render itself & its children 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="filters"
@@ -1414,7 +1414,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
 </div>
 `;
 
-exports[`renderer/routes/Filters.tsx filters product filters should filter by product - existing filter set 1`] = `
+exports[`renderer/routes/Filters.tsx > filters > product filters > should filter by product - existing filter set 1`] = `
 <div
   class="flex h-screen flex-col"
   data-testid="filters"

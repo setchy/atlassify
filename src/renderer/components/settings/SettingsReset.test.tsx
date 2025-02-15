@@ -1,21 +1,16 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
+import { mockAuth, mockSettings } from '../../__mocks__/state';
+
 import { AppContext } from '../../context/App';
 import { SettingsReset } from './SettingsReset';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/components/settings/SettingsReset.tsx', () => {
-  const resetSettings = jest.fn();
+  const resetSettings = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should reset default settings when `confirmed`', async () => {

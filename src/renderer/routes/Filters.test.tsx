@@ -1,23 +1,19 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { mockNavigate } from '../__mocks__/navigation';
+import { mockAuth, mockSettings } from '../__mocks__/state';
+
 import { AppContext } from '../context/App';
 import { FiltersRoute } from './Filters';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/routes/Filters.tsx', () => {
-  const updateFilter = jest.fn();
-  const clearFilters = jest.fn();
-  const fetchNotifications = jest.fn();
+  const updateFilter = vi.fn();
+  const clearFilters = vi.fn();
+  const fetchNotifications = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('General', () => {

@@ -1,31 +1,28 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockAtlassifyNotifications } from '../../__mocks__/notifications';
+import { mockAtlassianCloudAccount, mockSettings } from '../../__mocks__/state';
 import { AppContext } from '../../context/App';
 import type { ProductName } from '../../types';
 import * as comms from '../../utils/comms';
 import * as theme from '../../utils/theme';
 import { ProductNotifications } from './ProductNotifications';
 
-jest.mock('./NotificationRow', () => ({
+vi.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
 }));
 
-const openExternalLinkMock = jest
+const openExternalLinkMock = vi
   .spyOn(comms, 'openExternalLink')
-  .mockImplementation();
+  .mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children - light mode', () => {
-    jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+    vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
     const props = {
       account: mockAtlassianCloudAccount,
@@ -43,7 +40,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should render itself & its children - dark mode', () => {
-    jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+    vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
     const props = {
       account: mockAtlassianCloudAccount,
@@ -99,7 +96,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     render(
       <AppContext.Provider

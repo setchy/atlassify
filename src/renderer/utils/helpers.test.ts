@@ -5,7 +5,7 @@ import ChevronRightIcon from '@atlaskit/icon/utility/chevron-right';
 import {
   mockAtlassifyNotifications,
   mockSingleAtlassifyNotification,
-} from '../__mocks__/notifications-mocks';
+} from '../__mocks__/notifications';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,

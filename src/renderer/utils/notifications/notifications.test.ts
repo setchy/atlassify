@@ -1,4 +1,4 @@
-import { mockSingleAccountNotifications } from '../../__mocks__/notifications-mocks';
+import { mockSingleAccountNotifications } from '../../__mocks__/notifications';
 import { getNotificationCount, hasMoreNotifications } from './notifications';
 
 describe('renderer/utils/notifications/notifications.ts', () => {

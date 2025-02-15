@@ -1,18 +1,14 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { mockNavigate } from '../__mocks__/navigation';
+
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/routes/Login.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', () => {
@@ -27,9 +23,9 @@ describe('renderer/routes/Login.tsx', () => {
 
   describe('login web pages', () => {
     it('should open create new token page', async () => {
-      const openExternalLinkMock = jest
+      const openExternalLinkMock = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         render(
@@ -44,9 +40,9 @@ describe('renderer/routes/Login.tsx', () => {
       expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     });
     it('should open login docs', async () => {
-      const openExternalLinkMock = jest
+      const openExternalLinkMock = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         render(

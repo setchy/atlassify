@@ -1,17 +1,14 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockAtlassifyNotifications } from '../../__mocks__/notifications';
+import { mockAtlassianCloudAccount, mockSettings } from '../../__mocks__/state';
 import { ensureStableEmojis } from '../../__mocks__/utils';
 import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
 import { AccountNotifications } from './AccountNotifications';
 
-jest.mock('./ProductNotifications', () => ({
+vi.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>Product Notifications</div>,
 }));
 
@@ -22,7 +19,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
   describe('account view types', () => {
     it('should render itself - sort by date - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       const props = {
         account: mockAtlassianCloudAccount,
@@ -44,7 +41,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - sort by date - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       const props = {
         account: mockAtlassianCloudAccount,
@@ -151,9 +148,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open profile when clicked', async () => {
-    const openAccountProfileMock = jest
+    const openAccountProfileMock = vi
       .spyOn(links, 'openAccountProfile')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props = {
       account: mockAtlassianCloudAccount,
@@ -178,9 +175,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open my pull requests', async () => {
-    const openMyPullRequestsMock = jest
+    const openMyPullRequestsMock = vi
       .spyOn(links, 'openMyPullRequests')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props = {
       account: mockAtlassianCloudAccount,
@@ -208,7 +205,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       render(
@@ -236,7 +233,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       render(

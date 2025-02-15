@@ -7,11 +7,13 @@ import {
 } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { mockNavigate } from '../__mocks__/navigation';
 import {
   mockAtlassianCloudAccount,
   mockAuth,
   mockSettings,
-} from '../__mocks__/state-mocks';
+} from '../__mocks__/state';
+
 import { AppContext } from '../context/App';
 import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
@@ -20,20 +22,14 @@ import * as theme from '../utils/theme';
 
 import { AccountsRoute } from './Accounts';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/routes/Accounts.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('General', () => {
     it('should render itself & its children - light mode', async () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       await act(async () => {
         render(
@@ -56,7 +52,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     });
 
     it('should render itself & its children - dark mode', async () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       await act(async () => {
         render(
@@ -102,9 +98,9 @@ describe('renderer/routes/Accounts.tsx', () => {
 
   describe('Account interactions', () => {
     it('open account profile in external browser', async () => {
-      const openAccountProfileMock = jest
+      const openAccountProfileMock = vi
         .spyOn(links, 'openAccountProfile')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         render(
@@ -132,7 +128,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     });
 
     it('should refresh account', async () => {
-      const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
+      const apiRequestMock = vi.spyOn(apiRequests, 'performPostRequest');
 
       await act(async () => {
         render(
@@ -163,9 +159,9 @@ describe('renderer/routes/Accounts.tsx', () => {
     });
 
     it('should logout', async () => {
-      const logoutFromAccountMock = jest.fn();
-      const updateTrayIconMock = jest.spyOn(comms, 'updateTrayIcon');
-      const updateTrayTitleMock = jest.spyOn(comms, 'updateTrayTitle');
+      const logoutFromAccountMock = vi.fn();
+      const updateTrayIconMock = vi.spyOn(comms, 'updateTrayIcon');
+      const updateTrayTitleMock = vi.spyOn(comms, 'updateTrayTitle');
 
       await act(async () => {
         render(
