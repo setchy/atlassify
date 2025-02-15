@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications';
+import { mockAtlassianCloudAccount, mockSettings } from '../../__mocks__/state';
 import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
@@ -14,12 +11,12 @@ import {
   markNotificationsAsUnread,
 } from './client';
 
-jest.mock('axios');
+vi.mock('axios');
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
     // TODO: add more explicit mocks
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+    (axios as vi.MockedFunction<typeof axios>).mockResolvedValue({
       data: {
         data: {},
       },
@@ -27,7 +24,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {

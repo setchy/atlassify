@@ -1,16 +1,12 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
+import { mockNavigate } from '../../__mocks__/navigation';
+import { mockAuth, mockSettings } from '../../__mocks__/state';
+
 import { AppContext } from '../../context/App';
 import * as comms from '../../utils/comms';
 import { SettingsFooter } from './SettingsFooter';
-
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
 
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
   let originalEnv: NodeJS.ProcessEnv;
@@ -21,7 +17,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     process.env = originalEnv;
   });
 
@@ -80,9 +76,9 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
       ...originalEnv,
       NODE_ENV: 'production',
     };
-    const openExternalLinkMock = jest
+    const openExternalLinkMock = vi
       .spyOn(comms, 'openExternalLink')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     await act(async () => {
       render(
@@ -129,7 +125,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should quit the app', async () => {
-    const quitAppMock = jest.spyOn(comms, 'quitApp');
+    const quitAppMock = vi.spyOn(comms, 'quitApp');
 
     await act(async () => {
       render(

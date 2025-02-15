@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - account error 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - account error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -521,7 +521,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - group notifications by products - ordered by datetime 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - group notifications by products - ordered by datetime 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -978,7 +978,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - group notifications by products - ordered by products alphabetically 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - group notifications by products - ordered by products alphabetically 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1435,7 +1435,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - no notifications 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - no notifications 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1930,7 +1930,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - sort by date - dark mode 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - sort by date - dark mode 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -3315,7 +3315,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx account view types should render itself - sort by date - light mode 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - sort by date - light mode 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -4700,7 +4700,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
 }
 `;
 
-exports[`renderer/components/notifications/AccountNotifications.tsx should toggle account notifications visibility 1`] = `
+exports[`renderer/components/notifications/AccountNotifications.tsx > should toggle account notifications visibility 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

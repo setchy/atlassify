@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/icons/UnreadIcon.tsx renders correctly - brand  color 1`] = `
+exports[`renderer/components/icons/UnreadIcon.tsx > renders correctly - brand  color 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -95,7 +95,7 @@ exports[`renderer/components/icons/UnreadIcon.tsx renders correctly - brand  col
 }
 `;
 
-exports[`renderer/components/icons/UnreadIcon.tsx renders correctly - custom size 1`] = `
+exports[`renderer/components/icons/UnreadIcon.tsx > renders correctly - custom size 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -576,7 +576,7 @@ exports[`renderer/components/icons/UnreadIcon.tsx renders correctly - custom siz
 }
 `;
 
-exports[`renderer/components/icons/UnreadIcon.tsx renders correctly - default size and color 1`] = `
+exports[`renderer/components/icons/UnreadIcon.tsx > renders correctly - default size and color 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

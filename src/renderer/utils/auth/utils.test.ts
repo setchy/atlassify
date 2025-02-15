@@ -1,7 +1,4 @@
-import {
-  mockAtlassianCloudAccount,
-  mockAuth,
-} from '../../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount, mockAuth } from '../../__mocks__/state';
 import type { Account } from '../../types';
 import * as auth from './utils';
 

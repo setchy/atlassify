@@ -1,19 +1,15 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { mockNavigate } from '../__mocks__/navigation';
+
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
 import { LandingRoute } from './Landing';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/routes/Landing.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', () => {
@@ -27,7 +23,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should redirect to notifications once logged in', () => {
-    const showWindowMock = jest.spyOn(comms, 'showWindow');
+    const showWindowMock = vi.spyOn(comms, 'showWindow');
 
     const { rerender } = render(
       <AppContext.Provider value={{ isLoggedIn: false }}>
