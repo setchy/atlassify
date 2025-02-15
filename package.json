@@ -129,7 +129,7 @@
     "@atlaskit/avatar": "21.18.3",
     "@atlaskit/badge": "16.4.4",
     "@atlaskit/button": "20.3.3",
-    "@atlaskit/checkbox": "15.3.1",
+    "@atlaskit/checkbox": "15.3.2",
     "@atlaskit/css-reset": "6.13.0",
     "@atlaskit/form": "11.0.2",
     "@atlaskit/heading": "4.0.1",
@@ -152,7 +152,7 @@
     "@graphql-codegen/schema-ast": "4.1.0",
     "@parcel/watcher": "2.5.1",
     "@testing-library/react": "16.2.0",
-    "@types/node": "22.13.2",
+    "@types/node": "22.13.4",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "@types/react-router-dom": "5.3.3",
@@ -186,7 +186,7 @@
     "webpack-cli": "6.0.1",
     "webpack-merge": "6.0.1"
   },
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.4.0",
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "electron"]
   },
