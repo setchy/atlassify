@@ -70,8 +70,8 @@ importers:
         specifier: 13.5.0
         version: 13.5.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/radio':
-        specifier: 6.6.0
-        version: 6.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.2.1
+        version: 7.2.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
         specifier: 16.3.6
         version: 16.3.6(@types/react@18.3.18)(react@18.3.1)
@@ -448,8 +448,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/radio@6.6.0':
-    resolution: {integrity: sha512-mc6tfcnT9kaDYYAoVnMRrBGWrBlakKDM0x8b71S4t3d9x/Z77iHw/qrspScWZwthl73bLk/QbY4HaE7cRxgAHA==}
+  '@atlaskit/radio@7.2.1':
+    resolution: {integrity: sha512-ZH848VgT8caVupij1H3QeqIcWRZBqgMiJLjqAfoo7Pemwl9d2h6jIHUpY46bOK0o9z90PNBjFrrEm+SrS6na5Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5941,15 +5941,16 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/radio@6.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/radio@7.2.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/analytics-next': 10.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/theme': 14.0.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/tokens': 2.5.1(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/analytics-next': 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/css': 0.8.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 1.0.0(react@18.3.1)
+      '@atlaskit/theme': 14.1.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 3.3.1(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      '@compiled/react': 0.18.1(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
