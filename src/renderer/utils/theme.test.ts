@@ -1,17 +1,18 @@
-import { setGlobalTheme } from '@atlaskit/tokens';
+import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
 import { Theme } from '../types';
 import { getTheme, isLightMode, setTheme } from './theme';
 
-const mockGetGlobalTheme = vi.fn();
-
-vi.doMock('@atlaskit/tokens', () => ({
-  getGlobalTheme: mockGetGlobalTheme,
+vi.mock('@atlaskit/tokens', () => ({
+  getGlobalTheme: vi.fn(),
   setGlobalTheme: vi.fn(),
 }));
 
 describe('renderer/utils/theme.ts', () => {
   const htmlElement = document.createElement('html');
+
+  const mockGetGlobalTheme = vi.mocked(getGlobalTheme);
+  const mockSetGlobalTheme = vi.mocked(setGlobalTheme);
 
   beforeEach(() => {
     document.querySelector = vi.fn(() => htmlElement);
@@ -24,14 +25,14 @@ describe('renderer/utils/theme.ts', () => {
     it('should change to light mode', () => {
       setTheme(Theme.LIGHT);
 
-      expect(setGlobalTheme).toHaveBeenCalledWith({ colorMode: 'light' });
+      expect(mockSetGlobalTheme).toHaveBeenCalledWith({ colorMode: 'light' });
       expect(htmlElement.classList.contains('dark')).toBe(false);
     });
 
     it('should change to dark mode', () => {
       setTheme(Theme.DARK);
 
-      expect(setGlobalTheme).toHaveBeenCalledWith({ colorMode: 'dark' });
+      expect(mockSetGlobalTheme).toHaveBeenCalledWith({ colorMode: 'dark' });
       expect(htmlElement.classList.contains('dark')).toBe(true);
     });
 
@@ -45,7 +46,7 @@ describe('renderer/utils/theme.ts', () => {
 
       setTheme();
 
-      expect(setGlobalTheme).toHaveBeenCalledWith({ colorMode: 'light' });
+      expect(mockSetGlobalTheme).toHaveBeenCalledWith({ colorMode: 'light' });
       expect(htmlElement.classList.contains('dark')).toBe(false);
     });
 
@@ -59,7 +60,7 @@ describe('renderer/utils/theme.ts', () => {
 
       setTheme();
 
-      expect(setGlobalTheme).toHaveBeenCalledWith({ colorMode: 'dark' });
+      expect(mockSetGlobalTheme).toHaveBeenCalledWith({ colorMode: 'dark' });
       expect(htmlElement.classList.contains('dark')).toBe(true);
     });
   });
