@@ -1,4 +1,4 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import { useContext } from 'react';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
@@ -14,7 +14,6 @@ import type {
 import * as apiRequests from '../utils/api/request';
 import type { AtlassianGraphQLResponse } from '../utils/api/types';
 import * as comms from '../utils/comms';
-import { Constants } from '../utils/constants';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { AppContext, AppProvider, defaultSettings } from './App';
