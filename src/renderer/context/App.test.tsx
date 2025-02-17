@@ -1,5 +1,4 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
-import type { AxiosPromise, AxiosResponse } from 'axios';
 import { useContext } from 'react';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
@@ -57,8 +56,6 @@ describe('renderer/context/App.tsx', () => {
   }));
 
   beforeEach(() => {
-    vi.useFakeTimers();
-
     vi.mocked(useNotifications).mockReturnValue(mockUseNotifications);
   });
 
@@ -83,29 +80,25 @@ describe('renderer/context/App.tsx', () => {
       vi.clearAllMocks();
     });
 
+    // TODO - re-enable this test - fetchNotification isn't being called on timer.
     it.skip('fetch notifications every minute', async () => {
       vi.useFakeTimers();
-
-      customRender(null);
 
       await waitFor(() =>
         expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
       );
 
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
+      // Simulate multiple timer advances and check after each.
+      for (let i = 0; i < 3; i++) {
+        act(() => {
+          vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
+        });
 
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
-
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
+        // Wait for the mock to be called again before moving to the next one.
+        await waitFor(() =>
+          expect(fetchNotificationsMock).toHaveBeenCalledTimes(i + 2),
+        );
+      }
 
       vi.useRealTimers();
     });

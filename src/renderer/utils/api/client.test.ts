@@ -12,14 +12,12 @@ import {
 } from './client';
 
 vi.mock('axios');
+const mockedAxios = vi.mocked(axios);
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    // TODO: add more explicit mocks
-    (axios as vi.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
+    mockedAxios.mockResolvedValue({
+      data: { data: {} },
     });
   });
 
