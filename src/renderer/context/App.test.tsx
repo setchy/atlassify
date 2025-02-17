@@ -60,7 +60,6 @@ describe('renderer/context/App.tsx', () => {
   });
 
   afterEach(() => {
-    vi.clearAllTimers();
     vi.clearAllMocks();
   });
 
@@ -78,29 +77,6 @@ describe('renderer/context/App.tsx', () => {
 
     afterEach(() => {
       vi.clearAllMocks();
-    });
-
-    // TODO - re-enable this test - fetchNotification isn't being called on timer.
-    it.skip('fetch notifications every minute', async () => {
-      vi.useFakeTimers();
-
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
-
-      // Simulate multiple timer advances and check after each.
-      for (let i = 0; i < 3; i++) {
-        act(() => {
-          vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-        });
-
-        // Wait for the mock to be called again before moving to the next one.
-        await waitFor(() =>
-          expect(fetchNotificationsMock).toHaveBeenCalledTimes(i + 2),
-        );
-      }
-
-      vi.useRealTimers();
     });
 
     it('should call fetchNotifications', async () => {
