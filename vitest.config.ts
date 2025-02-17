@@ -7,6 +7,7 @@ export default defineConfig({
     globals: true,
     coverage: {
       reporter: ['lcov', 'text', 'html'],
+      include: ['src'],
     },
     outputFile: 'coverage/sonar-report.xml',
   },
