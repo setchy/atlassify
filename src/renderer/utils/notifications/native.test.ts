@@ -17,6 +17,7 @@ describe('renderer/utils/notifications/native.ts', () => {
   });
 
   describe('triggerNativeNotifications', () => {
+    // TODO - Fix this test
     it.skip('should raise a native notification (settings - on)', () => {
       const settings: SettingsState = {
         ...defaultSettings,
