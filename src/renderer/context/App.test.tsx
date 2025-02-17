@@ -5,15 +5,19 @@ import { useContext } from 'react';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
 import { mockAuth, mockSettings } from '../__mocks__/state';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AuthState, SettingsState, Token, Username } from '../types';
+import type {
+  AuthState,
+  SettingsState,
+  Status,
+  Token,
+  Username,
+} from '../types';
 import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
 import { Constants } from '../utils/constants';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { AppContext, AppProvider, defaultSettings } from './App';
-
-vi.mock('../hooks/useNotifications');
 
 const customRender = (
   ui,
@@ -32,8 +36,29 @@ describe('renderer/context/App.tsx', () => {
     .spyOn(storage, 'saveState')
     .mockImplementation(vi.fn());
 
+  const fetchNotificationsMock = vi.fn();
+  const markNotificationsReadMock = vi.fn();
+  const markNotificationsUnreadMock = vi.fn();
+  const removeAccountNotifications = vi.fn();
+
+  const mockUseNotifications = {
+    notifications: [],
+    status: 'success' as Status,
+    globalError: null,
+    fetchNotifications: fetchNotificationsMock,
+    markNotificationsRead: markNotificationsReadMock,
+    markNotificationsUnread: markNotificationsUnreadMock,
+    removeAccountNotifications: removeAccountNotifications,
+  };
+
+  vi.mock('../hooks/useNotifications', () => ({
+    useNotifications: vi.fn(),
+  }));
+
   beforeEach(() => {
     vi.useFakeTimers();
+
+    vi.mocked(useNotifications).mockReturnValue(mockUseNotifications);
   });
 
   afterEach(() => {
@@ -48,22 +73,10 @@ describe('renderer/context/App.tsx', () => {
     );
     getNotificationCountMock.mockReturnValue(1);
 
-    const fetchNotificationsMock = vi.fn();
-    const markNotificationsReadMock = vi.fn();
-    const markNotificationsUnreadMock = vi.fn();
-
     const mockDefaultState = {
       auth: { accounts: [] },
       settings: mockSettings,
     };
-
-    beforeEach(() => {
-      (useNotifications as vi.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-        markNotificationsRead: markNotificationsReadMock,
-        markNotificationsUnread: markNotificationsUnreadMock,
-      });
-    });
 
     afterEach(() => {
       vi.clearAllMocks();
@@ -111,7 +124,9 @@ describe('renderer/context/App.tsx', () => {
 
       fetchNotificationsMock.mockReset();
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
@@ -134,7 +149,9 @@ describe('renderer/context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
@@ -160,7 +177,9 @@ describe('renderer/context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
@@ -172,13 +191,6 @@ describe('renderer/context/App.tsx', () => {
 
   describe('authentication methods', () => {
     const apiRequestMock = vi.spyOn(apiRequests, 'performPostRequest');
-    const fetchNotificationsMock = vi.fn();
-
-    beforeEach(() => {
-      (useNotifications as vi.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-      });
-    });
 
     it('should call login', async () => {
       const requestPromise = new Promise((resolve) =>
@@ -223,19 +235,11 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      // expect(apiRequestMock).toHaveBeenCalledTimes(1);
+      expect(apiRequestMock).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('settings methods', () => {
-    const fetchNotificationsMock = vi.fn();
-
-    beforeEach(() => {
-      (useNotifications as vi.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-      });
-    });
-
     it('should call updateSetting and set playSoundNewNotifications', async () => {
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);

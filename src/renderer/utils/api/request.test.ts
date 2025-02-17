@@ -6,15 +6,13 @@ import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
 
 vi.mock('axios');
-
+const mockedAxios = vi.mocked(axios);
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
-    (axios as vi.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
+    mockedAxios.mockResolvedValue({
+      data: { data: {} },
     });
   });
 
