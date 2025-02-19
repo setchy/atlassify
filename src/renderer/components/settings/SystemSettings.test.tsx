@@ -1,15 +1,15 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
+import { mockAuth, mockSettings } from '../../__mocks__/state';
 import { AppContext } from '../../context/App';
 import { SystemSettings } from './SystemSettings';
 
 describe('renderer/components/settings/SystemSettings.tsx', () => {
-  const updateSetting = jest.fn();
+  const updateSetting = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should change the open links radio group', async () => {

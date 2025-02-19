@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/utils/api/request.ts should execute graphql request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts > should execute graphql request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
@@ -9,7 +9,7 @@ exports[`renderer/utils/api/request.ts should execute graphql request with the c
 }
 `;
 
-exports[`renderer/utils/api/request.ts should make a head request with the correct parameters 1`] = `
+exports[`renderer/utils/api/request.ts > should make a head request with the correct parameters 1`] = `
 {
   "Accept": "*/*",
   "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",

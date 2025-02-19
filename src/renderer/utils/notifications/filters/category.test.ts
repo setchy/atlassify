@@ -1,7 +1,7 @@
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
-} from '../../../__mocks__/notifications-mocks';
+} from '../../../__mocks__/notifications';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
 import {

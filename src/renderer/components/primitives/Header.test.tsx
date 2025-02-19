@@ -1,19 +1,15 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { mockNavigate } from '../../__mocks__/navigation';
+
 import { AppContext } from '../../context/App';
 import { Header } from './Header';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
-
 describe('renderer/components/primitives/Header.tsx', () => {
-  const fetchNotifications = jest.fn();
+  const fetchNotifications = vi.fn();
 
   afterEach(() => {
-    jest.resetAllMocks();
+    vi.resetAllMocks();
   });
 
   it('should render itself & its children', () => {

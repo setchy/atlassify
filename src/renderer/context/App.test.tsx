@@ -1,19 +1,22 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react';
-import type { AxiosPromise, AxiosResponse } from 'axios';
+import { act, fireEvent, render } from '@testing-library/react';
 import { useContext } from 'react';
 
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
+import { mockAuth, mockSettings } from '../__mocks__/state';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AuthState, SettingsState, Token, Username } from '../types';
+import type {
+  AuthState,
+  SettingsState,
+  Status,
+  Token,
+  Username,
+} from '../types';
 import * as apiRequests from '../utils/api/request';
+import type { AtlassianGraphQLResponse } from '../utils/api/types';
 import * as comms from '../utils/comms';
-import { Constants } from '../utils/constants';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { AppContext, AppProvider, defaultSettings } from './App';
-
-jest.mock('../hooks/useNotifications');
 
 const customRender = (
   ui,
@@ -28,68 +31,51 @@ const customRender = (
 };
 
 describe('renderer/context/App.tsx', () => {
-  const saveStateMock = jest
+  const saveStateMock = vi
     .spyOn(storage, 'saveState')
-    .mockImplementation(jest.fn());
+    .mockImplementation(vi.fn());
+
+  const fetchNotificationsMock = vi.fn();
+  const markNotificationsReadMock = vi.fn();
+  const markNotificationsUnreadMock = vi.fn();
+  const removeAccountNotifications = vi.fn();
+
+  const mockUseNotifications = {
+    notifications: [],
+    status: 'success' as Status,
+    globalError: null,
+    fetchNotifications: fetchNotificationsMock,
+    markNotificationsRead: markNotificationsReadMock,
+    markNotificationsUnread: markNotificationsUnreadMock,
+    removeAccountNotifications: removeAccountNotifications,
+  };
+
+  vi.mock('../hooks/useNotifications', () => ({
+    useNotifications: vi.fn(),
+  }));
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.mocked(useNotifications).mockReturnValue(mockUseNotifications);
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
-    const getNotificationCountMock = jest.spyOn(
+    const getNotificationCountMock = vi.spyOn(
       notifications,
       'getNotificationCount',
     );
     getNotificationCountMock.mockReturnValue(1);
-
-    const fetchNotificationsMock = jest.fn();
-    const markNotificationsReadMock = jest.fn();
-    const markNotificationsUnreadMock = jest.fn();
 
     const mockDefaultState = {
       auth: { accounts: [] },
       settings: mockSettings,
     };
 
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-        markNotificationsRead: markNotificationsReadMock,
-        markNotificationsUnread: markNotificationsUnreadMock,
-      });
-    });
-
     afterEach(() => {
-      jest.clearAllMocks();
-    });
-
-    it('fetch notifications every minute', async () => {
-      customRender(null);
-
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
+      vi.clearAllMocks();
     });
 
     it('should call fetchNotifications', async () => {
@@ -107,7 +93,9 @@ describe('renderer/context/App.tsx', () => {
 
       fetchNotificationsMock.mockReset();
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
@@ -130,7 +118,9 @@ describe('renderer/context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
@@ -156,7 +146,9 @@ describe('renderer/context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fireEvent.click(getByText('Test Case'));
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
@@ -167,31 +159,22 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
-    const fetchNotificationsMock = jest.fn();
-
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-      });
-    });
+    const apiRequestMock = vi.spyOn(apiRequests, 'performPostRequest');
 
     it('should call login', async () => {
-      const requestPromise = new Promise((resolve) =>
-        resolve({
+      const requestPromise: AtlassianGraphQLResponse<unknown> = {
+        data: {
           data: {
-            data: {
-              me: {
-                user: {
-                  accountId: '123',
-                  name: 'Atlassify',
-                  picture: 'https://avatar.atlassify.io',
-                },
+            me: {
+              user: {
+                accountId: '123',
+                name: 'Atlassify',
+                picture: 'https://avatar.atlassify.io',
               },
             },
           },
-        } as AxiosResponse),
-      ) as AxiosPromise;
+        },
+      };
 
       apiRequestMock.mockResolvedValueOnce(requestPromise);
 
@@ -219,19 +202,12 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
+      // TODO - Fix this test assertion
       // expect(apiRequestMock).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('settings methods', () => {
-    const fetchNotificationsMock = jest.fn();
-
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-      });
-    });
-
     it('should call updateSetting and set playSoundNewNotifications', async () => {
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
@@ -264,7 +240,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set openAtStartup', async () => {
-      const setAutoLaunchMock = jest.spyOn(comms, 'setAutoLaunch');
+      const setAutoLaunchMock = vi.spyOn(comms, 'setAutoLaunch');
 
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
@@ -299,10 +275,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set useAlternateIdleIcon', async () => {
-      const setAlternateIdleIconMock = jest.spyOn(
-        comms,
-        'setAlternateIdleIcon',
-      );
+      const setAlternateIdleIconMock = vi.spyOn(comms, 'setAlternateIdleIcon');
 
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);

@@ -1,25 +1,23 @@
 import axios from 'axios';
 
-import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount } from '../../__mocks__/state';
 import type { Link } from '../../types';
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
 
-jest.mock('axios');
-
+vi.mock('axios');
+const mockedAxios = vi.mocked(axios);
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
+    mockedAxios.mockResolvedValue({
+      data: { data: {} },
     });
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should execute graphql request with the correct parameters', async () => {

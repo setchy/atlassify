@@ -1,5 +1,5 @@
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications';
+import { mockAtlassianCloudAccount } from '../__mocks__/state';
 import * as comms from './comms';
 import {
   URLs,
@@ -13,12 +13,12 @@ import {
 } from './links';
 
 describe('renderer/utils/links.ts', () => {
-  const openExternalLinkMock = jest
+  const openExternalLinkMock = vi
     .spyOn(comms, 'openExternalLink')
-    .mockImplementation();
+    .mockImplementation(vi.fn());
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('openAtlassifyReleaseNotes', () => {

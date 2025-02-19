@@ -4,7 +4,7 @@ import type {
   AtlassifyNotification,
   Link,
 } from '../types';
-import { mockAtlassianCloudAccount } from './state-mocks';
+import { mockAtlassianCloudAccount } from './state';
 
 export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {

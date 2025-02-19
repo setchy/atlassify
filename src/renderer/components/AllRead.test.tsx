@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mockSettings } from '../__mocks__/state-mocks';
+import { mockSettings } from '../__mocks__/state';
 import { ensureStableEmojis } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
 import { AllRead } from './AllRead';
