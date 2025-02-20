@@ -15,31 +15,41 @@ export function filterNotifications(
   settings: SettingsState,
 ): AtlassifyNotification[] {
   return notifications.filter((notification) => {
+    let passesFilters = true;
+
     if (hasTimeSensitiveFilters(settings)) {
-      return settings.filterTimeSensitive.some((ts) =>
-        filterNotificationByTimeSensitive(notification, ts),
-      );
+      passesFilters =
+        passesFilters &&
+        settings.filterTimeSensitive.some((ts) =>
+          filterNotificationByTimeSensitive(notification, ts),
+        );
     }
 
     if (hasCategoryFilters(settings)) {
-      return settings.filterCategories.some((c) =>
-        filterNotificationByCategory(notification, c),
-      );
+      passesFilters =
+        passesFilters &&
+        settings.filterCategories.some((c) =>
+          filterNotificationByCategory(notification, c),
+        );
     }
 
     if (hasReadStateFilters(settings)) {
-      return settings.filterReadStates.some((rs) =>
-        filterNotificationByReadState(notification, rs),
-      );
+      passesFilters =
+        passesFilters &&
+        settings.filterReadStates.some((rs) =>
+          filterNotificationByReadState(notification, rs),
+        );
     }
 
     if (hasProductFilters(settings)) {
-      return settings.filterProducts.some((p) =>
-        filterNotificationByProduct(notification, p),
-      );
+      passesFilters =
+        passesFilters &&
+        settings.filterProducts.some((p) =>
+          filterNotificationByProduct(notification, p),
+        );
     }
 
-    return true;
+    return passesFilters;
   });
 }
 
