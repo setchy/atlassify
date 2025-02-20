@@ -76,8 +76,8 @@ importers:
         specifier: 16.3.6
         version: 16.3.6(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/textfield':
-        specifier: 6.8.2
-        version: 6.8.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.8.3
+        version: 6.8.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
         specifier: 13.4.10
         version: 13.4.10(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -348,6 +348,9 @@ packages:
   '@atlaskit/feature-gate-js-client@4.23.4':
     resolution: {integrity: sha512-gmbRHlzzVGkvR2iJ1TwUtK/fn+tcY2hVnYPHFanyRJaFUbtJYxMaEHISMVf5ogS6O5M1ic1YCB8o/y4Rzo7zDw==}
 
+  '@atlaskit/feature-gate-js-client@4.25.0':
+    resolution: {integrity: sha512-byPTckSA7ifQ1EWbj7mmFGHvjfNOPTkRau2FLr+tGPUtjO4Mih1MzBH5aIXr8J4b1dDBWlYW/c9UbIDVGUpjNQ==}
+
   '@atlaskit/focus-ring@2.0.0':
     resolution: {integrity: sha512-EjCPbwGotrIhOHKAvWiRTcCEeorzhvS2c0t3BD6I4qdOnJzdUATp6YmAn8yAhT1tYIEHg3SKthf/RzwIQWMTKw==}
     peerDependencies:
@@ -429,6 +432,9 @@ packages:
   '@atlaskit/platform-feature-flags@1.0.0':
     resolution: {integrity: sha512-J6ggqjqSOyikLIrn3BkGU3NPpB9m8wwTyl2MpymD7JIrEjuRKznVDAp/F0xMKdn56vUXgZPxB7JNurdEOGYDXg==}
 
+  '@atlaskit/platform-feature-flags@1.1.0':
+    resolution: {integrity: sha512-6g8uflI4gG3EClkxxGDmxQLnfgtW9lv9Aa1ocRWh95ui5t7rE4oCMRQvk15RwzBnlu6xPf4k8GV6PuKKPYc0iA==}
+
   '@atlaskit/popper@6.3.0':
     resolution: {integrity: sha512-Fnb26F5YE7H7KYmcvvQMS0odRoFIZYxIUXos5Hi6mOV9hajKuk/fppAo6uGvQ+CiHdJaGj2Tc+WYVYDsOIfMJQ==}
     peerDependencies:
@@ -458,8 +464,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/textfield@6.8.2':
-    resolution: {integrity: sha512-2ykVFL7HQj8plQcp2MTV0dzoDwtIX4MqAQx4t1vEUVO+c9gWOpQt828o0SirJgoLOE4271r/63AFisYloOBH0w==}
+  '@atlaskit/textfield@6.8.3':
+    resolution: {integrity: sha512-j2ApATx6N5tQICu61YTKYn8EtV/Qq01N/L6fM1UROaxaK97VFEyhBMy+7PhM3xCkDYIJPYrqkpEascJHL4A9Gw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -480,6 +486,11 @@ packages:
 
   '@atlaskit/theme@15.0.0':
     resolution: {integrity: sha512-VpN/5QF2hsuYqYyUCllcAE/mD6Qcaae3oekzqsfLRkr01lVK42b8jLXwgchUiLxmuT2lclFdBLfcX5gesQjbiw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/theme@16.0.0':
+    resolution: {integrity: sha512-GIxzHsdGQWlfv1XfhqpdPe911rq5IZ7a/RJDjHcdRSzm40N+0gYOk1Mg3F/QFVeK6ZeQOutrNJ/sD8CerHn3SA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -1481,6 +1492,12 @@ packages:
 
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
+
+  '@statsig/client-core@3.12.1':
+    resolution: {integrity: sha512-99FOEBq7M3Jnkvk0DWRAklvCE1J26HLmYsFGJAo+LQ7382DYBY3X6fvdZeaNGa5KDSIdyZEpeLQxkHw2PpVpGw==}
+
+  '@statsig/js-client@3.12.1':
+    resolution: {integrity: sha512-CCGJqFnKYhOEWZsZgXcMuKQLd/4TEB8PgObDXiyoKw1dszl8de4+hCsg/qa64Y4dy0e91cMS9oTfZZD3TJKkNA==}
 
   '@szmarczak/http-timer@4.0.6':
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
@@ -5691,6 +5708,16 @@ snapshots:
     transitivePeerDependencies:
       - react
 
+  '@atlaskit/feature-gate-js-client@4.25.0(react@18.3.1)':
+    dependencies:
+      '@atlaskit/atlassian-context': 0.1.0(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@statsig/client-core': 3.12.1
+      '@statsig/js-client': 3.12.1
+      eventemitter2: 4.1.2
+    transitivePeerDependencies:
+      - react
+
   '@atlaskit/focus-ring@2.0.0(@types/react@18.3.18)(react@18.3.1)':
     dependencies:
       '@atlaskit/tokens': 2.5.1(@types/react@18.3.18)(react@18.3.1)
@@ -5894,6 +5921,13 @@ snapshots:
     transitivePeerDependencies:
       - react
 
+  '@atlaskit/platform-feature-flags@1.1.0(react@18.3.1)':
+    dependencies:
+      '@atlaskit/feature-gate-js-client': 4.25.0(react@18.3.1)
+      '@babel/runtime': 7.25.7
+    transitivePeerDependencies:
+      - react
+
   '@atlaskit/popper@6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.7
@@ -5968,12 +6002,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/textfield@6.8.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/textfield@6.8.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/platform-feature-flags': 1.0.0(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
       '@atlaskit/primitives': 13.5.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/theme': 15.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/theme': 16.0.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/tokens': 3.3.1(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
@@ -6017,6 +6051,17 @@ snapshots:
       - supports-color
 
   '@atlaskit/theme@15.0.0(@types/react@18.3.18)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/codemod-utils': 4.2.4
+      '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 3.3.1(@types/react@18.3.18)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/theme@16.0.0(@types/react@18.3.18)(react@18.3.1)':
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
       '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
@@ -7492,6 +7537,12 @@ snapshots:
   '@sinonjs/fake-timers@10.3.0':
     dependencies:
       '@sinonjs/commons': 3.0.1
+
+  '@statsig/client-core@3.12.1': {}
+
+  '@statsig/js-client@3.12.1':
+    dependencies:
+      '@statsig/client-core': 3.12.1
 
   '@szmarczak/http-timer@4.0.6':
     dependencies:
