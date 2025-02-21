@@ -144,7 +144,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.25 6V1.75H2m5.5 12.48c-3.218-.254-5.75-2.447-5.75-5.73 0-3.368 2.42-4.921 4-6.29m4 7.77v4.25H14M8.5 1.75c3.218.255 5.75 2.447 5.75 5.73 0 3.352-2.397 4.906-3.977 6.27"
+                        d="M8.5 1.75c2 0 5.75 2.125 5.75 6.25s-4.24 6.24-4.24 6.24m-2.51.01c-2 0-5.75-2.125-5.75-6.25s4.26-6.26 4.26-6.26m.24 3.76V1.25H2m7.75 9.23v4.25H14"
                         stroke="currentcolor"
                         stroke-linejoin="round"
                         stroke-width="1.5"
@@ -395,7 +395,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M6.25 6V1.75H2m5.5 12.48c-3.218-.254-5.75-2.447-5.75-5.73 0-3.368 2.42-4.921 4-6.29m4 7.77v4.25H14M8.5 1.75c3.218.255 5.75 2.447 5.75 5.73 0 3.352-2.397 4.906-3.977 6.27"
+                        d="M8.5 1.75c2 0 5.75 2.125 5.75 6.25s-4.24 6.24-4.24 6.24m-2.51.01c-2 0-5.75-2.125-5.75-6.25s4.26-6.26 4.26-6.26m.24 3.76V1.25H2m7.75 9.23v4.25H14"
                         stroke="currentcolor"
                         stroke-linejoin="round"
                         stroke-width="1.5"
