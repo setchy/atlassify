@@ -8,7 +8,8 @@
     "customManagers:biomeVersions",
     "group:atlaskit",
     ":prConcurrentLimitNone",
-    ":prHourlyLimitNone"
+    ":prHourlyLimitNone",
+    "helpers:pinGitHubActionDigests"
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",

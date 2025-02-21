@@ -3,6 +3,9 @@ name: Website
 on:
   workflow_dispatch: # For manually running website deployment
 
+permissions:
+  contents: read
+
 jobs:
   redeploy-website:
     name: Deploy Website
