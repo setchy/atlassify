@@ -58,7 +58,7 @@
   "build": {
     "productName": "Atlassify",
     "appId": "com.electron.atlassify",
-    "copyright": "Copyright © 2024 Adam Setch",
+    "copyright": "Copyright © 2025 Adam Setch",
     "asar": true,
     "files": [
       "assets/images/*",
