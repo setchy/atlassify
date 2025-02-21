@@ -20,7 +20,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             >
               <div
                 class="css-k5cxwk"
-                id="notification-avatar"
+                data-testid="notification-avatar"
               >
                 <div
                   class="css-5zfxu5"
@@ -85,18 +85,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               >
                 <div
                   class="css-k5cxwk"
-                  data-testid="notification-details"
-                  id="notification-details"
                 >
                   <div
                     class="cursor-pointer"
+                    data-testid="notification-details"
                   >
                     <div
                       class="css-2mvdbp"
                     >
                       <div
                         class="css-k5cxwk"
-                        id="notification-title"
+                        data-testid="notification-title"
                       >
                         <span
                           class="css-b0hel9"
@@ -112,11 +111,11 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       </div>
                       <div
                         class="css-k5cxwk"
-                        id="notification-metadata"
+                        data-testid="notification-metadata"
                       >
                         <div
                           class="css-k5cxwk"
-                          id="notification-entity"
+                          data-testid="notification-entity"
                         >
                           <div
                             class="css-1w1rt7h"
@@ -155,7 +154,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         </div>
                         <div
                           class="css-1yqbixt"
-                          id="notification-product"
+                          data-testid="notification-product"
                         >
                           <div
                             class="css-f86pb"
@@ -199,7 +198,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             </div>
             <div
               class="css-k5cxwk"
-              id="notification-actions"
+              data-testid="notification-actions"
             >
               <div
                 role="presentation"
@@ -258,7 +257,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           >
             <div
               class="css-k5cxwk"
-              id="notification-avatar"
+              data-testid="notification-avatar"
             >
               <div
                 class="css-5zfxu5"
@@ -323,18 +322,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             >
               <div
                 class="css-k5cxwk"
-                data-testid="notification-details"
-                id="notification-details"
               >
                 <div
                   class="cursor-pointer"
+                  data-testid="notification-details"
                 >
                   <div
                     class="css-2mvdbp"
                   >
                     <div
                       class="css-k5cxwk"
-                      id="notification-title"
+                      data-testid="notification-title"
                     >
                       <span
                         class="css-b0hel9"
@@ -350,11 +348,11 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     </div>
                     <div
                       class="css-k5cxwk"
-                      id="notification-metadata"
+                      data-testid="notification-metadata"
                     >
                       <div
                         class="css-k5cxwk"
-                        id="notification-entity"
+                        data-testid="notification-entity"
                       >
                         <div
                           class="css-1w1rt7h"
@@ -393,7 +391,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       </div>
                       <div
                         class="css-1yqbixt"
-                        id="notification-product"
+                        data-testid="notification-product"
                       >
                         <div
                           class="css-f86pb"
@@ -437,7 +435,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           </div>
           <div
             class="css-k5cxwk"
-            id="notification-actions"
+            data-testid="notification-actions"
           >
             <div
               role="presentation"
@@ -553,7 +551,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             >
               <div
                 class="css-k5cxwk"
-                id="notification-avatar"
+                data-testid="notification-avatar"
               >
                 <div
                   class="css-5zfxu5"
@@ -618,18 +616,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               >
                 <div
                   class="css-k5cxwk"
-                  data-testid="notification-details"
-                  id="notification-details"
                 >
                   <div
                     class="cursor-pointer"
+                    data-testid="notification-details"
                   >
                     <div
                       class="css-2mvdbp"
                     >
                       <div
                         class="css-k5cxwk"
-                        id="notification-title"
+                        data-testid="notification-title"
                       >
                         <span
                           class="css-b0hel9"
@@ -645,11 +642,11 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       </div>
                       <div
                         class="css-k5cxwk"
-                        id="notification-metadata"
+                        data-testid="notification-metadata"
                       >
                         <div
                           class="css-k5cxwk"
-                          id="notification-entity"
+                          data-testid="notification-entity"
                         >
                           <div
                             class="css-1w1rt7h"
@@ -688,7 +685,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         </div>
                         <div
                           class="css-1yqbixt"
-                          id="notification-product"
+                          data-testid="notification-product"
                         >
                           <div
                             class="css-f86pb"
@@ -732,7 +729,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             </div>
             <div
               class="css-k5cxwk"
-              id="notification-actions"
+              data-testid="notification-actions"
             >
               <div
                 role="presentation"
@@ -791,7 +788,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           >
             <div
               class="css-k5cxwk"
-              id="notification-avatar"
+              data-testid="notification-avatar"
             >
               <div
                 class="css-5zfxu5"
@@ -856,18 +853,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
             >
               <div
                 class="css-k5cxwk"
-                data-testid="notification-details"
-                id="notification-details"
               >
                 <div
                   class="cursor-pointer"
+                  data-testid="notification-details"
                 >
                   <div
                     class="css-2mvdbp"
                   >
                     <div
                       class="css-k5cxwk"
-                      id="notification-title"
+                      data-testid="notification-title"
                     >
                       <span
                         class="css-b0hel9"
@@ -883,11 +879,11 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     </div>
                     <div
                       class="css-k5cxwk"
-                      id="notification-metadata"
+                      data-testid="notification-metadata"
                     >
                       <div
                         class="css-k5cxwk"
-                        id="notification-entity"
+                        data-testid="notification-entity"
                       >
                         <div
                           class="css-1w1rt7h"
@@ -926,7 +922,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       </div>
                       <div
                         class="css-1yqbixt"
-                        id="notification-product"
+                        data-testid="notification-product"
                       >
                         <div
                           class="css-f86pb"
@@ -970,7 +966,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
           </div>
           <div
             class="css-k5cxwk"
-            id="notification-actions"
+            data-testid="notification-actions"
           >
             <div
               role="presentation"
