@@ -9,7 +9,8 @@
     "group:atlaskit",
     ":prConcurrentLimitNone",
     ":prHourlyLimitNone",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
+    ":semanticCommitTypeAll(chore)"
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
