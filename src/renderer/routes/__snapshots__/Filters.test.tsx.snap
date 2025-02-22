@@ -93,7 +93,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -167,7 +166,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -253,7 +251,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -328,7 +325,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -422,7 +418,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -497,7 +492,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -583,7 +577,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -635,7 +628,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -701,7 +693,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -777,7 +768,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -855,7 +845,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -931,7 +920,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1007,7 +995,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1083,7 +1070,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1159,7 +1145,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1246,7 +1231,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1324,7 +1308,6 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -1507,7 +1490,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1581,7 +1563,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1667,7 +1648,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1742,7 +1722,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1836,7 +1815,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1911,7 +1889,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -1997,7 +1974,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -2049,7 +2025,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       class="css-f3myyk"
                       tabindex="0"
                       type="checkbox"
-                      value=""
                     />
                     <svg
                       class="css-1dr55qw"
@@ -2116,7 +2091,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2196,7 +2170,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2274,7 +2247,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2350,7 +2322,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2426,7 +2397,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2502,7 +2472,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2578,7 +2547,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2665,7 +2633,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"
@@ -2743,7 +2710,6 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     class="css-f3myyk"
                     tabindex="0"
                     type="checkbox"
-                    value=""
                   />
                   <svg
                     class="css-1dr55qw"

@@ -20,7 +20,15 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
+import {
+  Box,
+  Flex,
+  Grid,
+  Inline,
+  Pressable,
+  Stack,
+  xcss,
+} from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -113,96 +121,97 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   return (
     <Stack>
-      <Box
-        onClick={toggleAccountNotifications}
-        paddingInline="space.100"
-        paddingBlock="space.050"
-        backgroundColor={
-          props.error
-            ? 'color.background.accent.red.subtler'
-            : isLightMode()
-              ? 'color.background.accent.blue.subtler'
-              : 'color.background.accent.gray.subtler'
-        }
-        xcss={boxStyles}
-      >
-        <Flex alignItems="center" justifyContent="space-between">
-          <Inline space="space.100" alignBlock="center">
-            <Tooltip content="Open account profile" position="right">
-              <AvatarItem
-                avatar={
-                  <Avatar
-                    name={account.name}
-                    src={account.avatar}
-                    size="xsmall"
-                    appearance="circle"
-                    borderColor={isLightMode() ? 'white' : 'gray'}
-                  />
-                }
-                primaryText={account.name}
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  event.stopPropagation();
-                  openAccountProfile(account);
-                }}
-                testId="account-profile"
-              />
-            </Tooltip>{' '}
-            <Badge
-              appearance="primary"
-              max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT - 1}
-            >
-              {notifications.length}
-            </Badge>
-          </Inline>
+      <Pressable onClick={toggleAccountNotifications}>
+        <Box
+          paddingInline="space.100"
+          paddingBlock="space.050"
+          backgroundColor={
+            props.error
+              ? 'color.background.accent.red.subtler'
+              : isLightMode()
+                ? 'color.background.accent.blue.subtler'
+                : 'color.background.accent.gray.subtler'
+          }
+          xcss={boxStyles}
+        >
+          <Flex alignItems="center" justifyContent="space-between">
+            <Inline space="space.100" alignBlock="center">
+              <Tooltip content="Open account profile" position="right">
+                <AvatarItem
+                  avatar={
+                    <Avatar
+                      name={account.name}
+                      src={account.avatar}
+                      size="xsmall"
+                      appearance="circle"
+                      borderColor={isLightMode() ? 'white' : 'gray'}
+                    />
+                  }
+                  primaryText={account.name}
+                  onClick={(event: MouseEvent<HTMLElement>) => {
+                    event.stopPropagation();
+                    openAccountProfile(account);
+                  }}
+                  testId="account-profile"
+                />
+              </Tooltip>{' '}
+              <Badge
+                appearance="primary"
+                max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT - 1}
+              >
+                {notifications.length}
+              </Badge>
+            </Inline>
 
-          <Inline space="space.100">
-            <Tooltip content="My pull requests" position="bottom">
-              <IconButton
-                label="My pull requests"
-                icon={(iconProps) => (
-                  <BitbucketIcon {...iconProps} size="xsmall" />
-                )}
-                shape="circle"
-                spacing="compact"
-                appearance="subtle"
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  event.stopPropagation();
-                  openMyPullRequests();
-                }}
-                testId="account-pull-requests"
-              />
-            </Tooltip>
+            <Inline space="space.100">
+              <Tooltip content="My pull requests" position="bottom">
+                <IconButton
+                  label="My pull requests"
+                  icon={(iconProps) => (
+                    <BitbucketIcon {...iconProps} size="xsmall" />
+                  )}
+                  shape="circle"
+                  spacing="compact"
+                  appearance="subtle"
+                  onClick={(event: MouseEvent<HTMLElement>) => {
+                    event.stopPropagation();
+                    openMyPullRequests();
+                  }}
+                  testId="account-pull-requests"
+                />
+              </Tooltip>
 
-            <Tooltip
-              content="Mark all account notifications as read"
-              position="bottom"
-            >
-              <IconButton
-                label="Mark all account notifications as read"
-                icon={() => <UnreadIcon />}
-                shape="circle"
-                spacing="compact"
-                appearance="subtle"
-                onClick={(event: MouseEvent<HTMLElement>) => {
-                  event.stopPropagation();
-                  openModal();
-                }}
-                testId="account-mark-as-read"
-              />
-            </Tooltip>
-            <Tooltip content={Chevron.label} position="bottom">
-              <IconButton
-                label={Chevron.label}
-                icon={Chevron.icon}
-                shape="circle"
-                spacing="compact"
-                appearance="subtle"
-                testId="account-toggle"
-              />
-            </Tooltip>
-          </Inline>
-        </Flex>
-      </Box>
+              <Tooltip
+                content="Mark all account notifications as read"
+                position="bottom"
+              >
+                <IconButton
+                  label="Mark all account notifications as read"
+                  icon={() => <UnreadIcon />}
+                  shape="circle"
+                  spacing="compact"
+                  appearance="subtle"
+                  onClick={(event: MouseEvent<HTMLElement>) => {
+                    event.stopPropagation();
+                    openModal();
+                  }}
+                  testId="account-mark-as-read"
+                />
+              </Tooltip>
+              <Tooltip content={Chevron.label} position="bottom">
+                <IconButton
+                  label={Chevron.label}
+                  icon={Chevron.icon}
+                  shape="circle"
+                  spacing="compact"
+                  appearance="subtle"
+                  testId="account-toggle"
+                />
+              </Tooltip>
+            </Inline>
+          </Flex>
+        </Box>
+      </Pressable>
 
       {showAccountNotifications && (
         <Fragment>
