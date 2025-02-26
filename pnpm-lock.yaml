@@ -37,8 +37,8 @@ importers:
         specifier: 21.18.4
         version: 21.18.4(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
-        specifier: 16.4.4
-        version: 16.4.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 17.2.0
+        version: 17.2.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
         specifier: 20.3.3
         version: 20.3.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -289,8 +289,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/badge@16.4.4':
-    resolution: {integrity: sha512-bLBZb4KbJNpfJJBkIuWav97hCGlRIGCIF1Pe2EcTpAl3x4vWeNYhH+m/qBJm5mpKDKOda0/EYy+42lPrSE5pRQ==}
+  '@atlaskit/badge@17.2.0':
+    resolution: {integrity: sha512-/XZMR8iS1AdA1czzsgQVpkGvQqXOQ9YOHxRJaNYI+ekOHhK4y/fq2Zl5CRisrd8vbdq0fR43qmb0XOaqBzuXCQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5558,14 +5558,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/badge@16.4.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/badge@17.2.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/platform-feature-flags': 0.3.0
+      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
       '@atlaskit/primitives': 13.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      '@compiled/react': 0.18.2(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
@@ -7969,7 +7969,7 @@ snapshots:
       minimatch: 10.0.1
       resedit: 1.7.1
       sanitize-filename: 1.6.3
-      semver: 7.6.3
+      semver: 7.7.1
       tar: 6.2.1
       temp-file: 3.4.0
     transitivePeerDependencies:
