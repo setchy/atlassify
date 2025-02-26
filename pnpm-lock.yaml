@@ -49,8 +49,8 @@ importers:
         specifier: 6.16.0
         version: 6.16.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/form':
-        specifier: 11.0.2
-        version: 11.0.2(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 11.2.0
+        version: 11.2.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
         specifier: 4.0.1
         version: 4.0.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -355,13 +355,18 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/form@11.0.2':
-    resolution: {integrity: sha512-Q5GC43Jq4Ae0/tcXG1fYTmYEHXF33cBmjPIlrVm+jfrcQauXRFdnQbMZwyIRlrtFXsaFXL11tacs9xuqatf6Tg==}
+  '@atlaskit/form@11.2.0':
+    resolution: {integrity: sha512-FH9svvJt7DIEtANKWox/C1vyZQNYywhGZ1CVHyclavtK96AAQM8JTRsOfWaTJCZMtUBOylXTl44+LLA05+iF8A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   '@atlaskit/heading@4.0.1':
     resolution: {integrity: sha512-WCs1RGePH41oSmBNoRm/va6wVOPTpEim0QrZioBsQgf/lPN1tb9FYXQpnBl5F3431Zfx3pXQL85GP30gxHUWMg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/heading@4.3.1':
+    resolution: {integrity: sha512-ZF8+hPpNtGZQ35zncsrb3Ul+hMSU6xagK8MCJHWZZNJ/mVGqpNn0RagIhK/8DgoBebHZ8JjBxuAlCJHtuIIpSw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -5722,16 +5727,17 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@11.0.2(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/form@11.2.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 3.3.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/heading': 4.0.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/css': 0.9.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/heading': 4.3.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 23.11.0(@babel/core@7.25.7)(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/primitives': 13.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/theme': 14.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/theme': 16.0.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      '@compiled/react': 0.18.2(react@18.3.1)
       final-form: 4.20.10
       final-form-focus: 1.1.2(final-form@4.20.10)
       lodash: 4.17.21
@@ -5748,6 +5754,20 @@ snapshots:
       '@atlaskit/primitives': 13.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
+      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/heading@4.3.1(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@atlaskit/css': 0.9.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/primitives': 13.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@compiled/react': 0.18.2(react@18.3.1)
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
@@ -7969,7 +7989,7 @@ snapshots:
       minimatch: 10.0.1
       resedit: 1.7.1
       sanitize-filename: 1.6.3
-      semver: 7.6.3
+      semver: 7.7.1
       tar: 6.2.1
       temp-file: 3.4.0
     transitivePeerDependencies:
