@@ -38,7 +38,7 @@
     "@iconify-json/line-md": "1.2.5",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "24.0.0",
-    "@tailwindcss/vite": "4.0.8",
+    "@tailwindcss/vite": "4.0.9",
     "accessible-astro-components": "4.0.3",
     "astro": "5.4.0",
     "astro-icon": "1.1.5",
@@ -49,7 +49,7 @@
     "octokit": "4.1.2",
     "sharp": "0.33.5",
     "tailwind-merge": "3.0.1",
-    "tailwindcss": "4.0.8",
+    "tailwindcss": "4.0.9",
     "tailwindcss-motion": "1.1.0"
   },
   "devDependencies": {
