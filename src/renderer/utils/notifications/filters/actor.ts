@@ -7,9 +7,9 @@ import type {
   AtlassifyNotification,
   SettingsState,
 } from '../../../types';
-import type { FilterDetails } from './types';
+import type { Filter, FilterDetails } from './types';
 
-export const FILTERS_ACTORS: Record<ActorType, FilterDetails> = {
+const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   user: {
     name: 'user',
     description: 'User',
@@ -22,37 +22,38 @@ export const FILTERS_ACTORS: Record<ActorType, FilterDetails> = {
   },
 };
 
-export function getActorFilterDetails(actor: ActorType): FilterDetails {
-  return FILTERS_ACTORS[actor];
-}
+export const actorFilter: Filter<ActorType> = {
+  FILTER_TYPES: ACTOR_DETAILS,
 
-export function hasActorFilters(settings: SettingsState) {
-  return settings.filterActors.length > 0;
-}
+  getTypeDetails(type: ActorType): FilterDetails {
+    return this.FILTER_TYPES[type];
+  },
 
-export function isActorFilterSet(settings: SettingsState, actor: ActorType) {
-  return settings.filterActors.includes(actor);
-}
+  hasFilters(settings: SettingsState): boolean {
+    return settings.filterActors.length > 0;
+  },
 
-export function getActorFilterCount(
-  notifications: AccountNotifications[],
-  actor: ActorType,
-) {
-  return notifications.reduce(
-    (memo, acc) =>
-      memo +
-      acc.notifications.filter((n) => filterNotificationByActor(n, actor))
-        .length,
-    0,
-  );
-}
+  isFilterSet(settings: SettingsState, type: ActorType): boolean {
+    return settings.filterActors.includes(type);
+  },
 
-export function filterNotificationByActor(
-  notification: AtlassifyNotification,
-  actor: ActorType,
-): boolean {
-  return inferNotificationActor(notification) === actor;
-}
+  getFilterCount(notifications: AccountNotifications[], actor: ActorType) {
+    return notifications.reduce(
+      (memo, acc) =>
+        memo +
+        acc.notifications.filter((n) => this.filterNotification(n, actor))
+          .length,
+      0,
+    );
+  },
+
+  filterNotification(
+    notification: AtlassifyNotification,
+    actor: ActorType,
+  ): boolean {
+    return inferNotificationActor(notification) === actor;
+  },
+};
 
 export function inferNotificationActor(
   notification: AtlassifyNotification,

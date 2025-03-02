@@ -386,9 +386,10 @@ export interface AtlassianProduct {
   name: ProductName;
 
   /**
-   * The logo / icon of the product.
+   * The logo of the product.
    * @see {@link https://atlassian.design/components/logo/examples} for available logos.
    */
+  // TODO - Update to use the correct icon type
   // biome-ignore lint/suspicious/noExplicitAny: Requires a proper type
   logo: any;
 

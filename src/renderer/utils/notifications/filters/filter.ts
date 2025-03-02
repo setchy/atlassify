@@ -1,14 +1,10 @@
+import {
+  categoryFilter,
+  productFilter,
+  readStateFilter,
+  timeSensitiveFilter,
+} from '.';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import { filterNotificationByCategory, hasCategoryFilters } from './category';
-import { filterNotificationByProduct, hasProductFilters } from './product';
-import {
-  filterNotificationByReadState,
-  hasReadStateFilters,
-} from './readState';
-import {
-  filterNotificationByTimeSensitive,
-  hasTimeSensitiveFilters,
-} from './timeSensitive';
 
 export function filterNotifications(
   notifications: AtlassifyNotification[],
@@ -17,35 +13,35 @@ export function filterNotifications(
   return notifications.filter((notification) => {
     let passesFilters = true;
 
-    if (hasTimeSensitiveFilters(settings)) {
+    if (timeSensitiveFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
         settings.filterTimeSensitive.some((ts) =>
-          filterNotificationByTimeSensitive(notification, ts),
+          timeSensitiveFilter.filterNotification(notification, ts),
         );
     }
 
-    if (hasCategoryFilters(settings)) {
+    if (categoryFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
         settings.filterCategories.some((c) =>
-          filterNotificationByCategory(notification, c),
+          categoryFilter.filterNotification(notification, c),
         );
     }
 
-    if (hasReadStateFilters(settings)) {
+    if (readStateFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
         settings.filterReadStates.some((rs) =>
-          filterNotificationByReadState(notification, rs),
+          readStateFilter.filterNotification(notification, rs),
         );
     }
 
-    if (hasProductFilters(settings)) {
+    if (productFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
         settings.filterProducts.some((p) =>
-          filterNotificationByProduct(notification, p),
+          productFilter.filterNotification(notification, p),
         );
     }
 
@@ -55,9 +51,9 @@ export function filterNotifications(
 
 export function hasAnyFiltersSet(settings: SettingsState): boolean {
   return (
-    hasTimeSensitiveFilters(settings) ||
-    hasCategoryFilters(settings) ||
-    hasReadStateFilters(settings) ||
-    hasProductFilters(settings)
+    timeSensitiveFilter.hasFilters(settings) ||
+    categoryFilter.hasFilters(settings) ||
+    readStateFilter.hasFilters(settings) ||
+    productFilter.hasFilters(settings)
   );
 }

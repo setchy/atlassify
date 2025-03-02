@@ -1,23 +1,17 @@
+import { actorFilter, inferNotificationActor } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import {
-  filterNotificationByActor,
-  getActorFilterCount,
-  hasActorFilters,
-  inferNotificationActor,
-  isActorFilterSet,
-} from './actor';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
   it('hasActorFilters', () => {
-    expect(hasActorFilters(defaultSettings)).toBe(false);
+    expect(actorFilter.hasFilters(defaultSettings)).toBe(false);
 
     expect(
-      hasActorFilters({
+      actorFilter.hasFilters({
         ...defaultSettings,
         filterActors: ['user'],
       } as SettingsState),
@@ -30,9 +24,9 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       filterActors: ['user'],
     } as SettingsState;
 
-    expect(isActorFilterSet(settings, 'user')).toBe(true);
+    expect(actorFilter.isFilterSet(settings, 'user')).toBe(true);
 
-    expect(isActorFilterSet(settings, 'automation')).toBe(false);
+    expect(actorFilter.isFilterSet(settings, 'automation')).toBe(false);
   });
 
   it('getActorFilterCount', () => {
@@ -40,9 +34,11 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
     mockAccountNotifications[0].notifications[0].actor.displayName =
       'Automation for Jira';
 
-    expect(getActorFilterCount(mockAcctNotifications, 'user')).toBe(1);
+    expect(actorFilter.getFilterCount(mockAcctNotifications, 'user')).toBe(1);
 
-    expect(getActorFilterCount(mockAcctNotifications, 'automation')).toBe(1);
+    expect(
+      actorFilter.getFilterCount(mockAcctNotifications, 'automation'),
+    ).toBe(1);
   });
 
   it('filterNotificationByActor', () => {
@@ -53,9 +49,11 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       },
     } as AtlassifyNotification;
 
-    expect(filterNotificationByActor(mockNotification, 'user')).toBe(false);
+    expect(actorFilter.filterNotification(mockNotification, 'user')).toBe(
+      false,
+    );
 
-    expect(filterNotificationByActor(mockNotification, 'automation')).toBe(
+    expect(actorFilter.filterNotification(mockNotification, 'automation')).toBe(
       true,
     );
   });

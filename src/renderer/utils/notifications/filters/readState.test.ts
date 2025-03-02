@@ -1,22 +1,17 @@
+import { readStateFilter } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import {
-  filterNotificationByReadState,
-  getReadStateFilterCount,
-  hasReadStateFilters,
-  isReadStateFilterSet,
-} from './readState';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   it('hasReadStateFilters', () => {
-    expect(hasReadStateFilters(defaultSettings)).toBe(false);
+    expect(readStateFilter.hasFilters(defaultSettings)).toBe(false);
 
     expect(
-      hasReadStateFilters({
+      readStateFilter.hasFilters({
         ...defaultSettings,
         filterReadStates: ['read'],
       } as SettingsState),
@@ -29,15 +24,19 @@ describe('renderer/utils/notifications/filters/readState.ts', () => {
       filterReadStates: ['read'],
     } as SettingsState;
 
-    expect(isReadStateFilterSet(settings, 'read')).toBe(true);
+    expect(readStateFilter.isFilterSet(settings, 'read')).toBe(true);
 
-    expect(isReadStateFilterSet(settings, 'unread')).toBe(false);
+    expect(readStateFilter.isFilterSet(settings, 'unread')).toBe(false);
   });
 
   it('getReadStateFilterCount', () => {
-    expect(getReadStateFilterCount(mockAccountNotifications, 'read')).toBe(0);
+    expect(
+      readStateFilter.getFilterCount(mockAccountNotifications, 'read'),
+    ).toBe(0);
 
-    expect(getReadStateFilterCount(mockAccountNotifications, 'unread')).toBe(2);
+    expect(
+      readStateFilter.getFilterCount(mockAccountNotifications, 'unread'),
+    ).toBe(2);
   });
 
   it('filterNotificationByReadState', () => {
@@ -46,9 +45,11 @@ describe('renderer/utils/notifications/filters/readState.ts', () => {
       readState: 'unread',
     } as AtlassifyNotification;
 
-    expect(filterNotificationByReadState(mockNotification, 'read')).toBe(false);
+    expect(readStateFilter.filterNotification(mockNotification, 'read')).toBe(
+      false,
+    );
 
-    expect(filterNotificationByReadState(mockNotification, 'unread')).toBe(
+    expect(readStateFilter.filterNotification(mockNotification, 'unread')).toBe(
       true,
     );
   });
