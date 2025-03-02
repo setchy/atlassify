@@ -1,26 +1,71 @@
+import {
+  AtlasIcon,
+  AtlassianIcon,
+  BitbucketIcon,
+  CompassIcon,
+  ConfluenceIcon,
+  JiraIcon,
+  JiraProductDiscoveryIcon,
+  JiraServiceManagementIcon,
+  TrelloIcon,
+} from '@atlaskit/logo';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
   ProductName,
   SettingsState,
 } from '../../../types';
-import { PRODUCTS } from '../../products';
 import type { Filter, FilterDetails } from './types';
 
-export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = Object?.keys(
-  PRODUCTS,
-).reduce(
-  (details, key) => {
-    const product = PRODUCTS[key as ProductName];
-    details[key as ProductName] = {
-      name: product.name,
-      description: `Notifications related to ${product.name}`,
-      logo: product.logo,
-    };
-    return details;
+// TODO - remove duplication between this and utils/products PRODUCTS
+export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
+  bitbucket: {
+    name: 'bitbucket',
+    description: 'Bitbucket',
+    logo: BitbucketIcon,
   },
-  {} as Record<ProductName, FilterDetails>,
-);
+  compass: {
+    name: 'compass',
+    description: 'Compass',
+    logo: CompassIcon,
+  },
+  confluence: {
+    name: 'confluence',
+    description: 'Confluence',
+    logo: ConfluenceIcon,
+  },
+  jira: {
+    name: 'jira',
+    description: 'Jira',
+    logo: JiraIcon,
+  },
+  'jira product discovery': {
+    name: 'jira product discovery',
+    description: 'Jira Product Discovery',
+    logo: JiraProductDiscoveryIcon,
+  },
+  'jira service management': {
+    name: 'jira service management',
+    description: 'Jira Service Management',
+    logo: JiraServiceManagementIcon,
+  },
+  'team central (atlas)': {
+    name: 'team central (atlas)',
+    description: 'Team Central (Atlas)',
+    logo: AtlasIcon,
+  },
+  trello: {
+    name: 'trello',
+    description: 'Trello',
+    logo: TrelloIcon,
+  },
+  unknown: {
+    name: 'unknown',
+    description: 'Unknown',
+    logo: AtlassianIcon,
+  },
+};
 
 export const productFilter: Filter<ProductName> = {
   FILTER_TYPES: PRODUCT_DETAILS,

@@ -35,7 +35,6 @@ export const FilterSection = <T extends FilterValue>({
           const count = filter.getFilterCount(notifications, type);
 
           return (
-            // <Box key={typeDetails.name} paddingBlock="space.0">
             <Inline
               key={typeDetails.name}
               space="space.050"
@@ -68,7 +67,6 @@ export const FilterSection = <T extends FilterValue>({
                 {count}
               </Badge>
             </Inline>
-            // </Box>
           );
         })}
       </Box>

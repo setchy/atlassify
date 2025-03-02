@@ -1,3 +1,4 @@
+import { JiraLogo } from '@atlaskit/logo';
 import { productFilter } from '.';
 import {
   mockAccountNotifications,
@@ -44,7 +45,7 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
       ...mockSingleAtlassifyNotification,
       product: {
         name: 'jira',
-        logo: 'jira-logo',
+        logo: JiraLogo,
       },
     } as AtlassifyNotification;
 

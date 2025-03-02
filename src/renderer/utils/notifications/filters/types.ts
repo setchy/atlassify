@@ -1,4 +1,5 @@
 import type { NewCoreIconProps, NewUtilityIconProps } from '@atlaskit/icon';
+import type { LogoProps } from '@atlaskit/logo';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -31,8 +32,7 @@ export interface FilterDetails {
    * The logo for the filter.
    * @see {@link https://atlassian.design/components/logo/examples} for available logos.
    */
-  // biome-ignore lint/suspicious/noExplicitAny: Requires a proper type
-  logo?: any;
+  logo?: React.ComponentType<LogoProps>;
 }
 
 export interface Filter<T extends string> {

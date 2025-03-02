@@ -1,3 +1,6 @@
+import type { NewUtilityIconProps } from '@atlaskit/icon';
+import type { LogoProps } from '@atlaskit/logo';
+
 declare const __brand: unique symbol;
 
 type Brand<B> = { [__brand]: B };
@@ -389,9 +392,7 @@ export interface AtlassianProduct {
    * The logo of the product.
    * @see {@link https://atlassian.design/components/logo/examples} for available logos.
    */
-  // TODO - Update to use the correct icon type
-  // biome-ignore lint/suspicious/noExplicitAny: Requires a proper type
-  logo: any;
+  logo?: React.ComponentType<LogoProps>;
 
   /**
    * The URL to the product's home page.
@@ -421,8 +422,7 @@ export type Chevron = {
    * The chevron icon.
    * @see {@link https://atlassian.design/components/icon/examples} for available icons.
    */
-  // biome-ignore lint/suspicious/noExplicitAny: Requires a proper type
-  icon: any;
+  icon: React.ComponentType<NewUtilityIconProps>;
 
   /**
    * The chevron label.
