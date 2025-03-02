@@ -1,22 +1,18 @@
+import { JiraLogo } from '@atlaskit/logo';
+import { productFilter } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import {
-  filterNotificationByProduct,
-  getProductFilterCount,
-  hasProductFilters,
-  isProductFilterSet,
-} from './product';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {
-    expect(hasProductFilters(defaultSettings)).toBe(false);
+    expect(productFilter.hasFilters(defaultSettings)).toBe(false);
 
     expect(
-      hasProductFilters({
+      productFilter.hasFilters({
         ...defaultSettings,
         filterProducts: ['bitbucket'],
       } as SettingsState),
@@ -29,17 +25,19 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
       filterProducts: ['bitbucket'],
     } as SettingsState;
 
-    expect(isProductFilterSet(settings, 'compass')).toBe(false);
+    expect(productFilter.isFilterSet(settings, 'compass')).toBe(false);
 
-    expect(isProductFilterSet(settings, 'bitbucket')).toBe(true);
+    expect(productFilter.isFilterSet(settings, 'bitbucket')).toBe(true);
   });
 
   it('getProductFilterCount', () => {
-    expect(getProductFilterCount(mockAccountNotifications, 'bitbucket')).toBe(
-      1,
-    );
+    expect(
+      productFilter.getFilterCount(mockAccountNotifications, 'bitbucket'),
+    ).toBe(1);
 
-    expect(getProductFilterCount(mockAccountNotifications, 'jira')).toBe(0);
+    expect(productFilter.getFilterCount(mockAccountNotifications, 'jira')).toBe(
+      0,
+    );
   });
 
   it('filterNotificationByProduct', () => {
@@ -47,14 +45,16 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
       ...mockSingleAtlassifyNotification,
       product: {
         name: 'jira',
-        logo: 'jira-logo',
+        logo: JiraLogo,
       },
     } as AtlassifyNotification;
 
-    expect(filterNotificationByProduct(mockNotification, 'bitbucket')).toBe(
-      false,
-    );
+    expect(
+      productFilter.filterNotification(mockNotification, 'bitbucket'),
+    ).toBe(false);
 
-    expect(filterNotificationByProduct(mockNotification, 'jira')).toBe(true);
+    expect(productFilter.filterNotification(mockNotification, 'jira')).toBe(
+      true,
+    );
   });
 });

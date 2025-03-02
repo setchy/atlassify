@@ -14,8 +14,10 @@ import {
   formatNotificationUpdatedAt,
 } from '../../utils/helpers';
 import { openNotification } from '../../utils/links';
-import { getCategoryFilterDetails } from '../../utils/notifications/filters/category';
-import { filterNotificationByReadState } from '../../utils/notifications/filters/readState';
+import {
+  categoryFilter,
+  readStateFilter,
+} from '../../utils/notifications/filters';
 import { UnreadIcon } from '../icons/UnreadIcon';
 
 interface INotificationRow {
@@ -47,10 +49,10 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const updatedAt = formatNotificationUpdatedAt(notification);
 
-  const categoryDetails = getCategoryFilterDetails(notification.category);
+  const categoryDetails = categoryFilter.getTypeDetails(notification.category);
   const CategoryIcon = categoryDetails.icon;
 
-  const isNotificationUnread = filterNotificationByReadState(
+  const isNotificationUnread = readStateFilter.filterNotification(
     notification,
     'unread',
   );

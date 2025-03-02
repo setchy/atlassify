@@ -1,37 +1,101 @@
+import {
+  AtlasIcon,
+  AtlassianIcon,
+  BitbucketIcon,
+  CompassIcon,
+  ConfluenceIcon,
+  JiraIcon,
+  JiraProductDiscoveryIcon,
+  JiraServiceManagementIcon,
+  TrelloIcon,
+} from '@atlaskit/logo';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
   ProductName,
   SettingsState,
 } from '../../../types';
+import type { Filter, FilterDetails } from './types';
 
-export function hasProductFilters(settings: SettingsState) {
-  return settings.filterProducts.length > 0;
-}
+// TODO - remove duplication between this and utils/products PRODUCTS
+export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
+  bitbucket: {
+    name: 'bitbucket',
+    description: 'Bitbucket',
+    logo: BitbucketIcon,
+  },
+  compass: {
+    name: 'compass',
+    description: 'Compass',
+    logo: CompassIcon,
+  },
+  confluence: {
+    name: 'confluence',
+    description: 'Confluence',
+    logo: ConfluenceIcon,
+  },
+  jira: {
+    name: 'jira',
+    description: 'Jira',
+    logo: JiraIcon,
+  },
+  'jira product discovery': {
+    name: 'jira product discovery',
+    description: 'Jira Product Discovery',
+    logo: JiraProductDiscoveryIcon,
+  },
+  'jira service management': {
+    name: 'jira service management',
+    description: 'Jira Service Management',
+    logo: JiraServiceManagementIcon,
+  },
+  'team central (atlas)': {
+    name: 'team central (atlas)',
+    description: 'Team Central (Atlas)',
+    logo: AtlasIcon,
+  },
+  trello: {
+    name: 'trello',
+    description: 'Trello',
+    logo: TrelloIcon,
+  },
+  unknown: {
+    name: 'unknown',
+    description: 'Unknown',
+    logo: AtlassianIcon,
+  },
+};
 
-export function isProductFilterSet(
-  settings: SettingsState,
-  product: ProductName,
-) {
-  return settings.filterProducts.includes(product);
-}
+export const productFilter: Filter<ProductName> = {
+  FILTER_TYPES: PRODUCT_DETAILS,
 
-export function getProductFilterCount(
-  notifications: AccountNotifications[],
-  product: ProductName,
-) {
-  return notifications.reduce(
-    (memo, acc) =>
-      memo +
-      acc.notifications.filter((n) => filterNotificationByProduct(n, product))
-        .length,
-    0,
-  );
-}
+  getTypeDetails(type: ProductName) {
+    return this.FILTER_TYPES[type];
+  },
 
-export function filterNotificationByProduct(
-  notification: AtlassifyNotification,
-  product: ProductName,
-): boolean {
-  return notification.product.name === product;
-}
+  hasFilters(settings: SettingsState): boolean {
+    return settings.filterProducts.length > 0;
+  },
+
+  isFilterSet(settings: SettingsState, product: ProductName): boolean {
+    return settings.filterProducts.includes(product);
+  },
+
+  getFilterCount(notifications: AccountNotifications[], product: ProductName) {
+    return notifications.reduce(
+      (memo, acc) =>
+        memo +
+        acc.notifications.filter((n) => this.filterNotification(n, product))
+          .length,
+      0,
+    );
+  },
+
+  filterNotification(
+    notification: AtlassifyNotification,
+    product: ProductName,
+  ): boolean {
+    return notification.product.name === product;
+  },
+};

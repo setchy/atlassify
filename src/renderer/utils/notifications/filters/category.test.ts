@@ -1,22 +1,17 @@
+import { categoryFilter } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import {
-  filterNotificationByCategory,
-  getCategoryFilterCount,
-  hasCategoryFilters,
-  isCategoryFilterSet,
-} from './category';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
   it('hasCategoryFilters', () => {
-    expect(hasCategoryFilters(defaultSettings)).toBe(false);
+    expect(categoryFilter.hasFilters(defaultSettings)).toBe(false);
 
     expect(
-      hasCategoryFilters({
+      categoryFilter.hasFilters({
         ...defaultSettings,
         filterCategories: ['direct'],
       } as SettingsState),
@@ -29,17 +24,19 @@ describe('renderer/utils/notifications/filters/category.ts', () => {
       filterCategories: ['direct'],
     } as SettingsState;
 
-    expect(isCategoryFilterSet(settings, 'watching')).toBe(false);
+    expect(categoryFilter.isFilterSet(settings, 'watching')).toBe(false);
 
-    expect(isCategoryFilterSet(settings, 'direct')).toBe(true);
+    expect(categoryFilter.isFilterSet(settings, 'direct')).toBe(true);
   });
 
   it('getCategoryFilterCount', () => {
-    expect(getCategoryFilterCount(mockAccountNotifications, 'watching')).toBe(
-      0,
-    );
+    expect(
+      categoryFilter.getFilterCount(mockAccountNotifications, 'watching'),
+    ).toBe(0);
 
-    expect(getCategoryFilterCount(mockAccountNotifications, 'direct')).toBe(2);
+    expect(
+      categoryFilter.getFilterCount(mockAccountNotifications, 'direct'),
+    ).toBe(2);
   });
 
   it('filterNotificationByCategory', () => {
@@ -48,10 +45,12 @@ describe('renderer/utils/notifications/filters/category.ts', () => {
       category: 'direct',
     } as AtlassifyNotification;
 
-    expect(filterNotificationByCategory(mockNotification, 'watching')).toBe(
-      false,
-    );
+    expect(
+      categoryFilter.filterNotification(mockNotification, 'watching'),
+    ).toBe(false);
 
-    expect(filterNotificationByCategory(mockNotification, 'direct')).toBe(true);
+    expect(categoryFilter.filterNotification(mockNotification, 'direct')).toBe(
+      true,
+    );
   });
 });

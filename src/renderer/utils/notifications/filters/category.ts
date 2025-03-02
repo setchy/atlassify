@@ -7,9 +7,9 @@ import type {
   CategoryType,
   SettingsState,
 } from '../../../types';
-import type { FilterDetails } from './types';
+import type { Filter, FilterDetails } from './types';
 
-export const FILTERS_CATEGORIES: Record<CategoryType, FilterDetails> = {
+const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
   direct: {
     name: 'direct',
     description: 'Direct notification',
@@ -22,39 +22,38 @@ export const FILTERS_CATEGORIES: Record<CategoryType, FilterDetails> = {
   },
 };
 
-export function getCategoryFilterDetails(
-  category: CategoryType,
-): FilterDetails {
-  return FILTERS_CATEGORIES[category];
-}
+export const categoryFilter: Filter<CategoryType> = {
+  FILTER_TYPES: CATEGORY_DETAILS,
 
-export function hasCategoryFilters(settings: SettingsState) {
-  return settings.filterCategories.length > 0;
-}
+  getTypeDetails(type: CategoryType): FilterDetails {
+    return this.FILTER_TYPES[type];
+  },
 
-export function isCategoryFilterSet(
-  settings: SettingsState,
-  category: CategoryType,
-) {
-  return settings.filterCategories.includes(category);
-}
+  hasFilters(settings: SettingsState): boolean {
+    return settings.filterCategories.length > 0;
+  },
 
-export function getCategoryFilterCount(
-  notifications: AccountNotifications[],
-  category: CategoryType,
-) {
-  return notifications.reduce(
-    (memo, acc) =>
-      memo +
-      acc.notifications.filter((n) => filterNotificationByCategory(n, category))
-        .length,
-    0,
-  );
-}
+  isFilterSet(settings: SettingsState, type: CategoryType): boolean {
+    return settings.filterCategories.includes(type);
+  },
 
-export function filterNotificationByCategory(
-  notification: AtlassifyNotification,
-  category: CategoryType,
-): boolean {
-  return notification.category === category;
-}
+  getFilterCount(
+    notifications: AccountNotifications[],
+    category: CategoryType,
+  ) {
+    return notifications.reduce(
+      (memo, acc) =>
+        memo +
+        acc.notifications.filter((n) => this.filterNotification(n, category))
+          .length,
+      0,
+    );
+  },
+
+  filterNotification(
+    notification: AtlassifyNotification,
+    category: CategoryType,
+  ): boolean {
+    return notification.category === category;
+  },
+};

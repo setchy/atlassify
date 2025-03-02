@@ -7,59 +7,57 @@ import type {
   SettingsState,
   TimeSensitiveType,
 } from '../../../types';
-import type { FilterDetails } from './types';
+import type { Filter, FilterDetails } from './types';
 
-export const FILTERS_TIME_SENSITIVE: Record<TimeSensitiveType, FilterDetails> =
-  {
-    mention: {
-      name: 'mention',
-      description: 'Mentions',
-      icon: MentionIcon,
-    },
-    comment: {
-      name: 'comment',
-      description: 'Comments',
-      icon: CommentIcon,
-    },
-  };
+const TIME_SENSITIVE_DETAILS: Record<TimeSensitiveType, FilterDetails> = {
+  mention: {
+    name: 'mention',
+    description: 'Mentions',
+    icon: MentionIcon,
+  },
+  comment: {
+    name: 'comment',
+    description: 'Comments',
+    icon: CommentIcon,
+  },
+};
 
-export function getTimeSensitiveFilterDetails(
-  timeSensitive: TimeSensitiveType,
-): FilterDetails {
-  return FILTERS_TIME_SENSITIVE[timeSensitive];
-}
+export const timeSensitiveFilter: Filter<TimeSensitiveType> = {
+  FILTER_TYPES: TIME_SENSITIVE_DETAILS,
 
-export function hasTimeSensitiveFilters(settings: SettingsState) {
-  return settings.filterTimeSensitive.length > 0;
-}
+  getTypeDetails(type: TimeSensitiveType): FilterDetails {
+    return this.FILTER_TYPES[type];
+  },
 
-export function isTimeSensitiveFilterSet(
-  settings: SettingsState,
-  timeSensitive: TimeSensitiveType,
-) {
-  return settings.filterTimeSensitive.includes(timeSensitive);
-}
+  hasFilters(settings: SettingsState): boolean {
+    return settings.filterTimeSensitive.length > 0;
+  },
 
-export function getTimeSensitiveFilterCount(
-  notifications: AccountNotifications[],
-  timeSensitive: TimeSensitiveType,
-) {
-  return notifications.reduce(
-    (memo, acc) =>
-      memo +
-      acc.notifications.filter((n) =>
-        filterNotificationByTimeSensitive(n, timeSensitive),
-      ).length,
-    0,
-  );
-}
+  isFilterSet(settings: SettingsState, type: TimeSensitiveType): boolean {
+    return settings.filterTimeSensitive.includes(type);
+  },
 
-export function filterNotificationByTimeSensitive(
-  notification: AtlassifyNotification,
-  timeSensitive: TimeSensitiveType,
-): boolean {
-  return inferNotificationSensitivity(notification) === timeSensitive;
-}
+  getFilterCount(
+    notifications: AccountNotifications[],
+    timeSensitive: TimeSensitiveType,
+  ) {
+    return notifications.reduce(
+      (memo, acc) =>
+        memo +
+        acc.notifications.filter((n) =>
+          this.filterNotification(n, timeSensitive),
+        ).length,
+      0,
+    );
+  },
+
+  filterNotification(
+    notification: AtlassifyNotification,
+    timeSensitive: TimeSensitiveType,
+  ): boolean {
+    return inferNotificationSensitivity(notification) === timeSensitive;
+  },
+};
 
 export function inferNotificationSensitivity(
   notification: AtlassifyNotification,

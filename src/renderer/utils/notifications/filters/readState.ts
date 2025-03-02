@@ -4,9 +4,9 @@ import type {
   ReadStateType,
   SettingsState,
 } from '../../../types';
-import type { FilterDetails } from './types';
+import type { Filter, FilterDetails } from './types';
 
-export const FILTERS_READ_STATES: Record<ReadStateType, FilterDetails> = {
+const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
   unread: {
     name: 'unread',
     description: 'Unread notification',
@@ -17,40 +17,38 @@ export const FILTERS_READ_STATES: Record<ReadStateType, FilterDetails> = {
   },
 };
 
-export function getReadStateFilterDetails(
-  readState: ReadStateType,
-): FilterDetails {
-  return FILTERS_READ_STATES[readState];
-}
+export const readStateFilter: Filter<ReadStateType> = {
+  FILTER_TYPES: READ_STATE_DETAILS,
 
-export function hasReadStateFilters(settings: SettingsState) {
-  return settings.filterReadStates.length > 0;
-}
+  getTypeDetails(type: ReadStateType): FilterDetails {
+    return this.FILTER_TYPES[type];
+  },
 
-export function isReadStateFilterSet(
-  settings: SettingsState,
-  readState: ReadStateType,
-) {
-  return settings.filterReadStates.includes(readState);
-}
+  hasFilters(settings: SettingsState): boolean {
+    return settings.filterReadStates.length > 0;
+  },
 
-export function getReadStateFilterCount(
-  notifications: AccountNotifications[],
-  readState: ReadStateType,
-) {
-  return notifications.reduce(
-    (memo, acc) =>
-      memo +
-      acc.notifications.filter((n) =>
-        filterNotificationByReadState(n, readState),
-      ).length,
-    0,
-  );
-}
+  isFilterSet(settings: SettingsState, type: ReadStateType): boolean {
+    return settings.filterReadStates.includes(type);
+  },
 
-export function filterNotificationByReadState(
-  notification: AtlassifyNotification,
-  readState: ReadStateType,
-): boolean {
-  return notification.readState === readState;
-}
+  getFilterCount(
+    notifications: AccountNotifications[],
+    readState: ReadStateType,
+  ) {
+    return notifications.reduce(
+      (memo, acc) =>
+        memo +
+        acc.notifications.filter((n) => this.filterNotification(n, readState))
+          .length,
+      0,
+    );
+  },
+
+  filterNotification(
+    notification: AtlassifyNotification,
+    readState: ReadStateType,
+  ): boolean {
+    return notification.readState === readState;
+  },
+};
