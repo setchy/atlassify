@@ -322,16 +322,21 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       isLoggedIn,
       login,
       logoutFromAccount,
+
       status,
       globalError,
+
       notifications,
       fetchNotificationsWithAccounts,
+
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,
+
       settings,
       clearFilters,
       resetSettings,
       updateSetting,
+      updateFilter,
     ],
   );
 
