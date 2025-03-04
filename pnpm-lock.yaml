@@ -37,8 +37,8 @@ importers:
         specifier: 22.0.0
         version: 22.0.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
-        specifier: 16.4.4
-        version: 16.4.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 18.0.0
+        version: 18.0.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button':
         specifier: 20.3.3
         version: 20.3.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -300,10 +300,10 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/badge@16.4.4':
-    resolution: {integrity: sha512-bLBZb4KbJNpfJJBkIuWav97hCGlRIGCIF1Pe2EcTpAl3x4vWeNYhH+m/qBJm5mpKDKOda0/EYy+42lPrSE5pRQ==}
+  '@atlaskit/badge@18.0.0':
+    resolution: {integrity: sha512-IOfoZ1NzVGUR9wtwKZMHg+3NYnaw/2L/X3oEpKv+zdT9vpFX6rFmG9MgEJnqxXqCTGLfTBb5NBef0wJnqOt0Gw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^18.2.0
 
   '@atlaskit/blanket@13.3.2':
     resolution: {integrity: sha512-Fg2LIiZ9C22tZ9UlKETimkZSSQO6uEj1VE1dBLY8uM3VTDwxD3raFbMLG6HR8EBZoknS51KohgBCQxUXWB5bZw==}
@@ -5626,14 +5626,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/badge@16.4.4(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/badge@18.0.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/codemod-utils': 4.2.4
-      '@atlaskit/platform-feature-flags': 0.3.0
-      '@atlaskit/primitives': 13.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
+      '@atlaskit/primitives': 14.1.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/tokens': 4.2.0(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      '@compiled/react': 0.18.2(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
