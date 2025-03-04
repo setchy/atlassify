@@ -61,8 +61,8 @@ importers:
         specifier: 12.4.3
         version: 12.4.3(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
-        specifier: 14.3.5
-        version: 14.3.5(@types/react@18.3.18)(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/modal-dialog':
         specifier: 12.18.4
         version: 12.18.4(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -436,10 +436,10 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/logo@14.3.5':
-    resolution: {integrity: sha512-3KsbCyHCTUFqQjxmqbzOVeDXMLeOtyVgxygIwnkEHVudlEfvHhJgw8JBPhduprku5QzaDuMVzBaXhY9K8FVTsg==}
+  '@atlaskit/logo@16.0.0':
+    resolution: {integrity: sha512-se7DNm3i0MvIFWqxy9g6Y8hFRI5xhSVML/EuMelve6Zfpodt+sEdvvzdhIvsm1pl6IoYXuqRh/t/o8qYu6Xa6A==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^18.2.0
 
   '@atlaskit/modal-dialog@12.18.4':
     resolution: {integrity: sha512-YaEobMHew8a8bRs9/7A2lqWefrbA97oBbadNDL6x6CZEgnf2lHx8eM0AFQ1xk9DrVeYdZSIs8I8/1w/N5oXL9g==}
@@ -5947,13 +5947,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@atlaskit/logo@14.3.5(@types/react@18.3.18)(react@18.3.1)':
+  '@atlaskit/logo@16.0.0(@types/react@18.3.18)(react@18.3.1)':
     dependencies:
-      '@atlaskit/ds-lib': 3.2.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/theme': 14.0.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/tokens': 2.5.1(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/theme': 17.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 4.2.0(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
-      '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      '@compiled/react': 0.18.2(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
