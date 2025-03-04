@@ -133,7 +133,7 @@
     "@atlaskit/form": "11.0.2",
     "@atlaskit/heading": "4.0.1",
     "@atlaskit/icon": "23.11.0",
-    "@atlaskit/inline-message": "12.4.3",
+    "@atlaskit/inline-message": "14.0.0",
     "@atlaskit/logo": "14.3.5",
     "@atlaskit/modal-dialog": "12.18.4",
     "@atlaskit/primitives": "13.6.0",
