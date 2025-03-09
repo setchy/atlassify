@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { CompiledExtractPlugin } from '@compiled/webpack-loader';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -29,7 +30,26 @@ const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(js|jsx|ts|tsx)$/,
+        use: [
+          { loader: 'babel-loader' },
+          {
+            // ↓↓ Compiled should run last ↓↓
+            loader: '@compiled/webpack-loader',
+            options: {
+              transformerBabelPlugins: ['@atlaskit/tokens/babel-plugin'],
+              extract: true,
+              inlineCss: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /compiled-css\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /(?<!compiled-css)(?<!\.compiled)\.css$/,
         use: [
           MiniCssExtractPlugin.loader, // Extract CSS into a separate file
           'css-loader', // Translates CSS into CommonJS
@@ -44,6 +64,8 @@ const configuration: webpack.Configuration = {
     new MiniCssExtractPlugin({
       filename: 'styles.css', // Output file for the CSS
     }),
+
+    new CompiledExtractPlugin({ sortShorthand: true }),
 
     // Generate HTML file with script and link tags injected
     new HtmlWebpackPlugin({
