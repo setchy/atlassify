@@ -32,7 +32,9 @@ const configuration: webpack.Configuration = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         use: [
-          { loader: 'babel-loader' },
+          {
+            loader: 'babel-loader',
+          },
           {
             // ↓↓ Compiled should run last ↓↓
             loader: '@compiled/webpack-loader',
