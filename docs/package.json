@@ -38,9 +38,9 @@
     "@iconify-json/line-md": "1.2.5",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "24.0.0",
-    "@tailwindcss/vite": "4.0.9",
+    "@tailwindcss/vite": "4.0.12",
     "accessible-astro-components": "4.0.3",
-    "astro": "5.4.1",
+    "astro": "5.4.2",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -49,14 +49,14 @@
     "octokit": "4.1.2",
     "sharp": "0.33.5",
     "tailwind-merge": "3.0.1",
-    "tailwindcss": "4.0.9",
+    "tailwindcss": "4.0.12",
     "tailwindcss-motion": "1.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.6.1",
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }
