@@ -11,6 +11,7 @@ import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { namespacedEvent } from '../shared/events';
+import { handleEvent, onEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
@@ -113,13 +114,13 @@ app.whenReady().then(async () => {
   /**
    * Atlassify custom IPC events
    */
-  ipc.handle(namespacedEvent('version'), () => app.getVersion());
+  handleEvent('atlassify:version', () => app.getVersion());
 
-  ipc.on(namespacedEvent('window-show'), () => mb.showWindow());
+  onEvent('atlassify:window-show', () => mb.showWindow());
 
-  ipc.on(namespacedEvent('window-hide'), () => mb.hideWindow());
+  onEvent('atlassify:window-hide', () => mb.hideWindow());
 
-  ipc.on(namespacedEvent('quit'), () => mb.app.quit());
+  onEvent('atlassify:quit', () => mb.app.quit());
 
   ipc.on(
     namespacedEvent('use-alternate-idle-icon'),

@@ -27,15 +27,15 @@ export async function decryptValue(value: string): Promise<string> {
 }
 
 export function quitApp(): void {
-  window.atlassify.quitApp();
+  window.atlassify.app.quit();
 }
 
 export function showWindow(): void {
-  window.atlassify.showWindow();
+  window.atlassify.app.show();
 }
 
 export function hideWindow(): void {
-  window.atlassify.hideWindow();
+  window.atlassify.app.hide();
 }
 
 export function setAutoLaunch(value: boolean): void {
@@ -43,7 +43,7 @@ export function setAutoLaunch(value: boolean): void {
 }
 
 export function setAlternateIdleIcon(value: boolean): void {
-  window.atlassify.setAlternateIdleIcon(value);
+  window.atlassify.tray.useAlternateIdleIcon(value);
 }
 
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
@@ -51,9 +51,9 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
 }
 
 export function updateTrayIcon(notificationsLength = 0): void {
-  window.atlassify.updateTrayIcon(notificationsLength);
+  window.atlassify.tray.updateIcon(notificationsLength);
 }
 
 export function updateTrayTitle(title = ''): void {
-  window.atlassify.updateTrayTitle(title);
+  window.atlassify.tray.updateTitle(title);
 }

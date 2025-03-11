@@ -23,7 +23,7 @@ export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
 
   const [zoomPercentage, setZoomPercentage] = useState(
-    zoomLevelToPercentage(window.atlassify.getZoomLevel()),
+    zoomLevelToPercentage(window.atlassify.zoom.getLevel()),
   );
 
   const zoomBoxStyles = xcss({
@@ -50,7 +50,7 @@ export const AppearanceSettings: FC = () => {
     // start timing for event "completion"
     zoomResizeTimeout = setTimeout(() => {
       const zoomPercentage = zoomLevelToPercentage(
-        window.atlassify.getZoomLevel(),
+        window.atlassify.zoom.getLevel(),
       );
       setZoomPercentage(zoomPercentage);
       updateSetting('zoomPercentage', zoomPercentage);
@@ -113,7 +113,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage > 0 &&
-                      window.atlassify.setZoomLevel(
+                      window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage - 10),
                       )
                     }
@@ -128,7 +128,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage < 120 &&
-                      window.atlassify.setZoomLevel(
+                      window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage + 10),
                       )
                     }
@@ -142,7 +142,7 @@ export const AppearanceSettings: FC = () => {
                   icon={RetryIcon}
                   shape="circle"
                   spacing="compact"
-                  onClick={() => window.atlassify.setZoomLevel(0)}
+                  onClick={() => window.atlassify.zoom.setLevel(0)}
                   testId="settings-zoom-reset"
                 />
               </Tooltip>
