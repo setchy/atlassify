@@ -66,20 +66,16 @@ const api = {
 	updateTrayTitle: (title = "") =>
 		ipcRenderer.send(namespacedEvent("update-title"), title),
 
-	isLinux: () => {
-		return isLinux();
-	},
-
-	isMacOS: () => {
-		return isMacOS();
-	},
-
-	isWindows: () => {
-		return isWindows();
-	},
-
 	notificationSoundPath: () =>
 		ipcRenderer.invoke(namespacedEvent("notification-sound-path")),
+
+	platform: {
+		isLinux: () => isLinux(),
+
+		isMacOS: () => isMacOS(),
+
+		isWindows: () => isWindows(),
+	},
 
 	getZoomLevel: () => webFrame.getZoomLevel(),
 

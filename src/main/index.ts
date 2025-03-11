@@ -19,6 +19,16 @@ import Updater from './updater';
 
 log.initialize();
 
+const preloadFilePath = path.join(__dirname, 'preload.js');
+const indexHtmlFilePath = `file://${__dirname}/index.html`;
+const notificationSoundFilePath = path.join(
+  __dirname,
+  '..',
+  'assets',
+  'sounds',
+  APPLICATION.NOTIFICATION_SOUND,
+);
+
 const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
@@ -27,7 +37,7 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   resizable: false,
   skipTaskbar: true, // Hide the app from the Windows taskbar
   webPreferences: {
-    preload: path.join(__dirname, 'preload.js'),
+    preload: preloadFilePath,
     nodeIntegration: false,
     contextIsolation: true,
   },
@@ -35,7 +45,7 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
 
 const mb = menubar({
   icon: TrayIcons.idle,
-  index: `file://${__dirname}/index.html`,
+  index: indexHtmlFilePath,
   browserWindow: browserWindowOpts,
   preloadWindow: true,
   showDockIcon: false, // Hide the app from the macOS dock
@@ -169,13 +179,7 @@ app.whenReady().then(async () => {
   });
 
   ipc.handle(namespacedEvent('notification-sound-path'), () => {
-    return path.join(
-      __dirname,
-      '..',
-      'assets',
-      'sounds',
-      APPLICATION.NOTIFICATION_SOUND,
-    );
+    return notificationSoundFilePath;
   });
 
   // Safe Storage
