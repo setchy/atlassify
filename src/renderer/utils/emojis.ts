@@ -1,10 +1,9 @@
-import path from 'node:path';
-import twemoji, { type TwemojiOptions } from '@discordapp/twemoji';
+// import twemoji, { type TwemojiOptions } from "@discordapp/twemoji";
 
 import { Constants } from './constants';
 import { Errors } from './errors';
 
-const EMOJI_FORMAT = 'svg';
+// const EMOJI_FORMAT = "svg";
 
 const ALL_EMOJIS = [
   ...Constants.ALL_READ_EMOJIS,
@@ -20,15 +19,20 @@ export const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) => {
 });
 
 export function convertTextToEmojiImgHtml(text: string): string {
-  return twemoji.parse(text, {
-    folder: EMOJI_FORMAT,
-    callback: (icon: string, _options: TwemojiOptions) => {
-      return path.join('images', 'twemoji', `${icon}.${EMOJI_FORMAT}`);
-    },
-  });
+  return text;
+  // FIXME
+  // return twemoji.parse(text, {
+  //   folder: EMOJI_FORMAT,
+  //   callback: (icon: string, _options: TwemojiOptions) => {
+  //     return path.join('images', 'twemoji', `${icon}.${EMOJI_FORMAT}`);
+  //   },
+  // });
 }
 
 function extractSvgFilename(imgHtml: string): string {
-  const srcMatch = /src="(.*)"/.exec(imgHtml);
-  return path.basename(srcMatch[1]);
+  return imgHtml;
+
+  // FIXME
+  // const srcMatch = /src="(.*)"/.exec(imgHtml);
+  // return path.basename(srcMatch[1]);
 }

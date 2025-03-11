@@ -1,88 +1,59 @@
-import { ipcRenderer, shell } from 'electron';
-
-import { namespacedEvent } from '../../shared/events';
 import { defaultSettings } from '../context/App';
-import { type Link, OpenPreference } from '../types';
-import { Constants } from './constants';
+import type { Link } from '../types';
 import { loadState } from './storage';
 
 export function openExternalLink(url: Link): void {
+  // Load the state from local storage to avoid having to pass settings as a parameter
+  const { settings } = loadState();
+  const openPreference = settings
+    ? settings.openLinks
+    : defaultSettings.openLinks;
+
   if (url.toLowerCase().startsWith('https://')) {
-    // Load the state from local storage to avoid having to pass settings as a parameter
-    const { settings } = loadState();
-
-    const openPreference = settings
-      ? settings.openLinks
-      : defaultSettings.openLinks;
-
-    shell.openExternal(url, {
-      activate: openPreference === OpenPreference.FOREGROUND,
-    });
+    window.atlassify.openExternalLink(url, openPreference);
   }
 }
 
 export async function getAppVersion(): Promise<string> {
-  return await ipcRenderer.invoke(namespacedEvent('version'));
+  return await window.atlassify.getAppVersion();
 }
 
 export async function encryptValue(value: string): Promise<string> {
-  return await ipcRenderer.invoke(
-    namespacedEvent('safe-storage-encrypt'),
-    value,
-  );
+  return await window.atlassify.encryptValue(value);
 }
 
 export async function decryptValue(value: string): Promise<string> {
-  return await ipcRenderer.invoke(
-    namespacedEvent('safe-storage-decrypt'),
-    value,
-  );
+  return await window.atlassify.decryptValue(value);
 }
 
 export function quitApp(): void {
-  ipcRenderer.send(namespacedEvent('quit'));
+  window.atlassify.quitApp();
 }
 
 export function showWindow(): void {
-  ipcRenderer.send(namespacedEvent('window-show'));
+  window.atlassify.showWindow();
 }
 
 export function hideWindow(): void {
-  ipcRenderer.send(namespacedEvent('window-hide'));
+  window.atlassify.hideWindow();
 }
 
 export function setAutoLaunch(value: boolean): void {
-  ipcRenderer.send(namespacedEvent('update-auto-launch'), {
-    openAtLogin: value,
-    openAsHidden: value,
-  });
+  window.atlassify.setAutoLaunch(value);
 }
 
 export function setAlternateIdleIcon(value: boolean): void {
-  ipcRenderer.send(namespacedEvent('use-alternate-idle-icon'), value);
+  window.atlassify.setAlternateIdleIcon(value);
 }
 
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
-  ipcRenderer.send(namespacedEvent('update-keyboard-shortcut'), {
-    enabled: keyboardShortcut,
-    keyboardShortcut: Constants.DEFAULT_KEYBOARD_SHORTCUT,
-  });
+  window.atlassify.setKeyboardShortcut(keyboardShortcut);
 }
 
 export function updateTrayIcon(notificationsLength = 0): void {
-  if (notificationsLength < 0) {
-    ipcRenderer.send(namespacedEvent('icon-error'));
-    return;
-  }
-
-  if (notificationsLength > 0) {
-    ipcRenderer.send(namespacedEvent('icon-active'));
-    return;
-  }
-
-  ipcRenderer.send(namespacedEvent('icon-idle'));
+  window.atlassify.updateTrayIcon(notificationsLength);
 }
 
 export function updateTrayTitle(title = ''): void {
-  ipcRenderer.send(namespacedEvent('update-title'), title);
+  window.atlassify.updateTrayTitle(title);
 }

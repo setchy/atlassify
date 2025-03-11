@@ -1,5 +1,4 @@
-import { ipcRenderer, webFrame } from 'electron';
-import { type FC, useContext, useEffect, useState } from 'react';
+import { type FC, useContext, useState } from 'react';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
@@ -9,13 +8,12 @@ import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
-import { setGlobalTheme } from '@atlaskit/tokens';
+// import { setGlobalTheme } from "@atlaskit/tokens";
 import Tooltip from '@atlaskit/tooltip';
 
-import { namespacedEvent } from '../../../shared/events';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
-import { setTheme } from '../../utils/theme';
+// import { setTheme } from "../../utils/theme";
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
 
 let zoomResizeTimeout: NodeJS.Timeout;
@@ -23,8 +21,9 @@ const ZOOM_RESIZE_DELAY = 200;
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
+
   const [zoomPercentage, setZoomPercentage] = useState(
-    zoomLevelToPercentage(webFrame.getZoomLevel()),
+    zoomLevelToPercentage(window.atlassify.getZoomLevel()),
   );
 
   const zoomBoxStyles = xcss({
@@ -32,24 +31,27 @@ export const AppearanceSettings: FC = () => {
   });
 
   /* istanbul ignore next - testing this is not important */
-  useEffect(() => {
-    ipcRenderer.on(
-      namespacedEvent('update-theme'),
-      (_, updatedTheme: Theme) => {
-        if (settings.theme === Theme.SYSTEM) {
-          setTheme(updatedTheme);
-          setGlobalTheme({ colorMode: 'auto' });
-        }
-      },
-    );
-  }, [settings.theme]);
+  // FIXME
+  // useEffect(() => {
+  // 	ipcRenderer.on(
+  // 		namespacedEvent("update-theme"),
+  // 		(_, updatedTheme: Theme) => {
+  // 			if (settings.theme === Theme.SYSTEM) {
+  // 				setTheme(updatedTheme);
+  // 				setGlobalTheme({ colorMode: "auto" });
+  // 			}
+  // 		},
+  // 	);
+  // }, [settings.theme]);
 
   window.addEventListener('resize', () => {
     // clear the timeout
     clearTimeout(zoomResizeTimeout);
     // start timing for event "completion"
     zoomResizeTimeout = setTimeout(() => {
-      const zoomPercentage = zoomLevelToPercentage(webFrame.getZoomLevel());
+      const zoomPercentage = zoomLevelToPercentage(
+        window.atlassify.getZoomLevel(),
+      );
       setZoomPercentage(zoomPercentage);
       updateSetting('zoomPercentage', zoomPercentage);
     }, ZOOM_RESIZE_DELAY);
@@ -111,7 +113,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage > 0 &&
-                      webFrame.setZoomLevel(
+                      window.atlassify.setZoomLevel(
                         zoomPercentageToLevel(zoomPercentage - 10),
                       )
                     }
@@ -126,7 +128,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage < 120 &&
-                      webFrame.setZoomLevel(
+                      window.atlassify.setZoomLevel(
                         zoomPercentageToLevel(zoomPercentage + 10),
                       )
                     }
@@ -140,7 +142,7 @@ export const AppearanceSettings: FC = () => {
                   icon={RetryIcon}
                   shape="circle"
                   spacing="compact"
-                  onClick={() => webFrame.setZoomLevel(0)}
+                  onClick={() => window.atlassify.setZoomLevel(0)}
                   testId="settings-zoom-reset"
                 />
               </Tooltip>

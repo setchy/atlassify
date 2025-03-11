@@ -1,3 +1,4 @@
+import path from 'node:path';
 import {
   app,
   globalShortcut,
@@ -10,10 +11,10 @@ import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { namespacedEvent } from '../shared/events';
-import { isMacOS, isWindows } from '../shared/platform';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
+import { isMacOS, isWindows } from './platform';
 import Updater from './updater';
 
 log.initialize();
@@ -25,10 +26,10 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   minHeight: 400,
   resizable: false,
   skipTaskbar: true, // Hide the app from the Windows taskbar
-  // TODO ideally we would disable this as use a preload script with a context bridge
   webPreferences: {
-    nodeIntegration: true,
-    contextIsolation: false,
+    preload: path.join(__dirname, 'preload.js'),
+    nodeIntegration: false,
+    contextIsolation: true,
   },
 };
 
@@ -102,8 +103,6 @@ app.whenReady().then(async () => {
   /**
    * Atlassify custom IPC events
    */
-  ipc.handle(namespacedEvent('version'), () => app.getVersion());
-
   ipc.on(namespacedEvent('window-show'), () => mb.showWindow());
 
   ipc.on(namespacedEvent('window-hide'), () => mb.hideWindow());
@@ -165,6 +164,16 @@ app.whenReady().then(async () => {
 
   ipc.on(namespacedEvent('update-auto-launch'), (_, settings) => {
     app.setLoginItemSettings(settings);
+  });
+
+  ipc.handle(namespacedEvent('notification-sound-path'), () => {
+    return path.join(
+      __dirname,
+      '..',
+      'assets',
+      'sounds',
+      APPLICATION.NOTIFICATION_SOUND,
+    );
   });
 
   // Safe Storage

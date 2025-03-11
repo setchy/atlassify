@@ -1,4 +1,3 @@
-import { ipcRenderer, webFrame } from 'electron';
 import {
   type ReactNode,
   createContext,
@@ -8,7 +7,7 @@ import {
   useState,
 } from 'react';
 
-import { namespacedEvent } from '../../shared/events';
+// import { namespacedEvent } from "../../shared/events";
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import {
@@ -46,9 +45,9 @@ import {
   getNotificationCount,
   hasMoreNotifications,
 } from '../utils/notifications/notifications';
-import { clearState, loadState, saveState } from '../utils/storage';
+import { loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
-import { zoomPercentageToLevel } from '../utils/zoom';
+// import { zoomPercentageToLevel } from "../utils/zoom";
 
 export const defaultAuth: AuthState = {
   accounts: [],
@@ -184,11 +183,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.keyboardShortcutEnabled]);
 
   useEffect(() => {
-    ipcRenderer.on(namespacedEvent('reset-app'), () => {
-      clearState();
-      setAuth(defaultAuth);
-      setSettings(defaultSettings);
-    });
+    // FIXME
+    // ipcRenderer.on(namespacedEvent("reset-app"), () => {
+    // 	clearState();
+    // 	setAuth(defaultAuth);
+    // 	setSettings(defaultSettings);
+    // });
   }, []);
 
   const clearFilters = useCallback(() => {
@@ -263,9 +263,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
       setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
       setSettings({ ...defaultSettings, ...existing.settings });
-      webFrame.setZoomLevel(
-        zoomPercentageToLevel(existing.settings.zoomPercentage),
-      );
+      // FIXME
+      // webFrame.setZoomLevel(
+      // 	zoomPercentageToLevel(existing.settings.zoomPercentage),
+      // );
     }
 
     if (existing.auth) {

@@ -1,14 +1,10 @@
-import path from 'node:path';
-
 import { APPLICATION } from '../../../shared/constants';
-import { isWindows } from '../../../shared/platform';
 import type {
   AccountNotifications,
   AtlassifyNotification,
   AtlassifyState,
 } from '../../types';
 import { hideWindow, showWindow } from '../comms';
-import { Constants } from '../constants';
 import { formatNotificationFooterText } from '../helpers';
 import { openNotification } from '../links';
 import { setTrayIconColor } from './notifications';
@@ -65,7 +61,7 @@ export const raiseNativeNotification = (
 
   if (notifications.length === 1) {
     const notification = notifications[0];
-    title = isWindows() ? '' : notification.message;
+    title = window.atlassify.isWindows() ? '' : notification.message;
     body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
   } else {
     title = APPLICATION.NAME;
@@ -89,16 +85,10 @@ export const raiseNativeNotification = (
   return nativeNotification;
 };
 
-export const raiseSoundNotification = () => {
-  const audio = new Audio(
-    path.join(
-      __dirname,
-      '..',
-      'assets',
-      'sounds',
-      Constants.NOTIFICATION_SOUND,
-    ),
-  );
+export const raiseSoundNotification = async () => {
+  const path = await window.atlassify.notificationSoundPath();
+
+  const audio = new Audio(path);
   audio.volume = 0.2;
   audio.play();
 };

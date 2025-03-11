@@ -4,7 +4,7 @@ import { app, dialog } from 'electron';
 
 import { APPLICATION } from '../shared/constants';
 import { logError } from '../shared/logger';
-import { isMacOS } from '../shared/platform';
+import { isMacOS } from './platform';
 
 export async function onFirstRunMaybe() {
   if (isFirstRun()) {
