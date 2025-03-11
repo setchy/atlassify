@@ -103,6 +103,8 @@ app.whenReady().then(async () => {
   /**
    * Atlassify custom IPC events
    */
+  ipc.handle(namespacedEvent('version'), () => app.getVersion());
+
   ipc.on(namespacedEvent('window-show'), () => mb.showWindow());
 
   ipc.on(namespacedEvent('window-hide'), () => mb.hideWindow());
