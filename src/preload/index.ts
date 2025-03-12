@@ -1,94 +1,93 @@
-import { contextBridge, ipcRenderer, shell, webFrame } from 'electron';
+import { contextBridge, webFrame } from "electron";
 
-import { isLinux, isMacOS, isWindows } from '../main/platform';
-import { type Link, OpenPreference } from '../renderer/types';
-import { APPLICATION } from '../shared/constants';
-import { namespacedEvent } from '../shared/events';
-import { sendEvent } from './utils';
+import { isLinux, isMacOS, isWindows } from "../main/process";
+import { type Link, OpenPreference } from "../renderer/types";
+import { APPLICATION } from "../shared/constants";
+import { invokeEvent, sendEvent } from "./utils";
 
 const api = {
-  openExternalLink: (url: Link, openPreference: OpenPreference) => {
-    shell.openExternal(url, {
-      activate: openPreference === OpenPreference.FOREGROUND,
-    });
-  },
+	openExternalLink: (url: Link, openPreference: OpenPreference) => {
+		sendEvent("atlassify:open-external", {
+			url: url,
+			activate: openPreference === OpenPreference.FOREGROUND,
+		});
+	},
 
-  getAppVersion: () => {
-    // if (process.env.NODE_ENV === 'development') {
-    //   return 'dev';
-    // }
+	getAppVersion: async () => {
+		if (process.env.NODE_ENV === "development") {
+			return "dev";
+		}
 
-    // TODO - Return v{number}
-    return ipcRenderer.invoke(namespacedEvent('version'));
-  },
+		const version = await invokeEvent("atlassify:version");
 
-  encryptValue: (value: string) =>
-    ipcRenderer.invoke(namespacedEvent('safe-storage-encrypt'), value),
+		return `v${version}`;
+	},
 
-  decryptValue: (value: string) =>
-    ipcRenderer.invoke(namespacedEvent('safe-storage-decrypt'), value),
+	encryptValue: (value: string) =>
+		invokeEvent("atlassify:safe-storage-encrypt", value),
 
-  setAutoLaunch: (value: boolean) =>
-    ipcRenderer.send(namespacedEvent('update-auto-launch'), {
-      openAtLogin: value,
-      openAsHidden: value,
-    }),
+	decryptValue: (value: string) =>
+		invokeEvent("atlassify:safe-storage-decrypt", value),
 
-  setKeyboardShortcut: (keyboardShortcut: boolean) => {
-    ipcRenderer.send(namespacedEvent('update-keyboard-shortcut'), {
-      enabled: keyboardShortcut,
-      keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
-    });
-  },
+	setAutoLaunch: (value: boolean) =>
+		sendEvent("atlassify:update-auto-launch", {
+			openAtLogin: value,
+			openAsHidden: value,
+		}),
 
-  tray: {
-    updateIcon: (notificationsLength = 0) => {
-      if (notificationsLength < 0) {
-        ipcRenderer.send(namespacedEvent('icon-error'));
-        return;
-      }
+	setKeyboardShortcut: (keyboardShortcut: boolean) => {
+		sendEvent("atlassify:update-keyboard-shortcut", {
+			enabled: keyboardShortcut,
+			keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
+		});
+	},
 
-      if (notificationsLength > 0) {
-        ipcRenderer.send(namespacedEvent('icon-active'));
-        return;
-      }
+	tray: {
+		updateIcon: (notificationsLength = 0) => {
+			if (notificationsLength < 0) {
+				sendEvent("atlassify:icon-error");
+				return;
+			}
 
-      ipcRenderer.send(namespacedEvent('icon-idle'));
-    },
+			if (notificationsLength > 0) {
+				sendEvent("atlassify:icon-active");
+				return;
+			}
 
-    updateTitle: (title = '') =>
-      ipcRenderer.send(namespacedEvent('update-title'), title),
+			sendEvent("atlassify:icon-idle");
+		},
 
-    useAlternateIdleIcon: (value: boolean) =>
-      ipcRenderer.send(namespacedEvent('use-alternate-idle-icon'), value),
-  },
+		updateTitle: (title = "") => sendEvent("atlassify:update-title", title),
 
-  notificationSoundPath: () =>
-    ipcRenderer.invoke(namespacedEvent('notification-sound-path')),
+		useAlternateIdleIcon: (value: boolean) =>
+			sendEvent("atlassify:use-alternate-idle-icon", value),
+	},
 
-  platform: {
-    isLinux: () => isLinux(),
+	notificationSoundPath: () => invokeEvent("atlassify:notification-sound-path"),
 
-    isMacOS: () => isMacOS(),
+	platform: {
+		isLinux: () => isLinux(),
 
-    isWindows: () => isWindows(),
-  },
+		isMacOS: () => isMacOS(),
 
-  app: {
-    hide: () => ipcRenderer.send(namespacedEvent('window-hide')),
+		isWindows: () => isWindows(),
+	},
 
-    show: () => ipcRenderer.send(namespacedEvent('window-show')),
+	app: {
+		hide: () => sendEvent("atlassify:window-hide"),
 
-    quit: () => sendEvent('atlassify:quit'),
-  },
+		show: () => sendEvent("atlassify:window-show"),
 
-  zoom: {
-    getLevel: () => webFrame.getZoomLevel(),
+		quit: () => sendEvent("atlassify:quit"),
+	},
 
-    setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
-  },
+	zoom: {
+		getLevel: () => webFrame.getZoomLevel(),
+
+		setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
+	},
 };
 
-contextBridge.exposeInMainWorld('atlassify', api);
+contextBridge.exposeInMainWorld("atlassify", api);
 
 export type AtlassifyAPI = typeof api;

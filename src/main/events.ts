@@ -1,19 +1,26 @@
-import { ipcMain as ipc } from 'electron';
+import { ipcMain as ipc } from "electron";
+import type { EventData, EventType } from "../shared/events";
 
-export type EventType =
-  | 'atlassify:quit'
-  | 'atlassify:window-show'
-  | 'atlassify:window-hide'
-  | 'atlassify:version';
-
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function onEvent(event: EventType, listener: (...args: any[]) => void) {
-  ipc.on(event, listener);
-}
-export function handleEvent(
-  event: EventType,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  listener: (...args: any[]) => void,
+/**
+ * Handle main event without expecting a response
+ * @param event
+ * @param listener
+ */
+export function onEvent(
+	event: EventType,
+	listener: (event: Electron.IpcMainEvent, args: EventData) => void,
 ) {
-  ipc.handle(event, listener);
+	ipc.on(event, listener);
+}
+
+/**
+ * Handle main event and return a response
+ * @param event
+ * @param listener
+ */
+export function handleEvent(
+	event: EventType,
+	listener: (event: Electron.IpcMainInvokeEvent, data: EventData) => void,
+) {
+	ipc.handle(event, listener);
 }

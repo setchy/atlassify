@@ -1,59 +1,61 @@
-import { defaultSettings } from '../context/App';
-import type { Link } from '../types';
-import { loadState } from './storage';
+import { defaultSettings } from "../context/App";
+import type { Link } from "../types";
+import { loadState } from "./storage";
 
 export function openExternalLink(url: Link): void {
-  // Load the state from local storage to avoid having to pass settings as a parameter
-  const { settings } = loadState();
-  const openPreference = settings
-    ? settings.openLinks
-    : defaultSettings.openLinks;
+	// Load the state from local storage to avoid having to pass settings as a parameter
+	const { settings } = loadState();
+	const openPreference = settings
+		? settings.openLinks
+		: defaultSettings.openLinks;
 
-  if (url.toLowerCase().startsWith('https://')) {
-    window.atlassify.openExternalLink(url, openPreference);
-  }
+	console.log("ADAM HERE OPENING EXTERNAL LINK");
+
+	if (url.toLowerCase().startsWith("https://")) {
+		window.atlassify.openExternalLink(url, openPreference);
+	}
 }
 
 export async function getAppVersion(): Promise<string> {
-  return await window.atlassify.getAppVersion();
+	return await window.atlassify.getAppVersion();
 }
 
 export async function encryptValue(value: string): Promise<string> {
-  return await window.atlassify.encryptValue(value);
+	return await window.atlassify.encryptValue(value);
 }
 
 export async function decryptValue(value: string): Promise<string> {
-  return await window.atlassify.decryptValue(value);
+	return await window.atlassify.decryptValue(value);
 }
 
 export function quitApp(): void {
-  window.atlassify.app.quit();
+	window.atlassify.app.quit();
 }
 
 export function showWindow(): void {
-  window.atlassify.app.show();
+	window.atlassify.app.show();
 }
 
 export function hideWindow(): void {
-  window.atlassify.app.hide();
+	window.atlassify.app.hide();
 }
 
 export function setAutoLaunch(value: boolean): void {
-  window.atlassify.setAutoLaunch(value);
+	window.atlassify.setAutoLaunch(value);
 }
 
 export function setAlternateIdleIcon(value: boolean): void {
-  window.atlassify.tray.useAlternateIdleIcon(value);
+	window.atlassify.tray.useAlternateIdleIcon(value);
 }
 
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
-  window.atlassify.setKeyboardShortcut(keyboardShortcut);
+	window.atlassify.setKeyboardShortcut(keyboardShortcut);
 }
 
 export function updateTrayIcon(notificationsLength = 0): void {
-  window.atlassify.tray.updateIcon(notificationsLength);
+	window.atlassify.tray.updateIcon(notificationsLength);
 }
 
-export function updateTrayTitle(title = ''): void {
-  window.atlassify.tray.updateTitle(title);
+export function updateTrayTitle(title = ""): void {
+	window.atlassify.tray.updateTitle(title);
 }
