@@ -1,6 +1,6 @@
-import { ipcMain } from "electron";
-import type { Menubar } from "menubar";
-import type { EventData, EventType } from "../shared/events";
+import { ipcMain } from 'electron';
+import type { Menubar } from 'menubar';
+import type { EventData, EventType } from '../shared/events';
 
 /**
  * Handle main event without expecting a response
@@ -8,10 +8,10 @@ import type { EventData, EventType } from "../shared/events";
  * @param listener
  */
 export function onMainEvent(
-	event: EventType,
-	listener: (event: Electron.IpcMainEvent, args: EventData) => void,
+  event: EventType,
+  listener: (event: Electron.IpcMainEvent, args: EventData) => void,
 ) {
-	ipcMain.on(event, listener);
+  ipcMain.on(event, listener);
 }
 
 /**
@@ -20,10 +20,10 @@ export function onMainEvent(
  * @param listener
  */
 export function handleMainEvent(
-	event: EventType,
-	listener: (event: Electron.IpcMainInvokeEvent, data: EventData) => void,
+  event: EventType,
+  listener: (event: Electron.IpcMainInvokeEvent, data: EventData) => void,
 ) {
-	ipcMain.handle(event, listener);
+  ipcMain.handle(event, listener);
 }
 
 /**
@@ -33,9 +33,9 @@ export function handleMainEvent(
  * @param data the data to send with the event
  */
 export function sendRendererEvent(
-	mb: Menubar,
-	event: EventType,
-	data?: string,
+  mb: Menubar,
+  event: EventType,
+  data?: string,
 ) {
-	mb.window.webContents.send(event, data);
+  mb.window.webContents.send(event, data);
 }

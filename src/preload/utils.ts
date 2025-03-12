@@ -1,5 +1,5 @@
-import { ipcRenderer } from "electron";
-import type { EventData, EventType } from "../shared/events";
+import { ipcRenderer } from 'electron';
+import type { EventData, EventType } from '../shared/events';
 
 /**
  * Send renderer event without expecting a response
@@ -7,7 +7,7 @@ import type { EventData, EventType } from "../shared/events";
  * @param data the data to send with the event
  */
 export function sendMainEvent(event: EventType, data?: EventData): void {
-	ipcRenderer.send(event, data);
+  ipcRenderer.send(event, data);
 }
 
 /**
@@ -17,18 +17,18 @@ export function sendMainEvent(event: EventType, data?: EventData): void {
  * @returns
  */
 export function invokeMainEvent(
-	event: EventType,
-	data?: string,
+  event: EventType,
+  data?: string,
 ): Promise<string> {
-	return ipcRenderer.invoke(event, data);
+  return ipcRenderer.invoke(event, data);
 }
 
 /**
  * Handle renderer event without expecting a response
  */
 export function onRendererEvent(
-	event: EventType,
-	listener: (event: Electron.IpcRendererEvent, args: string) => void,
+  event: EventType,
+  listener: (event: Electron.IpcRendererEvent, args: string) => void,
 ) {
-	ipcRenderer.on(event, listener);
+  ipcRenderer.on(event, listener);
 }
