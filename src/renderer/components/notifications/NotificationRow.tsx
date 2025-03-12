@@ -81,6 +81,13 @@ export const NotificationRow: FC<INotificationRow> = ({
                     name={notification.actor.displayName}
                     src={notification.actor.avatarURL}
                     size="medium"
+                    appearance={
+                      // The Compass System Actor Icons look much better in square form than circle
+                      notification.product.name === 'compass' &&
+                      notification.message.includes('a scorecard')
+                        ? 'square'
+                        : 'circle'
+                    }
                   />
                 </Tooltip>
                 <Tooltip content={categoryDetails.description} position="right">
