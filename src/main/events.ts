@@ -1,4 +1,5 @@
-import { ipcMain as ipc } from "electron";
+import { ipcMain } from "electron";
+import type { Menubar } from "menubar";
 import type { EventData, EventType } from "../shared/events";
 
 /**
@@ -6,11 +7,11 @@ import type { EventData, EventType } from "../shared/events";
  * @param event
  * @param listener
  */
-export function onEvent(
+export function onMainEvent(
 	event: EventType,
 	listener: (event: Electron.IpcMainEvent, args: EventData) => void,
 ) {
-	ipc.on(event, listener);
+	ipcMain.on(event, listener);
 }
 
 /**
@@ -18,9 +19,23 @@ export function onEvent(
  * @param event
  * @param listener
  */
-export function handleEvent(
+export function handleMainEvent(
 	event: EventType,
 	listener: (event: Electron.IpcMainInvokeEvent, data: EventData) => void,
 ) {
-	ipc.handle(event, listener);
+	ipcMain.handle(event, listener);
+}
+
+/**
+ * Send main event to renderer
+ * @param mb the menubar instance
+ * @param event the type of event to send
+ * @param data the data to send with the event
+ */
+export function sendRendererEvent(
+	mb: Menubar,
+	event: EventType,
+	data?: string,
+) {
+	mb.window.webContents.send(event, data);
 }

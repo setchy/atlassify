@@ -4,14 +4,13 @@ import log from "electron-log";
 import { menubar } from "menubar";
 
 import { APPLICATION } from "../shared/constants";
-import {
-	type IAutoLaunch,
-	type IKeyboardShortcut,
-	type IOpenExternal,
-	namespacedEvent,
+import type {
+	IAutoLaunch,
+	IKeyboardShortcut,
+	IOpenExternal,
 } from "../shared/events";
 
-import { handleEvent, onEvent } from "./events";
+import { handleMainEvent, onMainEvent, sendRendererEvent } from "./events";
 import { onFirstRunMaybe } from "./first-run";
 import { TrayIcons } from "./icons";
 import MenuBuilder from "./menu";
@@ -109,45 +108,47 @@ app.whenReady().then(async () => {
 
 	nativeTheme.on("updated", () => {
 		if (nativeTheme.shouldUseDarkColors) {
-			mb.window.webContents.send(namespacedEvent("update-theme"), "DARK");
+			sendRendererEvent(mb, "atlassify:update-theme", "DARK");
 		} else {
-			mb.window.webContents.send(namespacedEvent("update-theme"), "LIGHT");
+			sendRendererEvent(mb, "atlassify:update-theme", "LIGHT");
 		}
 	});
 
 	/**
 	 * Atlassify custom IPC events - no response expected
 	 */
-	onEvent("atlassify:window-show", () => mb.showWindow());
+	onMainEvent("atlassify:window-show", () => mb.showWindow());
 
-	onEvent("atlassify:window-hide", () => mb.hideWindow());
+	onMainEvent("atlassify:window-hide", () => mb.hideWindow());
 
-	onEvent("atlassify:quit", () => mb.app.quit());
+	onMainEvent("atlassify:quit", () => mb.app.quit());
 
-	onEvent("atlassify:open-external", (_, { url, activate }: IOpenExternal) =>
-		shell.openExternal(url, { activate: activate }),
+	onMainEvent(
+		"atlassify:open-external",
+		(_, { url, activate }: IOpenExternal) =>
+			shell.openExternal(url, { activate: activate }),
 	);
 
-	onEvent(
+	onMainEvent(
 		"atlassify:use-alternate-idle-icon",
 		(_, useAlternateIdleIcon: boolean) => {
 			shouldUseAlternateIdleIcon = useAlternateIdleIcon;
 		},
 	);
 
-	onEvent("atlassify:icon-error", () => {
+	onMainEvent("atlassify:icon-error", () => {
 		if (!mb.tray.isDestroyed()) {
 			mb.tray.setImage(TrayIcons.error);
 		}
 	});
 
-	onEvent("atlassify:icon-active", () => {
+	onMainEvent("atlassify:icon-active", () => {
 		if (!mb.tray.isDestroyed()) {
 			mb.tray.setImage(TrayIcons.active);
 		}
 	});
 
-	onEvent("atlassify:icon-idle", () => {
+	onMainEvent("atlassify:icon-idle", () => {
 		if (!mb.tray.isDestroyed()) {
 			if (shouldUseAlternateIdleIcon) {
 				mb.tray.setImage(TrayIcons.idleAlternate);
@@ -157,13 +158,13 @@ app.whenReady().then(async () => {
 		}
 	});
 
-	onEvent("atlassify:update-title", (_, title: string) => {
+	onMainEvent("atlassify:update-title", (_, title: string) => {
 		if (!mb.tray.isDestroyed()) {
 			mb.tray.setTitle(title);
 		}
 	});
 
-	onEvent(
+	onMainEvent(
 		"atlassify:update-keyboard-shortcut",
 		(_, { enabled, keyboardShortcut }: IKeyboardShortcut) => {
 			if (!enabled) {
@@ -181,7 +182,7 @@ app.whenReady().then(async () => {
 		},
 	);
 
-	onEvent("atlassify:update-auto-launch", (_, settings: IAutoLaunch) => {
+	onMainEvent("atlassify:update-auto-launch", (_, settings: IAutoLaunch) => {
 		app.setLoginItemSettings(settings);
 	});
 
@@ -189,17 +190,17 @@ app.whenReady().then(async () => {
 	 * Atlassify custom IPC events - response expected
 	 */
 
-	handleEvent("atlassify:version", () => app.getVersion());
+	handleMainEvent("atlassify:version", () => app.getVersion());
 
-	handleEvent("atlassify:notification-sound-path", () => {
+	handleMainEvent("atlassify:notification-sound-path", () => {
 		return notificationSoundFilePath;
 	});
 
-	handleEvent("atlassify:safe-storage-encrypt", (_, value: string) => {
+	handleMainEvent("atlassify:safe-storage-encrypt", (_, value: string) => {
 		return safeStorage.encryptString(value).toString("base64");
 	});
 
-	handleEvent("atlassify:safe-storage-decrypt", (_, value: string) => {
+	handleMainEvent("atlassify:safe-storage-decrypt", (_, value: string) => {
 		return safeStorage.decryptString(Buffer.from(value, "base64"));
 	});
 });

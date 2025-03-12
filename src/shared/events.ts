@@ -1,5 +1,4 @@
 import type { Link } from "../renderer/types";
-import { APPLICATION } from "./constants";
 
 export type EventType =
 	| "atlassify:icon-idle"
@@ -16,7 +15,9 @@ export type EventType =
 	| "atlassify:safe-storage-encrypt"
 	| "atlassify:safe-storage-decrypt"
 	| "atlassify:notification-sound-path"
-	| "atlassify:open-external";
+	| "atlassify:open-external"
+	| "atlassify:reset-app"
+	| "atlassify:update-theme";
 
 export interface IAutoLaunch {
 	openAtLogin: boolean;
@@ -39,7 +40,3 @@ export type EventData =
 	| IKeyboardShortcut
 	| IAutoLaunch
 	| IOpenExternal;
-
-export function namespacedEvent(event: string) {
-	return `${APPLICATION.EVENT_PREFIX}${event}`;
-}

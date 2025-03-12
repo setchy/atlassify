@@ -3,11 +3,11 @@ import { contextBridge, webFrame } from "electron";
 import { isLinux, isMacOS, isWindows } from "../main/process";
 import { type Link, OpenPreference } from "../renderer/types";
 import { APPLICATION } from "../shared/constants";
-import { invokeEvent, sendEvent } from "./utils";
+import { invokeMainEvent, onRendererEvent, sendMainEvent } from "./utils";
 
 const api = {
 	openExternalLink: (url: Link, openPreference: OpenPreference) => {
-		sendEvent("atlassify:open-external", {
+		sendMainEvent("atlassify:open-external", {
 			url: url,
 			activate: openPreference === OpenPreference.FOREGROUND,
 		});
@@ -18,25 +18,25 @@ const api = {
 			return "dev";
 		}
 
-		const version = await invokeEvent("atlassify:version");
+		const version = await invokeMainEvent("atlassify:version");
 
 		return `v${version}`;
 	},
 
 	encryptValue: (value: string) =>
-		invokeEvent("atlassify:safe-storage-encrypt", value),
+		invokeMainEvent("atlassify:safe-storage-encrypt", value),
 
 	decryptValue: (value: string) =>
-		invokeEvent("atlassify:safe-storage-decrypt", value),
+		invokeMainEvent("atlassify:safe-storage-decrypt", value),
 
 	setAutoLaunch: (value: boolean) =>
-		sendEvent("atlassify:update-auto-launch", {
+		sendMainEvent("atlassify:update-auto-launch", {
 			openAtLogin: value,
 			openAsHidden: value,
 		}),
 
 	setKeyboardShortcut: (keyboardShortcut: boolean) => {
-		sendEvent("atlassify:update-keyboard-shortcut", {
+		sendMainEvent("atlassify:update-keyboard-shortcut", {
 			enabled: keyboardShortcut,
 			keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
 		});
@@ -45,25 +45,26 @@ const api = {
 	tray: {
 		updateIcon: (notificationsLength = 0) => {
 			if (notificationsLength < 0) {
-				sendEvent("atlassify:icon-error");
+				sendMainEvent("atlassify:icon-error");
 				return;
 			}
 
 			if (notificationsLength > 0) {
-				sendEvent("atlassify:icon-active");
+				sendMainEvent("atlassify:icon-active");
 				return;
 			}
 
-			sendEvent("atlassify:icon-idle");
+			sendMainEvent("atlassify:icon-idle");
 		},
 
-		updateTitle: (title = "") => sendEvent("atlassify:update-title", title),
+		updateTitle: (title = "") => sendMainEvent("atlassify:update-title", title),
 
 		useAlternateIdleIcon: (value: boolean) =>
-			sendEvent("atlassify:use-alternate-idle-icon", value),
+			sendMainEvent("atlassify:use-alternate-idle-icon", value),
 	},
 
-	notificationSoundPath: () => invokeEvent("atlassify:notification-sound-path"),
+	notificationSoundPath: () =>
+		invokeMainEvent("atlassify:notification-sound-path"),
 
 	platform: {
 		isLinux: () => isLinux(),
@@ -74,17 +75,25 @@ const api = {
 	},
 
 	app: {
-		hide: () => sendEvent("atlassify:window-hide"),
+		hide: () => sendMainEvent("atlassify:window-hide"),
 
-		show: () => sendEvent("atlassify:window-show"),
+		show: () => sendMainEvent("atlassify:window-show"),
 
-		quit: () => sendEvent("atlassify:quit"),
+		quit: () => sendMainEvent("atlassify:quit"),
 	},
 
 	zoom: {
 		getLevel: () => webFrame.getZoomLevel(),
 
 		setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
+	},
+
+	onResetApp: (callback: () => void) => {
+		onRendererEvent("atlassify:reset-app", () => callback());
+	},
+
+	onSystemThemeUpdate: (callback: (theme: string) => void) => {
+		onRendererEvent("atlassify:update-theme", (_, theme) => callback(theme));
 	},
 };
 
