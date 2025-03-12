@@ -1,102 +1,103 @@
-import { contextBridge, webFrame } from 'electron';
+import { contextBridge, webFrame } from "electron";
 
-import { isLinux, isMacOS, isWindows } from '../main/process';
-import { type Link, OpenPreference } from '../renderer/types';
-import { APPLICATION } from '../shared/constants';
-import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
+import { isLinux, isMacOS, isWindows } from "../main/process";
+import { APPLICATION } from "../shared/constants";
+import { invokeMainEvent, onRendererEvent, sendMainEvent } from "./utils";
 
 const api = {
-  openExternalLink: (url: string, openInForeground: boolean) => {
-    sendMainEvent('atlassify:open-external', {
-      url: url,
-      activate: openInForeground,
-    });
-  },
+	openExternalLink: (url: string, openInForeground: boolean) => {
+		sendMainEvent("atlassify:open-external", {
+			url: url,
+			activate: openInForeground,
+		});
+	},
 
-  getAppVersion: async () => {
-    if (process.env.NODE_ENV === 'development') {
-      return 'dev';
-    }
+	getAppVersion: async () => {
+		if (process.env.NODE_ENV === "development") {
+			return "dev";
+		}
 
-    const version = await invokeMainEvent('atlassify:version');
+		const version = await invokeMainEvent("atlassify:version");
 
-    return `v${version}`;
-  },
+		return `v${version}`;
+	},
 
-  encryptValue: (value: string) =>
-    invokeMainEvent('atlassify:safe-storage-encrypt', value),
+	encryptValue: (value: string) =>
+		invokeMainEvent("atlassify:safe-storage-encrypt", value),
 
-  decryptValue: (value: string) =>
-    invokeMainEvent('atlassify:safe-storage-decrypt', value),
+	decryptValue: (value: string) =>
+		invokeMainEvent("atlassify:safe-storage-decrypt", value),
 
-  setAutoLaunch: (value: boolean) =>
-    sendMainEvent('atlassify:update-auto-launch', {
-      openAtLogin: value,
-      openAsHidden: value,
-    }),
+	setAutoLaunch: (value: boolean) =>
+		sendMainEvent("atlassify:update-auto-launch", {
+			openAtLogin: value,
+			openAsHidden: value,
+		}),
 
-  setKeyboardShortcut: (keyboardShortcut: boolean) => {
-    sendMainEvent('atlassify:update-keyboard-shortcut', {
-      enabled: keyboardShortcut,
-      keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
-    });
-  },
+	setKeyboardShortcut: (keyboardShortcut: boolean) => {
+		sendMainEvent("atlassify:update-keyboard-shortcut", {
+			enabled: keyboardShortcut,
+			keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
+		});
+	},
 
-  tray: {
-    updateIcon: (notificationsLength = 0) => {
-      if (notificationsLength < 0) {
-        sendMainEvent('atlassify:icon-error');
-        return;
-      }
+	tray: {
+		updateIcon: (notificationsLength = 0) => {
+			if (notificationsLength < 0) {
+				sendMainEvent("atlassify:icon-error");
+				return;
+			}
 
-      if (notificationsLength > 0) {
-        sendMainEvent('atlassify:icon-active');
-        return;
-      }
+			if (notificationsLength > 0) {
+				sendMainEvent("atlassify:icon-active");
+				return;
+			}
 
-      sendMainEvent('atlassify:icon-idle');
-    },
+			sendMainEvent("atlassify:icon-idle");
+		},
 
-    updateTitle: (title = '') => sendMainEvent('atlassify:update-title', title),
+		updateTitle: (title = "") => sendMainEvent("atlassify:update-title", title),
 
-    useAlternateIdleIcon: (value: boolean) =>
-      sendMainEvent('atlassify:use-alternate-idle-icon', value),
-  },
+		useAlternateIdleIcon: (value: boolean) =>
+			sendMainEvent("atlassify:use-alternate-idle-icon", value),
+	},
 
-  notificationSoundPath: () =>
-    invokeMainEvent('atlassify:notification-sound-path'),
+	notificationSoundPath: () =>
+		invokeMainEvent("atlassify:notification-sound-path"),
 
-  platform: {
-    isLinux: () => isLinux(),
+	twemojiDirectory: () => invokeMainEvent("atlassify:twemoji-directory"),
 
-    isMacOS: () => isMacOS(),
+	platform: {
+		isLinux: () => isLinux(),
 
-    isWindows: () => isWindows(),
-  },
+		isMacOS: () => isMacOS(),
 
-  app: {
-    hide: () => sendMainEvent('atlassify:window-hide'),
+		isWindows: () => isWindows(),
+	},
 
-    show: () => sendMainEvent('atlassify:window-show'),
+	app: {
+		hide: () => sendMainEvent("atlassify:window-hide"),
 
-    quit: () => sendMainEvent('atlassify:quit'),
-  },
+		show: () => sendMainEvent("atlassify:window-show"),
 
-  zoom: {
-    getLevel: () => webFrame.getZoomLevel(),
+		quit: () => sendMainEvent("atlassify:quit"),
+	},
 
-    setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
-  },
+	zoom: {
+		getLevel: () => webFrame.getZoomLevel(),
 
-  onResetApp: (callback: () => void) => {
-    onRendererEvent('atlassify:reset-app', () => callback());
-  },
+		setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
+	},
 
-  onSystemThemeUpdate: (callback: (theme: string) => void) => {
-    onRendererEvent('atlassify:update-theme', (_, theme) => callback(theme));
-  },
+	onResetApp: (callback: () => void) => {
+		onRendererEvent("atlassify:reset-app", () => callback());
+	},
+
+	onSystemThemeUpdate: (callback: (theme: string) => void) => {
+		onRendererEvent("atlassify:update-theme", (_, theme) => callback(theme));
+	},
 };
 
-contextBridge.exposeInMainWorld('atlassify', api);
+contextBridge.exposeInMainWorld("atlassify", api);
 
 export type AtlassifyAPI = typeof api;
