@@ -1,4 +1,4 @@
-import type { AtlassifyAPI } from '.';
+import type { AtlassifyAPI } from '../preload/types';
 
 declare global {
   interface Window {

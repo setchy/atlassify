@@ -4,22 +4,12 @@ import { isLinux, isMacOS, isWindows } from '../main/process';
 import { APPLICATION } from '../shared/constants';
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
-const api = {
+export const api = {
   openExternalLink: (url: string, openInForeground: boolean) => {
     sendMainEvent('atlassify:open-external', {
       url: url,
       activate: openInForeground,
     });
-  },
-
-  getAppVersion: async () => {
-    if (process.env.NODE_ENV === 'development') {
-      return 'dev';
-    }
-
-    const version = await invokeMainEvent('atlassify:version');
-
-    return `v${version}`;
   },
 
   encryptValue: (value: string) =>
@@ -81,6 +71,16 @@ const api = {
     show: () => sendMainEvent('atlassify:window-show'),
 
     quit: () => sendMainEvent('atlassify:quit'),
+
+    version: async () => {
+      if (process.env.NODE_ENV === 'development') {
+        return 'dev';
+      }
+
+      const version = await invokeMainEvent('atlassify:version');
+
+      return `v${version}`;
+    },
   },
 
   zoom: {
@@ -99,5 +99,3 @@ const api = {
 };
 
 contextBridge.exposeInMainWorld('atlassify', api);
-
-export type AtlassifyAPI = typeof api;

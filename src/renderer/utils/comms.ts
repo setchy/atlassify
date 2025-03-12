@@ -18,7 +18,7 @@ export function openExternalLink(url: Link): void {
 }
 
 export async function getAppVersion(): Promise<string> {
-  return await window.atlassify.getAppVersion();
+  return await window.atlassify.app.version();
 }
 
 export async function encryptValue(value: string): Promise<string> {

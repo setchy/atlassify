@@ -1,4 +1,6 @@
-const { namespacedEvent } = require('../../shared/events');
+// /**
+//  * @typedef {import('../../preload/types.ts').AtlassifyAPI} AtlassifyAPI
+//  */
 
 // @ts-ignore
 window.Notification = function (title) {
@@ -32,31 +34,39 @@ window.localStorage = {
 
 window.alert = jest.fn();
 
-module.exports = {
-  ipcRenderer: {
-    send: jest.fn(),
-    on: jest.fn(),
-    sendSync: jest.fn(),
-    invoke: jest.fn((channel, ..._args) => {
-      switch (channel) {
-        case 'get-platform':
-          return Promise.resolve('darwin');
-        case namespacedEvent('version'):
-          return Promise.resolve('0.0.1');
-        case namespacedEvent('safe-storage-encrypt'):
-          return Promise.resolve('encrypted');
-        case namespacedEvent('safe-storage-decrypt'):
-          return Promise.resolve('decrypted');
-        default:
-          return Promise.reject(new Error(`Unknown channel: ${channel}`));
-      }
-    }),
-  },
-  shell: {
-    openExternal: jest.fn(),
-  },
-  webFrame: {
-    setZoomLevel: jest.fn(),
-    getZoomLevel: jest.fn(),
-  },
+// /** @type {AtlassifyAPI} */
+// const mockAtlassifyAPI = {
+// 	openExternalLink: jest.fn(),
+// 	decryptValue: () => Promise.resolve("decrypted"),
+// 	encryptValue: () => Promise.resolve("encrypted"),
+// 	platform: {
+// 		isLinux: () => false,
+// 		isMacOS: () => true,
+// 		isWindows: () => false,
+// 	},
+// 	app: {
+// 		hide: jest.fn(),
+// 		show: jest.fn(),
+// 		quit: jest.fn(),
+// 		version: () => Promise.resolve("0.0.1"),
+// 	},
+// 	zoom: {
+// 		getLevel: jest.fn(),
+// 		setLevel: jest.fn(),
+// 	},
+// 	tray: {
+// 		updateIcon: jest.fn(),
+// 		updateTitle: jest.fn(),
+// 		useAlternateIdleIcon: jest.fn(),
+// 	},
+// 	twemojiDirectory: jest.fn(),
+// };
+
+// window.atlassify = mockAtlassifyAPI;
+
+// window.atlassify.decryptValue = Promise.resolve("decrypted");
+// window.atlassify.twemojiDirectory = Promise.resolve("/tmp/emoji");
+
+window.atlassify.app = {
+  version: Promise.resolve('0.0.1'),
 };
