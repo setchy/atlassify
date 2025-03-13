@@ -158,7 +158,7 @@
     "@types/react-dom": "18.3.5",
     "@types/react-router-dom": "5.3.3",
     "autoprefixer": "10.4.21",
-    "axios": "1.8.2",
+    "axios": "1.8.3",
     "clsx": "2.1.1",
     "concurrently": "9.1.2",
     "copy-webpack-plugin": "13.0.0",
@@ -188,7 +188,7 @@
     "webpack-cli": "6.0.1",
     "webpack-merge": "6.0.1"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "electron"]
   },
