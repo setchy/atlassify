@@ -34,7 +34,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
     });
 
     expect(screen.getByTestId('settings-release-notes')).toMatchSnapshot();
-  });    
+  });
 
   it('should open release notes', async () => {
     const openExternalLinkMock = jest

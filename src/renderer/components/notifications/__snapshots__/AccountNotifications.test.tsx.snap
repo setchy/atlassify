@@ -212,7 +212,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     alt="🔥"
                     class="emoji"
                     draggable="false"
-                    src="images/twemoji/1f525.svg"
+                    src="/mock/images/assets/1f525.svg"
                   />
                 </span>
               </span>
@@ -444,7 +444,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   alt="🔥"
                   class="emoji"
                   draggable="false"
-                  src="images/twemoji/1f525.svg"
+                  src="/mock/images/assets/1f525.svg"
                 />
               </span>
             </span>
@@ -1644,7 +1644,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   alt="🎊"
                   class="emoji"
                   draggable="false"
-                  src="images/twemoji/1f38a.svg"
+                  src="/mock/images/assets/1f38a.svg"
                 />
               </span>
             </span>
@@ -1863,7 +1863,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 alt="🎊"
                 class="emoji"
                 draggable="false"
-                src="images/twemoji/1f38a.svg"
+                src="/mock/images/assets/1f38a.svg"
               />
             </span>
           </span>

@@ -1,39 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderer/components/settings/SettingsFooter.tsx app version should show development app version 1`] = `
-<button
-  class="css-eu6vk3"
-  data-testid="settings-release-notes"
-  title="View Atlassify release notes"
-  type="button"
->
-  <span
-    class="css-1nqby2s"
-  >
-    Atlassify
-     
-    dev
-  </span>
-</button>
-`;
-
-exports[`renderer/components/settings/SettingsFooter.tsx app version should show production app version 1`] = `
-<button
-  class="css-eu6vk3"
-  data-testid="settings-release-notes"
-  title="View Atlassify release notes"
-  type="button"
->
-  <span
-    class="css-1nqby2s"
-  >
-    Atlassify
-     
-    v0.0.1
-  </span>
-</button>
-`;
-
 exports[`renderer/components/settings/SettingsFooter.tsx should show app version 1`] = `
 <button
   class="css-eu6vk3"

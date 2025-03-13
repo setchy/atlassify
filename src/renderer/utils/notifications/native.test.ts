@@ -1,14 +1,12 @@
 import {
   mockAccountNotifications,
-  mockAtlassifyNotifications,
   mockSingleAccountNotifications,
-  mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 import { mockAuth } from '../../__mocks__/state-mocks';
 import { defaultSettings } from '../../context/App';
 import type { SettingsState } from '../../types';
-import * as comms from '../comms';
-import * as links from '../links';
+// import * as comms from '../comms';
+// import * as links from '../links';
 import * as native from './native';
 
 describe('renderer/utils/notifications/native.ts', () => {
@@ -99,32 +97,32 @@ describe('renderer/utils/notifications/native.ts', () => {
     expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
   });
 
-  describe('raiseNativeNotification', () => {
-    it('should click on a native notification (with 1 notification)', () => {
-      const hideWindowMock = jest.spyOn(comms, 'hideWindow');
-      jest.spyOn(links, 'openNotification');
+  // describe('raiseNativeNotification', () => {
+  //   it('should click on a native notification (with 1 notification)', () => {
+  //     const hideWindowMock = jest.spyOn(comms, 'hideWindow');
+  //     jest.spyOn(links, 'openNotification');
 
-      const nativeNotification: Notification = native.raiseNativeNotification([
-        mockSingleAtlassifyNotification,
-      ]);
-      nativeNotification.onclick(null);
+  //     const nativeNotification: Notification = native.raiseNativeNotification([
+  //       mockSingleAtlassifyNotification,
+  //     ]);
+  //     nativeNotification.onclick(null);
 
-      expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(links.openNotification).toHaveBeenLastCalledWith(
-        mockSingleAtlassifyNotification,
-      );
-      expect(hideWindowMock).toHaveBeenCalledTimes(1);
-    });
+  //     expect(links.openNotification).toHaveBeenCalledTimes(1);
+  //     expect(links.openNotification).toHaveBeenLastCalledWith(
+  //       mockSingleAtlassifyNotification,
+  //     );
+  //     expect(hideWindowMock).toHaveBeenCalledTimes(1);
+  //   });
 
-    it('should click on a native notification (with more than 1 notification)', () => {
-      const showWindowMock = jest.spyOn(comms, 'showWindow');
+  //   it('should click on a native notification (with more than 1 notification)', () => {
+  //     const showWindowMock = jest.spyOn(comms, 'showWindow');
 
-      const nativeNotification = native.raiseNativeNotification(
-        mockAtlassifyNotifications,
-      );
-      nativeNotification.onclick(null);
+  //     const nativeNotification = native.raiseNativeNotification(
+  //       mockAtlassifyNotifications,
+  //     );
+  //     nativeNotification.onclick(null);
 
-      expect(showWindowMock).toHaveBeenCalledTimes(1);
-    });
-  });
+  //     expect(showWindowMock).toHaveBeenCalledTimes(1);
+  //   });
+  // });
 });

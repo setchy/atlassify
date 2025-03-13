@@ -2,6 +2,7 @@ import { contextBridge, webFrame } from 'electron';
 
 import { isLinux, isMacOS, isWindows } from '../main/process';
 import { APPLICATION } from '../shared/constants';
+import { logError } from '../shared/logger';
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
 export const api = {
@@ -96,6 +97,35 @@ export const api = {
   onSystemThemeUpdate: (callback: (theme: string) => void) => {
     onRendererEvent('atlassify:update-theme', (_, theme) => callback(theme));
   },
+
+  raiseNativeNotification: (title: string, body: string, url?: string) => {
+    const notification = new Notification(title, {
+      body,
+      silent: true,
+    });
+
+    notification.onclick = () => {
+      if (url) {
+        api.app.hide();
+        api.openExternalLink(url, true);
+      } else {
+        api.app.show();
+      }
+    };
+
+    return notification;
+  },
 };
 
-contextBridge.exposeInMainWorld('atlassify', api);
+// Use `contextBridge` APIs to expose Electron APIs to
+// renderer only if context isolation is enabled, otherwise
+// just add to the DOM global.
+if (process.contextIsolated) {
+  try {
+    contextBridge.exposeInMainWorld('atlassify', api);
+  } catch (error) {
+    logError('preload', 'Failed to expose API to renderer', error);
+  }
+} else {
+  window.atlassify = api;
+}
