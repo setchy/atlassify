@@ -1,7 +1,5 @@
 import type webpack from 'webpack';
 
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-
 const configuration: webpack.Configuration = {
   module: {
     rules: [
@@ -14,8 +12,7 @@ const configuration: webpack.Configuration = {
   },
 
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    plugins: [new TsconfigPathsPlugin()],
+    extensions: ['.js', '.ts', '.tsx'],
   },
 
   node: {

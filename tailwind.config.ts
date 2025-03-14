@@ -5,7 +5,7 @@ import type { Config } from 'tailwindcss';
 const sidebarWidth = '3rem'; // 48px
 
 const config: Config = {
-  content: ['./src/**/*.js', './src/**/*.ts', './src/**/*.tsx'],
+  content: ['./src/**/*.ts', './src/**/*.tsx'],
   darkMode: 'class',
   theme: {
     extend: {

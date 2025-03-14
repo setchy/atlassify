@@ -24,7 +24,6 @@ log.initialize();
  */
 const preloadFilePath = path.join(__dirname, 'preload.js');
 const indexHtmlFilePath = `file://${__dirname}/index.html`;
-// TODO: validate the sound and emoji paths work when packaged
 const notificationSoundFilePath = path.join(
   __dirname,
   '..',
@@ -45,7 +44,6 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
     preload: preloadFilePath,
     contextIsolation: true,
     nodeIntegration: false,
-    sandbox: true,
   },
 };
 
