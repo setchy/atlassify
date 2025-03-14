@@ -8,14 +8,29 @@ import { merge } from 'webpack-merge';
 import baseConfig from './webpack.config.common';
 import webpackPaths from './webpack.paths';
 
-import { ALL_EMOJI_SVG_FILENAMES } from '../src/renderer/utils/emojis';
+import twemoji from '@discordapp/twemoji';
+import { Constants } from '../src/renderer/utils/constants';
+import { Errors } from '../src/renderer/utils/errors';
+
+const ALL_EMOJIS = [
+  ...Constants.ALL_READ_EMOJIS,
+  ...Errors.BAD_CREDENTIALS.emojis,
+  ...Errors.BAD_REQUEST.emojis,
+  ...Errors.NETWORK.emojis,
+  ...Errors.UNKNOWN.emojis,
+];
+
+export const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) => {
+  const imgHtml = twemoji.parse(emoji, { folder: 'svg', ext: '.svg' });
+  return extractSvgFilename(imgHtml);
+});
 
 const configuration: webpack.Configuration = {
   devtool: 'inline-source-map',
 
   mode: 'development',
 
-  target: 'electron-renderer',
+  target: ['web', 'electron-renderer'],
 
   entry: [path.join(webpackPaths.srcRendererPath, 'index.tsx')],
 
@@ -80,5 +95,12 @@ const configuration: webpack.Configuration = {
     }),
   ],
 };
+
+function extractSvgFilename(imgHtml: string) {
+  const srcMatch = /src="(.*)"/.exec(imgHtml);
+  const src = srcMatch ? srcMatch[1] : '';
+  const filename = src.split('/').pop(); // Get the last part after splitting by "/"
+  return filename;
+}
 
 export default merge(baseConfig, configuration);

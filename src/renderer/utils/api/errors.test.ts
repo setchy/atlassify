@@ -1,6 +1,5 @@
 import { AxiosError, type AxiosResponse } from 'axios';
 
-import { namespacedEvent } from '../../../shared/events';
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
 import type { AtlassianAPIError } from './types';
@@ -39,7 +38,7 @@ describe('renderer/utils/api/errors.ts', () => {
       const mockError: Partial<AxiosError<AtlassianAPIError>> = {
         code: AxiosError.ERR_BAD_REQUEST,
         status: 404,
-        message: `Error invoking remote method '${namespacedEvent('safe-storage-decrypt')}': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.`,
+        message: `Error invoking remote method 'atlassify:safe-storage-decrypt': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.`,
       };
 
       const result = determineFailureType(

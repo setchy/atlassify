@@ -212,7 +212,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     alt="🔥"
                     class="emoji"
                     draggable="false"
-                    src="images/twemoji/1f525.svg"
+                    src="/mock/images/assets/1f525.svg"
                   />
                 </span>
               </span>
@@ -444,7 +444,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   alt="🔥"
                   class="emoji"
                   draggable="false"
-                  src="images/twemoji/1f525.svg"
+                  src="/mock/images/assets/1f525.svg"
                 />
               </span>
             </span>
@@ -1644,7 +1644,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   alt="🎊"
                   class="emoji"
                   draggable="false"
-                  src="images/twemoji/1f38a.svg"
+                  src="/mock/images/assets/1f38a.svg"
                 />
               </span>
             </span>
@@ -1863,7 +1863,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 alt="🎊"
                 class="emoji"
                 draggable="false"
-                src="images/twemoji/1f38a.svg"
+                src="/mock/images/assets/1f38a.svg"
               />
             </span>
           </span>
@@ -2227,7 +2227,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -2462,7 +2462,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -2891,7 +2891,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -3126,7 +3126,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -3612,7 +3612,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -3847,7 +3847,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -4276,7 +4276,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -4511,7 +4511,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -5194,7 +5194,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -5429,7 +5429,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -5858,7 +5858,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -6093,7 +6093,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div

@@ -6,8 +6,8 @@ import log from 'electron-log';
 import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
-import { namespacedEvent } from '../shared/events';
 import { logError, logInfo } from '../shared/logger';
+import { sendRendererEvent } from './events';
 
 export function takeScreenshot(mb: Menubar) {
   const date = new Date();
@@ -38,7 +38,7 @@ export function resetApp(mb: Menubar) {
   });
 
   if (response === resetButtonId) {
-    mb.window.webContents.send(namespacedEvent('reset-app'));
+    sendRendererEvent(mb, 'atlassify:reset-app');
     mb.app.quit();
   }
 }

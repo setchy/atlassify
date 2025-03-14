@@ -8,10 +8,8 @@ import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 
 import { APPLICATION } from '../../../shared/constants';
-import { isLinux, isMacOS } from '../../../shared/platform';
 import { AppContext } from '../../context/App';
 import { OpenPreference } from '../../types';
-import { Constants } from '../../utils/constants';
 
 export const SystemSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
@@ -63,14 +61,14 @@ export const SystemSettings: FC = () => {
           <div className="w-60 text-xs">
             When enabled, you can use the hotkeys{' '}
             <span className="text-atlassify-attention">
-              {Constants.DEFAULT_KEYBOARD_SHORTCUT}
+              {APPLICATION.DEFAULT_KEYBOARD_SHORTCUT}
             </span>{' '}
             to show or hide {APPLICATION.NAME}.
           </div>
         </InlineMessage>
       </Inline>
 
-      {isMacOS() && (
+      {window.atlassify.platform.isMacOS() && (
         <Checkbox
           name="showNotificationsCountInTray"
           label="Show notifications count in tray"
@@ -122,7 +120,7 @@ export const SystemSettings: FC = () => {
         </InlineMessage>
       </Inline>
 
-      {!isLinux() && (
+      {!window.atlassify.platform.isLinux() && (
         <Checkbox
           name="openAtStartUp"
           label="Open at startup"

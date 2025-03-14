@@ -12,7 +12,7 @@ const configuration: webpack.Configuration = {
   },
 
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
 
   node: {
