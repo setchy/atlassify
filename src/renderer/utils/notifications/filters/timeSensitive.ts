@@ -69,4 +69,6 @@ export function inferNotificationSensitivity(
   if (notification.message.includes(' replied ')) {
     return 'comment';
   }
+
+  return null;
 }

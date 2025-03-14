@@ -1,25 +1,37 @@
 {
-  // TODO - Improve the separation of web vs node configurations
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
   "compilerOptions": {
     "incremental": true,
-    "target": "es2022",
-    "module": "commonjs",
-    "lib": ["dom", "es2022"],
-    "jsx": "react-jsx",
+    "target": "ES2024",
+    "module": "CommonJS",
     "sourceMap": true,
-    "moduleResolution": "node",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "outDir": "./build/",
+
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@preload/*": ["src/preload/*"],
+      "@renderer/*": ["src/renderer/*"],
+      "@shared/*": ["src/shared/*"]
+    },
+
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "outDir": "./build/",
+
     "plugins": [
       {
         "name": "@0no-co/graphqlsp",
         "schema": "./src/renderer/utils/api/gql/schema.graphql"
       }
     ]
-  },
-  "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"]
+  }
 }
