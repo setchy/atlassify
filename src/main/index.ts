@@ -24,7 +24,7 @@ log.initialize();
  */
 const preloadFilePath = path.join(__dirname, 'preload.js');
 const indexHtmlFilePath = `file://${__dirname}/index.html`;
-// TODO - validate the sound and emoji paths work when packaged
+// TODO: validate the sound and emoji paths work when packaged
 const notificationSoundFilePath = path.join(
   __dirname,
   '..',
@@ -43,7 +43,7 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   skipTaskbar: true, // Hide the app from the Windows taskbar
   webPreferences: {
     preload: preloadFilePath,
-    contextIsolation: true,
+    contextIsolation: false,
     nodeIntegration: false,
     sandbox: true,
   },

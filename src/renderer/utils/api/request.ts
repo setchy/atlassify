@@ -11,7 +11,7 @@ export async function performPostRequest<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ) {
-  // TODO consider storing the decrypted token in memory
+  // TODO: consider storing the decrypted token in memory
   const decryptedToken = await decryptValue(account.token);
   const auth = btoa(`${account.username}:${decryptedToken}`);
 

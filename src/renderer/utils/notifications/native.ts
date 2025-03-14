@@ -68,7 +68,7 @@ export const raiseNativeNotification = (
     body = `You have ${notifications.length} notifications.`;
   }
 
-  window.atlassify.raiseNativeNotification(title, body, url);
+  return window.atlassify.raiseNativeNotification(title, body, url);
 };
 
 export const raiseSoundNotification = async () => {
