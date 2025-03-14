@@ -8,16 +8,7 @@
     "sourceMap": true,
     "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
-
-    "baseUrl": ".",
     "outDir": "./build/",
-
-    "paths": {
-      "@main/*": ["src/main/*"],
-      "@preload/*": ["src/preload/*"],
-      "@renderer/*": ["src/renderer/*"],
-      "@shared/*": ["src/shared/*"]
-    },
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

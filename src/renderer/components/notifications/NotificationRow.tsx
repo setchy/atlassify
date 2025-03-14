@@ -5,20 +5,20 @@ import { IconButton } from '@atlaskit/button/new';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import type { AtlassifyNotification } from '@renderer/types';
-import { cn } from '@renderer/utils/cn';
+import { AppContext } from '../../context/App';
+import type { AtlassifyNotification } from '../../types';
+import { cn } from '../../utils/cn';
 
-import { UnreadIcon } from '@renderer/components/icons/UnreadIcon';
-import { AppContext } from '@renderer/context/App';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
-} from '@renderer/utils/helpers';
-import { openNotification } from '@renderer/utils/links';
+} from '../../utils/helpers';
+import { openNotification } from '../../utils/links';
 import {
   categoryFilter,
   readStateFilter,
-} from '@renderer/utils/notifications/filters';
+} from '../../utils/notifications/filters';
+import { UnreadIcon } from '../icons/UnreadIcon';
 
 interface INotificationRow {
   notification: AtlassifyNotification;

@@ -77,13 +77,13 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
       expect(inferNotificationSensitivity(mockNotification)).toBe('comment');
     });
 
-    it('should return undefined if no sensitivity', () => {
+    it('should return null if no sensitivity can be inferred from message', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,
         message: 'mentionedreplied on a page',
       } as AtlassifyNotification;
 
-      expect(inferNotificationSensitivity(mockNotification)).toBeUndefined();
+      expect(inferNotificationSensitivity(mockNotification)).toBeNull();
     });
   });
 });
