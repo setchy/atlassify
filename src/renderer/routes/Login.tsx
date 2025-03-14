@@ -51,7 +51,7 @@ export const LoginRoute: FC = () => {
         setIsValidToken(false);
       }
     },
-    [login],
+    [login, navigate],
   );
 
   return (
@@ -62,56 +62,100 @@ export const LoginRoute: FC = () => {
         <Form<IValues> onSubmit={loginUser}>
           {({ formProps, submitting }) => (
             <form {...formProps}>
-              <FormSection>
-                <Field
-                  aria-required={true}
-                  name="username"
-                  label="Username"
-                  defaultValue={''}
-                  isRequired
-                  testId="login-username"
-                >
-                  {({ fieldProps }) => (
-                    <Fragment>
-                      <TextField autoComplete="off" {...fieldProps} />
-                      <HelperMessage>
+              {
+                // FIXME: Resolve root issue with Windows login form crashing the renderer on mouse over. See #568
+                window.atlassify.platform.isWindows() ? (
+                  <Fragment>
+                    <div className="mb-4">
+                      <label htmlFor="username" className="font-bold mr-2">
+                        Username
+                      </label>
+                      <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                        className="border border-gray-400 rounded px-2 py-1 w-full"
+                      />
+                      <div className="text-sm italic">
                         Your Atlassian username / email address
-                      </HelperMessage>
-                    </Fragment>
-                  )}
-                </Field>
-                <Field
-                  aria-required={true}
-                  name="token"
-                  label="API Token"
-                  defaultValue={''}
-                  isRequired
-                  testId="login-token"
-                >
-                  {({ fieldProps }) => (
-                    <Fragment>
-                      <TextField type="password" {...fieldProps} />
-                      <HelperMessage>
-                        <Inline alignBlock="center" space="space.050">
-                          <Tooltip content="Create an API Token">
-                            <Button
-                              appearance="discovery"
-                              spacing="compact"
-                              iconBefore={LockLockedIcon}
-                              onClick={() => openAtlassianCreateToken()}
-                              testId="login-create-token"
-                            >
-                              Create an API Token
-                            </Button>
-                          </Tooltip>
-                          <Box>for your account and paste above</Box>
-                        </Inline>
-                      </HelperMessage>
-                    </Fragment>
-                  )}
-                </Field>
-              </FormSection>
+                      </div>
+                    </div>
 
+                    <label htmlFor="token" className="font-bold mr-2">
+                      API Token
+                    </label>
+                    <input
+                      type="password"
+                      id="token"
+                      name="token"
+                      required
+                      className="border border-gray-400 rounded px-2 py-1 w-full"
+                    />
+                    <div className="text-sm italic">
+                      <span
+                        className="text-blue-600 cursor-pointer"
+                        onClick={() => openAtlassianCreateToken()}
+                      >
+                        Create an API Token
+                      </span>{' '}
+                      for your account and paste above.
+                    </div>
+                  </Fragment>
+                ) : (
+                  <FormSection>
+                    <Field
+                      aria-required={true}
+                      name="username"
+                      label="Username"
+                      defaultValue=""
+                      isRequired
+                      testId="login-username"
+                    >
+                      {({ fieldProps }) => (
+                        <Fragment>
+                          <TextField autoComplete="off" {...fieldProps} />
+                          <HelperMessage>
+                            Your Atlassian username / email address
+                          </HelperMessage>
+                        </Fragment>
+                      )}
+                    </Field>
+                    <Field
+                      aria-required={true}
+                      name="token"
+                      label="API Token"
+                      defaultValue=""
+                      isRequired
+                      testId="login-token"
+                    >
+                      {({ fieldProps }) => (
+                        <Fragment>
+                          <TextField type="password" {...fieldProps} />
+                          <HelperMessage>
+                            <Inline alignBlock="center" space="space.050">
+                              <Tooltip content="Create an API Token">
+                                <Button
+                                  appearance="discovery"
+                                  spacing="compact"
+                                  iconBefore={LockLockedIcon}
+                                  onClick={() => openAtlassianCreateToken()}
+                                  testId="login-create-token"
+                                >
+                                  Create an API Token
+                                </Button>
+                              </Tooltip>
+                              <Box>for your account and paste above</Box>
+                            </Inline>
+                          </HelperMessage>
+                        </Fragment>
+                      )}
+                    </Field>
+                  </FormSection>
+                )
+              }
+
+              {/* Error message for invalid token */}
               <Box paddingBlock="space.050">
                 {!isValidToken && (
                   <ErrorMessage>
