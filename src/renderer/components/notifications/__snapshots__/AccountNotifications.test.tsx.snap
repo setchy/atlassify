@@ -21,8 +21,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -254,8 +255,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -544,8 +546,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -745,8 +748,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -1003,8 +1007,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -1204,8 +1209,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -1462,8 +1468,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -1682,8 +1689,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -1959,8 +1967,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -2628,8 +2637,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -3354,8 +3364,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -4023,8 +4034,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
@@ -4753,8 +4765,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -4947,8 +4960,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
@@ -5616,8 +5630,9 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
