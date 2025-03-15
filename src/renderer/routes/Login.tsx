@@ -2,18 +2,11 @@ import { type FC, Fragment, useCallback, useContext, useState } from 'react';
 
 import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
-import Form, {
-  ErrorMessage,
-  Field,
-  FormFooter,
-  FormSection,
-  HelperMessage,
-} from '@atlaskit/form';
+import Form, { ErrorMessage, Field, FormFooter } from '@atlaskit/form';
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LogInIcon from '@atlaskit/icon/core/log-in';
 import LockLockedIcon from '@atlaskit/icon/utility/lock-locked';
-import { Box, Inline } from '@atlaskit/primitives';
-import TextField from '@atlaskit/textfield';
+import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useNavigate } from 'react-router-dom';
@@ -51,8 +44,13 @@ export const LoginRoute: FC = () => {
         setIsValidToken(false);
       }
     },
-    [login],
+    [login, navigate],
   );
+
+  const labelClasses = 'font-bold text-sm text-gray-700';
+  const requiredClasses = 'text-red-500';
+  const inputClasses = 'border border-gray-400 rounded px-2 py-1 w-full';
+  const helpTextClasses = 'text-xs text-gray-500 mt-1';
 
   return (
     <Fragment>
@@ -62,56 +60,77 @@ export const LoginRoute: FC = () => {
         <Form<IValues> onSubmit={loginUser}>
           {({ formProps, submitting }) => (
             <form {...formProps}>
-              <FormSection>
-                <Field
-                  aria-required={true}
-                  name="username"
-                  label="Username"
-                  defaultValue={''}
-                  isRequired
-                  testId="login-username"
-                >
-                  {({ fieldProps }) => (
-                    <Fragment>
-                      <TextField autoComplete="off" {...fieldProps} />
-                      <HelperMessage>
-                        Your Atlassian username / email address
-                      </HelperMessage>
-                    </Fragment>
-                  )}
-                </Field>
-                <Field
-                  aria-required={true}
-                  name="token"
-                  label="API Token"
-                  defaultValue={''}
-                  isRequired
-                  testId="login-token"
-                >
-                  {({ fieldProps }) => (
-                    <Fragment>
-                      <TextField type="password" {...fieldProps} />
-                      <HelperMessage>
-                        <Inline alignBlock="center" space="space.050">
-                          <Tooltip content="Create an API Token">
-                            <Button
-                              appearance="discovery"
-                              spacing="compact"
-                              iconBefore={LockLockedIcon}
-                              onClick={() => openAtlassianCreateToken()}
-                              testId="login-create-token"
-                            >
-                              Create an API Token
-                            </Button>
-                          </Tooltip>
-                          <Box>for your account and paste above</Box>
-                        </Inline>
-                      </HelperMessage>
-                    </Fragment>
-                  )}
-                </Field>
-              </FormSection>
+              <Stack space="space.400">
+                <Stack space="space.050">
+                  <Inline alignBlock="center" space="space.050">
+                    <label htmlFor="username" className={labelClasses}>
+                      Username
+                    </label>
+                    <span className={requiredClasses}>*</span>
+                  </Inline>
+                  <Field name="username" defaultValue="" isRequired>
+                    {({ fieldProps }) => (
+                      <Box>
+                        <input
+                          {...fieldProps}
+                          type="text"
+                          id="username"
+                          name="username"
+                          required
+                          className={inputClasses}
+                        />
+                      </Box>
+                    )}
+                  </Field>
+                  <Box>
+                    <div className={helpTextClasses}>
+                      Your Atlassian username / email address
+                    </div>
+                  </Box>
+                </Stack>
+                <Stack space="space.050">
+                  <Inline alignBlock="center" space="space.050">
+                    <label htmlFor="token" className={labelClasses}>
+                      API Token
+                    </label>
+                    <span className={requiredClasses}>*</span>
+                  </Inline>
+                  <Field name="token" defaultValue="" isRequired>
+                    {({ fieldProps }) => (
+                      <Box>
+                        <input
+                          {...fieldProps}
+                          type="password"
+                          id="token"
+                          name="token"
+                          required
+                          className={inputClasses}
+                        />
+                      </Box>
+                    )}
+                  </Field>
+                  <Inline alignBlock="center" space="space.050">
+                    <Tooltip content="Create an API Token">
+                      <Button
+                        appearance="discovery"
+                        spacing="compact"
+                        iconBefore={LockLockedIcon}
+                        onClick={() => openAtlassianCreateToken()}
+                        testId="login-create-token"
+                      >
+                        Create an API Token
+                      </Button>
+                    </Tooltip>
+                    <Box>
+                      <div className={helpTextClasses}>
+                        for your account and paste above
+                      </div>
+                    </Box>
+                  </Inline>
+                </Stack>
+              </Stack>
 
+              {/* Error message for invalid token */}
               <Box paddingBlock="space.050">
                 {!isValidToken && (
                   <ErrorMessage>

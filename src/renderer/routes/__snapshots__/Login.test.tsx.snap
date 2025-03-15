@@ -61,146 +61,146 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       >
         <form>
           <div
-            class="css-2pqcrg"
+            class="css-1qcqice"
           >
             <div
-              class="css-wwet8f"
-              data-testid="login-username"
+              class="css-11u50rl"
             >
-              <label
-                class="css-g6a23j"
-                data-testid="login-username--label"
-                for="username-uid3"
-                id="username-uid3-label"
+              <div
+                class="css-bsfd3j"
               >
-                Username
+                <label
+                  class="font-bold text-sm text-gray-700"
+                  for="username"
+                >
+                  Username
+                </label>
                 <span
-                  aria-hidden="true"
-                  class="css-1qy5j0p"
-                  title="required"
+                  class="text-red-500"
                 >
                   *
                 </span>
-              </label>
-              <div
-                class="css-17nf42q"
-                data-ds--text-field--container="true"
-                role="presentation"
-              >
-                <input
-                  aria-describedby="username-uid3-valid username-uid3-helper"
-                  aria-labelledby="username-uid3-label"
-                  autocomplete="off"
-                  class="css-s6tjpp"
-                  data-ds--text-field--input="true"
-                  id="username-uid3"
-                  name="username"
-                  required=""
-                  value=""
-                />
               </div>
               <div
-                aria-live="polite"
-                class="css-5cg24a"
-                id="username-uid3-helper"
+                class="css-wwet8f"
               >
-                Your Atlassian username / email address
+                <div
+                  class="css-k5cxwk"
+                >
+                  <input
+                    aria-describedby="username-uid3-valid username-uid3-helper"
+                    aria-invalid="false"
+                    aria-labelledby="username-uid3-label"
+                    class="border border-gray-400 rounded px-2 py-1 w-full"
+                    id="username"
+                    name="username"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-k5cxwk"
+              >
+                <div
+                  class="text-xs text-gray-500 mt-1"
+                >
+                  Your Atlassian username / email address
+                </div>
               </div>
             </div>
             <div
-              class="css-wwet8f"
-              data-testid="login-token"
+              class="css-11u50rl"
             >
-              <label
-                class="css-g6a23j"
-                data-testid="login-token--label"
-                for="token-uid4"
-                id="token-uid4-label"
+              <div
+                class="css-bsfd3j"
               >
-                API Token
+                <label
+                  class="font-bold text-sm text-gray-700"
+                  for="token"
+                >
+                  API Token
+                </label>
                 <span
-                  aria-hidden="true"
-                  class="css-1qy5j0p"
-                  title="required"
+                  class="text-red-500"
                 >
                   *
                 </span>
-              </label>
-              <div
-                class="css-17nf42q"
-                data-ds--text-field--container="true"
-                role="presentation"
-              >
-                <input
-                  aria-describedby="token-uid4-valid token-uid4-helper"
-                  aria-labelledby="token-uid4-label"
-                  class="css-s6tjpp"
-                  data-ds--text-field--input="true"
-                  id="token-uid4"
-                  name="token"
-                  required=""
-                  type="password"
-                  value=""
-                />
               </div>
               <div
-                aria-live="polite"
-                class="css-5cg24a"
-                id="token-uid4-helper"
+                class="css-wwet8f"
               >
-                <span>
-                  <div
-                    class="css-bsfd3j"
+                <div
+                  class="css-k5cxwk"
+                >
+                  <input
+                    aria-describedby="token-uid4-valid token-uid4-helper"
+                    aria-invalid="false"
+                    aria-labelledby="token-uid4-label"
+                    class="border border-gray-400 rounded px-2 py-1 w-full"
+                    id="token"
+                    name="token"
+                    required=""
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="css-bsfd3j"
+              >
+                <div
+                  role="presentation"
+                >
+                  <button
+                    class="css-9v2r3w"
+                    data-testid="login-create-token"
+                    type="button"
                   >
-                    <div
-                      role="presentation"
+                    <span
+                      class="css-12rb8n9"
                     >
-                      <button
-                        class="css-9v2r3w"
-                        data-testid="login-create-token"
-                        type="button"
+                      <span
+                        aria-hidden="true"
+                        class="css-9693te"
+                        style="color: currentColor;"
                       >
-                        <span
-                          class="css-12rb8n9"
+                        <svg
+                          class="css-1a5x76h"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 12 12"
                         >
-                          <span
-                            aria-hidden="true"
-                            class="css-9693te"
-                            style="color: currentColor;"
-                          >
-                            <svg
-                              class="css-1a5x76h"
-                              fill="none"
-                              role="presentation"
-                              viewBox="0 0 12 12"
-                            >
-                              <path
-                                d="M8.813 11.25c.517 0 .937-.42.937-.937V7.187a.937.937 0 0 0-.937-.937H3.188a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937z"
-                                fill="currentcolor"
-                              />
-                              <path
-                                d="M3.75 6.25h-.562a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937h5.624c.518 0 .938-.42.938-.937V7.187a.937.937 0 0 0-.937-.937H8.25m-4.5 0V3a2.25 2.25 0 0 1 4.5 0v3.25m-4.5 0h4.5"
-                                stroke="currentcolor"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                        <span
-                          class="css-1nqby2s"
-                        >
-                          Create an API Token
-                        </span>
-                      </button>
-                    </div>
-                    <div
-                      class="css-k5cxwk"
+                          <path
+                            d="M8.813 11.25c.517 0 .937-.42.937-.937V7.187a.937.937 0 0 0-.937-.937H3.188a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937z"
+                            fill="currentcolor"
+                          />
+                          <path
+                            d="M3.75 6.25h-.562a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937h5.624c.518 0 .938-.42.938-.937V7.187a.937.937 0 0 0-.937-.937H8.25m-4.5 0V3a2.25 2.25 0 0 1 4.5 0v3.25m-4.5 0h4.5"
+                            stroke="currentcolor"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="css-1nqby2s"
                     >
-                      for your account and paste above
-                    </div>
+                      Create an API Token
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="css-k5cxwk"
+                >
+                  <div
+                    class="text-xs text-gray-500 mt-1"
+                  >
+                    for your account and paste above
                   </div>
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -376,146 +376,146 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
     >
       <form>
         <div
-          class="css-2pqcrg"
+          class="css-1qcqice"
         >
           <div
-            class="css-wwet8f"
-            data-testid="login-username"
+            class="css-11u50rl"
           >
-            <label
-              class="css-g6a23j"
-              data-testid="login-username--label"
-              for="username-uid3"
-              id="username-uid3-label"
+            <div
+              class="css-bsfd3j"
             >
-              Username
+              <label
+                class="font-bold text-sm text-gray-700"
+                for="username"
+              >
+                Username
+              </label>
               <span
-                aria-hidden="true"
-                class="css-1qy5j0p"
-                title="required"
+                class="text-red-500"
               >
                 *
               </span>
-            </label>
-            <div
-              class="css-17nf42q"
-              data-ds--text-field--container="true"
-              role="presentation"
-            >
-              <input
-                aria-describedby="username-uid3-valid username-uid3-helper"
-                aria-labelledby="username-uid3-label"
-                autocomplete="off"
-                class="css-s6tjpp"
-                data-ds--text-field--input="true"
-                id="username-uid3"
-                name="username"
-                required=""
-                value=""
-              />
             </div>
             <div
-              aria-live="polite"
-              class="css-5cg24a"
-              id="username-uid3-helper"
+              class="css-wwet8f"
             >
-              Your Atlassian username / email address
+              <div
+                class="css-k5cxwk"
+              >
+                <input
+                  aria-describedby="username-uid3-valid username-uid3-helper"
+                  aria-invalid="false"
+                  aria-labelledby="username-uid3-label"
+                  class="border border-gray-400 rounded px-2 py-1 w-full"
+                  id="username"
+                  name="username"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="css-k5cxwk"
+            >
+              <div
+                class="text-xs text-gray-500 mt-1"
+              >
+                Your Atlassian username / email address
+              </div>
             </div>
           </div>
           <div
-            class="css-wwet8f"
-            data-testid="login-token"
+            class="css-11u50rl"
           >
-            <label
-              class="css-g6a23j"
-              data-testid="login-token--label"
-              for="token-uid4"
-              id="token-uid4-label"
+            <div
+              class="css-bsfd3j"
             >
-              API Token
+              <label
+                class="font-bold text-sm text-gray-700"
+                for="token"
+              >
+                API Token
+              </label>
               <span
-                aria-hidden="true"
-                class="css-1qy5j0p"
-                title="required"
+                class="text-red-500"
               >
                 *
               </span>
-            </label>
-            <div
-              class="css-17nf42q"
-              data-ds--text-field--container="true"
-              role="presentation"
-            >
-              <input
-                aria-describedby="token-uid4-valid token-uid4-helper"
-                aria-labelledby="token-uid4-label"
-                class="css-s6tjpp"
-                data-ds--text-field--input="true"
-                id="token-uid4"
-                name="token"
-                required=""
-                type="password"
-                value=""
-              />
             </div>
             <div
-              aria-live="polite"
-              class="css-5cg24a"
-              id="token-uid4-helper"
+              class="css-wwet8f"
             >
-              <span>
-                <div
-                  class="css-bsfd3j"
+              <div
+                class="css-k5cxwk"
+              >
+                <input
+                  aria-describedby="token-uid4-valid token-uid4-helper"
+                  aria-invalid="false"
+                  aria-labelledby="token-uid4-label"
+                  class="border border-gray-400 rounded px-2 py-1 w-full"
+                  id="token"
+                  name="token"
+                  required=""
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="css-bsfd3j"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="css-9v2r3w"
+                  data-testid="login-create-token"
+                  type="button"
                 >
-                  <div
-                    role="presentation"
+                  <span
+                    class="css-12rb8n9"
                   >
-                    <button
-                      class="css-9v2r3w"
-                      data-testid="login-create-token"
-                      type="button"
+                    <span
+                      aria-hidden="true"
+                      class="css-9693te"
+                      style="color: currentColor;"
                     >
-                      <span
-                        class="css-12rb8n9"
+                      <svg
+                        class="css-1a5x76h"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 12 12"
                       >
-                        <span
-                          aria-hidden="true"
-                          class="css-9693te"
-                          style="color: currentColor;"
-                        >
-                          <svg
-                            class="css-1a5x76h"
-                            fill="none"
-                            role="presentation"
-                            viewBox="0 0 12 12"
-                          >
-                            <path
-                              d="M8.813 11.25c.517 0 .937-.42.937-.937V7.187a.937.937 0 0 0-.937-.937H3.188a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937z"
-                              fill="currentcolor"
-                            />
-                            <path
-                              d="M3.75 6.25h-.562a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937h5.624c.518 0 .938-.42.938-.937V7.187a.937.937 0 0 0-.937-.937H8.25m-4.5 0V3a2.25 2.25 0 0 1 4.5 0v3.25m-4.5 0h4.5"
-                              stroke="currentcolor"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                            />
-                          </svg>
-                        </span>
-                      </span>
-                      <span
-                        class="css-1nqby2s"
-                      >
-                        Create an API Token
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="css-k5cxwk"
+                        <path
+                          d="M8.813 11.25c.517 0 .937-.42.937-.937V7.187a.937.937 0 0 0-.937-.937H3.188a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937z"
+                          fill="currentcolor"
+                        />
+                        <path
+                          d="M3.75 6.25h-.562a.937.937 0 0 0-.938.938v3.125c0 .517.42.937.938.937h5.624c.518 0 .938-.42.938-.937V7.187a.937.937 0 0 0-.937-.937H8.25m-4.5 0V3a2.25 2.25 0 0 1 4.5 0v3.25m-4.5 0h4.5"
+                          stroke="currentcolor"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="css-1nqby2s"
                   >
-                    for your account and paste above
-                  </div>
+                    Create an API Token
+                  </span>
+                </button>
+              </div>
+              <div
+                class="css-k5cxwk"
+              >
+                <div
+                  class="text-xs text-gray-500 mt-1"
+                >
+                  for your account and paste above
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
