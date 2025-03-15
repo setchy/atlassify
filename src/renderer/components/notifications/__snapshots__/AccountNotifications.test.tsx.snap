@@ -27,11 +27,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid66"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -259,11 +260,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid66"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -548,11 +550,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid42"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -748,11 +751,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid42"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -1005,11 +1009,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid50"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -1205,11 +1210,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid50"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -1462,11 +1468,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid58"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -1681,11 +1688,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid58"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -1957,11 +1965,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid22"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -2150,11 +2159,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid30"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2243,11 +2253,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid32"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2385,11 +2396,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid36"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2478,11 +2490,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid38"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2621,11 +2634,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid22"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -2814,11 +2828,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid30"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -2907,11 +2922,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid32"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -3049,11 +3065,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid36"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -3142,11 +3159,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid38"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -3342,11 +3360,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 >
                   <div
                     aria-labelledby="uid2"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-8n3d7m"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                     >
                       <img
                         alt=""
@@ -3535,11 +3554,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid10"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -3628,11 +3648,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid12"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -3770,11 +3791,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid16"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -3863,11 +3885,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid18"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -4006,11 +4029,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               >
                 <div
                   aria-labelledby="uid2"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-8n3d7m"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                   >
                     <img
                       alt=""
@@ -4199,11 +4223,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid10"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4292,11 +4317,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid12"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -4434,11 +4460,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid16"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4527,11 +4554,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid18"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -4731,11 +4759,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 >
                   <div
                     aria-labelledby="uid138"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -4924,11 +4953,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 >
                   <div
                     aria-labelledby="uid158"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -5117,11 +5147,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <div
                         aria-labelledby="uid166"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5210,11 +5241,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <div
                                 aria-labelledby="uid168"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -5352,11 +5384,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <div
                         aria-labelledby="uid172"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5445,11 +5478,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <div
                                 aria-labelledby="uid174"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -5588,11 +5622,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               >
                 <div
                   aria-labelledby="uid158"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -5781,11 +5816,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   >
                     <div
                       aria-labelledby="uid166"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -5874,11 +5910,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           >
                             <div
                               aria-labelledby="uid168"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -6016,11 +6053,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   >
                     <div
                       aria-labelledby="uid172"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -6109,11 +6147,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           >
                             <div
                               aria-labelledby="uid174"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
