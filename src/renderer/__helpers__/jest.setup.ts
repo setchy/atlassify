@@ -10,6 +10,11 @@ if (!global.TextEncoder || !global.TextDecoder) {
   global.TextDecoder = TextDecoder;
 }
 
+// @ts-ignore
+window.Audio = class Audio {
+  play() {}
+};
+
 window.atlassify = {
   app: {
     version: () => Promise.resolve('v0.0.1'),
