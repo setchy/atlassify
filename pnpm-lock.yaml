@@ -73,8 +73,8 @@ importers:
         specifier: 6.6.0
         version: 6.6.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
-        specifier: 16.3.6
-        version: 16.3.6(@types/react@18.3.18)(react@18.3.1)
+        specifier: 18.0.1
+        version: 18.0.1(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/toggle':
         specifier: 13.4.10
         version: 13.4.10(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -487,6 +487,11 @@ packages:
     resolution: {integrity: sha512-H+/I0Xlnmit+kfl5ijqONHXEZAuZqXjmIl9e8TTinYtrWS8zAOTDVOuvnGaO0WPgnKRLzdlHbIg7/WEgOgywyw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  '@atlaskit/spinner@18.0.1':
+    resolution: {integrity: sha512-tJIS8IiGvXEVsIzyctu4FVAyanth5WZADNBML2HDvNhtskwiZO4bYyD4DJR8F0xULjDcDuxWKkOhi4QlNNv9Ow==}
+    peerDependencies:
+      react: ^18.2.0
 
   '@atlaskit/theme@13.1.0':
     resolution: {integrity: sha512-9HWU2Wf5DX1+OQKmqAeZqUPAe2BgNhyYhIlkQm2Vo8RxzvI0BDWyjafEro4MdUK8ZYqSfegd9wgk7qzIUF9ZaQ==}
@@ -6112,6 +6117,18 @@ snapshots:
       '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/spinner@18.0.1(@types/react@18.3.18)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/interaction-context': 3.0.0(react@18.3.1)
+      '@atlaskit/theme': 18.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 4.3.2(@types/react@18.3.18)(react@18.3.1)
+      '@babel/runtime': 7.25.7
+      '@compiled/react': 0.18.2(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
