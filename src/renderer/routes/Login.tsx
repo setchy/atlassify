@@ -83,7 +83,6 @@ export const LoginRoute: FC = () => {
                   type="text"
                   id="username"
                   name="username"
-                  required
                   className={inputClasses}
                 />
               </Box>
@@ -108,7 +107,6 @@ export const LoginRoute: FC = () => {
                   type="password"
                   id="token"
                   name="token"
-                  required
                   className={inputClasses}
                 />
               </Box>
