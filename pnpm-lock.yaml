@@ -43,8 +43,8 @@ importers:
         specifier: 20.3.3
         version: 20.3.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 15.4.0
-        version: 15.4.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 16.0.0
+        version: 16.0.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 7.0.1
         version: 7.0.1(@types/react@18.3.18)(react@18.3.1)
@@ -315,10 +315,10 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@atlaskit/checkbox@15.4.0':
-    resolution: {integrity: sha512-VuhHFWbyahIA9ZI3LyNGzRJRXkXuARw4x8ucZxEVpgNm1+zbU5ovE+8bvoymaX1lg269CDpJDqGeTP1g0w+alA==}
+  '@atlaskit/checkbox@16.0.0':
+    resolution: {integrity: sha512-0svvZynsw0m1iGXbYpxTREDPOnDxe9bjCaaRvmYkGRldEExfzkKqETzFv4ml5mvEa1BRrHFwkZ/F6ztcQ4BSoQ==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^18.2.0
 
   '@atlaskit/codemod-utils@4.2.4':
     resolution: {integrity: sha512-ETeLShTnEpLvsEhm0wmIlC7toRPy9hrMGbttdsiKzyUeGQQ3VqBxvOOPZNA6Uvi0660Jjd3lS7n5u7R/Ku0OHg==}
@@ -5701,15 +5701,15 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@15.4.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@16.0.0(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/analytics-next': 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.9.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/ds-lib': 3.5.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/icon': 23.11.0(@babel/core@7.25.7)(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/css': 0.10.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/icon': 24.1.0(@babel/core@7.25.7)(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
-      '@atlaskit/theme': 16.0.0(@types/react@18.3.18)(react@18.3.1)
-      '@atlaskit/tokens': 3.3.2(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/theme': 17.0.0(@types/react@18.3.18)(react@18.3.1)
+      '@atlaskit/tokens': 4.3.2(@types/react@18.3.18)(react@18.3.1)
       '@babel/runtime': 7.25.7
       '@emotion/react': 11.13.3(@types/react@18.3.18)(react@18.3.1)
       react: 18.3.1
@@ -8162,7 +8162,7 @@ snapshots:
       builder-util-runtime: 9.2.10
       chromium-pickle-js: 0.2.0
       config-file-ts: 0.2.8-rc1
-      debug: 4.3.7
+      debug: 4.4.0
       dmg-builder: 25.1.8(electron-builder-squirrel-windows@25.1.7)
       dotenv: 16.4.5
       dotenv-expand: 11.0.6
