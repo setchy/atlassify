@@ -79,11 +79,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
             >
               <div
                 aria-labelledby="uid14"
+                class="css-130dd7j"
                 role="img"
-                style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-1lxbsnd"
+                  class="css-1ummshu"
+                  style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                 >
                   <img
                     alt=""
@@ -330,11 +331,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
             >
               <div
                 aria-labelledby="uid4"
+                class="css-130dd7j"
                 role="img"
-                style="display: inline-block; position: relative; outline: 0;"
               >
                 <span
-                  class="css-m9ooyq"
+                  class="css-1ummshu"
+                  style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                 >
                   <img
                     alt=""

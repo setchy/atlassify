@@ -30,11 +30,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   >
                     <div
                       aria-labelledby="uid2"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -123,11 +124,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <div
                               aria-labelledby="uid4"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -268,11 +270,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 >
                   <div
                     aria-labelledby="uid2"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1pb0q1k"
+                      class="css-1ummshu"
+                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -361,11 +364,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <div
                             aria-labelledby="uid4"
+                            class="css-130dd7j"
                             role="img"
-                            style="display: inline-block; position: relative; outline: 0;"
                           >
                             <span
-                              class="css-1jon4ae"
+                              class="css-1iefllh"
+                              style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                             >
                               <img
                                 alt=""
@@ -563,11 +567,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   >
                     <div
                       aria-labelledby="uid8"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -656,11 +661,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <div
                               aria-labelledby="uid10"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -801,11 +807,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 >
                   <div
                     aria-labelledby="uid8"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-1pb0q1k"
+                      class="css-1ummshu"
+                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -894,11 +901,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <div
                             aria-labelledby="uid10"
+                            class="css-130dd7j"
                             role="img"
-                            style="display: inline-block; position: relative; outline: 0;"
                           >
                             <span
-                              class="css-1jon4ae"
+                              class="css-1iefllh"
+                              style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                             >
                               <img
                                 alt=""
