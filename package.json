@@ -147,7 +147,7 @@
     "@atlaskit/tooltip": "18.9.4",
     "@biomejs/biome": "1.9.4",
     "@discordapp/twemoji": "15.1.0",
-    "@electron/notarize": "2.5.0",
+    "@electron/notarize": "3.0.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/client-preset": "4.7.0",
     "@graphql-codegen/schema-ast": "4.1.0",
