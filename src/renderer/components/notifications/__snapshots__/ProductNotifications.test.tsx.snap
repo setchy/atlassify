@@ -132,10 +132,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -287,10 +287,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -499,10 +499,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -654,10 +654,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -866,10 +866,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M4.5 10.5 9 6 4.5 1.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M7.94 6 3.97 2.03 5.03.97l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5-1.06-1.06z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1014,10 +1014,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1169,10 +1169,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
