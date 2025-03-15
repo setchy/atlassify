@@ -61,7 +61,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       >
         <form>
           <div
-            class="css-1qcqice"
+            class="css-1ub26k9"
           >
             <div
               class="css-11u50rl"
@@ -82,23 +82,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </span>
               </div>
               <div
-                class="css-wwet8f"
+                class="css-k5cxwk"
               >
-                <div
-                  class="css-k5cxwk"
-                >
-                  <input
-                    aria-describedby="username-uid3-valid username-uid3-helper"
-                    aria-invalid="false"
-                    aria-labelledby="username-uid3-label"
-                    class="border border-gray-400 rounded px-2 py-1 w-full"
-                    id="username"
-                    name="username"
-                    required=""
-                    type="text"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="border border-gray-400 rounded px-2 py-1 w-full"
+                  id="username"
+                  name="username"
+                  type="text"
+                />
               </div>
               <div
                 class="css-k5cxwk"
@@ -129,23 +120,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </span>
               </div>
               <div
-                class="css-wwet8f"
+                class="css-k5cxwk"
               >
-                <div
-                  class="css-k5cxwk"
-                >
-                  <input
-                    aria-describedby="token-uid4-valid token-uid4-helper"
-                    aria-invalid="false"
-                    aria-labelledby="token-uid4-label"
-                    class="border border-gray-400 rounded px-2 py-1 w-full"
-                    id="token"
-                    name="token"
-                    required=""
-                    type="password"
-                    value=""
-                  />
-                </div>
+                <input
+                  class="border border-gray-400 rounded px-2 py-1 w-full"
+                  id="token"
+                  name="token"
+                  type="password"
+                />
               </div>
               <div
                 class="css-bsfd3j"
@@ -201,56 +183,56 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
           </div>
           <div
-            class="css-1rw5qv2"
+            class="css-opqhvv"
           >
             <div
-              class="css-kxmhz3"
+              class="css-1gbz6oi"
             >
               <div
-                class="css-1gbz6oi"
+                class="css-kxmhz3"
               >
                 <div
-                  role="presentation"
+                  class="css-k5cxwk"
                 >
-                  <button
-                    class="css-vgqjed"
-                    data-testid="login-docs"
-                    type="button"
+                  <div
+                    role="presentation"
                   >
-                    <span
-                      class="css-12rb8n9"
+                    <button
+                      class="css-vgqjed"
+                      data-testid="login-docs"
+                      type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="css-kxjlgc"
-                        style="color: currentColor;"
+                        class="css-12rb8n9"
                       >
-                        <svg
-                          class="css-1t4wpzr"
-                          fill="none"
-                          role="presentation"
-                          viewBox="0 0 16 16"
+                        <span
+                          aria-hidden="true"
+                          class="css-kxjlgc"
+                          style="color: currentColor;"
                         >
-                          <path
-                            clip-rule="evenodd"
-                            d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
-                            fill="currentcolor"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            class="css-1t4wpzr"
+                            fill="none"
+                            role="presentation"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="css-1nqby2s"
-                    >
-                      Docs
-                    </span>
-                  </button>
+                      <span
+                        class="css-1nqby2s"
+                      >
+                        Docs
+                      </span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <footer
-                class="css-kwugxo"
-              >
                 <div
                   aria-label="Form submit options"
                   class="css-1oy5iav"
@@ -302,7 +284,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </button>
                 </div>
-              </footer>
+              </div>
             </div>
           </div>
         </form>
@@ -366,7 +348,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
     >
       <form>
         <div
-          class="css-1qcqice"
+          class="css-1ub26k9"
         >
           <div
             class="css-11u50rl"
@@ -387,23 +369,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </span>
             </div>
             <div
-              class="css-wwet8f"
+              class="css-k5cxwk"
             >
-              <div
-                class="css-k5cxwk"
-              >
-                <input
-                  aria-describedby="username-uid3-valid username-uid3-helper"
-                  aria-invalid="false"
-                  aria-labelledby="username-uid3-label"
-                  class="border border-gray-400 rounded px-2 py-1 w-full"
-                  id="username"
-                  name="username"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="border border-gray-400 rounded px-2 py-1 w-full"
+                id="username"
+                name="username"
+                type="text"
+              />
             </div>
             <div
               class="css-k5cxwk"
@@ -434,23 +407,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </span>
             </div>
             <div
-              class="css-wwet8f"
+              class="css-k5cxwk"
             >
-              <div
-                class="css-k5cxwk"
-              >
-                <input
-                  aria-describedby="token-uid4-valid token-uid4-helper"
-                  aria-invalid="false"
-                  aria-labelledby="token-uid4-label"
-                  class="border border-gray-400 rounded px-2 py-1 w-full"
-                  id="token"
-                  name="token"
-                  required=""
-                  type="password"
-                  value=""
-                />
-              </div>
+              <input
+                class="border border-gray-400 rounded px-2 py-1 w-full"
+                id="token"
+                name="token"
+                type="password"
+              />
             </div>
             <div
               class="css-bsfd3j"
@@ -506,56 +470,56 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           </div>
         </div>
         <div
-          class="css-1rw5qv2"
+          class="css-opqhvv"
         >
           <div
-            class="css-kxmhz3"
+            class="css-1gbz6oi"
           >
             <div
-              class="css-1gbz6oi"
+              class="css-kxmhz3"
             >
               <div
-                role="presentation"
+                class="css-k5cxwk"
               >
-                <button
-                  class="css-vgqjed"
-                  data-testid="login-docs"
-                  type="button"
+                <div
+                  role="presentation"
                 >
-                  <span
-                    class="css-12rb8n9"
+                  <button
+                    class="css-vgqjed"
+                    data-testid="login-docs"
+                    type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="css-kxjlgc"
-                      style="color: currentColor;"
+                      class="css-12rb8n9"
                     >
-                      <svg
-                        class="css-1t4wpzr"
-                        fill="none"
-                        role="presentation"
-                        viewBox="0 0 16 16"
+                      <span
+                        aria-hidden="true"
+                        class="css-kxjlgc"
+                        style="color: currentColor;"
                       >
-                        <path
-                          clip-rule="evenodd"
-                          d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
+                        <svg
+                          class="css-1t4wpzr"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                     </span>
-                  </span>
-                  <span
-                    class="css-1nqby2s"
-                  >
-                    Docs
-                  </span>
-                </button>
+                    <span
+                      class="css-1nqby2s"
+                    >
+                      Docs
+                    </span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <footer
-              class="css-kwugxo"
-            >
               <div
                 aria-label="Form submit options"
                 class="css-1oy5iav"
@@ -607,7 +571,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </span>
                 </button>
               </div>
-            </footer>
+            </div>
           </div>
         </div>
       </form>
