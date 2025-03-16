@@ -49,7 +49,7 @@ importers:
         specifier: 7.0.1
         version: 7.0.1(@types/react@18.3.18)(react@18.3.1)
       '@atlaskit/form':
-        specifier: '10.6.3 '
+        specifier: 10.6.3
         version: 10.6.3(@babel/core@7.25.7)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
         specifier: 3.1.0
