@@ -61,83 +61,144 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       >
         <form>
           <div
-            class="css-1ub26k9"
+            class="css-2pqcrg"
           >
             <div
-              class="css-11u50rl"
+              class="css-wwet8f"
+              data-testid="login-username"
             >
-              <div
-                class="css-bsfd3j"
+              <label
+                class="css-g6a23j"
+                data-testid="login-username--label"
+                for="username-uid3"
+                id="username-uid3-label"
               >
-                <label
-                  class="font-bold text-sm text-gray-700"
-                  for="username"
-                >
-                  Username
-                </label>
-                <span
-                  class="text-red-500"
-                >
-                  *
-                </span>
-              </div>
+                Username
+              </label>
               <div
-                class="css-k5cxwk"
+                class="css-17nf42q"
+                data-ds--text-field--container="true"
+                role="presentation"
               >
                 <input
-                  class="border border-gray-400 rounded px-2 py-1 w-full"
-                  id="username"
+                  aria-describedby="username-uid3-valid username-uid3-helper"
+                  aria-labelledby="username-uid3-label"
+                  autocomplete="off"
+                  class="css-s6tjpp"
+                  data-ds--text-field--input="true"
+                  id="username-uid3"
                   name="username"
-                  type="text"
+                  value=""
                 />
               </div>
               <div
-                class="css-k5cxwk"
+                aria-live="polite"
+                class="css-5cg24a"
+                id="username-uid3-helper"
               >
-                <div
-                  class="text-xs text-gray-500 mt-1"
-                >
-                  Your Atlassian username / email address
-                </div>
+                Your Atlassian username / email address
               </div>
             </div>
             <div
-              class="css-11u50rl"
+              class="css-wwet8f"
+              data-testid="login-token"
             >
-              <div
-                class="css-bsfd3j"
+              <label
+                class="css-g6a23j"
+                data-testid="login-token--label"
+                for="token-uid4"
+                id="token-uid4-label"
               >
-                <label
-                  class="font-bold text-sm text-gray-700"
-                  for="token"
-                >
-                  API Token
-                </label>
-                <span
-                  class="text-red-500"
-                >
-                  *
-                </span>
-              </div>
+                API Token
+              </label>
               <div
-                class="css-k5cxwk"
+                class="css-17nf42q"
+                data-ds--text-field--container="true"
+                role="presentation"
               >
                 <input
-                  class="border border-gray-400 rounded px-2 py-1 w-full"
-                  id="token"
+                  aria-describedby="token-uid4-valid token-uid4-helper"
+                  aria-labelledby="token-uid4-label"
+                  class="css-s6tjpp"
+                  data-ds--text-field--input="true"
+                  id="token-uid4"
                   name="token"
                   type="password"
+                  value=""
                 />
               </div>
               <div
-                class="css-bsfd3j"
+                aria-live="polite"
+                class="css-5cg24a"
+                id="token-uid4-helper"
+              >
+                <span>
+                  <div
+                    class="css-bsfd3j"
+                  >
+                    <div
+                      role="presentation"
+                    >
+                      <button
+                        class="css-9v2r3w"
+                        data-testid="login-create-token"
+                        type="button"
+                      >
+                        <span
+                          class="css-12rb8n9"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="css-9693te"
+                            style="color: currentColor;"
+                          >
+                            <svg
+                              class="css-1a5x76h"
+                              fill="none"
+                              role="presentation"
+                              viewBox="0 0 12 12"
+                            >
+                              <path
+                                clip-rule="evenodd"
+                                d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          class="css-1nqby2s"
+                        >
+                          Create an API Token
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                    >
+                      for your account and paste above
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1rw5qv2"
+          >
+            <div
+              class="css-kxmhz3"
+            >
+              <div
+                class="css-1gbz6oi"
               >
                 <div
                   role="presentation"
                 >
                   <button
-                    class="css-9v2r3w"
-                    data-testid="login-create-token"
+                    class="css-vgqjed"
+                    data-testid="login-docs"
                     type="button"
                   >
                     <span
@@ -145,18 +206,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     >
                       <span
                         aria-hidden="true"
-                        class="css-9693te"
+                        class="css-kxjlgc"
                         style="color: currentColor;"
                       >
                         <svg
-                          class="css-1a5x76h"
+                          class="css-1t4wpzr"
                           fill="none"
                           role="presentation"
-                          viewBox="0 0 12 12"
+                          viewBox="0 0 16 16"
                         >
                           <path
                             clip-rule="evenodd"
-                            d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                            d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
                             fill="currentcolor"
                             fill-rule="evenodd"
                           />
@@ -166,73 +227,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     <span
                       class="css-1nqby2s"
                     >
-                      Create an API Token
+                      Docs
                     </span>
                   </button>
                 </div>
-                <div
-                  class="css-k5cxwk"
-                >
-                  <div
-                    class="text-xs text-gray-500 mt-1"
-                  >
-                    for your account and paste above
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
-          <div
-            class="css-opqhvv"
-          >
-            <div
-              class="css-1gbz6oi"
-            >
-              <div
-                class="css-kxmhz3"
+              <footer
+                class="css-kwugxo"
               >
-                <div
-                  class="css-k5cxwk"
-                >
-                  <div
-                    role="presentation"
-                  >
-                    <button
-                      class="css-vgqjed"
-                      data-testid="login-docs"
-                      type="button"
-                    >
-                      <span
-                        class="css-12rb8n9"
-                      >
-                        <span
-                          aria-hidden="true"
-                          class="css-kxjlgc"
-                          style="color: currentColor;"
-                        >
-                          <svg
-                            class="css-1t4wpzr"
-                            fill="none"
-                            role="presentation"
-                            viewBox="0 0 16 16"
-                          >
-                            <path
-                              clip-rule="evenodd"
-                              d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
-                              fill="currentcolor"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
-                        </span>
-                      </span>
-                      <span
-                        class="css-1nqby2s"
-                      >
-                        Docs
-                      </span>
-                    </button>
-                  </div>
-                </div>
                 <div
                   aria-label="Form submit options"
                   class="css-1oy5iav"
@@ -284,7 +286,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </button>
                 </div>
-              </div>
+              </footer>
             </div>
           </div>
         </form>
@@ -348,83 +350,144 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
     >
       <form>
         <div
-          class="css-1ub26k9"
+          class="css-2pqcrg"
         >
           <div
-            class="css-11u50rl"
+            class="css-wwet8f"
+            data-testid="login-username"
           >
-            <div
-              class="css-bsfd3j"
+            <label
+              class="css-g6a23j"
+              data-testid="login-username--label"
+              for="username-uid3"
+              id="username-uid3-label"
             >
-              <label
-                class="font-bold text-sm text-gray-700"
-                for="username"
-              >
-                Username
-              </label>
-              <span
-                class="text-red-500"
-              >
-                *
-              </span>
-            </div>
+              Username
+            </label>
             <div
-              class="css-k5cxwk"
+              class="css-17nf42q"
+              data-ds--text-field--container="true"
+              role="presentation"
             >
               <input
-                class="border border-gray-400 rounded px-2 py-1 w-full"
-                id="username"
+                aria-describedby="username-uid3-valid username-uid3-helper"
+                aria-labelledby="username-uid3-label"
+                autocomplete="off"
+                class="css-s6tjpp"
+                data-ds--text-field--input="true"
+                id="username-uid3"
                 name="username"
-                type="text"
+                value=""
               />
             </div>
             <div
-              class="css-k5cxwk"
+              aria-live="polite"
+              class="css-5cg24a"
+              id="username-uid3-helper"
             >
-              <div
-                class="text-xs text-gray-500 mt-1"
-              >
-                Your Atlassian username / email address
-              </div>
+              Your Atlassian username / email address
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-wwet8f"
+            data-testid="login-token"
           >
-            <div
-              class="css-bsfd3j"
+            <label
+              class="css-g6a23j"
+              data-testid="login-token--label"
+              for="token-uid4"
+              id="token-uid4-label"
             >
-              <label
-                class="font-bold text-sm text-gray-700"
-                for="token"
-              >
-                API Token
-              </label>
-              <span
-                class="text-red-500"
-              >
-                *
-              </span>
-            </div>
+              API Token
+            </label>
             <div
-              class="css-k5cxwk"
+              class="css-17nf42q"
+              data-ds--text-field--container="true"
+              role="presentation"
             >
               <input
-                class="border border-gray-400 rounded px-2 py-1 w-full"
-                id="token"
+                aria-describedby="token-uid4-valid token-uid4-helper"
+                aria-labelledby="token-uid4-label"
+                class="css-s6tjpp"
+                data-ds--text-field--input="true"
+                id="token-uid4"
                 name="token"
                 type="password"
+                value=""
               />
             </div>
             <div
-              class="css-bsfd3j"
+              aria-live="polite"
+              class="css-5cg24a"
+              id="token-uid4-helper"
+            >
+              <span>
+                <div
+                  class="css-bsfd3j"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <button
+                      class="css-9v2r3w"
+                      data-testid="login-create-token"
+                      type="button"
+                    >
+                      <span
+                        class="css-12rb8n9"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="css-9693te"
+                          style="color: currentColor;"
+                        >
+                          <svg
+                            class="css-1a5x76h"
+                            fill="none"
+                            role="presentation"
+                            viewBox="0 0 12 12"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span
+                        class="css-1nqby2s"
+                      >
+                        Create an API Token
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    class="css-k5cxwk"
+                  >
+                    for your account and paste above
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-1rw5qv2"
+        >
+          <div
+            class="css-kxmhz3"
+          >
+            <div
+              class="css-1gbz6oi"
             >
               <div
                 role="presentation"
               >
                 <button
-                  class="css-9v2r3w"
-                  data-testid="login-create-token"
+                  class="css-vgqjed"
+                  data-testid="login-docs"
                   type="button"
                 >
                   <span
@@ -432,18 +495,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   >
                     <span
                       aria-hidden="true"
-                      class="css-9693te"
+                      class="css-kxjlgc"
                       style="color: currentColor;"
                     >
                       <svg
-                        class="css-1a5x76h"
+                        class="css-1t4wpzr"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                          d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
                           fill="currentcolor"
                           fill-rule="evenodd"
                         />
@@ -453,73 +516,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   <span
                     class="css-1nqby2s"
                   >
-                    Create an API Token
+                    Docs
                   </span>
                 </button>
               </div>
-              <div
-                class="css-k5cxwk"
-              >
-                <div
-                  class="text-xs text-gray-500 mt-1"
-                >
-                  for your account and paste above
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="css-opqhvv"
-        >
-          <div
-            class="css-1gbz6oi"
-          >
-            <div
-              class="css-kxmhz3"
+            <footer
+              class="css-kwugxo"
             >
-              <div
-                class="css-k5cxwk"
-              >
-                <div
-                  role="presentation"
-                >
-                  <button
-                    class="css-vgqjed"
-                    data-testid="login-docs"
-                    type="button"
-                  >
-                    <span
-                      class="css-12rb8n9"
-                    >
-                      <span
-                        aria-hidden="true"
-                        class="css-kxjlgc"
-                        style="color: currentColor;"
-                      >
-                        <svg
-                          class="css-1t4wpzr"
-                          fill="none"
-                          role="presentation"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            clip-rule="evenodd"
-                            d="M3 2.5a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-3H15v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3v1.5zM10 1h4.25a.75.75 0 0 1 .75.75V6h-1.5V3.56L7.53 9.53 6.47 8.47l5.97-5.97H10z"
-                            fill="currentcolor"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="css-1nqby2s"
-                    >
-                      Docs
-                    </span>
-                  </button>
-                </div>
-              </div>
               <div
                 aria-label="Form submit options"
                 class="css-1oy5iav"
@@ -571,7 +575,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </span>
                 </button>
               </div>
-            </div>
+            </footer>
           </div>
         </div>
       </form>
