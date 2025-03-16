@@ -11,7 +11,7 @@ import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SettingsReset } from '../components/settings/SettingsReset';
 import { SystemSettings } from '../components/settings/SystemSettings';
 
-// FIXME: InlineMessage findDOMNode errors. See issue #90
+// FIXME #90 InlineMessage findDOMNode errors
 export const SettingsRoute: FC = () => {
   return (
     <Page id="settings">
