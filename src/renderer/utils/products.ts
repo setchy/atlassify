@@ -14,7 +14,7 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
-// TODO: remove duplication between this and filters/product PRODUCT_DETAILS
+// TODO remove duplication between this and filters/product PRODUCT_DETAILS
 export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
