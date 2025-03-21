@@ -14,11 +14,11 @@ describe('renderer/utils/comms.ts', () => {
         settings: { ...mockSettings, openLinks: OpenPreference.BACKGROUND },
       });
 
-      openExternalLink('https://www.atlassify.io/' as Link);
+      openExternalLink('https://atlassify.io/' as Link);
 
       expect(window.atlassify.openExternalLink).toHaveBeenCalledTimes(1);
       expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://www.atlassify.io/',
+        'https://atlassify.io/',
         false,
       );
     });
@@ -26,11 +26,11 @@ describe('renderer/utils/comms.ts', () => {
     it('should use default open preference if user settings not found', () => {
       jest.spyOn(storage, 'loadState').mockReturnValue({ settings: null });
 
-      openExternalLink('https://www.atlassify.io/' as Link);
+      openExternalLink('https://atlassify.io/' as Link);
 
       expect(window.atlassify.openExternalLink).toHaveBeenCalledTimes(1);
       expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://www.atlassify.io/',
+        'https://atlassify.io/',
         true,
       );
     });

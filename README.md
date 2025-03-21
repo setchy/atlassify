@@ -41,8 +41,8 @@ I would like to acknowledge the following projects and resources that have inspi
 
 
 <!-- LINK LABELS -->
-[website]: https://www.atlassify.io
-[faqs]: https://www.atlassify.io/faq/
+[website]: https://atlassify.io
+[faqs]: https://atlassify.io/faq/
 
 [attribution-gitify]: https://gitify.io
 [attribution-atlassian]: https://atlassian.design/
