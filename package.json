@@ -56,7 +56,7 @@
   "bugs": {
     "url": "https://github.com/setchy/atlassify/issues"
   },
-  "homepage": "https://atlassify.io/",
+  "homepage": "https://atlassify.io",
   "build": {
     "productName": "Atlassify",
     "appId": "com.electron.atlassify",
