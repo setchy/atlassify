@@ -15,9 +15,9 @@
     "watch:preload": "webpack --watch --config ./config/webpack.config.preload.base.ts",
     "watch:renderer": "webpack --watch --config ./config/webpack.config.renderer.base.ts",
     "prepare:remove-source-maps": "ts-node ./scripts/delete-source-maps.ts",
-    "package:linux": "electron-builder --linux",
-    "package:macos": "electron-builder --mac",
-    "package:win": "electron-builder --win",
+    "package:linux": "electron-builder --linux --config ./config/electron-builder.js",
+    "package:macos": "electron-builder --mac --config ./config/electron-builder.js",
+    "package:win": "electron-builder --win --config ./config/electron-builder.js",
     "lint:check": "biome check",
     "lint": "biome check --fix",
     "test": "jest",
@@ -57,65 +57,6 @@
     "url": "https://github.com/setchy/atlassify/issues"
   },
   "homepage": "https://atlassify.io",
-  "build": {
-    "productName": "Atlassify",
-    "appId": "com.electron.atlassify",
-    "copyright": "Copyright © 2025 Adam Setch",
-    "asar": true,
-    "files": [
-      "assets/images/*",
-      "assets/sounds/*",
-      "build/**/*",
-      "LICENSE",
-      "node_modules/**/*",
-      "package.json"
-    ],
-    "electronLanguages": ["en"],
-    "mac": {
-      "category": "public.app-category.developer-tools",
-      "icon": "assets/images/app-icon.icns",
-      "identity": "Adam Setch (5KD23H9729)",
-      "type": "distribution",
-      "notarize": false,
-      "target": {
-        "target": "default",
-        "arch": ["universal", "arm64", "x64"]
-      },
-      "hardenedRuntime": true,
-      "entitlements": "assets/entitlements.mac.plist",
-      "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false,
-      "extendInfo": {
-        "NSBluetoothAlwaysUsageDescription": null,
-        "NSBluetoothPeripheralUsageDescription": null,
-        "NSCameraUsageDescription": null,
-        "NSMicrophoneUsageDescription": null
-      }
-    },
-    "dmg": {
-      "sign": false,
-      "icon": "assets/images/app-icon.icns"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "assets/images/app-icon.ico"
-    },
-    "nsis": {
-      "oneClick": false
-    },
-    "linux": {
-      "target": ["AppImage", "deb", "rpm"],
-      "category": "Productivity",
-      "maintainer": "Adam Setch"
-    },
-    "publish": {
-      "provider": "github",
-      "owner": "setchy",
-      "repo": "atlassify"
-    },
-    "afterSign": "scripts/notarize.js",
-    "afterPack": "scripts/remove-unused-locales.js"
-  },
   "dependencies": {
     "electron-log": "5.3.2",
     "electron-updater": "6.3.9",
