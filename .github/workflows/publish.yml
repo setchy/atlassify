@@ -30,9 +30,9 @@ jobs:
       - run: pnpm prepare:remove-source-maps
       - run: pnpm package:macos --publish onTagOrDraft
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLEID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-          APPLE_ID_TEAM_ID: ${{ secrets.APPLEID_TEAMID }}
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
