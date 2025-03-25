@@ -59,8 +59,8 @@ const config = {
     owner: 'setchy',
     repo: 'atlassify',
   },
-  afterSign: 'scripts/notarize.js',
-  afterPack: 'scripts/remove-unused-locales.js',
+  afterSign: 'scripts/afterSign.js',
+  afterPack: 'scripts/afterPack.js',
 };
 
 module.exports = config;
