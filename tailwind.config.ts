@@ -20,6 +20,16 @@ const config: Config = {
           sidebar: 'var(--atlassify-background-sidebar)',
           notifications: 'var(--atlassify-background-notifications)',
           attention: R300,
+          heroicon: {
+            neutral: {
+              background: 'var(--ds-background-accent-gray-subtler)',
+              outline: 'var(--ds-text-subtle)',
+            },
+            selected: {
+              background: 'var(--ds-background-accent-blue-subtler)',
+              outline: 'var(--ds-text-selected)',
+            },
+          },
         },
       },
     },

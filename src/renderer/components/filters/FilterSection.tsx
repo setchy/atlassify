@@ -8,6 +8,7 @@ import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { AppContext } from '../../context/App';
 import type { FilterSettingsState, FilterValue } from '../../types';
+import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
@@ -61,6 +62,16 @@ export const FilterSection = <T extends FilterValue>({
                 <typeDetails.logo
                   size="xsmall"
                   appearance={isChecked ? 'brand' : 'neutral'}
+                />
+              )}
+              {typeDetails.heroicon && (
+                <typeDetails.heroicon
+                  className={cn(
+                    'size-4 p-[1px] rounded border',
+                    isChecked
+                      ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
+                      : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
+                  )}
                 />
               )}
               <Badge max={false} appearance={isChecked ? 'primary' : 'default'}>
