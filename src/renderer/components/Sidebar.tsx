@@ -94,7 +94,7 @@ export const Sidebar: FC = () => {
             </Tooltip>
 
             <Tooltip
-              content={`${notificationsLabel} unread notifications`}
+              content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? 'unread ' : ''}notifications`}
               position="right"
             >
               <IconButton
