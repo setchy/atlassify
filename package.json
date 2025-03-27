@@ -149,7 +149,7 @@
     "@discordapp/twemoji": "15.1.0",
     "@electron/notarize": "2.5.0",
     "@graphql-codegen/cli": "5.0.5",
-    "@graphql-codegen/client-preset": "4.7.0",
+    "@graphql-codegen/client-preset": "4.8.0",
     "@graphql-codegen/schema-ast": "4.1.0",
     "@heroicons/react": "2.2.0",
     "@testing-library/react": "16.2.0",
