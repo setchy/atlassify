@@ -1,32 +1,45 @@
 const { notarize } = require('@electron/notarize');
 const { AfterPackContext } = require('electron-builder');
 
-const packageJson = require('../package.json');
-const appBundleId = packageJson.build.appId;
+const builderConfig = require('../config/electron-builder');
+const appBundleId = builderConfig.appId;
 
-function logNotarizingProgress(msg) {
+function logAfterSignProgress(msg) {
   // biome-ignore lint/suspicious/noConsoleLog: log notarizing progress
-  console.log(`  • 📦 Notarizing Script: ${msg}`);
+  console.log(`  • [afterSign]: ${msg}`);
 }
 
 /**
  * @param {AfterPackContext} context
  */
-const notarizeApp = async (context) => {
+const afterSign = async (context) => {
+  logAfterSignProgress('Starting...');
+
   const { appOutDir } = context;
   const appName = context.packager.appInfo.productFilename;
   const shouldNotarize = process.env.NOTARIZE === 'true';
 
   if (!shouldNotarize) {
-    logNotarizingProgress(
+    logAfterSignProgress(
       'skipping notarize step as NOTARIZE env flag was not set',
     );
     return;
   }
 
-  logNotarizingProgress('process started');
+  notarizeApp(appName, appOutDir);
 
-  return await notarize({
+  logAfterSignProgress('Completed');
+};
+
+/**
+ * Notarizes the application
+ * @param {string} appOutDir
+ * @param {string} appName
+ */
+const notarizeApp = (appOutDir, appName) => {
+  logAfterSignProgress('notarizing app');
+
+  return notarize({
     appBundleId,
     appPath: `${appOutDir}/${appName}.app`,
     appleId: process.env.APPLE_ID_USERNAME,
@@ -36,4 +49,4 @@ const notarizeApp = async (context) => {
   });
 };
 
-exports.default = notarizeApp;
+module.exports = afterSign;
