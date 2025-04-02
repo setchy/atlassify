@@ -97,7 +97,7 @@
     "@types/jest": "29.5.14",
     "@types/node": "22.13.17",
     "@types/react": "18.3.20",
-    "@types/react-dom": "18.3.5",
+    "@types/react-dom": "18.3.6",
     "@types/react-router-dom": "5.3.3",
     "autoprefixer": "10.4.21",
     "axios": "1.8.4",
