@@ -2,6 +2,8 @@ name: Website
 
 on:
   workflow_dispatch: # For manually running website deployment
+  release:
+    types: [published] # For running on release publish
 
 permissions:
   contents: read
