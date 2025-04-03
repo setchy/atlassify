@@ -1,9 +1,6 @@
 const { notarize } = require('@electron/notarize');
 const { AfterPackContext } = require('electron-builder');
 
-const builderConfig = require('../config/electron-builder');
-const appBundleId = builderConfig.appId;
-
 function logAfterSignProgress(msg) {
   // biome-ignore lint/suspicious/noConsoleLog: log notarizing progress
   console.log(`  • [afterSign]: ${msg}`);
@@ -29,15 +26,11 @@ const afterSign = async (context) => {
   logAfterSignProgress('notarizing app');
 
   return await notarize({
-    appBundleId,
     appPath: `${appOutDir}/${appName}.app`,
     appleId: process.env.APPLE_ID_USERNAME,
     appleIdPassword: process.env.APPLE_ID_PASSWORD,
     teamId: process.env.APPLE_ID_TEAM_ID,
-    tool: 'notarytool',
   });
-
-  // logAfterSignProgress('Completed');
 };
 
 module.exports = afterSign;
