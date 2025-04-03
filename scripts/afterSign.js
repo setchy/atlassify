@@ -26,20 +26,9 @@ const afterSign = async (context) => {
     return;
   }
 
-  notarizeApp(appName, appOutDir);
-
-  logAfterSignProgress('Completed');
-};
-
-/**
- * Notarizes the application
- * @param {string} appOutDir
- * @param {string} appName
- */
-const notarizeApp = (appOutDir, appName) => {
   logAfterSignProgress('notarizing app');
 
-  return notarize({
+  return await notarize({
     appBundleId,
     appPath: `${appOutDir}/${appName}.app`,
     appleId: process.env.APPLE_ID_USERNAME,
@@ -47,6 +36,8 @@ const notarizeApp = (appOutDir, appName) => {
     teamId: process.env.APPLE_ID_TEAM_ID,
     tool: 'notarytool',
   });
+
+  // logAfterSignProgress('Completed');
 };
 
 module.exports = afterSign;
