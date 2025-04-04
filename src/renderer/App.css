@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/** Tailwind CSS */
+@import "tailwindcss";
+
+/** Tailwind CSS Configuration */
+@config '../../tailwind.config.ts';
 
 html,
 body,

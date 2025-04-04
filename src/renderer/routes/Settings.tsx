@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
-import { Contents } from '../components/primitives/Contents';
+import { Contents } from '../components/layout/Contents';
+import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
-import { Page } from '../components/primitives/Page';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';

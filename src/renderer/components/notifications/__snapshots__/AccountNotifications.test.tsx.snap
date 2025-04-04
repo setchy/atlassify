@@ -201,37 +201,33 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="flex flex-1 flex-col items-center justify-center min-h-screen"
         >
           <div
-            class="css-1amd086"
+            class="css-ybkmal"
           >
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🔥"
+                  class="emoji"
+                  draggable="false"
+                  src="/mock/images/assets/1f525.svg"
+                />
+              </span>
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Error title
+            </span>
             <div
-              class="css-ybkmal"
+              class="css-t8lj6l"
             >
               <span
-                class="text-5xl"
+                class="text-center"
               >
-                <span>
-                  <img
-                    alt="🔥"
-                    class="emoji"
-                    draggable="false"
-                    src="/mock/images/assets/1f525.svg"
-                  />
-                </span>
+                Error description
               </span>
-              <span
-                class="text-xl font-semibold"
-              >
-                Error title
-              </span>
-              <div
-                class="css-t8lj6l"
-              >
-                <span
-                  class="text-center"
-                >
-                  Error description
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -435,37 +431,33 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
-          class="css-1amd086"
+          class="css-ybkmal"
         >
+          <span
+            class="text-5xl"
+          >
+            <span>
+              <img
+                alt="🔥"
+                class="emoji"
+                draggable="false"
+                src="/mock/images/assets/1f525.svg"
+              />
+            </span>
+          </span>
+          <span
+            class="text-xl font-semibold"
+          >
+            Error title
+          </span>
           <div
-            class="css-ybkmal"
+            class="css-t8lj6l"
           >
             <span
-              class="text-5xl"
+              class="text-center"
             >
-              <span>
-                <img
-                  alt="🔥"
-                  class="emoji"
-                  draggable="false"
-                  src="/mock/images/assets/1f525.svg"
-                />
-              </span>
+              Error description
             </span>
-            <span
-              class="text-xl font-semibold"
-            >
-              Error title
-            </span>
-            <div
-              class="css-t8lj6l"
-            >
-              <span
-                class="text-center"
-              >
-                Error description
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -1665,8 +1657,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             <span
               class="text-xl font-semibold"
             >
-              No new notifications
+              No new  notifications
             </span>
+            <div
+              class="css-t8lj6l"
+            />
           </div>
         </div>
       </div>
@@ -1886,8 +1881,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           <span
             class="text-xl font-semibold"
           >
-            No new notifications
+            No new  notifications
           </span>
+          <div
+            class="css-t8lj6l"
+          />
         </div>
       </div>
     </div>
