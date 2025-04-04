@@ -2,7 +2,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 
 import Avatar from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
-import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Pressable, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -71,7 +71,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       <Box padding="space.100">
         <Inline space={spaceBetweenSections} alignBlock="center">
           <Inline space={spaceBetweenSections} grow="fill" alignBlock="start">
-            <Box id="notification-avatar">
+            <Box testId="notification-avatar">
               <Stack space="space.050" alignInline="center">
                 <Tooltip
                   content={notification.actor.displayName}
@@ -97,54 +97,54 @@ export const NotificationRow: FC<INotificationRow> = ({
             </Box>
 
             <Inline grow="fill">
-              <Box
-                id="notification-details"
-                onClick={handleNotificationInteraction}
-                testId="notification-details"
-              >
-                <div className="cursor-pointer">
-                  <Stack space="space.025">
-                    <Box id="notification-title">
-                      <Text>{notification.message}</Text>
-                      &nbsp;&nbsp;
-                      <Text size="small" as="em" align="end">
-                        {updatedAt}
-                      </Text>
-                    </Box>
-                    <Box id="notification-metadata">
-                      <Box id="notification-entity">
-                        <Inline space="space.050">
-                          <Avatar
-                            name={notification.entity.title}
-                            src={notification.entity.iconUrl}
-                            size="xsmall"
-                            appearance="square"
-                          />
-                          <Text size="small">{notification.entity.title}</Text>
-                        </Inline>
+              <Pressable onClick={handleNotificationInteraction}>
+                <Box testId="notification-details">
+                  <div className="cursor-pointer">
+                    <Stack space="space.025">
+                      <Box testId="notification-title">
+                        <Text>{notification.message}</Text>
+                        &nbsp;&nbsp;
+                        <Text size="small" as="em" align="end">
+                          {updatedAt}
+                        </Text>
                       </Box>
-                      <Box
-                        id="notification-product"
-                        paddingInlineStart="space.025"
-                      >
-                        <Inline space="space.075">
-                          <notification.product.logo
-                            size="xsmall"
-                            appearance="brand"
-                          />
-                          <Text size="small">
-                            {formatNotificationFooterText(notification)}
-                          </Text>
-                        </Inline>
+                      <Box testId="notification-metadata">
+                        <Box testId="notification-entity">
+                          <Inline space="space.050">
+                            <Avatar
+                              name={notification.entity.title}
+                              src={notification.entity.iconUrl}
+                              size="xsmall"
+                              appearance="square"
+                            />
+                            <Text size="small">
+                              {notification.entity.title}
+                            </Text>
+                          </Inline>
+                        </Box>
+                        <Box
+                          testId="notification-product"
+                          paddingInlineStart="space.025"
+                        >
+                          <Inline space="space.075">
+                            <notification.product.logo
+                              size="xsmall"
+                              appearance="brand"
+                            />
+                            <Text size="small">
+                              {formatNotificationFooterText(notification)}
+                            </Text>
+                          </Inline>
+                        </Box>
                       </Box>
-                    </Box>
-                  </Stack>
-                </div>
-              </Box>
+                    </Stack>
+                  </div>
+                </Box>
+              </Pressable>
             </Inline>
           </Inline>
 
-          <Box id="notification-actions">
+          <Box testId="notification-actions">
             {!animateExit &&
               (isNotificationUnread ? (
                 <Tooltip content="Mark as read" position="left">
