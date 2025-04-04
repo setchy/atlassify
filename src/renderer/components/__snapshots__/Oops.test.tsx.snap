@@ -16,10 +16,10 @@ exports[`renderer/components/Oops.tsx should render itself & its children - fall
           >
             <span>
               <img
-                alt="🙈"
+                alt="🙃"
                 class="emoji"
                 draggable="false"
-                src="/mock/images/assets/1f648.svg"
+                src="/mock/images/assets/1f643.svg"
               />
             </span>
           </span>
@@ -53,10 +53,10 @@ exports[`renderer/components/Oops.tsx should render itself & its children - fall
         >
           <span>
             <img
-              alt="🙈"
+              alt="🙃"
               class="emoji"
               draggable="false"
-              src="/mock/images/assets/1f648.svg"
+              src="/mock/images/assets/1f643.svg"
             />
           </span>
         </span>
