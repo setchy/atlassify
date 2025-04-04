@@ -1,41 +1,26 @@
 import { type FC, useMemo } from 'react';
 
-import { Box, Stack } from '@atlaskit/primitives';
-
 import type { AtlassifyError } from '../types';
-import { Centered } from './primitives/Centered';
-import { EmojiText } from './primitives/EmojiText';
+import { Errors } from '../utils/errors';
+import { EmojiSplash } from './layout/EmojiSplash';
 
 interface IOops {
   error: AtlassifyError;
 }
 
 export const Oops: FC<IOops> = ({ error }: IOops) => {
+  const err = error ?? Errors.UNKNOWN;
+
   const emoji = useMemo(
-    () => error.emojis[Math.floor(Math.random() * error.emojis.length)],
-    [error],
+    () => err.emojis[Math.floor(Math.random() * err.emojis.length)],
+    [err],
   );
 
   return (
-    <Centered>
-      <Box paddingInline="space.500">
-        <Stack space="space.300" alignInline="center">
-          <span className="text-5xl">
-            <EmojiText text={emoji} />
-          </span>
-
-          <span className="text-xl font-semibold">{error.title}</span>
-          <Stack space="space.100">
-            {error.descriptions.map((description) => {
-              return (
-                <span className="text-center" key={description}>
-                  {description}
-                </span>
-              );
-            })}
-          </Stack>
-        </Stack>
-      </Box>
-    </Centered>
+    <EmojiSplash
+      emoji={emoji}
+      heading={err.title}
+      subHeadings={err.descriptions}
+    />
   );
 };

@@ -17,7 +17,7 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { Centered } from '../components/primitives/Centered';
+import { Centered } from '../components/layout/Centered';
 import { AppContext } from '../context/App';
 import { showWindow } from '../utils/comms';
 

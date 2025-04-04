@@ -225,7 +225,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -554,7 +554,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -940,7 +940,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1269,7 +1269,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -1655,7 +1655,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1984,7 +1984,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -2370,7 +2370,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -2699,7 +2699,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
