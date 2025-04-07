@@ -2,16 +2,16 @@ import type { FC } from 'react';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
-import { Contents } from '../components/primitives/Contents';
+import { Contents } from '../components/layout/Contents';
+import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
-import { Page } from '../components/primitives/Page';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SettingsReset } from '../components/settings/SettingsReset';
 import { SystemSettings } from '../components/settings/SystemSettings';
 
-// FIXME: InlineMessage findDOMNode errors. See issue #90
+// FIXME #90 InlineMessage findDOMNode errors
 export const SettingsRoute: FC = () => {
   return (
     <Page id="settings">

@@ -1,3 +1,5 @@
+import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -10,10 +12,12 @@ const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
   unread: {
     name: 'unread',
     description: 'Unread notification',
+    heroicon: EnvelopeIcon,
   },
   read: {
     name: 'read',
     description: 'Read notification',
+    heroicon: EnvelopeOpenIcon,
   },
 };
 

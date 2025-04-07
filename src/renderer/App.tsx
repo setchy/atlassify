@@ -7,7 +7,6 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { Sidebar } from './components/Sidebar';
 import { AppContext, AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
@@ -17,6 +16,7 @@ import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
+import { AppLayout } from './components/layout/AppLayout';
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useContext(AppContext);
@@ -33,8 +33,7 @@ export const App = () => {
   return (
     <AppProvider>
       <Router>
-        <div className="flex h-full overflow-y-auto flex-col pl-sidebar">
-          <Sidebar />
+        <AppLayout>
           <Routes>
             <Route
               path="/"
@@ -71,7 +70,7 @@ export const App = () => {
             <Route path="/landing" element={<LandingRoute />} />
             <Route path="/login" element={<LoginRoute />} />
           </Routes>
-        </div>
+        </AppLayout>
       </Router>
     </AppProvider>
   );

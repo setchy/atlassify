@@ -21,17 +21,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid66"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -177,10 +179,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M7.5 10.5 3 6l4.5-4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -199,37 +201,33 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="flex flex-1 flex-col items-center justify-center min-h-screen"
         >
           <div
-            class="css-1amd086"
+            class="css-ybkmal"
           >
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🔥"
+                  class="emoji"
+                  draggable="false"
+                  src="/mock/images/assets/1f525.svg"
+                />
+              </span>
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Error title
+            </span>
             <div
-              class="css-ybkmal"
+              class="css-t8lj6l"
             >
               <span
-                class="text-5xl"
+                class="text-center"
               >
-                <span>
-                  <img
-                    alt="🔥"
-                    class="emoji"
-                    draggable="false"
-                    src="images/twemoji/1f525.svg"
-                  />
-                </span>
+                Error description
               </span>
-              <span
-                class="text-xl font-semibold"
-              >
-                Error title
-              </span>
-              <div
-                class="css-t8lj6l"
-              >
-                <span
-                  class="text-center"
-                >
-                  Error description
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -253,17 +251,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid66"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -409,10 +409,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M7.5 10.5 3 6l4.5-4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -431,37 +431,33 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
-          class="css-1amd086"
+          class="css-ybkmal"
         >
+          <span
+            class="text-5xl"
+          >
+            <span>
+              <img
+                alt="🔥"
+                class="emoji"
+                draggable="false"
+                src="/mock/images/assets/1f525.svg"
+              />
+            </span>
+          </span>
+          <span
+            class="text-xl font-semibold"
+          >
+            Error title
+          </span>
           <div
-            class="css-ybkmal"
+            class="css-t8lj6l"
           >
             <span
-              class="text-5xl"
+              class="text-center"
             >
-              <span>
-                <img
-                  alt="🔥"
-                  class="emoji"
-                  draggable="false"
-                  src="images/twemoji/1f525.svg"
-                />
-              </span>
+              Error description
             </span>
-            <span
-              class="text-xl font-semibold"
-            >
-              Error title
-            </span>
-            <div
-              class="css-t8lj6l"
-            >
-              <span
-                class="text-center"
-              >
-                Error description
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -542,17 +538,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid42"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -698,10 +696,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -742,17 +740,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid42"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -898,10 +898,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -999,17 +999,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid50"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -1155,10 +1157,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1199,17 +1201,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid50"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -1355,10 +1359,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1456,17 +1460,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid58"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -1612,10 +1618,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M7.5 10.5 3 6l4.5-4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1644,15 +1650,18 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   alt="🎊"
                   class="emoji"
                   draggable="false"
-                  src="images/twemoji/1f38a.svg"
+                  src="/mock/images/assets/1f38a.svg"
                 />
               </span>
             </span>
             <span
               class="text-xl font-semibold"
             >
-              No new notifications
+              No new  notifications
             </span>
+            <div
+              class="css-t8lj6l"
+            />
           </div>
         </div>
       </div>
@@ -1675,17 +1684,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid58"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -1831,10 +1842,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M7.5 10.5 3 6l4.5-4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1863,15 +1874,18 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 alt="🎊"
                 class="emoji"
                 draggable="false"
-                src="images/twemoji/1f38a.svg"
+                src="/mock/images/assets/1f38a.svg"
               />
             </span>
           </span>
           <span
             class="text-xl font-semibold"
           >
-            No new notifications
+            No new  notifications
           </span>
+          <div
+            class="css-t8lj6l"
+          />
         </div>
       </div>
     </div>
@@ -1951,17 +1965,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid22"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -2107,10 +2123,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -2150,11 +2166,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid30"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2190,10 +2207,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -2227,7 +2244,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -2243,11 +2260,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid32"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2385,11 +2403,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid36"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2425,10 +2444,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -2462,7 +2481,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -2478,11 +2497,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid38"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2615,17 +2635,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid22"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -2771,10 +2793,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -2814,11 +2836,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid30"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -2854,10 +2877,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -2891,7 +2914,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -2907,11 +2930,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid32"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -3049,11 +3073,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid36"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -3089,10 +3114,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -3126,7 +3151,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -3142,11 +3167,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid38"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -3336,17 +3362,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid2"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-8n3d7m"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                     >
                       <img
                         alt=""
@@ -3492,10 +3520,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -3535,11 +3563,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid10"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -3575,10 +3604,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -3612,7 +3641,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -3628,11 +3657,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid12"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -3770,11 +3800,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <div
                         aria-labelledby="uid16"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -3810,10 +3841,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -3847,7 +3878,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -3863,11 +3894,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <div
                                 aria-labelledby="uid18"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -4000,17 +4032,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid2"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-8n3d7m"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                   >
                     <img
                       alt=""
@@ -4156,10 +4190,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -4199,11 +4233,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid10"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4239,10 +4274,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -4276,7 +4311,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -4292,11 +4327,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid12"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -4434,11 +4470,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   >
                     <div
                       aria-labelledby="uid16"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4474,10 +4511,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -4511,7 +4548,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -4527,11 +4564,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           >
                             <div
                               aria-labelledby="uid18"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -4725,17 +4763,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid138"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -4881,10 +4921,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M4.5 10.5 9 6 4.5 1.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M7.94 6 3.97 2.03 5.03.97l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5-1.06-1.06z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -4918,17 +4958,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vqst9f"
+                  class="css-1ebohnz"
                   data-testid="account-profile--itemInner"
+                  style="--avatar-item-bg-color: transparent;"
                   type="button"
                 >
                   <div
                     aria-labelledby="uid158"
+                    class="css-130dd7j"
                     role="img"
-                    style="display: inline-block; position: relative; outline: 0;"
                   >
                     <span
-                      class="css-t4a0zx"
+                      class="css-10q6god"
+                      style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                     >
                       <img
                         alt=""
@@ -5074,10 +5116,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         viewBox="0 0 12 12"
                       >
                         <path
-                          d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -5117,11 +5159,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <div
                         aria-labelledby="uid166"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5157,10 +5200,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -5194,7 +5237,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -5210,11 +5253,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <div
                                 aria-labelledby="uid168"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -5352,11 +5396,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <div
                         aria-labelledby="uid172"
+                        class="css-130dd7j"
                         role="img"
-                        style="display: inline-block; position: relative; outline: 0;"
                       >
                         <span
-                          class="css-1pb0q1k"
+                          class="css-1ummshu"
+                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5392,10 +5437,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           viewBox="0 0 16 16"
                         >
                           <path
-                            d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                            stroke="currentcolor"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
+                            clip-rule="evenodd"
+                            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>
@@ -5429,7 +5474,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           <em
                             class="css-1ot9q9i"
                           >
-                            4 years ago
+                            5 years ago
                           </em>
                         </div>
                         <div
@@ -5445,11 +5490,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <div
                                 aria-labelledby="uid174"
+                                class="css-130dd7j"
                                 role="img"
-                                style="display: inline-block; position: relative; outline: 0;"
                               >
                                 <span
-                                  class="css-1jon4ae"
+                                  class="css-1iefllh"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -5582,17 +5628,19 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1vqst9f"
+                class="css-1ebohnz"
                 data-testid="account-profile--itemInner"
+                style="--avatar-item-bg-color: transparent;"
                 type="button"
               >
                 <div
                   aria-labelledby="uid158"
+                  class="css-130dd7j"
                   role="img"
-                  style="display: inline-block; position: relative; outline: 0;"
                 >
                   <span
-                    class="css-t4a0zx"
+                    class="css-10q6god"
+                    style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                   >
                     <img
                       alt=""
@@ -5738,10 +5786,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       viewBox="0 0 12 12"
                     >
                       <path
-                        d="M10.5 4.5 8.25 6.75 6 9 3.75 6.75 1.5 4.5"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -5781,11 +5829,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   >
                     <div
                       aria-labelledby="uid166"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -5821,10 +5870,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -5858,7 +5907,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -5874,11 +5923,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           >
                             <div
                               aria-labelledby="uid168"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -6016,11 +6066,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   >
                     <div
                       aria-labelledby="uid172"
+                      class="css-130dd7j"
                       role="img"
-                      style="display: inline-block; position: relative; outline: 0;"
                     >
                       <span
-                        class="css-1pb0q1k"
+                        class="css-1ummshu"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -6056,10 +6107,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -6093,7 +6144,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         <em
                           class="css-1ot9q9i"
                         >
-                          4 years ago
+                          5 years ago
                         </em>
                       </div>
                       <div
@@ -6109,11 +6160,12 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           >
                             <div
                               aria-labelledby="uid174"
+                              class="css-130dd7j"
                               role="img"
-                              style="display: inline-block; position: relative; outline: 0;"
                             >
                               <span
-                                class="css-1jon4ae"
+                                class="css-1iefllh"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""

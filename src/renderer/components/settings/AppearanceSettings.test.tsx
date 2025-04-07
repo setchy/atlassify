@@ -1,5 +1,4 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { webFrame } from 'electron';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
@@ -38,7 +37,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should update the zoom value when using CMD + and CMD -', async () => {
-    webFrame.getZoomLevel = jest.fn().mockReturnValue(-1);
+    window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(-1);
 
     await act(async () => {
       render(
@@ -64,9 +63,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
-    webFrame.getZoomLevel = jest.fn().mockReturnValue(0);
-    webFrame.setZoomLevel = jest.fn().mockImplementation((level) => {
-      webFrame.getZoomLevel = jest.fn().mockReturnValue(level);
+    window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(0);
+    window.atlassify.zoom.setLevel = jest.fn().mockImplementation((level) => {
+      window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(level);
       fireEvent(window, new Event('resize'));
     });
 

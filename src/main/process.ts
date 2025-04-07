@@ -1,3 +1,6 @@
+/* istanbul ignore file */
+// This file is excluded from test coverage because it's platform-specific utility functions
+
 export function isLinux(): boolean {
   return process.platform === 'linux';
 }

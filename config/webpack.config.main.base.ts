@@ -1,6 +1,7 @@
 import path from 'node:path';
 import type webpack from 'webpack';
 import { merge } from 'webpack-merge';
+
 import baseConfig from './webpack.config.common';
 import webpackPaths from './webpack.paths';
 
@@ -11,7 +12,7 @@ const configuration: webpack.Configuration = {
 
   target: 'electron-main',
 
-  entry: [path.join(webpackPaths.srcMainPath, 'main.ts')],
+  entry: [path.join(webpackPaths.srcMainPath, 'index.ts')],
 
   output: {
     path: webpackPaths.buildPath,

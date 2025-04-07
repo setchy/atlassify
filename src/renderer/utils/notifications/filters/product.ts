@@ -18,7 +18,7 @@ import type {
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
-// TODO - remove duplication between this and utils/products PRODUCTS
+// TODO remove duplication between this and utils/products PRODUCTS
 export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
   bitbucket: {
     name: 'bitbucket',

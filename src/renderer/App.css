@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/** Tailwind CSS */
+@import "tailwindcss";
+
+/** Tailwind CSS Configuration */
+@config '../../tailwind.config.ts';
 
 html,
 body,
@@ -37,8 +39,8 @@ body {
  * Ref: https://github.com/jdecked/twemoji?tab=readme-ov-file#inline-styles
  */
 img.emoji {
-  height: 1em;
-  width: 1em;
+  height: 1.5em;
+  width: 1.5em;
   margin: 0 0.05em 0 0.1em;
   vertical-align: -0.1em;
 }

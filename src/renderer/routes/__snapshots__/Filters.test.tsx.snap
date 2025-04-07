@@ -34,10 +34,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 viewBox="0 0 16 16"
               >
                 <path
-                  d="M15 8H2.25m4.5-5-5 5 5 5"
-                  stroke="currentcolor"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
+                  clip-rule="evenodd"
+                  d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
                 />
               </svg>
             </span>
@@ -132,9 +132,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M11.625 14.28A7.25 7.25 0 1 1 15.25 8c0 1.381-.932 3.107-2.59 3.107-1.656 0-1.782-1.976-1.782-3.357l.005-.125m0 0c.022-1.019-.42-1.956-1.258-2.44-1.315-.759-3.11-.114-4.007 1.44s-.558 3.43.757 4.19c1.315.759 3.11.115 4.007-1.44a3.7 3.7 0 0 0 .5-1.75Z"
-                        stroke="currentcolor"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 1.5a6.5 6.5 0 1 0 3.25 12.13l.75 1.3A8 8 0 1 1 16 8c0 .842-.28 1.775-.817 2.513-.547.751-1.401 1.344-2.522 1.344-.577 0-1.07-.177-1.462-.507a2.5 2.5 0 0 1-.66-.908C9.387 11.776 7.529 12.346 6 11.464 4.229 10.441 3.926 8.057 4.969 6.25S8.229 3.513 10 4.536c1.12.647 1.66 1.87 1.633 3.105l-.005.13c0 .687.038 1.397.226 1.923.091.255.201.415.313.51.098.083.242.153.494.153.536 0 .976-.27 1.31-.727.342-.47.529-1.091.529-1.63A6.5 6.5 0 0 0 8 1.5m2.133 6.102c.015-.798-.328-1.447-.883-1.767C8.39 5.339 7.02 5.698 6.268 7s-.377 2.67.482 3.165c.86.496 2.23.137 2.982-1.165.244-.422.37-.866.397-1.287z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -202,8 +203,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M4.25 13.25v-.75h-.2l-.172.099zm-3.5 2H0a.75.75 0 0 0 1.122.651zM2.625 2h10.75V.5H2.625zM14.5 3.125v8.25H16v-8.25zM13.375 12.5H4.25V14h9.125zm-9.497.099-3.5 2 .744 1.302 3.5-2zM1.5 15.25V3.125H0V15.25zM4 6.5h8V5H4zm0 3h5V8H4zm10.5 1.875c0 .621-.504 1.125-1.125 1.125V14A2.625 2.625 0 0 0 16 11.375zM13.375 2c.621 0 1.125.504 1.125 1.125H16A2.625 2.625 0 0 0 13.375.5zM2.625.5A2.625 2.625 0 0 0 0 3.125h1.5C1.5 2.504 2.004 2 2.625 2z"
+                        clip-rule="evenodd"
+                        d="M0 3.125A2.625 2.625 0 0 1 2.625.5h10.75A2.625 2.625 0 0 1 16 3.125v8.25A2.625 2.625 0 0 1 13.375 14H4.449l-3.327 1.901A.75.75 0 0 1 0 15.25zM2.625 2C2.004 2 1.5 2.504 1.5 3.125v10.833L4.05 12.5h9.325c.621 0 1.125-.504 1.125-1.125v-8.25C14.5 2.504 13.996 2 13.375 2zM12 6.5H4V5h8zm-3 3H4V8h5z"
                         fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -284,10 +287,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -355,16 +358,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M8 2.75c-3.255 0-6.086 2.039-7.13 4.888a1.06 1.06 0 0 0 0 .724C1.914 11.212 4.745 13.25 8 13.25s6.086-2.039 7.129-4.888a1.06 1.06 0 0 0 0-.724c-1.043-2.85-3.874-4.888-7.13-4.888Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                      />
-                      <path
-                        d="M10.25 8a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 3.5c-2.943 0-5.49 1.845-6.424 4.396a.3.3 0 0 0 0 .208C2.509 10.655 5.057 12.5 8 12.5s5.49-1.845 6.424-4.396a.3.3 0 0 0 0-.208C13.491 5.345 10.943 3.5 8 3.5M.167 7.38C1.32 4.232 4.433 2 8 2c3.566 0 6.681 2.232 7.833 5.38.146.4.146.84 0 1.24C14.68 11.768 11.566 14 8 14 4.433 14 1.319 11.768.167 8.62a1.8 1.8 0 0 1 0-1.24M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -445,10 +442,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M13.25 15v-2.25a3 3 0 0 0-3-3h-4.5a3 3 0 0 0-3 3V15m8.5-11a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -516,8 +513,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="m6 15.25-.723-.2a.75.75 0 0 0 1.253.73zM13.25 8l.53.53a.75.75 0 0 0-.53-1.28zM10 .75l.723.2A.75.75 0 0 0 9.47.22zM2.75 8l-.53-.53a.75.75 0 0 0 .53 1.28zm3.78 7.78 7.25-7.25-1.06-1.06-7.25 7.25zm6.72-8.53H8v1.5h5.25zm-4.527.95 2-7.25-1.446-.4-2 7.25zM9.47.22 2.22 7.47l1.06 1.06 7.25-7.25zM2.75 8.75H8v-1.5H2.75zm4.527-.95-2 7.25 1.446.4 2-7.25z"
+                        clip-rule="evenodd"
+                        d="M10.377.102a.75.75 0 0 1 .346.847L8.985 7.25h4.265a.75.75 0 0 1 .53 1.28l-7.25 7.25a.75.75 0 0 1-1.253-.73l1.738-6.3H2.75a.75.75 0 0 1-.53-1.28L9.47.22a.75.75 0 0 1 .907-.118M7.43 7.25l1.093-3.96L4.56 7.25zm1.142 1.5-1.093 3.96 3.961-3.96z"
                         fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -583,6 +582,22 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     Unread
                   </span>
                 </label>
+                <svg
+                  aria-hidden="true"
+                  class="size-4 p-[1px] rounded border text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background"
+                  data-slot="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 <span
                   class="css-1wkl091"
                 >
@@ -631,6 +646,22 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     Read
                   </span>
                 </label>
+                <svg
+                  aria-hidden="true"
+                  class="size-4 p-[1px] rounded border text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background"
+                  data-slot="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 <span
                   class="css-1wkl091"
                 >
@@ -1384,10 +1415,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 viewBox="0 0 16 16"
               >
                 <path
-                  d="M15 8H2.25m4.5-5-5 5 5 5"
-                  stroke="currentcolor"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
+                  clip-rule="evenodd"
+                  d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
+                  fill="currentcolor"
+                  fill-rule="evenodd"
                 />
               </svg>
             </span>
@@ -1482,9 +1513,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M11.625 14.28A7.25 7.25 0 1 1 15.25 8c0 1.381-.932 3.107-2.59 3.107-1.656 0-1.782-1.976-1.782-3.357l.005-.125m0 0c.022-1.019-.42-1.956-1.258-2.44-1.315-.759-3.11-.114-4.007 1.44s-.558 3.43.757 4.19c1.315.759 3.11.115 4.007-1.44a3.7 3.7 0 0 0 .5-1.75Z"
-                        stroke="currentcolor"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 1.5a6.5 6.5 0 1 0 3.25 12.13l.75 1.3A8 8 0 1 1 16 8c0 .842-.28 1.775-.817 2.513-.547.751-1.401 1.344-2.522 1.344-.577 0-1.07-.177-1.462-.507a2.5 2.5 0 0 1-.66-.908C9.387 11.776 7.529 12.346 6 11.464 4.229 10.441 3.926 8.057 4.969 6.25S8.229 3.513 10 4.536c1.12.647 1.66 1.87 1.633 3.105l-.005.13c0 .687.038 1.397.226 1.923.091.255.201.415.313.51.098.083.242.153.494.153.536 0 .976-.27 1.31-.727.342-.47.529-1.091.529-1.63A6.5 6.5 0 0 0 8 1.5m2.133 6.102c.015-.798-.328-1.447-.883-1.767C8.39 5.339 7.02 5.698 6.268 7s-.377 2.67.482 3.165c.86.496 2.23.137 2.982-1.165.244-.422.37-.866.397-1.287z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1552,8 +1584,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M4.25 13.25v-.75h-.2l-.172.099zm-3.5 2H0a.75.75 0 0 0 1.122.651zM2.625 2h10.75V.5H2.625zM14.5 3.125v8.25H16v-8.25zM13.375 12.5H4.25V14h9.125zm-9.497.099-3.5 2 .744 1.302 3.5-2zM1.5 15.25V3.125H0V15.25zM4 6.5h8V5H4zm0 3h5V8H4zm10.5 1.875c0 .621-.504 1.125-1.125 1.125V14A2.625 2.625 0 0 0 16 11.375zM13.375 2c.621 0 1.125.504 1.125 1.125H16A2.625 2.625 0 0 0 13.375.5zM2.625.5A2.625 2.625 0 0 0 0 3.125h1.5C1.5 2.504 2.004 2 2.625 2z"
+                        clip-rule="evenodd"
+                        d="M0 3.125A2.625 2.625 0 0 1 2.625.5h10.75A2.625 2.625 0 0 1 16 3.125v8.25A2.625 2.625 0 0 1 13.375 14H4.449l-3.327 1.901A.75.75 0 0 1 0 15.25zM2.625 2C2.004 2 1.5 2.504 1.5 3.125v10.833L4.05 12.5h9.325c.621 0 1.125-.504 1.125-1.125v-8.25C14.5 2.504 13.996 2 13.375 2zM12 6.5H4V5h8zm-3 3H4V8h5z"
                         fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1634,10 +1668,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M2.75 15V9.75m0 0v-8H14l-3 4 3 4z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1705,16 +1739,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M8 2.75c-3.255 0-6.086 2.039-7.13 4.888a1.06 1.06 0 0 0 0 .724C1.914 11.212 4.745 13.25 8 13.25s6.086-2.039 7.129-4.888a1.06 1.06 0 0 0 0-.724c-1.043-2.85-3.874-4.888-7.13-4.888Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                      />
-                      <path
-                        d="M10.25 8a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 3.5c-2.943 0-5.49 1.845-6.424 4.396a.3.3 0 0 0 0 .208C2.509 10.655 5.057 12.5 8 12.5s5.49-1.845 6.424-4.396a.3.3 0 0 0 0-.208C13.491 5.345 10.943 3.5 8 3.5M.167 7.38C1.32 4.232 4.433 2 8 2c3.566 0 6.681 2.232 7.833 5.38.146.4.146.84 0 1.24C14.68 11.768 11.566 14 8 14 4.433 14 1.319 11.768.167 8.62a1.8 1.8 0 0 1 0-1.24M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1795,10 +1823,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="M13.25 15v-2.25a3 3 0 0 0-3-3h-4.5a3 3 0 0 0-3 3V15m8.5-11a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1866,8 +1894,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                       viewBox="-4 -4 24 24"
                     >
                       <path
-                        d="m6 15.25-.723-.2a.75.75 0 0 0 1.253.73zM13.25 8l.53.53a.75.75 0 0 0-.53-1.28zM10 .75l.723.2A.75.75 0 0 0 9.47.22zM2.75 8l-.53-.53a.75.75 0 0 0 .53 1.28zm3.78 7.78 7.25-7.25-1.06-1.06-7.25 7.25zm6.72-8.53H8v1.5h5.25zm-4.527.95 2-7.25-1.446-.4-2 7.25zM9.47.22 2.22 7.47l1.06 1.06 7.25-7.25zM2.75 8.75H8v-1.5H2.75zm4.527-.95-2 7.25 1.446.4 2-7.25z"
+                        clip-rule="evenodd"
+                        d="M10.377.102a.75.75 0 0 1 .346.847L8.985 7.25h4.265a.75.75 0 0 1 .53 1.28l-7.25 7.25a.75.75 0 0 1-1.253-.73l1.738-6.3H2.75a.75.75 0 0 1-.53-1.28L9.47.22a.75.75 0 0 1 .907-.118M7.43 7.25l1.093-3.96L4.56 7.25zm1.142 1.5-1.093 3.96 3.961-3.96z"
                         fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1933,6 +1963,22 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     Unread
                   </span>
                 </label>
+                <svg
+                  aria-hidden="true"
+                  class="size-4 p-[1px] rounded border text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background"
+                  data-slot="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 <span
                   class="css-1wkl091"
                 >
@@ -1981,6 +2027,22 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     Read
                   </span>
                 </label>
+                <svg
+                  aria-hidden="true"
+                  class="size-4 p-[1px] rounded border text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background"
+                  data-slot="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
                 <span
                   class="css-1wkl091"
                 >

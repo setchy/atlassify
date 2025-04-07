@@ -20,9 +20,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
         viewBox="0 0 16 16"
       >
         <path
-          d="M3 8h10M1 2.75h14M5 13.25h6"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -55,9 +56,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
         viewBox="0 0 16 16"
       >
         <path
-          d="M3 8h10M1 2.75h14M5 13.25h6"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -90,9 +92,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
         viewBox="0 0 16 16"
       >
         <path
-          d="M3 8h10M1 2.75h14M5 13.25h6"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -126,13 +129,10 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
         viewBox="0 0 16 16"
       >
         <path
-          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
+          clip-rule="evenodd"
+          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
           fill="currentcolor"
-        />
-        <path
-          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -166,13 +166,10 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
         viewBox="0 0 16 16"
       >
         <path
-          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
+          clip-rule="evenodd"
+          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
           fill="currentcolor"
-        />
-        <path
-          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -206,13 +203,10 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
         viewBox="0 0 16 16"
       >
         <path
-          d="M2.75 2.75a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"
+          clip-rule="evenodd"
+          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
           fill="currentcolor"
-        />
-        <path
-          d="M5 2.75h10M5 8h10M5 13.25h10M2.75 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 5.25a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0-10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
-          stroke="currentcolor"
-          stroke-width="1.5"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -231,7 +225,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -492,10 +486,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -560,7 +554,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -821,10 +815,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -946,7 +940,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1207,10 +1201,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1275,7 +1269,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -1536,10 +1530,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1661,7 +1655,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -1922,10 +1916,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1990,7 +1984,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -2251,10 +2245,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -2376,7 +2370,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   "baseElement": <body>
     <div>
       <div
-        class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+        class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
       >
         <div
           class="flex flex-1 flex-col items-center"
@@ -2637,10 +2631,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                         viewBox="0 0 16 16"
                       >
                         <path
-                          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                          stroke="currentcolor"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          clip-rule="evenodd"
+                          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -2705,7 +2699,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
   </body>,
   "container": <div>
     <div
-      class="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+      class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
     >
       <div
         class="flex flex-1 flex-col items-center"
@@ -2966,10 +2960,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       viewBox="0 0 16 16"
                     >
                       <path
-                        d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-                        stroke="currentcolor"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        clip-rule="evenodd"
+                        d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -3105,10 +3099,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
         viewBox="0 0 16 16"
       >
         <path
-          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-          stroke="currentcolor"
-          stroke-linejoin="round"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -3141,10 +3135,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
         viewBox="0 0 16 16"
       >
         <path
-          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-          stroke="currentcolor"
-          stroke-linejoin="round"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -3177,10 +3171,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
         viewBox="0 0 16 16"
       >
         <path
-          d="M10.5 12.75a2.5 2.5 0 0 1-5 0m6.75-4.114V5a4.25 4.25 0 0 0-8.5 0v3.636a.4.4 0 0 1-.06.21l-1.842 2.948a.625.625 0 0 0 .53.956h11.244c.491 0 .79-.54.53-.956l-1.841-2.947a.4.4 0 0 1-.061-.211Z"
-          stroke="currentcolor"
-          stroke-linejoin="round"
-          stroke-width="1.5"
+          clip-rule="evenodd"
+          d="M3 5a5 5 0 0 1 10 0v3.535l1.788 2.861a1.375 1.375 0 0 1-1.166 2.104h-2.459a3.251 3.251 0 0 1-6.326 0h-2.46a1.375 1.375 0 0 1-1.165-2.104L3 8.535zm3.418 8.5a1.75 1.75 0 0 0 3.164 0zM8 1.5A3.5 3.5 0 0 0 4.5 5v3.636c0 .215-.06.426-.175.608L2.603 12h10.794l-1.723-2.756a1.15 1.15 0 0 1-.174-.608V5A3.5 3.5 0 0 0 8 1.5"
+          fill="currentcolor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>

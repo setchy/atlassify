@@ -8,4 +8,8 @@ export const APPLICATION = {
   FIRST_RUN_FOLDER: 'atlassify-first-run',
 
   WEBSITE: 'https://atlassify.io',
+
+  DEFAULT_KEYBOARD_SHORTCUT: 'CommandOrControl+Shift+G',
+
+  NOTIFICATION_SOUND: 'notification.wav',
 };

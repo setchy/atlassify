@@ -33,6 +33,12 @@ export interface FilterDetails {
    * @see {@link https://atlassian.design/components/logo/examples} for available logos.
    */
   logo?: React.ComponentType<LogoProps>;
+
+  /**
+   * The heroicon for the filter.
+   * @see {@link https://heroicons.com/} for available heroicons.
+   */
+  heroicon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 export interface Filter<T extends string> {

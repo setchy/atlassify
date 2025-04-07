@@ -113,23 +113,27 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render itself - no notifications', () => {
+    it('should render itself - no notifications', async () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: [],
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      let tree: ReturnType<typeof render> | null = null;
+
+      await act(async () => {
+        tree = render(
+          <AppContext.Provider value={{ settings: mockSettings }}>
+            <AccountNotifications {...props} />
+          </AppContext.Provider>,
+        );
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render itself - account error', () => {
+    it('should render itself - account error', async () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: [],
@@ -140,11 +144,15 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         },
       };
 
-      const tree = render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      let tree: ReturnType<typeof render> | null = null;
+
+      await act(async () => {
+        tree = render(
+          <AppContext.Provider value={{ settings: mockSettings }}>
+            <AccountNotifications {...props} />
+          </AppContext.Provider>,
+        );
+      });
 
       expect(tree).toMatchSnapshot();
     });

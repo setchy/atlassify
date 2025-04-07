@@ -1,22 +1,37 @@
-import {
-  app,
-  globalShortcut,
-  ipcMain as ipc,
-  nativeTheme,
-  safeStorage,
-} from 'electron';
+import path from 'node:path';
+import { app, globalShortcut, nativeTheme, safeStorage, shell } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
-import { namespacedEvent } from '../shared/events';
-import { isMacOS, isWindows } from '../shared/platform';
+import type {
+  IAutoLaunch,
+  IKeyboardShortcut,
+  IOpenExternal,
+} from '../shared/events';
+
+import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
+import { isMacOS, isWindows } from './process';
 import Updater from './updater';
 
 log.initialize();
+
+/**
+ * File paths
+ */
+const preloadFilePath = path.join(__dirname, 'preload.js');
+const indexHtmlFilePath = `file://${__dirname}/index.html`;
+const notificationSoundFilePath = path.join(
+  __dirname,
+  '..',
+  'assets',
+  'sounds',
+  APPLICATION.NOTIFICATION_SOUND,
+);
+const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
 
 const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   width: 500,
@@ -25,16 +40,16 @@ const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
   minHeight: 400,
   resizable: false,
   skipTaskbar: true, // Hide the app from the Windows taskbar
-  // TODO ideally we would disable this as use a preload script with a context bridge
   webPreferences: {
-    nodeIntegration: true,
-    contextIsolation: false,
+    preload: preloadFilePath,
+    contextIsolation: true,
+    nodeIntegration: false,
   },
 };
 
 const mb = menubar({
   icon: TrayIcons.idle,
-  index: `file://${__dirname}/index.html`,
+  index: indexHtmlFilePath,
   browserWindow: browserWindowOpts,
   preloadWindow: true,
   showDockIcon: false, // Hide the app from the macOS dock
@@ -67,7 +82,7 @@ app.whenReady().then(async () => {
       mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
     });
 
-    // Custom key events
+    // Custom window key event
     mb.window.webContents.on('before-input-event', (event, input) => {
       if (input.key === 'Escape') {
         mb.window.hide();
@@ -93,43 +108,48 @@ app.whenReady().then(async () => {
 
   nativeTheme.on('updated', () => {
     if (nativeTheme.shouldUseDarkColors) {
-      mb.window.webContents.send(namespacedEvent('update-theme'), 'DARK');
+      sendRendererEvent(mb, 'atlassify:update-theme', 'DARK');
     } else {
-      mb.window.webContents.send(namespacedEvent('update-theme'), 'LIGHT');
+      sendRendererEvent(mb, 'atlassify:update-theme', 'LIGHT');
     }
   });
 
   /**
-   * Atlassify custom IPC events
+   * Atlassify custom IPC events - no response expected
    */
-  ipc.handle(namespacedEvent('version'), () => app.getVersion());
 
-  ipc.on(namespacedEvent('window-show'), () => mb.showWindow());
+  onMainEvent('atlassify:window-show', () => mb.showWindow());
 
-  ipc.on(namespacedEvent('window-hide'), () => mb.hideWindow());
+  onMainEvent('atlassify:window-hide', () => mb.hideWindow());
 
-  ipc.on(namespacedEvent('quit'), () => mb.app.quit());
+  onMainEvent('atlassify:quit', () => mb.app.quit());
 
-  ipc.on(
-    namespacedEvent('use-alternate-idle-icon'),
-    (_, useAlternateIdleIcon) => {
+  onMainEvent(
+    'atlassify:open-external',
+    (_, { url, activate }: IOpenExternal) =>
+      shell.openExternal(url, { activate: activate }),
+  );
+
+  onMainEvent(
+    'atlassify:use-alternate-idle-icon',
+    (_, useAlternateIdleIcon: boolean) => {
       shouldUseAlternateIdleIcon = useAlternateIdleIcon;
     },
   );
 
-  ipc.on(namespacedEvent('icon-error'), () => {
+  onMainEvent('atlassify:icon-error', () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.error);
     }
   });
 
-  ipc.on(namespacedEvent('icon-active'), () => {
+  onMainEvent('atlassify:icon-active', () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.active);
     }
   });
 
-  ipc.on(namespacedEvent('icon-idle'), () => {
+  onMainEvent('atlassify:icon-idle', () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
         mb.tray.setImage(TrayIcons.idleAlternate);
@@ -139,15 +159,15 @@ app.whenReady().then(async () => {
     }
   });
 
-  ipc.on(namespacedEvent('update-title'), (_, title) => {
+  onMainEvent('atlassify:update-title', (_, title: string) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);
     }
   });
 
-  ipc.on(
-    namespacedEvent('update-keyboard-shortcut'),
-    (_, { enabled, keyboardShortcut }) => {
+  onMainEvent(
+    'atlassify:update-keyboard-shortcut',
+    (_, { enabled, keyboardShortcut }: IKeyboardShortcut) => {
       if (!enabled) {
         globalShortcut.unregister(keyboardShortcut);
         return;
@@ -163,16 +183,29 @@ app.whenReady().then(async () => {
     },
   );
 
-  ipc.on(namespacedEvent('update-auto-launch'), (_, settings) => {
+  onMainEvent('atlassify:update-auto-launch', (_, settings: IAutoLaunch) => {
     app.setLoginItemSettings(settings);
   });
 
-  // Safe Storage
-  ipc.handle(namespacedEvent('safe-storage-encrypt'), (_, settings) => {
-    return safeStorage.encryptString(settings).toString('base64');
+  /**
+   * Atlassify custom IPC events - response expected
+   */
+
+  handleMainEvent('atlassify:version', () => app.getVersion());
+
+  handleMainEvent('atlassify:notification-sound-path', () => {
+    return notificationSoundFilePath;
   });
 
-  ipc.handle(namespacedEvent('safe-storage-decrypt'), (_, settings) => {
-    return safeStorage.decryptString(Buffer.from(settings, 'base64'));
+  handleMainEvent('atlassify:twemoji-directory', () => {
+    return twemojiDirPath;
+  });
+
+  handleMainEvent('atlassify:safe-storage-encrypt', (_, value: string) => {
+    return safeStorage.encryptString(value).toString('base64');
+  });
+
+  handleMainEvent('atlassify:safe-storage-decrypt', (_, value: string) => {
+    return safeStorage.decryptString(Buffer.from(value, 'base64'));
   });
 });

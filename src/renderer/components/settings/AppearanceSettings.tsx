@@ -1,4 +1,3 @@
-import { ipcRenderer, webFrame } from 'electron';
 import { type FC, useContext, useEffect, useState } from 'react';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -12,7 +11,6 @@ import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import { namespacedEvent } from '../../../shared/events';
 import { AppContext } from '../../context/App';
 import { Theme } from '../../types';
 import { setTheme } from '../../utils/theme';
@@ -23,25 +21,22 @@ const ZOOM_RESIZE_DELAY = 200;
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
+
   const [zoomPercentage, setZoomPercentage] = useState(
-    zoomLevelToPercentage(webFrame.getZoomLevel()),
+    zoomLevelToPercentage(window.atlassify.zoom.getLevel()),
   );
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
   });
 
-  /* istanbul ignore next - testing this is not important */
   useEffect(() => {
-    ipcRenderer.on(
-      namespacedEvent('update-theme'),
-      (_, updatedTheme: Theme) => {
-        if (settings.theme === Theme.SYSTEM) {
-          setTheme(updatedTheme);
-          setGlobalTheme({ colorMode: 'auto' });
-        }
-      },
-    );
+    window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
+      if (settings.theme === Theme.SYSTEM) {
+        setTheme(updatedTheme);
+        setGlobalTheme({ colorMode: 'auto' });
+      }
+    });
   }, [settings.theme]);
 
   window.addEventListener('resize', () => {
@@ -49,7 +44,9 @@ export const AppearanceSettings: FC = () => {
     clearTimeout(zoomResizeTimeout);
     // start timing for event "completion"
     zoomResizeTimeout = setTimeout(() => {
-      const zoomPercentage = zoomLevelToPercentage(webFrame.getZoomLevel());
+      const zoomPercentage = zoomLevelToPercentage(
+        window.atlassify.zoom.getLevel(),
+      );
       setZoomPercentage(zoomPercentage);
       updateSetting('zoomPercentage', zoomPercentage);
     }, ZOOM_RESIZE_DELAY);
@@ -111,7 +108,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage > 0 &&
-                      webFrame.setZoomLevel(
+                      window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage - 10),
                       )
                     }
@@ -126,7 +123,7 @@ export const AppearanceSettings: FC = () => {
                     spacing="compact"
                     onClick={() =>
                       zoomPercentage < 120 &&
-                      webFrame.setZoomLevel(
+                      window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage + 10),
                       )
                     }
@@ -140,7 +137,7 @@ export const AppearanceSettings: FC = () => {
                   icon={RetryIcon}
                   shape="circle"
                   spacing="compact"
-                  onClick={() => webFrame.setZoomLevel(0)}
+                  onClick={() => window.atlassify.zoom.setLevel(0)}
                   testId="settings-zoom-reset"
                 />
               </Tooltip>

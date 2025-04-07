@@ -1,4 +1,3 @@
-import { ipcRenderer, webFrame } from 'electron';
 import {
   type ReactNode,
   createContext,
@@ -8,7 +7,6 @@ import {
   useState,
 } from 'react';
 
-import { namespacedEvent } from '../../shared/events';
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import {
@@ -184,7 +182,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.keyboardShortcutEnabled]);
 
   useEffect(() => {
-    ipcRenderer.on(namespacedEvent('reset-app'), () => {
+    window.atlassify.onResetApp(() => {
       clearState();
       setAuth(defaultAuth);
       setSettings(defaultSettings);
@@ -263,7 +261,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
       setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
       setSettings({ ...defaultSettings, ...existing.settings });
-      webFrame.setZoomLevel(
+      window.atlassify.zoom.setLevel(
         zoomPercentageToLevel(existing.settings.zoomPercentage),
       );
     }

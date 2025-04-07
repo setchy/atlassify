@@ -14,7 +14,7 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
-// TODO - remove duplication between this and filters/product PRODUCT_DETAILS
+// TODO remove duplication between this and filters/product PRODUCT_DETAILS
 export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
@@ -55,7 +55,7 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   },
 };
 
-// TODO ideally we could get this from a response field instead of String manipulation. See issue #97
+// TODO #97 ideally we could get the Product Name from a response field instead of String manipulation
 export function getAtlassianProduct(
   headNotification: AtlassianHeadNotificationFragment,
 ): AtlassianProduct {

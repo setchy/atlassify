@@ -5,7 +5,7 @@ import type { Config } from 'tailwindcss';
 const sidebarWidth = '3rem'; // 48px
 
 const config: Config = {
-  content: ['./src/**/*.js', './src/**/*.ts', './src/**/*.tsx'],
+  content: ['./src/**/*.ts', './src/**/*.tsx'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -20,6 +20,16 @@ const config: Config = {
           sidebar: 'var(--atlassify-background-sidebar)',
           notifications: 'var(--atlassify-background-notifications)',
           attention: R300,
+          heroicon: {
+            neutral: {
+              background: 'var(--ds-background-accent-gray-subtler)',
+              outline: 'var(--ds-text-subtle)',
+            },
+            selected: {
+              background: 'var(--ds-background-accent-blue-subtler)',
+              outline: 'var(--ds-text-selected)',
+            },
+          },
         },
       },
     },

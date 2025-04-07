@@ -78,7 +78,7 @@ export const Sidebar: FC = () => {
       : token('color.text.accent.gray.bolder');
 
   return (
-    <div className="fixed flex flex-col left-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar">
+    <div className="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar">
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
@@ -94,7 +94,7 @@ export const Sidebar: FC = () => {
             </Tooltip>
 
             <Tooltip
-              content={`${notificationsLabel} unread notifications`}
+              content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? 'unread ' : ''}notifications`}
               position="right"
             >
               <IconButton
