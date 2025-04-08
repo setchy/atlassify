@@ -20,15 +20,13 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: true,
       };
 
-      jest.spyOn(native, 'raiseNativeNotification');
-      jest.spyOn(window.atlassify, 'notificationSoundPath');
 
       native.triggerNativeNotifications([], mockAccountNotifications, {
         auth: mockAuth,
         settings,
       });
 
-      expect(native.raiseNativeNotification).toHaveBeenCalledTimes(1);
+      expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
       expect(window.atlassify.notificationSoundPath).toHaveBeenCalledTimes(1);
     });
 
@@ -39,15 +37,14 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: false,
       };
 
-      jest.spyOn(native, 'raiseNativeNotification');
-      jest.spyOn(window.atlassify, 'notificationSoundPath');
+  
 
       native.triggerNativeNotifications([], mockAccountNotifications, {
         auth: mockAuth,
         settings,
       });
 
-      expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
       expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
     });
 
@@ -58,8 +55,7 @@ describe('renderer/utils/notifications/native.ts', () => {
         showNotifications: true,
       };
 
-      jest.spyOn(native, 'raiseNativeNotification');
-      jest.spyOn(window.atlassify, 'notificationSoundPath');
+     
 
       native.triggerNativeNotifications(
         mockSingleAccountNotifications,
@@ -67,7 +63,7 @@ describe('renderer/utils/notifications/native.ts', () => {
         { auth: mockAuth, settings },
       );
 
-      expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
       expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
     });
   });
@@ -79,8 +75,7 @@ describe('renderer/utils/notifications/native.ts', () => {
       showNotifications: true,
     };
 
-    jest.spyOn(native, 'raiseNativeNotification');
-    jest.spyOn(window.atlassify, 'notificationSoundPath');
+   
 
     native.triggerNativeNotifications([], [], {
       auth: mockAuth,
@@ -91,7 +86,7 @@ describe('renderer/utils/notifications/native.ts', () => {
       settings,
     });
 
-    expect(native.raiseNativeNotification).not.toHaveBeenCalled();
+    expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
     expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
   });
 });
