@@ -20,12 +20,10 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: true,
       };
 
-
       native.triggerNativeNotifications([], mockAccountNotifications, {
         auth: mockAuth,
         settings,
       });
-
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
       expect(window.atlassify.notificationSoundPath).toHaveBeenCalledTimes(1);
     });
@@ -37,13 +35,10 @@ describe('renderer/utils/notifications/native.ts', () => {
         showSystemNotifications: false,
       };
 
-  
-
       native.triggerNativeNotifications([], mockAccountNotifications, {
         auth: mockAuth,
         settings,
       });
-
       expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
       expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
     });
@@ -55,14 +50,11 @@ describe('renderer/utils/notifications/native.ts', () => {
         showNotifications: true,
       };
 
-     
-
       native.triggerNativeNotifications(
         mockSingleAccountNotifications,
         mockSingleAccountNotifications,
         { auth: mockAuth, settings },
       );
-
       expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
       expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
     });
@@ -75,17 +67,10 @@ describe('renderer/utils/notifications/native.ts', () => {
       showNotifications: true,
     };
 
-   
-
     native.triggerNativeNotifications([], [], {
       auth: mockAuth,
       settings,
     });
-    native.triggerNativeNotifications([], [], {
-      auth: mockAuth,
-      settings,
-    });
-
     expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
     expect(window.atlassify.notificationSoundPath).not.toHaveBeenCalled();
   });
