@@ -13,7 +13,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
         >
           <span
             aria-label="Atlas"
-            class="css-1eivgv0"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3ickbl"
             role="img"
           >
             <svg
@@ -50,12 +50,12 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             class="css-1ezbfq2"
           >
             <h2
-              class="css-1i4hnz3"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
             >
               Atlassian notifications
             </h2>
             <span
-              class="css-11ssxzq"
+              class="css-1a6c8ku"
             >
               on your menu bar
             </span>
@@ -65,7 +65,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           >
             <span
               aria-label="Bitbucket"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -89,7 +89,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Compass"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -115,7 +115,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Confluence"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -139,7 +139,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -163,7 +163,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira Product Discovery"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -187,7 +187,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira Service Management"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -211,7 +211,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Trello"
-              class="css-1eu9lrx"
+              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
               role="img"
               style="--logo-color: inherit; --logo-fill: currentColor;"
             >
@@ -240,15 +240,16 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             role="presentation"
           >
             <button
-              class="css-1vvzp1k"
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkomb0 _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr31wqm _1di617hq _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="login"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
               type="button"
             >
               <span
-                class="css-12rb8n9"
+                class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
               >
                 <span
-                  class="css-1gskvga"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _vc881r31 _4t3i1tcg"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
                   <svg
@@ -271,7 +272,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
                 </span>
               </span>
               <span
-                class="css-1nqby2s"
+                class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 Login
               </span>
@@ -290,7 +291,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
       >
         <span
           aria-label="Atlas"
-          class="css-1eivgv0"
+          class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3ickbl"
           role="img"
         >
           <svg
@@ -327,12 +328,12 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           class="css-1ezbfq2"
         >
           <h2
-            class="css-1i4hnz3"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
           >
             Atlassian notifications
           </h2>
           <span
-            class="css-11ssxzq"
+            class="css-1a6c8ku"
           >
             on your menu bar
           </span>
@@ -342,7 +343,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
         >
           <span
             aria-label="Bitbucket"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -366,7 +367,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Compass"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -392,7 +393,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Confluence"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -416,7 +417,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -440,7 +441,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira Product Discovery"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -464,7 +465,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira Service Management"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -488,7 +489,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Trello"
-            class="css-1eu9lrx"
+            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i1tcg"
             role="img"
             style="--logo-color: inherit; --logo-fill: currentColor;"
           >
@@ -517,15 +518,16 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            class="css-1vvzp1k"
+            class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkomb0 _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr31wqm _1di617hq _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
             data-testid="login"
+            style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
             type="button"
           >
             <span
-              class="css-12rb8n9"
+              class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
             >
               <span
-                class="css-1gskvga"
+                class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _vc881r31 _4t3i1tcg"
                 style="--logo-color: inherit; --logo-fill: currentColor;"
               >
                 <svg
@@ -548,7 +550,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
               </span>
             </span>
             <span
-              class="css-1nqby2s"
+              class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
             >
               Login
             </span>

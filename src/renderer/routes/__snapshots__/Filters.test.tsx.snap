@@ -15,12 +15,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
         role="presentation"
       >
         <button
-          class="css-1t6wxle"
+          class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
           data-testid="header-nav-back"
+          style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
           type="button"
         >
           <span
-            class="css-1spmf3f"
+            class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
           >
             <span
               aria-hidden="true"
@@ -42,7 +43,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               </svg>
             </span>
             <span
-              class="css-b5o75w"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
             >
               Go Back
             </span>
@@ -50,7 +51,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
         </button>
       </div>
       <h3
-        class="css-rex7s6"
+        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
       >
         Filters
       </h3>
@@ -72,7 +73,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Time Sensitive
             </h4>
@@ -83,11 +84,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="mention"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -112,7 +115,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Mention
                   </span>
@@ -141,10 +144,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -154,11 +157,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="comment"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -183,7 +188,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Comment
                   </span>
@@ -212,10 +217,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -227,7 +232,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Category
             </h4>
@@ -238,11 +243,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="direct"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -267,7 +274,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Direct
                   </span>
@@ -296,10 +303,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -309,11 +316,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="watching"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -338,7 +347,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Watching
                   </span>
@@ -367,10 +376,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -382,7 +391,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Actors
             </h4>
@@ -393,11 +402,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="user"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -422,7 +433,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     User
                   </span>
@@ -451,10 +462,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -464,11 +475,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="automation"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -493,7 +506,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Automation
                   </span>
@@ -522,10 +535,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -537,7 +550,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Read State
             </h4>
@@ -548,11 +561,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="unread"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -577,7 +592,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Unread
                   </span>
@@ -599,10 +614,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   />
                 </svg>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -612,11 +627,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="read"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -641,7 +658,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Read
                   </span>
@@ -663,10 +680,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   />
                 </svg>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -682,7 +699,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Products
             </h4>
@@ -693,11 +710,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="bitbucket"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -722,14 +741,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Bitbucket
                   </span>
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -752,10 +771,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -765,11 +784,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="compass"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -794,14 +815,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Compass
                   </span>
                 </label>
                 <span
                   aria-label="Compass"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -826,10 +847,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -839,11 +860,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="confluence"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -868,14 +891,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Confluence
                   </span>
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -898,10 +921,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -911,11 +934,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -940,14 +965,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira
                   </span>
                 </label>
                 <span
                   aria-label="Jira"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -970,10 +995,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -983,11 +1008,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira product discovery"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1012,14 +1039,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira Product Discovery
                   </span>
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -1042,10 +1069,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1055,11 +1082,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira service management"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1084,14 +1113,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira Service Management
                   </span>
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -1114,10 +1143,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1127,11 +1156,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="team central (atlas)"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1156,14 +1187,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Team Central (Atlas)
                   </span>
                 </label>
                 <span
                   aria-label="Atlas"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                 >
                   <svg
@@ -1197,10 +1228,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1210,11 +1241,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="trello"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1239,14 +1272,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Trello
                   </span>
                 </label>
                 <span
                   aria-label="Trello"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -1271,10 +1304,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1284,11 +1317,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="unknown"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1313,14 +1348,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Unknown
                   </span>
                 </label>
                 <span
                   aria-label="Atlassian"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -1343,10 +1378,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1365,13 +1400,14 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
       class="css-hugz22"
     >
       <button
-        class="css-18yzeap"
+        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
         data-testid="filters-clear"
+        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
         title="Clear Filters"
         type="button"
       >
         <span
-          class="css-1nqby2s"
+          class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
         >
           Clear Filters
         </span>
@@ -1396,12 +1432,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
         role="presentation"
       >
         <button
-          class="css-1t6wxle"
+          class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
           data-testid="header-nav-back"
+          style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
           type="button"
         >
           <span
-            class="css-1spmf3f"
+            class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
           >
             <span
               aria-hidden="true"
@@ -1423,7 +1460,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               </svg>
             </span>
             <span
-              class="css-b5o75w"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
             >
               Go Back
             </span>
@@ -1431,7 +1468,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
         </button>
       </div>
       <h3
-        class="css-rex7s6"
+        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
       >
         Filters
       </h3>
@@ -1453,7 +1490,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Time Sensitive
             </h4>
@@ -1464,11 +1501,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="mention"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1493,7 +1532,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Mention
                   </span>
@@ -1522,10 +1561,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1535,11 +1574,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="comment"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1564,7 +1605,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Comment
                   </span>
@@ -1593,10 +1634,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1608,7 +1649,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Category
             </h4>
@@ -1619,11 +1660,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="direct"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1648,7 +1691,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Direct
                   </span>
@@ -1677,10 +1720,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1690,11 +1733,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="watching"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1719,7 +1764,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Watching
                   </span>
@@ -1748,10 +1793,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1763,7 +1808,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Actors
             </h4>
@@ -1774,11 +1819,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="user"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1803,7 +1850,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     User
                   </span>
@@ -1832,10 +1879,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1845,11 +1892,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="automation"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1874,7 +1923,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Automation
                   </span>
@@ -1903,10 +1952,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </span>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1918,7 +1967,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Read State
             </h4>
@@ -1929,11 +1978,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="unread"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -1958,7 +2009,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Unread
                   </span>
@@ -1980,10 +2031,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   />
                 </svg>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -1993,11 +2044,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="read"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2022,7 +2075,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Read
                   </span>
@@ -2044,10 +2097,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   />
                 </svg>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2063,7 +2116,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             class="css-11u50rl"
           >
             <h4
-              class="css-1skdotg"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
             >
               Products
             </h4>
@@ -2074,12 +2127,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="bitbucket"
                     checked=""
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2108,14 +2163,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Bitbucket
                   </span>
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2138,10 +2193,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-g73hg0"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhkomb0"
                 >
                   <span
-                    class="css-pvol9p"
+                    class="css-1oomvxc"
                   >
                     0
                   </span>
@@ -2151,11 +2206,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="compass"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2180,14 +2237,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Compass
                   </span>
                 </label>
                 <span
                   aria-label="Compass"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2212,10 +2269,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2225,11 +2282,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="confluence"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2254,14 +2313,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Confluence
                   </span>
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2284,10 +2343,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2297,11 +2356,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2326,14 +2387,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira
                   </span>
                 </label>
                 <span
                   aria-label="Jira"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2356,10 +2417,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2369,11 +2430,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira product discovery"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2398,14 +2461,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira Product Discovery
                   </span>
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2428,10 +2491,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2441,11 +2504,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="jira service management"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2470,14 +2535,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Jira Service Management
                   </span>
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2500,10 +2565,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2513,11 +2578,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="team central (atlas)"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2542,14 +2609,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Team Central (Atlas)
                   </span>
                 </label>
                 <span
                   aria-label="Atlas"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                 >
                   <svg
@@ -2583,10 +2650,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2596,11 +2663,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="trello"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2625,14 +2694,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Trello
                   </span>
                 </label>
                 <span
                   aria-label="Trello"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2657,10 +2726,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2670,11 +2739,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 class="css-bsfd3j"
               >
                 <label
-                  class="css-k8x29e"
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
                     aria-label="unknown"
-                    class="css-f3myyk"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgo41a _1dk7o41a _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    style="--_gqccd2: var(--ds-border-width-outline, 2px) solid var(--ds-border-focused, #2684FF);"
                     tabindex="0"
                     type="checkbox"
                     value=""
@@ -2699,14 +2770,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     </g>
                   </svg>
                   <span
-                    class="css-1odt9zb"
+                    class="_nd5l11ig _1wpz1h6o"
                   >
                     Unknown
                   </span>
                 </label>
                 <span
                   aria-label="Atlassian"
-                  class="css-5vjqu0"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                   role="img"
                   style="--logo-color: inherit; --logo-fill: currentColor;"
                 >
@@ -2729,10 +2800,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   </svg>
                 </span>
                 <span
-                  class="css-1wkl091"
+                  class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                 >
                   <span
-                    class="css-f9etm4"
+                    class="css-42o6f5"
                   >
                     0
                   </span>
@@ -2751,13 +2822,14 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
       class="css-hugz22"
     >
       <button
-        class="css-18yzeap"
+        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
         data-testid="filters-clear"
+        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
         title="Clear Filters"
         type="button"
       >
         <span
-          class="css-1nqby2s"
+          class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
         >
           Clear Filters
         </span>

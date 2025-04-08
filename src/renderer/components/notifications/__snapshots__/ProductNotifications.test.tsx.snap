@@ -18,19 +18,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-eu6vk3"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-home"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1nqby2s"
+                  class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
                     class="css-1v6wdk"
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="css-5vjqu0"
+                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                       role="img"
                       style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
@@ -53,15 +54,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
                     <span
-                      class="css-1wkl091"
+                      class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                     >
                       <span
-                        class="css-f9etm4"
+                        class="css-42o6f5"
                       >
                         2
                       </span>
@@ -78,12 +79,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -102,7 +104,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark all product notifications as read
                     </span>
@@ -113,12 +115,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-toggle"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <span
                       aria-hidden="true"
@@ -140,7 +143,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Hide product notifications
                     </span>
@@ -173,19 +176,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             role="presentation"
           >
             <button
-              class="css-eu6vk3"
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="product-home"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
               type="button"
             >
               <span
-                class="css-1nqby2s"
+                class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
                   class="css-1v6wdk"
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="css-5vjqu0"
+                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                     role="img"
                     style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
@@ -208,15 +212,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>
                   <span
-                    class="css-1wkl091"
+                    class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                   >
                     <span
-                      class="css-f9etm4"
+                      class="css-42o6f5"
                     >
                       2
                     </span>
@@ -233,12 +237,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <svg
                     aria-label="Unread Indicator"
@@ -257,7 +262,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     />
                   </svg>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Mark all product notifications as read
                   </span>
@@ -268,12 +273,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-toggle"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <span
                     aria-hidden="true"
@@ -295,7 +301,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Hide product notifications
                   </span>
@@ -385,19 +391,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-eu6vk3"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-home"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1nqby2s"
+                  class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
                     class="css-1v6wdk"
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="css-5vjqu0"
+                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                       role="img"
                       style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
@@ -420,15 +427,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
                     <span
-                      class="css-1wkl091"
+                      class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                     >
                       <span
-                        class="css-f9etm4"
+                        class="css-42o6f5"
                       >
                         2
                       </span>
@@ -445,12 +452,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -469,7 +477,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark all product notifications as read
                     </span>
@@ -480,12 +488,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-toggle"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <span
                       aria-hidden="true"
@@ -507,7 +516,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Hide product notifications
                     </span>
@@ -540,19 +549,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             role="presentation"
           >
             <button
-              class="css-eu6vk3"
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="product-home"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
               type="button"
             >
               <span
-                class="css-1nqby2s"
+                class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
                   class="css-1v6wdk"
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="css-5vjqu0"
+                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                     role="img"
                     style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
@@ -575,15 +585,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>
                   <span
-                    class="css-1wkl091"
+                    class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                   >
                     <span
-                      class="css-f9etm4"
+                      class="css-42o6f5"
                     >
                       2
                     </span>
@@ -600,12 +610,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <svg
                     aria-label="Unread Indicator"
@@ -624,7 +635,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     />
                   </svg>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Mark all product notifications as read
                   </span>
@@ -635,12 +646,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-toggle"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <span
                     aria-hidden="true"
@@ -662,7 +674,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Hide product notifications
                   </span>
@@ -752,19 +764,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-eu6vk3"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-home"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1nqby2s"
+                  class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
                     class="css-1v6wdk"
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="css-5vjqu0"
+                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                       role="img"
                       style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
@@ -787,15 +800,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
                     <span
-                      class="css-1wkl091"
+                      class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                     >
                       <span
-                        class="css-f9etm4"
+                        class="css-42o6f5"
                       >
                         2
                       </span>
@@ -812,12 +825,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -836,7 +850,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark all product notifications as read
                     </span>
@@ -847,12 +861,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-toggle"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <span
                       aria-hidden="true"
@@ -874,7 +889,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Show product notifications
                     </span>
@@ -900,19 +915,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-eu6vk3"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-home"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1nqby2s"
+                  class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
                     class="css-1v6wdk"
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="css-5vjqu0"
+                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                       role="img"
                       style="--logo-color: inherit; --logo-fill: currentColor;"
                     >
@@ -935,15 +951,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
                     <span
-                      class="css-1wkl091"
+                      class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                     >
                       <span
-                        class="css-f9etm4"
+                        class="css-42o6f5"
                       >
                         2
                       </span>
@@ -960,12 +976,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -984,7 +1001,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark all product notifications as read
                     </span>
@@ -995,12 +1012,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="product-toggle"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <span
                       aria-hidden="true"
@@ -1022,7 +1040,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Hide product notifications
                     </span>
@@ -1055,19 +1073,20 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
             role="presentation"
           >
             <button
-              class="css-eu6vk3"
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="product-home"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
               type="button"
             >
               <span
-                class="css-1nqby2s"
+                class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
                   class="css-1v6wdk"
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="css-5vjqu0"
+                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                     role="img"
                     style="--logo-color: inherit; --logo-fill: currentColor;"
                   >
@@ -1090,15 +1109,15 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>
                   <span
-                    class="css-1wkl091"
+                    class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
                   >
                     <span
-                      class="css-f9etm4"
+                      class="css-42o6f5"
                     >
                       2
                     </span>
@@ -1115,12 +1134,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <svg
                     aria-label="Unread Indicator"
@@ -1139,7 +1159,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     />
                   </svg>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Mark all product notifications as read
                   </span>
@@ -1150,12 +1170,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="product-toggle"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <span
                     aria-hidden="true"
@@ -1177,7 +1198,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     </svg>
                   </span>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Hide product notifications
                   </span>

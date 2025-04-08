@@ -15,12 +15,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             role="presentation"
           >
             <button
-              class="css-1t6wxle"
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="header-nav-back"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
               type="button"
             >
               <span
-                class="css-1spmf3f"
+                class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
               >
                 <span
                   aria-hidden="true"
@@ -42,7 +43,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="css-b5o75w"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                 >
                   Go Back
                 </span>
@@ -50,7 +51,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </button>
           </div>
           <h3
-            class="css-rex7s6"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
           >
             Login with Atlassian
           </h3>
@@ -61,14 +62,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       >
         <form>
           <div
-            class="css-2pqcrg"
+            class="_1pfh1ejb"
           >
             <div
-              class="css-wwet8f"
+              class="_1pfhu2gc"
               data-testid="login-username"
             >
               <label
-                class="css-g6a23j"
+                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
                 data-testid="login-username--label"
                 for="username-uid3"
                 id="username-uid3-label"
@@ -76,15 +77,16 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 Username
               </label>
               <div
-                class="css-17nf42q"
+                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _srjtgir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _ochr1p6i _195er01l _bqhtq049 _4cvx1elr _irr31d5g"
                 data-ds--text-field--container="true"
                 role="presentation"
+                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
               >
                 <input
                   aria-describedby="username-uid3-valid username-uid3-helper"
                   aria-labelledby="username-uid3-label"
                   autocomplete="off"
-                  class="css-s6tjpp"
+                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
                   data-ds--text-field--input="true"
                   id="username-uid3"
                   name="username"
@@ -93,18 +95,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
               <div
                 aria-live="polite"
-                class="css-5cg24a"
+                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                 id="username-uid3-helper"
               >
                 Your Atlassian username / email address
               </div>
             </div>
             <div
-              class="css-wwet8f"
+              class="_1pfhu2gc"
               data-testid="login-token"
             >
               <label
-                class="css-g6a23j"
+                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
                 data-testid="login-token--label"
                 for="token-uid4"
                 id="token-uid4-label"
@@ -112,14 +114,15 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 API Token
               </label>
               <div
-                class="css-17nf42q"
+                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _srjtgir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _ochr1p6i _195er01l _bqhtq049 _4cvx1elr _irr31d5g"
                 data-ds--text-field--container="true"
                 role="presentation"
+                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
               >
                 <input
                   aria-describedby="token-uid4-valid token-uid4-helper"
                   aria-labelledby="token-uid4-label"
-                  class="css-s6tjpp"
+                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
                   data-ds--text-field--input="true"
                   id="token-uid4"
                   name="token"
@@ -129,7 +132,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
               <div
                 aria-live="polite"
-                class="css-5cg24a"
+                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                 id="token-uid4-helper"
               >
                 <span>
@@ -140,12 +143,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       role="presentation"
                     >
                       <button
-                        class="css-9v2r3w"
+                        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                         data-testid="login-create-token"
+                        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                         type="button"
                       >
                         <span
-                          class="css-12rb8n9"
+                          class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                         >
                           <span
                             aria-hidden="true"
@@ -168,7 +172,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                           </span>
                         </span>
                         <span
-                          class="css-1nqby2s"
+                          class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                         >
                           Create an API Token
                         </span>
@@ -197,12 +201,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="presentation"
                 >
                   <button
-                    class="css-vgqjed"
+                    class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                     data-testid="login-docs"
+                    style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                     type="button"
                   >
                     <span
-                      class="css-12rb8n9"
+                      class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                     >
                       <span
                         aria-hidden="true"
@@ -225,7 +230,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       </span>
                     </span>
                     <span
-                      class="css-1nqby2s"
+                      class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                     >
                       Docs
                     </span>
@@ -233,7 +238,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </div>
               </div>
               <footer
-                class="css-kwugxo"
+                class="_1e0c1txw _1bahesu3 _1pfh1ejb"
               >
                 <div
                   aria-label="Form submit options"
@@ -241,23 +246,25 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   role="group"
                 >
                   <button
-                    class="css-eu6vk3"
+                    class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                     data-testid="login-cancel"
+                    style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                     type="button"
                   >
                     <span
-                      class="css-1nqby2s"
+                      class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                     >
                       Cancel
                     </span>
                   </button>
                   <button
-                    class="css-1vvzp1k"
+                    class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkomb0 _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr31wqm _1di617hq _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                     data-testid="login-submit"
+                    style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                     type="submit"
                   >
                     <span
-                      class="css-12rb8n9"
+                      class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                     >
                       <span
                         aria-hidden="true"
@@ -280,7 +287,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       </span>
                     </span>
                     <span
-                      class="css-1nqby2s"
+                      class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                     >
                       Login
                     </span>
@@ -304,12 +311,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           role="presentation"
         >
           <button
-            class="css-1t6wxle"
+            class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
             data-testid="header-nav-back"
+            style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
             type="button"
           >
             <span
-              class="css-1spmf3f"
+              class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
                 aria-hidden="true"
@@ -331,7 +339,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </svg>
               </span>
               <span
-                class="css-b5o75w"
+                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
               >
                 Go Back
               </span>
@@ -339,7 +347,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           </button>
         </div>
         <h3
-          class="css-rex7s6"
+          class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
         >
           Login with Atlassian
         </h3>
@@ -350,14 +358,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
     >
       <form>
         <div
-          class="css-2pqcrg"
+          class="_1pfh1ejb"
         >
           <div
-            class="css-wwet8f"
+            class="_1pfhu2gc"
             data-testid="login-username"
           >
             <label
-              class="css-g6a23j"
+              class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
               data-testid="login-username--label"
               for="username-uid3"
               id="username-uid3-label"
@@ -365,15 +373,16 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               Username
             </label>
             <div
-              class="css-17nf42q"
+              class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _srjtgir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _ochr1p6i _195er01l _bqhtq049 _4cvx1elr _irr31d5g"
               data-ds--text-field--container="true"
               role="presentation"
+              style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
             >
               <input
                 aria-describedby="username-uid3-valid username-uid3-helper"
                 aria-labelledby="username-uid3-label"
                 autocomplete="off"
-                class="css-s6tjpp"
+                class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
                 data-ds--text-field--input="true"
                 id="username-uid3"
                 name="username"
@@ -382,18 +391,18 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
             <div
               aria-live="polite"
-              class="css-5cg24a"
+              class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
               id="username-uid3-helper"
             >
               Your Atlassian username / email address
             </div>
           </div>
           <div
-            class="css-wwet8f"
+            class="_1pfhu2gc"
             data-testid="login-token"
           >
             <label
-              class="css-g6a23j"
+              class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
               data-testid="login-token--label"
               for="token-uid4"
               id="token-uid4-label"
@@ -401,14 +410,15 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               API Token
             </label>
             <div
-              class="css-17nf42q"
+              class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _srjtgir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _ochr1p6i _195er01l _bqhtq049 _4cvx1elr _irr31d5g"
               data-ds--text-field--container="true"
               role="presentation"
+              style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
             >
               <input
                 aria-describedby="token-uid4-valid token-uid4-helper"
                 aria-labelledby="token-uid4-label"
-                class="css-s6tjpp"
+                class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
                 data-ds--text-field--input="true"
                 id="token-uid4"
                 name="token"
@@ -418,7 +428,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
             <div
               aria-live="polite"
-              class="css-5cg24a"
+              class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
               id="token-uid4-helper"
             >
               <span>
@@ -429,12 +439,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="css-9v2r3w"
+                      class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                       data-testid="login-create-token"
+                      style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                       type="button"
                     >
                       <span
-                        class="css-12rb8n9"
+                        class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                       >
                         <span
                           aria-hidden="true"
@@ -457,7 +468,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                         </span>
                       </span>
                       <span
-                        class="css-1nqby2s"
+                        class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                       >
                         Create an API Token
                       </span>
@@ -486,12 +497,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="presentation"
               >
                 <button
-                  class="css-vgqjed"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="login-docs"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-12rb8n9"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                   >
                     <span
                       aria-hidden="true"
@@ -514,7 +526,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </span>
                   <span
-                    class="css-1nqby2s"
+                    class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                   >
                     Docs
                   </span>
@@ -522,7 +534,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
             </div>
             <footer
-              class="css-kwugxo"
+              class="_1e0c1txw _1bahesu3 _1pfh1ejb"
             >
               <div
                 aria-label="Form submit options"
@@ -530,23 +542,25 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 role="group"
               >
                 <button
-                  class="css-eu6vk3"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="login-cancel"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1nqby2s"
+                    class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                   >
                     Cancel
                   </span>
                 </button>
                 <button
-                  class="css-1vvzp1k"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkomb0 _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr31wqm _1di617hq _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="login-submit"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="submit"
                 >
                   <span
-                    class="css-12rb8n9"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                   >
                     <span
                       aria-hidden="true"
@@ -569,7 +583,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     </span>
                   </span>
                   <span
-                    class="css-1nqby2s"
+                    class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                   >
                     Login
                   </span>
