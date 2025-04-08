@@ -87,7 +87,7 @@
     "@atlaskit/tokens": "4.7.0",
     "@atlaskit/tooltip": "20.0.5",
     "@biomejs/biome": "1.9.4",
-    "@compiled/webpack-loader": "^0.19.5",
+    "@compiled/webpack-loader": "0.19.5",
     "@discordapp/twemoji": "15.1.0",
     "@electron/notarize": "3.0.1",
     "@graphql-codegen/cli": "5.0.5",
