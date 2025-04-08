@@ -36,7 +36,9 @@ export const SettingsFooter: FC = () => {
           onClick={() => openAtlassifyReleaseNotes(appVersion)}
           testId="settings-release-notes"
         >
-          {APPLICATION.NAME} {appVersion}
+          <span className="font-medium">
+            {APPLICATION.NAME} {appVersion}
+          </span>
         </Button>
       </Tooltip>
 

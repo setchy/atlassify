@@ -54,7 +54,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
@@ -212,7 +212,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>
@@ -427,7 +427,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
@@ -585,7 +585,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>
@@ -800,7 +800,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
@@ -951,7 +951,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </svg>
                     </span>
                     <span
-                      class="capitalize"
+                      class="capitalize font-medium"
                     >
                       bitbucket
                     </span>
@@ -1109,7 +1109,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     </svg>
                   </span>
                   <span
-                    class="capitalize"
+                    class="capitalize font-medium"
                   >
                     bitbucket
                   </span>

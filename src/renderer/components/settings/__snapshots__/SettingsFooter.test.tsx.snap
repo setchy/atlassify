@@ -11,9 +11,13 @@ exports[`renderer/components/settings/SettingsFooter.tsx should show app version
   <span
     class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
   >
-    Atlassify
-     
-    v0.0.1
+    <span
+      class="font-medium"
+    >
+      Atlassify
+       
+      v0.0.1
+    </span>
   </span>
 </button>
 `;
