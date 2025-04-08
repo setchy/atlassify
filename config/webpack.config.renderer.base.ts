@@ -52,6 +52,16 @@ const configuration: webpack.Configuration = {
           'postcss-loader', // Automatically uses the postcss.config.js file
         ],
       },
+      {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            // ↓↓ Atlaskit Components with Compiled CSS in JS - must be defined last ↓↓
+            loader: '@compiled/webpack-loader',
+          },
+        ],
+      },
     ],
   },
 

@@ -30,21 +30,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   >
                     <div
                       aria-labelledby="uid2"
-                      class="css-130dd7j"
+                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
                       <span
-                        class="css-1ummshu"
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
                         style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="css-13ep12v"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1q5u"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
-                          style="border-radius: 50%;"
                         />
                       </span>
                       <span
@@ -100,13 +99,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         id="notification-title"
                       >
                         <span
-                          class="css-b0hel9"
+                          class="css-bc6vhz"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1ot9q9i"
+                          class="css-1wofv2j"
                         >
                           3 years ago
                         </em>
@@ -124,21 +123,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <div
                               aria-labelledby="uid4"
-                              class="css-130dd7j"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                               role="img"
                             >
                               <span
-                                class="css-1iefllh"
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkoyh40 _14mjyh40 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
                                   aria-hidden="true"
-                                  class="css-13ep12v"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
                                   data-ssr-placeholder-ignored="true"
                                   data-vc="avatar-image"
                                   src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                  style="border-radius: 2px;"
                                 />
                               </span>
                               <span
@@ -149,7 +147,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               </span>
                             </div>
                             <span
-                              class="css-lym9kh"
+                              class="css-1re4vvb"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -164,7 +162,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <span
                               aria-label="Bitbucket"
-                              class="css-5vjqu0"
+                              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                               role="img"
                               style="--logo-color: inherit; --logo-fill: currentColor;"
                             >
@@ -187,7 +185,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               </svg>
                             </span>
                             <span
-                              class="css-lym9kh"
+                              class="css-1re4vvb"
                             >
                               myorg/notifications-test
                             </span>
@@ -207,12 +205,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -231,7 +230,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark as read
                     </span>
@@ -270,21 +269,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 >
                   <div
                     aria-labelledby="uid2"
-                    class="css-130dd7j"
+                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
                     <span
-                      class="css-1ummshu"
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="css-13ep12v"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1q5u"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
-                        style="border-radius: 50%;"
                       />
                     </span>
                     <span
@@ -340,13 +338,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       id="notification-title"
                     >
                       <span
-                        class="css-b0hel9"
+                        class="css-bc6vhz"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1ot9q9i"
+                        class="css-1wofv2j"
                       >
                         3 years ago
                       </em>
@@ -364,21 +362,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <div
                             aria-labelledby="uid4"
-                            class="css-130dd7j"
+                            class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                             role="img"
                           >
                             <span
-                              class="css-1iefllh"
+                              class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkoyh40 _14mjyh40 _1bsb7vkz _4t3i7vkz"
                               style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                             >
                               <img
                                 alt=""
                                 aria-hidden="true"
-                                class="css-13ep12v"
+                                class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
                                 data-ssr-placeholder-ignored="true"
                                 data-vc="avatar-image"
                                 src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                style="border-radius: 2px;"
                               />
                             </span>
                             <span
@@ -389,7 +386,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </span>
                           </div>
                           <span
-                            class="css-lym9kh"
+                            class="css-1re4vvb"
                           >
                             #103: chore(deps): update dependency eslint
                           </span>
@@ -404,7 +401,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <span
                             aria-label="Bitbucket"
-                            class="css-5vjqu0"
+                            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                             role="img"
                             style="--logo-color: inherit; --logo-fill: currentColor;"
                           >
@@ -427,7 +424,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </svg>
                           </span>
                           <span
-                            class="css-lym9kh"
+                            class="css-1re4vvb"
                           >
                             myorg/notifications-test
                           </span>
@@ -447,12 +444,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <svg
                     aria-label="Unread Indicator"
@@ -471,7 +469,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     />
                   </svg>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Mark as read
                   </span>
@@ -567,21 +565,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   >
                     <div
                       aria-labelledby="uid8"
-                      class="css-130dd7j"
+                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
                       <span
-                        class="css-1ummshu"
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
                         style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="css-13ep12v"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1q5u"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
-                          style="border-radius: 50%;"
                         />
                       </span>
                       <span
@@ -637,13 +634,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         id="notification-title"
                       >
                         <span
-                          class="css-b0hel9"
+                          class="css-bc6vhz"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1ot9q9i"
+                          class="css-1wofv2j"
                         >
                           3 years ago
                         </em>
@@ -661,21 +658,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <div
                               aria-labelledby="uid10"
-                              class="css-130dd7j"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                               role="img"
                             >
                               <span
-                                class="css-1iefllh"
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkoyh40 _14mjyh40 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                               >
                                 <img
                                   alt=""
                                   aria-hidden="true"
-                                  class="css-13ep12v"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
                                   data-ssr-placeholder-ignored="true"
                                   data-vc="avatar-image"
                                   src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                  style="border-radius: 2px;"
                                 />
                               </span>
                               <span
@@ -686,7 +682,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               </span>
                             </div>
                             <span
-                              class="css-lym9kh"
+                              class="css-1re4vvb"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -701,7 +697,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           >
                             <span
                               aria-label="Bitbucket"
-                              class="css-5vjqu0"
+                              class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                               role="img"
                               style="--logo-color: inherit; --logo-fill: currentColor;"
                             >
@@ -724,7 +720,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               </svg>
                             </span>
                             <span
-                              class="css-lym9kh"
+                              class="css-1re4vvb"
                             >
                               myorg/notifications-test
                             </span>
@@ -744,12 +740,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 role="presentation"
               >
                 <button
-                  class="css-1vyxgfe"
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                   type="button"
                 >
                   <span
-                    class="css-1spmf3f"
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
                     <svg
                       aria-label="Unread Indicator"
@@ -768,7 +765,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       />
                     </svg>
                     <span
-                      class="css-b5o75w"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                     >
                       Mark as read
                     </span>
@@ -807,21 +804,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                 >
                   <div
                     aria-labelledby="uid8"
-                    class="css-130dd7j"
+                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
                     <span
-                      class="css-1ummshu"
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="css-13ep12v"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1q5u"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
-                        style="border-radius: 50%;"
                       />
                     </span>
                     <span
@@ -877,13 +873,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       id="notification-title"
                     >
                       <span
-                        class="css-b0hel9"
+                        class="css-bc6vhz"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1ot9q9i"
+                        class="css-1wofv2j"
                       >
                         3 years ago
                       </em>
@@ -901,21 +897,20 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <div
                             aria-labelledby="uid10"
-                            class="css-130dd7j"
+                            class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                             role="img"
                           >
                             <span
-                              class="css-1iefllh"
+                              class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkoyh40 _14mjyh40 _1bsb7vkz _4t3i7vkz"
                               style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                             >
                               <img
                                 alt=""
                                 aria-hidden="true"
-                                class="css-13ep12v"
+                                class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
                                 data-ssr-placeholder-ignored="true"
                                 data-vc="avatar-image"
                                 src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                style="border-radius: 2px;"
                               />
                             </span>
                             <span
@@ -926,7 +921,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </span>
                           </div>
                           <span
-                            class="css-lym9kh"
+                            class="css-1re4vvb"
                           >
                             #103: chore(deps): update dependency eslint
                           </span>
@@ -941,7 +936,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         >
                           <span
                             aria-label="Bitbucket"
-                            class="css-5vjqu0"
+                            class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
                             role="img"
                             style="--logo-color: inherit; --logo-fill: currentColor;"
                           >
@@ -964,7 +959,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </svg>
                           </span>
                           <span
-                            class="css-lym9kh"
+                            class="css-1re4vvb"
                           >
                             myorg/notifications-test
                           </span>
@@ -984,12 +979,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
               role="presentation"
             >
               <button
-                class="css-1vyxgfe"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1spmf3f"
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
                   <svg
                     aria-label="Unread Indicator"
@@ -1008,7 +1004,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     />
                   </svg>
                   <span
-                    class="css-b5o75w"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
                   >
                     Mark as read
                   </span>
