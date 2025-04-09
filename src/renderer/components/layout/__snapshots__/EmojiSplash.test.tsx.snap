@@ -9,6 +9,43 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
+          class="css-1rd5nai"
+        >
+          <div
+            class="css-ybkmal"
+          >
+            <span
+              class="text-5xl"
+            >
+              <span />
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Test Heading
+            </span>
+            <div
+              class="css-t8lj6l"
+            >
+              <span
+                class="text-center"
+              >
+                Test Sub-Heading
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
+    >
+      <div
+        class="css-1rd5nai"
+      >
+        <div
           class="css-ybkmal"
         >
           <span
@@ -30,35 +67,6 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
               Test Sub-Heading
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex flex-1 flex-col items-center justify-center min-h-screen"
-    >
-      <div
-        class="css-ybkmal"
-      >
-        <span
-          class="text-5xl"
-        >
-          <span />
-        </span>
-        <span
-          class="text-xl font-semibold"
-        >
-          Test Heading
-        </span>
-        <div
-          class="css-t8lj6l"
-        >
-          <span
-            class="text-center"
-          >
-            Test Sub-Heading
-          </span>
         </div>
       </div>
     </div>
@@ -126,6 +134,34 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
+          class="css-1rd5nai"
+        >
+          <div
+            class="css-ybkmal"
+          >
+            <span
+              class="text-5xl"
+            >
+              <span />
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Test Heading
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
+    >
+      <div
+        class="css-1rd5nai"
+      >
+        <div
           class="css-ybkmal"
         >
           <span
@@ -138,33 +174,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
           >
             Test Heading
           </span>
-          <div
-            class="css-t8lj6l"
-          />
         </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex flex-1 flex-col items-center justify-center min-h-screen"
-    >
-      <div
-        class="css-ybkmal"
-      >
-        <span
-          class="text-5xl"
-        >
-          <span />
-        </span>
-        <span
-          class="text-xl font-semibold"
-        >
-          Test Heading
-        </span>
-        <div
-          class="css-t8lj6l"
-        />
       </div>
     </div>
   </div>,

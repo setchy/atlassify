@@ -1,4 +1,4 @@
-import { Stack } from '@atlaskit/primitives';
+import { Box, Stack } from '@atlaskit/primitives';
 import type { FC } from 'react';
 import { EmojiText } from '../primitives/EmojiText';
 import { Centered } from './Centered';
@@ -15,22 +15,27 @@ export const EmojiSplash: FC<IEmojiSplash> = ({
 }: IEmojiSplash) => {
   return (
     <Centered>
-      <Stack space="space.300" alignInline="center">
-        <span className="text-5xl">
-          <EmojiText text={props.emoji} />
-        </span>
-        <span className="text-xl font-semibold">{props.heading}</span>
+      <Box paddingInline="space.400">
+        <Stack space="space.300" alignInline="center">
+          <span className="text-5xl">
+            <EmojiText text={props.emoji} />
+          </span>
 
-        <Stack space="space.100">
-          {subHeadings.map((description) => {
-            return (
-              <span className="text-center" key={description}>
-                {description}
-              </span>
-            );
-          })}
+          <span className="text-xl font-semibold">{props.heading}</span>
+
+          {subHeadings.length > 0 && (
+            <Stack space="space.100">
+              {subHeadings.map((description) => {
+                return (
+                  <span className="text-center" key={description}>
+                    {description}
+                  </span>
+                );
+              })}
+            </Stack>
+          )}
         </Stack>
-      </Stack>
+      </Box>
     </Centered>
   );
 };
