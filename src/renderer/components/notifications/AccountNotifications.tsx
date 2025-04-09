@@ -41,13 +41,14 @@ import { ProductNotifications } from './ProductNotifications';
 interface IAccountNotifications {
   account: Account;
   notifications: AtlassifyNotification[];
+  hasMoreNotifications: boolean;
   error: AtlassifyError | null;
 }
 
 export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
-  const { account, notifications } = props;
+  const { account, notifications, hasMoreNotifications } = props;
 
   const { markNotificationsRead, settings } = useContext(AppContext);
 
@@ -149,9 +150,11 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             </Tooltip>{' '}
             <Badge
               appearance="primary"
-              max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT - 1}
+              max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT}
             >
-              {notifications.length}
+              {hasMoreNotifications
+                ? Constants.MAX_NOTIFICATIONS_PER_ACCOUNT + 1
+                : notifications.length}
             </Badge>
           </Inline>
 
