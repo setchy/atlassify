@@ -9,6 +9,50 @@ exports[`renderer/components/Oops.tsx should render itself & its children - fall
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
+          class="css-1rd5nai"
+        >
+          <div
+            class="css-ybkmal"
+          >
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🤔"
+                  class="emoji"
+                  draggable="false"
+                  src="/mock/images/assets/1f914.svg"
+                />
+              </span>
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Oops! Something went wrong
+            </span>
+            <div
+              class="css-t8lj6l"
+            >
+              <span
+                class="text-center"
+              >
+                Please try again later.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
+    >
+      <div
+        class="css-1rd5nai"
+      >
+        <div
           class="css-ybkmal"
         >
           <span
@@ -37,42 +81,6 @@ exports[`renderer/components/Oops.tsx should render itself & its children - fall
               Please try again later.
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex flex-1 flex-col items-center justify-center min-h-screen"
-    >
-      <div
-        class="css-ybkmal"
-      >
-        <span
-          class="text-5xl"
-        >
-          <span>
-            <img
-              alt="🤔"
-              class="emoji"
-              draggable="false"
-              src="/mock/images/assets/1f914.svg"
-            />
-          </span>
-        </span>
-        <span
-          class="text-xl font-semibold"
-        >
-          Oops! Something went wrong
-        </span>
-        <div
-          class="css-t8lj6l"
-        >
-          <span
-            class="text-center"
-          >
-            Please try again later.
-          </span>
         </div>
       </div>
     </div>
@@ -140,6 +148,50 @@ exports[`renderer/components/Oops.tsx should render itself & its children - spec
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
+          class="css-1rd5nai"
+        >
+          <div
+            class="css-ybkmal"
+          >
+            <span
+              class="text-5xl"
+            >
+              <span>
+                <img
+                  alt="🔥"
+                  class="emoji"
+                  draggable="false"
+                  src="/mock/images/assets/1f525.svg"
+                />
+              </span>
+            </span>
+            <span
+              class="text-xl font-semibold"
+            >
+              Error title
+            </span>
+            <div
+              class="css-t8lj6l"
+            >
+              <span
+                class="text-center"
+              >
+                Error description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex flex-1 flex-col items-center justify-center min-h-screen"
+    >
+      <div
+        class="css-1rd5nai"
+      >
+        <div
           class="css-ybkmal"
         >
           <span
@@ -168,42 +220,6 @@ exports[`renderer/components/Oops.tsx should render itself & its children - spec
               Error description
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex flex-1 flex-col items-center justify-center min-h-screen"
-    >
-      <div
-        class="css-ybkmal"
-      >
-        <span
-          class="text-5xl"
-        >
-          <span>
-            <img
-              alt="🔥"
-              class="emoji"
-              draggable="false"
-              src="/mock/images/assets/1f525.svg"
-            />
-          </span>
-        </span>
-        <span
-          class="text-xl font-semibold"
-        >
-          Error title
-        </span>
-        <div
-          class="css-t8lj6l"
-        >
-          <span
-            class="text-center"
-          >
-            Error description
-          </span>
         </div>
       </div>
     </div>
