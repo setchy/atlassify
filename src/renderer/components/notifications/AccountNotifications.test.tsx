@@ -27,6 +27,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
         error: null,
       };
 
@@ -49,6 +50,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
         error: null,
       };
 
@@ -69,6 +71,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
         error: null,
       };
 
@@ -93,6 +96,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
         error: null,
       };
 
@@ -117,6 +121,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: [],
+        hasMoreNotifications: false,
         error: null,
       };
 
@@ -137,6 +142,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       const props = {
         account: mockAtlassianCloudAccount,
         notifications: [],
+        hasMoreNotifications: false,
         error: {
           title: 'Error title',
           descriptions: ['Error description'],
@@ -166,6 +172,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
+      hasMoreNotifications: false,
       error: null,
     };
 
@@ -193,6 +200,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: [],
+      hasMoreNotifications: false,
       error: null,
     };
 
@@ -213,6 +221,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
+      hasMoreNotifications: false,
       error: null,
     };
 
@@ -241,6 +250,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
+      hasMoreNotifications: false,
       error: null,
     };
 
@@ -269,6 +279,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const props = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
+      hasMoreNotifications: false,
       error: null,
     };
 
