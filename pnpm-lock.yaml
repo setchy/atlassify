@@ -52,8 +52,8 @@ importers:
         specifier: 12.0.3
         version: 12.0.3(@babel/core@7.26.10)(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
-        specifier: 5.1.1
-        version: 5.1.1(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.2.0
+        version: 5.2.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
         specifier: 25.5.0
         version: 25.5.0(@babel/core@7.26.10)(@types/react@18.3.20)(react@18.3.1)
@@ -337,8 +337,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/heading@5.1.1':
-    resolution: {integrity: sha512-ZSAfMNq1Q6A2N/m66ufwTbvARtI9EEkIzI2M4Vc/D1Yl2olKjgjH677gY/ocdHKE0P0xqOKhiIp4CL91tm5OMw==}
+  '@atlaskit/heading@5.2.0':
+    resolution: {integrity: sha512-Gui3JYeoXHMXCCCcazUzDM8VJhAqwTCaUb7x1NxleT5AG4ooMCbLEnhaeEc8s08wqPi1f6kdKl5XR+O7CHhItQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6038,7 +6038,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 0.10.0(@types/react@18.3.20)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.20)(react@18.3.1)
-      '@atlaskit/heading': 5.1.1(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/heading': 5.2.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 25.5.0(@babel/core@7.26.10)(@types/react@18.3.20)(react@18.3.1)
       '@atlaskit/primitives': 14.4.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 18.0.0(@types/react@18.3.20)(react@18.3.1)
@@ -6056,10 +6056,9 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/heading@5.1.1(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/heading@5.2.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/css': 0.10.0(@types/react@18.3.20)(react@18.3.1)
-      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
       '@atlaskit/primitives': 14.4.0(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens': 4.7.0(@types/react@18.3.20)(react@18.3.1)
       '@babel/runtime': 7.27.0
