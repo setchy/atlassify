@@ -45,7 +45,7 @@ export const SettingsReset: FC = () => {
 
       <ModalTransition>
         {isOpen && (
-          <Modal onClose={closeModal} width="80%">
+          <Modal onClose={closeModal}>
             <ModalHeader>
               <Grid
                 gap="space.200"
