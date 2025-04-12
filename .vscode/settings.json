@@ -1,27 +1,27 @@
 {
-	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit",
-		"source.organizeImports.biome": "explicit"
-	},
-	"editor.defaultFormatter": "biomejs.biome",
-	"[astro]": {
-		"editor.defaultFormatter": "astro-build.astro-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"[xml]": {
-		"editor.defaultFormatter": "redhat.vscode-xml"
-	},
-	"tailwindCSS.experimental.classRegex": [
-		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-	],
-	"cSpell.words": ["Atlassify", "xcss"],
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"i18n-ally.translate.engines": ["google"],
-	"i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
-	"i18n-ally.sourceLanguage": "en",
-	"i18n-ally.keystyle": "nested"
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "cSpell.words": ["Atlassify", "xcss"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.translate.engines": ["google"],
+  "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested"
 }
