@@ -18,6 +18,8 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
 
+    "resolveJsonModule": true,
+
     "plugins": [
       {
         "name": "@0no-co/graphqlsp",

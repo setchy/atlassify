@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { APPLICATION } from '../../../shared/constants';
 import type {
   AccountNotifications,
@@ -58,6 +59,9 @@ export const raiseNativeNotification = (
   let body: string;
   let url: string = null;
 
+  // Get translation function
+  const { t } = useTranslation();
+
   if (notifications.length === 1) {
     const notification = notifications[0];
     title = window.atlassify.platform.isWindows() ? '' : notification.message;
@@ -65,7 +69,10 @@ export const raiseNativeNotification = (
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
-    body = `You have ${notifications.length} notifications.`;
+    body =
+      notifications.length === 1
+        ? t('notifications.you_have_one')
+        : t('notifications.you_have', { count: notifications.length });
   }
 
   return window.atlassify.raiseNativeNotification(title, body, url);

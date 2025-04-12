@@ -2,6 +2,7 @@ import { setGlobalTheme } from '@atlaskit/tokens';
 import { createRoot } from 'react-dom/client';
 
 import '@atlaskit/css-reset';
+import './i18n'; // Import i18n configuration
 
 setGlobalTheme({
   colorMode: 'light',

@@ -1,7 +1,8 @@
 {
-  "recommendations": [
-    "astro-build.astro-vscode",
-    "biomejs.biome",
-    "bradlc.vscode-tailwindcss"
-  ]
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"biomejs.biome",
+		"bradlc.vscode-tailwindcss",
+		"lokalise.i18n-ally"
+	]
 }

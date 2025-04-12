@@ -1,0 +1,42 @@
+{
+	"common": {
+		"settings": "Settings",
+		"cancel": "Cancel",
+		"save": "Save",
+		"reset": "Reset",
+		"login": "Login",
+		"logout": "Logout",
+		"username": "Username",
+		"submit": "Submit",
+		"docs": "Docs",
+		"close": "Close",
+		"notifications": "Notifications"
+	},
+	"login": {
+		"title": "Login with Atlassian",
+		"username_helper": "Your Atlassian username / email address",
+		"token": "API Token",
+		"create_token": "Create an API Token",
+		"token_helper": "for your account and paste above",
+		"error_message": "Oops! The username + token combination provided are not valid. Please try again.",
+		"security_docs": "See Atlassian documentation"
+	},
+	"settings": {
+		"reset_title": "Reset Settings",
+		"reset_confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults.",
+		"language": "Language",
+		"appearance": "Appearance",
+		"system_notifications": "Show system notifications",
+		"play_sound": "Play sound for new notifications",
+		"open_links": "Open links in",
+		"open_links_foreground": "Foreground",
+		"open_links_background": "Background",
+		"startup": "Start at login",
+		"alternate_icon": "Use alternate idle icon",
+		"keyboard_shortcut": "Enable keyboard shortcut"
+	},
+	"notifications": {
+		"you_have": "You have {{count}} notifications.",
+		"you_have_one": "You have 1 notification."
+	}
+}

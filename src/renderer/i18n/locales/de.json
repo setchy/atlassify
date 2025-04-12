@@ -1,0 +1,42 @@
+{
+  "common": {
+    "cancel": "Stornieren",
+    "close": "Schließen",
+    "docs": "Dokumente",
+    "login": "Login",
+    "logout": "Abmelden",
+    "notifications": "Benachrichtigungen",
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "settings": "Einstellungen",
+    "submit": "Einreichen",
+    "username": "Benutzername"
+  },
+  "login": {
+    "create_token": "Erstellen Sie ein API -Token",
+    "error_message": "Hoppla! \nDie Bereitstellung der Benutzernamen -Token -Kombination ist nicht gültig. \nBitte versuchen Sie es erneut.",
+    "security_docs": "Siehe Atlassian Dokumentation",
+    "title": "Melden Sie sich mit Atlassian an",
+    "token": "API -Token",
+    "token_helper": "Für Ihr Konto und eine Einfüge oben",
+    "username_helper": "Ihr Atlassian Benutzername / E -Mail -Adresse"
+  },
+  "notifications": {
+    "you_have": "Sie haben {{count}} Benachrichtigungen.",
+    "you_have_one": "Sie haben 1 Benachrichtigung."
+  },
+  "settings": {
+    "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
+    "appearance": "Aussehen",
+    "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
+    "language": "Sprache",
+    "open_links": "Offene Links in",
+    "open_links_background": "Hintergrund",
+    "open_links_foreground": "Vordergrund",
+    "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
+    "reset_confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appname}} zurücksetzen möchten.",
+    "reset_title": "Einstellungen zurücksetzen",
+    "startup": "Starten Sie bei Login",
+    "system_notifications": "Systembenachrichtigungen anzeigen"
+  }
+}

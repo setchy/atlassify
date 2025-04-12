@@ -104,6 +104,11 @@ export interface AppearanceSettingsState {
    * The zoom percentage of the application.
    */
   zoomPercentage: number;
+
+  /**
+   * The language of the application.
+   */
+  language: string;
 }
 
 /**

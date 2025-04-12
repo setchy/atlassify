@@ -1,0 +1,42 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "close": "Cerca",
+    "docs": "Documento",
+    "login": "Acceso",
+    "logout": "Cierre de sesión",
+    "notifications": "Notificaciones",
+    "reset": "Reiniciar",
+    "save": "Ahorrar",
+    "settings": "Ajustes",
+    "submit": "Entregar",
+    "username": "Nombre de usuario"
+  },
+  "login": {
+    "create_token": "Crear un token API",
+    "error_message": "¡Ups! \nLa combinación token de nombre de usuario proporcionada no es válida. \nPor favor intente de nuevo.",
+    "security_docs": "Ver documentación de Atlassian",
+    "title": "Iniciar sesión con Atlassian",
+    "token": "Token API",
+    "token_helper": "para su cuenta y pegue arriba",
+    "username_helper": "Su nombre de usuario / dirección de correo electrónico de Atlassian"
+  },
+  "notifications": {
+    "you_have": "Tienes {{Count}} notificaciones.",
+    "you_have_one": "Tienes 1 notificación."
+  },
+  "settings": {
+    "alternate_icon": "Use un icono de inactividad alternativo",
+    "appearance": "Apariencia",
+    "keyboard_shortcut": "Habilitar el atajo de teclado",
+    "language": "Idioma",
+    "open_links": "Abrir enlaces en",
+    "open_links_background": "Fondo",
+    "open_links_foreground": "Primer plano",
+    "play_sound": "Reproducir sonido para nuevas notificaciones",
+    "reset_confirm": "Confirme que desea restablecer todas las configuraciones en los valores predeterminados {{AppName}}.",
+    "reset_title": "Configuración de reinicio",
+    "startup": "Comience a iniciar sesión",
+    "system_notifications": "Mostrar notificaciones del sistema"
+  }
+}

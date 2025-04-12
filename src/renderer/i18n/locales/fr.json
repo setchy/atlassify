@@ -1,0 +1,42 @@
+{
+  "common": {
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "docs": "Docs",
+    "login": "Se connecter",
+    "logout": "Déconnexion",
+    "notifications": "Notifications",
+    "reset": "Réinitialiser",
+    "save": "Sauvegarder",
+    "settings": "Paramètres",
+    "submit": "Soumettre",
+    "username": "Nom d'utilisateur"
+  },
+  "login": {
+    "create_token": "Créer un jeton API",
+    "error_message": "Oups! \nLa combinaison de jetons de nom d'utilisateur fournie n'est pas valide. \nVeuillez réessayer.",
+    "security_docs": "Voir la documentation atlastique",
+    "title": "Connectez-vous avec Atlassian",
+    "token": "Jeton API",
+    "token_helper": "pour votre compte et collez-vous ci-dessus",
+    "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
+  },
+  "notifications": {
+    "you_have": "Vous avez {{count}} notifications.",
+    "you_have_one": "Vous avez 1 notification."
+  },
+  "settings": {
+    "alternate_icon": "Utiliser une icône inactif alternative",
+    "appearance": "Apparence",
+    "keyboard_shortcut": "Activer le raccourci clavier",
+    "language": "Langue",
+    "open_links": "Ouvrir des liens dans",
+    "open_links_background": "Arrière-plan",
+    "open_links_foreground": "Premier plan",
+    "play_sound": "Jouez au son pour de nouvelles notifications",
+    "reset_confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appname}}.",
+    "reset_title": "Réinitialiser les paramètres",
+    "startup": "Commencer par la connexion",
+    "system_notifications": "Afficher les notifications du système"
+  }
+}
