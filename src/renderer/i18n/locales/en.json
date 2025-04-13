@@ -22,6 +22,7 @@
     "security_docs": "See Atlassian documentation"
   },
   "settings": {
+    "title": "Settings",
     "reset_title": "Reset Settings",
     "reset_confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults.",
     "language": "Language",
@@ -36,7 +37,30 @@
     "keyboard_shortcut": "Enable keyboard shortcut"
   },
   "notifications": {
-    "you_have": "You have {{count}} notifications.",
-    "you_have_one": "You have 1 notification."
+    "native": "You have {{count}} notifications"
+  },
+  "allRead": {
+    "heading": "No new notifications",
+    "headingFiltered": "No new filtered notifications"
+  },
+  "errors": {
+    "badCredentials": {
+      "title": "Bad Credentials",
+      "description1": "Your credentials are either invalid or expired.",
+      "description2": "Please try removing your account and authenticating again."
+    },
+    "badRequest": {
+      "title": "Bad Request",
+      "description": "Something went wrong making the API request."
+    },
+    "network": {
+      "title": "Network Error",
+      "description1": "Unable to connect to Atlassian Cloud.",
+      "description2": "Please check your network connection, including whether you require a VPN, and try again."
+    },
+    "unknown": {
+      "title": "Oops! Something went wrong",
+      "description": "Please try again later."
+    }
   }
 }

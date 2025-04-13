@@ -14,7 +14,9 @@ import Tooltip from '@atlaskit/tooltip';
 import Select from '@atlaskit/select';
 import { useTranslation } from 'react-i18next';
 import { AppContext } from '../../context/App';
+import { LANGUAGES } from '../../i18n/types';
 import { Theme } from '../../types';
+import { loadLanguageLocale } from '../../utils/storage';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
 
@@ -72,19 +74,14 @@ export const AppearanceSettings: FC = () => {
 
   const { i18n } = useTranslation();
 
-  const languages = [
-    { label: 'English', value: 'en' },
-    { label: 'Deutsch', value: 'de' },
-    { label: 'Español', value: 'es' },
-    { label: 'Français', value: 'fr' },
-  ];
-
   const handleLanguageChange = useCallback(
     (option) => {
       i18n.changeLanguage(option.value);
     },
     [i18n],
   );
+
+  const locale = loadLanguageLocale();
 
   return (
     <Stack space="space.100">
@@ -96,8 +93,18 @@ export const AppearanceSettings: FC = () => {
             Language:
           </Text>
           <Select
-            options={languages}
-            onChange={handleLanguageChange}
+            menuPortalTarget={document.body}
+            styles={{
+              menuPortal: (base) => ({ ...base, zIndex: 1050 }),
+            }}
+            options={LANGUAGES}
+            defaultValue={LANGUAGES.find((lang) =>
+              locale.startsWith(lang.value),
+            )}
+            placeholder="Select language"
+            onChange={(option) => {
+              handleLanguageChange(option);
+            }}
             testId="settings-language-selector"
           />
         </Inline>

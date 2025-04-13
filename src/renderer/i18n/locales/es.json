@@ -38,5 +38,9 @@
     "reset_title": "Configuración de reinicio",
     "startup": "Comience a iniciar sesión",
     "system_notifications": "Mostrar notificaciones del sistema"
+  },
+  "allRead": {
+    "heading": "No hay nuevas notificaciones",
+    "headingFiltered": "No hay nuevas notificaciones filtradas"
   }
 }

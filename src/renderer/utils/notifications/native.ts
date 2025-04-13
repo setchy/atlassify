@@ -69,10 +69,7 @@ export const raiseNativeNotification = (
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
-    body =
-      notifications.length === 1
-        ? t('notifications.you_have_one')
-        : t('notifications.you_have', { count: notifications.length });
+    body = t('notifications.native', { count: notifications.length });
   }
 
   return window.atlassify.raiseNativeNotification(title, body, url);

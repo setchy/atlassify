@@ -1682,7 +1682,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               <span
                 class="text-xl font-semibold"
               >
-                No new  notifications
+                No new notifications
               </span>
             </div>
           </div>
@@ -1909,7 +1909,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             <span
               class="text-xl font-semibold"
             >
-              No new  notifications
+              No new notifications
             </span>
           </div>
         </div>

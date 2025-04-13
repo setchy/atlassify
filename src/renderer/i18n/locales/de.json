@@ -26,6 +26,7 @@
     "you_have_one": "Sie haben 1 Benachrichtigung."
   },
   "settings": {
+    "title": "Einstellungen",
     "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
     "appearance": "Aussehen",
     "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
@@ -38,5 +39,29 @@
     "reset_title": "Einstellungen zurücksetzen",
     "startup": "Starten Sie bei Login",
     "system_notifications": "Systembenachrichtigungen anzeigen"
+  },
+  "errors": {
+    "badCredentials": {
+      "title": "Ungültige Anmeldedaten",
+      "description1": "Ihre Anmeldedaten sind ungültig oder abgelaufen.",
+      "description2": "Bitte versuchen Sie, Ihr Konto zu entfernen und sich erneut zu authentifizieren."
+    },
+    "badRequest": {
+      "title": "Ungültige Anfrage",
+      "description": "Bei der API-Anfrage ist ein Fehler aufgetreten."
+    },
+    "network": {
+      "title": "Netzwerkfehler",
+      "description1": "Verbindung zu Atlassian Cloud nicht möglich.",
+      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, einschließlich ob Sie ein VPN benötigen, und versuchen Sie es erneut."
+    },
+    "unknown": {
+      "title": "Hoppla! Etwas ist schiefgelaufen",
+      "description": "Bitte versuchen Sie es später noch einmal."
+    }
+  },
+  "allRead": {
+    "heading": "Keine neuen Benachrichtigungen",
+    "headingFiltered": "Keine neuen gefilterten Benachrichtigungen"
   }
 }

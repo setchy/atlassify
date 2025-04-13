@@ -3,6 +3,8 @@ export const Constants = {
 
   STORAGE_KEY: 'atlassify-storage',
 
+  LANGUAGE_STORAGE_KEY: 'atlassify-language',
+
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
 
   FETCH_NOTIFICATIONS_INTERVAL: 60000,

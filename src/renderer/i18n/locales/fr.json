@@ -38,5 +38,9 @@
     "reset_title": "Réinitialiser les paramètres",
     "startup": "Commencer par la connexion",
     "system_notifications": "Afficher les notifications du système"
+  },
+  "allRead": {
+    "heading": "Pas de nouvelles notifications",
+    "headingFiltered": "Pas de nouvelles notifications filtrées"
   }
 }
