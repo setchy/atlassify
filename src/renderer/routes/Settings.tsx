@@ -1,8 +1,8 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
-import { useTranslation } from 'react-i18next';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';

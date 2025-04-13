@@ -1,4 +1,5 @@
 import { type FC, Fragment, useContext, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -25,6 +26,8 @@ import { LogoIcon } from './icons/LogoIcon';
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const { t } = useTranslation();
 
   const {
     notifications,
@@ -82,9 +85,9 @@ export const Sidebar: FC = () => {
       <div className="flex flex-1 flex-col items-center">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
-            <Tooltip content="Home" position="right">
+            <Tooltip content={t('sidebar.home')} position="right">
               <IconButton
-                label="Home"
+                label={t('sidebar.home')}
                 appearance="subtle"
                 icon={() => <LogoIcon width={32} height={32} />}
                 shape="circle"
@@ -94,11 +97,11 @@ export const Sidebar: FC = () => {
             </Tooltip>
 
             <Tooltip
-              content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? 'unread ' : ''}notifications`}
+              content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? t('sidebar.notifications.unread') : ''}${t('sidebar.notifications.notifications')}`}
               position="right"
             >
               <IconButton
-                label="Notifications"
+                label={t('sidebar.notifications.label')}
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}
@@ -116,13 +119,13 @@ export const Sidebar: FC = () => {
             {isLoggedIn && (
               <Fragment>
                 <Tooltip
-                  content="Show only unread notifications"
+                  content={t('sidebar.toggles.unreadOnly.tooltip')}
                   position="right"
                 >
                   <Toggle
                     id="toggle-unread-only"
                     size="regular"
-                    label="Show only unread toggle"
+                    label={t('sidebar.toggles.unreadOnly.label')}
                     isChecked={settings.fetchOnlyUnreadNotifications}
                     onChange={async (evt) => {
                       updateSetting(
@@ -135,11 +138,11 @@ export const Sidebar: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content="Group notifications by products"
+                  content={t('sidebar.toggles.groupByProduct.tooltip')}
                   position="right"
                 >
                   <IconButton
-                    label="Group notifications by products"
+                    label={t('sidebar.toggles.groupByProduct.label')}
                     icon={() => (
                       <ListBulletedIcon
                         label="groupByProduct"
@@ -163,9 +166,12 @@ export const Sidebar: FC = () => {
                   />
                 </Tooltip>
 
-                <Tooltip content="Filter notifications" position="right">
+                <Tooltip
+                  content={t('sidebar.filters.tooltip')}
+                  position="right"
+                >
                   <IconButton
-                    label="Filters"
+                    label={t('sidebar.filters.label')}
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}
@@ -189,13 +195,13 @@ export const Sidebar: FC = () => {
         <Stack alignInline="center" space="space.150">
           {isLoggedIn ? (
             <Fragment>
-              <Tooltip content="Refresh notifications" position="right">
+              <Tooltip content={t('sidebar.refresh.tooltip')} position="right">
                 <IconButton
-                  label="Refresh notifications"
+                  label={t('sidebar.refresh.label')}
                   icon={(iconProps) =>
                     status === 'loading' ? (
                       <Spinner
-                        label="Refresh notifications"
+                        label={t('sidebar.refresh.label')}
                         size="medium"
                         appearance="invert"
                       />
@@ -214,9 +220,9 @@ export const Sidebar: FC = () => {
                 />
               </Tooltip>
 
-              <Tooltip content="Settings" position="right">
+              <Tooltip content={t('sidebar.settings.tooltip')} position="right">
                 <IconButton
-                  label="Settings"
+                  label={t('sidebar.settings.label')}
                   icon={(iconProps) => (
                     <SettingsIcon
                       {...iconProps}
@@ -231,9 +237,12 @@ export const Sidebar: FC = () => {
               </Tooltip>
             </Fragment>
           ) : (
-            <Tooltip content={`Quit ${APPLICATION.NAME}`} position="right">
+            <Tooltip
+              content={t('sidebar.quit.tooltip', { name: APPLICATION.NAME })}
+              position="right"
+            >
               <IconButton
-                label={`Quit ${APPLICATION.NAME}`}
+                label={t('sidebar.quit.label', { name: APPLICATION.NAME })}
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}

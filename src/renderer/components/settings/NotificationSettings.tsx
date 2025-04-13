@@ -1,4 +1,5 @@
 import { type FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
@@ -10,14 +11,15 @@ import { AppContext } from '../../context/App';
 
 export const NotificationSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
+  const { t } = useTranslation();
 
   return (
     <Stack space="space.100">
-      <Heading size="small">Notifications</Heading>
+      <Heading size="small">{t('common.notifications')}</Heading>
 
       <Checkbox
         name="markAsReadOnOpen"
-        label="Mark as read on open"
+        label={t('settings.mark_as_read_on_open')}
         isChecked={settings.markAsReadOnOpen}
         onChange={(evt) =>
           updateSetting('markAsReadOnOpen', evt.target.checked)
@@ -27,7 +29,7 @@ export const NotificationSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="groupNotificationsByProductAlphabetically"
-          label="Group product notifications alphabetically"
+          label={t('settings.group_alphabetically')}
           isChecked={settings.groupNotificationsByProductAlphabetically}
           onChange={(evt) =>
             updateSetting(
@@ -38,8 +40,7 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            When notifications are <strong>grouped by products</strong>, this
-            setting will sort products in alphabetical order.
+            {t('settings.group_alphabetically_help')}
           </div>
         </InlineMessage>
       </Inline>
@@ -47,7 +48,7 @@ export const NotificationSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="delayNotificationState"
-          label="Delay notification state"
+          label={t('settings.delay_notification_state')}
           isChecked={settings.delayNotificationState}
           onChange={(evt) =>
             updateSetting('delayNotificationState', evt.target.checked)
@@ -55,9 +56,9 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            Keep the notification within {APPLICATION.NAME} upon interaction
-            (ie: open notification, mark as read) until the next refresh window
-            (scheduled or user initiated).
+            {t('settings.delay_notification_state_help', {
+              appName: APPLICATION.NAME,
+            })}
           </div>
         </InlineMessage>
       </Inline>

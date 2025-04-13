@@ -1,16 +1,49 @@
 {
+  "accounts": {
+    "add_new": "Ajouter un nouveau compte",
+    "logout_account": "Déconnexion {{username}}",
+    "open_profile": "Profil de compte ouvert",
+    "refresh_account": "Actualiser {{username}}",
+    "title": "Comptes"
+  },
+  "allRead": {
+    "heading": "Pas de nouvelles notifications",
+    "headingFiltered": "Pas de nouvelles notifications filtrées"
+  },
   "common": {
+    "are_you_sure": "Es-tu sûr?",
     "cancel": "Annuler",
     "close": "Fermer",
-    "docs": "Docs",
-    "login": "Se connecter",
-    "logout": "Déconnexion",
-    "notifications": "Notifications",
     "reset": "Réinitialiser",
     "save": "Sauvegarder",
     "settings": "Paramètres",
     "submit": "Soumettre",
-    "username": "Nom d'utilisateur"
+    "username": "Nom d'utilisateur",
+    "docs": "Docs",
+    "login": "Se connecter",
+    "logout": "Déconnexion",
+    "notifications": "Notifications",
+    "proceed": "Procéder"
+  },
+  "errors": {
+    "network": {
+      "description1": "Impossible de se connecter au nuage Atlassian.",
+      "description2": "Veuillez vérifier votre connexion réseau, y compris si vous avez besoin d'un VPN et réessayer.",
+      "title": "Erreur de réseau"
+    },
+    "unknown": {
+      "description": "Veuillez réessayer plus tard.",
+      "title": "Oups! \nQuelque chose s'est mal passé"
+    },
+    "badCredentials": {
+      "description1": "Vos informations d'identification ne sont pas valides ou expirées.",
+      "description2": "Veuillez essayer de retirer votre compte et de vous authentifier à nouveau.",
+      "title": "Mauvais références"
+    },
+    "badRequest": {
+      "description": "Quelque chose a mal tourné en faisant la demande de l'API.",
+      "title": "Mauvaise demande"
+    }
   },
   "login": {
     "create_token": "Créer un jeton API",
@@ -22,25 +55,84 @@
     "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
   },
   "notifications": {
-    "you_have": "Vous avez {{count}} notifications.",
-    "you_have_one": "Vous avez 1 notification."
+    "account": {
+      "mark_all_read": "Marquez toutes les notifications de compte comme lu",
+      "mark_read_confirm": "Veuillez confirmer que vous souhaitez marquer <strong> toutes les notifications de compte </strong> en lecture",
+      "open_profile": "Profil de compte ouvert",
+      "pull_requests": "Mes demandes de traction",
+      "toggle_collapse": "Basculer les notifications du compte",
+      "toggle_expand": "Basculer les notifications du compte"
+    },
+    "native_count": "Vous avez {{count}} notifications",
+    "product": {
+      "mark_all_read": "Marquez toutes les notifications de produit comme lu",
+      "open_product": "Ouvrir {{name}}",
+      "toggle_collapse": "Basculer les notifications de produits",
+      "toggle_expand": "Basculer les notifications de produits"
+    }
   },
   "settings": {
+    "accounts": "Comptes",
     "alternate_icon": "Utiliser une icône inactif alternative",
+    "alternate_icon_help": "Utilisez un logo blanc {{appName}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. \nCe paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
     "appearance": "Apparence",
+    "delay_notification_state": "État de notification de retard",
+    "delay_notification_state_help": "Gardez la notification dans {{appName}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",
+    "group_alphabetically": "Notifications de produit en groupe par ordre alphabétique",
+    "group_alphabetically_help": "Lorsque les notifications sont regroupées par des produits, ce paramètre trie les produits par ordre alphabétique.",
     "keyboard_shortcut": "Activer le raccourci clavier",
+    "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{shotcut}} pour afficher ou masquer {{appName}}.",
     "language": "Langue",
+    "mark_as_read_on_open": "Mark comme lu sur ouvert",
     "open_links": "Ouvrir des liens dans",
     "open_links_background": "Arrière-plan",
     "open_links_foreground": "Premier plan",
     "play_sound": "Jouez au son pour de nouvelles notifications",
-    "reset_confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appname}}.",
+    "reset_confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appName}}.",
     "reset_title": "Réinitialiser les paramètres",
+    "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
     "startup": "Commencer par la connexion",
-    "system_notifications": "Afficher les notifications du système"
+    "system_notifications": "Afficher les notifications du système",
+    "theme": "Thème",
+    "title": "Paramètres",
+    "view_release_notes": "Afficher {{appName}} Notes de version",
+    "zoom": "Zoom",
+    "zoom_in": "Zoomer",
+    "zoom_out": "Zoom out",
+    "zoom_reset": "Réinitialiser le zoom"
   },
-  "allRead": {
-    "heading": "Pas de nouvelles notifications",
-    "headingFiltered": "Pas de nouvelles notifications filtrées"
+  "sidebar": {
+    "filters": {
+      "label": "Filtres",
+      "tooltip": "Notifications de filtre"
+    },
+    "home": "Maison",
+    "notifications": {
+      "label": "Notifications",
+      "notifications": "notifications",
+      "unread": "non lu"
+    },
+    "quit": {
+      "label": "Quit {{name}}",
+      "tooltip": "Quit {{name}}"
+    },
+    "refresh": {
+      "label": "Notifications de rafraîchissement",
+      "tooltip": "Notifications de rafraîchissement"
+    },
+    "settings": {
+      "label": "Paramètres",
+      "tooltip": "Paramètres"
+    },
+    "toggles": {
+      "groupByProduct": {
+        "label": "Notifications de groupe par produits",
+        "tooltip": "Notifications de groupe par produits"
+      },
+      "unreadOnly": {
+        "label": "Afficher uniquement la bascule non lu",
+        "tooltip": "Afficher uniquement les notifications non lues"
+      }
+    }
   }
 }

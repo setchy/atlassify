@@ -10,7 +10,9 @@
     "submit": "Submit",
     "docs": "Docs",
     "close": "Close",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "proceed": "Proceed",
+    "are_you_sure": "Are you sure?"
   },
   "login": {
     "title": "Login with Atlassian",
@@ -21,12 +23,51 @@
     "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
     "security_docs": "See Atlassian documentation"
   },
+  "sidebar": {
+    "home": "Home",
+    "notifications": {
+      "label": "Notifications",
+      "unread": "unread ",
+      "notifications": "notifications"
+    },
+    "toggles": {
+      "unreadOnly": {
+        "label": "Show only unread toggle",
+        "tooltip": "Show only unread notifications"
+      },
+      "groupByProduct": {
+        "label": "Group notifications by products",
+        "tooltip": "Group notifications by products"
+      }
+    },
+    "filters": {
+      "label": "Filters",
+      "tooltip": "Filter notifications"
+    },
+    "refresh": {
+      "label": "Refresh notifications",
+      "tooltip": "Refresh notifications"
+    },
+    "settings": {
+      "label": "Settings",
+      "tooltip": "Settings"
+    },
+    "quit": {
+      "label": "Quit {{name}}",
+      "tooltip": "Quit {{name}}"
+    }
+  },
   "settings": {
     "title": "Settings",
     "reset_title": "Reset Settings",
     "reset_confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults.",
     "language": "Language",
     "appearance": "Appearance",
+    "theme": "Theme",
+    "zoom": "Zoom",
+    "zoom_in": "Zoom in",
+    "zoom_out": "Zoom out",
+    "zoom_reset": "Reset zoom",
     "system_notifications": "Show system notifications",
     "play_sound": "Play sound for new notifications",
     "open_links": "Open links in",
@@ -34,10 +75,34 @@
     "open_links_background": "Background",
     "startup": "Start at login",
     "alternate_icon": "Use alternate idle icon",
-    "keyboard_shortcut": "Enable keyboard shortcut"
+    "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
+    "keyboard_shortcut": "Enable keyboard shortcut",
+    "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
+    "mark_as_read_on_open": "Mark as read on open",
+    "group_alphabetically": "Group product notifications alphabetically",
+    "group_alphabetically_help": "When notifications are grouped by products, this setting will sort products in alphabetical order.",
+    "delay_notification_state": "Delay notification state",
+    "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated).",
+    "show_count_in_tray": "Show notifications count in tray",
+    "view_release_notes": "View {{appName}} release notes",
+    "accounts": "Accounts"
   },
   "notifications": {
-    "native": "You have {{count}} notifications"
+    "native_count": "You have {{count}} notifications",
+    "account": {
+      "open_profile": "Open account profile",
+      "pull_requests": "My pull requests",
+      "mark_all_read": "Mark all account notifications as read",
+      "toggle_expand": "Toggle account notifications",
+      "toggle_collapse": "Toggle account notifications",
+      "mark_read_confirm": "Please confirm that you want to mark <strong>all account notifications</strong> as read"
+    },
+    "product": {
+      "open_product": "Open {{name}}",
+      "mark_all_read": "Mark all product notifications as read",
+      "toggle_expand": "Toggle product notifications",
+      "toggle_collapse": "Toggle product notifications"
+    }
   },
   "allRead": {
     "heading": "No new notifications",
@@ -62,5 +127,12 @@
       "title": "Oops! Something went wrong",
       "description": "Please try again later."
     }
+  },
+  "accounts": {
+    "title": "Accounts",
+    "open_profile": "Open account profile",
+    "refresh_account": "Refresh {{username}}",
+    "logout_account": "Logout {{username}}",
+    "add_new": "Add new account"
   }
 }

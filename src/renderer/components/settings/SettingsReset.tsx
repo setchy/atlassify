@@ -1,4 +1,5 @@
 import { type FC, useCallback, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
 import CloseIcon from '@atlaskit/icon/core/close';
@@ -10,7 +11,6 @@ import Modal, {
   ModalTransition,
 } from '@atlaskit/modal-dialog';
 import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
-import { useTranslation } from 'react-i18next';
 
 import { APPLICATION } from '../../../shared/constants';
 import { AppContext } from '../../context/App';

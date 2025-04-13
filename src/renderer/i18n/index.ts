@@ -3,13 +3,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 import { Constants } from '../utils/constants';
+import type { Language } from './types';
 
 // Locales
 import deTranslation from './locales/de.json';
 import enTranslation from './locales/en.json';
 import esTranslation from './locales/es.json';
 import frTranslation from './locales/fr.json';
-import type { Language } from './types';
 
 export const DEFAULT_LANGUAGE: Language = 'en';
 

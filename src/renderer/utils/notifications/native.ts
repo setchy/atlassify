@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import { APPLICATION } from '../../../shared/constants';
 import type {
   AccountNotifications,
@@ -69,7 +70,7 @@ export const raiseNativeNotification = (
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
-    body = t('notifications.native', { count: notifications.length });
+    body = t('notifications.native_count', { count: notifications.length });
   }
 
   return window.atlassify.raiseNativeNotification(title, body, url);

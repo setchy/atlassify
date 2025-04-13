@@ -2,29 +2,29 @@ import type { AtlassifyError, ErrorType } from '../types';
 
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
-    title: 'Bad Credentials',
+    title: 'errors.badCredentials.title',
     descriptions: [
-      'Your credentials are either invalid or expired.',
-      'Please try removing your account and authenticating again.',
+      'errors.badCredentials.description1',
+      'errors.badCredentials.description2',
     ],
     emojis: ['🔓'],
   },
   BAD_REQUEST: {
-    title: 'Bad Request',
-    descriptions: ['Something went wrong making the API request.'],
+    title: 'errors.badRequest.title',
+    descriptions: ['errors.badRequest.description'],
     emojis: ['😳'],
   },
   NETWORK: {
-    title: 'Network Error',
+    title: 'errors.network.title',
     descriptions: [
-      'Unable to connect to Atlassian Cloud.',
-      'Please check your network connection, including whether you require a VPN, and try again.',
+      'errors.network.description1',
+      'errors.network.description2',
     ],
     emojis: ['🛜'],
   },
   UNKNOWN: {
-    title: 'Oops! Something went wrong',
-    descriptions: ['Please try again later.'],
+    title: 'errors.unknown.title',
+    descriptions: ['errors.unknown.description'],
     emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
   },
 };

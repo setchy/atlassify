@@ -1,5 +1,6 @@
 import { type FC, Fragment, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
@@ -17,7 +18,6 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import { useNavigate } from 'react-router-dom';
 import { logError } from '../../shared/logger';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';

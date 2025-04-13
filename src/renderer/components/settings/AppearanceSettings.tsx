@@ -1,4 +1,5 @@
 import { type FC, useCallback, useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
@@ -8,11 +9,10 @@ import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
+import Select from '@atlaskit/select';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import Select from '@atlaskit/select';
-import { useTranslation } from 'react-i18next';
 import { AppContext } from '../../context/App';
 import { LANGUAGES } from '../../i18n/types';
 import { Theme } from '../../types';
@@ -25,6 +25,7 @@ const ZOOM_RESIZE_DELAY = 200;
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
+  const { t } = useTranslation();
 
   const [zoomPercentage, setZoomPercentage] = useState(
     zoomLevelToPercentage(window.atlassify.zoom.getLevel()),
@@ -85,12 +86,12 @@ export const AppearanceSettings: FC = () => {
 
   return (
     <Stack space="space.100">
-      <Heading size="small">Appearance</Heading>
+      <Heading size="small">{t('settings.appearance')}</Heading>
 
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="start">
           <Text id="language-label" weight="medium">
-            Language:
+            {t('settings.language')}:
           </Text>
           <Select
             menuPortalTarget={document.body}
@@ -113,7 +114,7 @@ export const AppearanceSettings: FC = () => {
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="start">
           <Text id="theme-label" weight="medium">
-            Theme:
+            {t('settings.theme')}:
           </Text>
           <RadioGroup
             options={themeOptions}
@@ -130,7 +131,7 @@ export const AppearanceSettings: FC = () => {
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="center">
           <Text id="theme-label" weight="medium">
-            Zoom:
+            {t('settings.zoom')}:
           </Text>
           <Inline xcss={zoomBoxStyles}>
             <SplitButton spacing="compact">
@@ -138,9 +139,9 @@ export const AppearanceSettings: FC = () => {
                 <Box paddingInline="space.150">
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
-                <Tooltip content="Zoom out" position="bottom">
+                <Tooltip content={t('settings.zoom_out')} position="bottom">
                   <IconButton
-                    label="Zoom out"
+                    label={t('settings.zoom_out')}
                     icon={ZoomOutIcon}
                     shape="circle"
                     spacing="compact"
@@ -153,9 +154,9 @@ export const AppearanceSettings: FC = () => {
                     testId="settings-zoom-out"
                   />
                 </Tooltip>
-                <Tooltip content="Zoom in" position="bottom">
+                <Tooltip content={t('settings.zoom_in')} position="bottom">
                   <IconButton
-                    label="Zoom in"
+                    label={t('settings.zoom_in')}
                     icon={ZoomInIcon}
                     shape="circle"
                     spacing="compact"
@@ -169,9 +170,9 @@ export const AppearanceSettings: FC = () => {
                   />
                 </Tooltip>
               </Inline>
-              <Tooltip content="Reset zoom" position="bottom">
+              <Tooltip content={t('settings.zoom_reset')} position="bottom">
                 <IconButton
-                  label="Reset zoom"
+                  label={t('settings.zoom_reset')}
                   icon={RetryIcon}
                   shape="circle"
                   spacing="compact"
