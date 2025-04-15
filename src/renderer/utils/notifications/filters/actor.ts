@@ -1,6 +1,7 @@
 import AutomationIcon from '@atlaskit/icon/core/automation';
 import PersonIcon from '@atlaskit/icon/core/person';
 
+import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   ActorType,
@@ -12,12 +13,12 @@ import type { Filter, FilterDetails } from './types';
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   user: {
     name: 'user',
-    description: 'User',
+    description: i18n.t('filters.actors.user'),
     icon: PersonIcon,
   },
   automation: {
     name: 'automation',
-    description: 'Automation',
+    description: i18n.t('filters.actors.automation'),
     icon: AutomationIcon,
   },
 };

@@ -1,9 +1,9 @@
 {
   "accounts": {
     "add_new": "Neues Konto hinzufügen",
-    "logout_account": "Logout {{username}}",
+    "logout_account": "Logout {Benutzername}",
     "open_profile": "Kontoprofil öffnen",
-    "refresh_account": "Aktualisieren Sie {{username}}",
+    "refresh_account": "Aktualisieren {Benutzername}",
     "title": "Konten"
   },
   "allRead": {
@@ -23,7 +23,9 @@
     "save": "Speichern",
     "settings": "Einstellungen",
     "submit": "Einreichen",
-    "username": "Benutzername"
+    "username": "Benutzername",
+    "account": "Konto",
+    "product": "Produkt"
   },
   "errors": {
     "badCredentials": {
@@ -63,39 +65,43 @@
       "toggle_collapse": "Konto -Benachrichtigungen umschalten",
       "toggle_expand": "Konto -Benachrichtigungen umschalten"
     },
-    "native_count": "Sie haben {{count}} Benachrichtigungen",
+    "native_count": "{count, plural, = 0 {Sie haben keine Benachrichtigungen} eins {Sie haben",
     "product": {
       "mark_all_read": "Markieren Sie alle Produktbenachrichtigungen wie gelesen",
-      "open_product": "Öffnen Sie {{name}}",
+      "open_product": "Öffnen Sie {Name}",
       "toggle_collapse": "Produktbenachrichtigungen umschalten",
       "toggle_expand": "Produktbenachrichtigungen umschalten"
+    },
+    "interactions": {
+      "mark_as_read": "Markieren Sie wie gelesen",
+      "mark_as_unread": "Markieren Sie als ungelesen"
     }
   },
   "settings": {
     "accounts": "Konten",
     "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-    "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+    "alternate_icon_help": "Verwenden Sie ein weißes {Appname} -Logo (anstelle des Standard -Schwarz -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
     "appearance": "Aussehen",
     "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
-    "delay_notification_state_help": "Behalten Sie die Benachrichtigung innerhalb von {{appName}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerorientiert).",
+    "delay_notification_state_help": "Behalten Sie die Benachrichtigung innerhalb von {Appname} nach der Interaktion (dh die Benachrichtigung öffnen, als gelesen markieren) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerorientiert).",
     "group_alphabetically": "Gruppenproduktbenachrichtigungen alphabetisch",
     "group_alphabetically_help": "Wenn Benachrichtigungen nach Produkten gruppiert werden, sortiert diese Einstellung Produkte in alphabetischer Reihenfolge.",
     "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
-    "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{shotcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
+    "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie mit den Hotkeys {Shortcut} {Appname} angezeigt oder ausblenden.",
     "language": "Sprache",
     "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
     "open_links": "Offene Links in",
     "open_links_background": "Hintergrund",
     "open_links_foreground": "Vordergrund",
     "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
-    "reset_confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appName}} zurücksetzen möchten.",
+    "reset_confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {Appname} zurücksetzen möchten.",
     "reset_title": "Einstellungen zurücksetzen",
     "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
     "startup": "Starten Sie bei Login",
     "system_notifications": "Systembenachrichtigungen anzeigen",
     "theme": "Thema",
     "title": "Einstellungen",
-    "view_release_notes": "View {{appName}} Versionshinweise",
+    "view_release_notes": "{Appname} Versionsnotizen anzeigen",
     "zoom": "Zoom",
     "zoom_in": "Zoomen",
     "zoom_out": "Zoomen",
@@ -110,11 +116,13 @@
     "notifications": {
       "label": "Benachrichtigungen",
       "notifications": "Benachrichtigungen",
-      "unread": "ungelesen"
+      "unread": "ungelesen",
+      "read": "Benachrichtigungen",
+      "tooltip": "{count} {countSuffix} {countType}"
     },
     "quit": {
-      "label": "Beenden {{name}}",
-      "tooltip": "Beenden {{name}}"
+      "label": "Beenden {name}",
+      "tooltip": "Beenden {name}"
     },
     "refresh": {
       "label": "Benachrichtigungen aktualisieren",
@@ -134,5 +142,42 @@
         "tooltip": "Zeigen Sie nur ungelesene Benachrichtigungen"
       }
     }
+  },
+  "chevron": {
+    "hide": "{type} Benachrichtigungen ausblenden",
+    "none": "Keine Benachrichtigungen für {type}",
+    "show": "Zeigen Sie {type} Benachrichtigungen"
+  },
+  "filters": {
+    "actions": {
+      "clear": "Klare Filter"
+    },
+    "actors": {
+      "title": "Schauspieler"
+    },
+    "category": {
+      "title": "Kategorie"
+    },
+    "products": {
+      "title": "Produkte",
+      "unknown": "Unbekannt"
+    },
+    "read_state": {
+      "read": "Lesen",
+      "title": "Staat lesen",
+      "unread": "Ungelesen"
+    },
+    "time_sensitive": {
+      "title": "Zeitempfindlich"
+    },
+    "title": "Filter"
+  },
+  "landing": {
+    "heading": "Atlassianische Benachrichtigungen",
+    "login": {
+      "title": "Login",
+      "tooltip": "Melden Sie sich mit Atlassian an"
+    },
+    "subheading": "auf Ihrer Menüleiste"
   }
 }

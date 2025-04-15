@@ -64,13 +64,9 @@ export const Sidebar: FC = () => {
     return getNotificationCount(notifications);
   }, [notifications]);
 
-  const notificationsLabel = useMemo(() => {
-    const hasMoreNotifications = notifications.some(
-      (n) => n.hasMoreNotifications,
-    );
-
-    return `${notificationsCount}${hasMoreNotifications ? '+' : ''}`;
-  }, [notifications, notificationsCount]);
+  const hasMoreNotifications = useMemo(() => {
+    return notifications.some((n) => n.hasMoreNotifications);
+  }, [notifications]);
 
   const hasFilters = hasAnyFiltersSet(settings);
 
@@ -97,7 +93,14 @@ export const Sidebar: FC = () => {
             </Tooltip>
 
             <Tooltip
-              content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? t('sidebar.notifications.unread') : ''}${t('sidebar.notifications.notifications')}`}
+              // content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? t('sidebar.notifications.unread') : ''}${t('sidebar.notifications.notifications')}`}
+              content={t('sidebar.notifications.tooltip', {
+                count: notificationsCount,
+                countSuffix: hasMoreNotifications ? '+' : '',
+                countType: settings.fetchOnlyUnreadNotifications
+                  ? t('sidebar.notifications.unread')
+                  : t('sidebar.notifications.read'),
+              })}
               position="right"
             >
               <IconButton

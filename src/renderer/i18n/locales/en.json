@@ -12,7 +12,9 @@
     "close": "Close",
     "notifications": "Notifications",
     "proceed": "Proceed",
-    "are_you_sure": "Are you sure?"
+    "are_you_sure": "Are you sure?",
+    "account": "account",
+    "product": "product"
   },
   "login": {
     "title": "Login with Atlassian",
@@ -27,8 +29,9 @@
     "home": "Home",
     "notifications": {
       "label": "Notifications",
-      "unread": "unread ",
-      "notifications": "notifications"
+      "tooltip": "{count}{countSuffix} {countType}",
+      "unread": "unread notifications",
+      "read": "notifications"
     },
     "toggles": {
       "unreadOnly": {
@@ -53,14 +56,14 @@
       "tooltip": "Settings"
     },
     "quit": {
-      "label": "Quit {{name}}",
-      "tooltip": "Quit {{name}}"
+      "label": "Quit {name}",
+      "tooltip": "Quit {name}"
     }
   },
   "settings": {
     "title": "Settings",
     "reset_title": "Reset Settings",
-    "reset_confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults.",
+    "reset_confirm": "Please confirm that you want to reset all settings to the {appName} defaults.",
     "language": "Language",
     "appearance": "Appearance",
     "theme": "Theme",
@@ -75,20 +78,20 @@
     "open_links_background": "Background",
     "startup": "Start at login",
     "alternate_icon": "Use alternate idle icon",
-    "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
+    "alternate_icon_help": "Use a white {appName} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
     "keyboard_shortcut": "Enable keyboard shortcut",
-    "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
+    "keyboard_shortcut_help": "When enabled, you can use the hotkeys {shortcut} to show or hide {appName}.",
     "mark_as_read_on_open": "Mark as read on open",
     "group_alphabetically": "Group product notifications alphabetically",
     "group_alphabetically_help": "When notifications are grouped by products, this setting will sort products in alphabetical order.",
     "delay_notification_state": "Delay notification state",
-    "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated).",
+    "delay_notification_state_help": "Keep the notification within {appName} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated).",
     "show_count_in_tray": "Show notifications count in tray",
-    "view_release_notes": "View {{appName}} release notes",
+    "view_release_notes": "View {appName} release notes",
     "accounts": "Accounts"
   },
   "notifications": {
-    "native_count": "You have {{count}} notifications",
+    "native_count": "{count, plural, =0 {You have no notifications} one {You have # notification} other {You have # notifications}",
     "account": {
       "open_profile": "Open account profile",
       "pull_requests": "My pull requests",
@@ -98,15 +101,61 @@
       "mark_read_confirm": "Please confirm that you want to mark <strong>all account notifications</strong> as read"
     },
     "product": {
-      "open_product": "Open {{name}}",
+      "open_product": "Open {name}",
       "mark_all_read": "Mark all product notifications as read",
       "toggle_expand": "Toggle product notifications",
       "toggle_collapse": "Toggle product notifications"
+    },
+    "interactions": {
+      "mark_as_read": "Mark as read",
+      "mark_as_unread": "Mark as unread"
     }
   },
   "allRead": {
     "heading": "No new notifications",
     "headingFiltered": "No new filtered notifications"
+  },
+  "chevron": {
+    "none": "No notifications for {type}",
+    "show": "Show {type} notifications",
+    "hide": "Hide {type} notifications"
+  },
+  "filters": {
+    "title": "Filters",
+    "products": {
+      "title": "Products",
+      "unknown": "Unknown"
+    },
+    "time_sensitive": {
+      "title": "Time Sensitive",
+      "mention": "Mentions",
+      "comment": "Comments"
+    },
+    "category": {
+      "title": "Category",
+      "direct": "Direct notification",
+      "watching": "Watching notification"
+    },
+    "actors": {
+      "title": "Actors",
+      "user": "User",
+      "automation": "Automation"
+    },
+    "read_state": {
+      "title": "Read State",
+      "unread": "Unread",
+      "read": "Read"
+    },
+    "actions": {
+      "clear": "Clear Filters"
+    }
+  },
+  "landing": {
+    "subheading": "on your menu bar",
+    "login": {
+      "title": "Login",
+      "tooltip": "Login with Atlassian"
+    }
   },
   "errors": {
     "badCredentials": {
@@ -131,8 +180,8 @@
   "accounts": {
     "title": "Accounts",
     "open_profile": "Open account profile",
-    "refresh_account": "Refresh {{username}}",
-    "logout_account": "Logout {{username}}",
+    "refresh_account": "Refresh {username}",
+    "logout_account": "Logout {username}",
     "add_new": "Add new account"
   }
 }

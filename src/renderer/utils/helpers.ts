@@ -4,6 +4,7 @@ import ChevronRightIcon from '@atlaskit/icon/utility/chevron-right';
 
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 
+import i18n from '../i18n';
 import type { AtlassifyNotification, Chevron } from '../types';
 
 export function formatProperCase(text: string) {
@@ -49,22 +50,29 @@ export function getChevronDetails(
   isVisible: boolean,
   type: 'account' | 'product',
 ): Chevron {
+  let typeLocale: string;
+  if (type === 'account') {
+    typeLocale = i18n.t('common.account');
+  } else if (type === 'product') {
+    typeLocale = i18n.t('common.product');
+  }
+
   if (!hasNotifications) {
     return {
       icon: ChevronLeftIcon,
-      label: `No notifications for ${type}`,
+      label: i18n.t('chevron.none', { type: typeLocale }),
     };
   }
 
   if (isVisible) {
     return {
       icon: ChevronDownIcon,
-      label: `Hide ${type} notifications`,
+      label: i18n.t('chevron.hide', { type: typeLocale }),
     };
   }
 
   return {
     icon: ChevronRightIcon,
-    label: `Show ${type} notifications`,
+    label: i18n.t('chevron.show', { type: typeLocale }),
   };
 }

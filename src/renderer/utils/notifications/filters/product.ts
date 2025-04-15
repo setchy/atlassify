@@ -10,6 +10,7 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
+import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -62,7 +63,7 @@ export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
   },
   unknown: {
     name: 'unknown',
-    description: 'Unknown',
+    description: i18n.t('filters.products.unknown'),
     logo: AtlassianIcon,
   },
 };

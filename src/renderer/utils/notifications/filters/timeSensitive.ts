@@ -1,6 +1,7 @@
 import CommentIcon from '@atlaskit/icon/core/comment';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
+import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -12,12 +13,12 @@ import type { Filter, FilterDetails } from './types';
 const TIME_SENSITIVE_DETAILS: Record<TimeSensitiveType, FilterDetails> = {
   mention: {
     name: 'mention',
-    description: 'Mentions',
+    description: i18n.t('filters.time_sensitive.mention'),
     icon: MentionIcon,
   },
   comment: {
     name: 'comment',
-    description: 'Comments',
+    description: i18n.t('filters.time_sensitive.comment'),
     icon: CommentIcon,
   },
 };
