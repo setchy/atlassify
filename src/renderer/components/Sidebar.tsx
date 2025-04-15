@@ -93,7 +93,6 @@ export const Sidebar: FC = () => {
             </Tooltip>
 
             <Tooltip
-              // content={`${notificationsLabel} ${settings.fetchOnlyUnreadNotifications ? t('sidebar.notifications.unread') : ''}${t('sidebar.notifications.notifications')}`}
               content={t('sidebar.notifications.tooltip', {
                 count: notificationsCount,
                 countSuffix: hasMoreNotifications ? '+' : '',

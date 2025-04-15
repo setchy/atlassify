@@ -42,7 +42,7 @@ export const SettingsReset: FC = () => {
         onClick={openModal}
         testId="settings-reset-defaults"
       >
-        {t('settings.reset_title')}
+        {t('settings.reset.title')}
       </Button>
 
       <ModalTransition>
@@ -65,14 +65,14 @@ export const SettingsReset: FC = () => {
                 </Flex>
                 <Flex xcss={titleContainerStyles} justifyContent="start">
                   <ModalTitle appearance="danger">
-                    {t('settings.reset_title')}
+                    {t('settings.reset.title')}
                   </ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
               <p>
-                {t('settings.reset_confirm', { appName: APPLICATION.NAME })}
+                {t('settings.reset.confirm', { appName: APPLICATION.NAME })}
               </p>
             </ModalBody>
             <ModalFooter>

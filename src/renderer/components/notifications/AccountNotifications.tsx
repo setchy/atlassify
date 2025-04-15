@@ -266,8 +266,11 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             </ModalHeader>
             <ModalBody>
               <p>
-                Please confirm that you want to mark{' '}
-                <strong>all account notifications</strong> as read
+                {t('notifications.account.mark_read_confirm.description1')}{' '}
+                <strong>
+                  {t('notifications.account.mark_read_confirm.description2')}
+                </strong>{' '}
+                {t('notifications.account.mark_read_confirm.description3')}
               </p>
             </ModalBody>
             <ModalFooter>

@@ -19,24 +19,24 @@ export const SystemSettings: FC = () => {
   const openLinksOptions: OptionsPropType = [
     {
       name: 'openLinks',
-      label: t('settings.open_links_foreground'),
+      label: t('settings.system.open_links_foreground'),
       value: OpenPreference.FOREGROUND,
     },
     {
       name: 'openLinks',
-      label: t('settings.open_links_background'),
+      label: t('settings.system.open_links_background'),
       value: OpenPreference.BACKGROUND,
     },
   ];
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.title')}</Heading>
+      <Heading size="small">{t('settings.system.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
         <Inline space="space.100">
           <Text id="openLinks-label" weight="medium">
-            {t('settings.open_links')}:
+            {t('settings.system.open_links')}:
           </Text>
           <RadioGroup
             options={openLinksOptions}
@@ -53,7 +53,7 @@ export const SystemSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="keyboardShortcutEnabled"
-          label={t('settings.keyboard_shortcut')}
+          label={t('settings.system.keyboard_shortcut')}
           isChecked={settings.keyboardShortcutEnabled}
           onChange={(evt) =>
             updateSetting('keyboardShortcutEnabled', evt.target.checked)
@@ -61,7 +61,7 @@ export const SystemSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            {t('settings.keyboard_shortcut_help', {
+            {t('settings.system.keyboard_shortcut_help', {
               shortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
               appName: APPLICATION.NAME,
             })}
@@ -72,7 +72,7 @@ export const SystemSettings: FC = () => {
       {window.atlassify.platform.isMacOS() && (
         <Checkbox
           name="showNotificationsCountInTray"
-          label={t('settings.show_count_in_tray')}
+          label={t('settings.system.show_count_in_tray')}
           isChecked={settings.showNotificationsCountInTray}
           onChange={(evt) =>
             updateSetting('showNotificationsCountInTray', evt.target.checked)
@@ -82,7 +82,7 @@ export const SystemSettings: FC = () => {
 
       <Checkbox
         name="showNotifications"
-        label={t('settings.system_notifications')}
+        label={t('settings.system.system_notifications')}
         isChecked={settings.showSystemNotifications}
         onChange={(evt) =>
           updateSetting('showSystemNotifications', evt.target.checked)
@@ -91,7 +91,7 @@ export const SystemSettings: FC = () => {
 
       <Checkbox
         name="playSoundNewNotifications"
-        label={t('settings.play_sound')}
+        label={t('settings.system.play_sound')}
         isChecked={settings.playSoundNewNotifications}
         onChange={(evt) =>
           updateSetting('playSoundNewNotifications', evt.target.checked)
@@ -101,7 +101,7 @@ export const SystemSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="useAlternateIdleIcon"
-          label={t('settings.alternate_icon')}
+          label={t('settings.system.alternate_icon')}
           isChecked={settings.useAlternateIdleIcon}
           onChange={(evt) =>
             updateSetting('useAlternateIdleIcon', evt.target.checked)
@@ -109,7 +109,9 @@ export const SystemSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            {t('settings.alternate_icon_help', { appName: APPLICATION.NAME })}
+            {t('settings.system.alternate_icon_help', {
+              appName: APPLICATION.NAME,
+            })}
           </div>
         </InlineMessage>
       </Inline>
@@ -117,7 +119,7 @@ export const SystemSettings: FC = () => {
       {!window.atlassify.platform.isLinux() && (
         <Checkbox
           name="openAtStartUp"
-          label={t('settings.startup')}
+          label={t('settings.system.startup')}
           isChecked={settings.openAtStartup}
           onChange={(evt) => updateSetting('openAtStartup', evt.target.checked)}
         />

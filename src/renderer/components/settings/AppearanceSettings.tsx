@@ -86,12 +86,12 @@ export const AppearanceSettings: FC = () => {
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.appearance')}</Heading>
+      <Heading size="small">{t('settings.appearance.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="start">
           <Text id="language-label" weight="medium">
-            {t('settings.language')}:
+            {t('settings.appearance.language')}:
           </Text>
           <Select
             menuPortalTarget={document.body}
@@ -102,7 +102,7 @@ export const AppearanceSettings: FC = () => {
             defaultValue={LANGUAGES.find((lang) =>
               locale.startsWith(lang.value),
             )}
-            placeholder="Select language"
+            placeholder={t('settings.appearance.language_select')}
             onChange={(option) => {
               handleLanguageChange(option);
             }}
@@ -114,7 +114,7 @@ export const AppearanceSettings: FC = () => {
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="start">
           <Text id="theme-label" weight="medium">
-            {t('settings.theme')}:
+            {t('settings.appearance.theme')}:
           </Text>
           <RadioGroup
             options={themeOptions}
@@ -131,7 +131,7 @@ export const AppearanceSettings: FC = () => {
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="center">
           <Text id="theme-label" weight="medium">
-            {t('settings.zoom')}:
+            {t('settings.appearance.zoom')}:
           </Text>
           <Inline xcss={zoomBoxStyles}>
             <SplitButton spacing="compact">
@@ -139,9 +139,12 @@ export const AppearanceSettings: FC = () => {
                 <Box paddingInline="space.150">
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
-                <Tooltip content={t('settings.zoom_out')} position="bottom">
+                <Tooltip
+                  content={t('settings.appearance.zoom_out')}
+                  position="bottom"
+                >
                   <IconButton
-                    label={t('settings.zoom_out')}
+                    label={t('settings.appearance.zoom_out')}
                     icon={ZoomOutIcon}
                     shape="circle"
                     spacing="compact"
@@ -154,9 +157,12 @@ export const AppearanceSettings: FC = () => {
                     testId="settings-zoom-out"
                   />
                 </Tooltip>
-                <Tooltip content={t('settings.zoom_in')} position="bottom">
+                <Tooltip
+                  content={t('settings.appearance.zoom_in')}
+                  position="bottom"
+                >
                   <IconButton
-                    label={t('settings.zoom_in')}
+                    label={t('settings.appearance.zoom_in')}
                     icon={ZoomInIcon}
                     shape="circle"
                     spacing="compact"
@@ -170,9 +176,12 @@ export const AppearanceSettings: FC = () => {
                   />
                 </Tooltip>
               </Inline>
-              <Tooltip content={t('settings.zoom_reset')} position="bottom">
+              <Tooltip
+                content={t('settings.appearance.zoom_reset')}
+                position="bottom"
+              >
                 <IconButton
-                  label={t('settings.zoom_reset')}
+                  label={t('settings.appearance.zoom_reset')}
                   icon={RetryIcon}
                   shape="circle"
                   spacing="compact"

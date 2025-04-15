@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import ICU from 'i18next-icu';
 import { initReactI18next } from 'react-i18next';
 
 import { Constants } from '../utils/constants';
@@ -31,7 +30,6 @@ const resources: Record<Language, { translation: Record<string, any> }> = {
 };
 
 i18n
-  .use(ICU) // Add the ICU plugin
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({

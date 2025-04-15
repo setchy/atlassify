@@ -84,7 +84,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="language-label"
               >
-                Language:
+                Language
+                :
               </span>
               <div
                 class="css-1o7nse5-container"
@@ -188,7 +189,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="theme-label"
               >
-                Theme:
+                Theme
+                :
               </span>
               <div
                 aria-labelledby="theme-label"
@@ -269,7 +271,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="theme-label"
               >
-                Zoom:
+                Zoom
+                :
               </span>
               <div
                 class="css-1cdf62i"
@@ -707,7 +710,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="openLinks-label"
               >
-                Open Links:
+                Open Links
+                :
               </span>
               <div
                 aria-labelledby="openLinks-label"

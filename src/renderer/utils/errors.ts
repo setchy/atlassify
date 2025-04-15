@@ -1,30 +1,31 @@
+import i18n from '../i18n';
 import type { AtlassifyError, ErrorType } from '../types';
 
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
-    title: 'errors.badCredentials.title',
+    title: i18n.t('errors.badCredentials.title'),
     descriptions: [
-      'errors.badCredentials.description1',
-      'errors.badCredentials.description2',
+      i18n.t('errors.badCredentials.description1'),
+      i18n.t('errors.badCredentials.description2'),
     ],
     emojis: ['🔓'],
   },
   BAD_REQUEST: {
-    title: 'errors.badRequest.title',
-    descriptions: ['errors.badRequest.description'],
+    title: i18n.t('errors.badRequest.title'),
+    descriptions: [i18n.t('errors.badRequest.description1')],
     emojis: ['😳'],
   },
   NETWORK: {
-    title: 'errors.network.title',
+    title: i18n.t('errors.network.title'),
     descriptions: [
-      'errors.network.description1',
-      'errors.network.description2',
+      i18n.t('errors.network.description1'),
+      i18n.t('errors.network.description2'),
     ],
     emojis: ['🛜'],
   },
   UNKNOWN: {
-    title: 'errors.unknown.title',
-    descriptions: ['errors.unknown.description'],
+    title: i18n.t('errors.unknown.title'),
+    descriptions: [i18n.t('errors.unknown.description1')],
     emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
   },
 };

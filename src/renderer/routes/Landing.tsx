@@ -40,7 +40,7 @@ export const LandingRoute: FC = () => {
       <Stack alignBlock="center" alignInline="center" space="space.200">
         <AtlasIcon appearance="brand" size="xlarge" />
         <Stack alignInline="center">
-          <Heading size="large">Atlassian {t('common.notifications')}</Heading>
+          <Heading size="large">Atlassian {t('landing.notifications')}</Heading>
           <Text size="large">{t('landing.subheading')}</Text>
         </Stack>
         <Inline space="space.100">

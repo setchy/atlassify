@@ -15,11 +15,11 @@ export const NotificationSettings: FC = () => {
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('common.notifications')}</Heading>
+      <Heading size="small">{t('settings.notifications.title')}</Heading>
 
       <Checkbox
         name="markAsReadOnOpen"
-        label={t('settings.mark_as_read_on_open')}
+        label={t('settings.notifications.mark_as_read_on_open')}
         isChecked={settings.markAsReadOnOpen}
         onChange={(evt) =>
           updateSetting('markAsReadOnOpen', evt.target.checked)
@@ -29,7 +29,7 @@ export const NotificationSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="groupNotificationsByProductAlphabetically"
-          label={t('settings.group_alphabetically')}
+          label={t('settings.notifications.group_alphabetically')}
           isChecked={settings.groupNotificationsByProductAlphabetically}
           onChange={(evt) =>
             updateSetting(
@@ -40,7 +40,7 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            {t('settings.group_alphabetically_help')}
+            {t('settings.notifications.group_alphabetically_help')}
           </div>
         </InlineMessage>
       </Inline>
@@ -48,7 +48,7 @@ export const NotificationSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           name="delayNotificationState"
-          label={t('settings.delay_notification_state')}
+          label={t('settings.notifications.delay_notification_state')}
           isChecked={settings.delayNotificationState}
           onChange={(evt) =>
             updateSetting('delayNotificationState', evt.target.checked)
@@ -56,7 +56,7 @@ export const NotificationSettings: FC = () => {
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
-            {t('settings.delay_notification_state_help', {
+            {t('settings.notifications.delay_notification_state_help', {
               appName: APPLICATION.NAME,
             })}
           </div>
