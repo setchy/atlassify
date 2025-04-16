@@ -12,13 +12,13 @@ import type { Filter, FilterDetails } from './types';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   user: {
-    name: 'user',
-    description: i18n.t('filters.actors.user'),
+    name: i18n.t('filters.actors.user.title'),
+    description: i18n.t('filters.actors.user.description'),
     icon: PersonIcon,
   },
   automation: {
-    name: 'automation',
-    description: i18n.t('filters.actors.automation'),
+    name: i18n.t('filters.actors.automation.title'),
+    description: i18n.t('filters.actors.automation.description'),
     icon: AutomationIcon,
   },
 };

@@ -1,5 +1,218 @@
 {
+  "accounts": {
+    "add_new": "Neues Konto hinzufügen",
+    "logout_account": "Logout {{Benutzername}}",
+    "open_profile": "Kontoprofil öffnen",
+    "refresh_account": "Aktualisieren Sie {{Benutzername}}",
+    "title": "Konten"
+  },
+  "allRead": {
+    "heading": "Keine neuen Benachrichtigungen",
+    "headingFiltered": "Keine neuen gefilterten Benachrichtigungen"
+  },
+  "chevron": {
+    "hide": "Verstecken Sie {{Typ}} Benachrichtigungen",
+    "none": "Keine Benachrichtigungen für {{Typ}}",
+    "show": "Anzeigen {{type}} Benachrichtigungen"
+  },
   "common": {
-    "cancel": "Abbrechen"
+    "account": "Konto",
+    "are_you_sure": "Bist du sicher?",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "docs": "Dokumente",
+    "login": "Login",
+    "proceed": "Fortfahren",
+    "product": "Produkt",
+    "reset": "Zurücksetzen",
+    "username": "Benutzername"
+  },
+  "errors": {
+    "badCredentials": {
+      "description1": "Ihre Anmeldeinformationen sind entweder ungültig oder abgelaufen.",
+      "description2": "Bitte versuchen Sie, Ihr Konto zu entfernen und erneut zu authentifizieren.",
+      "title": "Schlechte Anmeldeinformationen"
+    },
+    "badRequest": {
+      "description1": "Etwas lief schief und machte die API -Anfrage.",
+      "title": "Ungültige Anforderung"
+    },
+    "network": {
+      "description1": "Es kann keine Verbindung zu Atlassian Cloud herstellen.",
+      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, einschließlich der Frage, ob Sie ein VPN benötigen, und versuchen Sie es erneut.",
+      "title": "Netzwerkfehler"
+    },
+    "unknown": {
+      "description1": "Bitte versuchen Sie es später erneut.",
+      "title": "Hoppla! \nEtwas lief schief"
+    }
+  },
+  "filters": {
+    "actions": {
+      "clear": "Klare Filter"
+    },
+    "actors": {
+      "automation": {
+        "description": "Benachrichtigungen aus Automatisierungsregeln",
+        "title": "Automatisierung"
+      },
+      "title": "Schauspieler",
+      "user": {
+        "description": "Benachrichtigungen von Benutzern",
+        "title": "Benutzer"
+      }
+    },
+    "category": {
+      "direct": {
+        "description": "Direkte Benachrichtigungen",
+        "title": "Direkt"
+      },
+      "title": "Kategorie",
+      "watching": {
+        "description": "Benachrichtigungen beobachten",
+        "title": "Aufpassen"
+      }
+    },
+    "products": {
+      "title": "Produkte",
+      "unknown": "Unbekannt"
+    },
+    "read_state": {
+      "read": {
+        "description": "Benachrichtigungen lesen",
+        "title": "Lesen"
+      },
+      "title": "Staat lesen",
+      "unread": {
+        "description": "Ungelesene Benachrichtigungen",
+        "title": "Ungelesen"
+      }
+    },
+    "time_sensitive": {
+      "comment": {
+        "description": "Kommentare",
+        "title": "Kommentar"
+      },
+      "mention": {
+        "description": "Erwähnungen",
+        "title": "Erwähnen"
+      },
+      "title": "Zeitempfindlich"
+    },
+    "title": "Filter"
+  },
+  "landing": {
+    "login": {
+      "title": "Login",
+      "tooltip": "Melden Sie sich mit Atlassian an"
+    },
+    "notifications": "Benachrichtigungen",
+    "subheading": "auf Ihrer Menüleiste"
+  },
+  "login": {
+    "create_token": "Erstellen Sie ein API -Token",
+    "error_message": "Hoppla! \nDie Bereitstellung der Benutzernamen -Token -Kombination ist nicht gültig. \nBitte versuchen Sie es erneut.",
+    "security_docs": "Siehe Atlassian Dokumentation",
+    "title": "Melden Sie sich mit Atlassian an",
+    "token": "API -Token",
+    "token_helper": "Für Ihr Konto und eine Einfüge oben",
+    "username_helper": "Ihr Atlassian Benutzername / E -Mail -Adresse"
+  },
+  "notifications": {
+    "account": {
+      "mark_all_read": "Markieren Sie alle Kontobenachrichtigungen wie gelesen",
+      "mark_read_confirm": {
+        "description1": "Bitte bestätigen Sie, dass Sie möchten",
+        "description2": "Markieren Sie alle Kontobenachrichtigungen",
+        "description3": "wie gelesen"
+      },
+      "open_profile": "Kontoprofil öffnen",
+      "pull_requests": "Meine Anfragen"
+    },
+    "interactions": {
+      "mark_as_read": "Markieren Sie wie gelesen",
+      "mark_as_unread": "Markieren Sie als ungelesen"
+    },
+    "native_count": "Sie haben {{count}} Benachrichtigungen",
+    "product": {
+      "mark_all_read": "Markieren Sie alle Produktbenachrichtigungen wie gelesen",
+      "open_product": "Öffnen Sie {{Name}}"
+    }
+  },
+  "settings": {
+    "accounts": "Konten",
+    "appearance": {
+      "language": "Sprache",
+      "language_select": "Sprache auswählen",
+      "theme": "Thema",
+      "title": "Aussehen",
+      "zoom": "Zoom",
+      "zoom_in": "Zoomen",
+      "zoom_out": "Zoomen",
+      "zoom_reset": "Zoom zurücksetzen"
+    },
+    "notifications": {
+      "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
+      "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appname}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
+      "group_alphabetically": "Gruppenproduktbenachrichtigungen alphabetisch",
+      "group_alphabetically_help": "Wenn Benachrichtigungen nach Produkten gruppiert werden, sortiert diese Einstellung Produkte in alphabetischer Reihenfolge.",
+      "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
+      "title": "Benachrichtigungen"
+    },
+    "reset": {
+      "confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appname}} zurücksetzen möchten.",
+      "title": "Einstellungen zurücksetzen"
+    },
+    "system": {
+      "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
+      "alternate_icon_help": "Verwenden Sie ein weißes {{appname}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+      "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
+      "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{Shortcut}} verwenden, um {{appname}} anzuzeigen oder auszublenden.",
+      "open_links": "Offene Links",
+      "open_links_background": "Hintergrund",
+      "open_links_foreground": "Vordergrund",
+      "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
+      "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
+      "startup": "Im Start geöffnet",
+      "system_notifications": "Systembenachrichtigungen anzeigen",
+      "title": "System"
+    },
+    "title": "Einstellungen",
+    "view_release_notes": "View {{appname}} Versionshinweise"
+  },
+  "sidebar": {
+    "filters": {
+      "label": "Filter",
+      "tooltip": "Filterbenachrichtigungen"
+    },
+    "home": "Heim",
+    "notifications": {
+      "label": "Benachrichtigungen",
+      "read": "Benachrichtigungen",
+      "tooltip": "{{count}} {{countSuffix}} {{countType}}",
+      "unread": "ungelesene Benachrichtigungen"
+    },
+    "quit": {
+      "label": "Beenden {{name}}",
+      "tooltip": "Beenden {{name}}"
+    },
+    "refresh": {
+      "label": "Benachrichtigungen aktualisieren",
+      "tooltip": "Benachrichtigungen aktualisieren"
+    },
+    "settings": {
+      "label": "Einstellungen",
+      "tooltip": "Einstellungen"
+    },
+    "toggles": {
+      "groupByProduct": {
+        "label": "Gruppenbenachrichtigungen durch Produkte",
+        "tooltip": "Gruppenbenachrichtigungen durch Produkte"
+      },
+      "unreadOnly": {
+        "label": "Zeigen Sie nur ungelesen",
+        "tooltip": "Zeigen Sie nur ungelesene Benachrichtigungen"
+      }
+    }
   }
 }

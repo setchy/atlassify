@@ -135,23 +135,47 @@
     },
     "time_sensitive": {
       "title": "Time Sensitive",
-      "mention": "Mentions",
-      "comment": "Comments"
+      "mention": {
+        "title": "Mention",
+        "description": "Mentions"
+      },
+      "comment": {
+        "title": "Comment",
+        "description": "Comments"
+      }
     },
     "category": {
       "title": "Category",
-      "direct": "Direct notification",
-      "watching": "Watching notification"
+      "direct": {
+        "title": "Direct",
+        "description": "Direct notifications"
+      },
+      "watching": {
+        "title": "Watching",
+        "description": "Watching notifications"
+      }
     },
     "actors": {
       "title": "Actors",
-      "user": "User",
-      "automation": "Automation"
+      "user": {
+        "title": "User",
+        "description": "Notifications from users"
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Notifications from automation rules"
+      }
     },
     "read_state": {
       "title": "Read State",
-      "unread": "Unread",
-      "read": "Read"
+      "unread": {
+        "title": "Unread",
+        "description": "Unread notifications"
+      },
+      "read": {
+        "title": "Read",
+        "description": "Read notifications"
+      }
     },
     "actions": {
       "clear": "Clear Filters"

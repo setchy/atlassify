@@ -2222,7 +2222,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -2458,7 +2458,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -2892,7 +2892,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"
@@ -3128,7 +3128,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"
@@ -3619,7 +3619,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -3855,7 +3855,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -4289,7 +4289,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"
@@ -4525,7 +4525,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"
@@ -5217,7 +5217,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -5453,7 +5453,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       role="presentation"
                     >
                       <span
-                        aria-label="Direct notification"
+                        aria-label="Direct notifications"
                         class="css-kxjlgc"
                         role="img"
                         style="color: currentColor;"
@@ -5887,7 +5887,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"
@@ -6123,7 +6123,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     role="presentation"
                   >
                     <span
-                      aria-label="Direct notification"
+                      aria-label="Direct notifications"
                       class="css-kxjlgc"
                       role="img"
                       style="color: currentColor;"

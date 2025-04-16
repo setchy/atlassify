@@ -12,13 +12,13 @@ import type { Filter, FilterDetails } from './types';
 
 const TIME_SENSITIVE_DETAILS: Record<TimeSensitiveType, FilterDetails> = {
   mention: {
-    name: 'mention',
-    description: i18n.t('filters.time_sensitive.mention'),
+    name: i18n.t('filters.time_sensitive.mention.title'),
+    description: i18n.t('filters.time_sensitive.mention.description'),
     icon: MentionIcon,
   },
   comment: {
-    name: 'comment',
-    description: i18n.t('filters.time_sensitive.comment'),
+    name: i18n.t('filters.time_sensitive.comment.title'),
+    description: i18n.t('filters.time_sensitive.comment.description'),
     icon: CommentIcon,
   },
 };

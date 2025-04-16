@@ -12,13 +12,13 @@ import type { Filter, FilterDetails } from './types';
 
 const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
   direct: {
-    name: 'direct',
-    description: i18n.t('filters.category.direct'),
+    name: i18n.t('filters.category.direct.title'),
+    description: i18n.t('filters.category.direct.description'),
     icon: FlagIcon,
   },
   watching: {
-    name: 'watching',
-    description: i18n.t('filters.category.watching'),
+    name: i18n.t('filters.category.watching.title'),
+    description: i18n.t('filters.category.watching.description'),
     icon: EyeOpenIcon,
   },
 };

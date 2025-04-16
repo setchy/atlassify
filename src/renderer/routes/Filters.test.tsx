@@ -86,7 +86,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('mention'));
+        fireEvent.click(screen.getByLabelText('Mention'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterTimeSensitive',
@@ -116,7 +116,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('mention'));
+        fireEvent.click(screen.getByLabelText('Mention'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterTimeSensitive',
@@ -145,7 +145,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('direct'));
+        fireEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterCategories',
@@ -175,7 +175,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('direct'));
+        fireEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterCategories',
@@ -204,7 +204,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('automation'));
+        fireEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterActors',
@@ -234,7 +234,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('automation'));
+        fireEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterActors',
@@ -263,7 +263,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('unread'));
+        fireEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterReadStates',
@@ -293,7 +293,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('unread'));
+        fireEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterReadStates',
