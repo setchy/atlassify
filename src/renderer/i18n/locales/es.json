@@ -1,9 +1,9 @@
 {
   "accounts": {
     "add_new": "Agregar nueva cuenta",
-    "logout_account": "LOGAR {{nombre de usuario}}",
+    "logout_account": "LOGAR {{username}}",
     "open_profile": "Perfil de cuenta abierto",
-    "refresh_account": "Actualizar {{nombre de usuario}}",
+    "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"
   },
   "allRead": {
@@ -11,9 +11,9 @@
     "headingFiltered": "No hay nuevas notificaciones filtradas"
   },
   "chevron": {
-    "hide": "Ocultar {{tipo}} notificaciones",
-    "none": "No hay notificaciones para {{tipo}}",
-    "show": "Mostrar {{tipo}} notificaciones"
+    "hide": "Ocultar {{type}} notificaciones",
+    "none": "No hay notificaciones para {{type}}",
+    "show": "Mostrar {{type}} notificaciones"
   },
   "common": {
     "account": "cuenta",
@@ -136,7 +136,7 @@
     "native_count": "Tienes {{count}} notificaciones",
     "product": {
       "mark_all_read": "Marque todas las notificaciones de productos como lectura",
-      "open_product": "Abrir {{nombre}}"
+      "open_product": "Abrir {{name}}"
     }
   },
   "settings": {
@@ -160,14 +160,14 @@
       "title": "Notificaciones"
     },
     "reset": {
-      "confirm": "Confirme que desea restablecer todas las configuraciones en los valores predeterminados {{AppName}}.",
+      "confirm": "Confirme que desea restablecer todas las configuraciones en los valores predeterminados {{appName}}.",
       "title": "Configuración de reinicio"
     },
     "system": {
       "alternate_icon": "Use un icono de inactividad alternativo",
-      "alternate_icon_help": "Use un logotipo blanco {{AppName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. \nEsta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
+      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. \nEsta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
       "keyboard_shortcut": "Habilitar el atajo de teclado",
-      "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{atajo}} para mostrar o ocultar {{appname}}.",
+      "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{shortcut}} para mostrar o ocultar {{appName}}.",
       "open_links": "Abrir enlaces",
       "open_links_background": "Fondo",
       "open_links_foreground": "Primer plano",
@@ -178,7 +178,7 @@
       "title": "Sistema"
     },
     "title": "Ajustes",
-    "view_release_notes": "Ver {{appname}} Notas de versión"
+    "view_release_notes": "Ver {{appName}} Notas de versión"
   },
   "sidebar": {
     "filters": {
@@ -189,12 +189,12 @@
     "notifications": {
       "label": "Notificaciones",
       "read": "notificaciones",
-      "tooltip": "{{Count}} {{CountSuffix}} {{CountType}}",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}}",
       "unread": "Notificaciones no leídas"
     },
     "quit": {
-      "label": "Salir {{nombre}}",
-      "tooltip": "Salir {{nombre}}"
+      "label": "Salir {{appName}}",
+      "tooltip": "Salir {{appName}}"
     },
     "refresh": {
       "label": "Redactar a las notificaciones",

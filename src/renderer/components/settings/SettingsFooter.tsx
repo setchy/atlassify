@@ -67,15 +67,15 @@ export const SettingsFooter: FC = () => {
           />
         </Tooltip>
         <Tooltip
-          content={t('sidebar.quit.tooltip', { name: APPLICATION.NAME })}
+          content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
           position="top"
         >
           <IconButton
-            label={t('sidebar.quit.label', { name: APPLICATION.NAME })}
+            label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
             icon={() => (
               <IconTile
                 icon={CrossCircleIcon}
-                label={t('sidebar.quit.label', { name: APPLICATION.NAME })}
+                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
                 appearance="red"
                 shape="circle"
               />

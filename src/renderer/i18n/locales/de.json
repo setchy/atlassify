@@ -1,9 +1,9 @@
 {
   "accounts": {
     "add_new": "Neues Konto hinzufügen",
-    "logout_account": "Logout {{Benutzername}}",
+    "logout_account": "Logout {{username}}",
     "open_profile": "Kontoprofil öffnen",
-    "refresh_account": "Aktualisieren Sie {{Benutzername}}",
+    "refresh_account": "Aktualisieren Sie {{username}}",
     "title": "Konten"
   },
   "allRead": {
@@ -11,8 +11,8 @@
     "headingFiltered": "Keine neuen gefilterten Benachrichtigungen"
   },
   "chevron": {
-    "hide": "Verstecken Sie {{Typ}} Benachrichtigungen",
-    "none": "Keine Benachrichtigungen für {{Typ}}",
+    "hide": "Verstecken Sie {{type}} Benachrichtigungen",
+    "none": "Keine Benachrichtigungen für {{type}}",
     "show": "Anzeigen {{type}} Benachrichtigungen"
   },
   "common": {
@@ -136,7 +136,7 @@
     "native_count": "Sie haben {{count}} Benachrichtigungen",
     "product": {
       "mark_all_read": "Markieren Sie alle Produktbenachrichtigungen wie gelesen",
-      "open_product": "Öffnen Sie {{Name}}"
+      "open_product": "Öffnen Sie {{name}}"
     }
   },
   "settings": {
@@ -153,21 +153,21 @@
     },
     "notifications": {
       "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
-      "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appname}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
+      "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appName}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
       "group_alphabetically": "Gruppenproduktbenachrichtigungen alphabetisch",
       "group_alphabetically_help": "Wenn Benachrichtigungen nach Produkten gruppiert werden, sortiert diese Einstellung Produkte in alphabetischer Reihenfolge.",
       "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
       "title": "Benachrichtigungen"
     },
     "reset": {
-      "confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appname}} zurücksetzen möchten.",
+      "confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appName}} zurücksetzen möchten.",
       "title": "Einstellungen zurücksetzen"
     },
     "system": {
       "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-      "alternate_icon_help": "Verwenden Sie ein weißes {{appname}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
-      "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{Shortcut}} verwenden, um {{appname}} anzuzeigen oder auszublenden.",
+      "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
       "open_links_background": "Hintergrund",
       "open_links_foreground": "Vordergrund",
@@ -178,7 +178,7 @@
       "title": "System"
     },
     "title": "Einstellungen",
-    "view_release_notes": "View {{appname}} Versionshinweise"
+    "view_release_notes": "View {{appName}} Versionshinweise"
   },
   "sidebar": {
     "filters": {
@@ -193,8 +193,8 @@
       "unread": "ungelesene Benachrichtigungen"
     },
     "quit": {
-      "label": "Beenden {{name}}",
-      "tooltip": "Beenden {{name}}"
+      "label": "Beenden {{appName}}",
+      "tooltip": "Beenden {{appName}}"
     },
     "refresh": {
       "label": "Benachrichtigungen aktualisieren",
