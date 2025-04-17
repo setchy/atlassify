@@ -1,9 +1,9 @@
 {
   "accounts": {
     "add_new": "Ajouter un nouveau compte",
-    "logout_account": "Déconnexion {{nom d'utilisateur}}",
+    "logout_account": "Déconnexion {{username}}",
     "open_profile": "Profil de compte ouvert",
-    "refresh_account": "Actualiser {{nom d'utilisateur}}",
+    "refresh_account": "Actualiser {{username}}",
     "title": "Comptes"
   },
   "allRead": {
@@ -136,7 +136,7 @@
     "native_count": "Vous avez {{count}} notifications",
     "product": {
       "mark_all_read": "Marquez toutes les notifications de produit comme lu",
-      "open_product": "Ouvrir {{nom}}"
+      "open_product": "Ouvrir {{name}}"
     }
   },
   "settings": {
@@ -153,21 +153,21 @@
     },
     "notifications": {
       "delay_notification_state": "État de notification de retard",
-      "delay_notification_state_help": "Gardez la notification dans {{appname}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",
+      "delay_notification_state_help": "Gardez la notification dans {{appName}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",
       "group_alphabetically": "Notifications de produit en groupe par ordre alphabétique",
       "group_alphabetically_help": "Lorsque les notifications sont regroupées par des produits, ce paramètre trie les produits par ordre alphabétique.",
       "mark_as_read_on_open": "Mark comme lu sur ouvert",
       "title": "Notifications"
     },
     "reset": {
-      "confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appname}}.",
+      "confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appName}}.",
       "title": "Réinitialiser les paramètres"
     },
     "system": {
       "alternate_icon": "Utiliser une icône inactif alternative",
-      "alternate_icon_help": "Utilisez un logo blanc {{appname}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. \nCe paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
+      "alternate_icon_help": "Utilisez un logo blanc {{appName}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. \nCe paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
       "keyboard_shortcut": "Activer le raccourci clavier",
-      "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{raccourci}} pour afficher ou masquer {{appname}}.",
+      "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{shortcut}} pour afficher ou masquer {{appName}}.",
       "open_links": "Ouvrir les liens",
       "open_links_background": "Arrière-plan",
       "open_links_foreground": "Premier plan",
@@ -178,7 +178,7 @@
       "title": "Système"
     },
     "title": "Paramètres",
-    "view_release_notes": "Afficher {{appname}} Notes de version"
+    "view_release_notes": "Afficher {{appName}} Notes de version"
   },
   "sidebar": {
     "filters": {
@@ -189,12 +189,12 @@
     "notifications": {
       "label": "Notifications",
       "read": "notifications",
-      "tooltip": "{{count}} {{countuffix}} {{countType}}",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}}",
       "unread": "Notifications non lues"
     },
     "quit": {
-      "label": "Quit {{nom}}",
-      "tooltip": "Quit {{nom}}"
+      "label": "Quit {{appName}}",
+      "tooltip": "Quit {{appName}}"
     },
     "refresh": {
       "label": "Notifications de rafraîchissement",

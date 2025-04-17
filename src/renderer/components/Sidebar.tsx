@@ -240,11 +240,11 @@ export const Sidebar: FC = () => {
             </Fragment>
           ) : (
             <Tooltip
-              content={t('sidebar.quit.tooltip', { name: APPLICATION.NAME })}
+              content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
               position="right"
             >
               <IconButton
-                label={t('sidebar.quit.label', { name: APPLICATION.NAME })}
+                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}
