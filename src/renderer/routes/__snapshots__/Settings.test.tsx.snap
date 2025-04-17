@@ -82,9 +82,115 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             >
               <span
                 class="css-aeiv5u"
+                id="language-label"
+              >
+                Language
+                :
+              </span>
+              <div
+                class="css-1o7nse5-container"
+                data-testid="settings-language-selector-select--container"
+              >
+                <span
+                  class="css-19y6gjl-a11yText"
+                  id="react-select-2-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="assertive"
+                  aria-relevant="additions text"
+                  class="css-19y6gjl-a11yText"
+                  role="log"
+                />
+                <div
+                  class="css-1vrwmt7-control"
+                  data-testid="settings-language-selector-select--control"
+                >
+                  <div
+                    class="value-container css-xo17ij"
+                    data-testid="settings-language-selector-select--value-container"
+                  >
+                    <div
+                      class="css-1c8bys3-singleValue"
+                    >
+                      English
+                    </div>
+                    <div
+                      class="css-bxfvr9"
+                      data-testid="settings-language-selector-select--input-container"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="both"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-invalid="false"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        data-testid="settings-language-selector-select--input"
+                        id="react-select-2-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="css-6jtart"
+                    data-testid="settings-language-selector-select--indicators-container"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="css-1cdp2iz-indicatorContainer"
+                      data-testid="settings-language-selector-select--dropdown-indicator"
+                    >
+                      <span
+                        class="css-17zzl5o"
+                      >
+                        <span
+                          aria-label="open"
+                          class="css-snhnyn"
+                          data-vc="icon-undefined"
+                          role="img"
+                          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        >
+                          <svg
+                            height="24"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <path
+                              d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-5shg4o"
+          >
+            <div
+              class="css-gokkc4"
+            >
+              <span
+                class="css-aeiv5u"
                 id="theme-label"
               >
-                Theme:
+                Theme
+                :
               </span>
               <div
                 aria-labelledby="theme-label"
@@ -165,7 +271,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="theme-label"
               >
-                Zoom:
+                Zoom
+                :
               </span>
               <div
                 class="css-1cdf62i"
@@ -603,7 +710,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 class="css-aeiv5u"
                 id="openLinks-label"
               >
-                Open Links:
+                Open Links
+                :
               </span>
               <div
                 aria-labelledby="openLinks-label"

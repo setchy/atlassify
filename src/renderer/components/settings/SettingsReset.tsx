@@ -1,4 +1,5 @@
 import { type FC, useCallback, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
 import CloseIcon from '@atlaskit/icon/core/close';
@@ -27,6 +28,7 @@ const titleContainerStyles = xcss({
 });
 
 export const SettingsReset: FC = () => {
+  const { t } = useTranslation();
   const { resetSettings } = useContext(AppContext);
   const [isOpen, setIsOpen] = useState(false);
   const openModal = useCallback(() => setIsOpen(true), []);
@@ -40,7 +42,7 @@ export const SettingsReset: FC = () => {
         onClick={openModal}
         testId="settings-reset-defaults"
       >
-        Reset Settings
+        {t('settings.reset.title')}
       </Button>
 
       <ModalTransition>
@@ -56,20 +58,21 @@ export const SettingsReset: FC = () => {
                   <IconButton
                     appearance="subtle"
                     icon={CloseIcon}
-                    label="Close Modal"
+                    label={t('common.close')}
                     onClick={closeModal}
                     testId="settings-reset-close"
                   />
                 </Flex>
                 <Flex xcss={titleContainerStyles} justifyContent="start">
-                  <ModalTitle appearance="danger">Reset Settings</ModalTitle>
+                  <ModalTitle appearance="danger">
+                    {t('settings.reset.title')}
+                  </ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
               <p>
-                Please confirm that you want to reset all settings to the{' '}
-                <strong>{APPLICATION.NAME} defaults</strong>.
+                {t('settings.reset.confirm', { appName: APPLICATION.NAME })}
               </p>
             </ModalBody>
             <ModalFooter>
@@ -78,7 +81,7 @@ export const SettingsReset: FC = () => {
                 onClick={() => closeModal()}
                 testId="settings-reset-cancel"
               >
-                Cancel
+                {t('common.cancel')}
               </Button>
               <Button
                 appearance="danger"
@@ -88,7 +91,7 @@ export const SettingsReset: FC = () => {
                 }}
                 testId="settings-reset-confirm"
               >
-                Reset
+                {t('common.reset')}
               </Button>
             </ModalFooter>
           </Modal>

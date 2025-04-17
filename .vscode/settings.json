@@ -19,5 +19,10 @@
   ],
   "cSpell.words": ["Atlassify", "xcss"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.translate.engines": ["google"],
+  "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true
 }

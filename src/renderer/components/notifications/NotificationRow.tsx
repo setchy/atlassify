@@ -1,4 +1,5 @@
 import { type FC, useCallback, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Avatar from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
@@ -32,6 +33,8 @@ export const NotificationRow: FC<INotificationRow> = ({
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
+
+  const { t } = useTranslation();
 
   const handleNotificationInteraction = useCallback(() => {
     setAnimateExit(
@@ -147,9 +150,12 @@ export const NotificationRow: FC<INotificationRow> = ({
           <Box id="notification-actions">
             {!animateExit &&
               (isNotificationUnread ? (
-                <Tooltip content="Mark as read" position="left">
+                <Tooltip
+                  content={t('notifications.interactions.mark_as_read')}
+                  position="left"
+                >
                   <IconButton
-                    label="Mark as read"
+                    label={t('notifications.interactions.mark_as_read')}
                     icon={() => <UnreadIcon color="brand" />}
                     shape="circle"
                     spacing="compact"
@@ -165,9 +171,12 @@ export const NotificationRow: FC<INotificationRow> = ({
                   />
                 </Tooltip>
               ) : (
-                <Tooltip content="Mark as unread" position="left">
+                <Tooltip
+                  content={t('notifications.interactions.mark_as_unread')}
+                  position="left"
+                >
                   <IconButton
-                    label="Mark as unread"
+                    label={t('notifications.interactions.mark_as_unread')}
                     icon={() => null}
                     shape="circle"
                     spacing="compact"

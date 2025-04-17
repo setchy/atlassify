@@ -1,4 +1,5 @@
 import { type FC, useContext, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../context/App';
 import { Constants } from '../utils/constants';
@@ -7,6 +8,7 @@ import { EmojiSplash } from './layout/EmojiSplash';
 
 export const AllRead: FC = () => {
   const { settings } = useContext(AppContext);
+  const { t } = useTranslation();
 
   const hasFilters = hasAnyFiltersSet(settings);
 
@@ -18,7 +20,9 @@ export const AllRead: FC = () => {
     [],
   );
 
-  const heading = `No new ${hasFilters ? 'filtered ' : ''} notifications`;
+  const heading = hasFilters
+    ? t('allRead.headingFiltered')
+    : t('allRead.heading');
 
   return <EmojiSplash emoji={emoji} heading={heading} />;
 };

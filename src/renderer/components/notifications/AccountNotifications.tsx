@@ -7,6 +7,7 @@ import {
   useMemo,
   useState,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
@@ -38,6 +39,7 @@ import { Oops } from '../Oops';
 import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
+
 interface IAccountNotifications {
   account: Account;
   notifications: AtlassifyNotification[];
@@ -49,7 +51,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
-
+  const { t } = useTranslation();
   const { markNotificationsRead, settings } = useContext(AppContext);
 
   const [showAccountNotifications, setShowAccountNotifications] =
@@ -129,7 +131,10 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Inline space="space.100" alignBlock="center">
-            <Tooltip content="Open account profile" position="right">
+            <Tooltip
+              content={t('notifications.account.open_profile')}
+              position="right"
+            >
               <AvatarItem
                 avatar={
                   <Avatar
@@ -159,9 +164,12 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           </Inline>
 
           <Inline space="space.100">
-            <Tooltip content="My pull requests" position="bottom">
+            <Tooltip
+              content={t('notifications.account.pull_requests')}
+              position="bottom"
+            >
               <IconButton
-                label="My pull requests"
+                label={t('notifications.account.pull_requests')}
                 icon={(iconProps) => (
                   <BitbucketIcon {...iconProps} size="xsmall" />
                 )}
@@ -177,11 +185,11 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             </Tooltip>
 
             <Tooltip
-              content="Mark all account notifications as read"
+              content={t('notifications.account.mark_all_read')}
               position="bottom"
             >
               <IconButton
-                label="Mark all account notifications as read"
+                label={t('notifications.account.mark_all_read')}
                 icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"
@@ -244,20 +252,25 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                   <IconButton
                     appearance="subtle"
                     icon={CloseIcon}
-                    label="Close"
+                    label={t('common.close')}
                     onClick={() => closeModal()}
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
                 <Flex xcss={titleContainerStyles} justifyContent="start">
-                  <ModalTitle appearance="warning">Are you sure?</ModalTitle>
+                  <ModalTitle appearance="warning">
+                    {t('common.are_you_sure')}
+                  </ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
               <p>
-                Please confirm that you want to mark{' '}
-                <strong>all account notifications</strong> as read
+                {t('notifications.account.mark_read_confirm.description1')}{' '}
+                <strong>
+                  {t('notifications.account.mark_read_confirm.description2')}
+                </strong>{' '}
+                {t('notifications.account.mark_read_confirm.description3')}
               </p>
             </ModalBody>
             <ModalFooter>
@@ -266,7 +279,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 onClick={() => closeModal()}
                 testId="account-mark-as-read-cancel"
               >
-                Cancel
+                {t('common.cancel')}
               </Button>
               <Button
                 appearance="warning"
@@ -276,7 +289,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 }}
                 testId="account-mark-as-read-confirm"
               >
-                Proceed
+                {t('common.proceed')}
               </Button>
             </ModalFooter>
           </Modal>

@@ -27,6 +27,7 @@ export const mockAuth: AuthState = {
 };
 
 const mockAppearanceSettings: AppearanceSettingsState = {
+  language: 'en',
   theme: Theme.LIGHT,
   zoomPercentage: 100,
 };

@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
@@ -13,9 +14,11 @@ import { SystemSettings } from '../components/settings/SystemSettings';
 
 // FIXME #90 InlineMessage findDOMNode errors
 export const SettingsRoute: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Page id="settings">
-      <Header fetchOnBack>Settings</Header>
+      <Header fetchOnBack>{t('settings.title')}</Header>
 
       <Contents>
         <Box paddingInline="space.400" paddingBlockEnd="space.200">

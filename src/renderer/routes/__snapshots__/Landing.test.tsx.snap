@@ -52,7 +52,8 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             <h2
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
             >
-              Atlassian notifications
+              Atlassian 
+              notifications
             </h2>
             <span
               class="css-1a6c8ku"
@@ -330,7 +331,8 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           <h2
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
           >
-            Atlassian notifications
+            Atlassian 
+            notifications
           </h2>
           <span
             class="css-1a6c8ku"

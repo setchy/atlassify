@@ -1,4 +1,5 @@
 import { type FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
@@ -21,34 +22,36 @@ import {
 export const FiltersRoute: FC = () => {
   const { clearFilters } = useContext(AppContext);
 
+  const { t } = useTranslation();
+
   return (
     <Page id="filters">
-      <Header fetchOnBack={true}>Filters</Header>
+      <Header fetchOnBack={true}>{t('filters.title')}</Header>
 
       <Contents>
         <Box paddingInlineStart="space.400">
           <Inline space="space.200">
             <Stack space="space.200">
               <FilterSection
-                title="Time Sensitive"
+                title={t('filters.time_sensitive.title')}
                 filter={timeSensitiveFilter}
                 filterSetting="filterTimeSensitive"
               />
 
               <FilterSection
-                title="Category"
+                title={t('filters.category.title')}
                 filter={categoryFilter}
                 filterSetting="filterCategories"
               />
 
               <FilterSection
-                title="Actors"
+                title={t('filters.actors.title')}
                 filter={actorFilter}
                 filterSetting="filterActors"
               />
 
               <FilterSection
-                title="Read State"
+                title={t('filters.read_state.title')}
                 filter={readStateFilter}
                 filterSetting="filterReadStates"
               />
@@ -56,7 +59,7 @@ export const FiltersRoute: FC = () => {
 
             <Stack>
               <FilterSection
-                title="Products"
+                title={t('filters.products.title')}
                 filter={productFilter}
                 filterSetting="filterProducts"
               />
@@ -67,13 +70,13 @@ export const FiltersRoute: FC = () => {
 
       <Footer justify="end">
         <Button
-          title="Clear Filters"
+          title={t('filters.actions.clear')}
           onClick={clearFilters}
           appearance="discovery"
           spacing="compact"
           testId="filters-clear"
         >
-          Clear Filters
+          {t('filters.actions.clear')}
         </Button>
       </Footer>
     </Page>

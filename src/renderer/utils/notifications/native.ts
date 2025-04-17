@@ -1,4 +1,5 @@
 import { APPLICATION } from '../../../shared/constants';
+import i18n from '../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -65,7 +66,9 @@ export const raiseNativeNotification = (
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
-    body = `You have ${notifications.length} notifications.`;
+    body = i18n.t('notifications.native_count', {
+      count: notifications.length,
+    });
   }
 
   return window.atlassify.raiseNativeNotification(title, body, url);

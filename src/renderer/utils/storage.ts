@@ -1,3 +1,5 @@
+import { DEFAULT_LANGUAGE } from '../i18n';
+import type { Language } from '../i18n/types';
 import type { AtlassifyState } from '../types';
 import { Constants } from './constants';
 
@@ -18,4 +20,11 @@ export async function saveState(atlassifyState: AtlassifyState) {
 
 export function clearState() {
   localStorage.clear();
+}
+
+export function loadLanguageLocale(): Language {
+  const existing = localStorage.getItem(Constants.LANGUAGE_STORAGE_KEY);
+  const language = (existing as Language) || DEFAULT_LANGUAGE;
+
+  return language;
 }

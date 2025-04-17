@@ -1,0 +1,218 @@
+{
+  "accounts": {
+    "add_new": "Agregar nueva cuenta",
+    "logout_account": "LOGAR {{nombre de usuario}}",
+    "open_profile": "Perfil de cuenta abierto",
+    "refresh_account": "Actualizar {{nombre de usuario}}",
+    "title": "Cuentas"
+  },
+  "allRead": {
+    "heading": "No hay nuevas notificaciones",
+    "headingFiltered": "No hay nuevas notificaciones filtradas"
+  },
+  "chevron": {
+    "hide": "Ocultar {{tipo}} notificaciones",
+    "none": "No hay notificaciones para {{tipo}}",
+    "show": "Mostrar {{tipo}} notificaciones"
+  },
+  "common": {
+    "account": "cuenta",
+    "are_you_sure": "¿Está seguro?",
+    "cancel": "Cancelar",
+    "close": "Cerca",
+    "docs": "Documento",
+    "login": "Acceso",
+    "proceed": "Proceder",
+    "product": "producto",
+    "reset": "Reiniciar",
+    "username": "Nombre de usuario"
+  },
+  "errors": {
+    "badCredentials": {
+      "description1": "Sus credenciales son inválidas o caducadas.",
+      "description2": "Intente eliminar su cuenta y autenticarse nuevamente.",
+      "title": "Malas credenciales"
+    },
+    "badRequest": {
+      "description1": "Algo salió mal haciendo la solicitud de API.",
+      "title": "Solicitud incorrecta"
+    },
+    "network": {
+      "description1": "Incapaz de conectarse a la nube Atlassian.",
+      "description2": "Consulte su conexión de red, incluso si necesita una VPN, y vuelva a intentarlo.",
+      "title": "Error de red"
+    },
+    "unknown": {
+      "description1": "Vuelva a intentarlo más tarde.",
+      "title": "¡Ups! \nAlgo salió mal"
+    }
+  },
+  "filters": {
+    "actions": {
+      "clear": "Filtros claros"
+    },
+    "actors": {
+      "automation": {
+        "description": "Notificaciones de las reglas de automatización",
+        "title": "Automatización"
+      },
+      "title": "Actores",
+      "user": {
+        "description": "Notificaciones de los usuarios",
+        "title": "Usuario"
+      }
+    },
+    "category": {
+      "direct": {
+        "description": "Notificaciones directas",
+        "title": "Directo"
+      },
+      "title": "Categoría",
+      "watching": {
+        "description": "Viendo notificaciones",
+        "title": "Mirando"
+      }
+    },
+    "products": {
+      "title": "Productos",
+      "unknown": "Desconocido"
+    },
+    "read_state": {
+      "read": {
+        "description": "Leer notificaciones",
+        "title": "Leer"
+      },
+      "title": "Estado de lectura",
+      "unread": {
+        "description": "Notificaciones no leídas",
+        "title": "No leído"
+      }
+    },
+    "time_sensitive": {
+      "comment": {
+        "description": "Comentario",
+        "title": "Comentario"
+      },
+      "mention": {
+        "description": "Menciones",
+        "title": "Mencionar"
+      },
+      "title": "Sensible en el tiempo"
+    },
+    "title": "Filtros"
+  },
+  "landing": {
+    "login": {
+      "title": "Acceso",
+      "tooltip": "Iniciar sesión con Atlassian"
+    },
+    "notifications": "notificaciones",
+    "subheading": "En tu barra de menú"
+  },
+  "login": {
+    "create_token": "Crear un token API",
+    "error_message": "¡Ups! \nLa combinación token de nombre de usuario proporcionada no es válida. \nPor favor intente de nuevo.",
+    "security_docs": "Ver documentación de Atlassian",
+    "title": "Iniciar sesión con Atlassian",
+    "token": "Token API",
+    "token_helper": "para su cuenta y pegue arriba",
+    "username_helper": "Su nombre de usuario / dirección de correo electrónico de Atlassian"
+  },
+  "notifications": {
+    "account": {
+      "mark_all_read": "Marque todas las notificaciones de cuenta como lectura",
+      "mark_read_confirm": {
+        "description1": "Por favor confirme que quiere",
+        "description2": "Marque todas las notificaciones de cuenta",
+        "description3": "como leída"
+      },
+      "open_profile": "Perfil de cuenta abierto",
+      "pull_requests": "Mis solicitudes de extracción"
+    },
+    "interactions": {
+      "mark_as_read": "Mark como leído",
+      "mark_as_unread": "Marca como no leído"
+    },
+    "native_count": "Tienes {{count}} notificaciones",
+    "product": {
+      "mark_all_read": "Marque todas las notificaciones de productos como lectura",
+      "open_product": "Abrir {{nombre}}"
+    }
+  },
+  "settings": {
+    "accounts": "Cuentas",
+    "appearance": {
+      "language": "Idioma",
+      "language_select": "Lenguaje seleccionado",
+      "theme": "Tema",
+      "title": "Apariencia",
+      "zoom": "Zoom",
+      "zoom_in": "Dar un golpe de zoom",
+      "zoom_out": "Alejarse",
+      "zoom_reset": "Restablecer zoom"
+    },
+    "notifications": {
+      "delay_notification_state": "Estado de notificación de retraso",
+      "delay_notification_state_help": "Mantenga la notificación dentro de {{AppName}} tras la interacción (es decir: Abra la notificación, marque como lea) hasta que la siguiente ventana de actualización (programada o iniciada por el usuario).",
+      "group_alphabetically": "Notificaciones de productos grupales alfabéticamente",
+      "group_alphabetically_help": "Cuando los productos agrupan las notificaciones, esta configuración ordenará los productos en orden alfabético.",
+      "mark_as_read_on_open": "Mark como leída en Open",
+      "title": "Notificaciones"
+    },
+    "reset": {
+      "confirm": "Confirme que desea restablecer todas las configuraciones en los valores predeterminados {{AppName}}.",
+      "title": "Configuración de reinicio"
+    },
+    "system": {
+      "alternate_icon": "Use un icono de inactividad alternativo",
+      "alternate_icon_help": "Use un logotipo blanco {{AppName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. \nEsta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
+      "keyboard_shortcut": "Habilitar el atajo de teclado",
+      "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{atajo}} para mostrar o ocultar {{appname}}.",
+      "open_links": "Abrir enlaces",
+      "open_links_background": "Fondo",
+      "open_links_foreground": "Primer plano",
+      "play_sound": "Reproducir sonido para nuevas notificaciones",
+      "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
+      "startup": "Abrir al inicio",
+      "system_notifications": "Mostrar notificaciones del sistema",
+      "title": "Sistema"
+    },
+    "title": "Ajustes",
+    "view_release_notes": "Ver {{appname}} Notas de versión"
+  },
+  "sidebar": {
+    "filters": {
+      "label": "Filtros",
+      "tooltip": "Notificaciones de filtro"
+    },
+    "home": "Hogar",
+    "notifications": {
+      "label": "Notificaciones",
+      "read": "notificaciones",
+      "tooltip": "{{Count}} {{CountSuffix}} {{CountType}}",
+      "unread": "Notificaciones no leídas"
+    },
+    "quit": {
+      "label": "Salir {{nombre}}",
+      "tooltip": "Salir {{nombre}}"
+    },
+    "refresh": {
+      "label": "Redactar a las notificaciones",
+      "tooltip": "Redactar a las notificaciones"
+    },
+    "settings": {
+      "label": "Ajustes",
+      "tooltip": "Ajustes"
+    },
+    "toggles": {
+      "groupByProduct": {
+        "label": "Notificaciones grupales por productos",
+        "tooltip": "Notificaciones grupales por productos"
+      },
+      "unreadOnly": {
+        "label": "Mostrar solo una palanca no leída",
+        "tooltip": "Mostrar solo notificaciones no leídas"
+      }
+    }
+  }
+}

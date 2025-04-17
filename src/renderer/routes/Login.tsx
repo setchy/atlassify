@@ -1,4 +1,6 @@
 import { type FC, Fragment, useCallback, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
@@ -16,7 +18,6 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import { useNavigate } from 'react-router-dom';
 import { logError } from '../../shared/logger';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
@@ -34,6 +35,7 @@ interface IValues {
 }
 
 export const LoginRoute: FC = () => {
+  const { t } = useTranslation();
   const { login } = useContext(AppContext);
   const navigate = useNavigate();
   const [isValidToken, setIsValidToken] = useState<boolean>(true);
@@ -56,7 +58,7 @@ export const LoginRoute: FC = () => {
 
   return (
     <Fragment>
-      <Header>Login with Atlassian</Header>
+      <Header>{t('login.title')}</Header>
 
       <Box paddingInline="space.400">
         <Form<IValues> onSubmit={loginUser}>
@@ -66,7 +68,7 @@ export const LoginRoute: FC = () => {
                 <Field
                   aria-required={true}
                   name="username"
-                  label="Username"
+                  label={t('common.username')}
                   defaultValue={''}
                   // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
                   // isRequired
@@ -76,7 +78,7 @@ export const LoginRoute: FC = () => {
                     <Fragment>
                       <TextField autoComplete="off" {...fieldProps} />
                       <HelperMessage>
-                        Your Atlassian username / email address
+                        {t('login.username_helper')}
                       </HelperMessage>
                     </Fragment>
                   )}
@@ -84,7 +86,7 @@ export const LoginRoute: FC = () => {
                 <Field
                   aria-required={true}
                   name="token"
-                  label="API Token"
+                  label={t('login.token')}
                   defaultValue={''}
                   // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
                   // isRequired
@@ -95,7 +97,7 @@ export const LoginRoute: FC = () => {
                       <TextField type="password" {...fieldProps} />
                       <HelperMessage>
                         <Inline alignBlock="center" space="space.050">
-                          <Tooltip content="Create an API Token">
+                          <Tooltip content={t('login.create_token')}>
                             <Button
                               appearance="discovery"
                               spacing="compact"
@@ -103,10 +105,10 @@ export const LoginRoute: FC = () => {
                               onClick={() => openAtlassianCreateToken()}
                               testId="login-create-token"
                             >
-                              Create an API Token
+                              {t('login.create_token')}
                             </Button>
                           </Tooltip>
-                          <Box>for your account and paste above</Box>
+                          <Box>{t('login.token_helper')}</Box>
                         </Inline>
                       </HelperMessage>
                     </Fragment>
@@ -116,24 +118,18 @@ export const LoginRoute: FC = () => {
 
               <Box paddingBlock="space.050">
                 {!isValidToken && (
-                  <ErrorMessage>
-                    Oops! The username + token combination provided are not
-                    valid. Please try again.
-                  </ErrorMessage>
+                  <ErrorMessage>{t('login.error_message')}</ErrorMessage>
                 )}
                 <Inline alignBlock="center" spread="space-between">
                   <Box paddingBlockStart="space.300">
-                    <Tooltip
-                      content="See Atlassian documentation"
-                      position="top"
-                    >
+                    <Tooltip content={t('login.security_docs')} position="top">
                       <Button
                         appearance="subtle"
                         iconBefore={LinkExternalIcon}
                         onClick={() => openAtlassianSecurityDocs()}
                         testId="login-docs"
                       >
-                        Docs
+                        {t('common.docs')}
                       </Button>
                     </Tooltip>
                   </Box>
@@ -144,7 +140,7 @@ export const LoginRoute: FC = () => {
                         onClick={() => navigate(-1)}
                         testId="login-cancel"
                       >
-                        Cancel
+                        {t('common.cancel')}
                       </Button>
                       <Button
                         type="submit"
@@ -153,7 +149,7 @@ export const LoginRoute: FC = () => {
                         isLoading={submitting}
                         testId="login-submit"
                       >
-                        Login
+                        {t('common.login')}
                       </Button>
                     </ButtonGroup>
                   </FormFooter>

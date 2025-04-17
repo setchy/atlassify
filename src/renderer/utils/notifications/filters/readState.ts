@@ -1,5 +1,6 @@
 import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
+import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -10,13 +11,13 @@ import type { Filter, FilterDetails } from './types';
 
 const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
   unread: {
-    name: 'unread',
-    description: 'Unread notification',
+    name: i18n.t('filters.read_state.unread.title'),
+    description: i18n.t('filters.read_state.unread.description'),
     heroicon: EnvelopeIcon,
   },
   read: {
-    name: 'read',
-    description: 'Read notification',
+    name: i18n.t('filters.read_state.read.title'),
+    description: i18n.t('filters.read_state.read.description'),
     heroicon: EnvelopeOpenIcon,
   },
 };

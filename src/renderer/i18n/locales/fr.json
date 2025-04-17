@@ -1,0 +1,218 @@
+{
+  "accounts": {
+    "add_new": "Ajouter un nouveau compte",
+    "logout_account": "Déconnexion {{nom d'utilisateur}}",
+    "open_profile": "Profil de compte ouvert",
+    "refresh_account": "Actualiser {{nom d'utilisateur}}",
+    "title": "Comptes"
+  },
+  "allRead": {
+    "heading": "Pas de nouvelles notifications",
+    "headingFiltered": "Pas de nouvelles notifications filtrées"
+  },
+  "chevron": {
+    "hide": "Masquer {{type}} Notifications",
+    "none": "Aucune notification pour {{type}}",
+    "show": "Afficher les notifications {{type}}"
+  },
+  "common": {
+    "account": "compte",
+    "are_you_sure": "Es-tu sûr?",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "docs": "Docs",
+    "login": "Se connecter",
+    "proceed": "Procéder",
+    "product": "produit",
+    "reset": "Réinitialiser",
+    "username": "Nom d'utilisateur"
+  },
+  "errors": {
+    "badCredentials": {
+      "description1": "Vos informations d'identification ne sont pas valides ou expirées.",
+      "description2": "Veuillez essayer de retirer votre compte et de vous authentifier à nouveau.",
+      "title": "Mauvais références"
+    },
+    "badRequest": {
+      "description1": "Quelque chose a mal tourné en faisant la demande de l'API.",
+      "title": "Mauvaise demande"
+    },
+    "network": {
+      "description1": "Impossible de se connecter au nuage Atlassian.",
+      "description2": "Veuillez vérifier votre connexion réseau, y compris si vous avez besoin d'un VPN et réessayer.",
+      "title": "Erreur de réseau"
+    },
+    "unknown": {
+      "description1": "Veuillez réessayer plus tard.",
+      "title": "Oups! \nQuelque chose s'est mal passé"
+    }
+  },
+  "filters": {
+    "actions": {
+      "clear": "Filtres à claire"
+    },
+    "actors": {
+      "automation": {
+        "description": "Notifications des règles d'automatisation",
+        "title": "Automation"
+      },
+      "title": "Acteurs",
+      "user": {
+        "description": "Notifications des utilisateurs",
+        "title": "Utilisateur"
+      }
+    },
+    "category": {
+      "direct": {
+        "description": "Notifications directes",
+        "title": "Direct"
+      },
+      "title": "Catégorie",
+      "watching": {
+        "description": "Regarder des notifications",
+        "title": "Regardant"
+      }
+    },
+    "products": {
+      "title": "Produits",
+      "unknown": "Inconnu"
+    },
+    "read_state": {
+      "read": {
+        "description": "Lire les notifications",
+        "title": "Lire"
+      },
+      "title": "Lire l'état",
+      "unread": {
+        "description": "Notifications non lues",
+        "title": "Non lu"
+      }
+    },
+    "time_sensitive": {
+      "comment": {
+        "description": "Commentaires",
+        "title": "Commentaire"
+      },
+      "mention": {
+        "description": "Mentions",
+        "title": "Mention"
+      },
+      "title": "Sensible au temps"
+    },
+    "title": "Filtres"
+  },
+  "landing": {
+    "login": {
+      "title": "Se connecter",
+      "tooltip": "Connectez-vous avec Atlassian"
+    },
+    "notifications": "notifications",
+    "subheading": "sur votre barre de menu"
+  },
+  "login": {
+    "create_token": "Créer un jeton API",
+    "error_message": "Oups! \nLa combinaison de jetons de nom d'utilisateur fournie n'est pas valide. \nVeuillez réessayer.",
+    "security_docs": "Voir la documentation atlastique",
+    "title": "Connectez-vous avec Atlassian",
+    "token": "Jeton API",
+    "token_helper": "pour votre compte et collez-vous ci-dessus",
+    "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
+  },
+  "notifications": {
+    "account": {
+      "mark_all_read": "Marquez toutes les notifications de compte comme lu",
+      "mark_read_confirm": {
+        "description1": "Veuillez confirmer que vous voulez",
+        "description2": "Marquez toutes les notifications de compte",
+        "description3": "en tant que lecture"
+      },
+      "open_profile": "Profil de compte ouvert",
+      "pull_requests": "Mes demandes de traction"
+    },
+    "interactions": {
+      "mark_as_read": "Mark comme lu",
+      "mark_as_unread": "Mark comme non lu"
+    },
+    "native_count": "Vous avez {{count}} notifications",
+    "product": {
+      "mark_all_read": "Marquez toutes les notifications de produit comme lu",
+      "open_product": "Ouvrir {{nom}}"
+    }
+  },
+  "settings": {
+    "accounts": "Comptes",
+    "appearance": {
+      "language": "Langue",
+      "language_select": "Sélectionner la langue",
+      "theme": "Thème",
+      "title": "Apparence",
+      "zoom": "Zoom",
+      "zoom_in": "Zoomer",
+      "zoom_out": "Zoom out",
+      "zoom_reset": "Réinitialiser le zoom"
+    },
+    "notifications": {
+      "delay_notification_state": "État de notification de retard",
+      "delay_notification_state_help": "Gardez la notification dans {{appname}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",
+      "group_alphabetically": "Notifications de produit en groupe par ordre alphabétique",
+      "group_alphabetically_help": "Lorsque les notifications sont regroupées par des produits, ce paramètre trie les produits par ordre alphabétique.",
+      "mark_as_read_on_open": "Mark comme lu sur ouvert",
+      "title": "Notifications"
+    },
+    "reset": {
+      "confirm": "Veuillez confirmer que vous souhaitez réinitialiser tous les paramètres des défaillances {{appname}}.",
+      "title": "Réinitialiser les paramètres"
+    },
+    "system": {
+      "alternate_icon": "Utiliser une icône inactif alternative",
+      "alternate_icon_help": "Utilisez un logo blanc {{appname}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. \nCe paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
+      "keyboard_shortcut": "Activer le raccourci clavier",
+      "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{raccourci}} pour afficher ou masquer {{appname}}.",
+      "open_links": "Ouvrir les liens",
+      "open_links_background": "Arrière-plan",
+      "open_links_foreground": "Premier plan",
+      "play_sound": "Jouez au son pour de nouvelles notifications",
+      "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
+      "startup": "Ouvert au démarrage",
+      "system_notifications": "Afficher les notifications du système",
+      "title": "Système"
+    },
+    "title": "Paramètres",
+    "view_release_notes": "Afficher {{appname}} Notes de version"
+  },
+  "sidebar": {
+    "filters": {
+      "label": "Filtres",
+      "tooltip": "Notifications de filtre"
+    },
+    "home": "Maison",
+    "notifications": {
+      "label": "Notifications",
+      "read": "notifications",
+      "tooltip": "{{count}} {{countuffix}} {{countType}}",
+      "unread": "Notifications non lues"
+    },
+    "quit": {
+      "label": "Quit {{nom}}",
+      "tooltip": "Quit {{nom}}"
+    },
+    "refresh": {
+      "label": "Notifications de rafraîchissement",
+      "tooltip": "Notifications de rafraîchissement"
+    },
+    "settings": {
+      "label": "Paramètres",
+      "tooltip": "Paramètres"
+    },
+    "toggles": {
+      "groupByProduct": {
+        "label": "Notifications de groupe par produits",
+        "tooltip": "Notifications de groupe par produits"
+      },
+      "unreadOnly": {
+        "label": "Afficher uniquement la bascule non lu",
+        "tooltip": "Afficher uniquement les notifications non lues"
+      }
+    }
+  }
+}
