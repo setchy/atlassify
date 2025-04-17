@@ -15,10 +15,10 @@ importers:
         specifier: 6.6.2
         version: 6.6.2
       i18next:
-        specifier: ^25.0.0
+        specifier: 25.0.0
         version: 25.0.0(typescript@5.8.3)
       i18next-browser-languagedetector:
-        specifier: ^8.0.4
+        specifier: 8.0.4
         version: 8.0.4
       menubar:
         specifier: 9.5.1
@@ -30,7 +30,7 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-i18next:
-        specifier: ^15.4.1
+        specifier: 15.4.1
         version: 15.4.1(i18next@25.0.0(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: 7.5.1
