@@ -69,6 +69,17 @@ The release process is automated. Follow the steps below.
 8. Create a [New Milestone][github-new-milestone] for upcoming release.
 
 
+### Locales
+
+Atlassify supports multiple languages / locales.
+
+To add new locales
+- Add a new locale file under `./src/renderer/i18n/locales`
+- Import and update the resources in `./src/renderer/i18n/index.ts`
+- Use the VSCode Extensions `i18n Ally` to automatically translate the keys
+- Verify the translated values. It's important that the placeholder variables `{{ }}` are not translated.  You may need to manually update these.
+
+
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/
 [github-dependency-dashboard]: https://github.com/setchy/atlassify/issues/1
