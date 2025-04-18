@@ -22,7 +22,7 @@ const config = {
     icon: 'assets/images/app-icon.icns',
     identity: 'Adam Setch (5KD23H9729)',
     type: 'distribution',
-    notarize: false,
+    notarize: false, // Handle notarization in afterSign.js
     target: {
       target: 'default',
       arch: ['universal', 'arm64', 'x64'],
