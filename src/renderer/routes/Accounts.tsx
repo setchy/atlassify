@@ -1,4 +1,5 @@
 import { type FC, useCallback, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
@@ -23,6 +24,7 @@ import { isLightMode } from '../utils/theme';
 export const AccountsRoute: FC = () => {
   const { auth, logoutFromAccount } = useContext(AppContext);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const logoutAccount = useCallback(
     (account: Account) => {
@@ -45,7 +47,7 @@ export const AccountsRoute: FC = () => {
 
   return (
     <Page id="accounts">
-      <Header>Accounts</Header>
+      <Header>{t('accounts.title')}</Header>
 
       <Contents>
         {auth.accounts.map((account) => {
@@ -61,9 +63,9 @@ export const AccountsRoute: FC = () => {
               xcss={boxStyles}
             >
               <Inline grow="fill" spread="space-between" alignBlock="center">
-                <Tooltip content="Open account profile" position="bottom">
+                <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem
-                    label="Open account profile"
+                    label={t('accounts.open_profile')}
                     avatar={
                       <Avatar
                         name={account.name}
@@ -82,11 +84,15 @@ export const AccountsRoute: FC = () => {
 
                 <Inline>
                   <Tooltip
-                    content={`Refresh ${account.username}`}
+                    content={t('accounts.refresh_account', {
+                      username: account.username,
+                    })}
                     position="bottom"
                   >
                     <IconButton
-                      label={`Refresh ${account.username}`}
+                      label={t('accounts.refresh_account', {
+                        username: account.username,
+                      })}
                       icon={RefreshIcon}
                       shape="circle"
                       appearance="subtle"
@@ -112,11 +118,15 @@ export const AccountsRoute: FC = () => {
                   </Tooltip>
 
                   <Tooltip
-                    content={`Logout ${account.username}`}
+                    content={t('accounts.logout_account', {
+                      username: account.username,
+                    })}
                     position="bottom"
                   >
                     <IconButton
-                      label={`Logout ${account.username}`}
+                      label={t('accounts.logout_account', {
+                        username: account.username,
+                      })}
                       icon={LogOutIcon}
                       shape="circle"
                       appearance="subtle"
@@ -132,9 +142,9 @@ export const AccountsRoute: FC = () => {
       </Contents>
 
       <Footer justify="end">
-        <Tooltip content="Add new account" position="left">
+        <Tooltip content={t('accounts.add_new')} position="left">
           <IconButton
-            label="Add new account"
+            label={t('accounts.add_new')}
             icon={PersonAddIcon}
             appearance="subtle"
             shape="circle"

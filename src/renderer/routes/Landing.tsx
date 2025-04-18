@@ -1,4 +1,5 @@
 import { type FC, useContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
@@ -25,6 +26,8 @@ export const LandingRoute: FC = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(AppContext);
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (isLoggedIn) {
       showWindow();
@@ -37,8 +40,8 @@ export const LandingRoute: FC = () => {
       <Stack alignBlock="center" alignInline="center" space="space.200">
         <AtlasIcon appearance="brand" size="xlarge" />
         <Stack alignInline="center">
-          <Heading size="large">Atlassian notifications</Heading>
-          <Text size="large">on your menu bar</Text>
+          <Heading size="large">Atlassian {t('landing.notifications')}</Heading>
+          <Text size="large">{t('landing.subheading')}</Text>
         </Stack>
         <Inline space="space.100">
           <BitbucketIcon size="small" appearance="neutral" />
@@ -49,7 +52,7 @@ export const LandingRoute: FC = () => {
           <JiraServiceManagementIcon size="small" appearance="neutral" />
           <TrelloIcon size="small" appearance="neutral" />
         </Inline>
-        <Tooltip content="Login with Atlassian">
+        <Tooltip content={t('landing.login.tooltip')}>
           <Button
             appearance="primary"
             spacing="default"
@@ -59,7 +62,7 @@ export const LandingRoute: FC = () => {
             onClick={() => navigate('/login')}
             testId="login"
           >
-            Login
+            {t('landing.login.title')}
           </Button>
         </Tooltip>
       </Stack>

@@ -1,30 +1,31 @@
+import i18n from '../i18n';
 import type { AtlassifyError, ErrorType } from '../types';
 
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
-    title: 'Bad Credentials',
+    title: i18n.t('errors.badCredentials.title'),
     descriptions: [
-      'Your credentials are either invalid or expired.',
-      'Please try removing your account and authenticating again.',
+      i18n.t('errors.badCredentials.description1'),
+      i18n.t('errors.badCredentials.description2'),
     ],
     emojis: ['🔓'],
   },
   BAD_REQUEST: {
-    title: 'Bad Request',
-    descriptions: ['Something went wrong making the API request.'],
+    title: i18n.t('errors.badRequest.title'),
+    descriptions: [i18n.t('errors.badRequest.description1')],
     emojis: ['😳'],
   },
   NETWORK: {
-    title: 'Network Error',
+    title: i18n.t('errors.network.title'),
     descriptions: [
-      'Unable to connect to Atlassian Cloud.',
-      'Please check your network connection, including whether you require a VPN, and try again.',
+      i18n.t('errors.network.description1'),
+      i18n.t('errors.network.description2'),
     ],
     emojis: ['🛜'],
   },
   UNKNOWN: {
-    title: 'Oops! Something went wrong',
-    descriptions: ['Please try again later.'],
+    title: i18n.t('errors.unknown.title'),
+    descriptions: [i18n.t('errors.unknown.description1')],
     emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
   },
 };

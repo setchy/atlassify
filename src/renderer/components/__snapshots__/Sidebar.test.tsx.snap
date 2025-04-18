@@ -134,7 +134,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
       >
         <path
           clip-rule="evenodd"
-          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
+          d="M.5 4.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0M16 5H6V3.5h10zm0 7.5H6V11h10z"
           fill="currentcolor"
           fill-rule="evenodd"
         />
@@ -172,7 +172,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
       >
         <path
           clip-rule="evenodd"
-          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
+          d="M.5 4.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0M16 5H6V3.5h10zm0 7.5H6V11h10z"
           fill="currentcolor"
           fill-rule="evenodd"
         />
@@ -210,7 +210,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
       >
         <path
           clip-rule="evenodd"
-          d="M1 2.75a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0m14 .75H5V2h10zM1 8a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 1 8m14 .75H5v-1.5h10zm-14 4.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0M15 14H5v-1.5h10z"
+          d="M.5 4.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0M16 5H6V3.5h10zm0 7.5H6V11h10z"
           fill="currentcolor"
           fill-rule="evenodd"
         />

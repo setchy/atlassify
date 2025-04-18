@@ -1,5 +1,6 @@
 import type { NewUtilityIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
+import type { Language } from './i18n/types';
 
 declare const __brand: unique symbol;
 
@@ -95,6 +96,11 @@ export type SettingsState = AppearanceSettingsState &
  * Settings related to the appearance of the application.
  */
 export interface AppearanceSettingsState {
+  /**
+   * The language of the application.
+   */
+  language: Language;
+
   /**
    * The theme of the application.
    */

@@ -1,4 +1,5 @@
 import { type FC, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -16,6 +17,7 @@ import { Footer } from '../primitives/Footer';
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     (async () => {
@@ -27,11 +29,15 @@ export const SettingsFooter: FC = () => {
   return (
     <Footer justify="space-between">
       <Tooltip
-        content={`View ${APPLICATION.NAME} release notes`}
+        content={t('settings.view_release_notes', {
+          appName: APPLICATION.NAME,
+        })}
         position="top"
       >
         <Button
-          title={`View ${APPLICATION.NAME} release notes`}
+          title={t('settings.view_release_notes', {
+            appName: APPLICATION.NAME,
+          })}
           appearance="subtle"
           onClick={() => openAtlassifyReleaseNotes(appVersion)}
           testId="settings-release-notes"
@@ -43,13 +49,13 @@ export const SettingsFooter: FC = () => {
       </Tooltip>
 
       <Inline space="space.200">
-        <Tooltip content="Accounts" position="top">
+        <Tooltip content={t('settings.accounts')} position="top">
           <IconButton
-            label="Accounts"
+            label={t('settings.accounts')}
             icon={() => (
               <IconTile
                 icon={PeopleGroupIcon}
-                label={'Accounts'}
+                label={t('settings.accounts')}
                 appearance="blue"
                 shape="circle"
               />
@@ -60,13 +66,16 @@ export const SettingsFooter: FC = () => {
             testId="settings-accounts"
           />
         </Tooltip>
-        <Tooltip content={`Quit ${APPLICATION.NAME}`} position="top">
+        <Tooltip
+          content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
+          position="top"
+        >
           <IconButton
-            label={`Quit ${APPLICATION.NAME}`}
+            label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
             icon={() => (
               <IconTile
                 icon={CrossCircleIcon}
-                label={`Quit ${APPLICATION.NAME}`}
+                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
                 appearance="red"
                 shape="circle"
               />

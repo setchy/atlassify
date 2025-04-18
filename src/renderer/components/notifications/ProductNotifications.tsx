@@ -1,4 +1,5 @@
 import { type FC, type MouseEvent, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -22,6 +23,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   productNotifications,
 }) => {
   const { markNotificationsRead, settings } = useContext(AppContext);
+  const { t } = useTranslation();
 
   const [animateExit, setAnimateExit] = useState(false);
   const [showProductNotifications, setShowProductNotifications] =
@@ -63,7 +65,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
           <Tooltip
             content={
               productDetails.home
-                ? `Open ${formatProperCase(productDetails.name)}`
+                ? t('notifications.product.open_product', {
+                    name: formatProperCase(productDetails.name),
+                  })
                 : ''
             }
             position="right"
@@ -91,11 +95,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
 
           <Inline space="space.100">
             <Tooltip
-              content="Mark all product notifications as read"
+              content={t('notifications.product.mark_all_read')}
               position="bottom"
             >
               <IconButton
-                label="Mark all product notifications as read"
+                label={t('notifications.product.mark_all_read')}
                 icon={() => <UnreadIcon />}
                 shape="circle"
                 spacing="compact"

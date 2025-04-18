@@ -1,6 +1,7 @@
 import EyeOpenIcon from '@atlaskit/icon/core/eye-open';
 import FlagIcon from '@atlaskit/icon/core/flag';
 
+import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -11,13 +12,13 @@ import type { Filter, FilterDetails } from './types';
 
 const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
   direct: {
-    name: 'direct',
-    description: 'Direct notification',
+    name: i18n.t('filters.category.direct.title'),
+    description: i18n.t('filters.category.direct.description'),
     icon: FlagIcon,
   },
   watching: {
-    name: 'watching',
-    description: 'Watching notification',
+    name: i18n.t('filters.category.watching.title'),
+    description: i18n.t('filters.category.watching.description'),
     icon: EyeOpenIcon,
   },
 };

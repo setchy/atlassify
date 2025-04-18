@@ -2,6 +2,7 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "biomejs.biome",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "lokalise.i18n-ally"
   ]
 }

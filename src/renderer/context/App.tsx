@@ -9,6 +9,7 @@ import {
 
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
+import { DEFAULT_LANGUAGE } from '../i18n';
 import {
   type Account,
   type AccountNotifications,
@@ -53,6 +54,7 @@ export const defaultAuth: AuthState = {
 };
 
 const defaultAppearanceSettings: AppearanceSettingsState = {
+  language: DEFAULT_LANGUAGE,
   theme: Theme.LIGHT,
   zoomPercentage: 100,
 };
