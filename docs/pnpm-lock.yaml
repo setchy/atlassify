@@ -24,8 +24,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       astro:
-        specifier: 5.7.5
-        version: 5.7.5(@types/node@22.9.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.5.4)
+        specifier: 5.7.8
+        version: 5.7.8(@types/node@22.9.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.5
         version: 1.1.5
@@ -990,8 +990,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.7.5:
-    resolution: {integrity: sha512-c59YuYiXyWWnUMOBlDczrjqKzF0dJQP20EP9vqDggcyKm//tEt9iJHNwoYq4r3UeO9UJCwlGK8FwaGTAwwF3IA==}
+  astro@5.7.8:
+    resolution: {integrity: sha512-82ku6+wOGXP5c5+YOkBzEGJ/k8/GVSeN0xD/TNUrPf5nvWpGGpngxtUAwuruKF6wIxRC1/SwlUVCs/4QT98iZQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2053,8 +2053,8 @@ packages:
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
-  unifont@0.2.0:
-    resolution: {integrity: sha512-RoF14/tOhLvDa7R5K6A3PjsfJVFKvadvRpWjfV1ttabUe9704P1ie9z1ABLWEts/8SxrBVePav/XhgeFNltpsw==}
+  unifont@0.4.1:
+    resolution: {integrity: sha512-zKSY9qO8svWYns+FGKjyVdLvpGPwqmsCjeJLN1xndMiqxHWBAhoWDMYMG960MxeV48clBmG+fDP59dHY1VoZvg==}
 
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
@@ -3110,7 +3110,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.7.5(@types/node@22.9.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.5.4):
+  astro@5.7.8(@types/node@22.9.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.8)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -3159,7 +3159,7 @@ snapshots:
       tinyglobby: 0.2.12
       tsconfck: 3.1.5(typescript@5.5.4)
       ultrahtml: 1.6.0
-      unifont: 0.2.0
+      unifont: 0.4.1
       unist-util-visit: 5.0.0
       unstorage: 1.15.0
       vfile: 6.0.3
@@ -4585,7 +4585,7 @@ snapshots:
       trough: 2.2.0
       vfile: 6.0.3
 
-  unifont@0.2.0:
+  unifont@0.4.1:
     dependencies:
       css-tree: 3.1.0
       ohash: 2.0.11
