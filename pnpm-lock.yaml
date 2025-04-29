@@ -43,8 +43,8 @@ importers:
         specifier: 1.12.16
         version: 1.12.16(graphql@16.11.0)(typescript@5.8.3)
       '@atlaskit/avatar':
-        specifier: 25.0.2
-        version: 25.0.2(@babel/core@7.26.10)(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 25.0.3
+        version: 25.0.3(@babel/core@7.26.10)(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
         specifier: 18.1.1
         version: 18.1.1(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -293,8 +293,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.2.0
 
-  '@atlaskit/avatar@25.0.2':
-    resolution: {integrity: sha512-Nw8K6t6KIfoe5LVrrgR7c/r13E0kIRyu99/x0ksCPewFTqAy2ix0Azzdq5Q+6fULn1ODkSYLDTEJGfhW+l3DNA==}
+  '@atlaskit/avatar@25.0.3':
+    resolution: {integrity: sha512-obHneuCP+PZgbjo+w6g3MH0TQ27JLAwhCw6M434UVY6268WwTDs0bq4FXF/wLKmllKg30pXLkEFfpN5I4or13g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5912,7 +5912,7 @@ snapshots:
       '@babel/runtime': 7.27.0
       react: 18.3.1
 
-  '@atlaskit/avatar@25.0.2(@babel/core@7.26.10)(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@25.0.3(@babel/core@7.26.10)(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.10.0(@types/react@18.3.20)(react@18.3.1)
