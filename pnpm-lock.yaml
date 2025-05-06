@@ -67,8 +67,8 @@ importers:
         specifier: 25.6.0
         version: 25.6.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: 14.0.5
-        version: 14.0.5(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.0.0
+        version: 15.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 18.0.0
         version: 18.0.0(@types/react@18.3.21)(react@18.3.1)
@@ -364,8 +364,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-message@14.0.5':
-    resolution: {integrity: sha512-0biYbafxqq7yZF04Z7mLXHmafi87ucK5bsWUS8in4Rv3mSU8nAGD6bEmJ4br8Lh2qc2YIULGv7o8svqmudmPcw==}
+  '@atlaskit/inline-message@15.0.0':
+    resolution: {integrity: sha512-f4adRjb3wlnESYvATBmRcNo+HWrd5EvuPyZ+t6H3Du/y4YPw5E51jTmuC0FOqZJKwhcJs+nlTZHtTEQX6Wa8CA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6127,7 +6127,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/inline-message@14.0.5(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-message@15.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 23.0.6(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon': 25.6.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
