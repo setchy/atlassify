@@ -12,27 +12,37 @@
     "helpers:pinGitHubActionDigests",
     ":semanticCommitTypeAll(chore)"
   ],
-  "labels": ["dependency"],
+  "labels": [
+    "dependency"
+  ],
   "rangeStrategy": "pin",
   "packageRules": [
     {
-      "matchDepTypes": ["engines"],
+      "matchDepTypes": [
+        "engines"
+      ],
       "rangeStrategy": "auto"
     },
     {
       "description": "Remove word `dependency` from commit messages and PR titles",
-      "matchDatasources": ["npm"],
+      "matchDatasources": [
+        "npm"
+      ],
       "commitMessageTopic": "{{depName}}"
     },
     {
       "description": "Override renovate atlaskit preset for cleaner PRs",
-      "extends": ["packages:atlaskit"],
+      "extends": [
+        "packages:atlaskit"
+      ],
       "groupName": "@atlaskit",
       "additionalBranchPrefix": "{{depNameSanitized}}-"
     },
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
-      "extends": ["packages:atlaskit"],
+      "extends": [
+        "packages:atlaskit"
+      ],
       "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
       "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
     }
@@ -44,8 +54,12 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
-      "fileMatch": ["sonar-project.properties"],
-      "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"]
+      "managerFilePatterns": [
+        "/sonar-project.properties/"
+      ],
+      "matchStrings": [
+        "\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"
+      ]
     }
   ]
 }
