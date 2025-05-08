@@ -44,7 +44,7 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "setchy/atlassify",
       "versioningTemplate": "loose",
-      "fileMatch": ["sonar-project.properties"],
+      "managerFilePatterns": ["/sonar-project.properties/"],
       "matchStrings": ["\\s?sonar.projectVersion=(?<currentValue>.+?)\\s"]
     }
   ]
