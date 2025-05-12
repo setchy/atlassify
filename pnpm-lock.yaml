@@ -64,8 +64,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: 25.7.0
-        version: 25.7.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
+        specifier: 26.0.0
+        version: 26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/inline-message':
         specifier: 15.0.0
         version: 15.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -356,6 +356,11 @@ packages:
 
   '@atlaskit/icon@25.7.0':
     resolution: {integrity: sha512-0aapJndnwg7+36CRL02I3j4mSu87MsNPaDdktqDwmq711vfnCc/g31iAYTXODAHu49FivzvsiUTn0BaUKahg/A==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/icon@26.0.0':
+    resolution: {integrity: sha512-2iw+3BRvyrVXxLT1LqDvm6SnHJDOD8Z86o11rlFXsNAvI6/WOhIIepam/GRsjY6LbB9CUyvLBn3pXebZcsFqhg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6126,6 +6131,19 @@ snapshots:
       '@babel/register': 7.25.9(@babel/core@7.26.10)
       '@babel/runtime': 7.27.0
       '@emotion/react': 11.13.3(@types/react@18.3.21)(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/icon@26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
+      '@atlaskit/tokens': 4.8.2(@types/react@18.3.21)(react@18.3.1)
+      '@babel/register': 7.25.9(@babel/core@7.26.10)
+      '@babel/runtime': 7.27.0
+      '@compiled/react': 0.18.3(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
       - '@babel/core'
