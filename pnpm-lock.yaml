@@ -91,8 +91,8 @@ importers:
         specifier: 8.0.4
         version: 8.0.4(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: 15.0.4
-        version: 15.0.4(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.0.5
+        version: 15.0.5(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 4.8.2
         version: 4.8.2(@types/react@18.3.21)(react@18.3.1)
@@ -359,6 +359,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/icon@26.0.0':
+    resolution: {integrity: sha512-2iw+3BRvyrVXxLT1LqDvm6SnHJDOD8Z86o11rlFXsNAvI6/WOhIIepam/GRsjY6LbB9CUyvLBn3pXebZcsFqhg==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/inline-dialog@17.0.2':
     resolution: {integrity: sha512-mJ0G4KvcMtfY84vA+c5e+OZcP2gvqnx8eZDGYL7DBsBNmwe2HwIpNA+55s48YQ5i8TOLXX2UweKMEtjiegNyGg==}
     peerDependencies:
@@ -448,8 +453,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.0.4':
-    resolution: {integrity: sha512-hlliKrlvinVJfom7b0n4rfXceNKMZKHqTa6TRZ/xv+GYPf3ywazeWNEeumkVG4Z90PIy+TkPGZdBt1vbVyjdaQ==}
+  '@atlaskit/toggle@15.0.5':
+    resolution: {integrity: sha512-ARf5Ts8eZAlRAOFYMWH1R/4y1sAyA2hiRZYX3ueF79AIoYYba9yhO7B4e06rrxqyjdysK+p0Bc1NKPyZ1Lp6ew==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6132,6 +6137,19 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/icon@26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
+      '@atlaskit/tokens': 4.8.2(@types/react@18.3.21)(react@18.3.1)
+      '@babel/register': 7.25.9(@babel/core@7.26.10)
+      '@babel/runtime': 7.27.0
+      '@compiled/react': 0.18.3(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/inline-dialog@17.0.2(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6396,12 +6414,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.0.4(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/toggle@15.0.5(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.10.0(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.21)(react@18.3.1)
-      '@atlaskit/icon': 25.7.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
+      '@atlaskit/icon': 26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
       '@atlaskit/primitives': 14.7.1(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 18.0.0(@types/react@18.3.21)(react@18.3.1)
