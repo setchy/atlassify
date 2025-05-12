@@ -87,7 +87,7 @@
     "@atlaskit/select": "20.4.0",
     "@atlaskit/spinner": "18.0.4",
     "@atlaskit/textfield": "8.0.4",
-    "@atlaskit/toggle": "15.0.4",
+    "@atlaskit/toggle": "15.0.5",
     "@atlaskit/tokens": "4.8.2",
     "@atlaskit/tooltip": "20.0.6",
     "@biomejs/biome": "1.9.4",
