@@ -64,8 +64,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/icon':
-        specifier: 25.7.0
-        version: 25.7.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
+        specifier: 26.0.0
+        version: 26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/inline-message':
         specifier: 15.0.0
         version: 15.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

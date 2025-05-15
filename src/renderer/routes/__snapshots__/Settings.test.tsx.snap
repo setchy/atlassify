@@ -25,11 +25,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           >
             <span
               aria-hidden="true"
-              class="css-kxjlgc"
+              class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
               style="color: currentColor;"
             >
               <svg
-                class="css-1t4wpzr"
+                class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                 fill="none"
                 role="presentation"
                 viewBox="0 0 16 16"
@@ -310,11 +310,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           >
                             <span
                               aria-hidden="true"
-                              class="css-kxjlgc"
+                              class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                               style="color: currentColor;"
                             >
                               <svg
-                                class="css-1t4wpzr"
+                                class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                                 fill="none"
                                 role="presentation"
                                 viewBox="0 0 16 16"
@@ -349,11 +349,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           >
                             <span
                               aria-hidden="true"
-                              class="css-kxjlgc"
+                              class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                               style="color: currentColor;"
                             >
                               <svg
-                                class="css-1t4wpzr"
+                                class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                                 fill="none"
                                 role="presentation"
                                 viewBox="0 0 16 16"
@@ -396,11 +396,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         >
                           <span
                             aria-hidden="true"
-                            class="css-kxjlgc"
+                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                             style="color: currentColor;"
                           >
                             <svg
-                              class="css-1t4wpzr"
+                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                               fill="none"
                               role="presentation"
                               viewBox="0 0 16 16"
@@ -1211,16 +1211,16 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="css-my19lg"
+                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk4v9p _syaz1ov1 _1bsb1tcg _4t3i1tcg _2rko14q2"
               >
                 <span
                   aria-label="Accounts"
-                  class="css-1dbakxj"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
                   role="img"
                   style="color: currentColor;"
                 >
                   <svg
-                    class="css-u7v0tx"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
                     fill="none"
                     role="presentation"
                     viewBox="-4 -4 24 24"
@@ -1255,16 +1255,16 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="css-hybpiu"
+                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1rtt _syaznbxb _1bsb1tcg _4t3i1tcg _2rko14q2"
               >
                 <span
                   aria-label="Quit Atlassify"
-                  class="css-1dbakxj"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
                   role="img"
                   style="color: currentColor;"
                 >
                   <svg
-                    class="css-u7v0tx"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
                     fill="none"
                     role="presentation"
                     viewBox="-4 -4 24 24"
