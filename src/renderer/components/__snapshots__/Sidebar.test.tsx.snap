@@ -12,10 +12,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -49,10 +49,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -86,10 +86,10 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -123,11 +123,11 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
   >
     <span
       aria-label="groupByProduct"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -161,11 +161,11 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
   >
     <span
       aria-label="groupByProduct"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -199,11 +199,11 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
   >
     <span
       aria-label="groupByProduct"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -485,10 +485,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   >
                     <span
                       aria-hidden="true"
-                      class="css-kxjlgc"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                     >
                       <svg
-                        class="css-1t4wpzr"
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                         fill="none"
                         role="presentation"
                         viewBox="0 0 16 16"
@@ -532,10 +532,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -817,10 +817,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -864,10 +864,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               >
                 <span
                   aria-hidden="true"
-                  class="css-kxjlgc"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 >
                   <svg
-                    class="css-1t4wpzr"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                     fill="none"
                     role="presentation"
                     viewBox="0 0 16 16"
@@ -1206,10 +1206,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   >
                     <span
                       aria-hidden="true"
-                      class="css-kxjlgc"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                     >
                       <svg
-                        class="css-1t4wpzr"
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                         fill="none"
                         role="presentation"
                         viewBox="0 0 16 16"
@@ -1253,10 +1253,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -1538,10 +1538,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -1585,10 +1585,10 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               >
                 <span
                   aria-hidden="true"
-                  class="css-kxjlgc"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 >
                   <svg
-                    class="css-1t4wpzr"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                     fill="none"
                     role="presentation"
                     viewBox="0 0 16 16"
@@ -1927,10 +1927,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   >
                     <span
                       aria-hidden="true"
-                      class="css-kxjlgc"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                     >
                       <svg
-                        class="css-1t4wpzr"
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                         fill="none"
                         role="presentation"
                         viewBox="0 0 16 16"
@@ -1974,10 +1974,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -2259,10 +2259,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -2306,10 +2306,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
               >
                 <span
                   aria-hidden="true"
-                  class="css-kxjlgc"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 >
                   <svg
-                    class="css-1t4wpzr"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                     fill="none"
                     role="presentation"
                     viewBox="0 0 16 16"
@@ -2648,10 +2648,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   >
                     <span
                       aria-hidden="true"
-                      class="css-kxjlgc"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                     >
                       <svg
-                        class="css-1t4wpzr"
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                         fill="none"
                         role="presentation"
                         viewBox="0 0 16 16"
@@ -2695,10 +2695,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -2980,10 +2980,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 >
                   <span
                     aria-hidden="true"
-                    class="css-kxjlgc"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                   >
                     <svg
-                      class="css-1t4wpzr"
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                       fill="none"
                       role="presentation"
                       viewBox="0 0 16 16"
@@ -3027,10 +3027,10 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
               >
                 <span
                   aria-hidden="true"
-                  class="css-kxjlgc"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 >
                   <svg
-                    class="css-1t4wpzr"
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
                     fill="none"
                     role="presentation"
                     viewBox="0 0 16 16"
@@ -3121,10 +3121,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -3158,10 +3158,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"
@@ -3195,10 +3195,10 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
   >
     <span
       aria-hidden="true"
-      class="css-kxjlgc"
+      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
     >
       <svg
-        class="css-1t4wpzr"
+        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
         fill="none"
         role="presentation"
         viewBox="0 0 16 16"

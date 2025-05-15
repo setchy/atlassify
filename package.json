@@ -138,7 +138,12 @@
   },
   "packageManager": "pnpm@10.10.0",
   "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "@parcel/watcher", "electron"]
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "@parcel/watcher",
+      "@tailwindcss/oxide",
+      "electron"
+    ]
   },
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
