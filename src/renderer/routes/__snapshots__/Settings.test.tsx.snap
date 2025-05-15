@@ -539,11 +539,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     >
                       <span
                         aria-label="info inline message"
-                        class="css-1afrefi"
+                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
                         data-testid="inline-message-icon"
                         data-vc="icon-inline-message-icon"
                         role="img"
-                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        style="--icon-primary-color: currentColor;"
                       >
                         <svg
                           height="24"
@@ -646,11 +646,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     >
                       <span
                         aria-label="info inline message"
-                        class="css-1afrefi"
+                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
                         data-testid="inline-message-icon"
                         data-vc="icon-inline-message-icon"
                         role="img"
-                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        style="--icon-primary-color: currentColor;"
                       >
                         <svg
                           height="24"
@@ -825,11 +825,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     >
                       <span
                         aria-label="info inline message"
-                        class="css-1afrefi"
+                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
                         data-testid="inline-message-icon"
                         data-vc="icon-inline-message-icon"
                         role="img"
-                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        style="--icon-primary-color: currentColor;"
                       >
                         <svg
                           height="24"
@@ -1058,11 +1058,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     >
                       <span
                         aria-label="info inline message"
-                        class="css-1afrefi"
+                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
                         data-testid="inline-message-icon"
                         data-vc="icon-inline-message-icon"
                         role="img"
-                        style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                        style="--icon-primary-color: currentColor;"
                       >
                         <svg
                           height="24"
