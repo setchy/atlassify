@@ -52,8 +52,8 @@ importers:
         specifier: 23.0.8
         version: 23.0.8(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 17.1.0
-        version: 17.1.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 17.1.2
+        version: 17.1.2(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 7.2.0
         version: 7.2.0(@types/react@18.3.21)(react@18.3.1)
@@ -313,8 +313,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/checkbox@17.1.0':
-    resolution: {integrity: sha512-CoeL1lxcp8jrjUHwYZOprScMARp+U/lVk99+O+AZ2srVQA2SBqcy5uJAzWgT7c6TbLmljGEx7GzB++m+mj0yAw==}
+  '@atlaskit/checkbox@17.1.2':
+    resolution: {integrity: sha512-Gw395XS/IqKju3z1og0q9ERIW8SfB725nTxXYTsMKtmGJK7dQqi2CgHQLlE2mm7nKSBOCrfxZELhQoDw4naoQA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6026,16 +6026,16 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@17.1.0(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@17.1.2(@babel/core@7.26.10)(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.10.0(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.21)(react@18.3.1)
-      '@atlaskit/icon': 25.7.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
+      '@atlaskit/icon': 26.0.0(@babel/core@7.26.10)(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.0(react@18.3.1)
       '@atlaskit/theme': 18.0.0(@types/react@18.3.21)(react@18.3.1)
       '@atlaskit/tokens': 4.8.2(@types/react@18.3.21)(react@18.3.1)
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
       '@compiled/react': 0.18.3(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
@@ -6046,7 +6046,7 @@ snapshots:
 
   '@atlaskit/codemod-utils@4.2.4':
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
 
   '@atlaskit/css-reset@7.2.0(@types/react@18.3.21)(react@18.3.1)':
     dependencies:
