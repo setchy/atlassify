@@ -336,6 +336,11 @@ export interface AtlassifyNotification {
    * The account that the notification belongs to.
    */
   account: Account;
+
+  /**
+   * Number of notifications with the same title
+   */
+  duplicateCount?: number;
 }
 
 /**

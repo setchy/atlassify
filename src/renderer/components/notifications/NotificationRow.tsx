@@ -10,6 +10,7 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 
+import Badge from '@atlaskit/badge';
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
@@ -112,6 +113,11 @@ export const NotificationRow: FC<INotificationRow> = ({
                       &nbsp;&nbsp;
                       <Text size="small" as="em" align="end">
                         {updatedAt}
+                        {notification.duplicateCount > 0 && (
+                          <Badge appearance="primary">
+                            {notification.duplicateCount}
+                          </Badge>
+                        )}
                       </Text>
                     </Box>
                     <Box id="notification-metadata">

@@ -76,6 +76,26 @@ export async function getAllNotifications(
 
           notifications = filterNotifications(notifications, state.settings);
 
+          // Remove duplicate notifications by title
+          if (true) {
+            // Count how many duplicate notifications were removed by title and update each notification object
+            for (const notification of notifications) {
+              const duplicateCount = notifications.filter(
+                (n) => n.message === notification.message,
+              ).length;
+
+              if (duplicateCount > 1) {
+                notification.duplicateCount = duplicateCount - 1;
+              }
+            }
+
+            notifications = notifications.filter(
+              (notification, index, self) =>
+                index ===
+                self.findIndex((n) => n.message === notification.message),
+            );
+          }
+
           return {
             account: accountNotifications.account,
             notifications: notifications,
