@@ -9,6 +9,8 @@ import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
 import NotificationIcon from '@atlaskit/icon/core/notification';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
 import SettingsIcon from '@atlaskit/icon/core/settings';
+// import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
+import SummarizeIcon from '@atlaskit/icon/core/summarize';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -165,6 +167,36 @@ export const Sidebar: FC = () => {
                     spacing="compact"
                     shape="circle"
                     testId="sidebar-group-by-product"
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  content={t('sidebar.toggles.groupByTitle.tooltip')}
+                  position="right"
+                >
+                  <IconButton
+                    label={t('sidebar.toggles.groupByTitle.label')}
+                    icon={() => (
+                      // <CollapseVerticalIcon
+                      <SummarizeIcon
+                        label="groupByTitle"
+                        color={sidebarIconColorToken}
+                      />
+                    )}
+                    onClick={() => {
+                      updateSetting(
+                        'groupNotificationsByTitle',
+                        !settings.groupNotificationsByTitle,
+                      );
+                    }}
+                    appearance={
+                      settings.groupNotificationsByTitle
+                        ? 'discovery'
+                        : 'subtle'
+                    }
+                    spacing="compact"
+                    shape="circle"
+                    testId="sidebar-group-by-title"
                   />
                 </Tooltip>
 

@@ -77,16 +77,16 @@ export async function getAllNotifications(
           notifications = filterNotifications(notifications, state.settings);
 
           // Remove duplicate notifications by title
-          if (true) {
+          if (state.settings.groupNotificationsByTitle) {
             // Count how many duplicate notifications were removed by title and update each notification object
             for (const notification of notifications) {
-              const duplicateCount = notifications.filter(
+              const matchedNotifications = notifications.filter(
                 (n) => n.message === notification.message,
-              ).length;
+              );
 
-              if (duplicateCount > 1) {
-                notification.duplicateCount = duplicateCount - 1;
-              }
+              notification.matchingNotificationIDs = matchedNotifications.map(
+                (n) => n.id,
+              );
             }
 
             notifications = notifications.filter(
@@ -159,6 +159,7 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
       },
       product: getAtlassianProduct(headNotification),
       account: account,
+      matchingNotificationIDs: [],
     };
   });
 }

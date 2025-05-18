@@ -140,6 +140,11 @@ export interface NotificationSettingsState {
    * Whether to sort grouped notifications by product alphabetically or time.
    */
   groupNotificationsByProductAlphabetically: boolean;
+
+  /**
+   * Whether to group notifications by title.
+   */
+  groupNotificationsByTitle: boolean;
 }
 
 /**
@@ -338,9 +343,9 @@ export interface AtlassifyNotification {
   account: Account;
 
   /**
-   * Number of notifications with the same title
+   * The notification IDs of other notifications that have the same notification title
    */
-  duplicateCount?: number;
+  matchingNotificationIDs?: string[];
 }
 
 /**

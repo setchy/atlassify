@@ -113,10 +113,13 @@ export const NotificationRow: FC<INotificationRow> = ({
                       &nbsp;&nbsp;
                       <Text size="small" as="em" align="end">
                         {updatedAt}
-                        {notification.duplicateCount > 0 && (
-                          <Badge appearance="primary">
-                            {notification.duplicateCount}
-                          </Badge>
+                        {notification.matchingNotificationIDs.length > 0 && (
+                          <>
+                            &nbsp;&nbsp;
+                            <Badge appearance="default">
+                              {notification.matchingNotificationIDs.length}
+                            </Badge>
+                          </>
                         )}
                       </Text>
                     </Box>

@@ -38,6 +38,7 @@ const mockNotificationSettings: NotificationSettingsState = {
   fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
+  groupNotificationsByTitle: false,
 };
 
 const mockSystemSettings: SystemSettingsState = {
