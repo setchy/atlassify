@@ -16,18 +16,22 @@ import * as types from './graphql';
  */
 type Documents = {
     "\n    query Me {\n      me {\n        user {\n          accountId\n          name\n          picture\n        }\n      }\n    }\n  ": typeof types.MeDocument,
-    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": typeof types.MyNotificationsDocument,
+    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $flat: Boolean = true,\n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: $flat, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": typeof types.MyNotificationsDocument,
     "\n    mutation MarkAsRead($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsRead(ids: $notificationIDs) \n      }\n    }\n  ": typeof types.MarkAsReadDocument,
     "\n    mutation MarkAsUnread($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsUnread(ids: $notificationIDs) \n      }\n    }\n  ": typeof types.MarkAsUnreadDocument,
-    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": typeof types.AtlassianNotificationFragmentDoc,
+    "\n    mutation MarkGroupAsRead($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsRead(groupId: $groupId) \n      }\n    }\n  ": typeof types.MarkGroupAsReadDocument,
+    "\n    mutation MarkGroupAsUnread($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsUnread(groupId: $groupId) \n      }\n    }\n  ": typeof types.MarkGroupAsUnreadDocument,
+    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      groupSize\n      additionalActors {\n        displayName\n        avatarURL\n      }\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": typeof types.AtlassianNotificationFragmentDoc,
     "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": typeof types.AtlassianHeadNotificationFragmentDoc,
 };
 const documents: Documents = {
     "\n    query Me {\n      me {\n        user {\n          accountId\n          name\n          picture\n        }\n      }\n    }\n  ": types.MeDocument,
-    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": types.MyNotificationsDocument,
+    "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $flat: Boolean = true,\n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: $flat, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  ": types.MyNotificationsDocument,
     "\n    mutation MarkAsRead($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsRead(ids: $notificationIDs) \n      }\n    }\n  ": types.MarkAsReadDocument,
     "\n    mutation MarkAsUnread($notificationIDs: [String!]!) {\n      notifications {\n        markNotificationsByIdsAsUnread(ids: $notificationIDs) \n      }\n    }\n  ": types.MarkAsUnreadDocument,
-    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": types.AtlassianNotificationFragmentDoc,
+    "\n    mutation MarkGroupAsRead($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsRead(groupId: $groupId) \n      }\n    }\n  ": types.MarkGroupAsReadDocument,
+    "\n    mutation MarkGroupAsUnread($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsUnread(groupId: $groupId) \n      }\n    }\n  ": types.MarkGroupAsUnreadDocument,
+    "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      groupSize\n      additionalActors {\n        displayName\n        avatarURL\n      }\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": types.AtlassianNotificationFragmentDoc,
     "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": types.AtlassianHeadNotificationFragmentDoc,
 };
 
@@ -38,7 +42,7 @@ export function graphql(source: "\n    query Me {\n      me {\n        user {\n 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: true, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  "): typeof import('./graphql').MyNotificationsDocument;
+export function graphql(source: "\n    query MyNotifications\n      (\n        $readState: InfluentsNotificationReadState, \n        $flat: Boolean = true,\n        $first: Int\n      ) \n      {\n      notifications {\n        unseenNotificationCount\n        notificationFeed(\n          flat: $flat, \n          first: $first,\n          filter: {\n            readStateFilter: $readState\n          }\n        ) {\n          pageInfo {\n            hasNextPage\n          }\n          nodes {\n            ...AtlassianNotification\n          }\n        }\n      }\n    }\n  "): typeof import('./graphql').MyNotificationsDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -50,7 +54,15 @@ export function graphql(source: "\n    mutation MarkAsUnread($notificationIDs: [
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  "): typeof import('./graphql').AtlassianNotificationFragmentDoc;
+export function graphql(source: "\n    mutation MarkGroupAsRead($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsRead(groupId: $groupId) \n      }\n    }\n  "): typeof import('./graphql').MarkGroupAsReadDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    mutation MarkGroupAsUnread($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsUnread(groupId: $groupId) \n      }\n    }\n  "): typeof import('./graphql').MarkGroupAsUnreadDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      groupSize\n      additionalActors {\n        displayName\n        avatarURL\n      }\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  "): typeof import('./graphql').AtlassianNotificationFragmentDoc;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

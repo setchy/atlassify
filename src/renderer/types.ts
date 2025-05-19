@@ -332,10 +332,7 @@ export interface AtlassifyNotification {
   /**
    * The actor who created the notification.
    */
-  actor: {
-    displayName: string;
-    avatarURL: Link;
-  };
+  actor: AtlassifyActor;
 
   /**
    * The account that the notification belongs to.
@@ -343,9 +340,34 @@ export interface AtlassifyNotification {
   account: Account;
 
   /**
-   * The notification IDs of other notifications that have the same notification title
+   * The notification group details when not fetching as flat list.
    */
-  matchingNotificationIDs?: string[];
+  notificationGroup: AtlassifyNotificationGroup;
+}
+
+export interface AtlassifyActor {
+  displayName: string;
+  avatarURL: Link;
+}
+
+/**
+ * The notification group details when not fetching as flat list.
+ */
+export interface AtlassifyNotificationGroup {
+  /**
+   * The unique identifier for the notification group.
+   */
+  id: string;
+
+  /**
+   * The group size for the notification group.'
+   */
+  size: number;
+
+  /**
+   * Additional actors that made updates as part of the group.
+   */
+  additionalActors: AtlassifyActor[];
 }
 
 /**

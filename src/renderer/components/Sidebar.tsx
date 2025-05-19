@@ -3,14 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
+import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import FilterIcon from '@atlaskit/icon/core/filter';
 import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
 import NotificationIcon from '@atlaskit/icon/core/notification';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
 import SettingsIcon from '@atlaskit/icon/core/settings';
-// import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
-import SummarizeIcon from '@atlaskit/icon/core/summarize';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -177,8 +176,7 @@ export const Sidebar: FC = () => {
                   <IconButton
                     label={t('sidebar.toggles.groupByTitle.label')}
                     icon={() => (
-                      // <CollapseVerticalIcon
-                      <SummarizeIcon
+                      <CollapseVerticalIcon
                         label="groupByTitle"
                         color={sidebarIconColorToken}
                       />
