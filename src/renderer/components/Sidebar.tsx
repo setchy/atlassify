@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
+import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import FilterIcon from '@atlaskit/icon/core/filter';
 import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
@@ -165,6 +166,35 @@ export const Sidebar: FC = () => {
                     spacing="compact"
                     shape="circle"
                     testId="sidebar-group-by-product"
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  content={t('sidebar.toggles.groupByTitle.tooltip')}
+                  position="right"
+                >
+                  <IconButton
+                    label={t('sidebar.toggles.groupByTitle.label')}
+                    icon={() => (
+                      <CollapseVerticalIcon
+                        label="groupByTitle"
+                        color={sidebarIconColorToken}
+                      />
+                    )}
+                    onClick={() => {
+                      updateSetting(
+                        'groupNotificationsByTitle',
+                        !settings.groupNotificationsByTitle,
+                      );
+                    }}
+                    appearance={
+                      settings.groupNotificationsByTitle
+                        ? 'discovery'
+                        : 'subtle'
+                    }
+                    spacing="compact"
+                    shape="circle"
+                    testId="sidebar-group-by-title"
                   />
                 </Tooltip>
 

@@ -10,6 +10,8 @@ import type {
   Status,
 } from '../types';
 import {
+  markNotificationGroupAsRead,
+  markNotificationGroupAsUnread,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
@@ -109,9 +111,18 @@ export const useNotifications = (): NotificationsState => {
       const notificationIDs = readNotifications.map(
         (notification) => notification.id,
       );
+      const notificationGroupIDs = readNotifications.map(
+        (notification) => notification.notificationGroup.id,
+      );
 
       try {
-        await markNotificationsAsRead(account, notificationIDs);
+        if (state.settings.groupNotificationsByTitle) {
+          for (const groupID of notificationGroupIDs) {
+            await markNotificationGroupAsRead(account, groupID);
+          }
+        } else {
+          await markNotificationsAsRead(account, notificationIDs);
+        }
 
         for (const notification of readNotifications) {
           notification.readState = 'read';
@@ -143,7 +154,7 @@ export const useNotifications = (): NotificationsState => {
 
   const markNotificationsUnread = useCallback(
     async (
-      _state: AtlassifyState,
+      state: AtlassifyState,
       unreadNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
@@ -152,9 +163,18 @@ export const useNotifications = (): NotificationsState => {
       const notificationIDs = unreadNotifications.map(
         (notification) => notification.id,
       );
+      const notificationGroupIDs = unreadNotifications.map(
+        (notification) => notification.notificationGroup.id,
+      );
 
       try {
-        await markNotificationsAsUnread(account, notificationIDs);
+        if (state.settings.groupNotificationsByTitle) {
+          for (const groupID of notificationGroupIDs) {
+            await markNotificationGroupAsUnread(account, groupID);
+          }
+        } else {
+          await markNotificationsAsUnread(account, notificationIDs);
+        }
 
         for (const notification of unreadNotifications) {
           notification.readState = 'unread';
