@@ -43,7 +43,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </svg>
             </span>
             <span
-              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
             >
               Go Back
             </span>
@@ -154,10 +154,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                       >
                         <span
                           aria-label="open"
-                          class="css-snhnyn"
+                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
                           data-vc="icon-undefined"
                           role="img"
-                          style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);"
+                          style="--icon-primary-color: currentColor;"
                         >
                           <svg
                             height="24"
@@ -328,7 +328,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                               </svg>
                             </span>
                             <span
-                              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                             >
                               Zoom out
                             </span>
@@ -367,7 +367,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                               </svg>
                             </span>
                             <span
-                              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                             >
                               Zoom in
                             </span>
@@ -414,7 +414,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                             </svg>
                           </span>
                           <span
-                            class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                            class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                           >
                             Reset zoom
                           </span>
@@ -1226,7 +1226,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 </span>
               </span>
               <span
-                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
               >
                 Accounts
               </span>
@@ -1270,7 +1270,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 </span>
               </span>
               <span
-                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
               >
                 Quit Atlassify
               </span>
