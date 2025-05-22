@@ -29,7 +29,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Filters
     </span>
@@ -66,7 +66,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Filters
     </span>
@@ -103,7 +103,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Filters
     </span>
@@ -141,7 +141,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Group notifications by products
     </span>
@@ -179,7 +179,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Group notifications by products
     </span>
@@ -217,7 +217,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group b
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Group notifications by products
     </span>
@@ -464,7 +464,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       />
                     </svg>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Home
                     </span>
@@ -502,7 +502,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       </svg>
                     </span>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Notifications
                     </span>
@@ -549,7 +549,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Quit Atlassify
                   </span>
@@ -796,7 +796,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     />
                   </svg>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Home
                   </span>
@@ -834,7 +834,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Notifications
                   </span>
@@ -881,7 +881,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Quit Atlassify
                 </span>
@@ -1185,7 +1185,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       />
                     </svg>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Home
                     </span>
@@ -1223,7 +1223,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                       </svg>
                     </span>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Notifications
                     </span>
@@ -1270,7 +1270,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Quit Atlassify
                   </span>
@@ -1517,7 +1517,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     />
                   </svg>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Home
                   </span>
@@ -1555,7 +1555,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Notifications
                   </span>
@@ -1602,7 +1602,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Quit Atlassify
                 </span>
@@ -1906,7 +1906,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       />
                     </svg>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Home
                     </span>
@@ -1944,7 +1944,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       </svg>
                     </span>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Notifications
                     </span>
@@ -1991,7 +1991,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Quit Atlassify
                   </span>
@@ -2238,7 +2238,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     />
                   </svg>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Home
                   </span>
@@ -2276,7 +2276,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Notifications
                   </span>
@@ -2323,7 +2323,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Quit Atlassify
                 </span>
@@ -2627,7 +2627,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       />
                     </svg>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Home
                     </span>
@@ -2665,7 +2665,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                       </svg>
                     </span>
                     <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
                       Notifications
                     </span>
@@ -2712,7 +2712,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Quit Atlassify
                   </span>
@@ -2959,7 +2959,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     />
                   </svg>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Home
                   </span>
@@ -2997,7 +2997,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     </svg>
                   </span>
                   <span
-                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
                     Notifications
                   </span>
@@ -3044,7 +3044,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Quit Atlassify
                 </span>
@@ -3138,7 +3138,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Notifications
     </span>
@@ -3175,7 +3175,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Notifications
     </span>
@@ -3212,7 +3212,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
       </svg>
     </span>
     <span
-      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
     >
       Notifications
     </span>
