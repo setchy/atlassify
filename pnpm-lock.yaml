@@ -73,8 +73,8 @@ importers:
         specifier: 18.0.0
         version: 18.0.0(@types/react@18.3.22)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 14.2.0
-        version: 14.2.0(@babel/core@7.27.1)(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 14.2.1
+        version: 14.2.1(@babel/core@7.27.1)(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 14.8.0
         version: 14.8.0(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -385,8 +385,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.2.0':
-    resolution: {integrity: sha512-HS6u90r9PgSnKiiG+SyBj3GBhxEPQHFkvDhINXAxRn5EnBEmQdHi9feMlQhrEWhWY2pFTGTMRF5yA4ybigEzQQ==}
+  '@atlaskit/modal-dialog@14.2.1':
+    resolution: {integrity: sha512-dxPZ1QevCW1/857psve+hVPEkD3WzYWf1gx+X2XWpfaIbUqo/H2SPUGG7yBxMMYDnthPQLjlWeRUccU3vbMbTg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5883,7 +5883,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.2.0(@babel/core@7.27.1)(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@14.2.1(@babel/core@7.27.1)(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 15.0.3(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7017,7 +7017,7 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@16.11.0)':
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/prisma-loader@8.0.17(@types/node@22.15.21)(encoding@0.1.13)(graphql@16.11.0)':
     dependencies:
@@ -7053,7 +7053,7 @@ snapshots:
       '@ardatan/relay-compiler': 12.0.3(encoding@0.1.13)(graphql@16.11.0)
       '@graphql-tools/utils': 10.8.6(graphql@16.11.0)
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -9321,7 +9321,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.11.0):
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   graphql-ws@6.0.5(graphql@16.11.0)(ws@8.18.2):
     dependencies:
