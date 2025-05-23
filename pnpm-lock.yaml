@@ -103,8 +103,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@compiled/webpack-loader':
-        specifier: 0.19.5
-        version: 0.19.5(webpack@5.99.9)
+        specifier: 0.19.6
+        version: 0.19.6(webpack@5.99.9)
       '@discordapp/twemoji':
         specifier: 15.1.0
         version: 15.1.0
@@ -712,14 +712,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@compiled/babel-plugin-strip-runtime@0.37.1':
-    resolution: {integrity: sha512-GESC3QXGhLd5ULzAre8NvbFmrICqD/lUX4VBse00VZmSeMDgbMMetPwFn9mfPdwiUj9tLXNTVswJzyT3OWYwtA==}
+  '@compiled/babel-plugin-strip-runtime@0.38.0':
+    resolution: {integrity: sha512-I+SazUOFjQ7wCNom4ZgtQ/Roy6iESW/kG4ucNwcJt0/AYqEN/nOcC+vDWkEdaZtoREbblYEz6kG3yS8Pz5sAdw==}
 
-  '@compiled/babel-plugin@0.37.1':
-    resolution: {integrity: sha512-lZUBJnySZlOHq16EnAUqnmz0EfOkoeclpH1nXZzs4aCJN7NOosnr2UPLbJtAsPuNJ1P2zstMSDGntMKhKOcA8w==}
+  '@compiled/babel-plugin@0.38.0':
+    resolution: {integrity: sha512-IoN8XGagcG/s5Xxr2pFO9sShyXZ299cq5sAUX4NCoGabm09EUSRQnwO7Djp32hXfpIetiCbdwE46/bqUnm8DQQ==}
 
-  '@compiled/css@0.20.0':
-    resolution: {integrity: sha512-cgRIqM+VWrwiG2S6b9DMkKm9bO5zG8ZMWvU6MNoKzQtkOPFFQ/jU4McN+4ilahHoJxUlHhLE8NoF0qL2UwzH4w==}
+  '@compiled/css@0.21.0':
+    resolution: {integrity: sha512-6eMEozYy62tTjRYgGs3XgwUDwbkbXhLbaX7ZEgwzZXzEWdQS9CmRzfsz1Tzw+92PGaa5cswDW0UThF8cCfpOjQ==}
 
   '@compiled/react@0.18.4':
     resolution: {integrity: sha512-tO0cAZTOMky8IcBscs6VQsMRUos8nXixIsQWPY8XWbF5JYYkIxuJ0ojpkjdUBkXBdgdjBjp6kczoub8BLPjHZg==}
@@ -729,8 +729,8 @@ packages:
   '@compiled/utils@0.13.2':
     resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
 
-  '@compiled/webpack-loader@0.19.5':
-    resolution: {integrity: sha512-+rS3VpLW7951J0A2Lt4TRMpi+6Tn0BXYh7RGvmIaKZ5oFijNpdHXKhSPuqe+zEP7i4soIUgtz4vmnrP32uFvbg==}
+  '@compiled/webpack-loader@0.19.6':
+    resolution: {integrity: sha512-8FEF/qC4LzPJSzZsh7jid3iwlWnN8ms1ETFcr4beDn3L8m90r2N7rn0Ms8/MVogcsRdAGn9RPYjlsbuCmVbA6Q==}
     peerDependencies:
       webpack: '>= 4.46.0'
 
@@ -6398,19 +6398,19 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@0.37.1':
+  '@compiled/babel-plugin-strip-runtime@0.38.0':
     dependencies:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/template': 7.27.2
       '@babel/traverse': 7.27.1
       '@babel/types': 7.27.1
-      '@compiled/css': 0.20.0
+      '@compiled/css': 0.21.0
       '@compiled/utils': 0.13.2
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/babel-plugin@0.37.1':
+  '@compiled/babel-plugin@0.38.0':
     dependencies:
       '@babel/core': 7.27.1
       '@babel/generator': 7.27.1
@@ -6421,14 +6421,14 @@ snapshots:
       '@babel/template': 7.27.2
       '@babel/traverse': 7.27.1
       '@babel/types': 7.27.1
-      '@compiled/css': 0.20.0
+      '@compiled/css': 0.21.0
       '@compiled/utils': 0.13.2
       '@emotion/is-prop-valid': 1.3.1
       resolve: 1.22.10
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/css@0.20.0':
+  '@compiled/css@0.21.0':
     dependencies:
       '@compiled/utils': 0.13.2
       autoprefixer: 10.4.21(postcss@8.5.3)
@@ -6450,13 +6450,13 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.4
 
-  '@compiled/webpack-loader@0.19.5(webpack@5.99.9)':
+  '@compiled/webpack-loader@0.19.6(webpack@5.99.9)':
     dependencies:
       '@babel/core': 7.27.1
       '@babel/parser': 7.27.2
-      '@compiled/babel-plugin': 0.37.1
-      '@compiled/babel-plugin-strip-runtime': 0.37.1
-      '@compiled/css': 0.20.0
+      '@compiled/babel-plugin': 0.38.0
+      '@compiled/babel-plugin-strip-runtime': 0.38.0
+      '@compiled/css': 0.21.0
       '@compiled/utils': 0.13.2
       enhanced-resolve: 5.18.1
       loader-utils: 2.0.4
