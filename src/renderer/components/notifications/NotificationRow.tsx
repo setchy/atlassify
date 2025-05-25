@@ -142,7 +142,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                       >
                         <Inline space="space.075">
                           <notification.product.logo
-                            size="xsmall"
+                            size="xxsmall"
                             appearance="brand"
                           />
                           <Text size="small">

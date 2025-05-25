@@ -43,7 +43,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               </svg>
             </span>
             <span
-              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
             >
               Go Back
             </span>
@@ -152,7 +152,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Refresh user@atlassify.io
                 </span>
@@ -191,7 +191,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Logout user@atlassify.io
                 </span>
@@ -240,7 +240,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               </svg>
             </span>
             <span
-              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
             >
               Add new account
             </span>
@@ -295,7 +295,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               </svg>
             </span>
             <span
-              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
             >
               Go Back
             </span>
@@ -404,7 +404,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Refresh user@atlassify.io
                 </span>
@@ -443,7 +443,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
                   </svg>
                 </span>
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                 >
                   Logout user@atlassify.io
                 </span>
@@ -492,7 +492,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               </svg>
             </span>
             <span
-              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _o5721q9c"
+              class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
             >
               Add new account
             </span>
