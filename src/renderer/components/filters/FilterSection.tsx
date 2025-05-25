@@ -60,7 +60,7 @@ export const FilterSection = <T extends FilterValue>({
               )}
               {typeDetails.logo && (
                 <typeDetails.logo
-                  size="xsmall"
+                  size="xxsmall"
                   appearance={isChecked ? 'brand' : 'neutral'}
                 />
               )}

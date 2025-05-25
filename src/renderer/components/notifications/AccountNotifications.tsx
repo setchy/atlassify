@@ -171,7 +171,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <IconButton
                 label={t('notifications.account.pull_requests')}
                 icon={(iconProps) => (
-                  <BitbucketIcon {...iconProps} size="xsmall" />
+                  <BitbucketIcon {...iconProps} size="xxsmall" />
                 )}
                 shape="circle"
                 spacing="compact"
