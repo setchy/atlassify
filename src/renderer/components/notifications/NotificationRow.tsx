@@ -153,15 +153,16 @@ export const NotificationRow: FC<INotificationRow> = ({
                       <Box id="notification-group">
                         {notification.notificationGroup.size > 1 && (
                           <Inline space="space.050" alignBlock="center">
-                            <AvatarGroup data={avatarGroup} size="small" />
+                            {notification.notificationGroup.additionalActors
+                              .length > 0 && (
+                              <AvatarGroup data={avatarGroup} size="small" />
+                            )}
                             <Text size="small">
-                              +{notification.notificationGroup.size - 1} updates
-                              from{' '}
-                              {
-                                notification.notificationGroup
-                                  .additionalActors[0].displayName
-                              }{' '}
-                              and others
+                              +{notification.notificationGroup.size - 1}{' '}
+                              {notification.notificationGroup
+                                .additionalActors[0]?.displayName
+                                ? `updates from ${notification.notificationGroup.additionalActors[0].displayName} and others`
+                                : 'other updates'}
                             </Text>
                           </Inline>
                         )}
