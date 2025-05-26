@@ -15,8 +15,8 @@ importers:
         specifier: 1.2.3
         version: 1.2.3
       '@octokit/openapi-types':
-        specifier: 25.0.0
-        version: 25.0.0
+        specifier: 25.1.0
+        version: 25.1.0
       '@tailwindcss/vite':
         specifier: 4.1.7
         version: 4.1.7(vite@6.3.4(@types/node@22.9.0)(jiti@2.4.2)(lightningcss@1.30.1))
@@ -629,8 +629,8 @@ packages:
     resolution: {integrity: sha512-Q8nFIagNLIZgM2odAraelMcDssapc+lF+y3OlcIPxyAU+knefO8KmozGqfnma1xegRDP4z5M73ABsamn72bOcA==}
     engines: {node: '>= 20'}
 
-  '@octokit/openapi-types@25.0.0':
-    resolution: {integrity: sha512-FZvktFu7HfOIJf2BScLKIEYjDsw6RKc7rBJCdvCTfKsVnx2GEB/Nbzjr29DUdb7vQhlzS/j8qDzdditP0OC6aw==}
+  '@octokit/openapi-types@25.1.0':
+    resolution: {integrity: sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA==}
 
   '@octokit/openapi-webhooks-types@11.0.0':
     resolution: {integrity: sha512-ZBzCFj98v3SuRM7oBas6BHZMJRadlnDoeFfvm1olVxZnYeU6Vh97FhPxyS5aLh5pN51GYv2I51l/hVUAVkGBlA==}
@@ -2811,7 +2811,7 @@ snapshots:
       '@octokit/request-error': 7.0.0
       '@octokit/types': 14.0.0
 
-  '@octokit/openapi-types@25.0.0': {}
+  '@octokit/openapi-types@25.1.0': {}
 
   '@octokit/openapi-webhooks-types@11.0.0': {}
 
@@ -2856,7 +2856,7 @@ snapshots:
 
   '@octokit/types@14.0.0':
     dependencies:
-      '@octokit/openapi-types': 25.0.0
+      '@octokit/openapi-types': 25.1.0
 
   '@octokit/webhooks-methods@6.0.0': {}
 
