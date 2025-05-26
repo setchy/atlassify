@@ -2355,6 +2355,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2591,6 +2595,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3025,6 +3033,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -3261,6 +3273,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -3752,6 +3768,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3988,6 +4008,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -4422,6 +4446,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -4658,6 +4686,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -5350,6 +5382,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -5586,6 +5622,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               </span>
                             </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
                       </div>
                     </div>
@@ -6020,6 +6060,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -6256,6 +6300,10 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
