@@ -26,7 +26,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "repository": {
     "type": "git",
