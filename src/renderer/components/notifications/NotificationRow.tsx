@@ -159,10 +159,12 @@ export const NotificationRow: FC<INotificationRow> = ({
                             )}
                             <Text size="small">
                               +{notification.notificationGroup.size - 1}{' '}
-                              {notification.notificationGroup
-                                .additionalActors[0]?.displayName
-                                ? `updates from ${notification.notificationGroup.additionalActors[0].displayName} and others`
+                              {notification.notificationGroup.additionalActors
+                                .length > 0
+                                ? `updates from ${notification.notificationGroup.additionalActors[0].displayName}`
                                 : 'other updates'}
+                              {notification.notificationGroup.additionalActors
+                                .length > 1 && ' and others'}
                             </Text>
                           </Inline>
                         )}
