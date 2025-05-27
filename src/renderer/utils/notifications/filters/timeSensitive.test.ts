@@ -14,15 +14,15 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
       timeSensitiveFilter.hasFilters({
         ...defaultSettings,
         filterTimeSensitive: ['comment'],
-      } as SettingsState),
+      }),
     ).toBe(true);
   });
 
   it('isTimeSensitiveFilterSet', () => {
-    const settings = {
+    const settings: SettingsState = {
       ...defaultSettings,
       filterTimeSensitive: ['comment'],
-    } as SettingsState;
+    };
 
     expect(timeSensitiveFilter.isFilterSet(settings, 'comment')).toBe(true);
 
