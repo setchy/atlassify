@@ -44,7 +44,7 @@ export const triggerNativeNotifications = (
   }
 
   if (state.settings.playSoundNewNotifications) {
-    raiseSoundNotification();
+    raiseSoundNotification(state.settings.notificationVolume / 100);
   }
 
   if (state.settings.showSystemNotifications) {
@@ -74,10 +74,10 @@ export const raiseNativeNotification = (
   return window.atlassify.raiseNativeNotification(title, body, url);
 };
 
-export const raiseSoundNotification = async () => {
+export const raiseSoundNotification = async (volume: number) => {
   const path = await window.atlassify.notificationSoundPath();
 
   const audio = new Audio(path);
-  audio.volume = 0.2;
+  audio.volume = volume;
   audio.play();
 };

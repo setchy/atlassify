@@ -116,8 +116,51 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     );
   });
 
-  it('should toggle the playSoundNewNotifications checkbox', async () => {
-    await act(async () => {
+  describe('playSoundNewNotifications', () => {
+    it('should toggle the playSoundNewNotifications checkbox', async () => {
+      const { rerender } = render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(
+        screen.getByLabelText('Play sound for new notifications'),
+      );
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith(
+        'playSoundNewNotifications',
+        false,
+      );
+
+      // Simulate update to context with playSound = false
+      rerender(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: { ...mockSettings, playSoundNewNotifications: false },
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('settings-volume-group')).not.toBeVisible();
+    });
+
+    it('should increase notification volume', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -131,17 +174,57 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           </MemoryRouter>
         </AppContext.Provider>,
       );
+
+      await userEvent.click(screen.getByTestId('settings-volume-up'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 30);
     });
 
-    await userEvent.click(
-      screen.getByLabelText('Play sound for new notifications'),
-    );
+    it('should decrease notification volume', async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
-      'playSoundNewNotifications',
-      false,
-    );
+      await userEvent.click(screen.getByTestId('settings-volume-down'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 10);
+    });
+
+    it('should reset notification volume', async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: {
+              ...mockSettings,
+              notificationVolume: 30,
+            },
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(screen.getByTestId('settings-volume-reset'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 20);
+    });
   });
 
   it('should toggle the useAlternateIdleIcon checkbox', async () => {

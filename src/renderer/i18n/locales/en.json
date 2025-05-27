@@ -169,6 +169,9 @@
       "show_count_in_tray": "Show notifications count in tray",
       "system_notifications": "Show system notifications",
       "play_sound": "Play sound for new notifications",
+      "volume_up": "Volume up",
+      "volume_down": "Volume down",
+      "volume_reset": "Reset volume",
       "alternate_icon": "Use alternate idle icon",
       "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
       "startup": "Open at startup"

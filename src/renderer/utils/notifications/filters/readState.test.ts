@@ -19,10 +19,10 @@ describe('renderer/utils/notifications/filters/readState.ts', () => {
   });
 
   it('isReadStateFilterSet', () => {
-    const settings = {
+    const settings: SettingsState = {
       ...defaultSettings,
       filterReadStates: ['read'],
-    } as SettingsState;
+    };
 
     expect(readStateFilter.isFilterSet(settings, 'read')).toBe(true);
 

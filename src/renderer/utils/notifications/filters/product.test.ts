@@ -20,10 +20,10 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
   });
 
   it('isProductFilterSet', () => {
-    const settings = {
+    const settings: SettingsState = {
       ...defaultSettings,
       filterProducts: ['bitbucket'],
-    } as SettingsState;
+    };
 
     expect(productFilter.isFilterSet(settings, 'compass')).toBe(false);
 

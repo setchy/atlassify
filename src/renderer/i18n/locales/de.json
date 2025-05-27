@@ -175,7 +175,10 @@
       "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
       "startup": "Im Start geöffnet",
       "system_notifications": "Systembenachrichtigungen anzeigen",
-      "title": "System"
+      "title": "System",
+      "volume_down": "Lautstärke nach unten",
+      "volume_reset": "Volumen zurücksetzen",
+      "volume_up": "Lautstärke"
     },
     "title": "Einstellungen",
     "view_release_notes": "View {{appName}} Versionshinweise"

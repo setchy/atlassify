@@ -1,15 +1,20 @@
 import { type FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { IconButton, SplitButton } from '@atlaskit/button/new';
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
+import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
+import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
-import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
 
+import RetryIcon from '@atlaskit/icon/core/retry';
+import Tooltip from '@atlaskit/tooltip';
 import { APPLICATION } from '../../../shared/constants';
-import { AppContext } from '../../context/App';
+import { AppContext, defaultSettings } from '../../context/App';
 import { OpenPreference } from '../../types';
 
 export const SystemSettings: FC = () => {
@@ -28,6 +33,11 @@ export const SystemSettings: FC = () => {
       value: OpenPreference.BACKGROUND,
     },
   ];
+
+  const volumeBoxStyles = xcss({
+    backgroundColor: 'color.background.accent.gray.subtlest',
+    visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
+  });
 
   return (
     <Stack space="space.100">
@@ -89,14 +99,83 @@ export const SystemSettings: FC = () => {
         }
       />
 
-      <Checkbox
-        name="playSoundNewNotifications"
-        label={t('settings.system.play_sound')}
-        isChecked={settings.playSoundNewNotifications}
-        onChange={(evt) =>
-          updateSetting('playSoundNewNotifications', evt.target.checked)
-        }
-      />
+      <Inline space="space.100" alignBlock="center">
+        <Checkbox
+          name="playSoundNewNotifications"
+          label={t('settings.system.play_sound')}
+          isChecked={settings.playSoundNewNotifications}
+          onChange={(evt) =>
+            updateSetting('playSoundNewNotifications', evt.target.checked)
+          }
+        />
+        <Inline xcss={volumeBoxStyles} testId="settings-volume-group">
+          <SplitButton spacing="compact">
+            <Inline alignBlock="center">
+              <Box paddingInline="space.150">
+                <Text>{settings.notificationVolume.toFixed(0)}%</Text>
+              </Box>
+              <Tooltip
+                content={t('settings.system.volume_down')}
+                position="bottom"
+              >
+                <IconButton
+                  label={t('settings.system.volume_down')}
+                  icon={VolumeLowIcon}
+                  shape="circle"
+                  spacing="compact"
+                  onClick={() => {
+                    const newVolume = Math.max(
+                      settings.notificationVolume - 10,
+                      10,
+                    );
+
+                    updateSetting('notificationVolume', newVolume);
+                  }}
+                  testId="settings-volume-down"
+                />
+              </Tooltip>
+              <Tooltip
+                content={t('settings.system.volume_up')}
+                position="bottom"
+              >
+                <IconButton
+                  label={t('settings.system.volume_up')}
+                  icon={VolumeHighIcon}
+                  shape="circle"
+                  spacing="compact"
+                  onClick={() => {
+                    const newVolume = Math.min(
+                      settings.notificationVolume + 10,
+                      100,
+                    );
+
+                    updateSetting('notificationVolume', newVolume);
+                  }}
+                  testId="settings-volume-up"
+                />
+              </Tooltip>
+            </Inline>
+            <Tooltip
+              content={t('settings.system.volume_reset')}
+              position="bottom"
+            >
+              <IconButton
+                label={t('settings.system.volume_reset')}
+                icon={RetryIcon}
+                shape="circle"
+                spacing="compact"
+                onClick={() =>
+                  updateSetting(
+                    'notificationVolume',
+                    defaultSettings.notificationVolume,
+                  )
+                }
+                testId="settings-volume-reset"
+              />
+            </Tooltip>
+          </SplitButton>
+        </Inline>
+      </Inline>
 
       <Inline space="space.100">
         <Checkbox
