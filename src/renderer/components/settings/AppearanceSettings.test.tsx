@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
@@ -30,7 +31,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('theme-dark--radio-label'));
+    await userEvent.click(screen.getByTestId('theme-dark--radio-label'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('theme', 'DARK');
@@ -86,7 +87,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId('settings-zoom-out'));
+      await userEvent.click(screen.getByTestId('settings-zoom-out'));
       await zoomTimeout();
     });
 
@@ -94,7 +95,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 90);
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId('settings-zoom-out'));
+      await userEvent.click(screen.getByTestId('settings-zoom-out'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(2);
@@ -102,7 +103,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId('settings-zoom-in'));
+      await userEvent.click(screen.getByTestId('settings-zoom-in'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(3);
@@ -110,7 +111,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      fireEvent.click(screen.getByTestId('settings-zoom-reset'));
+      await userEvent.click(screen.getByTestId('settings-zoom-reset'));
       await zoomTimeout();
 
       expect(updateSetting).toHaveBeenCalledTimes(4);

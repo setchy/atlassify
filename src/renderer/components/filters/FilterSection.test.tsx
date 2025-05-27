@@ -1,5 +1,7 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
+
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
@@ -32,27 +34,25 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - none already set', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            notifications: [],
-            updateFilter,
-          }}
-        >
-          <MemoryRouter>
-            <FilterSection
-              title={'FilterSectionTitle'}
-              filter={mockFilter}
-              filterSetting={mockFilterSetting}
-            />
-          </MemoryRouter>
-        </AppContext.Provider>,
-      );
-    });
+    render(
+      <AppContext.Provider
+        value={{
+          settings: mockSettings,
+          notifications: [],
+          updateFilter,
+        }}
+      >
+        <MemoryRouter>
+          <FilterSection
+            title={'FilterSectionTitle'}
+            filter={mockFilter}
+            filterSetting={mockFilterSetting}
+          />
+        </MemoryRouter>
+      </AppContext.Provider>,
+    );
 
-    fireEvent.click(screen.getByLabelText('Mention'));
+    await userEvent.click(screen.getByLabelText('Mention'));
 
     expect(updateFilter).toHaveBeenCalledWith(
       mockFilterSetting,
@@ -66,30 +66,28 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              filterTimeSensitive: ['mention'],
-            },
-            notifications: [],
-            updateFilter,
-          }}
-        >
-          <MemoryRouter>
-            <FilterSection
-              title={'FilterSectionTitle'}
-              filter={mockFilter}
-              filterSetting={mockFilterSetting}
-            />
-          </MemoryRouter>
-        </AppContext.Provider>,
-      );
-    });
+    render(
+      <AppContext.Provider
+        value={{
+          settings: {
+            ...mockSettings,
+            filterTimeSensitive: ['mention'],
+          },
+          notifications: [],
+          updateFilter,
+        }}
+      >
+        <MemoryRouter>
+          <FilterSection
+            title={'FilterSectionTitle'}
+            filter={mockFilter}
+            filterSetting={mockFilterSetting}
+          />
+        </MemoryRouter>
+      </AppContext.Provider>,
+    );
 
-    fireEvent.click(screen.getByLabelText('Comment'));
+    await userEvent.click(screen.getByLabelText('Comment'));
 
     expect(updateFilter).toHaveBeenCalledWith(
       mockFilterSetting,

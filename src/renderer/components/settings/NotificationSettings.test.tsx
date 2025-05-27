@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
@@ -29,9 +30,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Mark as read on open'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('markAsReadOnOpen', false);
@@ -54,17 +53,14 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(
+    await userEvent.click(
       screen.getByLabelText('Group product notifications alphabetically'),
-      {
-        target: { checked: true },
-      },
     );
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
       'groupNotificationsByProductAlphabetically',
-      false,
+      true,
     );
   });
 
@@ -85,11 +81,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Delay notification state'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Delay notification state'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('delayNotificationState', false);
+    expect(updateSetting).toHaveBeenCalledWith('delayNotificationState', true);
   });
 });

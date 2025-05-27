@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
@@ -59,7 +60,7 @@ describe('renderer/routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('header-nav-back'));
+      await userEvent.click(screen.getByTestId('header-nav-back'));
 
       expect(fetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
@@ -86,7 +87,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Mention'));
+        await userEvent.click(screen.getByLabelText('Mention'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterTimeSensitive',
@@ -116,7 +117,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Mention'));
+        await userEvent.click(screen.getByLabelText('Mention'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterTimeSensitive',
@@ -145,7 +146,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Direct'));
+        await userEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterCategories',
@@ -175,7 +176,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Direct'));
+        await userEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterCategories',
@@ -204,7 +205,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Automation'));
+        await userEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterActors',
@@ -234,7 +235,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Automation'));
+        await userEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterActors',
@@ -263,7 +264,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Unread'));
+        await userEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterReadStates',
@@ -293,7 +294,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('Unread'));
+        await userEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterReadStates',
@@ -322,7 +323,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('bitbucket'));
+        await userEvent.click(screen.getByLabelText('bitbucket'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',
@@ -352,7 +353,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        fireEvent.click(screen.getByLabelText('bitbucket'));
+        await userEvent.click(screen.getByLabelText('bitbucket'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',
@@ -384,7 +385,7 @@ describe('renderer/routes/Filters.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('filters-clear'));
+      await userEvent.click(screen.getByTestId('filters-clear'));
 
       expect(clearFilters).toHaveBeenCalled();
     });

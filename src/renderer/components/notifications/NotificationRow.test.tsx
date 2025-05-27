@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
@@ -67,7 +68,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
   });
 
   describe('notification interactions', () => {
-    it('should open a notification in the browser - click', () => {
+    it('should open a notification in the browser - click', async () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
@@ -87,13 +88,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-details'));
+      await userEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should open a notification in the browser - delay notification setting enabled', () => {
+    it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
@@ -116,13 +117,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-details'));
+      await userEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should mark a notification as read', () => {
+    it('should mark a notification as read', async () => {
       const markNotificationsReadMock = jest.fn();
 
       const props = {
@@ -141,12 +142,12 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-mark-as-read'));
+      await userEvent.click(screen.getByTestId('notification-mark-as-read'));
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should mark a notification as unread', () => {
+    it('should mark a notification as unread', async () => {
       const markNotificationsUnreadMock = jest.fn();
 
       const props = {
@@ -168,7 +169,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('notification-mark-as-unread'));
+      await userEvent.click(screen.getByTestId('notification-mark-as-unread'));
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
     });
