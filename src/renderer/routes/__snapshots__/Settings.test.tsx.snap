@@ -269,7 +269,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             >
               <span
                 class="css-aeiv5u"
-                id="theme-label"
+                id="zoom-label"
               >
                 Zoom
                 :
@@ -948,47 +948,202 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               Show system notifications
             </span>
           </label>
-          <label
-            class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-            style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+          <div
+            class="css-1v6wdk"
           >
-            <input
-              checked=""
-              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgj3jf _1dk7j3jf _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-              name="playSoundNewNotifications"
-              tabindex="0"
-              type="checkbox"
-              value=""
-            />
-            <svg
-              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
-              role="presentation"
-              style="fill: var(--checkbox-tick-color);"
-              viewBox="0 0 24 24"
+            <label
+              class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+              style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
             >
-              <g
-                fill-rule="evenodd"
+              <input
+                checked=""
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgj3jf _1dk7j3jf _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                name="playSoundNewNotifications"
+                tabindex="0"
+                type="checkbox"
+                value=""
+              />
+              <svg
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                role="presentation"
+                style="fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
               >
-                <rect
-                  fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
-                />
-                <path
-                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                  fill="inherit"
-                />
-              </g>
-            </svg>
-            <span
-              class="_nd5l11ig _1wpz1h6o"
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                  <path
+                    d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                    fill="inherit"
+                  />
+                </g>
+              </svg>
+              <span
+                class="_nd5l11ig _1wpz1h6o"
+              >
+                Play sound for new notifications
+              </span>
+            </label>
+            <div
+              class="css-onmozj"
+              data-testid="settings-volume-group"
             >
-              Play sound for new notifications
-            </span>
-          </label>
+              <div
+                class="_1e0c116y _kqswh2mm _4cvr1h6o _o5721q9c"
+              >
+                <div
+                  class="_traeidpf _anlpidpf _p9ykidpf _bepvidpf"
+                >
+                  <div
+                    class="css-mrgpd6"
+                  >
+                    <div
+                      class="css-13secbl"
+                    >
+                      <span
+                        class="css-bc6vhz"
+                      >
+                        20
+                        %
+                      </span>
+                    </div>
+                    <div
+                      role="presentation"
+                    >
+                      <button
+                        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1j54 _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr3yw9d _1di6ih13 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                        data-testid="settings-volume-down"
+                        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                        type="button"
+                      >
+                        <span
+                          class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                            style="color: currentColor;"
+                          >
+                            <svg
+                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                              fill="none"
+                              role="presentation"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                clip-rule="evenodd"
+                                d="M7.233 1.434C8.125.672 9.5 1.307 9.5 2.48v11.04c0 1.174-1.375 1.808-2.267 1.047l-2.87-2.447A.5.5 0 0 0 4.04 12H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2.04a.5.5 0 0 0 .324-.12zM8 2.75 5.337 5.02a2 2 0 0 1-1.298.48H2a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h2.04a2 2 0 0 1 1.297.478L8 13.249zm2.97 6.719a2.08 2.08 0 0 0 0-2.94l1.06-1.06a3.58 3.58 0 0 1 0 5.06z"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                          >
+                            Volume down
+                          </span>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      role="presentation"
+                    >
+                      <button
+                        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1j54 _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr3yw9d _1di6ih13 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                        data-testid="settings-volume-up"
+                        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                        type="button"
+                      >
+                        <span
+                          class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                            style="color: currentColor;"
+                          >
+                            <svg
+                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                              fill="none"
+                              role="presentation"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                clip-rule="evenodd"
+                                d="M7.233 1.434C8.125.672 9.5 1.307 9.5 2.48v11.04c0 1.174-1.375 1.808-2.267 1.047l-2.87-2.447A.5.5 0 0 0 4.04 12H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2.04a.5.5 0 0 0 .324-.12zM8 2.75 5.337 5.02a2 2 0 0 1-1.298.48H2a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h2.04a2 2 0 0 1 1.297.478L8 13.249zm4.97 8.719a4.907 4.907 0 0 0 0-6.94l1.06-1.06a6.407 6.407 0 0 1 0 9.06zm-2-2a2.08 2.08 0 0 0 0-2.94l1.06-1.06a3.58 3.58 0 0 1 0 5.06z"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                          >
+                            Volume up
+                          </span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_1bsbe4h9 _kqswh2mm _1pbykb7n _4t3i1k8s _bfhk1fxt _tzy41uwv"
+                />
+                <div
+                  class="_1j4hidpf _1553idpf _1qgbidpf _y1n3idpf"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <button
+                      class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1j54 _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr3yw9d _1di6ih13 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                      data-testid="settings-volume-reset"
+                      style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                      type="button"
+                    >
+                      <span
+                        class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                          style="color: currentColor;"
+                        >
+                          <svg
+                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                            fill="none"
+                            role="presentation"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M1 8a7 7 0 0 1 12.5-4.33V1H15v5a.75.75 0 0 1-.75.75H9.5v-1.5h3.264a5.5 5.5 0 1 0 .665 3.63l1.482.24A7.002 7.002 0 0 1 1 8"
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                        >
+                          Reset volume
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div
             class="css-gokkc4"
           >
