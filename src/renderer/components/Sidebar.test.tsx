@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import {
@@ -114,7 +115,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
   });
 
-  it('should navigate to home', () => {
+  it('should navigate to home', async () => {
     render(
       <AppContext.Provider
         value={{
@@ -131,13 +132,13 @@ describe('renderer/components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTestId('sidebar-home'));
+    await userEvent.click(screen.getByTestId('sidebar-home'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
   describe('notifications icon', () => {
-    it('opens notifications home when clicked', () => {
+    it('opens notifications home when clicked', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -153,7 +154,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-notifications'));
+      await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
       expect(openExternalLinkMock).toHaveBeenCalledWith(
         'https://team.atlassian.com/notifications',
@@ -219,7 +220,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   describe('show only unread notifications', () => {
-    it('should toggle show only unread notifications', () => {
+    it('should toggle show only unread notifications', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -236,7 +237,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(
+      await userEvent.click(
         screen.getByTestId('sidebar-toggle-unread-only--toggle-cross-icon'),
       );
 
@@ -289,7 +290,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
-    it('should toggle group by products', () => {
+    it('should toggle group by products', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -306,14 +307,14 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-group-by-product'));
+      await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
   });
 
   describe('Filter notifications', () => {
-    it('go to the filters route', () => {
+    it('go to the filters route', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -329,7 +330,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-filter-notifications'));
+      await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
@@ -337,7 +338,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/filters');
     });
 
-    it('go to the home if filters path already shown', () => {
+    it('go to the home if filters path already shown', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -353,7 +354,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-filter-notifications'));
+      await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
@@ -387,7 +388,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   describe('Refresh Notifications', () => {
-    it('should refresh the notifications when status is not loading', () => {
+    it('should refresh the notifications when status is not loading', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -405,12 +406,12 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-refresh'));
+      await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
       expect(fetchNotifications).toHaveBeenCalledTimes(1);
     });
 
-    it('should not refresh the notifications when status is loading', () => {
+    it('should not refresh the notifications when status is loading', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -428,14 +429,14 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-refresh'));
+      await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
       expect(fetchNotifications).not.toHaveBeenCalled();
     });
   });
 
   describe('Settings', () => {
-    it('go to the settings route', () => {
+    it('go to the settings route', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -451,12 +452,12 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-settings'));
+      await userEvent.click(screen.getByTestId('sidebar-settings'));
 
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/settings');
     });
 
-    it('go to the home if settings path already shown', () => {
+    it('go to the home if settings path already shown', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -473,14 +474,14 @@ describe('renderer/components/Sidebar.tsx', () => {
         </AppContext.Provider>,
       );
 
-      fireEvent.click(screen.getByTestId('sidebar-settings'));
+      await userEvent.click(screen.getByTestId('sidebar-settings'));
 
       expect(fetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
     });
   });
 
-  it('should quit the app', () => {
+  it('should quit the app', async () => {
     const quitAppMock = jest.spyOn(comms, 'quitApp');
 
     render(
@@ -498,7 +499,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTestId('sidebar-quit'));
+    await userEvent.click(screen.getByTestId('sidebar-quit'));
 
     expect(quitAppMock).toHaveBeenCalledTimes(1);
   });

@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { AppContext } from '../context/App';
@@ -49,14 +50,14 @@ describe('renderer/routes/Landing.tsx', () => {
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
   });
 
-  it('should navigate to login with api token', () => {
+  it('should navigate to login with api token', async () => {
     render(
       <MemoryRouter>
         <LandingRoute />
       </MemoryRouter>,
     );
 
-    fireEvent.click(screen.getByTestId('login'));
+    await userEvent.click(screen.getByTestId('login'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login');
   });

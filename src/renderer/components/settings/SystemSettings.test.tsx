@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
@@ -29,7 +30,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Background'));
+    await userEvent.click(screen.getByLabelText('Background'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('openLinks', 'BACKGROUND');
@@ -52,9 +53,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Enable keyboard shortcut'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -80,9 +79,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Show notifications count in tray'), {
-      target: { checked: true },
-    });
+    await userEvent.click(
+      screen.getByLabelText('Show notifications count in tray'),
+    );
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -108,9 +107,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Show system notifications'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Show system notifications'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -136,9 +133,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Play sound for new notifications'), {
-      target: { checked: true },
-    });
+    await userEvent.click(
+      screen.getByLabelText('Play sound for new notifications'),
+    );
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -164,12 +161,10 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Use alternate idle icon'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', false);
+    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', true);
   });
 
   it('should toggle the openAtStartup checkbox', async () => {
@@ -189,9 +184,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Open at startup'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Open at startup'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('openAtStartup', false);

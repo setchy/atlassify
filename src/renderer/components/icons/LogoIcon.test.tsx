@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+
 import { LogoIcon } from './LogoIcon';
 
 describe('renderer/components/icons/LogoIcon.tsx', () => {
