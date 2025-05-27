@@ -1,5 +1,12 @@
 import path from 'node:path';
-import { app, globalShortcut, nativeTheme, safeStorage, shell } from 'electron';
+import {
+  type BrowserWindowConstructorOptions,
+  app,
+  globalShortcut,
+  nativeTheme,
+  safeStorage,
+  shell,
+} from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
@@ -33,7 +40,7 @@ const notificationSoundFilePath = path.join(
 );
 const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
 
-const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
+const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
   minWidth: 500,
