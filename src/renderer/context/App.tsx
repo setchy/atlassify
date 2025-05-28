@@ -65,7 +65,7 @@ const defaultNotificationSettings: NotificationSettingsState = {
   fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
-  groupNotificationsByTitle: false,
+  groupNotificationsByTitle: true,
 };
 
 const defaultSystemSettings: SystemSettingsState = {

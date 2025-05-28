@@ -290,7 +290,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
-    it('should toggle group by products', async () => {
+    it('should toggle group notifications by products', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -310,6 +310,72 @@ describe('renderer/components/Sidebar.tsx', () => {
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
+    });
+  });
+
+  describe('Group by titles', () => {
+    it('should group notifications by title', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: true,
+            notifications: [],
+            auth: mockAuth,
+            settings: mockSettings,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
+    });
+
+    it('should not group notifications by title - flat notifications', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: true,
+            notifications: [],
+            auth: mockAuth,
+            settings: {
+              ...mockSettings,
+              groupNotificationsByTitle: false,
+            },
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
+    });
+
+    it('should toggle group notifications by title', async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: true,
+            notifications: [],
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(screen.getByTestId('sidebar-group-by-title'));
+
+      expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
   });
 

@@ -43,7 +43,13 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     notificationGroup: {
       id: '138661096',
       size: 1,
-      additionalActors: [],
+      additionalActors: [
+        {
+          displayName: 'atlassify-app',
+          avatarURL:
+            'https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123' as Link,
+        },
+      ],
     },
     message: 'atlassify-app edited your page',
     updated_at: '2020-09-13T21:12:16.662Z',

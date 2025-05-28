@@ -75,7 +75,7 @@ describe('renderer/utils/api/client.ts', () => {
           query: expect.stringContaining('query MyNotifications'),
           variables: {
             first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-            flat: true,
+            flat: !mockSettings.groupNotificationsByTitle,
             readState: 'unread',
           },
         },
