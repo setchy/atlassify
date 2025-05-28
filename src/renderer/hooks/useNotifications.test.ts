@@ -150,7 +150,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     expect(result.current.notifications.length).toBe(0);
   });
 
-  it('markNotificationsUnRead', async () => {
+  it('markNotificationsUnread', async () => {
     nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
 
     const { result } = renderHook(() => useNotifications());

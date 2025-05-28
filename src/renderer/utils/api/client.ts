@@ -5,8 +5,11 @@ import {
   InfluentsNotificationReadState,
   type MarkAsReadMutation,
   type MarkAsUnreadMutation,
+  type MarkGroupAsReadMutation,
+  type MarkGroupAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
+  type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
 import type { AtlassianGraphQLResponse } from './types';
@@ -60,13 +63,14 @@ export function getNotificationsForUser(
     query MyNotifications
       (
         $readState: InfluentsNotificationReadState, 
+        $flat: Boolean = true,
         $first: Int
       ) 
       {
       notifications {
         unseenNotificationCount
         notificationFeed(
-          flat: true, 
+          flat: $flat, 
           first: $first,
           filter: {
             readStateFilter: $readState
@@ -85,6 +89,7 @@ export function getNotificationsForUser(
 
   return performPostRequest(account, MyNotificationsQuery, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+    flat: !settings.groupNotificationsByTitle,
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread
       : null,
@@ -136,11 +141,87 @@ export function markNotificationsAsUnread(
 }
 
 /**
+ * Mark a notification group as "read".
+ * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
+ *
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function markNotificationGroupAsRead(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
+  const MarkGroupAsReadMutation = graphql(`
+    mutation MarkGroupAsRead($groupId: String!) {
+      notifications {
+        markNotificationsByGroupIdAsRead(groupId: $groupId)
+      }
+    }
+  `);
+
+  return performPostRequest(account, MarkGroupAsReadMutation, {
+    groupId: notificationGroupId,
+  });
+}
+
+/**
+ * Mark a notification group as "unread".
+ * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
+ *
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function markNotificationGroupAsUnread(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
+  const MarkGroupAsUnreadMutation = graphql(`
+    mutation MarkGroupAsUnread($groupId: String!) {
+      notifications {
+        markNotificationsByGroupIdAsUnread(groupId: $groupId)
+      }
+    }
+  `);
+
+  return performPostRequest(account, MarkGroupAsUnreadMutation, {
+    groupId: notificationGroupId,
+  });
+}
+
+/**
+ * Get notifications by group ID.
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getNotificationsByGroupId(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
+  const RetrieveNotificationsByGroupIdQuery = graphql(`
+    query RetrieveNotificationsByGroupId($groupId: String!) {
+      notifications {
+        notificationGroup(groupId: $groupId) {
+          nodes {
+            ...GroupNotificationDetails
+          } 
+        }
+      }
+    }
+  `);
+
+  return performPostRequest(account, RetrieveNotificationsByGroupIdQuery, {
+    groupId: notificationGroupId,
+  });
+}
+
+/**
  * GraphQL Fragments used for generating types
  */
 export const AtlassianNotificationFragment = graphql(`
     fragment AtlassianNotification on InfluentsNotificationHeadItem {
       groupId
+      groupSize
+      additionalActors {
+        displayName
+        avatarURL
+      }
       headNotification {
         ...AtlassianHeadNotification
       }
@@ -178,3 +259,10 @@ export const AtlassianHeadNotificationFragment = graphql(`
       }
     }
   `);
+
+export const GroupNotificationDetailsFragment = graphql(`
+  fragment GroupNotificationDetails on InfluentsNotificationItem {
+    notificationId
+    readState
+  }
+`);

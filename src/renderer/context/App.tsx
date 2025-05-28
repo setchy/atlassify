@@ -65,6 +65,7 @@ const defaultNotificationSettings: NotificationSettingsState = {
   fetchOnlyUnreadNotifications: true,
   groupNotificationsByProduct: false,
   groupNotificationsByProductAlphabetically: false,
+  groupNotificationsByTitle: true,
 };
 
 const defaultSystemSettings: SystemSettingsState = {
@@ -153,6 +154,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [
     auth.accounts,
     settings.fetchOnlyUnreadNotifications,
+    settings.groupNotificationsByTitle,
     settings.filterTimeSensitive,
     settings.filterCategories,
     settings.filterReadStates,

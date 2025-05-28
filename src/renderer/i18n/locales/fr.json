@@ -212,6 +212,10 @@
         "label": "Notifications de groupe par produits",
         "tooltip": "Notifications de groupe par produits"
       },
+      "groupByTitle": {
+        "label": "Notifications de groupe par titre",
+        "tooltip": "Notifications de groupe par titre"
+      },
       "unreadOnly": {
         "label": "Afficher uniquement la bascule non lu",
         "tooltip": "Afficher uniquement les notifications non lues"

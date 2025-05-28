@@ -140,6 +140,11 @@ export interface NotificationSettingsState {
    * Whether to sort grouped notifications by product alphabetically or time.
    */
   groupNotificationsByProductAlphabetically: boolean;
+
+  /**
+   * Whether to group notifications by title.
+   */
+  groupNotificationsByTitle: boolean;
 }
 
 /**
@@ -332,15 +337,42 @@ export interface AtlassifyNotification {
   /**
    * The actor who created the notification.
    */
-  actor: {
-    displayName: string;
-    avatarURL: Link;
-  };
+  actor: AtlassifyActor;
 
   /**
    * The account that the notification belongs to.
    */
   account: Account;
+
+  /**
+   * The notification group details when not fetching as flat list.
+   */
+  notificationGroup: AtlassifyNotificationGroup;
+}
+
+export interface AtlassifyActor {
+  displayName: string;
+  avatarURL: Link;
+}
+
+/**
+ * The notification group details when not fetching as flat list.
+ */
+export interface AtlassifyNotificationGroup {
+  /**
+   * The unique identifier for the notification group.
+   */
+  id: string;
+
+  /**
+   * The group size for the notification group.'
+   */
+  size: number;
+
+  /**
+   * Additional actors that made updates as part of the group.
+   */
+  additionalActors: AtlassifyActor[];
 }
 
 /**

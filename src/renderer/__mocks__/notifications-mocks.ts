@@ -8,8 +8,12 @@ import { mockAtlassianCloudAccount } from './state-mocks';
 
 export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {
-    account: mockAtlassianCloudAccount,
     id: '138661096',
+    notificationGroup: {
+      id: '138661096',
+      size: 1,
+      additionalActors: [],
+    },
     message: '#103: chore(deps): update dependency eslint',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {
@@ -30,11 +34,23 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     },
     category: 'direct',
     readState: 'unread',
+    account: mockAtlassianCloudAccount,
     url: 'https://bitbucket.org/myorg/notifications-test/pull-requests/103?link_source=platform' as Link,
     type: 'unknown',
   },
   {
     id: '148827438',
+    notificationGroup: {
+      id: '138661096',
+      size: 2,
+      additionalActors: [
+        {
+          displayName: 'atlassify-app',
+          avatarURL:
+            'https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123' as Link,
+        },
+      ],
+    },
     message: 'atlassify-app edited your page',
     updated_at: '2020-09-13T21:12:16.662Z',
     entity: {

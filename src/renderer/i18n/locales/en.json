@@ -199,6 +199,10 @@
       "groupByProduct": {
         "label": "Group notifications by products",
         "tooltip": "Group notifications by products"
+      },
+      "groupByTitle": {
+        "label": "Group notifications by title",
+        "tooltip": "Group notifications by title"
       }
     },
     "filters": {

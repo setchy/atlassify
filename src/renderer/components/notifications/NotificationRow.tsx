@@ -2,6 +2,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar from '@atlaskit/avatar';
+import AvatarGroup from '@atlaskit/avatar-group';
 import { IconButton } from '@atlaskit/button/new';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
@@ -61,6 +62,15 @@ export const NotificationRow: FC<INotificationRow> = ({
   );
 
   const spaceBetweenSections = 'space.100';
+
+  const avatarGroup = notification.notificationGroup.additionalActors.map(
+    (actor) => ({
+      key: actor.displayName,
+      name: actor.displayName,
+      href: '#',
+      src: actor.avatarURL,
+    }),
+  );
 
   return (
     <div
@@ -139,6 +149,25 @@ export const NotificationRow: FC<INotificationRow> = ({
                             {formatNotificationFooterText(notification)}
                           </Text>
                         </Inline>
+                      </Box>
+                      <Box id="notification-group">
+                        {notification.notificationGroup.size > 1 && (
+                          <Inline space="space.050" alignBlock="center">
+                            {notification.notificationGroup.additionalActors
+                              .length > 0 && (
+                              <AvatarGroup data={avatarGroup} size="small" />
+                            )}
+                            <Text size="small">
+                              +{notification.notificationGroup.size - 1}{' '}
+                              {notification.notificationGroup.additionalActors
+                                .length > 0
+                                ? `updates from ${notification.notificationGroup.additionalActors[0].displayName}`
+                                : 'other updates'}
+                              {notification.notificationGroup.additionalActors
+                                .length > 1 && ' and others'}
+                            </Text>
+                          </Inline>
+                        )}
                       </Box>
                     </Box>
                   </Stack>

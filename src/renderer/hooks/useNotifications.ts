@@ -10,9 +10,11 @@ import type {
   Status,
 } from '../types';
 import {
+  getNotificationsByGroupId,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { updateTrayIcon } from '../utils/comms';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
@@ -106,18 +108,27 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
 
       const account = readNotifications[0].account;
-      const notificationIDs = readNotifications.map(
+
+      const singleGroupNotifications = readNotifications.filter(
+        (notification) => !isGroupNotification(notification),
+      );
+      const singleNotificationIDs = singleGroupNotifications.map(
         (notification) => notification.id,
       );
 
       try {
-        await markNotificationsAsRead(account, notificationIDs);
+        const groupedNotificationIds =
+          await getNotificationIdsForGroups(readNotifications);
+
+        singleNotificationIDs.push(...groupedNotificationIds);
+
+        await markNotificationsAsRead(account, singleNotificationIDs);
 
         for (const notification of readNotifications) {
           notification.readState = 'read';
         }
 
-        // Only remove notifications from state if we're
+        // Only remove notifications from state if we're fetching only unread notifications
         if (state.settings.fetchOnlyUnreadNotifications) {
           const updatedNotifications = removeNotifications(
             state.settings,
@@ -149,12 +160,21 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
 
       const account = unreadNotifications[0].account;
-      const notificationIDs = unreadNotifications.map(
+
+      const singleGroupNotifications = unreadNotifications.filter(
+        (notification) => !isGroupNotification(notification),
+      );
+      const singleNotificationIDs = singleGroupNotifications.map(
         (notification) => notification.id,
       );
 
       try {
-        await markNotificationsAsUnread(account, notificationIDs);
+        const groupedNotificationIds =
+          await getNotificationIdsForGroups(unreadNotifications);
+
+        singleNotificationIDs.push(...groupedNotificationIds);
+
+        await markNotificationsAsUnread(account, singleNotificationIDs);
 
         for (const notification of unreadNotifications) {
           notification.readState = 'unread';
@@ -171,6 +191,48 @@ export const useNotifications = (): NotificationsState => {
     },
     [],
   );
+
+  async function getNotificationIdsForGroups(
+    notifications: AtlassifyNotification[],
+  ) {
+    const notificationIDs: string[] = [];
+
+    const account = notifications[0].account;
+
+    const groupNotifications = notifications.filter((notification) =>
+      isGroupNotification(notification),
+    );
+
+    const groupNotificationsGroupIDs = groupNotifications.map(
+      (notification) => notification.notificationGroup.id,
+    );
+
+    try {
+      for (const groupID of groupNotificationsGroupIDs) {
+        const res = await getNotificationsByGroupId(account, groupID);
+        const groupNotifications = res.data.notifications.notificationGroup
+          .nodes as GroupNotificationDetailsFragment[];
+
+        const groupNotificationIDs = groupNotifications.map(
+          (notification) => notification.notificationId,
+        );
+
+        notificationIDs.push(...groupNotificationIDs);
+      }
+    } catch (err) {
+      logError(
+        'getNotificationIdsForGroups',
+        'Error occurred while fetching notification ids for notification groups',
+        err,
+      );
+    }
+
+    return notificationIDs;
+  }
+
+  function isGroupNotification(notification: AtlassifyNotification): boolean {
+    return notification.notificationGroup.size > 1;
+  }
 
   return {
     status,

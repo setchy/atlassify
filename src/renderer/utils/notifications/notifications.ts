@@ -139,6 +139,14 @@ function mapAtlassianNotificationsToAtlassifyNotifications(
       },
       product: getAtlassianProduct(headNotification),
       account: account,
+      notificationGroup: {
+        id: notification.groupId,
+        size: notification.groupSize,
+        additionalActors: notification.additionalActors.map((actor) => ({
+          displayName: actor.displayName,
+          avatarURL: actor.avatarURL as Link,
+        })),
+      },
     };
   });
 }

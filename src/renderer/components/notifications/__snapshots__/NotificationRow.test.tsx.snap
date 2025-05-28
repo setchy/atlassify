@@ -191,6 +191,10 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -430,6 +434,10 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           </span>
                         </div>
                       </div>
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-group"
+                      />
                     </div>
                   </div>
                 </div>
@@ -726,6 +734,10 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             </span>
                           </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
                     </div>
                   </div>
@@ -965,6 +977,10 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           </span>
                         </div>
                       </div>
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-group"
+                      />
                     </div>
                   </div>
                 </div>
