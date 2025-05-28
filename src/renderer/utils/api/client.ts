@@ -9,6 +9,7 @@ import {
   type MarkGroupAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
+  type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
 import type { AtlassianGraphQLResponse } from './types';
@@ -141,6 +142,7 @@ export function markNotificationsAsUnread(
 
 /**
  * Mark a notification group as "read".
+ * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -163,6 +165,7 @@ export function markNotificationGroupAsRead(
 
 /**
  * Mark a notification group as "unread".
+ * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -179,6 +182,32 @@ export function markNotificationGroupAsUnread(
   `);
 
   return performPostRequest(account, MarkGroupAsUnreadMutation, {
+    groupId: notificationGroupId,
+  });
+}
+
+/**
+ * Get notifications by group ID.
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getNotificationsByGroupId(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
+  const RetrieveNotificationsByGroupIdQuery = graphql(`
+    query RetrieveNotificationsByGroupId($groupId: String!) {
+      notifications {
+        notificationGroup(groupId: $groupId) {
+          nodes {
+            notificationId
+            readState
+          } 
+        }
+      }
+    }
+  `);
+
+  return performPostRequest(account, RetrieveNotificationsByGroupIdQuery, {
     groupId: notificationGroupId,
   });
 }
