@@ -26,7 +26,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "repository": {
     "type": "git",
@@ -79,7 +79,7 @@
     "@atlaskit/css-reset": "7.3.0",
     "@atlaskit/form": "12.0.4",
     "@atlaskit/heading": "5.2.0",
-    "@atlaskit/icon": "26.1.1",
+    "@atlaskit/icon": "26.3.0",
     "@atlaskit/inline-message": "15.2.0",
     "@atlaskit/logo": "18.1.0",
     "@atlaskit/modal-dialog": "14.2.1",
@@ -100,10 +100,12 @@
     "@graphql-codegen/schema-ast": "4.1.0",
     "@heroicons/react": "2.2.0",
     "@tailwindcss/postcss": "4.1.7",
+    "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
     "@types/jest": "29.5.14",
-    "@types/node": "22.15.21",
-    "@types/react": "18.3.22",
+    "@types/node": "22.15.23",
+    "@types/react": "18.3.23",
     "@types/react-dom": "18.3.7",
     "@types/react-router-dom": "5.3.3",
     "axios": "1.9.0",

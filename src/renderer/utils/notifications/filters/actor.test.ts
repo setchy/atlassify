@@ -19,10 +19,10 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
   });
 
   it('isActorFilterSet', () => {
-    const settings = {
+    const settings: SettingsState = {
       ...defaultSettings,
       filterActors: ['user'],
-    } as SettingsState;
+    };
 
     expect(actorFilter.isFilterSet(settings, 'user')).toBe(true);
 

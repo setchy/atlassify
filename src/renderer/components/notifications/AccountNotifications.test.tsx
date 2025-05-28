@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
@@ -184,7 +185,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-profile--itemInner'));
+    await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
     expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
     expect(openAccountProfileMock).toHaveBeenCalledWith(
@@ -212,7 +213,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-pull-requests'));
+    await userEvent.click(screen.getByTestId('account-pull-requests'));
 
     expect(openMyPullRequestsMock).toHaveBeenCalledTimes(1);
   });
@@ -240,8 +241,8 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-mark-as-read'));
-    fireEvent.click(screen.getByTestId('account-mark-as-read-confirm'));
+    await userEvent.click(screen.getByTestId('account-mark-as-read'));
+    await userEvent.click(screen.getByTestId('account-mark-as-read-confirm'));
 
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });
@@ -269,8 +270,8 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-mark-as-read'));
-    fireEvent.click(screen.getByTestId('account-mark-as-read-cancel'));
+    await userEvent.click(screen.getByTestId('account-mark-as-read'));
+    await userEvent.click(screen.getByTestId('account-mark-as-read-cancel'));
 
     expect(markNotificationsReadMock).not.toHaveBeenCalled();
   });
@@ -295,7 +296,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-toggle'));
+    await userEvent.click(screen.getByTestId('account-toggle'));
 
     const tree = render(
       <AppContext.Provider

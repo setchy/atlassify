@@ -175,7 +175,10 @@
       "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
       "startup": "Abrir al inicio",
       "system_notifications": "Mostrar notificaciones del sistema",
-      "title": "Sistema"
+      "title": "Sistema",
+      "volume_down": "Volumen hacia abajo",
+      "volume_reset": "Reiniciar volumen",
+      "volume_up": "Volumen"
     },
     "title": "Ajustes",
     "view_release_notes": "Ver {{appName}} Notas de versión"

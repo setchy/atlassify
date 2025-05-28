@@ -182,6 +182,11 @@ export interface SystemSettingsState {
   playSoundNewNotifications: boolean;
 
   /**
+   * The volume for the notification sound.
+   */
+  notificationVolume: number;
+
+  /**
    * Whether to open the application on system startup.
    */
   openAtStartup: boolean;

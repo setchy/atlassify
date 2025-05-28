@@ -175,7 +175,10 @@
       "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
       "startup": "Ouvert au démarrage",
       "system_notifications": "Afficher les notifications du système",
-      "title": "Système"
+      "title": "Système",
+      "volume_down": "Volume",
+      "volume_reset": "Réinitialiser le volume",
+      "volume_up": "Volume"
     },
     "title": "Paramètres",
     "view_release_notes": "Afficher {{appName}} Notes de version"

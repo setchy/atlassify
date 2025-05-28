@@ -78,34 +78,34 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default time sensitive filters', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...defaultSettings,
         filterTimeSensitive: ['mention'],
-      } as SettingsState;
+      };
       expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default category filters', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...defaultSettings,
         filterCategories: ['direct'],
-      } as SettingsState;
+      };
       expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default read state filters', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...defaultSettings,
         filterReadStates: ['read'],
-      } as SettingsState;
+      };
       expect(hasAnyFiltersSet(settings)).toBe(true);
     });
 
     it('non-default product filters', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...defaultSettings,
         filterProducts: ['bitbucket'],
-      } as SettingsState;
+      };
       expect(hasAnyFiltersSet(settings)).toBe(true);
     });
   });

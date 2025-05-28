@@ -47,6 +47,7 @@ const mockSystemSettings: SystemSettingsState = {
   showNotificationsCountInTray: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
+  notificationVolume: 20,
   useAlternateIdleIcon: false,
   openAtStartup: true,
 };

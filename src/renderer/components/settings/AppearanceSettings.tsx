@@ -130,7 +130,7 @@ export const AppearanceSettings: FC = () => {
 
       <Box paddingInlineStart="space.050">
         <Inline space="space.100" alignBlock="center">
-          <Text id="theme-label" weight="medium">
+          <Text id="zoom-label" weight="medium">
             {t('settings.appearance.zoom')}:
           </Text>
           <Inline xcss={zoomBoxStyles}>

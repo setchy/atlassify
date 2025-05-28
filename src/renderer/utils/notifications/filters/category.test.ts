@@ -19,10 +19,10 @@ describe('renderer/utils/notifications/filters/category.ts', () => {
   });
 
   it('isCategoryFilterSet', () => {
-    const settings = {
+    const settings: SettingsState = {
       ...defaultSettings,
       filterCategories: ['direct'],
-    } as SettingsState;
+    };
 
     expect(categoryFilter.isFilterSet(settings, 'watching')).toBe(false);
 

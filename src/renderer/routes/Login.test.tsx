@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import * as comms from '../utils/comms';
@@ -39,7 +40,7 @@ describe('renderer/routes/Login.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('login-create-token'));
+      await userEvent.click(screen.getByTestId('login-create-token'));
 
       expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     });
@@ -56,7 +57,7 @@ describe('renderer/routes/Login.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('login-docs'));
+      await userEvent.click(screen.getByTestId('login-docs'));
 
       expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     });
@@ -71,7 +72,7 @@ describe('renderer/routes/Login.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('login-cancel'));
+    await userEvent.click(screen.getByTestId('login-cancel'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });

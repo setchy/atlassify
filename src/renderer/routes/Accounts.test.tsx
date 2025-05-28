@@ -1,10 +1,5 @@
-import {
-  act,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import {
@@ -94,7 +89,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('header-nav-back'));
+      await userEvent.click(screen.getByTestId('header-nav-back'));
 
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });
@@ -123,7 +118,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('account-profile--itemInner'));
+      await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
       expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
       expect(openAccountProfileMock).toHaveBeenCalledWith(
@@ -151,7 +146,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('account-refresh'));
+      await userEvent.click(screen.getByTestId('account-refresh'));
 
       expect(apiRequestMock).toHaveBeenCalledTimes(1);
 
@@ -185,7 +180,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         );
       });
 
-      fireEvent.click(screen.getByTestId('account-logout'));
+      await userEvent.click(screen.getByTestId('account-logout'));
 
       expect(logoutFromAccountMock).toHaveBeenCalledTimes(1);
 
@@ -213,7 +208,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByTestId('account-add-new'));
+    await userEvent.click(screen.getByTestId('account-add-new'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login', {
       replace: true,

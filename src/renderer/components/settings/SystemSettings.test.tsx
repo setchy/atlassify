@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
@@ -29,7 +30,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Background'));
+    await userEvent.click(screen.getByLabelText('Background'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('openLinks', 'BACKGROUND');
@@ -52,9 +53,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Enable keyboard shortcut'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -80,9 +79,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Show notifications count in tray'), {
-      target: { checked: true },
-    });
+    await userEvent.click(
+      screen.getByLabelText('Show notifications count in tray'),
+    );
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -108,9 +107,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Show system notifications'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Show system notifications'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith(
@@ -119,8 +116,51 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     );
   });
 
-  it('should toggle the playSoundNewNotifications checkbox', async () => {
-    await act(async () => {
+  describe('playSoundNewNotifications', () => {
+    it('should toggle the playSoundNewNotifications checkbox', async () => {
+      const { rerender } = render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(
+        screen.getByLabelText('Play sound for new notifications'),
+      );
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith(
+        'playSoundNewNotifications',
+        false,
+      );
+
+      // Simulate update to context with playSound = false
+      rerender(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: { ...mockSettings, playSoundNewNotifications: false },
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('settings-volume-group')).not.toBeVisible();
+    });
+
+    it('should increase notification volume', async () => {
       render(
         <AppContext.Provider
           value={{
@@ -134,17 +174,57 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           </MemoryRouter>
         </AppContext.Provider>,
       );
+
+      await userEvent.click(screen.getByTestId('settings-volume-up'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 30);
     });
 
-    fireEvent.click(screen.getByLabelText('Play sound for new notifications'), {
-      target: { checked: true },
+    it('should decrease notification volume', async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: mockSettings,
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(screen.getByTestId('settings-volume-down'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 10);
     });
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
-      'playSoundNewNotifications',
-      false,
-    );
+    it('should reset notification volume', async () => {
+      render(
+        <AppContext.Provider
+          value={{
+            auth: mockAuth,
+            settings: {
+              ...mockSettings,
+              notificationVolume: 30,
+            },
+            updateSetting,
+          }}
+        >
+          <MemoryRouter>
+            <SystemSettings />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      await userEvent.click(screen.getByTestId('settings-volume-reset'));
+
+      expect(updateSetting).toHaveBeenCalledTimes(1);
+      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 20);
+    });
   });
 
   it('should toggle the useAlternateIdleIcon checkbox', async () => {
@@ -164,12 +244,10 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Use alternate idle icon'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', false);
+    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', true);
   });
 
   it('should toggle the openAtStartup checkbox', async () => {
@@ -189,9 +267,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       );
     });
 
-    fireEvent.click(screen.getByLabelText('Open at startup'), {
-      target: { checked: true },
-    });
+    await userEvent.click(screen.getByLabelText('Open at startup'));
 
     expect(updateSetting).toHaveBeenCalledTimes(1);
     expect(updateSetting).toHaveBeenCalledWith('openAtStartup', false);

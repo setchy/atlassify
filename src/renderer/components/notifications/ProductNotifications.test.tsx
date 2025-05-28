@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
@@ -71,7 +72,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       render(<ProductNotifications {...props} />);
     });
 
-    fireEvent.click(screen.getByTestId('product-home'));
+    await userEvent.click(screen.getByTestId('product-home'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
   });
@@ -87,7 +88,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       render(<ProductNotifications {...props} />);
     });
 
-    fireEvent.click(screen.getByTestId('product-toggle'));
+    await userEvent.click(screen.getByTestId('product-toggle'));
 
     const tree = render(<ProductNotifications {...props} />);
 
@@ -112,7 +113,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       </AppContext.Provider>,
     );
 
-    fireEvent.click(screen.getByTestId('product-mark-as-read'));
+    await userEvent.click(screen.getByTestId('product-mark-as-read'));
 
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });

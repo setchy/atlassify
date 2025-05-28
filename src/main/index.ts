@@ -1,5 +1,12 @@
 import path from 'node:path';
-import { app, globalShortcut, nativeTheme, safeStorage, shell } from 'electron';
+import {
+  type BrowserWindowConstructorOptions,
+  app,
+  globalShortcut,
+  nativeTheme,
+  safeStorage,
+  shell,
+} from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
@@ -17,6 +24,9 @@ import MenuBuilder from './menu';
 import { isMacOS, isWindows } from './process';
 import Updater from './updater';
 
+// https://github.com/electron/electron/issues/46538
+app.commandLine?.appendSwitch('gtk-version', '3');
+
 log.initialize();
 
 /**
@@ -33,7 +43,7 @@ const notificationSoundFilePath = path.join(
 );
 const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
 
-const browserWindowOpts: Electron.BrowserWindowConstructorOptions = {
+const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
   minWidth: 500,
