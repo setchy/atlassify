@@ -212,6 +212,10 @@
         "label": "Notificaciones grupales por productos",
         "tooltip": "Notificaciones grupales por productos"
       },
+      "groupByTitle": {
+        "label": "Notificaciones grupales por título",
+        "tooltip": "Notificaciones grupales por título"
+      },
       "unreadOnly": {
         "label": "Mostrar solo una palanca no leída",
         "tooltip": "Mostrar solo notificaciones no leídas"

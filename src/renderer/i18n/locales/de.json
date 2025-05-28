@@ -212,6 +212,10 @@
         "label": "Gruppenbenachrichtigungen durch Produkte",
         "tooltip": "Gruppenbenachrichtigungen durch Produkte"
       },
+      "groupByTitle": {
+        "label": "Gruppenbenachrichtigungen nach Titel",
+        "tooltip": "Gruppenbenachrichtigungen nach Titel"
+      },
       "unreadOnly": {
         "label": "Zeigen Sie nur ungelesen",
         "tooltip": "Zeigen Sie nur ungelesene Benachrichtigungen"
