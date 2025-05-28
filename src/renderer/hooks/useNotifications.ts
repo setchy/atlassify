@@ -14,6 +14,7 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { updateTrayIcon } from '../utils/comms';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
@@ -209,11 +210,12 @@ export const useNotifications = (): NotificationsState => {
     try {
       for (const groupID of groupNotificationsGroupIDs) {
         const res = await getNotificationsByGroupId(account, groupID);
+        const groupNotifications = res.data.notifications.notificationGroup
+          .nodes as GroupNotificationDetailsFragment[];
 
-        const groupNotificationIDs =
-          res.data.notifications.notificationGroup.nodes.map(
-            (notification) => notification.notificationId,
-          );
+        const groupNotificationIDs = groupNotifications.map(
+          (notification) => notification.notificationId,
+        );
 
         notificationIDs.push(...groupNotificationIDs);
       }

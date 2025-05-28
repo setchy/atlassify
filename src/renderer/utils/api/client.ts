@@ -199,8 +199,7 @@ export function getNotificationsByGroupId(
       notifications {
         notificationGroup(groupId: $groupId) {
           nodes {
-            notificationId
-            readState
+            ...GroupNotificationDetails
           } 
         }
       }
@@ -260,3 +259,10 @@ export const AtlassianHeadNotificationFragment = graphql(`
       }
     }
   `);
+
+export const GroupNotificationDetailsFragment = graphql(`
+  fragment GroupNotificationDetails on InfluentsNotificationItem {
+    notificationId
+    readState
+  }
+`);
