@@ -154,7 +154,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [
     auth.accounts,
     settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByTitle, // TODO Could this be done a different way?
+    settings.groupNotificationsByTitle,
     settings.filterTimeSensitive,
     settings.filterCategories,
     settings.filterReadStates,
