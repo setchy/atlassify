@@ -42,7 +42,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     id: '148827438',
     notificationGroup: {
       id: '138661096',
-      size: 1,
+      size: 2,
       additionalActors: [
         {
           displayName: 'atlassify-app',

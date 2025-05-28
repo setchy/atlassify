@@ -9,7 +9,10 @@ import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,
+  getNotificationsByGroupId,
   getNotificationsForUser,
+  markNotificationGroupAsRead,
+  markNotificationGroupAsUnread,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from './client';
@@ -106,7 +109,7 @@ describe('renderer/utils/api/client.ts', () => {
     expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
-  it('markNotificationsAsUnread - should mark repository notifications as read - github', async () => {
+  it('markNotificationsAsUnread - should mark notifications as unread', async () => {
     await markNotificationsAsUnread(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,
     ]);
@@ -119,6 +122,74 @@ describe('renderer/utils/api/client.ts', () => {
           query: expect.stringContaining('mutation MarkAsUnread'),
           variables: {
             notificationIDs: [mockSingleAtlassifyNotification.id],
+          },
+        },
+      }),
+    );
+
+    expect(axios.defaults.headers.common).toMatchSnapshot();
+  });
+
+  it('markNotificationGroupAsRead - should mark notification group as read', async () => {
+    await markNotificationGroupAsRead(
+      mockAtlassianCloudAccount,
+      mockSingleAtlassifyNotification.notificationGroup.id,
+    );
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://team.atlassian.net/gateway/api/graphql',
+        method: 'POST',
+        data: {
+          query: expect.stringContaining('mutation MarkGroupAsRead'),
+          variables: {
+            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+          },
+        },
+      }),
+    );
+
+    expect(axios.defaults.headers.common).toMatchSnapshot();
+  });
+
+  it('markNotificationsAsUnread - should mark notification group as unread', async () => {
+    await markNotificationGroupAsUnread(
+      mockAtlassianCloudAccount,
+      mockSingleAtlassifyNotification.notificationGroup.id,
+    );
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://team.atlassian.net/gateway/api/graphql',
+        method: 'POST',
+        data: {
+          query: expect.stringContaining('mutation MarkGroupAsUnread'),
+          variables: {
+            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+          },
+        },
+      }),
+    );
+
+    expect(axios.defaults.headers.common).toMatchSnapshot();
+  });
+
+  it('getNotificationsByGroupId - should fetch notifications by group id', async () => {
+    await getNotificationsByGroupId(
+      mockAtlassianCloudAccount,
+      mockSingleAtlassifyNotification.notificationGroup.id,
+    );
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://team.atlassian.net/gateway/api/graphql',
+        method: 'POST',
+        data: {
+          query: expect.stringContaining(
+            'query RetrieveNotificationsByGroupId',
+          ),
+          variables: {
+            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
           },
         },
       }),

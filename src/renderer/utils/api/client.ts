@@ -146,22 +146,22 @@ export function markNotificationsAsUnread(
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
-// export function markNotificationGroupAsRead(
-//   account: Account,
-//   notificationGroupId: string,
-// ): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
-//   const MarkGroupAsReadMutation = graphql(`
-//     mutation MarkGroupAsRead($groupId: String!) {
-//       notifications {
-//         markNotificationsByGroupIdAsRead(groupId: $groupId)
-//       }
-//     }
-//   `);
+export function markNotificationGroupAsRead(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
+  const MarkGroupAsReadMutation = graphql(`
+    mutation MarkGroupAsRead($groupId: String!) {
+      notifications {
+        markNotificationsByGroupIdAsRead(groupId: $groupId)
+      }
+    }
+  `);
 
-//   return performPostRequest(account, MarkGroupAsReadMutation, {
-//     groupId: notificationGroupId,
-//   });
-// }
+  return performPostRequest(account, MarkGroupAsReadMutation, {
+    groupId: notificationGroupId,
+  });
+}
 
 /**
  * Mark a notification group as "unread".
@@ -169,22 +169,22 @@ export function markNotificationsAsUnread(
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
-// export function markNotificationGroupAsUnread(
-//   account: Account,
-//   notificationGroupId: string,
-// ): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
-//   const MarkGroupAsUnreadMutation = graphql(`
-//     mutation MarkGroupAsUnread($groupId: String!) {
-//       notifications {
-//         markNotificationsByGroupIdAsUnread(groupId: $groupId)
-//       }
-//     }
-//   `);
+export function markNotificationGroupAsUnread(
+  account: Account,
+  notificationGroupId: string,
+): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
+  const MarkGroupAsUnreadMutation = graphql(`
+    mutation MarkGroupAsUnread($groupId: String!) {
+      notifications {
+        markNotificationsByGroupIdAsUnread(groupId: $groupId)
+      }
+    }
+  `);
 
-//   return performPostRequest(account, MarkGroupAsUnreadMutation, {
-//     groupId: notificationGroupId,
-//   });
-// }
+  return performPostRequest(account, MarkGroupAsUnreadMutation, {
+    groupId: notificationGroupId,
+  });
+}
 
 /**
  * Get notifications by group ID.
