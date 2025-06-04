@@ -90,7 +90,7 @@
     "@atlaskit/textfield": "8.0.6",
     "@atlaskit/toggle": "15.0.6",
     "@atlaskit/tokens": "4.9.1",
-    "@atlaskit/tooltip": "20.2.2",
+    "@atlaskit/tooltip": "20.3.0",
     "@biomejs/biome": "1.9.4",
     "@compiled/webpack-loader": "0.19.6",
     "@discordapp/twemoji": "15.1.0",
