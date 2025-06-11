@@ -96,11 +96,8 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   id="react-select-2-live-region"
                 />
                 <span
-                  aria-atomic="false"
-                  aria-live="assertive"
-                  aria-relevant="additions text"
                   class="css-19y6gjl-a11yText"
-                  role="log"
+                  role="status"
                 />
                 <div
                   class="css-1vrwmt7-control"
@@ -112,6 +109,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   >
                     <div
                       class="css-1c8bys3-singleValue"
+                      id="react-select-2-single-value"
                     >
                       English
                     </div>
@@ -122,6 +120,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     >
                       <input
                         aria-autocomplete="both"
+                        aria-describedby="react-select-2-single-value"
                         aria-expanded="false"
                         aria-haspopup="listbox"
                         aria-invalid="false"
