@@ -85,8 +85,8 @@ importers:
         specifier: 8.1.1
         version: 8.1.1(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/select':
-        specifier: 20.7.0
-        version: 20.7.0(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 20.7.1
+        version: 20.7.1(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
         specifier: 18.0.5
         version: 18.0.5(@types/react@18.3.23)(react@18.3.1)
@@ -372,6 +372,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/icon@27.0.0':
+    resolution: {integrity: sha512-beR8FstHpEKvR7Lk1LgpBLVqQ/qJTxkoIXWssB7T0mDRKCeCu5bTnd6xaC33nU7Wbxw34lYVEiskvgKzCIOGcg==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/inline-dialog@17.2.0':
     resolution: {integrity: sha512-jGDAkx3uGFn3YXCTTErkHL3nsxmyxb/dEU/ZXyv6BFIlhHbM/wekksVmilE6dEoKnsTId48hwpL9pDORhQTM1Q==}
     peerDependencies:
@@ -467,8 +472,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/select@20.7.0':
-    resolution: {integrity: sha512-weY9bpv2ezEjJ/S2QbbY9OB0W9B1DQV7a2Y+vcVUekpBvLN67sOC2Vyq3swUe1ZDLHCTHx68YEF1zl158QqPGw==}
+  '@atlaskit/select@20.7.1':
+    resolution: {integrity: sha512-OBdW5xhlXKWnsEEvaUaBgjU2DID0pnmgJledX23yDaqMOcGxwZ+2sB84u+xxr94SXb/8LGNuLoRc4R9i+I15zg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5921,6 +5926,19 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/icon@27.0.0(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
+      '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
+      '@babel/register': 7.27.1(@babel/core@7.27.1)
+      '@babel/runtime': 7.27.6
+      '@compiled/react': 0.18.4(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/inline-dialog@17.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6197,7 +6215,7 @@ snapshots:
       '@atlaskit/primitives': 14.8.4(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner': 18.0.5(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       '@emotion/react': 11.14.0(@types/react@18.3.23)(react@18.3.1)
       '@floating-ui/dom': 1.7.0
@@ -6210,11 +6228,11 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@20.7.0(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/select@20.7.1(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/icon': 26.4.1(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/icon': 27.0.0(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/primitives': 14.8.4(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/react-select': 2.7.0(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6222,7 +6240,7 @@ snapshots:
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/visually-hidden': 3.0.3(react@18.3.1)
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       '@popperjs/core': 2.11.8
       bind-event-listener: 3.0.0
