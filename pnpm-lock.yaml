@@ -61,8 +61,8 @@ importers:
         specifier: 7.3.2
         version: 7.3.2(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/form':
-        specifier: 12.0.7
-        version: 12.0.7(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.0.8
+        version: 12.0.8(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
         specifier: 5.2.1
         version: 5.2.1(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -357,8 +357,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/form@12.0.7':
-    resolution: {integrity: sha512-MoHt0OZ2B32YUs5ipEnyz4zAjXeTb49zkgWoHDMgRQuWfW6I3/xrWKVFUJPZU7mefrBUkxHgHyQ3fvNQ6DW3Kg==}
+  '@atlaskit/form@12.0.8':
+    resolution: {integrity: sha512-JVnwkAF+pXv9t+KXTs/l6ww4r5pGYpSvk07kGWW9xKcWZkEU5w/ZOF7UleQt2qnLjnWcHcp4vFgh2OYPZXRtlQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5878,16 +5878,16 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@12.0.7(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/form@12.0.8(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/css': 0.10.6(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/heading': 5.2.1(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/icon': 26.4.1(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/icon': 27.0.0(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/primitives': 14.8.4(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       final-form: 4.20.10
       final-form-focus: 1.1.2(final-form@4.20.10)
@@ -9329,7 +9329,7 @@ snapshots:
 
   final-form@4.20.10:
     dependencies:
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.6
 
   find-cache-dir@2.1.0:
     dependencies:
