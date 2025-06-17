@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = `
 <div
@@ -26,7 +26,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             <span
               aria-hidden="true"
               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-              style="color: currentColor;"
+              style="color: currentcolor;"
             >
               <svg
                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -132,7 +132,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         id="react-select-2-input"
                         role="combobox"
                         spellcheck="false"
-                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
                         tabindex="0"
                         type="text"
                         value=""
@@ -156,7 +156,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
                           data-vc="icon-undefined"
                           role="img"
-                          style="--icon-primary-color: currentColor;"
+                          style="--icon-primary-color: currentColor; margin: var(--ds-space-negative-075, -0.375rem);"
                         >
                           <svg
                             height="24"
@@ -310,7 +310,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                             <span
                               aria-hidden="true"
                               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                              style="color: currentColor;"
+                              style="color: currentcolor;"
                             >
                               <svg
                                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -349,7 +349,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                             <span
                               aria-hidden="true"
                               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                              style="color: currentColor;"
+                              style="color: currentcolor;"
                             >
                               <svg
                                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -396,7 +396,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           <span
                             aria-hidden="true"
                             class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                            style="color: currentColor;"
+                            style="color: currentcolor;"
                           >
                             <svg
                               class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -449,7 +449,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -492,7 +492,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -598,7 +598,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -772,7 +772,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -880,7 +880,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -921,7 +921,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -965,7 +965,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -1029,7 +1029,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           <span
                             aria-hidden="true"
                             class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                            style="color: currentColor;"
+                            style="color: currentcolor;"
                           >
                             <svg
                               class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1068,7 +1068,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                           <span
                             aria-hidden="true"
                             class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                            style="color: currentColor;"
+                            style="color: currentcolor;"
                           >
                             <svg
                               class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1115,7 +1115,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         <span
                           aria-hidden="true"
                           class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                          style="color: currentColor;"
+                          style="color: currentcolor;"
                         >
                           <svg
                             class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1160,7 +1160,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -1264,7 +1264,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -1362,7 +1362,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   aria-label="Accounts"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
                   role="img"
-                  style="color: currentColor;"
+                  style="color: currentcolor;"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -1406,7 +1406,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   aria-label="Quit Atlassify"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
                   role="img"
-                  style="color: currentColor;"
+                  style="color: currentcolor;"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/components/layout/AppLayout.tsx should render itself & its children 1`] = `
 {
@@ -267,6 +267,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                         <span
                           aria-hidden="true"
                           class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                          style="color: var(--ds-text-accent-gray-bolder);"
                         >
                           <svg
                             class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -314,6 +315,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                       <span
                         aria-hidden="true"
                         class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-text-accent-gray-bolder);"
                       >
                         <svg
                           class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -612,6 +614,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                       <span
                         aria-hidden="true"
                         class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-text-accent-gray-bolder);"
                       >
                         <svg
                           class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -659,6 +662,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                     <span
                       aria-hidden="true"
                       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-text-accent-gray-bolder);"
                     >
                       <svg
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"

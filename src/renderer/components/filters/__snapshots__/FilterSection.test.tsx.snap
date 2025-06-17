@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/components/filters/FilterSection.tsx should be able to toggle filter value - none already set 1`] = `
 <div
@@ -18,7 +18,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     <svg
       class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
       role="presentation"
-      style="fill: var(--checkbox-tick-color);"
+      style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
       viewBox="0 0 24 24"
     >
       <g
@@ -46,7 +46,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-      style="color: currentColor;"
+      style="color: currentcolor;"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -93,7 +93,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     <svg
       class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
       role="presentation"
-      style="fill: var(--checkbox-tick-color);"
+      style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
       viewBox="0 0 24 24"
     >
       <g
@@ -121,7 +121,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-      style="color: currentColor;"
+      style="color: currentcolor;"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -183,7 +183,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -211,7 +211,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               <span
                 aria-hidden="true"
                 class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-                style="color: currentColor;"
+                style="color: currentcolor;"
               >
                 <svg
                   class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -255,7 +255,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
                 role="presentation"
-                style="fill: var(--checkbox-tick-color);"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
               >
                 <g
@@ -283,7 +283,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               <span
                 aria-hidden="true"
                 class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-                style="color: currentColor;"
+                style="color: currentcolor;"
               >
                 <svg
                   class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -343,7 +343,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -371,7 +371,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             <span
               aria-hidden="true"
               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-              style="color: currentColor;"
+              style="color: currentcolor;"
             >
               <svg
                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
@@ -415,7 +415,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
               role="presentation"
-              style="fill: var(--checkbox-tick-color);"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
             >
               <g
@@ -443,7 +443,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             <span
               aria-hidden="true"
               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-              style="color: currentColor;"
+              style="color: currentcolor;"
             >
               <svg
                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
