@@ -1,16 +1,16 @@
 import path from 'node:path';
+
+import twemoji from '@discordapp/twemoji';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack';
 import { merge } from 'webpack-merge';
 
-import baseConfig from './webpack.config.common';
-import webpackPaths from './webpack.paths';
-
-import twemoji from '@discordapp/twemoji';
 import { Constants } from '../src/renderer/utils/constants';
 import { Errors } from '../src/renderer/utils/errors';
+import baseConfig from './webpack.config.common';
+import webpackPaths from './webpack.paths';
 
 const ALL_EMOJIS = [
   ...Constants.ALL_READ_EMOJIS,

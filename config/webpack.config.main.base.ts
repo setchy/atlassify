@@ -1,4 +1,5 @@
 import path from 'node:path';
+
 import type webpack from 'webpack';
 import { merge } from 'webpack-merge';
 

@@ -1,4 +1,5 @@
 import { setGlobalTheme } from '@atlaskit/tokens';
+
 import { createRoot } from 'react-dom/client';
 
 import '@atlaskit/css-reset';

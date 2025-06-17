@@ -1,10 +1,10 @@
-import { categoryFilter } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { categoryFilter } from '.';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
   it('hasCategoryFilters', () => {

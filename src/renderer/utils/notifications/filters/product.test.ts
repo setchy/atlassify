@@ -1,11 +1,12 @@
 import { JiraLogo } from '@atlaskit/logo';
-import { productFilter } from '.';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { productFilter } from '.';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {

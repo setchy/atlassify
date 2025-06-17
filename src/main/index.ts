@@ -1,7 +1,8 @@
 import path from 'node:path';
+
 import {
-  type BrowserWindowConstructorOptions,
   app,
+  type BrowserWindowConstructorOptions,
   globalShortcut,
   nativeTheme,
   safeStorage,
@@ -16,7 +17,6 @@ import type {
   IKeyboardShortcut,
   IOpenExternal,
 } from '../shared/events';
-
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';

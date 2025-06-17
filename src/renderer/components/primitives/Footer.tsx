@@ -1,5 +1,6 @@
-import { Box, Flex } from '@atlaskit/primitives';
 import type { FC, ReactNode } from 'react';
+
+import { Box, Flex } from '@atlaskit/primitives';
 
 interface IFooter {
   children: ReactNode;

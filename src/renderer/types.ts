@@ -1,5 +1,6 @@
 import type { NewUtilityIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
+
 import type { Language } from './i18n/types';
 
 declare const __brand: unique symbol;

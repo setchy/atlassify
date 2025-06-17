@@ -1,5 +1,6 @@
 import { ipcMain } from 'electron';
 import type { Menubar } from 'menubar';
+
 import type { EventData, EventType } from '../shared/events';
 
 /**

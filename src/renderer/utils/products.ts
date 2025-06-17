@@ -1,7 +1,3 @@
-import type { AtlassianProduct, ProductName } from '../types';
-import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
-import { URLs } from './links';
-
 import {
   AtlasIcon,
   AtlassianIcon,
@@ -13,6 +9,10 @@ import {
   JiraServiceManagementIcon,
   TrelloIcon,
 } from '@atlaskit/logo';
+
+import type { AtlassianProduct, ProductName } from '../types';
+import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
+import { URLs } from './links';
 
 // TODO remove duplication between this and filters/product PRODUCT_DETAILS
 export const PRODUCTS: Record<ProductName, AtlassianProduct> = {

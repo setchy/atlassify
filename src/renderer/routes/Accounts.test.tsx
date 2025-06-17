@@ -12,7 +12,6 @@ import * as apiRequests from '../utils/api/request';
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';
-
 import { AccountsRoute } from './Accounts';
 
 const mockNavigate = jest.fn();

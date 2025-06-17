@@ -4,15 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
+import RetryIcon from '@atlaskit/icon/core/retry';
 import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
-
-import RetryIcon from '@atlaskit/icon/core/retry';
 import Tooltip from '@atlaskit/tooltip';
+
 import { APPLICATION } from '../../../shared/constants';
 import { AppContext, defaultSettings } from '../../context/App';
 import { OpenPreference } from '../../types';

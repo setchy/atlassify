@@ -1,4 +1,5 @@
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
+
 import { Theme } from '../types';
 import { getTheme, isLightMode, setTheme } from './theme';
 

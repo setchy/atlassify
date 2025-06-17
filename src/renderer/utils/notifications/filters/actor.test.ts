@@ -1,10 +1,10 @@
-import { actorFilter, inferNotificationActor } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { actorFilter, inferNotificationActor } from '.';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
   it('hasActorFilters', () => {

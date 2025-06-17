@@ -16,6 +16,7 @@ import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
+
 import { AppLayout } from './components/layout/AppLayout';
 
 function RequireAuth({ children }) {

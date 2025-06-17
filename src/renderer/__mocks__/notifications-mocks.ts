@@ -1,4 +1,5 @@
 import { BitbucketIcon, ConfluenceIcon } from '@atlaskit/logo';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
