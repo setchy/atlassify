@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+
 import type { EventData, EventType } from '../shared/events';
 
 /**

@@ -1,5 +1,5 @@
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
-import { PRODUCTS, getAtlassianProduct } from './products';
+import { getAtlassianProduct, PRODUCTS } from './products';
 
 describe('renderer/utils/products.ts', () => {
   it('getAtlassianProduct - should map to correct products', () => {

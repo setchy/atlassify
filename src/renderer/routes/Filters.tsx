@@ -10,7 +10,6 @@ import { Page } from '../components/layout/Page';
 import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
-
 import {
   actorFilter,
   categoryFilter,

@@ -2,7 +2,6 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import * as comms from './comms';
 import {
-  URLs,
   openAccountProfile,
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -10,6 +9,7 @@ import {
   openMyNotifications,
   openMyPullRequests,
   openNotification,
+  URLs,
 } from './links';
 
 describe('renderer/utils/links.ts', () => {

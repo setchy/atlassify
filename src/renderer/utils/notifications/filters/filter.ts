@@ -1,10 +1,10 @@
+import type { AtlassifyNotification, SettingsState } from '../../../types';
 import {
   categoryFilter,
   productFilter,
   readStateFilter,
   timeSensitiveFilter,
 } from '.';
-import type { AtlassifyNotification, SettingsState } from '../../../types';
 
 export function filterNotifications(
   notifications: AtlassifyNotification[],

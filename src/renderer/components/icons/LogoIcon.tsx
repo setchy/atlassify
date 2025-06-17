@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+
 import { APPLICATION } from '../../../shared/constants';
 
 interface ILogoIcon {

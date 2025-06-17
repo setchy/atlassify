@@ -10,7 +10,6 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
-
 import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,

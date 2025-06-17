@@ -35,8 +35,8 @@ import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
-import { Oops } from '../Oops';
 import { UnreadIcon } from '../icons/UnreadIcon';
+import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 

@@ -57,6 +57,11 @@
     "husky": "9.1.7"
   },
   "packageManager": "pnpm@10.12.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide"
+    ]
+  },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }

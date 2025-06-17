@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
+import { IconTile } from '@atlaskit/icon';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/core/people-group';
 import { Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { IconTile } from '@atlaskit/icon';
 import { APPLICATION } from '../../../shared/constants';
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';

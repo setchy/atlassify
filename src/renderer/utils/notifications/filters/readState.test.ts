@@ -1,10 +1,10 @@
-import { readStateFilter } from '.';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   it('hasReadStateFilters', () => {

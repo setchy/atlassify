@@ -1,6 +1,7 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
-import type { AxiosPromise, AxiosResponse } from 'axios';
 import { useContext } from 'react';
+
+import type { AxiosPromise, AxiosResponse } from 'axios';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
