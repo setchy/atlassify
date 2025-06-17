@@ -70,8 +70,8 @@ importers:
         specifier: 26.4.1
         version: 26.4.1(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: 15.3.0
-        version: 15.3.0(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.3.1
+        version: 15.3.1(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 18.2.0
         version: 18.2.0(@types/react@18.3.23)(react@18.3.1)
@@ -382,8 +382,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-message@15.3.0':
-    resolution: {integrity: sha512-tf3PskEvjEM0q0swSUmf74CcZ/yLbCbVHaXujfpwTTQVxUtccGMkadVT6tDDv9fCv8cXgNataULhXaVuo/Wyvw==}
+  '@atlaskit/inline-message@15.3.1':
+    resolution: {integrity: sha512-78wG6kxzoTbx9HdhhGcanFhfFmepwA0GAJFgLFghY/ppgaKG67fXZtOvv2OshmuZjTwRxsAqwvkvEH/zrGc/qg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5944,7 +5944,7 @@ snapshots:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.10.6(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/layering': 2.1.1(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/layering': 2.2.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/link': 3.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/popper': 7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5960,17 +5960,17 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/inline-message@15.3.0(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-message@15.3.1(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 23.2.3(@babel/core@7.27.1)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/icon': 26.4.1(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/icon': 27.0.0(@babel/core@7.27.1)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/inline-dialog': 17.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/link': 3.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/primitives': 14.8.4(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.1
+      '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       react: 18.3.1
     transitivePeerDependencies:
