@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters route 1`] = `
 <button
@@ -13,6 +13,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the filters 
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -50,6 +51,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications go to the home if 
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -87,6 +89,7 @@ exports[`renderer/components/Sidebar.tsx Filter notifications show filters count
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -125,6 +128,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should group notifica
       aria-label="groupByProduct"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -163,6 +167,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should order notifica
       aria-label="groupByProduct"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -201,6 +206,7 @@ exports[`renderer/components/Sidebar.tsx Group by products should toggle group n
       aria-label="groupByProduct"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -239,6 +245,7 @@ exports[`renderer/components/Sidebar.tsx Group by titles should group notificati
       aria-label="groupByTitle"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -277,6 +284,7 @@ exports[`renderer/components/Sidebar.tsx Group by titles should not group notifi
       aria-label="groupByTitle"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -315,6 +323,7 @@ exports[`renderer/components/Sidebar.tsx Group by titles should toggle group not
       aria-label="groupByTitle"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
       role="img"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -600,6 +609,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     <span
                       aria-hidden="true"
                       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-text-accent-gray-bolder);"
                     >
                       <svg
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -647,6 +657,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -932,6 +943,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -979,6 +991,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 <span
                   aria-hidden="true"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                  style="color: var(--ds-text-accent-gray-bolder);"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1321,6 +1334,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                     <span
                       aria-hidden="true"
                       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-text-accent-gray-bolder);"
                     >
                       <svg
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1368,6 +1382,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1653,6 +1668,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1700,6 +1716,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 <span
                   aria-hidden="true"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                  style="color: var(--ds-text-accent-gray-bolder);"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2042,6 +2059,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     <span
                       aria-hidden="true"
                       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-text-accent-gray-bolder);"
                     >
                       <svg
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2089,6 +2107,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2374,6 +2393,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2421,6 +2441,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 <span
                   aria-hidden="true"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                  style="color: var(--ds-text-accent-gray-bolder);"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2763,6 +2784,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                     <span
                       aria-hidden="true"
                       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-text-accent-gray-bolder);"
                     >
                       <svg
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -2810,6 +2832,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -3095,6 +3118,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                   <span
                     aria-hidden="true"
                     class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: var(--ds-text-accent-gray-bolder);"
                   >
                     <svg
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -3142,6 +3166,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
                 <span
                   aria-hidden="true"
                   class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                  style="color: var(--ds-text-accent-gray-bolder);"
                 >
                   <svg
                     class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -3236,6 +3261,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -3273,6 +3299,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -3310,6 +3337,7 @@ exports[`renderer/components/Sidebar.tsx notifications icon renders correct icon
     <span
       aria-hidden="true"
       class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+      style="color: var(--ds-text-accent-gray-bolder);"
     >
       <svg
         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
