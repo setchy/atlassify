@@ -83,6 +83,8 @@ export function getAtlassianProduct(
         default:
           return PRODUCTS['jira product discovery'];
       }
+    case 'opsgenie':
+      return PRODUCTS['jira service management'];
     case 'team-central':
       return PRODUCTS['team central (atlas)'];
     default:
