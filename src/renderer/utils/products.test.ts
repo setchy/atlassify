@@ -27,6 +27,10 @@ describe('renderer/utils/products.ts', () => {
       PRODUCTS['jira product discovery'],
     );
 
+    expect(getAtlassianProduct(createProductNotificationMock('opsgenie'))).toBe(
+      PRODUCTS['jira service management'],
+    );
+
     expect(
       getAtlassianProduct(createProductNotificationMock('team-central')),
     ).toBe(PRODUCTS['team central (atlas)']);
