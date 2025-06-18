@@ -115,7 +115,7 @@
     "css-loader": "7.1.2",
     "css-minimizer-webpack-plugin": "7.0.2",
     "date-fns": "4.1.0",
-    "electron": "36.4.0",
+    "electron": "36.5.0",
     "electron-builder": "25.1.8",
     "graphql": "16.11.0",
     "html-webpack-plugin": "5.6.3",
