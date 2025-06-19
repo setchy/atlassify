@@ -55,8 +55,8 @@ importers:
         specifier: 23.2.4
         version: 23.2.4(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 17.1.4
-        version: 17.1.4(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 17.1.5
+        version: 17.1.5(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 7.3.2
         version: 7.3.2(@types/react@18.3.23)(react@18.3.1)
@@ -329,8 +329,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/checkbox@17.1.4':
-    resolution: {integrity: sha512-XT9vIAh2x4wA/2AqLNos/jtlBVq5erK+DBK/8Tl1mJCh0ycuUvTEv/iLHeQL1fG14KyIHjc2B/Pq5Cl9VUZHsQ==}
+  '@atlaskit/checkbox@17.1.5':
+    resolution: {integrity: sha512-FIvjtTkZ1tO7Ykqw65QXw1w6MPj2ciUS+Hfzxpg8IEep79Z9RkMj10d8kmrt8/Kf98xLhgkMwaHa82jt+wbGlQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6056,15 +6056,15 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@17.1.4(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@17.1.5(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.10.6(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/css': 0.11.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/icon': 27.0.0(@babel/core@7.27.4)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/tokens': 5.2.1(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/tokens': 5.3.0(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       react: 18.3.1
