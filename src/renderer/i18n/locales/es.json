@@ -1,7 +1,7 @@
 {
   "accounts": {
     "add_new": "Agregar nueva cuenta",
-    "logout_account": "LOGAR {{username}}",
+    "logout_account": "Cerrar sesión {{username}}",
     "open_profile": "Perfil de cuenta abierto",
     "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"
@@ -44,7 +44,7 @@
     },
     "unknown": {
       "description1": "Vuelva a intentarlo más tarde.",
-      "title": "¡Ups! \nAlgo salió mal"
+      "title": "¡Ups! Algo salió mal"
     }
   },
   "filters": {
@@ -111,7 +111,7 @@
   },
   "login": {
     "create_token": "Crear token API con alcances",
-    "error_message": "¡Ups! \nLa combinación token de nombre de usuario proporcionada no es válida. \nPor favor intente de nuevo.",
+    "error_message": "¡Ups! La combinación token de nombre de usuario proporcionada no es válida. Por favor intente de nuevo.",
     "security_docs": "Ver documentación de Atlassian",
     "title": "Iniciar sesión con Atlassian",
     "token": "Token API",
@@ -130,8 +130,8 @@
       "pull_requests": "Mis solicitudes de extracción"
     },
     "interactions": {
-      "mark_as_read": "Mark como leído",
-      "mark_as_unread": "Marca como no leído"
+      "mark_as_read": "Marcar como leído",
+      "mark_as_unread": "Marcar como no leído"
     },
     "native_count": "Tienes {{count}} notificaciones",
     "product": {
@@ -153,7 +153,7 @@
     },
     "notifications": {
       "delay_notification_state": "Estado de notificación de retraso",
-      "delay_notification_state_help": "Mantenga la notificación dentro de {{AppName}} tras la interacción (es decir: Abra la notificación, marque como lea) hasta que la siguiente ventana de actualización (programada o iniciada por el usuario).",
+      "delay_notification_state_help": "Mantenga la notificación dentro de {{appName}} tras la interacción (es decir: Abra la notificación, marque como lea) hasta que la siguiente ventana de actualización (programada o iniciada por el usuario).",
       "group_alphabetically": "Notificaciones de productos grupales alfabéticamente",
       "group_alphabetically_help": "Cuando los productos agrupan las notificaciones, esta configuración ordenará los productos en orden alfabético.",
       "mark_as_read_on_open": "Mark como leída en Open",
@@ -165,7 +165,7 @@
     },
     "system": {
       "alternate_icon": "Use un icono de inactividad alternativo",
-      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. \nEsta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
+      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
       "keyboard_shortcut": "Habilitar el atajo de teclado",
       "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{shortcut}} para mostrar o ocultar {{appName}}.",
       "open_links": "Abrir enlaces",

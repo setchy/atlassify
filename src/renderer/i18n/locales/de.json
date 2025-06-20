@@ -44,7 +44,7 @@
     },
     "unknown": {
       "description1": "Bitte versuchen Sie es später erneut.",
-      "title": "Hoppla! \nEtwas lief schief"
+      "title": "Hoppla! Etwas lief schief"
     }
   },
   "filters": {
@@ -111,7 +111,7 @@
   },
   "login": {
     "create_token": "Erstellen Sie API -Token mit Scopes",
-    "error_message": "Hoppla! \nDie Bereitstellung der Benutzernamen -Token -Kombination ist nicht gültig. \nBitte versuchen Sie es erneut.",
+    "error_message": "Hoppla! Die angegebene Benutzername-Token-Kombination ist nicht gültig",
     "security_docs": "Siehe Atlassian Dokumentation",
     "title": "Melden Sie sich mit Atlassian an",
     "token": "API -Token",
@@ -165,7 +165,7 @@
     },
     "system": {
       "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
       "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
