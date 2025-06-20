@@ -113,8 +113,8 @@
     "title": "Login with Atlassian",
     "username_helper": "Your Atlassian username / email address",
     "token": "API Token",
-    "create_token": "Create an API Token",
-    "token_helper": "for your account and paste above",
+    "create_token": "Create API token with scopes",
+    "token_helper": "with scopes [read:account, read:jira-work] and paste above",
     "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
     "security_docs": "See Atlassian documentation"
   },
