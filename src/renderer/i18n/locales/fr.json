@@ -115,7 +115,7 @@
     "security_docs": "Voir la documentation atlastique",
     "title": "Connectez-vous avec Atlassian",
     "token": "Jeton API",
-    "token_helper": "avec des lunettes [read:account, read:jira-work] et coller ci-dessus",
+    "token_helper": "avec des portées [read:account, read:jira-work] et collez-le ci-dessus",
     "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
   },
   "notifications": {
