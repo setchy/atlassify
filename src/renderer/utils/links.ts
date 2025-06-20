@@ -7,7 +7,7 @@ export const URLs = {
     API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
     DOCS: {
       API_TOKEN:
-        'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/' as Link,
+        'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/#Create-an-API-token-with-scopes' as Link,
     },
     WEB: {
       BITBUCKET_HOME: 'https://bitbucket.org' as Link,

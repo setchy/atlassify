@@ -110,12 +110,12 @@
     "subheading": "auf Ihrer Menüleiste"
   },
   "login": {
-    "create_token": "Erstellen Sie ein API -Token",
+    "create_token": "Erstellen Sie API -Token mit Scopes",
     "error_message": "Hoppla! \nDie Bereitstellung der Benutzernamen -Token -Kombination ist nicht gültig. \nBitte versuchen Sie es erneut.",
     "security_docs": "Siehe Atlassian Dokumentation",
     "title": "Melden Sie sich mit Atlassian an",
     "token": "API -Token",
-    "token_helper": "Für Ihr Konto und eine Einfüge oben",
+    "token_helper": "mit Scopes [read:account, read:jira-work] und oben einfügen",
     "username_helper": "Ihr Atlassian Benutzername / E -Mail -Adresse"
   },
   "notifications": {

@@ -6,191 +6,195 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="css-18bes35"
+        class="flex h-screen flex-col"
+        data-testid="login"
       >
         <div
-          class="css-y272c0"
+          class="css-18bes35"
         >
           <div
-            role="presentation"
-          >
-            <button
-              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-              data-testid="header-nav-back"
-              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
-              type="button"
-            >
-              <span
-                class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
-              >
-                <span
-                  aria-hidden="true"
-                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                  style="color: currentcolor;"
-                >
-                  <svg
-                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
-                    fill="none"
-                    role="presentation"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
-                >
-                  Go Back
-                </span>
-              </span>
-            </button>
-          </div>
-          <h3
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
-          >
-            Login with Atlassian
-          </h3>
-        </div>
-      </div>
-      <div
-        class="css-1rd5nai"
-      >
-        <form>
-          <div
-            class="_1pfh1ejb"
+            class="css-y272c0"
           >
             <div
-              class="_1pfhu2gc"
-              data-testid="login-username"
+              role="presentation"
             >
-              <label
-                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
-                data-testid="login-username--label"
-                for="username-uid3"
-                id="username-uid3-label"
+              <button
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                data-testid="header-nav-back"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                type="button"
               >
-                Username
-              </label>
-              <div
-                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
-                data-ds--text-field--container="true"
-                role="presentation"
-                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
-              >
-                <input
-                  aria-describedby="username-uid3-valid username-uid3-helper"
-                  aria-labelledby="username-uid3-label"
-                  autocomplete="off"
-                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
-                  data-ds--text-field--input="true"
-                  id="username-uid3"
-                  name="username"
-                  value=""
-                />
-              </div>
-              <div
-                aria-live="polite"
-                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-                id="username-uid3-helper"
-              >
-                Your Atlassian username / email address
-              </div>
-            </div>
-            <div
-              class="_1pfhu2gc"
-              data-testid="login-token"
-            >
-              <label
-                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
-                data-testid="login-token--label"
-                for="token-uid4"
-                id="token-uid4-label"
-              >
-                API Token
-              </label>
-              <div
-                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
-                data-ds--text-field--container="true"
-                role="presentation"
-                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
-              >
-                <input
-                  aria-describedby="token-uid4-valid token-uid4-helper"
-                  aria-labelledby="token-uid4-label"
-                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
-                  data-ds--text-field--input="true"
-                  id="token-uid4"
-                  name="token"
-                  type="password"
-                  value=""
-                />
-              </div>
-              <div
-                aria-live="polite"
-                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-                id="token-uid4-helper"
-              >
-                <span>
-                  <div
-                    class="css-bsfd3j"
+                <span
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <div
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
                       role="presentation"
+                      viewBox="0 0 16 16"
                     >
-                      <button
-                        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-                        data-testid="login-create-token"
-                        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
-                        type="button"
+                      <path
+                        clip-rule="evenodd"
+                        d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                  >
+                    Go Back
+                  </span>
+                </span>
+              </button>
+            </div>
+            <h3
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
+            >
+              Login with Atlassian
+            </h3>
+          </div>
+        </div>
+        <div
+          class="css-1rd5nai"
+        >
+          <div
+            class="css-k5cxwk"
+          />
+          <form>
+            <div
+              class="_1pfh1ejb"
+            >
+              <div
+                class="_1pfhu2gc"
+                data-testid="login-username"
+              >
+                <label
+                  class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                  data-testid="login-username--label"
+                  for="username-uid3"
+                  id="username-uid3-label"
+                >
+                  Username
+                </label>
+                <div
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                  data-ds--text-field--container="true"
+                  role="presentation"
+                  style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                >
+                  <input
+                    aria-describedby="username-uid3-valid username-uid3-helper"
+                    aria-labelledby="username-uid3-label"
+                    autocomplete="off"
+                    class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
+                    data-ds--text-field--input="true"
+                    id="username-uid3"
+                    name="username"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-live="polite"
+                  class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                  id="username-uid3-helper"
+                >
+                  Your Atlassian username / email address
+                </div>
+              </div>
+              <div
+                class="_1pfhu2gc"
+                data-testid="login-token"
+              >
+                <label
+                  class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                  data-testid="login-token--label"
+                  for="token-uid4"
+                  id="token-uid4-label"
+                >
+                  API Token
+                </label>
+                <div
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                  data-ds--text-field--container="true"
+                  role="presentation"
+                  style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                >
+                  <input
+                    aria-describedby="token-uid4-valid token-uid4-helper"
+                    aria-labelledby="token-uid4-label"
+                    class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
+                    data-ds--text-field--input="true"
+                    id="token-uid4"
+                    name="token"
+                    type="password"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-live="polite"
+                  class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                  id="token-uid4-helper"
+                >
+                  <span>
+                    <div
+                      class="css-lkny6i"
+                    >
+                      <div
+                        role="presentation"
                       >
-                        <span
-                          class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
+                        <button
+                          class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                          data-testid="login-create-token"
+                          style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                          type="button"
                         >
                           <span
-                            aria-hidden="true"
-                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                            style="color: currentcolor;"
+                            class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                           >
-                            <svg
-                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
-                              fill="none"
-                              role="presentation"
-                              viewBox="0 0 12 12"
+                            <span
+                              aria-hidden="true"
+                              class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                              style="color: currentcolor;"
                             >
-                              <path
-                                clip-rule="evenodd"
-                                d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
-                                fill="currentcolor"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
+                              <svg
+                                class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                                fill="none"
+                                role="presentation"
+                                viewBox="0 0 12 12"
+                              >
+                                <path
+                                  clip-rule="evenodd"
+                                  d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                                  fill="currentcolor"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
                           </span>
-                        </span>
-                        <span
-                          class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
-                        >
-                          Create an API Token
-                        </span>
-                      </button>
+                          <span
+                            class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
+                          >
+                            Create API token with scopes
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="css-k5cxwk"
+                      >
+                        with scopes [read:account, read:jira-work] and paste above
+                      </div>
                     </div>
-                    <div
-                      class="css-k5cxwk"
-                    >
-                      for your account and paste above
-                    </div>
-                  </div>
-                </span>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-1rw5qv2"
-          >
             <div
               class="css-kxmhz3"
             >
@@ -295,198 +299,202 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </div>
               </footer>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="css-18bes35"
+      class="flex h-screen flex-col"
+      data-testid="login"
     >
       <div
-        class="css-y272c0"
+        class="css-18bes35"
       >
         <div
-          role="presentation"
-        >
-          <button
-            class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-            data-testid="header-nav-back"
-            style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
-            type="button"
-          >
-            <span
-              class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
-            >
-              <span
-                aria-hidden="true"
-                class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                style="color: currentcolor;"
-              >
-                <svg
-                  class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
-                  fill="none"
-                  role="presentation"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
-                    fill="currentcolor"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span
-                class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
-              >
-                Go Back
-              </span>
-            </span>
-          </button>
-        </div>
-        <h3
-          class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
-        >
-          Login with Atlassian
-        </h3>
-      </div>
-    </div>
-    <div
-      class="css-1rd5nai"
-    >
-      <form>
-        <div
-          class="_1pfh1ejb"
+          class="css-y272c0"
         >
           <div
-            class="_1pfhu2gc"
-            data-testid="login-username"
+            role="presentation"
           >
-            <label
-              class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
-              data-testid="login-username--label"
-              for="username-uid3"
-              id="username-uid3-label"
+            <button
+              class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              data-testid="header-nav-back"
+              style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+              type="button"
             >
-              Username
-            </label>
-            <div
-              class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
-              data-ds--text-field--container="true"
-              role="presentation"
-              style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
-            >
-              <input
-                aria-describedby="username-uid3-valid username-uid3-helper"
-                aria-labelledby="username-uid3-label"
-                autocomplete="off"
-                class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
-                data-ds--text-field--input="true"
-                id="username-uid3"
-                name="username"
-                value=""
-              />
-            </div>
-            <div
-              aria-live="polite"
-              class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-              id="username-uid3-helper"
-            >
-              Your Atlassian username / email address
-            </div>
-          </div>
-          <div
-            class="_1pfhu2gc"
-            data-testid="login-token"
-          >
-            <label
-              class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
-              data-testid="login-token--label"
-              for="token-uid4"
-              id="token-uid4-label"
-            >
-              API Token
-            </label>
-            <div
-              class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
-              data-ds--text-field--container="true"
-              role="presentation"
-              style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
-            >
-              <input
-                aria-describedby="token-uid4-valid token-uid4-helper"
-                aria-labelledby="token-uid4-label"
-                class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
-                data-ds--text-field--input="true"
-                id="token-uid4"
-                name="token"
-                type="password"
-                value=""
-              />
-            </div>
-            <div
-              aria-live="polite"
-              class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-              id="token-uid4-helper"
-            >
-              <span>
-                <div
-                  class="css-bsfd3j"
+              <span
+                class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+              >
+                <span
+                  aria-hidden="true"
+                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                  style="color: currentcolor;"
                 >
-                  <div
+                  <svg
+                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                    fill="none"
                     role="presentation"
+                    viewBox="0 0 16 16"
                   >
-                    <button
-                      class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-                      data-testid="login-create-token"
-                      style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
-                      type="button"
+                    <path
+                      clip-rule="evenodd"
+                      d="m1.22 7.47 5-5 1.06 1.06-3.72 3.72H15v1.5H3.56l3.72 3.72-1.06 1.06-5-5a.75.75 0 0 1 0-1.06"
+                      fill="currentcolor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                >
+                  Go Back
+                </span>
+              </span>
+            </button>
+          </div>
+          <h3
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
+          >
+            Login with Atlassian
+          </h3>
+        </div>
+      </div>
+      <div
+        class="css-1rd5nai"
+      >
+        <div
+          class="css-k5cxwk"
+        />
+        <form>
+          <div
+            class="_1pfh1ejb"
+          >
+            <div
+              class="_1pfhu2gc"
+              data-testid="login-username"
+            >
+              <label
+                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                data-testid="login-username--label"
+                for="username-uid3"
+                id="username-uid3-label"
+              >
+                Username
+              </label>
+              <div
+                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                data-ds--text-field--container="true"
+                role="presentation"
+                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+              >
+                <input
+                  aria-describedby="username-uid3-valid username-uid3-helper"
+                  aria-labelledby="username-uid3-label"
+                  autocomplete="off"
+                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
+                  data-ds--text-field--input="true"
+                  id="username-uid3"
+                  name="username"
+                  value=""
+                />
+              </div>
+              <div
+                aria-live="polite"
+                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                id="username-uid3-helper"
+              >
+                Your Atlassian username / email address
+              </div>
+            </div>
+            <div
+              class="_1pfhu2gc"
+              data-testid="login-token"
+            >
+              <label
+                class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                data-testid="login-token--label"
+                for="token-uid4"
+                id="token-uid4-label"
+              >
+                API Token
+              </label>
+              <div
+                class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                data-ds--text-field--container="true"
+                role="presentation"
+                style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+              >
+                <input
+                  aria-describedby="token-uid4-valid token-uid4-helper"
+                  aria-labelledby="token-uid4-label"
+                  class="_19itidpf _11c82smr _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14jiu2gc _olc6u2gc _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr131l"
+                  data-ds--text-field--input="true"
+                  id="token-uid4"
+                  name="token"
+                  type="password"
+                  value=""
+                />
+              </div>
+              <div
+                aria-live="polite"
+                class="_zulp12x7 _11c8dcr7 _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                id="token-uid4-helper"
+              >
+                <span>
+                  <div
+                    class="css-lkny6i"
+                  >
+                    <div
+                      role="presentation"
                     >
-                      <span
-                        class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
+                      <button
+                        class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkosqtm _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgu2gc _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                        data-testid="login-create-token"
+                        style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                        type="button"
                       >
                         <span
-                          aria-hidden="true"
-                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                          style="color: currentcolor;"
+                          class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw _1he91b66 _w795v77o"
                         >
-                          <svg
-                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
-                            fill="none"
-                            role="presentation"
-                            viewBox="0 0 12 12"
+                          <span
+                            aria-hidden="true"
+                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                            style="color: currentcolor;"
                           >
-                            <path
-                              clip-rule="evenodd"
-                              d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
-                              fill="currentcolor"
-                              fill-rule="evenodd"
-                            />
-                          </svg>
+                            <svg
+                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                              fill="none"
+                              role="presentation"
+                              viewBox="0 0 12 12"
+                            >
+                              <path
+                                clip-rule="evenodd"
+                                d="M6 1.5A1.5 1.5 0 0 0 4.5 3v2.5h3V3A1.5 1.5 0 0 0 6 1.5m3 4.01V3a3 3 0 0 0-6 0v2.51c-.844.094-1.5.809-1.5 1.678v3.125c0 .931.756 1.687 1.688 1.687h5.624c.932 0 1.688-.755 1.688-1.687V7.187c0-.868-.656-1.583-1.5-1.677"
+                                fill="currentcolor"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
                         </span>
-                      </span>
-                      <span
-                        class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
-                      >
-                        Create an API Token
-                      </span>
-                    </button>
+                        <span
+                          class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
+                        >
+                          Create API token with scopes
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                    >
+                      with scopes [read:account, read:jira-work] and paste above
+                    </div>
                   </div>
-                  <div
-                    class="css-k5cxwk"
-                  >
-                    for your account and paste above
-                  </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="css-1rw5qv2"
-        >
           <div
             class="css-kxmhz3"
           >
@@ -591,8 +599,8 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
             </footer>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>,
   "debug": [Function],

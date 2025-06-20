@@ -14,11 +14,12 @@ import Form, {
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LogInIcon from '@atlaskit/icon/core/log-in';
 import LockLockedIcon from '@atlaskit/icon/utility/lock-locked';
-import { Box, Inline } from '@atlaskit/primitives';
+import { Box, Inline, Stack } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { logError } from '../../shared/logger';
+import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
@@ -57,10 +58,15 @@ export const LoginRoute: FC = () => {
   );
 
   return (
-    <Fragment>
+    <Page id="login">
       <Header>{t('login.title')}</Header>
 
       <Box paddingInline="space.400">
+        <Box>
+          {!isValidToken && (
+            <ErrorMessage>{t('login.error_message')}</ErrorMessage>
+          )}
+        </Box>
         <Form<IValues> onSubmit={loginUser}>
           {({ formProps, submitting }) => (
             <form {...formProps}>
@@ -96,7 +102,7 @@ export const LoginRoute: FC = () => {
                     <Fragment>
                       <TextField type="password" {...fieldProps} />
                       <HelperMessage>
-                        <Inline alignBlock="center" space="space.050">
+                        <Stack alignBlock="center" space="space.050">
                           <Tooltip content={t('login.create_token')}>
                             <Button
                               appearance="discovery"
@@ -109,56 +115,51 @@ export const LoginRoute: FC = () => {
                             </Button>
                           </Tooltip>
                           <Box>{t('login.token_helper')}</Box>
-                        </Inline>
+                        </Stack>
                       </HelperMessage>
                     </Fragment>
                   )}
                 </Field>
               </FormSection>
 
-              <Box paddingBlock="space.050">
-                {!isValidToken && (
-                  <ErrorMessage>{t('login.error_message')}</ErrorMessage>
-                )}
-                <Inline alignBlock="center" spread="space-between">
-                  <Box paddingBlockStart="space.300">
-                    <Tooltip content={t('login.security_docs')} position="top">
-                      <Button
-                        appearance="subtle"
-                        iconBefore={LinkExternalIcon}
-                        onClick={() => openAtlassianSecurityDocs()}
-                        testId="login-docs"
-                      >
-                        {t('common.docs')}
-                      </Button>
-                    </Tooltip>
-                  </Box>
-                  <FormFooter>
-                    <ButtonGroup label="Form submit options">
-                      <Button
-                        appearance="subtle"
-                        onClick={() => navigate(-1)}
-                        testId="login-cancel"
-                      >
-                        {t('common.cancel')}
-                      </Button>
-                      <Button
-                        type="submit"
-                        iconBefore={LogInIcon}
-                        appearance="primary"
-                        isLoading={submitting}
-                        testId="login-submit"
-                      >
-                        {t('common.login')}
-                      </Button>
-                    </ButtonGroup>
-                  </FormFooter>
-                </Inline>
-              </Box>
+              <Inline alignBlock="center" spread="space-between">
+                <Box paddingBlockStart="space.300">
+                  <Tooltip content={t('login.security_docs')} position="top">
+                    <Button
+                      appearance="subtle"
+                      iconBefore={LinkExternalIcon}
+                      onClick={() => openAtlassianSecurityDocs()}
+                      testId="login-docs"
+                    >
+                      {t('common.docs')}
+                    </Button>
+                  </Tooltip>
+                </Box>
+                <FormFooter>
+                  <ButtonGroup label="Form submit options">
+                    <Button
+                      appearance="subtle"
+                      onClick={() => navigate(-1)}
+                      testId="login-cancel"
+                    >
+                      {t('common.cancel')}
+                    </Button>
+                    <Button
+                      type="submit"
+                      iconBefore={LogInIcon}
+                      appearance="primary"
+                      isLoading={submitting}
+                      testId="login-submit"
+                    >
+                      {t('common.login')}
+                    </Button>
+                  </ButtonGroup>
+                </FormFooter>
+              </Inline>
             </form>
           )}
         </Form>
       </Box>
-    </Fragment>
+    </Page>
   );
 };

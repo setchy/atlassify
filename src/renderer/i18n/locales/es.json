@@ -110,12 +110,12 @@
     "subheading": "En tu barra de menú"
   },
   "login": {
-    "create_token": "Crear un token API",
+    "create_token": "Crear token API con alcances",
     "error_message": "¡Ups! \nLa combinación token de nombre de usuario proporcionada no es válida. \nPor favor intente de nuevo.",
     "security_docs": "Ver documentación de Atlassian",
     "title": "Iniciar sesión con Atlassian",
     "token": "Token API",
-    "token_helper": "para su cuenta y pegue arriba",
+    "token_helper": "con ámbitos [read:account, read:jira-work] y pegar arriba",
     "username_helper": "Su nombre de usuario / dirección de correo electrónico de Atlassian"
   },
   "notifications": {
