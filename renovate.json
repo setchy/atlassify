@@ -14,6 +14,7 @@
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchDepTypes": ["engines"],
