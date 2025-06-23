@@ -385,11 +385,6 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/icon@27.1.0':
-    resolution: {integrity: sha512-ikBb0vVSXgVNWgP8LntlkGZkJAelo57t/jITuYFVBZlQDsTn+mi3HjD2dPXc/5Ot2KncmKg0NomAVmRAAcXeSQ==}
-    peerDependencies:
-      react: ^18.2.0
-
   '@atlaskit/inline-dialog@17.2.0':
     resolution: {integrity: sha512-jGDAkx3uGFn3YXCTTErkHL3nsxmyxb/dEU/ZXyv6BFIlhHbM/wekksVmilE6dEoKnsTId48hwpL9pDORhQTM1Q==}
     peerDependencies:
@@ -735,10 +730,6 @@ packages:
 
   '@babel/template@7.27.2':
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/traverse@7.27.1':
-    resolution: {integrity: sha512-ZCYtZciz1IWJB4U61UPu4KEaqyfj+r5T1Q5mqPo+IBpcG9kHv30Z0aD8LXPgC1trYa6rK0orRyAhqUgk4MjmEg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/traverse@7.27.4':
@@ -6189,19 +6180,6 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/icon@27.1.0(@babel/core@7.27.4)(@types/react@18.3.23)(react@18.3.1)':
-    dependencies:
-      '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
-      '@atlaskit/tokens': 5.4.0(@types/react@18.3.23)(react@18.3.1)
-      '@babel/register': 7.27.1(@babel/core@7.27.4)
-      '@babel/runtime': 7.27.6
-      '@compiled/react': 0.18.4(react@18.3.1)
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - supports-color
-
   '@atlaskit/inline-dialog@17.2.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6580,8 +6558,8 @@ snapshots:
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@babel/runtime': 7.27.6
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.27.4
+      '@babel/types': 7.27.6
       bind-event-listener: 3.0.0
       react: 18.3.1
     transitivePeerDependencies:
@@ -6645,8 +6623,8 @@ snapshots:
       '@babel/helpers': 7.27.1
       '@babel/parser': 7.27.2
       '@babel/template': 7.27.2
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.27.4
+      '@babel/types': 7.27.6
       convert-source-map: 2.0.0
       debug: 4.4.1
       gensync: 1.0.0-beta.2
@@ -6677,7 +6655,7 @@ snapshots:
 
   '@babel/generator@7.27.1':
     dependencies:
-      '@babel/parser': 7.27.2
+      '@babel/parser': 7.27.5
       '@babel/types': 7.27.6
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
@@ -6744,7 +6722,7 @@ snapshots:
 
   '@babel/parser@7.27.2':
     dependencies:
-      '@babel/types': 7.27.1
+      '@babel/types': 7.27.6
 
   '@babel/parser@7.27.5':
     dependencies:
@@ -6872,20 +6850,8 @@ snapshots:
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/parser': 7.27.2
+      '@babel/parser': 7.27.5
       '@babel/types': 7.27.6
-
-  '@babel/traverse@7.27.1':
-    dependencies:
-      '@babel/code-frame': 7.27.1
-      '@babel/generator': 7.27.1
-      '@babel/parser': 7.27.2
-      '@babel/template': 7.27.2
-      '@babel/types': 7.27.6
-      debug: 4.4.1
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@babel/traverse@7.27.4':
     dependencies:
@@ -6951,8 +6917,8 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/template': 7.27.2
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.27.4
+      '@babel/types': 7.27.6
       '@compiled/css': 0.21.0
       '@compiled/utils': 0.13.2
     transitivePeerDependencies:
@@ -6967,8 +6933,8 @@ snapshots:
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-transform-flow-strip-types': 7.27.1(@babel/core@7.27.1)
       '@babel/template': 7.27.2
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.27.4
+      '@babel/types': 7.27.6
       '@compiled/css': 0.21.0
       '@compiled/utils': 0.13.2
       '@emotion/is-prop-valid': 1.3.1
