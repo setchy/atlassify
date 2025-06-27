@@ -76,8 +76,8 @@ importers:
         specifier: 19.3.1
         version: 19.3.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 14.2.8
-        version: 14.2.8(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 14.2.9
+        version: 14.2.9(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 14.10.0
         version: 14.10.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -429,8 +429,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.2.8':
-    resolution: {integrity: sha512-H1teWuZRrG7hXkQXU6qZ89lI+z5Rv9u7IrVAqZ1a15SY3KjTma3O8R2lodHsQla8uGZQSABKVr2A51nkbMX8eA==}
+  '@atlaskit/modal-dialog@14.2.9':
+    resolution: {integrity: sha512-6a8A+yPCNfB9D8rzK53ImItm4B7XQk2PkL088s1Bdsk2gURj38Zc7hj4oj6FfzVB5B7Oma4MK4jSa/mcBjPF2Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6294,12 +6294,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.2.8(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@14.2.9(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 15.0.3(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button': 23.2.5(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.11.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/focus-ring': 3.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/icon': 27.2.0(@babel/core@7.27.4)(@types/react@18.3.23)(react@18.3.1)
