@@ -90,6 +90,9 @@ importers:
       '@atlaskit/spinner':
         specifier: 18.0.5
         version: 18.0.5(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/temp-nav-app-icons':
+        specifier: 0.8.4
+        version: 0.8.4(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 8.0.6
         version: 8.0.6(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -352,6 +355,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/css@0.12.0':
+    resolution: {integrity: sha512-C7wBNKKHwjHM73mTy/KUea9AQLtTpPAi0/gcXyLl+36Bk40sxzg8ZjfdjTLbBhP+N/qHbcs4QgMjsyc6CjZNFg==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/ds-lib@4.0.0':
     resolution: {integrity: sha512-nM0wAo8bm7FyAYuId6Ba2MFnLSVzlsZpyfRxPJ7dMFqEhJ4R53/CoT8v18mvi2Hu1Y4+d1t97lOyybHfgFyb+A==}
     peerDependencies:
@@ -481,8 +489,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/temp-nav-app-icons@0.8.0':
-    resolution: {integrity: sha512-b8kTT8gV+yRqOEiDZOVPccl3eTwjTntOtRPpCULGxsjyUcgyYFcCWXwkB7Hwl9Jg6QdtdzpBHMsr8eOD096jOg==}
+  '@atlaskit/temp-nav-app-icons@0.8.4':
+    resolution: {integrity: sha512-eu+Ge/uLqnDIBogNHEgJQJnKV80pagxZV1CqWacLGOn1Ix3eWg+ACWsLhS/BSfvC58DYyS7SBX4hrpuNos4Lsg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6084,6 +6092,16 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/css@0.12.0(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
+      '@babel/runtime': 7.27.6
+      '@compiled/react': 0.18.4(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/ds-lib@4.0.0(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
@@ -6247,7 +6265,7 @@ snapshots:
     dependencies:
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
-      '@atlaskit/temp-nav-app-icons': 0.8.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/temp-nav-app-icons': 0.8.4(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
@@ -6479,10 +6497,10 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/temp-nav-app-icons@0.8.0(@types/react@18.3.23)(react@18.3.1)':
+  '@atlaskit/temp-nav-app-icons@0.8.4(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
-      '@atlaskit/css': 0.10.6(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/tokens': 4.9.1(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       react: 18.3.1
