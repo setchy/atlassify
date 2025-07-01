@@ -33,8 +33,8 @@ importers:
         specifier: 15.5.3
         version: 15.5.3(i18next@25.2.1(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
       react-router-dom:
-        specifier: 7.6.2
-        version: 7.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.6.3
+        version: 7.6.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       update-electron-app:
         specifier: 3.1.1
         version: 3.1.1
@@ -347,11 +347,6 @@ packages:
 
   '@atlaskit/css@0.10.6':
     resolution: {integrity: sha512-oSv0CMSq70NSy2UwGi4qhX0VDvZQe4IY6J4sEo5uOg7UoUChpyp8rfz8KZ5m3GqM5GyoSOw9lYhMyMNZCuY0/Q==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/css@0.11.0':
-    resolution: {integrity: sha512-ZNLNAsF0QQg1FcyROgfBOYvuEGgzItFN2z99YJjACJ66+tJdYutTpS6/kyZIKHXNiElmvEc1hl/AU/6VxOSmqw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4957,15 +4952,15 @@ packages:
       react: ^16.8.0 || ^17 || ^18
       react-dom: ^16.8.0 || ^17 || ^18
 
-  react-router-dom@7.6.2:
-    resolution: {integrity: sha512-Q8zb6VlTbdYKK5JJBLQEN06oTUa/RAbG/oQS1auK1I0TbJOXktqm+QENEVJU6QvWynlXPRBXI3fiOQcSEA78rA==}
+  react-router-dom@7.6.3:
+    resolution: {integrity: sha512-DiWJm9qdUAmiJrVWaeJdu4TKu13+iB/8IEi0EW/XgaHCjW/vWGrwzup0GVvaMteuZjKnh5bEvJP/K0MDnzawHw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  react-router@7.6.2:
-    resolution: {integrity: sha512-U7Nv3y+bMimgWjhlT5CRdzHPu2/KVmqPwKUCChW8en5P3znxUqwlYFlbmyj8Rgp1SF6zs5X4+77kBVknkg6a0w==}
+  react-router@7.6.3:
+    resolution: {integrity: sha512-zf45LZp5skDC6I3jDLXQUu0u26jtuP4lEGbc7BbdyxenBN1vJSTA18czM2D+h5qyMBuMrD+9uB+mU37HIoKGRA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -6075,16 +6070,6 @@ snapshots:
   '@atlaskit/css@0.10.6(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
       '@atlaskit/tokens': 4.9.1(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.6
-      '@compiled/react': 0.18.4(react@18.3.1)
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  '@atlaskit/css@0.11.0(@types/react@18.3.23)(react@18.3.1)':
-    dependencies:
-      '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.4(react@18.3.1)
       react: 18.3.1
@@ -11882,13 +11867,13 @@ snapshots:
       react-fast-compare: 3.2.2
       warning: 4.0.3
 
-  react-router-dom@7.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@7.6.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-router: 7.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-router: 7.6.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  react-router@7.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router@7.6.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       cookie: 1.0.2
       react: 18.3.1
