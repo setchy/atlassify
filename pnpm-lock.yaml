@@ -73,8 +73,8 @@ importers:
         specifier: 15.3.2
         version: 15.3.2(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
-        specifier: 19.3.1
-        version: 19.3.1(@types/react@18.3.23)(react@18.3.1)
+        specifier: 19.5.0
+        version: 19.5.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/modal-dialog':
         specifier: 14.2.9
         version: 14.2.9(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -413,8 +413,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@19.3.1':
-    resolution: {integrity: sha512-XgsyUOPiJ+S/8KUL7rtI9rndk/E9HDdUu5M6CCCrKX3sJEJPuhnjzi2ZZ8w6YzC6tmfz1sKEOyhVUDMN2KVMhg==}
+  '@atlaskit/logo@19.5.0':
+    resolution: {integrity: sha512-fMZFarq5CNxi5cULonMXTnThEKZgQRsOCuvvAipccogVlgMCqVSDBhxL/qTOqYrh46CpL+QNjnN7/1unxy0W1g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -486,6 +486,11 @@ packages:
 
   '@atlaskit/temp-nav-app-icons@0.8.4':
     resolution: {integrity: sha512-eu+Ge/uLqnDIBogNHEgJQJnKV80pagxZV1CqWacLGOn1Ix3eWg+ACWsLhS/BSfvC58DYyS7SBX4hrpuNos4Lsg==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/temp-nav-app-icons@0.9.0':
+    resolution: {integrity: sha512-XZkj+JiTI3NyL8Fhz+iMbtxCm9FyU+S/UL6xwesrrtyu6a4FKTHFVVQJajsnmhPNzdEOulUA37F7UmstHYspMw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6246,11 +6251,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@19.3.1(@types/react@18.3.23)(react@18.3.1)':
+  '@atlaskit/logo@19.5.0(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 4.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
-      '@atlaskit/temp-nav-app-icons': 0.8.4(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/temp-nav-app-icons': 0.9.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/theme': 18.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
@@ -6483,6 +6488,17 @@ snapshots:
       - supports-color
 
   '@atlaskit/temp-nav-app-icons@0.8.4(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
+      '@babel/runtime': 7.27.6
+      '@compiled/react': 0.18.4(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/temp-nav-app-icons@0.9.0(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
       '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
