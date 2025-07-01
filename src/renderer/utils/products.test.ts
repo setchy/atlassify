@@ -20,6 +20,10 @@ describe('renderer/utils/products.ts', () => {
     ).toBe(PRODUCTS['jira service management']);
 
     expect(
+      getAtlassianProduct(createProductNotificationMock('jira', 'core')),
+    ).toBe(PRODUCTS.jira);
+
+    expect(
       getAtlassianProduct(createProductNotificationMock('jira', 'software')),
     ).toBe(PRODUCTS.jira);
 
