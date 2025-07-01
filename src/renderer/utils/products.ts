@@ -76,11 +76,11 @@ export function getAtlassianProduct(
       return PRODUCTS.confluence;
     case 'jira':
       switch (subProduct) {
-        case 'servicedesk':
-          return PRODUCTS['jira service management'];
         case 'core':
         case 'software':
           return PRODUCTS.jira;
+        case 'servicedesk':
+          return PRODUCTS['jira service management'];
         default:
           return PRODUCTS['jira product discovery'];
       }
