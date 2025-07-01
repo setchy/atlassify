@@ -78,6 +78,7 @@ export function getAtlassianProduct(
       switch (subProduct) {
         case 'servicedesk':
           return PRODUCTS['jira service management'];
+        case 'core':
         case 'software':
           return PRODUCTS.jira;
         default:
