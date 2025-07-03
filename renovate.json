@@ -36,6 +36,11 @@
       "extends": ["packages:atlaskit"],
       "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
       "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
+    },
+    {
+      "description": "Fetch changelog details for twemoji packages",
+      "matchPackageNames": ["@discordapp/twemoji", "@twemoji/api"],
+      "sourceUrl": "https://github.com/jdjdecked/twemoji"
     }
   ],
   "customManagers": [
