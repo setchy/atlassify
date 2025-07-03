@@ -22,7 +22,7 @@ importers:
         version: 8.2.0
       menubar:
         specifier: 9.5.1
-        version: 9.5.1(electron@37.1.0)
+        version: 9.5.1(electron@37.2.0)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -178,8 +178,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       electron:
-        specifier: 37.1.0
-        version: 37.1.0
+        specifier: 37.2.0
+        version: 37.2.0
       electron-builder:
         specifier: 25.1.8
         version: 25.1.8(electron-builder-squirrel-windows@25.1.8)
@@ -481,11 +481,6 @@ packages:
 
   '@atlaskit/spinner@18.0.5':
     resolution: {integrity: sha512-h/PUqLQfT5VU8hylEnIc0zOhNotYNV1FBv5aqAF8DuukRPr7OLBEGeveLI/HYBVIxL8fhX5pOmL0juXjFw23Aw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/temp-nav-app-icons@0.8.4':
-    resolution: {integrity: sha512-eu+Ge/uLqnDIBogNHEgJQJnKV80pagxZV1CqWacLGOn1Ix3eWg+ACWsLhS/BSfvC58DYyS7SBX4hrpuNos4Lsg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -2786,8 +2781,8 @@ packages:
   electron-updater@6.6.2:
     resolution: {integrity: sha512-Cr4GDOkbAUqRHP5/oeOmH/L2Bn6+FQPxVLZtPbcmKZC63a1F3uu5EefYOssgZXG3u/zBlubbJ5PJdITdMVggbw==}
 
-  electron@37.1.0:
-    resolution: {integrity: sha512-Fcr3yfAw4oU392waVZSlrFUQx4P+h/k31+PRgkBY9tFx9E/zxzdPQQj0achZlG1HRDusw3ooQB+OXb9PvufdzA==}
+  electron@37.2.0:
+    resolution: {integrity: sha512-dE6+qeg6SBUVd5d8CD2+GH82kh+gF1v40+hs+U+UOno681NMSGmBtgqwldQRpbvtnQDD7V2M9Cpfr3+Abw7aBg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -6487,17 +6482,6 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/temp-nav-app-icons@0.8.4(@types/react@18.3.23)(react@18.3.1)':
-    dependencies:
-      '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/tokens': 5.4.1(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.6
-      '@compiled/react': 0.18.4(react@18.3.1)
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
   '@atlaskit/temp-nav-app-icons@0.9.0(@types/react@18.3.23)(react@18.3.1)':
     dependencies:
       '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
@@ -9546,7 +9530,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@37.1.0:
+  electron@37.2.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.15.34
@@ -11046,9 +11030,9 @@ snapshots:
 
   memoize-one@6.0.0: {}
 
-  menubar@9.5.1(electron@37.1.0):
+  menubar@9.5.1(electron@37.2.0):
     dependencies:
-      electron: 37.1.0
+      electron: 37.2.0
       electron-positioner: 4.1.0
 
   merge-stream@2.0.0: {}
