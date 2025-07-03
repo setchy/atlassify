@@ -192,12 +192,24 @@ export function markNotificationGroupAsUnread(
  */
 export function getNotificationsByGroupId(
   account: Account,
+  settings: SettingsState,
   notificationGroupId: string,
+  notificationGroupSize: number = Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
   const RetrieveNotificationsByGroupIdQuery = graphql(`
-    query RetrieveNotificationsByGroupId($groupId: String!) {
+    query RetrieveNotificationsByGroupId(
+      $groupId: String!,
+      $first: Int,
+      $readState: InfluentsNotificationReadState
+    ) {
       notifications {
-        notificationGroup(groupId: $groupId) {
+        notificationGroup(
+          groupId: $groupId, 
+          first: $first, 
+          filter: { 
+            readStateFilter: $readState 
+          }
+        ) {
           nodes {
             ...GroupNotificationDetails
           } 
@@ -208,6 +220,10 @@ export function getNotificationsByGroupId(
 
   return performPostRequest(account, RetrieveNotificationsByGroupIdQuery, {
     groupId: notificationGroupId,
+    first: notificationGroupSize,
+    readState: settings.fetchOnlyUnreadNotifications
+      ? InfluentsNotificationReadState.Unread
+      : null,
   });
 }
 

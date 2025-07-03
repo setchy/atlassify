@@ -190,6 +190,8 @@ describe('renderer/utils/api/client.ts', () => {
           ),
           variables: {
             groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+            first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+            readState: 'unread',
           },
         },
       }),

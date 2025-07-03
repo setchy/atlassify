@@ -117,8 +117,10 @@ export const useNotifications = (): NotificationsState => {
       );
 
       try {
-        const groupedNotificationIds =
-          await getNotificationIdsForGroups(readNotifications);
+        const groupedNotificationIds = await getNotificationIdsForGroups(
+          state,
+          readNotifications,
+        );
 
         singleNotificationIDs.push(...groupedNotificationIds);
 
@@ -149,12 +151,12 @@ export const useNotifications = (): NotificationsState => {
 
       setStatus('success');
     },
-    [notifications],
+    [notifications, isGroupNotification, getNotificationIdsForGroups],
   );
 
   const markNotificationsUnread = useCallback(
     async (
-      _state: AtlassifyState,
+      state: AtlassifyState,
       unreadNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
@@ -169,8 +171,10 @@ export const useNotifications = (): NotificationsState => {
       );
 
       try {
-        const groupedNotificationIds =
-          await getNotificationIdsForGroups(unreadNotifications);
+        const groupedNotificationIds = await getNotificationIdsForGroups(
+          state,
+          unreadNotifications,
+        );
 
         singleNotificationIDs.push(...groupedNotificationIds);
 
@@ -189,10 +193,11 @@ export const useNotifications = (): NotificationsState => {
 
       setStatus('success');
     },
-    [],
+    [isGroupNotification, getNotificationIdsForGroups],
   );
 
   async function getNotificationIdsForGroups(
+    state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) {
     const notificationIDs: string[] = [];
@@ -203,13 +208,18 @@ export const useNotifications = (): NotificationsState => {
       isGroupNotification(notification),
     );
 
-    const groupNotificationsGroupIDs = groupNotifications.map(
-      (notification) => notification.notificationGroup.id,
-    );
-
     try {
-      for (const groupID of groupNotificationsGroupIDs) {
-        const res = await getNotificationsByGroupId(account, groupID);
+      for (const group of groupNotifications) {
+        const groupID = group.notificationGroup.id;
+        const groupSize = group.notificationGroup.size;
+
+        const res = await getNotificationsByGroupId(
+          account,
+          state.settings,
+          groupID,
+          groupSize,
+        );
+
         const groupNotifications = res.data.notifications.notificationGroup
           .nodes as GroupNotificationDetailsFragment[];
 
