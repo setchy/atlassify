@@ -39,7 +39,7 @@
     },
     {
       "description": "Fetch changelog details for twemoji packages",
-      "matchPackageNames": ["@discordapp/twemoji", "@twemoji/api"],
+      "matchPackageNames": ["@discordapp/twemoji"],
       "sourceUrl": "https://github.com/jdjdecked/twemoji"
     }
   ],
