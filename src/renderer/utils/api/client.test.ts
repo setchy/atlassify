@@ -175,9 +175,13 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('getNotificationsByGroupId - should fetch notifications by group id', async () => {
+    const mockGroupSize = 5;
+
     await getNotificationsByGroupId(
       mockAtlassianCloudAccount,
+      mockSettings,
       mockSingleAtlassifyNotification.notificationGroup.id,
+      mockGroupSize,
     );
 
     expect(axios).toHaveBeenCalledWith(
@@ -190,7 +194,7 @@ describe('renderer/utils/api/client.ts', () => {
           ),
           variables: {
             groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-            first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+            first: mockGroupSize,
             readState: 'unread',
           },
         },

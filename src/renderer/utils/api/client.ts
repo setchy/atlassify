@@ -62,7 +62,7 @@ export function getNotificationsForUser(
   const MyNotificationsQuery = graphql(`
     query MyNotifications
       (
-        $readState: InfluentsNotificationReadState, 
+        $readState: InfluentsNotificationReadState,
         $flat: Boolean = true,
         $first: Int
       ) 
