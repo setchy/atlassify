@@ -194,7 +194,7 @@ export function getNotificationsByGroupId(
   account: Account,
   settings: SettingsState,
   notificationGroupId: string,
-  notificationGroupSize: number = Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+  notificationGroupSize: number,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
   const RetrieveNotificationsByGroupIdQuery = graphql(`
     query RetrieveNotificationsByGroupId(

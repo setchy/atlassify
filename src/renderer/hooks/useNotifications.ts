@@ -210,14 +210,11 @@ export const useNotifications = (): NotificationsState => {
 
     try {
       for (const group of groupNotifications) {
-        const groupID = group.notificationGroup.id;
-        const groupSize = group.notificationGroup.size;
-
         const res = await getNotificationsByGroupId(
           account,
           state.settings,
-          groupID,
-          groupSize,
+          group.notificationGroup.id,
+          group.notificationGroup.size,
         );
 
         const groupNotifications = res.data.notifications.notificationGroup
