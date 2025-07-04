@@ -119,11 +119,7 @@ importers:
         version: 3.0.1
       '@graphql-codegen/cli':
         specifier: 5.0.7
-<<<<<<< HEAD
-        version: 5.0.7(@parcel/watcher@2.5.1)(@types/node@22.15.34)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)
-=======
-        version: 5.0.7(@types/node@22.16.0)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)
->>>>>>> main
+        version: 5.0.7(@parcel/watcher@2.5.1)(@types/node@22.16.0)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)
       '@graphql-codegen/client-preset':
         specifier: 4.8.3
         version: 4.8.3(encoding@0.1.13)(graphql@16.11.0)
@@ -134,7 +130,7 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@18.3.1)
       '@parcel/watcher':
-        specifier: ^2.5.1
+        specifier: 2.5.1
         version: 2.5.1
       '@tailwindcss/postcss':
         specifier: 4.1.11
@@ -7305,11 +7301,7 @@ snapshots:
       graphql: 16.11.0
       tslib: 2.6.3
 
-<<<<<<< HEAD
-  '@graphql-codegen/cli@5.0.7(@parcel/watcher@2.5.1)(@types/node@22.15.34)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)':
-=======
-  '@graphql-codegen/cli@5.0.7(@types/node@22.16.0)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)':
->>>>>>> main
+  '@graphql-codegen/cli@5.0.7(@parcel/watcher@2.5.1)(@types/node@22.16.0)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.8.3)':
     dependencies:
       '@babel/generator': 7.27.1
       '@babel/template': 7.27.2
