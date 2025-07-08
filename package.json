@@ -70,7 +70,7 @@
     "update-electron-app": "3.1.1"
   },
   "devDependencies": {
-    "@0no-co/graphqlsp": "1.13.0",
+    "@0no-co/graphqlsp": "1.14.0",
     "@atlaskit/avatar": "25.1.5",
     "@atlaskit/avatar-group": "12.1.0",
     "@atlaskit/badge": "18.1.3",

@@ -40,8 +40,8 @@ importers:
         version: 3.1.1
     devDependencies:
       '@0no-co/graphqlsp':
-        specifier: 1.13.0
-        version: 1.13.0(graphql@16.11.0)(typescript@5.8.3)
+        specifier: 1.14.0
+        version: 1.14.0(graphql@16.11.0)(typescript@5.8.3)
       '@atlaskit/avatar':
         specifier: 25.1.5
         version: 25.1.5(@babel/core@7.27.4)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -263,8 +263,8 @@ packages:
       graphql:
         optional: true
 
-  '@0no-co/graphqlsp@1.13.0':
-    resolution: {integrity: sha512-I8HVJ19PeF0QMKCcxUXjsmbI6L26bmAuDHUFdLD8xjhaOi7XG2ZhlkhqTYNxzYJN58yvv0IfKfn8yVrVvPUmVw==}
+  '@0no-co/graphqlsp@1.14.0':
+    resolution: {integrity: sha512-rgOJ0Bj9UFBmE7BfUGhsqYPYqPwCk1MCggoYN4NUSdX6gpqatNuzHNB2wHcAd9xdY55jHNRhHy5NsgwY6EGgmg==}
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
@@ -5962,7 +5962,7 @@ snapshots:
     optionalDependencies:
       graphql: 16.11.0
 
-  '@0no-co/graphqlsp@1.13.0(graphql@16.11.0)(typescript@5.8.3)':
+  '@0no-co/graphqlsp@1.14.0(graphql@16.11.0)(typescript@5.8.3)':
     dependencies:
       '@gql.tada/internal': 1.0.8(graphql@16.11.0)(typescript@5.8.3)
       graphql: 16.11.0
