@@ -39,7 +39,7 @@
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "25.1.0",
     "@tailwindcss/vite": "4.1.11",
-    "accessible-astro-components": "4.1.1",
+    "accessible-astro-components": "4.1.2",
     "astro": "5.11.0",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
@@ -53,10 +53,10 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.6",
+    "@biomejs/biome": "2.1.1",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide"
