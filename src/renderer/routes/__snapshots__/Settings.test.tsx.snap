@@ -533,7 +533,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 <span
                   class="css-1gd7hga"
                 >
-                  <div
+                  <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
@@ -579,10 +579,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         </svg>
                       </span>
                     </span>
-                    <div
+                    <span
                       class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
                     />
-                  </div>
+                  </span>
                 </span>
               </button>
             </div>
@@ -639,7 +639,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 <span
                   class="css-1gd7hga"
                 >
-                  <div
+                  <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
@@ -685,10 +685,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         </svg>
                       </span>
                     </span>
-                    <div
+                    <span
                       class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
                     />
-                  </div>
+                  </span>
                 </span>
               </button>
             </div>
@@ -817,7 +817,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 <span
                   class="css-1gd7hga"
                 >
-                  <div
+                  <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
@@ -863,10 +863,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         </svg>
                       </span>
                     </span>
-                    <div
+                    <span
                       class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
                     />
-                  </div>
+                  </span>
                 </span>
               </button>
             </div>
@@ -1201,7 +1201,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 <span
                   class="css-1gd7hga"
                 >
-                  <div
+                  <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
@@ -1247,10 +1247,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         </svg>
                       </span>
                     </span>
-                    <div
+                    <span
                       class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
                     />
-                  </div>
+                  </span>
                 </span>
               </button>
             </div>
