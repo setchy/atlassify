@@ -62,7 +62,10 @@ export const raiseNativeNotification = (
   if (notifications.length === 1) {
     const notification = notifications[0];
     title = window.atlassify.platform.isWindows() ? '' : notification.message;
-    body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
+    body = formatNotificationFooterText(notification);
+    if (notification.entity.title) {
+      body += `: ${notification.entity.title}`;
+    }
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
