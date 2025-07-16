@@ -33,6 +33,18 @@ export function formatNotificationFooterText(
   }
 }
 
+export function formatNativeNotificationFooterText(
+  notification: AtlassifyNotification,
+): string {
+  let footer = formatNotificationFooterText(notification);
+
+  if (notification.entity.title) {
+    footer += `: ${notification.entity.title}`;
+  }
+
+  return footer;
+}
+
 export function formatNotificationUpdatedAt(
   notification: AtlassifyNotification,
 ): string {
@@ -40,7 +52,7 @@ export function formatNotificationUpdatedAt(
     return formatDistanceToNowStrict(parseISO(notification.updated_at), {
       addSuffix: true,
     });
-  } catch (e) {}
+  } catch (_e) {}
 
   return '';
 }

@@ -5,7 +5,6 @@ import {
 import { mockAuth } from '../../__mocks__/state-mocks';
 import { defaultSettings } from '../../context/App';
 import type { SettingsState } from '../../types';
-import { formatProperCase } from '../helpers';
 import * as native from './native';
 
 const raiseSoundNotificationMock = jest.spyOn(native, 'raiseSoundNotification');
@@ -16,7 +15,7 @@ describe('renderer/utils/notifications/native.ts', () => {
   });
 
   describe('triggerNativeNotifications', () => {
-    it('should raise a native notification and play sound for a single new notification - with title', () => {
+    it('should raise a native notification and play sound for a single new notification', () => {
       const settings: SettingsState = {
         ...defaultSettings,
         playSoundNewNotifications: true,
@@ -35,39 +34,6 @@ describe('renderer/utils/notifications/native.ts', () => {
         ),
         expect.stringContaining(
           mockSingleAccountNotifications[0].notifications[0].message,
-        ),
-        mockSingleAccountNotifications[0].notifications[0].url,
-      );
-
-      expect(raiseSoundNotificationMock).toHaveBeenCalledTimes(1);
-      expect(raiseSoundNotificationMock).toHaveBeenCalledWith(0.2);
-    });
-
-    it('should raise a native notification and play sound for a single new notification - without title', () => {
-      const settings: SettingsState = {
-        ...defaultSettings,
-        playSoundNewNotifications: true,
-        showSystemNotifications: true,
-      };
-
-      mockSingleAccountNotifications[0].notifications[0].entity.title = null;
-      mockSingleAccountNotifications[0].notifications[0].product.name =
-        'team central (atlas)';
-
-      native.triggerNativeNotifications([], mockSingleAccountNotifications, {
-        auth: mockAuth,
-        settings,
-      });
-
-      expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
-        expect.stringContaining(
-          mockSingleAccountNotifications[0].notifications[0].message,
-        ),
-        expect.stringContaining(
-          formatProperCase(
-            mockSingleAccountNotifications[0].notifications[0].product.name,
-          ),
         ),
         mockSingleAccountNotifications[0].notifications[0].url,
       );
