@@ -21,8 +21,6 @@ describe('renderer/utils/notifications/native.ts', () => {
         playSoundNewNotifications: true,
         showSystemNotifications: true,
       };
-      const mockTitle =
-        mockSingleAccountNotifications[0].notifications[0].entity.title;
 
       native.triggerNativeNotifications([], mockSingleAccountNotifications, {
         auth: mockAuth,
@@ -31,8 +29,12 @@ describe('renderer/utils/notifications/native.ts', () => {
 
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
-        expect.stringContaining(mockTitle),
-        expect.stringContaining(mockTitle),
+        expect.stringContaining(
+          mockSingleAccountNotifications[0].notifications[0].message,
+        ),
+        expect.stringContaining(
+          mockSingleAccountNotifications[0].notifications[0].message,
+        ),
         mockSingleAccountNotifications[0].notifications[0].url,
       );
 

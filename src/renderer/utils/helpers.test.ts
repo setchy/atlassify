@@ -7,6 +7,7 @@ import {
   mockSingleAtlassifyNotification,
 } from '../__mocks__/notifications-mocks';
 import {
+  formatNativeNotificationFooterText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
@@ -22,7 +23,7 @@ describe('renderer/utils/helpers.ts', () => {
 
   describe('formatting', () => {
     describe('formatNotificationFooterText', () => {
-      it('use product name if available mapping', () => {
+      it('use path title when available ', () => {
         expect(
           formatNotificationFooterText(mockAtlassifyNotifications[1]),
         ).toBe('Atlassify Space');
@@ -34,13 +35,34 @@ describe('renderer/utils/helpers.ts', () => {
         ).toBe('myorg/notifications-test');
       });
 
-      it('default mapping', () => {
-        const mockNotification = mockAtlassifyNotifications[1];
-        mockNotification.path = null;
+      it('default product mapping', () => {
+        expect(
+          formatNotificationFooterText({
+            ...mockAtlassifyNotifications[1],
+            path: null,
+          }),
+        ).toBe('Confluence');
+      });
+    });
 
-        expect(formatNotificationFooterText(mockNotification)).toBe(
-          'Confluence',
-        );
+    describe('formatNativeNotificationFooterText', () => {
+      it('use entity title when available ', () => {
+        expect(
+          formatNativeNotificationFooterText(mockAtlassifyNotifications[1]),
+        ).toBe('Atlassify Space: Atlassify Home');
+      });
+
+      it('default case', () => {
+        expect(
+          formatNativeNotificationFooterText({
+            ...mockAtlassifyNotifications[1],
+            entity: {
+              title: null,
+              iconUrl: null,
+              url: null,
+            },
+          }),
+        ).toBe('Atlassify Space');
       });
     });
 

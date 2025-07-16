@@ -5,7 +5,7 @@ import type {
   AtlassifyNotification,
   AtlassifyState,
 } from '../../types';
-import { formatNotificationFooterText } from '../helpers';
+import { formatNativeNotificationFooterText } from '../helpers';
 import { setTrayIconColor } from './notifications';
 
 export const triggerNativeNotifications = (
@@ -62,7 +62,7 @@ export const raiseNativeNotification = (
   if (notifications.length === 1) {
     const notification = notifications[0];
     title = window.atlassify.platform.isWindows() ? '' : notification.message;
-    body = `${formatNotificationFooterText(notification)}: ${notification.entity.title}`;
+    body = formatNativeNotificationFooterText(notification);
     url = notification.entity.url;
   } else {
     title = APPLICATION.NAME;
