@@ -36,31 +36,33 @@ describe('renderer/utils/helpers.ts', () => {
       });
 
       it('default product mapping', () => {
-        const mockNotification = mockAtlassifyNotifications[1];
-        mockNotification.path = null;
-
-        expect(formatNotificationFooterText(mockNotification)).toBe(
-          'Confluence',
-        );
+        expect(
+          formatNotificationFooterText({
+            ...mockAtlassifyNotifications[1],
+            path: null,
+          }),
+        ).toBe('Confluence');
       });
     });
 
     describe('formatNativeNotificationFooterText', () => {
       it('use entity title when available ', () => {
-        const mockNotification = mockAtlassifyNotifications[1];
-
-        expect(formatNativeNotificationFooterText(mockNotification)).toBe(
-          'Atlassify Space: Atlassify Home',
-        );
+        expect(
+          formatNativeNotificationFooterText(mockAtlassifyNotifications[1]),
+        ).toBe('Atlassify Space: Atlassify Home');
       });
 
       it('default case', () => {
-        const mockNotification = mockAtlassifyNotifications[1];
-        mockNotification.entity.title = null;
-
-        expect(formatNativeNotificationFooterText(mockNotification)).toBe(
-          'Atlassify Space',
-        );
+        expect(
+          formatNativeNotificationFooterText({
+            ...mockAtlassifyNotifications[1],
+            entity: {
+              title: null,
+              iconUrl: null,
+              url: null,
+            },
+          }),
+        ).toBe('Atlassify Space');
       });
     });
 
