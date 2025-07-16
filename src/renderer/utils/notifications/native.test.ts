@@ -30,8 +30,12 @@ describe('renderer/utils/notifications/native.ts', () => {
 
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
-        expect.stringContaining(mockSingleAccountNotifications[0].notifications[0].message),
-        expect.stringContaining(mockSingleAccountNotifications[0].notifications[0].message),
+        expect.stringContaining(
+          mockSingleAccountNotifications[0].notifications[0].message,
+        ),
+        expect.stringContaining(
+          mockSingleAccountNotifications[0].notifications[0].message,
+        ),
         mockSingleAccountNotifications[0].notifications[0].url,
       );
 
@@ -45,9 +49,10 @@ describe('renderer/utils/notifications/native.ts', () => {
         playSoundNewNotifications: true,
         showSystemNotifications: true,
       };
-      
-      mockSingleAccountNotifications[0].notifications[0].entity.title = null
-      mockSingleAccountNotifications[0].notifications[0].product.name = 'team central (atlas)'
+
+      mockSingleAccountNotifications[0].notifications[0].entity.title = null;
+      mockSingleAccountNotifications[0].notifications[0].product.name =
+        'team central (atlas)';
 
       native.triggerNativeNotifications([], mockSingleAccountNotifications, {
         auth: mockAuth,
@@ -55,9 +60,15 @@ describe('renderer/utils/notifications/native.ts', () => {
       });
 
       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
-       expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
-        expect.stringContaining(mockSingleAccountNotifications[0].notifications[0].message),
-        expect.stringContaining(formatProperCase(mockSingleAccountNotifications[0].notifications[0].product.name)),
+      expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
+        expect.stringContaining(
+          mockSingleAccountNotifications[0].notifications[0].message,
+        ),
+        expect.stringContaining(
+          formatProperCase(
+            mockSingleAccountNotifications[0].notifications[0].product.name,
+          ),
+        ),
         mockSingleAccountNotifications[0].notifications[0].url,
       );
 
