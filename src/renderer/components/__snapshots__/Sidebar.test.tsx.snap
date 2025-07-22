@@ -254,10 +254,8 @@ exports[`renderer/components/Sidebar.tsx Group by titles should group notificati
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 7.25v1.5H1v-1.5zm-7.75 5.31-1.22 1.22-1.06-1.06 2.5-2.5a.75.75 0 0 1 1.06 0l2.5 2.5-1.06 1.06-1.22-1.22V16h-1.5zm.22-6.78-2.5-2.5 1.06-1.06 1.22 1.22V0h1.5v3.44l1.22-1.22 1.06 1.06-2.5 2.5a.75.75 0 0 1-1.06 0"
+          d="M0 7.25h16v1.5H0zm7.47 2.72a.75.75 0 0 1 1.06 0l3.25 3.25-1.06 1.06-1.97-1.97V16h-1.5v-3.69l-1.97 1.97-1.06-1.06zM5.28 1.72l1.97 1.97V0h1.5v3.69l1.97-1.97 1.06 1.06-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 2.78z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -293,10 +291,8 @@ exports[`renderer/components/Sidebar.tsx Group by titles should not group notifi
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 7.25v1.5H1v-1.5zm-7.75 5.31-1.22 1.22-1.06-1.06 2.5-2.5a.75.75 0 0 1 1.06 0l2.5 2.5-1.06 1.06-1.22-1.22V16h-1.5zm.22-6.78-2.5-2.5 1.06-1.06 1.22 1.22V0h1.5v3.44l1.22-1.22 1.06 1.06-2.5 2.5a.75.75 0 0 1-1.06 0"
+          d="M0 7.25h16v1.5H0zm7.47 2.72a.75.75 0 0 1 1.06 0l3.25 3.25-1.06 1.06-1.97-1.97V16h-1.5v-3.69l-1.97 1.97-1.06-1.06zM5.28 1.72l1.97 1.97V0h1.5v3.69l1.97-1.97 1.06 1.06-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 2.78z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -332,10 +328,8 @@ exports[`renderer/components/Sidebar.tsx Group by titles should toggle group not
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 7.25v1.5H1v-1.5zm-7.75 5.31-1.22 1.22-1.06-1.06 2.5-2.5a.75.75 0 0 1 1.06 0l2.5 2.5-1.06 1.06-1.22-1.22V16h-1.5zm.22-6.78-2.5-2.5 1.06-1.06 1.22 1.22V0h1.5v3.44l1.22-1.22 1.06 1.06-2.5 2.5a.75.75 0 0 1-1.06 0"
+          d="M0 7.25h16v1.5H0zm7.47 2.72a.75.75 0 0 1 1.06 0l3.25 3.25-1.06 1.06-1.97-1.97V16h-1.5v-3.69l-1.97 1.97-1.06-1.06zM5.28 1.72l1.97 1.97V0h1.5v3.69l1.97-1.97 1.06 1.06-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 2.78z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
