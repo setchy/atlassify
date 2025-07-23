@@ -9,7 +9,7 @@ setGlobalTheme({
   colorMode: 'light',
   light: 'light-brand-refresh',
   dark: 'dark-brand-refresh',
-  typography: 'typography-modernized',
+  typography: 'typography',
 });
 
 import { App } from './App';
