@@ -90,7 +90,7 @@
     "@atlaskit/temp-nav-app-icons": "0.9.1",
     "@atlaskit/textfield": "8.0.7",
     "@atlaskit/toggle": "15.0.11",
-    "@atlaskit/tokens": "5.6.0",
+    "@atlaskit/tokens": "5.6.1",
     "@atlaskit/tooltip": "20.3.3",
     "@biomejs/biome": "2.1.2",
     "@compiled/webpack-loader": "0.19.6",
