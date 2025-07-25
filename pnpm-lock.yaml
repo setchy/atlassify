@@ -43,8 +43,8 @@ importers:
         specifier: 1.14.0
         version: 1.14.0(graphql@16.11.0)(typescript@5.8.3)
       '@atlaskit/avatar':
-        specifier: 25.1.6
-        version: 25.1.6(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 25.1.7
+        version: 25.1.7(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/avatar-group':
         specifier: 12.1.1
         version: 12.1.1(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -315,8 +315,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.1.6':
-    resolution: {integrity: sha512-pVcO48oxMS/dkKJanwre2SdzS7D/sO34E4P+bKw7ESmLloNFdx6PhmCFRMxnG5rwpV6NzdSOtN8/lX18Mvl2BA==}
+  '@atlaskit/avatar@25.1.7':
+    resolution: {integrity: sha512-xCByQdu59ohcyfbJCKzqCnRz20zefhDv9TTUXvatrTGzphlwXs8WM8K+wjRMl4PPfNx1rbJdsX02P+27eluV+Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5975,7 +5975,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.1.1(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/avatar': 25.1.6(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/avatar': 25.1.7(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/ds-lib': 4.1.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/menu': 8.0.9(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5996,13 +5996,13 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.1.6(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@25.1.7(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/ds-lib': 4.1.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/focus-ring': 3.0.1(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/icon': 27.5.0(@babel/core@7.28.0)(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/icon': 27.6.1(@babel/core@7.28.0)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/primitives': 14.10.0(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 19.0.0(@types/react@18.3.23)(react@18.3.1)
@@ -7556,7 +7556,7 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@16.11.0)':
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/prisma-loader@8.0.17(@types/node@22.16.5)(encoding@0.1.13)(graphql@16.11.0)':
     dependencies:
@@ -7592,7 +7592,7 @@ snapshots:
       '@ardatan/relay-compiler': 12.0.3(encoding@0.1.13)(graphql@16.11.0)
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -10044,7 +10044,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.11.0):
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   graphql-ws@6.0.6(graphql@16.11.0)(ws@8.18.3):
     dependencies:
