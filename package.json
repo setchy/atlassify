@@ -83,7 +83,7 @@
     "@atlaskit/inline-message": "15.3.5",
     "@atlaskit/logo": "19.6.0",
     "@atlaskit/modal-dialog": "14.3.2",
-    "@atlaskit/primitives": "14.10.2",
+    "@atlaskit/primitives": "14.11.0",
     "@atlaskit/radio": "8.1.7",
     "@atlaskit/select": "21.2.1",
     "@atlaskit/spinner": "18.0.6",
