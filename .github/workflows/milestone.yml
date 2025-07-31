@@ -1,13 +1,16 @@
 name: Add milestone on merge
 on:
-  pull_request:
+  pull_request_target:
     branches:
         - main
     types: 
         - closed
 
+permissions:
+  contents: read
+
 jobs:
-  add:
+  add-milestone:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
