@@ -1,0 +1,16 @@
+name: Add milestone on merge
+on:
+  pull_request:
+    branches:
+        - main
+    types: 
+        - closed
+
+jobs:
+  add:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
+        with:
+          single: true

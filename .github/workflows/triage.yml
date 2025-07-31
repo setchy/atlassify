@@ -2,13 +2,14 @@ name: Triage PR
 
 on:
   pull_request_target:
+    branches: 
+      - main
     types: 
       - opened
+      - reopened
       - edited
       - synchronize
       - ready_for_review
-    branches: 
-      - main
 
 permissions:
   contents: read # the config file
@@ -30,11 +31,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: fuxingloh/multi-labeler@b15a54460c38f54043fa75f7b08a0e2aa5b94b5b # v4.0.0
-
-  pr-milestone:
-    name: Add milestone to PR
-    runs-on: ubuntu-latest
-    steps:
-      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
-        with:
-          single: true
