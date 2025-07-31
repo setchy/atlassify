@@ -35,6 +35,6 @@ jobs:
     name: Add milestone to PR
     runs-on: ubuntu-latest
     steps:
-      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3
+      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
         with:
           single: true
