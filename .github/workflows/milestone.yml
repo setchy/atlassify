@@ -16,5 +16,4 @@ jobs:
     steps:
       - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
           single: true
