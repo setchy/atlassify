@@ -1,19 +1,29 @@
-name: Add milestone on merge
+name: Add milestone on PR merge
+
 on:
   pull_request:
     branches:
-        - main
-    types: 
-        - closed
-
-permissions:
-  pull-requests: write # for adding milestones to pull requests
+      - main
+    types:
+      - closed
 
 jobs:
   add-milestone:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: benelan/milestone-action@ae503769af66e741a9d7f76052058e1c3054fd7e # v3.1.0
-        with:
-          single: true
+      - name: Authenticate GitHub CLI
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+
+      - name: Get open milestone
+        id: milestone
+        run: |
+          milestone=$(gh api repos/${{ github.repository }}/milestones \
+            --jq '.[] | select(.state=="open") | .title' | head -n 1)
+          echo "milestone=$milestone" >> $GITHUB_ENV
+
+      - name: Add milestone to PR
+        if: env.milestone != ''
+        run: |
+          gh pr edit ${{ github.event.pull_request.number }} \
+            --milestone "${{ env.milestone }}"
