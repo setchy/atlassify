@@ -97,8 +97,8 @@ importers:
         specifier: 8.0.8
         version: 8.0.8(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: 15.0.13
-        version: 15.0.13(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.1.0
+        version: 15.1.0(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 5.6.3
         version: 5.6.3(@types/react@18.3.23)(react@18.3.1)
@@ -502,8 +502,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.0.13':
-    resolution: {integrity: sha512-QyMpuQWiLcJ/QnKjKE29bQpj7gkvO0bMT0wwz9eMzHSFr+enyT2omL1q1/plYx3s/n78yBt6so/I1BB+gdkXxw==}
+  '@atlaskit/toggle@15.1.0':
+    resolution: {integrity: sha512-K/4knFrYvgSixx1UyIifTuqbs1jCKtJcY5rWhRUgyqTb8xF+CmdiJYjQo/K7+C6py9102s3wJLuAJ5zJTflr6A==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6560,7 +6560,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.0.13(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/toggle@15.1.0(@babel/core@7.28.0)(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
@@ -6568,8 +6568,10 @@ snapshots:
       '@atlaskit/icon': 27.8.1(@babel/core@7.28.0)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/primitives': 14.11.1(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/spinner': 19.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/theme': 19.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 5.6.3(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/visually-hidden': 3.0.3(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.6(react@18.3.1)
       bind-event-listener: 3.0.0
