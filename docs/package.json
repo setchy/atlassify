@@ -59,7 +59,11 @@
   "packageManager": "pnpm@10.14.0",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@tailwindcss/oxide"
+      "@tailwindcss/oxide",
+      "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
     ]
   },
   "lint-staged": {
