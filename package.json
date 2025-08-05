@@ -89,7 +89,7 @@
     "@atlaskit/spinner": "19.0.1",
     "@atlaskit/temp-nav-app-icons": "0.9.3",
     "@atlaskit/textfield": "8.0.9",
-    "@atlaskit/toggle": "15.1.0",
+    "@atlaskit/toggle": "15.1.1",
     "@atlaskit/tokens": "6.0.0",
     "@atlaskit/tooltip": "20.4.1",
     "@biomejs/biome": "2.1.3",
