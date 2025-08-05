@@ -70,8 +70,8 @@ importers:
         specifier: 27.9.2
         version: 27.9.2(@babel/core@7.28.0)(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/inline-message':
-        specifier: 15.3.5
-        version: 15.3.5(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.3.6
+        version: 15.3.6(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/logo':
         specifier: 19.6.1
         version: 19.6.1(@types/react@18.3.23)(react@18.3.1)
@@ -391,13 +391,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-dialog@17.2.4':
-    resolution: {integrity: sha512-P8SWrKR5NCjVRtwOVjp3SraptxhgDVpDUjPGBTinoqCyjyBya2DUqk7/TKYL0GbIuJHNU6mSEA4oVUzchAgpaw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/inline-message@15.3.5':
-    resolution: {integrity: sha512-GLWOvGqx9QzHuzFL7eI+XLw1DAgjqqc9DJ6YSWryOq9xqTuBWDgLbQmjtg4ruA/ZlwG1bpjYuP8UGTuIsksDlg==}
+  '@atlaskit/inline-message@15.3.6':
+    resolution: {integrity: sha512-EcVY9R8oIBEAtFylMGORz11G1/Sh1gcLpJqNG6RxzsW9JzrJyWNHmR7H2hO92QEXOoPw+jv3tVcqVQiiFzFejA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4982,9 +4977,6 @@ packages:
       eslint:
         optional: true
 
-  react-node-resolver@1.0.1:
-    resolution: {integrity: sha512-IiSe0h2+IJo4enSlbdYjdwJnY86A7TwNxnfQVG2yApxVkHj9es1jum9Lb2aiBXKkLnwAj7ufBBlAa0ROU0o9nA==}
-
   react-popper@2.3.0:
     resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
     peerDependencies:
@@ -6229,37 +6221,18 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/inline-dialog@17.2.4(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@atlaskit/analytics-next': 11.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/ds-lib': 4.1.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/layering': 3.0.1(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
-      '@atlaskit/popper': 7.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/theme': 19.0.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/tokens': 5.6.3(@types/react@18.3.23)(react@18.3.1)
-      '@babel/runtime': 7.27.6
-      '@compiled/react': 0.18.6(react@18.3.1)
-      bind-event-listener: 3.0.0
-      react: 18.3.1
-      react-node-resolver: 1.0.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - eslint
-      - prop-types
-      - react-dom
-      - supports-color
-
-  '@atlaskit/inline-message@15.3.5(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/inline-message@15.3.6(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/button': 23.3.2(@babel/core@7.28.0)(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/icon': 27.9.2(@babel/core@7.28.0)(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/inline-dialog': 17.2.4(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/link': 3.2.3(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
+      '@atlaskit/popper': 7.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/popup': 4.3.4(@types/react@18.3.23)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives': 14.11.3(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 19.0.0(@types/react@18.3.23)(react@18.3.1)
-      '@atlaskit/tokens': 5.6.3(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/tokens': 6.0.0(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.6(react@18.3.1)
       react: 18.3.1
@@ -11885,8 +11858,6 @@ snapshots:
     dependencies:
       prop-types: 15.8.1
       react: 18.3.1
-
-  react-node-resolver@1.0.1: {}
 
   react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
