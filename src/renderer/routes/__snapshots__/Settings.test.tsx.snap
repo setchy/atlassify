@@ -521,68 +521,66 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _nt751r31 _49pcnqa1 _1hvwt94y _kvh01r31 _38q98stv _1o0knqa1 _1yyu1kum _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _nt751r31 _49pcnqa1 _1hvwt94y _x5v913wx"
             >
               <button
                 aria-expanded="false"
-                class="css-exvukg"
+                aria-haspopup="true"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                tabindex="0"
+                id="uid10"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1gd7hga"
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                      data-ds--inline-message--icon="true"
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
                     >
-                      <span
-                        aria-label="info inline message"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
-                        data-testid="inline-message-icon"
-                        data-vc="icon-inline-message-icon"
-                        role="img"
-                        style="--icon-primary-color: currentColor;"
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
                       >
-                        <svg
-                          height="24"
-                          role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                        <g
+                          fill-rule="evenodd"
                         >
-                          <g
-                            fill-rule="evenodd"
-                          >
-                            <path
-                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                              fill="currentcolor"
-                            />
-                            <rect
-                              fill="inherit"
-                              height="7"
-                              rx="1"
-                              width="2"
-                              x="11"
-                              y="10"
-                            />
-                            <circle
-                              cx="12"
-                              cy="8"
-                              fill="inherit"
-                              r="1"
-                            />
-                          </g>
-                        </svg>
-                      </span>
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
                     </span>
-                    <span
-                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                    />
                   </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
                 </span>
               </button>
             </div>
@@ -627,68 +625,66 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _nt751r31 _49pcnqa1 _1hvwt94y _kvh01r31 _38q98stv _1o0knqa1 _1yyu1kum _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _nt751r31 _49pcnqa1 _1hvwt94y _x5v913wx"
             >
               <button
                 aria-expanded="false"
-                class="css-exvukg"
+                aria-haspopup="true"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                tabindex="0"
+                id="uid12"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1gd7hga"
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                      data-ds--inline-message--icon="true"
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
                     >
-                      <span
-                        aria-label="info inline message"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
-                        data-testid="inline-message-icon"
-                        data-vc="icon-inline-message-icon"
-                        role="img"
-                        style="--icon-primary-color: currentColor;"
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
                       >
-                        <svg
-                          height="24"
-                          role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                        <g
+                          fill-rule="evenodd"
                         >
-                          <g
-                            fill-rule="evenodd"
-                          >
-                            <path
-                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                              fill="currentcolor"
-                            />
-                            <rect
-                              fill="inherit"
-                              height="7"
-                              rx="1"
-                              width="2"
-                              x="11"
-                              y="10"
-                            />
-                            <circle
-                              cx="12"
-                              cy="8"
-                              fill="inherit"
-                              r="1"
-                            />
-                          </g>
-                        </svg>
-                      </span>
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
                     </span>
-                    <span
-                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                    />
                   </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
                 </span>
               </button>
             </div>
@@ -717,7 +713,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
               <div
                 aria-labelledby="openLinks-label"
-                id="uid10"
+                id="uid14"
                 role="radiogroup"
               >
                 <label
@@ -805,68 +801,66 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _nt751r31 _49pcnqa1 _1hvwt94y _kvh01r31 _38q98stv _1o0knqa1 _1yyu1kum _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _nt751r31 _49pcnqa1 _1hvwt94y _x5v913wx"
             >
               <button
                 aria-expanded="false"
-                class="css-exvukg"
+                aria-haspopup="true"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                tabindex="0"
+                id="uid15"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1gd7hga"
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                      data-ds--inline-message--icon="true"
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
                     >
-                      <span
-                        aria-label="info inline message"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
-                        data-testid="inline-message-icon"
-                        data-vc="icon-inline-message-icon"
-                        role="img"
-                        style="--icon-primary-color: currentColor;"
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
                       >
-                        <svg
-                          height="24"
-                          role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                        <g
+                          fill-rule="evenodd"
                         >
-                          <g
-                            fill-rule="evenodd"
-                          >
-                            <path
-                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                              fill="currentcolor"
-                            />
-                            <rect
-                              fill="inherit"
-                              height="7"
-                              rx="1"
-                              width="2"
-                              x="11"
-                              y="10"
-                            />
-                            <circle
-                              cx="12"
-                              cy="8"
-                              fill="inherit"
-                              r="1"
-                            />
-                          </g>
-                        </svg>
-                      </span>
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
                     </span>
-                    <span
-                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                    />
                   </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
                 </span>
               </button>
             </div>
@@ -1189,68 +1183,66 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _nt751r31 _49pcnqa1 _1hvwt94y _kvh01r31 _38q98stv _1o0knqa1 _1yyu1kum _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _nt751r31 _49pcnqa1 _1hvwt94y _x5v913wx"
             >
               <button
                 aria-expanded="false"
-                class="css-exvukg"
+                aria-haspopup="true"
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                tabindex="0"
+                id="uid23"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
                 type="button"
               >
                 <span
-                  class="css-1gd7hga"
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                      data-ds--inline-message--icon="true"
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
                     >
-                      <span
-                        aria-label="info inline message"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
-                        data-testid="inline-message-icon"
-                        data-vc="icon-inline-message-icon"
-                        role="img"
-                        style="--icon-primary-color: currentColor;"
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
                       >
-                        <svg
-                          height="24"
-                          role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                        <g
+                          fill-rule="evenodd"
                         >
-                          <g
-                            fill-rule="evenodd"
-                          >
-                            <path
-                              d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                              fill="currentcolor"
-                            />
-                            <rect
-                              fill="inherit"
-                              height="7"
-                              rx="1"
-                              width="2"
-                              x="11"
-                              y="10"
-                            />
-                            <circle
-                              cx="12"
-                              cy="8"
-                              fill="inherit"
-                              r="1"
-                            />
-                          </g>
-                        </svg>
-                      </span>
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
                     </span>
-                    <span
-                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                    />
                   </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
                 </span>
               </button>
             </div>
