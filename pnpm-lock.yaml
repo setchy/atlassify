@@ -22,7 +22,7 @@ importers:
         version: 8.2.0
       menubar:
         specifier: 9.5.1
-        version: 9.5.1(electron@37.2.5)
+        version: 9.5.1(electron@37.2.6)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -181,8 +181,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       electron:
-        specifier: 37.2.5
-        version: 37.2.5
+        specifier: 37.2.6
+        version: 37.2.6
       electron-builder:
         specifier: 25.1.8
         version: 25.1.8(electron-builder-squirrel-windows@25.1.8)
@@ -2833,8 +2833,8 @@ packages:
   electron-updater@6.6.2:
     resolution: {integrity: sha512-Cr4GDOkbAUqRHP5/oeOmH/L2Bn6+FQPxVLZtPbcmKZC63a1F3uu5EefYOssgZXG3u/zBlubbJ5PJdITdMVggbw==}
 
-  electron@37.2.5:
-    resolution: {integrity: sha512-719ZqEp43rj6xDJMICm4CIXl8keFFgvVNO9Ix6OtjNjrh9HtYlP/1WiYeRohnXj06aLyGx5NCzrHbG7j3BxO9w==}
+  electron@37.2.6:
+    resolution: {integrity: sha512-Ns6xyxE+hIK5UlujtRlw7w4e2Ju/ImCWXf1Q/PoOhc0N3/6SN6YW7+ujCarsHbxWnolbW+1RlkHtdklUJpjbPA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -9574,7 +9574,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@37.2.5:
+  electron@37.2.6:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.17.0
@@ -11031,9 +11031,9 @@ snapshots:
 
   memoize-one@6.0.0: {}
 
-  menubar@9.5.1(electron@37.2.5):
+  menubar@9.5.1(electron@37.2.6):
     dependencies:
-      electron: 37.2.5
+      electron: 37.2.6
       electron-positioner: 4.1.0
 
   merge-stream@2.0.0: {}
