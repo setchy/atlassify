@@ -91,8 +91,8 @@ importers:
         specifier: 19.0.1
         version: 19.0.1(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/temp-nav-app-icons':
-        specifier: 0.9.3
-        version: 0.9.3(@types/react@18.3.23)(react@18.3.1)
+        specifier: 0.10.0
+        version: 0.10.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 8.0.9
         version: 8.0.9(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -484,6 +484,11 @@ packages:
 
   '@atlaskit/spinner@19.0.1':
     resolution: {integrity: sha512-UgqdA7P0sw3vDOpbOEll/EWQJMPxzq8+iVc7zhKqMD41TQsaUjj9kK+ucR+5HEgkwJPWgAz9ssJSqlvfQO5IOA==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/temp-nav-app-icons@0.10.0':
+    resolution: {integrity: sha512-spt2KLz9EezPO+ehdQKEkhADknkFcHxdNYMe73gpyCR9MfDUw4q3m0U6XvsJQIibaLip+4jfEq7mw6jQrGnGJw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6521,6 +6526,17 @@ snapshots:
     dependencies:
       '@atlaskit/interaction-context': 3.0.0(react@18.3.1)
       '@atlaskit/theme': 19.0.0(@types/react@18.3.23)(react@18.3.1)
+      '@atlaskit/tokens': 6.0.0(@types/react@18.3.23)(react@18.3.1)
+      '@babel/runtime': 7.27.6
+      '@compiled/react': 0.18.6(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/temp-nav-app-icons@0.10.0(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/css': 0.12.0(@types/react@18.3.23)(react@18.3.1)
       '@atlaskit/tokens': 6.0.0(@types/react@18.3.23)(react@18.3.1)
       '@babel/runtime': 7.27.6
       '@compiled/react': 0.18.6(react@18.3.1)
