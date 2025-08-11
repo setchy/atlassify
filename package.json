@@ -92,7 +92,7 @@
     "@atlaskit/toggle": "15.1.1",
     "@atlaskit/tokens": "6.0.0",
     "@atlaskit/tooltip": "20.4.1",
-    "@biomejs/biome": "2.1.3",
+    "@biomejs/biome": "2.1.4",
     "@compiled/webpack-loader": "0.19.6",
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.0.1",
