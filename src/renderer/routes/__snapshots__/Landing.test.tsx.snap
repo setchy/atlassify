@@ -74,7 +74,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           >
             <span
               aria-label="Bitbucket"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -102,7 +102,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Compass"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -136,7 +136,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Confluence"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -164,7 +164,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -192,7 +192,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira Product Discovery"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -220,7 +220,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Jira Service Management"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -248,7 +248,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Home"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -276,7 +276,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
             <span
               aria-label="Trello"
-              class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
             >
@@ -419,7 +419,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
         >
           <span
             aria-label="Bitbucket"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -447,7 +447,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Compass"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -481,7 +481,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Confluence"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -509,7 +509,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -537,7 +537,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira Product Discovery"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -565,7 +565,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Jira Service Management"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -593,7 +593,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Home"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
@@ -621,7 +621,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
           <span
             aria-label="Trello"
-            class="_1e0c1o8l _4t3i1tcg _1b3i1e01 _9aea1fkg"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
           >
