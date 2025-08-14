@@ -37,6 +37,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   };
 
   const Chevron = getChevronDetails(true, showProductNotifications, 'product');
+  const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
@@ -125,7 +126,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               <IconButton
                 label={Chevron.label}
                 icon={(iconProps) => (
-                  <Chevron.icon {...iconProps} size="small" />
+                  <ChevronIcon {...iconProps} size="small" />
                 )}
                 shape="circle"
                 spacing="compact"

@@ -104,6 +104,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     showAccountNotifications,
     'account',
   );
+  const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
@@ -205,7 +206,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <IconButton
                 label={Chevron.label}
                 icon={(iconProps) => (
-                  <Chevron.icon {...iconProps} size="small" />
+                  <ChevronIcon {...iconProps} size="small" />
                 )}
                 shape="circle"
                 spacing="compact"
