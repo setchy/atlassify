@@ -204,7 +204,13 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
                 label={Chevron.label}
-                icon={Chevron.icon}
+                icon={(iconProps) => (
+                  <Chevron.icon 
+                    {...iconProps}
+                    size="small"
+                    />
+                )
+                }
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

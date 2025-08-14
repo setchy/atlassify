@@ -1,4 +1,4 @@
-import type { NewUtilityIconProps } from '@atlaskit/icon';
+import type { NewCoreIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
 
 import type { Language } from './i18n/types';
@@ -466,7 +466,7 @@ export type Chevron = {
    * The chevron icon.
    * @see {@link https://atlassian.design/components/icon/examples} for available icons.
    */
-  icon: React.ComponentType<NewUtilityIconProps>;
+  icon: React.ComponentType<NewCoreIconProps>;
 
   /**
    * The chevron label.
