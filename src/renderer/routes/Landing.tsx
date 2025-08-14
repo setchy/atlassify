@@ -47,28 +47,36 @@ export const LandingRoute: FC = () => {
         <Inline space="space.100">
           <BitbucketIcon
             size="small"
-            appearance="brand"
+            appearance="neutral"
             shouldUseNewLogoDesign
           />
-          <CompassIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <CompassIcon
+            size="small"
+            appearance="neutral"
+            shouldUseNewLogoDesign
+          />
           <ConfluenceIcon
             size="small"
-            appearance="brand"
+            appearance="neutral"
             shouldUseNewLogoDesign
           />
-          <JiraIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <JiraIcon size="small" appearance="neutral" shouldUseNewLogoDesign />
           <JiraProductDiscoveryIcon
             size="small"
-            appearance="brand"
+            appearance="neutral"
             shouldUseNewLogoDesign
           />
           <JiraServiceManagementIcon
             size="small"
-            appearance="brand"
+            appearance="neutral"
             shouldUseNewLogoDesign
           />
-          <HomeIcon size="small" appearance="brand" shouldUseNewLogoDesign />
-          <TrelloIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <HomeIcon size="small" appearance="neutral" shouldUseNewLogoDesign />
+          <TrelloIcon
+            size="small"
+            appearance="neutral"
+            shouldUseNewLogoDesign
+          />
         </Inline>
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
