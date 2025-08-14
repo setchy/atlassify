@@ -25,6 +25,9 @@
         "useJsxKeyInIterable": "off",
         "noChildrenProp": "off"
       },
+      "suspicious": {
+        "noUnknownAtRules": "warn"
+      },
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",
