@@ -21,12 +21,9 @@ type Documents = {
     "\n    mutation MarkGroupAsRead($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsRead(groupId: $groupId)\n      }\n    }\n  ": typeof types.MarkGroupAsReadDocument,
     "\n    mutation MarkGroupAsUnread($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsUnread(groupId: $groupId)\n      }\n    }\n  ": typeof types.MarkGroupAsUnreadDocument,
     "\n    query RetrieveNotificationsByGroupId(\n      $groupId: String!,\n      $first: Int,\n      $readState: InfluentsNotificationReadState\n    ) {\n      notifications {\n        notificationGroup(\n          groupId: $groupId, \n          first: $first, \n          filter: { \n            readStateFilter: $readState \n          }\n        ) {\n          nodes {\n            ...GroupNotificationDetails\n          } \n        }\n      }\n    }\n  ": typeof types.RetrieveNotificationsByGroupIdDocument,
-<<<<<<< HEAD
+    "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n": typeof types.MeDocument,
     "\n    query JiraProjectTypes(\n      $cloudId: ID!,\n      $keys: [String!]!\n    ) {\n      jira {\n        issuesByKey(\n          cloudId: $cloudId, \n          keys: $keys\n        ) {\n          id\n          key\n          summary\n          projectField {\n            project {\n              name\n              projectTypeName\n              projectType\n            }\n          }\n        }\n      }\n    }\n  ": typeof types.JiraProjectTypesDocument,
     "\n    query RetrieveCloudIDsForHostNames(\n      $hostNames: [String!]!\n    ) {\n      tenantContexts(hostNames: $hostNames) {\n        cloudId\n        hostName\n      }\n    }\n  ": typeof types.RetrieveCloudIDsForHostNamesDocument,
-=======
-    "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n": typeof types.MeDocument,
->>>>>>> main
     "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      groupSize\n      additionalActors {\n        displayName\n        avatarURL\n      }\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": typeof types.AtlassianNotificationFragmentDoc,
     "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": typeof types.AtlassianHeadNotificationFragmentDoc,
     "\n  fragment GroupNotificationDetails on InfluentsNotificationItem {\n    notificationId\n    readState\n  }\n": typeof types.GroupNotificationDetailsFragmentDoc,
@@ -38,12 +35,9 @@ const documents: Documents = {
     "\n    mutation MarkGroupAsRead($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsRead(groupId: $groupId)\n      }\n    }\n  ": types.MarkGroupAsReadDocument,
     "\n    mutation MarkGroupAsUnread($groupId: String!) {\n      notifications {\n        markNotificationsByGroupIdAsUnread(groupId: $groupId)\n      }\n    }\n  ": types.MarkGroupAsUnreadDocument,
     "\n    query RetrieveNotificationsByGroupId(\n      $groupId: String!,\n      $first: Int,\n      $readState: InfluentsNotificationReadState\n    ) {\n      notifications {\n        notificationGroup(\n          groupId: $groupId, \n          first: $first, \n          filter: { \n            readStateFilter: $readState \n          }\n        ) {\n          nodes {\n            ...GroupNotificationDetails\n          } \n        }\n      }\n    }\n  ": types.RetrieveNotificationsByGroupIdDocument,
-<<<<<<< HEAD
+    "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n": types.MeDocument,
     "\n    query JiraProjectTypes(\n      $cloudId: ID!,\n      $keys: [String!]!\n    ) {\n      jira {\n        issuesByKey(\n          cloudId: $cloudId, \n          keys: $keys\n        ) {\n          id\n          key\n          summary\n          projectField {\n            project {\n              name\n              projectTypeName\n              projectType\n            }\n          }\n        }\n      }\n    }\n  ": types.JiraProjectTypesDocument,
     "\n    query RetrieveCloudIDsForHostNames(\n      $hostNames: [String!]!\n    ) {\n      tenantContexts(hostNames: $hostNames) {\n        cloudId\n        hostName\n      }\n    }\n  ": types.RetrieveCloudIDsForHostNamesDocument,
-=======
-    "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n": types.MeDocument,
->>>>>>> main
     "\n    fragment AtlassianNotification on InfluentsNotificationHeadItem {\n      groupId\n      groupSize\n      additionalActors {\n        displayName\n        avatarURL\n      }\n      headNotification {\n        ...AtlassianHeadNotification\n      }\n    }\n  ": types.AtlassianNotificationFragmentDoc,
     "\n    fragment AtlassianHeadNotification on InfluentsNotificationItem {\n      notificationId\n      timestamp\n      readState\n      category\n      content {\n        type\n        message\n        url\n        entity {\n          title\n          iconUrl\n          url\n        }\n        path {\n          title\n          iconUrl\n          url\n        }\n        actor {\n          displayName\n          avatarURL\n        }\n      }\n      analyticsAttributes {\n        key\n        value\n      }\n    }\n  ": types.AtlassianHeadNotificationFragmentDoc,
     "\n  fragment GroupNotificationDetails on InfluentsNotificationItem {\n    notificationId\n    readState\n  }\n": types.GroupNotificationDetailsFragmentDoc,
@@ -76,15 +70,15 @@ export function graphql(source: "\n    query RetrieveNotificationsByGroupId(\n  
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-<<<<<<< HEAD
+export function graphql(source: "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n"): typeof import('./graphql').MeDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function graphql(source: "\n    query JiraProjectTypes(\n      $cloudId: ID!,\n      $keys: [String!]!\n    ) {\n      jira {\n        issuesByKey(\n          cloudId: $cloudId, \n          keys: $keys\n        ) {\n          id\n          key\n          summary\n          projectField {\n            project {\n              name\n              projectTypeName\n              projectType\n            }\n          }\n        }\n      }\n    }\n  "): typeof import('./graphql').JiraProjectTypesDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n    query RetrieveCloudIDsForHostNames(\n      $hostNames: [String!]!\n    ) {\n      tenantContexts(hostNames: $hostNames) {\n        cloudId\n        hostName\n      }\n    }\n  "): typeof import('./graphql').RetrieveCloudIDsForHostNamesDocument;
-=======
-export function graphql(source: "\n  query Me {\n    me {\n      user {\n        accountId\n        name\n        picture\n      }\n    }\n  }\n"): typeof import('./graphql').MeDocument;
->>>>>>> main
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
