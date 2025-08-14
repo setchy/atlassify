@@ -45,14 +45,30 @@ export const LandingRoute: FC = () => {
           <Text size="large">{t('landing.subheading')}</Text>
         </Stack>
         <Inline space="space.100">
-          <BitbucketIcon size="small" appearance="neutral" />
-          <CompassIcon size="small" appearance="neutral" />
-          <ConfluenceIcon size="small" appearance="neutral" />
-          <JiraIcon size="small" appearance="neutral" />
-          <JiraProductDiscoveryIcon size="small" appearance="neutral" />
-          <JiraServiceManagementIcon size="small" appearance="neutral" />
-          <HomeIcon size="small" appearance="neutral" />
-          <TrelloIcon size="small" appearance="neutral" />
+          <BitbucketIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <CompassIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <ConfluenceIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <JiraIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <JiraProductDiscoveryIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <JiraServiceManagementIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <HomeIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <TrelloIcon size="small" appearance="brand" shouldUseNewLogoDesign />
         </Inline>
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
