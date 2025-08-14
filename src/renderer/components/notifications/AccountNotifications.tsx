@@ -205,12 +205,8 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <IconButton
                 label={Chevron.label}
                 icon={(iconProps) => (
-                  <Chevron.icon 
-                    {...iconProps}
-                    size="small"
-                    />
-                )
-                }
+                  <Chevron.icon {...iconProps} size="small" />
+                )}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"
