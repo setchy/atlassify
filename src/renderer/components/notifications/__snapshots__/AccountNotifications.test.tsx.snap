@@ -177,13 +177,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                          d="m9.97 1.47-6 6a.75.75 0 0 0-.052 1.004l.052.056 6 6 1.06-1.06L5.56 8l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -412,13 +410,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                        d="m9.97 1.47-6 6a.75.75 0 0 0-.052 1.004l.052.056 6 6 1.06-1.06L5.56 8l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -704,13 +700,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -907,13 +901,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1167,13 +1159,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1370,13 +1360,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1630,13 +1618,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                          d="m9.97 1.47-6 6a.75.75 0 0 0-.052 1.004l.052.056 6 6 1.06-1.06L5.56 8l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1856,13 +1842,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="m4.06 6 3.97-3.97L6.97.97l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5 1.06-1.06z"
+                        d="m9.97 1.47-6 6a.75.75 0 0 0-.052 1.004l.052.056 6 6 1.06-1.06L5.56 8l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -2139,13 +2123,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -2859,13 +2841,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -3636,13 +3616,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -4356,13 +4334,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -5137,13 +5113,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M7.94 6 3.97 2.03 5.03.97l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5-1.06-1.06z"
+                          d="m6.03 1.47 6 6a.75.75 0 0 1 .052 1.004l-.052.056-6 6-1.06-1.06L10.44 8 4.97 2.53z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -5333,13 +5307,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -6053,13 +6025,11 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>

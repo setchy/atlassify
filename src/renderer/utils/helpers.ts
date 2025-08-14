@@ -1,6 +1,6 @@
-import ChevronDownIcon from '@atlaskit/icon/utility/chevron-down';
-import ChevronLeftIcon from '@atlaskit/icon/utility/chevron-left';
-import ChevronRightIcon from '@atlaskit/icon/utility/chevron-right';
+import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
+import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
+import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 
