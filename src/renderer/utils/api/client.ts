@@ -11,20 +11,33 @@ import {
   type MyNotificationsQuery,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
-import { performHeadRequest, performPostRequest } from './request';
+import {
+  performRequestForAccount,
+  performRequestForCredentials,
+} from './request';
 import type { AtlassianGraphQLResponse } from './types';
 
 /**
  * Check if provided credentials (username and token) are valid.
  *
- * @param account
- * @returns
  */
 export function checkIfCredentialsAreValid(
   username: Username,
   token: Token,
-): Promise<AtlassianGraphQLResponse<unknown>> {
-  return performHeadRequest(username, token);
+): Promise<AtlassianGraphQLResponse<MeQuery>> {
+  const MeQuery = graphql(`
+    query Me {
+      me {
+        user {
+          accountId
+          name
+          picture
+        }
+      }
+    }
+  `);
+
+  return performRequestForCredentials(username, token, MeQuery);
 }
 
 /**
@@ -47,7 +60,7 @@ export function getAuthenticatedUser(
     }
   `);
 
-  return performPostRequest(account, MeQuery);
+  return performRequestForAccount(account, MeQuery);
 }
 
 /**
@@ -87,7 +100,7 @@ export function getNotificationsForUser(
     }
   `);
 
-  return performPostRequest(account, MyNotificationsQuery, {
+  return performRequestForAccount(account, MyNotificationsQuery, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,
     readState: settings.fetchOnlyUnreadNotifications
@@ -113,7 +126,7 @@ export function markNotificationsAsRead(
     }
   `);
 
-  return performPostRequest(account, MarkAsReadMutation, {
+  return performRequestForAccount(account, MarkAsReadMutation, {
     notificationIDs: notificationIds,
   });
 }
@@ -135,7 +148,7 @@ export function markNotificationsAsUnread(
     }
   `);
 
-  return performPostRequest(account, MarkAsUnreadMutation, {
+  return performRequestForAccount(account, MarkAsUnreadMutation, {
     notificationIDs: notificationIds,
   });
 }
@@ -158,7 +171,7 @@ export function markNotificationGroupAsRead(
     }
   `);
 
-  return performPostRequest(account, MarkGroupAsReadMutation, {
+  return performRequestForAccount(account, MarkGroupAsReadMutation, {
     groupId: notificationGroupId,
   });
 }
@@ -181,7 +194,7 @@ export function markNotificationGroupAsUnread(
     }
   `);
 
-  return performPostRequest(account, MarkGroupAsUnreadMutation, {
+  return performRequestForAccount(account, MarkGroupAsUnreadMutation, {
     groupId: notificationGroupId,
   });
 }
@@ -218,13 +231,17 @@ export function getNotificationsByGroupId(
     }
   `);
 
-  return performPostRequest(account, RetrieveNotificationsByGroupIdQuery, {
-    groupId: notificationGroupId,
-    first: notificationGroupSize,
-    readState: settings.fetchOnlyUnreadNotifications
-      ? InfluentsNotificationReadState.Unread
-      : null,
-  });
+  return performRequestForAccount(
+    account,
+    RetrieveNotificationsByGroupIdQuery,
+    {
+      groupId: notificationGroupId,
+      first: notificationGroupSize,
+      readState: settings.fetchOnlyUnreadNotifications
+        ? InfluentsNotificationReadState.Unread
+        : null,
+    },
+  );
 }
 
 /**

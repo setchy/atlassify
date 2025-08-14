@@ -1,13 +1,10 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import { useContext } from 'react';
 
-import type { AxiosPromise, AxiosResponse } from 'axios';
-
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AuthState, SettingsState, Token, Username } from '../types';
-import * as apiRequests from '../utils/api/request';
+import type { AuthState, SettingsState } from '../types';
 import * as comms from '../utils/comms';
 import { Constants } from '../utils/constants';
 import * as notifications from '../utils/notifications/notifications';
@@ -164,63 +161,6 @@ describe('renderer/context/App.tsx', () => {
         mockDefaultState,
         [mockSingleAtlassifyNotification],
       );
-    });
-  });
-
-  describe('authentication methods', () => {
-    const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
-    const fetchNotificationsMock = jest.fn();
-
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-      });
-    });
-
-    it('should call login', async () => {
-      const requestPromise = new Promise((resolve) =>
-        resolve({
-          data: {
-            data: {
-              me: {
-                user: {
-                  accountId: '123',
-                  name: 'Atlassify',
-                  picture: 'https://avatar.atlassify.io',
-                },
-              },
-            },
-          },
-        } as AxiosResponse),
-      ) as AxiosPromise;
-
-      apiRequestMock.mockResolvedValueOnce(requestPromise);
-
-      const TestComponent = () => {
-        const { login } = useContext(AppContext);
-
-        return (
-          <button
-            type="button"
-            onClick={() =>
-              login({
-                username: 'atlassify' as Username,
-                token: '123-456' as Token,
-              })
-            }
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
-
-      // expect(apiRequestMock).toHaveBeenCalledTimes(1);
     });
   });
 
