@@ -12,7 +12,7 @@ if (!global.TextEncoder || !global.TextDecoder) {
   global.TextDecoder = TextDecoder;
 }
 
-// @ts-ignore
+// @ts-expect-error
 window.Audio = class Audio {
   play() {}
 };
