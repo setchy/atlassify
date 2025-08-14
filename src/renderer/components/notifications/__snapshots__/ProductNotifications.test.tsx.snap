@@ -31,27 +31,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                       role="img"
-                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                      style="--themed-icon-color: initial;"
                     >
                       <svg
-                        aria-hidden="true"
-                        fill="none"
-                        focusable="false"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="100%"
+                        viewBox="0 0 24 24"
                       >
                         
-      
+    
                         <path
-                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                          fill="#1868DB"
+                          d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                          fill="var(--tile-color,#94c748)"
                         />
                         
     
+                        <path
+                          d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                          fill="var(--icon-color, #101214)"
+                        />
+                        
+
                       </svg>
+                      
+
                     </span>
                     <span
                       class="capitalize font-medium"
@@ -94,7 +98,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -132,13 +135,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -189,27 +190,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                     role="img"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    style="--themed-icon-color: initial;"
                   >
                     <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 0 24 24"
                     >
                       
-      
+    
                       <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="#1868DB"
+                        d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                        fill="var(--tile-color,#94c748)"
                       />
                       
     
+                      <path
+                        d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                        fill="var(--icon-color, #101214)"
+                      />
+                      
+
                     </svg>
+                    
+
                   </span>
                   <span
                     class="capitalize font-medium"
@@ -252,7 +257,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"
@@ -290,13 +294,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -404,27 +406,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                       role="img"
-                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                      style="--themed-icon-color: initial;"
                     >
                       <svg
-                        aria-hidden="true"
-                        fill="none"
-                        focusable="false"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="100%"
+                        viewBox="0 0 24 24"
                       >
                         
-      
+    
                         <path
-                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                          fill="#1868DB"
+                          d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                          fill="var(--tile-color,#94c748)"
                         />
                         
     
+                        <path
+                          d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                          fill="var(--icon-color, #101214)"
+                        />
+                        
+
                       </svg>
+                      
+
                     </span>
                     <span
                       class="capitalize font-medium"
@@ -467,7 +473,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -505,13 +510,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -562,27 +565,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                     role="img"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    style="--themed-icon-color: initial;"
                   >
                     <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 0 24 24"
                     >
                       
-      
+    
                       <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="#1868DB"
+                        d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                        fill="var(--tile-color,#94c748)"
                       />
                       
     
+                      <path
+                        d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                        fill="var(--icon-color, #101214)"
+                      />
+                      
+
                     </svg>
+                    
+
                   </span>
                   <span
                     class="capitalize font-medium"
@@ -625,7 +632,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"
@@ -663,13 +669,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -777,27 +781,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                       role="img"
-                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                      style="--themed-icon-color: initial;"
                     >
                       <svg
-                        aria-hidden="true"
-                        fill="none"
-                        focusable="false"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="100%"
+                        viewBox="0 0 24 24"
                       >
                         
-      
+    
                         <path
-                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                          fill="#1868DB"
+                          d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                          fill="var(--tile-color,#94c748)"
                         />
                         
     
+                        <path
+                          d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                          fill="var(--icon-color, #101214)"
+                        />
+                        
+
                       </svg>
+                      
+
                     </span>
                     <span
                       class="capitalize font-medium"
@@ -840,7 +848,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -878,13 +885,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M7.94 6 3.97 2.03 5.03.97l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5-1.06-1.06z"
+                          d="m6.03 1.47 6 6a.75.75 0 0 1 .052 1.004l-.052.056-6 6-1.06-1.06L10.44 8 4.97 2.53z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -928,27 +933,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                       role="img"
-                      style="--logo-color: inherit; --logo-fill: currentColor;"
+                      style="--themed-icon-color: initial;"
                     >
                       <svg
-                        aria-hidden="true"
-                        fill="none"
-                        focusable="false"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
+                        height="100%"
+                        viewBox="0 0 24 24"
                       >
                         
-      
+    
                         <path
-                          d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                          fill="#1868DB"
+                          d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                          fill="var(--tile-color,#94c748)"
                         />
                         
     
+                        <path
+                          d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                          fill="var(--icon-color, #101214)"
+                        />
+                        
+
                       </svg>
+                      
+
                     </span>
                     <span
                       class="capitalize font-medium"
@@ -991,7 +1000,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -1029,13 +1037,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                         class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                         fill="none"
                         role="presentation"
-                        viewBox="0 0 12 12"
+                        viewBox="0 0 16 16"
                       >
                         <path
-                          clip-rule="evenodd"
-                          d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                          d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                           fill="currentcolor"
-                          fill-rule="evenodd"
                         />
                       </svg>
                     </span>
@@ -1086,27 +1092,31 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                     role="img"
-                    style="--logo-color: inherit; --logo-fill: currentColor;"
+                    style="--themed-icon-color: initial;"
                   >
                     <svg
-                      aria-hidden="true"
-                      fill="none"
-                      focusable="false"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
+                      height="100%"
+                      viewBox="0 0 24 24"
                     >
                       
-      
+    
                       <path
-                        d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                        fill="#1868DB"
+                        d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                        fill="var(--tile-color,#94c748)"
                       />
                       
     
+                      <path
+                        d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                        fill="var(--icon-color, #101214)"
+                      />
+                      
+
                     </svg>
+                    
+
                   </span>
                   <span
                     class="capitalize font-medium"
@@ -1149,7 +1159,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"
@@ -1187,13 +1196,11 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
                       fill="none"
                       role="presentation"
-                      viewBox="0 0 12 12"
+                      viewBox="0 0 16 16"
                     >
                       <path
-                        clip-rule="evenodd"
-                        d="M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z"
+                        d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                         fill="currentcolor"
-                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>

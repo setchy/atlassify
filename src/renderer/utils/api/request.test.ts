@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
-import type { Link } from '../../types';
+import type { Link, Token, Username } from '../../types';
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
-import { performHeadRequest, performPostRequest } from './request';
+import {
+  performRequestForAccount,
+  performRequestForCredentials,
+} from './request';
 
 jest.mock('axios');
 
@@ -22,16 +25,15 @@ describe('renderer/utils/api/request.ts', () => {
     jest.clearAllMocks();
   });
 
-  it('should execute graphql request with the correct parameters', async () => {
+  it('performRequestForAccount - should execute graphql request with the correct parameters', async () => {
     const data = {
       query: 'foo',
       variables: {
         key: 'value',
       },
     };
-    const method = 'POST';
 
-    await performPostRequest(
+    await performRequestForAccount(
       mockAtlassianCloudAccount,
       'foo' as unknown as TypedDocumentString<MeQuery, unknown>,
       {
@@ -40,29 +42,45 @@ describe('renderer/utils/api/request.ts', () => {
     );
 
     expect(axios).toHaveBeenCalledWith({
-      method,
       url,
       data,
+      method: 'POST',
+      headers: {
+        Accept: '*/*',
+        Authorization: 'Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk',
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/json',
+      },
     });
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
-  it('should make a head request with the correct parameters', async () => {
-    const data = {};
-    const method = 'HEAD';
+  it('performRequestForCredentials - should execute graphql request with the correct parameters', async () => {
+    const data = {
+      query: 'foo',
+      variables: {
+        key: 'value',
+      },
+    };
 
-    await performHeadRequest(
-      mockAtlassianCloudAccount.username,
-      mockAtlassianCloudAccount.token,
+    await performRequestForCredentials(
+      'some-username' as Username,
+      'some-password' as Token,
+      'foo' as unknown as TypedDocumentString<MeQuery, unknown>,
+      {
+        key: 'value',
+      },
     );
 
     expect(axios).toHaveBeenCalledWith({
-      method,
       url,
       data,
+      method: 'POST',
+      headers: {
+        Accept: '*/*',
+        Authorization: 'Basic c29tZS11c2VybmFtZTpzb21lLXBhc3N3b3Jk',
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/json',
+      },
     });
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 });

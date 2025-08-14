@@ -12,8 +12,8 @@ import Form, {
   HelperMessage,
 } from '@atlaskit/form';
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
+import LockLockedIcon from '@atlaskit/icon/core/lock-locked';
 import LogInIcon from '@atlaskit/icon/core/log-in';
-import LockLockedIcon from '@atlaskit/icon/utility/lock-locked';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
@@ -107,7 +107,9 @@ export const LoginRoute: FC = () => {
                             <Button
                               appearance="discovery"
                               spacing="compact"
-                              iconBefore={LockLockedIcon}
+                              iconBefore={(iconProps) => (
+                                <LockLockedIcon {...iconProps} size="small" />
+                              )}
                               onClick={() => openAtlassianCreateToken()}
                               testId="login-create-token"
                             >

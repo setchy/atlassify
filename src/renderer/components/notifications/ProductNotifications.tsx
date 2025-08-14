@@ -37,6 +37,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   };
 
   const Chevron = getChevronDetails(true, showProductNotifications, 'product');
+  const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
@@ -84,7 +85,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               testId="product-home"
             >
               <Inline space="space.100" alignBlock="center">
-                <productNotification.logo size="xxsmall" appearance="brand" />
+                <productNotification.logo
+                  size="xxsmall"
+                  appearance="brand"
+                  shouldUseNewLogoDesign
+                />
                 <span className="capitalize font-medium">
                   {productNotification.name}
                 </span>
@@ -120,7 +125,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
                 label={Chevron.label}
-                icon={Chevron.icon}
+                icon={(iconProps) => (
+                  <ChevronIcon {...iconProps} size="small" />
+                )}
                 shape="circle"
                 spacing="compact"
                 appearance="subtle"

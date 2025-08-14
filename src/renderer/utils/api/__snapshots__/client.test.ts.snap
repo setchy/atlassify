@@ -1,73 +1,57 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/utils/api/client.ts checkIfCredentialsAreValid - should validate credentials 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86dG9rZW4tMTIzLTQ1Ng==",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts getAuthenticatedUser - should fetch authenticated user details 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts getNotificationsByGroupId - should fetch notifications by group id 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts listNotificationsForAuthenticatedUser - should list notifications for user 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts markNotificationGroupAsRead - should mark notification group as read 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts markNotificationsAsRead - should mark notifications as read 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts markNotificationsAsUnread - should mark notification group as unread 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;
 
 exports[`renderer/utils/api/client.ts markNotificationsAsUnread - should mark notifications as unread 1`] = `
 {
-  "Accept": "*/*",
-  "Authorization": "Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk",
-  "Cache-Control": "no-cache",
-  "Content-Type": "application/json",
+  "Accept": "application/json, text/plain, */*",
+  "Content-Type": undefined,
 }
 `;

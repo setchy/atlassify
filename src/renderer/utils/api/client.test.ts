@@ -42,8 +42,11 @@ describe('renderer/utils/api/client.ts', () => {
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
         url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'HEAD',
-        data: {},
+        method: 'POST',
+        data: {
+          query: expect.stringContaining('query Me'),
+          variables: undefined,
+        },
       }),
     );
 

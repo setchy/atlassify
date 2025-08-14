@@ -1,4 +1,4 @@
-import type { NewUtilityIconProps } from '@atlaskit/icon';
+import type { NewCoreIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
 
 import type { Language } from './i18n/types';
@@ -78,12 +78,11 @@ export type SettingsValue =
  * The different types of allowed Filter values to be stored in the application.
  */
 export type FilterValue =
-  | CategoryType
-  | ReadStateType
   | ActorType
+  | CategoryType
   | ProductName
-  | TimeSensitiveType
-  | ActorType;
+  | ReadStateType
+  | TimeSensitiveType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
@@ -454,7 +453,7 @@ export type ProductName =
   | 'jira'
   | 'jira product discovery'
   | 'jira service management'
-  | 'team central (atlas)'
+  | 'home'
   | 'trello'
   | 'unknown';
 
@@ -466,7 +465,7 @@ export type Chevron = {
    * The chevron icon.
    * @see {@link https://atlassian.design/components/icon/examples} for available icons.
    */
-  icon: React.ComponentType<NewUtilityIconProps>;
+  icon: React.ComponentType<NewCoreIconProps>;
 
   /**
    * The chevron label.

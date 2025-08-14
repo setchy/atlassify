@@ -1,9 +1,9 @@
 import {
-  AtlasIcon,
   AtlassianIcon,
   BitbucketIcon,
   CompassIcon,
   ConfluenceIcon,
+  HomeIcon,
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
@@ -45,9 +45,9 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
     name: 'jira service management',
     logo: JiraServiceManagementIcon,
   },
-  'team central (atlas)': {
-    name: 'team central (atlas)',
-    logo: AtlasIcon,
+  home: {
+    name: 'home',
+    logo: HomeIcon,
   },
   trello: {
     name: 'trello',
@@ -116,7 +116,7 @@ export async function getAtlassianProduct(
     case 'opsgenie':
       return PRODUCTS['jira service management'];
     case 'team-central':
-      return PRODUCTS['team central (atlas)'];
+      return PRODUCTS.home;
     default:
       return PRODUCTS.unknown;
   }

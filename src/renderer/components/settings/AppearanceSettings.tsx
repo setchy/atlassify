@@ -95,9 +95,6 @@ export const AppearanceSettings: FC = () => {
           </Text>
           <Select
             menuPortalTarget={document.body}
-            styles={{
-              menuPortal: (base) => ({ ...base, zIndex: 1050 }),
-            }}
             options={LANGUAGES}
             defaultValue={LANGUAGES.find((lang) =>
               locale.startsWith(lang.value),
