@@ -13,6 +13,7 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  type LogoProps,
   TrelloIcon,
 } from '@atlaskit/logo';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
@@ -36,6 +37,12 @@ export const LandingRoute: FC = () => {
     }
   }, [isLoggedIn]);
 
+  const commonLogoProps: LogoProps = {
+    size: 'small',
+    appearance: 'brand',
+    shouldUseNewLogoDesign: true,
+  };
+
   return (
     <Centered>
       <Stack alignBlock="center" alignInline="center" space="space.200">
@@ -45,38 +52,14 @@ export const LandingRoute: FC = () => {
           <Text size="large">{t('landing.subheading')}</Text>
         </Stack>
         <Inline space="space.100">
-          <BitbucketIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
-          <CompassIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
-          <ConfluenceIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
-          <JiraIcon size="small" appearance="neutral" shouldUseNewLogoDesign />
-          <JiraProductDiscoveryIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
-          <JiraServiceManagementIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
-          <HomeIcon size="small" appearance="neutral" shouldUseNewLogoDesign />
-          <TrelloIcon
-            size="small"
-            appearance="neutral"
-            shouldUseNewLogoDesign
-          />
+          <BitbucketIcon {...commonLogoProps} />
+          <CompassIcon {...commonLogoProps} />
+          <ConfluenceIcon {...commonLogoProps} />
+          <JiraIcon {...commonLogoProps} />
+          <JiraProductDiscoveryIcon {...commonLogoProps} />
+          <JiraServiceManagementIcon {...commonLogoProps} />
+          <HomeIcon {...commonLogoProps} />
+          <TrelloIcon {...commonLogoProps} />
         </Inline>
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
