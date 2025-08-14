@@ -37,7 +37,7 @@ describe('renderer/utils/products.ts', () => {
 
     expect(
       getAtlassianProduct(createProductNotificationMock('team-central')),
-    ).toBe(PRODUCTS['team central (atlas)']);
+    ).toBe(PRODUCTS.home);
 
     expect(
       getAtlassianProduct(createProductNotificationMock('unmapped', 'product')),

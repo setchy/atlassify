@@ -84,7 +84,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               testId="product-home"
             >
               <Inline space="space.100" alignBlock="center">
-                <productNotification.logo size="xxsmall" appearance="brand" />
+                <productNotification.logo
+                  size="xxsmall"
+                  appearance="brand"
+                  shouldUseNewLogoDesign
+                />
                 <span className="capitalize font-medium">
                   {productNotification.name}
                 </span>

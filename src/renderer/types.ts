@@ -454,7 +454,7 @@ export type ProductName =
   | 'jira'
   | 'jira product discovery'
   | 'jira service management'
-  | 'team central (atlas)'
+  | 'home'
   | 'trello'
   | 'unknown';
 

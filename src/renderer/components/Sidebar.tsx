@@ -86,7 +86,7 @@ export const Sidebar: FC = () => {
               <IconButton
                 label={t('sidebar.home')}
                 appearance="subtle"
-                icon={() => <LogoIcon width={32} height={32} />}
+                icon={() => <LogoIcon width={32} height={32} color="white" />}
                 shape="circle"
                 onClick={() => navigate('/', { replace: true })}
                 testId="sidebar-home"

@@ -62,6 +62,7 @@ export const FilterSection = <T extends FilterValue>({
                 <typeDetails.logo
                   size="xxsmall"
                   appearance={isChecked ? 'brand' : 'neutral'}
+                  shouldUseNewLogoDesign
                 />
               )}
               {typeDetails.heroicon && (

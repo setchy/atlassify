@@ -739,27 +739,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#94c748)"
                     />
                     
     
+                    <path
+                      d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -812,29 +816,37 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Compass"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M15.667 15.66v5.942H9.713V15.66zV9.722H4.807c-.58.004-1.047.47-1.043 1.04v15.755a1.04 1.04 0 0 0 1.028 1.054h15.771a1.04 1.04 0 0 0 1.042-1.04V15.66zm0-11.88v5.942h5.967v5.938h5.935V4.82a1.04 1.04 0 0 0-1.028-1.053h-.014z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#94c748)"
                     />
                     
-      
+    
+                    <path
+                      d="M12.75 7.877v-3.37l6.16-.007h.007a.59.59 0 0 1 .583.598v6.147h-3.366V7.877z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+    
+                    <path
+                      d="M12.75 14.615v-3.37h3.368v6.165a.59.59 0 0 1-.591.59H6.583A.59.59 0 0 1 6 17.402V8.467a.59.59 0 0 1 .591-.59h6.16v3.368H9.373v3.37z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
                   
-    
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -887,27 +899,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M25.769 20.234c-6.584-3.183-8.507-3.66-11.282-3.66-3.254 0-6.028 1.355-8.507 5.16l-.406.622c-.333.513-.407.696-.407.915s.11.403.517.659l4.18 2.598c.222.146.407.22.592.22.222 0 .37-.11.592-.44l.665-1.024c1.036-1.574 1.96-2.086 3.144-2.086 1.036 0 2.257.293 3.773 1.025l4.365 2.049c.443.22.924.11 1.146-.403l2.071-4.537c.222-.512.074-.842-.444-1.098M6.572 12.22c6.584 3.184 8.507 3.66 11.281 3.66 3.255 0 6.03-1.354 8.507-5.16l.407-.622c.333-.512.407-.695.407-.915s-.11-.402-.518-.658l-4.18-2.598c-.221-.147-.406-.22-.591-.22-.222 0-.37.11-.592.44l-.666 1.024c-1.035 1.573-1.96 2.086-3.144 2.086-1.035 0-2.256-.293-3.772-1.025L9.346 6.183c-.444-.22-.924-.11-1.146.402l-2.072 4.538c-.222.512-.074.841.444 1.098"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
                     />
                     
     
+                    <path
+                      d="M17.888 14.461c-4.039-1.953-5.219-2.245-6.92-2.245-1.997 0-3.699.831-5.219 3.165l-.25.382c-.204.314-.249.426-.249.561s.068.247.318.404l2.564 1.594c.136.09.25.135.363.135.136 0 .226-.068.363-.27l.408-.628c.635-.966 1.203-1.28 1.928-1.28.636 0 1.385.18 2.315.629l2.677 1.257c.272.134.567.067.704-.247l1.27-2.783c.136-.315.046-.517-.272-.674M6.112 9.545c4.039 1.953 5.219 2.245 6.92 2.245 1.997 0 3.699-.83 5.219-3.165l.25-.381c.204-.315.249-.427.249-.562 0-.134-.068-.247-.318-.404L15.87 5.685c-.137-.09-.25-.135-.364-.135-.136 0-.226.067-.363.27l-.408.628c-.635.965-1.203 1.28-1.928 1.28-.636 0-1.385-.18-2.315-.63L7.814 5.843c-.272-.135-.567-.068-.703.247L5.84 8.872c-.136.314-.045.516.272.673"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -960,27 +976,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M11.034 21.99h-2.22c-3.346 0-5.747-2.05-5.747-5.052h11.932c.619 0 1.019.44 1.019 1.062v12.007c-2.983 0-4.984-2.416-4.984-5.784zm5.893-5.967h-2.219c-3.347 0-5.748-2.013-5.748-5.015h11.933c.618 0 1.055.402 1.055 1.025V24.04c-2.983 0-5.02-2.416-5.02-5.784zm5.93-5.93h-2.219c-3.347 0-5.748-2.05-5.748-5.052h11.933c.618 0 1.018.439 1.018 1.025v12.007c-2.983 0-4.984-2.416-4.984-5.784z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
                     />
                     
     
+                    <path
+                      d="M9.051 15.434H7.734c-1.988 0-3.413-1.218-3.413-3h7.085c.367 0 .605.26.605.63v7.13c-1.772 0-2.96-1.435-2.96-3.434zm3.5-3.543h-1.318c-1.987 0-3.413-1.196-3.413-2.978h7.085c.367 0 .627.239.627.608v7.13c-1.772 0-2.981-1.435-2.981-3.434zm3.52-3.522h-1.317c-1.987 0-3.413-1.217-3.413-3h7.085c.367 0 .605.262.605.61v7.129c-1.771 0-2.96-1.435-2.96-3.434z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -1033,27 +1053,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M17.655 5.884a15.3 15.3 0 0 0 8.75 0c.257-.056.428.114.37.37-.826 2.985-.826 5.742 0 8.727.058.228-.113.427-.37.342a16.33 16.33 0 0 0-8.75 0c-.228.085-.428-.114-.342-.342.77-2.985.77-5.742 0-8.727-.086-.256.114-.426.342-.37m1.169 10.576v.483c0 2.246-1.568 3.894-3.506 3.894a3.474 3.474 0 0 1-3.477-3.496c0-1.933 1.567-3.468 3.762-3.468h.57V7.078c-.285-.028-.57-.028-.855-.028C9.618 7.05 5 11.655 5 17.37c0 5.713 4.617 10.29 10.318 10.29s10.346-4.605 10.346-10.29v-.91z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#c97cf4)"
                     />
                     
     
+                    <path
+                      d="M13.467 4.882a9.47 9.47 0 0 0 5.422 0c.159-.035.265.07.23.229-.513 1.85-.513 3.558 0 5.408.035.14-.072.264-.23.211a10.1 10.1 0 0 0-5.422 0c-.142.053-.265-.07-.212-.211.476-1.85.476-3.559 0-5.408-.053-.159.07-.264.212-.23m.724 6.553v.3c0 1.39-.972 2.412-2.173 2.412a2.153 2.153 0 0 1-2.154-2.166c0-1.198.971-2.15 2.331-2.15h.353V5.62c-.176-.017-.353-.017-.53-.017a6.387 6.387 0 0 0-6.393 6.394 6.37 6.37 0 0 0 6.393 6.377c3.533 0 6.411-2.854 6.411-6.377v-.563z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -1106,27 +1130,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M18.79 13.257h7.325c1.1 0 1.476 1.046.805 1.878L15.464 29.274c-3.702-2.951-3.353-7.62-.644-11.027zm-5.66 5.634H5.806c-1.1 0-1.476-1.046-.805-1.878L16.457 2.874c3.702 2.951 3.3 7.566.617 11z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#ffc716)"
                     />
                     
     
+                    <path
+                      d="M13.744 10.156h4.578c.688 0 .922.654.503 1.174l-7.16 8.837c-2.314-1.845-2.096-4.763-.402-6.892zm-3.538 3.521H5.63c-.688 0-.923-.654-.504-1.173l7.16-8.837c2.315 1.844 2.063 4.728.386 6.875z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -1146,7 +1174,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
-                    aria-label="team central (atlas)"
+                    aria-label="home"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgj3jf _1dk7j3jf _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
                     tabindex="0"
                     type="checkbox"
@@ -1174,43 +1202,36 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   <span
                     class="_nd5l11ig _1wpz1h6o"
                   >
-                    Team Central (Atlas)
+                    Home
                   </span>
                 </label>
                 <span
-                  aria-label="Atlas"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  aria-label="Home"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
     
-                    <g
-                      fill="#6C6F77"
-                    >
-                      
-      
-                      <path
-                        d="M16 28.532c-6.656 0-12.068-5.412-12.068-12.068S9.344 4.396 16 4.396v1.921c-5.597 0-10.146 4.549-10.146 10.146S10.403 26.609 16 26.609zm0 0v-1.921c5.597 0 10.146-4.549 10.146-10.146h1.921c0 6.656-5.412 12.068-12.068 12.068zm12.068-12.068h-1.921c0-5.597-4.549-10.146-10.146-10.146V4.397c6.656 0 12.068 5.412 12.068 12.068zm-6.928 3.695c-1.28-.251-2.292-.706-3.973-1.467-.464-.204-.974-.436-1.559-.696a59 59 0 0 0-1.003-.436c-2.534-1.123-3.926-1.736-5.634-1.736-1.198 0-2.098.325-2.6.937a1.72 1.72 0 0 0-.38 1.448l-1.885.362a3.67 3.67 0 0 1 .78-3.035c.613-.743 1.82-1.634 4.085-1.634 2.116 0 3.824.761 6.414 1.903.316.14.641.288.994.436.594.26 1.114.492 1.578.706 1.606.724 2.488 1.123 3.555 1.327l-.371 1.885Zm1.877.185c-.64 0-1.253-.056-1.875-.185l.371-1.885c.502.102.994.149 1.504.149 1.188 0 2.089-.298 2.609-.864s.539-1.253.51-1.615l1.913-.167c.102 1.169-.251 2.265-1.003 3.082-.622.677-1.82 1.485-4.029 1.485M16 28.532v-1.921c2.757 0 4.4-2.813 4.4-7.52s-1.67-8.652-5.096-12.3l1.402-1.318c3.778 4.02 5.616 8.476 5.616 13.618 0 5.821-2.423 9.441-6.322 9.441m-.001 0c-4.15 0-6.526-3.379-6.526-9.273 0-6.879 3.008-10.722 5.82-13.776l1.412 1.299c-3.277 3.565-5.31 6.888-5.31 12.476 0 6.08 2.506 7.352 4.604 7.352z"
-                      />
-                      
-      
-                      <path
-                        d="M10.857 17.467a2.247 2.247 0 1 0 0-4.494 2.247 2.247 0 0 0 0 4.494m10.385 3.871a2.247 2.247 0 1 0 0-4.494 2.247 2.247 0 0 0 0 4.494M15.998 7.96a2.247 2.247 0 1 0 0-4.493 2.247 2.247 0 0 0 0 4.494Z"
-                      />
-                      
-    
-                    </g>
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#dddee1)"
+                    />
                     
-  
+    
+                    <path
+                      d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -1263,29 +1284,31 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Trello"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      clip-rule="evenodd"
-                      d="M24.286 5.337H7.714a2.585 2.585 0 0 0-2.585 2.585v16.572a2.585 2.585 0 0 0 2.585 2.584h16.572a2.585 2.585 0 0 0 2.585-2.584V7.922a2.585 2.585 0 0 0-2.585-2.585m-9.791 15.66a.86.86 0 0 1-.859.858h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86zm8.362-4.953a.86.86 0 0 1-.859.859h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86z"
-                      fill="#6C6F77"
-                      fill-rule="evenodd"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1558bc)"
                     />
                     
     
+                    <path
+                      d="M9.39 18.23a.95.95 0 0 0 .95-.95V5.38a.95.95 0 0 0-.95-.95H5.38a.95.95 0 0 0-.95.95v11.91c0 .52.42.95.95.95zm9.23-5.46a.95.95 0 0 0 .95-.95V5.38a.95.95 0 0 0-.95-.95h-4.01a.95.95 0 0 0-.95.95v6.44c0 .52.42.95.95.95z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2144,27 +2167,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="m25.586 15.819-1.618 9.885c-.106.598-.528.95-1.126.95H9.122c-.598 0-1.02-.352-1.126-.95L5.146 8.08c-.105-.598.212-.985.775-.985h20.123c.562 0 .88.387.773.985l-.773 4.644c-.106.668-.493.95-1.126.95H12.816c-.176 0-.282.105-.246.316l.95 5.84c.035.14.14.246.281.246h4.362c.141 0 .246-.105.282-.246l.668-4.222c.07-.527.422-.738.915-.738h4.75c.703 0 .914.351.808.95"
-                      fill="#1868DB"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#94c748)"
                     />
                     
     
+                    <path
+                      d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhkomb0"
@@ -2217,29 +2244,37 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Compass"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M15.667 15.66v5.942H9.713V15.66zV9.722H4.807c-.58.004-1.047.47-1.043 1.04v15.755a1.04 1.04 0 0 0 1.028 1.054h15.771a1.04 1.04 0 0 0 1.042-1.04V15.66zm0-11.88v5.942h5.967v5.938h5.935V4.82a1.04 1.04 0 0 0-1.028-1.053h-.014z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#94c748)"
                     />
                     
-      
+    
+                    <path
+                      d="M12.75 7.877v-3.37l6.16-.007h.007a.59.59 0 0 1 .583.598v6.147h-3.366V7.877z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+    
+                    <path
+                      d="M12.75 14.615v-3.37h3.368v6.165a.59.59 0 0 1-.591.59H6.583A.59.59 0 0 1 6 17.402V8.467a.59.59 0 0 1 .591-.59h6.16v3.368H9.373v3.37z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
                   
-    
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2292,27 +2327,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M25.769 20.234c-6.584-3.183-8.507-3.66-11.282-3.66-3.254 0-6.028 1.355-8.507 5.16l-.406.622c-.333.513-.407.696-.407.915s.11.403.517.659l4.18 2.598c.222.146.407.22.592.22.222 0 .37-.11.592-.44l.665-1.024c1.036-1.574 1.96-2.086 3.144-2.086 1.036 0 2.257.293 3.773 1.025l4.365 2.049c.443.22.924.11 1.146-.403l2.071-4.537c.222-.512.074-.842-.444-1.098M6.572 12.22c6.584 3.184 8.507 3.66 11.281 3.66 3.255 0 6.03-1.354 8.507-5.16l.407-.622c.333-.512.407-.695.407-.915s-.11-.402-.518-.658l-4.18-2.598c-.221-.147-.406-.22-.591-.22-.222 0-.37.11-.592.44l-.666 1.024c-1.035 1.573-1.96 2.086-3.144 2.086-1.035 0-2.256-.293-3.772-1.025L9.346 6.183c-.444-.22-.924-.11-1.146.402l-2.072 4.538c-.222.512-.074.841.444 1.098"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
                     />
                     
     
+                    <path
+                      d="M17.888 14.461c-4.039-1.953-5.219-2.245-6.92-2.245-1.997 0-3.699.831-5.219 3.165l-.25.382c-.204.314-.249.426-.249.561s.068.247.318.404l2.564 1.594c.136.09.25.135.363.135.136 0 .226-.068.363-.27l.408-.628c.635-.966 1.203-1.28 1.928-1.28.636 0 1.385.18 2.315.629l2.677 1.257c.272.134.567.067.704-.247l1.27-2.783c.136-.315.046-.517-.272-.674M6.112 9.545c4.039 1.953 5.219 2.245 6.92 2.245 1.997 0 3.699-.83 5.219-3.165l.25-.381c.204-.315.249-.427.249-.562 0-.134-.068-.247-.318-.404L15.87 5.685c-.137-.09-.25-.135-.364-.135-.136 0-.226.067-.363.27l-.408.628c-.635.965-1.203 1.28-1.928 1.28-.636 0-1.385-.18-2.315-.63L7.814 5.843c-.272-.135-.567-.068-.703.247L5.84 8.872c-.136.314-.045.516.272.673"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2365,27 +2404,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M11.034 21.99h-2.22c-3.346 0-5.747-2.05-5.747-5.052h11.932c.619 0 1.019.44 1.019 1.062v12.007c-2.983 0-4.984-2.416-4.984-5.784zm5.893-5.967h-2.219c-3.347 0-5.748-2.013-5.748-5.015h11.933c.618 0 1.055.402 1.055 1.025V24.04c-2.983 0-5.02-2.416-5.02-5.784zm5.93-5.93h-2.219c-3.347 0-5.748-2.05-5.748-5.052h11.933c.618 0 1.018.439 1.018 1.025v12.007c-2.983 0-4.984-2.416-4.984-5.784z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
                     />
                     
     
+                    <path
+                      d="M9.051 15.434H7.734c-1.988 0-3.413-1.218-3.413-3h7.085c.367 0 .605.26.605.63v7.13c-1.772 0-2.96-1.435-2.96-3.434zm3.5-3.543h-1.318c-1.987 0-3.413-1.196-3.413-2.978h7.085c.367 0 .627.239.627.608v7.13c-1.772 0-2.981-1.435-2.981-3.434zm3.52-3.522h-1.317c-1.987 0-3.413-1.217-3.413-3h7.085c.367 0 .605.262.605.61v7.129c-1.771 0-2.96-1.435-2.96-3.434z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2438,27 +2481,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M17.655 5.884a15.3 15.3 0 0 0 8.75 0c.257-.056.428.114.37.37-.826 2.985-.826 5.742 0 8.727.058.228-.113.427-.37.342a16.33 16.33 0 0 0-8.75 0c-.228.085-.428-.114-.342-.342.77-2.985.77-5.742 0-8.727-.086-.256.114-.426.342-.37m1.169 10.576v.483c0 2.246-1.568 3.894-3.506 3.894a3.474 3.474 0 0 1-3.477-3.496c0-1.933 1.567-3.468 3.762-3.468h.57V7.078c-.285-.028-.57-.028-.855-.028C9.618 7.05 5 11.655 5 17.37c0 5.713 4.617 10.29 10.318 10.29s10.346-4.605 10.346-10.29v-.91z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#c97cf4)"
                     />
                     
     
+                    <path
+                      d="M13.467 4.882a9.47 9.47 0 0 0 5.422 0c.159-.035.265.07.23.229-.513 1.85-.513 3.558 0 5.408.035.14-.072.264-.23.211a10.1 10.1 0 0 0-5.422 0c-.142.053-.265-.07-.212-.211.476-1.85.476-3.559 0-5.408-.053-.159.07-.264.212-.23m.724 6.553v.3c0 1.39-.972 2.412-2.173 2.412a2.153 2.153 0 0 1-2.154-2.166c0-1.198.971-2.15 2.331-2.15h.353V5.62c-.176-.017-.353-.017-.53-.017a6.387 6.387 0 0 0-6.393 6.394 6.37 6.37 0 0 0 6.393 6.377c3.533 0 6.411-2.854 6.411-6.377v-.563z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2511,27 +2558,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      d="M18.79 13.257h7.325c1.1 0 1.476 1.046.805 1.878L15.464 29.274c-3.702-2.951-3.353-7.62-.644-11.027zm-5.66 5.634H5.806c-1.1 0-1.476-1.046-.805-1.878L16.457 2.874c3.702 2.951 3.3 7.566.617 11z"
-                      fill="#6C6F77"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#ffc716)"
                     />
                     
     
+                    <path
+                      d="M13.744 10.156h4.578c.688 0 .922.654.503 1.174l-7.16 8.837c-2.314-1.845-2.096-4.763-.402-6.892zm-3.538 3.521H5.63c-.688 0-.923-.654-.504-1.173l7.16-8.837c2.315 1.844 2.063 4.728.386 6.875z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2551,7 +2602,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   style="--_5xk3r4: var(--ds-text, #091E42); --_1l71759: var(--ds-space-0, 0px) var(--ds-space-050, 4px); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
-                    aria-label="team central (atlas)"
+                    aria-label="home"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef7js4s _1h6rjs4s _smzgj3jf _1dk7j3jf _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
                     tabindex="0"
                     type="checkbox"
@@ -2579,43 +2630,36 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                   <span
                     class="_nd5l11ig _1wpz1h6o"
                   >
-                    Team Central (Atlas)
+                    Home
                   </span>
                 </label>
                 <span
-                  aria-label="Atlas"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  aria-label="Home"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
     
-                    <g
-                      fill="#6C6F77"
-                    >
-                      
-      
-                      <path
-                        d="M16 28.532c-6.656 0-12.068-5.412-12.068-12.068S9.344 4.396 16 4.396v1.921c-5.597 0-10.146 4.549-10.146 10.146S10.403 26.609 16 26.609zm0 0v-1.921c5.597 0 10.146-4.549 10.146-10.146h1.921c0 6.656-5.412 12.068-12.068 12.068zm12.068-12.068h-1.921c0-5.597-4.549-10.146-10.146-10.146V4.397c6.656 0 12.068 5.412 12.068 12.068zm-6.928 3.695c-1.28-.251-2.292-.706-3.973-1.467-.464-.204-.974-.436-1.559-.696a59 59 0 0 0-1.003-.436c-2.534-1.123-3.926-1.736-5.634-1.736-1.198 0-2.098.325-2.6.937a1.72 1.72 0 0 0-.38 1.448l-1.885.362a3.67 3.67 0 0 1 .78-3.035c.613-.743 1.82-1.634 4.085-1.634 2.116 0 3.824.761 6.414 1.903.316.14.641.288.994.436.594.26 1.114.492 1.578.706 1.606.724 2.488 1.123 3.555 1.327l-.371 1.885Zm1.877.185c-.64 0-1.253-.056-1.875-.185l.371-1.885c.502.102.994.149 1.504.149 1.188 0 2.089-.298 2.609-.864s.539-1.253.51-1.615l1.913-.167c.102 1.169-.251 2.265-1.003 3.082-.622.677-1.82 1.485-4.029 1.485M16 28.532v-1.921c2.757 0 4.4-2.813 4.4-7.52s-1.67-8.652-5.096-12.3l1.402-1.318c3.778 4.02 5.616 8.476 5.616 13.618 0 5.821-2.423 9.441-6.322 9.441m-.001 0c-4.15 0-6.526-3.379-6.526-9.273 0-6.879 3.008-10.722 5.82-13.776l1.412 1.299c-3.277 3.565-5.31 6.888-5.31 12.476 0 6.08 2.506 7.352 4.604 7.352z"
-                      />
-                      
-      
-                      <path
-                        d="M10.857 17.467a2.247 2.247 0 1 0 0-4.494 2.247 2.247 0 0 0 0 4.494m10.385 3.871a2.247 2.247 0 1 0 0-4.494 2.247 2.247 0 0 0 0 4.494M15.998 7.96a2.247 2.247 0 1 0 0-4.493 2.247 2.247 0 0 0 0 4.494Z"
-                      />
-                      
-    
-                    </g>
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#dddee1)"
+                    />
                     
-  
+    
+                    <path
+                      d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                      fill="var(--icon-color, #101214)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -2668,29 +2712,31 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Trello"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
                   role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                  style="--themed-icon-color: initial;"
                 >
                   <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
+                    height="100%"
+                    viewBox="0 0 24 24"
                   >
                     
-      
+    
                     <path
-                      clip-rule="evenodd"
-                      d="M24.286 5.337H7.714a2.585 2.585 0 0 0-2.585 2.585v16.572a2.585 2.585 0 0 0 2.585 2.584h16.572a2.585 2.585 0 0 0 2.585-2.584V7.922a2.585 2.585 0 0 0-2.585-2.585m-9.791 15.66a.86.86 0 0 1-.859.858h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86zm8.362-4.953a.86.86 0 0 1-.859.859h-3.634a.86.86 0 0 1-.859-.859V10.21a.86.86 0 0 1 .859-.86h3.634a.86.86 0 0 1 .859.86z"
-                      fill="#6C6F77"
-                      fill-rule="evenodd"
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1558bc)"
                     />
                     
     
+                    <path
+                      d="M9.39 18.23a.95.95 0 0 0 .95-.95V5.38a.95.95 0 0 0-.95-.95H5.38a.95.95 0 0 0-.95.95v11.91c0 .52.42.95.95.95zm9.23-5.46a.95.95 0 0 0 .95-.95V5.38a.95.95 0 0 0-.95-.95h-4.01a.95.95 0 0 0-.95.95v6.44c0 .52.42.95.95.95z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
                   </svg>
+                  
+
                 </span>
                 <span
                   class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"

@@ -1,9 +1,9 @@
 import {
-  AtlasIcon,
   AtlassianIcon,
   BitbucketIcon,
   CompassIcon,
   ConfluenceIcon,
+  HomeIcon,
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
@@ -51,10 +51,10 @@ export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
     description: 'Jira Service Management',
     logo: JiraServiceManagementIcon,
   },
-  'team central (atlas)': {
-    name: 'team central (atlas)',
-    description: 'Team Central (Atlas)',
-    logo: AtlasIcon,
+  home: {
+    name: 'home',
+    description: 'Atlassian Home',
+    logo: HomeIcon,
   },
   trello: {
     name: 'trello',

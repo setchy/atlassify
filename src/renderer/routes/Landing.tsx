@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import Button from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import {
-  AtlasIcon,
   AtlassianIcon,
   BitbucketIcon,
   CompassIcon,
   ConfluenceIcon,
+  HomeIcon,
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
@@ -18,6 +18,7 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { LogoIcon } from '../components/icons/LogoIcon';
 import { Centered } from '../components/layout/Centered';
 import { AppContext } from '../context/App';
 import { showWindow } from '../utils/comms';
@@ -38,19 +39,36 @@ export const LandingRoute: FC = () => {
   return (
     <Centered>
       <Stack alignBlock="center" alignInline="center" space="space.200">
-        <AtlasIcon appearance="brand" size="xlarge" />
+        <LogoIcon width={64} height={64} />
         <Stack alignInline="center">
           <Heading size="large">Atlassian {t('landing.notifications')}</Heading>
           <Text size="large">{t('landing.subheading')}</Text>
         </Stack>
         <Inline space="space.100">
-          <BitbucketIcon size="small" appearance="neutral" />
-          <CompassIcon size="small" appearance="neutral" />
-          <ConfluenceIcon size="small" appearance="neutral" />
-          <JiraIcon size="small" appearance="neutral" />
-          <JiraProductDiscoveryIcon size="small" appearance="neutral" />
-          <JiraServiceManagementIcon size="small" appearance="neutral" />
-          <TrelloIcon size="small" appearance="neutral" />
+          <BitbucketIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <CompassIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <ConfluenceIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <JiraIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <JiraProductDiscoveryIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <JiraServiceManagementIcon
+            size="small"
+            appearance="brand"
+            shouldUseNewLogoDesign
+          />
+          <HomeIcon size="small" appearance="brand" shouldUseNewLogoDesign />
+          <TrelloIcon size="small" appearance="brand" shouldUseNewLogoDesign />
         </Inline>
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
