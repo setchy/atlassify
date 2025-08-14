@@ -97,7 +97,7 @@ export const defaultSettings: SettingsState = {
 interface AppContextState {
   auth: AuthState;
   isLoggedIn: boolean;
-  login: (data: LoginOptions) => void;
+  login: (data: LoginOptions) => Promise<void>;
   logoutFromAccount: (account: Account) => void;
 
   status: Status;
