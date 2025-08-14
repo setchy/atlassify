@@ -94,7 +94,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -252,7 +251,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"
@@ -467,7 +465,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -625,7 +622,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"
@@ -840,7 +836,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -991,7 +986,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       viewBox="0 0 24 24"
                       width="24"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <circle
                         cx="50%"
@@ -1149,7 +1143,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     viewBox="0 0 24 24"
                     width="24"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <circle
                       cx="50%"

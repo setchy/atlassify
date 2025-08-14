@@ -22,7 +22,7 @@ import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
 import { getNotificationCount } from '../utils/notifications/notifications';
-import { LogoIcon } from './icons/LogoIcon';
+import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
@@ -86,7 +86,7 @@ export const Sidebar: FC = () => {
               <IconButton
                 label={t('sidebar.home')}
                 appearance="subtle"
-                icon={() => <LogoIcon width={32} height={32} />}
+                icon={() => <AtlassifyIcon size={32} />}
                 shape="circle"
                 onClick={() => navigate('/', { replace: true })}
                 testId="sidebar-home"
