@@ -3,6 +3,7 @@ import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,
+  type JiraProjectTypesQuery,
   type MarkAsReadMutation,
   type MarkAsUnreadMutation,
   type MarkGroupAsReadMutation,
@@ -10,6 +11,7 @@ import {
   type MeQuery,
   type MyNotificationsQuery,
   type RetrieveNotificationsByGroupIdQuery,
+  type RetrieveCloudIDsForHostNamesQuery,
 } from './graphql/generated/graphql';
 import { performHeadRequest, performPostRequest } from './request';
 import type { AtlassianGraphQLResponse } from './types';
@@ -224,6 +226,70 @@ export function getNotificationsByGroupId(
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread
       : null,
+  });
+}
+
+/**
+ * Get Jira Project Types by Keys
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getJiraProjectTypesByKeys(
+  account: Account,
+  cloudId: string,
+  keys: string[],
+): Promise<AtlassianGraphQLResponse<JiraProjectTypesQuery>> {
+  const JiraProjectTypesByKeysQuery = graphql(`
+    query JiraProjectTypes(
+      $cloudId: ID!,
+      $keys: [String!]!
+    ) {
+      jira {
+        issuesByKey(
+          cloudId: $cloudId, 
+          keys: $keys
+        ) {
+          id
+          key
+          summary
+          projectField {
+            project {
+              name
+              projectTypeName
+              projectType
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return performPostRequest(account, JiraProjectTypesByKeysQuery, {
+    cloudId: cloudId,
+    keys: keys,
+  });
+}
+
+/**
+ * Get Cloud IDs for Hostnames
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getCloudIDsForHostNames(
+  account: Account,
+  hostNames: string[],
+): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostNamesQuery>> {
+  const CloudIDsQuery = graphql(`
+    query RetrieveCloudIDsForHostNames(
+      $hostNames: [String!]!
+    ) {
+      tenantContexts(hostNames: $hostNames) {
+        cloudId
+        hostName
+      }
+    }
+  `);
+
+  return performPostRequest(account, CloudIDsQuery, {
+    hostNames: hostNames,
   });
 }
 

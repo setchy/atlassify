@@ -69,10 +69,11 @@ export async function getAllNotifications(
           const rawNotifications = res.data.notifications.notificationFeed
             .nodes as AtlassianNotificationFragment[];
 
-          let notifications = mapAtlassianNotificationsToAtlassifyNotifications(
-            accountNotifications.account,
-            rawNotifications,
-          );
+          let notifications =
+            await mapAtlassianNotificationsToAtlassifyNotifications(
+              accountNotifications.account,
+              rawNotifications,
+            );
 
           notifications = filterNotifications(notifications, state.settings);
 
@@ -102,53 +103,55 @@ export async function getAllNotifications(
   return notifications;
 }
 
-function mapAtlassianNotificationsToAtlassifyNotifications(
+async function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
   notifications: AtlassianNotificationFragment[],
-): AtlassifyNotification[] {
-  return notifications?.map((notification) => {
-    const headNotification =
-      notification.headNotification as AtlassianHeadNotificationFragment;
+): Promise<AtlassifyNotification[]> {
+  return Promise.all(
+    notifications?.map(async (notification) => {
+      const headNotification =
+        notification.headNotification as AtlassianHeadNotificationFragment;
 
-    let notificationPath: AtlassifyNotificationPath;
-    if (headNotification.content.path[0]) {
-      notificationPath = {
-        title: headNotification.content.path[0].title,
-        url: headNotification.content.path[0].url as Link,
-        iconUrl: headNotification.content.path[0].iconUrl as Link,
+      let notificationPath: AtlassifyNotificationPath;
+      if (headNotification.content.path[0]) {
+        notificationPath = {
+          title: headNotification.content.path[0].title,
+          url: headNotification.content.path[0].url as Link,
+          iconUrl: headNotification.content.path[0].iconUrl as Link,
+        };
+      }
+
+      return {
+        id: headNotification.notificationId,
+        message: headNotification.content.message,
+        readState: headNotification.readState as ReadStateType,
+        updated_at: headNotification.timestamp,
+        type: headNotification.content.type,
+        url: headNotification.content.url as Link,
+        path: notificationPath,
+        entity: {
+          title: headNotification.content.entity.title,
+          url: headNotification.content.entity.url as Link,
+          iconUrl: headNotification.content.entity.iconUrl as Link,
+        },
+        category: headNotification.category as CategoryType,
+        actor: {
+          displayName: headNotification.content.actor.displayName,
+          avatarURL: headNotification.content.actor.avatarURL as Link,
+        },
+        product: await getAtlassianProduct(account, headNotification),
+        account: account,
+        notificationGroup: {
+          id: notification.groupId,
+          size: notification.groupSize,
+          additionalActors: notification.additionalActors.map((actor) => ({
+            displayName: actor.displayName,
+            avatarURL: actor.avatarURL as Link,
+          })),
+        },
       };
-    }
-
-    return {
-      id: headNotification.notificationId,
-      message: headNotification.content.message,
-      readState: headNotification.readState as ReadStateType,
-      updated_at: headNotification.timestamp,
-      type: headNotification.content.type,
-      url: headNotification.content.url as Link,
-      path: notificationPath,
-      entity: {
-        title: headNotification.content.entity.title,
-        url: headNotification.content.entity.url as Link,
-        iconUrl: headNotification.content.entity.iconUrl as Link,
-      },
-      category: headNotification.category as CategoryType,
-      actor: {
-        displayName: headNotification.content.actor.displayName,
-        avatarURL: headNotification.content.actor.avatarURL as Link,
-      },
-      product: getAtlassianProduct(headNotification),
-      account: account,
-      notificationGroup: {
-        id: notification.groupId,
-        size: notification.groupSize,
-        additionalActors: notification.additionalActors.map((actor) => ({
-          displayName: actor.displayName,
-          avatarURL: actor.avatarURL as Link,
-        })),
-      },
-    };
-  });
+    }),
+  );
 }
 
 /**
