@@ -78,12 +78,11 @@ export type SettingsValue =
  * The different types of allowed Filter values to be stored in the application.
  */
 export type FilterValue =
-  | CategoryType
-  | ReadStateType
   | ActorType
+  | CategoryType
   | ProductName
-  | TimeSensitiveType
-  | ActorType;
+  | ReadStateType
+  | TimeSensitiveType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
