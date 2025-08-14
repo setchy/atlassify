@@ -2,7 +2,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import CloseIcon from '@atlaskit/icon/core/close';
+import CrossIcon from '@atlaskit/icon/core/cross';
 import Modal, {
   ModalBody,
   ModalFooter,
@@ -57,7 +57,7 @@ export const SettingsReset: FC = () => {
                 <Flex xcss={closeContainerStyles} justifyContent="end">
                   <IconButton
                     appearance="subtle"
-                    icon={CloseIcon}
+                    icon={CrossIcon}
                     label={t('common.close')}
                     onClick={closeModal}
                     testId="settings-reset-close"

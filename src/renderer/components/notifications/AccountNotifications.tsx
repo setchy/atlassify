@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
-import CloseIcon from '@atlaskit/icon/core/close';
+import CrossIcon from '@atlaskit/icon/core/cross';
 import { BitbucketIcon } from '@atlaskit/logo';
 import Modal, {
   ModalBody,
@@ -251,7 +251,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 <Flex xcss={closeContainerStyles} justifyContent="end">
                   <IconButton
                     appearance="subtle"
-                    icon={CloseIcon}
+                    icon={CrossIcon}
                     label={t('common.close')}
                     onClick={() => closeModal()}
                     testId="account-mark-as-read-close"
