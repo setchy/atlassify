@@ -1,4 +1,4 @@
-import axios, { type Method } from 'axios';
+import axios from 'axios';
 
 import type { Account, Token, Username } from '../../types';
 import { decryptValue } from '../comms';
@@ -6,33 +6,45 @@ import { URLs } from '../links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from './types';
 
-export async function performPostRequest<TResult, TVariables>(
+export async function performRequestForAccount<TResult, TVariables>(
   account: Account,
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ) {
   // TODO consider storing the decrypted token in memory
-  const decryptedToken = await decryptValue(account.token);
-  const auth = btoa(`${account.username}:${decryptedToken}`);
+  const decryptedToken = (await decryptValue(account.token)) as Token;
 
-  return performApiRequest<TResult>(auth, 'POST', { query, variables });
+  return performApiRequest<TResult>(account.username, decryptedToken, {
+    query,
+    variables,
+  });
 }
 
-export function performHeadRequest(username: Username, token: Token) {
-  const auth = btoa(`${username}:${token}`);
-
-  return performApiRequest(auth, 'HEAD');
+export async function performRequestForCredentials<TResult, TVariables>(
+  username: Username,
+  token: Token,
+  query: TypedDocumentString<TResult, TVariables>,
+  ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
+) {
+  return performApiRequest<TResult>(username, token, { query, variables });
 }
 
-function performApiRequest<T>(auth: string, method: Method, data = {}) {
+function performApiRequest<T>(username: Username, token: Token, data) {
   const url = URLs.ATLASSIAN.API;
 
-  axios.defaults.headers.common.Accept = '*/*';
-  axios.defaults.headers.common.Authorization = `Basic ${auth}`;
-  axios.defaults.headers.common['Cache-Control'] = 'no-cache';
-  axios.defaults.headers.common['Content-Type'] = 'application/json';
+  const auth = btoa(`${username}:${token}`);
 
-  return axios({ method, url, data }).then((response) => {
+  return axios({
+    method: 'POST',
+    url,
+    data,
+    headers: {
+      Accept: '*/*',
+      Authorization: `Basic ${auth}`,
+      'Cache-Control': 'no-cache',
+      'Content-Type': 'application/json',
+    },
+  }).then((response) => {
     return response.data;
   }) as Promise<AtlassianGraphQLResponse<T>>;
 }

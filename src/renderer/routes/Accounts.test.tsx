@@ -126,7 +126,10 @@ describe('renderer/routes/Accounts.tsx', () => {
     });
 
     it('should refresh account', async () => {
-      const apiRequestMock = jest.spyOn(apiRequests, 'performPostRequest');
+      const apiRequestMock = jest.spyOn(
+        apiRequests,
+        'performRequestForAccount',
+      );
 
       await act(async () => {
         render(
