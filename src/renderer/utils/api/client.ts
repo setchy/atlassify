@@ -25,19 +25,7 @@ export function checkIfCredentialsAreValid(
   username: Username,
   token: Token,
 ): Promise<AtlassianGraphQLResponse<MeQuery>> {
-  const MeQuery = graphql(`
-    query Me {
-      me {
-        user {
-          accountId
-          name
-          picture
-        }
-      }
-    }
-  `);
-
-  return performRequestForCredentials(username, token, MeQuery);
+  return performRequestForCredentials(username, token, MeQueryDocument);
 }
 
 /**
@@ -48,19 +36,7 @@ export function checkIfCredentialsAreValid(
 export function getAuthenticatedUser(
   account: Account,
 ): Promise<AtlassianGraphQLResponse<MeQuery>> {
-  const MeQuery = graphql(`
-    query Me {
-      me {
-        user {
-          accountId
-          name
-          picture
-        }
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, MeQuery);
+  return performRequestForAccount(account, MeQueryDocument);
 }
 
 /**
@@ -72,7 +48,7 @@ export function getNotificationsForUser(
   account: Account,
   settings: SettingsState,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
-  const MyNotificationsQuery = graphql(`
+  const MyNotificationsDocument = graphql(`
     query MyNotifications
       (
         $readState: InfluentsNotificationReadState,
@@ -100,7 +76,7 @@ export function getNotificationsForUser(
     }
   `);
 
-  return performRequestForAccount(account, MyNotificationsQuery, {
+  return performRequestForAccount(account, MyNotificationsDocument, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,
     readState: settings.fetchOnlyUnreadNotifications
@@ -118,7 +94,7 @@ export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
 ): Promise<AtlassianGraphQLResponse<MarkAsReadMutation>> {
-  const MarkAsReadMutation = graphql(`
+  const MarkAsReadDocument = graphql(`
     mutation MarkAsRead($notificationIDs: [String!]!) {
       notifications {
         markNotificationsByIdsAsRead(ids: $notificationIDs) 
@@ -126,7 +102,7 @@ export function markNotificationsAsRead(
     }
   `);
 
-  return performRequestForAccount(account, MarkAsReadMutation, {
+  return performRequestForAccount(account, MarkAsReadDocument, {
     notificationIDs: notificationIds,
   });
 }
@@ -140,7 +116,7 @@ export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
 ): Promise<AtlassianGraphQLResponse<MarkAsUnreadMutation>> {
-  const MarkAsUnreadMutation = graphql(`
+  const MarkAsUnreadDocument = graphql(`
     mutation MarkAsUnread($notificationIDs: [String!]!) {
       notifications {
         markNotificationsByIdsAsUnread(ids: $notificationIDs) 
@@ -148,7 +124,7 @@ export function markNotificationsAsUnread(
     }
   `);
 
-  return performRequestForAccount(account, MarkAsUnreadMutation, {
+  return performRequestForAccount(account, MarkAsUnreadDocument, {
     notificationIDs: notificationIds,
   });
 }
@@ -163,7 +139,7 @@ export function markNotificationGroupAsRead(
   account: Account,
   notificationGroupId: string,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
-  const MarkGroupAsReadMutation = graphql(`
+  const MarkGroupAsReadDocument = graphql(`
     mutation MarkGroupAsRead($groupId: String!) {
       notifications {
         markNotificationsByGroupIdAsRead(groupId: $groupId)
@@ -171,7 +147,7 @@ export function markNotificationGroupAsRead(
     }
   `);
 
-  return performRequestForAccount(account, MarkGroupAsReadMutation, {
+  return performRequestForAccount(account, MarkGroupAsReadDocument, {
     groupId: notificationGroupId,
   });
 }
@@ -186,7 +162,7 @@ export function markNotificationGroupAsUnread(
   account: Account,
   notificationGroupId: string,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
-  const MarkGroupAsUnreadMutation = graphql(`
+  const MarkGroupAsUnreadDocument = graphql(`
     mutation MarkGroupAsUnread($groupId: String!) {
       notifications {
         markNotificationsByGroupIdAsUnread(groupId: $groupId)
@@ -194,7 +170,7 @@ export function markNotificationGroupAsUnread(
     }
   `);
 
-  return performRequestForAccount(account, MarkGroupAsUnreadMutation, {
+  return performRequestForAccount(account, MarkGroupAsUnreadDocument, {
     groupId: notificationGroupId,
   });
 }
@@ -209,7 +185,7 @@ export function getNotificationsByGroupId(
   notificationGroupId: string,
   notificationGroupSize: number,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
-  const RetrieveNotificationsByGroupIdQuery = graphql(`
+  const RetrieveNotificationsByGroupIdDocument = graphql(`
     query RetrieveNotificationsByGroupId(
       $groupId: String!,
       $first: Int,
@@ -233,7 +209,7 @@ export function getNotificationsByGroupId(
 
   return performRequestForAccount(
     account,
-    RetrieveNotificationsByGroupIdQuery,
+    RetrieveNotificationsByGroupIdDocument,
     {
       groupId: notificationGroupId,
       first: notificationGroupSize,
@@ -243,6 +219,21 @@ export function getNotificationsByGroupId(
     },
   );
 }
+
+/**
+ * GraphQL Documents
+ */
+const MeQueryDocument = graphql(`
+  query Me {
+    me {
+      user {
+        accountId
+        name
+        picture
+      }
+    }
+  }
+`);
 
 /**
  * GraphQL Fragments used for generating types
