@@ -143,6 +143,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                           <notification.product.logo
                             size="xxsmall"
                             appearance="brand"
+                            shouldUseNewLogoDesign
                           />
                           <Text size="small">
                             {formatNotificationFooterText(notification)}
