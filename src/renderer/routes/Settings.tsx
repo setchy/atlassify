@@ -12,7 +12,6 @@ import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SettingsReset } from '../components/settings/SettingsReset';
 import { SystemSettings } from '../components/settings/SystemSettings';
 
-// FIXME #90 InlineMessage findDOMNode errors
 export const SettingsRoute: FC = () => {
   const { t } = useTranslation();
 
