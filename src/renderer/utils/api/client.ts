@@ -277,6 +277,31 @@ export function getJiraProjectTypesByKeys(
 }
 
 /**
+ * Get Cloud IDs for Hostnames
+ *
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getCloudIDsForHostnames(
+  account: Account,
+  hostnames: Hostname[],
+): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
+  const CloudIDsForHostnamesDocument = graphql(`
+    query RetrieveCloudIDsForHostnames(
+      $hostNames: [String!]!
+    ) {
+      tenantContexts(hostNames: $hostNames) {
+        cloudId
+        hostName
+      }
+    }
+  `);
+
+  return performRequestForAccount(account, CloudIDsForHostnamesDocument, {
+    hostNames: hostnames,
+  });
+}
+
+/**
  * Get Jira Project Types by Issue Keys (via Jira Cloud REST API)
  *
  * Endpoint documentation: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
@@ -301,31 +326,6 @@ export async function getJiraProjectTypeByKey(
       error,
     );
   }
-}
-
-/**
- * Get Cloud IDs for Hostnames
- *
- * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
- */
-export function getCloudIDsForHostnames(
-  account: Account,
-  hostnames: Hostname[],
-): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
-  const CloudIDsForHostnamesDocument = graphql(`
-    query RetrieveCloudIDsForHostnames(
-      $hostNames: [String!]!
-    ) {
-      tenantContexts(hostNames: $hostNames) {
-        cloudId
-        hostName
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, CloudIDsForHostnamesDocument, {
-    hostNames: hostnames,
-  });
 }
 
 /**
