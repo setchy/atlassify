@@ -7,9 +7,13 @@ import { TextDecoder, TextEncoder } from 'node:util';
  * - ReferenceError: TextEncoder is not defined
  * - ReferenceError: TextDecoder is not defined
  */
-if (!global.TextEncoder || !global.TextDecoder) {
-  global.TextEncoder = TextEncoder;
-  global.TextDecoder = TextDecoder;
+if (!('TextEncoder' in globalThis)) {
+  (globalThis as unknown as { TextEncoder: typeof TextEncoder }).TextEncoder =
+    TextEncoder;
+}
+if (!('TextDecoder' in globalThis)) {
+  (globalThis as unknown as { TextDecoder: typeof TextDecoder }).TextDecoder =
+    TextDecoder;
 }
 
 // @ts-expect-error
