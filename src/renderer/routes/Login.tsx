@@ -76,7 +76,8 @@ export const LoginRoute: FC = () => {
                   name="username"
                   label={t('common.username')}
                   defaultValue={''}
-                  isRequired
+                  // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
+                  // isRequired
                   testId="login-username"
                 >
                   {({ fieldProps }) => (
@@ -93,7 +94,8 @@ export const LoginRoute: FC = () => {
                   name="token"
                   label={t('login.token')}
                   defaultValue={''}
-                  isRequired
+                  // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
+                  // isRequired
                   testId="login-token"
                 >
                   {({ fieldProps }) => (
