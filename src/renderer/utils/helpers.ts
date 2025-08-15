@@ -30,7 +30,9 @@ export function formatNotificationFooterText(
       const key = extractGoalOrProjectKey(notification);
 
       if (key) {
-        return `${key}${notification.path.title}`.replace('Atlassian Home', '');
+        return `${key}${notification.path.title}`
+          .replace('Atlassian Home', '')
+          .replace('Goals', '');
       }
 
       break;
@@ -46,9 +48,11 @@ export function formatNotificationFooterText(
   return formatProperCase(notification.product.name);
 }
 
-function extractGoalOrProjectKey(notification): string {
+function extractGoalOrProjectKey(
+  notification: AtlassifyNotification,
+): string | null {
   const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
-  return match ? match[2] : '';
+  return match ? match[2] : null;
 }
 
 export function formatNativeNotificationFooterText(
