@@ -35,6 +35,21 @@ export type Link = Branded<string, 'WebUrl'>;
 export type Status = 'loading' | 'success' | 'error';
 
 /**
+ * The hostname of an Atlassian tenant
+ */
+export type Hostname = Branded<string, 'Hostname'>;
+
+/**
+ * An Atlassian tenant cloud id
+ */
+export type CloudID = Branded<string, 'CloudID'>;
+
+/**
+ * The Jira project key
+ */
+export type JiraProjectKey = Branded<string, 'JiraProjectKey'>;
+
+/**
  * An Atlassian account.
  */
 export interface Account {
@@ -504,3 +519,12 @@ export type TimeSensitiveType = 'mention' | 'comment';
  * - 'automation' - An automation actor created the notification.
  */
 export type ActorType = 'user' | 'automation';
+
+/**
+ * Jira project types
+ *
+ * - 'software' - A software development project.
+ * - 'service_desk' - A service desk project.
+ * - 'product_discovery' - A product discovery project.
+ */
+export type JiraProjectType = 'software' | 'service_desk' | 'product_discovery';

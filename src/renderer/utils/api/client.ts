@@ -1,4 +1,10 @@
-import type { Account, SettingsState, Token, Username } from '../../types';
+import type {
+  Account,
+  Hostname,
+  SettingsState,
+  Token,
+  Username,
+} from '../../types';
 import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
 import {
@@ -10,7 +16,7 @@ import {
   type MarkGroupAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
-  type RetrieveCloudIDsForHostNamesQuery,
+  type RetrieveCloudIDsForHostnamesQuery,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
@@ -246,7 +252,7 @@ export function getJiraProjectTypesByKeys(
   cloudId: string,
   keys: string[],
 ): Promise<AtlassianGraphQLResponse<JiraProjectTypesQuery>> {
-  const JiraProjectTypesByKeysQuery = graphql(`
+  const JiraProjectTypesByKeysDocument = graphql(`
     query JiraProjectTypes(
       $cloudId: ID!,
       $keys: [String!]!
@@ -271,7 +277,7 @@ export function getJiraProjectTypesByKeys(
     }
   `);
 
-  return performPostRequest(account, JiraProjectTypesByKeysQuery, {
+  return performRequestForAccount(account, JiraProjectTypesByKeysDocument, {
     cloudId: cloudId,
     keys: keys,
   });
@@ -283,10 +289,10 @@ export function getJiraProjectTypesByKeys(
  */
 export function getCloudIDsForHostNames(
   account: Account,
-  hostNames: string[],
-): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostNamesQuery>> {
-  const CloudIDsQuery = graphql(`
-    query RetrieveCloudIDsForHostNames(
+  hostnames: Hostname[],
+): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
+  const CloudIDsForHostnamesDocument = graphql(`
+    query RetrieveCloudIDsForHostnames(
       $hostNames: [String!]!
     ) {
       tenantContexts(hostNames: $hostNames) {
@@ -296,8 +302,8 @@ export function getCloudIDsForHostNames(
     }
   `);
 
-  return performPostRequest(account, CloudIDsQuery, {
-    hostNames: hostNames,
+  return performRequestForAccount(account, CloudIDsForHostnamesDocument, {
+    hostNames: hostnames,
   });
 }
 

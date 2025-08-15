@@ -10,7 +10,15 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
-import type { Account, AtlassianProduct, ProductName } from '../types';
+import type {
+  Account,
+  AtlassianProduct,
+  CloudID,
+  Hostname,
+  JiraProjectKey,
+  JiraProjectType,
+  ProductName,
+} from '../types';
 import {
   getCloudIDsForHostNames,
   getJiraProjectTypesByKeys,
@@ -59,6 +67,9 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   },
 };
 
+const hostnameCloudIdCache = new Map<Hostname, CloudID>();
+const jiraProjectTypeCache = new Map<JiraProjectKey, JiraProjectType>();
+
 // TODO #97 ideally we could get the Product Name from a response field instead of String manipulation
 export async function getAtlassianProduct(
   account: Account,
@@ -80,35 +91,42 @@ export async function getAtlassianProduct(
     case 'confluence':
       return PRODUCTS.confluence;
     case 'jira': {
-      console.log(
-        'ADAM PATH',
-        JSON.stringify(headNotification.content.path[0]),
-      );
-      const hostName = new URL(headNotification.content.path[0].url).hostname;
-      const cloudTenant = await getCloudIDsForHostNames(account, [hostName]);
+      const hostName = new URL(headNotification.content.path[0].url)
+        .hostname as Hostname;
 
-      console.log('ADAM HOSTNAME ', hostName);
-      console.log('ADAM CLOUD TENANT ', JSON.stringify(cloudTenant));
+      // Check cache first
+      let cloudID = hostnameCloudIdCache.get(hostName);
 
-      const cloudID = cloudTenant?.data?.tenantContexts[0]?.cloudId;
+      if (!cloudID) {
+        const cloudTenant = await getCloudIDsForHostNames(account, [hostName]);
+        cloudID = cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
+        if (cloudID) {
+          hostnameCloudIdCache.set(hostName, cloudID);
+        }
+      }
 
-      console.log('ADAM CLOUD ID ', cloudID);
+      const pathTitle = headNotification.content.path[0].title;
+      const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
 
-      const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
-        headNotification.content.path[0].title,
-      ]);
+      // Check cache for project type
+      let jiraProjectType = jiraProjectTypeCache.get(projectKey);
 
-      console.log('ADAM JIRA PROJECT ', JSON.stringify(jiraProject));
-
-      const jiraProjectType =
-        jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase();
+      if (!jiraProjectType) {
+        const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
+          pathTitle,
+        ]);
+        jiraProjectType =
+          jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase() as JiraProjectType;
+        if (jiraProjectType) {
+          jiraProjectTypeCache.set(projectKey, jiraProjectType);
+        }
+      }
 
       switch (jiraProjectType) {
         case 'product_discovery':
           return PRODUCTS['jira product discovery'];
         case 'service_desk':
           return PRODUCTS['jira service management'];
-
         default:
           return PRODUCTS['jira'];
       }
