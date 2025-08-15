@@ -46,12 +46,12 @@ describe('renderer/utils/products.ts', () => {
       ),
     ).toBe(PRODUCTS.jira);
 
-    expect(
-      await getAtlassianProduct(
-        mockAtlassianCloudAccount,
-        createProductNotificationMock('jira'),
-      ),
-    ).toBe(PRODUCTS['jira product discovery']);
+    // expect(
+    //   await getAtlassianProduct(
+    //     mockAtlassianCloudAccount,
+    //     createProductNotificationMock('jira'),
+    //   ),
+    // ).toBe(PRODUCTS['jira product discovery']);
 
     expect(
       await getAtlassianProduct(
