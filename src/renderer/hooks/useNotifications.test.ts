@@ -1,39 +1,48 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import axios from 'axios';
-import nock from 'nock';
+
+jest.mock('axios');
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';
 
 describe('renderer/hooks/useNotifications.ts', () => {
-  beforeEach(() => {
-    // axios will default to using the XHR adapter which can't be intercepted
-    // by nock. So, configure axios to use the node adapter.
-    axios.defaults.adapter = 'http';
+  const mockedAxios = axios as unknown as jest.MockedFunction<typeof axios>;
+
+  // Helper to build a typed AxiosResponse without unsafe `as never` casts everywhere.
+  function mockAxiosResponse<T>(payload: T) {
+    return {
+      data: payload,
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      config: {},
+    } as import('axios').AxiosResponse<T>;
+  }
+
+  afterEach(() => {
+    mockedAxios.mockReset();
   });
 
   describe('fetchNotifications', () => {
     it('fetchNotifications - unread only', async () => {
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      mockedAxios.mockResolvedValueOnce(
+        mockAxiosResponse({
           data: {
             notifications: {
               notificationFeed: {
+                pageInfo: { hasNextPage: false },
                 nodes: [],
               },
             },
           },
           extensions: {
-            notifications: {
-              response_info: {
-                responseSize: 0,
-              },
-            },
+            notifications: { response_info: { responseSize: 0 } },
           },
-        });
+        }),
+      );
 
       const { result } = renderHook(() => useNotifications());
 
@@ -58,24 +67,21 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - all notifications read/unread', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      mockedAxios.mockResolvedValueOnce(
+        mockAxiosResponse({
           data: {
             notifications: {
               notificationFeed: {
+                pageInfo: { hasNextPage: false },
                 nodes: [],
               },
             },
           },
           extensions: {
-            notifications: {
-              response_info: {
-                responseSize: 0,
-              },
-            },
+            notifications: { response_info: { responseSize: 0 } },
           },
-        });
+        }),
+      );
 
       const { result } = renderHook(() => useNotifications());
 
@@ -100,17 +106,18 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - handles missing extensions response object', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      mockedAxios.mockResolvedValueOnce(
+        mockAxiosResponse({
           data: {
             notifications: {
               notificationFeed: {
+                pageInfo: { hasNextPage: false },
                 nodes: [],
               },
             },
           },
-        });
+        }),
+      );
 
       const { result } = renderHook(() => useNotifications());
 
@@ -134,7 +141,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsRead', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    mockedAxios.mockResolvedValueOnce(mockAxiosResponse({ data: {} }));
 
     const { result } = renderHook(() => useNotifications());
 
@@ -152,7 +159,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsUnread', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    mockedAxios.mockResolvedValueOnce(mockAxiosResponse({ data: {} }));
 
     const { result } = renderHook(() => useNotifications());
 
