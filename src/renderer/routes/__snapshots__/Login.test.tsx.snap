@@ -82,6 +82,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   id="username-uid3-label"
                 >
                   Username
+                  <span
+                    aria-hidden="true"
+                    class="_syaz1ick _ect41gqc _bozgv77o"
+                    title="required"
+                  >
+                    *
+                  </span>
                 </label>
                 <div
                   class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
@@ -97,6 +104,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     data-ds--text-field--input="true"
                     id="username-uid3"
                     name="username"
+                    required=""
                     value=""
                   />
                 </div>
@@ -119,6 +127,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   id="token-uid4-label"
                 >
                   API Token
+                  <span
+                    aria-hidden="true"
+                    class="_syaz1ick _ect41gqc _bozgv77o"
+                    title="required"
+                  >
+                    *
+                  </span>
                 </label>
                 <div
                   class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
@@ -133,6 +148,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     data-ds--text-field--input="true"
                     id="token-uid4"
                     name="token"
+                    required=""
                     type="password"
                     value=""
                   />
@@ -382,6 +398,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 id="username-uid3-label"
               >
                 Username
+                <span
+                  aria-hidden="true"
+                  class="_syaz1ick _ect41gqc _bozgv77o"
+                  title="required"
+                >
+                  *
+                </span>
               </label>
               <div
                 class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
@@ -397,6 +420,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-ds--text-field--input="true"
                   id="username-uid3"
                   name="username"
+                  required=""
                   value=""
                 />
               </div>
@@ -419,6 +443,13 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 id="token-uid4-label"
               >
                 API Token
+                <span
+                  aria-hidden="true"
+                  class="_syaz1ick _ect41gqc _bozgv77o"
+                  title="required"
+                >
+                  *
+                </span>
               </label>
               <div
                 class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
@@ -433,6 +464,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-ds--text-field--input="true"
                   id="token-uid4"
                   name="token"
+                  required=""
                   type="password"
                   value=""
                 />
