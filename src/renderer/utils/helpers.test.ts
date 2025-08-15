@@ -6,17 +6,18 @@ import {
   mockAtlassifyNotifications,
   mockSingleAtlassifyNotification,
 } from '../__mocks__/notifications-mocks';
+import type { Link } from '../types';
 import {
+  extractRepositoryName,
   formatNativeNotificationFooterText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
-  getRepositoryName,
 } from './helpers';
 
 describe('renderer/utils/helpers.ts', () => {
   it('getRepositoryName', () => {
-    expect(getRepositoryName(mockSingleAtlassifyNotification)).toBe(
+    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe(
       'myorg/notifications-test',
     );
   });
@@ -33,6 +34,56 @@ describe('renderer/utils/helpers.ts', () => {
         expect(
           formatNotificationFooterText(mockAtlassifyNotifications[0]),
         ).toBe('myorg/notifications-test');
+      });
+
+      describe('atlassian home mappings', () => {
+        it('atlassian home - project', () => {
+          expect(
+            formatNotificationFooterText({
+              ...mockAtlassifyNotifications[1],
+              product: {
+                name: 'home',
+              },
+              path: {
+                title: 'Atlassian Home • Pending',
+                iconUrl: null,
+                url: 'https://home.atlassian.com/o/some-guid/project/ABC-123/about' as Link,
+              },
+            }),
+          ).toBe('ABC-123 • Pending');
+        });
+
+        it('atlassian home - goal', () => {
+          expect(
+            formatNotificationFooterText({
+              ...mockAtlassifyNotifications[1],
+              product: {
+                name: 'home',
+              },
+              path: {
+                title: 'Goals • On track',
+                iconUrl: null,
+                url: 'https://home.atlassian.com/o/some-guid/goal/ABC-123/about' as Link,
+              },
+            }),
+          ).toBe('ABC-123 • On track');
+        });
+
+        it('atlassian home - kudos', () => {
+          expect(
+            formatNotificationFooterText({
+              ...mockAtlassifyNotifications[1],
+              product: {
+                name: 'home',
+              },
+              path: {
+                title: 'Atlassian Home',
+                iconUrl: null,
+                url: 'https://home.atlassian.com/o/some-guid/people/kudos/some-guid' as Link,
+              },
+            }),
+          ).toBe('Atlassian Home');
+        });
       });
 
       it('default product mapping', () => {
