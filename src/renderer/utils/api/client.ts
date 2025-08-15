@@ -9,7 +9,6 @@ import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,
-  type JiraProjectTypesQuery,
   type MarkAsReadMutation,
   type MarkAsUnreadMutation,
   type MarkGroupAsReadMutation,
@@ -17,6 +16,7 @@ import {
   type MeQuery,
   type MyNotificationsQuery,
   type RetrieveCloudIDsForHostnamesQuery,
+  type RetrieveJiraProjectTypesQuery,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
@@ -229,21 +229,6 @@ export function getNotificationsByGroupId(
 }
 
 /**
- * GraphQL Documents
- */
-const MeQueryDocument = graphql(`
-  query Me {
-    me {
-      user {
-        accountId
-        name
-        picture
-      }
-    }
-  }
-`);
-
-/**
  * Get Jira Project Types by Keys
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -251,9 +236,9 @@ export function getJiraProjectTypesByKeys(
   account: Account,
   cloudId: string,
   keys: string[],
-): Promise<AtlassianGraphQLResponse<JiraProjectTypesQuery>> {
+): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
   const JiraProjectTypesByKeysDocument = graphql(`
-    query JiraProjectTypes(
+    query RetrieveJiraProjectTypes(
       $cloudId: ID!,
       $keys: [String!]!
     ) {
@@ -305,6 +290,21 @@ export function getCloudIDsForHostnames(
     hostNames: hostnames,
   });
 }
+
+/**
+ * GraphQL Documents
+ */
+const MeQueryDocument = graphql(`
+  query Me {
+    me {
+      user {
+        accountId
+        name
+        picture
+      }
+    }
+  }
+`);
 
 /**
  * GraphQL Fragments used for generating types

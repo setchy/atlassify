@@ -166,32 +166,62 @@ describe('renderer/utils/api/client.ts', () => {
     );
   });
 
-  it('getNotificationsByGroupId - should fetch notifications by group id', async () => {
-    const mockGroupSize = 5;
+  describe('getNotificationsByGroupId', () => {
+    it('getNotificationsByGroupId - should fetch unread notifications by group id', async () => {
+      const mockGroupSize = 5;
 
-    await getNotificationsByGroupId(
-      mockAtlassianCloudAccount,
-      mockSettings,
-      mockSingleAtlassifyNotification.notificationGroup.id,
-      mockGroupSize,
-    );
+      await getNotificationsByGroupId(
+        mockAtlassianCloudAccount,
+        { ...mockSettings, fetchOnlyUnreadNotifications: true },
+        mockSingleAtlassifyNotification.notificationGroup.id,
+        mockGroupSize,
+      );
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining(
-            'query RetrieveNotificationsByGroupId',
-          ),
-          variables: {
-            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-            first: mockGroupSize,
-            readState: 'unread',
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+          data: {
+            query: expect.stringContaining(
+              'query RetrieveNotificationsByGroupId',
+            ),
+            variables: {
+              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+              first: mockGroupSize,
+              readState: 'unread',
+            },
           },
-        },
-      }),
-    );
+        }),
+      );
+    });
+
+    it('getNotificationsByGroupId - should fetch all notifications by group id', async () => {
+      const mockGroupSize = 5;
+
+      await getNotificationsByGroupId(
+        mockAtlassianCloudAccount,
+        { ...mockSettings, fetchOnlyUnreadNotifications: false },
+        mockSingleAtlassifyNotification.notificationGroup.id,
+        mockGroupSize,
+      );
+
+      expect(axios).toHaveBeenCalledWith(
+        expect.objectContaining({
+          url: 'https://team.atlassian.net/gateway/api/graphql',
+          method: 'POST',
+          data: {
+            query: expect.stringContaining(
+              'query RetrieveNotificationsByGroupId',
+            ),
+            variables: {
+              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+              first: mockGroupSize,
+              readState: null,
+            },
+          },
+        }),
+      );
+    });
   });
 
   it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {
@@ -208,12 +238,10 @@ describe('renderer/utils/api/client.ts', () => {
         url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
         data: {
-          query: expect.stringContaining(
-            'query RetrieveJiraProjectTypesByKeys',
-          ),
+          query: expect.stringContaining('query RetrieveJiraProjectTypes'),
           variables: {
-            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-            projectKeys: mockProjectKeys,
+            cloudId: mockCloudID,
+            keys: mockProjectKeys,
           },
         },
       }),
@@ -232,8 +260,7 @@ describe('renderer/utils/api/client.ts', () => {
         data: {
           query: expect.stringContaining('query RetrieveCloudIDsForHostnames'),
           variables: {
-            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-            hostnames: mockHostnames,
+            hostNames: mockHostnames,
           },
         },
       }),
