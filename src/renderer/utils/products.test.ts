@@ -3,7 +3,7 @@ import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/
 import { getAtlassianProduct, PRODUCTS } from './products';
 
 describe('renderer/utils/products.ts', () => {
-  it('getAtlassianProduct - should map to correct products', async () => {
+  it('getAtlassianProduct - should map to correct products from analytics attributes', async () => {
     expect(
       await getAtlassianProduct(
         mockAtlassianCloudAccount,

@@ -11,6 +11,7 @@ import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,
   getCloudIDsForHostnames,
+  getJiraProjectTypeByKey,
   getJiraProjectTypesByKeys,
   getNotificationsByGroupId,
   getNotificationsForUser,
@@ -222,6 +223,27 @@ describe('renderer/utils/api/client.ts', () => {
         }),
       );
     });
+  });
+
+  it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
+    const mockProjectKeys = 'PROJ-1';
+    const mockCloudID = 'mock-cloud-id';
+    (axios as jest.MockedFunction<typeof axios>).mockResolvedValueOnce({
+      data: { fields: { project: { projectTypeKey: 'service_desk' } } },
+    });
+    const result = await getJiraProjectTypeByKey(
+      mockAtlassianCloudAccount,
+      mockCloudID,
+      mockProjectKeys,
+    );
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        method: 'GET',
+        url: `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/issue/${mockProjectKeys}?fields=project`,
+      }),
+    );
+    expect(result).toBe('service_desk');
   });
 
   it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {

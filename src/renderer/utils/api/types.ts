@@ -38,3 +38,11 @@ interface AtlassianGraphQLExtensions {
     };
   };
 }
+
+export interface JiraProjectRestResponse {
+  fields?: {
+    project?: {
+      projectTypeKey?: string;
+    };
+  };
+}

@@ -1,6 +1,8 @@
+import { logError } from '../../../shared/logger';
 import type {
   Account,
   Hostname,
+  JiraProjectType,
   SettingsState,
   Token,
   Username,
@@ -20,10 +22,14 @@ import {
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
+  performRESTRequestForAccount,
   performRequestForAccount,
   performRequestForCredentials,
 } from './request';
-import type { AtlassianGraphQLResponse } from './types';
+import type {
+  AtlassianGraphQLResponse,
+  JiraProjectRestResponse,
+} from './types';
 
 /**
  * Check if provided credentials (username and token) are valid.
@@ -185,6 +191,7 @@ export function markNotificationGroupAsUnread(
 
 /**
  * Get notifications by group ID.
+ *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
 export function getNotificationsByGroupId(
@@ -230,6 +237,8 @@ export function getNotificationsByGroupId(
 
 /**
  * Get Jira Project Types by Keys
+ * TODO: Currently unused due to "quirks" with expected GraphQL API scopes. See REST API impl getJiraProjectTypeByKey
+ *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
 export function getJiraProjectTypesByKeys(
@@ -268,7 +277,35 @@ export function getJiraProjectTypesByKeys(
 }
 
 /**
+ * Get Jira Project Types by Issue Keys (via Jira Cloud REST API)
+ *
+ * Endpoint documentation: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
+ */
+export async function getJiraProjectTypeByKey(
+  account: Account,
+  cloudId: string,
+  issueKey: string,
+): Promise<JiraProjectType> {
+  try {
+    const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/issue/${issueKey}?fields=project`;
+    // Define the JiraProjectResponse type to match the expected response structure
+
+    const response =
+      await performRESTRequestForAccount<JiraProjectRestResponse>(account, url);
+
+    return response?.fields?.project?.projectTypeKey as JiraProjectType;
+  } catch (error) {
+    logError(
+      'getJiraProjectTypesByKeys',
+      `failed to fetch project type for ${issueKey}`,
+      error,
+    );
+  }
+}
+
+/**
  * Get Cloud IDs for Hostnames
+ *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
 export function getCloudIDsForHostnames(

@@ -14,10 +14,32 @@ export async function performRequestForAccount<TResult, TVariables>(
   // TODO consider storing the decrypted token in memory
   const decryptedToken = (await decryptValue(account.token)) as Token;
 
-  return performApiRequest<TResult>(account.username, decryptedToken, {
+  return performGraphQLApiRequest<TResult>(account.username, decryptedToken, {
     query,
     variables,
   });
+}
+
+export async function performRESTRequestForAccount<T>(
+  account: Account,
+  url: string,
+) {
+  // decrypt token for REST calls
+  const decryptedToken = (await decryptValue(account.token)) as Token;
+  const auth = btoa(`${account.username}:${decryptedToken}`);
+
+  return axios({
+    method: 'GET',
+    url: url,
+    headers: {
+      Accept: 'application/json',
+      Authorization: `Basic ${auth}`,
+      'Cache-Control': 'no-cache',
+      'Content-Type': 'application/json',
+    },
+  }).then((response) => {
+    return response.data;
+  }) as Promise<T>;
 }
 
 export async function performRequestForCredentials<TResult, TVariables>(
@@ -26,10 +48,37 @@ export async function performRequestForCredentials<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ) {
-  return performApiRequest<TResult>(username, token, { query, variables });
+  return performGraphQLApiRequest<TResult>(username, token, {
+    query,
+    variables,
+  });
 }
 
-function performApiRequest<T>(username: Username, token: Token, data) {
+function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
+  const url = URLs.ATLASSIAN.API;
+
+  const auth = btoa(`${username}:${token}`);
+
+  return axios({
+    method: 'POST',
+    url,
+    data,
+    headers: {
+      Accept: '*/*',
+      Authorization: `Basic ${auth}`,
+      'Cache-Control': 'no-cache',
+      'Content-Type': 'application/json',
+    },
+  }).then((response) => {
+    return response.data;
+  }) as Promise<AtlassianGraphQLResponse<T>>;
+}
+
+export function performRESTApiRequest<T>(
+  username: Username,
+  token: Token,
+  data,
+) {
   const url = URLs.ATLASSIAN.API;
 
   const auth = btoa(`${username}:${token}`);

@@ -10,6 +10,7 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
+import { logError } from '../../shared/logger';
 import type {
   Account,
   AtlassianProduct,
@@ -19,10 +20,7 @@ import type {
   JiraProjectType,
   ProductName,
 } from '../types';
-import {
-  getCloudIDsForHostnames,
-  getJiraProjectTypesByKeys,
-} from './api/client';
+import { getCloudIDsForHostnames, getJiraProjectTypeByKey } from './api/client';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { URLs } from './links';
 
@@ -104,7 +102,7 @@ export async function getAtlassianProduct(
         case 'servicedesk':
           return PRODUCTS['jira service management'];
         default:
-          return getJiraProduct(account, headNotification);
+          return lookupJiraProjectType(account, headNotification);
       }
     case 'opsgenie':
       return PRODUCTS['jira service management'];
@@ -115,47 +113,60 @@ export async function getAtlassianProduct(
   }
 }
 
-async function getJiraProduct(
+async function lookupJiraProjectType(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
 ): Promise<AtlassianProduct> {
-  const hostName = new URL(headNotification.content.path[0].url)
-    .hostname as Hostname;
+  try {
+    const hostName = new URL(headNotification.content.path[0].url)
+      .hostname as Hostname;
 
-  // Check cache for cloudID (promise-aware)
-  let cloudIdPromise = hostnameCloudIdCache.get(hostName);
-  if (typeof cloudIdPromise === 'undefined') {
-    cloudIdPromise = (async () => {
-      const cloudTenant = await getCloudIDsForHostnames(account, [hostName]);
-      return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
-    })();
-    hostnameCloudIdCache.set(hostName, cloudIdPromise);
-  }
-  const cloudID = await cloudIdPromise;
+    // Check cache for cloudID (promise-aware)
+    let cloudIdPromise = hostnameCloudIdCache.get(hostName);
+    if (typeof cloudIdPromise === 'undefined') {
+      cloudIdPromise = (async () => {
+        const cloudTenant = await getCloudIDsForHostnames(account, [hostName]);
+        return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
+      })();
+      hostnameCloudIdCache.set(hostName, cloudIdPromise);
+    }
+    const cloudID = await cloudIdPromise;
 
-  const pathTitle = headNotification.content.path[0].title;
-  const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
+    const pathTitle = headNotification.content.path[0].title;
+    const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
 
-  // Check cache for project type (promise-aware)
-  let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
-  if (typeof jiraProjectTypePromise === 'undefined') {
-    jiraProjectTypePromise = (async () => {
-      const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
-        pathTitle,
-      ]);
-      return jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase() as JiraProjectType;
-    })();
-    jiraProjectTypeCache.set(projectKey, jiraProjectTypePromise);
-  }
-  const jiraProjectType = await jiraProjectTypePromise;
+    // Check cache for project type (promise-aware)
+    let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
+    if (typeof jiraProjectTypePromise === 'undefined') {
+      jiraProjectTypePromise = (async () => {
+        const jiraProject = await getJiraProjectTypeByKey(
+          account,
+          cloudID,
+          pathTitle,
+        );
 
-  switch (jiraProjectType) {
-    case 'product_discovery':
-      return PRODUCTS['jira product discovery'];
-    case 'service_desk':
-      return PRODUCTS['jira service management'];
-    default:
-      return PRODUCTS['jira'];
+        return jiraProject;
+      })();
+      jiraProjectTypeCache.set(projectKey, jiraProjectTypePromise);
+    }
+
+    const jiraProjectType = await jiraProjectTypePromise;
+
+    switch (jiraProjectType) {
+      case 'product_discovery':
+        return PRODUCTS['jira product discovery'];
+      case 'service_desk':
+        return PRODUCTS['jira service management'];
+      default:
+        return PRODUCTS['jira'];
+    }
+  } catch (error) {
+    logError(
+      'lookupJiraProjectType',
+      'Error fetching Jira project type:',
+      error,
+    );
+    return PRODUCTS['jira'];
   }
 }
 
