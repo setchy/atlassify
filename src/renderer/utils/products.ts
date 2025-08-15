@@ -20,7 +20,7 @@ import type {
   ProductName,
 } from '../types';
 import {
-  getCloudIDsForHostNames,
+  getCloudIDsForHostnames,
   getJiraProjectTypesByKeys,
 } from './api/client';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
@@ -124,9 +124,9 @@ async function getJiraProduct(
 
   // Check cache for cloudID (promise-aware)
   let cloudIdPromise = hostnameCloudIdCache.get(hostName);
-  if (!cloudIdPromise) {
+  if (typeof cloudIdPromise === 'undefined') {
     cloudIdPromise = (async () => {
-      const cloudTenant = await getCloudIDsForHostNames(account, [hostName]);
+      const cloudTenant = await getCloudIDsForHostnames(account, [hostName]);
       return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
     })();
     hostnameCloudIdCache.set(hostName, cloudIdPromise);
@@ -138,7 +138,7 @@ async function getJiraProduct(
 
   // Check cache for project type (promise-aware)
   let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
-  if (!jiraProjectTypePromise) {
+  if (typeof jiraProjectTypePromise === 'undefined') {
     jiraProjectTypePromise = (async () => {
       const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
         pathTitle,

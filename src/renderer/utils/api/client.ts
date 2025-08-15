@@ -262,7 +262,6 @@ export function getJiraProjectTypesByKeys(
           cloudId: $cloudId, 
           keys: $keys
         ) {
-          id
           key
           summary
           projectField {
@@ -287,7 +286,7 @@ export function getJiraProjectTypesByKeys(
  * Get Cloud IDs for Hostnames
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
-export function getCloudIDsForHostNames(
+export function getCloudIDsForHostnames(
   account: Account,
   hostnames: Hostname[],
 ): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {

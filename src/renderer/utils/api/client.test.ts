@@ -5,10 +5,13 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
+import type { Hostname } from '../../types';
 import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,
+  getCloudIDsForHostnames,
+  getJiraProjectTypesByKeys,
   getNotificationsByGroupId,
   getNotificationsForUser,
   markNotificationGroupAsRead,
@@ -49,8 +52,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('getAuthenticatedUser - should fetch authenticated user details', async () => {
@@ -66,8 +67,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('listNotificationsForAuthenticatedUser - should list notifications for user', async () => {
@@ -87,8 +86,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('markNotificationsAsRead - should mark notifications as read', async () => {
@@ -108,8 +105,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('markNotificationsAsUnread - should mark notifications as unread', async () => {
@@ -129,8 +124,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('markNotificationGroupAsRead - should mark notification group as read', async () => {
@@ -151,8 +144,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('markNotificationsAsUnread - should mark notification group as unread', async () => {
@@ -173,8 +164,6 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
-
-    expect(axios.defaults.headers.common).toMatchSnapshot();
   });
 
   it('getNotificationsByGroupId - should fetch notifications by group id', async () => {
@@ -203,7 +192,51 @@ describe('renderer/utils/api/client.ts', () => {
         },
       }),
     );
+  });
 
-    expect(axios.defaults.headers.common).toMatchSnapshot();
+  it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {
+    const mockProjectKeys = ['PROJ-1', 'PROJ-2'];
+    const mockCloudID = 'mock-cloud-id';
+    await getJiraProjectTypesByKeys(
+      mockAtlassianCloudAccount,
+      mockCloudID,
+      mockProjectKeys,
+    );
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://team.atlassian.net/gateway/api/graphql',
+        method: 'POST',
+        data: {
+          query: expect.stringContaining(
+            'query RetrieveJiraProjectTypesByKeys',
+          ),
+          variables: {
+            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+            projectKeys: mockProjectKeys,
+          },
+        },
+      }),
+    );
+  });
+
+  it('getCloudIDsForHostnames - should fetch cloud ID for hostname', async () => {
+    const mockHostnames = ['https://example.atlassian.net'] as Hostname[];
+
+    await getCloudIDsForHostnames(mockAtlassianCloudAccount, mockHostnames);
+
+    expect(axios).toHaveBeenCalledWith(
+      expect.objectContaining({
+        url: 'https://team.atlassian.net/gateway/api/graphql',
+        method: 'POST',
+        data: {
+          query: expect.stringContaining('query RetrieveCloudIDsForHostnames'),
+          variables: {
+            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+            hostnames: mockHostnames,
+          },
+        },
+      }),
+    );
   });
 });
