@@ -43,7 +43,7 @@ export function formatNotificationFooterText(
     return notification.path.title;
   }
 
-  return;
+  return formatProperCase(notification.product.name);
 }
 
 function extractGoalOrProjectKey(notification): string {
