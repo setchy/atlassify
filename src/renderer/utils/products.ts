@@ -85,6 +85,11 @@ export async function getAtlassianProduct(
     .filter((attribute) => attribute.key === 'registrationProduct')[0]
     .value?.toLowerCase();
 
+  // TODO - Maybe one day we can reliably use subProduct for Jira product types
+  //  const subProduct = headNotification.analyticsAttributes
+  //   .filter((attribute) => attribute.key === 'subProduct')[0]
+  //   .value?.toLowerCase();
+
   switch (registrationProduct) {
     case 'bitbucket':
       return PRODUCTS.bitbucket;
