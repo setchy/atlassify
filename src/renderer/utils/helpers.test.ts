@@ -7,16 +7,16 @@ import {
   mockSingleAtlassifyNotification,
 } from '../__mocks__/notifications-mocks';
 import {
+  extractRepositoryName,
   formatNativeNotificationFooterText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
-  getRepositoryName,
 } from './helpers';
 
 describe('renderer/utils/helpers.ts', () => {
   it('getRepositoryName', () => {
-    expect(getRepositoryName(mockSingleAtlassifyNotification)).toBe(
+    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe(
       'myorg/notifications-test',
     );
   });

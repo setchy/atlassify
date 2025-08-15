@@ -14,23 +14,41 @@ export function formatProperCase(text: string) {
   });
 }
 
-export function getRepositoryName(notification: AtlassifyNotification): string {
+export function extractRepositoryName(
+  notification: AtlassifyNotification,
+): string {
   return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
 ): string {
+  switch (notification.product.name) {
+    case 'bitbucket':
+      return extractRepositoryName(notification);
+    case 'home': {
+      const key = extractGoalOrProjectKey(notification);
+
+      if (key) {
+        return `${key}${notification.path.title}`.replace('Atlassian Home', '');
+      }
+
+      break;
+    }
+    default:
+      break;
+  }
+
   if (notification.path) {
     return notification.path.title;
   }
 
-  switch (notification.product.name) {
-    case 'bitbucket':
-      return getRepositoryName(notification);
-    default:
-      return formatProperCase(notification.product.name);
-  }
+  return;
+}
+
+function extractGoalOrProjectKey(notification): string {
+  const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
+  return match ? match[2] : '';
 }
 
 export function formatNativeNotificationFooterText(
