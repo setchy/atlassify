@@ -67,10 +67,16 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   },
 };
 
-const hostnameCloudIdCache = new Map<Hostname, CloudID>();
-const jiraProjectTypeCache = new Map<JiraProjectKey, JiraProjectType>();
+// Use a promise cache to avoid duplicate API calls for the same hostname
+const hostnameCloudIdCache = new Map<Hostname, Promise<CloudID>>();
+// Use a promise cache to avoid duplicate API calls for the same project key
+const jiraProjectTypeCache = new Map<
+  JiraProjectKey,
+  Promise<JiraProjectType>
+>();
 
 // TODO #97 ideally we could get the Product Name from a response field instead of String manipulation
+
 export async function getAtlassianProduct(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
@@ -79,10 +85,6 @@ export async function getAtlassianProduct(
     .filter((attribute) => attribute.key === 'registrationProduct')[0]
     .value?.toLowerCase();
 
-  // const subProduct = headNotification.analyticsAttributes
-  //   .filter((attribute) => attribute.key === 'subProduct')[0]
-  //   .value?.toLowerCase();
-
   switch (registrationProduct) {
     case 'bitbucket':
       return PRODUCTS.bitbucket;
@@ -90,53 +92,58 @@ export async function getAtlassianProduct(
       return PRODUCTS.compass;
     case 'confluence':
       return PRODUCTS.confluence;
-    case 'jira': {
-      const hostName = new URL(headNotification.content.path[0].url)
-        .hostname as Hostname;
-
-      // Check cache first
-      let cloudID = hostnameCloudIdCache.get(hostName);
-
-      if (!cloudID) {
-        const cloudTenant = await getCloudIDsForHostNames(account, [hostName]);
-        cloudID = cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
-        if (cloudID) {
-          hostnameCloudIdCache.set(hostName, cloudID);
-        }
-      }
-
-      const pathTitle = headNotification.content.path[0].title;
-      const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
-
-      // Check cache for project type
-      let jiraProjectType = jiraProjectTypeCache.get(projectKey);
-
-      if (!jiraProjectType) {
-        const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
-          pathTitle,
-        ]);
-        jiraProjectType =
-          jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase() as JiraProjectType;
-        if (jiraProjectType) {
-          jiraProjectTypeCache.set(projectKey, jiraProjectType);
-        }
-      }
-
-      switch (jiraProjectType) {
-        case 'product_discovery':
-          return PRODUCTS['jira product discovery'];
-        case 'service_desk':
-          return PRODUCTS['jira service management'];
-        default:
-          return PRODUCTS['jira'];
-      }
-    }
+    case 'jira':
+      return getJiraProduct(account, headNotification);
     case 'opsgenie':
       return PRODUCTS['jira service management'];
     case 'team-central':
       return PRODUCTS.home;
     default:
       return PRODUCTS.unknown;
+  }
+}
+
+async function getJiraProduct(
+  account: Account,
+  headNotification: AtlassianHeadNotificationFragment,
+): Promise<AtlassianProduct> {
+  const hostName = new URL(headNotification.content.path[0].url)
+    .hostname as Hostname;
+
+  // Check cache for cloudID (promise-aware)
+  let cloudIdPromise = hostnameCloudIdCache.get(hostName);
+  if (!cloudIdPromise) {
+    cloudIdPromise = (async () => {
+      const cloudTenant = await getCloudIDsForHostNames(account, [hostName]);
+      return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
+    })();
+    hostnameCloudIdCache.set(hostName, cloudIdPromise);
+  }
+  const cloudID = await cloudIdPromise;
+
+  const pathTitle = headNotification.content.path[0].title;
+  const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
+
+  // Check cache for project type (promise-aware)
+  let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
+  if (!jiraProjectTypePromise) {
+    jiraProjectTypePromise = (async () => {
+      const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
+        pathTitle,
+      ]);
+      return jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase() as JiraProjectType;
+    })();
+    jiraProjectTypeCache.set(projectKey, jiraProjectTypePromise);
+  }
+  const jiraProjectType = await jiraProjectTypePromise;
+
+  switch (jiraProjectType) {
+    case 'product_discovery':
+      return PRODUCTS['jira product discovery'];
+    case 'service_desk':
+      return PRODUCTS['jira service management'];
+    default:
+      return PRODUCTS['jira'];
   }
 }
 
