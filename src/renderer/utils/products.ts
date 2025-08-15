@@ -10,7 +10,19 @@ import {
   TrelloIcon,
 } from '@atlaskit/logo';
 
-import type { AtlassianProduct, ProductName } from '../types';
+import type {
+  Account,
+  AtlassianProduct,
+  CloudID,
+  Hostname,
+  JiraProjectKey,
+  JiraProjectType,
+  ProductName,
+} from '../types';
+import {
+  getCloudIDsForHostnames,
+  getJiraProjectTypesByKeys,
+} from './api/client';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { URLs } from './links';
 
@@ -55,10 +67,20 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   },
 };
 
+// Use a promise cache to avoid duplicate API calls for the same hostname
+const hostnameCloudIdCache = new Map<Hostname, Promise<CloudID>>();
+// Use a promise cache to avoid duplicate API calls for the same project key
+const jiraProjectTypeCache = new Map<
+  JiraProjectKey,
+  Promise<JiraProjectType>
+>();
+
 // TODO #97 ideally we could get the Product Name from a response field instead of String manipulation
-export function getAtlassianProduct(
+
+export async function getAtlassianProduct(
+  account: Account,
   headNotification: AtlassianHeadNotificationFragment,
-): AtlassianProduct {
+): Promise<AtlassianProduct> {
   const registrationProduct = headNotification.analyticsAttributes
     .filter((attribute) => attribute.key === 'registrationProduct')[0]
     .value?.toLowerCase();
@@ -82,7 +104,7 @@ export function getAtlassianProduct(
         case 'servicedesk':
           return PRODUCTS['jira service management'];
         default:
-          return PRODUCTS['jira product discovery'];
+          return getJiraProduct(account, headNotification);
       }
     case 'opsgenie':
       return PRODUCTS['jira service management'];
@@ -90,6 +112,50 @@ export function getAtlassianProduct(
       return PRODUCTS.home;
     default:
       return PRODUCTS.unknown;
+  }
+}
+
+async function getJiraProduct(
+  account: Account,
+  headNotification: AtlassianHeadNotificationFragment,
+): Promise<AtlassianProduct> {
+  const hostName = new URL(headNotification.content.path[0].url)
+    .hostname as Hostname;
+
+  // Check cache for cloudID (promise-aware)
+  let cloudIdPromise = hostnameCloudIdCache.get(hostName);
+  if (typeof cloudIdPromise === 'undefined') {
+    cloudIdPromise = (async () => {
+      const cloudTenant = await getCloudIDsForHostnames(account, [hostName]);
+      return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
+    })();
+    hostnameCloudIdCache.set(hostName, cloudIdPromise);
+  }
+  const cloudID = await cloudIdPromise;
+
+  const pathTitle = headNotification.content.path[0].title;
+  const projectKey = pathTitle.split('-')[0] as JiraProjectKey;
+
+  // Check cache for project type (promise-aware)
+  let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
+  if (typeof jiraProjectTypePromise === 'undefined') {
+    jiraProjectTypePromise = (async () => {
+      const jiraProject = await getJiraProjectTypesByKeys(account, cloudID, [
+        pathTitle,
+      ]);
+      return jiraProject?.data?.jira.issuesByKey[0].projectField.project.projectType.toLowerCase() as JiraProjectType;
+    })();
+    jiraProjectTypeCache.set(projectKey, jiraProjectTypePromise);
+  }
+  const jiraProjectType = await jiraProjectTypePromise;
+
+  switch (jiraProjectType) {
+    case 'product_discovery':
+      return PRODUCTS['jira product discovery'];
+    case 'service_desk':
+      return PRODUCTS['jira service management'];
+    default:
+      return PRODUCTS['jira'];
   }
 }
 

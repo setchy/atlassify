@@ -1,4 +1,10 @@
-import type { Account, SettingsState, Token, Username } from '../../types';
+import type {
+  Account,
+  Hostname,
+  SettingsState,
+  Token,
+  Username,
+} from '../../types';
 import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
 import {
@@ -9,6 +15,8 @@ import {
   type MarkGroupAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
+  type RetrieveCloudIDsForHostnamesQuery,
+  type RetrieveJiraProjectTypesQuery,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
@@ -218,6 +226,69 @@ export function getNotificationsByGroupId(
         : null,
     },
   );
+}
+
+/**
+ * Get Jira Project Types by Keys
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getJiraProjectTypesByKeys(
+  account: Account,
+  cloudId: string,
+  keys: string[],
+): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
+  const JiraProjectTypesByKeysDocument = graphql(`
+    query RetrieveJiraProjectTypes(
+      $cloudId: ID!,
+      $keys: [String!]!
+    ) {
+      jira {
+        issuesByKey(
+          cloudId: $cloudId, 
+          keys: $keys
+        ) {
+          key
+          summary
+          projectField {
+            project {
+              name
+              projectTypeName
+              projectType
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return performRequestForAccount(account, JiraProjectTypesByKeysDocument, {
+    cloudId: cloudId,
+    keys: keys,
+  });
+}
+
+/**
+ * Get Cloud IDs for Hostnames
+ * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
+ */
+export function getCloudIDsForHostnames(
+  account: Account,
+  hostnames: Hostname[],
+): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
+  const CloudIDsForHostnamesDocument = graphql(`
+    query RetrieveCloudIDsForHostnames(
+      $hostNames: [String!]!
+    ) {
+      tenantContexts(hostNames: $hostNames) {
+        cloudId
+        hostName
+      }
+    }
+  `);
+
+  return performRequestForAccount(account, CloudIDsForHostnamesDocument, {
+    hostNames: hostnames,
+  });
 }
 
 /**

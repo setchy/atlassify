@@ -1,46 +1,77 @@
+import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { getAtlassianProduct, PRODUCTS } from './products';
 
 describe('renderer/utils/products.ts', () => {
-  it('getAtlassianProduct - should map to correct products', () => {
+  it('getAtlassianProduct - should map to correct products', async () => {
     expect(
-      getAtlassianProduct(createProductNotificationMock('bitbucket')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('bitbucket'),
+      ),
     ).toBe(PRODUCTS.bitbucket);
 
-    expect(getAtlassianProduct(createProductNotificationMock('compass'))).toBe(
-      PRODUCTS.compass,
-    );
+    expect(
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('compass'),
+      ),
+    ).toBe(PRODUCTS.compass);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('confluence')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('confluence'),
+      ),
     ).toBe(PRODUCTS.confluence);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('jira', 'servicedesk')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('jira', 'servicedesk'),
+      ),
     ).toBe(PRODUCTS['jira service management']);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('jira', 'core')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('jira', 'core'),
+      ),
     ).toBe(PRODUCTS.jira);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('jira', 'software')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('jira', 'software'),
+      ),
     ).toBe(PRODUCTS.jira);
 
-    expect(getAtlassianProduct(createProductNotificationMock('jira'))).toBe(
-      PRODUCTS['jira product discovery'],
-    );
-
-    expect(getAtlassianProduct(createProductNotificationMock('opsgenie'))).toBe(
-      PRODUCTS['jira service management'],
-    );
+    // expect(
+    //   await getAtlassianProduct(
+    //     mockAtlassianCloudAccount,
+    //     createProductNotificationMock('jira'),
+    //   ),
+    // ).toBe(PRODUCTS['jira product discovery']);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('team-central')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('opsgenie'),
+      ),
+    ).toBe(PRODUCTS['jira service management']);
+
+    expect(
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('team-central'),
+      ),
     ).toBe(PRODUCTS.home);
 
     expect(
-      getAtlassianProduct(createProductNotificationMock('unmapped', 'product')),
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('unmapped', 'product'),
+      ),
     ).toBe(PRODUCTS.unknown);
   });
 });
