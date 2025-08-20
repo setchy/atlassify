@@ -311,21 +311,14 @@ export async function getJiraProjectTypeByKey(
   cloudId: string,
   issueKey: string,
 ): Promise<JiraProjectType> {
-  try {
-    const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/issue/${issueKey}?fields=project`;
-    // Define the JiraProjectResponse type to match the expected response structure
+  const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/issue/${issueKey}?fields=project`;
 
-    const response =
-      await performRESTRequestForAccount<JiraProjectRestResponse>(account, url);
+  const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
+    account,
+    url,
+  );
 
-    return response?.fields?.project?.projectTypeKey as JiraProjectType;
-  } catch (error) {
-    logError(
-      'getJiraProjectTypesByKeys',
-      `failed to fetch project type for ${issueKey}`,
-      error,
-    );
-  }
+  return response?.fields?.project?.projectTypeKey as JiraProjectType;
 }
 
 /**
