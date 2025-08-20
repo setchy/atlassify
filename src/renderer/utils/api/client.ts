@@ -1,4 +1,3 @@
-import { logError } from '../../../shared/logger';
 import type {
   Account,
   Hostname,
