@@ -162,9 +162,9 @@ describe('renderer/utils/helpers.ts', () => {
         label: 'Show account notifications',
       });
 
-      expect(getChevronDetails(false, false, 'account')).toEqual({
+      expect(getChevronDetails(false, false, 'product')).toEqual({
         icon: ChevronLeftIcon,
-        label: 'No notifications for account',
+        label: 'No notifications for product',
       });
     });
   });
