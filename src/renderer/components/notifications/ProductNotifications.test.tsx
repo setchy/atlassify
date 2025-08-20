@@ -29,8 +29,6 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
     const props = {
-      account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as ProductName,
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -47,8 +45,6 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
     const props = {
-      account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as ProductName,
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -62,10 +58,12 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should open product home when available', async () => {
+    // Use a notification whose product has a home URL (e.g. bitbucket)
+    const mockBitbucketNotification = mockAtlassifyNotifications[0];
+    expect(mockBitbucketNotification.product.name).toBe('bitbucket');
+
     const props = {
-      account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as ProductName,
-      productNotifications: mockAtlassifyNotifications,
+      productNotifications: [mockBitbucketNotification],
     };
 
     await act(async () => {
@@ -75,6 +73,24 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     await userEvent.click(screen.getByTestId('product-home'));
 
     expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not open product home and have empty tooltip content when home is unavailable', async () => {
+    // Use a notification whose product has no home URL (e.g. confluence)
+    const mockConfluenceNotification = mockAtlassifyNotifications[1];
+    expect(mockConfluenceNotification.product.name).toBe('confluence');
+
+    await act(async () => {
+      render(
+        <ProductNotifications
+          productNotifications={[mockConfluenceNotification]}
+        />,
+      );
+    });
+
+    await userEvent.click(screen.getByTestId('product-home'));
+
+    expect(openExternalLinkMock).not.toHaveBeenCalled();
   });
 
   it('should toggle product notifications visibility', async () => {

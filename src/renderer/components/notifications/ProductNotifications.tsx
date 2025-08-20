@@ -29,6 +29,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   const [showProductNotifications, setShowProductNotifications] =
     useState(true);
 
+  // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
   const productDetails = getProductDetails(productNotification.name);
 
