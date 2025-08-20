@@ -23,19 +23,19 @@ window.Audio = class Audio {
 
 window.atlassify = {
   app: {
-    version: () => Promise.resolve('v0.0.1'),
+    version: jest.fn().mockResolvedValue('v0.0.1'),
     hide: jest.fn(),
     quit: jest.fn(),
     show: jest.fn(),
   },
-  twemojiDirectory: () => Promise.resolve('/mock/images/assets'),
+  twemojiDirectory: jest.fn().mockResolvedValue('/mock/images/assets'),
   openExternalLink: jest.fn(),
-  decryptValue: () => Promise.resolve('decrypted'),
-  encryptValue: () => Promise.resolve('encrypted'),
+  decryptValue: jest.fn().mockResolvedValue('decrypted'),
+  encryptValue: jest.fn().mockResolvedValue('encrypted'),
   platform: {
-    isLinux: () => false,
-    isMacOS: () => true,
-    isWindows: () => false,
+    isLinux: jest.fn().mockReturnValue(false),
+    isMacOS: jest.fn().mockReturnValue(true),
+    isWindows: jest.fn().mockReturnValue(false),
   },
   zoom: {
     getLevel: jest.fn(),
