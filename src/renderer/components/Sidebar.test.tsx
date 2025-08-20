@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
+import { useThemeObserver } from '@atlaskit/tokens';
+
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
@@ -9,8 +11,19 @@ import {
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
-import * as theme from '../utils/theme';
 import { Sidebar } from './Sidebar';
+
+jest.mock('@atlaskit/tokens', () => {
+  const actual = jest.requireActual('@atlaskit/tokens');
+  return {
+    ...actual,
+    useThemeObserver: jest.fn(() => ({ colorMode: 'light' })),
+  };
+});
+
+const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
+  (useThemeObserver as jest.Mock).mockReturnValue({ colorMode: mode });
+};
 
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -31,7 +44,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      mockThemeObserverColorMode('light');
 
       const tree = render(
         <AppContext.Provider
@@ -51,7 +64,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should render itself & its children - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      mockThemeObserverColorMode('dark');
 
       const tree = render(
         <AppContext.Provider
@@ -73,7 +86,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('logged out', () => {
     it('should render itself & its children - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      mockThemeObserverColorMode('light');
 
       const tree = render(
         <AppContext.Provider
@@ -94,7 +107,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should render itself & its children - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      mockThemeObserverColorMode('dark');
 
       const tree = render(
         <AppContext.Provider
@@ -219,7 +232,45 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
   });
 
-  describe('show only unread notifications', () => {
+  describe('show read / unread notifications', () => {
+    it('renders correct icon when in unread only mode', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: true,
+            notifications: [],
+            auth: mockAuth,
+            settings: { ...mockSettings, fetchOnlyUnreadNotifications: true },
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
+    });
+
+    it('renders correct icon when in unread and read mode', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            isLoggedIn: true,
+            notifications: [],
+            auth: mockAuth,
+            settings: { ...mockSettings, fetchOnlyUnreadNotifications: false },
+          }}
+        >
+          <MemoryRouter>
+            <Sidebar />
+          </MemoryRouter>
+        </AppContext.Provider>,
+      );
+
+      expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
+    });
+
     it('should toggle show only unread notifications', async () => {
       render(
         <AppContext.Provider

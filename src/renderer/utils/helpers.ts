@@ -87,7 +87,7 @@ export function getChevronDetails(
   let typeLocale: string;
   if (type === 'account') {
     typeLocale = i18n.t('common.account');
-  } else if (type === 'product') {
+  } else {
     typeLocale = i18n.t('common.product');
   }
 
