@@ -84,11 +84,11 @@ export const Sidebar: FC = () => {
           <Stack alignInline="center" space="space.100">
             <Tooltip content={t('sidebar.home')} position="right">
               <IconButton
-                label={t('sidebar.home')}
                 appearance="subtle"
                 icon={() => <AtlassifyIcon size={32} />}
-                shape="circle"
+                label={t('sidebar.home')}
                 onClick={() => navigate('/', { replace: true })}
+                shape="circle"
                 testId="sidebar-home"
               />
             </Tooltip>
@@ -104,17 +104,17 @@ export const Sidebar: FC = () => {
               position="right"
             >
               <IconButton
-                label={t('sidebar.notifications.label')}
+                appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}
                     color={sidebarIconColorToken}
                   />
                 )}
-                appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
-                spacing="compact"
-                shape="circle"
+                label={t('sidebar.notifications.label')}
                 onClick={() => openMyNotifications()}
+                shape="circle"
+                spacing="compact"
                 testId="sidebar-notifications"
               />
             </Tooltip>
@@ -127,15 +127,15 @@ export const Sidebar: FC = () => {
                 >
                   <Toggle
                     id="toggle-unread-only"
-                    size="regular"
-                    label={t('sidebar.toggles.unreadOnly.label')}
                     isChecked={settings.fetchOnlyUnreadNotifications}
+                    label={t('sidebar.toggles.unreadOnly.label')}
                     onChange={async (evt) => {
                       updateSetting(
                         'fetchOnlyUnreadNotifications',
                         evt.target.checked,
                       );
                     }}
+                    size="regular"
                     testId="sidebar-toggle-unread-only"
                   />
                 </Tooltip>
@@ -145,26 +145,26 @@ export const Sidebar: FC = () => {
                   position="right"
                 >
                   <IconButton
-                    label={t('sidebar.toggles.groupByProduct.label')}
+                    appearance={
+                      settings.groupNotificationsByProduct
+                        ? 'discovery'
+                        : 'subtle'
+                    }
                     icon={() => (
                       <ListBulletedIcon
-                        label="groupByProduct"
                         color={sidebarIconColorToken}
+                        label="groupByProduct"
                       />
                     )}
+                    label={t('sidebar.toggles.groupByProduct.label')}
                     onClick={() => {
                       updateSetting(
                         'groupNotificationsByProduct',
                         !settings.groupNotificationsByProduct,
                       );
                     }}
-                    appearance={
-                      settings.groupNotificationsByProduct
-                        ? 'discovery'
-                        : 'subtle'
-                    }
-                    spacing="compact"
                     shape="circle"
+                    spacing="compact"
                     testId="sidebar-group-by-product"
                   />
                 </Tooltip>
@@ -174,26 +174,26 @@ export const Sidebar: FC = () => {
                   position="right"
                 >
                   <IconButton
-                    label={t('sidebar.toggles.groupByTitle.label')}
+                    appearance={
+                      settings.groupNotificationsByTitle
+                        ? 'discovery'
+                        : 'subtle'
+                    }
                     icon={() => (
                       <CollapseVerticalIcon
-                        label="groupByTitle"
                         color={sidebarIconColorToken}
+                        label="groupByTitle"
                       />
                     )}
+                    label={t('sidebar.toggles.groupByTitle.label')}
                     onClick={() => {
                       updateSetting(
                         'groupNotificationsByTitle',
                         !settings.groupNotificationsByTitle,
                       );
                     }}
-                    appearance={
-                      settings.groupNotificationsByTitle
-                        ? 'discovery'
-                        : 'subtle'
-                    }
-                    spacing="compact"
                     shape="circle"
+                    spacing="compact"
                     testId="sidebar-group-by-title"
                   />
                 </Tooltip>
@@ -203,17 +203,17 @@ export const Sidebar: FC = () => {
                   position="right"
                 >
                   <IconButton
-                    label={t('sidebar.filters.label')}
+                    appearance={hasFilters ? 'discovery' : 'subtle'}
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}
                         color={sidebarIconColorToken}
                       />
                     )}
-                    appearance={hasFilters ? 'discovery' : 'subtle'}
-                    spacing="compact"
-                    shape="circle"
+                    label={t('sidebar.filters.label')}
                     onClick={() => toggleFilters()}
+                    shape="circle"
+                    spacing="compact"
                     testId="sidebar-filter-notifications"
                   />
                 </Tooltip>
@@ -229,13 +229,13 @@ export const Sidebar: FC = () => {
             <Fragment>
               <Tooltip content={t('sidebar.refresh.tooltip')} position="right">
                 <IconButton
-                  label={t('sidebar.refresh.label')}
+                  appearance="subtle"
                   icon={(iconProps) =>
                     status === 'loading' ? (
                       <Spinner
+                        appearance="invert"
                         label={t('sidebar.refresh.label')}
                         size="medium"
-                        appearance="invert"
                       />
                     ) : (
                       <RefreshIcon
@@ -244,26 +244,26 @@ export const Sidebar: FC = () => {
                       />
                     )
                   }
-                  appearance="subtle"
-                  shape="circle"
-                  onClick={() => refreshNotifications()}
                   isDisabled={status === 'loading'}
+                  label={t('sidebar.refresh.label')}
+                  onClick={() => refreshNotifications()}
+                  shape="circle"
                   testId="sidebar-refresh"
                 />
               </Tooltip>
 
               <Tooltip content={t('sidebar.settings.tooltip')} position="right">
                 <IconButton
-                  label={t('sidebar.settings.label')}
+                  appearance="subtle"
                   icon={(iconProps) => (
                     <SettingsIcon
                       {...iconProps}
                       color={sidebarIconColorToken}
                     />
                   )}
-                  appearance="subtle"
-                  shape="circle"
+                  label={t('sidebar.settings.label')}
                   onClick={() => toggleSettings()}
+                  shape="circle"
                   testId="sidebar-settings"
                 />
               </Tooltip>
@@ -274,16 +274,16 @@ export const Sidebar: FC = () => {
               position="right"
             >
               <IconButton
-                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
+                appearance="subtle"
                 icon={(iconProps) => (
                   <CrossCircleIcon
                     {...iconProps}
                     color={sidebarIconColorToken}
                   />
                 )}
-                shape="circle"
-                appearance="subtle"
+                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
                 onClick={() => quitApp()}
+                shape="circle"
                 testId="sidebar-quit"
               />
             </Tooltip>

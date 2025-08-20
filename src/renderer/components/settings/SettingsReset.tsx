@@ -37,8 +37,8 @@ export const SettingsReset: FC = () => {
   return (
     <Inline alignInline="center">
       <Button
-        aria-haspopup="dialog"
         appearance="danger"
+        aria-haspopup="dialog"
         onClick={openModal}
         testId="settings-reset-defaults"
       >
@@ -54,7 +54,7 @@ export const SettingsReset: FC = () => {
                 templateAreas={['title close']}
                 xcss={gridStyles}
               >
-                <Flex xcss={closeContainerStyles} justifyContent="end">
+                <Flex justifyContent="end" xcss={closeContainerStyles}>
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
@@ -63,7 +63,7 @@ export const SettingsReset: FC = () => {
                     testId="settings-reset-close"
                   />
                 </Flex>
-                <Flex xcss={titleContainerStyles} justifyContent="start">
+                <Flex justifyContent="start" xcss={titleContainerStyles}>
                   <ModalTitle appearance="danger">
                     {t('settings.reset.title')}
                   </ModalTitle>

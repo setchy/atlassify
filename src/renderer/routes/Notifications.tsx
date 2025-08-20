@@ -35,11 +35,11 @@ export const NotificationsRoute: FC = () => {
       <Contents>
         {notifications.map((accountNotifications) => (
           <AccountNotifications
-            key={accountNotifications.account.id}
             account={accountNotifications.account}
-            notifications={accountNotifications.notifications}
-            hasMoreNotifications={accountNotifications.hasMoreNotifications}
             error={accountNotifications.error}
+            hasMoreNotifications={accountNotifications.hasMoreNotifications}
+            key={accountNotifications.account.id}
+            notifications={accountNotifications.notifications}
           />
         ))}
       </Contents>

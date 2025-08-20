@@ -53,31 +53,31 @@ export const AccountsRoute: FC = () => {
         {auth.accounts.map((account) => {
           return (
             <Box
-              key={account.id}
-              padding="space.150"
               backgroundColor={
                 isLightMode()
                   ? 'color.background.accent.blue.subtlest'
                   : 'color.background.accent.gray.subtlest'
               }
+              key={account.id}
+              padding="space.150"
               xcss={boxStyles}
             >
-              <Inline grow="fill" spread="space-between" alignBlock="center">
+              <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem
-                    label={t('accounts.open_profile')}
                     avatar={
                       <Avatar
-                        name={account.name}
-                        src={account.avatar}
-                        size="medium"
                         appearance="circle"
                         borderColor={isLightMode() ? 'white' : 'gray'}
+                        name={account.name}
+                        size="medium"
+                        src={account.avatar}
                       />
                     }
+                    label={t('accounts.open_profile')}
+                    onClick={() => openAccountProfile(account)}
                     primaryText={account.name}
                     secondaryText={account.username}
-                    onClick={() => openAccountProfile(account)}
                     testId="account-profile"
                   />
                 </Tooltip>
@@ -90,12 +90,11 @@ export const AccountsRoute: FC = () => {
                     position="bottom"
                   >
                     <IconButton
+                      appearance="subtle"
+                      icon={RefreshIcon}
                       label={t('accounts.refresh_account', {
                         username: account.username,
                       })}
-                      icon={RefreshIcon}
-                      shape="circle"
-                      appearance="subtle"
                       onClick={async (e) => {
                         const button = e.currentTarget;
                         button.classList.add('animate-spin');
@@ -113,6 +112,7 @@ export const AccountsRoute: FC = () => {
                           button.classList.remove('animate-spin');
                         }, 250);
                       }}
+                      shape="circle"
                       testId="account-refresh"
                     />
                   </Tooltip>
@@ -124,13 +124,13 @@ export const AccountsRoute: FC = () => {
                     position="bottom"
                   >
                     <IconButton
+                      appearance="subtle"
+                      icon={LogOutIcon}
                       label={t('accounts.logout_account', {
                         username: account.username,
                       })}
-                      icon={LogOutIcon}
-                      shape="circle"
-                      appearance="subtle"
                       onClick={() => logoutAccount(account)}
+                      shape="circle"
                       testId="account-logout"
                     />
                   </Tooltip>
@@ -144,11 +144,11 @@ export const AccountsRoute: FC = () => {
       <Footer justify="end">
         <Tooltip content={t('accounts.add_new')} position="left">
           <IconButton
-            label={t('accounts.add_new')}
-            icon={PersonAddIcon}
             appearance="subtle"
-            shape="circle"
+            icon={PersonAddIcon}
+            label={t('accounts.add_new')}
             onClick={() => login()}
+            shape="circle"
             testId="account-add-new"
           />
         </Tooltip>

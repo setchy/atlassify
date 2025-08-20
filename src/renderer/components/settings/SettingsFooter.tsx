@@ -35,12 +35,12 @@ export const SettingsFooter: FC = () => {
         position="top"
       >
         <Button
-          title={t('settings.view_release_notes', {
-            appName: APPLICATION.NAME,
-          })}
           appearance="subtle"
           onClick={() => openAtlassifyReleaseNotes(appVersion)}
           testId="settings-release-notes"
+          title={t('settings.view_release_notes', {
+            appName: APPLICATION.NAME,
+          })}
         >
           <span className="font-medium">
             {APPLICATION.NAME} {appVersion}
@@ -51,18 +51,18 @@ export const SettingsFooter: FC = () => {
       <Inline space="space.200">
         <Tooltip content={t('settings.accounts')} position="top">
           <IconButton
-            label={t('settings.accounts')}
+            appearance="subtle"
             icon={() => (
               <IconTile
+                appearance="blue"
                 icon={PeopleGroupIcon}
                 label={t('settings.accounts')}
-                appearance="blue"
                 shape="circle"
               />
             )}
-            appearance="subtle"
-            shape="circle"
+            label={t('settings.accounts')}
             onClick={() => navigate('/accounts')}
+            shape="circle"
             testId="settings-accounts"
           />
         </Tooltip>
@@ -71,18 +71,18 @@ export const SettingsFooter: FC = () => {
           position="top"
         >
           <IconButton
-            label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
+            appearance="subtle"
             icon={() => (
               <IconTile
+                appearance="red"
                 icon={CrossCircleIcon}
                 label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
-                appearance="red"
                 shape="circle"
               />
             )}
-            appearance="subtle"
-            shape="circle"
+            label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
             onClick={() => quitApp()}
+            shape="circle"
             testId="settings-quit"
           />
         </Tooltip>

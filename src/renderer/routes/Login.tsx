@@ -73,9 +73,9 @@ export const LoginRoute: FC = () => {
               <FormSection>
                 <Field
                   aria-required={true}
-                  name="username"
-                  label={t('common.username')}
                   defaultValue={''}
+                  label={t('common.username')}
+                  name="username"
                   // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
                   // isRequired
                   testId="login-username"
@@ -91,9 +91,9 @@ export const LoginRoute: FC = () => {
                 </Field>
                 <Field
                   aria-required={true}
-                  name="token"
-                  label={t('login.token')}
                   defaultValue={''}
+                  label={t('login.token')}
+                  name="token"
                   // FIXME #568 isRequired causes the renderer process on Windows devices to crash upon mouse enter
                   // isRequired
                   testId="login-token"
@@ -106,11 +106,11 @@ export const LoginRoute: FC = () => {
                           <Tooltip content={t('login.create_token')}>
                             <Button
                               appearance="discovery"
-                              spacing="compact"
                               iconBefore={(iconProps) => (
                                 <LockLockedIcon {...iconProps} size="small" />
                               )}
                               onClick={() => openAtlassianCreateToken()}
+                              spacing="compact"
                               testId="login-create-token"
                             >
                               {t('login.create_token')}
@@ -147,11 +147,11 @@ export const LoginRoute: FC = () => {
                       {t('common.cancel')}
                     </Button>
                     <Button
-                      type="submit"
-                      iconBefore={LogInIcon}
                       appearance="primary"
+                      iconBefore={LogInIcon}
                       isLoading={submitting}
                       testId="login-submit"
+                      type="submit"
                     >
                       {t('common.login')}
                     </Button>

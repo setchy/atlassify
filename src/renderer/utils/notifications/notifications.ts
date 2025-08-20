@@ -166,7 +166,7 @@ function determineIfMorePagesAvailable<T>(
       res.extensions.notifications.response_info.responseSize ===
       Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
     );
-  } catch (err) {
+  } catch (_err) {
     logWarn(
       'determineIfMorePagesAvailable',
       'Response did not contain extensions object, assuming no more pages',

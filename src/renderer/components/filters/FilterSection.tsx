@@ -37,32 +37,32 @@ export const FilterSection = <T extends FilterValue>({
 
           return (
             <Inline
+              alignBlock="center"
               key={typeDetails.name}
               space="space.050"
-              alignBlock="center"
             >
               <Checkbox
                 aria-label={typeDetails.name}
-                label={typeLabel}
                 isChecked={isChecked}
+                label={typeLabel}
                 onChange={(evt) =>
                   updateFilter(filterSetting, type, evt.target.checked)
                 }
               />
               {typeDetails.icon && (
                 <IconTile
+                  appearance={isChecked ? 'blue' : 'gray'}
                   icon={typeDetails.icon}
                   label=""
-                  appearance={isChecked ? 'blue' : 'gray'}
                   shape="square"
                   size="16"
                 />
               )}
               {typeDetails.logo && (
                 <typeDetails.logo
-                  size="xxsmall"
                   appearance={isChecked ? 'brand' : 'neutral'}
                   shouldUseNewLogoDesign
+                  size="xxsmall"
                 />
               )}
               {typeDetails.heroicon && (
@@ -75,7 +75,7 @@ export const FilterSection = <T extends FilterValue>({
                   )}
                 />
               )}
-              <Badge max={false} appearance={isChecked ? 'primary' : 'default'}>
+              <Badge appearance={isChecked ? 'primary' : 'default'} max={false}>
                 {count}
               </Badge>
             </Inline>

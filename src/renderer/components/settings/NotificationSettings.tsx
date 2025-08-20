@@ -18,9 +18,9 @@ export const NotificationSettings: FC = () => {
       <Heading size="small">{t('settings.notifications.title')}</Heading>
 
       <Checkbox
-        name="markAsReadOnOpen"
-        label={t('settings.notifications.mark_as_read_on_open')}
         isChecked={settings.markAsReadOnOpen}
+        label={t('settings.notifications.mark_as_read_on_open')}
+        name="markAsReadOnOpen"
         onChange={(evt) =>
           updateSetting('markAsReadOnOpen', evt.target.checked)
         }
@@ -28,9 +28,9 @@ export const NotificationSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          name="groupNotificationsByProductAlphabetically"
-          label={t('settings.notifications.group_alphabetically')}
           isChecked={settings.groupNotificationsByProductAlphabetically}
+          label={t('settings.notifications.group_alphabetically')}
+          name="groupNotificationsByProductAlphabetically"
           onChange={(evt) =>
             updateSetting(
               'groupNotificationsByProductAlphabetically',
@@ -47,9 +47,9 @@ export const NotificationSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          name="delayNotificationState"
-          label={t('settings.notifications.delay_notification_state')}
           isChecked={settings.delayNotificationState}
+          label={t('settings.notifications.delay_notification_state')}
+          name="delayNotificationState"
           onChange={(evt) =>
             updateSetting('delayNotificationState', evt.target.checked)
           }

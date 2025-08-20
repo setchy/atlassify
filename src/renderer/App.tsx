@@ -26,7 +26,7 @@ function RequireAuth({ children }) {
   return isLoggedIn ? (
     children
   ) : (
-    <Navigate to="/landing" replace state={{ from: location }} />
+    <Navigate replace state={{ from: location }} to="/landing" />
   );
 }
 
@@ -37,39 +37,39 @@ export const App = () => {
         <AppLayout>
           <Routes>
             <Route
-              path="/"
               element={
                 <RequireAuth>
                   <NotificationsRoute />
                 </RequireAuth>
               }
+              path="/"
             />
             <Route
-              path="/filters"
               element={
                 <RequireAuth>
                   <FiltersRoute />
                 </RequireAuth>
               }
+              path="/filters"
             />
             <Route
-              path="/settings"
               element={
                 <RequireAuth>
                   <SettingsRoute />
                 </RequireAuth>
               }
+              path="/settings"
             />
             <Route
-              path="/accounts"
               element={
                 <RequireAuth>
                   <AccountsRoute />
                 </RequireAuth>
               }
+              path="/accounts"
             />
-            <Route path="/landing" element={<LandingRoute />} />
-            <Route path="/login" element={<LoginRoute />} />
+            <Route element={<LandingRoute />} path="/landing" />
+            <Route element={<LoginRoute />} path="/login" />
           </Routes>
         </AppLayout>
       </Router>

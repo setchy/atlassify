@@ -95,7 +95,7 @@ describe('renderer/context/App.tsx', () => {
         const { fetchNotifications } = useContext(AppContext);
 
         return (
-          <button type="button" onClick={fetchNotifications}>
+          <button onClick={fetchNotifications} type="button">
             Test Case
           </button>
         );
@@ -116,10 +116,10 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() =>
               markNotificationsRead([mockSingleAtlassifyNotification])
             }
+            type="button"
           >
             Test Case
           </button>
@@ -142,10 +142,10 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() =>
               markNotificationsUnread([mockSingleAtlassifyNotification])
             }
+            type="button"
           >
             Test Case
           </button>
@@ -179,8 +179,8 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() => updateSetting('playSoundNewNotifications', true)}
+            type="button"
           >
             Test Case
           </button>
@@ -212,8 +212,8 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() => updateSetting('openAtStartup', true)}
+            type="button"
           >
             Test Case
           </button>
@@ -250,8 +250,8 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() => updateSetting('useAlternateIdleIcon', true)}
+            type="button"
           >
             Test Case
           </button>
@@ -282,7 +282,7 @@ describe('renderer/context/App.tsx', () => {
         const { resetSettings } = useContext(AppContext);
 
         return (
-          <button type="button" onClick={() => resetSettings()}>
+          <button onClick={() => resetSettings()} type="button">
             Test Case
           </button>
         );
@@ -310,8 +310,8 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() => updateFilter('filterCategories', 'direct', true)}
+            type="button"
           >
             Test Case
           </button>
@@ -341,8 +341,8 @@ describe('renderer/context/App.tsx', () => {
 
         return (
           <button
-            type="button"
             onClick={() => updateFilter('filterCategories', 'direct', false)}
+            type="button"
           >
             Test Case
           </button>
@@ -371,7 +371,7 @@ describe('renderer/context/App.tsx', () => {
         const { clearFilters } = useContext(AppContext);
 
         return (
-          <button type="button" onClick={() => clearFilters()}>
+          <button onClick={() => clearFilters()} type="button">
             Test Case
           </button>
         );

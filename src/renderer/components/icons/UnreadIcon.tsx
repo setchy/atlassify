@@ -16,14 +16,14 @@ export const UnreadIcon: FC<IUnreadIcon> = ({
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      role="img"
       aria-label="Unread Indicator"
+      height={size}
+      role="img"
+      viewBox="0 0 24 24"
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="50%" cy="50%" r="4" fill={fillColor} />
+      <circle cx="50%" cy="50%" fill={fillColor} r="4" />
     </svg>
   );
 };

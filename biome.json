@@ -20,7 +20,8 @@
               "**"
             ]
           }
-        }
+        },
+        "useSortedAttributes": "on"
       }
     }
   },
@@ -49,10 +50,6 @@
         "noInferrableTypes": "error",
         "noUselessElse": "error"
       },
-      "a11y": {
-        "useKeyWithClickEvents": "off",
-        "useSemanticElements": "off"
-      },
       "correctness": {
         "noUnusedFunctionParameters": "error",
         "useExhaustiveDependencies": {
@@ -60,8 +57,7 @@
           "options": {
             "hooks": [{ "name": "useNavigate", "stableResult": true }]
           }
-        },
-        "useUniqueElementIds": "warn"
+        }
       }
     }
   },

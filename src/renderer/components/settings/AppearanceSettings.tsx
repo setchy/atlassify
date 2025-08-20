@@ -89,44 +89,44 @@ export const AppearanceSettings: FC = () => {
       <Heading size="small">{t('settings.appearance.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
-        <Inline space="space.100" alignBlock="start">
+        <Inline alignBlock="start" space="space.100">
           <Text id="language-label" weight="medium">
             {t('settings.appearance.language')}:
           </Text>
           <Select
-            menuPortalTarget={document.body}
-            options={LANGUAGES}
             defaultValue={LANGUAGES.find((lang) =>
               locale.startsWith(lang.value),
             )}
-            placeholder={t('settings.appearance.language_select')}
+            menuPortalTarget={document.body}
             onChange={(option) => {
               handleLanguageChange(option);
             }}
+            options={LANGUAGES}
+            placeholder={t('settings.appearance.language_select')}
             testId="settings-language-selector"
           />
         </Inline>
       </Box>
 
       <Box paddingInlineStart="space.050">
-        <Inline space="space.100" alignBlock="start">
+        <Inline alignBlock="start" space="space.100">
           <Text id="theme-label" weight="medium">
             {t('settings.appearance.theme')}:
           </Text>
           <RadioGroup
-            options={themeOptions}
+            aria-labelledby="theme-label"
             defaultValue={settings.theme}
-            value={settings.theme}
             onChange={(evt) => {
               updateSetting('theme', evt.target.value as Theme);
             }}
-            aria-labelledby="theme-label"
+            options={themeOptions}
+            value={settings.theme}
           />
         </Inline>
       </Box>
 
       <Box paddingInlineStart="space.050">
-        <Inline space="space.100" alignBlock="center">
+        <Inline alignBlock="center" space="space.100">
           <Text id="zoom-label" weight="medium">
             {t('settings.appearance.zoom')}:
           </Text>
@@ -141,16 +141,16 @@ export const AppearanceSettings: FC = () => {
                   position="bottom"
                 >
                   <IconButton
-                    label={t('settings.appearance.zoom_out')}
                     icon={ZoomOutIcon}
-                    shape="circle"
-                    spacing="compact"
+                    label={t('settings.appearance.zoom_out')}
                     onClick={() =>
                       zoomPercentage > 0 &&
                       window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage - 10),
                       )
                     }
+                    shape="circle"
+                    spacing="compact"
                     testId="settings-zoom-out"
                   />
                 </Tooltip>
@@ -159,16 +159,16 @@ export const AppearanceSettings: FC = () => {
                   position="bottom"
                 >
                   <IconButton
-                    label={t('settings.appearance.zoom_in')}
                     icon={ZoomInIcon}
-                    shape="circle"
-                    spacing="compact"
+                    label={t('settings.appearance.zoom_in')}
                     onClick={() =>
                       zoomPercentage < 120 &&
                       window.atlassify.zoom.setLevel(
                         zoomPercentageToLevel(zoomPercentage + 10),
                       )
                     }
+                    shape="circle"
+                    spacing="compact"
                     testId="settings-zoom-in"
                   />
                 </Tooltip>
@@ -178,11 +178,11 @@ export const AppearanceSettings: FC = () => {
                 position="bottom"
               >
                 <IconButton
-                  label={t('settings.appearance.zoom_reset')}
                   icon={RetryIcon}
+                  label={t('settings.appearance.zoom_reset')}
+                  onClick={() => window.atlassify.zoom.setLevel(0)}
                   shape="circle"
                   spacing="compact"
-                  onClick={() => window.atlassify.zoom.setLevel(0)}
                   testId="settings-zoom-reset"
                 />
               </Tooltip>

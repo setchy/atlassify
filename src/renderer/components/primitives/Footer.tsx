@@ -10,9 +10,9 @@ interface IFooter {
 export const Footer: FC<IFooter> = (props: IFooter) => {
   return (
     <Box
+      backgroundColor="color.background.accent.gray.subtlest"
       paddingBlock="space.050"
       paddingInline="space.200"
-      backgroundColor="color.background.accent.gray.subtlest"
     >
       <Flex justifyContent={props.justify}>{props.children}</Flex>
     </Box>

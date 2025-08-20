@@ -18,7 +18,7 @@ export const EmojiSplash: FC<IEmojiSplash> = ({
   return (
     <Centered>
       <Box paddingInline="space.400">
-        <Stack space="space.300" alignInline="center">
+        <Stack alignInline="center" space="space.300">
           <span className="text-5xl">
             <EmojiText text={props.emoji} />
           </span>

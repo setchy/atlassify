@@ -52,15 +52,15 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   return (
     <Stack>
       <Box
-        onClick={toggleProductNotifications}
-        paddingInlineStart="space.050"
-        paddingInlineEnd="space.100"
-        paddingBlock="space.050"
         backgroundColor={
           isLightMode()
             ? 'color.background.accent.blue.subtlest'
             : 'color.background.accent.gray.subtlest'
         }
+        onClick={toggleProductNotifications}
+        paddingBlock="space.050"
+        paddingInlineEnd="space.100"
+        paddingInlineStart="space.050"
         xcss={boxStyles}
       >
         <Flex alignItems="center" justifyContent="space-between">
@@ -85,11 +85,11 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               }}
               testId="product-home"
             >
-              <Inline space="space.100" alignBlock="center">
+              <Inline alignBlock="center" space="space.100">
                 <productNotification.logo
-                  size="xxsmall"
                   appearance="brand"
                   shouldUseNewLogoDesign
+                  size="xxsmall"
                 />
                 <span className="capitalize font-medium">
                   {productNotification.name}
@@ -105,11 +105,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
               position="bottom"
             >
               <IconButton
-                label={t('notifications.product.mark_all_read')}
-                icon={() => <UnreadIcon />}
-                shape="circle"
-                spacing="compact"
                 appearance="subtle"
+                icon={() => <UnreadIcon />}
+                label={t('notifications.product.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
@@ -119,19 +117,21 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   );
                   markNotificationsRead(productNotifications);
                 }}
+                shape="circle"
+                spacing="compact"
                 testId="product-mark-as-read"
               />
             </Tooltip>
 
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
-                label={Chevron.label}
+                appearance="subtle"
                 icon={(iconProps) => (
                   <ChevronIcon {...iconProps} size="small" />
                 )}
+                label={Chevron.label}
                 shape="circle"
                 spacing="compact"
-                appearance="subtle"
                 testId="product-toggle"
               />
             </Tooltip>
@@ -142,9 +142,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
       {showProductNotifications &&
         productNotifications.map((notification) => (
           <NotificationRow
+            isAnimated={animateExit}
             key={notification.id}
             notification={notification}
-            isAnimated={animateExit}
           />
         ))}
     </Stack>

@@ -73,26 +73,23 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   return (
     <div
-      id={notification.id}
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
       )}
+      id={notification.id}
     >
       <Box padding="space.100">
-        <Inline space={spaceBetweenSections} alignBlock="center">
-          <Inline space={spaceBetweenSections} grow="fill" alignBlock="start">
+        <Inline alignBlock="center" space={spaceBetweenSections}>
+          <Inline alignBlock="start" grow="fill" space={spaceBetweenSections}>
             <Box id="notification-avatar">
-              <Stack space="space.050" alignInline="center">
+              <Stack alignInline="center" space="space.050">
                 <Tooltip
                   content={notification.actor.displayName}
                   position="right"
                 >
                   <Avatar
-                    name={notification.actor.displayName}
-                    src={notification.actor.avatarURL}
-                    size="medium"
                     appearance={
                       // The Compass System Actor Icons look much better in square form than circle
                       notification.product.name === 'compass' &&
@@ -100,6 +97,9 @@ export const NotificationRow: FC<INotificationRow> = ({
                         ? 'square'
                         : 'circle'
                     }
+                    name={notification.actor.displayName}
+                    size="medium"
+                    src={notification.actor.avatarURL}
                   />
                 </Tooltip>
                 <Tooltip content={categoryDetails.description} position="right">
@@ -119,7 +119,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                     <Box id="notification-title">
                       <Text>{notification.message}</Text>
                       &nbsp;&nbsp;
-                      <Text size="small" as="em" align="end">
+                      <Text align="end" as="em" size="small">
                         {updatedAt}
                       </Text>
                     </Box>
@@ -127,10 +127,10 @@ export const NotificationRow: FC<INotificationRow> = ({
                       <Box id="notification-entity">
                         <Inline space="space.050">
                           <Avatar
-                            name={notification.entity.title}
-                            src={notification.entity.iconUrl}
-                            size="xsmall"
                             appearance="square"
+                            name={notification.entity.title}
+                            size="xsmall"
+                            src={notification.entity.iconUrl}
                           />
                           <Text size="small">{notification.entity.title}</Text>
                         </Inline>
@@ -141,9 +141,9 @@ export const NotificationRow: FC<INotificationRow> = ({
                       >
                         <Inline space="space.075">
                           <notification.product.logo
-                            size="xxsmall"
                             appearance="brand"
                             shouldUseNewLogoDesign
+                            size="xxsmall"
                           />
                           <Text size="small">
                             {formatNotificationFooterText(notification)}
@@ -152,7 +152,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                       </Box>
                       <Box id="notification-group">
                         {notification.notificationGroup.size > 1 && (
-                          <Inline space="space.050" alignBlock="center">
+                          <Inline alignBlock="center" space="space.050">
                             {notification.notificationGroup.additionalActors
                               .length > 0 && (
                               <AvatarGroup data={avatarGroup} size="small" />
@@ -184,11 +184,9 @@ export const NotificationRow: FC<INotificationRow> = ({
                   position="left"
                 >
                   <IconButton
-                    label={t('notifications.interactions.mark_as_read')}
-                    icon={() => <UnreadIcon color="brand" />}
-                    shape="circle"
-                    spacing="compact"
                     appearance="subtle"
+                    icon={() => <UnreadIcon color="brand" />}
+                    label={t('notifications.interactions.mark_as_read')}
                     onClick={() => {
                       setAnimateExit(
                         settings.fetchOnlyUnreadNotifications &&
@@ -196,6 +194,8 @@ export const NotificationRow: FC<INotificationRow> = ({
                       );
                       markNotificationsRead([notification]);
                     }}
+                    shape="circle"
+                    spacing="compact"
                     testId="notification-mark-as-read"
                   />
                 </Tooltip>
@@ -205,14 +205,14 @@ export const NotificationRow: FC<INotificationRow> = ({
                   position="left"
                 >
                   <IconButton
-                    label={t('notifications.interactions.mark_as_unread')}
-                    icon={() => null}
-                    shape="circle"
-                    spacing="compact"
                     appearance="subtle"
+                    icon={() => null}
+                    label={t('notifications.interactions.mark_as_unread')}
                     onClick={() => {
                       markNotificationsUnread([notification]);
                     }}
+                    shape="circle"
+                    spacing="compact"
                     testId="notification-mark-as-unread"
                   />
                 </Tooltip>

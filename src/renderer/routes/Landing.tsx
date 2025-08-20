@@ -46,7 +46,7 @@ export const LandingRoute: FC = () => {
   return (
     <Centered>
       <Stack alignBlock="center" alignInline="center" space="space.200">
-        <AtlassifyIcon size={64} color="brand" />
+        <AtlassifyIcon color="brand" size={64} />
         <Stack alignInline="center">
           <Heading size="large">Atlassian {t('landing.notifications')}</Heading>
           <Text size="large">{t('landing.subheading')}</Text>
@@ -64,11 +64,11 @@ export const LandingRoute: FC = () => {
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
             appearance="primary"
-            spacing="default"
             iconBefore={(iconProps) => (
               <AtlassianIcon {...iconProps} size="small" />
             )}
             onClick={() => navigate('/login')}
+            spacing="default"
             testId="login"
           >
             {t('landing.login.title')}

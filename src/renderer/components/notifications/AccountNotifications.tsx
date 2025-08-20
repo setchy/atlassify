@@ -118,9 +118,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   return (
     <Stack>
       <Box
-        onClick={toggleAccountNotifications}
-        paddingInline="space.100"
-        paddingBlock="space.050"
         backgroundColor={
           props.error
             ? 'color.background.accent.red.subtler'
@@ -128,10 +125,13 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               ? 'color.background.accent.blue.subtler'
               : 'color.background.accent.gray.subtler'
         }
+        onClick={toggleAccountNotifications}
+        paddingBlock="space.050"
+        paddingInline="space.100"
         xcss={boxStyles}
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Inline space="space.100" alignBlock="center">
+          <Inline alignBlock="center" space="space.100">
             <Tooltip
               content={t('notifications.account.open_profile')}
               position="right"
@@ -139,18 +139,18 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               <AvatarItem
                 avatar={
                   <Avatar
-                    name={account.name}
-                    src={account.avatar}
-                    size="xsmall"
                     appearance="circle"
                     borderColor={isLightMode() ? 'white' : 'gray'}
+                    name={account.name}
+                    size="xsmall"
+                    src={account.avatar}
                   />
                 }
-                primaryText={account.name}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   event.stopPropagation();
                   openAccountProfile(account);
                 }}
+                primaryText={account.name}
                 testId="account-profile"
               />
             </Tooltip>{' '}
@@ -170,17 +170,17 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               position="bottom"
             >
               <IconButton
-                label={t('notifications.account.pull_requests')}
+                appearance="subtle"
                 icon={(iconProps) => (
                   <BitbucketIcon {...iconProps} size="xxsmall" />
                 )}
-                shape="circle"
-                spacing="compact"
-                appearance="subtle"
+                label={t('notifications.account.pull_requests')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   event.stopPropagation();
                   openMyPullRequests();
                 }}
+                shape="circle"
+                spacing="compact"
                 testId="account-pull-requests"
               />
             </Tooltip>
@@ -190,27 +190,27 @@ export const AccountNotifications: FC<IAccountNotifications> = (
               position="bottom"
             >
               <IconButton
-                label={t('notifications.account.mark_all_read')}
-                icon={() => <UnreadIcon />}
-                shape="circle"
-                spacing="compact"
                 appearance="subtle"
+                icon={() => <UnreadIcon />}
+                label={t('notifications.account.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   event.stopPropagation();
                   openModal();
                 }}
+                shape="circle"
+                spacing="compact"
                 testId="account-mark-as-read"
               />
             </Tooltip>
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
-                label={Chevron.label}
+                appearance="subtle"
                 icon={(iconProps) => (
                   <ChevronIcon {...iconProps} size="small" />
                 )}
+                label={Chevron.label}
                 shape="circle"
                 spacing="compact"
-                appearance="subtle"
                 testId="account-toggle"
               />
             </Tooltip>
@@ -251,7 +251,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 templateAreas={['title close']}
                 xcss={gridStyles}
               >
-                <Flex xcss={closeContainerStyles} justifyContent="end">
+                <Flex justifyContent="end" xcss={closeContainerStyles}>
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
@@ -260,7 +260,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
-                <Flex xcss={titleContainerStyles} justifyContent="start">
+                <Flex justifyContent="start" xcss={titleContainerStyles}>
                   <ModalTitle appearance="warning">
                     {t('common.are_you_sure')}
                   </ModalTitle>

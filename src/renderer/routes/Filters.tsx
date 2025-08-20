@@ -32,35 +32,35 @@ export const FiltersRoute: FC = () => {
           <Inline space="space.200">
             <Stack space="space.200">
               <FilterSection
-                title={t('filters.time_sensitive.title')}
                 filter={timeSensitiveFilter}
                 filterSetting="filterTimeSensitive"
+                title={t('filters.time_sensitive.title')}
               />
 
               <FilterSection
-                title={t('filters.category.title')}
                 filter={categoryFilter}
                 filterSetting="filterCategories"
+                title={t('filters.category.title')}
               />
 
               <FilterSection
-                title={t('filters.actors.title')}
                 filter={actorFilter}
                 filterSetting="filterActors"
+                title={t('filters.actors.title')}
               />
 
               <FilterSection
-                title={t('filters.read_state.title')}
                 filter={readStateFilter}
                 filterSetting="filterReadStates"
+                title={t('filters.read_state.title')}
               />
             </Stack>
 
             <Stack>
               <FilterSection
-                title={t('filters.products.title')}
                 filter={productFilter}
                 filterSetting="filterProducts"
+                title={t('filters.products.title')}
               />
             </Stack>
           </Inline>
@@ -69,11 +69,11 @@ export const FiltersRoute: FC = () => {
 
       <Footer justify="end">
         <Button
-          title={t('filters.actions.clear')}
-          onClick={clearFilters}
           appearance="discovery"
+          onClick={clearFilters}
           spacing="compact"
           testId="filters-clear"
+          title={t('filters.actions.clear')}
         >
           {t('filters.actions.clear')}
         </Button>

@@ -21,23 +21,23 @@ export const Header: FC<IHeader> = (props: IHeader) => {
 
   return (
     <Box
-      paddingInlineStart="space.300"
-      paddingInlineEnd="space.500"
       paddingBlock="space.200"
+      paddingInlineEnd="space.500"
+      paddingInlineStart="space.300"
     >
-      <Inline grow="fill" spread="space-between" alignBlock="center">
+      <Inline alignBlock="center" grow="fill" spread="space-between">
         <Tooltip content="Go back" position="right">
           <IconButton
-            label="Go Back"
-            icon={ArrowLeftIcon}
             appearance="subtle"
-            shape="circle"
+            icon={ArrowLeftIcon}
+            label="Go Back"
             onClick={() => {
               navigate(-1);
               if (props.fetchOnBack) {
                 fetchNotifications();
               }
             }}
+            shape="circle"
             testId="header-nav-back"
           />
         </Tooltip>

@@ -49,22 +49,22 @@ export const SystemSettings: FC = () => {
             {t('settings.system.open_links')}:
           </Text>
           <RadioGroup
-            options={openLinksOptions}
+            aria-labelledby="openLinks-label"
             defaultValue={settings.openLinks}
-            value={settings.openLinks}
             onChange={(evt) => {
               updateSetting('openLinks', evt.target.value as OpenPreference);
             }}
-            aria-labelledby="openLinks-label"
+            options={openLinksOptions}
+            value={settings.openLinks}
           />
         </Inline>
       </Box>
 
       <Inline space="space.100">
         <Checkbox
-          name="keyboardShortcutEnabled"
-          label={t('settings.system.keyboard_shortcut')}
           isChecked={settings.keyboardShortcutEnabled}
+          label={t('settings.system.keyboard_shortcut')}
+          name="keyboardShortcutEnabled"
           onChange={(evt) =>
             updateSetting('keyboardShortcutEnabled', evt.target.checked)
           }
@@ -81,9 +81,9 @@ export const SystemSettings: FC = () => {
 
       {window.atlassify.platform.isMacOS() && (
         <Checkbox
-          name="showNotificationsCountInTray"
-          label={t('settings.system.show_count_in_tray')}
           isChecked={settings.showNotificationsCountInTray}
+          label={t('settings.system.show_count_in_tray')}
+          name="showNotificationsCountInTray"
           onChange={(evt) =>
             updateSetting('showNotificationsCountInTray', evt.target.checked)
           }
@@ -91,24 +91,24 @@ export const SystemSettings: FC = () => {
       )}
 
       <Checkbox
-        name="showNotifications"
-        label={t('settings.system.system_notifications')}
         isChecked={settings.showSystemNotifications}
+        label={t('settings.system.system_notifications')}
+        name="showNotifications"
         onChange={(evt) =>
           updateSetting('showSystemNotifications', evt.target.checked)
         }
       />
 
-      <Inline space="space.100" alignBlock="center">
+      <Inline alignBlock="center" space="space.100">
         <Checkbox
-          name="playSoundNewNotifications"
-          label={t('settings.system.play_sound')}
           isChecked={settings.playSoundNewNotifications}
+          label={t('settings.system.play_sound')}
+          name="playSoundNewNotifications"
           onChange={(evt) =>
             updateSetting('playSoundNewNotifications', evt.target.checked)
           }
         />
-        <Inline xcss={volumeBoxStyles} testId="settings-volume-group">
+        <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
               <Box paddingInline="space.150">
@@ -119,10 +119,8 @@ export const SystemSettings: FC = () => {
                 position="bottom"
               >
                 <IconButton
-                  label={t('settings.system.volume_down')}
                   icon={VolumeLowIcon}
-                  shape="circle"
-                  spacing="compact"
+                  label={t('settings.system.volume_down')}
                   onClick={() => {
                     const newVolume = Math.max(
                       settings.notificationVolume - 10,
@@ -131,6 +129,8 @@ export const SystemSettings: FC = () => {
 
                     updateSetting('notificationVolume', newVolume);
                   }}
+                  shape="circle"
+                  spacing="compact"
                   testId="settings-volume-down"
                 />
               </Tooltip>
@@ -139,10 +139,8 @@ export const SystemSettings: FC = () => {
                 position="bottom"
               >
                 <IconButton
-                  label={t('settings.system.volume_up')}
                   icon={VolumeHighIcon}
-                  shape="circle"
-                  spacing="compact"
+                  label={t('settings.system.volume_up')}
                   onClick={() => {
                     const newVolume = Math.min(
                       settings.notificationVolume + 10,
@@ -151,6 +149,8 @@ export const SystemSettings: FC = () => {
 
                     updateSetting('notificationVolume', newVolume);
                   }}
+                  shape="circle"
+                  spacing="compact"
                   testId="settings-volume-up"
                 />
               </Tooltip>
@@ -160,16 +160,16 @@ export const SystemSettings: FC = () => {
               position="bottom"
             >
               <IconButton
-                label={t('settings.system.volume_reset')}
                 icon={RetryIcon}
-                shape="circle"
-                spacing="compact"
+                label={t('settings.system.volume_reset')}
                 onClick={() =>
                   updateSetting(
                     'notificationVolume',
                     defaultSettings.notificationVolume,
                   )
                 }
+                shape="circle"
+                spacing="compact"
                 testId="settings-volume-reset"
               />
             </Tooltip>
@@ -179,9 +179,9 @@ export const SystemSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          name="useAlternateIdleIcon"
-          label={t('settings.system.alternate_icon')}
           isChecked={settings.useAlternateIdleIcon}
+          label={t('settings.system.alternate_icon')}
+          name="useAlternateIdleIcon"
           onChange={(evt) =>
             updateSetting('useAlternateIdleIcon', evt.target.checked)
           }
@@ -197,9 +197,9 @@ export const SystemSettings: FC = () => {
 
       {!window.atlassify.platform.isLinux() && (
         <Checkbox
-          name="openAtStartUp"
-          label={t('settings.system.startup')}
           isChecked={settings.openAtStartup}
+          label={t('settings.system.startup')}
+          name="openAtStartUp"
           onChange={(evt) => updateSetting('openAtStartup', evt.target.checked)}
         />
       )}

@@ -23,9 +23,9 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         }}
       >
         <FilterSection
-          title={'FilterSectionTitle'}
           filter={mockFilter}
           filterSetting={mockFilterSetting}
+          title={'FilterSectionTitle'}
         />
       </AppContext.Provider>,
     );
@@ -44,9 +44,9 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       >
         <MemoryRouter>
           <FilterSection
-            title={'FilterSectionTitle'}
             filter={mockFilter}
             filterSetting={mockFilterSetting}
+            title={'FilterSectionTitle'}
           />
         </MemoryRouter>
       </AppContext.Provider>,
@@ -79,9 +79,9 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       >
         <MemoryRouter>
           <FilterSection
-            title={'FilterSectionTitle'}
             filter={mockFilter}
             filterSetting={mockFilterSetting}
+            title={'FilterSectionTitle'}
           />
         </MemoryRouter>
       </AppContext.Provider>,
