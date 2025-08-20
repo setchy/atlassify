@@ -20,6 +20,7 @@ const config = {
   mac: {
     category: 'public.app-category.developer-tools',
     icon: 'assets/images/app-icon.icns',
+    identity: 'Developer ID Application: Adam Setch (5KD23H9729)',
     type: 'distribution',
     notarize: false, // Handle notarization in afterSign.js
     target: {
