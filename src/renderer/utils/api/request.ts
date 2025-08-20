@@ -38,17 +38,11 @@ export async function performRESTRequestForAccount<T>(
 ) {
   // decrypt token for REST calls
   const decryptedToken = (await decryptValue(account.token)) as Token;
-  const auth = btoa(`${account.username}:${decryptedToken}`);
 
   return axios({
     method: 'GET',
     url: url,
-    headers: {
-      Accept: 'application/json',
-      Authorization: `Basic ${auth}`,
-      'Cache-Control': 'no-cache',
-      'Content-Type': 'application/json',
-    },
+    headers: getHeaders(account.username, decryptedToken),
   }).then((response) => {
     return response.data;
   }) as Promise<T>;
@@ -57,19 +51,22 @@ export async function performRESTRequestForAccount<T>(
 function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
   const url = URLs.ATLASSIAN.API;
 
-  const auth = btoa(`${username}:${token}`);
-
   return axios({
     method: 'POST',
     url,
     data,
-    headers: {
-      Accept: '*/*',
-      Authorization: `Basic ${auth}`,
-      'Cache-Control': 'no-cache',
-      'Content-Type': 'application/json',
-    },
+    headers: getHeaders(username, token),
   }).then((response) => {
     return response.data;
   }) as Promise<AtlassianGraphQLResponse<T>>;
+}
+
+function getHeaders(username: Username, token: Token) {
+  const auth = btoa(`${username}:${token}`);
+  return {
+    Accept: 'application/json',
+    Authorization: `Basic ${auth}`,
+    'Cache-Control': 'no-cache',
+    'Content-Type': 'application/json',
+  };
 }

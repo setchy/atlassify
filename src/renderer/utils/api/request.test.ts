@@ -46,7 +46,7 @@ describe('renderer/utils/api/request.ts', () => {
       data,
       method: 'POST',
       headers: {
-        Accept: '*/*',
+        Accept: 'application/json',
         Authorization: 'Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk',
         'Cache-Control': 'no-cache',
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ describe('renderer/utils/api/request.ts', () => {
       data,
       method: 'POST',
       headers: {
-        Accept: '*/*',
+        Accept: 'application/json',
         Authorization: 'Basic c29tZS11c2VybmFtZTpzb21lLXBhc3N3b3Jk',
         'Cache-Control': 'no-cache',
         'Content-Type': 'application/json',
