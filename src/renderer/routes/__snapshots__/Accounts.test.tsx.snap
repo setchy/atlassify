@@ -58,7 +58,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="flex-grow overflow-x-auto"
+    class="grow overflow-x-auto"
   >
     <div
       class="css-1cascbq"
@@ -310,7 +310,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="flex-grow overflow-x-auto"
+    class="grow overflow-x-auto"
   >
     <div
       class="css-2yrksc"

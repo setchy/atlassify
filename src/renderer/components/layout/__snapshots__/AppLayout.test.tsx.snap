@@ -9,7 +9,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
         class="flex min-h-screen"
       >
         <div
-          class="w-sidebar flex-shrink-0"
+          class="w-sidebar shrink-0"
         >
           <div
             class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
@@ -190,7 +190,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
       class="flex min-h-screen"
     >
       <div
-        class="w-sidebar flex-shrink-0"
+        class="w-sidebar shrink-0"
       >
         <div
           class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
