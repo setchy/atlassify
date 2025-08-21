@@ -76,7 +76,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         (isAnimated || animateExit) &&
-          'translate-x-full opacity-0 transition duration-[350ms] ease-in-out',
+          'translate-x-full opacity-0 transition duration-350 ease-in-out',
       )}
       id={notification.id}
     >

@@ -14,7 +14,7 @@ export const AppLayout: FC<IAppLayout> = ({ children }) => {
   return (
     <div className="flex min-h-screen">
       {/* Fixed-width sidebar */}
-      <div className="w-sidebar flex-shrink-0">
+      <div className="w-sidebar shrink-0">
         <Sidebar />
       </div>
       {/* Content area with left padding to make space for the sidebar */}
