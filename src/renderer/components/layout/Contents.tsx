@@ -9,5 +9,5 @@ interface IContents {
  * It provides proper padding and handles scrolling.
  */
 export const Contents: FC<IContents> = (props: IContents) => {
-  return <div className="flex-grow overflow-x-auto">{props.children}</div>;
+  return <div className="grow overflow-x-auto">{props.children}</div>;
 };

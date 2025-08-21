@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`renderer/routes/Notifications.tsx should render itself & its children (error conditions - oops) bad credentials 1`] = `
 {
@@ -217,7 +217,7 @@ exports[`renderer/routes/Notifications.tsx should render itself & its children (
         data-testid="notifications"
       >
         <div
-          class="flex-grow overflow-x-auto"
+          class="grow overflow-x-auto"
         >
           <p>
             AccountNotifications
@@ -232,7 +232,7 @@ exports[`renderer/routes/Notifications.tsx should render itself & its children (
       data-testid="notifications"
     >
       <div
-        class="flex-grow overflow-x-auto"
+        class="grow overflow-x-auto"
       >
         <p>
           AccountNotifications

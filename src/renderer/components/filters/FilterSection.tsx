@@ -68,7 +68,7 @@ export const FilterSection = <T extends FilterValue>({
               {typeDetails.heroicon && (
                 <typeDetails.heroicon
                   className={cn(
-                    'size-4 p-[1px] rounded border',
+                    'size-4 p-px rounded border',
                     isChecked
                       ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
                       : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
