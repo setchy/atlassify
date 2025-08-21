@@ -60,7 +60,7 @@ I would like to acknowledge the following projects and resources that have inspi
 [quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 
 [ci-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/ci.yml?logo=github&label=CI
-[release-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/release.yml/badge.svg
+[release-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/release.yml?logo=github&label=Release
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlassify/total?label=downloads@all&logo=github
 [downloads-latest-badge]: https://img.shields.io/github/downloads/setchy/atlassify/latest/total?logo=github
 [contributors-badge]: https://img.shields.io/github/contributors/setchy/atlassify?logo=github
