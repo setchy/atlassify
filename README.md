@@ -54,9 +54,9 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls
 [brew]: https://brew.sh
 
-[coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
+[coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
-[quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarcloud
+[quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 
 [ci-workflow-badge]: https://github.com/setchy/atlassify/actions/workflows/ci.yml/badge.svg
