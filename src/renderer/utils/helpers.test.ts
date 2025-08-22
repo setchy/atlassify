@@ -8,6 +8,7 @@ import {
 } from '../__mocks__/notifications-mocks';
 import type { Link } from '../types';
 import {
+  blockAlignmentByLength,
   extractRepositoryName,
   formatNativeNotificationFooterText,
   formatNotificationFooterText,
@@ -167,5 +168,17 @@ describe('renderer/utils/helpers.ts', () => {
         label: 'No notifications for product',
       });
     });
+  });
+
+  it('blockAlignmentByLength', () => {
+    expect(blockAlignmentByLength(null)).toEqual('center');
+
+    expect(blockAlignmentByLength('Some short string')).toEqual('center');
+
+    expect(
+      blockAlignmentByLength(
+        'Some much longer string that should trigger a different format',
+      ),
+    ).toEqual('start');
   });
 });

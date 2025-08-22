@@ -114,7 +114,7 @@ export function getChevronDetails(
 }
 
 export function blockAlignmentByLength(text: string): AlignBlock {
-  return text.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
+  return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
     ? 'start'
     : 'center';
 }
