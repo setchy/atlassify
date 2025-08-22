@@ -11,6 +11,7 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import {
+  blockAlignmentByLength,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
 } from '../../utils/helpers';
@@ -71,6 +72,10 @@ export const NotificationRow: FC<INotificationRow> = ({
     }),
   );
 
+  const displayGroupSize = notification.notificationGroup.size - 1;
+  const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
+  const notificationFooterText = formatNotificationFooterText(notification);
+
   return (
     <div
       className={cn(
@@ -124,51 +129,64 @@ export const NotificationRow: FC<INotificationRow> = ({
                       </Text>
                     </Box>
                     <Box id="notification-metadata">
-                      <Box id="notification-entity">
-                        <Inline space="space.050">
-                          <Avatar
-                            appearance="square"
-                            name={notification.entity.title}
-                            size="xsmall"
-                            src={notification.entity.iconUrl}
-                          />
-                          <Text size="small">{notification.entity.title}</Text>
-                        </Inline>
-                      </Box>
-                      <Box
-                        id="notification-product"
-                        paddingInlineStart="space.025"
-                      >
-                        <Inline space="space.075">
-                          <notification.product.logo
-                            appearance="brand"
-                            shouldUseNewLogoDesign
-                            size="xxsmall"
-                          />
-                          <Text size="small">
-                            {formatNotificationFooterText(notification)}
-                          </Text>
-                        </Inline>
-                      </Box>
-                      <Box id="notification-group">
-                        {notification.notificationGroup.size > 1 && (
-                          <Inline alignBlock="center" space="space.050">
-                            {notification.notificationGroup.additionalActors
-                              .length > 0 && (
-                              <AvatarGroup data={avatarGroup} size="small" />
+                      <Stack space="space.025">
+                        <Box id="notification-entity">
+                          <Inline
+                            alignBlock={blockAlignmentByLength(
+                              notification.entity.title,
                             )}
+                            space="space.050"
+                          >
+                            <Avatar
+                              appearance="square"
+                              name={notification.entity.title}
+                              size="xsmall"
+                              src={notification.entity.iconUrl}
+                            />
                             <Text size="small">
-                              +{notification.notificationGroup.size - 1}{' '}
-                              {notification.notificationGroup.additionalActors
-                                .length > 0
-                                ? `updates from ${notification.notificationGroup.additionalActors[0].displayName}`
-                                : 'other updates'}
-                              {notification.notificationGroup.additionalActors
-                                .length > 1 && ' and others'}
+                              {notification.entity.title}
                             </Text>
                           </Inline>
-                        )}
-                      </Box>
+                        </Box>
+                        <Box
+                          id="notification-product"
+                          paddingInlineStart="space.025"
+                        >
+                          <Inline
+                            alignBlock={blockAlignmentByLength(
+                              notificationFooterText,
+                            )}
+                            space="space.075"
+                          >
+                            <notification.product.logo
+                              appearance="brand"
+                              shouldUseNewLogoDesign
+                              size="xxsmall"
+                            />
+                            <Text size="small">{notificationFooterText}</Text>
+                          </Inline>
+                        </Box>
+                        <Box id="notification-group">
+                          {notification.notificationGroup.size > 1 && (
+                            <Inline alignBlock="center" space="space.050">
+                              {notification.notificationGroup.additionalActors
+                                .length > 0 && (
+                                // @ts-expect-error We're forcing the xsmall size for Avatar Groups
+                                <AvatarGroup data={avatarGroup} size="xsmall" />
+                              )}
+                              <Text size="small">
+                                +{displayGroupSize}{' '}
+                                {notification.notificationGroup.additionalActors
+                                  .length > 0
+                                  ? `${displayUpdateVerbiage} from ${notification.notificationGroup.additionalActors[0].displayName}`
+                                  : `other ${displayUpdateVerbiage}`}
+                                {notification.notificationGroup.additionalActors
+                                  .length > 1 && ' and others'}
+                              </Text>
+                            </Inline>
+                          )}
+                        </Box>
+                      </Stack>
                     </Box>
                   </Stack>
                 </div>
