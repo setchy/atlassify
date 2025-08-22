@@ -63,6 +63,13 @@ describe('renderer/utils/products.ts', () => {
     expect(
       await getAtlassianProduct(
         mockAtlassianCloudAccount,
+        createProductNotificationMock('people-and-teams-collective'),
+      ),
+    ).toBe(PRODUCTS.teams);
+
+    expect(
+      await getAtlassianProduct(
+        mockAtlassianCloudAccount,
         createProductNotificationMock('team-central'),
       ),
     ).toBe(PRODUCTS.home);
