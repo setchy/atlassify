@@ -73,8 +73,11 @@ const jiraProjectTypeCache = new Map<
   Promise<JiraProjectType>
 >();
 
-// TODO #97 ideally we could get the Product Name from a response field instead of String manipulation
-
+/**
+ * Infer the Atlassian Product from notification analytic attributes
+ *
+ * TODO #97 ideally we could get the Product Name from a API response attribute instead of inference
+ */
 export async function getAtlassianProduct(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
