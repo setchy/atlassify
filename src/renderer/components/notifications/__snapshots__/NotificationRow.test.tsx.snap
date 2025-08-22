@@ -115,90 +115,94 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         id="notification-metadata"
                       >
                         <div
-                          class="css-k5cxwk"
-                          id="notification-entity"
+                          class="css-2mvdbp"
                         >
                           <div
-                            class="css-1w1rt7h"
+                            class="css-k5cxwk"
+                            id="notification-entity"
                           >
                             <div
-                              aria-labelledby="uid4"
-                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
-                              role="img"
+                              class="css-bsfd3j"
                             >
-                              <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              <div
+                                aria-labelledby="uid4"
+                                class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                role="img"
                               >
-                                <img
-                                  alt=""
-                                  aria-hidden="true"
-                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
-                                  data-ssr-placeholder-ignored="true"
-                                  data-vc="avatar-image"
-                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                />
-                              </span>
+                                <span
+                                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                >
+                                  <img
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                    data-ssr-placeholder-ignored="true"
+                                    data-vc="avatar-image"
+                                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                  />
+                                </span>
+                                <span
+                                  hidden=""
+                                  id="uid4"
+                                >
+                                  #103: chore(deps): update dependency eslint
+                                </span>
+                              </div>
                               <span
-                                hidden=""
-                                id="uid4"
+                                class="css-1re4vvb"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
                             </div>
-                            <span
-                              class="css-1re4vvb"
-                            >
-                              #103: chore(deps): update dependency eslint
-                            </span>
                           </div>
-                        </div>
-                        <div
-                          class="css-1yqbixt"
-                          id="notification-product"
-                        >
                           <div
-                            class="css-f86pb"
+                            class="css-1yqbixt"
+                            id="notification-product"
                           >
-                            <span
-                              aria-label="Bitbucket"
-                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
-                              role="img"
-                              style="--themed-icon-color: initial;"
+                            <div
+                              class="css-f86pb"
                             >
-                              <svg
-                                height="100%"
-                                viewBox="0 0 24 24"
+                              <span
+                                aria-label="Bitbucket"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                role="img"
+                                style="--themed-icon-color: initial;"
                               >
-                                
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                >
+                                  
     
-                                <path
-                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                                  fill="var(--tile-color,#94c748)"
-                                />
-                                
+                                  <path
+                                    d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                    fill="var(--tile-color,#94c748)"
+                                  />
+                                  
     
-                                <path
-                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
-                                  fill="var(--icon-color, #101214)"
-                                />
+                                  <path
+                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+
+                                </svg>
                                 
 
-                              </svg>
-                              
-
-                            </span>
-                            <span
-                              class="css-1re4vvb"
-                            >
-                              myorg/notifications-test
-                            </span>
+                              </span>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                myorg/notifications-test
+                              </span>
+                            </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
-                        <div
-                          class="css-k5cxwk"
-                          id="notification-group"
-                        />
                       </div>
                     </div>
                   </div>
@@ -361,90 +365,94 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       id="notification-metadata"
                     >
                       <div
-                        class="css-k5cxwk"
-                        id="notification-entity"
+                        class="css-2mvdbp"
                       >
                         <div
-                          class="css-1w1rt7h"
+                          class="css-k5cxwk"
+                          id="notification-entity"
                         >
                           <div
-                            aria-labelledby="uid4"
-                            class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
-                            role="img"
+                            class="css-bsfd3j"
                           >
-                            <span
-                              class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
-                              style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                            <div
+                              aria-labelledby="uid4"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                              role="img"
                             >
-                              <img
-                                alt=""
-                                aria-hidden="true"
-                                class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
-                                data-ssr-placeholder-ignored="true"
-                                data-vc="avatar-image"
-                                src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                              />
-                            </span>
+                              <span
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                  data-ssr-placeholder-ignored="true"
+                                  data-vc="avatar-image"
+                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                />
+                              </span>
+                              <span
+                                hidden=""
+                                id="uid4"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
                             <span
-                              hidden=""
-                              id="uid4"
+                              class="css-1re4vvb"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
                           </div>
-                          <span
-                            class="css-1re4vvb"
-                          >
-                            #103: chore(deps): update dependency eslint
-                          </span>
                         </div>
-                      </div>
-                      <div
-                        class="css-1yqbixt"
-                        id="notification-product"
-                      >
                         <div
-                          class="css-f86pb"
+                          class="css-1yqbixt"
+                          id="notification-product"
                         >
-                          <span
-                            aria-label="Bitbucket"
-                            class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
-                            role="img"
-                            style="--themed-icon-color: initial;"
+                          <div
+                            class="css-f86pb"
                           >
-                            <svg
-                              height="100%"
-                              viewBox="0 0 24 24"
+                            <span
+                              aria-label="Bitbucket"
+                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                              role="img"
+                              style="--themed-icon-color: initial;"
                             >
-                              
+                              <svg
+                                height="100%"
+                                viewBox="0 0 24 24"
+                              >
+                                
     
-                              <path
-                                d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                                fill="var(--tile-color,#94c748)"
-                              />
-                              
+                                <path
+                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                  fill="var(--tile-color,#94c748)"
+                                />
+                                
     
-                              <path
-                                d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
-                                fill="var(--icon-color, #101214)"
-                              />
+                                <path
+                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+
+                              </svg>
                               
 
-                            </svg>
-                            
-
-                          </span>
-                          <span
-                            class="css-1re4vvb"
-                          >
-                            myorg/notifications-test
-                          </span>
+                            </span>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              myorg/notifications-test
+                            </span>
+                          </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
-                      <div
-                        class="css-k5cxwk"
-                        id="notification-group"
-                      />
                     </div>
                   </div>
                 </div>
@@ -664,90 +672,94 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         id="notification-metadata"
                       >
                         <div
-                          class="css-k5cxwk"
-                          id="notification-entity"
+                          class="css-2mvdbp"
                         >
                           <div
-                            class="css-1w1rt7h"
+                            class="css-k5cxwk"
+                            id="notification-entity"
                           >
                             <div
-                              aria-labelledby="uid10"
-                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
-                              role="img"
+                              class="css-bsfd3j"
                             >
-                              <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              <div
+                                aria-labelledby="uid10"
+                                class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                role="img"
                               >
-                                <img
-                                  alt=""
-                                  aria-hidden="true"
-                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
-                                  data-ssr-placeholder-ignored="true"
-                                  data-vc="avatar-image"
-                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                                />
-                              </span>
+                                <span
+                                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                >
+                                  <img
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                    data-ssr-placeholder-ignored="true"
+                                    data-vc="avatar-image"
+                                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                  />
+                                </span>
+                                <span
+                                  hidden=""
+                                  id="uid10"
+                                >
+                                  #103: chore(deps): update dependency eslint
+                                </span>
+                              </div>
                               <span
-                                hidden=""
-                                id="uid10"
+                                class="css-1re4vvb"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
                             </div>
-                            <span
-                              class="css-1re4vvb"
-                            >
-                              #103: chore(deps): update dependency eslint
-                            </span>
                           </div>
-                        </div>
-                        <div
-                          class="css-1yqbixt"
-                          id="notification-product"
-                        >
                           <div
-                            class="css-f86pb"
+                            class="css-1yqbixt"
+                            id="notification-product"
                           >
-                            <span
-                              aria-label="Bitbucket"
-                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
-                              role="img"
-                              style="--themed-icon-color: initial;"
+                            <div
+                              class="css-f86pb"
                             >
-                              <svg
-                                height="100%"
-                                viewBox="0 0 24 24"
+                              <span
+                                aria-label="Bitbucket"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                role="img"
+                                style="--themed-icon-color: initial;"
                               >
-                                
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                >
+                                  
     
-                                <path
-                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                                  fill="var(--tile-color,#94c748)"
-                                />
-                                
+                                  <path
+                                    d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                    fill="var(--tile-color,#94c748)"
+                                  />
+                                  
     
-                                <path
-                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
-                                  fill="var(--icon-color, #101214)"
-                                />
+                                  <path
+                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+
+                                </svg>
                                 
 
-                              </svg>
-                              
-
-                            </span>
-                            <span
-                              class="css-1re4vvb"
-                            >
-                              myorg/notifications-test
-                            </span>
+                              </span>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                myorg/notifications-test
+                              </span>
+                            </div>
                           </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
                         </div>
-                        <div
-                          class="css-k5cxwk"
-                          id="notification-group"
-                        />
                       </div>
                     </div>
                   </div>
@@ -910,90 +922,94 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       id="notification-metadata"
                     >
                       <div
-                        class="css-k5cxwk"
-                        id="notification-entity"
+                        class="css-2mvdbp"
                       >
                         <div
-                          class="css-1w1rt7h"
+                          class="css-k5cxwk"
+                          id="notification-entity"
                         >
                           <div
-                            aria-labelledby="uid10"
-                            class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
-                            role="img"
+                            class="css-bsfd3j"
                           >
-                            <span
-                              class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
-                              style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                            <div
+                              aria-labelledby="uid10"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                              role="img"
                             >
-                              <img
-                                alt=""
-                                aria-hidden="true"
-                                class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
-                                data-ssr-placeholder-ignored="true"
-                                data-vc="avatar-image"
-                                src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
-                              />
-                            </span>
+                              <span
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                  data-ssr-placeholder-ignored="true"
+                                  data-vc="avatar-image"
+                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                />
+                              </span>
+                              <span
+                                hidden=""
+                                id="uid10"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
                             <span
-                              hidden=""
-                              id="uid10"
+                              class="css-1re4vvb"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
                           </div>
-                          <span
-                            class="css-1re4vvb"
-                          >
-                            #103: chore(deps): update dependency eslint
-                          </span>
                         </div>
-                      </div>
-                      <div
-                        class="css-1yqbixt"
-                        id="notification-product"
-                      >
                         <div
-                          class="css-f86pb"
+                          class="css-1yqbixt"
+                          id="notification-product"
                         >
-                          <span
-                            aria-label="Bitbucket"
-                            class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
-                            role="img"
-                            style="--themed-icon-color: initial;"
+                          <div
+                            class="css-f86pb"
                           >
-                            <svg
-                              height="100%"
-                              viewBox="0 0 24 24"
+                            <span
+                              aria-label="Bitbucket"
+                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                              role="img"
+                              style="--themed-icon-color: initial;"
                             >
-                              
+                              <svg
+                                height="100%"
+                                viewBox="0 0 24 24"
+                              >
+                                
     
-                              <path
-                                d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                                fill="var(--tile-color,#94c748)"
-                              />
-                              
+                                <path
+                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                  fill="var(--tile-color,#94c748)"
+                                />
+                                
     
-                              <path
-                                d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
-                                fill="var(--icon-color, #101214)"
-                              />
+                                <path
+                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+
+                              </svg>
                               
 
-                            </svg>
-                            
-
-                          </span>
-                          <span
-                            class="css-1re4vvb"
-                          >
-                            myorg/notifications-test
-                          </span>
+                            </span>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              myorg/notifications-test
+                            </span>
+                          </div>
                         </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
                       </div>
-                      <div
-                        class="css-k5cxwk"
-                        id="notification-group"
-                      />
                     </div>
                   </div>
                 </div>
