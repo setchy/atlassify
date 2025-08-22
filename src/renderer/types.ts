@@ -470,7 +470,6 @@ export type ProductName =
   | 'jira product discovery'
   | 'jira service management'
   | 'teams'
-  | 'trello'
   | 'unknown';
 
 /**
