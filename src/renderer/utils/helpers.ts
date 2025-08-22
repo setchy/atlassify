@@ -1,11 +1,13 @@
 import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
+import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 
 import i18n from '../i18n';
 import type { AtlassifyNotification, Chevron } from '../types';
+import { Constants } from './constants';
 
 export function formatProperCase(text: string) {
   return text.replace(/\w+/g, (word) => {
@@ -109,4 +111,10 @@ export function getChevronDetails(
     icon: ChevronRightIcon,
     label: i18n.t('chevron.show', { type: typeLocale }),
   };
+}
+
+export function blockAlignmentByLength(text: string): AlignBlock {
+  return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
+    ? 'start'
+    : 'center';
 }
