@@ -7,6 +7,7 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  TeamsIcon,
   TrelloIcon,
 } from '@atlaskit/logo';
 
@@ -36,6 +37,11 @@ export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
     description: 'Confluence',
     logo: ConfluenceIcon,
   },
+  home: {
+    name: 'home',
+    description: 'Atlassian Home',
+    logo: HomeIcon,
+  },
   jira: {
     name: 'jira',
     description: 'Jira',
@@ -51,10 +57,10 @@ export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
     description: 'Jira Service Management',
     logo: JiraServiceManagementIcon,
   },
-  home: {
-    name: 'home',
-    description: 'Atlassian Home',
-    logo: HomeIcon,
+  teams: {
+    name: 'teams',
+    description: 'Atlassian Teams',
+    logo: TeamsIcon,
   },
   trello: {
     name: 'trello',

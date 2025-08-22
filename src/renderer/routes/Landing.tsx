@@ -14,6 +14,7 @@ import {
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
   type LogoProps,
+  TeamsIcon,
   TrelloIcon,
 } from '@atlaskit/logo';
 import { Inline, Stack, Text } from '@atlaskit/primitives';
@@ -55,10 +56,11 @@ export const LandingRoute: FC = () => {
           <BitbucketIcon {...commonLogoProps} />
           <CompassIcon {...commonLogoProps} />
           <ConfluenceIcon {...commonLogoProps} />
+          <HomeIcon {...commonLogoProps} />
           <JiraIcon {...commonLogoProps} />
           <JiraProductDiscoveryIcon {...commonLogoProps} />
           <JiraServiceManagementIcon {...commonLogoProps} />
-          <HomeIcon {...commonLogoProps} />
+          <TeamsIcon {...commonLogoProps} />
           <TrelloIcon {...commonLogoProps} />
         </Inline>
         <Tooltip content={t('landing.login.tooltip')}>

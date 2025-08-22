@@ -163,6 +163,34 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
 
             </span>
             <span
+              aria-label="Home"
+              class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
+              role="img"
+              style="--themed-icon-color: initial;"
+            >
+              <svg
+                height="100%"
+                viewBox="0 0 24 24"
+              >
+                
+    
+                <path
+                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                  fill="var(--tile-color,#dddee1)"
+                />
+                
+    
+                <path
+                  d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                  fill="var(--icon-color, #101214)"
+                />
+                
+
+              </svg>
+              
+
+            </span>
+            <span
               aria-label="Jira"
               class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
@@ -247,7 +275,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
 
             </span>
             <span
-              aria-label="Home"
+              aria-label="Teams"
               class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
               role="img"
               style="--themed-icon-color: initial;"
@@ -265,7 +293,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
                 
     
                 <path
-                  d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                  d="M8.06 11.25a2.63 2.63 0 1 0 0-5.25 2.63 2.63 0 0 0 0 5.25m7.88 0a2.63 2.63 0 1 0 0-5.25 2.63 2.63 0 0 0 0 5.25m.17 1.31a2.89 2.89 0 0 1 2.89 2.9V18h-7.22l1.66-3.67a2.89 2.89 0 0 1 2.67-1.77M5 15.63V18h4.81l1.31-2.81a2.63 2.63 0 0 0-2.62-2.63h-.44A3.06 3.06 0 0 0 5 15.63"
                   fill="var(--icon-color, #101214)"
                 />
                 
@@ -508,6 +536,34 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
 
           </span>
           <span
+            aria-label="Home"
+            class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
+            role="img"
+            style="--themed-icon-color: initial;"
+          >
+            <svg
+              height="100%"
+              viewBox="0 0 24 24"
+            >
+              
+    
+              <path
+                d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                fill="var(--tile-color,#dddee1)"
+              />
+              
+    
+              <path
+                d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                fill="var(--icon-color, #101214)"
+              />
+              
+
+            </svg>
+            
+
+          </span>
+          <span
             aria-label="Jira"
             class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
@@ -592,7 +648,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
 
           </span>
           <span
-            aria-label="Home"
+            aria-label="Teams"
             class="_1e0c1o8l _4t3i1tcg _1b3i18uv _9aea18uv"
             role="img"
             style="--themed-icon-color: initial;"
@@ -610,7 +666,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
               
     
               <path
-                d="M5.875 10.688v7.437h4.375V13.75h3.5v4.375h4.375v-7.437L12 5z"
+                d="M8.06 11.25a2.63 2.63 0 1 0 0-5.25 2.63 2.63 0 0 0 0 5.25m7.88 0a2.63 2.63 0 1 0 0-5.25 2.63 2.63 0 0 0 0 5.25m.17 1.31a2.89 2.89 0 0 1 2.89 2.9V18h-7.22l1.66-3.67a2.89 2.89 0 0 1 2.67-1.77M5 15.63V18h4.81l1.31-2.81a2.63 2.63 0 0 0-2.62-2.63h-.44A3.06 3.06 0 0 0 5 15.63"
                 fill="var(--icon-color, #101214)"
               />
               

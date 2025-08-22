@@ -465,10 +465,11 @@ export type ProductName =
   | 'bitbucket'
   | 'confluence'
   | 'compass'
+  | 'home'
   | 'jira'
   | 'jira product discovery'
   | 'jira service management'
-  | 'home'
+  | 'teams'
   | 'trello'
   | 'unknown';
 

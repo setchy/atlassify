@@ -7,6 +7,7 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  TeamsIcon,
   TrelloIcon,
 } from '@atlaskit/logo';
 
@@ -39,6 +40,10 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
     name: 'confluence',
     logo: ConfluenceIcon,
   },
+  home: {
+    name: 'home',
+    logo: HomeIcon,
+  },
   jira: {
     name: 'jira',
     logo: JiraIcon,
@@ -51,9 +56,9 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
     name: 'jira service management',
     logo: JiraServiceManagementIcon,
   },
-  home: {
-    name: 'home',
-    logo: HomeIcon,
+  teams: {
+    name: 'teams',
+    logo: TeamsIcon,
   },
   trello: {
     name: 'trello',
@@ -109,6 +114,8 @@ export async function getAtlassianProduct(
       }
     case 'opsgenie':
       return PRODUCTS['jira service management'];
+    case 'people-and-teams-collective':
+      return PRODUCTS.teams;
     case 'team-central':
       return PRODUCTS.home;
     default:
