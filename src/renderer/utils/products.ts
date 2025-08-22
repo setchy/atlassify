@@ -8,7 +8,6 @@ import {
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
   TeamsIcon,
-  TrelloIcon,
 } from '@atlaskit/logo';
 
 import { logError } from '../../shared/logger';
@@ -59,10 +58,6 @@ export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   teams: {
     name: 'teams',
     logo: TeamsIcon,
-  },
-  trello: {
-    name: 'trello',
-    logo: TrelloIcon,
   },
   unknown: {
     name: 'unknown',

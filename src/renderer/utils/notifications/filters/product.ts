@@ -8,7 +8,6 @@ import {
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
   TeamsIcon,
-  TrelloIcon,
 } from '@atlaskit/logo';
 
 import i18n from '../../../i18n';
@@ -61,11 +60,6 @@ export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
     name: 'teams',
     description: 'Atlassian Teams',
     logo: TeamsIcon,
-  },
-  trello: {
-    name: 'trello',
-    description: 'Trello',
-    logo: TrelloIcon,
   },
   unknown: {
     name: 'unknown',
