@@ -66,7 +66,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-i18next": "15.7.1",
-    "react-router-dom": "7.8.1",
+    "react-router-dom": "7.8.2",
     "update-electron-app": "3.1.1"
   },
   "devDependencies": {
