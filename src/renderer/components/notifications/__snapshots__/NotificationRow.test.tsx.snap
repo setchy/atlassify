@@ -161,7 +161,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -411,7 +411,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           id="notification-product"
                         >
                           <div
-                            class="css-f86pb"
+                            class="css-lyw6pf"
                           >
                             <span
                               aria-label="Bitbucket"
@@ -718,7 +718,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -968,7 +968,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                           id="notification-product"
                         >
                           <div
-                            class="css-f86pb"
+                            class="css-lyw6pf"
                           >
                             <span
                               aria-label="Bitbucket"

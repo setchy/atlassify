@@ -2298,7 +2298,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -2545,7 +2545,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -3032,7 +3032,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -3279,7 +3279,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Confluence"
@@ -3823,7 +3823,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -4070,7 +4070,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -4557,7 +4557,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -4804,7 +4804,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Confluence"
@@ -5546,7 +5546,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -5793,7 +5793,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               id="notification-product"
                             >
                               <div
-                                class="css-f86pb"
+                                class="css-lyw6pf"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -6280,7 +6280,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -6527,7 +6527,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             id="notification-product"
                           >
                             <div
-                              class="css-f86pb"
+                              class="css-lyw6pf"
                             >
                               <span
                                 aria-label="Confluence"

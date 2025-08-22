@@ -11,6 +11,7 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import {
+  blockAlignmentByLength,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
 } from '../../utils/helpers';
@@ -71,10 +72,9 @@ export const NotificationRow: FC<INotificationRow> = ({
     }),
   );
 
-  const ENTITY_TITLE_LENGTH_THRESHOLD = 55;
-
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
+  const notificationFooterText = formatNotificationFooterText(notification);
 
   return (
     <div
@@ -132,12 +132,9 @@ export const NotificationRow: FC<INotificationRow> = ({
                       <Stack space="space.025">
                         <Box id="notification-entity">
                           <Inline
-                            alignBlock={
-                              notification.entity.title.length >
-                              ENTITY_TITLE_LENGTH_THRESHOLD
-                                ? 'start'
-                                : 'center'
-                            }
+                            alignBlock={blockAlignmentByLength(
+                              notification.entity.title,
+                            )}
                             space="space.050"
                           >
                             <Avatar
@@ -155,15 +152,18 @@ export const NotificationRow: FC<INotificationRow> = ({
                           id="notification-product"
                           paddingInlineStart="space.025"
                         >
-                          <Inline space="space.075">
+                          <Inline
+                            alignBlock={blockAlignmentByLength(
+                              notificationFooterText,
+                            )}
+                            space="space.075"
+                          >
                             <notification.product.logo
                               appearance="brand"
                               shouldUseNewLogoDesign
                               size="xxsmall"
                             />
-                            <Text size="small">
-                              {formatNotificationFooterText(notification)}
-                            </Text>
+                            <Text size="small">{notificationFooterText}</Text>
                           </Inline>
                         </Box>
                         <Box id="notification-group">
