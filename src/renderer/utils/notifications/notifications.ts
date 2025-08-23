@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 
 import { logError, logWarn } from '../../../shared/logger';
+
 import type {
   Account,
   AccountNotifications,

@@ -1,6 +1,7 @@
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
-import { Theme } from '../types';
+import { Theme } from '../../shared/theme';
+
 import { getTheme, isLightMode, setTheme } from './theme';
 
 jest.mock('@atlaskit/tokens', () => ({

@@ -13,6 +13,7 @@ import Modal, {
 import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
+
 import { AppContext } from '../../context/App';
 
 const gridStyles = xcss({

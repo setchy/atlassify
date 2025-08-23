@@ -1,4 +1,5 @@
 import { APPLICATION } from '../../../shared/constants';
+
 import i18n from '../../i18n';
 import type {
   AccountNotifications,

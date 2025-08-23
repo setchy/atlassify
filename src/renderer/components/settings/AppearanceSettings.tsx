@@ -13,9 +13,10 @@ import Select from '@atlaskit/select';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
+import { Theme } from '../../../shared/theme';
+
 import { AppContext } from '../../context/App';
 import { LANGUAGES } from '../../i18n/types';
-import { Theme } from '../../types';
 import { loadLanguageLocale } from '../../utils/storage';
 import { setTheme } from '../../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';

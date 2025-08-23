@@ -1,4 +1,5 @@
 import { logError } from '../../../shared/logger';
+
 import type { Account, AuthState, Token, Username } from '../../types';
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';

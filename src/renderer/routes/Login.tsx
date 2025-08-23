@@ -19,6 +19,7 @@ import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { logError } from '../../shared/logger';
+
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
