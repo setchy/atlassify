@@ -323,7 +323,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('bitbucket'));
+        await userEvent.click(screen.getByLabelText('Bitbucket'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',
@@ -353,7 +353,7 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('bitbucket'));
+        await userEvent.click(screen.getByLabelText('Bitbucket'));
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',

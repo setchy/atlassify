@@ -7,6 +7,8 @@ import {
   useState,
 } from 'react';
 
+import { Theme } from '../../shared/theme';
+
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import { DEFAULT_LANGUAGE } from '../i18n';
@@ -47,7 +49,6 @@ import {
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { zoomPercentageToLevel } from '../utils/zoom';
-import { Theme } from '../../shared/theme';
 
 export const defaultAuth: AuthState = {
   accounts: [],
