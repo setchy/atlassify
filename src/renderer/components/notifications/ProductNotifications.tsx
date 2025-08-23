@@ -68,7 +68,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             content={
               productDetails.home
                 ? t('notifications.product.open_product', {
-                    name: formatProperCase(productDetails.name),
+                    name: productDetails.display,
                   })
                 : ''
             }

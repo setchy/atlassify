@@ -446,6 +446,11 @@ export interface AtlassianProduct {
   name: ProductName;
 
   /**
+   * The display name of the product.
+   */
+  display: string;
+
+  /**
    * The logo of the product.
    * @see {@link https://atlassian.design/components/logo/examples} for available logos.
    */
@@ -458,7 +463,7 @@ export interface AtlassianProduct {
 }
 
 /**
- * The differentAtlassian products which are supported by Atlassify (currently).
+ * Atlassian products which are currently supported by Atlassify.
  */
 export type ProductName =
   | 'bitbucket'

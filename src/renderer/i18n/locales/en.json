@@ -75,8 +75,7 @@
       }
     },
     "products": {
-      "title": "Products",
-      "unknown": "Unknown"
+      "title": "Products"
     },
     "read_state": {
       "title": "Read State",
@@ -138,6 +137,9 @@
       "mark_as_read": "Mark as read",
       "mark_as_unread": "Mark as unread"
     }
+  },
+  "products": {
+    "unknown": "Unknown"
   },
   "settings": {
     "title": "Settings",

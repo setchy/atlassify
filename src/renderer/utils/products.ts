@@ -12,6 +12,7 @@ import {
 
 import { logError } from '../../shared/logger';
 
+import i18n from '../i18n';
 import type {
   Account,
   AtlassianProduct,
@@ -25,43 +26,51 @@ import { getCloudIDsForHostnames, getJiraProjectTypeByKey } from './api/client';
 import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
 import { URLs } from './links';
 
-// TODO remove duplication between this and filters/product PRODUCT_DETAILS
 export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
   bitbucket: {
     name: 'bitbucket',
+    display: 'Bitbucket',
     logo: BitbucketIcon,
     home: URLs.ATLASSIAN.WEB.BITBUCKET_HOME,
   },
   compass: {
     name: 'compass',
+    display: 'Compass',
     logo: CompassIcon,
   },
   confluence: {
     name: 'confluence',
+    display: 'Confluence',
     logo: ConfluenceIcon,
   },
   home: {
     name: 'home',
+    display: 'Atlassian Home',
     logo: HomeIcon,
   },
   jira: {
     name: 'jira',
+    display: 'Jira',
     logo: JiraIcon,
   },
   'jira product discovery': {
     name: 'jira product discovery',
+    display: 'Jira Product Discovery',
     logo: JiraProductDiscoveryIcon,
   },
   'jira service management': {
     name: 'jira service management',
+    display: 'Jira Service Management',
     logo: JiraServiceManagementIcon,
   },
   teams: {
     name: 'teams',
+    display: 'Atlassian Teams',
     logo: TeamsIcon,
   },
   unknown: {
     name: 'unknown',
+    display: i18n.t('products.unknown'),
     logo: AtlassianIcon,
   },
 };
