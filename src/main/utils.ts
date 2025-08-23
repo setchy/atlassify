@@ -7,6 +7,7 @@ import log from 'electron-log';
 import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
+import { EVENTS } from '../shared/events';
 import { logError, logInfo } from '../shared/logger';
 
 import { sendRendererEvent } from './events';
@@ -40,15 +41,14 @@ export function resetApp(mb: Menubar) {
   });
 
   if (response === resetButtonId) {
-    sendRendererEvent(mb, 'atlassify:reset-app');
+    sendRendererEvent(mb, EVENTS.RESET_APP);
     mb.app.quit();
   }
 }
 
 export function openLogsDirectory() {
-  const logDirectory = path.dirname(log.transports.file?.getFile()?.path);
-
-  if (!logDirectory) {
+  const logFilePath = log.transports.file?.getFile()?.path;
+  if (!logFilePath) {
     logError(
       'openLogsDirectory',
       'Could not find log directory!',
@@ -56,6 +56,6 @@ export function openLogsDirectory() {
     );
     return;
   }
-
+  const logDirectory = path.dirname(logFilePath);
   shell.openPath(logDirectory);
 }
