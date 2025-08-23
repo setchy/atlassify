@@ -16,7 +16,7 @@ const PRODUCT_DETAILS: Record<ProductType, FilterDetails> = Object.fromEntries(
       type,
       {
         name: product.display,
-        description: i18n.t('filters.category.products.description', {
+        description: i18n.t('filters.products.description', {
           type: product.display,
         }),
         logo: product.logo,
