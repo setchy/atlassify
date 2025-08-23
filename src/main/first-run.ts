@@ -41,9 +41,9 @@ const getConfigPath = () => {
 
 /**
  * Determine if this is the first run of the application by checking for the existence of a specific file.
- * @returns {boolean} true if this is the first run, false otherwise
+ * @returns true if this is the first run, false otherwise
  */
-function isFirstRun() {
+function isFirstRun(): boolean {
   const configPath = getConfigPath();
 
   try {
