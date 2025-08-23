@@ -8,18 +8,19 @@ import { PRODUCTS } from '../../products/catalog';
 import type { AtlassianProduct, ProductType } from '../../products/types';
 import type { Filter, FilterDetails } from './types';
 
-// Derive filter details directly from the single PRODUCTS catalog source.
 const PRODUCT_DETAILS: Record<ProductType, FilterDetails> = Object.fromEntries(
   (Object.keys(PRODUCTS) as ProductType[]).map((type) => {
-    const product: AtlassianProduct = PRODUCTS[type];
+    const p: AtlassianProduct = PRODUCTS[type];
+    const name = p.display;
+    const description = i18n.t('filters.products.description', {
+      type: p.display,
+    });
     return [
       type,
       {
-        name: product.display,
-        description: i18n.t('filters.products.description', {
-          type: product.display,
-        }),
-        logo: product.logo,
+        name,
+        description,
+        logo: p.logo,
       } as FilterDetails,
     ];
   }),
