@@ -21,7 +21,7 @@ export function logWarn(
 export function logError(
   type: string,
   message: string,
-  err?: Error,
+  err: Error,
   contexts: string[] = [],
 ) {
   logMessage(log.error, type, message, err, contexts);
@@ -41,7 +41,9 @@ function logMessage(
     args.push(`[${combined}]`);
   }
 
-  if (err) args.push(err);
+  if (err) {
+    args.push(err);
+  }
 
   logFunction(...args);
 }

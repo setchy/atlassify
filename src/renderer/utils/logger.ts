@@ -22,7 +22,7 @@ export function rendererLogWarn(
 export function rendererLogError(
   type: string,
   message: string,
-  err?: Error,
+  err: Error,
   notification?: AtlassifyNotification,
 ) {
   logError(type, message, err, buildContexts(notification));
