@@ -1,7 +1,5 @@
-const { Configuration } = require('electron-builder');
-
 /**
- * @type {Configuration}
+ * @type {import('electron-builder').Configuration}
  */
 const config = {
   productName: 'Atlassify',
