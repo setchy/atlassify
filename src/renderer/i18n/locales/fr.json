@@ -74,6 +74,7 @@
       }
     },
     "products": {
+      "description": "{{type}} Notifications",
       "title": "Produits"
     },
     "read_state": {

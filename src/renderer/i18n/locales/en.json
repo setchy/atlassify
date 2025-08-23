@@ -75,7 +75,8 @@
       }
     },
     "products": {
-      "title": "Products"
+      "title": "Products",
+      "description": "{{type}} notifications"
     },
     "read_state": {
       "title": "Read State",
