@@ -11,6 +11,7 @@ import {
 } from '@atlaskit/logo';
 
 import { logError } from '../../shared/logger';
+
 import type {
   Account,
   AtlassianProduct,
@@ -163,7 +164,7 @@ async function lookupJiraProjectType(
       case 'service_desk':
         return PRODUCTS['jira service management'];
       default:
-        return PRODUCTS['jira'];
+        return PRODUCTS.jira;
     }
   } catch (error) {
     logError(
@@ -171,7 +172,7 @@ async function lookupJiraProjectType(
       'Error fetching Jira project type:',
       error,
     );
-    return PRODUCTS['jira'];
+    return PRODUCTS.jira;
   }
 }
 

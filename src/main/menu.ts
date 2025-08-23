@@ -3,7 +3,8 @@ import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
-import { isMacOS, isWindows } from './process';
+import { isMacOS, isWindows } from '../shared/platform';
+
 import { openLogsDirectory, resetApp, takeScreenshot } from './utils';
 
 export default class MenuBuilder {

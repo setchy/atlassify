@@ -7,6 +7,7 @@ import InlineMessage from '@atlaskit/inline-message';
 import { Inline, Stack } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
+
 import { AppContext } from '../../context/App';
 
 export const NotificationSettings: FC = () => {

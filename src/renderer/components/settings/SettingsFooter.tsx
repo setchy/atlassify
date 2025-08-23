@@ -10,6 +10,7 @@ import { Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
+
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
 import { Footer } from '../primitives/Footer';
