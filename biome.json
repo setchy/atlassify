@@ -17,6 +17,8 @@
               ":BLANK_LINE:",
               ":PACKAGE:",
               ":BLANK_LINE:",
+              "**/shared/**",
+              ":BLANK_LINE:",
               "**"
             ]
           }

@@ -8,6 +8,7 @@ import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
+
 import { sendRendererEvent } from './events';
 
 export function takeScreenshot(mb: Menubar) {

@@ -1,32 +1,34 @@
 import { contextBridge, webFrame } from 'electron';
 
-import { isLinux, isMacOS, isWindows } from '../main/process';
 import { APPLICATION } from '../shared/constants';
+import { EVENTS } from '../shared/events';
 import { logError } from '../shared/logger';
+import { isLinux, isMacOS, isWindows } from '../shared/platform';
+
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
 export const api = {
   openExternalLink: (url: string, openInForeground: boolean) => {
-    sendMainEvent('atlassify:open-external', {
+    sendMainEvent(EVENTS.OPEN_EXTERNAL, {
       url: url,
       activate: openInForeground,
     });
   },
 
   encryptValue: (value: string) =>
-    invokeMainEvent('atlassify:safe-storage-encrypt', value),
+    invokeMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, value),
 
   decryptValue: (value: string) =>
-    invokeMainEvent('atlassify:safe-storage-decrypt', value),
+    invokeMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, value),
 
   setAutoLaunch: (value: boolean) =>
-    sendMainEvent('atlassify:update-auto-launch', {
+    sendMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, {
       openAtLogin: value,
       openAsHidden: value,
     }),
 
   setKeyboardShortcut: (keyboardShortcut: boolean) => {
-    sendMainEvent('atlassify:update-keyboard-shortcut', {
+    sendMainEvent(EVENTS.UPDATE_KEYBOARD_SHORTCUT, {
       enabled: keyboardShortcut,
       keyboardShortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
     });
@@ -35,28 +37,27 @@ export const api = {
   tray: {
     updateIcon: (notificationsLength = 0) => {
       if (notificationsLength < 0) {
-        sendMainEvent('atlassify:icon-error');
+        sendMainEvent(EVENTS.ICON_ERROR);
         return;
       }
 
       if (notificationsLength > 0) {
-        sendMainEvent('atlassify:icon-active');
+        sendMainEvent(EVENTS.ICON_ACTIVE);
         return;
       }
 
-      sendMainEvent('atlassify:icon-idle');
+      sendMainEvent(EVENTS.ICON_IDLE);
     },
 
-    updateTitle: (title = '') => sendMainEvent('atlassify:update-title', title),
+    updateTitle: (title = '') => sendMainEvent(EVENTS.UPDATE_TITLE, title),
 
     useAlternateIdleIcon: (value: boolean) =>
-      sendMainEvent('atlassify:use-alternate-idle-icon', value),
+      sendMainEvent(EVENTS.USE_ALTERNATE_IDLE_ICON, value),
   },
 
-  notificationSoundPath: () =>
-    invokeMainEvent('atlassify:notification-sound-path'),
+  notificationSoundPath: () => invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH),
 
-  twemojiDirectory: () => invokeMainEvent('atlassify:twemoji-directory'),
+  twemojiDirectory: () => invokeMainEvent(EVENTS.TWEMOJI_DIRECTORY),
 
   platform: {
     isLinux: () => isLinux(),
@@ -67,18 +68,18 @@ export const api = {
   },
 
   app: {
-    hide: () => sendMainEvent('atlassify:window-hide'),
+    hide: () => sendMainEvent(EVENTS.WINDOW_HIDE),
 
-    show: () => sendMainEvent('atlassify:window-show'),
+    show: () => sendMainEvent(EVENTS.WINDOW_SHOW),
 
-    quit: () => sendMainEvent('atlassify:quit'),
+    quit: () => sendMainEvent(EVENTS.QUIT),
 
     version: async () => {
       if (process.env.NODE_ENV === 'development') {
         return 'dev';
       }
 
-      const version = await invokeMainEvent('atlassify:version');
+      const version = await invokeMainEvent(EVENTS.VERSION);
 
       return `v${version}`;
     },
@@ -91,19 +92,15 @@ export const api = {
   },
 
   onResetApp: (callback: () => void) => {
-    onRendererEvent('atlassify:reset-app', () => callback());
+    onRendererEvent(EVENTS.RESET_APP, () => callback());
   },
 
   onSystemThemeUpdate: (callback: (theme: string) => void) => {
-    onRendererEvent('atlassify:update-theme', (_, theme) => callback(theme));
+    onRendererEvent(EVENTS.UPDATE_THEME, (_, theme) => callback(theme));
   },
 
   raiseNativeNotification: (title: string, body: string, url?: string) => {
-    const notification = new Notification(title, {
-      body,
-      silent: true,
-    });
-
+    const notification = new Notification(title, { body: body, silent: true });
     notification.onclick = () => {
       if (url) {
         api.app.hide();

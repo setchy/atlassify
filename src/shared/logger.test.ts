@@ -1,9 +1,8 @@
 import log from 'electron-log';
 
-import { mockSingleAtlassifyNotification } from '../renderer/__mocks__/notifications-mocks';
 import { logError, logInfo, logWarn } from './logger';
 
-describe('renderer/utils/logger.ts', () => {
+describe('shared/logger.ts', () => {
   const logInfoSpy = jest.spyOn(log, 'info').mockImplementation();
   const logWarnSpy = jest.spyOn(log, 'warn').mockImplementation();
   const logErrorSpy = jest.spyOn(log, 'error').mockImplementation();
@@ -17,61 +16,70 @@ describe('renderer/utils/logger.ts', () => {
   });
 
   describe('logInfo', () => {
-    it('log info without notification', () => {
+    it('logs info without contexts', () => {
       logInfo('foo', 'bar');
-
       expect(logInfoSpy).toHaveBeenCalledTimes(1);
       expect(logInfoSpy).toHaveBeenCalledWith('[foo]', 'bar');
     });
 
-    it('log info with notification', () => {
-      logInfo('foo', 'bar', mockSingleAtlassifyNotification);
-
+    it('logs info with single context', () => {
+      logInfo('foo', 'bar', ['ctx']);
       expect(logInfoSpy).toHaveBeenCalledTimes(1);
-      expect(logInfoSpy).toHaveBeenCalledWith(
-        '[foo]',
-        'bar',
-        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
-      );
+      expect(logInfoSpy).toHaveBeenCalledWith('[foo]', 'bar', '[ctx]');
+    });
+
+    it('logs info with multiple contexts', () => {
+      logInfo('foo', 'bar', ['ctx1', 'ctx2']);
+      expect(logInfoSpy).toHaveBeenCalledTimes(1);
+      expect(logInfoSpy).toHaveBeenCalledWith('[foo]', 'bar', '[ctx1 >> ctx2]');
     });
   });
 
   describe('logWarn', () => {
-    it('log warn without notification', () => {
+    it('logs warn without contexts', () => {
       logWarn('foo', 'bar');
-
       expect(logWarnSpy).toHaveBeenCalledTimes(1);
       expect(logWarnSpy).toHaveBeenCalledWith('[foo]', 'bar');
     });
 
-    it('log warn with notification', () => {
-      logWarn('foo', 'bar', mockSingleAtlassifyNotification);
-
+    it('logs warn with single context', () => {
+      logWarn('foo', 'bar', ['ctx']);
       expect(logWarnSpy).toHaveBeenCalledTimes(1);
-      expect(logWarnSpy).toHaveBeenCalledWith(
-        '[foo]',
-        'bar',
-        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
-      );
+      expect(logWarnSpy).toHaveBeenCalledWith('[foo]', 'bar', '[ctx]');
+    });
+
+    it('logs warn with multiple contexts', () => {
+      logWarn('foo', 'bar', ['ctx1', 'ctx2']);
+      expect(logWarnSpy).toHaveBeenCalledTimes(1);
+      expect(logWarnSpy).toHaveBeenCalledWith('[foo]', 'bar', '[ctx1 >> ctx2]');
     });
   });
 
   describe('logError', () => {
-    it('log error without notification', () => {
+    it('logs error without contexts', () => {
       logError('foo', 'bar', mockError);
-
       expect(logErrorSpy).toHaveBeenCalledTimes(1);
       expect(logErrorSpy).toHaveBeenCalledWith('[foo]', 'bar', mockError);
     });
 
-    it('log error with notification', () => {
-      logError('foo', 'bar', mockError, mockSingleAtlassifyNotification);
-
+    it('logs error with single context', () => {
+      logError('foo', 'bar', mockError, ['ctx']);
       expect(logErrorSpy).toHaveBeenCalledTimes(1);
       expect(logErrorSpy).toHaveBeenCalledWith(
         '[foo]',
         'bar',
-        '[#103: chore(deps): update dependency eslint >> #103: chore(deps): update dependency eslint]',
+        '[ctx]',
+        mockError,
+      );
+    });
+
+    it('logs error with multiple contexts', () => {
+      logError('foo', 'bar', mockError, ['ctx1', 'ctx2']);
+      expect(logErrorSpy).toHaveBeenCalledTimes(1);
+      expect(logErrorSpy).toHaveBeenCalledWith(
+        '[foo]',
+        'bar',
+        '[ctx1 >> ctx2]',
         mockError,
       );
     });

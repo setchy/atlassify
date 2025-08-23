@@ -12,16 +12,19 @@ import log from 'electron-log';
 import { menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
-import type {
-  IAutoLaunch,
-  IKeyboardShortcut,
-  IOpenExternal,
+import {
+  EVENTS,
+  type IAutoLaunch,
+  type IKeyboardShortcut,
+  type IOpenExternal,
 } from '../shared/events';
+import { isMacOS, isWindows } from '../shared/platform';
+import { Theme } from '../shared/theme';
+
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
-import { isMacOS, isWindows } from './process';
 import Updater from './updater';
 
 log.initialize();
@@ -115,48 +118,45 @@ app.whenReady().then(async () => {
 
   nativeTheme.on('updated', () => {
     if (nativeTheme.shouldUseDarkColors) {
-      sendRendererEvent(mb, 'atlassify:update-theme', 'DARK');
+      sendRendererEvent(mb, EVENTS.UPDATE_THEME, Theme.DARK);
     } else {
-      sendRendererEvent(mb, 'atlassify:update-theme', 'LIGHT');
+      sendRendererEvent(mb, EVENTS.UPDATE_THEME, Theme.LIGHT);
     }
   });
 
   /**
    * Atlassify custom IPC events - no response expected
    */
+  onMainEvent(EVENTS.WINDOW_SHOW, () => mb.showWindow());
 
-  onMainEvent('atlassify:window-show', () => mb.showWindow());
+  onMainEvent(EVENTS.WINDOW_HIDE, () => mb.hideWindow());
 
-  onMainEvent('atlassify:window-hide', () => mb.hideWindow());
+  onMainEvent(EVENTS.QUIT, () => mb.app.quit());
 
-  onMainEvent('atlassify:quit', () => mb.app.quit());
-
-  onMainEvent(
-    'atlassify:open-external',
-    (_, { url, activate }: IOpenExternal) =>
-      shell.openExternal(url, { activate: activate }),
+  onMainEvent(EVENTS.OPEN_EXTERNAL, (_, { url, activate }: IOpenExternal) =>
+    shell.openExternal(url, { activate: activate }),
   );
 
   onMainEvent(
-    'atlassify:use-alternate-idle-icon',
+    EVENTS.USE_ALTERNATE_IDLE_ICON,
     (_, useAlternateIdleIcon: boolean) => {
       shouldUseAlternateIdleIcon = useAlternateIdleIcon;
     },
   );
 
-  onMainEvent('atlassify:icon-error', () => {
+  onMainEvent(EVENTS.ICON_ERROR, () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.error);
     }
   });
 
-  onMainEvent('atlassify:icon-active', () => {
+  onMainEvent(EVENTS.ICON_ACTIVE, () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.active);
     }
   });
 
-  onMainEvent('atlassify:icon-idle', () => {
+  onMainEvent(EVENTS.ICON_IDLE, () => {
     if (!mb.tray.isDestroyed()) {
       if (shouldUseAlternateIdleIcon) {
         mb.tray.setImage(TrayIcons.idleAlternate);
@@ -166,14 +166,14 @@ app.whenReady().then(async () => {
     }
   });
 
-  onMainEvent('atlassify:update-title', (_, title: string) => {
+  onMainEvent(EVENTS.UPDATE_TITLE, (_, title: string) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);
     }
   });
 
   onMainEvent(
-    'atlassify:update-keyboard-shortcut',
+    EVENTS.UPDATE_KEYBOARD_SHORTCUT,
     (_, { enabled, keyboardShortcut }: IKeyboardShortcut) => {
       if (!enabled) {
         globalShortcut.unregister(keyboardShortcut);
@@ -190,7 +190,7 @@ app.whenReady().then(async () => {
     },
   );
 
-  onMainEvent('atlassify:update-auto-launch', (_, settings: IAutoLaunch) => {
+  onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings: IAutoLaunch) => {
     app.setLoginItemSettings(settings);
   });
 
@@ -198,21 +198,21 @@ app.whenReady().then(async () => {
    * Atlassify custom IPC events - response expected
    */
 
-  handleMainEvent('atlassify:version', () => app.getVersion());
+  handleMainEvent(EVENTS.VERSION, () => app.getVersion());
 
-  handleMainEvent('atlassify:notification-sound-path', () => {
+  handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
     return notificationSoundFilePath;
   });
 
-  handleMainEvent('atlassify:twemoji-directory', () => {
+  handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
     return twemojiDirPath;
   });
 
-  handleMainEvent('atlassify:safe-storage-encrypt', (_, value: string) => {
+  handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
     return safeStorage.encryptString(value).toString('base64');
   });
 
-  handleMainEvent('atlassify:safe-storage-decrypt', (_, value: string) => {
+  handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
     return safeStorage.decryptString(Buffer.from(value, 'base64'));
   });
 });

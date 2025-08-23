@@ -14,6 +14,7 @@ import type { OptionsPropType } from '@atlaskit/radio/types';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
+
 import { AppContext, defaultSettings } from '../../context/App';
 import { OpenPreference } from '../../types';
 
