@@ -1,11 +1,10 @@
-import { JiraLogo } from '@atlaskit/logo';
-
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
@@ -44,10 +43,7 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
   it('filterNotificationByProduct', () => {
     const mockNotification = {
       ...mockSingleAtlassifyNotification,
-      product: {
-        name: 'jira',
-        logo: JiraLogo,
-      },
+      product: PRODUCTS.jira,
     } as AtlassifyNotification;
 
     expect(

@@ -1,72 +1,23 @@
-import {
-  AtlassianIcon,
-  BitbucketIcon,
-  CompassIcon,
-  ConfluenceIcon,
-  HomeIcon,
-  JiraIcon,
-  JiraProductDiscoveryIcon,
-  JiraServiceManagementIcon,
-  TeamsIcon,
-} from '@atlaskit/logo';
-
-import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
   ProductName,
   SettingsState,
 } from '../../../types';
+import { PRODUCTS } from '../../products';
 import type { Filter, FilterDetails } from './types';
 
-// TODO remove duplication between this and utils/products PRODUCTS
-export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
-  bitbucket: {
-    name: 'bitbucket',
-    description: 'Bitbucket',
-    logo: BitbucketIcon,
-  },
-  compass: {
-    name: 'compass',
-    description: 'Compass',
-    logo: CompassIcon,
-  },
-  confluence: {
-    name: 'confluence',
-    description: 'Confluence',
-    logo: ConfluenceIcon,
-  },
-  home: {
-    name: 'home',
-    description: 'Atlassian Home',
-    logo: HomeIcon,
-  },
-  jira: {
-    name: 'jira',
-    description: 'Jira',
-    logo: JiraIcon,
-  },
-  'jira product discovery': {
-    name: 'jira product discovery',
-    description: 'Jira Product Discovery',
-    logo: JiraProductDiscoveryIcon,
-  },
-  'jira service management': {
-    name: 'jira service management',
-    description: 'Jira Service Management',
-    logo: JiraServiceManagementIcon,
-  },
-  teams: {
-    name: 'teams',
-    description: 'Atlassian Teams',
-    logo: TeamsIcon,
-  },
-  unknown: {
-    name: 'unknown',
-    description: i18n.t('filters.products.unknown'),
-    logo: AtlassianIcon,
-  },
-};
+export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> =
+  Object.fromEntries(
+    Object.entries(PRODUCTS).map(([name, details]) => [
+      name,
+      {
+        name,
+        description: details.display,
+        logo: details.logo,
+      } as FilterDetails,
+    ]),
+  ) as Record<ProductName, FilterDetails>;
 
 export const productFilter: Filter<ProductName> = {
   FILTER_TYPES: PRODUCT_DETAILS,

@@ -15,6 +15,7 @@ import {
   formatNotificationUpdatedAt,
   getChevronDetails,
 } from './helpers';
+import { PRODUCTS } from './products';
 
 describe('renderer/utils/helpers.ts', () => {
   it('getRepositoryName', () => {
@@ -42,9 +43,7 @@ describe('renderer/utils/helpers.ts', () => {
           expect(
             formatNotificationFooterText({
               ...mockAtlassifyNotifications[1],
-              product: {
-                name: 'home',
-              },
+              product: PRODUCTS.home,
               path: {
                 title: 'Atlassian Home • Pending',
                 iconUrl: null,
@@ -58,9 +57,7 @@ describe('renderer/utils/helpers.ts', () => {
           expect(
             formatNotificationFooterText({
               ...mockAtlassifyNotifications[1],
-              product: {
-                name: 'home',
-              },
+              product: PRODUCTS.home,
               path: {
                 title: 'Goals • On track',
                 iconUrl: null,
@@ -74,9 +71,7 @@ describe('renderer/utils/helpers.ts', () => {
           expect(
             formatNotificationFooterText({
               ...mockAtlassifyNotifications[1],
-              product: {
-                name: 'home',
-              },
+              product: PRODUCTS.home,
               path: {
                 title: 'Atlassian Home',
                 iconUrl: null,

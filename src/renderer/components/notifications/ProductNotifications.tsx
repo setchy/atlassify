@@ -9,7 +9,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
-import { formatProperCase, getChevronDetails } from '../../utils/helpers';
+import { getChevronDetails } from '../../utils/helpers';
 import { getProductDetails } from '../../utils/products';
 import { isLightMode } from '../../utils/theme';
 import { UnreadIcon } from '../icons/UnreadIcon';
