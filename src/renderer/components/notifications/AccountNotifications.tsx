@@ -75,10 +75,6 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   const groupedNotifications = Object.values(
     notifications?.reduce(
       (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
-        if (!notification.product) {
-          console.error('ADAM no product type ', JSON.stringify(notification));
-        }
-
         const key = notification.product.type;
         if (!acc[key]) acc[key] = [];
         acc[key].push(notification);
