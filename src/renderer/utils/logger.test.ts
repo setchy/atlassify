@@ -1,9 +1,9 @@
 import log from 'electron-log';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { rendererLogError, rendererLogInfo, rendererLogWarn } from '../logger';
+import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
-describe('renderer/logger.ts', () => {
+describe('renderer/utils/logger.ts', () => {
   const logInfoSpy = jest.spyOn(log, 'info').mockImplementation();
   const logWarnSpy = jest.spyOn(log, 'warn').mockImplementation();
   const logErrorSpy = jest.spyOn(log, 'error').mockImplementation();
