@@ -80,5 +80,16 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
 
       expect(inferNotificationActor(mockNotification)).toBe('automation');
     });
+
+    it('should infer automation actor', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        actor: {
+          displayName: null,
+        },
+      } as AtlassifyNotification;
+
+      expect(inferNotificationActor(mockNotification)).toBe('automation');
+    });
   });
 });

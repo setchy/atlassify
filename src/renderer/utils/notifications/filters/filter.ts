@@ -1,5 +1,6 @@
 import type { AtlassifyNotification, SettingsState } from '../../../types';
 import {
+  actorFilter,
   categoryFilter,
   productFilter,
   readStateFilter,
@@ -29,6 +30,14 @@ export function filterNotifications(
         );
     }
 
+    if (actorFilter.hasFilters(settings)) {
+      passesFilters =
+        passesFilters &&
+        settings.filterActors.some((c) =>
+          actorFilter.filterNotification(notification, c),
+        );
+    }
+
     if (readStateFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
@@ -49,10 +58,11 @@ export function filterNotifications(
   });
 }
 
-export function hasAnyFiltersSet(settings: SettingsState): boolean {
+export function hasActiveFilters(settings: SettingsState): boolean {
   return (
     timeSensitiveFilter.hasFilters(settings) ||
     categoryFilter.hasFilters(settings) ||
+    actorFilter.hasFilters(settings) ||
     readStateFilter.hasFilters(settings) ||
     productFilter.hasFilters(settings)
   );

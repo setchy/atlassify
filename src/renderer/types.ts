@@ -1,18 +1,17 @@
-import type { NewCoreIconProps } from '@atlaskit/icon';
-import type { LogoProps } from '@atlaskit/logo';
+import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
+import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
+import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 
-import { Theme } from '../shared/theme';
+import type { Theme } from '../shared/theme';
 
 import type { Language } from './i18n/types';
+import type { AtlassianProduct, ProductType } from './utils/products/types';
 
 declare const __brand: unique symbol;
 
 type Brand<B> = { [__brand]: B };
 
 export type Branded<T, B> = T & Brand<B>;
-
-// Re-export Theme so existing imports from '../types' continue to work after moving enum to shared.
-export { Theme };
 
 /**
  * A username for an Atlassian account.
@@ -100,7 +99,7 @@ export type SettingsValue =
 export type FilterValue =
   | ActorType
   | CategoryType
-  | ProductName
+  | ProductType
   | ReadStateType
   | TimeSensitiveType;
 
@@ -234,7 +233,7 @@ export interface FilterSettingsState {
   /**
    * The products to filter notifications by.
    */
-  filterProducts: ProductName[];
+  filterProducts: ProductType[];
 
   /**
    * The notification actors / authors .
@@ -437,54 +436,16 @@ export type ErrorType =
   | 'UNKNOWN';
 
 /**
- * Details for a specific Atlassian product.
- */
-export interface AtlassianProduct {
-  /**
-   * The name of the product.
-   */
-  name: ProductName;
-
-  /**
-   * The display name of the product.
-   */
-  display: string;
-
-  /**
-   * The logo of the product.
-   * @see {@link https://atlassian.design/components/logo/examples} for available logos.
-   */
-  logo?: React.ComponentType<LogoProps>;
-
-  /**
-   * The URL to the product's home page.
-   */
-  home?: Link;
-}
-
-/**
- * Atlassian products which are currently supported by Atlassify.
- */
-export type ProductName =
-  | 'bitbucket'
-  | 'confluence'
-  | 'compass'
-  | 'home'
-  | 'jira'
-  | 'jira product discovery'
-  | 'jira service management'
-  | 'teams'
-  | 'unknown';
-
-/**
  * Details for Chevron header accordion.
  */
 export type Chevron = {
   /**
    * The chevron icon.
-   * @see {@link https://atlassian.design/components/icon/examples} for available icons.
    */
-  icon: React.ComponentType<NewCoreIconProps>;
+  icon:
+    | typeof ChevronLeftIcon
+    | typeof ChevronRightIcon
+    | typeof ChevronDownIcon;
 
   /**
    * The chevron label.
@@ -523,12 +484,3 @@ export type TimeSensitiveType = 'mention' | 'comment';
  * - 'automation' - An automation actor created the notification.
  */
 export type ActorType = 'user' | 'automation';
-
-/**
- * Jira project types
- *
- * - 'software' - A software development project.
- * - 'service_desk' - A service desk project.
- * - 'product_discovery' - A product discovery project.
- */
-export type JiraProjectType = 'software' | 'service_desk' | 'product_discovery';

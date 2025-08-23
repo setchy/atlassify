@@ -10,12 +10,11 @@ import { AppContext } from '../../context/App';
 import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
-import { getProductDetails } from '../../utils/products';
 import { isLightMode } from '../../utils/theme';
 import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 
-interface IProductNotifications {
+export interface IProductNotifications {
   productNotifications: AtlassifyNotification[];
 }
 
@@ -31,7 +30,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
 
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
-  const productDetails = getProductDetails(productNotification.name);
 
   const toggleProductNotifications = () => {
     setShowProductNotifications(!showProductNotifications);
@@ -66,9 +64,9 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip
             content={
-              productDetails.home
+              productNotification.home
                 ? t('notifications.product.open_product', {
-                    name: productDetails.display,
+                    name: productNotification.display,
                   })
                 : ''
             }
@@ -77,10 +75,10 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             <Button
               appearance="subtle"
               onClick={(event: MouseEvent<HTMLElement>) => {
-                if (productDetails.home) {
+                if (productNotification.home) {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  openExternalLink(productDetails.home);
+                  openExternalLink(productNotification.home);
                 }
               }}
               testId="product-home"
@@ -91,8 +89,8 @@ export const ProductNotifications: FC<IProductNotifications> = ({
                   shouldUseNewLogoDesign
                   size="xxsmall"
                 />
-                <span className="capitalize font-medium">
-                  {productNotification.name}
+                <span className="font-medium">
+                  {productNotification.display}
                 </span>
                 <Badge max={false}>{productNotifications.length}</Badge>
               </Inline>{' '}

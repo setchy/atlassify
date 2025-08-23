@@ -5,7 +5,7 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
-import type { Hostname } from '../../types';
+import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
@@ -245,8 +245,8 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {
-    const mockProjectKeys = ['PROJ-1', 'PROJ-2'];
-    const mockCloudID = 'mock-cloud-id';
+    const mockProjectKeys = ['PROJ-1', 'PROJ-2'] as JiraProjectKey[];
+    const mockCloudID = 'mock-cloud-id' as CloudID;
     await getJiraProjectTypesByKeys(
       mockAtlassianCloudAccount,
       mockCloudID,
@@ -269,21 +269,21 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
-    const mockProjectKeys = 'PROJ-1';
-    const mockCloudID = 'mock-cloud-id';
+    const mockProjectKey = 'PROJ' as JiraProjectKey;
+    const mockCloudID = 'mock-cloud-id' as CloudID;
     (axios as jest.MockedFunction<typeof axios>).mockResolvedValueOnce({
-      data: { fields: { project: { projectTypeKey: 'service_desk' } } },
+      data: { projectTypeKey: 'service_desk' },
     });
     const result = await getJiraProjectTypeByKey(
       mockAtlassianCloudAccount,
       mockCloudID,
-      mockProjectKeys,
+      mockProjectKey,
     );
 
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
         method: 'GET',
-        url: `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/issue/${mockProjectKeys}?fields=project`,
+        url: `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/project/${mockProjectKey}`,
       }),
     );
     expect(result).toBe('service_desk');

@@ -1,28 +1,27 @@
 import type {
   AccountNotifications,
   AtlassifyNotification,
-  ProductName,
   SettingsState,
 } from '../../../types';
-import { PRODUCTS } from '../../products';
+import { PRODUCTS } from '../../products/catalog';
+import type { ProductType } from '../../products/types';
 import type { Filter, FilterDetails } from './types';
 
-export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> =
-  Object.fromEntries(
-    Object.entries(PRODUCTS).map(([name, details]) => [
-      name,
-      {
-        name,
-        description: details.display,
-        logo: details.logo,
-      } as FilterDetails,
-    ]),
-  ) as Record<ProductName, FilterDetails>;
+const PRODUCT_DETAILS: Record<ProductType, FilterDetails> = Object.fromEntries(
+  Object.entries(PRODUCTS).map(([name, details]) => [
+    name,
+    {
+      name: details.display,
+      description: details.display,
+      logo: details.logo as FilterDetails['logo'],
+    } as FilterDetails,
+  ]),
+) as Record<ProductType, FilterDetails>;
 
-export const productFilter: Filter<ProductName> = {
+export const productFilter: Filter<ProductType> = {
   FILTER_TYPES: PRODUCT_DETAILS,
 
-  getTypeDetails(type: ProductName) {
+  getTypeDetails(type: ProductType) {
     return this.FILTER_TYPES[type];
   },
 
@@ -30,11 +29,11 @@ export const productFilter: Filter<ProductName> = {
     return settings.filterProducts.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, product: ProductName): boolean {
+  isFilterSet(settings: SettingsState, product: ProductType): boolean {
     return settings.filterProducts.includes(product);
   },
 
-  getFilterCount(notifications: AccountNotifications[], product: ProductName) {
+  getFilterCount(notifications: AccountNotifications[], product: ProductType) {
     return notifications.reduce(
       (memo, acc) =>
         memo +
@@ -46,8 +45,8 @@ export const productFilter: Filter<ProductName> = {
 
   filterNotification(
     notification: AtlassifyNotification,
-    product: ProductName,
+    product: ProductType,
   ): boolean {
-    return notification.product.name === product;
+    return notification.product.type === product;
   },
 };

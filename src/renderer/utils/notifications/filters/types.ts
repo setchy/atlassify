@@ -23,7 +23,8 @@ export interface FilterDetails {
 
   /**
    * The icon for the filter.
-   * @see {@link https://atlassian.design/components/icon/icon-explorer} for available icons.
+   *
+   * See https://atlassian.design/components/icon/icon-explorer for available icons.
    */
   icon?:
     | React.ComponentType<NewUtilityIconProps>
@@ -31,13 +32,15 @@ export interface FilterDetails {
 
   /**
    * The logo for the filter.
-   * @see {@link https://atlassian.design/components/logo/examples} for available logos.
+   *
+   * See https://atlassian.design/components/logo/examples for available logos.
    */
   logo?: React.ComponentType<LogoProps>;
 
   /**
    * The heroicon for the filter.
-   * @see {@link https://heroicons.com/} for available heroicons.
+   *
+   * See https://heroicons.com/ for available heroicons.
    */
   heroicon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }

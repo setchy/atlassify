@@ -25,7 +25,7 @@ export function extractRepositoryName(
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
 ): string {
-  switch (notification.product.name) {
+  switch (notification.product.type) {
     case 'bitbucket':
       return extractRepositoryName(notification);
     case 'home': {
@@ -47,7 +47,7 @@ export function formatNotificationFooterText(
     return notification.path.title;
   }
 
-  return formatProperCase(notification.product.name);
+  return formatProperCase(notification.product.type);
 }
 
 function extractGoalOrProjectKey(

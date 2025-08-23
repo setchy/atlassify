@@ -25,7 +25,6 @@ import {
   type SettingsValue,
   type Status,
   type SystemSettingsState,
-  Theme,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 import {
@@ -48,6 +47,7 @@ import {
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { zoomPercentageToLevel } from '../utils/zoom';
+import { Theme } from '../../shared/theme';
 
 export const defaultAuth: AuthState = {
   accounts: [],

@@ -21,7 +21,7 @@ import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
-import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
+import { hasActiveFilters } from '../utils/notifications/filters/filter';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
@@ -69,8 +69,6 @@ export const Sidebar: FC = () => {
   const hasMoreNotifications = useMemo(() => {
     return notifications.some((n) => n.hasMoreNotifications);
   }, [notifications]);
-
-  const hasFilters = hasAnyFiltersSet(settings);
 
   const theme = useThemeObserver();
   const sidebarIconColorToken =
@@ -204,7 +202,9 @@ export const Sidebar: FC = () => {
                   position="right"
                 >
                   <IconButton
-                    appearance={hasFilters ? 'discovery' : 'subtle'}
+                    appearance={
+                      hasActiveFilters(settings) ? 'discovery' : 'subtle'
+                    }
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}

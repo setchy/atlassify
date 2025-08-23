@@ -59,7 +59,13 @@ export const actorFilter: Filter<ActorType> = {
 export function inferNotificationActor(
   notification: AtlassifyNotification,
 ): ActorType {
-  return notification.actor.displayName.startsWith('Automation for')
-    ? 'automation'
-    : 'user';
+  if (!notification.actor.displayName) {
+    return 'automation';
+  }
+
+  if (notification.actor.displayName?.startsWith('Automation for')) {
+    return 'automation';
+  }
+
+  return 'user';
 }

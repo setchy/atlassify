@@ -1,7 +1,8 @@
 import type {
   Account,
+  CloudID,
   Hostname,
-  JiraProjectType,
+  JiraProjectKey,
   SettingsState,
   Token,
   Username,
@@ -28,6 +29,7 @@ import {
 import type {
   AtlassianGraphQLResponse,
   JiraProjectRestResponse,
+  JiraProjectType,
 } from './types';
 
 /**
@@ -242,8 +244,8 @@ export function getNotificationsByGroupId(
  */
 export function getJiraProjectTypesByKeys(
   account: Account,
-  cloudId: string,
-  keys: string[],
+  cloudId: CloudID,
+  keys: JiraProjectKey[],
 ): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
   const JiraProjectTypesByKeysDocument = graphql(`
     query RetrieveJiraProjectTypes(
@@ -301,23 +303,23 @@ export function getCloudIDsForHostnames(
 }
 
 /**
- * Get Jira Project Types by Issue Keys (via Jira Cloud REST API)
+ * Get Jira Project Type by Project Key (via Jira Cloud REST API)
  *
- * Endpoint documentation: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-issueidorkey-get
+ * Endpoint documentation: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/#api-rest-api-3-project-projectidorkey-get
  */
 export async function getJiraProjectTypeByKey(
   account: Account,
-  cloudId: string,
-  issueKey: string,
+  cloudId: CloudID,
+  projectKey: JiraProjectKey,
 ): Promise<JiraProjectType> {
-  const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/issue/${issueKey}?fields=project`;
+  const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/project/${projectKey}`;
 
   const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
     account,
     url,
   );
 
-  return response?.fields?.project?.projectTypeKey as JiraProjectType;
+  return response?.projectTypeKey;
 }
 
 /**

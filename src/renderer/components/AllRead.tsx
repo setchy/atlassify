@@ -3,14 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../context/App';
 import { Constants } from '../utils/constants';
-import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
+import { hasActiveFilters } from '../utils/notifications/filters/filter';
 import { EmojiSplash } from './layout/EmojiSplash';
 
 export const AllRead: FC = () => {
   const { settings } = useContext(AppContext);
   const { t } = useTranslation();
-
-  const hasFilters = hasAnyFiltersSet(settings);
 
   const emoji = useMemo(
     () =>
@@ -20,7 +18,7 @@ export const AllRead: FC = () => {
     [],
   );
 
-  const heading = hasFilters
+  const heading = hasActiveFilters(settings)
     ? t('allRead.headingFiltered')
     : t('allRead.heading');
 

@@ -25,7 +25,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
     },
     path: null,
     product: {
-      name: 'bitbucket',
+      type: 'bitbucket',
       display: 'Bitbucket',
       logo: BitbucketIcon,
     },
@@ -67,7 +67,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
       url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify' as Link,
     },
     product: {
-      name: 'confluence',
+      type: 'confluence',
       display: 'Confluence',
       logo: ConfluenceIcon,
     },
