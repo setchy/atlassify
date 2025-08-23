@@ -22,7 +22,10 @@ const getZoomLevel = jest.fn(() => 1);
 const setZoomLevel = jest.fn((_level: number) => undefined);
 
 jest.mock('electron', () => ({
-  contextBridge: { exposeInMainWorld: (key: string, value: unknown) => exposeInMainWorld(key, value) },
+  contextBridge: {
+    exposeInMainWorld: (key: string, value: unknown) =>
+      exposeInMainWorld(key, value),
+  },
   webFrame: {
     getZoomLevel: () => getZoomLevel(),
     setZoomLevel: (level: number) => setZoomLevel(level),
@@ -33,7 +36,10 @@ jest.mock('electron', () => ({
 class MockNotification {
   static instances: MockNotification[] = [];
   public onclick: (() => void) | null = null;
-  constructor(public title: string, public options: { body: string; silent: boolean }) {
+  constructor(
+    public title: string,
+    public options: { body: string; silent: boolean },
+  ) {
     MockNotification.instances.push(this);
   }
   triggerClick() {
@@ -42,7 +48,8 @@ class MockNotification {
 }
 
 // Attach to global before importing preload
-(global as unknown as { Notification: unknown }).Notification = MockNotification;
+(global as unknown as { Notification: unknown }).Notification =
+  MockNotification;
 
 interface TestApi {
   tray: { updateIcon: (n?: number) => void };
@@ -56,7 +63,8 @@ describe('preload/index', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     // default to non-isolated environment for most tests
-    (process as unknown as { contextIsolated?: boolean }).contextIsolated = false;
+    (process as unknown as { contextIsolated?: boolean }).contextIsolated =
+      false;
   });
 
   const importPreload = async () => {
@@ -67,13 +75,14 @@ describe('preload/index', () => {
 
   it('exposes api on window when context isolation disabled', async () => {
     await importPreload();
-  const w = window as unknown as { atlassify: Record<string, unknown> };
+    const w = window as unknown as { atlassify: Record<string, unknown> };
     expect(w.atlassify).toBeDefined();
     expect(exposeInMainWorld).not.toHaveBeenCalled();
   });
 
   it('exposes api via contextBridge when context isolation enabled', async () => {
-    (process as unknown as { contextIsolated?: boolean }).contextIsolated = true;
+    (process as unknown as { contextIsolated?: boolean }).contextIsolated =
+      true;
     await importPreload();
     expect(exposeInMainWorld).toHaveBeenCalledTimes(1);
     const [key, api] = exposeInMainWorld.mock.calls[0];
@@ -106,7 +115,7 @@ describe('preload/index', () => {
     const originalEnv = process.env.NODE_ENV;
     process.env.NODE_ENV = 'development';
     await importPreload();
-  const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = (window as unknown as { atlassify: TestApi }).atlassify;
     await expect(api.app.version()).resolves.toBe('dev');
     process.env.NODE_ENV = originalEnv;
   });
@@ -116,14 +125,14 @@ describe('preload/index', () => {
     process.env.NODE_ENV = 'production';
     invokeMainEvent.mockResolvedValueOnce('1.2.3');
     await importPreload();
-  const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = (window as unknown as { atlassify: TestApi }).atlassify;
     await expect(api.app.version()).resolves.toBe('v1.2.3');
     process.env.NODE_ENV = originalEnv;
   });
 
   it('onSystemThemeUpdate registers listener', async () => {
     await importPreload();
-  const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = (window as unknown as { atlassify: TestApi }).atlassify;
     const callback = jest.fn();
     api.onSystemThemeUpdate(callback);
     expect(onRendererEvent).toHaveBeenCalledWith(
@@ -138,20 +147,27 @@ describe('preload/index', () => {
 
   it('raiseNativeNotification without url calls app.show', async () => {
     await importPreload();
-  const api = (window as unknown as { atlassify: TestApi }).atlassify;
-  api.app.show = jest.fn();
-  const notification = api.raiseNativeNotification('Title', 'Body') as MockNotification;
-  notification.triggerClick();
+    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    api.app.show = jest.fn();
+    const notification = api.raiseNativeNotification(
+      'Title',
+      'Body',
+    ) as MockNotification;
+    notification.triggerClick();
     expect(api.app.show).toHaveBeenCalled();
   });
 
   it('raiseNativeNotification with url hides app then opens link', async () => {
     await importPreload();
-  const api = (window as unknown as { atlassify: TestApi }).atlassify;
-  api.app.hide = jest.fn();
-  api.openExternalLink = jest.fn();
-  const notification = api.raiseNativeNotification('Title', 'Body', 'https://x') as MockNotification;
-  notification.triggerClick();
+    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    api.app.hide = jest.fn();
+    api.openExternalLink = jest.fn();
+    const notification = api.raiseNativeNotification(
+      'Title',
+      'Body',
+      'https://x',
+    ) as MockNotification;
+    notification.triggerClick();
     expect(api.app.hide).toHaveBeenCalled();
     expect(api.openExternalLink).toHaveBeenCalledWith('https://x', true);
   });
