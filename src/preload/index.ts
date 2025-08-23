@@ -1,8 +1,8 @@
 import { contextBridge, webFrame } from 'electron';
 
-import { isLinux, isMacOS, isWindows } from '../main/process';
 import { APPLICATION } from '../shared/constants';
 import { logError } from '../shared/logger';
+import { isLinux, isMacOS, isWindows } from '../shared/platform';
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
 export const api = {

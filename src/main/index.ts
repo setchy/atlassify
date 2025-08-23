@@ -17,11 +17,11 @@ import type {
   IKeyboardShortcut,
   IOpenExternal,
 } from '../shared/events';
+import { isMacOS, isWindows } from '../shared/platform';
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
-import { isMacOS, isWindows } from './process';
 import Updater from './updater';
 
 log.initialize();
