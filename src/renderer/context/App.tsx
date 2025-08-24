@@ -7,6 +7,8 @@ import {
   useState,
 } from 'react';
 
+import { Theme } from '../../shared/theme';
+
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import { DEFAULT_LANGUAGE } from '../i18n';
@@ -25,7 +27,6 @@ import {
   type SettingsValue,
   type Status,
   type SystemSettingsState,
-  Theme,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 import {
