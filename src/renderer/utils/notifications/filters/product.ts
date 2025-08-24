@@ -48,7 +48,7 @@ function buildProductFilterDetails(
   products: typeof PRODUCTS,
 ): Record<ProductType, FilterDetails> {
   return Object.fromEntries(
-    (Object.keys(products) as ProductType[]).sort().map((type) => {
+    (Object.keys(products) as ProductType[]).map((type) => {
       const p: AtlassianProduct = products[type];
 
       return [
