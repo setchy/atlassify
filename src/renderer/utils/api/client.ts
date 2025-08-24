@@ -3,7 +3,6 @@ import type {
   CloudID,
   Hostname,
   JiraProjectKey,
-  JiraProjectType,
   SettingsState,
   Token,
   Username,
@@ -30,6 +29,7 @@ import {
 import type {
   AtlassianGraphQLResponse,
   JiraProjectRestResponse,
+  JiraProjectType,
 } from './types';
 
 /**
@@ -319,7 +319,7 @@ export async function getJiraProjectTypeByKey(
     url,
   );
 
-  return response?.projectTypeKey;
+  return response.projectTypeKey;
 }
 
 /**

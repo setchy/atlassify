@@ -1,10 +1,9 @@
-import { BitbucketIcon, ConfluenceIcon } from '@atlaskit/logo';
-
 import type {
   AccountNotifications,
   AtlassifyNotification,
   Link,
 } from '../types';
+import { PRODUCTS } from '../utils/products';
 import { mockAtlassianCloudAccount } from './state-mocks';
 
 export const mockAtlassifyNotifications: AtlassifyNotification[] = [
@@ -24,10 +23,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
       url: 'https://bitbucket.org/myorg/notifications-test/pull-requests/103?link_source=platform' as Link,
     },
     path: null,
-    product: {
-      name: 'bitbucket',
-      logo: BitbucketIcon,
-    },
+    product: PRODUCTS.bitbucket,
     actor: {
       displayName: 'atlassify-app',
       avatarURL:
@@ -65,10 +61,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
       iconUrl: null,
       url: 'https://some-tenant.atlassian.net/wiki/spaces/Atlassify' as Link,
     },
-    product: {
-      name: 'confluence',
-      logo: ConfluenceIcon,
-    },
+    product: PRODUCTS.confluence,
     actor: {
       displayName: 'atlassify-app',
       avatarURL:

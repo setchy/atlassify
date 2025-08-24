@@ -7,6 +7,7 @@ import { AppContext } from '../../context/App';
 import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
+import { PRODUCTS } from '../../utils/products';
 import { type INotificationRow, NotificationRow } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
@@ -122,12 +123,12 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         .spyOn(global.Date, 'now')
         .mockImplementation(() => new Date('2024').valueOf());
 
-      const mockNotification = mockSingleAtlassifyNotification;
-      mockNotification.product.name = 'compass';
-      mockNotification.message = 'some-project improved a scorecard';
-
       const props: INotificationRow = {
-        notification: mockNotification,
+        notification: {
+          ...mockSingleAtlassifyNotification,
+          product: PRODUCTS.compass,
+          message: 'some-project improved a scorecard',
+        },
       };
 
       const tree = render(

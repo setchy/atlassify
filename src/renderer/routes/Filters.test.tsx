@@ -323,7 +323,10 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('bitbucket'));
+        const bitbucketInput = screen.getByRole('checkbox', {
+          name: 'Bitbucket',
+        });
+        await userEvent.click(bitbucketInput);
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',
@@ -353,7 +356,10 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('bitbucket'));
+        const bitbucketInput = screen.getByRole('checkbox', {
+          name: 'Bitbucket',
+        });
+        await userEvent.click(bitbucketInput);
 
         expect(updateFilter).toHaveBeenCalledWith(
           'filterProducts',

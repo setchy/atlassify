@@ -2,7 +2,7 @@ import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-moc
 import { mockSettings } from '../../../__mocks__/state-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { SettingsState } from '../../../types';
-import { filterNotifications, hasActiveFilters } from './filter';
+import { filterNotifications, hasActiveFilters } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
   afterEach(() => {
@@ -63,8 +63,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('should filter notifications by product when provided', async () => {
-      mockAtlassifyNotifications[0].product.name = 'bitbucket';
-      mockAtlassifyNotifications[1].product.name = 'compass';
+      mockAtlassifyNotifications[0].product.type = 'bitbucket';
+      mockAtlassifyNotifications[1].product.type = 'compass';
       const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
         filterProducts: ['compass'],

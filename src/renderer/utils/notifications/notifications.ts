@@ -22,8 +22,8 @@ import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
 import { Errors } from '../errors';
-import { getAtlassianProduct } from '../products';
-import { filterNotifications } from './filters/filter';
+import { inferAtlassianProduct } from '../products';
+import { filterNotifications } from './filters';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);
@@ -140,7 +140,7 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
           displayName: headNotification.content.actor.displayName,
           avatarURL: headNotification.content.actor.avatarURL as Link,
         },
-        product: await getAtlassianProduct(account, headNotification),
+        product: await inferAtlassianProduct(account, headNotification),
         account: account,
         notificationGroup: {
           id: notification.groupId,

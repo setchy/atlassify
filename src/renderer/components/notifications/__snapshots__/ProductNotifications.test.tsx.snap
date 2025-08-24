@@ -58,9 +58,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 
                     </span>
                     <span
-                      class="capitalize font-medium"
+                      class="font-medium"
                     >
-                      bitbucket
+                      Bitbucket
                     </span>
                     <span
                       class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -217,9 +217,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 
                   </span>
                   <span
-                    class="capitalize font-medium"
+                    class="font-medium"
                   >
-                    bitbucket
+                    Bitbucket
                   </span>
                   <span
                     class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -433,9 +433,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 
                     </span>
                     <span
-                      class="capitalize font-medium"
+                      class="font-medium"
                     >
-                      bitbucket
+                      Bitbucket
                     </span>
                     <span
                       class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -592,9 +592,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 
                   </span>
                   <span
-                    class="capitalize font-medium"
+                    class="font-medium"
                   >
-                    bitbucket
+                    Bitbucket
                   </span>
                   <span
                     class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -808,9 +808,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
 
                     </span>
                     <span
-                      class="capitalize font-medium"
+                      class="font-medium"
                     >
-                      bitbucket
+                      Bitbucket
                     </span>
                     <span
                       class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -960,9 +960,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
 
                     </span>
                     <span
-                      class="capitalize font-medium"
+                      class="font-medium"
                     >
-                      bitbucket
+                      Bitbucket
                     </span>
                     <span
                       class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"
@@ -1119,9 +1119,9 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
 
                   </span>
                   <span
-                    class="capitalize font-medium"
+                    class="font-medium"
                   >
-                    bitbucket
+                    Bitbucket
                   </span>
                   <span
                     class="_2rkopd34 _18zr12x7 _1e0c116y _1o9zidpf _1kz6184x _bfhklecj"

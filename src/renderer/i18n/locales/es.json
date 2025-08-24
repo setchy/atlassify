@@ -74,8 +74,8 @@
       }
     },
     "products": {
-      "title": "Productos",
-      "unknown": "Desconocido"
+      "description": "{{type}} notificaciones",
+      "title": "Productos"
     },
     "read_state": {
       "read": {
@@ -138,6 +138,9 @@
       "mark_all_read": "Marque todas las notificaciones de productos como lectura",
       "open_product": "Abrir {{name}}"
     }
+  },
+  "products": {
+    "unknown": "Desconocido"
   },
   "settings": {
     "accounts": "Cuentas",

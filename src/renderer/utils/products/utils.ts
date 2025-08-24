@@ -1,16 +1,4 @@
-import {
-  AtlassianIcon,
-  BitbucketIcon,
-  CompassIcon,
-  ConfluenceIcon,
-  HomeIcon,
-  JiraIcon,
-  JiraProductDiscoveryIcon,
-  JiraServiceManagementIcon,
-  TeamsIcon,
-} from '@atlaskit/logo';
-
-import { logError } from '../../shared/logger';
+import { logError } from '../../../shared/logger';
 
 import type {
   Account,
@@ -18,53 +6,14 @@ import type {
   CloudID,
   Hostname,
   JiraProjectKey,
-  JiraProjectType,
-  ProductName,
-} from '../types';
-import { getCloudIDsForHostnames, getJiraProjectTypeByKey } from './api/client';
-import type { AtlassianHeadNotificationFragment } from './api/graphql/generated/graphql';
-import { URLs } from './links';
-
-// TODO remove duplication between this and filters/product PRODUCT_DETAILS
-export const PRODUCTS: Record<ProductName, AtlassianProduct> = {
-  bitbucket: {
-    name: 'bitbucket',
-    logo: BitbucketIcon,
-    home: URLs.ATLASSIAN.WEB.BITBUCKET_HOME,
-  },
-  compass: {
-    name: 'compass',
-    logo: CompassIcon,
-  },
-  confluence: {
-    name: 'confluence',
-    logo: ConfluenceIcon,
-  },
-  home: {
-    name: 'home',
-    logo: HomeIcon,
-  },
-  jira: {
-    name: 'jira',
-    logo: JiraIcon,
-  },
-  'jira product discovery': {
-    name: 'jira product discovery',
-    logo: JiraProductDiscoveryIcon,
-  },
-  'jira service management': {
-    name: 'jira service management',
-    logo: JiraServiceManagementIcon,
-  },
-  teams: {
-    name: 'teams',
-    logo: TeamsIcon,
-  },
-  unknown: {
-    name: 'unknown',
-    logo: AtlassianIcon,
-  },
-};
+} from '../../types';
+import {
+  getCloudIDsForHostnames,
+  getJiraProjectTypeByKey,
+} from '../api/client';
+import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
+import type { JiraProjectType } from '../api/types';
+import { PRODUCTS } from './catalog';
 
 // Use a promise cache to avoid duplicate API calls for the same hostname
 const hostnameCloudIdCache = new Map<Hostname, Promise<CloudID>>();
@@ -74,12 +23,16 @@ const jiraProjectTypeCache = new Map<
   Promise<JiraProjectType>
 >();
 
+// Test-only utility (tree-shakable) to clear caches between tests
+export function __resetProductInferenceCaches() {
+  hostnameCloudIdCache.clear();
+  jiraProjectTypeCache.clear();
+}
+
 /**
  * Infer the Atlassian Product from notification analytic attributes
- *
- * TODO #97 ideally we could get the Product Name from a API response attribute instead of inference
  */
-export async function getAtlassianProduct(
+export async function inferAtlassianProduct(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
 ): Promise<AtlassianProduct> {
@@ -104,12 +57,12 @@ export async function getAtlassianProduct(
         case 'software':
           return PRODUCTS.jira;
         case 'servicedesk':
-          return PRODUCTS['jira service management'];
+          return PRODUCTS.jira_service_management;
         default:
           return lookupJiraProjectType(account, headNotification);
       }
     case 'opsgenie':
-      return PRODUCTS['jira service management'];
+      return PRODUCTS.jira_service_management;
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
     case 'team-central':
@@ -164,9 +117,9 @@ async function lookupJiraProjectType(
 
     switch (jiraProjectType) {
       case 'product_discovery':
-        return PRODUCTS['jira product discovery'];
+        return PRODUCTS.jira_product_discovery;
       case 'service_desk':
-        return PRODUCTS['jira service management'];
+        return PRODUCTS.jira_service_management;
       default:
         return PRODUCTS.jira;
     }
@@ -178,8 +131,4 @@ async function lookupJiraProjectType(
     );
     return PRODUCTS.jira;
   }
-}
-
-export function getProductDetails(product: ProductName): AtlassianProduct {
-  return PRODUCTS[product];
 }

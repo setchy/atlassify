@@ -1,4 +1,6 @@
-import type { NewCoreIconProps } from '@atlaskit/icon';
+import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
+import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
+import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { LogoProps } from '@atlaskit/logo';
 
 import type { Theme } from '../shared/theme';
@@ -97,7 +99,7 @@ export type SettingsValue =
 export type FilterValue =
   | ActorType
   | CategoryType
-  | ProductName
+  | ProductType
   | ReadStateType
   | TimeSensitiveType;
 
@@ -231,7 +233,7 @@ export interface FilterSettingsState {
   /**
    * The products to filter notifications by.
    */
-  filterProducts: ProductName[];
+  filterProducts: ProductType[];
 
   /**
    * The notification actors / authors .
@@ -434,49 +436,16 @@ export type ErrorType =
   | 'UNKNOWN';
 
 /**
- * Details for a specific Atlassian product.
- */
-export interface AtlassianProduct {
-  /**
-   * The name of the product.
-   */
-  name: ProductName;
-
-  /**
-   * The logo of the product.
-   * @see {@link https://atlassian.design/components/logo/examples} for available logos.
-   */
-  logo?: React.ComponentType<LogoProps>;
-
-  /**
-   * The URL to the product's home page.
-   */
-  home?: Link;
-}
-
-/**
- * The differentAtlassian products which are supported by Atlassify (currently).
- */
-export type ProductName =
-  | 'bitbucket'
-  | 'confluence'
-  | 'compass'
-  | 'home'
-  | 'jira'
-  | 'jira product discovery'
-  | 'jira service management'
-  | 'teams'
-  | 'unknown';
-
-/**
  * Details for Chevron header accordion.
  */
 export type Chevron = {
   /**
    * The chevron icon.
-   * @see {@link https://atlassian.design/components/icon/examples} for available icons.
    */
-  icon: React.ComponentType<NewCoreIconProps>;
+  icon:
+    | typeof ChevronLeftIcon
+    | typeof ChevronRightIcon
+    | typeof ChevronDownIcon;
 
   /**
    * The chevron label.
@@ -517,19 +486,42 @@ export type TimeSensitiveType = 'mention' | 'comment';
 export type ActorType = 'user' | 'automation';
 
 /**
- * Jira Project types
- *
- * - 'business' - A business project.
- * - 'customer_service' - A customer service project.
- * - 'product_discovery' - A product discovery project.
- * - 'service_desk' - A service desk project.
- * - 'software' - A software development project.
- *
- * See https://support.atlassian.com/jira-work-management/docs/what-is-the-jira-family-of-applications/#Jiraapplicationsoverview-Productfeaturesandprojecttypes
+ * Atlassian products which are currently supported by Atlassify.
  */
-export type JiraProjectType =
-  | 'business'
-  | 'customer_service'
-  | 'product_discovery'
-  | 'service_desk'
-  | 'software';
+export type ProductType =
+  | 'bitbucket'
+  | 'confluence'
+  | 'compass'
+  | 'home'
+  | 'jira'
+  | 'jira_product_discovery'
+  | 'jira_service_management'
+  | 'teams'
+  | 'unknown';
+
+/**
+ * Details for a specific Atlassian product.
+ */
+export interface AtlassianProduct {
+  /**
+   * The type of the product.
+   */
+  type: ProductType;
+
+  /**
+   * The display name of the product.
+   */
+  display: string;
+
+  /**
+   * The logo of the product.
+   *
+   * See https://atlassian.design/components/logo/examples for available logos.
+   */
+  logo?: React.ComponentType<LogoProps>;
+
+  /**
+   * The URL to the product's home page.
+   */
+  home?: Link;
+}

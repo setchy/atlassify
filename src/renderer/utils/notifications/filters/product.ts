@@ -1,77 +1,20 @@
-import {
-  AtlassianIcon,
-  BitbucketIcon,
-  CompassIcon,
-  ConfluenceIcon,
-  HomeIcon,
-  JiraIcon,
-  JiraProductDiscoveryIcon,
-  JiraServiceManagementIcon,
-  TeamsIcon,
-} from '@atlaskit/logo';
-
 import i18n from '../../../i18n';
 import type {
   AccountNotifications,
+  AtlassianProduct,
   AtlassifyNotification,
-  ProductName,
+  ProductType,
   SettingsState,
 } from '../../../types';
+import { PRODUCTS } from '../../products';
 import type { Filter, FilterDetails } from './types';
 
-// TODO remove duplication between this and utils/products PRODUCTS
-export const PRODUCT_DETAILS: Record<ProductName, FilterDetails> = {
-  bitbucket: {
-    name: 'bitbucket',
-    description: 'Bitbucket',
-    logo: BitbucketIcon,
+export const productFilter: Filter<ProductType> = {
+  get FILTER_TYPES() {
+    return buildProductFilterDetails(PRODUCTS);
   },
-  compass: {
-    name: 'compass',
-    description: 'Compass',
-    logo: CompassIcon,
-  },
-  confluence: {
-    name: 'confluence',
-    description: 'Confluence',
-    logo: ConfluenceIcon,
-  },
-  home: {
-    name: 'home',
-    description: 'Atlassian Home',
-    logo: HomeIcon,
-  },
-  jira: {
-    name: 'jira',
-    description: 'Jira',
-    logo: JiraIcon,
-  },
-  'jira product discovery': {
-    name: 'jira product discovery',
-    description: 'Jira Product Discovery',
-    logo: JiraProductDiscoveryIcon,
-  },
-  'jira service management': {
-    name: 'jira service management',
-    description: 'Jira Service Management',
-    logo: JiraServiceManagementIcon,
-  },
-  teams: {
-    name: 'teams',
-    description: 'Atlassian Teams',
-    logo: TeamsIcon,
-  },
-  unknown: {
-    name: 'unknown',
-    description: i18n.t('filters.products.unknown'),
-    logo: AtlassianIcon,
-  },
-};
 
-export const productFilter: Filter<ProductName> = {
-  FILTER_TYPES: PRODUCT_DETAILS,
-
-  getTypeDetails(type: ProductName) {
+  getTypeDetails(type: ProductType) {
     return this.FILTER_TYPES[type];
   },
 
@@ -79,11 +22,11 @@ export const productFilter: Filter<ProductName> = {
     return settings.filterProducts.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, product: ProductName): boolean {
+  isFilterSet(settings: SettingsState, product: ProductType): boolean {
     return settings.filterProducts.includes(product);
   },
 
-  getFilterCount(notifications: AccountNotifications[], product: ProductName) {
+  getFilterCount(notifications: AccountNotifications[], product: ProductType) {
     return notifications.reduce(
       (memo, acc) =>
         memo +
@@ -95,8 +38,30 @@ export const productFilter: Filter<ProductName> = {
 
   filterNotification(
     notification: AtlassifyNotification,
-    product: ProductName,
+    product: ProductType,
   ): boolean {
-    return notification.product.name === product;
+    // Match against the canonical product type (slug)
+    return notification.product.type === product;
   },
 };
+
+function buildProductFilterDetails(
+  products: typeof PRODUCTS,
+): Record<ProductType, FilterDetails> {
+  return Object.fromEntries(
+    (Object.keys(products) as ProductType[]).map((type) => {
+      const p: AtlassianProduct = products[type];
+
+      return [
+        type,
+        {
+          name: p.display,
+          description: i18n.t('filters.products.description', {
+            type: p.display,
+          }),
+          logo: p.logo,
+        } as FilterDetails,
+      ];
+    }),
+  ) as Record<ProductType, FilterDetails>;
+}

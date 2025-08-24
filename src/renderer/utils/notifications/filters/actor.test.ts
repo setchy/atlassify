@@ -4,6 +4,7 @@ import {
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
@@ -84,9 +85,7 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
     it('should infer automation actor from compass scorecard', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,
-        product: {
-          name: 'compass',
-        },
+        product: PRODUCTS.compass,
         message: 'some-component is failing a scorecard',
       } as AtlassifyNotification;
 

@@ -75,7 +75,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   const groupedNotifications = Object.values(
     notifications?.reduce(
       (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
-        const key = notification.product.name;
+        const key = notification.product.type;
         if (!acc[key]) acc[key] = [];
         acc[key].push(notification);
         return acc;
@@ -86,7 +86,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
 
   if (settings.groupNotificationsByProductAlphabetically) {
     groupedNotifications.sort((a, b) =>
-      a[0].product.name.localeCompare(b[0].product.name),
+      a[0].product.type.localeCompare(b[0].product.type),
     );
   }
 
@@ -227,7 +227,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
                 (productNotifications) => {
                   return (
                     <ProductNotifications
-                      key={productNotifications[0].product.name}
+                      key={productNotifications[0].product.type}
                       productNotifications={productNotifications}
                     />
                   );

@@ -164,7 +164,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               class="css-lyw6pf"
                             >
                               <span
-                                aria-label="Bitbucket"
+                                aria-label="Compass"
                                 class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                                 role="img"
                                 style="--themed-icon-color: initial;"
@@ -182,7 +182,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                   
     
                                   <path
-                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    d="M12.75 7.877v-3.37l6.16-.007h.007a.59.59 0 0 1 .583.598v6.147h-3.366V7.877z"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+    
+                                  <path
+                                    d="M12.75 14.615v-3.37h3.368v6.165a.59.59 0 0 1-.591.59H6.583A.59.59 0 0 1 6 17.402V8.467a.59.59 0 0 1 .591-.59h6.16v3.368H9.373v3.37z"
                                     fill="var(--icon-color, #101214)"
                                   />
                                   
@@ -427,7 +433,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             class="css-lyw6pf"
                           >
                             <span
-                              aria-label="Bitbucket"
+                              aria-label="Compass"
                               class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
                               role="img"
                               style="--themed-icon-color: initial;"
@@ -445,7 +451,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 
     
                                 <path
-                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  d="M12.75 7.877v-3.37l6.16-.007h.007a.59.59 0 0 1 .583.598v6.147h-3.366V7.877z"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+    
+                                <path
+                                  d="M12.75 14.615v-3.37h3.368v6.165a.59.59 0 0 1-.591.59H6.583A.59.59 0 0 1 6 17.402V8.467a.59.59 0 0 1 .591-.59h6.16v3.368H9.373v3.37z"
                                   fill="var(--icon-color, #101214)"
                                 />
                                 
