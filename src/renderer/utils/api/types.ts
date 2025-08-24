@@ -1,3 +1,5 @@
+import type { JiraProjectType } from '../../types';
+
 /**
  * The different types of API errors which may be encountered.
  */
@@ -40,9 +42,5 @@ interface AtlassianGraphQLExtensions {
 }
 
 export interface JiraProjectRestResponse {
-  fields?: {
-    project?: {
-      projectTypeKey?: string;
-    };
-  };
+  projectTypeKey?: JiraProjectType;
 }
