@@ -3,7 +3,7 @@ import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated
 import { inferAtlassianProduct, PRODUCTS } from '.';
 
 describe('renderer/utils/products/index.ts', () => {
-  describe('inferAtlassianProduct - should map to correct products from analytics attributes', async () => {
+  describe('inferAtlassianProduct - should map to correct products from analytics attributes', () => {
     it('bitbucket', async () => {
       expect(
         await inferAtlassianProduct(
@@ -31,7 +31,7 @@ describe('renderer/utils/products/index.ts', () => {
       ).toBe(PRODUCTS.confluence);
     });
 
-    describe('jira', async () => {
+    describe('jira', () => {
       it('jira - core', async () => {
         expect(
           await inferAtlassianProduct(
@@ -49,15 +49,33 @@ describe('renderer/utils/products/index.ts', () => {
           ),
         ).toBe(PRODUCTS.jira);
       });
-    });
 
-    it('jira - servicedesk', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('jira', 'servicedesk'),
-        ),
-      ).toBe(PRODUCTS.jira_service_management);
+      it('jira - servicedesk', async () => {
+        expect(
+          await inferAtlassianProduct(
+            mockAtlassianCloudAccount,
+            createProductNotificationMock('jira', 'servicedesk'),
+          ),
+        ).toBe(PRODUCTS.jira_service_management);
+      });
+
+      describe('lookupJiraProjectType fallback', () => {
+        it('default to jira software if empty path', async () => {
+          const mockNotification = {
+            ...createProductNotificationMock('jira', null),
+            content: {
+              path: [],
+            },
+          } as AtlassianHeadNotificationFragment;
+
+          expect(
+            await inferAtlassianProduct(
+              mockAtlassianCloudAccount,
+              mockNotification,
+            ),
+          ).toBe(PRODUCTS.jira);
+        });
+      });
     });
 
     it('opsgenie', async () => {
