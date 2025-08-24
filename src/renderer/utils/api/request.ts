@@ -11,7 +11,6 @@ export async function performRequestForAccount<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ) {
-  // TODO consider storing the decrypted token in memory
   const decryptedToken = (await decryptValue(account.token)) as Token;
 
   return performGraphQLApiRequest<TResult>(account.username, decryptedToken, {
