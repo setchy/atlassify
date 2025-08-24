@@ -115,16 +115,16 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     },
   });
 
+  const backgroundColor = props.error
+    ? 'color.background.accent.red.subtler'
+    : isLightMode()
+      ? 'color.background.accent.blue.subtler'
+      : 'color.background.accent.gray.subtler';
+
   return (
     <Stack>
       <Box
-        backgroundColor={
-          props.error
-            ? 'color.background.accent.red.subtler'
-            : isLightMode()
-              ? 'color.background.accent.blue.subtler'
-              : 'color.background.accent.gray.subtler'
-        }
+        backgroundColor={backgroundColor}
         onClick={toggleAccountNotifications}
         paddingBlock="space.050"
         paddingInline="space.100"
