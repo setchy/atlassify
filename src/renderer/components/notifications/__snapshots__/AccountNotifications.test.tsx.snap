@@ -133,21 +133,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -366,21 +370,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -656,21 +664,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -857,21 +869,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -1115,21 +1131,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -1316,21 +1336,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -1574,21 +1598,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -1798,21 +1826,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -2079,21 +2111,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -2362,21 +2398,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -2654,21 +2694,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -2813,21 +2857,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -3096,21 +3144,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -3388,21 +3440,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -3604,21 +3660,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -3887,21 +3947,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -4179,21 +4243,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -4338,21 +4406,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -4621,21 +4693,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -4913,21 +4989,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -5133,21 +5213,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -5327,21 +5411,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: currentcolor;"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-text)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -5610,21 +5698,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -5902,21 +5994,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     <span
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        aria-label="Unread Indicator"
-                        height="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-icon-brand);"
                       >
-                        <circle
-                          cx="50%"
-                          cy="50%"
-                          fill="var(--ds-icon-brand)"
-                          r="4"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span
                         class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                       >
@@ -6061,21 +6157,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 <span
                   class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                 >
-                  <svg
-                    aria-label="Unread Indicator"
-                    height="24"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    style="color: currentcolor;"
                   >
-                    <circle
-                      cx="50%"
-                      cy="50%"
-                      fill="var(--ds-text)"
-                      r="4"
-                    />
-                  </svg>
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
@@ -6344,21 +6444,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
@@ -6636,21 +6740,25 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   <span
                     class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                   >
-                    <svg
-                      aria-label="Unread Indicator"
-                      height="24"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <span
+                      aria-hidden="true"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      style="color: var(--ds-icon-brand);"
                     >
-                      <circle
-                        cx="50%"
-                        cy="50%"
-                        fill="var(--ds-icon-brand)"
-                        r="4"
-                      />
-                    </svg>
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M4.25 8a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >

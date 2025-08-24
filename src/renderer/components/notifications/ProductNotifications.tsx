@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
+import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -11,7 +12,6 @@ import type { AtlassifyNotification } from '../../types';
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
 import { isLightMode } from '../../utils/theme';
-import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 
 export interface IProductNotifications {
@@ -104,7 +104,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
             >
               <IconButton
                 appearance="subtle"
-                icon={() => <UnreadIcon />}
+                icon={() => <StrokeWeightLargeIcon label="" />}
                 label={t('notifications.product.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.

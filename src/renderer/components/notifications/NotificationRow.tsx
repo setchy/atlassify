@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
 import { IconButton } from '@atlaskit/button/new';
+import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -21,7 +23,6 @@ import {
   categoryFilter,
   readStateFilter,
 } from '../../utils/notifications/filters';
-import { UnreadIcon } from '../icons/UnreadIcon';
 
 export interface INotificationRow {
   notification: AtlassifyNotification;
@@ -204,7 +205,12 @@ export const NotificationRow: FC<INotificationRow> = ({
                 >
                   <IconButton
                     appearance="subtle"
-                    icon={() => <UnreadIcon color="brand" />}
+                    icon={() => (
+                      <StrokeWeightLargeIcon
+                        color={token('color.icon.brand')}
+                        label=""
+                      />
+                    )}
                     label={t('notifications.interactions.mark_as_read')}
                     onClick={() => {
                       setAnimateExit(

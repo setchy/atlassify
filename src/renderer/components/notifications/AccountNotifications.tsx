@@ -13,6 +13,7 @@ import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossIcon from '@atlaskit/icon/core/cross';
+import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { BitbucketIcon } from '@atlaskit/logo';
 import Modal, {
   ModalBody,
@@ -35,7 +36,6 @@ import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
-import { UnreadIcon } from '../icons/UnreadIcon';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
@@ -191,7 +191,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
             >
               <IconButton
                 appearance="subtle"
-                icon={() => <UnreadIcon />}
+                icon={() => <StrokeWeightLargeIcon label="" />}
                 label={t('notifications.account.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   event.stopPropagation();
