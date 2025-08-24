@@ -3,7 +3,7 @@ import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
-import { formatDistanceToNowStrict, parseISO } from 'date-fns';
+import { formatDistanceToNowStrict, isValid, parseISO } from 'date-fns';
 
 import i18n from '../i18n';
 import type { AtlassifyNotification, Chevron } from '../types';
@@ -72,13 +72,18 @@ export function formatNativeNotificationFooterText(
 export function formatNotificationUpdatedAt(
   notification: AtlassifyNotification,
 ): string {
-  try {
-    return formatDistanceToNowStrict(parseISO(notification.updated_at), {
-      addSuffix: true,
-    });
-  } catch (_e) {}
+  const iso = notification.updated_at;
 
-  return '';
+  if (!iso) {
+    return '';
+  }
+
+  const parsed = parseISO(iso);
+  if (!isValid(parsed)) {
+    return '';
+  }
+
+  return formatDistanceToNowStrict(parsed, { addSuffix: true });
 }
 
 export function getChevronDetails(
