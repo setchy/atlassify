@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AppContext } from '../context/App';
 import { Constants } from '../utils/constants';
-import { hasActiveFilters } from '../utils/notifications/filters/filter';
+import { hasActiveFilters } from '../utils/notifications/filters';
 import { EmojiSplash } from './layout/EmojiSplash';
 
 export const AllRead: FC = () => {

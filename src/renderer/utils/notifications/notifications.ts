@@ -23,7 +23,7 @@ import { updateTrayIcon } from '../comms';
 import { Constants } from '../constants';
 import { Errors } from '../errors';
 import { inferAtlassianProduct } from '../products';
-import { filterNotifications } from './filters/filter';
+import { filterNotifications } from './filters';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);

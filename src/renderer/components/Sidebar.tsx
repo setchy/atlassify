@@ -21,7 +21,7 @@ import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
-import { hasActiveFilters } from '../utils/notifications/filters/filter';
+import { hasActiveFilters } from '../utils/notifications/filters';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 

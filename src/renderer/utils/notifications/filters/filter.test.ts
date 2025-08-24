@@ -2,7 +2,7 @@ import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-moc
 import { mockSettings } from '../../../__mocks__/state-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { SettingsState } from '../../../types';
-import { filterNotifications, hasActiveFilters } from './filter';
+import { filterNotifications, hasActiveFilters } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
   afterEach(() => {
