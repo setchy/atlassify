@@ -4,7 +4,7 @@ import {
 } from '../../../__mocks__/notifications-mocks';
 import { defaultSettings } from '../../../context/App';
 import type { AtlassifyNotification, SettingsState } from '../../../types';
-import { PRODUCTS } from '../../products/catalog';
+import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {

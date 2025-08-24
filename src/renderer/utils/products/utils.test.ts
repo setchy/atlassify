@@ -30,7 +30,7 @@ const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = jest.requireMock(
   getJiraProjectTypeByKey: jest.Mock;
 };
 
-describe('renderer/utils/products/index.ts', () => {
+describe('renderer/utils/products/utils.ts', () => {
   describe('inferAtlassianProduct', () => {
     test.each([
       ['bitbucket', PRODUCTS.bitbucket],
