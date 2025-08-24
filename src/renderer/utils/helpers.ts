@@ -123,7 +123,7 @@ export function isCompassScorecardNotification(
   notification: AtlassifyNotification,
 ): boolean {
   return (
-    notification.product.name === 'compass' &&
+    notification.product.type === 'compass' &&
     notification.message.includes('a scorecard')
   );
 }

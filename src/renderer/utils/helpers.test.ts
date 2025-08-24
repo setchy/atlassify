@@ -180,19 +180,23 @@ describe('renderer/utils/helpers.ts', () => {
 
   describe('isCompassScorecardNotification', () => {
     it('should return true for compass scorecard notifications', () => {
-      const notification = mockSingleAtlassifyNotification;
-      notification.product.name = 'compass';
-      notification.message = 'This is a scorecard notification';
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.compass,
+        message: 'some-project improved a scorecard',
+      };
 
-      expect(isCompassScorecardNotification(notification)).toBe(true);
+      expect(isCompassScorecardNotification(mockNotification)).toBe(true);
     });
 
     it('should return false for non-compass notifications', () => {
-      const notification = mockSingleAtlassifyNotification;
-      notification.product.name = 'confluence';
-      notification.message = 'This is a scorecard wiki';
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.confluence,
+        message: 'This is a scorecard wiki',
+      };
 
-      expect(isCompassScorecardNotification(notification)).toBe(false);
+      expect(isCompassScorecardNotification(mockNotification)).toBe(false);
     });
   });
 });
