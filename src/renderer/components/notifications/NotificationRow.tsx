@@ -22,7 +22,7 @@ import {
 } from '../../utils/notifications/filters';
 import { UnreadIcon } from '../icons/UnreadIcon';
 
-interface INotificationRow {
+export interface INotificationRow {
   notification: AtlassifyNotification;
   isAnimated?: boolean;
 }

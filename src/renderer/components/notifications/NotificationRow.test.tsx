@@ -2,16 +2,12 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockAuth,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
 import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
-import { NotificationRow } from './NotificationRow';
+import { type INotificationRow, NotificationRow } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
   jest.spyOn(links, 'openNotification');
@@ -26,9 +22,8 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       .spyOn(global.Date, 'now')
       .mockImplementation(() => new Date('2024').valueOf());
 
-    const props = {
+    const props: INotificationRow = {
       notification: mockSingleAtlassifyNotification,
-      account: mockAtlassianCloudAccount,
     };
 
     const tree = render(
@@ -49,9 +44,8 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       .spyOn(global.Date, 'now')
       .mockImplementation(() => new Date('2024').valueOf());
 
-    const props = {
+    const props: INotificationRow = {
       notification: mockSingleAtlassifyNotification,
-      account: mockAtlassianCloudAccount,
     };
 
     const tree = render(
@@ -71,9 +65,8 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - click', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props = {
+      const props: INotificationRow = {
         notification: mockSingleAtlassifyNotification,
-        account: mockAtlassianCloudAccount,
       };
 
       render(
@@ -97,9 +90,8 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props = {
+      const props: INotificationRow = {
         notification: mockSingleAtlassifyNotification,
-        account: mockAtlassianCloudAccount,
       };
 
       render(
@@ -126,9 +118,8 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as read', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props = {
+      const props: INotificationRow = {
         notification: mockSingleAtlassifyNotification,
-        account: mockAtlassianCloudAccount,
       };
 
       render(
@@ -150,12 +141,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as unread', async () => {
       const markNotificationsUnreadMock = jest.fn();
 
-      const props = {
+      const props: INotificationRow = {
         notification: {
           ...mockSingleAtlassifyNotification,
           readState: 'read' as ReadStateType,
         },
-        account: mockAtlassianCloudAccount,
       };
 
       render(

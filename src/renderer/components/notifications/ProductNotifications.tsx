@@ -15,7 +15,7 @@ import { isLightMode } from '../../utils/theme';
 import { UnreadIcon } from '../icons/UnreadIcon';
 import { NotificationRow } from './NotificationRow';
 
-interface IProductNotifications {
+export interface IProductNotifications {
   productNotifications: AtlassifyNotification[];
 }
 
