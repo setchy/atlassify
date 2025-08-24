@@ -10,7 +10,10 @@ import { ensureStableEmojis } from '../../__mocks__/utils';
 import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
-import { AccountNotifications } from './AccountNotifications';
+import {
+  AccountNotifications,
+  type IAccountNotifications,
+} from './AccountNotifications';
 
 jest.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>Product Notifications</div>,
@@ -25,7 +28,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     it('should render itself - sort by date - light mode', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
@@ -48,7 +51,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     it('should render itself - sort by date - dark mode', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
@@ -69,7 +72,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
@@ -94,7 +97,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
@@ -119,7 +122,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - no notifications', async () => {
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: [],
         hasMoreNotifications: false,
@@ -140,7 +143,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - account error', async () => {
-      const props = {
+      const props: IAccountNotifications = {
         account: mockAtlassianCloudAccount,
         notifications: [],
         hasMoreNotifications: false,
@@ -170,7 +173,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
 
-    const props = {
+    const props: IAccountNotifications = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
@@ -198,7 +201,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       .spyOn(links, 'openMyPullRequests')
       .mockImplementation();
 
-    const props = {
+    const props: IAccountNotifications = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
@@ -219,7 +222,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should mark all account notifications as read when `confirmed`', async () => {
-    const props = {
+    const props: IAccountNotifications = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
@@ -248,7 +251,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should skip marking all account notifications as read when `cancelled`', async () => {
-    const props = {
+    const props: IAccountNotifications = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
@@ -277,7 +280,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should toggle account notifications visibility', async () => {
-    const props = {
+    const props: IAccountNotifications = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,

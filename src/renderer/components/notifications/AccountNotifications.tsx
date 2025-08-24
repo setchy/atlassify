@@ -40,7 +40,7 @@ import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 
-interface IAccountNotifications {
+export interface IAccountNotifications {
   account: Account;
   notifications: AtlassifyNotification[];
   hasMoreNotifications: boolean;

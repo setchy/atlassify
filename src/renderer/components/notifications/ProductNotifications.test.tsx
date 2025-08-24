@@ -2,15 +2,14 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
-import type { ProductName } from '../../types';
 import * as comms from '../../utils/comms';
 import * as theme from '../../utils/theme';
-import { ProductNotifications } from './ProductNotifications';
+import {
+  type IProductNotifications,
+  ProductNotifications,
+} from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
@@ -28,7 +27,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - light mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-    const props = {
+    const props: IProductNotifications = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -44,7 +43,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - dark mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
-    const props = {
+    const props: IProductNotifications = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -62,7 +61,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     const mockBitbucketNotification = mockAtlassifyNotifications[0];
     expect(mockBitbucketNotification.product.name).toBe('bitbucket');
 
-    const props = {
+    const props: IProductNotifications = {
       productNotifications: [mockBitbucketNotification],
     };
 
@@ -94,9 +93,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should toggle product notifications visibility', async () => {
-    const props = {
-      account: mockAtlassianCloudAccount,
-      product: 'bitbucket' as ProductName,
+    const props: IProductNotifications = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -112,7 +109,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should mark all product notifications as read', async () => {
-    const props = {
+    const props: IProductNotifications = {
       productNotifications: mockAtlassifyNotifications,
     };
 
