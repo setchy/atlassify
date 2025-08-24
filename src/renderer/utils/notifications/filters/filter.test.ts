@@ -1,6 +1,6 @@
 import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../../__mocks__/state-mocks';
-import { defaultSettings } from '../../../context/App';
+import { defaultSettings } from '../../../context/defaults';
 import type { SettingsState } from '../../../types';
 import { filterNotifications, hasActiveFilters } from '.';
 

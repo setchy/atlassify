@@ -15,7 +15,8 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext, defaultSettings } from '../../context/App';
+import { AppContext } from '../../context/App';
+import { defaultSettings } from '../../context/defaults';
 import { OpenPreference } from '../../types';
 
 export const SystemSettings: FC = () => {

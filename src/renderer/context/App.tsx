@@ -7,26 +7,19 @@ import {
   useState,
 } from 'react';
 
-import { Theme } from '../../shared/theme';
-
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
-import { DEFAULT_LANGUAGE } from '../i18n';
-import {
-  type Account,
-  type AccountNotifications,
-  type AppearanceSettingsState,
-  type AtlassifyError,
-  type AtlassifyNotification,
-  type AuthState,
-  type FilterSettingsState,
-  type FilterValue,
-  type NotificationSettingsState,
-  OpenPreference,
-  type SettingsState,
-  type SettingsValue,
-  type Status,
-  type SystemSettingsState,
+import type {
+  Account,
+  AccountNotifications,
+  AtlassifyError,
+  AtlassifyNotification,
+  AuthState,
+  FilterSettingsState,
+  FilterValue,
+  SettingsState,
+  SettingsValue,
+  Status,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 import {
@@ -49,51 +42,7 @@ import {
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { zoomPercentageToLevel } from '../utils/zoom';
-
-export const defaultAuth: AuthState = {
-  accounts: [],
-};
-
-const defaultAppearanceSettings: AppearanceSettingsState = {
-  language: DEFAULT_LANGUAGE,
-  theme: Theme.LIGHT,
-  zoomPercentage: 100,
-};
-
-const defaultNotificationSettings: NotificationSettingsState = {
-  markAsReadOnOpen: true,
-  delayNotificationState: false,
-  fetchOnlyUnreadNotifications: true,
-  groupNotificationsByProduct: false,
-  groupNotificationsByProductAlphabetically: false,
-  groupNotificationsByTitle: true,
-};
-
-const defaultSystemSettings: SystemSettingsState = {
-  openLinks: OpenPreference.FOREGROUND,
-  keyboardShortcutEnabled: true,
-  showNotificationsCountInTray: true,
-  showSystemNotifications: true,
-  playSoundNewNotifications: true,
-  notificationVolume: 20,
-  useAlternateIdleIcon: false,
-  openAtStartup: true,
-};
-
-export const defaultFilters: FilterSettingsState = {
-  filterTimeSensitive: [],
-  filterCategories: [],
-  filterReadStates: [],
-  filterProducts: [],
-  filterActors: [],
-};
-
-export const defaultSettings: SettingsState = {
-  ...defaultAppearanceSettings,
-  ...defaultNotificationSettings,
-  ...defaultSystemSettings,
-  ...defaultFilters,
-};
+import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
 
 interface AppContextState {
   auth: AuthState;
@@ -141,6 +90,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
+  // Run once on mount to restore settings/state
+  // biome-ignore lint/correctness/useExhaustiveDependencies: restoreSettings is stable and should run only once
   useEffect(() => {
     restoreSettings();
   }, []);

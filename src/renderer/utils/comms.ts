@@ -1,4 +1,4 @@
-import { defaultSettings } from '../context/App';
+import { defaultSettings } from '../context/defaults';
 import { type Link, OpenPreference } from '../types';
 import { loadState } from './storage';
 
