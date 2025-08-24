@@ -20,8 +20,6 @@ const jiraProjectTypeCache = new Map<
 
 /**
  * Infer the Atlassian Product from notification analytic attributes
- *
- * TODO #97 ideally we could get the Product Name from a API response attribute instead of inference
  */
 export async function inferAtlassianProduct(
   account: Account,
@@ -72,10 +70,6 @@ async function lookupJiraProjectType(
   }
 
   try {
-    if (headNotification.content.path.length === 0) {
-      return PRODUCTS.jira;
-    }
-
     const hostName = new URL(headNotification.content.path[0].url)
       .hostname as Hostname;
 
