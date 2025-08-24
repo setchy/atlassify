@@ -1,7 +1,7 @@
 import type { NewCoreIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
 
-import { Theme } from '../shared/theme';
+import type { Theme } from '../shared/theme';
 
 import type { Language } from './i18n/types';
 
@@ -10,9 +10,6 @@ declare const __brand: unique symbol;
 type Brand<B> = { [__brand]: B };
 
 export type Branded<T, B> = T & Brand<B>;
-
-// Re-export Theme so existing imports from '../types' continue to work after moving enum to shared.
-export { Theme };
 
 /**
  * A username for an Atlassian account.

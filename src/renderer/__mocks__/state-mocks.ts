@@ -1,3 +1,5 @@
+import { Theme } from '../../shared/theme';
+
 import {
   type Account,
   type AppearanceSettingsState,
@@ -10,7 +12,6 @@ import {
   OpenPreference,
   type SettingsState,
   type SystemSettingsState,
-  Theme,
   type Username,
 } from '../types';
 
