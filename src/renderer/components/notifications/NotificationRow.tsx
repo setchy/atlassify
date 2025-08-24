@@ -14,6 +14,7 @@ import {
   blockAlignmentByLength,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
+  isCompassScorecardNotification,
 } from '../../utils/helpers';
 import { openNotification } from '../../utils/links';
 import {
@@ -63,12 +64,11 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const spaceBetweenSections = 'space.100';
 
-  // The Compass System Actor Icons look much better in square form than circle
-  const avatarAppearanceStyle: AppearanceType =
-    notification.product.type === 'compass' &&
-    notification.message.includes('a scorecard')
-      ? 'square'
-      : 'circle';
+  const avatarAppearanceStyle: AppearanceType = isCompassScorecardNotification(
+    notification,
+  )
+    ? 'square'
+    : 'circle';
 
   const avatarGroup = notification.notificationGroup.additionalActors.map(
     (actor) => ({
