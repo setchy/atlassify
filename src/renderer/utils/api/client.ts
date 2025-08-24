@@ -13,12 +13,9 @@ import {
   InfluentsNotificationReadState,
   type MarkAsReadMutation,
   type MarkAsUnreadMutation,
-  type MarkGroupAsReadMutation,
-  type MarkGroupAsUnreadMutation,
   type MeQuery,
   type MyNotificationsQuery,
   type RetrieveCloudIDsForHostnamesQuery,
-  type RetrieveJiraProjectTypesQuery,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
@@ -145,52 +142,6 @@ export function markNotificationsAsUnread(
 }
 
 /**
- * Mark a notification group as "read".
- * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
- *
- * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
- */
-export function markNotificationGroupAsRead(
-  account: Account,
-  notificationGroupId: string,
-): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
-  const MarkGroupAsReadDocument = graphql(`
-    mutation MarkGroupAsRead($groupId: String!) {
-      notifications {
-        markNotificationsByGroupIdAsRead(groupId: $groupId)
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, MarkGroupAsReadDocument, {
-    groupId: notificationGroupId,
-  });
-}
-
-/**
- * Mark a notification group as "unread".
- * TODO: Currently unused due to "quirks" with API behavior across different product notification types.
- *
- * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
- */
-export function markNotificationGroupAsUnread(
-  account: Account,
-  notificationGroupId: string,
-): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
-  const MarkGroupAsUnreadDocument = graphql(`
-    mutation MarkGroupAsUnread($groupId: String!) {
-      notifications {
-        markNotificationsByGroupIdAsUnread(groupId: $groupId)
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, MarkGroupAsUnreadDocument, {
-    groupId: notificationGroupId,
-  });
-}
-
-/**
  * Get notifications by group ID.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
@@ -234,47 +185,6 @@ export function getNotificationsByGroupId(
         : null,
     },
   );
-}
-
-/**
- * Get Jira Project Types by Keys
- * TODO: Currently unused due to "quirks" with expected GraphQL API scopes. See REST API impl getJiraProjectTypeByKey
- *
- * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
- */
-export function getJiraProjectTypesByKeys(
-  account: Account,
-  cloudId: CloudID,
-  keys: JiraProjectKey[],
-): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
-  const JiraProjectTypesByKeysDocument = graphql(`
-    query RetrieveJiraProjectTypes(
-      $cloudId: ID!,
-      $keys: [String!]!
-    ) {
-      jira {
-        issuesByKey(
-          cloudId: $cloudId, 
-          keys: $keys
-        ) {
-          key
-          summary
-          projectField {
-            project {
-              name
-              projectTypeName
-              projectType
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, JiraProjectTypesByKeysDocument, {
-    cloudId: cloudId,
-    keys: keys,
-  });
 }
 
 /**
