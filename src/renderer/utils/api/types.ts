@@ -1,3 +1,5 @@
+import type { JiraProjectType } from '../../types';
+
 /**
  * The different types of API errors which may be encountered.
  */

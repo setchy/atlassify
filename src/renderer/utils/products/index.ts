@@ -69,6 +69,10 @@ async function lookupJiraProjectType(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
 ): Promise<AtlassianProduct> {
+  if (headNotification.content.path.length === 0) {
+    return PRODUCTS.jira;
+  }
+
   try {
     if (headNotification.content.path.length === 0) {
       return PRODUCTS.jira;

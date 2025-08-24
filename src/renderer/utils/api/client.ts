@@ -3,6 +3,7 @@ import type {
   CloudID,
   Hostname,
   JiraProjectKey,
+  JiraProjectType,
   SettingsState,
   Token,
   Username,
@@ -319,7 +320,7 @@ export async function getJiraProjectTypeByKey(
     url,
   );
 
-  return response?.projectTypeKey;
+  return response.projectTypeKey;
 }
 
 /**
