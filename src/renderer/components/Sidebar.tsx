@@ -21,7 +21,7 @@ import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
-import { hasAnyFiltersSet } from '../utils/notifications/filters/filter';
+import { hasActiveFilters } from '../utils/notifications/filters/filter';
 import { getNotificationCount } from '../utils/notifications/notifications';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
@@ -70,7 +70,7 @@ export const Sidebar: FC = () => {
     return notifications.some((n) => n.hasMoreNotifications);
   }, [notifications]);
 
-  const hasFilters = hasAnyFiltersSet(settings);
+  const hasFilters = hasActiveFilters(settings);
 
   const theme = useThemeObserver();
   const sidebarIconColorToken =
