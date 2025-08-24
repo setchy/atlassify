@@ -1,7 +1,7 @@
 import { type FC, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Avatar from '@atlaskit/avatar';
+import Avatar, { type AppearanceType } from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
 import { IconButton } from '@atlaskit/button/new';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
@@ -14,6 +14,7 @@ import {
   blockAlignmentByLength,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
+  isCompassScorecardNotification,
 } from '../../utils/helpers';
 import { openNotification } from '../../utils/links';
 import {
@@ -63,6 +64,12 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const spaceBetweenSections = 'space.100';
 
+  const avatarAppearanceStyle: AppearanceType = isCompassScorecardNotification(
+    notification,
+  )
+    ? 'square'
+    : 'circle';
+
   const avatarGroup = notification.notificationGroup.additionalActors.map(
     (actor) => ({
       key: actor.displayName,
@@ -95,13 +102,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                   position="right"
                 >
                   <Avatar
-                    appearance={
-                      // The Compass System Actor Icons look much better in square form than circle
-                      notification.product.name === 'compass' &&
-                      notification.message.includes('a scorecard')
-                        ? 'square'
-                        : 'circle'
-                    }
+                    appearance={avatarAppearanceStyle}
                     name={notification.actor.displayName}
                     size="medium"
                     src={notification.actor.avatarURL}

@@ -14,6 +14,7 @@ import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
+  isCompassScorecardNotification,
 } from './helpers';
 
 describe('renderer/utils/helpers.ts', () => {
@@ -180,5 +181,23 @@ describe('renderer/utils/helpers.ts', () => {
         'Some much longer string that should trigger a different format',
       ),
     ).toEqual('start');
+  });
+
+  describe('isCompassScorecardNotification', () => {
+    it('should return true for compass scorecard notifications', () => {
+      const notification = mockSingleAtlassifyNotification;
+      notification.product.name = 'compass';
+      notification.message = 'This is a scorecard notification';
+
+      expect(isCompassScorecardNotification(notification)).toBe(true);
+    });
+
+    it('should return false for non-compass notifications', () => {
+      const notification = mockSingleAtlassifyNotification;
+      notification.product.name = 'confluence';
+      notification.message = 'This is a scorecard wiki';
+
+      expect(isCompassScorecardNotification(notification)).toBe(false);
+    });
   });
 });

@@ -70,22 +70,34 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       expect(inferNotificationActor(mockNotification)).toBe('user');
     });
 
-    it('should infer automation actor', () => {
+    it('should infer automation actor when displayName is null', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,
         actor: {
-          displayName: 'Automation for Jira',
+          displayName: null,
         },
       } as AtlassifyNotification;
 
       expect(inferNotificationActor(mockNotification)).toBe('automation');
     });
 
-    it('should infer automation actor when displayName is null', () => {
+    it('should infer automation actor from compass scorecard', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: {
+          name: 'compass',
+        },
+        message: 'some-component is failing a scorecard',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationActor(mockNotification)).toBe('automation');
+    });
+
+    it('should infer automation actor from displayName', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,
         actor: {
-          displayName: null,
+          displayName: 'Automation for Jira',
         },
       } as AtlassifyNotification;
 

@@ -8,6 +8,7 @@ import type {
   AtlassifyNotification,
   SettingsState,
 } from '../../../types';
+import { isCompassScorecardNotification } from '../../helpers';
 import type { Filter, FilterDetails } from './types';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
@@ -60,6 +61,10 @@ export function inferNotificationActor(
   notification: AtlassifyNotification,
 ): ActorType {
   if (!notification.actor.displayName) {
+    return 'automation';
+  }
+
+  if (isCompassScorecardNotification(notification)) {
     return 'automation';
   }
 
