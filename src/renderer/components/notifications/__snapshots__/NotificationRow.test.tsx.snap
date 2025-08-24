@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render itself & its children - group by date 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx should render notifications compass avatar as square 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -29,18 +29,18 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     role="presentation"
                   >
                     <div
-                      aria-labelledby="uid2"
+                      aria-labelledby="uid30"
                       class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
                       <span
-                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkosqtm _14mjsqtm _1bsbzwfg _4t3izwfg"
                         style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                       >
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkosqtm"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -48,7 +48,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       </span>
                       <span
                         hidden=""
-                        id="uid2"
+                        id="uid30"
                       >
                         atlassify-app
                       </span>
@@ -101,7 +101,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                         <span
                           class="css-bc6vhz"
                         >
-                          #103: chore(deps): update dependency eslint
+                          some-project improved a scorecard
                         </span>
                           
                         <em
@@ -125,7 +125,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               class="css-bsfd3j"
                             >
                               <div
-                                aria-labelledby="uid4"
+                                aria-labelledby="uid32"
                                 class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                 role="img"
                               >
@@ -144,7 +144,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                                 </span>
                                 <span
                                   hidden=""
-                                  id="uid4"
+                                  id="uid32"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -194,14 +194,27 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               <span
                                 class="css-1re4vvb"
                               >
-                                myorg/notifications-test
+                                Compass
                               </span>
                             </div>
                           </div>
                           <div
                             class="css-k5cxwk"
                             id="notification-group"
-                          />
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                +
+                                2
+                                 
+                                other updates
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -279,18 +292,18 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                   role="presentation"
                 >
                   <div
-                    aria-labelledby="uid2"
+                    aria-labelledby="uid30"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkosqtm _14mjsqtm _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkosqtm"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -298,7 +311,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                     </span>
                     <span
                       hidden=""
-                      id="uid2"
+                      id="uid30"
                     >
                       atlassify-app
                     </span>
@@ -351,7 +364,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                       <span
                         class="css-bc6vhz"
                       >
-                        #103: chore(deps): update dependency eslint
+                        some-project improved a scorecard
                       </span>
                         
                       <em
@@ -375,7 +388,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             class="css-bsfd3j"
                           >
                             <div
-                              aria-labelledby="uid4"
+                              aria-labelledby="uid32"
                               class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                               role="img"
                             >
@@ -394,7 +407,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               </span>
                               <span
                                 hidden=""
-                                id="uid4"
+                                id="uid32"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -444,14 +457,27 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                             <span
                               class="css-1re4vvb"
                             >
-                              myorg/notifications-test
+                              Compass
                             </span>
                           </div>
                         </div>
                         <div
                           class="css-k5cxwk"
                           id="notification-group"
-                        />
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              +
+                              2
+                               
+                              other updates
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -557,7 +583,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render itself & its children - group by products 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -952,6 +978,1945 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render its
                               <span
                                 hidden=""
                                 id="uid10"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              #103: chore(deps): update dependency eslint
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-1yqbixt"
+                          id="notification-product"
+                        >
+                          <div
+                            class="css-lyw6pf"
+                          >
+                            <span
+                              aria-label="Bitbucket"
+                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                              role="img"
+                              style="--themed-icon-color: initial;"
+                            >
+                              <svg
+                                height="100%"
+                                viewBox="0 0 24 24"
+                              >
+                                
+    
+                                <path
+                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                  fill="var(--tile-color,#94c748)"
+                                />
+                                
+    
+                                <path
+                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+
+                              </svg>
+                              
+
+                            </span>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              myorg/notifications-test
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-k5cxwk"
+            id="notification-actions"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                data-testid="notification-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                type="button"
+              >
+                <span
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                >
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-icon-brand)"
+                      r="4"
+                    />
+                  </svg>
+                  <span
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple named actors 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+        id="138661096"
+      >
+        <div
+          class="css-am7nxq"
+        >
+          <div
+            class="css-1v6wdk"
+          >
+            <div
+              class="css-1ufm3oo"
+            >
+              <div
+                class="css-k5cxwk"
+                id="notification-avatar"
+              >
+                <div
+                  class="css-5zfxu5"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <div
+                      aria-labelledby="uid14"
+                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                      role="img"
+                    >
+                      <span
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          data-ssr-placeholder-ignored="true"
+                          data-vc="avatar-image"
+                          src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                        />
+                      </span>
+                      <span
+                        hidden=""
+                        id="uid14"
+                      >
+                        atlassify-app
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    role="presentation"
+                  >
+                    <span
+                      aria-label="Direct notifications"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      role="img"
+                      style="color: currentcolor;"
+                    >
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-8kdxbn"
+              >
+                <div
+                  class="css-k5cxwk"
+                  data-testid="notification-details"
+                  id="notification-details"
+                >
+                  <div
+                    class="cursor-pointer"
+                  >
+                    <div
+                      class="css-2mvdbp"
+                    >
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-title"
+                      >
+                        <span
+                          class="css-bc6vhz"
+                        >
+                          #103: chore(deps): update dependency eslint
+                        </span>
+                          
+                        <em
+                          class="css-1wofv2j"
+                        >
+                          3 years ago
+                        </em>
+                      </div>
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-metadata"
+                      >
+                        <div
+                          class="css-2mvdbp"
+                        >
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-entity"
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <div
+                                aria-labelledby="uid16"
+                                class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                role="img"
+                              >
+                                <span
+                                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                >
+                                  <img
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                    data-ssr-placeholder-ignored="true"
+                                    data-vc="avatar-image"
+                                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                  />
+                                </span>
+                                <span
+                                  hidden=""
+                                  id="uid16"
+                                >
+                                  #103: chore(deps): update dependency eslint
+                                </span>
+                              </div>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-1yqbixt"
+                            id="notification-product"
+                          >
+                            <div
+                              class="css-lyw6pf"
+                            >
+                              <span
+                                aria-label="Bitbucket"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                role="img"
+                                style="--themed-icon-color: initial;"
+                              >
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                >
+                                  
+    
+                                  <path
+                                    d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                    fill="var(--tile-color,#94c748)"
+                                  />
+                                  
+    
+                                  <path
+                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+
+                                </svg>
+                                
+
+                              </span>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                myorg/notifications-test
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <ul
+                                aria-label="avatar group"
+                                class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                              >
+                                <li
+                                  class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
+                                >
+                                  <div
+                                    role="presentation"
+                                  >
+                                    <div
+                                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                      style="z-index: 5;"
+                                    >
+                                      <a
+                                        aria-label="User 1"
+                                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
+                                        href="#"
+                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                      >
+                                        <span
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                        >
+                                          <span
+                                            aria-hidden="true"
+                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                            data-vc="icon-undefined"
+                                            style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          >
+                                            <svg
+                                              height="24"
+                                              role="presentation"
+                                              viewBox="0 0 24 24"
+                                              width="24"
+                                            >
+                                              <g
+                                                fill="currentcolor"
+                                                fill-rule="evenodd"
+                                              >
+                                                <path
+                                                  d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                                                />
+                                                <circle
+                                                  cx="12"
+                                                  cy="7"
+                                                  r="4"
+                                                />
+                                              </g>
+                                            </svg>
+                                          </span>
+                                        </span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li
+                                  class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
+                                >
+                                  <div
+                                    role="presentation"
+                                  >
+                                    <div
+                                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                      style="z-index: 4;"
+                                    >
+                                      <a
+                                        aria-label="User 2"
+                                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
+                                        href="#"
+                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                      >
+                                        <span
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                        >
+                                          <span
+                                            aria-hidden="true"
+                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                            data-vc="icon-undefined"
+                                            style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          >
+                                            <svg
+                                              height="24"
+                                              role="presentation"
+                                              viewBox="0 0 24 24"
+                                              width="24"
+                                            >
+                                              <g
+                                                fill="currentcolor"
+                                                fill-rule="evenodd"
+                                              >
+                                                <path
+                                                  d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                                                />
+                                                <circle
+                                                  cx="12"
+                                                  cy="7"
+                                                  r="4"
+                                                />
+                                              </g>
+                                            </svg>
+                                          </span>
+                                        </span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                +
+                                2
+                                 
+                                updates from User 1
+                                 and others
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-k5cxwk"
+              id="notification-actions"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  data-testid="notification-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                  type="button"
+                >
+                  <span
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                  >
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-icon-brand)"
+                        r="4"
+                      />
+                    </svg>
+                    <span
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                    >
+                      Mark as read
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+      id="138661096"
+    >
+      <div
+        class="css-am7nxq"
+      >
+        <div
+          class="css-1v6wdk"
+        >
+          <div
+            class="css-1ufm3oo"
+          >
+            <div
+              class="css-k5cxwk"
+              id="notification-avatar"
+            >
+              <div
+                class="css-5zfxu5"
+              >
+                <div
+                  role="presentation"
+                >
+                  <div
+                    aria-labelledby="uid14"
+                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                    role="img"
+                  >
+                    <span
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        data-ssr-placeholder-ignored="true"
+                        data-vc="avatar-image"
+                        src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid14"
+                    >
+                      atlassify-app
+                    </span>
+                  </div>
+                </div>
+                <div
+                  role="presentation"
+                >
+                  <span
+                    aria-label="Direct notifications"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    role="img"
+                    style="color: currentcolor;"
+                  >
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-8kdxbn"
+            >
+              <div
+                class="css-k5cxwk"
+                data-testid="notification-details"
+                id="notification-details"
+              >
+                <div
+                  class="cursor-pointer"
+                >
+                  <div
+                    class="css-2mvdbp"
+                  >
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-title"
+                    >
+                      <span
+                        class="css-bc6vhz"
+                      >
+                        #103: chore(deps): update dependency eslint
+                      </span>
+                        
+                      <em
+                        class="css-1wofv2j"
+                      >
+                        3 years ago
+                      </em>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-metadata"
+                    >
+                      <div
+                        class="css-2mvdbp"
+                      >
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-entity"
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <div
+                              aria-labelledby="uid16"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                              role="img"
+                            >
+                              <span
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                  data-ssr-placeholder-ignored="true"
+                                  data-vc="avatar-image"
+                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                />
+                              </span>
+                              <span
+                                hidden=""
+                                id="uid16"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              #103: chore(deps): update dependency eslint
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-1yqbixt"
+                          id="notification-product"
+                        >
+                          <div
+                            class="css-lyw6pf"
+                          >
+                            <span
+                              aria-label="Bitbucket"
+                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                              role="img"
+                              style="--themed-icon-color: initial;"
+                            >
+                              <svg
+                                height="100%"
+                                viewBox="0 0 24 24"
+                              >
+                                
+    
+                                <path
+                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                  fill="var(--tile-color,#94c748)"
+                                />
+                                
+    
+                                <path
+                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+
+                              </svg>
+                              
+
+                            </span>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              myorg/notifications-test
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <ul
+                              aria-label="avatar group"
+                              class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                            >
+                              <li
+                                class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
+                              >
+                                <div
+                                  role="presentation"
+                                >
+                                  <div
+                                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                    style="z-index: 5;"
+                                  >
+                                    <a
+                                      aria-label="User 1"
+                                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
+                                      href="#"
+                                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    >
+                                      <span
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                          data-vc="icon-undefined"
+                                          style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                        >
+                                          <svg
+                                            height="24"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                            width="24"
+                                          >
+                                            <g
+                                              fill="currentcolor"
+                                              fill-rule="evenodd"
+                                            >
+                                              <path
+                                                d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                                              />
+                                              <circle
+                                                cx="12"
+                                                cy="7"
+                                                r="4"
+                                              />
+                                            </g>
+                                          </svg>
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
+                              >
+                                <div
+                                  role="presentation"
+                                >
+                                  <div
+                                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                    style="z-index: 4;"
+                                  >
+                                    <a
+                                      aria-label="User 2"
+                                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
+                                      href="#"
+                                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    >
+                                      <span
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                          data-vc="icon-undefined"
+                                          style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                        >
+                                          <svg
+                                            height="24"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                            width="24"
+                                          >
+                                            <g
+                                              fill="currentcolor"
+                                              fill-rule="evenodd"
+                                            >
+                                              <path
+                                                d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
+                                              />
+                                              <circle
+                                                cx="12"
+                                                cy="7"
+                                                r="4"
+                                              />
+                                            </g>
+                                          </svg>
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              +
+                              2
+                               
+                              updates from User 1
+                               and others
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-k5cxwk"
+            id="notification-actions"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                data-testid="notification-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                type="button"
+              >
+                <span
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                >
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-icon-brand)"
+                      r="4"
+                    />
+                  </svg>
+                  <span
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple unnamed actors 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+        id="138661096"
+      >
+        <div
+          class="css-am7nxq"
+        >
+          <div
+            class="css-1v6wdk"
+          >
+            <div
+              class="css-1ufm3oo"
+            >
+              <div
+                class="css-k5cxwk"
+                id="notification-avatar"
+              >
+                <div
+                  class="css-5zfxu5"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <div
+                      aria-labelledby="uid24"
+                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                      role="img"
+                    >
+                      <span
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          data-ssr-placeholder-ignored="true"
+                          data-vc="avatar-image"
+                          src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                        />
+                      </span>
+                      <span
+                        hidden=""
+                        id="uid24"
+                      >
+                        atlassify-app
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    role="presentation"
+                  >
+                    <span
+                      aria-label="Direct notifications"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      role="img"
+                      style="color: currentcolor;"
+                    >
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-8kdxbn"
+              >
+                <div
+                  class="css-k5cxwk"
+                  data-testid="notification-details"
+                  id="notification-details"
+                >
+                  <div
+                    class="cursor-pointer"
+                  >
+                    <div
+                      class="css-2mvdbp"
+                    >
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-title"
+                      >
+                        <span
+                          class="css-bc6vhz"
+                        >
+                          #103: chore(deps): update dependency eslint
+                        </span>
+                          
+                        <em
+                          class="css-1wofv2j"
+                        >
+                          3 years ago
+                        </em>
+                      </div>
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-metadata"
+                      >
+                        <div
+                          class="css-2mvdbp"
+                        >
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-entity"
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <div
+                                aria-labelledby="uid26"
+                                class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                role="img"
+                              >
+                                <span
+                                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                >
+                                  <img
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                    data-ssr-placeholder-ignored="true"
+                                    data-vc="avatar-image"
+                                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                  />
+                                </span>
+                                <span
+                                  hidden=""
+                                  id="uid26"
+                                >
+                                  #103: chore(deps): update dependency eslint
+                                </span>
+                              </div>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-1yqbixt"
+                            id="notification-product"
+                          >
+                            <div
+                              class="css-lyw6pf"
+                            >
+                              <span
+                                aria-label="Bitbucket"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                role="img"
+                                style="--themed-icon-color: initial;"
+                              >
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                >
+                                  
+    
+                                  <path
+                                    d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                    fill="var(--tile-color,#94c748)"
+                                  />
+                                  
+    
+                                  <path
+                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+
+                                </svg>
+                                
+
+                              </span>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                myorg/notifications-test
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                +
+                                2
+                                 
+                                other updates
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-k5cxwk"
+              id="notification-actions"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  data-testid="notification-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                  type="button"
+                >
+                  <span
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                  >
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-icon-brand)"
+                        r="4"
+                      />
+                    </svg>
+                    <span
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                    >
+                      Mark as read
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+      id="138661096"
+    >
+      <div
+        class="css-am7nxq"
+      >
+        <div
+          class="css-1v6wdk"
+        >
+          <div
+            class="css-1ufm3oo"
+          >
+            <div
+              class="css-k5cxwk"
+              id="notification-avatar"
+            >
+              <div
+                class="css-5zfxu5"
+              >
+                <div
+                  role="presentation"
+                >
+                  <div
+                    aria-labelledby="uid24"
+                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                    role="img"
+                  >
+                    <span
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        data-ssr-placeholder-ignored="true"
+                        data-vc="avatar-image"
+                        src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid24"
+                    >
+                      atlassify-app
+                    </span>
+                  </div>
+                </div>
+                <div
+                  role="presentation"
+                >
+                  <span
+                    aria-label="Direct notifications"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    role="img"
+                    style="color: currentcolor;"
+                  >
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-8kdxbn"
+            >
+              <div
+                class="css-k5cxwk"
+                data-testid="notification-details"
+                id="notification-details"
+              >
+                <div
+                  class="cursor-pointer"
+                >
+                  <div
+                    class="css-2mvdbp"
+                  >
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-title"
+                    >
+                      <span
+                        class="css-bc6vhz"
+                      >
+                        #103: chore(deps): update dependency eslint
+                      </span>
+                        
+                      <em
+                        class="css-1wofv2j"
+                      >
+                        3 years ago
+                      </em>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-metadata"
+                    >
+                      <div
+                        class="css-2mvdbp"
+                      >
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-entity"
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <div
+                              aria-labelledby="uid26"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                              role="img"
+                            >
+                              <span
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                  data-ssr-placeholder-ignored="true"
+                                  data-vc="avatar-image"
+                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                />
+                              </span>
+                              <span
+                                hidden=""
+                                id="uid26"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              #103: chore(deps): update dependency eslint
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-1yqbixt"
+                          id="notification-product"
+                        >
+                          <div
+                            class="css-lyw6pf"
+                          >
+                            <span
+                              aria-label="Bitbucket"
+                              class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                              role="img"
+                              style="--themed-icon-color: initial;"
+                            >
+                              <svg
+                                height="100%"
+                                viewBox="0 0 24 24"
+                              >
+                                
+    
+                                <path
+                                  d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                  fill="var(--tile-color,#94c748)"
+                                />
+                                
+    
+                                <path
+                                  d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                  fill="var(--icon-color, #101214)"
+                                />
+                                
+
+                              </svg>
+                              
+
+                            </span>
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              myorg/notifications-test
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-group"
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <span
+                              class="css-1re4vvb"
+                            >
+                              +
+                              2
+                               
+                              other updates
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-k5cxwk"
+            id="notification-actions"
+          >
+            <div
+              role="presentation"
+            >
+              <button
+                class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                data-testid="notification-mark-as-read"
+                style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                type="button"
+              >
+                <span
+                  class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                >
+                  <svg
+                    aria-label="Unread Indicator"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      fill="var(--ds-icon-brand)"
+                      r="4"
+                    />
+                  </svg>
+                  <span
+                    class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                  >
+                    Mark as read
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`renderer/components/notifications/NotificationRow.tsx should render notifications standard notification 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+        id="138661096"
+      >
+        <div
+          class="css-am7nxq"
+        >
+          <div
+            class="css-1v6wdk"
+          >
+            <div
+              class="css-1ufm3oo"
+            >
+              <div
+                class="css-k5cxwk"
+                id="notification-avatar"
+              >
+                <div
+                  class="css-5zfxu5"
+                >
+                  <div
+                    role="presentation"
+                  >
+                    <div
+                      aria-labelledby="uid2"
+                      class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                      role="img"
+                    >
+                      <span
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          data-ssr-placeholder-ignored="true"
+                          data-vc="avatar-image"
+                          src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                        />
+                      </span>
+                      <span
+                        hidden=""
+                        id="uid2"
+                      >
+                        atlassify-app
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    role="presentation"
+                  >
+                    <span
+                      aria-label="Direct notifications"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      role="img"
+                      style="color: currentcolor;"
+                    >
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                        fill="none"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-8kdxbn"
+              >
+                <div
+                  class="css-k5cxwk"
+                  data-testid="notification-details"
+                  id="notification-details"
+                >
+                  <div
+                    class="cursor-pointer"
+                  >
+                    <div
+                      class="css-2mvdbp"
+                    >
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-title"
+                      >
+                        <span
+                          class="css-bc6vhz"
+                        >
+                          #103: chore(deps): update dependency eslint
+                        </span>
+                          
+                        <em
+                          class="css-1wofv2j"
+                        >
+                          3 years ago
+                        </em>
+                      </div>
+                      <div
+                        class="css-k5cxwk"
+                        id="notification-metadata"
+                      >
+                        <div
+                          class="css-2mvdbp"
+                        >
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-entity"
+                          >
+                            <div
+                              class="css-bsfd3j"
+                            >
+                              <div
+                                aria-labelledby="uid4"
+                                class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                                role="img"
+                              >
+                                <span
+                                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                >
+                                  <img
+                                    alt=""
+                                    aria-hidden="true"
+                                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                    data-ssr-placeholder-ignored="true"
+                                    data-vc="avatar-image"
+                                    src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                  />
+                                </span>
+                                <span
+                                  hidden=""
+                                  id="uid4"
+                                >
+                                  #103: chore(deps): update dependency eslint
+                                </span>
+                              </div>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                #103: chore(deps): update dependency eslint
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-1yqbixt"
+                            id="notification-product"
+                          >
+                            <div
+                              class="css-lyw6pf"
+                            >
+                              <span
+                                aria-label="Bitbucket"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                role="img"
+                                style="--themed-icon-color: initial;"
+                              >
+                                <svg
+                                  height="100%"
+                                  viewBox="0 0 24 24"
+                                >
+                                  
+    
+                                  <path
+                                    d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                                    fill="var(--tile-color,#94c748)"
+                                  />
+                                  
+    
+                                  <path
+                                    d="m17.898 11.353-.994 6.064c-.065.367-.324.583-.691.583H7.787c-.367 0-.627-.216-.691-.583L5.346 6.604C5.28 6.237 5.476 6 5.82 6h12.358c.346 0 .54.237.475.604l-.475 2.85c-.065.41-.303.582-.691.582h-7.432c-.109 0-.173.065-.152.194l.584 3.583c.021.086.086.151.172.151h2.68c.086 0 .15-.065.172-.151l.41-2.59c.044-.324.26-.453.563-.453H17.4c.432 0 .562.216.497.582"
+                                    fill="var(--icon-color, #101214)"
+                                  />
+                                  
+
+                                </svg>
+                                
+
+                              </span>
+                              <span
+                                class="css-1re4vvb"
+                              >
+                                myorg/notifications-test
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="css-k5cxwk"
+                            id="notification-group"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-k5cxwk"
+              id="notification-actions"
+            >
+              <div
+                role="presentation"
+              >
+                <button
+                  class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko14q2 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  data-testid="notification-mark-as-read"
+                  style="--_1203r2w: calc(0px - var(--ds-border-width-outline, 2px));"
+                  type="button"
+                >
+                  <span
+                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                  >
+                    <svg
+                      aria-label="Unread Indicator"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        fill="var(--ds-icon-brand)"
+                        r="4"
+                      />
+                    </svg>
+                    <span
+                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                    >
+                      Mark as read
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+      id="138661096"
+    >
+      <div
+        class="css-am7nxq"
+      >
+        <div
+          class="css-1v6wdk"
+        >
+          <div
+            class="css-1ufm3oo"
+          >
+            <div
+              class="css-k5cxwk"
+              id="notification-avatar"
+            >
+              <div
+                class="css-5zfxu5"
+              >
+                <div
+                  role="presentation"
+                >
+                  <div
+                    aria-labelledby="uid2"
+                    class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                    role="img"
+                  >
+                    <span
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1q5u _14mj1q5u _1bsbzwfg _4t3izwfg"
+                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        data-ssr-placeholder-ignored="true"
+                        data-vc="avatar-image"
+                        src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+                      />
+                    </span>
+                    <span
+                      hidden=""
+                      id="uid2"
+                    >
+                      atlassify-app
+                    </span>
+                  </div>
+                </div>
+                <div
+                  role="presentation"
+                >
+                  <span
+                    aria-label="Direct notifications"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                    role="img"
+                    style="color: currentcolor;"
+                  >
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                      fill="none"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-8kdxbn"
+            >
+              <div
+                class="css-k5cxwk"
+                data-testid="notification-details"
+                id="notification-details"
+              >
+                <div
+                  class="cursor-pointer"
+                >
+                  <div
+                    class="css-2mvdbp"
+                  >
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-title"
+                    >
+                      <span
+                        class="css-bc6vhz"
+                      >
+                        #103: chore(deps): update dependency eslint
+                      </span>
+                        
+                      <em
+                        class="css-1wofv2j"
+                      >
+                        3 years ago
+                      </em>
+                    </div>
+                    <div
+                      class="css-k5cxwk"
+                      id="notification-metadata"
+                    >
+                      <div
+                        class="css-2mvdbp"
+                      >
+                        <div
+                          class="css-k5cxwk"
+                          id="notification-entity"
+                        >
+                          <div
+                            class="css-bsfd3j"
+                          >
+                            <div
+                              aria-labelledby="uid4"
+                              class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+                              role="img"
+                            >
+                              <span
+                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rkogqwt _14mjgqwt _1bsb7vkz _4t3i7vkz"
+                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                              >
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkogqwt"
+                                  data-ssr-placeholder-ignored="true"
+                                  data-vc="avatar-image"
+                                  src="https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/80907f89f58b/img/favicon.ico"
+                                />
+                              </span>
+                              <span
+                                hidden=""
+                                id="uid4"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>

@@ -17,48 +17,131 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     jest.clearAllMocks();
   });
 
-  it('should render itself & its children - group by date', async () => {
-    jest
-      .spyOn(global.Date, 'now')
-      .mockImplementation(() => new Date('2024').valueOf());
+  describe('should render notifications', () => {
+    it('standard notification', async () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2024').valueOf());
 
-    const props: INotificationRow = {
-      notification: mockSingleAtlassifyNotification,
-    };
+      const props: INotificationRow = {
+        notification: mockSingleAtlassifyNotification,
+      };
 
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings, groupNotificationsByProduct: false },
-        }}
-      >
-        <NotificationRow {...props} />
-      </AppContext.Provider>,
-    );
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: mockSettings,
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
 
-    expect(tree).toMatchSnapshot();
-  });
+      expect(tree).toMatchSnapshot();
+    });
 
-  it('should render itself & its children - group by products', async () => {
-    jest
-      .spyOn(global.Date, 'now')
-      .mockImplementation(() => new Date('2024').valueOf());
+    it('group by title', async () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2024').valueOf());
 
-    const props: INotificationRow = {
-      notification: mockSingleAtlassifyNotification,
-    };
+      const props: INotificationRow = {
+        notification: mockSingleAtlassifyNotification,
+      };
 
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings, groupNotificationsByProduct: true },
-        }}
-      >
-        <NotificationRow {...props} />
-      </AppContext.Provider>,
-    );
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByTitle: true },
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
 
-    expect(tree).toMatchSnapshot();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('group by title with multiple named actors', async () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2024').valueOf());
+
+      const mockNotification = mockSingleAtlassifyNotification;
+      mockNotification.notificationGroup.size = 3;
+      mockNotification.notificationGroup.additionalActors = [
+        { displayName: 'User 1', avatarURL: null },
+        { displayName: 'User 2', avatarURL: null },
+      ];
+
+      const props: INotificationRow = {
+        notification: mockNotification,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByTitle: true },
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('group by title with multiple unnamed actors', async () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2024').valueOf());
+
+      const mockNotification = mockSingleAtlassifyNotification;
+      mockNotification.notificationGroup.size = 3;
+      mockNotification.notificationGroup.additionalActors = [];
+
+      const props: INotificationRow = {
+        notification: mockNotification,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByTitle: true },
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('compass avatar as square', async () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2024').valueOf());
+
+      const mockNotification = mockSingleAtlassifyNotification;
+      mockNotification.product.name = 'compass';
+      mockNotification.message = 'some-project improved a scorecard';
+
+      const props: INotificationRow = {
+        notification: mockNotification,
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByProduct: true },
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('notification interactions', () => {
