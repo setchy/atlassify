@@ -25,7 +25,6 @@ jest.mock('axios');
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    // TODO add more explicit mocks
     (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
       data: {
         data: {},
