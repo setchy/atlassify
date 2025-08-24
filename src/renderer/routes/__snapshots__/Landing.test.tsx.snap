@@ -12,9 +12,8 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           class="css-11aluc9"
         >
           <svg
-            aria-label="Atlassify Logo"
+            aria-hidden="true"
             height="64"
-            role="img"
             viewBox="0 0 48 48"
             width="64"
             xmlns="http://www.w3.org/2000/svg"
@@ -357,9 +356,8 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
         class="css-11aluc9"
       >
         <svg
-          aria-label="Atlassify Logo"
+          aria-hidden="true"
           height="64"
-          role="img"
           viewBox="0 0 48 48"
           width="64"
           xmlns="http://www.w3.org/2000/svg"

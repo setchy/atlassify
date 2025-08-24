@@ -2,8 +2,6 @@ import type { FC } from 'react';
 
 import { B300, N0 } from '@atlaskit/theme/colors';
 
-import { APPLICATION } from '../../../shared/constants';
-
 interface IAtlassifyIcon {
   size?: number;
   color?: 'brand' | 'default';
@@ -16,9 +14,8 @@ export const AtlassifyIcon: FC<IAtlassifyIcon> = ({
 
   return (
     <svg
-      aria-label={`${APPLICATION.NAME} Logo`}
+      aria-hidden="true"
       height={size}
-      role="img"
       viewBox="0 0 48 48"
       width={size}
       xmlns="http://www.w3.org/2000/svg"

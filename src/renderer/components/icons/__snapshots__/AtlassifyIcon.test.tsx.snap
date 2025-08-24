@@ -6,9 +6,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - brand co
   "baseElement": <body>
     <div>
       <svg
-        aria-label="Atlassify Logo"
+        aria-hidden="true"
         height="48"
-        role="img"
         viewBox="0 0 48 48"
         width="48"
         xmlns="http://www.w3.org/2000/svg"
@@ -52,9 +51,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - brand co
   </body>,
   "container": <div>
     <svg
-      aria-label="Atlassify Logo"
+      aria-hidden="true"
       height="48"
-      role="img"
       viewBox="0 0 48 48"
       width="48"
       xmlns="http://www.w3.org/2000/svg"
@@ -155,9 +153,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - custom s
   "baseElement": <body>
     <div>
       <svg
-        aria-label="Atlassify Logo"
+        aria-hidden="true"
         height="48"
-        role="img"
         viewBox="0 0 48 48"
         width="48"
         xmlns="http://www.w3.org/2000/svg"
@@ -201,9 +198,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - custom s
   </body>,
   "container": <div>
     <svg
-      aria-label="Atlassify Logo"
+      aria-hidden="true"
       height="48"
-      role="img"
       viewBox="0 0 48 48"
       width="48"
       xmlns="http://www.w3.org/2000/svg"
@@ -304,9 +300,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - default 
   "baseElement": <body>
     <div>
       <svg
-        aria-label="Atlassify Logo"
+        aria-hidden="true"
         height="48"
-        role="img"
         viewBox="0 0 48 48"
         width="48"
         xmlns="http://www.w3.org/2000/svg"
@@ -350,9 +345,8 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - default 
   </body>,
   "container": <div>
     <svg
-      aria-label="Atlassify Logo"
+      aria-hidden="true"
       height="48"
-      role="img"
       viewBox="0 0 48 48"
       width="48"
       xmlns="http://www.w3.org/2000/svg"

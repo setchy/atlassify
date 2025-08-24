@@ -36,9 +36,8 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                         class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                       >
                         <svg
-                          aria-label="Atlassify Logo"
+                          aria-hidden="true"
                           height="32"
-                          role="img"
                           viewBox="0 0 48 48"
                           width="32"
                           xmlns="http://www.w3.org/2000/svg"
@@ -217,9 +216,8 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                       class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
                       <svg
-                        aria-label="Atlassify Logo"
+                        aria-hidden="true"
                         height="32"
-                        role="img"
                         viewBox="0 0 48 48"
                         width="32"
                         xmlns="http://www.w3.org/2000/svg"
