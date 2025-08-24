@@ -70,6 +70,8 @@ export const Sidebar: FC = () => {
     return notifications.some((n) => n.hasMoreNotifications);
   }, [notifications]);
 
+  const hasFilters = hasActiveFilters(settings);
+
   const theme = useThemeObserver();
   const sidebarIconColorToken =
     theme.colorMode === 'light'
@@ -202,9 +204,7 @@ export const Sidebar: FC = () => {
                   position="right"
                 >
                   <IconButton
-                    appearance={
-                      hasActiveFilters(settings) ? 'discovery' : 'subtle'
-                    }
+                    appearance={hasFilters ? 'discovery' : 'subtle'}
                     icon={(iconProps) => (
                       <FilterIcon
                         {...iconProps}

@@ -10,6 +10,8 @@ export const AllRead: FC = () => {
   const { settings } = useContext(AppContext);
   const { t } = useTranslation();
 
+  const hasFilters = hasActiveFilters(settings);
+
   const emoji = useMemo(
     () =>
       Constants.ALL_READ_EMOJIS[
@@ -18,7 +20,7 @@ export const AllRead: FC = () => {
     [],
   );
 
-  const heading = hasActiveFilters(settings)
+  const heading = hasFilters
     ? t('allRead.headingFiltered')
     : t('allRead.heading');
 

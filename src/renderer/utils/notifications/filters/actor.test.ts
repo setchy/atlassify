@@ -81,7 +81,7 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       expect(inferNotificationActor(mockNotification)).toBe('automation');
     });
 
-    it('should infer automation actor', () => {
+    it('should infer automation actor when displayName is null', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,
         actor: {

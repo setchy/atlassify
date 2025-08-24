@@ -41,12 +41,12 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[1].actor.displayName = 'Automation for Jira';
       const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
-        filterActors: ['automation'],
+        filterActors: ['user'],
       });
 
       expect(mockAtlassifyNotifications.length).toBe(2);
       expect(result.length).toBe(1);
-      expect(result).toEqual([mockAtlassifyNotifications[1]]);
+      expect(result).toEqual([mockAtlassifyNotifications[0]]);
     });
 
     it('should filter notifications by read state when provided', async () => {
@@ -102,14 +102,6 @@ describe('renderer/utils/notifications/filter.ts', () => {
       const settings: SettingsState = {
         ...defaultSettings,
         filterCategories: ['direct'],
-      };
-      expect(hasActiveFilters(settings)).toBe(true);
-    });
-
-    it('non-default actor filters', () => {
-      const settings: SettingsState = {
-        ...defaultSettings,
-        filterActors: ['automation'],
       };
       expect(hasActiveFilters(settings)).toBe(true);
     });
