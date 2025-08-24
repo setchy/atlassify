@@ -8,26 +8,10 @@ import { PRODUCTS } from '../../products/catalog';
 import type { AtlassianProduct, ProductType } from '../../products/types';
 import type { Filter, FilterDetails } from './types';
 
-const PRODUCT_DETAILS: Record<ProductType, FilterDetails> = Object.fromEntries(
-  (Object.keys(PRODUCTS) as ProductType[]).map((type) => {
-    const p: AtlassianProduct = PRODUCTS[type];
-    const name = p.display;
-    const description = i18n.t('filters.products.description', {
-      type: p.display,
-    });
-    return [
-      type,
-      {
-        name,
-        description,
-        logo: p.logo,
-      } as FilterDetails,
-    ];
-  }),
-) as Record<ProductType, FilterDetails>;
-
 export const productFilter: Filter<ProductType> = {
-  FILTER_TYPES: PRODUCT_DETAILS,
+  get FILTER_TYPES() {
+    return buildProductFilterDetails(PRODUCTS);
+  },
 
   getTypeDetails(type: ProductType) {
     return this.FILTER_TYPES[type];
@@ -59,3 +43,24 @@ export const productFilter: Filter<ProductType> = {
     return notification.product.type === product;
   },
 };
+
+function buildProductFilterDetails(
+  products: typeof PRODUCTS,
+): Record<ProductType, FilterDetails> {
+  return Object.fromEntries(
+    (Object.keys(products) as ProductType[]).sort().map((type) => {
+      const p: AtlassianProduct = products[type];
+
+      return [
+        type,
+        {
+          name: p.display,
+          description: i18n.t('filters.products.description', {
+            type: p.display,
+          }),
+          logo: p.logo,
+        } as FilterDetails,
+      ];
+    }),
+  ) as Record<ProductType, FilterDetails>;
+}
