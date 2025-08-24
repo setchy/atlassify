@@ -20,6 +20,12 @@ const jiraProjectTypeCache = new Map<
   Promise<JiraProjectType>
 >();
 
+// Test-only utility (tree-shakable) to clear caches between tests
+export function __resetProductInferenceCaches() {
+  hostnameCloudIdCache.clear();
+  jiraProjectTypeCache.clear();
+}
+
 /**
  * Infer the Atlassian Product from notification analytic attributes
  */

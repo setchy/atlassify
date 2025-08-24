@@ -1,117 +1,185 @@
+// Mock API client before importing module under test so internal imports use mocks
+jest.mock('../api/client', () => {
+  return {
+    getCloudIDsForHostnames: jest.fn(async () => ({
+      data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
+    })),
+    getJiraProjectTypeByKey: jest.fn(),
+  };
+});
+jest.mock('../../../shared/logger', () => ({
+  logError: jest.fn(),
+}));
+
+import { logError } from '../../../shared/logger';
+
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import { inferAtlassianProduct, PRODUCTS } from '.';
+import type { JiraProjectType } from '../api/types';
+import {
+  __resetProductInferenceCaches,
+  inferAtlassianProduct,
+  PRODUCTS,
+} from '.';
+
+// Access mocked API functions via requireMock to avoid type-side effects
+const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = jest.requireMock(
+  '../api/client',
+) as {
+  getCloudIDsForHostnames: jest.Mock;
+  getJiraProjectTypeByKey: jest.Mock;
+};
 
 describe('renderer/utils/products/index.ts', () => {
-  describe('inferAtlassianProduct - should map to correct products from analytics attributes', () => {
-    it('bitbucket', async () => {
+  describe('inferAtlassianProduct', () => {
+    test.each([
+      ['bitbucket', PRODUCTS.bitbucket],
+      ['compass', PRODUCTS.compass],
+      ['confluence', PRODUCTS.confluence],
+      ['opsgenie', PRODUCTS.jira_service_management],
+      ['people-and-teams-collective', PRODUCTS.teams],
+      ['team-central', PRODUCTS.home],
+      ['unmapped', PRODUCTS.unknown],
+    ])('%s maps correctly', async (registrationProduct, expected) => {
       expect(
         await inferAtlassianProduct(
           mockAtlassianCloudAccount,
-          createProductNotificationMock('bitbucket'),
+          createProductNotificationMock(registrationProduct),
         ),
-      ).toBe(PRODUCTS.bitbucket);
+      ).toBe(expected);
     });
 
-    it('compass', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('compass'),
-        ),
-      ).toBe(PRODUCTS.compass);
-    });
-
-    it('confluence', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('confluence'),
-        ),
-      ).toBe(PRODUCTS.confluence);
-    });
-
-    describe('jira', () => {
-      it('jira - core', async () => {
+    describe('jira analytics subProduct direct mapping', () => {
+      test.each([
+        ['core', PRODUCTS.jira],
+        ['software', PRODUCTS.jira],
+        ['servicedesk', PRODUCTS.jira_service_management],
+      ])('jira + %s', async (sub, expected) => {
         expect(
           await inferAtlassianProduct(
             mockAtlassianCloudAccount,
-            createProductNotificationMock('jira', 'core'),
+            createProductNotificationMock('jira', sub),
+          ),
+        ).toBe(expected);
+      });
+    });
+
+    describe('lookupJiraProjectType', () => {
+      const host = 'somehost';
+      const makeJiraNotif = (
+        key: string,
+        issue = 123,
+      ): AtlassianHeadNotificationFragment =>
+        ({
+          ...createProductNotificationMock('jira'),
+          content: {
+            path: [
+              {
+                title: `${key}-${issue} Title`,
+                url: `https://${host}.example.atlassian.net/browse/${key}-${issue}`,
+              },
+            ],
+          },
+        }) as AtlassianHeadNotificationFragment;
+
+      const setProjectType = (t: JiraProjectType) =>
+        (getJiraProjectTypeByKey as jest.Mock).mockResolvedValueOnce(t);
+
+      test.each<
+        [JiraProjectType, string, (typeof PRODUCTS)[keyof typeof PRODUCTS]]
+      >([
+        ['product_discovery', 'PDD', PRODUCTS.jira_product_discovery],
+        ['service_desk', 'SVC', PRODUCTS.jira_service_management],
+        ['business', 'BUS', PRODUCTS.jira],
+        ['customer_service', 'CS', PRODUCTS.jira],
+        ['software', 'SW', PRODUCTS.jira],
+      ])('project type %s maps', async (projType, key, expected) => {
+        setProjectType(projType);
+        const notif = makeJiraNotif(key);
+        expect(
+          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
+        ).toBe(expected);
+      });
+
+      it('falls back to jira when empty path', async () => {
+        const mockNotification = {
+          ...createProductNotificationMock('jira'),
+          content: { path: [] },
+        } as AtlassianHeadNotificationFragment;
+        expect(
+          await inferAtlassianProduct(
+            mockAtlassianCloudAccount,
+            mockNotification,
           ),
         ).toBe(PRODUCTS.jira);
       });
 
-      it('jira - software', async () => {
+      it('falls back to jira on invalid URL', async () => {
+        const mockNotification = {
+          ...createProductNotificationMock('jira'),
+          content: { path: [{ title: 'ABC-1', url: 'not-a-valid-url' }] },
+        } as unknown as AtlassianHeadNotificationFragment;
         expect(
           await inferAtlassianProduct(
             mockAtlassianCloudAccount,
-            createProductNotificationMock('jira', 'software'),
+            mockNotification,
           ),
         ).toBe(PRODUCTS.jira);
       });
 
-      it('jira - servicedesk', async () => {
+      it('caches cloud id + project type lookups', async () => {
+        setProjectType('software');
+        await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          makeJiraNotif('AAA'),
+        );
+        // Second same key
+        await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          makeJiraNotif('AAA'),
+        );
+        // Different key reuses cloud id but new project type fetch
+        setProjectType('service_desk');
+        await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          makeJiraNotif('BBB'),
+        );
+
+        const cloudCalls = (getCloudIDsForHostnames as jest.Mock).mock.calls;
+        expect(cloudCalls.length).toBe(1);
+        const projCalls = (getJiraProjectTypeByKey as jest.Mock).mock.calls;
+        // 1st key fetch + 2nd key fetch = 2
         expect(
-          await inferAtlassianProduct(
-            mockAtlassianCloudAccount,
-            createProductNotificationMock('jira', 'servicedesk'),
-          ),
-        ).toBe(PRODUCTS.jira_service_management);
+          projCalls.filter((c) => ['AAA', 'BBB'].includes(c[2])).length,
+        ).toBe(2);
       });
 
-      describe('lookupJiraProjectType fallback', () => {
-        it('default to jira software if empty path', async () => {
-          const mockNotification = {
-            ...createProductNotificationMock('jira', null),
-            content: {
-              path: [],
-            },
-          } as AtlassianHeadNotificationFragment;
+      it('logs and falls back when cloud id retrieval fails', async () => {
+        __resetProductInferenceCaches();
+        (getCloudIDsForHostnames as jest.Mock).mockRejectedValueOnce(
+          new Error('cloud boom'),
+        );
+        const notif = makeJiraNotif('ERR1');
+        expect(
+          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
+        ).toBe(PRODUCTS.jira);
+        expect(logError).toHaveBeenCalled();
+      });
 
-          expect(
-            await inferAtlassianProduct(
-              mockAtlassianCloudAccount,
-              mockNotification,
-            ),
-          ).toBe(PRODUCTS.jira);
+      it('logs and falls back when project type lookup fails', async () => {
+        __resetProductInferenceCaches();
+        (getCloudIDsForHostnames as jest.Mock).mockResolvedValueOnce({
+          data: { tenantContexts: [{ cloudId: 'cloud-2' }] },
         });
+        (getJiraProjectTypeByKey as jest.Mock).mockRejectedValueOnce(
+          new Error('project boom'),
+        );
+        const notif = makeJiraNotif('ERR2');
+        expect(
+          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
+        ).toBe(PRODUCTS.jira);
+        expect(logError).toHaveBeenCalled();
       });
-    });
-
-    it('opsgenie', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('opsgenie'),
-        ),
-      ).toBe(PRODUCTS.jira_service_management);
-    });
-
-    it('teams', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('people-and-teams-collective'),
-        ),
-      ).toBe(PRODUCTS.teams);
-    });
-
-    it('home', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('team-central'),
-        ),
-      ).toBe(PRODUCTS.home);
-    });
-
-    it('unknown', async () => {
-      expect(
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          createProductNotificationMock('unmapped', 'product'),
-        ),
-      ).toBe(PRODUCTS.unknown);
     });
   });
 });
@@ -135,3 +203,8 @@ function createProductNotificationMock(
 
   return mockHeadNotification as AtlassianHeadNotificationFragment;
 }
+
+afterEach(() => {
+  jest.clearAllMocks();
+  __resetProductInferenceCaches();
+});
