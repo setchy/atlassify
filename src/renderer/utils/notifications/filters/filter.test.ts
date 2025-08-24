@@ -106,6 +106,14 @@ describe('renderer/utils/notifications/filter.ts', () => {
       expect(hasActiveFilters(settings)).toBe(true);
     });
 
+    it('non-default actor filters', () => {
+      const settings: SettingsState = {
+        ...defaultSettings,
+        filterActors: ['automation'],
+      };
+      expect(hasActiveFilters(settings)).toBe(true);
+    });
+
     it('non-default read state filters', () => {
       const settings: SettingsState = {
         ...defaultSettings,
