@@ -4,7 +4,7 @@ import type {
   AtlassifyNotification,
   SettingsState,
 } from '../../../types';
-import { PRODUCTS } from '../../products';
+import { PRODUCTS } from '../../products/catalog';
 import type { AtlassianProduct, ProductType } from '../../products/types';
 import type { Filter, FilterDetails } from './types';
 
