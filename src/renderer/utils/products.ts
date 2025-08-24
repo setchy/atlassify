@@ -123,6 +123,10 @@ async function lookupJiraProjectType(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,
 ): Promise<AtlassianProduct> {
+  if (headNotification.content.path.length === 0) {
+    return PRODUCTS.jira;
+  }
+
   try {
     const hostName = new URL(headNotification.content.path[0].url)
       .hostname as Hostname;
@@ -148,7 +152,7 @@ async function lookupJiraProjectType(
         const jiraProject = await getJiraProjectTypeByKey(
           account,
           cloudID,
-          pathTitle,
+          projectKey,
         );
 
         return jiraProject;
