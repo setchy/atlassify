@@ -3,7 +3,6 @@ import type {
   CloudID,
   Hostname,
   JiraProjectKey,
-  JiraProjectType,
   SettingsState,
   Token,
   Username,
