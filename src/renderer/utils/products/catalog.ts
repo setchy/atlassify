@@ -11,8 +11,8 @@ import {
 } from '@atlaskit/logo';
 
 import i18n from '../../i18n';
+import type { AtlassianProduct, ProductType } from '../../types';
 import { URLs } from '../links';
-import type { AtlassianProduct, ProductType } from './types';
 
 export const PRODUCTS: Record<ProductType, AtlassianProduct> = {
   bitbucket: {

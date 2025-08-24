@@ -1,11 +1,11 @@
 import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
+import type { LogoProps } from '@atlaskit/logo';
 
 import type { Theme } from '../shared/theme';
 
 import type { Language } from './i18n/types';
-import type { AtlassianProduct, ProductType } from './utils/products/types';
 
 declare const __brand: unique symbol;
 
@@ -484,3 +484,44 @@ export type TimeSensitiveType = 'mention' | 'comment';
  * - 'automation' - An automation actor created the notification.
  */
 export type ActorType = 'user' | 'automation';
+
+/**
+ * Atlassian products which are currently supported by Atlassify.
+ */
+export type ProductType =
+  | 'bitbucket'
+  | 'confluence'
+  | 'compass'
+  | 'home'
+  | 'jira'
+  | 'jira_product_discovery'
+  | 'jira_service_management'
+  | 'teams'
+  | 'unknown';
+
+/**
+ * Details for a specific Atlassian product.
+ */
+export interface AtlassianProduct {
+  /**
+   * The type of the product.
+   */
+  type: ProductType;
+
+  /**
+   * The display name of the product.
+   */
+  display: string;
+
+  /**
+   * The logo of the product.
+   *
+   * See https://atlassian.design/components/logo/examples for available logos.
+   */
+  logo?: React.ComponentType<LogoProps>;
+
+  /**
+   * The URL to the product's home page.
+   */
+  home?: Link;
+}

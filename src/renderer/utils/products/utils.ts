@@ -1,6 +1,12 @@
 import { logError } from '../../../shared/logger';
 
-import type { Account, CloudID, Hostname, JiraProjectKey } from '../../types';
+import type {
+  Account,
+  AtlassianProduct,
+  CloudID,
+  Hostname,
+  JiraProjectKey,
+} from '../../types';
 import {
   getCloudIDsForHostnames,
   getJiraProjectTypeByKey,
@@ -8,9 +14,6 @@ import {
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import type { JiraProjectType } from '../api/types';
 import { PRODUCTS } from './catalog';
-import type { AtlassianProduct } from './types';
-
-export { PRODUCTS } from './catalog';
 
 // Use a promise cache to avoid duplicate API calls for the same hostname
 const hostnameCloudIdCache = new Map<Hostname, Promise<CloudID>>();
