@@ -77,8 +77,9 @@ export default class MenuBuilder {
           },
           {
             label: 'Visit Repository',
-            click: () =>
-              shell.openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`),
+            click: () => {
+              shell.openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`);
+            },
           },
           {
             label: `Reset ${APPLICATION.NAME}`,
@@ -91,7 +92,9 @@ export default class MenuBuilder {
       { type: 'separator' },
       {
         label: 'Visit Website',
-        click: () => shell.openExternal(APPLICATION.WEBSITE),
+        click: () => {
+          shell.openExternal(APPLICATION.WEBSITE);
+        },
       },
       {
         label: `Quit ${APPLICATION.NAME}`,
