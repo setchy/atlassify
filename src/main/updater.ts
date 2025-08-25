@@ -1,13 +1,20 @@
-import log from 'electron-log';
+import { dialog, type MessageBoxOptions } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
-import { updateElectronApp } from 'update-electron-app';
 
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
 
 import type MenuBuilder from './menu';
 
+/**
+ * Updater class for handling application updates.
+ *
+ * Supports scheduled and manual updates for all platforms.
+ *
+ * NOTE: we previously used update-electron-app, but that expects Squirrel on Windows and doesn't support Linux.
+ * Using electron-updater directly ensures cross-platform GitHub provider updates.
+ */
 export default class Updater {
   private readonly menubar: Menubar;
   private readonly menuBuilder: MenuBuilder;
@@ -17,11 +24,13 @@ export default class Updater {
     this.menuBuilder = menuBuilder;
   }
 
-  initialize(): void {
-    updateElectronApp({
-      updateInterval: '24 hours',
-      logger: log,
-    });
+  async initialize(): Promise<void> {
+    if (!this.menubar.app.isPackaged) {
+      logInfo('updater', 'Skipping updater since app is in development mode');
+      return;
+    }
+
+    logInfo('updater', 'Initializing updater');
 
     autoUpdater.on('checking-for-update', () => {
       logInfo('auto updater', 'Checking for update');
@@ -43,12 +52,14 @@ export default class Updater {
       );
     });
 
-    autoUpdater.on('update-downloaded', () => {
+    autoUpdater.on('update-downloaded', (event) => {
       logInfo('auto updater', 'Update downloaded');
 
       this.setTooltipWithStatus('A new update is ready to install');
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
+
+      this.showUpdateReadyDialog(event.releaseName);
     });
 
     autoUpdater.on('update-not-available', () => {
@@ -71,6 +82,22 @@ export default class Updater {
 
       this.resetState();
     });
+
+    // Kick off an immediate check (packaged apps only)
+    try {
+      await autoUpdater.checkForUpdatesAndNotify();
+    } catch (e) {
+      logError('auto updater', 'Initial check failed', e as Error);
+    }
+
+    // Schedule periodic checks
+    setInterval(async () => {
+      try {
+        await autoUpdater.checkForUpdatesAndNotify();
+      } catch (e) {
+        logError('auto updater', 'Scheduled check failed', e as Error);
+      }
+    }, APPLICATION.UPDATE_CHECK_INTERVAL_MS);
   }
 
   private setTooltipWithStatus(status: string) {
@@ -83,5 +110,20 @@ export default class Updater {
     this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+  }
+
+  private showUpdateReadyDialog(releaseName: string) {
+    const dialogOpts: MessageBoxOptions = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: 'Application Update',
+      message: `${APPLICATION.NAME} ${releaseName} has been downloaded`,
+      detail:
+        'Restart to apply the update. You can also restart later from the tray menu.',
+    };
+
+    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+      if (returnValue.response === 0) autoUpdater.quitAndInstall();
+    });
   }
 }

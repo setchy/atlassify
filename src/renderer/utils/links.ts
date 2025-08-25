@@ -1,6 +1,7 @@
+import { APPLICATION } from '../../shared/constants';
+
 import type { Account, AtlassifyNotification, Link } from '../types';
 import { openExternalLink } from './comms';
-import { Constants } from './constants';
 
 export const URLs = {
   ATLASSIAN: {
@@ -21,7 +22,7 @@ export const URLs = {
 
 export function openAtlassifyReleaseNotes(version: string) {
   openExternalLink(
-    `https://github.com/${Constants.REPO_SLUG}/releases/tag/${version}` as Link,
+    `https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link,
   );
 }
 
