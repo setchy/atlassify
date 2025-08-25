@@ -24,7 +24,7 @@ export default class Updater {
     this.menuBuilder = menuBuilder;
   }
 
-  initialize(): void {
+  async initialize(): Promise<void> {
     if (!this.menubar.app.isPackaged) {
       logInfo('updater', 'Skipping updater since app is in development mode');
       return;
@@ -83,17 +83,17 @@ export default class Updater {
       this.resetState();
     });
 
-    // Kick off an immediate check (packaged apps only); ignore errors here.
+    // Kick off an immediate check (packaged apps only)
     try {
-      autoUpdater.checkForUpdatesAndNotify();
+      await autoUpdater.checkForUpdatesAndNotify();
     } catch (e) {
       logError('auto updater', 'Initial check failed', e as Error);
     }
 
     // Schedule periodic checks
-    setInterval(() => {
+    setInterval(async () => {
       try {
-        autoUpdater.checkForUpdatesAndNotify();
+        await autoUpdater.checkForUpdatesAndNotify();
       } catch (e) {
         logError('auto updater', 'Scheduled check failed', e as Error);
       }

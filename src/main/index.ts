@@ -69,7 +69,7 @@ const contextMenu = menuBuilder.buildMenu();
 
 // Initialize updater for all supported platforms (macOS, Windows, Linux)
 const updater = new Updater(mb, menuBuilder);
-updater.initialize();
+void updater.initialize();
 
 let shouldUseAlternateIdleIcon = false;
 
