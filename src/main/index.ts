@@ -24,7 +24,7 @@ import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
-import Updater from './updater';
+import AppUpdater from './updater';
 
 log.initialize();
 
@@ -67,14 +67,14 @@ const mb = menubar({
 const menuBuilder = new MenuBuilder(mb);
 const contextMenu = menuBuilder.buildMenu();
 
-// Initialize updater for all supported platforms (macOS, Windows, Linux)
-const updater = new Updater(mb, menuBuilder);
-void updater.initialize();
+const appUpdater = new AppUpdater(mb, menuBuilder);
 
 let shouldUseAlternateIdleIcon = false;
 
 app.whenReady().then(async () => {
   await onFirstRunMaybe();
+
+  appUpdater.start();
 
   mb.on('ready', () => {
     mb.app.setAppUserModelId(APPLICATION.ID);

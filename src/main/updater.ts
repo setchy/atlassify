@@ -1,4 +1,5 @@
 import { dialog, type MessageBoxOptions } from 'electron';
+import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
@@ -12,36 +13,53 @@ import type MenuBuilder from './menu';
  *
  * Supports scheduled and manual updates for all platforms.
  *
- * NOTE: we previously used update-electron-app, but that expects Squirrel on Windows and doesn't support Linux.
- * Using electron-updater directly ensures cross-platform GitHub provider updates.
+ * Documentation: https://www.electron.build/auto-update
+ *
+ * NOTE: previously used update-electron-app (Squirrel-focused, no Linux + NSIS). electron-updater gives cross-platform support.
+ * Caller guarantees app is ready before initialize() is invoked.
  */
-export default class Updater {
+export default class AppUpdater {
   private readonly menubar: Menubar;
   private readonly menuBuilder: MenuBuilder;
+  private started = false;
 
   constructor(menubar: Menubar, menuBuilder: MenuBuilder) {
     this.menubar = menubar;
     this.menuBuilder = menuBuilder;
+    autoUpdater.logger = log;
   }
 
-  async initialize(): Promise<void> {
+  async start(): Promise<void> {
+    if (this.started) {
+      return; // idempotent
+    }
+
     if (!this.menubar.app.isPackaged) {
-      logInfo('updater', 'Skipping updater since app is in development mode');
+      logInfo(
+        'app updater',
+        'Skipping updater since app is in development mode',
+      );
       return;
     }
 
-    logInfo('updater', 'Initializing updater');
+    logInfo('app updater', 'Starting updater');
 
+    this.registerListeners();
+    await this.performInitialCheck();
+    this.schedulePeriodicChecks();
+
+    this.started = true;
+  }
+
+  private registerListeners() {
     autoUpdater.on('checking-for-update', () => {
       logInfo('auto updater', 'Checking for update');
-
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     });
 
     autoUpdater.on('update-available', () => {
-      logInfo('auto updater', 'New update available');
-
+      logInfo('auto updater', 'Update available');
       this.setTooltipWithStatus('A new update is available');
       this.menuBuilder.setUpdateAvailableMenuVisibility(true);
     });
@@ -54,17 +72,14 @@ export default class Updater {
 
     autoUpdater.on('update-downloaded', (event) => {
       logInfo('auto updater', 'Update downloaded');
-
       this.setTooltipWithStatus('A new update is ready to install');
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
-
       this.showUpdateReadyDialog(event.releaseName);
     });
 
     autoUpdater.on('update-not-available', () => {
       logInfo('auto updater', 'Update not available');
-
       this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(true);
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
@@ -73,26 +88,28 @@ export default class Updater {
 
     autoUpdater.on('update-cancelled', () => {
       logInfo('auto updater', 'Update cancelled');
-
       this.resetState();
     });
 
     autoUpdater.on('error', (err) => {
       logError('auto updater', 'Error checking for update', err);
-
       this.resetState();
     });
+  }
 
-    // Kick off an immediate check (packaged apps only)
+  private async performInitialCheck() {
     try {
+      logInfo('app updater', 'Checking for updates on application launch');
       await autoUpdater.checkForUpdatesAndNotify();
     } catch (e) {
       logError('auto updater', 'Initial check failed', e as Error);
     }
+  }
 
-    // Schedule periodic checks
+  private schedulePeriodicChecks() {
     setInterval(async () => {
       try {
+        logInfo('app updater', 'Checking for updates on a periodic schedule');
         await autoUpdater.checkForUpdatesAndNotify();
       } catch (e) {
         logError('auto updater', 'Scheduled check failed', e as Error);
