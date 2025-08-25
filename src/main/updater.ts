@@ -1,3 +1,4 @@
+import { dialog, type MessageBoxOptions } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
@@ -36,7 +37,6 @@ export default class Updater {
 
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
-      // No-op: website item always visible
     });
 
     autoUpdater.on('update-available', () => {
@@ -44,7 +44,6 @@ export default class Updater {
 
       this.setTooltipWithStatus('A new update is available');
       this.menuBuilder.setUpdateAvailableMenuVisibility(true);
-      // No-op
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
@@ -53,13 +52,14 @@ export default class Updater {
       );
     });
 
-    autoUpdater.on('update-downloaded', () => {
+    autoUpdater.on('update-downloaded', (event) => {
       logInfo('auto updater', 'Update downloaded');
 
       this.setTooltipWithStatus('A new update is ready to install');
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
-      // No-op
+
+      this.showUpdateReadyDialog(event.releaseName);
     });
 
     autoUpdater.on('update-not-available', () => {
@@ -69,7 +69,6 @@ export default class Updater {
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(true);
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
-      // No-op
     });
 
     autoUpdater.on('update-cancelled', () => {
@@ -82,7 +81,6 @@ export default class Updater {
       logError('auto updater', 'Error checking for update', err);
 
       this.resetState();
-      // No-op: user can always access website
     });
 
     // Kick off an immediate check (packaged apps only); ignore errors here.
@@ -112,6 +110,20 @@ export default class Updater {
     this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
-    // No-op
+  }
+
+  private showUpdateReadyDialog(releaseName: string) {
+    const dialogOpts: MessageBoxOptions = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: 'Application Update',
+      message: `${APPLICATION.NAME} ${releaseName} has been downloaded`,
+      detail:
+        'Restart to apply the update. You can also restart later from the tray menu.',
+    };
+
+    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+      if (returnValue.response === 0) autoUpdater.quitAndInstall();
+    });
   }
 }
