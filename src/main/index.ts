@@ -18,7 +18,6 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
-import { isMacOS, isWindows } from '../shared/platform';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -68,14 +67,9 @@ const mb = menubar({
 const menuBuilder = new MenuBuilder(mb);
 const contextMenu = menuBuilder.buildMenu();
 
-/**
- * Electron Auto Updater only supports macOS and Windows
- * https://github.com/electron/update-electron-app
- */
-if (isMacOS() || isWindows()) {
-  const updater = new Updater(mb, menuBuilder);
-  updater.initialize();
-}
+// Initialize updater for all supported platforms (macOS, Windows, Linux)
+const updater = new Updater(mb, menuBuilder);
+updater.initialize();
 
 let shouldUseAlternateIdleIcon = false;
 

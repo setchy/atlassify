@@ -25,13 +25,13 @@ import Modal, {
 import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { Constants } from '../../constants';
 import { AppContext } from '../../context/App';
 import type {
   Account,
   AtlassifyError,
   AtlassifyNotification,
 } from '../../types';
-import { Constants } from '../../utils/constants';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { isLightMode } from '../../utils/theme';

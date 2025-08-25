@@ -7,6 +7,7 @@ import {
   useState,
 } from 'react';
 
+import { Constants } from '../constants';
 import { useInterval } from '../hooks/useInterval';
 import { useNotifications } from '../hooks/useNotifications';
 import type {
@@ -34,7 +35,6 @@ import {
   setKeyboardShortcut,
   updateTrayTitle,
 } from '../utils/comms';
-import { Constants } from '../utils/constants';
 import {
   getNotificationCount,
   hasMoreNotifications,
@@ -115,13 +115,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useInterval(() => {
     fetchNotifications({ auth, settings });
-  }, Constants.FETCH_NOTIFICATIONS_INTERVAL);
+  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
 
   useInterval(() => {
     for (const account of auth.accounts) {
       refreshAccount(account);
     }
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL);
+  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
   useEffect(() => {
     const count = getNotificationCount(notifications);

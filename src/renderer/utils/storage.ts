@@ -1,7 +1,7 @@
+import { Constants } from '../constants';
 import { DEFAULT_LANGUAGE } from '../i18n';
 import type { Language } from '../i18n/types';
 import type { AtlassifyState } from '../types';
-import { Constants } from './constants';
 
 export function loadState(): AtlassifyState {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);

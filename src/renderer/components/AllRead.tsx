@@ -1,8 +1,8 @@
 import { type FC, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Constants } from '../constants';
 import { AppContext } from '../context/App';
-import { Constants } from '../utils/constants';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { EmojiSplash } from './layout/EmojiSplash';
 

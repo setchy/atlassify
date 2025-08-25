@@ -2,6 +2,7 @@ import { AxiosError } from 'axios';
 
 import { logError, logWarn } from '../../../shared/logger';
 
+import { Constants } from '../../constants';
 import type {
   Account,
   AccountNotifications,
@@ -20,7 +21,6 @@ import type {
 } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
-import { Constants } from '../constants';
 import { Errors } from '../errors';
 import { inferAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';

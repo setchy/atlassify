@@ -1,3 +1,4 @@
+import { Constants } from '../../constants';
 import type {
   Account,
   CloudID,
@@ -7,7 +8,6 @@ import type {
   Token,
   Username,
 } from '../../types';
-import { Constants } from '../constants';
 import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,

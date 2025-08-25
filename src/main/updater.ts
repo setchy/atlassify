@@ -1,13 +1,19 @@
-import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
-import { updateElectronApp } from 'update-electron-app';
 
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
 
 import type MenuBuilder from './menu';
 
+/**
+ * Updater class for handling application updates.
+ *
+ * Supports scheduled and manual updates for all platforms.
+ *
+ * NOTE: we previously used update-electron-app, but that expects Squirrel on Windows and doesn't support Linux.
+ * Using electron-updater directly ensures cross-platform GitHub provider updates.
+ */
 export default class Updater {
   private readonly menubar: Menubar;
   private readonly menuBuilder: MenuBuilder;
@@ -18,16 +24,19 @@ export default class Updater {
   }
 
   initialize(): void {
-    updateElectronApp({
-      updateInterval: '24 hours',
-      logger: log,
-    });
+    if (!this.menubar.app.isPackaged) {
+      logInfo('updater', 'Skipping updater since app is in development mode');
+      return;
+    }
+
+    logInfo('updater', 'Initializing updater');
 
     autoUpdater.on('checking-for-update', () => {
       logInfo('auto updater', 'Checking for update');
 
       this.menuBuilder.setCheckForUpdatesMenuEnabled(false);
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
+      // No-op: website item always visible
     });
 
     autoUpdater.on('update-available', () => {
@@ -35,6 +44,7 @@ export default class Updater {
 
       this.setTooltipWithStatus('A new update is available');
       this.menuBuilder.setUpdateAvailableMenuVisibility(true);
+      // No-op
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
@@ -49,6 +59,7 @@ export default class Updater {
       this.setTooltipWithStatus('A new update is ready to install');
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
+      // No-op
     });
 
     autoUpdater.on('update-not-available', () => {
@@ -58,6 +69,7 @@ export default class Updater {
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(true);
       this.menuBuilder.setUpdateAvailableMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+      // No-op
     });
 
     autoUpdater.on('update-cancelled', () => {
@@ -70,7 +82,24 @@ export default class Updater {
       logError('auto updater', 'Error checking for update', err);
 
       this.resetState();
+      // No-op: user can always access website
     });
+
+    // Kick off an immediate check (packaged apps only); ignore errors here.
+    try {
+      autoUpdater.checkForUpdatesAndNotify();
+    } catch (e) {
+      logError('auto updater', 'Initial check failed', e as Error);
+    }
+
+    // Schedule periodic checks
+    setInterval(() => {
+      try {
+        autoUpdater.checkForUpdatesAndNotify();
+      } catch (e) {
+        logError('auto updater', 'Scheduled check failed', e as Error);
+      }
+    }, APPLICATION.UPDATE_CHECK_INTERVAL_MS);
   }
 
   private setTooltipWithStatus(status: string) {
@@ -83,5 +112,6 @@ export default class Updater {
     this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+    // No-op
   }
 }

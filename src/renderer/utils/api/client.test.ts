@@ -5,8 +5,8 @@ import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
+import { Constants } from '../../constants';
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
-import { Constants } from '../constants';
 import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,
