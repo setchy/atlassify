@@ -93,11 +93,11 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 style="box-sizing: border-box;"
               >
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _1pbydx66 _ogto7mnp _jqf6ydhy _uiztglyw _o5721q9c -a11yText"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _1pbydx66 _ogto7mnp _uiztglyw _o5721q9c -a11yText"
                   id="react-select-2-live-region"
                 />
                 <span
-                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _1pbydx66 _ogto7mnp _jqf6ydhy _uiztglyw _o5721q9c -a11yText"
+                  class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _1pbydx66 _ogto7mnp _uiztglyw _o5721q9c -a11yText"
                   role="status"
                 />
                 <div
