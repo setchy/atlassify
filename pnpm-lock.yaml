@@ -52,8 +52,8 @@ importers:
         specifier: 23.4.2
         version: 23.4.2(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/checkbox':
-        specifier: 17.1.10
-        version: 17.1.10(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 17.1.11
+        version: 17.1.11(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
         specifier: 7.3.4
         version: 7.3.4(@types/react@18.3.24)(react@18.3.1)
@@ -329,8 +329,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/checkbox@17.1.10':
-    resolution: {integrity: sha512-JuZESKatxE0psA2aJSlar3l8erfNzemWSZe6b8j8mIFMVndV3bnGwCmRy9wTB4bRVpAv/XmGHoSKtTDwnErGQw==}
+  '@atlaskit/checkbox@17.1.11':
+    resolution: {integrity: sha512-x3jt+LzksYAXbsGwtp6K6gYSVop1qXc1U2gRHdhPFDULW+1HpQMdkDD9U4WJzK/wKdVrbNG+F2zojDVAzM9U3Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6009,14 +6009,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@17.1.10(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/checkbox@17.1.11(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/icon': 28.1.0(@babel/core@7.28.3)(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
-      '@atlaskit/theme': 19.0.2(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/theme': 20.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.1.0(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.3
       '@compiled/react': 0.18.6(react@18.3.1)
