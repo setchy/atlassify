@@ -85,7 +85,7 @@
     "@atlaskit/spinner": "19.0.2",
     "@atlaskit/textfield": "8.0.9",
     "@atlaskit/toggle": "15.1.2",
-    "@atlaskit/tokens": "6.0.0",
+    "@atlaskit/tokens": "6.1.0",
     "@atlaskit/tooltip": "20.4.2",
     "@biomejs/biome": "2.2.2",
     "@compiled/webpack-loader": "0.19.6",
