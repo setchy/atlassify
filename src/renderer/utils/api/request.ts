@@ -6,6 +6,14 @@ import { URLs } from '../links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from './types';
 
+/**
+ * Perform a GraphQL API request for account
+ *
+ * @param account
+ * @param query
+ * @param variables
+ * @returns
+ */
 export async function performRequestForAccount<TResult, TVariables>(
   account: Account,
   query: TypedDocumentString<TResult, TVariables>,
@@ -19,6 +27,15 @@ export async function performRequestForAccount<TResult, TVariables>(
   });
 }
 
+/**
+ * Perform a GraphQL API request for username and token
+ *
+ * @param username
+ * @param token
+ * @param query
+ * @param variables
+ * @returns
+ */
 export async function performRequestForCredentials<TResult, TVariables>(
   username: Username,
   token: Token,
@@ -31,11 +48,17 @@ export async function performRequestForCredentials<TResult, TVariables>(
   });
 }
 
+/**
+ * Perform a REST API request for account
+ *
+ * @param account
+ * @param url
+ * @returns
+ */
 export async function performRESTRequestForAccount<T>(
   account: Account,
   url: string,
 ) {
-  // decrypt token for REST calls
   const decryptedToken = (await decryptValue(account.token)) as Token;
 
   return axios({
@@ -47,6 +70,14 @@ export async function performRESTRequestForAccount<T>(
   }) as Promise<T>;
 }
 
+/**
+ * Perform a GraphQL API request for username and token
+ *
+ * @param username
+ * @param token
+ * @param data
+ * @returns
+ */
 function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
   const url = URLs.ATLASSIAN.API;
 
@@ -60,6 +91,13 @@ function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
   }) as Promise<AtlassianGraphQLResponse<T>>;
 }
 
+/**
+ * Construct headers for API requests
+ *
+ * @param username
+ * @param token
+ * @returns
+ */
 function getHeaders(username: Username, token: Token) {
   const auth = btoa(`${username}:${token}`);
   return {
