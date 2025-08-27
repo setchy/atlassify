@@ -2,9 +2,9 @@ import '@testing-library/jest-dom';
 
 import { TextEncoder } from 'node:util';
 
-// @ts-expect-error: prevent ReferenceError: TextEncoder is not defined
-global.TextEncoder = TextEncoder;
-
+/**
+ * Atlassify context bridge API
+ */
 window.atlassify = {
   app: {
     version: jest.fn().mockResolvedValue('v0.0.1'),
@@ -37,3 +37,6 @@ window.atlassify = {
   setKeyboardShortcut: jest.fn(),
   raiseNativeNotification: jest.fn(),
 };
+
+// @ts-expect-error: prevent ReferenceError: TextEncoder is not defined
+global.TextEncoder = TextEncoder;
