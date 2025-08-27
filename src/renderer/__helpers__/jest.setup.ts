@@ -1,25 +1,9 @@
 import '@testing-library/jest-dom';
 
-import { TextDecoder, TextEncoder } from 'node:util';
+import { TextEncoder } from 'node:util';
 
-/**
- * Prevent the following errors with jest:
- * - ReferenceError: TextEncoder is not defined
- * - ReferenceError: TextDecoder is not defined
- */
-if (!('TextEncoder' in globalThis)) {
-  (globalThis as unknown as { TextEncoder: typeof TextEncoder }).TextEncoder =
-    TextEncoder;
-}
-if (!('TextDecoder' in globalThis)) {
-  (globalThis as unknown as { TextDecoder: typeof TextDecoder }).TextDecoder =
-    TextDecoder;
-}
-
-// @ts-expect-error
-window.Audio = class Audio {
-  play() {}
-};
+// @ts-expect-error: prevent ReferenceError: TextEncoder is not defined
+global.TextEncoder = TextEncoder;
 
 window.atlassify = {
   app: {
