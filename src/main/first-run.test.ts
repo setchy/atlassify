@@ -39,6 +39,8 @@ jest.mock('../shared/logger', () => ({
 let mac = true;
 jest.mock('../shared/platform', () => ({ isMacOS: () => mac }));
 
+import { APPLICATION } from '../shared/constants';
+
 import { onFirstRunMaybe } from './first-run';
 
 describe('main/first-run', () => {
@@ -48,7 +50,7 @@ describe('main/first-run', () => {
   });
 
   function configPath() {
-    return path.join('/User/Data', 'FirstRun', 'atlassify-first-run');
+    return path.join('/User/Data', 'FirstRun', APPLICATION.FIRST_RUN_FOLDER);
   }
 
   it('creates first-run marker when not existing and returns true', async () => {
