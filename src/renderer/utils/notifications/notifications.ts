@@ -1,7 +1,5 @@
 import { AxiosError } from 'axios';
 
-import { logError, logWarn } from '../../../shared/logger';
-
 import { Constants } from '../../constants';
 import type {
   Account,
@@ -22,6 +20,7 @@ import type {
 import type { AtlassianGraphQLResponse } from '../api/types';
 import { updateTrayIcon } from '../comms';
 import { Errors } from '../errors';
+import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';
 
@@ -85,7 +84,7 @@ export async function getAllNotifications(
             error: null,
           };
         } catch (err) {
-          logError(
+          rendererLogError(
             'getAllNotifications',
             'error occurred while fetching account notifications',
             err,
@@ -168,7 +167,7 @@ function determineIfMorePagesAvailable<T>(
       Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
     );
   } catch (_err) {
-    logWarn(
+    rendererLogWarn(
       'determineIfMorePagesAvailable',
       'Response did not contain extensions object, assuming no more pages',
     );

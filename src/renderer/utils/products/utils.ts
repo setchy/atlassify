@@ -1,5 +1,3 @@
-import { logError } from '../../../shared/logger';
-
 import type {
   Account,
   AtlassianProduct,
@@ -13,6 +11,7 @@ import {
 } from '../api/client';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import type { JiraProjectType } from '../api/types';
+import { rendererLogError } from '../logger';
 import { PRODUCTS } from './catalog';
 
 // Use a promise cache to avoid duplicate API calls for the same hostname
@@ -124,7 +123,7 @@ async function lookupJiraProjectType(
         return PRODUCTS.jira;
     }
   } catch (error) {
-    logError(
+    rendererLogError(
       'lookupJiraProjectType',
       'Error fetching Jira project type:',
       error,

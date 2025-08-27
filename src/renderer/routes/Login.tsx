@@ -18,8 +18,6 @@ import { Box, Inline, Stack } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import { logError } from '../../shared/logger';
-
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
@@ -30,6 +28,7 @@ import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
 } from '../utils/links';
+import { rendererLogError } from '../utils/logger';
 
 interface IValues {
   username: Username;
@@ -50,7 +49,11 @@ export const LoginRoute: FC = () => {
         await login(data as LoginOptions);
         navigate(-1);
       } catch (err) {
-        logError('loginUser', 'failed to login with provided credentials', err);
+        rendererLogError(
+          'loginUser',
+          'failed to login with provided credentials',
+          err,
+        );
 
         setIsValidToken(false);
       }

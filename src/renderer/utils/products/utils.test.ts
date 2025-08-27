@@ -7,15 +7,14 @@ jest.mock('../api/client', () => {
     getJiraProjectTypeByKey: jest.fn(),
   };
 });
-jest.mock('../../../shared/logger', () => ({
-  logError: jest.fn(),
+jest.mock('../logger', () => ({
+  rendererLogError: jest.fn(),
 }));
-
-import { logError } from '../../../shared/logger';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import type { JiraProjectType } from '../api/types';
+import { rendererLogError } from '../logger';
 import {
   __resetProductInferenceCaches,
   inferAtlassianProduct,
@@ -163,7 +162,7 @@ describe('renderer/utils/products/utils.ts', () => {
         expect(
           await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
         ).toBe(PRODUCTS.jira);
-        expect(logError).toHaveBeenCalled();
+        expect(rendererLogError).toHaveBeenCalled();
       });
 
       it('logs and falls back when project type lookup fails', async () => {
@@ -178,7 +177,7 @@ describe('renderer/utils/products/utils.ts', () => {
         expect(
           await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
         ).toBe(PRODUCTS.jira);
-        expect(logError).toHaveBeenCalled();
+        expect(rendererLogError).toHaveBeenCalled();
       });
     });
   });

@@ -1,7 +1,5 @@
 import { useCallback, useState } from 'react';
 
-import { logError } from '../../shared/logger';
-
 import type {
   Account,
   AccountNotifications,
@@ -17,6 +15,7 @@ import {
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { updateTrayIcon } from '../utils/comms';
+import { rendererLogError } from '../utils/logger';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
@@ -143,7 +142,7 @@ export const useNotifications = (): NotificationsState => {
           setTrayIconColor(updatedNotifications);
         }
       } catch (err) {
-        logError(
+        rendererLogError(
           'markNotificationsRead',
           'Error occurred while marking notifications as read',
           err,
@@ -185,7 +184,7 @@ export const useNotifications = (): NotificationsState => {
           notification.readState = 'unread';
         }
       } catch (err) {
-        logError(
+        rendererLogError(
           'markNotificationsUnread',
           'Error occurred while marking notifications as unread',
           err,
@@ -228,7 +227,7 @@ export const useNotifications = (): NotificationsState => {
         notificationIDs.push(...groupNotificationIDs);
       }
     } catch (err) {
-      logError(
+      rendererLogError(
         'getNotificationIdsForGroups',
         'Error occurred while fetching notification ids for notification groups',
         err,

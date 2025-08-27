@@ -1,8 +1,7 @@
-import { logError } from '../../../shared/logger';
-
 import type { Account, AuthState, Token, Username } from '../../types';
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';
+import { rendererLogError } from '../logger';
 
 export async function addAccount(
   auth: AuthState,
@@ -40,7 +39,7 @@ export async function refreshAccount(account: Account): Promise<Account> {
     account.name = res.data.me.user.name;
     account.avatar = res.data.me.user.picture;
   } catch (err) {
-    logError(
+    rendererLogError(
       'refreshAccount',
       `failed to refresh account for user ${account.username}`,
       err,
