@@ -62,7 +62,6 @@ jobs:
       
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm prepare:remove-source-maps
       - run: pnpm package:win --publish never
       
       - name: Clean up builds
@@ -94,7 +93,6 @@ jobs:
       
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm prepare:remove-source-maps
       - run: pnpm package:linux --publish never
       
       - name: Clean up builds
