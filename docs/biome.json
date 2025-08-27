@@ -25,9 +25,6 @@
         "noChildrenProp": "off",
         "useJsxKeyInIterable": "off"
       },
-      "suspicious": {
-        "noUnknownAtRules": "warn"
-      },
       "style": {
         "noInferrableTypes": "error",
         "noParameterAssign": "error",
@@ -39,6 +36,9 @@
         "useNumberNamespace": "error",
         "useSelfClosingElements": "error",
         "useSingleVarDeclarator": "error"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "warn"
       }
     }
   },

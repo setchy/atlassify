@@ -35,9 +35,19 @@
     },
     "rules": {
       "recommended": true,
-      "suspicious": {
-        "noConsole": "error",
-        "noUnknownAtRules": "warn"
+      "correctness": {
+        "noUnusedFunctionParameters": "error",
+        "useExhaustiveDependencies": {
+          "level": "warn",
+          "options": {
+            "hooks": [
+              {
+                "name": "useNavigate",
+                "stableResult": true
+              }
+            ]
+          }
+        }
       },
       "style": {
         "useDefaultSwitchClause": "error",
@@ -52,14 +62,9 @@
         "noInferrableTypes": "error",
         "noUselessElse": "error"
       },
-      "correctness": {
-        "noUnusedFunctionParameters": "error",
-        "useExhaustiveDependencies": {
-          "level": "warn",
-          "options": {
-            "hooks": [{ "name": "useNavigate", "stableResult": true }]
-          }
-        }
+      "suspicious": {
+        "noConsole": "error",
+        "noUnknownAtRules": "warn"
       }
     }
   },
@@ -84,7 +89,6 @@
       "allowComments": true
     }
   },
-
   "files": {
     "includes": ["**", "!**/docs/**/*", "!**/generated/**/*"]
   }
