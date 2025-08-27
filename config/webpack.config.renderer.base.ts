@@ -37,9 +37,6 @@ const configuration: webpack.Configuration = {
   output: {
     path: webpackPaths.buildPath,
     filename: 'renderer.js',
-    library: {
-      type: 'umd',
-    },
   },
 
   module: {

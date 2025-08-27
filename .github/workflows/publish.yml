@@ -27,7 +27,6 @@ jobs:
       
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm prepare:remove-source-maps
       - run: pnpm package:macos --publish onTagOrDraft
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
