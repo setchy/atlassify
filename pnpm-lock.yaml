@@ -43,8 +43,8 @@ importers:
         specifier: 25.1.10
         version: 25.1.10(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/avatar-group':
-        specifier: 12.2.1
-        version: 12.2.1(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.2.2
+        version: 12.2.2(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/badge':
         specifier: 18.1.4
         version: 18.1.4(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -304,8 +304,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar-group@12.2.1':
-    resolution: {integrity: sha512-Lbbmn5G/QAiMxfDHAL9ms3FOaT82xF96r0WEdlwW/nIOC9nl7KDTdpdliqretkBXieaG3P0I6Jg9kTXMZkWnig==}
+  '@atlaskit/avatar-group@12.2.2':
+    resolution: {integrity: sha512-PuC4GxH71553me4/aiwFV/wW0aIVRxdEM3/RpV56BnvHV2Jbgk9x04t1BXs/YzSFmpTbsANxPfHGhEbzNprisQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5909,7 +5909,7 @@ snapshots:
       '@babel/runtime': 7.28.3
       react: 18.3.1
 
-  '@atlaskit/avatar-group@12.2.1(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar-group@12.2.2(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/avatar': 25.1.10(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
@@ -5917,7 +5917,7 @@ snapshots:
       '@atlaskit/menu': 8.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/popup': 4.3.9(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/theme': 19.0.2(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/theme': 20.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.1.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tooltip': 20.4.3(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@babel/runtime': 7.28.3
