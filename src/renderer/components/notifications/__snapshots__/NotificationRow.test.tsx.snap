@@ -643,7 +643,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -897,7 +897,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -1208,7 +1208,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -1583,7 +1583,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -2015,7 +2015,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -2282,7 +2282,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -2606,7 +2606,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -2860,7 +2860,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko14q2"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1twn"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
