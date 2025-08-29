@@ -58,8 +58,8 @@ importers:
         specifier: 7.3.5
         version: 7.3.5(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/form':
-        specifier: 12.3.0
-        version: 12.3.0(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 12.4.0
+        version: 12.4.0(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/heading':
         specifier: 5.2.4
         version: 5.2.4(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -360,8 +360,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/form@12.3.0':
-    resolution: {integrity: sha512-SjFeWCt29n7Kg3PBlsP2xQzx3HMr0oNhhV8K+RXTlN7/KjuXIO+nTfGIjKsYDAaVgg/sYyeOA4CcDSdSJ/aAmw==}
+  '@atlaskit/form@12.4.0':
+    resolution: {integrity: sha512-pxN/2c/CeqPVWZS5eam0GuJ+3wMOUHUMBhP0d2qWwsOK5vSStp/Ba3T1ayjNwjTO1XdnFRZUTILDdxOMv6+u4g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6082,7 +6082,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@12.3.0(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/form@12.4.0(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
