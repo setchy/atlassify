@@ -21,7 +21,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -258,7 +258,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -552,7 +552,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -757,7 +757,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -1019,7 +1019,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -1224,7 +1224,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -1486,7 +1486,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -1714,7 +1714,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -1999,7 +1999,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -2745,7 +2745,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -3548,7 +3548,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -4294,7 +4294,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
@@ -5101,7 +5101,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -5299,7 +5299,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 role="presentation"
               >
                 <button
-                  class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                  class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                   data-testid="account-profile--itemInner"
                   style="--avatar-item-bg-color: transparent;"
                   type="button"
@@ -6045,7 +6045,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               role="presentation"
             >
               <button
-                class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+                class="_2rkosqtm _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
                 data-testid="account-profile--itemInner"
                 style="--avatar-item-bg-color: transparent;"
                 type="button"
