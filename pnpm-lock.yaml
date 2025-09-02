@@ -40,8 +40,8 @@ importers:
         specifier: 1.15.0
         version: 1.15.0(graphql@16.11.0)(typescript@5.9.2)
       '@atlaskit/avatar':
-        specifier: 25.1.14
-        version: 25.1.14(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 25.1.15
+        version: 25.1.15(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/avatar-group':
         specifier: 12.2.4
         version: 12.2.4(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -309,8 +309,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.1.14':
-    resolution: {integrity: sha512-JvYRwtR/rSJkAe/kWAe9axAqyHAbBoC6LWAUZhO6JvbMewWaQL5I7iM8AYXZIvEZg8HTkRyrvDCocC2b01lAbg==}
+  '@atlaskit/avatar@25.1.15':
+    resolution: {integrity: sha512-pRuKsUmLJd8Q+xN5vMA504L1G1+fqUi6UA0HifJHz0HvPAl+7IvvEovouz8mNB4Ju3feKaMueW8qkn1GM85uBA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5911,7 +5911,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.2.4(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@atlaskit/avatar': 25.1.14(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/avatar': 25.1.15(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/menu': 8.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5932,7 +5932,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.1.14(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/avatar@25.1.15(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
