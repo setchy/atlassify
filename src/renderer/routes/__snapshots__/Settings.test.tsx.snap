@@ -1354,7 +1354,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk4v9p _syaz1ov1 _1bsb1tcg _4t3i1tcg _2rko14q2"
+                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk4v9p _syaz1ov1 _1bsb1tcg _4t3i1tcg _2rko1twn"
               >
                 <span
                   aria-label="Accounts"
@@ -1398,7 +1398,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1rtt _syaznbxb _1bsb1tcg _4t3i1tcg _2rko14q2"
+                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1rtt _syaznbxb _1bsb1tcg _4t3i1tcg _2rko1twn"
               >
                 <span
                   aria-label="Quit Atlassify"
