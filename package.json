@@ -89,7 +89,7 @@
     "@biomejs/biome": "2.2.2",
     "@compiled/webpack-loader": "0.19.6",
     "@discordapp/twemoji": "16.0.1",
-    "@electron/notarize": "3.0.2",
+    "@electron/notarize": "3.1.0",
     "@graphql-codegen/cli": "5.0.7",
     "@graphql-codegen/client-preset": "4.8.3",
     "@graphql-codegen/schema-ast": "4.1.0",
