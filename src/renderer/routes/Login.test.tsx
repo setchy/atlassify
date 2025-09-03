@@ -1,6 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
@@ -17,11 +16,7 @@ describe('renderer/routes/Login.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = render(
-      <MemoryRouter>
-        <LoginRoute />
-      </MemoryRouter>,
-    );
+    const tree = render(<LoginRoute />);
 
     expect(tree).toMatchSnapshot();
   });
@@ -33,11 +28,7 @@ describe('renderer/routes/Login.tsx', () => {
         .mockImplementation();
 
       await act(async () => {
-        render(
-          <MemoryRouter>
-            <LoginRoute />
-          </MemoryRouter>,
-        );
+        render(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-create-token'));
@@ -50,11 +41,7 @@ describe('renderer/routes/Login.tsx', () => {
         .mockImplementation();
 
       await act(async () => {
-        render(
-          <MemoryRouter>
-            <LoginRoute />
-          </MemoryRouter>,
-        );
+        render(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-docs'));
@@ -65,11 +52,7 @@ describe('renderer/routes/Login.tsx', () => {
 
   it('should navigate back to landing page on cancel', async () => {
     await act(async () => {
-      render(
-        <MemoryRouter>
-          <LoginRoute />
-        </MemoryRouter>,
-      );
+      render(<LoginRoute />);
     });
 
     await userEvent.click(screen.getByTestId('login-cancel'));

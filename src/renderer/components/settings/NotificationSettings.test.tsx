@@ -1,6 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
 import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
@@ -23,9 +22,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
             updateSetting,
           }}
         >
-          <MemoryRouter>
-            <NotificationSettings />
-          </MemoryRouter>
+          <NotificationSettings />
         </AppContext.Provider>,
       );
     });
@@ -46,9 +43,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
             updateSetting,
           }}
         >
-          <MemoryRouter>
-            <NotificationSettings />
-          </MemoryRouter>
+          <NotificationSettings />
         </AppContext.Provider>,
       );
     });
@@ -74,9 +69,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
             updateSetting,
           }}
         >
-          <MemoryRouter>
-            <NotificationSettings />
-          </MemoryRouter>
+          <NotificationSettings />
         </AppContext.Provider>,
       );
     });

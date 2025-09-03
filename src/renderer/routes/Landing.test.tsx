@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
 import { AppContext } from '../context/App';
 import * as comms from '../utils/comms';
@@ -18,11 +17,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = render(
-      <MemoryRouter>
-        <LandingRoute />
-      </MemoryRouter>,
-    );
+    const tree = render(<LandingRoute />);
 
     expect(tree).toMatchSnapshot();
   });
@@ -32,17 +27,13 @@ describe('renderer/routes/Landing.tsx', () => {
 
     const { rerender } = render(
       <AppContext.Provider value={{ isLoggedIn: false }}>
-        <MemoryRouter>
-          <LandingRoute />
-        </MemoryRouter>
+        <LandingRoute />
       </AppContext.Provider>,
     );
 
     rerender(
       <AppContext.Provider value={{ isLoggedIn: true }}>
-        <MemoryRouter>
-          <LandingRoute />
-        </MemoryRouter>
+        <LandingRoute />
       </AppContext.Provider>,
     );
 
@@ -51,11 +42,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should navigate to login with api token', async () => {
-    render(
-      <MemoryRouter>
-        <LandingRoute />
-      </MemoryRouter>,
-    );
+    render(<LandingRoute />);
 
     await userEvent.click(screen.getByTestId('login'));
 
