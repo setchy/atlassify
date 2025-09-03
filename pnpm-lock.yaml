@@ -91,8 +91,8 @@ importers:
         specifier: 8.0.10
         version: 8.0.10(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: 15.1.3
-        version: 15.1.3(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.1.4
+        version: 15.1.4(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 6.1.3
         version: 6.1.3(@types/react@18.3.24)(react@18.3.1)
@@ -491,8 +491,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.1.3':
-    resolution: {integrity: sha512-oAdhkclffto9wRP9J14hDhPG2paPYFvcIuFFTfDCb3tAMq2mV6GyA2GwkX2yem3jeDGvVl5c7zLlxaSTOSpYAA==}
+  '@atlaskit/toggle@15.1.4':
+    resolution: {integrity: sha512-jzj0JHIFJHwl/E0iYQy16VDjUNbfHpwVWuPQ6R+ep9fkZrB/mm13idih5GJTcoQST1LJQjHZhJcWxnj5vSuMqg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6485,7 +6485,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.1.3(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/toggle@15.1.4(@babel/core@7.28.3)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
