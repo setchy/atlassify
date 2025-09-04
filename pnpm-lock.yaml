@@ -73,8 +73,8 @@ importers:
         specifier: 19.7.2
         version: 19.7.2(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/modal-dialog':
-        specifier: 14.3.9
-        version: 14.3.9(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 14.3.10
+        version: 14.3.10(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/primitives':
         specifier: 14.12.3
         version: 14.12.3(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -411,8 +411,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.3.9':
-    resolution: {integrity: sha512-0e2jSvxcBLVq1fxMlIEPEOqKtcKKo8eDcwmWBtPVzHwWKhnTbwvEHQmT0Jy3+k14TbhkyPRSBJeiGP7pIU7QpQ==}
+  '@atlaskit/modal-dialog@14.3.10':
+    resolution: {integrity: sha512-2OPjMjJfgVCezZ2ScHomw/M1hWIj0dNlpXmyUz7Wy3YjecZyQMu4ThZ1KVeOttAhTplZzWdY7SvgOjEu7j2gwQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6209,12 +6209,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.3.9(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/modal-dialog@14.3.10(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/blanket': 15.0.12(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/button': 23.4.4(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.12.5(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/css': 0.13.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/focus-ring': 3.0.3(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/icon': 28.1.1(@babel/core@7.28.3)(@types/react@18.3.24)(react@18.3.1)
@@ -6223,7 +6223,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
       '@atlaskit/portal': 5.1.5(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/pragmatic-drag-and-drop': 1.7.5
-      '@atlaskit/primitives': 14.12.3(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/primitives': 14.13.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.2.0(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.3
