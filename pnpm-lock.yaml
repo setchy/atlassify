@@ -79,8 +79,8 @@ importers:
         specifier: 14.12.3
         version: 14.12.3(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/radio':
-        specifier: 8.3.0
-        version: 8.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 8.3.2
+        version: 8.3.2(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/select':
         specifier: 21.2.8
         version: 21.2.8(@babel/core@7.28.3)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -347,6 +347,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/css@0.13.0':
+    resolution: {integrity: sha512-hbi1vJH+a9eP8a/85y9dz3Md1Ly5c5hxo65oC3qxOE4anz96GvU7JDODZeFoMmAaHNqjTRbrFcVgeXqdzvCaIg==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/ds-lib@5.0.0':
     resolution: {integrity: sha512-Bd0/D5Q2Sg/Z1kg/Qst+2VfiVoVuGwEvrWKSt63QgDaCizl30j2EtqLLF9U978mzl1JHMmi3KQeYf3ROjhoACA==}
     peerDependencies:
@@ -449,8 +454,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/radio@8.3.0':
-    resolution: {integrity: sha512-kxTx0o9k/WohAMULd2nKKhaMDLvMOVDc5tsfg49xhrqvviEMRmmHQ3Dwm6Mw770KPIrBpcOJ2b4vJpE9orouhg==}
+  '@atlaskit/radio@8.3.2':
+    resolution: {integrity: sha512-3LPhchSTI/2+fZSnGUiVsK4zwObVkayHtvozeyHwGaohXzvR7FlpBLbaVBSlrDhnOoKlCA70qSoD1XYF0G8ziA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -498,6 +503,11 @@ packages:
 
   '@atlaskit/tokens@6.1.4':
     resolution: {integrity: sha512-AkONopNZBC13zS4RIth7FxCtW4UWw2j7zhhk17jkGeH5Sj9yLGEFYZM1ohsp3ZEM6bsVJOwHpAdCvcFfP/cIEg==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/tokens@6.2.0':
+    resolution: {integrity: sha512-VzJ8NI/Ns2CqVafgpIvKHIHxkgpcfeWzd4URiPr+4Y8aDoYqF+MJ8WrpBDQh0hNmDJ3NZwIAeTGqLK0G+fakqw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6051,6 +6061,16 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/css@0.13.0(@types/react@18.3.24)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/tokens': 6.2.0(@types/react@18.3.24)(react@18.3.1)
+      '@babel/runtime': 7.28.3
+      '@compiled/react': 0.18.6(react@18.3.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/ds-lib@5.0.0(@types/react@18.3.24)(react@18.3.1)':
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
@@ -6359,14 +6379,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/radio@8.3.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/radio@8.3.2(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.12.2(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/css': 0.13.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
       '@atlaskit/theme': 20.0.0(@types/react@18.3.24)(react@18.3.1)
-      '@atlaskit/tokens': 6.1.4(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/tokens': 6.2.0(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.3
       '@compiled/react': 0.18.6(react@18.3.1)
       react: 18.3.1
@@ -6508,6 +6528,19 @@ snapshots:
       - supports-color
 
   '@atlaskit/tokens@6.1.4(@types/react@18.3.24)(react@18.3.1)':
+    dependencies:
+      '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
+      '@babel/runtime': 7.28.3
+      '@babel/traverse': 7.28.3
+      '@babel/types': 7.28.2
+      bind-event-listener: 3.0.0
+      react: 18.3.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/tokens@6.2.0(@types/react@18.3.24)(react@18.3.1)':
     dependencies:
       '@atlaskit/ds-lib': 5.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.1(react@18.3.1)
