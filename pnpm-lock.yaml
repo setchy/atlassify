@@ -91,8 +91,8 @@ importers:
         specifier: 8.0.10
         version: 8.0.10(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/toggle':
-        specifier: 15.1.5
-        version: 15.1.5(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 15.1.6
+        version: 15.1.6(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/tokens':
         specifier: 6.3.0
         version: 6.3.0(@types/react@18.3.24)(react@18.3.1)
@@ -492,8 +492,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.1.5':
-    resolution: {integrity: sha512-i/Q8kIktlm9fA8FBePouvCjVwNdQyG3ooV9D3q3KSVGUNhT6YT0oihhTS/ikjtEaDjGV6NP7aqwT+kaOEuIKnw==}
+  '@atlaskit/toggle@15.1.6':
+    resolution: {integrity: sha512-zMlygthzJeYCmpakwaXCxPM7EEUcftOPRJIAkcsyoc1f5d32N56TPhngM2A9EB/xy1oc5NVhDTrjt9teBbrqYQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6478,14 +6478,14 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.1.5(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/toggle@15.1.6(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/css': 0.13.1(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/css': 0.14.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/icon': 28.1.2(@babel/core@7.28.4)(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
-      '@atlaskit/primitives': 14.13.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner': 19.0.3(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
