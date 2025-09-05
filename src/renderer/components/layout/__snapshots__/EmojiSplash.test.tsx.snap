@@ -12,7 +12,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -32,7 +32,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
               Test Heading
             </span>
             <div
-              class="css-t8lj6l"
+              class="css-u5wwvt"
             >
               <span
                 class="text-center"
@@ -53,7 +53,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
         class="css-1rd5nai"
       >
         <div
-          class="css-ybkmal"
+          class="css-1ma91a4"
         >
           <span
             class="text-5xl"
@@ -73,7 +73,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
             Test Heading
           </span>
           <div
-            class="css-t8lj6l"
+            class="css-u5wwvt"
           >
             <span
               class="text-center"
@@ -151,7 +151,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -183,7 +183,7 @@ exports[`renderer/components/layout/EmojiSplash.tsx should render itself & its c
         class="css-1rd5nai"
       >
         <div
-          class="css-ybkmal"
+          class="css-1ma91a4"
         >
           <span
             class="text-5xl"

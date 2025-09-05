@@ -6,16 +6,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-1izbi24"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -77,7 +77,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -207,7 +207,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-1rd5nai"
           >
             <div
-              class="css-ybkmal"
+              class="css-1ma91a4"
             >
               <span
                 class="text-5xl"
@@ -227,7 +227,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 Error title
               </span>
               <div
-                class="css-t8lj6l"
+                class="css-u5wwvt"
               >
                 <span
                   class="text-center"
@@ -243,16 +243,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-1izbi24"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -314,7 +314,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -444,7 +444,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -464,7 +464,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               Error title
             </span>
             <div
-              class="css-t8lj6l"
+              class="css-u5wwvt"
             >
               <span
                 class="text-center"
@@ -537,16 +537,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -608,7 +608,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -742,16 +742,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-qsa8gv"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -813,7 +813,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -1004,16 +1004,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -1075,7 +1075,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -1209,16 +1209,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-qsa8gv"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -1280,7 +1280,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -1471,16 +1471,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -1542,7 +1542,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -1672,7 +1672,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-1rd5nai"
           >
             <div
-              class="css-ybkmal"
+              class="css-1ma91a4"
             >
               <span
                 class="text-5xl"
@@ -1699,16 +1699,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-qsa8gv"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -1770,7 +1770,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -1900,7 +1900,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -1984,16 +1984,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -2055,7 +2055,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -2186,17 +2186,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -2254,7 +2254,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -2265,7 +2265,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -2288,14 +2288,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid34"
@@ -2334,7 +2334,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -2437,17 +2437,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -2505,7 +2505,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -2516,7 +2516,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -2539,14 +2539,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid40"
@@ -2585,7 +2585,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -2627,7 +2627,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-group"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <ul
                                   aria-label="avatar group"
@@ -2730,16 +2730,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-qsa8gv"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -2801,7 +2801,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -2932,17 +2932,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -3000,7 +3000,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -3011,7 +3011,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -3034,14 +3034,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid34"
@@ -3080,7 +3080,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -3183,17 +3183,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -3251,7 +3251,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -3262,7 +3262,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -3285,14 +3285,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid40"
@@ -3331,7 +3331,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Confluence"
@@ -3373,7 +3373,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <ul
                                 aria-label="avatar group"
@@ -3533,16 +3533,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-jw6f40"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -3604,7 +3604,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -3735,17 +3735,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -3803,7 +3803,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -3814,7 +3814,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -3837,14 +3837,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid12"
@@ -3883,7 +3883,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -3986,17 +3986,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -4054,7 +4054,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -4065,7 +4065,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -4088,14 +4088,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid18"
@@ -4134,7 +4134,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -4176,7 +4176,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               id="notification-group"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <ul
                                   aria-label="avatar group"
@@ -4279,16 +4279,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-jw6f40"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -4350,7 +4350,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -4481,17 +4481,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -4549,7 +4549,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -4560,7 +4560,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -4583,14 +4583,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid12"
@@ -4629,7 +4629,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -4732,17 +4732,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -4800,7 +4800,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -4811,7 +4811,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -4834,14 +4834,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid18"
@@ -4880,7 +4880,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Confluence"
@@ -4922,7 +4922,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <ul
                                 aria-label="avatar group"
@@ -5086,16 +5086,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
     />
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -5157,7 +5157,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -5284,16 +5284,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
     </div>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-qsa8gv"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
                 role="presentation"
@@ -5355,7 +5355,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
               </span>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -5486,17 +5486,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -5554,7 +5554,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -5565,7 +5565,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -5588,14 +5588,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid178"
@@ -5634,7 +5634,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Bitbucket"
@@ -5737,17 +5737,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             class="css-am7nxq"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <div
-                class="css-1ufm3oo"
+                class="css-1uywe1h"
               >
                 <div
                   class="css-k5cxwk"
                   id="notification-avatar"
                 >
                   <div
-                    class="css-5zfxu5"
+                    class="css-1cd2fb3"
                   >
                     <div
                       role="presentation"
@@ -5805,7 +5805,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </div>
                 </div>
                 <div
-                  class="css-8kdxbn"
+                  class="css-1dkqsc5"
                 >
                   <div
                     class="css-k5cxwk"
@@ -5816,7 +5816,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       class="cursor-pointer"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
@@ -5839,14 +5839,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                           id="notification-metadata"
                         >
                           <div
-                            class="css-2mvdbp"
+                            class="css-1926jks"
                           >
                             <div
                               class="css-k5cxwk"
                               id="notification-entity"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <div
                                   aria-labelledby="uid184"
@@ -5885,7 +5885,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               id="notification-product"
                             >
                               <div
-                                class="css-lyw6pf"
+                                class="css-1076utp"
                               >
                                 <span
                                   aria-label="Confluence"
@@ -5927,7 +5927,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               id="notification-group"
                             >
                               <div
-                                class="css-bsfd3j"
+                                class="css-5fz2td"
                               >
                                 <ul
                                   aria-label="avatar group"
@@ -6030,16 +6030,16 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-qsa8gv"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
               role="presentation"
@@ -6101,7 +6101,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -6232,17 +6232,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -6300,7 +6300,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -6311,7 +6311,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -6334,14 +6334,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid178"
@@ -6380,7 +6380,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -6483,17 +6483,17 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -6551,7 +6551,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -6562,7 +6562,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -6585,14 +6585,14 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid184"
@@ -6631,7 +6631,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Confluence"
@@ -6673,7 +6673,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <ul
                                 aria-label="avatar group"

@@ -21,7 +21,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                 class="css-qae7qe"
               >
                 <div
-                  class="css-2k1qcz"
+                  class="css-1ljzo1n"
                 >
                   <div
                     role="presentation"
@@ -131,7 +131,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
               class="css-1qsxb5u"
             >
               <div
-                class="css-bcf5ys"
+                class="css-1q8tdp"
               >
                 <div
                   role="presentation"
@@ -201,7 +201,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
               class="css-qae7qe"
             >
               <div
-                class="css-2k1qcz"
+                class="css-1ljzo1n"
               >
                 <div
                   role="presentation"
@@ -311,7 +311,7 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
             class="css-1qsxb5u"
           >
             <div
-              class="css-bcf5ys"
+              class="css-1q8tdp"
             >
               <div
                 role="presentation"

@@ -6,13 +6,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-15mab0t"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
               role="presentation"
@@ -27,7 +27,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
-                    class="css-1v6wdk"
+                    class="css-gdhcj"
                   >
                     <span
                       aria-label="Bitbucket"
@@ -77,7 +77,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               </button>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -169,13 +169,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-15mab0t"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
             role="presentation"
@@ -190,7 +190,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
-                  class="css-1v6wdk"
+                  class="css-gdhcj"
                 >
                   <span
                     aria-label="Bitbucket"
@@ -240,7 +240,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             </button>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -389,13 +389,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-ea7a9f"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
               role="presentation"
@@ -410,7 +410,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
-                    class="css-1v6wdk"
+                    class="css-gdhcj"
                   >
                     <span
                       aria-label="Bitbucket"
@@ -460,7 +460,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               </button>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -552,13 +552,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-ea7a9f"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
             role="presentation"
@@ -573,7 +573,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
-                  class="css-1v6wdk"
+                  class="css-gdhcj"
                 >
                   <span
                     aria-label="Bitbucket"
@@ -623,7 +623,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             </button>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"
@@ -772,13 +772,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
   "baseElement": <body>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-15mab0t"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
               role="presentation"
@@ -793,7 +793,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
-                    class="css-1v6wdk"
+                    class="css-gdhcj"
                   >
                     <span
                       aria-label="Bitbucket"
@@ -843,7 +843,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               </button>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -928,13 +928,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
     </div>
     <div>
       <div
-        class="css-1npayr"
+        class="css-18nlz2h"
       >
         <div
           class="css-15mab0t"
         >
           <div
-            class="css-1a0x9v0"
+            class="css-58xle2"
           >
             <div
               role="presentation"
@@ -949,7 +949,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                 >
                   <div
-                    class="css-1v6wdk"
+                    class="css-gdhcj"
                   >
                     <span
                       aria-label="Bitbucket"
@@ -999,7 +999,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               </button>
             </div>
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <div
                 role="presentation"
@@ -1091,13 +1091,13 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
   </body>,
   "container": <div>
     <div
-      class="css-1npayr"
+      class="css-18nlz2h"
     >
       <div
         class="css-15mab0t"
       >
         <div
-          class="css-1a0x9v0"
+          class="css-58xle2"
         >
           <div
             role="presentation"
@@ -1112,7 +1112,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
               >
                 <div
-                  class="css-1v6wdk"
+                  class="css-gdhcj"
                 >
                   <span
                     aria-label="Bitbucket"
@@ -1162,7 +1162,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
             </button>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <div
               role="presentation"

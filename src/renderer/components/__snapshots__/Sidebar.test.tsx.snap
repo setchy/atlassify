@@ -357,7 +357,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
             class="css-qae7qe"
           >
             <div
-              class="css-2k1qcz"
+              class="css-1ljzo1n"
             >
               <div
                 role="presentation"
@@ -467,7 +467,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
           class="css-1qsxb5u"
         >
           <div
-            class="css-bcf5ys"
+            class="css-1q8tdp"
           >
             <div
               role="presentation"
@@ -524,7 +524,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
           class="css-qae7qe"
         >
           <div
-            class="css-2k1qcz"
+            class="css-1ljzo1n"
           >
             <div
               role="presentation"
@@ -634,7 +634,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
         class="css-1qsxb5u"
       >
         <div
-          class="css-bcf5ys"
+          class="css-1q8tdp"
         >
           <div
             role="presentation"
@@ -748,7 +748,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
             class="css-qae7qe"
           >
             <div
-              class="css-2k1qcz"
+              class="css-1ljzo1n"
             >
               <div
                 role="presentation"
@@ -858,7 +858,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
           class="css-1qsxb5u"
         >
           <div
-            class="css-bcf5ys"
+            class="css-1q8tdp"
           >
             <div
               role="presentation"
@@ -915,7 +915,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
           class="css-qae7qe"
         >
           <div
-            class="css-2k1qcz"
+            class="css-1ljzo1n"
           >
             <div
               role="presentation"
@@ -1025,7 +1025,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
         class="css-1qsxb5u"
       >
         <div
-          class="css-bcf5ys"
+          class="css-1q8tdp"
         >
           <div
             role="presentation"
@@ -1139,7 +1139,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
             class="css-qae7qe"
           >
             <div
-              class="css-2k1qcz"
+              class="css-1ljzo1n"
             >
               <div
                 role="presentation"
@@ -1249,7 +1249,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
           class="css-1qsxb5u"
         >
           <div
-            class="css-bcf5ys"
+            class="css-1q8tdp"
           >
             <div
               role="presentation"
@@ -1306,7 +1306,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
           class="css-qae7qe"
         >
           <div
-            class="css-2k1qcz"
+            class="css-1ljzo1n"
           >
             <div
               role="presentation"
@@ -1416,7 +1416,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
         class="css-1qsxb5u"
       >
         <div
-          class="css-bcf5ys"
+          class="css-1q8tdp"
         >
           <div
             role="presentation"
@@ -1530,7 +1530,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
             class="css-qae7qe"
           >
             <div
-              class="css-2k1qcz"
+              class="css-1ljzo1n"
             >
               <div
                 role="presentation"
@@ -1640,7 +1640,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
           class="css-1qsxb5u"
         >
           <div
-            class="css-bcf5ys"
+            class="css-1q8tdp"
           >
             <div
               role="presentation"
@@ -1697,7 +1697,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
           class="css-qae7qe"
         >
           <div
-            class="css-2k1qcz"
+            class="css-1ljzo1n"
           >
             <div
               role="presentation"
@@ -1807,7 +1807,7 @@ exports[`renderer/components/Sidebar.tsx logged out should render itself & its c
         class="css-1qsxb5u"
       >
         <div
-          class="css-bcf5ys"
+          class="css-1q8tdp"
         >
           <div
             role="presentation"

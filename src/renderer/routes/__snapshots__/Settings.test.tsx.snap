@@ -9,7 +9,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     class="css-18bes35"
   >
     <div
-      class="css-y272c0"
+      class="css-1ja375h"
     >
       <div
         role="presentation"
@@ -64,10 +64,10 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
       class="css-8mzmlv"
     >
       <div
-        class="css-1ub26k9"
+        class="css-1f88b8t"
       >
         <div
-          class="css-t8lj6l"
+          class="css-u5wwvt"
         >
           <h4
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -78,7 +78,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             class="css-5shg4o"
           >
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <span
                 class="css-aeiv5u"
@@ -188,7 +188,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             class="css-5shg4o"
           >
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <span
                 class="css-aeiv5u"
@@ -270,7 +270,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             class="css-5shg4o"
           >
             <div
-              class="css-1v6wdk"
+              class="css-gdhcj"
             >
               <span
                 class="css-aeiv5u"
@@ -280,7 +280,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 :
               </span>
               <div
-                class="css-1cdf62i"
+                class="css-1by9qc2"
               >
                 <div
                   class="_1e0c116y _kqswh2mm _4cvr1h6o _o5721q9c"
@@ -289,7 +289,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     class="_traeidpf _anlpidpf _p9ykidpf _bepvidpf"
                   >
                     <div
-                      class="css-mrgpd6"
+                      class="css-3p0rff"
                     >
                       <div
                         class="css-13secbl"
@@ -433,7 +433,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           </div>
         </div>
         <div
-          class="css-t8lj6l"
+          class="css-u5wwvt"
         >
           <h4
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -482,7 +482,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </span>
           </label>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -586,7 +586,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </div>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -691,7 +691,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           </div>
         </div>
         <div
-          class="css-t8lj6l"
+          class="css-u5wwvt"
         >
           <h4
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -702,7 +702,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             class="css-5shg4o"
           >
             <div
-              class="css-gokkc4"
+              class="css-xxi07b"
             >
               <span
                 class="css-aeiv5u"
@@ -757,7 +757,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </div>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -948,7 +948,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </span>
           </label>
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -992,7 +992,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
             </label>
             <div
-              class="css-onmozj"
+              class="css-1436gvr"
               data-testid="settings-volume-group"
             >
               <div
@@ -1002,7 +1002,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   class="_traeidpf _anlpidpf _p9ykidpf _bepvidpf"
                 >
                   <div
-                    class="css-mrgpd6"
+                    class="css-3p0rff"
                   >
                     <div
                       class="css-13secbl"
@@ -1144,7 +1144,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
             </div>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1290,7 +1290,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           </label>
         </div>
         <div
-          class="css-ze0mo2"
+          class="css-1ubxutt"
         >
           <button
             aria-haspopup="dialog"
@@ -1313,7 +1313,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
     class="css-156yo0n"
   >
     <div
-      class="css-fx4jsa"
+      class="css-1fxbet0"
     >
       <div
         role="presentation"
@@ -1339,7 +1339,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         </button>
       </div>
       <div
-        class="css-srvzt9"
+        class="css-1ntkjjh"
       >
         <div
           role="presentation"

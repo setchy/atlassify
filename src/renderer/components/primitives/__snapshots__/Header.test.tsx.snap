@@ -9,7 +9,7 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
         class="css-18bes35"
       >
         <div
-          class="css-y272c0"
+          class="css-1ja375h"
         >
           <div
             role="presentation"
@@ -64,7 +64,7 @@ exports[`renderer/components/primitives/Header.tsx should render itself & its ch
       class="css-18bes35"
     >
       <div
-        class="css-y272c0"
+        class="css-1ja375h"
       >
         <div
           role="presentation"

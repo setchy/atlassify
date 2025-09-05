@@ -13,17 +13,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -81,7 +81,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -92,7 +92,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -115,14 +115,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid32"
@@ -161,7 +161,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Compass"
@@ -209,7 +209,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <span
                                 class="css-1re4vvb"
@@ -286,17 +286,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
         class="css-am7nxq"
       >
         <div
-          class="css-1v6wdk"
+          class="css-gdhcj"
         >
           <div
-            class="css-1ufm3oo"
+            class="css-1uywe1h"
           >
             <div
               class="css-k5cxwk"
               id="notification-avatar"
             >
               <div
-                class="css-5zfxu5"
+                class="css-1cd2fb3"
               >
                 <div
                   role="presentation"
@@ -354,7 +354,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               </div>
             </div>
             <div
-              class="css-8kdxbn"
+              class="css-1dkqsc5"
             >
               <div
                 class="css-k5cxwk"
@@ -365,7 +365,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   class="cursor-pointer"
                 >
                   <div
-                    class="css-2mvdbp"
+                    class="css-1926jks"
                   >
                     <div
                       class="css-k5cxwk"
@@ -388,14 +388,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-metadata"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
                           id="notification-entity"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <div
                               aria-labelledby="uid32"
@@ -434,7 +434,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-product"
                         >
                           <div
-                            class="css-lyw6pf"
+                            class="css-1076utp"
                           >
                             <span
                               aria-label="Compass"
@@ -482,7 +482,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-group"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <span
                               class="css-1re4vvb"
@@ -616,17 +616,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -684,7 +684,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -695,7 +695,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -718,14 +718,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid10"
@@ -764,7 +764,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -870,17 +870,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
         class="css-am7nxq"
       >
         <div
-          class="css-1v6wdk"
+          class="css-gdhcj"
         >
           <div
-            class="css-1ufm3oo"
+            class="css-1uywe1h"
           >
             <div
               class="css-k5cxwk"
               id="notification-avatar"
             >
               <div
-                class="css-5zfxu5"
+                class="css-1cd2fb3"
               >
                 <div
                   role="presentation"
@@ -938,7 +938,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               </div>
             </div>
             <div
-              class="css-8kdxbn"
+              class="css-1dkqsc5"
             >
               <div
                 class="css-k5cxwk"
@@ -949,7 +949,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   class="cursor-pointer"
                 >
                   <div
-                    class="css-2mvdbp"
+                    class="css-1926jks"
                   >
                     <div
                       class="css-k5cxwk"
@@ -972,14 +972,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-metadata"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
                           id="notification-entity"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <div
                               aria-labelledby="uid10"
@@ -1018,7 +1018,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-product"
                         >
                           <div
-                            class="css-lyw6pf"
+                            class="css-1076utp"
                           >
                             <span
                               aria-label="Bitbucket"
@@ -1181,17 +1181,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -1249,7 +1249,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -1260,7 +1260,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -1283,14 +1283,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid16"
@@ -1329,7 +1329,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -1371,7 +1371,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <ul
                                 aria-label="avatar group"
@@ -1556,17 +1556,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
         class="css-am7nxq"
       >
         <div
-          class="css-1v6wdk"
+          class="css-gdhcj"
         >
           <div
-            class="css-1ufm3oo"
+            class="css-1uywe1h"
           >
             <div
               class="css-k5cxwk"
               id="notification-avatar"
             >
               <div
-                class="css-5zfxu5"
+                class="css-1cd2fb3"
               >
                 <div
                   role="presentation"
@@ -1624,7 +1624,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               </div>
             </div>
             <div
-              class="css-8kdxbn"
+              class="css-1dkqsc5"
             >
               <div
                 class="css-k5cxwk"
@@ -1635,7 +1635,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   class="cursor-pointer"
                 >
                   <div
-                    class="css-2mvdbp"
+                    class="css-1926jks"
                   >
                     <div
                       class="css-k5cxwk"
@@ -1658,14 +1658,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-metadata"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
                           id="notification-entity"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <div
                               aria-labelledby="uid16"
@@ -1704,7 +1704,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-product"
                         >
                           <div
-                            class="css-lyw6pf"
+                            class="css-1076utp"
                           >
                             <span
                               aria-label="Bitbucket"
@@ -1746,7 +1746,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-group"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <ul
                               aria-label="avatar group"
@@ -1988,17 +1988,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -2056,7 +2056,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -2067,7 +2067,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -2090,14 +2090,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid26"
@@ -2136,7 +2136,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -2178,7 +2178,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-group"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <span
                                 class="css-1re4vvb"
@@ -2255,17 +2255,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
         class="css-am7nxq"
       >
         <div
-          class="css-1v6wdk"
+          class="css-gdhcj"
         >
           <div
-            class="css-1ufm3oo"
+            class="css-1uywe1h"
           >
             <div
               class="css-k5cxwk"
               id="notification-avatar"
             >
               <div
-                class="css-5zfxu5"
+                class="css-1cd2fb3"
               >
                 <div
                   role="presentation"
@@ -2323,7 +2323,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               </div>
             </div>
             <div
-              class="css-8kdxbn"
+              class="css-1dkqsc5"
             >
               <div
                 class="css-k5cxwk"
@@ -2334,7 +2334,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   class="cursor-pointer"
                 >
                   <div
-                    class="css-2mvdbp"
+                    class="css-1926jks"
                   >
                     <div
                       class="css-k5cxwk"
@@ -2357,14 +2357,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-metadata"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
                           id="notification-entity"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <div
                               aria-labelledby="uid26"
@@ -2403,7 +2403,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-product"
                         >
                           <div
-                            class="css-lyw6pf"
+                            class="css-1076utp"
                           >
                             <span
                               aria-label="Bitbucket"
@@ -2445,7 +2445,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-group"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <span
                               class="css-1re4vvb"
@@ -2579,17 +2579,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
           class="css-am7nxq"
         >
           <div
-            class="css-1v6wdk"
+            class="css-gdhcj"
           >
             <div
-              class="css-1ufm3oo"
+              class="css-1uywe1h"
             >
               <div
                 class="css-k5cxwk"
                 id="notification-avatar"
               >
                 <div
-                  class="css-5zfxu5"
+                  class="css-1cd2fb3"
                 >
                   <div
                     role="presentation"
@@ -2647,7 +2647,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 </div>
               </div>
               <div
-                class="css-8kdxbn"
+                class="css-1dkqsc5"
               >
                 <div
                   class="css-k5cxwk"
@@ -2658,7 +2658,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     class="cursor-pointer"
                   >
                     <div
-                      class="css-2mvdbp"
+                      class="css-1926jks"
                     >
                       <div
                         class="css-k5cxwk"
@@ -2681,14 +2681,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-metadata"
                       >
                         <div
-                          class="css-2mvdbp"
+                          class="css-1926jks"
                         >
                           <div
                             class="css-k5cxwk"
                             id="notification-entity"
                           >
                             <div
-                              class="css-bsfd3j"
+                              class="css-5fz2td"
                             >
                               <div
                                 aria-labelledby="uid4"
@@ -2727,7 +2727,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             id="notification-product"
                           >
                             <div
-                              class="css-lyw6pf"
+                              class="css-1076utp"
                             >
                               <span
                                 aria-label="Bitbucket"
@@ -2833,17 +2833,17 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
         class="css-am7nxq"
       >
         <div
-          class="css-1v6wdk"
+          class="css-gdhcj"
         >
           <div
-            class="css-1ufm3oo"
+            class="css-1uywe1h"
           >
             <div
               class="css-k5cxwk"
               id="notification-avatar"
             >
               <div
-                class="css-5zfxu5"
+                class="css-1cd2fb3"
               >
                 <div
                   role="presentation"
@@ -2901,7 +2901,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               </div>
             </div>
             <div
-              class="css-8kdxbn"
+              class="css-1dkqsc5"
             >
               <div
                 class="css-k5cxwk"
@@ -2912,7 +2912,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   class="cursor-pointer"
                 >
                   <div
-                    class="css-2mvdbp"
+                    class="css-1926jks"
                   >
                     <div
                       class="css-k5cxwk"
@@ -2935,14 +2935,14 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-metadata"
                     >
                       <div
-                        class="css-2mvdbp"
+                        class="css-1926jks"
                       >
                         <div
                           class="css-k5cxwk"
                           id="notification-entity"
                         >
                           <div
-                            class="css-bsfd3j"
+                            class="css-5fz2td"
                           >
                             <div
                               aria-labelledby="uid4"
@@ -2981,7 +2981,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           id="notification-product"
                         >
                           <div
-                            class="css-lyw6pf"
+                            class="css-1076utp"
                           >
                             <span
                               aria-label="Bitbucket"

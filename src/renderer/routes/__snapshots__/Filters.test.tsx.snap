@@ -9,7 +9,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     class="css-18bes35"
   >
     <div
-      class="css-y272c0"
+      class="css-1ja375h"
     >
       <div
         role="presentation"
@@ -64,13 +64,13 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
       class="css-1l34ghh"
     >
       <div
-        class="css-srvzt9"
+        class="css-1ntkjjh"
       >
         <div
-          class="css-1ub26k9"
+          class="css-1f88b8t"
         >
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -81,7 +81,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -153,7 +153,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -227,7 +227,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -238,7 +238,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -310,7 +310,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -384,7 +384,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -395,7 +395,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -467,7 +467,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -541,7 +541,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -552,7 +552,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -617,7 +617,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -685,10 +685,10 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
           </div>
         </div>
         <div
-          class="css-1npayr"
+          class="css-18nlz2h"
         >
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -699,7 +699,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -776,7 +776,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -859,7 +859,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -936,7 +936,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1013,7 +1013,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1090,7 +1090,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1167,7 +1167,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1244,7 +1244,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1321,7 +1321,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1403,7 +1403,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     class="css-156yo0n"
   >
     <div
-      class="css-hugz22"
+      class="css-11bvkc9"
     >
       <button
         class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
@@ -1432,7 +1432,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     class="css-18bes35"
   >
     <div
-      class="css-y272c0"
+      class="css-1ja375h"
     >
       <div
         role="presentation"
@@ -1487,13 +1487,13 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
       class="css-1l34ghh"
     >
       <div
-        class="css-srvzt9"
+        class="css-1ntkjjh"
       >
         <div
-          class="css-1ub26k9"
+          class="css-1f88b8t"
         >
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -1504,7 +1504,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1576,7 +1576,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1650,7 +1650,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -1661,7 +1661,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1733,7 +1733,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1807,7 +1807,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -1818,7 +1818,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1890,7 +1890,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -1964,7 +1964,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
             </div>
           </div>
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -1975,7 +1975,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2040,7 +2040,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2108,10 +2108,10 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
           </div>
         </div>
         <div
-          class="css-1npayr"
+          class="css-18nlz2h"
         >
           <div
-            class="css-11u50rl"
+            class="css-1rn971c"
           >
             <h4
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -2122,7 +2122,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
               class="css-k5cxwk"
             >
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2204,7 +2204,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2287,7 +2287,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2364,7 +2364,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2441,7 +2441,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2518,7 +2518,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2595,7 +2595,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2672,7 +2672,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2749,7 +2749,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </span>
               </div>
               <div
-                class="css-bsfd3j"
+                class="css-5fz2td"
               >
                 <label
                   class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -2831,7 +2831,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     class="css-156yo0n"
   >
     <div
-      class="css-hugz22"
+      class="css-11bvkc9"
     >
       <button
         class="_mizu194a _1ah31bk5 _ra3xnqa1 _128m1bk5 _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1vbi _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr37gr8 _1di61wu2 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"

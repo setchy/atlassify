@@ -9,7 +9,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
         class="css-156yo0n"
       >
         <div
-          class="css-hugz22"
+          class="css-11bvkc9"
         >
           Test
         </div>
@@ -21,7 +21,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
       class="css-156yo0n"
     >
       <div
-        class="css-hugz22"
+        class="css-11bvkc9"
       >
         Test
       </div>
@@ -90,7 +90,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
         class="css-156yo0n"
       >
         <div
-          class="css-fx4jsa"
+          class="css-1fxbet0"
         >
           Test
         </div>
@@ -102,7 +102,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
       class="css-156yo0n"
     >
       <div
-        class="css-fx4jsa"
+        class="css-1fxbet0"
       >
         Test
       </div>

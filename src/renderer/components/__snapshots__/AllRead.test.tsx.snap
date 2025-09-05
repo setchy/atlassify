@@ -12,7 +12,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -44,7 +44,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - n
         class="css-1rd5nai"
       >
         <div
-          class="css-ybkmal"
+          class="css-1ma91a4"
         >
           <span
             class="text-5xl"
@@ -133,7 +133,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - w
           class="css-1rd5nai"
         >
           <div
-            class="css-ybkmal"
+            class="css-1ma91a4"
           >
             <span
               class="text-5xl"
@@ -165,7 +165,7 @@ exports[`renderer/components/AllRead.tsx should render itself & its children - w
         class="css-1rd5nai"
       >
         <div
-          class="css-ybkmal"
+          class="css-1ma91a4"
         >
           <span
             class="text-5xl"

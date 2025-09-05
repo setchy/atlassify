@@ -13,7 +13,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           class="css-18bes35"
         >
           <div
-            class="css-y272c0"
+            class="css-1ja375h"
           >
             <div
               role="presentation"
@@ -144,7 +144,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 >
                   <span>
                     <div
-                      class="css-lkny6i"
+                      class="css-z2jtml"
                     >
                       <div
                         role="presentation"
@@ -196,7 +196,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </div>
             </div>
             <div
-              class="css-kxmhz3"
+              class="css-1n11f8s"
             >
               <div
                 class="css-1gbz6oi"
@@ -313,7 +313,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
         class="css-18bes35"
       >
         <div
-          class="css-y272c0"
+          class="css-1ja375h"
         >
           <div
             role="presentation"
@@ -444,7 +444,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               >
                 <span>
                   <div
-                    class="css-lkny6i"
+                    class="css-z2jtml"
                   >
                     <div
                       role="presentation"
@@ -496,7 +496,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </div>
           </div>
           <div
-            class="css-kxmhz3"
+            class="css-1n11f8s"
           >
             <div
               class="css-1gbz6oi"

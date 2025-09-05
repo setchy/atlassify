@@ -9,7 +9,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
         class="flex flex-1 flex-col items-center justify-center min-h-screen"
       >
         <div
-          class="css-11aluc9"
+          class="css-1i50zrx"
         >
           <svg
             aria-hidden="true"
@@ -54,7 +54,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             />
           </svg>
           <div
-            class="css-1ezbfq2"
+            class="css-1o3s557"
           >
             <h2
               class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
@@ -69,7 +69,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
             </span>
           </div>
           <div
-            class="css-gokkc4"
+            class="css-xxi07b"
           >
             <span
               aria-label="Bitbucket"
@@ -353,7 +353,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
       class="flex flex-1 flex-col items-center justify-center min-h-screen"
     >
       <div
-        class="css-11aluc9"
+        class="css-1i50zrx"
       >
         <svg
           aria-hidden="true"
@@ -398,7 +398,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           />
         </svg>
         <div
-          class="css-1ezbfq2"
+          class="css-1o3s557"
         >
           <h2
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syaz1fxt"
@@ -413,7 +413,7 @@ exports[`renderer/routes/Landing.tsx should render itself & its children 1`] = `
           </span>
         </div>
         <div
-          class="css-gokkc4"
+          class="css-xxi07b"
         >
           <span
             aria-label="Bitbucket"

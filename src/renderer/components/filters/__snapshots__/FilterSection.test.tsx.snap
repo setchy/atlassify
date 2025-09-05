@@ -2,7 +2,7 @@
 
 exports[`renderer/components/filters/FilterSection.tsx should be able to toggle filter value - none already set 1`] = `
 <div
-  class="css-bsfd3j"
+  class="css-5fz2td"
 >
   <label
     class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -77,7 +77,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
 
 exports[`renderer/components/filters/FilterSection.tsx should be able to toggle filter value - some filters already set 1`] = `
 <div
-  class="css-bsfd3j"
+  class="css-5fz2td"
 >
   <label
     class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -156,7 +156,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
   "baseElement": <body>
     <div>
       <div
-        class="css-11u50rl"
+        class="css-1rn971c"
       >
         <h4
           class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -167,7 +167,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
           class="css-k5cxwk"
         >
           <div
-            class="css-bsfd3j"
+            class="css-5fz2td"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -239,7 +239,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             </span>
           </div>
           <div
-            class="css-bsfd3j"
+            class="css-5fz2td"
           >
             <label
               class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -316,7 +316,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
   </body>,
   "container": <div>
     <div
-      class="css-11u50rl"
+      class="css-1rn971c"
     >
       <h4
         class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
@@ -327,7 +327,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
         class="css-k5cxwk"
       >
         <div
-          class="css-bsfd3j"
+          class="css-5fz2td"
         >
           <label
             class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
@@ -399,7 +399,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
           </span>
         </div>
         <div
-          class="css-bsfd3j"
+          class="css-5fz2td"
         >
           <label
             class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1te3 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
