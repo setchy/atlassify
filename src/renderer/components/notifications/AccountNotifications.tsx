@@ -76,7 +76,10 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     notifications?.reduce(
       (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
         const key = notification.product.type;
-        if (!acc[key]) acc[key] = [];
+        if (!acc[key]) {
+          acc[key] = [];
+        }
+
         acc[key].push(notification);
         return acc;
       },
