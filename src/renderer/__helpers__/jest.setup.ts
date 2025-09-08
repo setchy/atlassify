@@ -40,3 +40,5 @@ window.atlassify = {
 
 // @ts-expect-error: prevent ReferenceError: TextEncoder is not defined
 global.TextEncoder = TextEncoder;
+
+window.HTMLMediaElement.prototype.play = jest.fn();
