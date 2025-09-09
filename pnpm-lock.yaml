@@ -85,8 +85,8 @@ importers:
         specifier: 21.2.8
         version: 21.2.8(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
-        specifier: 19.0.3
-        version: 19.0.3(@types/react@18.3.24)(react@18.3.1)
+        specifier: 19.0.4
+        version: 19.0.4(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/textfield':
         specifier: 8.0.10
         version: 8.0.10(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -462,8 +462,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/spinner@19.0.3':
-    resolution: {integrity: sha512-OhLqyZ83J7HWgcWm7nPCN/HUsLhJAW1aWIPbCgXgSvJ36rKgJqWY6AFWGYKh/odT6NJgCmqY3mNO2eOJDpjpuA==}
+  '@atlaskit/spinner@19.0.4':
+    resolution: {integrity: sha512-NxUSJjJscWiKR58FoVOmUXpwKBNHXJ4GIScFixrNoYMMxx12316pSCfTXZzIG90NbIg4g3auNux2LTVvk3tOrg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5959,7 +5959,7 @@ snapshots:
       '@atlaskit/interaction-context': 3.0.0(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
       '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 19.0.3(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/spinner': 19.0.4(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tooltip': 20.4.6(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6349,7 +6349,7 @@ snapshots:
       '@atlaskit/layering': 3.0.3(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
       '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 19.0.3(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/spinner': 19.0.4(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@18.3.1)
@@ -6373,7 +6373,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
       '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/react-select': 3.5.3(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 19.0.3(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/spinner': 19.0.4(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/visually-hidden': 3.0.3(react@18.3.1)
@@ -6393,10 +6393,10 @@ snapshots:
       - prop-types
       - supports-color
 
-  '@atlaskit/spinner@19.0.3(@types/react@18.3.24)(react@18.3.1)':
+  '@atlaskit/spinner@19.0.4(@types/react@18.3.24)(react@18.3.1)':
     dependencies:
       '@atlaskit/interaction-context': 3.0.0(react@18.3.1)
-      '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/theme': 21.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@18.3.1)
@@ -6460,7 +6460,7 @@ snapshots:
       '@atlaskit/icon': 28.1.2(@babel/core@7.28.4)(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@18.3.1)
       '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@atlaskit/spinner': 19.0.3(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/spinner': 19.0.4(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/visually-hidden': 3.0.3(react@18.3.1)
