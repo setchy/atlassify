@@ -71,7 +71,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         >
           <button
             aria-label="Open account profile"
-            class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+            class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
             data-testid="account-profile--itemInner"
             style="--avatar-item-bg-color: transparent;"
             type="button"
@@ -82,7 +82,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="img"
             >
               <span
-                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                 style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
               >
                 <img
@@ -323,7 +323,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         >
           <button
             aria-label="Open account profile"
-            class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1bk5 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
+            class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
             data-testid="account-profile--itemInner"
             style="--avatar-item-bg-color: transparent;"
             type="button"
@@ -334,7 +334,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               role="img"
             >
               <span
-                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128m1bk5 _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                 style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
               >
                 <img
