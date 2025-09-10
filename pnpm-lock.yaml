@@ -82,8 +82,8 @@ importers:
         specifier: 8.3.3
         version: 8.3.3(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/select':
-        specifier: 21.2.8
-        version: 21.2.8(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 21.2.10
+        version: 21.2.10(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner':
         specifier: 19.0.4
         version: 19.0.4(@types/react@18.3.24)(react@18.3.1)
@@ -456,8 +456,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/select@21.2.8':
-    resolution: {integrity: sha512-ohOCW103njPDwJSpLXxT+yuUx73MeOSXtCe1zs8Xmhapm0T8UHRmjfgdrlDwXKqFn3o0iMAU7ngbMWDkmPaybg==}
+  '@atlaskit/select@21.2.10':
+    resolution: {integrity: sha512-egtkxFDe7XhGtzG0kVtFOU4kWwQVYv3loo25KjgVMBPBodd1BqC9SOQu8btWi0WSLO19TEh3NZbKik/SXs/Xxg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6566,7 +6566,7 @@ snapshots:
       - prop-types
       - supports-color
 
-  '@atlaskit/select@21.2.8(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@atlaskit/select@21.2.10(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/ds-lib': 5.0.1(@types/react@18.3.24)(react@18.3.1)
@@ -6575,7 +6575,7 @@ snapshots:
       '@atlaskit/primitives': 14.14.0(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/react-select': 3.5.3(@babel/core@7.28.4)(@types/react@18.3.24)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/spinner': 19.0.4(@types/react@18.3.24)(react@18.3.1)
-      '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/theme': 21.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.1(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/visually-hidden': 3.0.3(react@18.3.1)
       '@babel/runtime': 7.28.4
