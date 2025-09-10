@@ -127,6 +127,7 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   return (
     <Stack>
       <Box
+        as="div"
         backgroundColor={backgroundColor}
         onClick={toggleAccountNotifications}
         paddingBlock="space.050"

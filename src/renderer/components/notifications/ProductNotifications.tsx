@@ -50,6 +50,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   return (
     <Stack>
       <Box
+        as="div"
         backgroundColor={
           isLightMode()
             ? 'color.background.accent.blue.subtlest'

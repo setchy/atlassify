@@ -450,7 +450,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               name="markAsReadOnOpen"
               tabindex="0"
               type="checkbox"
-              value=""
             />
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -493,7 +492,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 name="groupNotificationsByProductAlphabetically"
                 tabindex="0"
                 type="checkbox"
-                value=""
               />
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -597,7 +595,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 name="delayNotificationState"
                 tabindex="0"
                 type="checkbox"
-                value=""
               />
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -769,7 +766,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 name="keyboardShortcutEnabled"
                 tabindex="0"
                 type="checkbox"
-                value=""
               />
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -875,7 +871,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               name="showNotificationsCountInTray"
               tabindex="0"
               type="checkbox"
-              value=""
             />
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -916,7 +911,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               name="showNotifications"
               tabindex="0"
               type="checkbox"
-              value=""
             />
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -960,7 +954,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 name="playSoundNewNotifications"
                 tabindex="0"
                 type="checkbox"
-                value=""
               />
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -1155,7 +1148,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 name="useAlternateIdleIcon"
                 tabindex="0"
                 type="checkbox"
-                value=""
               />
               <svg
                 class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
@@ -1257,7 +1249,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               name="openAtStartUp"
               tabindex="0"
               type="checkbox"
-              value=""
             />
             <svg
               class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
