@@ -55,8 +55,8 @@ importers:
         specifier: 17.1.14
         version: 17.1.14(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@atlaskit/css-reset':
-        specifier: 7.3.5
-        version: 7.3.5(@types/react@18.3.24)(react@18.3.1)
+        specifier: 7.3.6
+        version: 7.3.6(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/form':
         specifier: 12.5.3
         version: 12.5.3(@babel/core@7.28.4)(@types/react@18.3.24)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -333,8 +333,8 @@ packages:
   '@atlaskit/codemod-utils@4.2.5':
     resolution: {integrity: sha512-f7b7/BqfxbPtAfJXXgR8YfzOz9Mj912kBZB5Q/3ykKw9yvT8lQsZj6HOL7qMlHMutzPdz+uuF+duBVjybtNgCg==}
 
-  '@atlaskit/css-reset@7.3.5':
-    resolution: {integrity: sha512-1UZlmdDe6RtVD4/dvPpH7DMTog0xRR81NVD1YiGLt+YwjVgjMJyGRo9bpRRwzn9kBSRov3/mYXFHglrK85r3Vw==}
+  '@atlaskit/css-reset@7.3.6':
+    resolution: {integrity: sha512-qmToUnAwUlOQNfJVjvKYKbtmlQAftnAcOZNh7KGFsYt+k66LSjKRdCJgGBXFgFCvQTichqLesJBbAPRG0zroWQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6199,9 +6199,9 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.28.4
 
-  '@atlaskit/css-reset@7.3.5(@types/react@18.3.24)(react@18.3.1)':
+  '@atlaskit/css-reset@7.3.6(@types/react@18.3.24)(react@18.3.1)':
     dependencies:
-      '@atlaskit/theme': 20.0.1(@types/react@18.3.24)(react@18.3.1)
+      '@atlaskit/theme': 21.0.0(@types/react@18.3.24)(react@18.3.1)
       '@atlaskit/tokens': 6.3.1(@types/react@18.3.24)(react@18.3.1)
       '@babel/runtime': 7.28.4
       react: 18.3.1
