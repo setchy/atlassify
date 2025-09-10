@@ -96,7 +96,7 @@ export const NotificationRow: FC<INotificationRow> = ({
       <Box padding="space.100">
         <Inline alignBlock="center" space={spaceBetweenSections}>
           <Inline alignBlock="start" grow="fill" space={spaceBetweenSections}>
-            <Box id="notification-avatar">
+            <Box as="div" id="notification-avatar">
               <Stack alignInline="center" space="space.050">
                 <Tooltip
                   content={notification.actor.displayName}
@@ -117,22 +117,23 @@ export const NotificationRow: FC<INotificationRow> = ({
 
             <Inline grow="fill">
               <Box
+                as="div"
                 id="notification-details"
                 onClick={handleNotificationInteraction}
                 testId="notification-details"
               >
                 <div className="cursor-pointer">
                   <Stack space="space.025">
-                    <Box id="notification-title">
+                    <Box as="div" id="notification-title">
                       <Text>{notification.message}</Text>
                       &nbsp;&nbsp;
                       <Text align="end" as="em" size="small">
                         {updatedAt}
                       </Text>
                     </Box>
-                    <Box id="notification-metadata">
+                    <Box as="div" id="notification-metadata">
                       <Stack space="space.025">
-                        <Box id="notification-entity">
+                        <Box as="div" id="notification-entity">
                           <Inline
                             alignBlock={blockAlignmentByLength(
                               notification.entity.title,
@@ -151,6 +152,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                           </Inline>
                         </Box>
                         <Box
+                          as="div"
                           id="notification-product"
                           paddingInlineStart="space.025"
                         >
@@ -168,7 +170,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                             <Text size="small">{notificationFooterText}</Text>
                           </Inline>
                         </Box>
-                        <Box id="notification-group">
+                        <Box as="div" id="notification-group">
                           {notification.notificationGroup.size > 1 && (
                             <Inline alignBlock="center" space="space.050">
                               {notification.notificationGroup.additionalActors
@@ -196,7 +198,7 @@ export const NotificationRow: FC<INotificationRow> = ({
             </Inline>
           </Inline>
 
-          <Box id="notification-actions">
+          <Box as="div" id="notification-actions">
             {!animateExit &&
               (isNotificationUnread ? (
                 <Tooltip

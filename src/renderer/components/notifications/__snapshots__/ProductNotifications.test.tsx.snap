@@ -8,7 +8,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
       <div
         class="css-18nlz2h"
       >
-        <div
+        <button
           class="css-15mab0t"
         >
           <div
@@ -157,7 +157,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               </div>
             </div>
           </div>
-        </div>
+        </button>
         <div>
           NotificationRow
         </div>
@@ -171,7 +171,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
     <div
       class="css-18nlz2h"
     >
-      <div
+      <button
         class="css-15mab0t"
       >
         <div
@@ -320,7 +320,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             </div>
           </div>
         </div>
-      </div>
+      </button>
       <div>
         NotificationRow
       </div>
@@ -391,7 +391,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
       <div
         class="css-18nlz2h"
       >
-        <div
+        <button
           class="css-ea7a9f"
         >
           <div
@@ -540,7 +540,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
               </div>
             </div>
           </div>
-        </div>
+        </button>
         <div>
           NotificationRow
         </div>
@@ -554,7 +554,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
     <div
       class="css-18nlz2h"
     >
-      <div
+      <button
         class="css-ea7a9f"
       >
         <div
@@ -703,7 +703,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
             </div>
           </div>
         </div>
-      </div>
+      </button>
       <div>
         NotificationRow
       </div>
@@ -774,7 +774,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
       <div
         class="css-18nlz2h"
       >
-        <div
+        <button
           class="css-15mab0t"
         >
           <div
@@ -923,14 +923,14 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               </div>
             </div>
           </div>
-        </div>
+        </button>
       </div>
     </div>
     <div>
       <div
         class="css-18nlz2h"
       >
-        <div
+        <button
           class="css-15mab0t"
         >
           <div
@@ -1079,7 +1079,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
               </div>
             </div>
           </div>
-        </div>
+        </button>
         <div>
           NotificationRow
         </div>
@@ -1093,7 +1093,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
     <div
       class="css-18nlz2h"
     >
-      <div
+      <button
         class="css-15mab0t"
       >
         <div
@@ -1242,7 +1242,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
             </div>
           </div>
         </div>
-      </div>
+      </button>
       <div>
         NotificationRow
       </div>
