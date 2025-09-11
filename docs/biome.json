@@ -21,10 +21,6 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "correctness": {
-        "noChildrenProp": "off",
-        "useJsxKeyInIterable": "off"
-      },
       "style": {
         "noInferrableTypes": "error",
         "noParameterAssign": "error",
@@ -36,9 +32,6 @@
         "useNumberNamespace": "error",
         "useSelfClosingElements": "error",
         "useSingleVarDeclarator": "error"
-      },
-      "suspicious": {
-        "noUnknownAtRules": "warn"
       }
     }
   },

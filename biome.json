@@ -64,8 +64,7 @@
         "noUselessElse": "error"
       },
       "suspicious": {
-        "noConsole": "error",
-        "noUnknownAtRules": "warn"
+        "noConsole": "error"
       }
     }
   },
