@@ -19,6 +19,7 @@ import { rendererLogError } from '../utils/logger';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
   getAllNotifications,
+  isGroupNotification,
   setTrayIconColor,
 } from '../utils/notifications/notifications';
 import { removeNotifications } from '../utils/notifications/remove';
@@ -100,6 +101,47 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
+  const getNotificationIdsForGroups = useCallback(
+    async (state: AtlassifyState, notifications: AtlassifyNotification[]) => {
+      const notificationIDs: string[] = [];
+
+      const account = notifications[0].account;
+
+      const groupNotifications = notifications.filter((notification) =>
+        isGroupNotification(notification),
+      );
+
+      try {
+        for (const group of groupNotifications) {
+          const res = await getNotificationsByGroupId(
+            account,
+            state.settings,
+            group.notificationGroup.id,
+            group.notificationGroup.size,
+          );
+
+          const groupNotifications = res.data.notifications.notificationGroup
+            .nodes as GroupNotificationDetailsFragment[];
+
+          const groupNotificationIDs = groupNotifications.map(
+            (notification) => notification.notificationId,
+          );
+
+          notificationIDs.push(...groupNotificationIDs);
+        }
+      } catch (err) {
+        rendererLogError(
+          'getNotificationIdsForGroups',
+          'Error occurred while fetching notification ids for notification groups',
+          err,
+        );
+      }
+
+      return notificationIDs;
+    },
+    [],
+  );
+
   const markNotificationsRead = useCallback(
     async (
       state: AtlassifyState,
@@ -151,7 +193,7 @@ export const useNotifications = (): NotificationsState => {
 
       setStatus('success');
     },
-    [notifications, isGroupNotification, getNotificationIdsForGroups],
+    [notifications, getNotificationIdsForGroups],
   );
 
   const markNotificationsUnread = useCallback(
@@ -193,53 +235,8 @@ export const useNotifications = (): NotificationsState => {
 
       setStatus('success');
     },
-    [isGroupNotification, getNotificationIdsForGroups],
+    [getNotificationIdsForGroups],
   );
-
-  async function getNotificationIdsForGroups(
-    state: AtlassifyState,
-    notifications: AtlassifyNotification[],
-  ) {
-    const notificationIDs: string[] = [];
-
-    const account = notifications[0].account;
-
-    const groupNotifications = notifications.filter((notification) =>
-      isGroupNotification(notification),
-    );
-
-    try {
-      for (const group of groupNotifications) {
-        const res = await getNotificationsByGroupId(
-          account,
-          state.settings,
-          group.notificationGroup.id,
-          group.notificationGroup.size,
-        );
-
-        const groupNotifications = res.data.notifications.notificationGroup
-          .nodes as GroupNotificationDetailsFragment[];
-
-        const groupNotificationIDs = groupNotifications.map(
-          (notification) => notification.notificationId,
-        );
-
-        notificationIDs.push(...groupNotificationIDs);
-      }
-    } catch (err) {
-      rendererLogError(
-        'getNotificationIdsForGroups',
-        'Error occurred while fetching notification ids for notification groups',
-        err,
-      );
-    }
-
-    return notificationIDs;
-  }
-
-  function isGroupNotification(notification: AtlassifyNotification): boolean {
-    return notification.notificationGroup.size > 1;
-  }
 
   return {
     status,
