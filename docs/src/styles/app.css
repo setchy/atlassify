@@ -1,4 +1,9 @@
+/* biome-ignore-all lint/suspicious/noUnknownAtRules: Tailwind CSS directives */
+
+/** Tailwind CSS */
 @import "tailwindcss";
+
+/** Tailwind CSS Configuration */
 @config "../../tailwind.config.ts";
 
 a:not(.atlassify-navbar) {
