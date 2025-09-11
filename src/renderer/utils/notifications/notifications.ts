@@ -50,6 +50,12 @@ export function hasMoreNotifications(notifications: AccountNotifications[]) {
   return notifications?.some((n) => n.hasMoreNotifications);
 }
 
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
+}
+
 export async function getAllNotifications(
   state: AtlassifyState,
 ): Promise<AccountNotifications[]> {
