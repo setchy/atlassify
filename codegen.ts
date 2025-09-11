@@ -5,7 +5,7 @@ const config: CodegenConfig = {
   schema: 'https://developer.atlassian.com/gateway/api/graphql',
   documents: [
     'src/renderer/utils/api/**/*.ts',
-    '!src/renderer/utils/api/graphql/**',
+    '!src/renderer/utils/api/graphql/generated/**',
     '!src/renderer/utils/api/**/*.test.ts',
   ],
   generates: {
