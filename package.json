@@ -104,7 +104,7 @@
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
     "@types/react-router-dom": "5.3.3",
-    "axios": "1.11.0",
+    "axios": "1.12.1",
     "clsx": "2.1.1",
     "concurrently": "9.2.1",
     "copy-webpack-plugin": "13.0.1",
