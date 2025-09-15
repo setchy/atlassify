@@ -35,6 +35,7 @@ describe('renderer/routes/Login.tsx', () => {
 
       expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
     });
+
     it('should open login docs', async () => {
       const openExternalLinkMock = jest
         .spyOn(comms, 'openExternalLink')

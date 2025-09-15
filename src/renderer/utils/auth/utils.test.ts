@@ -2,7 +2,7 @@ import {
   mockAtlassianCloudAccount,
   mockAuth,
 } from '../../__mocks__/state-mocks';
-import type { Account } from '../../types';
+import type { Account, Username } from '../../types';
 import * as auth from './utils';
 
 describe('renderer/utils/auth/utils.ts', () => {
@@ -40,5 +40,19 @@ describe('hasAccounts', () => {
         accounts: [],
       }),
     ).toBeFalsy();
+  });
+
+  describe('hasUsernameAlready', () => {
+    it('should return true', () => {
+      expect(
+        auth.hasUsernameAlready(mockAuth, mockAtlassianCloudAccount.username),
+      ).toBeTruthy();
+    });
+
+    it('should validate false', () => {
+      expect(
+        auth.hasUsernameAlready(mockAuth, 'some-other-username' as Username),
+      ).toBeFalsy();
+    });
   });
 });

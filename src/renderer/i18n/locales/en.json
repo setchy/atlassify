@@ -116,6 +116,7 @@
     "create_token": "Create API token with scopes",
     "token_helper": "with scopes [read:account, read:jira-work] and paste above",
     "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
+    "duplicate_username": "This username has already been added. Please use a different username.",
     "security_docs": "See Atlassian documentation"
   },
   "notifications": {

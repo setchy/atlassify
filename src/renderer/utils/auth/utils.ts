@@ -52,3 +52,9 @@ export async function refreshAccount(account: Account): Promise<Account> {
 export function hasAccounts(auth: AuthState) {
   return auth.accounts.length > 0;
 }
+
+export function hasUsernameAlready(auth: AuthState, username: Username) {
+  return auth.accounts.some(
+    (a) => a.username.trim().toLowerCase() === username.trim().toLowerCase(),
+  );
+}

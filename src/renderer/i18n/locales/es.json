@@ -111,6 +111,7 @@
   },
   "login": {
     "create_token": "Crear token API con alcances",
+    "duplicate_username": "Este nombre de usuario ya ha sido agregado. \nUtilice un nombre de usuario diferente.",
     "error_message": "¡Ups! La combinación token de nombre de usuario proporcionada no es válida. Por favor intente de nuevo.",
     "security_docs": "Ver documentación de Atlassian",
     "title": "Iniciar sesión con Atlassian",
