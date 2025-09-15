@@ -1,3 +1,4 @@
+import type { ChangeEvent } from 'react';
 import { type FC, Fragment, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +25,7 @@ import { AppContext } from '../context/App';
 import type { Token, Username } from '../types';
 import { checkIfCredentialsAreValid } from '../utils/api/client';
 import type { LoginOptions } from '../utils/auth/types';
+import { hasUsernameAlready } from '../utils/auth/utils';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -37,9 +39,11 @@ interface IValues {
 
 export const LoginRoute: FC = () => {
   const { t } = useTranslation();
-  const { login } = useContext(AppContext);
+  const { login, auth } = useContext(AppContext);
   const navigate = useNavigate();
-  const [isValidToken, setIsValidToken] = useState<boolean>(true);
+  const [isValidCredentials, setIsValidCredentials] = useState<boolean>(true);
+  const [isDuplicateUsername, setIsDuplicateUsername] =
+    useState<boolean>(false);
 
   const loginUser = useCallback(
     async (data: IValues) => {
@@ -54,8 +58,7 @@ export const LoginRoute: FC = () => {
           'failed to login with provided credentials',
           err,
         );
-
-        setIsValidToken(false);
+        setIsValidCredentials(false);
       }
     },
     [login],
@@ -67,7 +70,10 @@ export const LoginRoute: FC = () => {
 
       <Box paddingInline="space.400">
         <Box>
-          {!isValidToken && (
+          {isDuplicateUsername && (
+            <ErrorMessage>{t('login.duplicate_username')}</ErrorMessage>
+          )}
+          {!isValidCredentials && (
             <ErrorMessage>{t('login.error_message')}</ErrorMessage>
           )}
         </Box>
@@ -84,14 +90,28 @@ export const LoginRoute: FC = () => {
                   // isRequired
                   testId="login-username"
                 >
-                  {({ fieldProps }) => (
-                    <Fragment>
-                      <TextField autoComplete="off" {...fieldProps} />
-                      <HelperMessage>
-                        {t('login.username_helper')}
-                      </HelperMessage>
-                    </Fragment>
-                  )}
+                  {({ fieldProps }) => {
+                    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+                      fieldProps.onChange(e);
+
+                      setIsDuplicateUsername(
+                        hasUsernameAlready(auth, e.target.value as Username),
+                      );
+                    };
+
+                    return (
+                      <Fragment>
+                        <TextField
+                          autoComplete="off"
+                          {...fieldProps}
+                          onChange={onChange}
+                        />
+                        <HelperMessage>
+                          {t('login.username_helper')}
+                        </HelperMessage>
+                      </Fragment>
+                    );
+                  }}
                 </Field>
                 <Field
                   aria-required={true}
@@ -153,6 +173,7 @@ export const LoginRoute: FC = () => {
                     <Button
                       appearance="primary"
                       iconBefore={LogInIcon}
+                      isDisabled={isDuplicateUsername}
                       isLoading={submitting}
                       testId="login-submit"
                       type="submit"

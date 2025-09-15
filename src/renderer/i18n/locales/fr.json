@@ -111,6 +111,7 @@
   },
   "login": {
     "create_token": "Créer un jeton API avec des lunettes",
+    "duplicate_username": "Ce nom d'utilisateur a déjà été ajouté. \nVeuillez utiliser un nom d'utilisateur différent.",
     "error_message": "Oups! La combinaison de jetons de nom d'utilisateur fournie n'est pas valide. Veuillez réessayer.",
     "security_docs": "Voir la documentation atlastique",
     "title": "Connectez-vous avec Atlassian",

@@ -111,6 +111,7 @@
   },
   "login": {
     "create_token": "Erstellen Sie API -Token mit Scopes",
+    "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. \nBitte verwenden Sie einen anderen Benutzernamen.",
     "error_message": "Hoppla! Die angegebene Benutzername-Token-Kombination ist nicht gültig",
     "security_docs": "Siehe Atlassian Dokumentation",
     "title": "Melden Sie sich mit Atlassian an",
