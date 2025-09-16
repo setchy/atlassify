@@ -39,7 +39,7 @@
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "25.1.0",
     "@tailwindcss/vite": "4.1.13",
-    "accessible-astro-components": "5.0.0",
+    "accessible-astro-components": "5.0.1",
     "astro": "5.13.7",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
