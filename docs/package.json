@@ -37,7 +37,7 @@
   "dependencies": {
     "@iconify-json/line-md": "1.2.11",
     "@iconify-json/mdi": "1.2.3",
-    "@octokit/openapi-types": "25.1.0",
+    "@octokit/openapi-types": "26.0.0",
     "@tailwindcss/vite": "4.1.13",
     "accessible-astro-components": "5.0.1",
     "astro": "5.13.7",
