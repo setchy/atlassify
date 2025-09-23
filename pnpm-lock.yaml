@@ -73,8 +73,8 @@ importers:
         specifier: 19.7.3
         version: 19.7.3(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/modal-dialog':
-        specifier: 14.3.13
-        version: 14.3.13(@babel/core@7.28.4)(@types/react@19.1.13)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 14.4.0
+        version: 14.4.0(@babel/core@7.28.4)(@types/react@19.1.13)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/primitives':
         specifier: 14.15.2
         version: 14.15.2(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -412,8 +412,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.3.13':
-    resolution: {integrity: sha512-RCNuwRt686z0wbqigp/8/WUz6Hxx9fRvc0zHvs36Dfa9sJ3or4YOXz70HXRnVVB3aAz2mKrAfa4eUUROuh0DHA==}
+  '@atlaskit/modal-dialog@14.4.0':
+    resolution: {integrity: sha512-yHxCl9TDDFOjkyECCJ0Rg0qpG3d6Wy6w5VZnpLTLMKsblFfr857jJoXRbN33c9ZGeSutcyiwFgA80dKerJLKXg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6262,7 +6262,7 @@ snapshots:
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.1.1)
       '@atlaskit/tile': 0.1.4(@types/react@19.1.13)(react@19.1.1)
-      '@atlaskit/tokens': 6.3.2(@types/react@19.1.13)(react@19.1.1)
+      '@atlaskit/tokens': 6.3.3(@types/react@19.1.13)(react@19.1.1)
       '@babel/register': 7.28.3(@babel/core@7.28.4)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.1.1)
@@ -6366,7 +6366,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.3.13(@babel/core@7.28.4)(@types/react@19.1.13)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@atlaskit/modal-dialog@14.4.0(@babel/core@7.28.4)(@types/react@19.1.13)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/blanket': 15.0.14(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -6374,7 +6374,7 @@ snapshots:
       '@atlaskit/css': 0.14.2(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/ds-lib': 5.1.0(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/focus-ring': 3.0.5(@types/react@19.1.13)(react@19.1.1)
-      '@atlaskit/icon': 28.2.1(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1)
+      '@atlaskit/icon': 28.3.0(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/layering': 3.0.3(@types/react@19.1.13)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/motion': 5.3.6(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.1.1)
@@ -6624,7 +6624,7 @@ snapshots:
 
   '@atlaskit/tile@0.1.4(@types/react@19.1.13)(react@19.1.1)':
     dependencies:
-      '@atlaskit/tokens': 6.3.2(@types/react@19.1.13)(react@19.1.1)
+      '@atlaskit/tokens': 6.3.3(@types/react@19.1.13)(react@19.1.1)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.1.1)
       react: 19.1.1
