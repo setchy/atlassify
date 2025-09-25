@@ -24,8 +24,8 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       astro:
-        specifier: 5.13.11
-        version: 5.13.11(@types/node@22.9.0)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.5.4)
+        specifier: 5.14.0
+        version: 5.14.0(@types/node@22.9.0)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.5.4)
       astro-icon:
         specifier: 1.1.5
         version: 1.1.5
@@ -866,11 +866,6 @@ packages:
   accessible-astro-components@5.0.1:
     resolution: {integrity: sha512-+jV5py6HZdv9+ZvYnRL1JeGOOLfBB89/1FmERwU3fkA+h2YRvsXxJl8qBlNuZUsiXWEOZGjXzjcRKYGnNE2B/Q==}
 
-  acorn@8.14.1:
-    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
@@ -908,8 +903,8 @@ packages:
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
 
-  astro@5.13.11:
-    resolution: {integrity: sha512-qKB+95GtyJSwVn5TDi31FTIcsohzA/nLhyATWn5VWqok1VLzZvm/1KHCk4tNElSrAQ5BisxUIMZWTh+B4X2JvQ==}
+  astro@5.14.0:
+    resolution: {integrity: sha512-p41jPzs9XhcVBPzp8ZwjU4SgxSyjgkzMq3NToRIn4CPbE/f9rb1cba5+N6TRk4A8yBudEU6MFzCMFWer7kjW3Q==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2938,8 +2933,6 @@ snapshots:
 
   accessible-astro-components@5.0.1: {}
 
-  acorn@8.14.1: {}
-
   acorn@8.15.0: {}
 
   ansi-align@3.0.1:
@@ -2972,7 +2965,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@5.13.11(@types/node@22.9.0)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.5.4):
+  astro@5.14.0(@types/node@22.9.0)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.7.3
@@ -3355,7 +3348,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -3981,7 +3974,7 @@ snapshots:
 
   mlly@1.7.2:
     dependencies:
-      acorn: 8.14.1
+      acorn: 8.15.0
       pathe: 1.1.2
       pkg-types: 1.2.1
       ufo: 1.5.4
