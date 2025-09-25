@@ -54,7 +54,6 @@ export const FilterSection = <T extends FilterValue>({
                   appearance={isChecked ? 'blue' : 'gray'}
                   icon={typeDetails.icon}
                   label=""
-                  shape="square"
                   size="16"
                 />
               )}
