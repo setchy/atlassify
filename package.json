@@ -85,7 +85,7 @@
     "@atlaskit/textfield": "8.0.11",
     "@atlaskit/toggle": "15.1.8",
     "@atlaskit/tokens": "6.3.3",
-    "@atlaskit/tooltip": "20.4.8",
+    "@atlaskit/tooltip": "20.5.1",
     "@biomejs/biome": "2.2.4",
     "@compiled/webpack-loader": "0.19.6",
     "@discordapp/twemoji": "16.0.1",
