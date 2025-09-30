@@ -52,8 +52,8 @@ importers:
         specifier: 23.5.0
         version: 23.5.0(@babel/core@7.28.4)(@types/react@19.1.16)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/checkbox':
-        specifier: 17.1.15
-        version: 17.1.15(@babel/core@7.28.4)(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 17.1.16
+        version: 17.1.16(@babel/core@7.28.4)(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/css-reset':
         specifier: 7.3.7
         version: 7.3.7(@types/react@19.1.16)(react@19.1.1)
@@ -325,8 +325,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/checkbox@17.1.15':
-    resolution: {integrity: sha512-QuCpMgvzOzqSigEu6qZVxi8TS63sfnTs3N7QPw2WenmNO6aGRG3YIGd8gKq7g/g3b5Re7KmtiJ6beXq0ZN+Hnw==}
+  '@atlaskit/checkbox@17.1.16':
+    resolution: {integrity: sha512-gc3h5NiAC4LLuLR/O6vZ3T/6Y4jxxua91Lyy5Qx1N+jtdNoxiYds/dJCQ/NnDilqoalUJ6MVdIND793ACNhT4w==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6170,7 +6170,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@17.1.15(@babel/core@7.28.4)(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@atlaskit/checkbox@17.1.16(@babel/core@7.28.4)(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/css': 0.14.2(@types/react@19.1.16)(react@19.1.1)
