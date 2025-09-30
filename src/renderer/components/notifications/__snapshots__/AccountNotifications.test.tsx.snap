@@ -2181,7 +2181,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2277,7 +2277,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -2431,7 +2431,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -2527,7 +2527,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -2619,7 +2619,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                           aria-label="atlassify-app"
                                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                           href="#"
-                                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                         >
                                           <img
                                             alt="atlassify-app"
@@ -2922,7 +2922,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -3018,7 +3018,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -3172,7 +3172,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -3268,7 +3268,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -3360,7 +3360,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                         aria-label="atlassify-app"
                                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                         href="#"
-                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <img
                                           alt="atlassify-app"
@@ -3720,7 +3720,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -3816,7 +3816,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -3970,7 +3970,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -4066,7 +4066,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -4158,7 +4158,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                           aria-label="atlassify-app"
                                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                           href="#"
-                                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                         >
                                           <img
                                             alt="atlassify-app"
@@ -4461,7 +4461,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4557,7 +4557,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -4711,7 +4711,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -4807,7 +4807,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -4899,7 +4899,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                         aria-label="atlassify-app"
                                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                         href="#"
-                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <img
                                           alt="atlassify-app"
@@ -5458,7 +5458,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5554,7 +5554,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -5708,7 +5708,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       >
                         <span
                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                         >
                           <img
                             alt=""
@@ -5804,7 +5804,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 >
                                   <span
                                     class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                    style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                    style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                   >
                                     <img
                                       alt=""
@@ -5896,7 +5896,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                           aria-label="atlassify-app"
                                           class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                           href="#"
-                                          style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                         >
                                           <img
                                             alt="atlassify-app"
@@ -6199,7 +6199,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -6295,7 +6295,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -6449,7 +6449,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -6545,7 +6545,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -6637,7 +6637,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                         aria-label="atlassify-app"
                                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                         href="#"
-                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <img
                                           alt="atlassify-app"

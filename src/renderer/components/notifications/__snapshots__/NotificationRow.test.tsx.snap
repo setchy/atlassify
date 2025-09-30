@@ -35,12 +35,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkofajl _14mjfajl _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
                           aria-hidden="true"
-                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkofajl"
+                          class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko12b0"
                           data-ssr-placeholder-ignored="true"
                           data-vc="avatar-image"
                           src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -131,7 +131,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -307,12 +307,12 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   >
                     <span
                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkofajl _14mjfajl _1bsbzwfg _4t3izwfg"
-                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
                         alt=""
                         aria-hidden="true"
-                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rkofajl"
+                        class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko12b0"
                         data-ssr-placeholder-ignored="true"
                         data-vc="avatar-image"
                         src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
@@ -403,7 +403,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             >
                               <span
                                 class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -636,7 +636,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -732,7 +732,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -889,7 +889,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   >
                     <span
                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -985,7 +985,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             >
                               <span
                                 class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -1199,7 +1199,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -1295,7 +1295,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -1387,16 +1387,16 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         aria-label="User 1"
                                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                         href="#"
-                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <span
-                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
                                         >
                                           <span
                                             aria-hidden="true"
-                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                             data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                            style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
                                           >
                                             <svg
                                               height="24"
@@ -1438,16 +1438,16 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         aria-label="User 2"
                                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                         href="#"
-                                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <span
-                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
                                         >
                                           <span
                                             aria-hidden="true"
-                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                             data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                            style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
                                           >
                                             <svg
                                               height="24"
@@ -1573,7 +1573,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   >
                     <span
                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -1669,7 +1669,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             >
                               <span
                                 class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -1761,16 +1761,16 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       aria-label="User 1"
                                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                       href="#"
-                                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
                                       <span
-                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
                                       >
                                         <span
                                           aria-hidden="true"
-                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                           data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
                                         >
                                           <svg
                                             height="24"
@@ -1812,16 +1812,16 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       aria-label="User 2"
                                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1g4v _ez1ykb7n _gcm1182g _eeh8kb7n _jlxit94y"
                                       href="#"
-                                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
                                       <span
-                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhkr4aa _w8l57vkz _17527vkz"
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
                                       >
                                         <span
                                           aria-hidden="true"
-                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
+                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                           data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-inverse, #FFFFFF); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
                                         >
                                           <svg
                                             height="24"
@@ -2004,7 +2004,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -2100,7 +2100,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2270,7 +2270,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   >
                     <span
                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -2366,7 +2366,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             >
                               <span
                                 class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
                                   alt=""
@@ -2593,7 +2593,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     >
                       <span
                         class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                        style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                        style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
                           alt=""
@@ -2689,7 +2689,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               >
                                 <span
                                   class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                  style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                  style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                 >
                                   <img
                                     alt=""
@@ -2846,7 +2846,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                   >
                     <span
                       class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
-                      style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                      style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
                         alt=""
@@ -2942,7 +2942,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             >
                               <span
                                 class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkolb4i _14mjlb4i _1bsb7vkz _4t3i7vkz"
-                                style="--avatar-bg-color: var(--ds-surface-overlay, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface-overlay, #FFFFFF);"
+                                style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
                                   alt=""
