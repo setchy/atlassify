@@ -80,7 +80,7 @@
     "@atlaskit/modal-dialog": "14.4.1",
     "@atlaskit/primitives": "14.15.2",
     "@atlaskit/radio": "8.3.8",
-    "@atlaskit/select": "21.3.2",
+    "@atlaskit/select": "21.3.3",
     "@atlaskit/spinner": "19.0.5",
     "@atlaskit/textfield": "8.0.13",
     "@atlaskit/toggle": "15.1.8",
