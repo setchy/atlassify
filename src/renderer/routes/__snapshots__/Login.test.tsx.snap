@@ -88,10 +88,10 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     Username
                   </label>
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
                     data-ds--text-field--container="true"
                     role="presentation"
-                    style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                    style="max-width: 100%;"
                   >
                     <input
                       aria-describedby="username-uid3-valid username-uid3-helper"
@@ -125,10 +125,10 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     API Token
                   </label>
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
                     data-ds--text-field--container="true"
                     role="presentation"
-                    style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                    style="max-width: 100%;"
                   >
                     <input
                       aria-describedby="token-uid4-valid token-uid4-helper"
@@ -386,10 +386,10 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   Username
                 </label>
                 <div
-                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
                   data-ds--text-field--container="true"
                   role="presentation"
-                  style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                  style="max-width: 100%;"
                 >
                   <input
                     aria-describedby="username-uid3-valid username-uid3-helper"
@@ -423,10 +423,10 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   API Token
                 </label>
                 <div
-                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnq1l7b _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6d1elr _1dqonqa1 _syaz1fxt _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1p6i _qao9r01l _q433q049 _4cvx1elr _irr31d5g"
                   data-ds--text-field--container="true"
                   role="presentation"
-                  style="max-width: 100%; --_x5k4n9: inset 0 0 0 var(--ds-border-width, 1px) var(--ds-border-danger, #E2483D);"
+                  style="max-width: 100%;"
                 >
                   <input
                     aria-describedby="token-uid4-valid token-uid4-helper"
