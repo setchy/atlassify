@@ -61,8 +61,8 @@ importers:
         specifier: 14.2.0
         version: 14.2.0(@babel/core@7.28.4)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/heading':
-        specifier: 5.2.7
-        version: 5.2.7(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 5.2.8
+        version: 5.2.8(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/icon':
         specifier: 28.3.0
         version: 28.3.0(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1)
@@ -361,8 +361,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/heading@5.2.7':
-    resolution: {integrity: sha512-sC5rU0wLiGoAcHq/4E1ycmLzylpUhD3eVR8i0qAix9hglFh0gx0a4tchvgreCteP2HKzRkDv9/CFurwPUiWWmg==}
+  '@atlaskit/heading@5.2.8':
+    resolution: {integrity: sha512-EtAkZ95AgWlzMg1DEvMnF30KWdZst3XWeRLNfhUojm6FotNZhsMT0/FWlRkDEuo9M3T0zdo4j/ucKGMlYo2bUw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6211,7 +6211,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 0.14.2(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/ds-lib': 5.1.0(@types/react@19.1.13)(react@19.1.1)
-      '@atlaskit/heading': 5.2.7(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      '@atlaskit/heading': 5.2.8(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/icon': 28.3.0(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.1.1)
       '@atlaskit/primitives': 14.15.2(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -6227,7 +6227,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/heading@5.2.7(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@atlaskit/heading@5.2.8(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@atlaskit/css': 0.14.2(@types/react@19.1.13)(react@19.1.1)
       '@atlaskit/primitives': 14.15.2(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
