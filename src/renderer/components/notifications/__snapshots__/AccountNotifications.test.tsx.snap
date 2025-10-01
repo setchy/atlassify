@@ -2311,7 +2311,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   aria-label="Bitbucket"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -2561,7 +2561,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   aria-label="Confluence"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -3052,7 +3052,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <span
                                 aria-label="Bitbucket"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >
@@ -3302,7 +3302,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <span
                                 aria-label="Confluence"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >
@@ -3850,7 +3850,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   aria-label="Bitbucket"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -4100,7 +4100,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               >
                                 <span
                                   aria-label="Confluence"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -4591,7 +4591,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <span
                                 aria-label="Bitbucket"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >
@@ -4841,7 +4841,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                             >
                               <span
                                 aria-label="Confluence"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >
@@ -5588,7 +5588,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               >
                                 <span
                                   aria-label="Bitbucket"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -5838,7 +5838,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               >
                                 <span
                                   aria-label="Confluence"
-                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                   role="img"
                                   style="--themed-icon-color: initial;"
                                 >
@@ -6329,7 +6329,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <span
                                 aria-label="Bitbucket"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >
@@ -6579,7 +6579,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                             >
                               <span
                                 aria-label="Confluence"
-                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                                class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                                 role="img"
                                 style="--themed-icon-color: initial;"
                               >

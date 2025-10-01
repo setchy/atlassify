@@ -56,7 +56,7 @@
   "dependencies": {
     "electron-log": "5.4.3",
     "electron-updater": "6.6.2",
-    "i18next": "25.5.2",
+    "i18next": "25.5.3",
     "i18next-browser-languagedetector": "8.2.0",
     "menubar": "9.5.1",
     "react": "19.1.1",
@@ -76,7 +76,7 @@
     "@atlaskit/heading": "5.2.8",
     "@atlaskit/icon": "28.4.0",
     "@atlaskit/inline-message": "15.3.11",
-    "@atlaskit/logo": "19.8.2",
+    "@atlaskit/logo": "19.8.3",
     "@atlaskit/modal-dialog": "14.4.2",
     "@atlaskit/primitives": "14.15.5",
     "@atlaskit/radio": "8.3.8",

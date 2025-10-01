@@ -30,7 +30,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                       role="img"
                       style="--themed-icon-color: initial;"
                     >
@@ -190,7 +190,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                     role="img"
                     style="--themed-icon-color: initial;"
                   >
@@ -407,7 +407,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                       role="img"
                       style="--themed-icon-color: initial;"
                     >
@@ -567,7 +567,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                     role="img"
                     style="--themed-icon-color: initial;"
                   >
@@ -784,7 +784,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                       role="img"
                       style="--themed-icon-color: initial;"
                     >
@@ -937,7 +937,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                   >
                     <span
                       aria-label="Bitbucket"
-                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                      class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                       role="img"
                       style="--themed-icon-color: initial;"
                     >
@@ -1097,7 +1097,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                 >
                   <span
                     aria-label="Bitbucket"
-                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                    class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                     role="img"
                     style="--themed-icon-color: initial;"
                   >

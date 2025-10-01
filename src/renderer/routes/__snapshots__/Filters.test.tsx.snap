@@ -729,7 +729,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -805,7 +805,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Compass"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -887,7 +887,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -963,7 +963,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Home"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -1039,7 +1039,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -1115,7 +1115,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -1191,7 +1191,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -1267,7 +1267,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                 </label>
                 <span
                   aria-label="Teams"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2138,7 +2138,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2214,7 +2214,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Compass"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2296,7 +2296,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Confluence"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2372,7 +2372,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Home"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2448,7 +2448,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2524,7 +2524,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira Product Discovery"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2600,7 +2600,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Jira Service Management"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2676,7 +2676,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                 </label>
                 <span
                   aria-label="Teams"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
