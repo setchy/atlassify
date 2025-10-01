@@ -4,7 +4,7 @@
 
 > Atlassian notifications on your menu bar. Available on macOS, Windows and Linux.
 
-![Atlassify](docs/public//images//social.png)
+![Atlassify][social]
 
 ### Download
 
@@ -41,6 +41,7 @@ I would like to acknowledge the following projects and resources that have inspi
 
 
 <!-- LINK LABELS -->
+[social]: docs/public/images//social.png
 [website]: https://atlassify.io
 [faqs]: https://atlassify.io/faq
 
