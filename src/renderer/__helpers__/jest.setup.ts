@@ -29,6 +29,7 @@ window.atlassify = {
     updateIcon: jest.fn(),
     updateTitle: jest.fn(),
     useAlternateIdleIcon: jest.fn(),
+    useUnreadActiveIcon: jest.fn(),
   },
   notificationSoundPath: jest.fn(),
   onResetApp: jest.fn(),

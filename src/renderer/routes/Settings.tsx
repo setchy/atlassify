@@ -11,6 +11,7 @@ import { NotificationSettings } from '../components/settings/NotificationSetting
 import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SettingsReset } from '../components/settings/SettingsReset';
 import { SystemSettings } from '../components/settings/SystemSettings';
+import { TraySettings } from '../components/settings/TraySettings';
 
 export const SettingsRoute: FC = () => {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ export const SettingsRoute: FC = () => {
           <Stack space="space.200">
             <AppearanceSettings />
             <NotificationSettings />
+            <TraySettings />
             <SystemSettings />
             <SettingsReset />
           </Stack>

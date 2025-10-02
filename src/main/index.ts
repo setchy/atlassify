@@ -70,6 +70,7 @@ const contextMenu = menuBuilder.buildMenu();
 const appUpdater = new AppUpdater(mb, menuBuilder);
 
 let shouldUseAlternateIdleIcon = false;
+let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
   await onFirstRunMaybe();
@@ -138,6 +139,19 @@ app.whenReady().then(async () => {
     },
   );
 
+  onMainEvent(
+    EVENTS.USE_UNREAD_ACTIVE_ICON,
+    (_, useUnreadActiveIcon: boolean) => {
+      shouldUseUnreadActiveIcon = useUnreadActiveIcon;
+
+      if (shouldUseUnreadActiveIcon) {
+        setActiveIcon();
+      } else {
+        setIdleIcon();
+      }
+    },
+  );
+
   onMainEvent(EVENTS.ICON_ERROR, () => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setImage(TrayIcons.error);
@@ -145,18 +159,14 @@ app.whenReady().then(async () => {
   });
 
   onMainEvent(EVENTS.ICON_ACTIVE, () => {
-    if (!mb.tray.isDestroyed()) {
-      mb.tray.setImage(TrayIcons.active);
+    if (!mb.tray.isDestroyed() && shouldUseUnreadActiveIcon) {
+      setActiveIcon();
     }
   });
 
   onMainEvent(EVENTS.ICON_IDLE, () => {
     if (!mb.tray.isDestroyed()) {
-      if (shouldUseAlternateIdleIcon) {
-        mb.tray.setImage(TrayIcons.idleAlternate);
-      } else {
-        mb.tray.setImage(TrayIcons.idle);
-      }
+      setIdleIcon();
     }
   });
 
@@ -210,3 +220,15 @@ app.whenReady().then(async () => {
     return safeStorage.decryptString(Buffer.from(value, 'base64'));
   });
 });
+
+function setActiveIcon() {
+  mb.tray.setImage(TrayIcons.active);
+}
+
+function setIdleIcon() {
+  if (shouldUseAlternateIdleIcon) {
+    mb.tray.setImage(TrayIcons.idleAlternate);
+  } else {
+    mb.tray.setImage(TrayIcons.idle);
+  }
+}

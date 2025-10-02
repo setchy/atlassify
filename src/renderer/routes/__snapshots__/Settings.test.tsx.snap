@@ -687,6 +687,264 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
           <h4
             class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
           >
+            Tray
+          </h4>
+          <label
+            class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+            style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+          >
+            <input
+              checked=""
+              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+              name="showNotificationsCountInTray"
+              tabindex="0"
+              type="checkbox"
+            />
+            <svg
+              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+              role="presentation"
+              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill-rule="evenodd"
+              >
+                <rect
+                  fill="currentColor"
+                  height="12"
+                  rx="2"
+                  width="12"
+                  x="6"
+                  y="6"
+                />
+                <path
+                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                  fill="inherit"
+                />
+              </g>
+            </svg>
+            <span
+              class="_nd5l11ig _1wpz1h6o"
+            >
+              Show notifications count in tray
+            </span>
+          </label>
+          <div
+            class="css-xxi07b"
+          >
+            <label
+              class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+            >
+              <input
+                checked=""
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                name="useUnreadActiveIcon"
+                tabindex="0"
+                type="checkbox"
+              />
+              <svg
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                role="presentation"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                  <path
+                    d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                    fill="inherit"
+                  />
+                </g>
+              </svg>
+              <span
+                class="_nd5l11ig _1wpz1h6o"
+              >
+                Highlight unread notifications
+              </span>
+            </label>
+            <div
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                data-ds--inline-message--button="true"
+                id="uid14"
+                type="button"
+              >
+                <span
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                >
+                  <span
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
+                  >
+                    <span
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="css-xxi07b"
+          >
+            <label
+              class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+            >
+              <input
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                name="useAlternateIdleIcon"
+                tabindex="0"
+                type="checkbox"
+              />
+              <svg
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                role="presentation"
+                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    rx="2"
+                    width="12"
+                    x="6"
+                    y="6"
+                  />
+                </g>
+              </svg>
+              <span
+                class="_nd5l11ig _1wpz1h6o"
+              >
+                Use alternate idle icon
+              </span>
+            </label>
+            <div
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                data-ds--inline-message--button="true"
+                id="uid16"
+                type="button"
+              >
+                <span
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                >
+                  <span
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
+                  >
+                    <span
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
+                      data-testid="inline-message-icon"
+                      data-vc="icon-inline-message-icon"
+                      role="img"
+                      style="--icon-primary-color: currentColor;"
+                    >
+                      <svg
+                        height="24"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="24"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                        >
+                          <path
+                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
+                            fill="currentcolor"
+                          />
+                          <rect
+                            fill="inherit"
+                            height="7"
+                            rx="1"
+                            width="2"
+                            x="11"
+                            y="10"
+                          />
+                          <circle
+                            cx="12"
+                            cy="8"
+                            fill="inherit"
+                            r="1"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="css-u5wwvt"
+        >
+          <h4
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syaz1fxt"
+          >
             System
           </h4>
           <div
@@ -704,7 +962,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </span>
               <div
                 aria-labelledby="openLinks-label"
-                id="uid14"
+                id="uid18"
                 role="radiogroup"
               >
                 <label
@@ -798,7 +1056,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 aria-haspopup="true"
                 class="_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid15"
+                id="uid19"
                 type="button"
               >
                 <span
@@ -854,46 +1112,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               </button>
             </div>
           </div>
-          <label
-            class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-            style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-          >
-            <input
-              checked=""
-              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-              name="showNotificationsCountInTray"
-              tabindex="0"
-              type="checkbox"
-            />
-            <svg
-              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
-              role="presentation"
-              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
-              viewBox="0 0 24 24"
-            >
-              <g
-                fill-rule="evenodd"
-              >
-                <rect
-                  fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
-                />
-                <path
-                  d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
-                  fill="inherit"
-                />
-              </g>
-            </svg>
-            <span
-              class="_nd5l11ig _1wpz1h6o"
-            >
-              Show notifications count in tray
-            </span>
-          </label>
           <label
             class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
             style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
@@ -1124,108 +1342,6 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div
-            class="css-xxi07b"
-          >
-            <label
-              class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-            >
-              <input
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-                name="useAlternateIdleIcon"
-                tabindex="0"
-                type="checkbox"
-              />
-              <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
-                role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill-rule="evenodd"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
-                  />
-                </g>
-              </svg>
-              <span
-                class="_nd5l11ig _1wpz1h6o"
-              >
-                Use alternate idle icon
-              </span>
-            </label>
-            <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
-            >
-              <button
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
-                data-ds--inline-message--button="true"
-                id="uid23"
-                type="button"
-              >
-                <span
-                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
-                >
-                  <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                    data-ds--inline-message--icon="true"
-                  >
-                    <span
-                      aria-label="info inline message"
-                      class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb1tcg _4t3i1tcg _5fdi1tcg _zbji1tcg"
-                      data-testid="inline-message-icon"
-                      data-vc="icon-inline-message-icon"
-                      role="img"
-                      style="--icon-primary-color: currentColor;"
-                    >
-                      <svg
-                        height="24"
-                        role="presentation"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <g
-                          fill-rule="evenodd"
-                        >
-                          <path
-                            d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12"
-                            fill="currentcolor"
-                          />
-                          <rect
-                            fill="inherit"
-                            height="7"
-                            rx="1"
-                            width="2"
-                            x="11"
-                            y="10"
-                          />
-                          <circle
-                            cx="12"
-                            cy="8"
-                            fill="inherit"
-                            r="1"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                  />
-                </span>
-              </button>
             </div>
           </div>
           <label

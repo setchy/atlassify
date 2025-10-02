@@ -57,32 +57,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     );
   });
 
-  it('should toggle the showNotificationsCountInTray checkbox', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <SystemSettings />
-        </AppContext.Provider>,
-      );
-    });
-
-    await userEvent.click(
-      screen.getByLabelText('Show notifications count in tray'),
-    );
-
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
-      'showNotificationsCountInTray',
-      false,
-    );
-  });
-
   it('should toggle the showSystemNotifications checkbox', async () => {
     await act(async () => {
       render(
@@ -206,27 +180,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
       expect(updateSetting).toHaveBeenCalledTimes(1);
       expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 20);
     });
-  });
-
-  it('should toggle the useAlternateIdleIcon checkbox', async () => {
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <SystemSettings />
-        </AppContext.Provider>,
-      );
-    });
-
-    await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
-
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', true);
   });
 
   it('should toggle the openAtStartup checkbox', async () => {

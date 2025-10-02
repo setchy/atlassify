@@ -12,6 +12,7 @@ import {
   OpenPreference,
   type SettingsState,
   type SystemSettingsState,
+  type TraySettingsState,
   type Username,
 } from '../types';
 
@@ -42,14 +43,18 @@ const mockNotificationSettings: NotificationSettingsState = {
   groupNotificationsByTitle: true,
 };
 
+const mockTraySettings: TraySettingsState = {
+  showNotificationsCountInTray: true,
+  useUnreadActiveIcon: true,
+  useAlternateIdleIcon: false,
+};
+
 const mockSystemSettings: SystemSettingsState = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcutEnabled: true,
-  showNotificationsCountInTray: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   notificationVolume: 20,
-  useAlternateIdleIcon: false,
   openAtStartup: true,
 };
 
@@ -64,6 +69,7 @@ const mockFilters: FilterSettingsState = {
 export const mockSettings: SettingsState = {
   ...mockAppearanceSettings,
   ...mockNotificationSettings,
+  ...mockTraySettings,
   ...mockSystemSettings,
   ...mockFilters,
 };

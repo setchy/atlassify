@@ -7,9 +7,9 @@ import {
   hideWindow,
   openExternalLink,
   quitApp,
-  setAlternateIdleIcon,
   setAutoLaunch,
   setKeyboardShortcut,
+  setUseAlternateIdleIcon,
   showWindow,
   updateTrayIcon,
   updateTrayTitle,
@@ -123,7 +123,7 @@ describe('renderer/utils/comms.ts', () => {
     });
 
     it('sets alternate idle icon', () => {
-      setAlternateIdleIcon(false);
+      setUseAlternateIdleIcon(false);
 
       expect(window.atlassify.tray.useAlternateIdleIcon).toHaveBeenCalledTimes(
         1,

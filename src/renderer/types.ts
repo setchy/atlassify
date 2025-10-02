@@ -108,6 +108,7 @@ export type FilterValue =
  */
 export type SettingsState = AppearanceSettingsState &
   NotificationSettingsState &
+  TraySettingsState &
   SystemSettingsState &
   FilterSettingsState;
 
@@ -167,6 +168,26 @@ export interface NotificationSettingsState {
 }
 
 /**
+ * Settings related to the tray / menu bar behavior.
+ */
+export interface TraySettingsState {
+  /**
+   * Whether to show the notifications count in the tray icon.
+   */
+  showNotificationsCountInTray: boolean;
+
+  /**
+   * Whether to use the active green icon for highlighting unread notifications
+   */
+  useUnreadActiveIcon: boolean;
+
+  /**
+   * Whether to use the alternate white idle icon, suitable for devices which have dark-themed system bars
+   */
+  useAlternateIdleIcon: boolean;
+}
+
+/**
  * Settings related to the system behavior of the application.
  */
 export interface SystemSettingsState {
@@ -181,19 +202,9 @@ export interface SystemSettingsState {
   keyboardShortcutEnabled: boolean;
 
   /**
-   * Whether to show the notifications count in the tray icon.  Not supported on Windows
-   */
-  showNotificationsCountInTray: boolean;
-
-  /**
    * Whether to show/raise system notifications.
    */
   showSystemNotifications: boolean;
-
-  /**
-   * Whether to use the alternate white idle icon, suitable for devices which have dark taskbars / docks / menubars
-   */
-  useAlternateIdleIcon: boolean;
 
   /**
    * Whether to play a sound for new notifications.
