@@ -70,8 +70,8 @@ importers:
         specifier: 15.3.11
         version: 15.3.11(@babel/core@7.28.4)(@types/react@19.1.17)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@atlaskit/logo':
-        specifier: 19.8.3
-        version: 19.8.3(@types/react@19.1.17)(react@19.1.1)
+        specifier: 19.9.0
+        version: 19.9.0(@types/react@19.1.17)(react@19.1.1)
       '@atlaskit/modal-dialog':
         specifier: 14.4.2
         version: 14.4.2(@babel/core@7.28.4)(@types/react@19.1.17)(prop-types@15.8.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -396,8 +396,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@19.8.3':
-    resolution: {integrity: sha512-23mOJCh46m9zg3N4q/CeKjezEBK2OYIdHCoew17uozwZAflQ4k1HLsvZtVpyqNC/F6JoXID796AkXudUqXFKzw==}
+  '@atlaskit/logo@19.9.0':
+    resolution: {integrity: sha512-4lFM5W45Jn/W8x79Kto7x01VylPxKios3OteLIIAO/x8GAKtp7kRrGLa3XDPhv9HF8MnTn4FSd5lX3SyUs3uTQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6352,7 +6352,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@19.8.3(@types/react@19.1.17)(react@19.1.1)':
+  '@atlaskit/logo@19.9.0(@types/react@19.1.17)(react@19.1.1)':
     dependencies:
       '@atlaskit/ds-lib': 5.1.0(@types/react@19.1.17)(react@19.1.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.1.1)
