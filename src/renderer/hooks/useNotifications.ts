@@ -14,7 +14,7 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
-import { updateTrayIcon } from '../utils/comms';
+import { updateTrayColor } from '../utils/comms';
 import { rendererLogError } from '../utils/logger';
 import { triggerNativeNotifications } from '../utils/notifications/native';
 import {
@@ -90,7 +90,7 @@ export const useNotifications = (): NotificationsState => {
       if (allAccountsHaveErrors) {
         setStatus('error');
         setGlobalError(accountErrorsAreAllSame ? accountError : null);
-        updateTrayIcon(-1);
+        updateTrayColor(-1);
         return;
       }
 

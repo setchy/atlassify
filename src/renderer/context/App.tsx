@@ -34,6 +34,7 @@ import {
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
+  updateTrayColor,
   updateTrayTitle,
 } from '../utils/comms';
 import {
@@ -128,20 +129,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     const count = getNotificationCount(notifications);
     const hasMore = hasMoreNotifications(notifications);
 
+    let title = '';
     if (settings.showNotificationsCountInTray && count > 0) {
-      updateTrayTitle(`${count.toString()}${hasMore ? '+' : ''}`);
-    } else {
-      updateTrayTitle();
+      title = `${count.toString()}${hasMore ? '+' : ''}`;
     }
-  }, [settings.showNotificationsCountInTray, notifications]);
-
-  useEffect(() => {
-    const count = getNotificationCount(notifications);
 
     setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
 
-    updateTrayTitle(count.toString());
-  }, [settings.useUnreadActiveIcon, notifications]);
+    updateTrayColor(count);
+    updateTrayTitle(title);
+  }, [
+    settings.showNotificationsCountInTray,
+    settings.useUnreadActiveIcon,
+    notifications,
+  ]);
 
   useEffect(() => {
     setAutoLaunch(settings.openAtStartup);

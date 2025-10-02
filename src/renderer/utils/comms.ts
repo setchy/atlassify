@@ -57,8 +57,8 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
   window.atlassify.setKeyboardShortcut(keyboardShortcut);
 }
 
-export function updateTrayIcon(notificationsLength = 0): void {
-  window.atlassify.tray.updateIcon(notificationsLength);
+export function updateTrayColor(notificationsLength = 0): void {
+  window.atlassify.tray.updateColor(notificationsLength);
 }
 
 export function updateTrayTitle(title = ''): void {

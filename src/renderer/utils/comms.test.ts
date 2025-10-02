@@ -11,7 +11,7 @@ import {
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   showWindow,
-  updateTrayIcon,
+  updateTrayColor,
   updateTrayTitle,
 } from './comms';
 import * as storage from './storage';
@@ -142,16 +142,17 @@ describe('renderer/utils/comms.ts', () => {
   });
 
   describe('tray helpers', () => {
-    it('updates tray icon with count', () => {
-      updateTrayIcon(5);
+    it('updates tray icon color with count', () => {
+      updateTrayColor(5);
 
-      expect(window.atlassify.tray.updateIcon).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.tray.updateIcon).toHaveBeenCalledWith(5);
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(5);
     });
 
-    it('updates tray icon with default count', () => {
-      updateTrayIcon();
-      expect(window.atlassify.tray.updateIcon).toHaveBeenCalledTimes(1);
+    it('updates tray icon color with default count', () => {
+      updateTrayColor();
+
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
     });
 
     it('updates tray title with provided value', () => {
@@ -165,7 +166,9 @@ describe('renderer/utils/comms.ts', () => {
 
     it('updates tray title with default value', () => {
       updateTrayTitle();
+
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledTimes(1);
+      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith('');
     });
   });
 });
