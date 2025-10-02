@@ -18,7 +18,7 @@ import type {
   AtlassianNotificationFragment,
 } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
-import { updateTrayIcon } from '../comms';
+import { updateTrayColor } from '../comms';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
@@ -27,7 +27,7 @@ import { filterNotifications } from './filters';
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);
 
-  updateTrayIcon(allNotificationsCount);
+  updateTrayColor(allNotificationsCount);
 }
 
 function getNotifications(state: AtlassifyState) {

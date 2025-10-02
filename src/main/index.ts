@@ -143,34 +143,26 @@ app.whenReady().then(async () => {
     EVENTS.USE_UNREAD_ACTIVE_ICON,
     (_, useUnreadActiveIcon: boolean) => {
       shouldUseUnreadActiveIcon = useUnreadActiveIcon;
-
-      if (shouldUseUnreadActiveIcon) {
-        setActiveIcon();
-      } else {
-        setIdleIcon();
-      }
     },
   );
 
-  onMainEvent(EVENTS.ICON_ERROR, () => {
+  onMainEvent(EVENTS.UPDATE_ICON_COLOR, (_, notificationsCount: number) => {
     if (!mb.tray.isDestroyed()) {
-      mb.tray.setImage(TrayIcons.error);
-    }
-  });
+      if (notificationsCount < 0) {
+        setErrorIcon();
+        return;
+      }
 
-  onMainEvent(EVENTS.ICON_ACTIVE, () => {
-    if (!mb.tray.isDestroyed() && shouldUseUnreadActiveIcon) {
-      setActiveIcon();
-    }
-  });
+      if (notificationsCount > 0) {
+        setActiveIcon();
+        return;
+      }
 
-  onMainEvent(EVENTS.ICON_IDLE, () => {
-    if (!mb.tray.isDestroyed()) {
       setIdleIcon();
     }
   });
 
-  onMainEvent(EVENTS.UPDATE_TITLE, (_, title: string) => {
+  onMainEvent(EVENTS.UPDATE_ICON_TITLE, (_, title: string) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);
     }
@@ -221,14 +213,22 @@ app.whenReady().then(async () => {
   });
 });
 
-function setActiveIcon() {
-  mb.tray.setImage(TrayIcons.active);
-}
-
 function setIdleIcon() {
   if (shouldUseAlternateIdleIcon) {
     mb.tray.setImage(TrayIcons.idleAlternate);
   } else {
     mb.tray.setImage(TrayIcons.idle);
   }
+}
+
+function setActiveIcon() {
+  if (shouldUseUnreadActiveIcon) {
+    mb.tray.setImage(TrayIcons.active);
+  } else {
+    setIdleIcon();
+  }
+}
+
+function setErrorIcon() {
+  mb.tray.setImage(TrayIcons.error);
 }
