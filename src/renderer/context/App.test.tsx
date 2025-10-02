@@ -240,10 +240,48 @@ describe('renderer/context/App.tsx', () => {
       });
     });
 
+    it('should call updateSetting and set useUnreadActiveIcon', async () => {
+      const setUnreadActiveIconMock = jest.spyOn(
+        comms,
+        'setUseUnreadActiveIcon',
+      );
+
+      const TestComponent = () => {
+        const { updateSetting } = useContext(AppContext);
+
+        return (
+          <button
+            onClick={() => updateSetting('useUnreadActiveIcon', true)}
+            type="button"
+          >
+            Test Case
+          </button>
+        );
+      };
+
+      const { getByText } = customRender(<TestComponent />);
+
+      act(() => {
+        fireEvent.click(getByText('Test Case'));
+      });
+
+      expect(setUnreadActiveIconMock).toHaveBeenCalledWith(true);
+
+      expect(saveStateMock).toHaveBeenCalledWith({
+        auth: {
+          accounts: [],
+        } as AuthState,
+        settings: {
+          ...defaultSettings,
+          useUnreadActiveIcon: true,
+        } as SettingsState,
+      });
+    });
+
     it('should call updateSetting and set useAlternateIdleIcon', async () => {
       const setAlternateIdleIconMock = jest.spyOn(
         comms,
-        'setAlternateIdleIcon',
+        'setUseAlternateIdleIcon',
       );
 
       const TestComponent = () => {

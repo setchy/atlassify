@@ -9,6 +9,7 @@ import {
   OpenPreference,
   type SettingsState,
   type SystemSettingsState,
+  type TraySettingsState,
 } from '../types';
 
 export const defaultAuth: AuthState = {
@@ -30,14 +31,18 @@ const defaultNotificationSettings: NotificationSettingsState = {
   groupNotificationsByTitle: true,
 };
 
+const defaultTraySettings: TraySettingsState = {
+  showNotificationsCountInTray: true,
+  useUnreadActiveIcon: true,
+  useAlternateIdleIcon: false,
+};
+
 const defaultSystemSettings: SystemSettingsState = {
   openLinks: OpenPreference.FOREGROUND,
   keyboardShortcutEnabled: true,
-  showNotificationsCountInTray: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   notificationVolume: 20,
-  useAlternateIdleIcon: false,
   openAtStartup: true,
 };
 
@@ -52,6 +57,7 @@ export const defaultFilters: FilterSettingsState = {
 export const defaultSettings: SettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
+  ...defaultTraySettings,
   ...defaultSystemSettings,
   ...defaultFilters,
 };

@@ -168,15 +168,12 @@
       "title": "Configuración de reinicio"
     },
     "system": {
-      "alternate_icon": "Use un icono de inactividad alternativo",
-      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
       "keyboard_shortcut": "Habilitar el atajo de teclado",
       "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{shortcut}} para mostrar o ocultar {{appName}}.",
       "open_links": "Abrir enlaces",
       "open_links_background": "Fondo",
       "open_links_foreground": "Primer plano",
       "play_sound": "Reproducir sonido para nuevas notificaciones",
-      "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
       "startup": "Abrir al inicio",
       "system_notifications": "Mostrar notificaciones del sistema",
       "title": "Sistema",
@@ -185,6 +182,14 @@
       "volume_up": "Volumen"
     },
     "title": "Ajustes",
+    "tray": {
+      "alternate_icon": "Use un icono de inactividad alternativo",
+      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
+      "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
+      "title": "Bandeja",
+      "unread_active_icon": "Resaltar las notificaciones no leídas",
+      "unread_active_icon_help": "Use un logotipo verde {{appName}} cuando hay notificaciones no leídas."
+    },
     "view_release_notes": "Ver {{appName}} Notas de versión"
   },
   "sidebar": {

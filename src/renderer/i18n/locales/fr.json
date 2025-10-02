@@ -168,15 +168,12 @@
       "title": "Réinitialiser les paramètres"
     },
     "system": {
-      "alternate_icon": "Utiliser une icône inactif alternative",
-      "alternate_icon_help": "Utilisez un logo blanc {{appName}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. Ce paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
       "keyboard_shortcut": "Activer le raccourci clavier",
       "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{shortcut}} pour afficher ou masquer {{appName}}.",
       "open_links": "Ouvrir les liens",
       "open_links_background": "Arrière-plan",
       "open_links_foreground": "Premier plan",
       "play_sound": "Jouez au son pour de nouvelles notifications",
-      "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
       "startup": "Ouvert au démarrage",
       "system_notifications": "Afficher les notifications du système",
       "title": "Système",
@@ -185,6 +182,14 @@
       "volume_up": "Volume"
     },
     "title": "Paramètres",
+    "tray": {
+      "alternate_icon": "Utiliser une icône inactif alternative",
+      "alternate_icon_help": "Utilisez un logo blanc {{appName}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. Ce paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
+      "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
+      "title": "Plateau",
+      "unread_active_icon": "Mettre en évidence les notifications non lues",
+      "unread_active_icon_help": "Utilisez un logo vert {{appName}} lorsqu'il existe des notifications non lues."
+    },
     "view_release_notes": "Afficher {{appName}} Notes de version"
   },
   "sidebar": {

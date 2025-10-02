@@ -30,9 +30,10 @@ import {
   removeAccount,
 } from '../utils/auth/utils';
 import {
-  setAlternateIdleIcon,
   setAutoLaunch,
   setKeyboardShortcut,
+  setUseAlternateIdleIcon,
+  setUseUnreadActiveIcon,
   updateTrayTitle,
 } from '../utils/comms';
 import {
@@ -135,6 +136,22 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [settings.showNotificationsCountInTray, notifications]);
 
   useEffect(() => {
+    const count = getNotificationCount(notifications);
+
+    setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
+
+    updateTrayTitle(count.toString());
+  }, [settings.useUnreadActiveIcon, notifications]);
+
+  useEffect(() => {
+    setAutoLaunch(settings.openAtStartup);
+  }, [settings.openAtStartup]);
+
+  useEffect(() => {
+    setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
+  }, [settings.useAlternateIdleIcon]);
+
+  useEffect(() => {
     setKeyboardShortcut(settings.keyboardShortcutEnabled);
   }, [settings.keyboardShortcutEnabled]);
 
@@ -159,13 +176,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const updateSetting = useCallback(
     (name: keyof SettingsState, value: SettingsValue) => {
-      if (name === 'openAtStartup') {
-        setAutoLaunch(value as boolean);
-      }
-      if (name === 'useAlternateIdleIcon') {
-        setAlternateIdleIcon(value as boolean);
-      }
-
       const newSettings = { ...settings, [name]: value };
       setSettings(newSettings);
       saveState({ auth, settings: newSettings });
@@ -215,8 +225,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     // Restore settings before accounts to ensure filters are available before fetching notifications
     if (existing.settings) {
+      setUseUnreadActiveIcon(existing.settings.useUnreadActiveIcon);
+      setUseAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
       setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
-      setAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
       setSettings({ ...defaultSettings, ...existing.settings });
       window.atlassify.zoom.setLevel(
         zoomPercentageToLevel(existing.settings.zoomPercentage),

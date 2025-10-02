@@ -163,6 +163,14 @@
       "delay_notification_state": "Delay notification state",
       "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated)."
     },
+    "tray": {
+      "title": "Tray",
+      "show_count_in_tray": "Show notifications count in tray",
+      "unread_active_icon": "Highlight unread notifications",
+      "unread_active_icon_help": "Use a green {{appName}} logo when there are unread notifications.",
+      "alternate_icon": "Use alternate idle icon",
+      "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar."
+    },
     "system": {
       "title": "System",
       "open_links": "Open Links",
@@ -170,14 +178,11 @@
       "open_links_background": "Background",
       "keyboard_shortcut": "Enable keyboard shortcut",
       "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
-      "show_count_in_tray": "Show notifications count in tray",
       "system_notifications": "Show system notifications",
       "play_sound": "Play sound for new notifications",
       "volume_up": "Volume up",
       "volume_down": "Volume down",
       "volume_reset": "Reset volume",
-      "alternate_icon": "Use alternate idle icon",
-      "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
       "startup": "Open at startup"
     },
     "reset": {

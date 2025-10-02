@@ -168,15 +168,12 @@
       "title": "Einstellungen zurücksetzen"
     },
     "system": {
-      "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
       "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
       "open_links_background": "Hintergrund",
       "open_links_foreground": "Vordergrund",
       "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
-      "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
       "startup": "Im Start geöffnet",
       "system_notifications": "Systembenachrichtigungen anzeigen",
       "title": "System",
@@ -185,6 +182,14 @@
       "volume_up": "Lautstärke"
     },
     "title": "Einstellungen",
+    "tray": {
+      "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
+      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+      "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
+      "title": "Tablett",
+      "unread_active_icon": "Machen Sie ungelesene Benachrichtigungen hervor",
+      "unread_active_icon_help": "Verwenden Sie ein grünes {{appName}} -Logo, wenn es ungelesene Benachrichtigungen gibt."
+    },
     "view_release_notes": "View {{appName}} Versionshinweise"
   },
   "sidebar": {

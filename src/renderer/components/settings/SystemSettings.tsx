@@ -81,17 +81,6 @@ export const SystemSettings: FC = () => {
         </InlineMessage>
       </Inline>
 
-      {window.atlassify.platform.isMacOS() && (
-        <Checkbox
-          isChecked={settings.showNotificationsCountInTray}
-          label={t('settings.system.show_count_in_tray')}
-          name="showNotificationsCountInTray"
-          onChange={(evt) =>
-            updateSetting('showNotificationsCountInTray', evt.target.checked)
-          }
-        />
-      )}
-
       <Checkbox
         isChecked={settings.showSystemNotifications}
         label={t('settings.system.system_notifications')}
@@ -177,24 +166,6 @@ export const SystemSettings: FC = () => {
             </Tooltip>
           </SplitButton>
         </Inline>
-      </Inline>
-
-      <Inline space="space.100">
-        <Checkbox
-          isChecked={settings.useAlternateIdleIcon}
-          label={t('settings.system.alternate_icon')}
-          name="useAlternateIdleIcon"
-          onChange={(evt) =>
-            updateSetting('useAlternateIdleIcon', evt.target.checked)
-          }
-        />
-        <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
-            {t('settings.system.alternate_icon_help', {
-              appName: APPLICATION.NAME,
-            })}
-          </div>
-        </InlineMessage>
       </Inline>
 
       {!window.atlassify.platform.isLinux() && (
