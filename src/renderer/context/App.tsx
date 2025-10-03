@@ -135,22 +135,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     }
 
     setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
+    setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
 
     updateTrayColor(count);
     updateTrayTitle(title);
   }, [
     settings.showNotificationsCountInTray,
     settings.useUnreadActiveIcon,
+    settings.useAlternateIdleIcon,
     notifications,
   ]);
 
   useEffect(() => {
     setAutoLaunch(settings.openAtStartup);
   }, [settings.openAtStartup]);
-
-  useEffect(() => {
-    setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
-  }, [settings.useAlternateIdleIcon]);
 
   useEffect(() => {
     setKeyboardShortcut(settings.keyboardShortcutEnabled);
