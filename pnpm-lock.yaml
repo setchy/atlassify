@@ -40,8 +40,8 @@ importers:
         specifier: 1.15.0
         version: 1.15.0(graphql@16.11.0)(typescript@5.9.3)
       '@atlaskit/avatar':
-        specifier: 25.3.1
-        version: 25.3.1(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 25.3.2
+        version: 25.3.2(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/avatar-group':
         specifier: 12.3.0
         version: 12.3.0(@babel/core@7.28.4)(@types/react@19.2.0)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -305,8 +305,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.3.1':
-    resolution: {integrity: sha512-pn8aCoQkc4OI6uXaLplP2ubiidwzZnc20Jl6d2YyDDSIg0O4I2Hh/i8MKmnba+ZZ4JIbr8CCCFwuAAtnoxNlIQ==}
+  '@atlaskit/avatar@25.3.2':
+    resolution: {integrity: sha512-yDATrJ8CJXjW3MLhlQSE0D5j1hqxqvycjwXkx7ATkpsWkzwkIDFMCJU3M5EjKFchKsTcm6dNlcgfD6BG7CY0Sg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6032,7 +6032,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.3.0(@babel/core@7.28.4)(@types/react@19.2.0)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@atlaskit/avatar': 25.3.1(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/avatar': 25.3.2(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.14.4(@types/react@19.2.0)(react@19.2.0)
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.0)(react@19.2.0)
       '@atlaskit/menu': 8.4.4(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -6053,7 +6053,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.3.1(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/avatar@25.3.2(@babel/core@7.28.4)(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.14.4(@types/react@19.2.0)(react@19.2.0)
@@ -7641,14 +7641,14 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@16.11.0)':
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/relay-operation-optimizer@7.0.21(encoding@0.1.13)(graphql@16.11.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.3(encoding@0.1.13)(graphql@16.11.0)
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -10157,7 +10157,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.11.0):
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   graphql-ws@6.0.6(graphql@16.11.0)(ws@8.18.3):
     dependencies:
