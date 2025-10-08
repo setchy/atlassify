@@ -14,28 +14,27 @@ export const triggerNativeNotifications = (
   newNotifications: AccountNotifications[],
   state: AtlassifyState,
 ) => {
-  const diffNotifications = newNotifications
-    .map((accountNotifications) => {
-      const accountPreviousNotifications = previousNotifications.find(
-        (item) => item.account.id === accountNotifications.account.id,
-      );
+  const diffNotifications = newNotifications.flatMap((accountNotifications) => {
+    const accountPreviousNotifications = previousNotifications.find(
+      (item) => item.account.id === accountNotifications.account.id,
+    );
 
-      if (!accountPreviousNotifications) {
-        return accountNotifications.notifications;
-      }
+    if (!accountPreviousNotifications) {
+      return accountNotifications.notifications;
+    }
 
-      const accountPreviousNotificationsIds =
-        accountPreviousNotifications.notifications.map((item) => item.id);
+    const accountPreviousNotificationsIds = new Set<string>(
+      accountPreviousNotifications.notifications.map((item) => item.id),
+    );
 
-      const accountNewNotifications = accountNotifications.notifications.filter(
-        (item) => {
-          return !accountPreviousNotificationsIds.includes(`${item.id}`);
-        },
-      );
+    const accountNewNotifications = accountNotifications.notifications.filter(
+      (notification) => {
+        return !accountPreviousNotificationsIds.has(notification.id);
+      },
+    );
 
-      return accountNewNotifications;
-    })
-    .reduce((acc, val) => acc.concat(val), []);
+    return accountNewNotifications;
+  });
 
   setTrayIconColor(newNotifications);
 
