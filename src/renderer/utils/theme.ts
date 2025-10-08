@@ -27,14 +27,14 @@ export function setTheme(mode?: Theme) {
         setLightMode();
       }
   }
+}
 
-  function setLightMode() {
-    document.querySelector('html').classList.remove('dark');
-    setGlobalTheme({ colorMode: 'light' });
-  }
+function setLightMode() {
+  document.querySelector('html').classList.remove('dark');
+  setGlobalTheme({ colorMode: 'light' });
+}
 
-  function setDarkMode() {
-    document.querySelector('html').classList.add('dark');
-    setGlobalTheme({ colorMode: 'dark' });
-  }
+function setDarkMode() {
+  document.querySelector('html').classList.add('dark');
+  setGlobalTheme({ colorMode: 'dark' });
 }

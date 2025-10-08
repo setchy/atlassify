@@ -36,12 +36,12 @@ export async function inferAtlassianProduct(
   headNotification: AtlassianHeadNotificationFragment,
 ): Promise<AtlassianProduct> {
   const registrationProduct = headNotification.analyticsAttributes
-    .filter((attribute) => attribute.key === 'registrationProduct')[0]
-    .value?.toLowerCase();
+    .find((attribute) => attribute.key === 'registrationProduct')
+    ?.value?.toLowerCase();
 
   const subProduct = headNotification.analyticsAttributes
-    .filter((attribute) => attribute.key === 'subProduct')[0]
-    .value?.toLowerCase();
+    .find((attribute) => attribute.key === 'subProduct')
+    ?.value?.toLowerCase();
 
   switch (registrationProduct) {
     case 'bitbucket':
