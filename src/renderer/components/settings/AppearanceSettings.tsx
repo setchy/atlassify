@@ -115,8 +115,8 @@ export const AppearanceSettings: FC = () => {
             {t('settings.appearance.theme')}:
           </Text>
           <RadioGroup
-            aria-labelledby="theme-label"
             defaultValue={settings.theme}
+            labelId="theme-label"
             onChange={(evt) => {
               updateSetting('theme', evt.target.value as Theme);
             }}

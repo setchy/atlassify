@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
-import { IconTile } from '@atlaskit/icon';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/core/people-group';
 import { Inline } from '@atlaskit/primitives';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
@@ -54,11 +54,9 @@ export const SettingsFooter: FC = () => {
           <IconButton
             appearance="subtle"
             icon={() => (
-              <IconTile
-                appearance="blue"
-                icon={PeopleGroupIcon}
+              <PeopleGroupIcon
+                color={token('color.icon.accent.blue')}
                 label={t('settings.accounts')}
-                shape="circle"
               />
             )}
             label={t('settings.accounts')}
@@ -73,12 +71,11 @@ export const SettingsFooter: FC = () => {
         >
           <IconButton
             appearance="subtle"
+            color="danger"
             icon={() => (
-              <IconTile
-                appearance="red"
-                icon={CrossCircleIcon}
+              <CrossCircleIcon
+                color={token('color.icon.accent.red')}
                 label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
-                shape="circle"
               />
             )}
             label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}

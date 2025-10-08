@@ -85,7 +85,7 @@ async function lookupJiraProjectType(
 
     // Check cache for cloudID (promise-aware)
     let cloudIdPromise = hostnameCloudIdCache.get(hostName);
-    if (typeof cloudIdPromise === 'undefined') {
+    if (cloudIdPromise === undefined) {
       cloudIdPromise = (async () => {
         const cloudTenant = await getCloudIDsForHostnames(account, [hostName]);
         return cloudTenant?.data?.tenantContexts[0]?.cloudId as CloudID;
@@ -99,7 +99,7 @@ async function lookupJiraProjectType(
 
     // Check cache for project type (promise-aware)
     let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
-    if (typeof jiraProjectTypePromise === 'undefined') {
+    if (jiraProjectTypePromise === undefined) {
       jiraProjectTypePromise = (async () => {
         const jiraProject = await getJiraProjectTypeByKey(
           account,

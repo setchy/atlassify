@@ -51,8 +51,8 @@ export const SystemSettings: FC = () => {
             {t('settings.system.open_links')}:
           </Text>
           <RadioGroup
-            aria-labelledby="openLinks-label"
             defaultValue={settings.openLinks}
+            labelId="openLinks-label"
             onChange={(evt) => {
               updateSetting('openLinks', evt.target.value as OpenPreference);
             }}
