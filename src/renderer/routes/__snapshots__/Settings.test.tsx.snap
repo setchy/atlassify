@@ -1447,28 +1447,24 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk4v9p _syaz1ov1 _1bsb1tcg _4t3i1tcg _2rko1rr0"
+                aria-label="Accounts"
+                class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                role="img"
+                style="color: var(--ds-icon-accent-blue);"
               >
-                <span
-                  aria-label="Accounts"
-                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-                  role="img"
-                  style="color: currentcolor;"
+                <svg
+                  class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                  fill="none"
+                  role="presentation"
+                  viewBox="0 0 16 16"
                 >
-                  <svg
-                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
-                    fill="none"
-                    role="presentation"
-                    viewBox="-4 -4 24 24"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M9 4.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0M11 1a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7M3 5.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0M4 3a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M2.625 9A2.625 2.625 0 0 0 0 11.625V13h1.5v-1.375c0-.621.504-1.125 1.125-1.125H5V9zM6 12.5A3.5 3.5 0 0 1 9.5 9h3a3.5 3.5 0 0 1 3.5 3.5V14h-1.5v-1.5a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2V14H6z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    clip-rule="evenodd"
+                    d="M9 4.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0M11 1a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7M3 5.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0M4 3a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M2.625 9A2.625 2.625 0 0 0 0 11.625V13h1.5v-1.375c0-.621.504-1.125 1.125-1.125H5V9zM6 12.5A3.5 3.5 0 0 1 9.5 9h3a3.5 3.5 0 0 1 3.5 3.5V14h-1.5v-1.5a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2V14H6z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
               <span
                 class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
@@ -1483,6 +1479,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
         >
           <button
             class="_mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syaz10s3 _105310s3 _f8pj10s3 _30l310s3 _9h8h10s3 _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+            color="danger"
             data-testid="settings-quit"
             type="button"
           >
@@ -1490,28 +1487,24 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
             >
               <span
-                class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1rtt _syaznbxb _1bsb1tcg _4t3i1tcg _2rko1rr0"
+                aria-label="Quit Atlassify"
+                class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                role="img"
+                style="color: var(--ds-icon-accent-red);"
               >
-                <span
-                  aria-label="Quit Atlassify"
-                  class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
-                  role="img"
-                  style="color: currentcolor;"
+                <svg
+                  class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                  fill="none"
+                  role="presentation"
+                  viewBox="0 0 16 16"
                 >
-                  <svg
-                    class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
-                    fill="none"
-                    role="presentation"
-                    viewBox="-4 -4 24 24"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
-                      fill="currentcolor"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    clip-rule="evenodd"
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                    fill="currentcolor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
               <span
                 class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
