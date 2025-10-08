@@ -110,13 +110,13 @@
     "subheading": "sur votre barre de menu"
   },
   "login": {
-    "create_token": "Créer un jeton API avec des lunettes",
+    "create_token": "Créer un jeton API",
     "duplicate_username": "Ce nom d'utilisateur a déjà été ajouté. \nVeuillez utiliser un nom d'utilisateur différent.",
     "error_message": "Oups! La combinaison de jetons de nom d'utilisateur fournie n'est pas valide. Veuillez réessayer.",
     "security_docs": "Voir la documentation atlastique",
     "title": "Connectez-vous avec Atlassian",
     "token": "Jeton API",
-    "token_helper": "avec des portées [read:account, read:jira-work] et collez-le ci-dessus",
+    "token_helper": "et collez dessus",
     "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
   },
   "notifications": {

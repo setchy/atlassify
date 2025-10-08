@@ -148,7 +148,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   >
                     <span>
                       <div
-                        class="css-z2jtml"
+                        class="css-5fz2td"
                       >
                         <div
                           role="presentation"
@@ -184,14 +184,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                             <span
                               class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                             >
-                              Create API token with scopes
+                              Create API token
                             </span>
                           </button>
                         </div>
                         <div
                           class="css-k5cxwk"
                         >
-                          with scopes [read:account, read:jira-work] and paste above
+                          and paste above
                         </div>
                       </div>
                     </span>
@@ -446,7 +446,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 >
                   <span>
                     <div
-                      class="css-z2jtml"
+                      class="css-5fz2td"
                     >
                       <div
                         role="presentation"
@@ -482,14 +482,14 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                           <span
                             class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                           >
-                            Create API token with scopes
+                            Create API token
                           </span>
                         </button>
                       </div>
                       <div
                         class="css-k5cxwk"
                       >
-                        with scopes [read:account, read:jira-work] and paste above
+                        and paste above
                       </div>
                     </div>
                   </span>

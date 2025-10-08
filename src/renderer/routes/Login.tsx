@@ -20,7 +20,7 @@ import Form, {
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LockLockedIcon from '@atlaskit/icon/core/lock-locked';
 import LogInIcon from '@atlaskit/icon/core/log-in';
-import { Box, Stack } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -131,7 +131,7 @@ export const LoginRoute: FC = () => {
                         <Fragment>
                           <TextField type="password" {...fieldProps} />
                           <HelperMessage>
-                            <Stack alignBlock="center" space="space.050">
+                            <Inline alignBlock="center" space="space.050">
                               <Tooltip content={t('login.create_token')}>
                                 <Button
                                   appearance="discovery"
@@ -149,7 +149,7 @@ export const LoginRoute: FC = () => {
                                 </Button>
                               </Tooltip>
                               <Box>{t('login.token_helper')}</Box>
-                            </Stack>
+                            </Inline>
                           </HelperMessage>
                         </Fragment>
                       )}
