@@ -73,19 +73,9 @@ const appUpdater = new AppUpdater(mb, menuBuilder);
 let shouldUseAlternateIdleIcon = false;
 let shouldUseUnreadActiveIcon = true;
 
-/** Prevent second instances */
-const gotTheLock = app.requestSingleInstanceLock();
-if (!gotTheLock) {
-  logWarn('main:gotTheLock', 'Second instance detected, quitting');
-  app.quit();
-} else {
-  // When a second instance is launched, focus/show the existing menubar window
-  app.on('second-instance', () => {
-    mb.showWindow();
-  });
-}
-
 app.whenReady().then(async () => {
+  preventSecondInstance();
+
   await onFirstRunMaybe();
 
   appUpdater.start();
@@ -244,4 +234,22 @@ function setActiveIcon() {
 
 function setErrorIcon() {
   mb.tray.setImage(TrayIcons.error);
+}
+
+/**
+ * Prevent second instances
+ */
+function preventSecondInstance() {
+  const gotTheLock = app.requestSingleInstanceLock();
+
+  if (!gotTheLock) {
+    logWarn('main:gotTheLock', 'Second instance detected, quitting');
+    app.quit();
+    return;
+  }
+
+  // When a second instance is launched, focus/show the existing menubar window
+  app.on('second-instance', () => {
+    mb.showWindow();
+  });
 }
