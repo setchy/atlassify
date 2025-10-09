@@ -34,7 +34,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       role="img"
                     >
                       <span
-                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkofajl _14mjfajl _1bsbzwfg _4t3izwfg"
+                        class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko12b0 _14mj12b0 _1bsbzwfg _4t3izwfg"
                         style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                       >
                         <img
@@ -306,7 +306,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkofajl _14mjfajl _1bsbzwfg _4t3izwfg"
+                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu194a _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko12b0 _14mj12b0 _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
