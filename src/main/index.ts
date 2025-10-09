@@ -18,6 +18,7 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
+import { logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -74,6 +75,15 @@ let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
   await onFirstRunMaybe();
+
+  /** Prevent second instances */
+  const gotTheLock = app.requestSingleInstanceLock();
+
+  if (!gotTheLock) {
+    logWarn('main:gotTheLock', 'Second instance detected, quitting');
+    app.quit(); // Quit the second instance
+    return;
+  }
 
   appUpdater.start();
 
