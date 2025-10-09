@@ -43,8 +43,8 @@ importers:
         specifier: 25.3.2
         version: 25.3.2(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/avatar-group':
-        specifier: 12.3.0
-        version: 12.3.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 12.3.1
+        version: 12.3.1(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/badge':
         specifier: 18.2.0
         version: 18.2.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -300,13 +300,18 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar-group@12.3.0':
-    resolution: {integrity: sha512-yhzcLbyWlRh16pSULgCf8Obar7afF7g22W6KKj/XUCRG7A3AgdUHjs2t42N8QIjcYFDA9fuKDg5D5N0Sum71Bg==}
+  '@atlaskit/avatar-group@12.3.1':
+    resolution: {integrity: sha512-Ur4J7HxMxBpu9tspl2aIRsaolC9g7Y+YlsyjijwrAj3RZ0IM1JbcSU1cAjFtTbMiPTQLWSYj0N7Gv/JDb3nuTQ==}
     peerDependencies:
       react: ^18.2.0
 
   '@atlaskit/avatar@25.3.2':
     resolution: {integrity: sha512-yDATrJ8CJXjW3MLhlQSE0D5j1hqxqvycjwXkx7ATkpsWkzwkIDFMCJU3M5EjKFchKsTcm6dNlcgfD6BG7CY0Sg==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/avatar@25.4.0':
+    resolution: {integrity: sha512-GXSDqfGxHlqE/D05pw7ZDKLoSGvqx68Vm/mJYeKndj6aJrWH+iq0THfe/T9kyeI/MH4eOwnJm5oyNBX+LuFNug==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6029,9 +6034,9 @@ snapshots:
       '@babel/runtime': 7.28.4
       react: 19.2.0
 
-  '@atlaskit/avatar-group@12.3.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/avatar-group@12.3.1(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@atlaskit/avatar': 25.3.2(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/avatar': 25.4.0(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.14.4(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/menu': 8.4.4(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -6053,6 +6058,26 @@ snapshots:
       - supports-color
 
   '@atlaskit/avatar@25.3.2(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/css': 0.14.4(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/focus-ring': 3.0.5(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/icon': 28.5.1(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
+      '@atlaskit/primitives': 14.15.5(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 6.4.3(@types/react@19.2.2)(react@19.2.0)
+      '@babel/runtime': 7.28.4
+      '@compiled/react': 0.18.6(react@19.2.0)
+      react: 19.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/avatar@25.4.0(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.14.4(@types/react@19.2.2)(react@19.2.0)
@@ -7635,14 +7660,14 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@16.11.0)':
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/relay-operation-optimizer@7.0.21(encoding@0.1.13)(graphql@16.11.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.3(encoding@0.1.13)(graphql@16.11.0)
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -10151,7 +10176,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.11.0):
     dependencies:
       graphql: 16.11.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   graphql-ws@6.0.6(graphql@16.11.0)(ws@8.18.3):
     dependencies:
