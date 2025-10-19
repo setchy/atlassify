@@ -85,8 +85,8 @@ importers:
         specifier: 21.3.6
         version: 21.3.6(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner':
-        specifier: 19.0.5
-        version: 19.0.5(@types/react@19.2.2)(react@19.2.0)
+        specifier: 19.0.6
+        version: 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/textfield':
         specifier: 8.0.14
         version: 8.0.14(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -482,8 +482,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/spinner@19.0.5':
-    resolution: {integrity: sha512-3m8MwoRcJuSvSQI8tPxaX1y9hpAoAqXWAb+tSQH49k6wxDonU+Z8OK0PGaYGqpittSpWaBq7vRp+YFK50r95BA==}
+  '@atlaskit/spinner@19.0.6':
+    resolution: {integrity: sha512-bjyclrR57PuCMqM57OzyDqMVwjTN3tSvb0CxVweo1ofVI0KKb8MacWaIYmUD4MVun+QRlyxZVFd5V5XRZj1CPA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6132,7 +6132,7 @@ snapshots:
       '@atlaskit/interaction-context': 3.1.0(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.0.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/spinner': 19.0.5(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tooltip': 20.5.2(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -6576,7 +6576,7 @@ snapshots:
       '@atlaskit/layering': 3.1.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 14.15.5(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/spinner': 19.0.5(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tokens': 6.5.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6600,7 +6600,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.0.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/react-select': 3.8.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/spinner': 19.0.5(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
@@ -6630,11 +6630,11 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/spinner@19.0.5(@types/react@19.2.2)(react@19.2.0)':
+  '@atlaskit/spinner@19.0.6(@types/react@19.2.2)(react@19.2.0)':
     dependencies:
       '@atlaskit/interaction-context': 3.1.0(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 6.5.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6698,7 +6698,7 @@ snapshots:
       '@atlaskit/icon': 28.5.1(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.0.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/spinner': 19.0.5(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
