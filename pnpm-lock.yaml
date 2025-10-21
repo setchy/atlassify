@@ -112,8 +112,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       '@graphql-codegen/cli':
-        specifier: 6.0.0
-        version: 6.0.0(@parcel/watcher@2.5.1)(@types/node@22.18.11)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.9.3)
+        specifier: 6.0.1
+        version: 6.0.1(@parcel/watcher@2.5.1)(@types/node@22.18.11)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.9.3)
       '@graphql-codegen/client-preset':
         specifier: 5.1.0
         version: 5.1.0(encoding@0.1.13)(graphql@16.11.0)
@@ -982,8 +982,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/cli@6.0.0':
-    resolution: {integrity: sha512-tvchLVCMtorDE+UwgQbrjyaQK16GCZA+QomTxZazRx64ixtgmbEiQV7GhCBy0y0Bo7/tcTJb6sy9G/TL/BgiOg==}
+  '@graphql-codegen/cli@6.0.1':
+    resolution: {integrity: sha512-6iP91joxb7phdicDrIF8Cv9ah2QpPVXUUu7rbOaQKvqey+QKYmHcxGCi9r5/7p4lUiHZPQvfB7xDHURHQca1SA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
@@ -7326,7 +7326,7 @@ snapshots:
       graphql: 16.11.0
       tslib: 2.6.3
 
-  '@graphql-codegen/cli@6.0.0(@parcel/watcher@2.5.1)(@types/node@22.18.11)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.9.3)':
+  '@graphql-codegen/cli@6.0.1(@parcel/watcher@2.5.1)(@types/node@22.18.11)(encoding@0.1.13)(graphql@16.11.0)(typescript@5.9.3)':
     dependencies:
       '@babel/generator': 7.28.3
       '@babel/template': 7.27.2
@@ -7528,7 +7528,7 @@ snapshots:
     dependencies:
       graphql: 16.11.0
       lodash.sortby: 4.7.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/executor-common@0.0.4(graphql@16.11.0)':
     dependencies:
