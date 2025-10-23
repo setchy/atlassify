@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
 import type { Link, Token, Username } from '../../types';
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
@@ -8,21 +6,22 @@ import {
   performRequestForCredentials,
 } from './request';
 
-jest.mock('axios');
+const originalFetch = globalThis.fetch;
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
-    });
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ data: {} }),
+    } as unknown as Response);
   });
 
   afterEach(() => {
     jest.clearAllMocks();
+    globalThis.fetch = originalFetch;
   });
 
   it('performRequestForAccount - should execute graphql request with the correct parameters', async () => {
@@ -41,17 +40,19 @@ describe('renderer/utils/api/request.ts', () => {
       },
     );
 
-    expect(axios).toHaveBeenCalledWith({
+    expect(globalThis.fetch).toHaveBeenCalledWith(
       url,
-      data,
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk',
-        'Cache-Control': 'no-cache',
-        'Content-Type': 'application/json',
-      },
-    });
+      expect.objectContaining({
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'Basic dXNlckBhdGxhc3NpZnkuaW86ZGVjcnlwdGVk',
+          'Cache-Control': 'no-cache',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }),
+    );
   });
 
   it('performRequestForCredentials - should execute graphql request with the correct parameters', async () => {
@@ -71,16 +72,18 @@ describe('renderer/utils/api/request.ts', () => {
       },
     );
 
-    expect(axios).toHaveBeenCalledWith({
+    expect(globalThis.fetch).toHaveBeenCalledWith(
       url,
-      data,
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Basic c29tZS11c2VybmFtZTpzb21lLXBhc3N3b3Jk',
-        'Cache-Control': 'no-cache',
-        'Content-Type': 'application/json',
-      },
-    });
+      expect.objectContaining({
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'Basic c29tZS11c2VybmFtZTpzb21lLXBhc3N3b3Jk',
+          'Cache-Control': 'no-cache',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }),
+    );
   });
 });

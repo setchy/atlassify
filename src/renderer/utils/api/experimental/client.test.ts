@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { mockSingleAtlassifyNotification } from '../../../__mocks__/notifications-mocks';
 import { mockAtlassianCloudAccount } from '../../../__mocks__/state-mocks';
 import type { CloudID, JiraProjectKey } from '../../../types';
@@ -9,19 +7,20 @@ import {
   markNotificationGroupAsUnread,
 } from './client';
 
-jest.mock('axios');
+const originalFetch = globalThis.fetch;
 
 describe('renderer/utils/api/experimental/client.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
-    });
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ data: {} }),
+    } as unknown as Response);
   });
 
   afterEach(() => {
     jest.clearAllMocks();
+    globalThis.fetch = originalFetch;
   });
 
   it('markNotificationGroupAsRead - should mark notification group as read', async () => {
@@ -30,16 +29,11 @@ describe('renderer/utils/api/experimental/client.ts', () => {
       mockSingleAtlassifyNotification.notificationGroup.id,
     );
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkGroupAsRead'),
-          variables: {
-            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-          },
-        },
+        body: expect.stringContaining('mutation MarkGroupAsRead'),
       }),
     );
   });
@@ -50,16 +44,11 @@ describe('renderer/utils/api/experimental/client.ts', () => {
       mockSingleAtlassifyNotification.notificationGroup.id,
     );
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkGroupAsUnread'),
-          variables: {
-            groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-          },
-        },
+        body: expect.stringContaining('mutation MarkGroupAsUnread'),
       }),
     );
   });
@@ -73,17 +62,11 @@ describe('renderer/utils/api/experimental/client.ts', () => {
       mockProjectKeys,
     );
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('query RetrieveJiraProjectTypes'),
-          variables: {
-            cloudId: mockCloudID,
-            keys: mockProjectKeys,
-          },
-        },
+        body: expect.stringContaining('query RetrieveJiraProjectTypes'),
       }),
     );
   });

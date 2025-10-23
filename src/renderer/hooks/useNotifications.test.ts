@@ -1,24 +1,23 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import axios from 'axios';
-import nock from 'nock';
-
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockState } from '../__mocks__/state-mocks';
 import { useNotifications } from './useNotifications';
 
 describe('renderer/hooks/useNotifications.ts', () => {
-  beforeEach(() => {
-    // axios will default to using the XHR adapter which can't be intercepted
-    // by nock. So, configure axios to use the node adapter.
-    axios.defaults.adapter = 'http';
+  const originalFetch = globalThis.fetch;
+  afterEach(() => {
+    jest.clearAllMocks();
+    globalThis.fetch = originalFetch;
   });
+  beforeEach(() => {});
 
   describe('fetchNotifications', () => {
     it('fetchNotifications - unread only', async () => {
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      globalThis.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => ({
           data: {
             notifications: {
               notificationFeed: {
@@ -33,7 +32,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
               },
             },
           },
-        });
+        }),
+      } as unknown as Response);
 
       const { result } = renderHook(() => useNotifications());
 
@@ -58,9 +58,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - all notifications read/unread', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      globalThis.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => ({
           data: {
             notifications: {
               notificationFeed: {
@@ -75,7 +76,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
               },
             },
           },
-        });
+        }),
+      } as unknown as Response);
 
       const { result } = renderHook(() => useNotifications());
 
@@ -100,9 +102,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - handles missing extensions response object', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
-        .reply(200, {
+      globalThis.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => ({
           data: {
             notifications: {
               notificationFeed: {
@@ -110,7 +113,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
               },
             },
           },
-        });
+        }),
+      } as unknown as Response);
 
       const { result } = renderHook(() => useNotifications());
 
@@ -134,7 +138,11 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsRead', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({}),
+    } as unknown as Response);
 
     const { result } = renderHook(() => useNotifications());
 
@@ -152,7 +160,11 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsUnread', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({}),
+    } as unknown as Response);
 
     const { result } = renderHook(() => useNotifications());
 

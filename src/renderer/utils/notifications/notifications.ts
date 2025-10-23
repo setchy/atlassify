@@ -1,5 +1,3 @@
-import { AxiosError } from 'axios';
-
 import { Constants } from '../../constants';
 import type {
   Account,
@@ -67,7 +65,7 @@ export async function getAllNotifications(
           const res = await accountNotifications.notifications;
 
           if (res.errors) {
-            throw new AxiosError(Errors.BAD_REQUEST.title);
+            throw new Error(Errors.BAD_REQUEST.title);
           }
 
           const rawNotifications = res.data.notifications.notificationFeed
@@ -170,7 +168,7 @@ function determineIfMorePagesAvailable<T>(
       res.extensions.notifications.response_info.responseSize ===
       Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
     );
-  } catch (_err) {
+  } catch {
     rendererLogWarn(
       'determineIfMorePagesAvailable',
       'Response did not contain extensions object, assuming no more pages',
