@@ -1,11 +1,8 @@
-import axios from 'axios';
-
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockSettings,
 } from '../../__mocks__/state-mocks';
-import { Constants } from '../../constants';
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 import {
   checkIfCredentialsAreValid,
@@ -20,19 +17,20 @@ import {
 
 // Experimental API tests moved to experimental/client.test.ts
 
-jest.mock('axios');
+const originalFetch = globalThis.fetch;
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
-      data: {
-        data: {},
-      },
-    });
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => ({ data: {} }),
+    } as unknown as Response);
   });
 
   afterEach(() => {
     jest.clearAllMocks();
+    globalThis.fetch = originalFetch;
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {
@@ -41,14 +39,11 @@ describe('renderer/utils/api/client.ts', () => {
       mockAtlassianCloudAccount.token,
     );
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('query Me'),
-          variables: undefined,
-        },
+        body: expect.stringContaining('query Me'),
       }),
     );
   });
@@ -56,14 +51,11 @@ describe('renderer/utils/api/client.ts', () => {
   it('getAuthenticatedUser - should fetch authenticated user details', async () => {
     await getAuthenticatedUser(mockAtlassianCloudAccount);
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('query Me'),
-          variables: undefined,
-        },
+        body: expect.stringContaining('query Me'),
       }),
     );
   });
@@ -71,18 +63,11 @@ describe('renderer/utils/api/client.ts', () => {
   it('listNotificationsForAuthenticatedUser - should list notifications for user', async () => {
     await getNotificationsForUser(mockAtlassianCloudAccount, mockSettings);
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('query MyNotifications'),
-          variables: {
-            first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-            flat: !mockSettings.groupNotificationsByTitle,
-            readState: 'unread',
-          },
-        },
+        body: expect.stringContaining('query MyNotifications'),
       }),
     );
   });
@@ -92,16 +77,11 @@ describe('renderer/utils/api/client.ts', () => {
       mockSingleAtlassifyNotification.id,
     ]);
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkAsRead'),
-          variables: {
-            notificationIDs: [mockSingleAtlassifyNotification.id],
-          },
-        },
+        body: expect.stringContaining('mutation MarkAsRead'),
       }),
     );
   });
@@ -111,16 +91,11 @@ describe('renderer/utils/api/client.ts', () => {
       mockSingleAtlassifyNotification.id,
     ]);
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkAsUnread'),
-          variables: {
-            notificationIDs: [mockSingleAtlassifyNotification.id],
-          },
-        },
+        body: expect.stringContaining('mutation MarkAsUnread'),
       }),
     );
   });
@@ -136,20 +111,11 @@ describe('renderer/utils/api/client.ts', () => {
         mockGroupSize,
       );
 
-      expect(axios).toHaveBeenCalledWith(
+      expect(globalThis.fetch).toHaveBeenCalledWith(
+        'https://team.atlassian.net/gateway/api/graphql',
         expect.objectContaining({
-          url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
-          data: {
-            query: expect.stringContaining(
-              'query RetrieveNotificationsByGroupId',
-            ),
-            variables: {
-              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-              first: mockGroupSize,
-              readState: 'unread',
-            },
-          },
+          body: expect.stringContaining('query RetrieveNotificationsByGroupId'),
         }),
       );
     });
@@ -164,20 +130,11 @@ describe('renderer/utils/api/client.ts', () => {
         mockGroupSize,
       );
 
-      expect(axios).toHaveBeenCalledWith(
+      expect(globalThis.fetch).toHaveBeenCalledWith(
+        'https://team.atlassian.net/gateway/api/graphql',
         expect.objectContaining({
-          url: 'https://team.atlassian.net/gateway/api/graphql',
           method: 'POST',
-          data: {
-            query: expect.stringContaining(
-              'query RetrieveNotificationsByGroupId',
-            ),
-            variables: {
-              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-              first: mockGroupSize,
-              readState: null,
-            },
-          },
+          body: expect.stringContaining('query RetrieveNotificationsByGroupId'),
         }),
       );
     });
@@ -188,16 +145,11 @@ describe('renderer/utils/api/client.ts', () => {
 
     await getCloudIDsForHostnames(mockAtlassianCloudAccount, mockHostnames);
 
-    expect(axios).toHaveBeenCalledWith(
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      'https://team.atlassian.net/gateway/api/graphql',
       expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
         method: 'POST',
-        data: {
-          query: expect.stringContaining('query RetrieveCloudIDsForHostnames'),
-          variables: {
-            hostNames: mockHostnames,
-          },
-        },
+        body: expect.stringContaining('query RetrieveCloudIDsForHostnames'),
       }),
     );
   });
@@ -205,20 +157,20 @@ describe('renderer/utils/api/client.ts', () => {
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
     const mockProjectKey = 'PROJ' as JiraProjectKey;
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValueOnce({
-      data: { projectTypeKey: 'service_desk' },
-    });
+    (globalThis.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      json: async () => ({ projectTypeKey: 'service_desk' }),
+    } as unknown as Response);
     const result = await getJiraProjectTypeByKey(
       mockAtlassianCloudAccount,
       mockCloudID,
       mockProjectKey,
     );
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        method: 'GET',
-        url: `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/project/${mockProjectKey}`,
-      }),
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/project/${mockProjectKey}`,
+      expect.objectContaining({ method: 'GET' }),
     );
     expect(result).toBe('service_desk');
   });

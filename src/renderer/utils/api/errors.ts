@@ -1,17 +1,18 @@
-import { AxiosError } from 'axios';
-
 import type { AtlassifyError } from '../../types';
 import { Errors } from '../errors';
-import type { AtlassianAPIError } from './types';
 
-export function determineFailureType(
-  err: AxiosError<AtlassianAPIError>,
-): AtlassifyError {
+type HttpError = {
+  message?: string;
+  code?: string;
+  response?: { status?: number };
+};
+
+export function determineFailureType(err: HttpError): AtlassifyError {
   if (err.message === Errors.BAD_REQUEST.title) {
     return Errors.BAD_REQUEST;
   }
 
-  if (err.code === AxiosError.ERR_NETWORK) {
+  if (err.code === 'ERR_NETWORK') {
     return Errors.NETWORK;
   }
 
