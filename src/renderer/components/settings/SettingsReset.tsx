@@ -2,6 +2,7 @@ import { type FC, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap } from '@atlaskit/css';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import Modal, {
   ModalBody,
@@ -10,27 +11,28 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
+import { Flex, Grid, Inline } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
 import { AppContext } from '../../context/App';
 
-const gridStyles = xcss({
-  width: '100%',
-});
-
-const closeContainerStyles = xcss({
-  gridArea: 'close',
-});
-
-const titleContainerStyles = xcss({
-  gridArea: 'title',
+const styles = cssMap({
+  grid: {
+    width: '100%',
+  },
+  close: {
+    gridArea: 'close',
+  },
+  title: {
+    gridArea: 'title',
+  },
 });
 
 export const SettingsReset: FC = () => {
   const { t } = useTranslation();
   const { resetSettings } = useContext(AppContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
@@ -53,9 +55,9 @@ export const SettingsReset: FC = () => {
               <Grid
                 gap="space.200"
                 templateAreas={['title close']}
-                xcss={gridStyles}
+                xcss={styles.grid}
               >
-                <Flex justifyContent="end" xcss={closeContainerStyles}>
+                <Flex justifyContent="end" xcss={styles.close}>
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
@@ -64,7 +66,7 @@ export const SettingsReset: FC = () => {
                     testId="settings-reset-close"
                   />
                 </Flex>
-                <Flex justifyContent="start" xcss={titleContainerStyles}>
+                <Flex justifyContent="start" xcss={styles.title}>
                   <ModalTitle appearance="danger">
                     {t('settings.reset.title')}
                   </ModalTitle>

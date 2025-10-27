@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
+import { cssMap } from '@atlaskit/css';
 import LogOutIcon from '@atlaskit/icon/core/log-out';
 import PersonAddIcon from '@atlaskit/icon/core/person-add';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
-import { Box, Inline, xcss } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Contents } from '../components/layout/Contents';
@@ -20,6 +22,13 @@ import { refreshAccount } from '../utils/auth/utils';
 import { updateTrayColor, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
+
+const styles = cssMap({
+  box: {
+    borderRadius: 'border.radius.200',
+    marginInline: token('space.400'),
+  },
+});
 
 export const AccountsRoute: FC = () => {
   const { auth, logoutFromAccount } = useContext(AppContext);
@@ -40,11 +49,6 @@ export const AccountsRoute: FC = () => {
     return navigate('/login', { replace: true });
   }, []);
 
-  const boxStyles = xcss({
-    borderRadius: 'border.radius.200',
-    marginInline: 'space.400',
-  });
-
   return (
     <Page id="accounts">
       <Header>{t('accounts.title')}</Header>
@@ -60,7 +64,7 @@ export const AccountsRoute: FC = () => {
               }
               key={account.id}
               padding="space.150"
-              xcss={boxStyles}
+              xcss={styles.box}
             >
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">

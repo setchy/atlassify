@@ -3,14 +3,16 @@ import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import { Checkbox } from '@atlaskit/checkbox';
+import { cssMap } from '@atlaskit/css';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
-import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/types';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
@@ -36,9 +38,11 @@ export const SystemSettings: FC = () => {
     },
   ];
 
-  const volumeBoxStyles = xcss({
-    backgroundColor: 'color.background.accent.gray.subtlest',
-    visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
+  const styles = cssMap({
+    volumeBox: {
+      backgroundColor: token('color.background.accent.gray.subtlest'),
+      visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
+    },
   });
 
   return (
@@ -99,7 +103,7 @@ export const SystemSettings: FC = () => {
             updateSetting('playSoundNewNotifications', evt.target.checked)
           }
         />
-        <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
+        <Inline testId="settings-volume-group" xcss={styles.volumeBox}>
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
               <Box paddingInline="space.150">

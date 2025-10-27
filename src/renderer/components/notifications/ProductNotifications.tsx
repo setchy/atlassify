@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap } from '@atlaskit/css';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
-import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
@@ -13,6 +15,17 @@ import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
 import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
+
+const styles = cssMap({
+  box: {
+    transitionDuration: '200ms',
+    '&:hover': {
+      backgroundColor: isLightMode()
+        ? token('color.background.accent.blue.subtlest.hovered')
+        : token('color.background.accent.gray.subtlest.hovered'),
+    },
+  },
+});
 
 export interface IProductNotifications {
   productNotifications: AtlassifyNotification[];
@@ -38,15 +51,6 @@ export const ProductNotifications: FC<IProductNotifications> = ({
   const Chevron = getChevronDetails(true, showProductNotifications, 'product');
   const ChevronIcon = Chevron.icon;
 
-  const boxStyles = xcss({
-    transitionDuration: '200ms',
-    ':hover': {
-      backgroundColor: isLightMode()
-        ? 'color.background.accent.blue.subtlest.hovered'
-        : 'color.background.accent.gray.subtlest.hovered',
-    },
-  });
-
   return (
     <Stack>
       <Box
@@ -60,7 +64,7 @@ export const ProductNotifications: FC<IProductNotifications> = ({
         paddingBlock="space.050"
         paddingInlineEnd="space.100"
         paddingInlineStart="space.050"
-        xcss={boxStyles}
+        xcss={styles.box}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip
