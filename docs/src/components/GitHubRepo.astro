@@ -1,14 +1,14 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Octokit } from "octokit";
-import { siteMetadata, URLs } from "~/constants";
-import type { RepoStats } from "~/types";
+import { Icon } from 'astro-icon/components';
+import { Octokit } from 'octokit';
+import { siteMetadata, URLs } from '~/constants';
+import type { RepoStats } from '~/types';
 
 const octokit = new Octokit();
 
 const formatCount = (count: number) => {
-  return new Intl.NumberFormat("en", {
-    notation: "compact",
+  return new Intl.NumberFormat('en', {
+    notation: 'compact',
     maximumFractionDigits: 1,
   }).format(count);
 };
@@ -28,14 +28,14 @@ const loadRepoStats = async (): Promise<RepoStats> => {
     return {
       forks: formatCount(repository.data.forks_count),
       stars: formatCount(repository.data.stargazers_count),
-      latestReleaseName: latestRelease.data.name?.replace("v", "") ?? "",
+      latestReleaseName: latestRelease.data.name?.replace('v', '') ?? '',
     };
   } catch (error) {
-    console.error("Failed to load repo stats", error);
+    console.error('Failed to load repo stats', error);
     return {
-      forks: "",
-      stars: "",
-      latestReleaseName: "",
+      forks: '',
+      stars: '',
+      latestReleaseName: '',
     };
   }
 };

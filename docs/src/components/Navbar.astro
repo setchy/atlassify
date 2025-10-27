@@ -1,10 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
-import GitHubRepo from "~/components/GitHubRepo.astro";
-import { siteMetadata } from "~/constants";
+import { Icon } from 'astro-icon/components';
+import GitHubRepo from '~/components/GitHubRepo.astro';
+import { siteMetadata } from '~/constants';
 
 const { currentPathname } = Astro.props;
-const isHomepage = currentPathname === "/";
+const isHomepage = currentPathname === '/';
 ---
 
 <nav class:list={["py-8 px-8", isHomepage && "bg-atlassify-docs-hero"]}>
