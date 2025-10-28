@@ -1,5 +1,8 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.3.1/schema.json",
+  "files": {
+    "includes": ["**", "!**/docs/**/*", "!**/generated/**/*"]
+  },
   "assist": {
     "actions": {
       "source": {
@@ -72,9 +75,6 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2
-  },
-  "files": {
-    "includes": ["**", "!**/docs/**/*", "!**/generated/**/*"]
   },
   "css": {
     "formatter": {
