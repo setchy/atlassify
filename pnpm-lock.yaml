@@ -82,8 +82,8 @@ importers:
         specifier: 8.3.10
         version: 8.3.10(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/select':
-        specifier: 21.3.6
-        version: 21.3.6(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 21.3.7
+        version: 21.3.7(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner':
         specifier: 19.0.6
         version: 19.0.6(@types/react@19.2.2)(react@19.2.0)
@@ -471,8 +471,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/select@21.3.6':
-    resolution: {integrity: sha512-mBhPOagUJEQQLzJnp/mpWlCuCzNz+7FzrcsuGqaZQn0A01/CfPI4h9iCwhXaDnaH+MW9RSPw9Idq8fMKef32og==}
+  '@atlaskit/select@21.3.7':
+    resolution: {integrity: sha512-K7NwYiM1SZ/UkdXc/ZvnvH6ViPQztGnSEKXYxNQC9XPkEQsD/hcarMJmqGCe/jSanrJ5n3eSaQrXm8Rn3b51kA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6559,7 +6559,7 @@ snapshots:
     dependencies:
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/icon': 28.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/layering': 3.1.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/layering': 3.2.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 14.15.5(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
@@ -6578,7 +6578,7 @@ snapshots:
       - prop-types
       - supports-color
 
-  '@atlaskit/select@21.3.6(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/select@21.3.7(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
