@@ -49,8 +49,8 @@ importers:
         specifier: 18.2.3
         version: 18.2.3(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/button':
-        specifier: 23.5.3
-        version: 23.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 23.5.4
+        version: 23.5.4(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/checkbox':
         specifier: 17.1.18
         version: 17.1.18(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -320,8 +320,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/button@23.5.3':
-    resolution: {integrity: sha512-0qlcL92sb3t3ni1+/tFHVQJJGxkMZsJErchwEy/3NV0qu/UtkrJqcbggVqCcrk0AMvxKLq4V1U66HwGe3xAdKg==}
+  '@atlaskit/button@23.5.4':
+    resolution: {integrity: sha512-2jd+jctwDyIOfypbZTzMdoOn1T2YnFw0b5HCZ2x3zs1vyomJQrkM3TKsoir+t647+250mPnaRu4i+B0GZYQy5Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6114,7 +6114,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/button@23.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/button@23.5.4(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.15.0(@types/react@19.2.2)(react@19.2.0)
@@ -6273,7 +6273,7 @@ snapshots:
 
   '@atlaskit/inline-message@15.4.1(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
-      '@atlaskit/button': 23.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/button': 23.5.4(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/icon': 28.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/link': 3.2.8(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -6380,7 +6380,7 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/blanket': 15.0.14(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/button': 23.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@atlaskit/button': 23.5.4(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.15.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/focus-ring': 3.0.5(@types/react@19.2.2)(react@19.2.0)
