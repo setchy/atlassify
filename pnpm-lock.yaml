@@ -43,8 +43,8 @@ importers:
         specifier: 25.5.0
         version: 25.5.0(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/avatar-group':
-        specifier: 12.3.3
-        version: 12.3.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 12.4.0
+        version: 12.4.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/badge':
         specifier: 18.2.3
         version: 18.2.3(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -300,8 +300,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar-group@12.3.3':
-    resolution: {integrity: sha512-tNXNN27m1isBjZBN2AfWyOV8WEUF8CnFoJjNvmq7WS0gM9MfF/esaTycBVKl2/3FFx8kDl/sztxk6gJkzsNLxA==}
+  '@atlaskit/avatar-group@12.4.0':
+    resolution: {integrity: sha512-t2M63qV8KQXRpb6Yn/M/eL45c4Dmw4m+HBFTb+xGECCg30TTA3M4SGi2mc1FeKLPvN3jBeqHF1l4lvQHNXAnRQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6041,7 +6041,7 @@ snapshots:
       '@babel/runtime': 7.28.4
       react: 19.2.0
 
-  '@atlaskit/avatar-group@12.3.3(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/avatar-group@12.4.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/avatar': 25.5.0(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/css': 0.15.0(@types/react@19.2.2)(react@19.2.0)
