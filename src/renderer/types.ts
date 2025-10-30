@@ -311,8 +311,13 @@ export interface AtlassifyNotification {
   /**
    * The unique identifier for the notification.
    */
-
   id: string;
+
+  /**
+   * The display order for the notification
+   */
+  order: number;
+
   /**
    * The update message for the notification.
    */
