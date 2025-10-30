@@ -166,6 +166,7 @@
     "tray": {
       "title": "Tray",
       "show_count_in_tray": "Show notifications count in tray",
+      "show_count_in_tray_help": "Show the unread notification count next to the tray icon. Useful for a quick glance at unread activity.",
       "unread_active_icon": "Highlight unread notifications",
       "unread_active_icon_help": "Use a green {{appName}} logo when there are unread notifications.",
       "alternate_icon": "Use alternate idle icon",
@@ -179,11 +180,13 @@
       "keyboard_shortcut": "Enable keyboard shortcut",
       "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
       "system_notifications": "Show system notifications",
+      "system_notifications_help": "Display native operating system notifications for new unread notifications.",
       "play_sound": "Play sound for new notifications",
       "volume_up": "Volume up",
       "volume_down": "Volume down",
       "volume_reset": "Reset volume",
-      "startup": "Open at startup"
+      "startup": "Open at startup",
+      "startup_help": "Launch {{appName}} automatically at startup."
     },
     "reset": {
       "title": "Reset Settings",

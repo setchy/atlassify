@@ -175,7 +175,9 @@
       "open_links_foreground": "Vordergrund",
       "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
       "startup": "Im Start geöffnet",
+      "startup_help": "Starten Sie {{appName}} automatisch beim Start.",
       "system_notifications": "Systembenachrichtigungen anzeigen",
+      "system_notifications_help": "Zeigen Sie native Betriebssystembenachrichtigungen für neue ungelesene Benachrichtigungen an.",
       "title": "System",
       "volume_down": "Lautstärke nach unten",
       "volume_reset": "Volumen zurücksetzen",
@@ -186,6 +188,7 @@
       "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
       "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
+      "show_count_in_tray_help": "Zeigt die Anzahl der ungelesenen Benachrichtigungen neben dem Taskleistensymbol an. \nNützlich für einen schnellen Blick auf ungelesene Aktivitäten.",
       "title": "Tablett",
       "unread_active_icon": "Machen Sie ungelesene Benachrichtigungen hervor",
       "unread_active_icon_help": "Verwenden Sie ein grünes {{appName}} -Logo, wenn es ungelesene Benachrichtigungen gibt."

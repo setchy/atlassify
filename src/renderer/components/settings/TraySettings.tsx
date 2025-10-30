@@ -19,14 +19,21 @@ export const TraySettings: FC = () => {
       <Heading size="small">{t('settings.tray.title')}</Heading>
 
       {window.atlassify.platform.isMacOS() && (
-        <Checkbox
-          isChecked={settings.showNotificationsCountInTray}
-          label={t('settings.tray.show_count_in_tray')}
-          name="showNotificationsCountInTray"
-          onChange={(evt) =>
-            updateSetting('showNotificationsCountInTray', evt.target.checked)
-          }
-        />
+        <Inline space="space.100">
+          <Checkbox
+            isChecked={settings.showNotificationsCountInTray}
+            label={t('settings.tray.show_count_in_tray')}
+            name="showNotificationsCountInTray"
+            onChange={(evt) =>
+              updateSetting('showNotificationsCountInTray', evt.target.checked)
+            }
+          />
+          <InlineMessage appearance="info">
+            <div className="w-60 text-xs">
+              {t('settings.tray.show_count_in_tray_help')}
+            </div>
+          </InlineMessage>
+        </Inline>
       )}
 
       <Inline space="space.100">

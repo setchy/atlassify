@@ -175,7 +175,9 @@
       "open_links_foreground": "Premier plan",
       "play_sound": "Jouez au son pour de nouvelles notifications",
       "startup": "Ouvert au démarrage",
+      "startup_help": "Lancez {{appName}} automatiquement au démarrage.",
       "system_notifications": "Afficher les notifications du système",
+      "system_notifications_help": "Affichez les notifications natives du système d'exploitation pour les nouvelles notifications non lues.",
       "title": "Système",
       "volume_down": "Volume",
       "volume_reset": "Réinitialiser le volume",
@@ -186,6 +188,7 @@
       "alternate_icon": "Utiliser une icône inactif alternative",
       "alternate_icon_help": "Utilisez un logo blanc {{appName}} (au lieu du logo noir par défaut) lorsque toutes les notifications sont lues. Ce paramètre est particulièrement utile pour les appareils qui ont une menubar ou une barre de tâches sur le thème foncé.",
       "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
+      "show_count_in_tray_help": "Affichez le nombre de notifications non lues à côté de l'icône de la barre d'état. \nUtile pour un aperçu rapide des activités non lues.",
       "title": "Plateau",
       "unread_active_icon": "Mettre en évidence les notifications non lues",
       "unread_active_icon_help": "Utilisez un logo vert {{appName}} lorsqu'il existe des notifications non lues."
