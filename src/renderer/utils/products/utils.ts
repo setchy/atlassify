@@ -64,6 +64,8 @@ export async function inferAtlassianProduct(
       return PRODUCTS.jira_service_management;
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
+    case 'post-office':
+      return PRODUCTS.rovo;
     case 'team-central':
       return PRODUCTS.home;
     default:

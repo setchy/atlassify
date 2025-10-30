@@ -5,6 +5,8 @@ import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/type
 
 import { formatDistanceToNowStrict, isValid, parseISO } from 'date-fns';
 
+import { logWarn } from '../../shared/logger';
+
 import { Constants } from '../constants';
 import i18n from '../i18n';
 import type { AtlassifyNotification, Chevron } from '../types';
@@ -22,12 +24,29 @@ export function extractRepositoryName(
   return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 
+export function extractRovoContextName(
+  notification: AtlassifyNotification,
+): string {
+  try {
+    const pathname = new URL(notification.url).pathname;
+
+    return (
+      pathname
+        .split('/').pop();
+  } catch (error) {
+    logWarn('Error extracting Rovo context name:', error);
+    return null;
+  }
+}
+
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
 ): string {
   switch (notification.product.type) {
     case 'bitbucket':
       return extractRepositoryName(notification);
+    case 'rovo':
+      return extractRovoContextName(notification);
     case 'home': {
       const key = extractGoalOrProjectKey(notification);
 
