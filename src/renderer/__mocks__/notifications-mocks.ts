@@ -9,6 +9,7 @@ import { mockAtlassianCloudAccount } from './state-mocks';
 export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   {
     id: '138661096',
+    order: 0,
     notificationGroup: {
       id: '138661096',
       size: 1,
@@ -37,6 +38,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   },
   {
     id: '148827438',
+    order: 1,
     notificationGroup: {
       id: '138661096',
       size: 2,

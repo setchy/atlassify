@@ -10,6 +10,7 @@ import type {
   CategoryType,
   Link,
   ReadStateType,
+  SettingsState,
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -23,6 +24,7 @@ import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';
+import { getFlattenedNotificationsByProduct } from './group';
 
 export function setTrayIconColor(notifications: AccountNotifications[]) {
   const allNotificationsCount = getNotificationCount(notifications);
@@ -104,6 +106,9 @@ export async function getAllNotifications(
       }),
   );
 
+  // Set the order property for the notifications
+  stabilizeNotificationsOrder(notifications, state.settings);
+
   return notifications;
 }
 
@@ -127,6 +132,7 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
 
       return {
         id: headNotification.notificationId,
+        order: 0, // Will be set later in stabilizeNotificationsOrder
         message: headNotification.content.message,
         readState: headNotification.readState as ReadStateType,
         updated_at: headNotification.timestamp,
@@ -178,4 +184,27 @@ function determineIfMorePagesAvailable<T>(
   }
 
   return false;
+}
+
+/**
+ * Assign an order property to each notification to stabilize how they are displayed
+ * during notification interaction events (mark as read, mark as done, etc.)
+ *
+ * @param notifications
+ * @param settings
+ */
+export function stabilizeNotificationsOrder(
+  notifications: AccountNotifications[],
+  settings: SettingsState,
+) {
+  const flattenedNotifications = getFlattenedNotificationsByProduct(
+    notifications,
+    settings,
+  );
+
+  let orderIndex = 0;
+
+  for (const n of flattenedNotifications) {
+    n.order = orderIndex++;
+  }
 }
