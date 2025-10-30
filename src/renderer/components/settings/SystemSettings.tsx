@@ -81,14 +81,21 @@ export const SystemSettings: FC = () => {
         </InlineMessage>
       </Inline>
 
-      <Checkbox
-        isChecked={settings.showSystemNotifications}
-        label={t('settings.system.system_notifications')}
-        name="showNotifications"
-        onChange={(evt) =>
-          updateSetting('showSystemNotifications', evt.target.checked)
-        }
-      />
+      <Inline space="space.100">
+        <Checkbox
+          isChecked={settings.showSystemNotifications}
+          label={t('settings.system.system_notifications')}
+          name="showNotifications"
+          onChange={(evt) =>
+            updateSetting('showSystemNotifications', evt.target.checked)
+          }
+        />
+        <InlineMessage appearance="info">
+          <div className="w-60 text-xs">
+            {t('settings.system.system_notifications_help')}
+          </div>
+        </InlineMessage>
+      </Inline>
 
       <Inline alignBlock="center" space="space.100">
         <Checkbox
@@ -169,12 +176,23 @@ export const SystemSettings: FC = () => {
       </Inline>
 
       {!window.atlassify.platform.isLinux() && (
-        <Checkbox
-          isChecked={settings.openAtStartup}
-          label={t('settings.system.startup')}
-          name="openAtStartUp"
-          onChange={(evt) => updateSetting('openAtStartup', evt.target.checked)}
-        />
+        <Inline space="space.100">
+          <Checkbox
+            isChecked={settings.openAtStartup}
+            label={t('settings.system.startup')}
+            name="openAtStartUp"
+            onChange={(evt) =>
+              updateSetting('openAtStartup', evt.target.checked)
+            }
+          />
+          <InlineMessage appearance="info">
+            <div className="w-60 text-xs">
+              {t('settings.system.startup_help', {
+                appName: APPLICATION.NAME,
+              })}
+            </div>
+          </InlineMessage>
+        </Inline>
       )}
     </Stack>
   );

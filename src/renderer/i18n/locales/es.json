@@ -175,7 +175,9 @@
       "open_links_foreground": "Primer plano",
       "play_sound": "Reproducir sonido para nuevas notificaciones",
       "startup": "Abrir al inicio",
+      "startup_help": "Inicie {{appName}} automáticamente al inicio.",
       "system_notifications": "Mostrar notificaciones del sistema",
+      "system_notifications_help": "Muestra notificaciones nativas del sistema operativo para nuevas notificaciones no leídas.",
       "title": "Sistema",
       "volume_down": "Volumen hacia abajo",
       "volume_reset": "Reiniciar volumen",
@@ -186,6 +188,7 @@
       "alternate_icon": "Use un icono de inactividad alternativo",
       "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
       "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
+      "show_count_in_tray_help": "Muestra el recuento de notificaciones no leídas junto al icono de la bandeja. \nÚtil para echar un vistazo rápido a la actividad no leída.",
       "title": "Bandeja",
       "unread_active_icon": "Resaltar las notificaciones no leídas",
       "unread_active_icon_help": "Use un logotipo verde {{appName}} cuando hay notificaciones no leídas."
