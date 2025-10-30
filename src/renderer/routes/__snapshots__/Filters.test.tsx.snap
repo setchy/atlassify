@@ -1235,6 +1235,88 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                   style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                 >
                   <input
+                    aria-label="Rovo"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                    role="presentation"
+                    style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="12"
+                        rx="2"
+                        width="12"
+                        x="6"
+                        y="6"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo
+                  </span>
+                </label>
+                <span
+                  aria-label="Rovo"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  role="img"
+                  style="--themed-icon-color: initial;"
+                >
+                  <svg
+                    height="100%"
+                    viewBox="0 0 24 24"
+                  >
+                    
+    
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
+                    />
+                    
+    
+                    <path
+                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+    
+                    <path
+                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
+                  </svg>
+                  
+
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
+                >
+                  <span
+                    class="css-1a6ar2r"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                >
+                  <input
                     aria-label="Teams"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
                     tabindex="0"
@@ -2619,6 +2701,88 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     <path
                       d="M13.744 10.156h4.578c.688 0 .922.654.503 1.174l-7.16 8.837c-2.314-1.845-2.096-4.763-.402-6.892zm-3.538 3.521H5.63c-.688 0-.923-.654-.504-1.173l7.16-8.837c2.315 1.844 2.063 4.728.386 6.875z"
                       fill="var(--icon-color, #101214)"
+                    />
+                    
+
+                  </svg>
+                  
+
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
+                >
+                  <span
+                    class="css-1a6ar2r"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c82smr _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
+                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                >
+                  <input
+                    aria-label="Rovo"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                    role="presentation"
+                    style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        fill="currentColor"
+                        height="12"
+                        rx="2"
+                        width="12"
+                        x="6"
+                        y="6"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo
+                  </span>
+                </label>
+                <span
+                  aria-label="Rovo"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  role="img"
+                  style="--themed-icon-color: initial;"
+                >
+                  <svg
+                    height="100%"
+                    viewBox="0 0 24 24"
+                  >
+                    
+    
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
+                    />
+                    
+    
+                    <path
+                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+    
+                    <path
+                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
+                      fill="var(--icon-color, white)"
                     />
                     
 
