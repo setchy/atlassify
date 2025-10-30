@@ -27,7 +27,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid70"
+                    aria-labelledby="uid72"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -46,7 +46,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid70"
+                      id="uid72"
                     >
                       Atlassify
                     </span>
@@ -261,7 +261,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid70"
+                  aria-labelledby="uid72"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -280,7 +280,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid70"
+                    id="uid72"
                   >
                     Atlassify
                   </span>
@@ -552,7 +552,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid46"
+                    aria-labelledby="uid48"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -571,7 +571,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid46"
+                      id="uid48"
                     >
                       Atlassify
                     </span>
@@ -754,7 +754,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid46"
+                  aria-labelledby="uid48"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -773,7 +773,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid46"
+                    id="uid48"
                   >
                     Atlassify
                   </span>
@@ -1013,7 +1013,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid54"
+                    aria-labelledby="uid56"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -1032,7 +1032,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid54"
+                      id="uid56"
                     >
                       Atlassify
                     </span>
@@ -1215,7 +1215,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid54"
+                  aria-labelledby="uid56"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -1234,7 +1234,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid54"
+                    id="uid56"
                   >
                     Atlassify
                   </span>
@@ -1474,7 +1474,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid62"
+                    aria-labelledby="uid64"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -1493,7 +1493,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid62"
+                      id="uid64"
                     >
                       Atlassify
                     </span>
@@ -1699,7 +1699,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid62"
+                  aria-labelledby="uid64"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -1718,7 +1718,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid62"
+                    id="uid64"
                   >
                     Atlassify
                   </span>
@@ -1981,7 +1981,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid24"
+                    aria-labelledby="uid25"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -2000,7 +2000,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     </span>
                     <span
                       hidden=""
-                      id="uid24"
+                      id="uid25"
                     >
                       Atlassify
                     </span>
@@ -2175,7 +2175,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <div
-                        aria-labelledby="uid32"
+                        aria-labelledby="uid33"
                         class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                         role="img"
                       >
@@ -2194,7 +2194,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         </span>
                         <span
                           hidden=""
-                          id="uid32"
+                          id="uid33"
                         >
                           atlassify-app
                         </span>
@@ -2271,7 +2271,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 class="css-5fz2td"
                               >
                                 <div
-                                  aria-labelledby="uid34"
+                                  aria-labelledby="uid35"
                                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                   role="img"
                                 >
@@ -2290,7 +2290,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                   </span>
                                   <span
                                     hidden=""
-                                    id="uid34"
+                                    id="uid35"
                                   >
                                     #103: chore(deps): update dependency eslint
                                   </span>
@@ -2425,7 +2425,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       role="presentation"
                     >
                       <div
-                        aria-labelledby="uid38"
+                        aria-labelledby="uid39"
                         class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                         role="img"
                       >
@@ -2444,7 +2444,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                         </span>
                         <span
                           hidden=""
-                          id="uid38"
+                          id="uid39"
                         >
                           atlassify-app
                         </span>
@@ -2521,7 +2521,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 class="css-5fz2td"
                               >
                                 <div
-                                  aria-labelledby="uid40"
+                                  aria-labelledby="uid41"
                                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                   role="img"
                                 >
@@ -2540,7 +2540,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                   </span>
                                   <span
                                     hidden=""
-                                    id="uid40"
+                                    id="uid41"
                                   >
                                     Atlassify Home
                                   </span>
@@ -2604,6 +2604,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 <ul
                                   aria-label="avatar group"
                                   class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                  id="uid42"
                                 >
                                   <li
                                     class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
@@ -2722,7 +2723,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                 type="button"
               >
                 <div
-                  aria-labelledby="uid24"
+                  aria-labelledby="uid25"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -2741,7 +2742,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   </span>
                   <span
                     hidden=""
-                    id="uid24"
+                    id="uid25"
                   >
                     Atlassify
                   </span>
@@ -2916,7 +2917,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <div
-                      aria-labelledby="uid32"
+                      aria-labelledby="uid33"
                       class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
@@ -2935,7 +2936,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       </span>
                       <span
                         hidden=""
-                        id="uid32"
+                        id="uid33"
                       >
                         atlassify-app
                       </span>
@@ -3012,7 +3013,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               class="css-5fz2td"
                             >
                               <div
-                                aria-labelledby="uid34"
+                                aria-labelledby="uid35"
                                 class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                 role="img"
                               >
@@ -3031,7 +3032,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 </span>
                                 <span
                                   hidden=""
-                                  id="uid34"
+                                  id="uid35"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -3166,7 +3167,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     role="presentation"
                   >
                     <div
-                      aria-labelledby="uid38"
+                      aria-labelledby="uid39"
                       class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
@@ -3185,7 +3186,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                       </span>
                       <span
                         hidden=""
-                        id="uid38"
+                        id="uid39"
                       >
                         atlassify-app
                       </span>
@@ -3262,7 +3263,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               class="css-5fz2td"
                             >
                               <div
-                                aria-labelledby="uid40"
+                                aria-labelledby="uid41"
                                 class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                 role="img"
                               >
@@ -3281,7 +3282,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 </span>
                                 <span
                                   hidden=""
-                                  id="uid40"
+                                  id="uid41"
                                 >
                                   Atlassify Home
                                 </span>
@@ -3345,6 +3346,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               <ul
                                 aria-label="avatar group"
                                 class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                id="uid42"
                               >
                                 <li
                                   class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
@@ -4143,6 +4145,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                                 <ul
                                   aria-label="avatar group"
                                   class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                  id="uid19"
                                 >
                                   <li
                                     class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
@@ -4884,6 +4887,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                               <ul
                                 aria-label="avatar group"
                                 class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                id="uid19"
                               >
                                 <li
                                   class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
@@ -5063,7 +5067,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid146"
+                    aria-labelledby="uid150"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -5082,7 +5086,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid146"
+                      id="uid150"
                     >
                       Atlassify
                     </span>
@@ -5258,7 +5262,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   type="button"
                 >
                   <div
-                    aria-labelledby="uid168"
+                    aria-labelledby="uid173"
                     class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                     role="img"
                   >
@@ -5277,7 +5281,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     </span>
                     <span
                       hidden=""
-                      id="uid168"
+                      id="uid173"
                     >
                       Atlassify
                     </span>
@@ -5452,7 +5456,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       role="presentation"
                     >
                       <div
-                        aria-labelledby="uid176"
+                        aria-labelledby="uid181"
                         class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                         role="img"
                       >
@@ -5471,7 +5475,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         </span>
                         <span
                           hidden=""
-                          id="uid176"
+                          id="uid181"
                         >
                           atlassify-app
                         </span>
@@ -5548,7 +5552,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 class="css-5fz2td"
                               >
                                 <div
-                                  aria-labelledby="uid178"
+                                  aria-labelledby="uid183"
                                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                   role="img"
                                 >
@@ -5567,7 +5571,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                   </span>
                                   <span
                                     hidden=""
-                                    id="uid178"
+                                    id="uid183"
                                   >
                                     #103: chore(deps): update dependency eslint
                                   </span>
@@ -5702,7 +5706,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       role="presentation"
                     >
                       <div
-                        aria-labelledby="uid182"
+                        aria-labelledby="uid187"
                         class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                         role="img"
                       >
@@ -5721,7 +5725,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                         </span>
                         <span
                           hidden=""
-                          id="uid182"
+                          id="uid187"
                         >
                           atlassify-app
                         </span>
@@ -5798,7 +5802,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 class="css-5fz2td"
                               >
                                 <div
-                                  aria-labelledby="uid184"
+                                  aria-labelledby="uid189"
                                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                   role="img"
                                 >
@@ -5817,7 +5821,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                   </span>
                                   <span
                                     hidden=""
-                                    id="uid184"
+                                    id="uid189"
                                   >
                                     Atlassify Home
                                   </span>
@@ -5881,6 +5885,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 <ul
                                   aria-label="avatar group"
                                   class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                  id="uid190"
                                 >
                                   <li
                                     class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"
@@ -5999,7 +6004,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                 type="button"
               >
                 <div
-                  aria-labelledby="uid168"
+                  aria-labelledby="uid173"
                   class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                   role="img"
                 >
@@ -6018,7 +6023,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   </span>
                   <span
                     hidden=""
-                    id="uid168"
+                    id="uid173"
                   >
                     Atlassify
                   </span>
@@ -6193,7 +6198,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     role="presentation"
                   >
                     <div
-                      aria-labelledby="uid176"
+                      aria-labelledby="uid181"
                       class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
@@ -6212,7 +6217,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       </span>
                       <span
                         hidden=""
-                        id="uid176"
+                        id="uid181"
                       >
                         atlassify-app
                       </span>
@@ -6289,7 +6294,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               class="css-5fz2td"
                             >
                               <div
-                                aria-labelledby="uid178"
+                                aria-labelledby="uid183"
                                 class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                 role="img"
                               >
@@ -6308,7 +6313,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 </span>
                                 <span
                                   hidden=""
-                                  id="uid178"
+                                  id="uid183"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -6443,7 +6448,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     role="presentation"
                   >
                     <div
-                      aria-labelledby="uid182"
+                      aria-labelledby="uid187"
                       class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                       role="img"
                     >
@@ -6462,7 +6467,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                       </span>
                       <span
                         hidden=""
-                        id="uid182"
+                        id="uid187"
                       >
                         atlassify-app
                       </span>
@@ -6539,7 +6544,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               class="css-5fz2td"
                             >
                               <div
-                                aria-labelledby="uid184"
+                                aria-labelledby="uid189"
                                 class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
                                 role="img"
                               >
@@ -6558,7 +6563,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                                 </span>
                                 <span
                                   hidden=""
-                                  id="uid184"
+                                  id="uid189"
                                 >
                                   Atlassify Home
                                 </span>
@@ -6622,6 +6627,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                               <ul
                                 aria-label="avatar group"
                                 class="_1e0c1txw _19121cl4 _vwz4kb7n _2mzuagmp _6rthze3t _1pfhze3t _12l2u2gc _ahbqze3t _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t"
+                                id="uid190"
                               >
                                 <li
                                   class="_6rthze3t _1pfhze3t _12l2x0bf _ahbqze3t"

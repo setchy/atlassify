@@ -34,6 +34,7 @@ import type {
 } from '../../types';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
+import { groupNotificationsByProduct } from '../../utils/notifications/group';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -50,7 +51,7 @@ export interface IAccountNotifications {
 export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
-  const { account, notifications, hasMoreNotifications } = props;
+  const { account, notifications, error, hasMoreNotifications } = props;
   const { t } = useTranslation();
   const { markNotificationsRead, settings } = useContext(AppContext);
 
@@ -72,25 +73,26 @@ export const AccountNotifications: FC<IAccountNotifications> = (
     gridArea: 'title',
   });
 
-  const groupedNotifications = Object.values(
-    notifications?.reduce(
-      (acc: { [key: string]: AtlassifyNotification[] }, notification) => {
-        const key = notification.product.type;
-        if (!acc[key]) {
-          acc[key] = [];
-        }
-
-        acc[key].push(notification);
-        return acc;
-      },
-      {},
-    ),
+  const sortedNotifications = useMemo(
+    () => [...notifications].sort((a, b) => a.order - b.order),
+    [notifications],
   );
 
+  const groupedNotifications = useMemo(() => {
+    const map = groupNotificationsByProduct([
+      {
+        account,
+        error,
+        notifications: sortedNotifications,
+        hasMoreNotifications,
+      },
+    ]);
+
+    return Array.from(map.entries());
+  }, [account, error, sortedNotifications, hasMoreNotifications]);
+
   if (settings.groupNotificationsByProductAlphabetically) {
-    groupedNotifications.sort((a, b) =>
-      a[0].product.type.localeCompare(b[0].product.type),
-    );
+    groupedNotifications.sort((a, b) => a[0].localeCompare(b[0]));
   }
 
   const toggleAccountNotifications = () => {
@@ -227,17 +229,15 @@ export const AccountNotifications: FC<IAccountNotifications> = (
           {props.error && <Oops error={props.error} />}
           {!hasNotifications && !props.error && <AllRead />}
           {settings.groupNotificationsByProduct
-            ? Object.values(groupedNotifications).map(
-                (productNotifications) => {
-                  return (
-                    <ProductNotifications
-                      key={productNotifications[0].product.type}
-                      productNotifications={productNotifications}
-                    />
-                  );
-                },
+            ? groupedNotifications.map(
+                ([productType, productNotifications]) => (
+                  <ProductNotifications
+                    key={productType}
+                    productNotifications={productNotifications}
+                  />
+                ),
               )
-            : notifications.map((notification) => (
+            : sortedNotifications.map((notification) => (
                 <NotificationRow
                   key={notification.id}
                   notification={notification}
