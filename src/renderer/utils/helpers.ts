@@ -30,9 +30,7 @@ export function extractRovoContextName(
   try {
     const pathname = new URL(notification.url).pathname;
 
-    return (
-      pathname
-        .split('/').pop();
+    return pathname.split('/').pop();
   } catch (error) {
     logWarn('Error extracting Rovo context name:', error);
     return null;
