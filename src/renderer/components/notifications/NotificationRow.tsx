@@ -135,19 +135,39 @@ export const NotificationRow: FC<INotificationRow> = ({
                     </Box>
                     <Box as="div" id="notification-metadata">
                       <Stack space="space.025">
-                        <Box as="div" id="notification-entity">
+                        <Box
+                          as="div"
+                          id="notification-entity"
+                          paddingInlineStart={
+                            notification.entity.iconUrl
+                              ? 'space.0'
+                              : 'space.025'
+                          }
+                        >
                           <Inline
                             alignBlock={blockAlignmentByLength(
                               notificationBodyText,
                             )}
-                            space="space.050"
+                            space={
+                              notification.entity.iconUrl
+                                ? 'space.050'
+                                : 'space.075'
+                            }
                           >
-                            <Avatar
-                              appearance="square"
-                              name={notificationBodyText}
-                              size="xsmall"
-                              src={notification.entity.iconUrl}
-                            />
+                            {notification.entity.iconUrl ? (
+                              <Avatar
+                                appearance="square"
+                                name={notificationBodyText}
+                                size="xsmall"
+                                src={notification.entity.iconUrl}
+                              />
+                            ) : (
+                              <notification.product.logo
+                                appearance="brand"
+                                shouldUseNewLogoDesign
+                                size="xxsmall"
+                              />
+                            )}
                             <Text size="small">{notificationBodyText}</Text>
                           </Inline>
                         </Box>

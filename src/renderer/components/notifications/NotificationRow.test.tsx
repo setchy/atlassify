@@ -19,11 +19,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
   });
 
   describe('should render notifications', () => {
-    it('standard notification', async () => {
+    beforeEach(() => {
       jest
         .spyOn(global.Date, 'now')
         .mockImplementation(() => new Date('2024').valueOf());
+    });
 
+    it('standard notification', async () => {
       const props: INotificationRow = {
         notification: mockSingleAtlassifyNotification,
       };
@@ -42,10 +44,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('group by title', async () => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementation(() => new Date('2024').valueOf());
-
       const props: INotificationRow = {
         notification: mockSingleAtlassifyNotification,
       };
@@ -64,10 +62,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('group by title with multiple named actors', async () => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementation(() => new Date('2024').valueOf());
-
       const mockNotification = mockSingleAtlassifyNotification;
       mockNotification.notificationGroup.size = 3;
       mockNotification.notificationGroup.additionalActors = [
@@ -93,10 +87,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('group by title with multiple unnamed actors', async () => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementation(() => new Date('2024').valueOf());
-
       const mockNotification = mockSingleAtlassifyNotification;
       mockNotification.notificationGroup.size = 3;
       mockNotification.notificationGroup.additionalActors = [];
@@ -119,15 +109,35 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('compass avatar as square', async () => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementation(() => new Date('2024').valueOf());
-
       const props: INotificationRow = {
         notification: {
           ...mockSingleAtlassifyNotification,
           product: PRODUCTS.compass,
           message: 'some-project improved a scorecard',
+        },
+      };
+
+      const tree = render(
+        <AppContext.Provider
+          value={{
+            settings: { ...mockSettings, groupNotificationsByProduct: true },
+          }}
+        >
+          <NotificationRow {...props} />
+        </AppContext.Provider>,
+      );
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('missing entity icon url should default to product logo', async () => {
+      const props: INotificationRow = {
+        notification: {
+          ...mockSingleAtlassifyNotification,
+          entity: {
+            ...mockSingleAtlassifyNotification.entity,
+            iconUrl: null,
+          },
         },
       };
 
