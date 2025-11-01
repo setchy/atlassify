@@ -6,7 +6,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
   data-testid="filters"
 >
   <div
-    class="css-18bes35"
+    class="css-1e213mf"
   >
     <div
       class="css-1ja375h"
@@ -60,7 +60,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     class="grow overflow-x-auto"
   >
     <div
-      class="css-1l34ghh"
+      class="css-2oqvam"
     >
       <div
         class="css-1ntkjjh"
@@ -1492,7 +1492,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
   data-testid="filters"
 >
   <div
-    class="css-18bes35"
+    class="css-1e213mf"
   >
     <div
       class="css-1ja375h"
@@ -1546,7 +1546,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     class="grow overflow-x-auto"
   >
     <div
-      class="css-1l34ghh"
+      class="css-2oqvam"
     >
       <div
         class="css-1ntkjjh"

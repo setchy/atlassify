@@ -28,7 +28,7 @@ export const FiltersRoute: FC = () => {
       <Header fetchOnBack={true}>{t('filters.title')}</Header>
 
       <Contents>
-        <Box paddingInlineStart="space.400">
+        <Box paddingBlockEnd="space.200" paddingInlineStart="space.250">
           <Inline space="space.200">
             <Stack space="space.200">
               <FilterSection

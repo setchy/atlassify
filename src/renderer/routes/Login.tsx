@@ -78,7 +78,7 @@ export const LoginRoute: FC = () => {
         {({ formProps, submitting }) => (
           <>
             <Contents>
-              <Box paddingInline="space.400">
+              <Box paddingInline="space.250">
                 <Box>
                   {isDuplicateUsername && (
                     <ErrorMessage>{t('login.duplicate_username')}</ErrorMessage>

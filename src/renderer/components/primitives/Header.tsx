@@ -22,8 +22,8 @@ export const Header: FC<IHeader> = (props: IHeader) => {
   return (
     <Box
       paddingBlock="space.200"
-      paddingInlineEnd="space.500"
-      paddingInlineStart="space.300"
+      paddingInlineEnd="space.300"
+      paddingInlineStart="space.150"
     >
       <Inline alignBlock="center" grow="fill" spread="space-between">
         <Tooltip content="Go back" position="right">
