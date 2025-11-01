@@ -58,13 +58,13 @@ export function formatNotificationFooterText(
 export function extractRepositoryName(
   notification: AtlassifyNotification,
 ): string {
-  return notification.entity.url.split('/').slice(3, 5).join('/') || null;
+  return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 
 export function extractRovoDevContextName(
   notification: AtlassifyNotification,
 ): string {
-  const context = new URL(notification.url).pathname.split('/').pop() || null;
+  const context = new URL(notification.url).pathname.split('/').pop();
 
   return `The AI coding tool has generated code for ${context}`;
 }
