@@ -92,6 +92,16 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       expect(inferNotificationActor(mockNotification)).toBe('automation');
     });
 
+    it('should infer automation actor from rovo dev', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.rovo_dev,
+        message: 'AI generated code is ready',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationActor(mockNotification)).toBe('automation');
+    });
+
     it('should infer automation actor from displayName', () => {
       const mockNotification = {
         ...mockSingleAtlassifyNotification,

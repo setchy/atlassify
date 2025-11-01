@@ -12,6 +12,7 @@ import {
   extractRepositoryName,
   extractRovoDevContextName,
   formatNativeNotificationFooterText,
+  formatNotificationBodyText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
@@ -21,6 +22,24 @@ import { PRODUCTS } from './products';
 
 describe('renderer/utils/helpers.ts', () => {
   describe('formatting', () => {
+    describe('formatNotificationBodyText', () => {
+      it('rovo dev mapping ', () => {
+        expect(
+          formatNotificationBodyText({
+            ...mockAtlassifyNotifications[1],
+            product: PRODUCTS.rovo_dev,
+            url: 'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link,
+          }),
+        ).toBe('The AI coding tool has generated code for ATLASSIFY-123');
+      });
+
+      it('default mapping', () => {
+        expect(formatNotificationBodyText(mockAtlassifyNotifications[1])).toBe(
+          'Atlassify Home',
+        );
+      });
+    });
+
     describe('formatNotificationFooterText', () => {
       it('use path title when available ', () => {
         expect(
