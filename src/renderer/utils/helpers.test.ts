@@ -10,7 +10,9 @@ import type { Link } from '../types';
 import {
   blockAlignmentByLength,
   extractRepositoryName,
+  extractRovoDevContextName,
   formatNativeNotificationFooterText,
+  formatNotificationBodyText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   getChevronDetails,
@@ -19,13 +21,25 @@ import {
 import { PRODUCTS } from './products';
 
 describe('renderer/utils/helpers.ts', () => {
-  it('getRepositoryName', () => {
-    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe(
-      'myorg/notifications-test',
-    );
-  });
-
   describe('formatting', () => {
+    describe('formatNotificationBodyText', () => {
+      it('rovo dev mapping ', () => {
+        expect(
+          formatNotificationBodyText({
+            ...mockAtlassifyNotifications[1],
+            product: PRODUCTS.rovo_dev,
+            url: 'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link,
+          }),
+        ).toBe('The AI coding tool has generated code for ATLASSIFY-123');
+      });
+
+      it('default mapping', () => {
+        expect(formatNotificationBodyText(mockAtlassifyNotifications[1])).toBe(
+          'Atlassify Home',
+        );
+      });
+    });
+
     describe('formatNotificationFooterText', () => {
       it('use path title when available ', () => {
         expect(
@@ -141,6 +155,24 @@ describe('renderer/utils/helpers.ts', () => {
 
         expect(formatNotificationUpdatedAt(notification)).toBe('');
       });
+    });
+  });
+
+  describe('extracting', () => {
+    it('extractRepositoryName', () => {
+      const mockNotif = mockSingleAtlassifyNotification;
+
+      expect(extractRepositoryName(mockNotif)).toBe('myorg/notifications-test');
+    });
+
+    it('extractRovoDevContextName', () => {
+      const mockNotif = mockSingleAtlassifyNotification;
+      mockNotif.url =
+        'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link;
+
+      expect(extractRovoDevContextName(mockNotif)).toBe(
+        'The AI coding tool has generated code for ATLASSIFY-123',
+      );
     });
   });
 

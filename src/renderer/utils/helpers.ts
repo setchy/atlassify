@@ -16,10 +16,15 @@ export function formatProperCase(text: string) {
   });
 }
 
-export function extractRepositoryName(
+export function formatNotificationBodyText(
   notification: AtlassifyNotification,
 ): string {
-  return notification.entity.url.split('/').slice(3, 5).join('/');
+  switch (notification.product.type) {
+    case 'rovo_dev':
+      return extractRovoDevContextName(notification);
+    default:
+      return notification.entity.title;
+  }
 }
 
 export function formatNotificationFooterText(
@@ -47,7 +52,21 @@ export function formatNotificationFooterText(
     return notification.path.title;
   }
 
-  return formatProperCase(notification.product.type);
+  return notification.product.display;
+}
+
+export function extractRepositoryName(
+  notification: AtlassifyNotification,
+): string {
+  return notification.entity.url.split('/').slice(3, 5).join('/');
+}
+
+export function extractRovoDevContextName(
+  notification: AtlassifyNotification,
+): string {
+  const context = new URL(notification.url).pathname.split('/').pop();
+
+  return `The AI coding tool has generated code for ${context}`;
 }
 
 function extractGoalOrProjectKey(

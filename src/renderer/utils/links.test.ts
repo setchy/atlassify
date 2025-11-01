@@ -61,9 +61,20 @@ describe('renderer/utils/links.ts', () => {
     );
   });
 
-  it('openNotification', async () => {
-    const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
-    await openNotification(mockSingleAtlassifyNotification);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
+  describe('openNotification', () => {
+    it('openNotification should use entity url when available', async () => {
+      const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
+      await openNotification(mockSingleAtlassifyNotification);
+      expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
+    });
+
+    it('openNotification should fallback to notification url when entity url is not available', async () => {
+      const mockNotif = mockSingleAtlassifyNotification;
+      mockNotif.entity.url = null;
+      const mockNotificationUrl = mockNotif.url;
+
+      await openNotification(mockNotif);
+      expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
+    });
   });
 });

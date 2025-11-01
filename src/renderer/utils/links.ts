@@ -52,5 +52,5 @@ export function openAccountProfile(account: Account) {
 }
 
 export async function openNotification(notification: AtlassifyNotification) {
-  openExternalLink(notification.entity.url);
+  openExternalLink(notification.entity.url ?? notification.url);
 }

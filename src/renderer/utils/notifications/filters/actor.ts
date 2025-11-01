@@ -68,6 +68,10 @@ export function inferNotificationActor(
     return 'automation';
   }
 
+  if (notification.product.type === 'rovo_dev') {
+    return 'automation';
+  }
+
   if (notification.actor.displayName?.startsWith('Automation for')) {
     return 'automation';
   }

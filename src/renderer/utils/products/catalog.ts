@@ -7,6 +7,7 @@ import {
   JiraIcon,
   JiraProductDiscoveryIcon,
   JiraServiceManagementIcon,
+  RovoDevIcon,
   TeamsIcon,
 } from '@atlaskit/logo';
 
@@ -50,6 +51,11 @@ export const PRODUCTS: Record<ProductType, AtlassianProduct> = {
     type: 'jira_service_management',
     display: 'Jira Service Management',
     logo: JiraServiceManagementIcon,
+  },
+  rovo_dev: {
+    type: 'rovo_dev',
+    display: 'Rovo Dev',
+    logo: RovoDevIcon,
   },
   teams: {
     type: 'teams',

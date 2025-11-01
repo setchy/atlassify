@@ -63,6 +63,38 @@ describe('renderer/utils/products/utils.ts', () => {
       });
     });
 
+    describe('rovo dev product inference', () => {
+      it('should infer rovo dev product', async () => {
+        const mockNotification = {
+          ...createProductNotificationMock('post-office'),
+          content: {
+            message: 'AI generated code is ready',
+          },
+        } as AtlassianHeadNotificationFragment;
+
+        const inferredProduct = await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          mockNotification,
+        );
+        expect(inferredProduct).toBe(PRODUCTS.rovo_dev);
+      });
+
+      it('should return unknown is unsure', async () => {
+        const mockNotification = {
+          ...createProductNotificationMock('post-office'),
+          content: {
+            message: 'some other message type',
+          },
+        } as AtlassianHeadNotificationFragment;
+
+        const inferredProduct = await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          mockNotification,
+        );
+        expect(inferredProduct).toBe(PRODUCTS.unknown);
+      });
+    });
+
     describe('lookupJiraProjectType', () => {
       const host = 'somehost';
       const makeJiraNotif = (

@@ -64,6 +64,11 @@ export async function inferAtlassianProduct(
       return PRODUCTS.jira_service_management;
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
+    case 'post-office':
+      if (headNotification.content.message.includes('AI generated code')) {
+        return PRODUCTS.rovo_dev;
+      }
+      return PRODUCTS.unknown;
     case 'team-central':
       return PRODUCTS.home;
     default:
