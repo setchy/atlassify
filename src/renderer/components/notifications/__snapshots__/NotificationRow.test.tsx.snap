@@ -118,7 +118,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           class="css-1926jks"
                         >
                           <div
-                            class="css-k5cxwk"
+                            class="css-scnxu0"
                             id="notification-entity"
                           >
                             <div
@@ -390,7 +390,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         class="css-1926jks"
                       >
                         <div
-                          class="css-k5cxwk"
+                          class="css-scnxu0"
                           id="notification-entity"
                         >
                           <div
@@ -719,7 +719,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           class="css-1926jks"
                         >
                           <div
-                            class="css-k5cxwk"
+                            class="css-scnxu0"
                             id="notification-entity"
                           >
                             <div
@@ -972,7 +972,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         class="css-1926jks"
                       >
                         <div
-                          class="css-k5cxwk"
+                          class="css-scnxu0"
                           id="notification-entity"
                         >
                           <div
@@ -1282,7 +1282,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           class="css-1926jks"
                         >
                           <div
-                            class="css-k5cxwk"
+                            class="css-scnxu0"
                             id="notification-entity"
                           >
                             <div
@@ -1657,7 +1657,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         class="css-1926jks"
                       >
                         <div
-                          class="css-k5cxwk"
+                          class="css-scnxu0"
                           id="notification-entity"
                         >
                           <div
@@ -2089,7 +2089,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           class="css-1926jks"
                         >
                           <div
-                            class="css-k5cxwk"
+                            class="css-scnxu0"
                             id="notification-entity"
                           >
                             <div
@@ -2355,7 +2355,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         class="css-1926jks"
                       >
                         <div
-                          class="css-k5cxwk"
+                          class="css-scnxu0"
                           id="notification-entity"
                         >
                           <div
@@ -2678,7 +2678,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                           class="css-1926jks"
                         >
                           <div
-                            class="css-k5cxwk"
+                            class="css-scnxu0"
                             id="notification-entity"
                           >
                             <div
@@ -2931,7 +2931,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         class="css-1926jks"
                       >
                         <div
-                          class="css-k5cxwk"
+                          class="css-scnxu0"
                           id="notification-entity"
                         >
                           <div
