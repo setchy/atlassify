@@ -139,9 +139,9 @@ export const NotificationRow: FC<INotificationRow> = ({
                           as="div"
                           id="notification-entity"
                           paddingInlineStart={
-                            !notification.entity.iconUrl
-                              ? 'space.025'
-                              : 'space.0'
+                            notification.entity.iconUrl
+                              ? 'space.0'
+                              : 'space.025'
                           }
                         >
                           <Inline
