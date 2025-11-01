@@ -10,7 +10,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
         data-testid="login"
       >
         <div
-          class="css-18bes35"
+          class="css-1e213mf"
         >
           <div
             class="css-1ja375h"
@@ -64,7 +64,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           class="grow overflow-x-auto"
         >
           <div
-            class="css-1rd5nai"
+            class="css-1q0ykya"
           >
             <div
               class="css-k5cxwk"
@@ -308,7 +308,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
       data-testid="login"
     >
       <div
-        class="css-18bes35"
+        class="css-1e213mf"
       >
         <div
           class="css-1ja375h"
@@ -362,7 +362,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
         class="grow overflow-x-auto"
       >
         <div
-          class="css-1rd5nai"
+          class="css-1q0ykya"
         >
           <div
             class="css-k5cxwk"

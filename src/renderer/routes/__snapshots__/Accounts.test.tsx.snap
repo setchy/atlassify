@@ -6,7 +6,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
   data-testid="accounts"
 >
   <div
-    class="css-18bes35"
+    class="css-1e213mf"
   >
     <div
       class="css-1ja375h"
@@ -60,7 +60,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-auto"
   >
     <div
-      class="css-p1x8su"
+      class="css-i91uyn"
     >
       <div
         class="css-1ja375h"
@@ -254,7 +254,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
   data-testid="accounts"
 >
   <div
-    class="css-18bes35"
+    class="css-1e213mf"
   >
     <div
       class="css-1ja375h"
@@ -308,7 +308,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-auto"
   >
     <div
-      class="css-1gmr5x9"
+      class="css-jv47vm"
     >
       <div
         class="css-1ja375h"

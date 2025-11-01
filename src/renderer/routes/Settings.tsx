@@ -21,7 +21,7 @@ export const SettingsRoute: FC = () => {
       <Header fetchOnBack>{t('settings.title')}</Header>
 
       <Contents>
-        <Box paddingBlockEnd="space.200" paddingInline="space.400">
+        <Box paddingBlockEnd="space.200" paddingInline="space.250">
           <Stack space="space.200">
             <AppearanceSettings />
             <NotificationSettings />
