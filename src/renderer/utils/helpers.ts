@@ -5,8 +5,6 @@ import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/type
 
 import { formatDistanceToNowStrict, isValid, parseISO } from 'date-fns';
 
-import { logWarn } from '../../shared/logger';
-
 import { Constants } from '../constants';
 import i18n from '../i18n';
 import type { AtlassifyNotification, Chevron } from '../types';
@@ -18,22 +16,14 @@ export function formatProperCase(text: string) {
   });
 }
 
-export function extractRepositoryName(
+export function formatNotificationBodyText(
   notification: AtlassifyNotification,
 ): string {
-  return notification.entity.url.split('/').slice(3, 5).join('/');
-}
-
-export function extractRovoContextName(
-  notification: AtlassifyNotification,
-): string {
-  try {
-    const pathname = new URL(notification.url).pathname;
-
-    return pathname.split('/').pop();
-  } catch (error) {
-    logWarn('Error extracting Rovo context name:', error);
-    return null;
+  switch (notification.product.type) {
+    case 'rovo_dev':
+      return extractRovoDevContextName(notification);
+    default:
+      return notification.entity.title;
   }
 }
 
@@ -43,8 +33,6 @@ export function formatNotificationFooterText(
   switch (notification.product.type) {
     case 'bitbucket':
       return extractRepositoryName(notification);
-    case 'rovo':
-      return extractRovoContextName(notification);
     case 'home': {
       const key = extractGoalOrProjectKey(notification);
 
@@ -64,7 +52,21 @@ export function formatNotificationFooterText(
     return notification.path.title;
   }
 
-  return formatProperCase(notification.product.type);
+  return notification.product.display;
+}
+
+export function extractRepositoryName(
+  notification: AtlassifyNotification,
+): string {
+  return notification.entity.url.split('/').slice(3, 5).join('/') || null;
+}
+
+export function extractRovoDevContextName(
+  notification: AtlassifyNotification,
+): string {
+  const context = new URL(notification.url).pathname.split('/').pop() || null;
+
+  return `The AI coding tool has generated code for ${context}`;
 }
 
 function extractGoalOrProjectKey(

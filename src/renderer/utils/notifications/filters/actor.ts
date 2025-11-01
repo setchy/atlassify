@@ -68,7 +68,7 @@ export function inferNotificationActor(
     return 'automation';
   }
 
-  if (notification.product.type === 'rovo') {
+  if (notification.product.type === 'rovo_dev') {
     return 'automation';
   }
 

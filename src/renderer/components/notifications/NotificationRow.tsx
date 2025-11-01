@@ -14,6 +14,7 @@ import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import {
   blockAlignmentByLength,
+  formatNotificationBodyText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   isCompassScorecardNotification,
@@ -82,6 +83,7 @@ export const NotificationRow: FC<INotificationRow> = ({
 
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
+  const notificationBodyText = formatNotificationBodyText(notification);
   const notificationFooterText = formatNotificationFooterText(notification);
 
   return (
@@ -136,19 +138,17 @@ export const NotificationRow: FC<INotificationRow> = ({
                         <Box as="div" id="notification-entity">
                           <Inline
                             alignBlock={blockAlignmentByLength(
-                              notification.entity.title,
+                              notificationBodyText,
                             )}
                             space="space.050"
                           >
                             <Avatar
                               appearance="square"
-                              name={notification.entity.title}
+                              name={notificationBodyText}
                               size="xsmall"
                               src={notification.entity.iconUrl}
                             />
-                            <Text size="small">
-                              {notification.entity.title}
-                            </Text>
+                            <Text size="small">{notificationBodyText}</Text>
                           </Inline>
                         </Box>
                         <Box

@@ -16,7 +16,7 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "cSpell.words": ["Atlassify", "codegen", "xcss"],
+  "cSpell.words": ["Atlassify", "codegen", "rovo", "xcss"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "i18n-ally.translate.engines": ["google"],

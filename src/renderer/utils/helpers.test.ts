@@ -10,6 +10,7 @@ import type { Link } from '../types';
 import {
   blockAlignmentByLength,
   extractRepositoryName,
+  extractRovoDevContextName,
   formatNativeNotificationFooterText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
@@ -19,12 +20,6 @@ import {
 import { PRODUCTS } from './products';
 
 describe('renderer/utils/helpers.ts', () => {
-  it('getRepositoryName', () => {
-    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe(
-      'myorg/notifications-test',
-    );
-  });
-
   describe('formatting', () => {
     describe('formatNotificationFooterText', () => {
       it('use path title when available ', () => {
@@ -141,6 +136,24 @@ describe('renderer/utils/helpers.ts', () => {
 
         expect(formatNotificationUpdatedAt(notification)).toBe('');
       });
+    });
+  });
+
+  describe('extracting', () => {
+    it('extractRepositoryName', () => {
+      const mockNotif = mockSingleAtlassifyNotification;
+
+      expect(extractRepositoryName(mockNotif)).toBe('myorg/notifications-test');
+    });
+
+    it('extractRovoDevContextName', () => {
+      const mockNotif = mockSingleAtlassifyNotification;
+      mockNotif.url =
+        'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link;
+
+      expect(extractRovoDevContextName(mockNotif)).toBe(
+        'The AI coding tool has generated code for ATLASSIFY-123',
+      );
     });
   });
 

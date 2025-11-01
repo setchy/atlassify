@@ -65,7 +65,10 @@ export async function inferAtlassianProduct(
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
     case 'post-office':
-      return PRODUCTS.rovo;
+      if (headNotification.content.message.includes('AI generated code')) {
+        return PRODUCTS.rovo_dev;
+      }
+      return PRODUCTS.unknown;
     case 'team-central':
       return PRODUCTS.home;
     default:
