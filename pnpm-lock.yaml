@@ -94,8 +94,8 @@ importers:
         specifier: 15.1.11
         version: 15.1.11(@babel/core@7.28.4)(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/tokens':
-        specifier: 7.0.0
-        version: 7.0.0(@types/react@19.2.2)(react@19.2.0)
+        specifier: 7.1.0
+        version: 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tooltip':
         specifier: 20.7.0
         version: 20.7.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -512,8 +512,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/tokens@7.0.0':
-    resolution: {integrity: sha512-dTnot5S31jVmjXc/i7XkkEZuhK14AsCa/Tb3SUDpXA8B//0qgUXGUYp2HYK+YzraFTX1cshwEdl82lll6l/XGg==}
+  '@atlaskit/tokens@7.1.0':
+    resolution: {integrity: sha512-VoDwyhhd+dOGogrJFI0eZoUmsTSXF0LtvpK7I0JxHEvXpf6Ov/+Ie0J1TRGIzAMc3zVEn91wWkuY5GjHOnSSdA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6050,7 +6050,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/popup': 4.4.2(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tooltip': 20.7.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6074,7 +6074,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6089,7 +6089,7 @@ snapshots:
       '@atlaskit/codemod-utils': 4.2.5
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6126,7 +6126,7 @@ snapshots:
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/tooltip': 20.7.0(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
       '@babel/runtime': 7.28.4
@@ -6149,7 +6149,7 @@ snapshots:
       '@atlaskit/icon': 28.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6166,7 +6166,7 @@ snapshots:
   '@atlaskit/css-reset@7.3.8(@types/react@19.2.2)(react@19.2.0)':
     dependencies:
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       react: 19.2.0
     transitivePeerDependencies:
@@ -6232,7 +6232,7 @@ snapshots:
       '@atlaskit/icon': 28.5.3(@babel/core@7.28.4)(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       final-form: 4.20.10
       final-form-focus: 1.1.2(final-form@4.20.10)
@@ -6248,7 +6248,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 0.15.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6261,7 +6261,7 @@ snapshots:
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/tile': 1.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/register': 7.28.3(@babel/core@7.28.4)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6282,7 +6282,7 @@ snapshots:
       '@atlaskit/popup': 4.4.2(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6351,7 +6351,7 @@ snapshots:
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6392,7 +6392,7 @@ snapshots:
       '@atlaskit/pragmatic-drag-and-drop': 1.7.7
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       bind-event-listener: 3.0.0
@@ -6525,7 +6525,7 @@ snapshots:
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/interaction-context': 3.1.0(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6546,7 +6546,7 @@ snapshots:
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6588,7 +6588,7 @@ snapshots:
       '@atlaskit/react-select': 3.8.0(@babel/core@7.28.4)(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6620,7 +6620,7 @@ snapshots:
     dependencies:
       '@atlaskit/interaction-context': 3.1.0(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6633,7 +6633,7 @@ snapshots:
       '@atlaskit/analytics-next': 11.1.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6656,7 +6656,7 @@ snapshots:
   '@atlaskit/tile@1.0.0(@types/react@19.2.2)(react@19.2.0)':
     dependencies:
       '@atlaskit/skeleton': 2.1.2(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       react: 19.2.0
@@ -6674,7 +6674,7 @@ snapshots:
       '@atlaskit/primitives': 16.1.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/spinner': 19.0.6(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
@@ -6699,7 +6699,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/tokens@7.0.0(@types/react@19.2.2)(react@19.2.0)':
+  '@atlaskit/tokens@7.1.0(@types/react@19.2.2)(react@19.2.0)':
     dependencies:
       '@atlaskit/ds-lib': 5.1.1(@types/react@19.2.2)(react@19.2.0)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.0)
@@ -6722,7 +6722,7 @@ snapshots:
       '@atlaskit/popper': 7.1.5(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/portal': 5.1.8(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/theme': 21.0.0(@types/react@19.2.2)(react@19.2.0)
-      '@atlaskit/tokens': 7.0.0(@types/react@19.2.2)(react@19.2.0)
+      '@atlaskit/tokens': 7.1.0(@types/react@19.2.2)(react@19.2.0)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.0)
       bind-event-listener: 3.0.0
