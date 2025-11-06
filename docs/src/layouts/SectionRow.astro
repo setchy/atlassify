@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+
 import { marked } from 'marked';
 
 export interface Props {
@@ -21,7 +22,6 @@ const {
   isReversed = false,
 } = Astro.props;
 ---
-
 <div
   class:list={[
     "flex px-12 py-16 lg:py-24",
@@ -57,6 +57,6 @@ const {
       )
     }
 
-    <slot />
+    <slot/>
   </div>
 </div>

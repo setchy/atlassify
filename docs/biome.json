@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.3.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -9,8 +9,14 @@
           "options": {
             "groups": [
               ["astro:*", "*astro-*", "astro*/*"],
+              ":BLANK_LINE:",
               ":PACKAGE:",
-              ":ALIAS:"
+              ":BLANK_LINE:",
+              ["~/constants"],
+              ":BLANK_LINE:",
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              "**"
             ]
           }
         }
@@ -60,6 +66,12 @@
     "parser": {
       "tailwindDirectives": true
     }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true
   },
   "javascript": {
     "formatter": {

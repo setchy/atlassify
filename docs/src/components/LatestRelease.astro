@@ -1,9 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
+
 import { format } from 'date-fns';
 import { Octokit } from 'octokit';
-import DownloadButton from '~/components/DownloadButton.astro';
+
 import { siteMetadata, URLs } from '~/constants';
+
+import DownloadButton from '~/components/DownloadButton.astro';
 import type {
   DownloadLink,
   DownloadLinks,
@@ -106,7 +109,6 @@ const loadInitialData = async (): Promise<HeroData> => {
 
 const { downloadLinks, version, releaseDate } = await loadInitialData();
 ---
-
 <div class="text-sm mt-4">
   {
     version ? (

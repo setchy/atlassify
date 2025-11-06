@@ -1,10 +1,11 @@
 ---
+import '~/styles/app.css';
+
+import { siteMetadata } from '~/constants';
+
 import Footer from '~/components/Footer.astro';
 import GoogleAnalytics from '~/components/GoogleAnalytics.astro';
 import Navbar from '~/components/Navbar.astro';
-
-import '~/styles/app.css';
-import { siteMetadata } from '~/constants';
 
 export interface Props {
   title: string;
@@ -14,53 +15,52 @@ const { title } = Astro.props;
 const pageTitle = `${title} - ${siteMetadata.title}`;
 const ogImage = `${siteMetadata.url}/images/social.png`;
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={siteMetadata.description} />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content={siteMetadata.description}>
     <title>{pageTitle}</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" href="/images/favicon.ico">
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="/images/favicon-32x32.png"
-    />
+    >
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="/images/favicon-16x16.png"
-    />
+    >
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="/images/apple-touch-icon.png"
-    />
+    >
 
     <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={siteMetadata.description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteMetadata.url} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={siteMetadata.description}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={siteMetadata.url}>
+    <meta property="og:image" content={ogImage}>
 
     <!-- Google Analytics and Site Verification -->
-    <GoogleAnalytics />
+    <GoogleAnalytics/>
     <meta
       name="google-site-verification"
       content={siteMetadata.google.siteVerification}
-    />
+    >
   </head>
   <body class="flex flex-col min-h-screen">
-    <Navbar currentPathname={Astro.url.pathname} />
-    <slot />
-    <Footer currentPathname={Astro.url.pathname} />
+    <Navbar currentPathname={Astro.url.pathname}/>
+    <slot/>
+    <Footer currentPathname={Astro.url.pathname}/>
   </body>
 </html>

@@ -1,12 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-import GitHubRepo from '~/components/GitHubRepo.astro';
+
 import { siteMetadata } from '~/constants';
+
+import GitHubRepo from '~/components/GitHubRepo.astro';
 
 const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
 ---
-
 <nav class:list={["py-8 px-8", isHomepage && "bg-atlassify-docs-hero"]}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
@@ -14,7 +15,7 @@ const isHomepage = currentPathname === '/';
     >
       <div class="flex items-center shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
-          <Icon name="atlassify-white" size={48} class="w-8 sm:w-12" />
+          <Icon name="atlassify-white" size={48} class="w-8 sm:w-12"/>
         </a>
       </div>
 
@@ -40,7 +41,7 @@ const isHomepage = currentPathname === '/';
           }
 
           <li>
-            <GitHubRepo />
+            <GitHubRepo/>
           </li>
         </ul>
       </div>
