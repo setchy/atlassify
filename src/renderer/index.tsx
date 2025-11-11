@@ -7,8 +7,8 @@ import './i18n';
 
 setGlobalTheme({
   colorMode: 'light',
-  light: 'light-brand-refresh',
-  dark: 'dark-brand-refresh',
+  light: 'light',
+  dark: 'dark',
   typography: 'typography',
 });
 
