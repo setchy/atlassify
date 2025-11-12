@@ -190,21 +190,23 @@ function determineIfMorePagesAvailable<T>(
  * Assign an order property to each notification to stabilize how they are displayed
  * during notification interaction events (mark as read, mark as done, etc.)
  *
- * @param notifications
+ * @param accountNotifications
  * @param settings
  */
 export function stabilizeNotificationsOrder(
-  notifications: AccountNotifications[],
+  accountNotifications: AccountNotifications[],
   settings: SettingsState,
 ) {
-  const flattenedNotifications = getFlattenedNotificationsByProduct(
-    notifications,
-    settings,
-  );
-
   let orderIndex = 0;
 
-  for (const n of flattenedNotifications) {
-    n.order = orderIndex++;
+  for (const account of accountNotifications) {
+    const flattenedNotifications = getFlattenedNotificationsByProduct(
+      account.notifications,
+      settings,
+    );
+
+    for (const n of flattenedNotifications) {
+      n.order = orderIndex++;
+    }
   }
 }

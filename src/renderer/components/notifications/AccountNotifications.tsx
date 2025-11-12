@@ -51,7 +51,7 @@ export interface IAccountNotifications {
 export const AccountNotifications: FC<IAccountNotifications> = (
   props: IAccountNotifications,
 ) => {
-  const { account, notifications, error, hasMoreNotifications } = props;
+  const { account, notifications, hasMoreNotifications } = props;
   const { t } = useTranslation();
   const { markNotificationsRead, settings } = useContext(AppContext);
 
@@ -79,21 +79,16 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   );
 
   const groupedNotifications = useMemo(() => {
-    const map = groupNotificationsByProduct([
-      {
-        account,
-        error,
-        notifications: sortedNotifications,
-        hasMoreNotifications,
-      },
-    ]);
+    const map = groupNotificationsByProduct(sortedNotifications);
 
-    return Array.from(map.entries());
-  }, [account, error, sortedNotifications, hasMoreNotifications]);
+    const notifications = Array.from(map.entries());
 
-  if (settings.groupNotificationsByProductAlphabetically) {
-    groupedNotifications.sort((a, b) => a[0].localeCompare(b[0]));
-  }
+    if (settings.groupNotificationsByProductAlphabetically) {
+      notifications.sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
+    return notifications;
+  }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
   const toggleAccountNotifications = () => {
     setShowAccountNotifications(!showAccountNotifications);
