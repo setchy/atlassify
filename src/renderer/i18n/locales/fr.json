@@ -2,7 +2,7 @@
   "accounts": {
     "add_new": "Ajouter un nouveau compte",
     "logout_account": "Déconnexion {{username}}",
-    "open_profile": "Profil de compte ouvert",
+    "open_profile": "Profil de compte ouvert ↗",
     "refresh_account": "Actualiser {{username}}",
     "title": "Comptes"
   },
@@ -127,8 +127,8 @@
         "description2": "Marquez toutes les notifications de compte",
         "description3": "en tant que lecture"
       },
-      "open_profile": "Profil de compte ouvert",
-      "pull_requests": "Mes demandes de traction"
+      "open_profile": "Profil de compte ouvert ↗",
+      "pull_requests": "Mes demandes de traction ↗"
     },
     "interactions": {
       "mark_as_read": "Marquer comme lu",
@@ -137,7 +137,7 @@
     "native_count": "Vous avez {{count}} notifications",
     "product": {
       "mark_all_read": "Marquez toutes les notifications de produit comme lu",
-      "open_product": "Ouvrir {{name}}"
+      "open_product": "Ouvrir {{name}} ↗"
     }
   },
   "products": {
@@ -204,7 +204,7 @@
     "notifications": {
       "label": "Notifications",
       "read": "notifications",
-      "tooltip": "{{count}}{{countSuffix}} {{countType}}",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
       "unread": "Notifications non lues"
     },
     "quit": {

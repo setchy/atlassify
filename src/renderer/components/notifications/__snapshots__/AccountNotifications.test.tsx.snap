@@ -115,7 +115,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -349,7 +349,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -640,7 +640,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -842,7 +842,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -1101,7 +1101,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -1303,7 +1303,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -1562,7 +1562,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -1787,7 +1787,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -2069,7 +2069,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -2811,7 +2811,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -3610,7 +3610,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -4352,7 +4352,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx account view
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
@@ -5155,7 +5155,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -5350,7 +5350,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                     <span
                       class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                     >
-                      My pull requests
+                      My pull requests ↗
                     </span>
                   </span>
                 </button>
@@ -6092,7 +6092,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx should toggl
                   <span
                     class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
                   >
-                    My pull requests
+                    My pull requests ↗
                   </span>
                 </span>
               </button>
