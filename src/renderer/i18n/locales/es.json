@@ -2,7 +2,7 @@
   "accounts": {
     "add_new": "Agregar nueva cuenta",
     "logout_account": "Cerrar sesión {{username}}",
-    "open_profile": "Perfil de cuenta abierto",
+    "open_profile": "Perfil de cuenta abierto ↗",
     "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"
   },
@@ -127,8 +127,8 @@
         "description2": "Marque todas las notificaciones de cuenta",
         "description3": "como leída"
       },
-      "open_profile": "Perfil de cuenta abierto",
-      "pull_requests": "Mis solicitudes de extracción"
+      "open_profile": "Perfil de cuenta abierto ↗",
+      "pull_requests": "Mis solicitudes de extracción ↗"
     },
     "interactions": {
       "mark_as_read": "Marcar como leído",
@@ -137,7 +137,7 @@
     "native_count": "Tienes {{count}} notificaciones",
     "product": {
       "mark_all_read": "Marque todas las notificaciones de productos como lectura",
-      "open_product": "Abrir {{name}}"
+      "open_product": "Abrir {{name}} ↗"
     }
   },
   "products": {
@@ -204,7 +204,7 @@
     "notifications": {
       "label": "Notificaciones",
       "read": "notificaciones",
-      "tooltip": "{{count}}{{countSuffix}} {{countType}}",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
       "unread": "Notificaciones no leídas"
     },
     "quit": {
