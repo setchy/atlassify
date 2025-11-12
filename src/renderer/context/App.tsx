@@ -92,7 +92,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
-  // Run once on mount to restore settings/state
   // biome-ignore lint/correctness/useExhaustiveDependencies: restoreSettings is stable and should run only once
   useEffect(() => {
     restoreSettings();
@@ -102,11 +101,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     setTheme(settings.theme);
   }, [settings.theme]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We only want fetchNotifications to be called for particular state changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
     fetchNotifications({ auth, settings });
   }, [
-    auth.accounts,
+    auth.accounts.length,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByTitle,
     settings.filterTimeSensitive,
