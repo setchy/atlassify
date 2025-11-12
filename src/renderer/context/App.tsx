@@ -210,8 +210,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       // Remove notifications for account
       removeAccountNotifications(account);
 
-      // Remove from auth state
       const updatedAuth = removeAccount(auth, account);
+
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },
