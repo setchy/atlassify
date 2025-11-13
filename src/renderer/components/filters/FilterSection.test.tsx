@@ -4,14 +4,14 @@ import userEvent from '@testing-library/user-event';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
-import { timeSensitiveFilter } from '../../utils/notifications/filters';
+import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
   const updateFilter = jest.fn();
 
-  const mockFilter = timeSensitiveFilter;
-  const mockFilterSetting = 'filterTimeSensitive';
+  const mockFilter = engagementFilter;
+  const mockFilterSetting = 'filterEngagementStates';
 
   it('should render itself & its children', () => {
     const tree = render(
@@ -49,7 +49,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       </AppContext.Provider>,
     );
 
-    await userEvent.click(screen.getByLabelText('Mention'));
+    await userEvent.click(screen.getByLabelText('Mentions'));
 
     expect(updateFilter).toHaveBeenCalledWith(
       mockFilterSetting,
@@ -58,7 +58,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
     );
 
     expect(
-      screen.getByLabelText('Mention').parentNode.parentNode,
+      screen.getByLabelText('Mentions').parentNode.parentNode,
     ).toMatchSnapshot();
   });
 
@@ -68,7 +68,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         value={{
           settings: {
             ...mockSettings,
-            filterTimeSensitive: ['mention'],
+            filterEngagementStates: ['mention'],
           },
           notifications: [],
           updateFilter,
@@ -82,7 +82,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       </AppContext.Provider>,
     );
 
-    await userEvent.click(screen.getByLabelText('Comment'));
+    await userEvent.click(screen.getByLabelText('Comments'));
 
     expect(updateFilter).toHaveBeenCalledWith(
       mockFilterSetting,
@@ -91,7 +91,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
     );
 
     expect(
-      screen.getByLabelText('Comment').parentNode.parentNode,
+      screen.getByLabelText('Comments').parentNode.parentNode,
     ).toMatchSnapshot();
   });
 });

@@ -108,7 +108,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     auth.accounts.length,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByTitle,
-    settings.filterTimeSensitive,
+    settings.filterEngagementStates,
     settings.filterCategories,
     settings.filterReadStates,
     settings.filterProducts,

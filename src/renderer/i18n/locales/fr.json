@@ -73,6 +73,21 @@
         "title": "Regardant"
       }
     },
+    "engagement": {
+      "comment": {
+        "description": "Commentaires",
+        "title": "Commentaire"
+      },
+      "mention": {
+        "description": "Mentions",
+        "title": "Mention"
+      },
+      "reactions": {
+        "description": "Réactions",
+        "title": "Réactions"
+      },
+      "title": "Fiançailles"
+    },
     "products": {
       "description": "{{type}} Notifications",
       "title": "Produits"
@@ -87,17 +102,6 @@
         "description": "Notifications non lues",
         "title": "Non lu"
       }
-    },
-    "time_sensitive": {
-      "comment": {
-        "description": "Commentaires",
-        "title": "Commentaire"
-      },
-      "mention": {
-        "description": "Mentions",
-        "title": "Mention"
-      },
-      "title": "Sensible au temps"
     },
     "title": "Filtres"
   },

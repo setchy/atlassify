@@ -59,7 +59,7 @@ const mockSystemSettings: SystemSettingsState = {
 };
 
 const mockFilters: FilterSettingsState = {
-  filterTimeSensitive: [],
+  filterEngagementStates: [],
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],
