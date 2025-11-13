@@ -87,7 +87,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 :
               </span>
               <div
-                class="_11c82smr _kqswh2mm _lcxv1rj4 -container"
+                class="_11c81ixg _kqswh2mm _lcxv1rj4 _1tn22smr -container"
                 data-testid="settings-language-selector-select--container"
                 style="box-sizing: border-box;"
               >
@@ -100,7 +100,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   role="status"
                 />
                 <div
-                  class="_12ji1r31 _1qu2glyw _12y3idpf _2rkofajl _v564r5cv _1h6d1elr _1dqonqa1 _189ee4h9 _4cvr1h6o _80om73ad _1e0c1txw _1n261g80 _1bah1yb4 _kqswh2mm _bfhk1j9a _1tke1ylp _ca0qze3t _u5f3ze3t _n3tdze3t _19bvze3t _15peftgi _1ke8ftgi _jaboglyw _1u6l1bml _4cvx1elr _123byq51 _d0altlke _irr31d5g _1ogl1caj -control"
+                  class="_12ji1r31 _1qu2glyw _12y3idpf _2rkofajl _v564r5cv _1h6drsbi _1dqonqa1 _189ee4h9 _4cvr1h6o _80om73ad _1e0c1txw _1n261g80 _1bah1yb4 _kqswh2mm _bfhk1j9a _1tke1ylp _ca0qze3t _u5f3ze3t _n3tdze3t _19bvze3t _15peftgi _1ke8ftgi _jaboglyw _1u6luvb6 _4cvxrsbi _123byq51 _d0altlke _irr3l4ek _1ogl1caj -control"
                   data-testid="settings-language-selector-select--control"
                   style="box-sizing: border-box;"
                 >
@@ -110,14 +110,14 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                     style="box-sizing: border-box;"
                   >
                     <div
-                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _19pkidpf _2hwxv77o _otyridpf _18u0v77o _syaz1fxt -singleValue"
+                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _19pkidpf _2hwxv77o _otyridpf _18u0v77o _syazi7uo -singleValue"
                       id="react-select-2-single-value"
                       style="box-sizing: border-box;"
                     >
                       English
                     </div>
                     <div
-                      class="_16jlkb7n _1o9zkb7n _i0dl1wug _nd5l1sux _1mouv77o _195gv77o _1rjcv77o _1e0c1n7u _yv0e12qd _syaz1fxt _j8d6idpf _1av2idpf _1doyidpf _pfztidpf _uoe3idpf _1recidpf _70xridpf _1k96idpf _eq43idpf _1h9u1kw7 _ckog1yjy _1x651r31 _1nn4glyw _1rzeidpf _1yd8yh40 _aetr11ps _uy7x15vq _1qjlqvpr -Input"
+                      class="_16jlkb7n _1o9zkb7n _i0dl1wug _nd5l1sux _1mouv77o _195gv77o _1rjcv77o _1e0c1n7u _yv0e12qd _syazi7uo _j8d6idpf _1av2idpf _1doyidpf _pfztidpf _uoe3idpf _1recidpf _70xridpf _1k96idpf _eq43idpf _1h9u1kw7 _ckog1yjy _1x651r31 _1nn4glyw _1rzeidpf _1yd8yh40 _aetr11ps _uy7x15vq _1qjlqvpr -Input"
                       data-testid="settings-language-selector-select--input-container"
                       data-value=""
                       style="box-sizing: border-box;"
@@ -149,7 +149,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   >
                     <div
                       aria-hidden="true"
-                      class="_v564vrg3 _1e0c1txw _syaz1gjq _ca0q12x7 _u5f3v77o _n3td12x7 _19bvv77o _30l31gjq -indicatorContainer"
+                      class="_v564vrg3 _1e0c1txw _syazazsu _ca0q12x7 _u5f3v77o _n3td12x7 _19bvv77o _30l3azsu -indicatorContainer"
                       data-testid="settings-language-selector-select--dropdown-indicator"
                       style="box-sizing: border-box;"
                     >
@@ -520,7 +520,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid10"
                 type="button"
@@ -622,7 +622,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid12"
                 type="button"
@@ -738,7 +738,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid14"
                 type="button"
@@ -845,7 +845,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid16"
                 type="button"
@@ -947,7 +947,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid18"
                 type="button"
@@ -1121,7 +1121,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid21"
                 type="button"
@@ -1228,7 +1228,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid23"
                 type="button"
@@ -1527,7 +1527,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syaz1gjq _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _11c82smr _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
                 id="uid31"
                 type="button"
