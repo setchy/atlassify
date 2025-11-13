@@ -2,14 +2,14 @@ import type { FC } from 'react';
 
 import { B300, N0 } from '@atlaskit/theme/colors';
 
-interface IAtlassifyIcon {
+interface AtlassifyIconProps {
   size?: number;
   color?: 'brand' | 'default';
 }
-export const AtlassifyIcon: FC<IAtlassifyIcon> = ({
+export const AtlassifyIcon: FC<AtlassifyIconProps> = ({
   size = 48,
   color = 'default',
-}: IAtlassifyIcon) => {
+}: AtlassifyIconProps) => {
   const fillColor = color === 'brand' ? B300 : N0;
 
   return (

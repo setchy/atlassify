@@ -6,7 +6,7 @@ exports[`renderer/components/layout/Contents.tsx should render itself & its chil
   "baseElement": <body>
     <div>
       <div
-        class="grow overflow-x-auto"
+        class="grow overflow-x-hidden overflow-y-auto"
       >
         Test
       </div>
@@ -14,7 +14,7 @@ exports[`renderer/components/layout/Contents.tsx should render itself & its chil
   </body>,
   "container": <div>
     <div
-      class="grow overflow-x-auto"
+      class="grow overflow-x-hidden overflow-y-auto"
     >
       Test
     </div>

@@ -39,7 +39,7 @@ import {
 } from '../utils/links';
 import { rendererLogError } from '../utils/logger';
 
-interface IValues {
+interface LoginProps {
   username: Username;
   token: Token;
 }
@@ -53,7 +53,7 @@ export const LoginRoute: FC = () => {
     useState<boolean>(false);
 
   const loginUser = useCallback(
-    async (data: IValues) => {
+    async (data: LoginProps) => {
       try {
         await checkIfCredentialsAreValid(data.username, data.token);
         await login(data as LoginOptions);
@@ -71,10 +71,10 @@ export const LoginRoute: FC = () => {
   );
 
   return (
-    <Page id="login">
+    <Page testId="login">
       <Header>{t('login.title')}</Header>
 
-      <Form<IValues> onSubmit={loginUser}>
+      <Form<LoginProps> onSubmit={loginUser}>
         {({ formProps, submitting }) => (
           <>
             <Contents>

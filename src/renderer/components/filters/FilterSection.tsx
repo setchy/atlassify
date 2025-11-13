@@ -12,7 +12,7 @@ import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
-export interface IFilterSection<T extends FilterValue> {
+export interface FilterSectionProps<T extends FilterValue> {
   title: string;
   filter: Filter<T>;
   filterSetting: keyof FilterSettingsState;
@@ -22,7 +22,7 @@ export const FilterSection = <T extends FilterValue>({
   title,
   filter,
   filterSetting,
-}: IFilterSection<T>) => {
+}: FilterSectionProps<T>) => {
   const { updateFilter, settings, notifications } = useContext(AppContext);
 
   return (

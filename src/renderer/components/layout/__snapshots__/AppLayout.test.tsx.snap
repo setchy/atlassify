@@ -6,16 +6,22 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
   "baseElement": <body>
     <div>
       <div
-        class="flex min-h-screen"
+        class="flex flex-col min-h-screen"
       >
+        <button
+          aria-label="initial focus"
+          class="sr-only"
+          data-testid="initial-focus-sentinel"
+          type="button"
+        />
         <div
           class="w-sidebar shrink-0"
         >
           <div
-            class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+            class="flex flex-col w-sidebar h-full bg-atlassify-sidebar"
           >
             <div
-              class="flex flex-1 flex-col items-center"
+              class="css-vl8czg"
             >
               <div
                 class="css-qae7qe"
@@ -122,57 +128,57 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="css-1qsxb5u"
-            >
               <div
-                class="css-1q8tdp"
+                class="css-1qsxb5u"
               >
                 <div
-                  role="presentation"
+                  class="css-1q8tdp"
                 >
-                  <button
-                    class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-                    data-testid="sidebar-quit"
-                    type="button"
+                  <div
+                    role="presentation"
                   >
-                    <span
-                      class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                    <button
+                      class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                      data-testid="sidebar-quit"
+                      type="button"
                     >
                       <span
-                        aria-hidden="true"
-                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                        style="color: var(--ds-text-accent-gray-bolder);"
+                        class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                       >
-                        <svg
-                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
-                          fill="none"
-                          role="presentation"
-                          viewBox="0 0 16 16"
+                        <span
+                          aria-hidden="true"
+                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                          style="color: var(--ds-text-accent-gray-bolder);"
                         >
-                          <path
-                            clip-rule="evenodd"
-                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
-                            fill="currentcolor"
-                            fill-rule="evenodd"
-                          />
-                        </svg>
+                          <svg
+                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                            fill="none"
+                            role="presentation"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              clip-rule="evenodd"
+                              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                              fill="currentcolor"
+                              fill-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                        >
+                          Quit Atlassify
+                        </span>
                       </span>
-                      <span
-                        class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
-                      >
-                        Quit Atlassify
-                      </span>
-                    </span>
-                  </button>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="flex-1"
+          class="flex-1 pl-sidebar"
         >
           Test
         </div>
@@ -181,16 +187,22 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
   </body>,
   "container": <div>
     <div
-      class="flex min-h-screen"
+      class="flex flex-col min-h-screen"
     >
+      <button
+        aria-label="initial focus"
+        class="sr-only"
+        data-testid="initial-focus-sentinel"
+        type="button"
+      />
       <div
         class="w-sidebar shrink-0"
       >
         <div
-          class="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar"
+          class="flex flex-col w-sidebar h-full bg-atlassify-sidebar"
         >
           <div
-            class="flex flex-1 flex-col items-center"
+            class="css-vl8czg"
           >
             <div
               class="css-qae7qe"
@@ -297,57 +309,57 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-1qsxb5u"
-          >
             <div
-              class="css-1q8tdp"
+              class="css-1qsxb5u"
             >
               <div
-                role="presentation"
+                class="css-1q8tdp"
               >
-                <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
-                  data-testid="sidebar-quit"
-                  type="button"
+                <div
+                  role="presentation"
                 >
-                  <span
-                    class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
+                  <button
+                    class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                    data-testid="sidebar-quit"
+                    type="button"
                   >
                     <span
-                      aria-hidden="true"
-                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                      style="color: var(--ds-text-accent-gray-bolder);"
+                      class="_v564g17y _1e0c1txw _16jlidpf _1o9zidpf _1wpz1h6o _1wybidpf _vwz4idpf _uiztglyw"
                     >
-                      <svg
-                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
-                        fill="none"
-                        role="presentation"
-                        viewBox="0 0 16 16"
+                      <span
+                        aria-hidden="true"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        style="color: var(--ds-text-accent-gray-bolder);"
                       >
-                        <path
-                          clip-rule="evenodd"
-                          d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+                          fill="none"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
+                      >
+                        Quit Atlassify
+                      </span>
                     </span>
-                    <span
-                      class="_ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itidpf _1reo15vq _18m915vq _1bsbt94y _4t3it94y _kqswstnw _ogto7mnp _uiztglyw _o5721q9c"
-                    >
-                      Quit Atlassify
-                    </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="flex-1"
+        class="flex-1 pl-sidebar"
       >
         Test
       </div>

@@ -7,8 +7,8 @@ import { AppContext } from '../../context/App';
 import * as comms from '../../utils/comms';
 import * as theme from '../../utils/theme';
 import {
-  type IProductNotifications,
   ProductNotifications,
+  type ProductNotificationsProps,
 } from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
@@ -27,7 +27,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - light mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -43,7 +43,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - dark mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -61,7 +61,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     const mockBitbucketNotification = mockAtlassifyNotifications[0];
     expect(mockBitbucketNotification.product.type).toBe('bitbucket');
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: [mockBitbucketNotification],
     };
 
@@ -93,7 +93,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should toggle product notifications visibility', async () => {
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
@@ -109,7 +109,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should mark all product notifications as read', async () => {
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 

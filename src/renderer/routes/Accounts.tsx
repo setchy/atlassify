@@ -46,7 +46,7 @@ export const AccountsRoute: FC = () => {
   });
 
   return (
-    <Page id="accounts">
+    <Page testId="accounts">
       <Header>{t('accounts.title')}</Header>
 
       <Contents>

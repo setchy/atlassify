@@ -4,11 +4,11 @@ import type { AtlassifyError } from '../types';
 import { Errors } from '../utils/errors';
 import { EmojiSplash } from './layout/EmojiSplash';
 
-interface IOops {
+interface OopsProps {
   error: AtlassifyError;
 }
 
-export const Oops: FC<IOops> = ({ error }: IOops) => {
+export const Oops: FC<OopsProps> = ({ error }: OopsProps) => {
   const err = error ?? Errors.UNKNOWN;
 
   const emoji = useMemo(
