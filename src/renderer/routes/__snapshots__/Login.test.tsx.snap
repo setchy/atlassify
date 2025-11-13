@@ -80,7 +80,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-testid="login-username"
                 >
                   <label
-                    class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                    class="_11c8dcr7 _1e0c1o8l _syazazsu _k48pmoej _6rth1b66 _1pfhze3t"
                     data-testid="login-username--label"
                     for="username-uid3"
                     id="username-uid3-label"
@@ -117,7 +117,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-testid="login-token"
                 >
                   <label
-                    class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                    class="_11c8dcr7 _1e0c1o8l _syazazsu _k48pmoej _6rth1b66 _1pfhze3t"
                     data-testid="login-token--label"
                     for="token-uid4"
                     id="token-uid4-label"
@@ -378,7 +378,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 data-testid="login-username"
               >
                 <label
-                  class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                  class="_11c8dcr7 _1e0c1o8l _syazazsu _k48pmoej _6rth1b66 _1pfhze3t"
                   data-testid="login-username--label"
                   for="username-uid3"
                   id="username-uid3-label"
@@ -415,7 +415,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 data-testid="login-token"
               >
                 <label
-                  class="_11c8dcr7 _1e0c1o8l _syaz1gjq _k48pmoej _6rth1b66 _1pfhze3t"
+                  class="_11c8dcr7 _1e0c1o8l _syazazsu _k48pmoej _6rth1b66 _1pfhze3t"
                   data-testid="login-token--label"
                   for="token-uid4"
                   id="token-uid4-label"
