@@ -1391,13 +1391,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <span
-                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk7qp0 _w8l57vkz _17527vkz"
                                         >
                                           <span
                                             aria-hidden="true"
                                             class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                             data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                            style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
                                               height="24"
@@ -1442,13 +1442,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                       >
                                         <span
-                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
+                                          class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk7qp0 _w8l57vkz _17527vkz"
                                         >
                                           <span
                                             aria-hidden="true"
                                             class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                             data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                            style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
                                               height="24"
@@ -1766,13 +1766,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
                                       <span
-                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk7qp0 _w8l57vkz _17527vkz"
                                       >
                                         <span
                                           aria-hidden="true"
                                           class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                           data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
                                             height="24"
@@ -1817,13 +1817,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
                                       <span
-                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk1v33 _w8l57vkz _17527vkz"
+                                        class="_1e0c1txw _1bsb1osq _4t3i1osq _bfhk7qp0 _w8l57vkz _17527vkz"
                                       >
                                         <span
                                           aria-hidden="true"
                                           class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
                                           data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-subtle, #626F86); --icon-secondary-color: var(--ds-icon-subtle, #626F86);"
+                                          style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
                                             height="24"
