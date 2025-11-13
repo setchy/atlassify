@@ -104,12 +104,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               class="_16jlkb7n _1o9zkb7n _i0dl1osq _1ul9idpf _p12f1osq _vwz419ii _bozgu2gc"
             >
               <span
-                class="_1e0c1ule _syaz1fxt _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syazi7uo _1reo15vq _1bto1l2s _o5721q9c"
               >
                 Atlassify
               </span>
               <span
-                class="_1e0c1ule _syaz131l _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syaz1rpy _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
               >
                 user@atlassify.io
               </span>
@@ -352,12 +352,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               class="_16jlkb7n _1o9zkb7n _i0dl1osq _1ul9idpf _p12f1osq _vwz419ii _bozgu2gc"
             >
               <span
-                class="_1e0c1ule _syaz1fxt _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syazi7uo _1reo15vq _1bto1l2s _o5721q9c"
               >
                 Atlassify
               </span>
               <span
-                class="_1e0c1ule _syaz131l _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syaz1rpy _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
               >
                 user@atlassify.io
               </span>
