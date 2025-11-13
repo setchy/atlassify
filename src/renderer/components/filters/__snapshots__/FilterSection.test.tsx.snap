@@ -40,7 +40,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     </span>
   </label>
   <span
-    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
   >
     <span
       aria-hidden="true"
@@ -114,7 +114,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
     </span>
   </label>
   <span
-    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
   >
     <span
       aria-hidden="true"
@@ -203,7 +203,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               </span>
             </label>
             <span
-              class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+              class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
             >
               <span
                 aria-hidden="true"
@@ -274,7 +274,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               </span>
             </label>
             <span
-              class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+              class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
             >
               <span
                 aria-hidden="true"
@@ -361,7 +361,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             </span>
           </label>
           <span
-            class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+            class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
           >
             <span
               aria-hidden="true"
@@ -432,7 +432,7 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
             </span>
           </label>
           <span
-            class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1v33 _syaz16ni _1bsb7vkz _4t3i7vkz _2rko12b0"
+            class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
           >
             <span
               aria-hidden="true"
