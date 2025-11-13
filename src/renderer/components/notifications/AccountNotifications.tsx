@@ -222,7 +222,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       {showAccountNotifications && (
         <Fragment>
           {props.error && <Oops error={props.error} />}
+
           {!hasNotifications && !props.error && <AllRead />}
+
           {settings.groupNotificationsByProduct
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
