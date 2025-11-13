@@ -491,7 +491,7 @@ export type ReadStateType = 'unread' | 'read';
  * - 'mention' - A user has mentioned you as part of the notification.
  * - 'comment' - A user has commented on your prior work.
  */
-export type TimeSensitiveType = 'mention' | 'comment';
+export type TimeSensitiveType = 'mention' | 'comment' | 'reactions';
 
 /**
  * The actor type.

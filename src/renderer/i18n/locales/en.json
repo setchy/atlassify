@@ -98,6 +98,10 @@
       "comment": {
         "title": "Comment",
         "description": "Comments"
+      },
+      "reactions": {
+        "title": "Reactions",
+        "description": "Reactions"
       }
     }
   },

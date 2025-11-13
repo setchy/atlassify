@@ -1,4 +1,5 @@
 import CommentIcon from '@atlaskit/icon/core/comment';
+import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
 import i18n from '../../../i18n';
@@ -20,6 +21,11 @@ const TIME_SENSITIVE_DETAILS: Record<TimeSensitiveType, FilterDetails> = {
     name: i18n.t('filters.time_sensitive.comment.title'),
     description: i18n.t('filters.time_sensitive.comment.description'),
     icon: CommentIcon,
+  },
+  reactions: {
+    name: i18n.t('filters.time_sensitive.reactions.title'),
+    description: i18n.t('filters.time_sensitive.reactions.description'),
+    icon: EmojiIcon,
   },
 };
 
@@ -69,6 +75,10 @@ export function inferNotificationSensitivity(
 
   if (notification.message.includes(' replied ')) {
     return 'comment';
+  }
+
+  if (/ reacted.+to your /.exec(notification.message)) {
+    return 'reactions';
   }
 
   return null;

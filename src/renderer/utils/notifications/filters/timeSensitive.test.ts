@@ -27,6 +27,8 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
     expect(timeSensitiveFilter.isFilterSet(settings, 'comment')).toBe(true);
 
     expect(timeSensitiveFilter.isFilterSet(settings, 'mention')).toBe(false);
+
+    expect(timeSensitiveFilter.isFilterSet(settings, 'reactions')).toBe(false);
   });
 
   it('getTimeSensitiveFilterCount', () => {
@@ -41,6 +43,10 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
     expect(
       timeSensitiveFilter.getFilterCount(mockAcctNotifications, 'mention'),
     ).toBe(1);
+
+    expect(
+      timeSensitiveFilter.getFilterCount(mockAcctNotifications, 'reactions'),
+    ).toBe(0);
   });
 
   it('filterNotificationByTimeSensitive', () => {
@@ -56,6 +62,10 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
     expect(
       timeSensitiveFilter.filterNotification(mockNotification, 'mention'),
     ).toBe(true);
+
+    expect(
+      timeSensitiveFilter.filterNotification(mockNotification, 'reactions'),
+    ).toBe(false);
   });
 
   describe('inferNotificationSensitivity', () => {
@@ -75,6 +85,24 @@ describe('renderer/utils/notifications/filters/timeSensitive.ts', () => {
       } as AtlassifyNotification;
 
       expect(inferNotificationSensitivity(mockNotification)).toBe('comment');
+    });
+
+    it('should infer reactions sensitivity', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        message: 'someone reacted to your comment',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationSensitivity(mockNotification)).toBe('reactions');
+    });
+
+    it('should infer reactions sensitivity with emoji', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        message: 'someone reacted 🍻 to your comment',
+      } as AtlassifyNotification;
+
+      expect(inferNotificationSensitivity(mockNotification)).toBe('reactions');
     });
 
     it('should return null if no sensitivity can be inferred from message', () => {
