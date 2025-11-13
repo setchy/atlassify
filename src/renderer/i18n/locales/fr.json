@@ -97,6 +97,10 @@
         "description": "Mentions",
         "title": "Mention"
       },
+      "reactions": {
+        "description": "Réactions",
+        "title": "Réactions"
+      },
       "title": "Sensible au temps"
     },
     "title": "Filtres"

@@ -97,6 +97,10 @@
         "description": "Erwähnungen",
         "title": "Erwähnen"
       },
+      "reactions": {
+        "description": "Reaktionen",
+        "title": "Reaktionen"
+      },
       "title": "Zeitempfindlich"
     },
     "title": "Filter"
