@@ -1,4 +1,4 @@
-import type { NewCoreIconProps, NewUtilityIconProps } from '@atlaskit/icon';
+import type { NewCoreIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
 
 import type {
@@ -26,9 +26,7 @@ export interface FilterDetails {
    *
    * See https://atlassian.design/components/icon/icon-explorer for available icons.
    */
-  icon?:
-    | React.ComponentType<NewUtilityIconProps>
-    | React.ComponentType<NewCoreIconProps>;
+  icon?: React.ComponentType<NewCoreIconProps>;
 
   /**
    * The logo for the filter.
