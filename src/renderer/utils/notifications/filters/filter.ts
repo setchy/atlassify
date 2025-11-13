@@ -2,9 +2,9 @@ import type { AtlassifyNotification, SettingsState } from '../../../types';
 import {
   actorFilter,
   categoryFilter,
+  engagementFilter,
   productFilter,
   readStateFilter,
-  timeSensitiveFilter,
 } from '.';
 
 export function filterNotifications(
@@ -14,11 +14,11 @@ export function filterNotifications(
   return notifications.filter((notification) => {
     let passesFilters = true;
 
-    if (timeSensitiveFilter.hasFilters(settings)) {
+    if (engagementFilter.hasFilters(settings)) {
       passesFilters =
         passesFilters &&
-        settings.filterTimeSensitive.some((ts) =>
-          timeSensitiveFilter.filterNotification(notification, ts),
+        settings.filterEngagementStates.some((ts) =>
+          engagementFilter.filterNotification(notification, ts),
         );
     }
 
@@ -60,7 +60,7 @@ export function filterNotifications(
 
 export function hasActiveFilters(settings: SettingsState): boolean {
   return (
-    timeSensitiveFilter.hasFilters(settings) ||
+    engagementFilter.hasFilters(settings) ||
     categoryFilter.hasFilters(settings) ||
     actorFilter.hasFilters(settings) ||
     readStateFilter.hasFilters(settings) ||

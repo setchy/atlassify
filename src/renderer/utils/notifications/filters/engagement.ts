@@ -6,53 +6,53 @@ import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
+  EngagementStateType,
   SettingsState,
-  TimeSensitiveType,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
-const TIME_SENSITIVE_DETAILS: Record<TimeSensitiveType, FilterDetails> = {
+const ENGAGEMENT_DETAILS: Record<EngagementStateType, FilterDetails> = {
   mention: {
-    name: i18n.t('filters.time_sensitive.mention.title'),
-    description: i18n.t('filters.time_sensitive.mention.description'),
+    name: i18n.t('filters.engagement.mention.title'),
+    description: i18n.t('filters.engagement.mention.description'),
     icon: MentionIcon,
   },
   comment: {
-    name: i18n.t('filters.time_sensitive.comment.title'),
-    description: i18n.t('filters.time_sensitive.comment.description'),
+    name: i18n.t('filters.engagement.comment.title'),
+    description: i18n.t('filters.engagement.comment.description'),
     icon: CommentIcon,
   },
-  reactions: {
-    name: i18n.t('filters.time_sensitive.reactions.title'),
-    description: i18n.t('filters.time_sensitive.reactions.description'),
+  reaction: {
+    name: i18n.t('filters.engagement.reactions.title'),
+    description: i18n.t('filters.engagement.reactions.description'),
     icon: EmojiIcon,
   },
 };
 
-export const timeSensitiveFilter: Filter<TimeSensitiveType> = {
-  FILTER_TYPES: TIME_SENSITIVE_DETAILS,
+export const engagementFilter: Filter<EngagementStateType> = {
+  FILTER_TYPES: ENGAGEMENT_DETAILS,
 
-  getTypeDetails(type: TimeSensitiveType): FilterDetails {
+  getTypeDetails(type: EngagementStateType): FilterDetails {
     return this.FILTER_TYPES[type];
   },
 
   hasFilters(settings: SettingsState): boolean {
-    return settings.filterTimeSensitive.length > 0;
+    return settings.filterEngagementStates.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: TimeSensitiveType): boolean {
-    return settings.filterTimeSensitive.includes(type);
+  isFilterSet(settings: SettingsState, type: EngagementStateType): boolean {
+    return settings.filterEngagementStates.includes(type);
   },
 
   getFilterCount(
     notifications: AccountNotifications[],
-    timeSensitive: TimeSensitiveType,
+    engagementState: EngagementStateType,
   ) {
     return notifications.reduce(
       (memo, acc) =>
         memo +
         acc.notifications.filter((n) =>
-          this.filterNotification(n, timeSensitive),
+          this.filterNotification(n, engagementState),
         ).length,
       0,
     );
@@ -60,15 +60,15 @@ export const timeSensitiveFilter: Filter<TimeSensitiveType> = {
 
   filterNotification(
     notification: AtlassifyNotification,
-    timeSensitive: TimeSensitiveType,
+    engagementState: EngagementStateType,
   ): boolean {
-    return inferNotificationSensitivity(notification) === timeSensitive;
+    return inferNotificationEngagementState(notification) === engagementState;
   },
 };
 
-export function inferNotificationSensitivity(
+export function inferNotificationEngagementState(
   notification: AtlassifyNotification,
-): TimeSensitiveType | null {
+): EngagementStateType | null {
   if (notification.message.includes(' mentioned ')) {
     return 'mention';
   }
@@ -78,7 +78,7 @@ export function inferNotificationSensitivity(
   }
 
   if (/ reacted.+to your /.exec(notification.message)) {
-    return 'reactions';
+    return 'reaction';
   }
 
   return null;

@@ -428,7 +428,7 @@ describe('renderer/context/App.tsx', () => {
         } as AuthState,
         settings: {
           ...mockSettings,
-          filterTimeSensitive: defaultSettings.filterTimeSensitive,
+          filterEngagementStates: defaultSettings.filterEngagementStates,
           filterCategories: defaultSettings.filterCategories,
           filterReadStates: defaultSettings.filterReadStates,
           filterProducts: defaultSettings.filterProducts,

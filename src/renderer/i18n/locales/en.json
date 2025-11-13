@@ -89,14 +89,14 @@
         "description": "Read notifications"
       }
     },
-    "time_sensitive": {
-      "title": "Time Sensitive",
+    "engagement": {
+      "title": "Engagement",
       "mention": {
-        "title": "Mention",
+        "title": "Mentions",
         "description": "Mentions"
       },
       "comment": {
-        "title": "Comment",
+        "title": "Comments",
         "description": "Comments"
       },
       "reactions": {

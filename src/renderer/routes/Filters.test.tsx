@@ -80,16 +80,16 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('Mention'));
+        await userEvent.click(screen.getByLabelText('Mentions'));
 
         expect(updateFilter).toHaveBeenCalledWith(
-          'filterTimeSensitive',
+          'filterEngagementStates',
           'mention',
           true,
         );
       });
 
-      it('should filter by time sensitive - existing filter set', async () => {
+      it('should filter by engagement state - existing filter set', async () => {
         await act(async () => {
           render(
             <AppContext.Provider
@@ -97,7 +97,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: {
                   ...mockSettings,
-                  filterTimeSensitive: ['mention'],
+                  filterEngagementStates: ['mention'],
                 },
                 notifications: [],
                 updateFilter,
@@ -108,10 +108,10 @@ describe('renderer/routes/Filters.tsx', () => {
           );
         });
 
-        await userEvent.click(screen.getByLabelText('Mention'));
+        await userEvent.click(screen.getByLabelText('Mentions'));
 
         expect(updateFilter).toHaveBeenCalledWith(
-          'filterTimeSensitive',
+          'filterEngagementStates',
           'mention',
           false,
         );

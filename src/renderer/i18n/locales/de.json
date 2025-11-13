@@ -73,6 +73,21 @@
         "title": "Aufpassen"
       }
     },
+    "engagement": {
+      "comment": {
+        "description": "Kommentare",
+        "title": "Kommentar"
+      },
+      "mention": {
+        "description": "Erwähnungen",
+        "title": "Erwähnen"
+      },
+      "reactions": {
+        "description": "Reaktionen",
+        "title": "Reaktionen"
+      },
+      "title": "Engagement"
+    },
     "products": {
       "description": "{{type}} Benachrichtigungen",
       "title": "Produkte"
@@ -87,21 +102,6 @@
         "description": "Ungelesene Benachrichtigungen",
         "title": "Ungelesen"
       }
-    },
-    "time_sensitive": {
-      "comment": {
-        "description": "Kommentare",
-        "title": "Kommentar"
-      },
-      "mention": {
-        "description": "Erwähnungen",
-        "title": "Erwähnen"
-      },
-      "reactions": {
-        "description": "Reaktionen",
-        "title": "Reaktionen"
-      },
-      "title": "Zeitempfindlich"
     },
     "title": "Filter"
   },
