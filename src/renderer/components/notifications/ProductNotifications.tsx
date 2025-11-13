@@ -14,11 +14,11 @@ import { getChevronDetails } from '../../utils/helpers';
 import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
 
-export interface IProductNotifications {
+export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
 }
 
-export const ProductNotifications: FC<IProductNotifications> = ({
+export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
   const { markNotificationsRead, settings } = useContext(AppContext);

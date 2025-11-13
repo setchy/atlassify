@@ -41,15 +41,15 @@ import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 
-export interface IAccountNotifications {
+export interface AccountNotificationsProps {
   account: Account;
   notifications: AtlassifyNotification[];
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
 }
 
-export const AccountNotifications: FC<IAccountNotifications> = (
-  props: IAccountNotifications,
+export const AccountNotifications: FC<AccountNotificationsProps> = (
+  props: AccountNotificationsProps,
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
   const { t } = useTranslation();

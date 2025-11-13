@@ -25,15 +25,15 @@ import {
   readStateFilter,
 } from '../../utils/notifications/filters';
 
-export interface INotificationRow {
+export interface NotificationRowProps {
   notification: AtlassifyNotification;
   isAnimated?: boolean;
 }
 
-export const NotificationRow: FC<INotificationRow> = ({
+export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isAnimated = false,
-}: INotificationRow) => {
+}: NotificationRowProps) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);

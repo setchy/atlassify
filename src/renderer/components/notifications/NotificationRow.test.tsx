@@ -8,7 +8,7 @@ import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { PRODUCTS } from '../../utils/products';
-import { type INotificationRow, NotificationRow } from './NotificationRow';
+import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
   jest.spyOn(links, 'openNotification');
@@ -26,7 +26,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('standard notification', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
@@ -44,7 +44,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('group by title', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
@@ -69,7 +69,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         { displayName: 'User 2', avatarURL: null },
       ];
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockNotification,
       };
 
@@ -91,7 +91,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       mockNotification.notificationGroup.size = 3;
       mockNotification.notificationGroup.additionalActors = [];
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockNotification,
       };
 
@@ -109,7 +109,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('compass avatar as square', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           product: PRODUCTS.compass,
@@ -131,7 +131,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('missing entity icon url should default to product logo', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           entity: {
@@ -159,7 +159,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - click', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
@@ -184,7 +184,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
@@ -212,7 +212,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as read', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
@@ -235,7 +235,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as unread', async () => {
       const markNotificationsUnreadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           readState: 'read' as ReadStateType,

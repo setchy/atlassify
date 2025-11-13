@@ -17,7 +17,7 @@ export const SettingsRoute: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page id="settings">
+    <Page testId="settings">
       <Header fetchOnBack>{t('settings.title')}</Header>
 
       <Contents>

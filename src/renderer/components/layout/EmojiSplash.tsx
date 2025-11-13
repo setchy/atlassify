@@ -5,16 +5,16 @@ import { Box, Stack } from '@atlaskit/primitives';
 import { EmojiText } from '../primitives/EmojiText';
 import { Centered } from './Centered';
 
-interface IEmojiSplash {
+interface EmojiSplashProps {
   emoji: string;
   heading: string;
   subHeadings?: string[];
 }
 
-export const EmojiSplash: FC<IEmojiSplash> = ({
+export const EmojiSplash: FC<EmojiSplashProps> = ({
   subHeadings = [],
   ...props
-}: IEmojiSplash) => {
+}: EmojiSplashProps) => {
   return (
     <Centered>
       <Box paddingInline="space.400">

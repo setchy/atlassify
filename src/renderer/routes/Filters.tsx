@@ -24,7 +24,7 @@ export const FiltersRoute: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page id="filters">
+    <Page testId="filters">
       <Header fetchOnBack={true}>{t('filters.title')}</Header>
 
       <Contents>
