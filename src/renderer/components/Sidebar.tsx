@@ -1,4 +1,4 @@
-import { type FC, Fragment, useContext, useMemo } from 'react';
+import { type FC, Fragment, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,6 @@ import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
-import { getNotificationCount } from '../utils/notifications/notifications';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
@@ -32,12 +31,14 @@ export const Sidebar: FC = () => {
   const { t } = useTranslation();
 
   const {
-    notifications,
     fetchNotifications,
     isLoggedIn,
     settings,
     updateSetting,
     status,
+    hasMoreAccountNotifications,
+    notificationCount,
+    hasNotifications,
   } = useContext(AppContext);
 
   const toggleFilters = () => {
@@ -61,14 +62,6 @@ export const Sidebar: FC = () => {
     navigate('/', { replace: true });
     fetchNotifications();
   };
-
-  const notificationsCount = useMemo(() => {
-    return getNotificationCount(notifications);
-  }, [notifications]);
-
-  const hasMoreNotifications = useMemo(() => {
-    return notifications.some((n) => n.hasMoreNotifications);
-  }, [notifications]);
 
   const hasFilters = hasActiveFilters(settings);
 
@@ -97,8 +90,8 @@ export const Sidebar: FC = () => {
 
             <Tooltip
               content={t('sidebar.notifications.tooltip', {
-                count: notificationsCount,
-                countSuffix: hasMoreNotifications ? '+' : '',
+                count: notificationCount,
+                countSuffix: hasMoreAccountNotifications ? '+' : '',
                 countType: settings.fetchOnlyUnreadNotifications
                   ? t('sidebar.notifications.unread')
                   : t('sidebar.notifications.read'),
@@ -106,7 +99,7 @@ export const Sidebar: FC = () => {
               position="right"
             >
               <IconButton
-                appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
+                appearance={hasNotifications ? 'primary' : 'subtle'}
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}

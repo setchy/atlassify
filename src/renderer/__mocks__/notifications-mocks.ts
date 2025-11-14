@@ -1,5 +1,6 @@
 import type {
   AccountNotifications,
+  AtlassifyError,
   AtlassifyNotification,
   Link,
   ProductType,
@@ -107,6 +108,17 @@ export const mockSingleAccountNotifications: AccountNotifications[] = [
     error: null,
   },
 ];
+
+export function mockAccountWithError(
+  error: AtlassifyError,
+): AccountNotifications {
+  return {
+    account: mockAtlassianCloudAccount,
+    notifications: [],
+    hasMoreNotifications: false,
+    error,
+  };
+}
 
 export function createMockNotificationForProductType(
   id: string,

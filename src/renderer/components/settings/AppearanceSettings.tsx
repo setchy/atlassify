@@ -19,7 +19,13 @@ import { AppContext } from '../../context/App';
 import { LANGUAGES } from '../../i18n/types';
 import { loadLanguageLocale } from '../../utils/storage';
 import { setTheme } from '../../utils/theme';
-import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
+import {
+  canDecreaseZoom,
+  canIncreaseZoom,
+  decreaseZoom,
+  increaseZoom,
+  zoomLevelToPercentage,
+} from '../../utils/zoom';
 
 let zoomResizeTimeout: NodeJS.Timeout;
 const ZOOM_RESIZE_DELAY = 200;
@@ -143,13 +149,9 @@ export const AppearanceSettings: FC = () => {
                 >
                   <IconButton
                     icon={ZoomOutIcon}
+                    isDisabled={!canDecreaseZoom(zoomPercentage)}
                     label={t('settings.appearance.zoom_out')}
-                    onClick={() =>
-                      zoomPercentage > 0 &&
-                      window.atlassify.zoom.setLevel(
-                        zoomPercentageToLevel(zoomPercentage - 10),
-                      )
-                    }
+                    onClick={() => decreaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
                     testId="settings-zoom-out"
@@ -161,13 +163,9 @@ export const AppearanceSettings: FC = () => {
                 >
                   <IconButton
                     icon={ZoomInIcon}
+                    isDisabled={!canIncreaseZoom(zoomPercentage)}
                     label={t('settings.appearance.zoom_in')}
-                    onClick={() =>
-                      zoomPercentage < 120 &&
-                      window.atlassify.zoom.setLevel(
-                        zoomPercentageToLevel(zoomPercentage + 10),
-                      )
-                    }
+                    onClick={() => increaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
                     testId="settings-zoom-in"

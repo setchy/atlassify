@@ -54,6 +54,11 @@ export type CloudID = Branded<string, 'CloudID'>;
 export type JiraProjectKey = Branded<string, 'JiraProjectKey'>;
 
 /**
+ * Percentage value between 0 and 100
+ */
+export type Percentage = Branded<number, 'Percentage'>;
+
+/**
  * An Atlassian account.
  */
 export interface Account {
@@ -89,9 +94,10 @@ export interface Account {
 export type SettingsValue =
   | boolean
   | number
+  | FilterValue[]
   | OpenPreference
-  | Theme
-  | FilterValue[];
+  | Percentage
+  | Theme;
 
 /**
  * The different types of allowed Filter values to be stored in the application.
@@ -129,7 +135,7 @@ export interface AppearanceSettingsState {
   /**
    * The zoom percentage of the application.
    */
-  zoomPercentage: number;
+  zoomPercentage: Percentage;
 }
 
 /**
@@ -214,7 +220,7 @@ export interface SystemSettingsState {
   /**
    * The volume for the notification sound.
    */
-  notificationVolume: number;
+  notificationVolume: Percentage;
 
   /**
    * Whether to open the application on system startup.

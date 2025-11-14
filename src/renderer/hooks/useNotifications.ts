@@ -14,20 +14,29 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
-import { updateTrayColor } from '../utils/comms';
+import {
+  areAllAccountErrorsSame,
+  doesAllAccountsHaveErrors,
+} from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
-import { triggerNativeNotifications } from '../utils/notifications/native';
+import { raiseNativeNotification } from '../utils/notifications/native';
 import {
   getAllNotifications,
   isGroupNotification,
-  setTrayIconColor,
 } from '../utils/notifications/notifications';
-import { removeNotifications } from '../utils/notifications/remove';
+import { removeNotificationsForAccount } from '../utils/notifications/remove';
+import { raiseSoundNotification } from '../utils/notifications/sound';
+import { getNewNotifications } from '../utils/notifications/utils';
 
 interface NotificationsState {
+  status: Status;
+  globalError: AtlassifyError;
+
   notifications: AccountNotifications[];
-  removeAccountNotifications: (account: Account) => Promise<void>;
+
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
+  removeAccountNotifications: (account: Account) => Promise<void>;
+
   markNotificationsRead: (
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
@@ -36,8 +45,6 @@ interface NotificationsState {
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
-  status: Status;
-  globalError: AtlassifyError;
 }
 
 export const useNotifications = (): NotificationsState => {
@@ -57,7 +64,7 @@ export const useNotifications = (): NotificationsState => {
       );
 
       setNotifications(updatedNotifications);
-      setTrayIconColor(updatedNotifications);
+
       setStatus('success');
     },
     [notifications],
@@ -68,34 +75,38 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
       setGlobalError(null);
 
+      const previousNotifications = notifications;
       const fetchedNotifications = await getAllNotifications(state);
+      setNotifications(fetchedNotifications);
 
       // Set Global Error if all accounts have the same error
       const allAccountsHaveErrors =
-        fetchedNotifications.length > 0 &&
-        fetchedNotifications.every((account) => {
-          return account.error !== null;
-        });
-
-      let accountErrorsAreAllSame = true;
-      const accountError = fetchedNotifications[0]?.error;
-
-      for (const fetchedNotification of fetchedNotifications) {
-        if (accountError !== fetchedNotification.error) {
-          accountErrorsAreAllSame = false;
-          break;
-        }
-      }
+        doesAllAccountsHaveErrors(fetchedNotifications);
+      const allAccountErrorsAreSame =
+        areAllAccountErrorsSame(fetchedNotifications);
 
       if (allAccountsHaveErrors) {
+        const accountError = fetchedNotifications[0].error;
         setStatus('error');
-        setGlobalError(accountErrorsAreAllSame ? accountError : null);
-        updateTrayColor(-1);
+        setGlobalError(allAccountErrorsAreSame ? accountError : null);
         return;
       }
 
-      setNotifications(fetchedNotifications);
-      triggerNativeNotifications(notifications, fetchedNotifications, state);
+      const diffNotifications = getNewNotifications(
+        previousNotifications,
+        fetchedNotifications,
+      );
+
+      if (diffNotifications.length > 0) {
+        if (state.settings.playSoundNewNotifications) {
+          raiseSoundNotification(state.settings.notificationVolume);
+        }
+
+        if (state.settings.showSystemNotifications) {
+          raiseNativeNotification(diffNotifications);
+        }
+      }
+
       setStatus('success');
     },
     [notifications],
@@ -172,17 +183,14 @@ export const useNotifications = (): NotificationsState => {
           notification.readState = 'read';
         }
 
-        // Only remove notifications from state if we're fetching only unread notifications
-        if (state.settings.fetchOnlyUnreadNotifications) {
-          const updatedNotifications = removeNotifications(
-            state.settings,
-            readNotifications,
-            notifications,
-          );
+        const updatedNotifications = removeNotificationsForAccount(
+          account,
+          state.settings,
+          readNotifications,
+          notifications,
+        );
 
-          setNotifications(updatedNotifications);
-          setTrayIconColor(updatedNotifications);
-        }
+        setNotifications(updatedNotifications);
       } catch (err) {
         rendererLogError(
           'markNotificationsRead',
@@ -241,10 +249,12 @@ export const useNotifications = (): NotificationsState => {
   return {
     status,
     globalError,
+
     notifications,
 
-    removeAccountNotifications,
     fetchNotifications,
+    removeAccountNotifications,
+
     markNotificationsRead,
     markNotificationsUnread,
   };

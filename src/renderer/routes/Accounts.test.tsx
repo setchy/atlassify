@@ -8,7 +8,6 @@ import {
 } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import * as apiRequests from '../utils/api/request';
-import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';
 import { AccountsRoute } from './Accounts';
@@ -150,8 +149,6 @@ describe('renderer/routes/Accounts.tsx', () => {
 
     it('should logout', async () => {
       const logoutFromAccountMock = jest.fn();
-      const updateTrayColorMock = jest.spyOn(comms, 'updateTrayColor');
-      const updateTrayTitleMock = jest.spyOn(comms, 'updateTrayTitle');
 
       await act(async () => {
         render(
@@ -172,11 +169,6 @@ describe('renderer/routes/Accounts.tsx', () => {
       await userEvent.click(screen.getByTestId('account-logout'));
 
       expect(logoutFromAccountMock).toHaveBeenCalledTimes(1);
-
-      expect(updateTrayColorMock).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorMock).toHaveBeenCalledWith();
-      expect(updateTrayTitleMock).toHaveBeenCalledTimes(1);
-      expect(updateTrayTitleMock).toHaveBeenCalledWith();
 
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });

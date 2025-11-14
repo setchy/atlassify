@@ -34,8 +34,6 @@ import {
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
-  updateTrayColor,
-  updateTrayTitle,
 } from '../utils/comms';
 import {
   getNotificationCount,
@@ -43,6 +41,7 @@ import {
 } from '../utils/notifications/notifications';
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
+import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomPercentageToLevel } from '../utils/zoom';
 import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
 
@@ -56,6 +55,10 @@ interface AppContextState {
   globalError: AtlassifyError;
 
   notifications: AccountNotifications[];
+  notificationCount: number;
+  hasNotifications: boolean;
+  hasMoreAccountNotifications: boolean;
+
   fetchNotifications: () => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
 
@@ -92,6 +95,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
+  const notificationCount = getNotificationCount(notifications);
+
+  const hasNotifications = useMemo(
+    () => notificationCount > 0,
+    [notificationCount],
+  );
+
+  const hasMoreAccountNotifications = useMemo(
+    () => hasMoreNotifications(notifications),
+    [notifications],
+  );
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: restoreSettings is stable and should run only once
   useEffect(() => {
     restoreSettings();
@@ -124,20 +139,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     }
   }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
-    const count = getNotificationCount(notifications);
-    const hasMore = hasMoreNotifications(notifications);
-
-    let title = '';
-    if (settings.showNotificationsCountInTray && count > 0) {
-      title = `${count.toString()}${hasMore ? '+' : ''}`;
-    }
-
     setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
     setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
 
-    updateTrayColor(count);
-    updateTrayTitle(title);
+    const trayCount = status === 'error' ? -1 : notificationCount;
+    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, settings);
   }, [
     settings.showNotificationsCountInTray,
     settings.useUnreadActiveIcon,
@@ -259,7 +267,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationsUnread],
   );
 
-  const contextValues = useMemo(
+  const contextValues: AppContextState = useMemo(
     () => ({
       auth,
       isLoggedIn,
@@ -270,7 +278,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       globalError,
 
       notifications,
+      notificationCount,
+      hasNotifications,
+      hasMoreAccountNotifications,
+
       fetchNotifications: fetchNotificationsWithAccounts,
+      removeAccountNotifications,
 
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
@@ -291,7 +304,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       globalError,
 
       notifications,
+      notificationCount,
+      hasNotifications,
+      hasMoreAccountNotifications,
+
       fetchNotificationsWithAccounts,
+      removeAccountNotifications,
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,
