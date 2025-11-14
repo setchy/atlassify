@@ -105,9 +105,9 @@ export type SettingsValue =
 export type FilterValue =
   | ActorType
   | CategoryType
+  | EngagementStateType
   | ProductType
-  | ReadStateType
-  | TimeSensitiveType;
+  | ReadStateType;
 
 /**
  * The different types of allowed Settings keys to be stored in the application.
@@ -233,9 +233,9 @@ export interface SystemSettingsState {
  */
 export interface FilterSettingsState {
   /**
-   * The categories to filter time sensitive notifications by.
+   * The engagement states to filter notifications by.
    */
-  filterTimeSensitive: TimeSensitiveType[];
+  filterEngagementStates: EngagementStateType[];
 
   /**
    * The categories to filter notifications by.
@@ -492,12 +492,13 @@ export type CategoryType = 'direct' | 'watching';
 export type ReadStateType = 'unread' | 'read';
 
 /**
- * The sensitivity (ie: importance) of a notification.
+ * Types of notifications that are a result of others engaging with your work.
  *
  * - 'mention' - A user has mentioned you as part of the notification.
- * - 'comment' - A user has commented on your prior work.
+ * - 'comment' - A user has commented on your work.
+ * - 'reaction' - A user has reacted on your work.
  */
-export type TimeSensitiveType = 'mention' | 'comment';
+export type EngagementStateType = 'mention' | 'comment' | 'reaction';
 
 /**
  * The actor type.

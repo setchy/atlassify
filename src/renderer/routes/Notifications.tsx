@@ -31,7 +31,7 @@ export const NotificationsRoute: FC = () => {
   }
 
   return (
-    <Page id="notifications">
+    <Page testId="notifications">
       <Contents>
         {notifications.map((accountNotifications) => (
           <AccountNotifications

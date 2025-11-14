@@ -47,7 +47,7 @@ const defaultSystemSettings: SystemSettingsState = {
 };
 
 export const defaultFilters: FilterSettingsState = {
-  filterTimeSensitive: [],
+  filterEngagementStates: [],
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],

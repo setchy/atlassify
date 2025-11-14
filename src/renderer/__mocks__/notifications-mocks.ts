@@ -2,6 +2,7 @@ import type {
   AccountNotifications,
   AtlassifyNotification,
   Link,
+  ProductType,
 } from '../types';
 import { PRODUCTS } from '../utils/products';
 import { mockAtlassianCloudAccount } from './state-mocks';
@@ -106,3 +107,16 @@ export const mockSingleAccountNotifications: AccountNotifications[] = [
     error: null,
   },
 ];
+
+export function createMockNotificationForProductType(
+  id: string,
+  productType: ProductType | null,
+): AtlassifyNotification {
+  return {
+    id,
+    account: mockAtlassianCloudAccount,
+    product: {
+      type: productType,
+    },
+  } as AtlassifyNotification;
+}

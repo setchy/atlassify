@@ -213,11 +213,11 @@ exports[`renderer/routes/Notifications.tsx should render itself & its children (
   "baseElement": <body>
     <div>
       <div
-        class="flex h-screen flex-col"
+        class="flex flex-col h-screen"
         data-testid="notifications"
       >
         <div
-          class="grow overflow-x-auto"
+          class="grow overflow-x-hidden overflow-y-auto"
         >
           <p>
             AccountNotifications
@@ -228,11 +228,11 @@ exports[`renderer/routes/Notifications.tsx should render itself & its children (
   </body>,
   "container": <div>
     <div
-      class="flex h-screen flex-col"
+      class="flex flex-col h-screen"
       data-testid="notifications"
     >
       <div
-        class="grow overflow-x-auto"
+        class="grow overflow-x-hidden overflow-y-auto"
       >
         <p>
           AccountNotifications

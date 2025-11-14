@@ -2,7 +2,7 @@
 
 exports[`renderer/routes/Accounts.tsx General should render itself & its children - dark mode 1`] = `
 <div
-  class="flex h-screen flex-col"
+  class="flex flex-col h-screen"
   data-testid="accounts"
 >
   <div
@@ -57,7 +57,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="grow overflow-x-auto"
+    class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
       class="css-i91uyn"
@@ -69,7 +69,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
           role="presentation"
         >
           <button
-            aria-label="Open account profile"
+            aria-label="Open account profile ↗"
             class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
             data-testid="account-profile--itemInner"
             style="--avatar-item-bg-color: transparent;"
@@ -104,12 +104,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               class="_16jlkb7n _1o9zkb7n _i0dl1osq _1ul9idpf _p12f1osq _vwz419ii _bozgu2gc"
             >
               <span
-                class="_1e0c1ule _syaz1fxt _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syazi7uo _1reo15vq _1bto1l2s _o5721q9c"
               >
                 Atlassify
               </span>
               <span
-                class="_1e0c1ule _syaz131l _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syaz1rpy _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
               >
                 user@atlassify.io
               </span>
@@ -250,7 +250,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
 
 exports[`renderer/routes/Accounts.tsx General should render itself & its children - light mode 1`] = `
 <div
-  class="flex h-screen flex-col"
+  class="flex flex-col h-screen"
   data-testid="accounts"
 >
   <div
@@ -305,7 +305,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="grow overflow-x-auto"
+    class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
       class="css-jv47vm"
@@ -317,7 +317,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
           role="presentation"
         >
           <button
-            aria-label="Open account profile"
+            aria-label="Open account profile ↗"
             class="_2rkofajl _12ji1r31 _1qu2glyw _12y31o36 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1txw _vchhusvi _1bsb1osq _4cvr1h6o _bfhk1g13 _syaz1kw7 _1wyb1kw7 _zg8l4jg8 _k48pi7a9 _vwz4kb7n _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _85i51b66 _1q511b66 _y4ti1b66 _bozg1b66 _y3gn1e5h _nt751r31 _49pcglyw _1hvw1o36 _858u194a _9oik1r31 _1bnxglyw _jf4cnqa1 _irr314ae _d0altlke _1di61l7b"
             data-testid="account-profile--itemInner"
             style="--avatar-item-bg-color: transparent;"
@@ -352,12 +352,12 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
               class="_16jlkb7n _1o9zkb7n _i0dl1osq _1ul9idpf _p12f1osq _vwz419ii _bozgu2gc"
             >
               <span
-                class="_1e0c1ule _syaz1fxt _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syazi7uo _1reo15vq _1bto1l2s _o5721q9c"
               >
                 Atlassify
               </span>
               <span
-                class="_1e0c1ule _syaz131l _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
+                class="_1e0c1ule _syaz1rpy _1wyb181o _1reo15vq _1bto1l2s _o5721q9c"
               >
                 user@atlassify.io
               </span>
