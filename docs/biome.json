@@ -9,9 +9,13 @@
           "options": {
             "groups": [
               ["astro:*", "*astro-*", "astro*/*"],
+              ":BLANK_LINE:",
               ":PACKAGE:",
+              ":BLANK_LINE:",
               ["~/constants"],
+              ":BLANK_LINE:",
               ":ALIAS:",
+              ":BLANK_LINE:",
               "**"
             ]
           }
