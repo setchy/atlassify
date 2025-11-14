@@ -14,7 +14,6 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
-import { updateTrayColor } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
@@ -90,7 +89,6 @@ export const useNotifications = (): NotificationsState => {
         const accountError = fetchedNotifications[0].error;
         setStatus('error');
         setGlobalError(allAccountErrorsAreSame ? accountError : null);
-        updateTrayColor(-1);
         return;
       }
 
