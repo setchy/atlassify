@@ -1,6 +1,6 @@
 import { AxiosError } from 'axios';
 
-import type { AtlassifyError } from '../../types';
+import type { AccountNotifications, AtlassifyError } from '../../types';
 import { Errors } from '../errors';
 import type { AtlassianAPIError } from './types';
 
@@ -26,4 +26,28 @@ export function determineFailureType(
   }
 
   return Errors.UNKNOWN;
+}
+
+/**
+ * Check if all accounts have errors
+ */
+export function doesAllAccountsHaveErrors(
+  notifications: AccountNotifications[],
+) {
+  return (
+    notifications.length > 0 &&
+    notifications.every((account) => account.error !== null)
+  );
+}
+
+/**
+ * Check if all account errors are the same
+ */
+export function areAllAccountErrorsSame(notifications: AccountNotifications[]) {
+  if (notifications.length === 0) {
+    return true;
+  }
+
+  const firstError = notifications[0].error;
+  return notifications.every((account) => account.error === firstError);
 }

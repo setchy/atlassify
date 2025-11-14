@@ -10,6 +10,7 @@ import {
   type Link,
   type NotificationSettingsState,
   OpenPreference,
+  type Percentage,
   type SettingsState,
   type SystemSettingsState,
   type TraySettingsState,
@@ -31,7 +32,7 @@ export const mockAuth: AuthState = {
 const mockAppearanceSettings: AppearanceSettingsState = {
   language: 'en',
   theme: Theme.LIGHT,
-  zoomPercentage: 100,
+  zoomPercentage: 100 as Percentage,
 };
 
 const mockNotificationSettings: NotificationSettingsState = {
@@ -54,7 +55,7 @@ const mockSystemSettings: SystemSettingsState = {
   keyboardShortcutEnabled: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
-  notificationVolume: 20,
+  notificationVolume: 20 as Percentage,
   openAtStartup: true,
 };
 

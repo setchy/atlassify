@@ -13,10 +13,18 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import {
+  areAllAccountErrorsSame,
+  doesAllAccountsHaveErrors,
+} from '../utils/api/errors';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { updateTrayColor } from '../utils/comms';
 import { rendererLogError } from '../utils/logger';
-import { triggerNativeNotifications } from '../utils/notifications/native';
+import {
+  raiseNativeNotification,
+  raiseSoundNotification,
+  triggerNativeNotifications,
+} from '../utils/notifications/native';
 import {
   getAllNotifications,
   isGroupNotification,
@@ -68,34 +76,39 @@ export const useNotifications = (): NotificationsState => {
       setStatus('loading');
       setGlobalError(null);
 
+      const previousNotifications = notifications;
       const fetchedNotifications = await getAllNotifications(state);
+      setNotifications(fetchedNotifications);
 
       // Set Global Error if all accounts have the same error
       const allAccountsHaveErrors =
-        fetchedNotifications.length > 0 &&
-        fetchedNotifications.every((account) => {
-          return account.error !== null;
-        });
-
-      let accountErrorsAreAllSame = true;
-      const accountError = fetchedNotifications[0]?.error;
-
-      for (const fetchedNotification of fetchedNotifications) {
-        if (accountError !== fetchedNotification.error) {
-          accountErrorsAreAllSame = false;
-          break;
-        }
-      }
+        doesAllAccountsHaveErrors(fetchedNotifications);
+      const allAccountErrorsAreSame =
+        areAllAccountErrorsSame(fetchedNotifications);
 
       if (allAccountsHaveErrors) {
+        const accountError = fetchedNotifications[0].error;
         setStatus('error');
-        setGlobalError(accountErrorsAreAllSame ? accountError : null);
+        setGlobalError(allAccountErrorsAreSame ? accountError : null);
         updateTrayColor(-1);
         return;
       }
 
-      setNotifications(fetchedNotifications);
-      triggerNativeNotifications(notifications, fetchedNotifications, state);
+      const diffNotifications = getNewNotifications(
+        previousNotifications,
+        fetchedNotifications,
+      );
+
+      if (diffNotifications.length > 0) {
+        if (state.settings.playSoundNewNotifications) {
+          raiseSoundNotification(state.settings.notificationVolume);
+        }
+
+        if (state.settings.showSystemNotifications) {
+          raiseNativeNotification(diffNotifications);
+        }
+      }
+
       setStatus('success');
     },
     [notifications],
