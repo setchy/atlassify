@@ -25,11 +25,3 @@ export const raiseNativeNotification = (
 
   return window.atlassify.raiseNativeNotification(title, body, url);
 };
-
-export const raiseSoundNotification = async (volume: number) => {
-  const path = await window.atlassify.notificationSoundPath();
-
-  const audio = new Audio(path);
-  audio.volume = volume;
-  audio.play();
-};

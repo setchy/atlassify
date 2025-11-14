@@ -19,17 +19,45 @@ import type {
   AtlassianNotificationFragment,
 } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
-import { updateTrayColor } from '../comms';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
-export function setTrayIconColor(notifications: AccountNotifications[]) {
-  const allNotificationsCount = getNotificationCount(notifications);
+/**
+ * Get the count of notifications across all accounts.
+ *
+ * @param notifications - The account notifications to check.
+ * @returns The count of all notifications.
+ */
+export function getNotificationCount(notifications: AccountNotifications[]) {
+  return notifications.reduce(
+    (memo, acc) => memo + acc.notifications.length,
+    0,
+  );
+}
 
-  updateTrayColor(allNotificationsCount);
+/**
+ * Check if any accounts have more notifications beyond the max page size fetched per account.
+ *
+ * @param notifications - The account notifications to check.
+ * @returns The count of all notifications.
+ */
+export function hasMoreNotifications(notifications: AccountNotifications[]) {
+  return notifications?.some((n) => n.hasMoreNotifications);
+}
+
+/**
+ * Check if a notification is a group notification.
+ *
+ * @param notification
+ * @returns true if group notification, false otherwise
+ */
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
 }
 
 function getNotifications(state: AtlassifyState) {
@@ -41,23 +69,12 @@ function getNotifications(state: AtlassifyState) {
   });
 }
 
-export function getNotificationCount(notifications: AccountNotifications[]) {
-  return notifications.reduce(
-    (memo, acc) => memo + acc.notifications.length,
-    0,
-  );
-}
-
-export function hasMoreNotifications(notifications: AccountNotifications[]) {
-  return notifications?.some((n) => n.hasMoreNotifications);
-}
-
-export function isGroupNotification(
-  notification: AtlassifyNotification,
-): boolean {
-  return notification.notificationGroup.size > 1;
-}
-
+/**
+ * Get all notifications for all accounts.
+ *
+ * @param state - The Gitify state.
+ * @returns A promise that resolves to an array of account notifications.
+ */
 export async function getAllNotifications(
   state: AtlassifyState,
 ): Promise<AccountNotifications[]> {

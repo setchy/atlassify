@@ -17,7 +17,6 @@ import { Header } from '../components/primitives/Header';
 import { AppContext } from '../context/App';
 import type { Account } from '../types';
 import { refreshAccount } from '../utils/auth/utils';
-import { updateTrayColor, updateTrayTitle } from '../utils/comms';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
@@ -30,8 +29,6 @@ export const AccountsRoute: FC = () => {
     (account: Account) => {
       logoutFromAccount(account);
       navigate(-1);
-      updateTrayColor();
-      updateTrayTitle();
     },
     [logoutFromAccount],
   );

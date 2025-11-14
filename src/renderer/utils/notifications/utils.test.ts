@@ -1,5 +1,8 @@
-import { createMockNotificationForRepoName } from '../../__mocks__/notifications-mocks';
-import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
+import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
+import {
+  mockAtlassianCloudAccount,
+  mockAtlassianCloudAccountTwo,
+} from '../../__mocks__/state-mocks';
 import type { AccountNotifications } from '../../types';
 import { getNewNotifications } from './utils';
 
@@ -8,13 +11,14 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('returns all notifications when previous is empty', () => {
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
-            createMockNotificationForRepoName('3', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
+            createMockNotificationForProductType('3', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -27,9 +31,10 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('returns empty array when new is empty', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -47,24 +52,26 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('returns only new notifications, filtering out existing ones', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('2', 'some/repo'),
-            createMockNotificationForRepoName('3', 'some/repo'),
-            createMockNotificationForRepoName('4', 'some/repo'),
+            createMockNotificationForProductType('2', 'jira'),
+            createMockNotificationForProductType('3', 'jira'),
+            createMockNotificationForProductType('4', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -80,25 +87,27 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('returns empty array when all notifications already exist', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
-            createMockNotificationForRepoName('3', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
+            createMockNotificationForProductType('3', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
-            createMockNotificationForRepoName('3', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
+            createMockNotificationForProductType('3', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -113,33 +122,37 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('handles multiple accounts correctly', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
         {
-          account: mockGitHubEnterpriseServerAccount,
-          notifications: [createMockNotificationForRepoName('10', 'some/repo')],
+          account: mockAtlassianCloudAccountTwo,
+          notifications: [createMockNotificationForProductType('10', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
         {
-          account: mockGitHubEnterpriseServerAccount,
+          account: mockAtlassianCloudAccountTwo,
           notifications: [
-            createMockNotificationForRepoName('10', 'some/repo'),
-            createMockNotificationForRepoName('11', 'some/repo'),
+            createMockNotificationForProductType('10', 'jira'),
+            createMockNotificationForProductType('11', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -155,25 +168,28 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('treats new account as having all new notifications', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
         {
-          account: mockGitHubEnterpriseServerAccount,
+          account: mockAtlassianCloudAccountTwo,
           notifications: [
-            createMockNotificationForRepoName('10', 'some/repo'),
-            createMockNotificationForRepoName('11', 'some/repo'),
+            createMockNotificationForProductType('10', 'jira'),
+            createMockNotificationForProductType('11', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -189,17 +205,19 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('handles account with no notifications', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -214,21 +232,23 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('preserves notification order from input', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('5', 'some/repo'),
-            createMockNotificationForRepoName('3', 'some/repo'),
-            createMockNotificationForRepoName('4', 'some/repo'),
+            createMockNotificationForProductType('5', 'jira'),
+            createMockNotificationForProductType('3', 'jira'),
+            createMockNotificationForProductType('4', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
@@ -244,27 +264,29 @@ describe('renderer/utils/notifications/utils.ts', () => {
     it('handles removed account gracefully', () => {
       const previousNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
-          notifications: [createMockNotificationForRepoName('1', 'some/repo')],
+          account: mockAtlassianCloudAccount,
+          notifications: [createMockNotificationForProductType('1', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
         {
-          account: mockGitHubEnterpriseServerAccount,
-          notifications: [createMockNotificationForRepoName('10', 'some/repo')],
+          account: mockAtlassianCloudAccountTwo,
+          notifications: [createMockNotificationForProductType('10', 'jira')],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
-        // enterprise account removed
       ];
 
       const result = getNewNotifications(
@@ -281,20 +303,22 @@ describe('renderer/utils/notifications/utils.ts', () => {
 
       const newNotifications: AccountNotifications[] = [
         {
-          account: mockGitHubCloudAccount,
+          account: mockAtlassianCloudAccount,
           notifications: [
-            createMockNotificationForRepoName('1', 'some/repo'),
-            createMockNotificationForRepoName('2', 'some/repo'),
+            createMockNotificationForProductType('1', 'jira'),
+            createMockNotificationForProductType('2', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
         {
-          account: mockGitHubEnterpriseServerAccount,
+          account: mockAtlassianCloudAccountTwo,
           notifications: [
-            createMockNotificationForRepoName('10', 'some/repo'),
-            createMockNotificationForRepoName('11', 'some/repo'),
+            createMockNotificationForProductType('10', 'jira'),
+            createMockNotificationForProductType('11', 'jira'),
           ],
           error: null,
+          hasMoreNotifications: false,
         },
       ];
 

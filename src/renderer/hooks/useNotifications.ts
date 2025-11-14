@@ -13,29 +13,31 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
+import { updateTrayColor } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
-} from '../utils/api/errors';
-import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
-import { updateTrayColor } from '../utils/comms';
+} from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
-import {
-  raiseNativeNotification,
-  raiseSoundNotification,
-  triggerNativeNotifications,
-} from '../utils/notifications/native';
+import { raiseNativeNotification } from '../utils/notifications/native';
 import {
   getAllNotifications,
   isGroupNotification,
-  setTrayIconColor,
 } from '../utils/notifications/notifications';
-import { removeNotifications } from '../utils/notifications/remove';
+import { removeNotificationsForAccount } from '../utils/notifications/remove';
+import { raiseSoundNotification } from '../utils/notifications/sound';
+import { getNewNotifications } from '../utils/notifications/utils';
 
 interface NotificationsState {
+  status: Status;
+  globalError: AtlassifyError;
+
   notifications: AccountNotifications[];
-  removeAccountNotifications: (account: Account) => Promise<void>;
+
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
+  removeAccountNotifications: (account: Account) => Promise<void>;
+
   markNotificationsRead: (
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
@@ -44,8 +46,6 @@ interface NotificationsState {
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
-  status: Status;
-  globalError: AtlassifyError;
 }
 
 export const useNotifications = (): NotificationsState => {
@@ -65,7 +65,7 @@ export const useNotifications = (): NotificationsState => {
       );
 
       setNotifications(updatedNotifications);
-      setTrayIconColor(updatedNotifications);
+
       setStatus('success');
     },
     [notifications],
@@ -185,17 +185,14 @@ export const useNotifications = (): NotificationsState => {
           notification.readState = 'read';
         }
 
-        // Only remove notifications from state if we're fetching only unread notifications
-        if (state.settings.fetchOnlyUnreadNotifications) {
-          const updatedNotifications = removeNotifications(
-            state.settings,
-            readNotifications,
-            notifications,
-          );
+        const updatedNotifications = removeNotificationsForAccount(
+          account,
+          state.settings,
+          readNotifications,
+          notifications,
+        );
 
-          setNotifications(updatedNotifications);
-          setTrayIconColor(updatedNotifications);
-        }
+        setNotifications(updatedNotifications);
       } catch (err) {
         rendererLogError(
           'markNotificationsRead',
@@ -254,10 +251,12 @@ export const useNotifications = (): NotificationsState => {
   return {
     status,
     globalError,
+
     notifications,
 
-    removeAccountNotifications,
     fetchNotifications,
+    removeAccountNotifications,
+
     markNotificationsRead,
     markNotificationsUnread,
   };

@@ -13,13 +13,13 @@ const ZOOM_STEP = 10 as Percentage;
  * @param percentage 0-150
  * @returns zoomLevel -2 to 0.5
  */
-export const zoomPercentageToLevel = (percentage: Percentage): number => {
+export function zoomPercentageToLevel(percentage: Percentage): number {
   if (percentage === undefined) {
     return zoomPercentageToLevel(RECOMMENDED_ZOOM_PERCENTAGE);
   }
 
   return ((percentage - RECOMMENDED_ZOOM_PERCENTAGE) * MULTIPLIER) / 100;
-};
+}
 
 /**
  * Zoom level to percentage. 0 is the recommended zoom level (100%).

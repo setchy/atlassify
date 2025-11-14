@@ -25,6 +25,14 @@ export const mockAtlassianCloudAccount: Account = {
   avatar: 'https://avatar.atlassify.io' as Link,
 };
 
+export const mockAtlassianCloudAccountTwo: Account = {
+  id: '987654321',
+  username: 'other@atlassify.io' as Username,
+  token: 'token-abc-xyz' as EncryptedToken,
+  name: 'Another One',
+  avatar: 'https://avatar.atlassify.io' as Link,
+};
+
 export const mockAuth: AuthState = {
   accounts: [mockAtlassianCloudAccount],
 };
