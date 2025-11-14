@@ -2,7 +2,10 @@ import {
   mockSingleAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
+import {
+  mockAtlassianCloudAccountTwo,
+  mockSettings,
+} from '../../__mocks__/state-mocks';
 import { removeNotificationsForAccount } from './remove';
 
 describe('renderer/utils/notifications/remove.ts', () => {
@@ -49,7 +52,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
     );
 
     expect(result[0].notifications.length).toBe(1);
-    expect(result[0].notifications[0].readState).toBe('read');
+    expect(result[0].notifications[0].readState).toBe('unread');
   });
 
   it('should skip notification removal if nothing to remove', () => {
@@ -72,7 +75,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
     expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
     const result = removeNotificationsForAccount(
-      mockSingleAccountNotifications[0].account,
+      mockAtlassianCloudAccountTwo,
       { ...mockSettings },
       [
         {
