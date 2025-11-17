@@ -1,9 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
@@ -14,39 +13,31 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   const mockFilterSetting = 'filterEngagementStates';
 
   it('should render itself & its children', () => {
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: mockSettings,
-          notifications: mockAccountNotifications,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    const tree = renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        notifications: mockAccountNotifications,
+      },
     );
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - none already set', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          settings: mockSettings,
-          notifications: [],
-          updateFilter: mockUpdateFilter,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        notifications: [],
+        updateFilter: mockUpdateFilter,
+      },
     );
 
     await userEvent.click(screen.getByLabelText('Mentions'));
@@ -63,23 +54,19 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          settings: {
-            ...mockSettings,
-            filterEngagementStates: ['mention'],
-          },
-          notifications: [],
-          updateFilter: mockUpdateFilter,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        settings: {
+          filterEngagementStates: ['mention'],
+        },
+        notifications: [],
+        updateFilter: mockUpdateFilter,
+      },
     );
 
     await userEvent.click(screen.getByLabelText('Comments'));

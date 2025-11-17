@@ -27,7 +27,7 @@ const customRender = (
 };
 
 describe('renderer/context/App.tsx', () => {
-  const mockSaveState = jest
+  const saveStateSpy = jest
     .spyOn(storage, 'saveState')
     .mockImplementation(jest.fn());
 
@@ -41,11 +41,11 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('notification methods', () => {
-    const mockGetNotificationCount = jest.spyOn(
+    const getNotificationCountSpy = jest.spyOn(
       notifications,
       'getNotificationCount',
     );
-    mockGetNotificationCount.mockReturnValue(1);
+    getNotificationCountSpy.mockReturnValue(1);
 
     const mockFetchNotifications = jest.fn();
     const mockMarkNotificationsRead = jest.fn();
@@ -194,7 +194,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -206,7 +206,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set openAtStartup', async () => {
-      const mockSetAutoLaunch = jest.spyOn(comms, 'setAutoLaunch');
+      const setAutoLaunchSpy = jest.spyOn(comms, 'setAutoLaunch');
 
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
@@ -227,9 +227,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSetAutoLaunch).toHaveBeenCalledWith(true);
+      expect(setAutoLaunchSpy).toHaveBeenCalledWith(true);
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -241,7 +241,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set useUnreadActiveIcon', async () => {
-      const mockUseUnreadActiveIcon = jest.spyOn(
+      const setUseUnreadActiveIconSpy = jest.spyOn(
         comms,
         'setUseUnreadActiveIcon',
       );
@@ -265,9 +265,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockUseUnreadActiveIcon).toHaveBeenCalledWith(true);
+      expect(setUseUnreadActiveIconSpy).toHaveBeenCalledWith(true);
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -279,7 +279,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set useAlternateIdleIcon', async () => {
-      const mockSetUseAlternateIdleIcon = jest.spyOn(
+      const setUseAlternateIdleIconSpy = jest.spyOn(
         comms,
         'setUseAlternateIdleIcon',
       );
@@ -303,9 +303,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSetUseAlternateIdleIcon).toHaveBeenCalledWith(true);
+      expect(setUseAlternateIdleIconSpy).toHaveBeenCalledWith(true);
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -333,7 +333,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -363,7 +363,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -394,7 +394,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -422,7 +422,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(mockSaveState).toHaveBeenCalledWith({
+      expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,

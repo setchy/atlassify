@@ -1,8 +1,7 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { NotificationSettings } from './NotificationSettings';
 
 describe('renderer/components/settings/NotificationSettings.tsx', () => {
@@ -14,17 +13,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
   it('should toggle the markAsReadOnOpen checkbox', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <NotificationSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationSettings />, {
+        updateSetting,
+      });
     });
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
@@ -35,17 +26,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
   it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <NotificationSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationSettings />, {
+        updateSetting,
+      });
     });
 
     await userEvent.click(
@@ -61,17 +44,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
   it('should toggle the delayNotificationState checkbox', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <NotificationSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationSettings />, {
+        updateSetting,
+      });
     });
 
     await userEvent.click(screen.getByLabelText('Delay notification state'));

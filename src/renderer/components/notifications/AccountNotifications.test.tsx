@@ -1,11 +1,12 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ensureStableEmojis } from '../../__helpers__/test-utils';
+import {
+  ensureStableEmojis,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
 import {
@@ -33,15 +34,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -56,15 +49,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -77,19 +62,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              groupNotificationsByProduct: true,
-              groupNotificationsByProductAlphabetically: false,
-            },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: false,
+        },
+      });
 
       expect(tree).toMatchSnapshot();
     });
@@ -102,19 +80,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              groupNotificationsByProduct: true,
-              groupNotificationsByProductAlphabetically: true,
-            },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: true,
+        },
+      });
 
       expect(tree).toMatchSnapshot();
     });
@@ -127,14 +98,10 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      let tree: ReturnType<typeof render> | null = null;
+      let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
       await act(async () => {
-        tree = render(
-          <AppContext.Provider value={{ settings: mockSettings }}>
-            <AccountNotifications {...props} />
-          </AppContext.Provider>,
-        );
+        tree = renderWithAppContext(<AccountNotifications {...props} />);
       });
 
       expect(tree).toMatchSnapshot();
@@ -152,14 +119,10 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         },
       };
 
-      let tree: ReturnType<typeof render> | null = null;
+      let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
       await act(async () => {
-        tree = render(
-          <AppContext.Provider value={{ settings: mockSettings }}>
-            <AccountNotifications {...props} />
-          </AppContext.Provider>,
-        );
+        tree = renderWithAppContext(<AccountNotifications {...props} />);
       });
 
       expect(tree).toMatchSnapshot();
@@ -167,7 +130,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open profile when clicked', async () => {
-    const mockOpenAccountProfile = jest
+    const openAccountProfileSpy = jest
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
 
@@ -179,23 +142,19 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
-    expect(mockOpenAccountProfile).toHaveBeenCalledTimes(1);
-    expect(mockOpenAccountProfile).toHaveBeenCalledWith(
+    expect(openAccountProfileSpy).toHaveBeenCalledTimes(1);
+    expect(openAccountProfileSpy).toHaveBeenCalledWith(
       mockAtlassianCloudAccount,
     );
   });
 
   it('should open my pull requests', async () => {
-    const mockOpenMyPullRequests = jest
+    const openPullRequestsSpy = jest
       .spyOn(links, 'openMyPullRequests')
       .mockImplementation();
 
@@ -207,16 +166,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-pull-requests'));
 
-    expect(mockOpenMyPullRequests).toHaveBeenCalledTimes(1);
+    expect(openPullRequestsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should mark all account notifications as read when `confirmed`', async () => {
@@ -230,16 +185,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const mockMarkNotificationsRead = jest.fn();
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: mockMarkNotificationsRead,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />, {
+        markNotificationsRead: mockMarkNotificationsRead,
+      });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
@@ -259,16 +207,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const mockMarkNotificationsRead = jest.fn();
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: mockMarkNotificationsRead,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />, {
+        markNotificationsRead: mockMarkNotificationsRead,
+      });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
@@ -286,28 +227,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-toggle'));
 
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings },
-        }}
-      >
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<AccountNotifications {...props} />);
     expect(tree).toMatchSnapshot();
   });
 });

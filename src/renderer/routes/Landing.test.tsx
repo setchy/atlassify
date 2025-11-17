@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { AppContext } from '../context/App';
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import * as comms from '../utils/comms';
 import { LandingRoute } from './Landing';
 
@@ -17,35 +17,29 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = render(<LandingRoute />);
+    const tree = renderWithAppContext(<LandingRoute />);
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should redirect to notifications once logged in', () => {
-    const mockShowWindow = jest.spyOn(comms, 'showWindow');
+    const showWindowSpy = jest.spyOn(comms, 'showWindow');
 
-    const { rerender } = render(
-      <AppContext.Provider value={{ isLoggedIn: false }}>
-        <LandingRoute />
-      </AppContext.Provider>,
-    );
+    renderWithAppContext(<LandingRoute />, {
+      isLoggedIn: true,
+    });
 
-    rerender(
-      <AppContext.Provider value={{ isLoggedIn: true }}>
-        <LandingRoute />
-      </AppContext.Provider>,
-    );
-
-    expect(mockShowWindow).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
+    expect(showWindowSpy).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
   });
 
   it('should navigate to login with api token', async () => {
-    render(<LandingRoute />);
+    renderWithAppContext(<LandingRoute />);
 
     await userEvent.click(screen.getByTestId('login'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login');
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/login');
   });
 });

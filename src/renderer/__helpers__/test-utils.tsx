@@ -3,13 +3,21 @@ import { type ReactElement, type ReactNode, useMemo } from 'react';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { AppContext, type AppContextState } from '../context/App';
+import type { SettingsState } from '../types';
+
+/**
+ * Test context that allows partial settings
+ */
+type TestAppContext = Omit<Partial<AppContextState>, 'settings'> & {
+  settings?: Partial<SettingsState>;
+};
 
 /**
  * Props for the AppContextProvider wrapper
  */
 interface AppContextProviderProps {
   readonly children: ReactNode;
-  readonly value?: Partial<AppContextState>;
+  readonly value?: TestAppContext;
 }
 
 /**
@@ -20,16 +28,20 @@ export function AppContextProvider({
   value = {},
 }: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
+    const { settings: providedSettings, ...otherValues } = value;
     return {
       auth: mockAuth,
-      settings: mockSettings,
+      settings: {
+        ...mockSettings,
+        ...providedSettings,
+      },
 
       notifications: [],
 
       status: 'success',
       globalError: null,
 
-      ...value,
+      ...otherValues,
     } as Partial<AppContextState>;
   }, [value]);
 
@@ -46,7 +58,7 @@ export function AppContextProvider({
  */
 export function renderWithAppContext(
   ui: ReactElement,
-  context: Partial<AppContextState> = {},
+  context: TestAppContext = {},
 ) {
   return render(ui, {
     wrapper: ({ children }) => (

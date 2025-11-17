@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { Header } from './Header';
 
 const mockNavigate = jest.fn();
@@ -18,33 +18,29 @@ describe('renderer/components/primitives/Header.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = render(<Header>Test Header</Header>);
+    const tree = renderWithAppContext(<Header>Test Header</Header>);
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should navigate back', async () => {
-    render(<Header>Test Header</Header>);
+    renderWithAppContext(<Header>Test Header</Header>);
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith(-1);
   });
 
   it('should navigate back and fetch notifications', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          fetchNotifications: mockFetchNotifications,
-        }}
-      >
-        <Header fetchOnBack={true}>Test Header</Header>
-      </AppContext.Provider>,
-    );
+    renderWithAppContext(<Header fetchOnBack={true}>Test Header</Header>, {
+      fetchNotifications: mockFetchNotifications,
+    });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith(-1);
   });
 });

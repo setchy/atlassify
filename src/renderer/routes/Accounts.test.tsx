@@ -1,10 +1,9 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
-import * as apiRequests from '../utils/api/request';
+import * as authUtils from '../utils/auth/utils';
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';
 import { AccountsRoute } from './Accounts';
@@ -25,18 +24,11 @@ describe('renderer/routes/Accounts.tsx', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: {
-                accounts: [mockAtlassianCloudAccount],
-              },
-              settings: mockSettings,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />, {
+          auth: {
+            accounts: [mockAtlassianCloudAccount],
+          },
+        });
       });
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
@@ -46,18 +38,11 @@ describe('renderer/routes/Accounts.tsx', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: {
-                accounts: [mockAtlassianCloudAccount],
-              },
-              settings: mockSettings,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />, {
+          auth: {
+            accounts: [mockAtlassianCloudAccount],
+          },
+        });
       });
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
@@ -65,129 +50,91 @@ describe('renderer/routes/Accounts.tsx', () => {
 
     it('should go back by pressing the icon', async () => {
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: mockAuth,
-              settings: mockSettings,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />);
       });
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+      expect(mockNavigate).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledWith(-1);
     });
   });
 
   describe('Account interactions', () => {
     it('open account profile in external browser', async () => {
-      const mockOpenAccountProfile = jest
+      const openAccountProfileSpy = jest
         .spyOn(links, 'openAccountProfile')
         .mockImplementation();
 
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: {
-                accounts: [mockAtlassianCloudAccount],
-              },
-              settings: mockSettings,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />, {
+          auth: {
+            accounts: [mockAtlassianCloudAccount],
+          },
+        });
       });
 
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
-      expect(mockOpenAccountProfile).toHaveBeenCalledTimes(1);
-      expect(mockOpenAccountProfile).toHaveBeenCalledWith(
+      expect(openAccountProfileSpy).toHaveBeenCalledTimes(1);
+      expect(openAccountProfileSpy).toHaveBeenCalledWith(
         mockAtlassianCloudAccount,
       );
     });
 
     it('should refresh account', async () => {
-      const mockPerformRequestForAccount = jest.spyOn(
-        apiRequests,
-        'performRequestForAccount',
-      );
+      const refreshAccountSpy = jest
+        .spyOn(authUtils, 'refreshAccount')
+        .mockImplementation();
 
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: {
-                accounts: [mockAtlassianCloudAccount],
-              },
-              settings: mockSettings,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />, {
+          auth: {
+            accounts: [mockAtlassianCloudAccount],
+          },
+        });
       });
 
       await userEvent.click(screen.getByTestId('account-refresh'));
 
-      expect(mockPerformRequestForAccount).toHaveBeenCalledTimes(1);
-
-      await waitFor(() =>
-        expect(mockNavigate).toHaveBeenNthCalledWith(1, '/accounts', {
-          replace: true,
-        }),
-      );
+      expect(refreshAccountSpy).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledWith('/accounts', {
+        replace: true,
+      });
     });
 
     it('should logout', async () => {
       const mockLogoutFromAccount = jest.fn();
 
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: {
-                accounts: [mockAtlassianCloudAccount],
-              },
-              settings: mockSettings,
-              logoutFromAccount: mockLogoutFromAccount,
-            }}
-          >
-            <AccountsRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<AccountsRoute />, {
+          auth: {
+            accounts: [mockAtlassianCloudAccount],
+          },
+          logoutFromAccount: mockLogoutFromAccount,
+        });
       });
 
       await userEvent.click(screen.getByTestId('account-logout'));
 
       expect(mockLogoutFromAccount).toHaveBeenCalledTimes(1);
-
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+      expect(mockNavigate).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledWith(-1);
     });
   });
 
   it('should add new accounts', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: { accounts: [mockAtlassianCloudAccount] },
-            settings: mockSettings,
-          }}
-        >
-          <AccountsRoute />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountsRoute />, {
+        auth: { accounts: [mockAtlassianCloudAccount] },
+      });
     });
 
     await userEvent.click(screen.getByTestId('account-add-new'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/login', {
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith('/login', {
       replace: true,
     });
   });

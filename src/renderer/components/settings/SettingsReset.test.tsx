@@ -1,8 +1,7 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { SettingsReset } from './SettingsReset';
 
 const mockNavigate = jest.fn();
@@ -20,17 +19,9 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
 
   it('should reset default settings when `confirmed`', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            resetSettings: mockResetSettings,
-          }}
-        >
-          <SettingsReset />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<SettingsReset />, {
+        resetSettings: mockResetSettings,
+      });
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
@@ -41,17 +32,9 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
 
   it('should skip reset default settings when `cancelled`', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            resetSettings: mockResetSettings,
-          }}
-        >
-          <SettingsReset />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<SettingsReset />, {
+        resetSettings: mockResetSettings,
+      });
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));

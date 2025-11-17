@@ -1,5 +1,6 @@
-import { act, render } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { EmojiText, type EmojiTextProps } from './EmojiText';
 
 describe('renderer/components/primitives/Emoji.tsx', () => {
@@ -8,10 +9,10 @@ describe('renderer/components/primitives/Emoji.tsx', () => {
       text: '🍺',
     };
 
-    let tree: ReturnType<typeof render> | null = null;
+    let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = render(<EmojiText {...props} />);
+      tree = renderWithAppContext(<EmojiText {...props} />);
     });
 
     expect(tree).toMatchSnapshot();

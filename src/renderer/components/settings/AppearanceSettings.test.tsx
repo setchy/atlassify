@@ -1,8 +1,7 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
@@ -15,17 +14,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
 
   it('should change the theme radio group', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting: mockUpdateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AppearanceSettings />, {
+        updateSetting: mockUpdateSetting,
+      });
     });
 
     await userEvent.click(screen.getByTestId('theme-dark--radio-label'));
@@ -38,17 +29,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(-1);
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting: mockUpdateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AppearanceSettings />, {
+        updateSetting: mockUpdateSetting,
+      });
     });
 
     fireEvent(window, new Event('resize'));
@@ -66,17 +49,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     });
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting: mockUpdateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AppearanceSettings />, {
+        updateSetting: mockUpdateSetting,
+      });
     });
 
     await act(async () => {
@@ -85,7 +60,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     });
 
     expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
-    expect(mockUpdateSetting).toHaveBeenCalledWith('zoomPercentage', 90);
+    expect(mockUpdateSetting).toHaveBeenNthCalledWith(1, 'zoomPercentage', 90);
 
     await act(async () => {
       await userEvent.click(screen.getByTestId('settings-zoom-out'));

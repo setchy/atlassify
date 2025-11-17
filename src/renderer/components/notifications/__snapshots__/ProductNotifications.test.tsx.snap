@@ -156,10 +156,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
           </div>
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
       </div>
     </div>
@@ -316,10 +316,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
         </div>
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
     </div>
   </div>,
@@ -533,10 +533,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
           </div>
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
       </div>
     </div>
@@ -693,10 +693,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
         </div>
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
     </div>
   </div>,
@@ -1063,10 +1063,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
           </div>
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
         <div>
-          NotificationRow
+          Notification Row
         </div>
       </div>
     </div>
@@ -1223,10 +1223,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
         </div>
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
       <div>
-        NotificationRow
+        Notification Row
       </div>
     </div>
   </div>,

@@ -1,6 +1,7 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
 
@@ -16,48 +17,49 @@ describe('renderer/routes/Login.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = render(<LoginRoute />);
+    const tree = renderWithAppContext(<LoginRoute />);
 
     expect(tree).toMatchSnapshot();
   });
 
   describe('login web pages', () => {
     it('should open create new token page', async () => {
-      const mockOpenExternalLink = jest
+      const openExternalLinkSpy = jest
         .spyOn(comms, 'openExternalLink')
         .mockImplementation();
 
       await act(async () => {
-        render(<LoginRoute />);
+        renderWithAppContext(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-create-token'));
 
-      expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
+      expect(openExternalLinkSpy).toHaveBeenCalledTimes(1);
     });
 
     it('should open login docs', async () => {
-      const mockOpenExternalLink = jest
+      const openExternalLinkSpy = jest
         .spyOn(comms, 'openExternalLink')
         .mockImplementation();
 
       await act(async () => {
-        render(<LoginRoute />);
+        renderWithAppContext(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-docs'));
 
-      expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
+      expect(openExternalLinkSpy).toHaveBeenCalledTimes(1);
     });
   });
 
   it('should navigate back to landing page on cancel', async () => {
     await act(async () => {
-      render(<LoginRoute />);
+      renderWithAppContext(<LoginRoute />);
     });
 
     await userEvent.click(screen.getByTestId('login-cancel'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith(-1);
   });
 });
