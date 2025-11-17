@@ -17,7 +17,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = renderWithAppContext(<LandingRoute />);
+    const tree = renderWithAppContext(<LandingRoute />, { isLoggedIn: false });
 
     expect(tree).toMatchSnapshot();
   });
@@ -35,7 +35,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should navigate to login with api token', async () => {
-    renderWithAppContext(<LandingRoute />);
+    renderWithAppContext(<LandingRoute />, { isLoggedIn: false });
 
     await userEvent.click(screen.getByTestId('login'));
 

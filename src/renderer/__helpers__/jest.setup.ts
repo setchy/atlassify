@@ -2,6 +2,13 @@ import '@testing-library/jest-dom';
 
 import { TextEncoder } from 'node:util';
 
+// Stub Atlaskit feature flags so tests don't hit the Feature Gate client
+jest.mock('@atlaskit/platform-feature-flags', () => {
+  return {
+    fg: jest.fn(() => false),
+  };
+});
+
 /**
  * Atlassify context bridge API
  */
