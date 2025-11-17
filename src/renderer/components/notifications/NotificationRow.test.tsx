@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
+import { mockSettings } from '../../__mocks__/state-mocks';
 import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
@@ -37,7 +38,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByTitle: true },
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
       });
 
       expect(tree).toMatchSnapshot();
@@ -56,7 +57,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByTitle: true },
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
       });
 
       expect(tree).toMatchSnapshot();
@@ -72,7 +73,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByTitle: true },
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
       });
 
       expect(tree).toMatchSnapshot();
@@ -88,7 +89,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByProduct: true },
+        settings: { ...mockSettings, groupNotificationsByProduct: true },
       });
 
       expect(tree).toMatchSnapshot();
@@ -140,6 +141,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       renderWithAppContext(<NotificationRow {...props} />, {
         settings: {
+          ...mockSettings,
           delayNotificationState: true,
         },
         markNotificationsRead: mockMarkNotificationsRead,

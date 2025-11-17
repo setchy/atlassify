@@ -11,7 +11,7 @@ import {
 } from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
-  NotificationRow: () => <div>Notification Row</div>,
+  NotificationRow: () => <div>NotificationRow</div>,
 }));
 
 const openExternalLinkSpy = jest

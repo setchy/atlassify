@@ -83,7 +83,7 @@ describe('renderer/context/App.tsx', () => {
     };
 
     it('fetch notifications each interval', async () => {
-      renderWithAppContext(null);
+      renderWithAppContext(<AppProvider>{null}</AppProvider>);
 
       await waitFor(() =>
         expect(mockFetchNotifications).toHaveBeenCalledTimes(1),

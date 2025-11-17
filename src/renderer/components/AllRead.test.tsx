@@ -37,6 +37,7 @@ describe('renderer/components/AllRead.tsx', () => {
     await act(async () => {
       tree = renderWithAppContext(<AllRead />, {
         settings: {
+          ...mockSettings,
           filterProducts: ['jira'],
         },
       });

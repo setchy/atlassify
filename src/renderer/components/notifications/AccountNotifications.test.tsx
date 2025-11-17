@@ -15,7 +15,7 @@ import {
 } from './AccountNotifications';
 
 jest.mock('./ProductNotifications', () => ({
-  ProductNotifications: () => <div>Product Notifications</div>,
+  ProductNotifications: () => <div>ProductNotifications</div>,
 }));
 
 describe('renderer/components/notifications/AccountNotifications.tsx', () => {

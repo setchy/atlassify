@@ -9,6 +9,7 @@ import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
+import { mockSettings } from '../__mocks__/state-mocks';
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 
@@ -50,6 +51,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
+          isLoggedIn: true,
           notifications: mockAccountNotifications,
         },
       );
@@ -65,6 +67,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
+          isLoggedIn: true,
           notifications: mockAccountNotifications,
         },
       );
@@ -107,16 +110,11 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
   });
 
-  it('should navigate to home', async () => {
+  it('should navigate to home when clicking logo', async () => {
     renderWithAppContext(
       <MemoryRouter>
         <Sidebar />
       </MemoryRouter>,
-      {
-        isLoggedIn: false,
-        notifications: [],
-        fetchNotifications: mockFetchNotifications,
-      },
     );
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
@@ -131,10 +129,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          isLoggedIn: true,
-          notifications: [],
-        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
@@ -150,7 +144,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
           notifications: [],
         },
       );
@@ -164,7 +157,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
           notifications: mockAccountNotifications,
         },
       );
@@ -178,7 +170,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
           notifications: mockAccountNotificationsWithMorePages,
         },
       );
@@ -194,9 +185,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
-          settings: { fetchOnlyUnreadNotifications: true },
+          settings: { ...mockSettings, fetchOnlyUnreadNotifications: true },
         },
       );
 
@@ -209,9 +198,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
-          settings: { fetchOnlyUnreadNotifications: false },
+          settings: { ...mockSettings, fetchOnlyUnreadNotifications: false },
         },
       );
 
@@ -224,8 +211,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           updateSetting: mockUpdateSettings,
         },
       );
@@ -247,8 +232,10 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
+          settings: {
+            ...mockSettings,
+            groupNotificationsByProduct: false,
+          },
         },
       );
 
@@ -261,12 +248,10 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           settings: {
+            ...mockSettings,
             groupNotificationsByProduct: true,
           },
-          updateSetting: mockUpdateSettings,
         },
       );
 
@@ -279,8 +264,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           updateSetting: mockUpdateSettings,
         },
       );
@@ -298,8 +281,10 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
+          settings: {
+            ...mockSettings,
+            groupNotificationsByTitle: true,
+          },
         },
       );
 
@@ -312,12 +297,10 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           settings: {
+            ...mockSettings,
             groupNotificationsByTitle: false,
           },
-          updateSetting: mockUpdateSettings,
         },
       );
 
@@ -330,8 +313,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           updateSetting: mockUpdateSettings,
         },
       );
@@ -348,10 +329,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          isLoggedIn: true,
-          notifications: [],
-        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
@@ -368,10 +345,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter initialEntries={['/filters']}>
           <Sidebar />
         </MemoryRouter>,
-        {
-          isLoggedIn: true,
-          notifications: [],
-        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
@@ -383,15 +356,14 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
     });
 
-    it('show filters count if any are saved', () => {
+    it('highlight filters sidebar if any are saved', () => {
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           settings: {
+            ...mockSettings,
             filterProducts: ['bitbucket'],
           },
         },
@@ -410,8 +382,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           fetchNotifications: mockFetchNotifications,
           status: 'success',
         },
@@ -428,8 +398,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           fetchNotifications: mockFetchNotifications,
           status: 'loading',
         },
@@ -447,10 +415,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          isLoggedIn: true,
-          notifications: [],
-        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
@@ -465,8 +429,6 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
-          notifications: [],
           fetchNotifications: mockFetchNotifications,
         },
       );
@@ -488,7 +450,6 @@ describe('renderer/components/Sidebar.tsx', () => {
       </MemoryRouter>,
       {
         isLoggedIn: false,
-        notifications: [],
       },
     );
 
