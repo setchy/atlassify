@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react';
-
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
-import { AppContext } from '../context/App';
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';
 
@@ -19,70 +17,48 @@ jest.mock('../components/Oops', () => ({
 
 describe('renderer/routes/Notifications.tsx', () => {
   it('should render itself & its children (with notifications)', () => {
-    const tree = render(
-      <AppContext.Provider value={{ notifications: mockAccountNotifications }}>
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: mockAccountNotifications,
+    });
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should render itself & its children', () => {
-    const tree = render(
-      <AppContext.Provider value={{ notifications: [] }}>
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+    });
 
     expect(tree).toMatchSnapshot();
   });
 
   describe('should render itself & its children (error conditions - oops)', () => {
     it('bad credentials', () => {
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: [],
-            status: 'error',
-            globalError: Errors.BAD_CREDENTIALS,
-          }}
-        >
-          <NotificationsRoute />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationsRoute />, {
+        notifications: [],
+        status: 'error',
+        globalError: Errors.BAD_CREDENTIALS,
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('unknown error', () => {
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: [],
-            status: 'error',
-            globalError: Errors.UNKNOWN,
-          }}
-        >
-          <NotificationsRoute />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationsRoute />, {
+        notifications: [],
+        status: 'error',
+        globalError: Errors.UNKNOWN,
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('default error', () => {
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: [],
-            status: 'error',
-            globalError: null,
-          }}
-        >
-          <NotificationsRoute />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationsRoute />, {
+        notifications: [],
+        status: 'error',
+        globalError: null,
+      });
 
       expect(tree).toMatchSnapshot();
     });

@@ -11,7 +11,7 @@ jest.mock('../logger', () => ({
   rendererLogError: jest.fn(),
 }));
 
-import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import type { JiraProjectType } from '../api/types';
 import { rendererLogError } from '../logger';

@@ -1,18 +1,17 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { SettingsRoute } from './Settings';
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Settings.tsx', () => {
-  const fetchNotifications = jest.fn();
+  const fetchNotificationsMock = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -20,11 +19,7 @@ describe('renderer/routes/Settings.tsx', () => {
 
   it('should render itself & its children', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider value={{ auth: mockAuth, settings: mockSettings }}>
-          <SettingsRoute />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<SettingsRoute />);
     });
 
     expect(screen.getByTestId('settings')).toMatchSnapshot();
@@ -32,22 +27,15 @@ describe('renderer/routes/Settings.tsx', () => {
 
   it('should go back by pressing the icon', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            fetchNotifications,
-          }}
-        >
-          <SettingsRoute />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<SettingsRoute />, {
+        fetchNotifications: fetchNotificationsMock,
+      });
     });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(fetchNotifications).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+    expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith(-1);
   });
 });

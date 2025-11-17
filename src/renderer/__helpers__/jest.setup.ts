@@ -2,10 +2,17 @@ import '@testing-library/jest-dom';
 
 import { TextEncoder } from 'node:util';
 
+// Stub Atlaskit feature flags so tests don't hit the Feature Gate client
+jest.mock('@atlaskit/platform-feature-flags', () => {
+  return {
+    fg: jest.fn(() => false),
+  };
+});
+
 /**
  * Atlassify context bridge API
  */
-window.atlassify = {
+globalThis.atlassify = {
   app: {
     version: jest.fn().mockResolvedValue('v0.0.1'),
     hide: jest.fn(),
@@ -40,6 +47,6 @@ window.atlassify = {
 };
 
 // prevent ReferenceError: TextEncoder is not defined
-global.TextEncoder = TextEncoder;
+globalThis.TextEncoder = TextEncoder;
 
-window.HTMLMediaElement.prototype.play = jest.fn();
+globalThis.HTMLMediaElement.prototype.play = jest.fn();

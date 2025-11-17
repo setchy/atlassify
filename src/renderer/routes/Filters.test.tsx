@@ -1,20 +1,20 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
+import { renderWithAppContext } from '../__helpers__/test-utils';
+import { mockSettings } from '../__mocks__/state-mocks';
 import { FiltersRoute } from './Filters';
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  const updateFilter = jest.fn();
-  const clearFilters = jest.fn();
-  const fetchNotifications = jest.fn();
+  const updateFilterMock = jest.fn();
+  const clearFiltersMock = jest.fn();
+  const fetchNotificationsMock = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -23,17 +23,9 @@ describe('renderer/routes/Filters.tsx', () => {
   describe('General', () => {
     it('should render itself & its children', async () => {
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: mockAuth,
-              settings: mockSettings,
-              notifications: [],
-            }}
-          >
-            <FiltersRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
+        });
       });
 
       expect(screen.getByTestId('filters')).toMatchSnapshot();
@@ -41,24 +33,17 @@ describe('renderer/routes/Filters.tsx', () => {
 
     it('should go back by pressing the icon', async () => {
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: mockAuth,
-              settings: mockSettings,
-              fetchNotifications,
-              notifications: [],
-            }}
-          >
-            <FiltersRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<FiltersRoute />, {
+          fetchNotifications: fetchNotificationsMock,
+          notifications: [],
+        });
       });
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith(-1);
     });
   });
 
@@ -66,23 +51,15 @@ describe('renderer/routes/Filters.tsx', () => {
     describe('time sensitive filters', () => {
       it('should filter by time sensitive - no existing filters set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: mockSettings,
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterEngagementStates',
           'mention',
           true,
@@ -91,26 +68,19 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by engagement state - existing filter set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: {
-                  ...mockSettings,
-                  filterEngagementStates: ['mention'],
-                },
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            settings: {
+              ...mockSettings,
+              filterEngagementStates: ['mention'],
+            },
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterEngagementStates',
           'mention',
           false,
@@ -121,23 +91,15 @@ describe('renderer/routes/Filters.tsx', () => {
     describe('category filters', () => {
       it('should filter by category - no existing filters set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: mockSettings,
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterCategories',
           'direct',
           true,
@@ -146,26 +108,19 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by category - existing filter set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: {
-                  ...mockSettings,
-                  filterCategories: ['direct'],
-                },
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            settings: {
+              ...mockSettings,
+              filterCategories: ['direct'],
+            },
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterCategories',
           'direct',
           false,
@@ -176,23 +131,15 @@ describe('renderer/routes/Filters.tsx', () => {
     describe('actor filters', () => {
       it('should filter by actor - no existing filters set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: mockSettings,
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterActors',
           'automation',
           true,
@@ -201,26 +148,19 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by actor - existing filter set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: {
-                  ...mockSettings,
-                  filterActors: ['automation'],
-                },
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            settings: {
+              ...mockSettings,
+              filterActors: ['automation'],
+            },
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterActors',
           'automation',
           false,
@@ -231,23 +171,15 @@ describe('renderer/routes/Filters.tsx', () => {
     describe('read state filters', () => {
       it('should filter by read state - no existing filters set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: mockSettings,
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterReadStates',
           'unread',
           true,
@@ -256,26 +188,19 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by read state - existing filter set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: {
-                  ...mockSettings,
-                  filterReadStates: ['unread'],
-                },
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            settings: {
+              ...mockSettings,
+              filterReadStates: ['unread'],
+            },
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterReadStates',
           'unread',
           false,
@@ -286,18 +211,10 @@ describe('renderer/routes/Filters.tsx', () => {
     describe('product filters', () => {
       it('should filter by product - no existing filters set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: mockSettings,
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {
@@ -305,7 +222,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterProducts',
           'bitbucket',
           true,
@@ -314,21 +231,14 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by product - existing filter set', async () => {
         await act(async () => {
-          render(
-            <AppContext.Provider
-              value={{
-                auth: mockAuth,
-                settings: {
-                  ...mockSettings,
-                  filterProducts: ['bitbucket'],
-                },
-                notifications: [],
-                updateFilter,
-              }}
-            >
-              <FiltersRoute />
-            </AppContext.Provider>,
-          );
+          renderWithAppContext(<FiltersRoute />, {
+            settings: {
+              ...mockSettings,
+              filterProducts: ['bitbucket'],
+            },
+            notifications: [],
+            updateFilter: updateFilterMock,
+          });
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {
@@ -336,7 +246,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(updateFilterMock).toHaveBeenCalledWith(
           'filterProducts',
           'bitbucket',
           false,
@@ -350,23 +260,15 @@ describe('renderer/routes/Filters.tsx', () => {
   describe('Footer section', () => {
     it('should clear filters', async () => {
       await act(async () => {
-        render(
-          <AppContext.Provider
-            value={{
-              auth: mockAuth,
-              settings: mockSettings,
-              notifications: [],
-              clearFilters,
-            }}
-          >
-            <FiltersRoute />
-          </AppContext.Provider>,
-        );
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
+          clearFilters: clearFiltersMock,
+        });
       });
 
       await userEvent.click(screen.getByTestId('filters-clear'));
 
-      expect(clearFilters).toHaveBeenCalled();
+      expect(clearFiltersMock).toHaveBeenCalled();
     });
   });
 });

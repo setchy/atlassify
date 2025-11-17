@@ -1,8 +1,8 @@
-import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
 import {
   mockAtlassianCloudAccount,
   mockAtlassianCloudAccountTwo,
-} from '../../__mocks__/state-mocks';
+} from '../../__mocks__/account-mocks';
+import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
 import type { AccountNotifications } from '../../types';
 import { getNewNotifications } from './utils';
 
