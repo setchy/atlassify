@@ -11,7 +11,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/components/primitives/Header.tsx', () => {
-  const fetchNotifications = jest.fn();
+  const mockFetchNotifications = jest.fn();
 
   afterEach(() => {
     jest.resetAllMocks();
@@ -35,7 +35,7 @@ describe('renderer/components/primitives/Header.tsx', () => {
     render(
       <AppContext.Provider
         value={{
-          fetchNotifications,
+          fetchNotifications: mockFetchNotifications,
         }}
       >
         <Header fetchOnBack={true}>Test Header</Header>
@@ -45,6 +45,6 @@ describe('renderer/components/primitives/Header.tsx', () => {
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
-    expect(fetchNotifications).toHaveBeenCalledTimes(1);
+    expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
   });
 });

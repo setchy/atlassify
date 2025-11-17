@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/routes/Settings.tsx', () => {
-  const fetchNotifications = jest.fn();
+  const mockFetchNotifications = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -37,7 +37,7 @@ describe('renderer/routes/Settings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            fetchNotifications,
+            fetchNotifications: mockFetchNotifications,
           }}
         >
           <SettingsRoute />
@@ -47,7 +47,7 @@ describe('renderer/routes/Settings.tsx', () => {
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(fetchNotifications).toHaveBeenCalledTimes(1);
+    expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
     expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
   });
 });
