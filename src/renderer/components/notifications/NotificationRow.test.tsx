@@ -157,7 +157,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
   describe('notification interactions', () => {
     it('should open a notification in the browser - click', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const mockMarkNotificationsRead = jest.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -167,7 +167,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
+            markNotificationsRead: mockMarkNotificationsRead,
             auth: mockAuth,
           }}
         >
@@ -178,11 +178,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
     });
 
     it('should open a notification in the browser - delay notification setting enabled', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const mockMarkNotificationsRead = jest.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -195,7 +195,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
               ...mockSettings,
               delayNotificationState: true,
             },
-            markNotificationsRead: markNotificationsReadMock,
+            markNotificationsRead: mockMarkNotificationsRead,
             auth: mockAuth,
           }}
         >
@@ -206,11 +206,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-details'));
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
     });
 
     it('should mark a notification as read', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const mockMarkNotificationsRead = jest.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -220,7 +220,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
+            markNotificationsRead: mockMarkNotificationsRead,
           }}
         >
           <NotificationRow {...props} />
@@ -229,11 +229,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
 
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
     });
 
     it('should mark a notification as unread', async () => {
-      const markNotificationsUnreadMock = jest.fn();
+      const mockMarkNotificationsUnread = jest.fn();
 
       const props: NotificationRowProps = {
         notification: {
@@ -246,7 +246,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationsUnread: markNotificationsUnreadMock,
+            markNotificationsUnread: mockMarkNotificationsUnread,
           }}
         >
           <NotificationRow {...props} />
@@ -255,7 +255,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       await userEvent.click(screen.getByTestId('notification-mark-as-unread'));
 
-      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsUnread).toHaveBeenCalledTimes(1);
     });
   });
 });

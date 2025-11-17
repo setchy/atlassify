@@ -7,7 +7,7 @@ import type { Percentage } from '../../types';
 import { SystemSettings } from './SystemSettings';
 
 describe('renderer/components/settings/SystemSettings.tsx', () => {
-  const updateSetting = jest.fn();
+  const mockUpdateSetting = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -20,7 +20,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -30,8 +30,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Background'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('openLinks', 'BACKGROUND');
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith('openLinks', 'BACKGROUND');
   });
 
   it('should toggle the keyboardShortcutEnabled checkbox', async () => {
@@ -41,7 +41,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -51,8 +51,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith(
       'keyboardShortcutEnabled',
       false,
     );
@@ -65,7 +65,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -75,8 +75,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Show system notifications'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith(
       'showSystemNotifications',
       false,
     );
@@ -89,7 +89,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -100,8 +100,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
         screen.getByLabelText('Play sound for new notifications'),
       );
 
-      expect(updateSetting).toHaveBeenCalledTimes(1);
-      expect(updateSetting).toHaveBeenCalledWith(
+      expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+      expect(mockUpdateSetting).toHaveBeenCalledWith(
         'playSoundNewNotifications',
         false,
       );
@@ -112,7 +112,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: { ...mockSettings, playSoundNewNotifications: false },
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -128,7 +128,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -137,8 +137,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
       await userEvent.click(screen.getByTestId('settings-volume-up'));
 
-      expect(updateSetting).toHaveBeenCalledTimes(1);
-      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 30);
+      expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+      expect(mockUpdateSetting).toHaveBeenCalledWith('notificationVolume', 30);
     });
 
     it('should decrease notification volume', async () => {
@@ -147,7 +147,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -156,8 +156,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
       await userEvent.click(screen.getByTestId('settings-volume-down'));
 
-      expect(updateSetting).toHaveBeenCalledTimes(1);
-      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 10);
+      expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+      expect(mockUpdateSetting).toHaveBeenCalledWith('notificationVolume', 10);
     });
 
     it('should reset notification volume', async () => {
@@ -169,7 +169,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
               ...mockSettings,
               notificationVolume: 30 as Percentage,
             },
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -178,8 +178,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
       await userEvent.click(screen.getByTestId('settings-volume-reset'));
 
-      expect(updateSetting).toHaveBeenCalledTimes(1);
-      expect(updateSetting).toHaveBeenCalledWith('notificationVolume', 20);
+      expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+      expect(mockUpdateSetting).toHaveBeenCalledWith('notificationVolume', 20);
     });
   });
 
@@ -190,7 +190,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <SystemSettings />
@@ -200,7 +200,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Open at startup'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('openAtStartup', false);
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith('openAtStartup', false);
   });
 });

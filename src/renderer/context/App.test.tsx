@@ -27,7 +27,7 @@ const customRender = (
 };
 
 describe('renderer/context/App.tsx', () => {
-  const saveStateMock = jest
+  const mockSaveState = jest
     .spyOn(storage, 'saveState')
     .mockImplementation(jest.fn());
 
@@ -41,15 +41,15 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('notification methods', () => {
-    const getNotificationCountMock = jest.spyOn(
+    const mockGetNotificationCount = jest.spyOn(
       notifications,
       'getNotificationCount',
     );
-    getNotificationCountMock.mockReturnValue(1);
+    mockGetNotificationCount.mockReturnValue(1);
 
-    const fetchNotificationsMock = jest.fn();
-    const markNotificationsReadMock = jest.fn();
-    const markNotificationsUnreadMock = jest.fn();
+    const mockFetchNotifications = jest.fn();
+    const mockMarkNotificationsRead = jest.fn();
+    const mockMarkNotificationsUnread = jest.fn();
 
     const mockDefaultState = {
       auth: { accounts: [] },
@@ -58,9 +58,9 @@ describe('renderer/context/App.tsx', () => {
 
     beforeEach(() => {
       (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
-        markNotificationsRead: markNotificationsReadMock,
-        markNotificationsUnread: markNotificationsUnreadMock,
+        fetchNotifications: mockFetchNotifications,
+        markNotificationsRead: mockMarkNotificationsRead,
+        markNotificationsUnread: mockMarkNotificationsUnread,
       });
     });
 
@@ -72,23 +72,23 @@ describe('renderer/context/App.tsx', () => {
       customRender(null);
 
       await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
+        expect(mockFetchNotifications).toHaveBeenCalledTimes(1),
       );
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(2);
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(3);
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(4);
     });
 
     it('should call fetchNotifications', async () => {
@@ -104,11 +104,11 @@ describe('renderer/context/App.tsx', () => {
 
       const { getByText } = customRender(<TestComponent />);
 
-      fetchNotificationsMock.mockReset();
+      mockFetchNotifications.mockReset();
 
       fireEvent.click(getByText('Test Case'));
 
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
@@ -131,8 +131,8 @@ describe('renderer/context/App.tsx', () => {
 
       fireEvent.click(getByText('Test Case'));
 
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
+      expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsRead).toHaveBeenCalledWith(mockDefaultState, [
         mockSingleAtlassifyNotification,
       ]);
     });
@@ -157,8 +157,8 @@ describe('renderer/context/App.tsx', () => {
 
       fireEvent.click(getByText('Test Case'));
 
-      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
+      expect(mockMarkNotificationsUnread).toHaveBeenCalledTimes(1);
+      expect(mockMarkNotificationsUnread).toHaveBeenCalledWith(
         mockDefaultState,
         [mockSingleAtlassifyNotification],
       );
@@ -166,11 +166,11 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('settings methods', () => {
-    const fetchNotificationsMock = jest.fn();
+    const mockFetchNotifications = jest.fn();
 
     beforeEach(() => {
       (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: fetchNotificationsMock,
+        fetchNotifications: mockFetchNotifications,
       });
     });
 
@@ -194,7 +194,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -206,7 +206,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set openAtStartup', async () => {
-      const setAutoLaunchMock = jest.spyOn(comms, 'setAutoLaunch');
+      const mockSetAutoLaunch = jest.spyOn(comms, 'setAutoLaunch');
 
       const TestComponent = () => {
         const { updateSetting } = useContext(AppContext);
@@ -227,9 +227,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(setAutoLaunchMock).toHaveBeenCalledWith(true);
+      expect(mockSetAutoLaunch).toHaveBeenCalledWith(true);
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -241,7 +241,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set useUnreadActiveIcon', async () => {
-      const setUnreadActiveIconMock = jest.spyOn(
+      const mockUseUnreadActiveIcon = jest.spyOn(
         comms,
         'setUseUnreadActiveIcon',
       );
@@ -265,9 +265,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(setUnreadActiveIconMock).toHaveBeenCalledWith(true);
+      expect(mockUseUnreadActiveIcon).toHaveBeenCalledWith(true);
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -279,7 +279,7 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call updateSetting and set useAlternateIdleIcon', async () => {
-      const setAlternateIdleIconMock = jest.spyOn(
+      const mockSetUseAlternateIdleIcon = jest.spyOn(
         comms,
         'setUseAlternateIdleIcon',
       );
@@ -303,9 +303,9 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(setAlternateIdleIconMock).toHaveBeenCalledWith(true);
+      expect(mockSetUseAlternateIdleIcon).toHaveBeenCalledWith(true);
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -333,7 +333,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -363,7 +363,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -394,7 +394,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,
@@ -422,7 +422,7 @@ describe('renderer/context/App.tsx', () => {
         fireEvent.click(getByText('Test Case'));
       });
 
-      expect(saveStateMock).toHaveBeenCalledWith({
+      expect(mockSaveState).toHaveBeenCalledWith({
         auth: {
           accounts: [],
         } as AuthState,

@@ -6,7 +6,7 @@ import { AppContext } from '../../context/App';
 import { TraySettings } from './TraySettings';
 
 describe('renderer/components/settings/TraySettings.tsx', () => {
-  const updateSetting = jest.fn();
+  const mockUpdateSetting = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -19,7 +19,7 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <TraySettings />
@@ -31,8 +31,8 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
       screen.getByLabelText('Show notifications count in tray'),
     );
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith(
       'showNotificationsCountInTray',
       false,
     );
@@ -45,7 +45,7 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSetting,
           }}
         >
           <TraySettings />
@@ -55,7 +55,10 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', true);
+    expect(mockUpdateSetting).toHaveBeenCalledTimes(1);
+    expect(mockUpdateSetting).toHaveBeenCalledWith(
+      'useAlternateIdleIcon',
+      true,
+    );
   });
 });

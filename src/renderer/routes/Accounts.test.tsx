@@ -1,11 +1,8 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import {
-  mockAtlassianCloudAccount,
-  mockAuth,
-  mockSettings,
-} from '../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 import { AppContext } from '../context/App';
 import * as apiRequests from '../utils/api/request';
 import * as links from '../utils/links';
@@ -88,7 +85,7 @@ describe('renderer/routes/Accounts.tsx', () => {
 
   describe('Account interactions', () => {
     it('open account profile in external browser', async () => {
-      const openAccountProfileMock = jest
+      const mockOpenAccountProfile = jest
         .spyOn(links, 'openAccountProfile')
         .mockImplementation();
 
@@ -109,14 +106,14 @@ describe('renderer/routes/Accounts.tsx', () => {
 
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
-      expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
-      expect(openAccountProfileMock).toHaveBeenCalledWith(
+      expect(mockOpenAccountProfile).toHaveBeenCalledTimes(1);
+      expect(mockOpenAccountProfile).toHaveBeenCalledWith(
         mockAtlassianCloudAccount,
       );
     });
 
     it('should refresh account', async () => {
-      const apiRequestMock = jest.spyOn(
+      const mockPerformRequestForAccount = jest.spyOn(
         apiRequests,
         'performRequestForAccount',
       );
@@ -138,7 +135,7 @@ describe('renderer/routes/Accounts.tsx', () => {
 
       await userEvent.click(screen.getByTestId('account-refresh'));
 
-      expect(apiRequestMock).toHaveBeenCalledTimes(1);
+      expect(mockPerformRequestForAccount).toHaveBeenCalledTimes(1);
 
       await waitFor(() =>
         expect(mockNavigate).toHaveBeenNthCalledWith(1, '/accounts', {
@@ -148,7 +145,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     });
 
     it('should logout', async () => {
-      const logoutFromAccountMock = jest.fn();
+      const mockLogoutFromAccount = jest.fn();
 
       await act(async () => {
         render(
@@ -158,7 +155,7 @@ describe('renderer/routes/Accounts.tsx', () => {
                 accounts: [mockAtlassianCloudAccount],
               },
               settings: mockSettings,
-              logoutFromAccount: logoutFromAccountMock,
+              logoutFromAccount: mockLogoutFromAccount,
             }}
           >
             <AccountsRoute />
@@ -168,7 +165,7 @@ describe('renderer/routes/Accounts.tsx', () => {
 
       await userEvent.click(screen.getByTestId('account-logout'));
 
-      expect(logoutFromAccountMock).toHaveBeenCalledTimes(1);
+      expect(mockLogoutFromAccount).toHaveBeenCalledTimes(1);
 
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });

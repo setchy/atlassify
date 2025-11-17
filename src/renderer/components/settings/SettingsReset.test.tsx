@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/components/settings/SettingsReset.tsx', () => {
-  const resetSettings = jest.fn();
+  const mockResetSettings = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -25,7 +25,7 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            resetSettings,
+            resetSettings: mockResetSettings,
           }}
         >
           <SettingsReset />
@@ -36,7 +36,7 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-confirm'));
 
-    expect(resetSettings).toHaveBeenCalled();
+    expect(mockResetSettings).toHaveBeenCalled();
   });
 
   it('should skip reset default settings when `cancelled`', async () => {
@@ -46,7 +46,7 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
           value={{
             auth: mockAuth,
             settings: mockSettings,
-            resetSettings,
+            resetSettings: mockResetSettings,
           }}
         >
           <SettingsReset />
@@ -57,6 +57,6 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-cancel'));
 
-    expect(resetSettings).not.toHaveBeenCalled();
+    expect(mockResetSettings).not.toHaveBeenCalled();
   });
 });

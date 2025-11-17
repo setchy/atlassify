@@ -45,7 +45,7 @@ import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomPercentageToLevel } from '../utils/zoom';
 import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
 
-interface AppContextState {
+export interface AppContextState {
   auth: AuthState;
   isLoggedIn: boolean;
   login: (data: LoginOptions) => Promise<void>;

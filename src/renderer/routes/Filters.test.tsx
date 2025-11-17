@@ -12,9 +12,9 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  const updateFilter = jest.fn();
-  const clearFilters = jest.fn();
-  const fetchNotifications = jest.fn();
+  const mockUpdateFilter = jest.fn();
+  const mockClearFilters = jest.fn();
+  const mockFetchNotifications = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -46,7 +46,7 @@ describe('renderer/routes/Filters.tsx', () => {
             value={{
               auth: mockAuth,
               settings: mockSettings,
-              fetchNotifications,
+              fetchNotifications: mockFetchNotifications,
               notifications: [],
             }}
           >
@@ -57,7 +57,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, -1);
     });
   });
@@ -72,7 +72,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -82,7 +82,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterEngagementStates',
           'mention',
           true,
@@ -100,7 +100,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterEngagementStates: ['mention'],
                 },
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -110,7 +110,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterEngagementStates',
           'mention',
           false,
@@ -127,7 +127,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -137,7 +137,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterCategories',
           'direct',
           true,
@@ -155,7 +155,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterCategories: ['direct'],
                 },
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -165,7 +165,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterCategories',
           'direct',
           false,
@@ -182,7 +182,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -192,7 +192,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterActors',
           'automation',
           true,
@@ -210,7 +210,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterActors: ['automation'],
                 },
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -220,7 +220,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterActors',
           'automation',
           false,
@@ -237,7 +237,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -247,7 +247,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterReadStates',
           'unread',
           true,
@@ -265,7 +265,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterReadStates: ['unread'],
                 },
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -275,7 +275,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterReadStates',
           'unread',
           false,
@@ -292,7 +292,7 @@ describe('renderer/routes/Filters.tsx', () => {
                 auth: mockAuth,
                 settings: mockSettings,
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -305,7 +305,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterProducts',
           'bitbucket',
           true,
@@ -323,7 +323,7 @@ describe('renderer/routes/Filters.tsx', () => {
                   filterProducts: ['bitbucket'],
                 },
                 notifications: [],
-                updateFilter,
+                updateFilter: mockUpdateFilter,
               }}
             >
               <FiltersRoute />
@@ -336,7 +336,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilter).toHaveBeenCalledWith(
+        expect(mockUpdateFilter).toHaveBeenCalledWith(
           'filterProducts',
           'bitbucket',
           false,
@@ -356,7 +356,7 @@ describe('renderer/routes/Filters.tsx', () => {
               auth: mockAuth,
               settings: mockSettings,
               notifications: [],
-              clearFilters,
+              clearFilters: mockClearFilters,
             }}
           >
             <FiltersRoute />
@@ -366,7 +366,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
       await userEvent.click(screen.getByTestId('filters-clear'));
 
-      expect(clearFilters).toHaveBeenCalled();
+      expect(mockClearFilters).toHaveBeenCalled();
     });
   });
 });

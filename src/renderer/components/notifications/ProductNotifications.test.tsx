@@ -15,7 +15,7 @@ jest.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
 }));
 
-const openExternalLinkMock = jest
+const mockOpenExternalLink = jest
   .spyOn(comms, 'openExternalLink')
   .mockImplementation();
 
@@ -71,7 +71,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('product-home'));
 
-    expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+    expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
   });
 
   it('should not open product home and have empty tooltip content when home is unavailable', async () => {
@@ -89,7 +89,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('product-home'));
 
-    expect(openExternalLinkMock).not.toHaveBeenCalled();
+    expect(mockOpenExternalLink).not.toHaveBeenCalled();
   });
 
   it('should toggle product notifications visibility', async () => {
@@ -113,13 +113,13 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const mockMarkNotificationsRead = jest.fn();
 
     render(
       <AppContext.Provider
         value={{
           settings: mockSettings,
-          markNotificationsRead: markNotificationsReadMock,
+          markNotificationsRead: mockMarkNotificationsRead,
         }}
       >
         <ProductNotifications {...props} />
@@ -128,6 +128,6 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('product-mark-as-read'));
 
-    expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+    expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
   });
 });

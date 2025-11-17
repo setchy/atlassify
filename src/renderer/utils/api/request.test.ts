@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { mockAtlassianCloudAccount } from '../../__mocks__/state-mocks';
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import type { Link, Token, Username } from '../../types';
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
 import {

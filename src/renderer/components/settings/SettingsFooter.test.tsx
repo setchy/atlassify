@@ -35,7 +35,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should open release notes', async () => {
-    const openExternalLinkMock = jest
+    const mockOpenExternalLink = jest
       .spyOn(comms, 'openExternalLink')
       .mockImplementation();
 
@@ -54,8 +54,8 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
 
     await userEvent.click(screen.getByTestId('settings-release-notes'));
 
-    expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       'https://github.com/setchy/atlassify/releases/tag/v0.0.1',
     );
   });
@@ -80,7 +80,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should quit the app', async () => {
-    const quitAppMock = jest.spyOn(comms, 'quitApp');
+    const mockQuitApp = jest.spyOn(comms, 'quitApp');
 
     await act(async () => {
       render(
@@ -97,6 +97,6 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
 
     await userEvent.click(screen.getByTestId('settings-quit'));
 
-    expect(quitAppMock).toHaveBeenCalledTimes(1);
+    expect(mockQuitApp).toHaveBeenCalledTimes(1);
   });
 });

@@ -23,7 +23,7 @@ describe('renderer/routes/Login.tsx', () => {
 
   describe('login web pages', () => {
     it('should open create new token page', async () => {
-      const openExternalLinkMock = jest
+      const mockOpenExternalLink = jest
         .spyOn(comms, 'openExternalLink')
         .mockImplementation();
 
@@ -33,11 +33,11 @@ describe('renderer/routes/Login.tsx', () => {
 
       await userEvent.click(screen.getByTestId('login-create-token'));
 
-      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+      expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
     });
 
     it('should open login docs', async () => {
-      const openExternalLinkMock = jest
+      const mockOpenExternalLink = jest
         .spyOn(comms, 'openExternalLink')
         .mockImplementation();
 
@@ -47,7 +47,7 @@ describe('renderer/routes/Login.tsx', () => {
 
       await userEvent.click(screen.getByTestId('login-docs'));
 
-      expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+      expect(mockOpenExternalLink).toHaveBeenCalledTimes(1);
     });
   });
 

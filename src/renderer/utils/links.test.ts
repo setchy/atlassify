@@ -1,5 +1,5 @@
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAtlassianCloudAccount } from '../__mocks__/state-mocks';
 import * as comms from './comms';
 import {
   openAccountProfile,
@@ -13,7 +13,7 @@ import {
 } from './links';
 
 describe('renderer/utils/links.ts', () => {
-  const openExternalLinkMock = jest
+  const mockOpenExternalLink = jest
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();
 
@@ -23,40 +23,40 @@ describe('renderer/utils/links.ts', () => {
 
   it('openAtlassifyReleaseNotes', () => {
     openAtlassifyReleaseNotes('v1.0.0');
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       'https://github.com/setchy/atlassify/releases/tag/v1.0.0',
     );
   });
 
   it('openAtlassianSecurityDocs', () => {
     openAtlassianSecurityDocs();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       URLs.ATLASSIAN.DOCS.API_TOKEN,
     );
   });
 
   it('openAtlassianCreateToken', () => {
     openAtlassianCreateToken();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       URLs.ATLASSIAN.WEB.SECURITY_TOKENS,
     );
   });
 
   it('openMyNotifications', () => {
     openMyNotifications();
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
     );
   });
 
   it('openMyPullRequests', () => {
     openMyPullRequests();
-    expect(openExternalLinkMock).toHaveBeenCalledWith('https://bitbucket.org/');
+    expect(mockOpenExternalLink).toHaveBeenCalledWith('https://bitbucket.org/');
   });
 
   it('openAccountProfile', () => {
     openAccountProfile(mockAtlassianCloudAccount);
-    expect(openExternalLinkMock).toHaveBeenCalledWith(
+    expect(mockOpenExternalLink).toHaveBeenCalledWith(
       'https://team.atlassian.com/people/123456789',
     );
   });
@@ -65,7 +65,7 @@ describe('renderer/utils/links.ts', () => {
     it('openNotification should use entity url when available', async () => {
       const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
       await openNotification(mockSingleAtlassifyNotification);
-      expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
+      expect(mockOpenExternalLink).toHaveBeenCalledWith(mockNotificationUrl);
     });
 
     it('openNotification should fallback to notification url when entity url is not available', async () => {
@@ -74,7 +74,7 @@ describe('renderer/utils/links.ts', () => {
       const mockNotificationUrl = mockNotif.url;
 
       await openNotification(mockNotif);
-      expect(openExternalLinkMock).toHaveBeenCalledWith(mockNotificationUrl);
+      expect(mockOpenExternalLink).toHaveBeenCalledWith(mockNotificationUrl);
     });
   });
 });

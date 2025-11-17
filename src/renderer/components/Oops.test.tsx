@@ -1,6 +1,6 @@
 import { act, render } from '@testing-library/react';
 
-import { ensureStableEmojis } from '../__mocks__/utils';
+import { ensureStableEmojis } from '../__helpers__/test-utils';
 import { Oops } from './Oops';
 
 describe('renderer/components/Oops.tsx', () => {

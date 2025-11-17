@@ -8,7 +8,7 @@ import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
-  const updateFilter = jest.fn();
+  const mockUpdateFilter = jest.fn();
 
   const mockFilter = engagementFilter;
   const mockFilterSetting = 'filterEngagementStates';
@@ -38,7 +38,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         value={{
           settings: mockSettings,
           notifications: [],
-          updateFilter,
+          updateFilter: mockUpdateFilter,
         }}
       >
         <FilterSection
@@ -51,7 +51,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Mentions'));
 
-    expect(updateFilter).toHaveBeenCalledWith(
+    expect(mockUpdateFilter).toHaveBeenCalledWith(
       mockFilterSetting,
       'mention',
       true,
@@ -71,7 +71,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
             filterEngagementStates: ['mention'],
           },
           notifications: [],
-          updateFilter,
+          updateFilter: mockUpdateFilter,
         }}
       >
         <FilterSection
@@ -84,7 +84,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Comments'));
 
-    expect(updateFilter).toHaveBeenCalledWith(
+    expect(mockUpdateFilter).toHaveBeenCalledWith(
       mockFilterSetting,
       'comment',
       true,

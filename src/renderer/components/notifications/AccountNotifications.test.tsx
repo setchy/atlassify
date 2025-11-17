@@ -1,12 +1,10 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { ensureStableEmojis } from '../../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
-import { ensureStableEmojis } from '../../__mocks__/utils';
+import { mockSettings } from '../../__mocks__/state-mocks';
 import { AppContext } from '../../context/App';
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
@@ -169,7 +167,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open profile when clicked', async () => {
-    const openAccountProfileMock = jest
+    const mockOpenAccountProfile = jest
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
 
@@ -190,14 +188,14 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
-    expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
-    expect(openAccountProfileMock).toHaveBeenCalledWith(
+    expect(mockOpenAccountProfile).toHaveBeenCalledTimes(1);
+    expect(mockOpenAccountProfile).toHaveBeenCalledWith(
       mockAtlassianCloudAccount,
     );
   });
 
   it('should open my pull requests', async () => {
-    const openMyPullRequestsMock = jest
+    const mockOpenMyPullRequests = jest
       .spyOn(links, 'openMyPullRequests')
       .mockImplementation();
 
@@ -218,7 +216,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('account-pull-requests'));
 
-    expect(openMyPullRequestsMock).toHaveBeenCalledTimes(1);
+    expect(mockOpenMyPullRequests).toHaveBeenCalledTimes(1);
   });
 
   it('should mark all account notifications as read when `confirmed`', async () => {
@@ -229,14 +227,14 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const mockMarkNotificationsRead = jest.fn();
 
     await act(async () => {
       render(
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
+            markNotificationsRead: mockMarkNotificationsRead,
           }}
         >
           <AccountNotifications {...props} />
@@ -247,7 +245,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
     await userEvent.click(screen.getByTestId('account-mark-as-read-confirm'));
 
-    expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+    expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
   });
 
   it('should skip marking all account notifications as read when `cancelled`', async () => {
@@ -258,14 +256,14 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const mockMarkNotificationsRead = jest.fn();
 
     await act(async () => {
       render(
         <AppContext.Provider
           value={{
             settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
+            markNotificationsRead: mockMarkNotificationsRead,
           }}
         >
           <AccountNotifications {...props} />
@@ -276,7 +274,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
     await userEvent.click(screen.getByTestId('account-mark-as-read-cancel'));
 
-    expect(markNotificationsReadMock).not.toHaveBeenCalled();
+    expect(mockMarkNotificationsRead).not.toHaveBeenCalled();
   });
 
   it('should toggle account notifications visibility', async () => {

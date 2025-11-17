@@ -32,9 +32,9 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('renderer/components/Sidebar.tsx', () => {
-  const updateSetting = jest.fn();
-  const fetchNotifications = jest.fn();
-  const openExternalLinkMock = jest
+  const mockUpdateSettings = jest.fn();
+  const mockFetchNotifications = jest.fn();
+  const mockOpenExternalLink = jest
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();
 
@@ -136,7 +136,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           notifications: [],
           auth: mockAuth,
           settings: mockSettings,
-          fetchNotifications,
+          fetchNotifications: mockFetchNotifications,
         }}
       >
         <MemoryRouter>
@@ -169,7 +169,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
-      expect(openExternalLinkMock).toHaveBeenCalledWith(
+      expect(mockOpenExternalLink).toHaveBeenCalledWith(
         'https://team.atlassian.com/notifications',
       );
     });
@@ -279,7 +279,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSettings,
           }}
         >
           <MemoryRouter>
@@ -329,7 +329,7 @@ describe('renderer/components/Sidebar.tsx', () => {
               ...mockSettings,
               groupNotificationsByProduct: true,
             },
-            updateSetting,
+            updateSetting: mockUpdateSettings,
           }}
         >
           <MemoryRouter>
@@ -349,7 +349,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSettings,
           }}
         >
           <MemoryRouter>
@@ -395,7 +395,7 @@ describe('renderer/components/Sidebar.tsx', () => {
               ...mockSettings,
               groupNotificationsByTitle: false,
             },
-            updateSetting,
+            updateSetting: mockUpdateSettings,
           }}
         >
           <MemoryRouter>
@@ -415,7 +415,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            updateSetting,
+            updateSetting: mockUpdateSettings,
           }}
         >
           <MemoryRouter>
@@ -513,7 +513,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            fetchNotifications,
+            fetchNotifications: mockFetchNotifications,
             status: 'success',
           }}
         >
@@ -525,7 +525,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
     });
 
     it('should not refresh the notifications when status is loading', async () => {
@@ -536,7 +536,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            fetchNotifications,
+            fetchNotifications: mockFetchNotifications,
             status: 'loading',
           }}
         >
@@ -548,7 +548,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(fetchNotifications).not.toHaveBeenCalled();
+      expect(mockFetchNotifications).not.toHaveBeenCalled();
     });
   });
 
@@ -582,7 +582,7 @@ describe('renderer/components/Sidebar.tsx', () => {
             notifications: [],
             auth: mockAuth,
             settings: mockSettings,
-            fetchNotifications,
+            fetchNotifications: mockFetchNotifications,
           }}
         >
           <MemoryRouter initialEntries={['/settings']}>
@@ -593,13 +593,13 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
+      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
     });
   });
 
   it('should quit the app', async () => {
-    const quitAppMock = jest.spyOn(comms, 'quitApp');
+    const mockQuitApp = jest.spyOn(comms, 'quitApp');
 
     render(
       <AppContext.Provider
@@ -618,6 +618,6 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));
 
-    expect(quitAppMock).toHaveBeenCalledTimes(1);
+    expect(mockQuitApp).toHaveBeenCalledTimes(1);
   });
 });

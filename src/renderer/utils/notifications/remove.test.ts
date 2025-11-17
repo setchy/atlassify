@@ -1,11 +1,9 @@
+import { mockAtlassianCloudAccountTwo } from '../../__mocks__/account-mocks';
 import {
   mockSingleAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
-import {
-  mockAtlassianCloudAccountTwo,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
+import { mockSettings } from '../../__mocks__/state-mocks';
 import { removeNotificationsForAccount } from './remove';
 
 describe('renderer/utils/notifications/remove.ts', () => {

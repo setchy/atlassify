@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 
+import { ensureStableEmojis } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
-import { ensureStableEmojis } from '../__mocks__/utils';
 import { AppContext } from '../context/App';
 import { AllRead } from './AllRead';
 
