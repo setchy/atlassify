@@ -182,18 +182,18 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const mockMarkNotificationsRead = jest.fn();
+    const markNotificationsReadMock = jest.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {
-        markNotificationsRead: mockMarkNotificationsRead,
+        markNotificationsRead: markNotificationsReadMock,
       });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
     await userEvent.click(screen.getByTestId('account-mark-as-read-confirm'));
 
-    expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
+    expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });
 
   it('should skip marking all account notifications as read when `cancelled`', async () => {
@@ -204,18 +204,18 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const mockMarkNotificationsRead = jest.fn();
+    const markNotificationsReadMock = jest.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {
-        markNotificationsRead: mockMarkNotificationsRead,
+        markNotificationsRead: markNotificationsReadMock,
       });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
     await userEvent.click(screen.getByTestId('account-mark-as-read-cancel'));
 
-    expect(mockMarkNotificationsRead).not.toHaveBeenCalled();
+    expect(markNotificationsReadMock).not.toHaveBeenCalled();
   });
 
   it('should toggle account notifications visibility', async () => {

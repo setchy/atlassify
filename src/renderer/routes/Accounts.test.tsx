@@ -8,10 +8,10 @@ import * as links from '../utils/links';
 import * as theme from '../utils/theme';
 import { AccountsRoute } from './Accounts';
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Accounts.tsx', () => {
@@ -55,8 +55,8 @@ describe('renderer/routes/Accounts.tsx', () => {
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith(-1);
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith(-1);
     });
   });
 
@@ -98,29 +98,29 @@ describe('renderer/routes/Accounts.tsx', () => {
       await userEvent.click(screen.getByTestId('account-refresh'));
 
       expect(refreshAccountSpy).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/accounts', {
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/accounts', {
         replace: true,
       });
     });
 
     it('should logout', async () => {
-      const mockLogoutFromAccount = jest.fn();
+      const logoutFromAccountMock = jest.fn();
 
       await act(async () => {
         renderWithAppContext(<AccountsRoute />, {
           auth: {
             accounts: [mockAtlassianCloudAccount],
           },
-          logoutFromAccount: mockLogoutFromAccount,
+          logoutFromAccount: logoutFromAccountMock,
         });
       });
 
       await userEvent.click(screen.getByTestId('account-logout'));
 
-      expect(mockLogoutFromAccount).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith(-1);
+      expect(logoutFromAccountMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith(-1);
     });
   });
 
@@ -133,8 +133,8 @@ describe('renderer/routes/Accounts.tsx', () => {
 
     await userEvent.click(screen.getByTestId('account-add-new'));
 
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith('/login', {
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith('/login', {
       replace: true,
     });
   });

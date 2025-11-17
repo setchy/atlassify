@@ -4,14 +4,14 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { Header } from './Header';
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/components/primitives/Header.tsx', () => {
-  const mockFetchNotifications = jest.fn();
+  const fetchNotificationsMock = jest.fn();
 
   afterEach(() => {
     jest.resetAllMocks();
@@ -28,19 +28,19 @@ describe('renderer/components/primitives/Header.tsx', () => {
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith(-1);
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith(-1);
   });
 
   it('should navigate back and fetch notifications', async () => {
     renderWithAppContext(<Header fetchOnBack={true}>Test Header</Header>, {
-      fetchNotifications: mockFetchNotifications,
+      fetchNotifications: fetchNotificationsMock,
     });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith(-1);
+    expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith(-1);
   });
 });

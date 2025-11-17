@@ -4,14 +4,14 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { SettingsReset } from './SettingsReset';
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/components/settings/SettingsReset.tsx', () => {
-  const mockResetSettings = jest.fn();
+  const resetSettingsMock = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -20,26 +20,26 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
   it('should reset default settings when `confirmed`', async () => {
     await act(async () => {
       renderWithAppContext(<SettingsReset />, {
-        resetSettings: mockResetSettings,
+        resetSettings: resetSettingsMock,
       });
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-confirm'));
 
-    expect(mockResetSettings).toHaveBeenCalled();
+    expect(resetSettingsMock).toHaveBeenCalled();
   });
 
   it('should skip reset default settings when `cancelled`', async () => {
     await act(async () => {
       renderWithAppContext(<SettingsReset />, {
-        resetSettings: mockResetSettings,
+        resetSettings: resetSettingsMock,
       });
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-cancel'));
 
-    expect(mockResetSettings).not.toHaveBeenCalled();
+    expect(resetSettingsMock).not.toHaveBeenCalled();
   });
 });

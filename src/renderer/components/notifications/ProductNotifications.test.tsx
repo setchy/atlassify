@@ -104,14 +104,14 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const mockMarkNotificationsRead = jest.fn();
+    const markNotificationsReadMock = jest.fn();
 
     renderWithAppContext(<ProductNotifications {...props} />, {
-      markNotificationsRead: mockMarkNotificationsRead,
+      markNotificationsRead: markNotificationsReadMock,
     });
 
     await userEvent.click(screen.getByTestId('product-mark-as-read'));
 
-    expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
+    expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });
 });

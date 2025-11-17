@@ -48,9 +48,9 @@ const renderContextButton = (
 };
 
 describe('renderer/context/App.tsx', () => {
-  const mockFetchNotifications = jest.fn();
-  const mockMarkNotificationsRead = jest.fn();
-  const mockMarkNotificationsUnread = jest.fn();
+  const fetchNotificationsMock = jest.fn();
+  const markNotificationsReadMock = jest.fn();
+  const markNotificationsUnreadMock = jest.fn();
 
   const saveStateSpy = jest
     .spyOn(storage, 'saveState')
@@ -59,9 +59,9 @@ describe('renderer/context/App.tsx', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useNotifications as jest.Mock).mockReturnValue({
-      fetchNotifications: mockFetchNotifications,
-      markNotificationsRead: mockMarkNotificationsRead,
-      markNotificationsUnread: mockMarkNotificationsUnread,
+      fetchNotifications: fetchNotificationsMock,
+      markNotificationsRead: markNotificationsReadMock,
+      markNotificationsUnread: markNotificationsUnreadMock,
     });
   });
 
@@ -86,33 +86,33 @@ describe('renderer/context/App.tsx', () => {
       renderWithAppContext(<AppProvider>{null}</AppProvider>);
 
       await waitFor(() =>
-        expect(mockFetchNotifications).toHaveBeenCalledTimes(1),
+        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
       );
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(2);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(3);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
 
       act(() => {
         jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(4);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
     });
 
     it('should call fetchNotifications', async () => {
       const { button } = renderContextButton('fetchNotifications');
 
-      mockFetchNotifications.mockReset();
+      fetchNotificationsMock.mockReset();
 
       fireEvent.click(button);
 
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
@@ -122,8 +122,8 @@ describe('renderer/context/App.tsx', () => {
 
       fireEvent.click(button);
 
-      expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
-      expect(mockMarkNotificationsRead).toHaveBeenCalledWith(mockDefaultState, [
+      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
+      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
         mockSingleAtlassifyNotification,
       ]);
     });
@@ -135,8 +135,8 @@ describe('renderer/context/App.tsx', () => {
 
       fireEvent.click(button);
 
-      expect(mockMarkNotificationsUnread).toHaveBeenCalledTimes(1);
-      expect(mockMarkNotificationsUnread).toHaveBeenCalledWith(
+      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
         mockDefaultState,
         [mockSingleAtlassifyNotification],
       );

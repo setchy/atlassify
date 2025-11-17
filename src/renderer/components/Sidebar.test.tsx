@@ -25,15 +25,15 @@ const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as jest.Mock).mockReturnValue({ colorMode: mode });
 };
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/components/Sidebar.tsx', () => {
-  const mockUpdateSettings = jest.fn();
-  const mockFetchNotifications = jest.fn();
+  const updateSettingMock = jest.fn();
+  const fetchNotificationsMock = jest.fn();
   const openExternalLinkSpy = jest
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();
@@ -119,8 +119,8 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
 
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
   });
 
   describe('notifications icon', () => {
@@ -211,7 +211,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          updateSetting: mockUpdateSettings,
+          updateSetting: updateSettingMock,
         },
       );
 
@@ -264,7 +264,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          updateSetting: mockUpdateSettings,
+          updateSetting: updateSettingMock,
         },
       );
 
@@ -313,7 +313,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          updateSetting: mockUpdateSettings,
+          updateSetting: updateSettingMock,
         },
       );
 
@@ -336,8 +336,8 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
       ).toMatchSnapshot();
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/filters');
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/filters');
     });
 
     it('go to the home if filters path already shown', async () => {
@@ -352,8 +352,8 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
       ).toMatchSnapshot();
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
 
     it('highlight filters sidebar if any are saved', () => {
@@ -382,14 +382,14 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          fetchNotifications: mockFetchNotifications,
+          fetchNotifications: fetchNotificationsMock,
           status: 'success',
         },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not refresh the notifications when status is loading', async () => {
@@ -398,14 +398,14 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          fetchNotifications: mockFetchNotifications,
+          fetchNotifications: fetchNotificationsMock,
           status: 'loading',
         },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(mockFetchNotifications).not.toHaveBeenCalled();
+      expect(fetchNotificationsMock).not.toHaveBeenCalled();
     });
   });
 
@@ -419,8 +419,8 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/settings');
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/settings');
     });
 
     it('go to the home if settings path already shown', async () => {
@@ -429,15 +429,15 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          fetchNotifications: mockFetchNotifications,
+          fetchNotifications: fetchNotificationsMock,
         },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
   });
 

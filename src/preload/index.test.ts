@@ -1,34 +1,34 @@
 import { EVENTS } from '../shared/events';
 
 // Mocks shared modules used inside preload
-const sendMainEvent = jest.fn();
-const invokeMainEvent = jest.fn();
-const onRendererEvent = jest.fn();
-const logError = jest.fn();
+const sendMainEventMock = jest.fn();
+const invokeMainEventMock = jest.fn();
+const onRendererEventMock = jest.fn();
+const logErrorMock = jest.fn();
 
 jest.mock('./utils', () => ({
-  sendMainEvent: (...args: unknown[]) => sendMainEvent(...args),
-  invokeMainEvent: (...args: unknown[]) => invokeMainEvent(...args),
-  onRendererEvent: (...args: unknown[]) => onRendererEvent(...args),
+  sendMainEvent: (...args: unknown[]) => sendMainEventMock(...args),
+  invokeMainEvent: (...args: unknown[]) => invokeMainEventMock(...args),
+  onRendererEvent: (...args: unknown[]) => onRendererEventMock(...args),
 }));
 
 jest.mock('../shared/logger', () => ({
-  logError: (...args: unknown[]) => logError(...args),
+  logError: (...args: unknown[]) => logErrorMock(...args),
 }));
 
 // We'll reconfigure the electron mock per context isolation scenario.
-const exposeInMainWorld = jest.fn();
-const getZoomLevel = jest.fn(() => 1);
-const setZoomLevel = jest.fn((_level: number) => undefined);
+const exposeInMainWorldMock = jest.fn();
+const getZoomLevelMock = jest.fn(() => 1);
+const setZoomLevelMock = jest.fn((_level: number) => undefined);
 
 jest.mock('electron', () => ({
   contextBridge: {
     exposeInMainWorld: (key: string, value: unknown) =>
-      exposeInMainWorld(key, value),
+      exposeInMainWorldMock(key, value),
   },
   webFrame: {
-    getZoomLevel: () => getZoomLevel(),
-    setZoomLevel: (level: number) => setZoomLevel(level),
+    getZoomLevel: () => getZoomLevelMock(),
+    setZoomLevel: (level: number) => setZoomLevelMock(level),
   },
 }));
 
@@ -75,26 +75,32 @@ describe('preload/index', () => {
 
   it('exposes api on window when context isolation disabled', async () => {
     await importPreload();
+
     const w = window as unknown as { atlassify: Record<string, unknown> };
+
     expect(w.atlassify).toBeDefined();
-    expect(exposeInMainWorld).not.toHaveBeenCalled();
+    expect(exposeInMainWorldMock).not.toHaveBeenCalled();
   });
 
   it('exposes api via contextBridge when context isolation enabled', async () => {
     (process as unknown as { contextIsolated?: boolean }).contextIsolated =
       true;
+
     await importPreload();
-    expect(exposeInMainWorld).toHaveBeenCalledTimes(1);
-    const [key, api] = exposeInMainWorld.mock.calls[0];
+
+    expect(exposeInMainWorldMock).toHaveBeenCalledTimes(1);
+    const [key, api] = exposeInMainWorldMock.mock.calls[0];
     expect(key).toBe('atlassify');
     expect(api).toHaveProperty('openExternalLink');
   });
 
   it('tray.updateColor sends correct events', async () => {
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify; // casting only in test boundary
     api.tray.updateColor(-1);
-    expect(sendMainEvent).toHaveBeenNthCalledWith(
+
+    expect(sendMainEventMock).toHaveBeenNthCalledWith(
       1,
       EVENTS.UPDATE_ICON_COLOR,
       -1,
@@ -103,9 +109,12 @@ describe('preload/index', () => {
 
   it('openExternalLink sends event with payload', async () => {
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
+
     api.openExternalLink('https://example.com', true);
-    expect(sendMainEvent).toHaveBeenCalledWith(EVENTS.OPEN_EXTERNAL, {
+
+    expect(sendMainEventMock).toHaveBeenCalledWith(EVENTS.OPEN_EXTERNAL, {
       url: 'https://example.com',
       activate: true,
     });
@@ -114,60 +123,80 @@ describe('preload/index', () => {
   it('app.version returns dev in development', async () => {
     const originalEnv = process.env.NODE_ENV;
     process.env.NODE_ENV = 'development';
+
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
+
     await expect(api.app.version()).resolves.toBe('dev');
+
     process.env.NODE_ENV = originalEnv;
   });
 
   it('app.version prefixes production version', async () => {
     const originalEnv = process.env.NODE_ENV;
     process.env.NODE_ENV = 'production';
-    invokeMainEvent.mockResolvedValueOnce('1.2.3');
+    invokeMainEventMock.mockResolvedValueOnce('1.2.3');
+
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
+
     await expect(api.app.version()).resolves.toBe('v1.2.3');
     process.env.NODE_ENV = originalEnv;
   });
 
   it('onSystemThemeUpdate registers listener', async () => {
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
     const callback = jest.fn();
     api.onSystemThemeUpdate(callback);
-    expect(onRendererEvent).toHaveBeenCalledWith(
+
+    expect(onRendererEventMock).toHaveBeenCalledWith(
       EVENTS.UPDATE_THEME,
       expect.any(Function),
     );
+
     // Simulate event
-    const listener = onRendererEvent.mock.calls[0][1];
+    const listener = onRendererEventMock.mock.calls[0][1];
+
     listener({}, 'dark');
+
     expect(callback).toHaveBeenCalledWith('dark');
   });
 
   it('raiseNativeNotification without url calls app.show', async () => {
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
     api.app.show = jest.fn();
+
     const notification = api.raiseNativeNotification(
       'Title',
       'Body',
     ) as MockNotification;
+
     notification.triggerClick();
+
     expect(api.app.show).toHaveBeenCalled();
   });
 
   it('raiseNativeNotification with url hides app then opens link', async () => {
     await importPreload();
+
     const api = (window as unknown as { atlassify: TestApi }).atlassify;
     api.app.hide = jest.fn();
     api.openExternalLink = jest.fn();
+
     const notification = api.raiseNativeNotification(
       'Title',
       'Body',
       'https://x',
     ) as MockNotification;
+
     notification.triggerClick();
+
     expect(api.app.hide).toHaveBeenCalled();
     expect(api.openExternalLink).toHaveBeenCalledWith('https://x', true);
   });
