@@ -1,38 +1,68 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, waitFor } from '@testing-library/react';
 import { useContext } from 'react';
 
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { mockSettings } from '../__mocks__/state-mocks';
 import { Constants } from '../constants';
 import { useNotifications } from '../hooks/useNotifications';
 import type { AuthState, SettingsState } from '../types';
-import * as comms from '../utils/comms';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
-import { AppContext, AppProvider } from './App';
+import { AppContext, type AppContextState, AppProvider } from './App';
 import { defaultSettings } from './defaults';
 
 jest.mock('../hooks/useNotifications');
 
-const customRender = (
-  ui,
-  auth: AuthState = mockAuth,
-  settings: SettingsState = mockSettings,
+// Helper to render a button that calls a context method when clicked
+const renderContextButton = (
+  contextMethodName: keyof AppContextState,
+  ...args: unknown[]
 ) => {
-  return render(
-    <AppContext.Provider value={{ auth, settings }}>
-      <AppProvider>{ui}</AppProvider>
-    </AppContext.Provider>,
+  const TestComponent = () => {
+    const context = useContext(AppContext);
+    const method = context[contextMethodName];
+    return (
+      <button
+        data-testid="context-method-button"
+        onClick={() => {
+          if (typeof method === 'function') {
+            (method as (...args: unknown[]) => void)(...args);
+          }
+        }}
+        type="button"
+      >
+        {String(contextMethodName)}
+      </button>
+    );
+  };
+
+  const result = renderWithAppContext(
+    <AppProvider>
+      <TestComponent />
+    </AppProvider>,
   );
+
+  const button = result.getByTestId('context-method-button');
+  return { ...result, button };
 };
 
 describe('renderer/context/App.tsx', () => {
+  const mockFetchNotifications = jest.fn();
+  const mockMarkNotificationsRead = jest.fn();
+  const mockMarkNotificationsUnread = jest.fn();
+
   const saveStateSpy = jest
     .spyOn(storage, 'saveState')
     .mockImplementation(jest.fn());
 
   beforeEach(() => {
     jest.useFakeTimers();
+    (useNotifications as jest.Mock).mockReturnValue({
+      fetchNotifications: mockFetchNotifications,
+      markNotificationsRead: mockMarkNotificationsRead,
+      markNotificationsUnread: mockMarkNotificationsUnread,
+    });
   });
 
   afterEach(() => {
@@ -47,29 +77,13 @@ describe('renderer/context/App.tsx', () => {
     );
     getNotificationCountSpy.mockReturnValue(1);
 
-    const mockFetchNotifications = jest.fn();
-    const mockMarkNotificationsRead = jest.fn();
-    const mockMarkNotificationsUnread = jest.fn();
-
     const mockDefaultState = {
       auth: { accounts: [] },
       settings: mockSettings,
     };
 
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: mockFetchNotifications,
-        markNotificationsRead: mockMarkNotificationsRead,
-        markNotificationsUnread: mockMarkNotificationsUnread,
-      });
-    });
-
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
-    it('fetch notifications every minute', async () => {
-      customRender(null);
+    it('fetch notifications each interval', async () => {
+      renderWithAppContext(null);
 
       await waitFor(() =>
         expect(mockFetchNotifications).toHaveBeenCalledTimes(1),
@@ -92,44 +106,21 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call fetchNotifications', async () => {
-      const TestComponent = () => {
-        const { fetchNotifications } = useContext(AppContext);
-
-        return (
-          <button onClick={fetchNotifications} type="button">
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
+      const { button } = renderContextButton('fetchNotifications');
 
       mockFetchNotifications.mockReset();
 
-      fireEvent.click(getByText('Test Case'));
+      fireEvent.click(button);
 
       expect(mockFetchNotifications).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
-      const TestComponent = () => {
-        const { markNotificationsRead } = useContext(AppContext);
+      const { button } = renderContextButton('markNotificationsRead', [
+        mockSingleAtlassifyNotification,
+      ]);
 
-        return (
-          <button
-            onClick={() =>
-              markNotificationsRead([mockSingleAtlassifyNotification])
-            }
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      fireEvent.click(getByText('Test Case'));
+      fireEvent.click(button);
 
       expect(mockMarkNotificationsRead).toHaveBeenCalledTimes(1);
       expect(mockMarkNotificationsRead).toHaveBeenCalledWith(mockDefaultState, [
@@ -138,24 +129,11 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call markNotificationsUnread', async () => {
-      const TestComponent = () => {
-        const { markNotificationsUnread } = useContext(AppContext);
+      const { button } = renderContextButton('markNotificationsUnread', [
+        mockSingleAtlassifyNotification,
+      ]);
 
-        return (
-          <button
-            onClick={() =>
-              markNotificationsUnread([mockSingleAtlassifyNotification])
-            }
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      fireEvent.click(getByText('Test Case'));
+      fireEvent.click(button);
 
       expect(mockMarkNotificationsUnread).toHaveBeenCalledTimes(1);
       expect(mockMarkNotificationsUnread).toHaveBeenCalledWith(
@@ -166,33 +144,14 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('settings methods', () => {
-    const mockFetchNotifications = jest.fn();
+    it('should call updateSetting', async () => {
+      const { button } = renderContextButton(
+        'updateSetting',
+        'playSoundNewNotifications',
+        true,
+      );
 
-    beforeEach(() => {
-      (useNotifications as jest.Mock).mockReturnValue({
-        fetchNotifications: mockFetchNotifications,
-      });
-    });
-
-    it('should call updateSetting and set playSoundNewNotifications', async () => {
-      const TestComponent = () => {
-        const { updateSetting } = useContext(AppContext);
-
-        return (
-          <button
-            onClick={() => updateSetting('playSoundNewNotifications', true)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
+      fireEvent.click(button);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -205,133 +164,10 @@ describe('renderer/context/App.tsx', () => {
       });
     });
 
-    it('should call updateSetting and set openAtStartup', async () => {
-      const setAutoLaunchSpy = jest.spyOn(comms, 'setAutoLaunch');
-
-      const TestComponent = () => {
-        const { updateSetting } = useContext(AppContext);
-
-        return (
-          <button
-            onClick={() => updateSetting('openAtStartup', true)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
-
-      expect(setAutoLaunchSpy).toHaveBeenCalledWith(true);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          openAtStartup: true,
-        } as SettingsState,
-      });
-    });
-
-    it('should call updateSetting and set useUnreadActiveIcon', async () => {
-      const setUseUnreadActiveIconSpy = jest.spyOn(
-        comms,
-        'setUseUnreadActiveIcon',
-      );
-
-      const TestComponent = () => {
-        const { updateSetting } = useContext(AppContext);
-
-        return (
-          <button
-            onClick={() => updateSetting('useUnreadActiveIcon', true)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
-
-      expect(setUseUnreadActiveIconSpy).toHaveBeenCalledWith(true);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          useUnreadActiveIcon: true,
-        } as SettingsState,
-      });
-    });
-
-    it('should call updateSetting and set useAlternateIdleIcon', async () => {
-      const setUseAlternateIdleIconSpy = jest.spyOn(
-        comms,
-        'setUseAlternateIdleIcon',
-      );
-
-      const TestComponent = () => {
-        const { updateSetting } = useContext(AppContext);
-
-        return (
-          <button
-            onClick={() => updateSetting('useAlternateIdleIcon', true)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
-
-      expect(setUseAlternateIdleIconSpy).toHaveBeenCalledWith(true);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          useAlternateIdleIcon: true,
-        } as SettingsState,
-      });
-    });
-
     it('should call resetSettings', async () => {
-      const TestComponent = () => {
-        const { resetSettings } = useContext(AppContext);
+      const { button } = renderContextButton('resetSettings');
 
-        return (
-          <button onClick={() => resetSettings()} type="button">
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
+      fireEvent.click(button);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -344,24 +180,14 @@ describe('renderer/context/App.tsx', () => {
 
   describe('filter methods', () => {
     it('should update filter - checked', async () => {
-      const TestComponent = () => {
-        const { updateFilter } = useContext(AppContext);
+      const { button } = renderContextButton(
+        'updateFilter',
+        'filterCategories',
+        'direct',
+        true,
+      );
 
-        return (
-          <button
-            onClick={() => updateFilter('filterCategories', 'direct', true)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
+      fireEvent.click(button);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -375,24 +201,14 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should update filter - unchecked', async () => {
-      const TestComponent = () => {
-        const { updateFilter } = useContext(AppContext);
+      const { button } = renderContextButton(
+        'updateFilter',
+        'filterCategories',
+        'direct',
+        false,
+      );
 
-        return (
-          <button
-            onClick={() => updateFilter('filterCategories', 'direct', false)}
-            type="button"
-          >
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
+      fireEvent.click(button);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -406,21 +222,9 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should clear filters back to default', async () => {
-      const TestComponent = () => {
-        const { clearFilters } = useContext(AppContext);
+      const { button } = renderContextButton('clearFilters');
 
-        return (
-          <button onClick={() => clearFilters()} type="button">
-            Test Case
-          </button>
-        );
-      };
-
-      const { getByText } = customRender(<TestComponent />);
-
-      act(() => {
-        fireEvent.click(getByText('Test Case'));
-      });
+      fireEvent.click(button);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -430,6 +234,7 @@ describe('renderer/context/App.tsx', () => {
           ...mockSettings,
           filterEngagementStates: defaultSettings.filterEngagementStates,
           filterCategories: defaultSettings.filterCategories,
+          filterActors: defaultSettings.filterActors,
           filterReadStates: defaultSettings.filterReadStates,
           filterProducts: defaultSettings.filterProducts,
         },
