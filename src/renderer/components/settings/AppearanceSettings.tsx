@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useEffect, useState } from 'react';
+import { type FC, useCallback, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -24,19 +24,17 @@ import {
   canIncreaseZoom,
   decreaseZoom,
   increaseZoom,
+  resetZoomLevel,
   zoomLevelToPercentage,
 } from '../../utils/zoom';
 
-let zoomResizeTimeout: NodeJS.Timeout;
-const ZOOM_RESIZE_DELAY = 200;
-
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
-  const { t } = useTranslation();
-
-  const [zoomPercentage, setZoomPercentage] = useState(
-    zoomLevelToPercentage(window.atlassify.zoom.getLevel()),
+  const zoomPercentage = zoomLevelToPercentage(
+    window.atlassify.zoom.getLevel(),
   );
+
+  const { t } = useTranslation();
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
@@ -50,19 +48,6 @@ export const AppearanceSettings: FC = () => {
       }
     });
   }, [settings.theme]);
-
-  window.addEventListener('resize', () => {
-    // clear the timeout
-    clearTimeout(zoomResizeTimeout);
-    // start timing for event "completion"
-    zoomResizeTimeout = setTimeout(() => {
-      const zoomPercentage = zoomLevelToPercentage(
-        window.atlassify.zoom.getLevel(),
-      );
-      setZoomPercentage(zoomPercentage);
-      updateSetting('zoomPercentage', zoomPercentage);
-    }, ZOOM_RESIZE_DELAY);
-  });
 
   const themeOptions: OptionsPropType = [
     {
@@ -179,7 +164,7 @@ export const AppearanceSettings: FC = () => {
                 <IconButton
                   icon={RetryIcon}
                   label={t('settings.appearance.zoom_reset')}
-                  onClick={() => window.atlassify.zoom.setLevel(0)}
+                  onClick={() => resetZoomLevel()}
                   shape="circle"
                   spacing="compact"
                   testId="settings-zoom-reset"

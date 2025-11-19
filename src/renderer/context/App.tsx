@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import { Constants } from '../constants';
-import { useInterval } from '../hooks/useInterval';
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useNotifications } from '../hooks/useNotifications';
 import type {
   Account,
@@ -42,7 +42,7 @@ import {
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
-import { zoomPercentageToLevel } from '../utils/zoom';
+import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
 import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
 
 export interface AppContextState {
@@ -85,6 +85,8 @@ export const AppContext = createContext<Partial<AppContextState>>({});
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [auth, setAuth] = useState<AuthState>(defaultAuth);
   const [settings, setSettings] = useState<SettingsState>(defaultSettings);
+  const [needsAccountRefresh, setNeedsAccountRefresh] = useState(false);
+
   const {
     notifications,
     fetchNotifications,
@@ -107,10 +109,41 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [notifications],
   );
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: restoreSettings is stable and should run only once
-  useEffect(() => {
-    restoreSettings();
+  const restorePersistedState = useCallback(async () => {
+    const existing = loadState();
+
+    // Restore settings before accounts to ensure filters are available before fetching notifications
+    if (existing.settings) {
+      setSettings({ ...defaultSettings, ...existing.settings });
+    }
+
+    if (existing.auth) {
+      setAuth({ ...defaultAuth, ...existing.auth });
+
+      // Trigger the effect to refresh accounts
+      setNeedsAccountRefresh(true);
+    }
   }, []);
+
+  useEffect(() => {
+    restorePersistedState();
+  }, [restorePersistedState]);
+
+  // Refresh account details on startup
+  useEffect(() => {
+    if (!needsAccountRefresh) {
+      return;
+    }
+
+    Promise.all(auth.accounts.map(refreshAccount)).finally(() => {
+      setNeedsAccountRefresh(false);
+    });
+  }, [needsAccountRefresh, auth.accounts]);
+
+  // Refresh account details on interval
+  useIntervalTimer(() => {
+    Promise.all(auth.accounts.map(refreshAccount));
+  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
   useEffect(() => {
     setTheme(settings.theme);
@@ -125,19 +158,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     settings.groupNotificationsByTitle,
     settings.filterEngagementStates,
     settings.filterCategories,
+    settings.filterActors,
     settings.filterReadStates,
     settings.filterProducts,
   ]);
 
-  useInterval(() => {
+  useIntervalTimer(() => {
     fetchNotifications({ auth, settings });
   }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-
-  useInterval(() => {
-    for (const account of auth.accounts) {
-      refreshAccount(account);
-    }
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
@@ -154,12 +182,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   ]);
 
   useEffect(() => {
-    setAutoLaunch(settings.openAtStartup);
-  }, [settings.openAtStartup]);
-
-  useEffect(() => {
     setKeyboardShortcut(settings.keyboardShortcutEnabled);
   }, [settings.keyboardShortcutEnabled]);
+
+  useEffect(() => {
+    setAutoLaunch(settings.openAtStartup);
+  }, [settings.openAtStartup]);
 
   useEffect(() => {
     window.atlassify.onResetApp(() => {
@@ -200,6 +228,37 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [updateSetting, settings],
   );
 
+  // Global window zoom handler / listener
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update on settings.zoomPercentage changes
+  useEffect(() => {
+    // Set the zoom level when settings.zoomPercentage changes
+    window.atlassify.zoom.setLevel(
+      zoomPercentageToLevel(settings.zoomPercentage),
+    );
+
+    // Sync zoom percentage in settings when window is resized
+    let timeout: NodeJS.Timeout;
+    const DELAY = 200;
+
+    const handleResize = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const zoomPercentage = zoomLevelToPercentage(
+          window.atlassify.zoom.getLevel(),
+        );
+
+        updateSetting('zoomPercentage', zoomPercentage);
+      }, DELAY);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeout);
+    };
+  }, [settings.zoomPercentage]);
+
   const isLoggedIn = useMemo(() => {
     return hasAccounts(auth);
   }, [auth]);
@@ -225,30 +284,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     },
     [auth, settings, removeAccountNotifications],
   );
-
-  const restoreSettings = useCallback(async () => {
-    const existing = loadState();
-
-    // Restore settings before accounts to ensure filters are available before fetching notifications
-    if (existing.settings) {
-      setUseUnreadActiveIcon(existing.settings.useUnreadActiveIcon);
-      setUseAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
-      setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
-      setSettings({ ...defaultSettings, ...existing.settings });
-      window.atlassify.zoom.setLevel(
-        zoomPercentageToLevel(existing.settings.zoomPercentage),
-      );
-    }
-
-    if (existing.auth) {
-      setAuth({ ...defaultAuth, ...existing.auth });
-
-      // Refresh account data on app start
-      for (const account of existing.auth.accounts) {
-        await refreshAccount(account);
-      }
-    }
-  }, []);
 
   const fetchNotificationsWithAccounts = useCallback(
     async () => await fetchNotifications({ auth, settings }),
