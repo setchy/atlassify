@@ -12,7 +12,7 @@ jest.mock('@atlaskit/platform-feature-flags', () => {
 /**
  * Atlassify context bridge API
  */
-globalThis.atlassify = {
+window.atlassify = {
   app: {
     version: jest.fn().mockResolvedValue('v0.0.1'),
     hide: jest.fn(),
@@ -47,6 +47,6 @@ globalThis.atlassify = {
 };
 
 // prevent ReferenceError: TextEncoder is not defined
-globalThis.TextEncoder = TextEncoder;
+window.TextEncoder = TextEncoder;
 
-globalThis.HTMLMediaElement.prototype.play = jest.fn();
+window.HTMLMediaElement.prototype.play = jest.fn();
