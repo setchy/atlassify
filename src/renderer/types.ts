@@ -460,7 +460,7 @@ export type ErrorType =
 /**
  * Details for Chevron header accordion.
  */
-export type Chevron = {
+export interface Chevron {
   /**
    * The chevron icon.
    */
@@ -473,7 +473,7 @@ export type Chevron = {
    * The chevron label.
    */
   label: string;
-};
+}
 
 /**
  * The notification category.
