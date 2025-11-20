@@ -66,7 +66,7 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.1",
-    "@atlaskit/avatar": "25.5.3",
+    "@atlaskit/avatar": "25.5.4",
     "@atlaskit/avatar-group": "12.4.1",
     "@atlaskit/badge": "18.2.4",
     "@atlaskit/checkbox": "17.1.20",
