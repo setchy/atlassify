@@ -119,10 +119,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [notifications],
   );
 
-  // Refresh account details on startup and account changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh accounts details once on mount/startup
   useEffect(() => {
     Promise.all(auth.accounts.map(refreshAccount));
-  }, [auth.accounts]);
+  }, []);
 
   // Refresh account details on interval
   useIntervalTimer(() => {
