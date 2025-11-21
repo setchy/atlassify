@@ -54,7 +54,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
               </button>
             </div>
             <h3
-              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syazi7uo"
             >
               Login with Atlassian
             </h3>
@@ -352,7 +352,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
             </button>
           </div>
           <h3
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syaz1fxt"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syazi7uo"
           >
             Login with Atlassian
           </h3>
