@@ -83,9 +83,19 @@ export interface AppContextState {
 export const AppContext = createContext<Partial<AppContextState>>({});
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [auth, setAuth] = useState<AuthState>(defaultAuth);
-  const [settings, setSettings] = useState<SettingsState>(defaultSettings);
-  const [needsAccountRefresh, setNeedsAccountRefresh] = useState(false);
+  const existingState = loadState();
+
+  const [auth, setAuth] = useState<AuthState>(
+    existingState.auth
+      ? { ...defaultAuth, ...existingState.auth }
+      : defaultAuth,
+  );
+
+  const [settings, setSettings] = useState<SettingsState>(
+    existingState.settings
+      ? { ...defaultSettings, ...existingState.settings }
+      : defaultSettings,
+  );
 
   const {
     notifications,
@@ -109,36 +119,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [notifications],
   );
 
-  const restorePersistedState = useCallback(async () => {
-    const existing = loadState();
-
-    // Restore settings before accounts to ensure filters are available before fetching notifications
-    if (existing.settings) {
-      setSettings({ ...defaultSettings, ...existing.settings });
-    }
-
-    if (existing.auth) {
-      setAuth({ ...defaultAuth, ...existing.auth });
-
-      // Trigger the effect to refresh accounts
-      setNeedsAccountRefresh(true);
-    }
-  }, []);
-
+  // Refresh account details on startup and account changes
   useEffect(() => {
-    restorePersistedState();
-  }, [restorePersistedState]);
-
-  // Refresh account details on startup
-  useEffect(() => {
-    if (!needsAccountRefresh) {
-      return;
-    }
-
-    Promise.all(auth.accounts.map(refreshAccount)).finally(() => {
-      setNeedsAccountRefresh(false);
-    });
-  }, [needsAccountRefresh, auth.accounts]);
+    Promise.all(auth.accounts.map(refreshAccount));
+  }, [auth.accounts]);
 
   // Refresh account details on interval
   useIntervalTimer(() => {
