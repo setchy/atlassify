@@ -73,8 +73,8 @@ importers:
         specifier: 19.9.4
         version: 19.9.4(@types/react@19.2.6)(react@19.2.0)
       '@atlaskit/modal-dialog':
-        specifier: 14.7.0
-        version: 14.7.0(@babel/core@7.28.5)(@types/react@19.2.6)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 14.7.1
+        version: 14.7.1(@babel/core@7.28.5)(@types/react@19.2.6)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/primitives':
         specifier: 16.2.0
         version: 16.2.0(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -407,8 +407,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.7.0':
-    resolution: {integrity: sha512-Wdt/zBt1eFfO8X5EgNP+45caajsFTQBkgEKPiok+5yNXAkr1izZauWYAAd96+wHzKMR9jH25ohiojJA3OqIaXg==}
+  '@atlaskit/modal-dialog@14.7.1':
+    resolution: {integrity: sha512-WoIacrzNqTL58q1eWeQscK4TYgu5nNDGJSIXe3tY/UPZ8xSs3UTOtuSEfak6NHFhzS7DtH067+taD7Bunm2Z4w==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6382,12 +6382,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.7.0(@babel/core@7.28.5)(@types/react@19.2.6)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@atlaskit/modal-dialog@14.7.1(@babel/core@7.28.5)(@types/react@19.2.6)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/blanket': 15.0.18(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@atlaskit/button': 23.6.2(@babel/core@7.28.5)(@types/react@19.2.6)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@atlaskit/css': 0.15.2(@types/react@19.2.6)(react@19.2.0)
+      '@atlaskit/css': 0.16.0(@types/react@19.2.6)(react@19.2.0)
       '@atlaskit/ds-lib': 5.2.0(@types/react@19.2.6)(react@19.2.0)
       '@atlaskit/focus-ring': 3.0.7(@types/react@19.2.6)(react@19.2.0)
       '@atlaskit/icon': 29.0.0(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0)
