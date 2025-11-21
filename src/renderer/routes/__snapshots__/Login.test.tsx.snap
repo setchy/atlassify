@@ -96,6 +96,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     <input
                       aria-describedby="username-uid3-valid username-uid3-helper"
                       aria-labelledby="username-uid3-label"
+                      aria-required="false"
                       autocomplete="off"
                       class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                       data-ds--text-field--input="true"
@@ -133,6 +134,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     <input
                       aria-describedby="token-uid4-valid token-uid4-helper"
                       aria-labelledby="token-uid4-label"
+                      aria-required="false"
                       class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                       data-ds--text-field--input="true"
                       id="token-uid4"
@@ -394,6 +396,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   <input
                     aria-describedby="username-uid3-valid username-uid3-helper"
                     aria-labelledby="username-uid3-label"
+                    aria-required="false"
                     autocomplete="off"
                     class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                     data-ds--text-field--input="true"
@@ -431,6 +434,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   <input
                     aria-describedby="token-uid4-valid token-uid4-helper"
                     aria-labelledby="token-uid4-label"
+                    aria-required="false"
                     class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                     data-ds--text-field--input="true"
                     id="token-uid4"
