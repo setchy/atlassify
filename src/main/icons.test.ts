@@ -10,8 +10,8 @@ describe('main/icons.ts', () => {
       'assets/images/tray-idle-white.png',
     );
 
-    expect(TrayIcons.offline).toContain('assets/images/tray-offline.png');
-
     expect(TrayIcons.error).toContain('assets/images/tray-error.png');
+
+    expect(TrayIcons.offline).toContain('assets/images/tray-offline.png');
   });
 });
