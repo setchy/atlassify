@@ -119,20 +119,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [notifications],
   );
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh accounts details once on mount/startup
-  useEffect(() => {
-    Promise.all(auth.accounts.map(refreshAccount));
-  }, []);
-
-  // Refresh account details on interval
-  useIntervalTimer(() => {
-    Promise.all(auth.accounts.map(refreshAccount));
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
-
-  useEffect(() => {
-    setTheme(settings.theme);
-  }, [settings.theme]);
-
   // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
     fetchNotifications({ auth, settings });
@@ -150,6 +136,23 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   useIntervalTimer(() => {
     fetchNotifications({ auth, settings });
   }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
+  useEffect(() => {
+    if (!auth.accounts.length) {
+      return;
+    }
+    Promise.all(auth.accounts.map(refreshAccount));
+  }, []);
+
+  // Refresh account details on interval
+  useIntervalTimer(() => {
+    Promise.all(auth.accounts.map(refreshAccount));
+  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
+
+  useEffect(() => {
+    setTheme(settings.theme);
+  }, [settings.theme]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
@@ -182,23 +185,29 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const clearFilters = useCallback(() => {
-    const newSettings = { ...settings, ...defaultFilters };
-    setSettings(newSettings);
-    saveState({ auth, settings: newSettings });
-  }, [auth, settings]);
+    setSettings((prevSettings) => {
+      const newSettings = { ...prevSettings, ...defaultFilters };
+      saveState({ auth, settings: newSettings });
+      return newSettings;
+    });
+  }, [auth]);
 
   const resetSettings = useCallback(() => {
-    setSettings(defaultSettings);
-    saveState({ auth, settings: defaultSettings });
+    setSettings(() => {
+      saveState({ auth, settings: defaultSettings });
+      return defaultSettings;
+    });
   }, [auth]);
 
   const updateSetting = useCallback(
     (name: keyof SettingsState, value: SettingsValue) => {
-      const newSettings = { ...settings, [name]: value };
-      setSettings(newSettings);
-      saveState({ auth, settings: newSettings });
+      setSettings((prevSettings) => {
+        const newSettings = { ...prevSettings, [name]: value };
+        saveState({ auth, settings: newSettings });
+        return newSettings;
+      });
     },
-    [auth, settings],
+    [auth],
   );
 
   const updateFilter = useCallback(
@@ -231,7 +240,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
           window.atlassify.zoom.getLevel(),
         );
 
-        updateSetting('zoomPercentage', zoomPercentage);
+        if (zoomPercentage !== settings.zoomPercentage) {
+          updateSetting('zoomPercentage', zoomPercentage);
+        }
       }, DELAY);
     };
 
