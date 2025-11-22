@@ -119,6 +119,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [notifications],
   );
 
+  const refreshAllAccounts = useCallback(() => {
+    if (!auth.accounts.length) {
+      return;
+    }
+
+    return Promise.all(auth.accounts.map(refreshAccount));
+  }, [auth.accounts]);
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
     fetchNotifications({ auth, settings });
@@ -139,15 +147,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
   useEffect(() => {
-    if (!auth.accounts.length) {
-      return;
-    }
-    Promise.all(auth.accounts.map(refreshAccount));
+    refreshAllAccounts();
   }, []);
 
   // Refresh account details on interval
   useIntervalTimer(() => {
-    Promise.all(auth.accounts.map(refreshAccount));
+    refreshAllAccounts();
   }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
   useEffect(() => {
