@@ -238,12 +238,12 @@ function setActiveIcon() {
   }
 }
 
-function setOfflineIcon() {
-  mb.tray.setImage(TrayIcons.offline);
-}
-
 function setErrorIcon() {
   mb.tray.setImage(TrayIcons.error);
+}
+
+function setOfflineIcon() {
+  mb.tray.setImage(TrayIcons.offline);
 }
 
 /**
