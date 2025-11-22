@@ -5,6 +5,7 @@ import {
   type BrowserWindowConstructorOptions,
   globalShortcut,
   nativeTheme,
+  net,
   safeStorage,
   shell,
 } from 'electron';
@@ -151,6 +152,11 @@ app.whenReady().then(async () => {
 
   onMainEvent(EVENTS.UPDATE_ICON_COLOR, (_, notificationsCount: number) => {
     if (!mb.tray.isDestroyed()) {
+      if (!net.isOnline()) {
+        setOfflineIcon();
+        return;
+      }
+
       if (notificationsCount < 0) {
         setErrorIcon();
         return;
@@ -230,6 +236,10 @@ function setActiveIcon() {
   } else {
     setIdleIcon();
   }
+}
+
+function setOfflineIcon() {
+  mb.tray.setImage(TrayIcons.offline);
 }
 
 function setErrorIcon() {
