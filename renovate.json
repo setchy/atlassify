@@ -1,16 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":separateMultipleMajorReleases",
+    "config:best-practices",
+    ":disableRateLimiting",
     ":enableVulnerabilityAlerts",
-    "schedule:daily",
+    ":semanticCommitTypeAll(chore)",
+    ":separateMultipleMajorReleases",
     "customManagers:biomeVersions",
     "group:atlaskit",
-    ":prConcurrentLimitNone",
-    ":prHourlyLimitNone",
-    "helpers:pinGitHubActionDigests",
-    ":semanticCommitTypeAll(chore)"
+    "schedule:daily"
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
