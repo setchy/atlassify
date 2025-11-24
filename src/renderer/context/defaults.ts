@@ -4,6 +4,7 @@ import { DEFAULT_LANGUAGE } from '../i18n';
 import {
   type AppearanceSettingsState,
   type AuthState,
+  type ConfigSettingsState,
   type FilterSettingsState,
   type NotificationSettingsState,
   OpenPreference,
@@ -47,7 +48,7 @@ const defaultSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-export const defaultFilters: FilterSettingsState = {
+export const defaultFilterSettings: FilterSettingsState = {
   filterEngagementStates: [],
   filterCategories: [],
   filterReadStates: [],
@@ -55,10 +56,14 @@ export const defaultFilters: FilterSettingsState = {
   filterActors: [],
 };
 
-export const defaultSettings: SettingsState = {
+export const defaultConfigSettings: ConfigSettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
   ...defaultTraySettings,
   ...defaultSystemSettings,
-  ...defaultFilters,
+};
+
+export const defaultSettings: SettingsState = {
+  ...defaultConfigSettings,
+  ...defaultFilterSettings,
 };

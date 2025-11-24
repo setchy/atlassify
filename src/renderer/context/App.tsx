@@ -16,8 +16,10 @@ import type {
   AtlassifyError,
   AtlassifyNotification,
   AuthState,
+  ConfigSettingsState,
+  ConfigSettingsValue,
   FilterSettingsState,
-  FilterValue,
+  FilterSettingsValue,
   SettingsState,
   SettingsValue,
   Status,
@@ -39,7 +41,11 @@ import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
+import {
+  defaultAuth,
+  defaultFilterSettings,
+  defaultSettings,
+} from './defaults';
 
 export interface AppContextState {
   auth: AuthState;
@@ -68,10 +74,13 @@ export interface AppContextState {
   settings: SettingsState;
   clearFilters: () => void;
   resetSettings: () => void;
-  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+  updateSetting: (
+    name: keyof ConfigSettingsState,
+    value: ConfigSettingsValue,
+  ) => void;
   updateFilter: (
     name: keyof FilterSettingsState,
-    value: FilterValue,
+    value: FilterSettingsValue,
     checked: boolean,
   ) => void;
 }
@@ -181,7 +190,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const clearFilters = useCallback(() => {
     setSettings((prevSettings) => {
-      const newSettings = { ...prevSettings, ...defaultFilters };
+      const newSettings = { ...prevSettings, ...defaultFilterSettings };
       saveState({ auth, settings: newSettings });
       return newSettings;
     });
@@ -206,7 +215,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const updateFilter = useCallback(
-    (name: keyof FilterSettingsState, value: FilterValue, checked: boolean) => {
+    (
+      name: keyof FilterSettingsState,
+      value: FilterSettingsValue,
+      checked: boolean,
+    ) => {
       const updatedFilters = checked
         ? [...settings[name], value]
         : settings[name].filter((item) => item !== value);
