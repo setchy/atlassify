@@ -45,14 +45,14 @@ export const engagementFilter: Filter<EngagementStateType> = {
   },
 
   getFilterCount(
-    notifications: AccountNotifications[],
+    accountNotifications: AccountNotifications[],
     engagementState: EngagementStateType,
   ) {
-    return notifications.reduce(
-      (memo, acc) =>
+    return accountNotifications.reduce(
+      (memo, account) =>
         memo +
-        acc.notifications.filter((n) =>
-          this.filterNotification(n, engagementState),
+        account.notifications.filter((notification) =>
+          this.filterNotification(notification, engagementState),
         ).length,
       0,
     );

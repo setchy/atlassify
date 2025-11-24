@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import type {
   Account,
@@ -22,6 +22,8 @@ import { rendererLogError } from '../utils/logger';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
   getAllNotifications,
+  getNotificationCount,
+  hasMoreNotifications,
   isGroupNotification,
 } from '../utils/notifications/notifications';
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
@@ -33,6 +35,9 @@ interface NotificationsState {
   globalError: AtlassifyError;
 
   notifications: AccountNotifications[];
+  notificationCount: number;
+  hasNotifications: boolean;
+  hasMoreAccountNotifications: boolean;
 
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
@@ -53,6 +58,18 @@ export const useNotifications = (): NotificationsState => {
 
   const [notifications, setNotifications] = useState<AccountNotifications[]>(
     [],
+  );
+
+  const notificationCount = getNotificationCount(notifications);
+
+  const hasNotifications = useMemo(
+    () => notificationCount > 0,
+    [notificationCount],
+  );
+
+  const hasMoreAccountNotifications = useMemo(
+    () => hasMoreNotifications(notifications),
+    [notifications],
   );
 
   const removeAccountNotifications = useCallback(
@@ -251,6 +268,9 @@ export const useNotifications = (): NotificationsState => {
     globalError,
 
     notifications,
+    notificationCount,
+    hasNotifications,
+    hasMoreAccountNotifications,
 
     fetchNotifications,
     removeAccountNotifications,

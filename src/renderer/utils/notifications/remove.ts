@@ -8,24 +8,24 @@ import type {
 /**
  * Remove notifications from the account notifications list.
  *
- * If fetching all notifications (read and unread), no need to remove from state
+ * If fetching all notifications (read and unread), no need to remove from state, just mark as read.
  * If delayNotificationState is enabled in settings, mark notifications as read instead of removing them.
  */
 export function removeNotificationsForAccount(
   account: Account,
   settings: SettingsState,
   notificationsToRemove: AtlassifyNotification[],
-  allNotifications: AccountNotifications[],
+  accountNotifications: AccountNotifications[],
 ): AccountNotifications[] {
   if (notificationsToRemove.length === 0) {
-    return allNotifications;
+    return accountNotifications;
   }
 
   const notificationIDsToRemove = new Set(
-    notificationsToRemove.map((n) => n.id),
+    notificationsToRemove.map((notification) => notification.id),
   );
 
-  return allNotifications.map((accountNotifications) =>
+  return accountNotifications.map((accountNotifications) =>
     account.id === accountNotifications.account.id
       ? {
           ...accountNotifications,

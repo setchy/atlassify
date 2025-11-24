@@ -4,11 +4,11 @@ import type { AccountNotifications, AtlassifyNotification } from '../../types';
  * Find notifications that exist in newNotifications but not in previousNotifications
  */
 export function getNewNotifications(
-  previousNotifications: AccountNotifications[],
-  newNotifications: AccountNotifications[],
+  previousAccountNotifications: AccountNotifications[],
+  newAccountNotifications: AccountNotifications[],
 ): AtlassifyNotification[] {
-  return newNotifications.flatMap((accountNotifications) => {
-    const accountPreviousNotifications = previousNotifications.find(
+  return newAccountNotifications.flatMap((accountNotifications) => {
+    const accountPreviousNotifications = previousAccountNotifications.find(
       (item) => item.account.id === accountNotifications.account.id,
     );
 
