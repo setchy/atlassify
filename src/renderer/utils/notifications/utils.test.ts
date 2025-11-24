@@ -9,7 +9,7 @@ import { getNewNotifications } from './utils';
 describe('renderer/utils/notifications/utils.ts', () => {
   describe('getNewNotifications', () => {
     it('returns all notifications when previous is empty', () => {
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -22,14 +22,14 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const result = getNewNotifications([], newNotifications);
+      const result = getNewNotifications([], newAccountNotifications);
 
       expect(result).toHaveLength(3);
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
     });
 
     it('returns empty array when new is empty', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -38,7 +38,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(previousNotifications, []);
+      const result = getNewNotifications(previousAccountNotifications, []);
 
       expect(result).toHaveLength(0);
     });
@@ -50,7 +50,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('returns only new notifications, filtering out existing ones', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -62,7 +62,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -76,8 +76,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(2);
@@ -85,7 +85,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('returns empty array when all notifications already exist', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -98,7 +98,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -112,15 +112,15 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(0);
     });
 
     it('handles multiple accounts correctly', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -135,7 +135,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -157,8 +157,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(2);
@@ -166,7 +166,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('treats new account as having all new notifications', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -175,7 +175,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -194,8 +194,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(2);
@@ -203,7 +203,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('handles account with no notifications', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -212,7 +212,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [],
@@ -222,15 +222,15 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(0);
     });
 
     it('preserves notification order from input', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -239,7 +239,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -253,8 +253,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(3);
@@ -262,7 +262,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('handles removed account gracefully', () => {
-      const previousNotifications: AccountNotifications[] = [
+      const previousAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [createMockNotificationForProductType('1', 'jira')],
@@ -277,7 +277,7 @@ describe('renderer/utils/notifications/utils.ts', () => {
         },
       ];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -290,8 +290,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(1);
@@ -299,9 +299,9 @@ describe('renderer/utils/notifications/utils.ts', () => {
     });
 
     it('handles multiple new notifications across multiple accounts', () => {
-      const previousNotifications: AccountNotifications[] = [];
+      const previousAccountNotifications: AccountNotifications[] = [];
 
-      const newNotifications: AccountNotifications[] = [
+      const newAccountNotifications: AccountNotifications[] = [
         {
           account: mockAtlassianCloudAccount,
           notifications: [
@@ -323,8 +323,8 @@ describe('renderer/utils/notifications/utils.ts', () => {
       ];
 
       const result = getNewNotifications(
-        previousNotifications,
-        newNotifications,
+        previousAccountNotifications,
+        newAccountNotifications,
       );
 
       expect(result).toHaveLength(4);

@@ -22,21 +22,21 @@ export interface FilterDetails {
   description: string;
 
   /**
-   * The icon for the filter.
+   * The atlaskit icon for the filter.
    *
    * See https://atlassian.design/components/icon/icon-explorer for available icons.
    */
   icon?: React.ComponentType<NewCoreIconProps>;
 
   /**
-   * The logo for the filter.
+   * The atlaskit logo for the filter.
    *
    * See https://atlassian.design/components/logo/examples for available logos.
    */
   logo?: React.ComponentType<LogoProps>;
 
   /**
-   * The heroicon for the filter.
+   * The hero icon for the filter.
    *
    * See https://heroicons.com/ for available heroicons.
    */
@@ -52,7 +52,7 @@ export interface Filter<T extends string> {
 
   isFilterSet(settings: SettingsState, type: T): boolean;
 
-  getFilterCount(notifications: AccountNotifications[], type: T): number;
+  getFilterCount(accountNotifications: AccountNotifications[], type: T): number;
 
   filterNotification(notification: AtlassifyNotification, type: T): boolean;
 }

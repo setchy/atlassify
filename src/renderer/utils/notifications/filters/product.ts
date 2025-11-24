@@ -26,12 +26,16 @@ export const productFilter: Filter<ProductType> = {
     return settings.filterProducts.includes(product);
   },
 
-  getFilterCount(notifications: AccountNotifications[], product: ProductType) {
-    return notifications.reduce(
-      (memo, acc) =>
+  getFilterCount(
+    accountNotifications: AccountNotifications[],
+    product: ProductType,
+  ) {
+    return accountNotifications.reduce(
+      (memo, account) =>
         memo +
-        acc.notifications.filter((n) => this.filterNotification(n, product))
-          .length,
+        account.notifications.filter((notification) =>
+          this.filterNotification(notification, product),
+        ).length,
       0,
     );
   },

@@ -35,10 +35,6 @@ import {
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
 } from '../utils/comms';
-import {
-  getNotificationCount,
-  hasMoreNotifications,
-} from '../utils/notifications/notifications';
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
@@ -98,26 +94,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const {
-    notifications,
-    fetchNotifications,
-    removeAccountNotifications,
     status,
     globalError,
+
+    notifications,
+    notificationCount,
+    hasNotifications,
+    hasMoreAccountNotifications,
+
+    fetchNotifications,
+    removeAccountNotifications,
+
     markNotificationsRead,
     markNotificationsUnread,
   } = useNotifications();
-
-  const notificationCount = getNotificationCount(notifications);
-
-  const hasNotifications = useMemo(
-    () => notificationCount > 0,
-    [notificationCount],
-  );
-
-  const hasMoreAccountNotifications = useMemo(
-    () => hasMoreNotifications(notifications),
-    [notifications],
-  );
 
   const refreshAllAccounts = useCallback(() => {
     if (!auth.accounts.length) {

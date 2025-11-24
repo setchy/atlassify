@@ -31,9 +31,11 @@ import { getFlattenedNotificationsByProduct } from './group';
  * @param notifications - The account notifications to check.
  * @returns The count of all notifications.
  */
-export function getNotificationCount(notifications: AccountNotifications[]) {
-  return notifications.reduce(
-    (memo, acc) => memo + acc.notifications.length,
+export function getNotificationCount(
+  accountNotifications: AccountNotifications[],
+) {
+  return accountNotifications.reduce(
+    (memo, account) => memo + account.notifications.length,
     0,
   );
 }
@@ -44,8 +46,10 @@ export function getNotificationCount(notifications: AccountNotifications[]) {
  * @param notifications - The account notifications to check.
  * @returns The count of all notifications.
  */
-export function hasMoreNotifications(notifications: AccountNotifications[]) {
-  return notifications?.some((n) => n.hasMoreNotifications);
+export function hasMoreNotifications(
+  accountNotifications: AccountNotifications[],
+) {
+  return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
 /**
@@ -78,7 +82,7 @@ function getNotifications(state: AtlassifyState) {
 export async function getAllNotifications(
   state: AtlassifyState,
 ): Promise<AccountNotifications[]> {
-  const notifications: AccountNotifications[] = await Promise.all(
+  const accountNotifications: AccountNotifications[] = await Promise.all(
     getNotifications(state)
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
@@ -124,9 +128,9 @@ export async function getAllNotifications(
   );
 
   // Set the order property for the notifications
-  stabilizeNotificationsOrder(notifications, state.settings);
+  stabilizeNotificationsOrder(accountNotifications, state.settings);
 
-  return notifications;
+  return accountNotifications;
 }
 
 async function mapAtlassianNotificationsToAtlassifyNotifications(
@@ -222,8 +226,8 @@ export function stabilizeNotificationsOrder(
       settings,
     );
 
-    for (const n of flattenedNotifications) {
-      n.order = orderIndex++;
+    for (const notification of flattenedNotifications) {
+      notification.order = orderIndex++;
     }
   }
 }

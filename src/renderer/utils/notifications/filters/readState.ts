@@ -38,14 +38,15 @@ export const readStateFilter: Filter<ReadStateType> = {
   },
 
   getFilterCount(
-    notifications: AccountNotifications[],
+    accountNotifications: AccountNotifications[],
     readState: ReadStateType,
   ) {
-    return notifications.reduce(
-      (memo, acc) =>
+    return accountNotifications.reduce(
+      (memo, account) =>
         memo +
-        acc.notifications.filter((n) => this.filterNotification(n, readState))
-          .length,
+        account.notifications.filter((notification) =>
+          this.filterNotification(notification, readState),
+        ).length,
       0,
     );
   },
