@@ -275,7 +275,7 @@ export interface AuthState {
  */
 export interface AtlassifyState {
   /**
-   * Authenticated atlassian accounts for use by Atlassify.
+   * Authenticated Atlassian accounts for use by Atlassify.
    */
   auth?: AuthState;
 
