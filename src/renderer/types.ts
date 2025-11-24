@@ -89,20 +89,24 @@ export interface Account {
 }
 
 /**
- * The different types of allowed Settings values to be stored in the application.
+ * All allowed Config and Filter Settings values to be stored in the application.
  */
-export type SettingsValue =
+export type SettingsValue = ConfigSettingsValue | FilterSettingsValue[];
+
+/**
+ * All Config Settings values to be stored in the application.
+ */
+export type ConfigSettingsValue =
   | boolean
   | number
-  | FilterValue[]
   | OpenPreference
   | Percentage
   | Theme;
 
 /**
- * The different types of allowed Filter values to be stored in the application.
+ * All Filter Settings values to be stored in the application.
  */
-export type FilterValue =
+export type FilterSettingsValue =
   | ActorType
   | CategoryType
   | EngagementStateType
@@ -110,13 +114,17 @@ export type FilterValue =
   | ReadStateType;
 
 /**
- * The different types of allowed Settings keys to be stored in the application.
+ * All allowed Config and Filter Settings keys to be stored in the application.
  */
-export type SettingsState = AppearanceSettingsState &
+export type SettingsState = ConfigSettingsState & FilterSettingsState;
+
+/**
+ * All Config Settings keys to be stored in the application.
+ */
+export type ConfigSettingsState = AppearanceSettingsState &
   NotificationSettingsState &
   TraySettingsState &
-  SystemSettingsState &
-  FilterSettingsState;
+  SystemSettingsState;
 
 /**
  * Settings related to the appearance of the application.
