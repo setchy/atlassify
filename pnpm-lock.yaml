@@ -82,8 +82,8 @@ importers:
         specifier: 8.3.13
         version: 8.3.13(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/select':
-        specifier: 21.4.1
-        version: 21.4.1(@babel/core@7.28.5)(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: 21.4.2
+        version: 21.4.2(@babel/core@7.28.5)(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/spinner':
         specifier: 19.0.7
         version: 19.0.7(@types/react@19.2.7)(react@19.2.1)
@@ -466,8 +466,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/select@21.4.1':
-    resolution: {integrity: sha512-XJUpxKbgRkVJl7NyOhWjhi2lgy5/JTMKJQ0rKVQ3Hiq/o4Qnk8oyBs41slpmJ4Qjodp/kkzJmUHZQ+lH7ge/wA==}
+  '@atlaskit/select@21.4.2':
+    resolution: {integrity: sha512-Ywpg9NQZnL2Ux/n9FHui2KHhgBvK+mMA2hfHfnCvUkV/RpABCSkPUPQD7C/FHcug9ZviITyouFmfbcpODog4Rw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6558,7 +6558,7 @@ snapshots:
       - prop-types
       - supports-color
 
-  '@atlaskit/select@21.4.1(@babel/core@7.28.5)(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@atlaskit/select@21.4.2(@babel/core@7.28.5)(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.7)(react@19.2.1)
@@ -6566,7 +6566,6 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.1)
       '@atlaskit/primitives': 16.4.1(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/react-select': 3.9.1(@babel/core@7.28.5)(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      '@atlaskit/spinner': 19.0.7(@types/react@19.2.7)(react@19.2.1)
       '@atlaskit/theme': 21.0.2(@types/react@19.2.7)(react@19.2.1)
       '@atlaskit/tokens': 8.4.0(@types/react@19.2.7)(react@19.2.1)
       '@atlaskit/visually-hidden': 3.0.3(react@19.2.1)
