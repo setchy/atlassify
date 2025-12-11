@@ -43,8 +43,8 @@ importers:
         specifier: 25.5.6
         version: 25.5.6(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/avatar-group':
-        specifier: 12.4.3
-        version: 12.4.3(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: 12.4.4
+        version: 12.4.4(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/badge':
         specifier: 18.2.4
         version: 18.2.4(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -300,8 +300,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar-group@12.4.3':
-    resolution: {integrity: sha512-VuoyfS8zRI9TKJQn33Jo+exRzN6/Rsf0MGddtnzyg4ESFZ5PNVWK3X0YCuyc6sGAvo2P3xiJWrqxMv6iWA1tXg==}
+  '@atlaskit/avatar-group@12.4.4':
+    resolution: {integrity: sha512-yXOIhN8whHfHPJF72hLRHweeNq7z/SlWyxeLOHPdlpjSlsVRm4PPIQPW4NHj/mRMnJObw4Ul+yNmokWgsH4SVQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6008,7 +6008,7 @@ snapshots:
       '@babel/runtime': 7.28.4
       react: 19.2.1
 
-  '@atlaskit/avatar-group@12.4.3(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@atlaskit/avatar-group@12.4.4(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       '@atlaskit/avatar': 25.5.6(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/css': 0.17.0(@types/react@19.2.7)(react@19.2.1)
@@ -6016,7 +6016,6 @@ snapshots:
       '@atlaskit/menu': 8.4.9(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.1)
       '@atlaskit/popup': 4.6.3(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      '@atlaskit/theme': 21.0.2(@types/react@19.2.7)(react@19.2.1)
       '@atlaskit/tokens': 8.4.1(@types/react@19.2.7)(react@19.2.1)
       '@atlaskit/tooltip': 20.11.0(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@babel/runtime': 7.28.4
