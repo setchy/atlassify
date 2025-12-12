@@ -13,6 +13,7 @@ const config: CodegenConfig = {
       preset: 'client',
       config: {
         documentMode: 'string',
+        useTypeImports: true,
       },
     },
     'src/renderer/utils/api/graphql/generated/schema.graphql': {

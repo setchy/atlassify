@@ -1,4 +1,5 @@
 import { AxiosError } from 'axios';
+import type { ExecutionResult } from 'graphql';
 
 import { Constants } from '../../constants';
 import type {
@@ -18,7 +19,7 @@ import type {
   AtlassianHeadNotificationFragment,
   AtlassianNotificationFragment,
 } from '../api/graphql/generated/graphql';
-import type { AtlassianGraphQLResponse } from '../api/types';
+import type { AtlassianGraphQLExtensions } from '../api/types';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
@@ -189,8 +190,8 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
  * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.
  * Instead we can check the extensions response size to determine if there are more notifications.
  */
-function determineIfMorePagesAvailable<T>(
-  res: AtlassianGraphQLResponse<T>,
+function determineIfMorePagesAvailable<TResult>(
+  res: ExecutionResult<TResult, AtlassianGraphQLExtensions>,
 ): boolean {
   try {
     return (
