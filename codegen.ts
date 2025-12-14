@@ -3,11 +3,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: 'https://developer.atlassian.com/gateway/api/graphql',
-  documents: [
-    'src/renderer/utils/api/**/*.ts',
-    '!src/renderer/utils/api/graphql/generated/**',
-    '!src/renderer/utils/api/**/*.test.ts',
-  ],
+  documents: ['src/renderer/utils/api/**/*.graphql'],
   generates: {
     'src/renderer/utils/api/graphql/generated/': {
       preset: 'client',
