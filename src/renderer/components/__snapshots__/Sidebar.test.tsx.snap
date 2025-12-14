@@ -451,7 +451,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 role="presentation"
               >
                 <label
-                  class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rkopxbi _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
+                  class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
                   data-checked="true"
                   data-size="regular"
                   data-testid="sidebar-toggle-unread-only"
@@ -839,7 +839,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               role="presentation"
             >
               <label
-                class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rkopxbi _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
+                class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
                 data-checked="true"
                 data-size="regular"
                 data-testid="sidebar-toggle-unread-only"
@@ -1284,7 +1284,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
                 role="presentation"
               >
                 <label
-                  class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rkopxbi _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
+                  class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
                   data-checked="true"
                   data-size="regular"
                   data-testid="sidebar-toggle-unread-only"
@@ -1672,7 +1672,7 @@ exports[`renderer/components/Sidebar.tsx logged in should render itself & its ch
               role="presentation"
             >
               <label
-                class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rkopxbi _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
+                class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1tkq _syazw5hi _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rusw5hi _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys43zdg _krlfnqa1 _ju3ddkaa _1bki1ouc _1flt1ouc _3xv21ouc _94713286 _ucabw5hi _mqf8snw8 _3dj2snw8 _1dl9snw8 _1divw5hi _1il8kb7n _y54dw5hi _irr31mlc _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1plu15bl _1uo81mlc _178c1ouc _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
                 data-checked="true"
                 data-size="regular"
                 data-testid="sidebar-toggle-unread-only"
