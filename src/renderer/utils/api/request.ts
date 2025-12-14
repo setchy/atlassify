@@ -1,11 +1,10 @@
 import axios from 'axios';
-import type { ExecutionResult } from 'graphql';
 
 import type { Account, Token, Username } from '../../types';
 import { decryptValue } from '../comms';
 import { URLs } from '../links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
-import type { AtlassianGraphQLExtensions } from './types';
+import type { AtlassianGraphQLResponse } from './types';
 
 /**
  * Perform a GraphQL API request for account
@@ -93,7 +92,7 @@ function performGraphQLApiRequest<TResult>(
     headers: getHeaders(username, token),
   }).then((response) => {
     return response.data;
-  }) as Promise<ExecutionResult<TResult, AtlassianGraphQLExtensions>>;
+  }) as Promise<AtlassianGraphQLResponse<TResult>>;
 }
 
 /**

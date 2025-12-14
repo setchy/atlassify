@@ -1,5 +1,4 @@
 import { AxiosError } from 'axios';
-import type { ExecutionResult } from 'graphql';
 
 import { Constants } from '../../constants';
 import type {
@@ -19,7 +18,7 @@ import type {
   AtlassianHeadNotificationFragment,
   AtlassianNotificationFragment,
 } from '../api/graphql/generated/graphql';
-import type { AtlassianGraphQLExtensions } from '../api/types';
+import type { AtlassianGraphQLResponse } from '../api/types';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
@@ -191,7 +190,7 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
  * Instead we can check the extensions response size to determine if there are more notifications.
  */
 function determineIfMorePagesAvailable<TResult>(
-  res: ExecutionResult<TResult, AtlassianGraphQLExtensions>,
+  res: AtlassianGraphQLResponse<TResult>,
 ): boolean {
   try {
     return (
