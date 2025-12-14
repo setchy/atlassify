@@ -1,3 +1,5 @@
+import type { ExecutionResult } from 'graphql';
+
 /**
  * The different types of API errors which may be encountered.
  */
@@ -20,6 +22,14 @@ export interface AtlassianGraphQLExtensions {
     };
   };
 }
+
+/**
+ * Atlassian GraphQL API response type.
+ */
+export type AtlassianGraphQLResponse<TResult> = ExecutionResult<
+  TResult,
+  AtlassianGraphQLExtensions
+>;
 
 export interface JiraProjectRestResponse {
   projectTypeKey: JiraProjectType;

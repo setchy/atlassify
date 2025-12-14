@@ -1,5 +1,3 @@
-import type { ExecutionResult } from 'graphql';
-
 import type { Account, CloudID, JiraProjectKey } from '../../../types';
 import { graphql } from '../graphql/generated/gql';
 import type {
@@ -8,6 +6,7 @@ import type {
   RetrieveJiraProjectTypesQuery,
 } from '../graphql/generated/graphql';
 import { performRequestForAccount } from '../request';
+import type { AtlassianGraphQLResponse } from '../types';
 
 /**
  * TODO the api client functions in this file are all unused due to different "quirks" with behavior. Ideally each of these would be used.
@@ -22,7 +21,7 @@ import { performRequestForAccount } from '../request';
 export function markNotificationGroupAsRead(
   account: Account,
   notificationGroupId: string,
-): Promise<ExecutionResult<MarkGroupAsReadMutation>> {
+): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
   const MarkGroupAsReadDocument = graphql(`
     mutation MarkGroupAsRead($groupId: String!) {
       notifications {
@@ -45,7 +44,7 @@ export function markNotificationGroupAsRead(
 export function markNotificationGroupAsUnread(
   account: Account,
   notificationGroupId: string,
-): Promise<ExecutionResult<MarkGroupAsUnreadMutation>> {
+): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
   const MarkGroupAsUnreadDocument = graphql(`
     mutation MarkGroupAsUnread($groupId: String!) {
       notifications {
@@ -69,7 +68,7 @@ export function getJiraProjectTypesByKeys(
   account: Account,
   cloudId: CloudID,
   keys: JiraProjectKey[],
-): Promise<ExecutionResult<RetrieveJiraProjectTypesQuery>> {
+): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
   const JiraProjectTypesByKeysDocument = graphql(`
     query RetrieveJiraProjectTypes(
       $cloudId: ID!,
