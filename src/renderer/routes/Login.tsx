@@ -90,8 +90,8 @@ export const LoginRoute: FC = () => {
                 <form {...formProps} id="login-form">
                   <FormSection>
                     <Field
-                      aria-required={true}
                       defaultValue={''}
+                      // isRequired={true} // Causes app crash on Windows.  Needs investigation.
                       label={t('common.username')}
                       name="username"
                       testId="login-username"
@@ -121,8 +121,8 @@ export const LoginRoute: FC = () => {
                       }}
                     </Field>
                     <Field
-                      aria-required={true}
                       defaultValue={''}
+                      // isRequired={true} // Causes app crash on Windows.  Needs investigation.
                       label={t('login.token')}
                       name="token"
                       testId="login-token"
