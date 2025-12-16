@@ -14,9 +14,13 @@ import type {
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type {
-  AtlassianHeadNotificationFragment,
-  AtlassianNotificationFragment,
+import {
+  type FragmentType,
+  useFragment,
+} from '../api/graphql/generated/fragment-masking';
+import {
+  AtlassianHeadNotificationFragmentDoc,
+  AtlassianNotificationFragmentDoc,
 } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
 import { Errors } from '../errors';
@@ -94,7 +98,9 @@ export async function getAllNotifications(
           }
 
           const rawNotifications = res.data.notifications.notificationFeed
-            .nodes as AtlassianNotificationFragment[];
+            .nodes as ReadonlyArray<
+            FragmentType<typeof AtlassianNotificationFragmentDoc>
+          >;
 
           let notifications =
             await mapAtlassianNotificationsToAtlassifyNotifications(
@@ -135,19 +141,30 @@ export async function getAllNotifications(
 
 async function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  notifications: AtlassianNotificationFragment[],
+  notifications: ReadonlyArray<
+    FragmentType<typeof AtlassianNotificationFragmentDoc>
+  >,
 ): Promise<AtlassifyNotification[]> {
   return Promise.all(
     notifications?.map(async (notification) => {
-      const headNotification =
-        notification.headNotification as AtlassianHeadNotificationFragment;
+      const atlassianNotification = useFragment(
+        AtlassianNotificationFragmentDoc,
+        notification,
+      );
+
+      const headNotification = useFragment(
+        AtlassianHeadNotificationFragmentDoc,
+        atlassianNotification.headNotification,
+      );
+
+      const path = headNotification.content.path?.[0];
 
       let notificationPath: AtlassifyNotificationPath;
-      if (headNotification.content.path[0]) {
+      if (path) {
         notificationPath = {
-          title: headNotification.content.path[0].title,
-          url: headNotification.content.path[0].url as Link,
-          iconUrl: headNotification.content.path[0].iconUrl as Link,
+          title: path.title,
+          url: path.url as Link,
+          iconUrl: path.iconUrl as Link,
         };
       }
 
@@ -173,12 +190,14 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
         product: await inferAtlassianProduct(account, headNotification),
         account: account,
         notificationGroup: {
-          id: notification.groupId,
-          size: notification.groupSize,
-          additionalActors: notification.additionalActors.map((actor) => ({
-            displayName: actor.displayName,
-            avatarURL: actor.avatarURL as Link,
-          })),
+          id: atlassianNotification.groupId,
+          size: atlassianNotification.groupSize,
+          additionalActors: atlassianNotification.additionalActors.map(
+            (actor) => ({
+              displayName: actor.displayName,
+              avatarURL: actor.avatarURL as Link,
+            }),
+          ),
         },
       };
     }),
