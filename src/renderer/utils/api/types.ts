@@ -1,3 +1,5 @@
+import type { ExecutionResult } from 'graphql';
+
 /**
  * The different types of API errors which may be encountered.
  */
@@ -13,31 +15,21 @@ interface AtlassianHTTPError {
   message: string;
 }
 
-/**
- * The response from an Atlassian API request.
- */
-export interface AtlassianGraphQLResponse<TData> {
-  data: TData;
-  errors?: AtlassianGraphQLError[];
-  extensions?: AtlassianGraphQLExtensions;
-}
-
-interface AtlassianGraphQLError {
-  message: string;
-  extensions: {
-    classification: string;
-    errorType: string;
-    statusCode: number;
-  };
-}
-
-interface AtlassianGraphQLExtensions {
+export interface AtlassianGraphQLExtensions {
   notifications: {
     response_info: {
       responseSize: number;
     };
   };
 }
+
+/**
+ * Atlassian GraphQL API response type.
+ */
+export type AtlassianGraphQLResponse<TResult> = ExecutionResult<
+  TResult,
+  AtlassianGraphQLExtensions
+>;
 
 export interface JiraProjectRestResponse {
   projectTypeKey: JiraProjectType;

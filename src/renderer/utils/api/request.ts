@@ -78,7 +78,11 @@ export async function performRESTRequestForAccount<T>(
  * @param data
  * @returns
  */
-function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
+function performGraphQLApiRequest<TResult>(
+  username: Username,
+  token: Token,
+  data,
+) {
   const url = URLs.ATLASSIAN.API;
 
   return axios({
@@ -88,7 +92,7 @@ function performGraphQLApiRequest<T>(username: Username, token: Token, data) {
     headers: getHeaders(username, token),
   }).then((response) => {
     return response.data;
-  }) as Promise<AtlassianGraphQLResponse<T>>;
+  }) as Promise<AtlassianGraphQLResponse<TResult>>;
 }
 
 /**

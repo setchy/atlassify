@@ -1,0 +1,27 @@
+mutation MarkGroupAsRead($groupId: String!) {
+  notifications {
+    markNotificationsByGroupIdAsRead(groupId: $groupId)
+  }
+}
+
+mutation MarkGroupAsUnread($groupId: String!) {
+  notifications {
+    markNotificationsByGroupIdAsUnread(groupId: $groupId)
+  }
+}
+
+query RetrieveJiraProjectTypes($cloudId: ID!, $keys: [String!]!) {
+  jira {
+    issuesByKey(cloudId: $cloudId, keys: $keys) {
+      key
+      summary
+      projectField {
+        project {
+          name
+          projectTypeName
+          projectType
+        }
+      }
+    }
+  }
+}
