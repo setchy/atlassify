@@ -39,14 +39,15 @@ export const categoryFilter: Filter<CategoryType> = {
   },
 
   getFilterCount(
-    notifications: AccountNotifications[],
+    accountNotifications: AccountNotifications[],
     category: CategoryType,
   ) {
-    return notifications.reduce(
-      (memo, acc) =>
+    return accountNotifications.reduce(
+      (memo, account) =>
         memo +
-        acc.notifications.filter((n) => this.filterNotification(n, category))
-          .length,
+        account.notifications.filter((notification) =>
+          this.filterNotification(notification, category),
+        ).length,
       0,
     );
   },

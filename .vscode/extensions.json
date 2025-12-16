@@ -3,6 +3,8 @@
     "astro-build.astro-vscode",
     "biomejs.biome",
     "bradlc.vscode-tailwindcss",
+    "GraphQL.vscode-graphql",
+    "GraphQL.vscode-graphql-syntax",
     "lokalise.i18n-ally",
     "SonarSource.sonarlint-vscode"
   ]

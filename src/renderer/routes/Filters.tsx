@@ -13,9 +13,9 @@ import { AppContext } from '../context/App';
 import {
   actorFilter,
   categoryFilter,
+  engagementFilter,
   productFilter,
   readStateFilter,
-  timeSensitiveFilter,
 } from '../utils/notifications/filters';
 
 export const FiltersRoute: FC = () => {
@@ -24,7 +24,7 @@ export const FiltersRoute: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page id="filters">
+    <Page testId="filters">
       <Header fetchOnBack={true}>{t('filters.title')}</Header>
 
       <Contents>
@@ -32,9 +32,9 @@ export const FiltersRoute: FC = () => {
           <Inline space="space.200">
             <Stack space="space.200">
               <FilterSection
-                filter={timeSensitiveFilter}
-                filterSetting="filterTimeSensitive"
-                title={t('filters.time_sensitive.title')}
+                filter={engagementFilter}
+                filterSetting="filterEngagementStates"
+                title={t('filters.engagement.title')}
               />
 
               <FilterSection

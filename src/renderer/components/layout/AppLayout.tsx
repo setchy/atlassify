@@ -2,23 +2,37 @@ import type { FC, ReactNode } from 'react';
 
 import { Sidebar } from '../Sidebar';
 
-interface IAppLayout {
-  children: ReactNode;
-}
+type AppLayoutProps = { children: ReactNode };
 
 /**
  * AppLayout is the main container for the application.
  * It handles the basic layout with sidebar and content area.
  */
-export const AppLayout: FC<IAppLayout> = ({ children }) => {
+export const AppLayout: FC<AppLayoutProps> = ({ children }) => {
+  const setFocusRef = (el: HTMLButtonElement | null) => {
+    if (el) {
+      el.focus();
+    }
+  };
+
   return (
     <div className="flex min-h-screen">
+      {/* Hidden focus sentinel; grabs initial focus via callback ref */}
+      <button
+        aria-label="initial focus"
+        className="sr-only"
+        data-testid="initial-focus-sentinel"
+        ref={setFocusRef}
+        type="button"
+      />
+
       {/* Fixed-width sidebar */}
       <div className="w-sidebar shrink-0">
         <Sidebar />
       </div>
+
       {/* Content area with left padding to make space for the sidebar */}
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 pl-sidebar">{children}</div>
     </div>
   );
 };

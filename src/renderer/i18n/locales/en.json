@@ -1,7 +1,7 @@
 {
   "accounts": {
     "title": "Accounts",
-    "open_profile": "Open account profile",
+    "open_profile": "Open account profile ↗",
     "refresh_account": "Refresh {{username}}",
     "logout_account": "Logout {{username}}",
     "add_new": "Add new account"
@@ -89,15 +89,19 @@
         "description": "Read notifications"
       }
     },
-    "time_sensitive": {
-      "title": "Time Sensitive",
+    "engagement": {
+      "title": "Engagement",
       "mention": {
-        "title": "Mention",
+        "title": "Mentions",
         "description": "Mentions"
       },
       "comment": {
-        "title": "Comment",
+        "title": "Comments",
         "description": "Comments"
+      },
+      "reactions": {
+        "title": "Reactions",
+        "description": "Reactions"
       }
     }
   },
@@ -122,8 +126,8 @@
   "notifications": {
     "native_count": "You have {{count}} notifications",
     "account": {
-      "open_profile": "Open account profile",
-      "pull_requests": "My pull requests",
+      "open_profile": "Open account profile ↗",
+      "pull_requests": "My pull requests ↗",
       "mark_all_read": "Mark all account notifications as read",
       "mark_read_confirm": {
         "description1": "Please confirm that you want to",
@@ -132,7 +136,7 @@
       }
     },
     "product": {
-      "open_product": "Open {{name}}",
+      "open_product": "Open {{name}} ↗",
       "mark_all_read": "Mark all product notifications as read"
     },
     "interactions": {
@@ -199,7 +203,7 @@
     "home": "Home",
     "notifications": {
       "label": "Notifications",
-      "tooltip": "{{count}}{{countSuffix}} {{countType}}",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
       "unread": "unread notifications",
       "read": "notifications"
     },

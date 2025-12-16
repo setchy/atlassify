@@ -1,97 +1,84 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
-import { timeSensitiveFilter } from '../../utils/notifications/filters';
+import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
-  const updateFilter = jest.fn();
+  const updateFilterMock = jest.fn();
 
-  const mockFilter = timeSensitiveFilter;
-  const mockFilterSetting = 'filterTimeSensitive';
+  const mockFilter = engagementFilter;
+  const mockFilterSetting = 'filterEngagementStates';
 
   it('should render itself & its children', () => {
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: mockSettings,
-          notifications: mockAccountNotifications,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    const tree = renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        notifications: mockAccountNotifications,
+      },
     );
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - none already set', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          settings: mockSettings,
-          notifications: [],
-          updateFilter,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        notifications: [],
+        updateFilter: updateFilterMock,
+      },
     );
 
-    await userEvent.click(screen.getByLabelText('Mention'));
+    await userEvent.click(screen.getByLabelText('Mentions'));
 
-    expect(updateFilter).toHaveBeenCalledWith(
+    expect(updateFilterMock).toHaveBeenCalledWith(
       mockFilterSetting,
       'mention',
       true,
     );
 
     expect(
-      screen.getByLabelText('Mention').parentNode.parentNode,
+      screen.getByLabelText('Mentions').parentNode.parentNode,
     ).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          settings: {
-            ...mockSettings,
-            filterTimeSensitive: ['mention'],
-          },
-          notifications: [],
-          updateFilter,
-        }}
-      >
-        <FilterSection
-          filter={mockFilter}
-          filterSetting={mockFilterSetting}
-          title={'FilterSectionTitle'}
-        />
-      </AppContext.Provider>,
+    renderWithAppContext(
+      <FilterSection
+        filter={mockFilter}
+        filterSetting={mockFilterSetting}
+        title={'FilterSectionTitle'}
+      />,
+      {
+        settings: {
+          filterEngagementStates: ['mention'],
+        },
+        notifications: [],
+        updateFilter: updateFilterMock,
+      },
     );
 
-    await userEvent.click(screen.getByLabelText('Comment'));
+    await userEvent.click(screen.getByLabelText('Comments'));
 
-    expect(updateFilter).toHaveBeenCalledWith(
+    expect(updateFilterMock).toHaveBeenCalledWith(
       mockFilterSetting,
       'comment',
       true,
     );
 
     expect(
-      screen.getByLabelText('Comment').parentNode.parentNode,
+      screen.getByLabelText('Comments').parentNode.parentNode,
     ).toMatchSnapshot();
   });
 });

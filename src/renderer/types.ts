@@ -54,6 +54,11 @@ export type CloudID = Branded<string, 'CloudID'>;
 export type JiraProjectKey = Branded<string, 'JiraProjectKey'>;
 
 /**
+ * Percentage value between 0 and 100
+ */
+export type Percentage = Branded<number, 'Percentage'>;
+
+/**
  * An Atlassian account.
  */
 export interface Account {
@@ -84,33 +89,42 @@ export interface Account {
 }
 
 /**
- * The different types of allowed Settings values to be stored in the application.
+ * All allowed Config and Filter Settings values to be stored in the application.
  */
-export type SettingsValue =
+export type SettingsValue = ConfigSettingsValue | FilterSettingsValue[];
+
+/**
+ * All Config Settings values to be stored in the application.
+ */
+export type ConfigSettingsValue =
   | boolean
   | number
   | OpenPreference
-  | Theme
-  | FilterValue[];
+  | Percentage
+  | Theme;
 
 /**
- * The different types of allowed Filter values to be stored in the application.
+ * All Filter Settings values to be stored in the application.
  */
-export type FilterValue =
+export type FilterSettingsValue =
   | ActorType
   | CategoryType
+  | EngagementStateType
   | ProductType
-  | ReadStateType
-  | TimeSensitiveType;
+  | ReadStateType;
 
 /**
- * The different types of allowed Settings keys to be stored in the application.
+ * All allowed Config and Filter Settings keys to be stored in the application.
  */
-export type SettingsState = AppearanceSettingsState &
+export type SettingsState = ConfigSettingsState & FilterSettingsState;
+
+/**
+ * All Config Settings keys to be stored in the application.
+ */
+export type ConfigSettingsState = AppearanceSettingsState &
   NotificationSettingsState &
   TraySettingsState &
-  SystemSettingsState &
-  FilterSettingsState;
+  SystemSettingsState;
 
 /**
  * Settings related to the appearance of the application.
@@ -129,7 +143,7 @@ export interface AppearanceSettingsState {
   /**
    * The zoom percentage of the application.
    */
-  zoomPercentage: number;
+  zoomPercentage: Percentage;
 }
 
 /**
@@ -214,7 +228,7 @@ export interface SystemSettingsState {
   /**
    * The volume for the notification sound.
    */
-  notificationVolume: number;
+  notificationVolume: Percentage;
 
   /**
    * Whether to open the application on system startup.
@@ -227,9 +241,9 @@ export interface SystemSettingsState {
  */
 export interface FilterSettingsState {
   /**
-   * The categories to filter time sensitive notifications by.
+   * The engagement states to filter notifications by.
    */
-  filterTimeSensitive: TimeSensitiveType[];
+  filterEngagementStates: EngagementStateType[];
 
   /**
    * The categories to filter notifications by.
@@ -261,7 +275,7 @@ export interface AuthState {
  */
 export interface AtlassifyState {
   /**
-   * Authenticated atlassian accounts for use by Atlassify.
+   * Authenticated Atlassian accounts for use by Atlassify.
    */
   auth?: AuthState;
 
@@ -454,7 +468,7 @@ export type ErrorType =
 /**
  * Details for Chevron header accordion.
  */
-export type Chevron = {
+export interface Chevron {
   /**
    * The chevron icon.
    */
@@ -467,7 +481,7 @@ export type Chevron = {
    * The chevron label.
    */
   label: string;
-};
+}
 
 /**
  * The notification category.
@@ -486,12 +500,13 @@ export type CategoryType = 'direct' | 'watching';
 export type ReadStateType = 'unread' | 'read';
 
 /**
- * The sensitivity (ie: importance) of a notification.
+ * Types of notifications that are a result of others engaging with your work.
  *
  * - 'mention' - A user has mentioned you as part of the notification.
- * - 'comment' - A user has commented on your prior work.
+ * - 'comment' - A user has commented on your work.
+ * - 'reaction' - A user has reacted on your work.
  */
-export type TimeSensitiveType = 'mention' | 'comment';
+export type EngagementStateType = 'mention' | 'comment' | 'reaction';
 
 /**
  * The actor type.

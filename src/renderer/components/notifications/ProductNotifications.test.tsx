@@ -1,21 +1,20 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
 import * as comms from '../../utils/comms';
 import * as theme from '../../utils/theme';
 import {
-  type IProductNotifications,
   ProductNotifications,
+  type ProductNotificationsProps,
 } from './ProductNotifications';
 
 jest.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
 }));
 
-const openExternalLinkMock = jest
+const openExternalLinkSpy = jest
   .spyOn(comms, 'openExternalLink')
   .mockImplementation();
 
@@ -27,15 +26,11 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - light mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = render(
-      <AppContext.Provider value={{}}>
-        <ProductNotifications {...props} />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
     expect(tree).toMatchSnapshot();
   });
@@ -43,15 +38,11 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - dark mode', () => {
     jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = render(
-      <AppContext.Provider value={{}}>
-        <ProductNotifications {...props} />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
     expect(tree).toMatchSnapshot();
   });
@@ -61,17 +52,17 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     const mockBitbucketNotification = mockAtlassifyNotifications[0];
     expect(mockBitbucketNotification.product.type).toBe('bitbucket');
 
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: [mockBitbucketNotification],
     };
 
     await act(async () => {
-      render(<ProductNotifications {...props} />);
+      renderWithAppContext(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-home'));
 
-    expect(openExternalLinkMock).toHaveBeenCalledTimes(1);
+    expect(openExternalLinkSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should not open product home and have empty tooltip content when home is unavailable', async () => {
@@ -80,7 +71,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     expect(mockConfluenceNotification.product.type).toBe('confluence');
 
     await act(async () => {
-      render(
+      renderWithAppContext(
         <ProductNotifications
           productNotifications={[mockConfluenceNotification]}
         />,
@@ -89,42 +80,35 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     await userEvent.click(screen.getByTestId('product-home'));
 
-    expect(openExternalLinkMock).not.toHaveBeenCalled();
+    expect(openExternalLinkSpy).not.toHaveBeenCalled();
   });
 
   it('should toggle product notifications visibility', async () => {
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
     await act(async () => {
-      render(<ProductNotifications {...props} />);
+      renderWithAppContext(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-toggle'));
 
-    const tree = render(<ProductNotifications {...props} />);
+    const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should mark all product notifications as read', async () => {
-    const props: IProductNotifications = {
+    const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
     };
 
     const markNotificationsReadMock = jest.fn();
 
-    render(
-      <AppContext.Provider
-        value={{
-          settings: mockSettings,
-          markNotificationsRead: markNotificationsReadMock,
-        }}
-      >
-        <ProductNotifications {...props} />
-      </AppContext.Provider>,
-    );
+    renderWithAppContext(<ProductNotifications {...props} />, {
+      markNotificationsRead: markNotificationsReadMock,
+    });
 
     await userEvent.click(screen.getByTestId('product-mark-as-read'));
 

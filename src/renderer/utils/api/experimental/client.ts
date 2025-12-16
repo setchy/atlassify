@@ -1,9 +1,11 @@
 import type { Account, CloudID, JiraProjectKey } from '../../../types';
-import { graphql } from '../graphql/generated/gql';
-import type {
-  MarkGroupAsReadMutation,
-  MarkGroupAsUnreadMutation,
-  RetrieveJiraProjectTypesQuery,
+import {
+  MarkGroupAsReadDocument,
+  type MarkGroupAsReadMutation,
+  MarkGroupAsUnreadDocument,
+  type MarkGroupAsUnreadMutation,
+  RetrieveJiraProjectTypesDocument,
+  type RetrieveJiraProjectTypesQuery,
 } from '../graphql/generated/graphql';
 import { performRequestForAccount } from '../request';
 import type { AtlassianGraphQLResponse } from '../types';
@@ -22,14 +24,6 @@ export function markNotificationGroupAsRead(
   account: Account,
   notificationGroupId: string,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
-  const MarkGroupAsReadDocument = graphql(`
-    mutation MarkGroupAsRead($groupId: String!) {
-      notifications {
-        markNotificationsByGroupIdAsRead(groupId: $groupId)
-      }
-    }
-  `);
-
   return performRequestForAccount(account, MarkGroupAsReadDocument, {
     groupId: notificationGroupId,
   });
@@ -45,14 +39,6 @@ export function markNotificationGroupAsUnread(
   account: Account,
   notificationGroupId: string,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
-  const MarkGroupAsUnreadDocument = graphql(`
-    mutation MarkGroupAsUnread($groupId: String!) {
-      notifications {
-        markNotificationsByGroupIdAsUnread(groupId: $groupId)
-      }
-    }
-  `);
-
   return performRequestForAccount(account, MarkGroupAsUnreadDocument, {
     groupId: notificationGroupId,
   });
@@ -69,31 +55,7 @@ export function getJiraProjectTypesByKeys(
   cloudId: CloudID,
   keys: JiraProjectKey[],
 ): Promise<AtlassianGraphQLResponse<RetrieveJiraProjectTypesQuery>> {
-  const JiraProjectTypesByKeysDocument = graphql(`
-    query RetrieveJiraProjectTypes(
-      $cloudId: ID!,
-      $keys: [String!]!
-    ) {
-      jira {
-        issuesByKey(
-          cloudId: $cloudId, 
-          keys: $keys
-        ) {
-          key
-          summary
-          projectField {
-            project {
-              name
-              projectTypeName
-              projectType
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, JiraProjectTypesByKeysDocument, {
+  return performRequestForAccount(account, RetrieveJiraProjectTypesDocument, {
     cloudId: cloudId,
     keys: keys,
   });

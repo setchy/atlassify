@@ -17,18 +17,18 @@ const fileTransport = { getFile: () => ({ path: '/var/log/app/app.log' }) };
 const logTransports: { file: { getFile: () => { path: string } | null } } = {
   file: fileTransport,
 };
-const logInfo = jest.fn();
-const logError = jest.fn();
+const logInfoMock = jest.fn();
+const logErrorMock = jest.fn();
 
 jest.mock('electron-log', () => ({ transports: logTransports }));
 jest.mock('../shared/logger', () => ({
-  logInfo: (...a: unknown[]) => logInfo(...a),
-  logError: (...a: unknown[]) => logError(...a),
+  logInfo: (...a: unknown[]) => logInfoMock(...a),
+  logError: (...a: unknown[]) => logErrorMock(...a),
 }));
 
-const sendRendererEvent = jest.fn();
+const sendRendererEventMock = jest.fn();
 jest.mock('./events', () => ({
-  sendRendererEvent: (...a: unknown[]) => sendRendererEvent(...a),
+  sendRendererEvent: (...a: unknown[]) => sendRendererEventMock(...a),
 }));
 
 import { dialog, shell } from 'electron';
@@ -56,7 +56,7 @@ describe('main/utils', () => {
     expect(writeFile).toHaveBeenCalled();
     const writtenPath = (writeFile.mock.calls[0] as unknown[])[0] as string;
     expect(writtenPath.startsWith(path.join('/home/test'))).toBe(true);
-    expect(logInfo).toHaveBeenCalledWith(
+    expect(logInfoMock).toHaveBeenCalledWith(
       'takeScreenshot',
       expect.stringContaining('Screenshot saved'),
     );
@@ -66,7 +66,10 @@ describe('main/utils', () => {
     (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(1);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
-    expect(sendRendererEvent).toHaveBeenCalledWith(mb, 'atlassify:reset-app');
+    expect(sendRendererEventMock).toHaveBeenCalledWith(
+      mb,
+      'atlassify:reset-app',
+    );
     expect(mb.app.quit).toHaveBeenCalled();
   });
 
@@ -74,14 +77,14 @@ describe('main/utils', () => {
     (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(0);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
-    expect(sendRendererEvent).not.toHaveBeenCalled();
+    expect(sendRendererEventMock).not.toHaveBeenCalled();
     expect(mb.app.quit).not.toHaveBeenCalled();
   });
 
   it('openLogsDirectory opens directory when present', () => {
     openLogsDirectory();
     expect(shell.openPath).toHaveBeenCalledWith('/var/log/app');
-    expect(logError).not.toHaveBeenCalled();
+    expect(logErrorMock).not.toHaveBeenCalled();
   });
 
   it('openLogsDirectory logs error when no directory', () => {
@@ -90,7 +93,7 @@ describe('main/utils', () => {
     jest.resetModules();
     const { openLogsDirectory: openLogsDirectoryReloaded } = require('./utils');
     openLogsDirectoryReloaded();
-    expect(logError).toHaveBeenCalledWith(
+    expect(logErrorMock).toHaveBeenCalledWith(
       'openLogsDirectory',
       'Could not find log directory!',
       expect.any(Error),

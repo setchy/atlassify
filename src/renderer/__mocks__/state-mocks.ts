@@ -1,28 +1,18 @@
 import { Theme } from '../../shared/theme';
 
 import {
-  type Account,
   type AppearanceSettingsState,
   type AtlassifyState,
   type AuthState,
-  type EncryptedToken,
   type FilterSettingsState,
-  type Link,
   type NotificationSettingsState,
   OpenPreference,
+  type Percentage,
   type SettingsState,
   type SystemSettingsState,
   type TraySettingsState,
-  type Username,
 } from '../types';
-
-export const mockAtlassianCloudAccount: Account = {
-  id: '123456789',
-  username: 'user@atlassify.io' as Username,
-  token: 'token-123-456' as EncryptedToken,
-  name: 'Atlassify',
-  avatar: 'https://avatar.atlassify.io' as Link,
-};
+import { mockAtlassianCloudAccount } from './account-mocks';
 
 export const mockAuth: AuthState = {
   accounts: [mockAtlassianCloudAccount],
@@ -31,7 +21,7 @@ export const mockAuth: AuthState = {
 const mockAppearanceSettings: AppearanceSettingsState = {
   language: 'en',
   theme: Theme.LIGHT,
-  zoomPercentage: 100,
+  zoomPercentage: 100 as Percentage,
 };
 
 const mockNotificationSettings: NotificationSettingsState = {
@@ -54,12 +44,12 @@ const mockSystemSettings: SystemSettingsState = {
   keyboardShortcutEnabled: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
-  notificationVolume: 20,
+  notificationVolume: 20 as Percentage,
   openAtStartup: true,
 };
 
 const mockFilters: FilterSettingsState = {
-  filterTimeSensitive: [],
+  filterEngagementStates: [],
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],

@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useEffect, useState } from 'react';
+import { type FC, useCallback, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -19,18 +19,22 @@ import { AppContext } from '../../context/App';
 import { LANGUAGES } from '../../i18n/types';
 import { loadLanguageLocale } from '../../utils/storage';
 import { setTheme } from '../../utils/theme';
-import { zoomLevelToPercentage, zoomPercentageToLevel } from '../../utils/zoom';
-
-let zoomResizeTimeout: NodeJS.Timeout;
-const ZOOM_RESIZE_DELAY = 200;
+import {
+  canDecreaseZoom,
+  canIncreaseZoom,
+  decreaseZoom,
+  increaseZoom,
+  resetZoomLevel,
+  zoomLevelToPercentage,
+} from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
-  const { t } = useTranslation();
-
-  const [zoomPercentage, setZoomPercentage] = useState(
-    zoomLevelToPercentage(window.atlassify.zoom.getLevel()),
+  const zoomPercentage = zoomLevelToPercentage(
+    window.atlassify.zoom.getLevel(),
   );
+
+  const { t } = useTranslation();
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
@@ -44,19 +48,6 @@ export const AppearanceSettings: FC = () => {
       }
     });
   }, [settings.theme]);
-
-  window.addEventListener('resize', () => {
-    // clear the timeout
-    clearTimeout(zoomResizeTimeout);
-    // start timing for event "completion"
-    zoomResizeTimeout = setTimeout(() => {
-      const zoomPercentage = zoomLevelToPercentage(
-        window.atlassify.zoom.getLevel(),
-      );
-      setZoomPercentage(zoomPercentage);
-      updateSetting('zoomPercentage', zoomPercentage);
-    }, ZOOM_RESIZE_DELAY);
-  });
 
   const themeOptions: OptionsPropType = [
     {
@@ -143,13 +134,9 @@ export const AppearanceSettings: FC = () => {
                 >
                   <IconButton
                     icon={ZoomOutIcon}
+                    isDisabled={!canDecreaseZoom(zoomPercentage)}
                     label={t('settings.appearance.zoom_out')}
-                    onClick={() =>
-                      zoomPercentage > 0 &&
-                      window.atlassify.zoom.setLevel(
-                        zoomPercentageToLevel(zoomPercentage - 10),
-                      )
-                    }
+                    onClick={() => decreaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
                     testId="settings-zoom-out"
@@ -161,13 +148,9 @@ export const AppearanceSettings: FC = () => {
                 >
                   <IconButton
                     icon={ZoomInIcon}
+                    isDisabled={!canIncreaseZoom(zoomPercentage)}
                     label={t('settings.appearance.zoom_in')}
-                    onClick={() =>
-                      zoomPercentage < 120 &&
-                      window.atlassify.zoom.setLevel(
-                        zoomPercentageToLevel(zoomPercentage + 10),
-                      )
-                    }
+                    onClick={() => increaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
                     testId="settings-zoom-in"
@@ -181,7 +164,7 @@ export const AppearanceSettings: FC = () => {
                 <IconButton
                   icon={RetryIcon}
                   label={t('settings.appearance.zoom_reset')}
-                  onClick={() => window.atlassify.zoom.setLevel(0)}
+                  onClick={() => resetZoomLevel()}
                   shape="circle"
                   spacing="compact"
                   testId="settings-zoom-reset"

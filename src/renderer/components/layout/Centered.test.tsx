@@ -1,10 +1,9 @@
-import { render } from '@testing-library/react';
-
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { Centered } from './Centered';
 
 describe('renderer/components/layout/Centered.tsx', () => {
   it('should render itself & its children', () => {
-    const tree = render(<Centered>Test</Centered>);
+    const tree = renderWithAppContext(<Centered>Test</Centered>);
 
     expect(tree).toMatchSnapshot();
   });

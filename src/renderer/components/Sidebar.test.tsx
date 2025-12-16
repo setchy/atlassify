@@ -1,15 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
-import { AppContext } from '../context/App';
+import { mockSettings } from '../__mocks__/state-mocks';
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 
@@ -25,16 +25,16 @@ const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as jest.Mock).mockReturnValue({ colorMode: mode });
 };
 
-const mockNavigate = jest.fn();
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => navigateMock,
 }));
 
 describe('renderer/components/Sidebar.tsx', () => {
-  const updateSetting = jest.fn();
-  const fetchNotifications = jest.fn();
-  const openExternalLinkMock = jest
+  const updateSettingMock = jest.fn();
+  const fetchNotificationsMock = jest.fn();
+  const openExternalLinkSpy = jest
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();
 
@@ -46,18 +46,14 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: mockAccountNotifications,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      const tree = renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          isLoggedIn: true,
+          notifications: mockAccountNotifications,
+        },
       );
 
       expect(tree).toMatchSnapshot();
@@ -66,18 +62,14 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            notifications: mockAccountNotifications,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      const tree = renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          isLoggedIn: true,
+          notifications: mockAccountNotifications,
+        },
       );
 
       expect(tree).toMatchSnapshot();
@@ -88,19 +80,14 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: false,
-            notifications: mockAccountNotifications,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      const tree = renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          isLoggedIn: false,
+          notifications: mockAccountNotifications,
+        },
       );
 
       expect(tree).toMatchSnapshot();
@@ -109,123 +96,82 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: false,
-            notifications: mockAccountNotifications,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      const tree = renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          isLoggedIn: false,
+          notifications: mockAccountNotifications,
+        },
       );
 
       expect(tree).toMatchSnapshot();
     });
   });
 
-  it('should navigate to home', async () => {
-    render(
-      <AppContext.Provider
-        value={{
-          isLoggedIn: false,
-          notifications: [],
-          auth: mockAuth,
-          settings: mockSettings,
-          fetchNotifications,
-        }}
-      >
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>
-      </AppContext.Provider>,
+  it('should navigate to home when clicking logo', async () => {
+    renderWithAppContext(
+      <MemoryRouter>
+        <Sidebar />
+      </MemoryRouter>,
     );
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
 
-    expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+    expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
   });
 
   describe('notifications icon', () => {
     it('opens notifications home when clicked', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
       );
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
-      expect(openExternalLinkMock).toHaveBeenCalledWith(
+      expect(openExternalLinkSpy).toHaveBeenCalledWith(
         'https://team.atlassian.com/notifications',
       );
     });
 
     it('renders correct icon when there are no notifications', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          notifications: [],
+        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when there are notifications', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: mockAccountNotifications,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          notifications: mockAccountNotifications,
+        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when there are more notifications available', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: mockAccountNotificationsWithMorePages,
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          notifications: mockAccountNotificationsWithMorePages,
+        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
@@ -234,58 +180,39 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('show read / unread notifications', () => {
     it('renders correct icon when in unread only mode', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: { ...mockSettings, fetchOnlyUnreadNotifications: true },
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: { ...mockSettings, fetchOnlyUnreadNotifications: true },
+        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when in unread and read mode', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: { ...mockSettings, fetchOnlyUnreadNotifications: false },
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: { ...mockSettings, fetchOnlyUnreadNotifications: false },
+        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('should toggle show only unread notifications', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          updateSetting: updateSettingMock,
+        },
       );
 
       await userEvent.click(
@@ -300,62 +227,45 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by products', () => {
     it('should order notifications by date', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: {
+            ...mockSettings,
+            groupNotificationsByProduct: false,
+          },
+        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should group notifications by product', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: {
-              ...mockSettings,
-              groupNotificationsByProduct: true,
-            },
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: {
+            ...mockSettings,
+            groupNotificationsByProduct: true,
+          },
+        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by products', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          updateSetting: updateSettingMock,
+        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
@@ -366,62 +276,45 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by titles', () => {
     it('should group notifications by title', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: {
+            ...mockSettings,
+            groupNotificationsByTitle: true,
+          },
+        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should not group notifications by title - flat notifications', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: {
-              ...mockSettings,
-              groupNotificationsByTitle: false,
-            },
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: {
+            ...mockSettings,
+            groupNotificationsByTitle: false,
+          },
+        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by title', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          updateSetting: updateSettingMock,
+        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-title'));
@@ -432,19 +325,10 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Filter notifications', () => {
     it('go to the filters route', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
       );
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
@@ -452,23 +336,15 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
       ).toMatchSnapshot();
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, '/filters');
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/filters');
     });
 
     it('go to the home if filters path already shown', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter initialEntries={['/filters']}>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter initialEntries={['/filters']}>
+          <Sidebar />
+        </MemoryRouter>,
       );
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
@@ -476,26 +352,21 @@ describe('renderer/components/Sidebar.tsx', () => {
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
       ).toMatchSnapshot();
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
 
-    it('show filters count if any are saved', () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: {
-              ...mockSettings,
-              filterProducts: ['bitbucket'],
-            },
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+    it('highlight filters sidebar if any are saved', () => {
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          settings: {
+            ...mockSettings,
+            filterProducts: ['bitbucket'],
+          },
+        },
       );
 
       expect(
@@ -506,118 +377,84 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Refresh Notifications', () => {
     it('should refresh the notifications when status is not loading', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            fetchNotifications,
-            status: 'success',
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          fetchNotifications: fetchNotificationsMock,
+          status: 'success',
+        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not refresh the notifications when status is loading', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            fetchNotifications,
-            status: 'loading',
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          fetchNotifications: fetchNotificationsMock,
+          status: 'loading',
+        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
-      expect(fetchNotifications).not.toHaveBeenCalled();
+      expect(fetchNotificationsMock).not.toHaveBeenCalled();
     });
   });
 
   describe('Settings', () => {
     it('go to the settings route', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-          }}
-        >
-          <MemoryRouter>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter>
+          <Sidebar />
+        </MemoryRouter>,
       );
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, '/settings');
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/settings');
     });
 
     it('go to the home if settings path already shown', async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            isLoggedIn: true,
-            notifications: [],
-            auth: mockAuth,
-            settings: mockSettings,
-            fetchNotifications,
-          }}
-        >
-          <MemoryRouter initialEntries={['/settings']}>
-            <Sidebar />
-          </MemoryRouter>
-        </AppContext.Provider>,
+      renderWithAppContext(
+        <MemoryRouter initialEntries={['/settings']}>
+          <Sidebar />
+        </MemoryRouter>,
+        {
+          fetchNotifications: fetchNotificationsMock,
+        },
       );
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(fetchNotifications).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenNthCalledWith(1, '/', { replace: true });
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
   });
 
   it('should quit the app', async () => {
-    const quitAppMock = jest.spyOn(comms, 'quitApp');
+    const quitAppSpy = jest.spyOn(comms, 'quitApp');
 
-    render(
-      <AppContext.Provider
-        value={{
-          isLoggedIn: false,
-          notifications: [],
-          auth: mockAuth,
-          settings: mockSettings,
-        }}
-      >
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>
-      </AppContext.Provider>,
+    renderWithAppContext(
+      <MemoryRouter>
+        <Sidebar />
+      </MemoryRouter>,
+      {
+        isLoggedIn: false,
+      },
     );
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));
 
-    expect(quitAppMock).toHaveBeenCalledTimes(1);
+    expect(quitAppSpy).toHaveBeenCalledTimes(1);
   });
 });

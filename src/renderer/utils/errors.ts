@@ -1,5 +1,5 @@
 import i18n from '../i18n';
-import type { AtlassifyError, ErrorType } from '../types';
+import type { AccountNotifications, AtlassifyError, ErrorType } from '../types';
 
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
@@ -29,3 +29,29 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
     emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
   },
 };
+
+/**
+ * Check if all accounts have errors
+ */
+export function doesAllAccountsHaveErrors(
+  accountNotifications: AccountNotifications[],
+) {
+  return (
+    accountNotifications.length > 0 &&
+    accountNotifications.every((account) => account.error !== null)
+  );
+}
+
+/**
+ * Check if all account errors are the same
+ */
+export function areAllAccountErrorsSame(
+  accountNotifications: AccountNotifications[],
+) {
+  if (accountNotifications.length === 0) {
+    return true;
+  }
+
+  const firstError = accountNotifications[0].error;
+  return accountNotifications.every((account) => account.error === firstError);
+}

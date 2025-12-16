@@ -1,14 +1,19 @@
+---
+import { siteMetadata } from '../constants.ts';
+
+const GTAG_ID = siteMetadata.google.gtag;
+const GTAG_SRC = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`;
+---
+
 <!-- Google tag (gtag.js) -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-JRB90LB5N9"
-></script>
+<script async src={GTAG_SRC}></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag() {
+  // biome-ignore lint/complexity/noArguments: keep arguments object as per gtag.js spec
   dataLayer.push(arguments);
 }
 gtag('js', new Date());
 
-gtag('config', 'G-JRB90LB5N9');
+gtag('config', GTAG_ID);
 </script>

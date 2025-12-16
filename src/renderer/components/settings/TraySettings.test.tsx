@@ -1,12 +1,11 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { TraySettings } from './TraySettings';
 
 describe('renderer/components/settings/TraySettings.tsx', () => {
-  const updateSetting = jest.fn();
+  const updateSettingMock = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -14,25 +13,17 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
 
   it('should toggle the showNotificationsCountInTray checkbox', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <TraySettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<TraySettings />, {
+        updateSetting: updateSettingMock,
+      });
     });
 
     await userEvent.click(
       screen.getByLabelText('Show notifications count in tray'),
     );
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith(
+    expect(updateSettingMock).toHaveBeenCalledTimes(1);
+    expect(updateSettingMock).toHaveBeenCalledWith(
       'showNotificationsCountInTray',
       false,
     );
@@ -40,22 +31,17 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
 
   it('should toggle the useAlternateIdleIcon checkbox', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <TraySettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<TraySettings />, {
+        updateSetting: updateSettingMock,
+      });
     });
 
     await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('useAlternateIdleIcon', true);
+    expect(updateSettingMock).toHaveBeenCalledTimes(1);
+    expect(updateSettingMock).toHaveBeenCalledWith(
+      'useAlternateIdleIcon',
+      true,
+    );
   });
 });

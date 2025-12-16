@@ -183,6 +183,61 @@ describe('main/updater.ts', () => {
       ).toHaveBeenCalledWith(false);
     });
 
+    it('auto-hides "No updates available" after configured timeout', async () => {
+      jest.useFakeTimers();
+      try {
+        await updater.start();
+
+        menuBuilder.setNoUpdateAvailableMenuVisibility.mockClear();
+
+        emit('update-not-available');
+        // Immediately shows the message
+        expect(
+          menuBuilder.setNoUpdateAvailableMenuVisibility,
+        ).toHaveBeenCalledWith(true);
+
+        // Then hides it after the configured timeout
+        jest.advanceTimersByTime(APPLICATION.UPDATE_NOT_AVAILABLE_DISPLAY_MS);
+        expect(
+          menuBuilder.setNoUpdateAvailableMenuVisibility,
+        ).toHaveBeenLastCalledWith(false);
+      } finally {
+        jest.useRealTimers();
+      }
+    });
+
+    it('clears pending hide timer when a new check starts', async () => {
+      jest.useFakeTimers();
+      try {
+        await updater.start();
+        menuBuilder.setNoUpdateAvailableMenuVisibility.mockClear();
+
+        emit('update-not-available');
+        // Message shown
+        expect(
+          menuBuilder.setNoUpdateAvailableMenuVisibility,
+        ).toHaveBeenCalledWith(true);
+
+        // New check should hide immediately and clear pending timeout
+        emit('checking-for-update');
+        expect(
+          menuBuilder.setNoUpdateAvailableMenuVisibility,
+        ).toHaveBeenLastCalledWith(false);
+
+        const callsBefore =
+          menuBuilder.setNoUpdateAvailableMenuVisibility.mock.calls.length;
+        jest.advanceTimersByTime(
+          APPLICATION.UPDATE_NOT_AVAILABLE_DISPLAY_MS * 2,
+        );
+        // No additional hide call due to cleared timeout
+        expect(
+          menuBuilder.setNoUpdateAvailableMenuVisibility.mock.calls.length,
+        ).toBe(callsBefore);
+      } finally {
+        jest.useRealTimers();
+      }
+    });
+
     it('handles update-cancelled (reset state)', async () => {
       await updater.start();
       emit('update-cancelled');
@@ -205,12 +260,12 @@ describe('main/updater.ts', () => {
     });
 
     it('performs initial check and schedules periodic checks', async () => {
-      const originalSetInterval = global.setInterval;
+      const originalSetInterval = globalThis.setInterval;
       const setIntervalSpy = jest
-        .spyOn(global, 'setInterval')
+        .spyOn(globalThis, 'setInterval')
         .mockImplementation(((fn: () => void) => {
           fn();
-          return 0 as unknown as NodeJS.Timer;
+          return 0 as unknown as NodeJS.Timeout;
         }) as unknown as typeof setInterval);
       try {
         await updater.start();
@@ -224,7 +279,7 @@ describe('main/updater.ts', () => {
         );
       } finally {
         setIntervalSpy.mockRestore();
-        global.setInterval = originalSetInterval;
+        globalThis.setInterval = originalSetInterval;
       }
     });
   });

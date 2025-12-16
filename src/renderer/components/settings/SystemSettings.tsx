@@ -18,6 +18,12 @@ import { APPLICATION } from '../../../shared/constants';
 import { AppContext } from '../../context/App';
 import { defaultSettings } from '../../context/defaults';
 import { OpenPreference } from '../../types';
+import {
+  canDecreaseVolume,
+  canIncreaseVolume,
+  decreaseVolume,
+  increaseVolume,
+} from '../../utils/notifications/sound';
 
 export const SystemSettings: FC = () => {
   const { settings, updateSetting } = useContext(AppContext);
@@ -118,14 +124,13 @@ export const SystemSettings: FC = () => {
               >
                 <IconButton
                   icon={VolumeLowIcon}
+                  isDisabled={!canDecreaseVolume(settings.notificationVolume)}
                   label={t('settings.system.volume_down')}
                   onClick={() => {
-                    const newVolume = Math.max(
-                      settings.notificationVolume - 10,
-                      10,
+                    updateSetting(
+                      'notificationVolume',
+                      decreaseVolume(settings.notificationVolume),
                     );
-
-                    updateSetting('notificationVolume', newVolume);
                   }}
                   shape="circle"
                   spacing="compact"
@@ -138,14 +143,13 @@ export const SystemSettings: FC = () => {
               >
                 <IconButton
                   icon={VolumeHighIcon}
+                  isDisabled={!canIncreaseVolume(settings.notificationVolume)}
                   label={t('settings.system.volume_up')}
                   onClick={() => {
-                    const newVolume = Math.min(
-                      settings.notificationVolume + 10,
-                      100,
+                    updateSetting(
+                      'notificationVolume',
+                      increaseVolume(settings.notificationVolume),
                     );
-
-                    updateSetting('notificationVolume', newVolume);
                   }}
                   shape="circle"
                   spacing="compact"

@@ -10,12 +10,12 @@ describe('renderer/utils/notifications/filter.ts', () => {
   });
 
   describe('filterNotifications', () => {
-    it('should filter notifications by time sensitive when provided', async () => {
+    it('should filter notifications by engagement state when provided', async () => {
       mockAtlassifyNotifications[0].message = 'Some message';
       mockAtlassifyNotifications[1].message = 'someone mentioned you on a page';
       const result = filterNotifications(mockAtlassifyNotifications, {
         ...mockSettings,
-        filterTimeSensitive: ['mention'],
+        filterEngagementStates: ['mention'],
       });
 
       expect(mockAtlassifyNotifications.length).toBe(2);
@@ -90,10 +90,10 @@ describe('renderer/utils/notifications/filter.ts', () => {
       expect(hasActiveFilters(defaultSettings)).toBe(false);
     });
 
-    it('non-default time sensitive filters', () => {
+    it('non-default engagement state filters', () => {
       const settings: SettingsState = {
         ...defaultSettings,
-        filterTimeSensitive: ['mention'],
+        filterEngagementStates: ['mention'],
       };
       expect(hasActiveFilters(settings)).toBe(true);
     });

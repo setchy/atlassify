@@ -4,7 +4,7 @@ import { clearState, loadState, saveState } from './storage';
 
 describe('renderer/utils/storage.ts', () => {
   it('should load the state from localstorage - existing', () => {
-    jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValueOnce(
+    jest.spyOn(Storage.prototype, 'getItem').mockReturnValueOnce(
       JSON.stringify({
         auth: {
           accounts: [
@@ -33,17 +33,18 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should load the state from localstorage - empty', () => {
-    jest
-      .spyOn(localStorage.__proto__, 'getItem')
-      .mockReturnValueOnce(JSON.stringify({}));
+    jest.spyOn(localStorage, 'getItem').mockReturnValueOnce(JSON.stringify({}));
+
     const result = loadState();
+
     expect(result.auth).toBeUndefined();
     expect(result.auth).toBeUndefined();
     expect(result.settings).toBeUndefined();
   });
 
   it('should save the state to localstorage', () => {
-    jest.spyOn(localStorage.__proto__, 'setItem');
+    jest.spyOn(Storage.prototype, 'setItem').mockImplementation();
+
     saveState({
       auth: {
         accounts: [
@@ -58,12 +59,15 @@ describe('renderer/utils/storage.ts', () => {
       },
       settings: mockSettings,
     });
+
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
   });
 
   it('should clear the state from localstorage', () => {
-    jest.spyOn(localStorage.__proto__, 'clear');
+    jest.spyOn(Storage.prototype, 'clear').mockImplementation();
+
     clearState();
+
     expect(localStorage.clear).toHaveBeenCalledTimes(1);
   });
 });

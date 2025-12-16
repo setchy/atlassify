@@ -1,56 +1,8 @@
 import { APPLICATION } from '../../../shared/constants';
 
 import i18n from '../../i18n';
-import type {
-  AccountNotifications,
-  AtlassifyNotification,
-  AtlassifyState,
-} from '../../types';
+import type { AtlassifyNotification } from '../../types';
 import { formatNativeNotificationFooterText } from '../helpers';
-import { setTrayIconColor } from './notifications';
-
-export const triggerNativeNotifications = (
-  previousNotifications: AccountNotifications[],
-  newNotifications: AccountNotifications[],
-  state: AtlassifyState,
-) => {
-  const diffNotifications = newNotifications.flatMap((accountNotifications) => {
-    const accountPreviousNotifications = previousNotifications.find(
-      (item) => item.account.id === accountNotifications.account.id,
-    );
-
-    if (!accountPreviousNotifications) {
-      return accountNotifications.notifications;
-    }
-
-    const accountPreviousNotificationsIds = new Set<string>(
-      accountPreviousNotifications.notifications.map((item) => item.id),
-    );
-
-    const accountNewNotifications = accountNotifications.notifications.filter(
-      (notification) => {
-        return !accountPreviousNotificationsIds.has(notification.id);
-      },
-    );
-
-    return accountNewNotifications;
-  });
-
-  setTrayIconColor(newNotifications);
-
-  // If there are no new notifications just stop there
-  if (!diffNotifications.length) {
-    return;
-  }
-
-  if (state.settings.playSoundNewNotifications) {
-    raiseSoundNotification(state.settings.notificationVolume / 100);
-  }
-
-  if (state.settings.showSystemNotifications) {
-    raiseNativeNotification(diffNotifications);
-  }
-};
 
 export const raiseNativeNotification = (
   notifications: AtlassifyNotification[],
@@ -72,12 +24,4 @@ export const raiseNativeNotification = (
   }
 
   return window.atlassify.raiseNativeNotification(title, body, url);
-};
-
-export const raiseSoundNotification = async (volume: number) => {
-  const path = await window.atlassify.notificationSoundPath();
-
-  const audio = new Audio(path);
-  audio.volume = volume;
-  audio.play();
 };

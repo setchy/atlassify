@@ -25,15 +25,15 @@ import {
   readStateFilter,
 } from '../../utils/notifications/filters';
 
-export interface INotificationRow {
+export interface NotificationRowProps {
   notification: AtlassifyNotification;
   isAnimated?: boolean;
 }
 
-export const NotificationRow: FC<INotificationRow> = ({
+export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isAnimated = false,
-}: INotificationRow) => {
+}: NotificationRowProps) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useContext(AppContext);
   const [animateExit, setAnimateExit] = useState(false);
@@ -133,10 +133,12 @@ export const NotificationRow: FC<INotificationRow> = ({
                         {updatedAt}
                       </Text>
                     </Box>
+
                     <Box as="div" id="notification-metadata">
                       <Stack space="space.025">
                         <Box
                           as="div"
+                          hidden={!notificationBodyText}
                           id="notification-entity"
                           paddingInlineStart={
                             notification.entity.iconUrl
@@ -171,6 +173,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                             <Text size="small">{notificationBodyText}</Text>
                           </Inline>
                         </Box>
+
                         <Box
                           as="div"
                           id="notification-product"
@@ -190,6 +193,7 @@ export const NotificationRow: FC<INotificationRow> = ({
                             <Text size="small">{notificationFooterText}</Text>
                           </Inline>
                         </Box>
+
                         <Box as="div" id="notification-group">
                           {notification.notificationGroup.size > 1 && (
                             <Inline alignBlock="center" space="space.050">

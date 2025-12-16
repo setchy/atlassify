@@ -149,12 +149,6 @@ describe('renderer/utils/comms.ts', () => {
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(5);
     });
 
-    it('updates tray icon color with default count', () => {
-      updateTrayColor();
-
-      expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
-    });
-
     it('updates tray title with provided value', () => {
       updateTrayTitle('Atlassify');
 
@@ -162,13 +156,6 @@ describe('renderer/utils/comms.ts', () => {
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith(
         'Atlassify',
       );
-    });
-
-    it('updates tray title with default value', () => {
-      updateTrayTitle();
-
-      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith('');
     });
   });
 });

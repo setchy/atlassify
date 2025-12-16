@@ -39,12 +39,16 @@ export const actorFilter: Filter<ActorType> = {
     return settings.filterActors.includes(type);
   },
 
-  getFilterCount(notifications: AccountNotifications[], actor: ActorType) {
-    return notifications.reduce(
-      (memo, acc) =>
+  getFilterCount(
+    accountNotifications: AccountNotifications[],
+    actor: ActorType,
+  ) {
+    return accountNotifications.reduce(
+      (memo, account) =>
         memo +
-        acc.notifications.filter((n) => this.filterNotification(n, actor))
-          .length,
+        account.notifications.filter((notification) =>
+          this.filterNotification(notification, actor),
+        ).length,
       0,
     );
   },

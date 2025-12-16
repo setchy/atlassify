@@ -41,17 +41,17 @@ import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 
-export interface IAccountNotifications {
+export interface AccountNotificationsProps {
   account: Account;
   notifications: AtlassifyNotification[];
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
 }
 
-export const AccountNotifications: FC<IAccountNotifications> = (
-  props: IAccountNotifications,
+export const AccountNotifications: FC<AccountNotificationsProps> = (
+  props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, error, hasMoreNotifications } = props;
+  const { account, notifications, hasMoreNotifications } = props;
   const { t } = useTranslation();
   const { markNotificationsRead, settings } = useContext(AppContext);
 
@@ -79,21 +79,16 @@ export const AccountNotifications: FC<IAccountNotifications> = (
   );
 
   const groupedNotifications = useMemo(() => {
-    const map = groupNotificationsByProduct([
-      {
-        account,
-        error,
-        notifications: sortedNotifications,
-        hasMoreNotifications,
-      },
-    ]);
+    const map = groupNotificationsByProduct(sortedNotifications);
 
-    return Array.from(map.entries());
-  }, [account, error, sortedNotifications, hasMoreNotifications]);
+    const notifications = Array.from(map.entries());
 
-  if (settings.groupNotificationsByProductAlphabetically) {
-    groupedNotifications.sort((a, b) => a[0].localeCompare(b[0]));
-  }
+    if (settings.groupNotificationsByProductAlphabetically) {
+      notifications.sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
+    return notifications;
+  }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
   const toggleAccountNotifications = () => {
     setShowAccountNotifications(!showAccountNotifications);
@@ -227,7 +222,9 @@ export const AccountNotifications: FC<IAccountNotifications> = (
       {showAccountNotifications && (
         <Fragment>
           {props.error && <Oops error={props.error} />}
+
           {!hasNotifications && !props.error && <AllRead />}
+
           {settings.groupNotificationsByProduct
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (

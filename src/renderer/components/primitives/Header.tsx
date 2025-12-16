@@ -9,12 +9,12 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
 
-interface IHeader {
+interface HeaderProps {
   children: string;
   fetchOnBack?: boolean;
 }
 
-export const Header: FC<IHeader> = (props: IHeader) => {
+export const Header: FC<HeaderProps> = (props: HeaderProps) => {
   const navigate = useNavigate();
 
   const { fetchNotifications } = useContext(AppContext);

@@ -2,12 +2,12 @@ import type { FC, ReactNode } from 'react';
 
 import { Box, Flex } from '@atlaskit/primitives';
 
-interface IFooter {
+interface FooterProps {
   children: ReactNode;
   justify: 'end' | 'space-between';
 }
 
-export const Footer: FC<IFooter> = (props: IFooter) => {
+export const Footer: FC<FooterProps> = (props: FooterProps) => {
   return (
     <Box
       backgroundColor="color.background.accent.gray.subtlest"

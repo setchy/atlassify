@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import { Constants } from '../constants';
-import { useInterval } from '../hooks/useInterval';
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useNotifications } from '../hooks/useNotifications';
 import type {
   Account,
@@ -16,8 +16,10 @@ import type {
   AtlassifyError,
   AtlassifyNotification,
   AuthState,
+  ConfigSettingsState,
+  ConfigSettingsValue,
   FilterSettingsState,
-  FilterValue,
+  FilterSettingsValue,
   SettingsState,
   SettingsValue,
   Status,
@@ -34,19 +36,18 @@ import {
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
-  updateTrayColor,
-  updateTrayTitle,
 } from '../utils/comms';
-import {
-  getNotificationCount,
-  hasMoreNotifications,
-} from '../utils/notifications/notifications';
 import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
-import { zoomPercentageToLevel } from '../utils/zoom';
-import { defaultAuth, defaultFilters, defaultSettings } from './defaults';
+import { setTrayIconColorAndTitle } from '../utils/tray';
+import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
+import {
+  defaultAuth,
+  defaultFilterSettings,
+  defaultSettings,
+} from './defaults';
 
-interface AppContextState {
+export interface AppContextState {
   auth: AuthState;
   isLoggedIn: boolean;
   login: (data: LoginOptions) => Promise<void>;
@@ -56,6 +57,10 @@ interface AppContextState {
   globalError: AtlassifyError;
 
   notifications: AccountNotifications[];
+  notificationCount: number;
+  hasNotifications: boolean;
+  hasMoreAccountNotifications: boolean;
+
   fetchNotifications: () => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
 
@@ -69,10 +74,13 @@ interface AppContextState {
   settings: SettingsState;
   clearFilters: () => void;
   resetSettings: () => void;
-  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+  updateSetting: (
+    name: keyof ConfigSettingsState,
+    value: ConfigSettingsValue,
+  ) => void;
   updateFilter: (
     name: keyof FilterSettingsState,
-    value: FilterValue,
+    value: FilterSettingsValue,
     checked: boolean,
   ) => void;
 }
@@ -80,65 +88,83 @@ interface AppContextState {
 export const AppContext = createContext<Partial<AppContextState>>({});
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [auth, setAuth] = useState<AuthState>(defaultAuth);
-  const [settings, setSettings] = useState<SettingsState>(defaultSettings);
+  const existingState = loadState();
+
+  const [auth, setAuth] = useState<AuthState>(
+    existingState.auth
+      ? { ...defaultAuth, ...existingState.auth }
+      : defaultAuth,
+  );
+
+  const [settings, setSettings] = useState<SettingsState>(
+    existingState.settings
+      ? { ...defaultSettings, ...existingState.settings }
+      : defaultSettings,
+  );
+
   const {
-    notifications,
-    fetchNotifications,
-    removeAccountNotifications,
     status,
     globalError,
+
+    notifications,
+    notificationCount,
+    hasNotifications,
+    hasMoreAccountNotifications,
+
+    fetchNotifications,
+    removeAccountNotifications,
+
     markNotificationsRead,
     markNotificationsUnread,
   } = useNotifications();
 
-  // Run once on mount to restore settings/state
-  // biome-ignore lint/correctness/useExhaustiveDependencies: restoreSettings is stable and should run only once
+  const refreshAllAccounts = useCallback(() => {
+    if (!auth.accounts.length) {
+      return;
+    }
+
+    return Promise.all(auth.accounts.map(refreshAccount));
+  }, [auth.accounts]);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
-    restoreSettings();
+    fetchNotifications({ auth, settings });
+  }, [
+    auth.accounts.length,
+    settings.fetchOnlyUnreadNotifications,
+    settings.groupNotificationsByTitle,
+    settings.filterEngagementStates,
+    settings.filterCategories,
+    settings.filterActors,
+    settings.filterReadStates,
+    settings.filterProducts,
+  ]);
+
+  useIntervalTimer(() => {
+    fetchNotifications({ auth, settings });
+  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
+  useEffect(() => {
+    refreshAllAccounts();
   }, []);
+
+  // Refresh account details on interval
+  useIntervalTimer(() => {
+    refreshAllAccounts();
+  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
 
   useEffect(() => {
     setTheme(settings.theme);
   }, [settings.theme]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We only want fetchNotifications to be called for particular state changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
-    fetchNotifications({ auth, settings });
-  }, [
-    auth.accounts,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByTitle,
-    settings.filterTimeSensitive,
-    settings.filterCategories,
-    settings.filterReadStates,
-    settings.filterProducts,
-  ]);
-
-  useInterval(() => {
-    fetchNotifications({ auth, settings });
-  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-
-  useInterval(() => {
-    for (const account of auth.accounts) {
-      refreshAccount(account);
-    }
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
-
-  useEffect(() => {
-    const count = getNotificationCount(notifications);
-    const hasMore = hasMoreNotifications(notifications);
-
-    let title = '';
-    if (settings.showNotificationsCountInTray && count > 0) {
-      title = `${count.toString()}${hasMore ? '+' : ''}`;
-    }
-
     setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
     setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
 
-    updateTrayColor(count);
-    updateTrayTitle(title);
+    const trayCount = status === 'error' ? -1 : notificationCount;
+    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, settings);
   }, [
     settings.showNotificationsCountInTray,
     settings.useUnreadActiveIcon,
@@ -147,12 +173,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   ]);
 
   useEffect(() => {
-    setAutoLaunch(settings.openAtStartup);
-  }, [settings.openAtStartup]);
-
-  useEffect(() => {
     setKeyboardShortcut(settings.keyboardShortcutEnabled);
   }, [settings.keyboardShortcutEnabled]);
+
+  useEffect(() => {
+    setAutoLaunch(settings.openAtStartup);
+  }, [settings.openAtStartup]);
 
   useEffect(() => {
     window.atlassify.onResetApp(() => {
@@ -163,27 +189,37 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const clearFilters = useCallback(() => {
-    const newSettings = { ...settings, ...defaultFilters };
-    setSettings(newSettings);
-    saveState({ auth, settings: newSettings });
-  }, [auth, settings]);
+    setSettings((prevSettings) => {
+      const newSettings = { ...prevSettings, ...defaultFilterSettings };
+      saveState({ auth, settings: newSettings });
+      return newSettings;
+    });
+  }, [auth]);
 
   const resetSettings = useCallback(() => {
-    setSettings(defaultSettings);
-    saveState({ auth, settings: defaultSettings });
+    setSettings(() => {
+      saveState({ auth, settings: defaultSettings });
+      return defaultSettings;
+    });
   }, [auth]);
 
   const updateSetting = useCallback(
     (name: keyof SettingsState, value: SettingsValue) => {
-      const newSettings = { ...settings, [name]: value };
-      setSettings(newSettings);
-      saveState({ auth, settings: newSettings });
+      setSettings((prevSettings) => {
+        const newSettings = { ...prevSettings, [name]: value };
+        saveState({ auth, settings: newSettings });
+        return newSettings;
+      });
     },
-    [auth, settings],
+    [auth],
   );
 
   const updateFilter = useCallback(
-    (name: keyof FilterSettingsState, value: FilterValue, checked: boolean) => {
+    (
+      name: keyof FilterSettingsState,
+      value: FilterSettingsValue,
+      checked: boolean,
+    ) => {
       const updatedFilters = checked
         ? [...settings[name], value]
         : settings[name].filter((item) => item !== value);
@@ -192,6 +228,39 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     },
     [updateSetting, settings],
   );
+
+  // Global window zoom handler / listener
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update on settings.zoomPercentage changes
+  useEffect(() => {
+    // Set the zoom level when settings.zoomPercentage changes
+    window.atlassify.zoom.setLevel(
+      zoomPercentageToLevel(settings.zoomPercentage),
+    );
+
+    // Sync zoom percentage in settings when window is resized
+    let timeout: NodeJS.Timeout;
+    const DELAY = 200;
+
+    const handleResize = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const zoomPercentage = zoomLevelToPercentage(
+          window.atlassify.zoom.getLevel(),
+        );
+
+        if (zoomPercentage !== settings.zoomPercentage) {
+          updateSetting('zoomPercentage', zoomPercentage);
+        }
+      }, DELAY);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeout);
+    };
+  }, [settings.zoomPercentage]);
 
   const isLoggedIn = useMemo(() => {
     return hasAccounts(auth);
@@ -211,37 +280,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       // Remove notifications for account
       removeAccountNotifications(account);
 
-      // Remove from auth state
       const updatedAuth = removeAccount(auth, account);
+
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },
     [auth, settings, removeAccountNotifications],
   );
-
-  const restoreSettings = useCallback(async () => {
-    const existing = loadState();
-
-    // Restore settings before accounts to ensure filters are available before fetching notifications
-    if (existing.settings) {
-      setUseUnreadActiveIcon(existing.settings.useUnreadActiveIcon);
-      setUseAlternateIdleIcon(existing.settings.useAlternateIdleIcon);
-      setKeyboardShortcut(existing.settings.keyboardShortcutEnabled);
-      setSettings({ ...defaultSettings, ...existing.settings });
-      window.atlassify.zoom.setLevel(
-        zoomPercentageToLevel(existing.settings.zoomPercentage),
-      );
-    }
-
-    if (existing.auth) {
-      setAuth({ ...defaultAuth, ...existing.auth });
-
-      // Refresh account data on app start
-      for (const account of existing.auth.accounts) {
-        await refreshAccount(account);
-      }
-    }
-  }, []);
 
   const fetchNotificationsWithAccounts = useCallback(
     async () => await fetchNotifications({ auth, settings }),
@@ -260,7 +305,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth, settings, markNotificationsUnread],
   );
 
-  const contextValues = useMemo(
+  const contextValues: AppContextState = useMemo(
     () => ({
       auth,
       isLoggedIn,
@@ -271,7 +316,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       globalError,
 
       notifications,
+      notificationCount,
+      hasNotifications,
+      hasMoreAccountNotifications,
+
       fetchNotifications: fetchNotificationsWithAccounts,
+      removeAccountNotifications,
 
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
@@ -292,7 +342,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       globalError,
 
       notifications,
+      notificationCount,
+      hasNotifications,
+      hasMoreAccountNotifications,
+
       fetchNotificationsWithAccounts,
+      removeAccountNotifications,
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,

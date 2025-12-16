@@ -1,42 +1,47 @@
 import type {
+  Account,
   AccountNotifications,
   AtlassifyNotification,
   SettingsState,
 } from '../../types';
 
-export function removeNotifications(
+/**
+ * Remove notifications from the account notifications list.
+ *
+ * If fetching all notifications (read and unread), no need to remove from state, just mark as read.
+ * If delayNotificationState is enabled in settings, mark notifications as read instead of removing them.
+ */
+export function removeNotificationsForAccount(
+  account: Account,
   settings: SettingsState,
   notificationsToRemove: AtlassifyNotification[],
-  allNotifications: AccountNotifications[],
+  accountNotifications: AccountNotifications[],
 ): AccountNotifications[] {
-  if (settings.delayNotificationState) {
-    return allNotifications;
-  }
-
   if (notificationsToRemove.length === 0) {
-    return allNotifications;
+    return accountNotifications;
   }
 
-  const removeNotificationAccount = notificationsToRemove[0].account;
-  const removeNotificationIDs = new Set<string>(
+  const notificationIDsToRemove = new Set(
     notificationsToRemove.map((notification) => notification.id),
   );
 
-  const accountIndex = allNotifications.findIndex(
-    (accountNotifications) =>
-      accountNotifications.account.id === removeNotificationAccount.id,
+  return accountNotifications.map((accountNotifications) =>
+    account.id === accountNotifications.account.id
+      ? {
+          ...accountNotifications,
+          notifications:
+            settings.delayNotificationState ||
+            !settings.fetchOnlyUnreadNotifications
+              ? accountNotifications.notifications.map((notification) =>
+                  notificationIDsToRemove.has(notification.id)
+                    ? { ...notification, readState: 'read' }
+                    : notification,
+                )
+              : accountNotifications.notifications.filter(
+                  (notification) =>
+                    !notificationIDsToRemove.has(notification.id),
+                ),
+        }
+      : accountNotifications,
   );
-
-  if (accountIndex !== -1) {
-    const updatedNotifications = [...allNotifications];
-    updatedNotifications[accountIndex] = {
-      ...updatedNotifications[accountIndex],
-      notifications: updatedNotifications[accountIndex].notifications.filter(
-        (notification) => !removeNotificationIDs.has(notification.id),
-      ),
-    };
-    return updatedNotifications;
-  }
-
-  return allNotifications;
 }

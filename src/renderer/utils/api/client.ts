@@ -8,14 +8,19 @@ import type {
   Token,
   Username,
 } from '../../types';
-import { graphql } from './graphql/generated/gql';
 import {
   InfluentsNotificationReadState,
+  MarkAsReadDocument,
   type MarkAsReadMutation,
+  MarkAsUnreadDocument,
   type MarkAsUnreadMutation,
+  MeDocument,
   type MeQuery,
+  MyNotificationsDocument,
   type MyNotificationsQuery,
+  RetrieveCloudIDsForHostnamesDocument,
   type RetrieveCloudIDsForHostnamesQuery,
+  RetrieveNotificationsByGroupIdDocument,
   type RetrieveNotificationsByGroupIdQuery,
 } from './graphql/generated/graphql';
 import {
@@ -37,7 +42,7 @@ export function checkIfCredentialsAreValid(
   username: Username,
   token: Token,
 ): Promise<AtlassianGraphQLResponse<MeQuery>> {
-  return performRequestForCredentials(username, token, MeQueryDocument);
+  return performRequestForCredentials(username, token, MeDocument);
 }
 
 /**
@@ -48,7 +53,7 @@ export function checkIfCredentialsAreValid(
 export function getAuthenticatedUser(
   account: Account,
 ): Promise<AtlassianGraphQLResponse<MeQuery>> {
-  return performRequestForAccount(account, MeQueryDocument);
+  return performRequestForAccount(account, MeDocument);
 }
 
 /**
@@ -60,34 +65,6 @@ export function getNotificationsForUser(
   account: Account,
   settings: SettingsState,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
-  const MyNotificationsDocument = graphql(`
-    query MyNotifications
-      (
-        $readState: InfluentsNotificationReadState,
-        $flat: Boolean = true,
-        $first: Int
-      ) 
-      {
-      notifications {
-        unseenNotificationCount
-        notificationFeed(
-          flat: $flat, 
-          first: $first,
-          filter: {
-            readStateFilter: $readState
-          }
-        ) {
-          pageInfo {
-            hasNextPage
-          }
-          nodes {
-            ...AtlassianNotification
-          }
-        }
-      }
-    }
-  `);
-
   return performRequestForAccount(account, MyNotificationsDocument, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,
@@ -106,14 +83,6 @@ export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
 ): Promise<AtlassianGraphQLResponse<MarkAsReadMutation>> {
-  const MarkAsReadDocument = graphql(`
-    mutation MarkAsRead($notificationIDs: [String!]!) {
-      notifications {
-        markNotificationsByIdsAsRead(ids: $notificationIDs) 
-      }
-    }
-  `);
-
   return performRequestForAccount(account, MarkAsReadDocument, {
     notificationIDs: notificationIds,
   });
@@ -128,14 +97,6 @@ export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
 ): Promise<AtlassianGraphQLResponse<MarkAsUnreadMutation>> {
-  const MarkAsUnreadDocument = graphql(`
-    mutation MarkAsUnread($notificationIDs: [String!]!) {
-      notifications {
-        markNotificationsByIdsAsUnread(ids: $notificationIDs) 
-      }
-    }
-  `);
-
   return performRequestForAccount(account, MarkAsUnreadDocument, {
     notificationIDs: notificationIds,
   });
@@ -152,28 +113,6 @@ export function getNotificationsByGroupId(
   notificationGroupId: string,
   notificationGroupSize: number,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
-  const RetrieveNotificationsByGroupIdDocument = graphql(`
-    query RetrieveNotificationsByGroupId(
-      $groupId: String!,
-      $first: Int,
-      $readState: InfluentsNotificationReadState
-    ) {
-      notifications {
-        notificationGroup(
-          groupId: $groupId, 
-          first: $first, 
-          filter: { 
-            readStateFilter: $readState 
-          }
-        ) {
-          nodes {
-            ...GroupNotificationDetails
-          } 
-        }
-      }
-    }
-  `);
-
   return performRequestForAccount(
     account,
     RetrieveNotificationsByGroupIdDocument,
@@ -196,20 +135,13 @@ export function getCloudIDsForHostnames(
   account: Account,
   hostnames: Hostname[],
 ): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
-  const CloudIDsForHostnamesDocument = graphql(`
-    query RetrieveCloudIDsForHostnames(
-      $hostNames: [String!]!
-    ) {
-      tenantContexts(hostNames: $hostNames) {
-        cloudId
-        hostName
-      }
-    }
-  `);
-
-  return performRequestForAccount(account, CloudIDsForHostnamesDocument, {
-    hostNames: hostnames,
-  });
+  return performRequestForAccount(
+    account,
+    RetrieveCloudIDsForHostnamesDocument,
+    {
+      hostNames: hostnames,
+    },
+  );
 }
 
 /**
@@ -231,74 +163,3 @@ export async function getJiraProjectTypeByKey(
 
   return response.projectTypeKey;
 }
-
-/**
- * GraphQL Documents
- */
-const MeQueryDocument = graphql(`
-  query Me {
-    me {
-      user {
-        accountId
-        name
-        picture
-      }
-    }
-  }
-`);
-
-/**
- * GraphQL Fragments used for generating types
- */
-export const AtlassianNotificationFragment = graphql(`
-    fragment AtlassianNotification on InfluentsNotificationHeadItem {
-      groupId
-      groupSize
-      additionalActors {
-        displayName
-        avatarURL
-      }
-      headNotification {
-        ...AtlassianHeadNotification
-      }
-    }
-  `);
-
-export const AtlassianHeadNotificationFragment = graphql(`
-    fragment AtlassianHeadNotification on InfluentsNotificationItem {
-      notificationId
-      timestamp
-      readState
-      category
-      content {
-        type
-        message
-        url
-        entity {
-          title
-          iconUrl
-          url
-        }
-        path {
-          title
-          iconUrl
-          url
-        }
-        actor {
-          displayName
-          avatarURL
-        }
-      }
-      analyticsAttributes {
-        key
-        value
-      }
-    }
-  `);
-
-export const GroupNotificationDetailsFragment = graphql(`
-  fragment GroupNotificationDetails on InfluentsNotificationItem {
-    notificationId
-    readState
-  }
-`);

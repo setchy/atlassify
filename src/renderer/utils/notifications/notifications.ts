@@ -14,22 +14,58 @@ import type {
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type {
-  AtlassianHeadNotificationFragment,
-  AtlassianNotificationFragment,
+import {
+  type FragmentType,
+  useFragment,
+} from '../api/graphql/generated/fragment-masking';
+import {
+  AtlassianHeadNotificationFragmentDoc,
+  AtlassianNotificationFragmentDoc,
 } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
-import { updateTrayColor } from '../comms';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';
 import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
-export function setTrayIconColor(notifications: AccountNotifications[]) {
-  const allNotificationsCount = getNotificationCount(notifications);
+/**
+ * Get the count of notifications across all accounts.
+ *
+ * @param notifications - The account notifications to check.
+ * @returns The count of all notifications.
+ */
+export function getNotificationCount(
+  accountNotifications: AccountNotifications[],
+) {
+  return accountNotifications.reduce(
+    (memo, account) => memo + account.notifications.length,
+    0,
+  );
+}
 
-  updateTrayColor(allNotificationsCount);
+/**
+ * Check if any accounts have more notifications beyond the max page size fetched per account.
+ *
+ * @param notifications - The account notifications to check.
+ * @returns The count of all notifications.
+ */
+export function hasMoreNotifications(
+  accountNotifications: AccountNotifications[],
+) {
+  return accountNotifications?.some((account) => account.hasMoreNotifications);
+}
+
+/**
+ * Check if a notification is a group notification.
+ *
+ * @param notification
+ * @returns true if group notification, false otherwise
+ */
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
 }
 
 function getNotifications(state: AtlassifyState) {
@@ -41,27 +77,16 @@ function getNotifications(state: AtlassifyState) {
   });
 }
 
-export function getNotificationCount(notifications: AccountNotifications[]) {
-  return notifications.reduce(
-    (memo, acc) => memo + acc.notifications.length,
-    0,
-  );
-}
-
-export function hasMoreNotifications(notifications: AccountNotifications[]) {
-  return notifications?.some((n) => n.hasMoreNotifications);
-}
-
-export function isGroupNotification(
-  notification: AtlassifyNotification,
-): boolean {
-  return notification.notificationGroup.size > 1;
-}
-
+/**
+ * Get all notifications for all accounts.
+ *
+ * @param state - The Gitify state.
+ * @returns A promise that resolves to an array of account notifications.
+ */
 export async function getAllNotifications(
   state: AtlassifyState,
 ): Promise<AccountNotifications[]> {
-  const notifications: AccountNotifications[] = await Promise.all(
+  const accountNotifications: AccountNotifications[] = await Promise.all(
     getNotifications(state)
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
@@ -73,7 +98,9 @@ export async function getAllNotifications(
           }
 
           const rawNotifications = res.data.notifications.notificationFeed
-            .nodes as AtlassianNotificationFragment[];
+            .nodes as ReadonlyArray<
+            FragmentType<typeof AtlassianNotificationFragmentDoc>
+          >;
 
           let notifications =
             await mapAtlassianNotificationsToAtlassifyNotifications(
@@ -107,26 +134,37 @@ export async function getAllNotifications(
   );
 
   // Set the order property for the notifications
-  stabilizeNotificationsOrder(notifications, state.settings);
+  stabilizeNotificationsOrder(accountNotifications, state.settings);
 
-  return notifications;
+  return accountNotifications;
 }
 
 async function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  notifications: AtlassianNotificationFragment[],
+  notifications: ReadonlyArray<
+    FragmentType<typeof AtlassianNotificationFragmentDoc>
+  >,
 ): Promise<AtlassifyNotification[]> {
   return Promise.all(
     notifications?.map(async (notification) => {
-      const headNotification =
-        notification.headNotification as AtlassianHeadNotificationFragment;
+      const atlassianNotification = useFragment(
+        AtlassianNotificationFragmentDoc,
+        notification,
+      );
+
+      const headNotification = useFragment(
+        AtlassianHeadNotificationFragmentDoc,
+        atlassianNotification.headNotification,
+      );
+
+      const path = headNotification.content.path?.[0];
 
       let notificationPath: AtlassifyNotificationPath;
-      if (headNotification.content.path[0]) {
+      if (path) {
         notificationPath = {
-          title: headNotification.content.path[0].title,
-          url: headNotification.content.path[0].url as Link,
-          iconUrl: headNotification.content.path[0].iconUrl as Link,
+          title: path.title,
+          url: path.url as Link,
+          iconUrl: path.iconUrl as Link,
         };
       }
 
@@ -152,12 +190,14 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
         product: await inferAtlassianProduct(account, headNotification),
         account: account,
         notificationGroup: {
-          id: notification.groupId,
-          size: notification.groupSize,
-          additionalActors: notification.additionalActors.map((actor) => ({
-            displayName: actor.displayName,
-            avatarURL: actor.avatarURL as Link,
-          })),
+          id: atlassianNotification.groupId,
+          size: atlassianNotification.groupSize,
+          additionalActors: atlassianNotification.additionalActors.map(
+            (actor) => ({
+              displayName: actor.displayName,
+              avatarURL: actor.avatarURL as Link,
+            }),
+          ),
         },
       };
     }),
@@ -168,8 +208,8 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
  * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.
  * Instead we can check the extensions response size to determine if there are more notifications.
  */
-function determineIfMorePagesAvailable<T>(
-  res: AtlassianGraphQLResponse<T>,
+function determineIfMorePagesAvailable<TResult>(
+  res: AtlassianGraphQLResponse<TResult>,
 ): boolean {
   try {
     return (
@@ -190,21 +230,23 @@ function determineIfMorePagesAvailable<T>(
  * Assign an order property to each notification to stabilize how they are displayed
  * during notification interaction events (mark as read, mark as done, etc.)
  *
- * @param notifications
+ * @param accountNotifications
  * @param settings
  */
 export function stabilizeNotificationsOrder(
-  notifications: AccountNotifications[],
+  accountNotifications: AccountNotifications[],
   settings: SettingsState,
 ) {
-  const flattenedNotifications = getFlattenedNotificationsByProduct(
-    notifications,
-    settings,
-  );
-
   let orderIndex = 0;
 
-  for (const n of flattenedNotifications) {
-    n.order = orderIndex++;
+  for (const account of accountNotifications) {
+    const flattenedNotifications = getFlattenedNotificationsByProduct(
+      account.notifications,
+      settings,
+    );
+
+    for (const notification of flattenedNotifications) {
+      notification.order = orderIndex++;
+    }
   }
 }

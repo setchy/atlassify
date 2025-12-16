@@ -4,9 +4,11 @@ import { DEFAULT_LANGUAGE } from '../i18n';
 import {
   type AppearanceSettingsState,
   type AuthState,
+  type ConfigSettingsState,
   type FilterSettingsState,
   type NotificationSettingsState,
   OpenPreference,
+  type Percentage,
   type SettingsState,
   type SystemSettingsState,
   type TraySettingsState,
@@ -19,7 +21,7 @@ export const defaultAuth: AuthState = {
 const defaultAppearanceSettings: AppearanceSettingsState = {
   language: DEFAULT_LANGUAGE,
   theme: Theme.LIGHT,
-  zoomPercentage: 100,
+  zoomPercentage: 100 as Percentage,
 };
 
 const defaultNotificationSettings: NotificationSettingsState = {
@@ -42,22 +44,26 @@ const defaultSystemSettings: SystemSettingsState = {
   keyboardShortcutEnabled: true,
   showSystemNotifications: true,
   playSoundNewNotifications: true,
-  notificationVolume: 20,
+  notificationVolume: 20 as Percentage,
   openAtStartup: true,
 };
 
-export const defaultFilters: FilterSettingsState = {
-  filterTimeSensitive: [],
+export const defaultFilterSettings: FilterSettingsState = {
+  filterEngagementStates: [],
   filterCategories: [],
   filterReadStates: [],
   filterProducts: [],
   filterActors: [],
 };
 
-export const defaultSettings: SettingsState = {
+export const defaultConfigSettings: ConfigSettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
   ...defaultTraySettings,
   ...defaultSystemSettings,
-  ...defaultFilters,
+};
+
+export const defaultSettings: SettingsState = {
+  ...defaultConfigSettings,
+  ...defaultFilterSettings,
 };

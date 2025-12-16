@@ -11,5 +11,7 @@ describe('main/icons.ts', () => {
     );
 
     expect(TrayIcons.error).toContain('assets/images/tray-error.png');
+
+    expect(TrayIcons.offline).toContain('assets/images/tray-offline.png');
   });
 });

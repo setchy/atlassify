@@ -7,22 +7,22 @@ import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { AppContext } from '../../context/App';
-import type { FilterSettingsState, FilterValue } from '../../types';
+import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
-export interface IFilterSection<T extends FilterValue> {
+export interface FilterSectionProps<T extends FilterSettingsValue> {
   title: string;
   filter: Filter<T>;
   filterSetting: keyof FilterSettingsState;
 }
 
-export const FilterSection = <T extends FilterValue>({
+export const FilterSection = <T extends FilterSettingsValue>({
   title,
   filter,
   filterSetting,
-}: IFilterSection<T>) => {
+}: FilterSectionProps<T>) => {
   const { updateFilter, settings, notifications } = useContext(AppContext);
 
   return (

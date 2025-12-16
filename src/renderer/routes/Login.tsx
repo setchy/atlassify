@@ -39,7 +39,7 @@ import {
 } from '../utils/links';
 import { rendererLogError } from '../utils/logger';
 
-interface IValues {
+interface LoginProps {
   username: Username;
   token: Token;
 }
@@ -53,7 +53,7 @@ export const LoginRoute: FC = () => {
     useState<boolean>(false);
 
   const loginUser = useCallback(
-    async (data: IValues) => {
+    async (data: LoginProps) => {
       try {
         await checkIfCredentialsAreValid(data.username, data.token);
         await login(data as LoginOptions);
@@ -71,10 +71,10 @@ export const LoginRoute: FC = () => {
   );
 
   return (
-    <Page id="login">
+    <Page testId="login">
       <Header>{t('login.title')}</Header>
 
-      <Form<IValues> onSubmit={loginUser}>
+      <Form<LoginProps> onSubmit={loginUser}>
         {({ formProps, submitting }) => (
           <>
             <Contents>
@@ -90,8 +90,8 @@ export const LoginRoute: FC = () => {
                 <form {...formProps} id="login-form">
                   <FormSection>
                     <Field
-                      aria-required={true}
                       defaultValue={''}
+                      // isRequired={true} // Causes app crash on Windows.  Needs investigation.
                       label={t('common.username')}
                       name="username"
                       testId="login-username"
@@ -121,8 +121,8 @@ export const LoginRoute: FC = () => {
                       }}
                     </Field>
                     <Field
-                      aria-required={true}
                       defaultValue={''}
+                      // isRequired={true} // Causes app crash on Windows.  Needs investigation.
                       label={t('login.token')}
                       name="token"
                       testId="login-token"

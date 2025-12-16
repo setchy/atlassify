@@ -1,62 +1,45 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { mockSettings } from '../../__mocks__/state-mocks';
 import type { ReadStateType } from '../../types';
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { PRODUCTS } from '../../utils/products';
-import { type INotificationRow, NotificationRow } from './NotificationRow';
+import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
-  jest.spyOn(links, 'openNotification');
+  jest.spyOn(links, 'openNotification').mockImplementation();
   jest.spyOn(comms, 'openExternalLink').mockImplementation();
+  jest
+    .spyOn(globalThis.Date, 'now')
+    .mockImplementation(() => new Date('2024').valueOf());
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   describe('should render notifications', () => {
-    beforeEach(() => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementation(() => new Date('2024').valueOf());
-    });
-
     it('standard notification', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
 
     it('group by title', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, groupNotificationsByTitle: true },
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />, {
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
+      });
 
       expect(tree).toMatchSnapshot();
     });
@@ -69,19 +52,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         { displayName: 'User 2', avatarURL: null },
       ];
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockNotification,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, groupNotificationsByTitle: true },
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />, {
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
+      });
 
       expect(tree).toMatchSnapshot();
     });
@@ -91,25 +68,19 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       mockNotification.notificationGroup.size = 3;
       mockNotification.notificationGroup.additionalActors = [];
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockNotification,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, groupNotificationsByTitle: true },
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />, {
+        settings: { ...mockSettings, groupNotificationsByTitle: true },
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('compass avatar as square', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           product: PRODUCTS.compass,
@@ -117,21 +88,15 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         },
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, groupNotificationsByProduct: true },
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />, {
+        settings: { ...mockSettings, groupNotificationsByProduct: true },
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('missing entity icon url should default to product logo', async () => {
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           entity: {
@@ -141,15 +106,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         },
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings, groupNotificationsByProduct: true },
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByProduct: true },
+      });
 
       expect(tree).toMatchSnapshot();
     });
@@ -159,21 +118,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - click', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationRow {...props} />, {
+        markNotificationsRead: markNotificationsReadMock,
+      });
 
       await userEvent.click(screen.getByTestId('notification-details'));
 
@@ -184,24 +135,17 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
-      render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              delayNotificationState: true,
-            },
-            markNotificationsRead: markNotificationsReadMock,
-            auth: mockAuth,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationRow {...props} />, {
+        settings: {
+          ...mockSettings,
+          delayNotificationState: true,
+        },
+        markNotificationsRead: markNotificationsReadMock,
+      });
 
       await userEvent.click(screen.getByTestId('notification-details'));
 
@@ -212,20 +156,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as read', async () => {
       const markNotificationsReadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
       };
 
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationRow {...props} />, {
+        markNotificationsRead: markNotificationsReadMock,
+      });
 
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
 
@@ -235,23 +172,16 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should mark a notification as unread', async () => {
       const markNotificationsUnreadMock = jest.fn();
 
-      const props: INotificationRow = {
+      const props: NotificationRowProps = {
         notification: {
           ...mockSingleAtlassifyNotification,
           readState: 'read' as ReadStateType,
         },
       };
 
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsUnread: markNotificationsUnreadMock,
-          }}
-        >
-          <NotificationRow {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<NotificationRow {...props} />, {
+        markNotificationsUnread: markNotificationsUnreadMock,
+      });
 
       await userEvent.click(screen.getByTestId('notification-mark-as-unread'));
 

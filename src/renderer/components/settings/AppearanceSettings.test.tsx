@@ -1,13 +1,12 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAuth, mockSettings } from '../../__mocks__/state-mocks';
-import { AppContext } from '../../context/App';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
+import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
-  const updateSetting = jest.fn();
-  const zoomTimeout = () => new Promise((r) => setTimeout(r, 300));
+  const updateSettingMock = jest.fn();
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -15,100 +14,43 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
 
   it('should change the theme radio group', async () => {
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AppearanceSettings />, {
+        updateSetting: updateSettingMock,
+      });
     });
 
     await userEvent.click(screen.getByTestId('theme-dark--radio-label'));
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('theme', 'DARK');
-  });
-
-  it('should update the zoom value when using CMD + and CMD -', async () => {
-    window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(-1);
-
-    await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
-    });
-
-    fireEvent(window, new Event('resize'));
-    await zoomTimeout();
-
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 50);
+    expect(updateSettingMock).toHaveBeenCalledTimes(1);
+    expect(updateSettingMock).toHaveBeenCalledWith('theme', 'DARK');
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
-    window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(0);
-    window.atlassify.zoom.setLevel = jest.fn().mockImplementation((level) => {
-      window.atlassify.zoom.getLevel = jest.fn().mockReturnValue(level);
-      fireEvent(window, new Event('resize'));
-    });
+    const zoomOutSpy = jest.spyOn(zoom, 'decreaseZoom').mockImplementation();
+    const zoomInSpy = jest.spyOn(zoom, 'increaseZoom').mockImplementation();
+    const zoomResetSpy = jest
+      .spyOn(zoom, 'resetZoomLevel')
+      .mockImplementation();
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            auth: mockAuth,
-            settings: mockSettings,
-            updateSetting,
-          }}
-        >
-          <AppearanceSettings />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AppearanceSettings />, {
+        updateSetting: updateSettingMock,
+      });
     });
 
-    await act(async () => {
-      await userEvent.click(screen.getByTestId('settings-zoom-out'));
-      await zoomTimeout();
-    });
+    // Zoom Out
+    await userEvent.click(screen.getByTestId('settings-zoom-out'));
+    expect(zoomOutSpy).toHaveBeenCalledTimes(1);
 
-    expect(updateSetting).toHaveBeenCalledTimes(1);
-    expect(updateSetting).toHaveBeenCalledWith('zoomPercentage', 90);
+    await userEvent.click(screen.getByTestId('settings-zoom-out'));
+    expect(zoomOutSpy).toHaveBeenCalledTimes(2);
 
-    await act(async () => {
-      await userEvent.click(screen.getByTestId('settings-zoom-out'));
-      await zoomTimeout();
+    // Zoom In
+    await userEvent.click(screen.getByTestId('settings-zoom-in'));
+    expect(zoomInSpy).toHaveBeenCalledTimes(1);
 
-      expect(updateSetting).toHaveBeenCalledTimes(2);
-      expect(updateSetting).toHaveBeenNthCalledWith(2, 'zoomPercentage', 80);
-    });
-
-    await act(async () => {
-      await userEvent.click(screen.getByTestId('settings-zoom-in'));
-      await zoomTimeout();
-
-      expect(updateSetting).toHaveBeenCalledTimes(3);
-      expect(updateSetting).toHaveBeenNthCalledWith(3, 'zoomPercentage', 90);
-    });
-
-    await act(async () => {
-      await userEvent.click(screen.getByTestId('settings-zoom-reset'));
-      await zoomTimeout();
-
-      expect(updateSetting).toHaveBeenCalledTimes(4);
-      expect(updateSetting).toHaveBeenNthCalledWith(4, 'zoomPercentage', 100);
-    });
+    // Zoom Reset
+    await userEvent.click(screen.getByTestId('settings-zoom-reset'));
+    expect(zoomResetSpy).toHaveBeenCalledTimes(1);
   });
 });

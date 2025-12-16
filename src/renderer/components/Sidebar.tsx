@@ -1,4 +1,4 @@
-import { type FC, Fragment, useContext, useMemo } from 'react';
+import { type FC, Fragment, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,6 @@ import { AppContext } from '../context/App';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
-import { getNotificationCount } from '../utils/notifications/notifications';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
@@ -32,12 +31,14 @@ export const Sidebar: FC = () => {
   const { t } = useTranslation();
 
   const {
-    notifications,
     fetchNotifications,
     isLoggedIn,
     settings,
     updateSetting,
     status,
+    hasMoreAccountNotifications,
+    notificationCount,
+    hasNotifications,
   } = useContext(AppContext);
 
   const toggleFilters = () => {
@@ -62,14 +63,6 @@ export const Sidebar: FC = () => {
     fetchNotifications();
   };
 
-  const notificationsCount = useMemo(() => {
-    return getNotificationCount(notifications);
-  }, [notifications]);
-
-  const hasMoreNotifications = useMemo(() => {
-    return notifications.some((n) => n.hasMoreNotifications);
-  }, [notifications]);
-
   const hasFilters = hasActiveFilters(settings);
 
   const theme = useThemeObserver();
@@ -79,8 +72,9 @@ export const Sidebar: FC = () => {
       : token('color.text.accent.gray.bolder');
 
   return (
-    <div className="fixed flex flex-col pl-sidebar -ml-sidebar w-sidebar h-full overflow-y-auto bg-atlassify-sidebar">
-      <div className="flex flex-1 flex-col items-center">
+    <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
+      {/* <Flex direction="column" justifyContent="space-between"> */}
+      <Stack grow="fill" spread="space-between">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
             <Tooltip content={t('sidebar.home')} position="right">
@@ -96,8 +90,8 @@ export const Sidebar: FC = () => {
 
             <Tooltip
               content={t('sidebar.notifications.tooltip', {
-                count: notificationsCount,
-                countSuffix: hasMoreNotifications ? '+' : '',
+                count: notificationCount,
+                countSuffix: hasMoreAccountNotifications ? '+' : '',
                 countType: settings.fetchOnlyUnreadNotifications
                   ? t('sidebar.notifications.unread')
                   : t('sidebar.notifications.read'),
@@ -105,7 +99,7 @@ export const Sidebar: FC = () => {
               position="right"
             >
               <IconButton
-                appearance={notificationsCount > 0 ? 'primary' : 'subtle'}
+                appearance={hasNotifications ? 'primary' : 'subtle'}
                 icon={(iconProps) => (
                   <NotificationIcon
                     {...iconProps}
@@ -222,75 +216,86 @@ export const Sidebar: FC = () => {
             )}
           </Stack>
         </Box>
-      </div>
 
-      <Box paddingBlockEnd="space.200">
-        <Stack alignInline="center" space="space.150">
-          {isLoggedIn ? (
-            <Fragment>
-              <Tooltip content={t('sidebar.refresh.tooltip')} position="right">
-                <IconButton
-                  appearance="subtle"
-                  icon={(iconProps) =>
-                    status === 'loading' ? (
-                      <Spinner
-                        appearance="invert"
-                        label={t('sidebar.refresh.label')}
-                        size="medium"
-                      />
-                    ) : (
-                      <RefreshIcon
+        <Box paddingBlockEnd="space.200">
+          <Stack alignInline="center" space="space.150">
+            {isLoggedIn ? (
+              <Fragment>
+                <Tooltip
+                  content={t('sidebar.refresh.tooltip')}
+                  position="right"
+                >
+                  <IconButton
+                    appearance="subtle"
+                    icon={(iconProps) =>
+                      status === 'loading' ? (
+                        <Spinner
+                          appearance="invert"
+                          label={t('sidebar.refresh.label')}
+                          size="medium"
+                        />
+                      ) : (
+                        <RefreshIcon
+                          {...iconProps}
+                          color={sidebarIconColorToken}
+                        />
+                      )
+                    }
+                    isDisabled={status === 'loading'}
+                    label={t('sidebar.refresh.label')}
+                    onClick={() => refreshNotifications()}
+                    shape="circle"
+                    testId="sidebar-refresh"
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  content={t('sidebar.settings.tooltip')}
+                  position="right"
+                >
+                  <IconButton
+                    appearance="subtle"
+                    icon={(iconProps) => (
+                      <SettingsIcon
                         {...iconProps}
                         color={sidebarIconColorToken}
                       />
-                    )
-                  }
-                  isDisabled={status === 'loading'}
-                  label={t('sidebar.refresh.label')}
-                  onClick={() => refreshNotifications()}
-                  shape="circle"
-                  testId="sidebar-refresh"
-                />
-              </Tooltip>
-
-              <Tooltip content={t('sidebar.settings.tooltip')} position="right">
+                    )}
+                    label={t('sidebar.settings.label')}
+                    onClick={() => toggleSettings()}
+                    shape="circle"
+                    testId="sidebar-settings"
+                  />
+                </Tooltip>
+              </Fragment>
+            ) : (
+              <Tooltip
+                content={t('sidebar.quit.tooltip', {
+                  appName: APPLICATION.NAME,
+                })}
+                position="right"
+              >
                 <IconButton
                   appearance="subtle"
                   icon={(iconProps) => (
-                    <SettingsIcon
+                    <CrossCircleIcon
                       {...iconProps}
                       color={sidebarIconColorToken}
                     />
                   )}
-                  label={t('sidebar.settings.label')}
-                  onClick={() => toggleSettings()}
+                  label={t('sidebar.quit.label', {
+                    appName: APPLICATION.NAME,
+                  })}
+                  onClick={() => quitApp()}
                   shape="circle"
-                  testId="sidebar-settings"
+                  testId="sidebar-quit"
                 />
               </Tooltip>
-            </Fragment>
-          ) : (
-            <Tooltip
-              content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
-              position="right"
-            >
-              <IconButton
-                appearance="subtle"
-                icon={(iconProps) => (
-                  <CrossCircleIcon
-                    {...iconProps}
-                    color={sidebarIconColorToken}
-                  />
-                )}
-                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
-                onClick={() => quitApp()}
-                shape="circle"
-                testId="sidebar-quit"
-              />
-            </Tooltip>
-          )}
-        </Stack>
-      </Box>
+            )}
+          </Stack>
+        </Box>
+      </Stack>
+      {/* </Flex> */}
     </div>
   );
 };

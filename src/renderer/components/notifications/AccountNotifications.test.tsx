@@ -1,22 +1,21 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import {
-  mockAtlassianCloudAccount,
-  mockSettings,
-} from '../../__mocks__/state-mocks';
-import { ensureStableEmojis } from '../../__mocks__/utils';
-import { AppContext } from '../../context/App';
+  ensureStableEmojis,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
+import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
 import {
   AccountNotifications,
-  type IAccountNotifications,
+  type AccountNotificationsProps,
 } from './AccountNotifications';
 
 jest.mock('./ProductNotifications', () => ({
-  ProductNotifications: () => <div>Product Notifications</div>,
+  ProductNotifications: () => <div>ProductNotifications</div>,
 }));
 
 describe('renderer/components/notifications/AccountNotifications.tsx', () => {
@@ -28,22 +27,14 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     it('should render itself - sort by date - light mode', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -51,99 +42,73 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     it('should render itself - sort by date - dark mode', () => {
       jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              groupNotificationsByProduct: true,
-              groupNotificationsByProductAlphabetically: false,
-            },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: false,
+        },
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
       };
 
-      const tree = render(
-        <AppContext.Provider
-          value={{
-            settings: {
-              ...mockSettings,
-              groupNotificationsByProduct: true,
-              groupNotificationsByProductAlphabetically: true,
-            },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: true,
+        },
+      });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render itself - no notifications', async () => {
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: [],
         hasMoreNotifications: false,
         error: null,
       };
 
-      let tree: ReturnType<typeof render> | null = null;
+      let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
       await act(async () => {
-        tree = render(
-          <AppContext.Provider value={{ settings: mockSettings }}>
-            <AccountNotifications {...props} />
-          </AppContext.Provider>,
-        );
+        tree = renderWithAppContext(<AccountNotifications {...props} />);
       });
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render itself - account error', async () => {
-      const props: IAccountNotifications = {
+      const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: [],
         hasMoreNotifications: false,
@@ -154,14 +119,10 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         },
       };
 
-      let tree: ReturnType<typeof render> | null = null;
+      let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
       await act(async () => {
-        tree = render(
-          <AppContext.Provider value={{ settings: mockSettings }}>
-            <AccountNotifications {...props} />
-          </AppContext.Provider>,
-        );
+        tree = renderWithAppContext(<AccountNotifications {...props} />);
       });
 
       expect(tree).toMatchSnapshot();
@@ -169,11 +130,11 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open profile when clicked', async () => {
-    const openAccountProfileMock = jest
+    const openAccountProfileSpy = jest
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
 
-    const props: IAccountNotifications = {
+    const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
@@ -181,27 +142,23 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
-    expect(openAccountProfileMock).toHaveBeenCalledTimes(1);
-    expect(openAccountProfileMock).toHaveBeenCalledWith(
+    expect(openAccountProfileSpy).toHaveBeenCalledTimes(1);
+    expect(openAccountProfileSpy).toHaveBeenCalledWith(
       mockAtlassianCloudAccount,
     );
   });
 
   it('should open my pull requests', async () => {
-    const openMyPullRequestsMock = jest
+    const openPullRequestsSpy = jest
       .spyOn(links, 'openMyPullRequests')
       .mockImplementation();
 
-    const props: IAccountNotifications = {
+    const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
@@ -209,20 +166,16 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider value={{ settings: mockSettings }}>
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-pull-requests'));
 
-    expect(openMyPullRequestsMock).toHaveBeenCalledTimes(1);
+    expect(openPullRequestsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should mark all account notifications as read when `confirmed`', async () => {
-    const props: IAccountNotifications = {
+    const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
@@ -232,16 +185,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const markNotificationsReadMock = jest.fn();
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />, {
+        markNotificationsRead: markNotificationsReadMock,
+      });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
@@ -251,7 +197,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should skip marking all account notifications as read when `cancelled`', async () => {
-    const props: IAccountNotifications = {
+    const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
@@ -261,16 +207,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     const markNotificationsReadMock = jest.fn();
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: mockSettings,
-            markNotificationsRead: markNotificationsReadMock,
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />, {
+        markNotificationsRead: markNotificationsReadMock,
+      });
     });
 
     await userEvent.click(screen.getByTestId('account-mark-as-read'));
@@ -280,7 +219,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should toggle account notifications visibility', async () => {
-    const props: IAccountNotifications = {
+    const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
@@ -288,28 +227,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     };
 
     await act(async () => {
-      render(
-        <AppContext.Provider
-          value={{
-            settings: { ...mockSettings },
-          }}
-        >
-          <AccountNotifications {...props} />
-        </AppContext.Provider>,
-      );
+      renderWithAppContext(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-toggle'));
 
-    const tree = render(
-      <AppContext.Provider
-        value={{
-          settings: { ...mockSettings },
-        }}
-      >
-        <AccountNotifications {...props} />
-      </AppContext.Provider>,
-    );
+    const tree = renderWithAppContext(<AccountNotifications {...props} />);
     expect(tree).toMatchSnapshot();
   });
 });
