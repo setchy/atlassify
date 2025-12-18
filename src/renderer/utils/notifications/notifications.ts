@@ -14,14 +14,7 @@ import type {
 } from '../../types';
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import {
-  type FragmentType,
-  useFragment,
-} from '../api/graphql/generated/fragment-masking';
-import {
-  AtlassianHeadNotificationFragmentDoc,
-  AtlassianNotificationFragmentDoc,
-} from '../api/graphql/generated/graphql';
+import type { AtlassianNotificationFragment } from '../api/graphql/generated/graphql';
 import type { AtlassianGraphQLResponse } from '../api/types';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
@@ -97,10 +90,8 @@ export async function getAllNotifications(
             throw new AxiosError(Errors.BAD_REQUEST.title);
           }
 
-          const rawNotifications = res.data.notifications.notificationFeed
-            .nodes as ReadonlyArray<
-            FragmentType<typeof AtlassianNotificationFragmentDoc>
-          >;
+          const rawNotifications =
+            res.data.notifications.notificationFeed.nodes;
 
           let notifications =
             await mapAtlassianNotificationsToAtlassifyNotifications(
@@ -141,23 +132,13 @@ export async function getAllNotifications(
 
 async function mapAtlassianNotificationsToAtlassifyNotifications(
   account: Account,
-  notifications: ReadonlyArray<
-    FragmentType<typeof AtlassianNotificationFragmentDoc>
-  >,
+  notifications: AtlassianNotificationFragment[],
 ): Promise<AtlassifyNotification[]> {
   return Promise.all(
     notifications?.map(async (notification) => {
-      const atlassianNotification = useFragment(
-        AtlassianNotificationFragmentDoc,
-        notification,
-      );
+      const path = notification.headNotification.content.path?.[0];
 
-      const headNotification = useFragment(
-        AtlassianHeadNotificationFragmentDoc,
-        atlassianNotification.headNotification,
-      );
-
-      const path = headNotification.content.path?.[0];
+      const headNotification = notification.headNotification;
 
       let notificationPath: AtlassifyNotificationPath;
       if (path) {
@@ -190,14 +171,12 @@ async function mapAtlassianNotificationsToAtlassifyNotifications(
         product: await inferAtlassianProduct(account, headNotification),
         account: account,
         notificationGroup: {
-          id: atlassianNotification.groupId,
-          size: atlassianNotification.groupSize,
-          additionalActors: atlassianNotification.additionalActors.map(
-            (actor) => ({
-              displayName: actor.displayName,
-              avatarURL: actor.avatarURL as Link,
-            }),
-          ),
+          id: notification.groupId,
+          size: notification.groupSize,
+          additionalActors: notification.additionalActors.map((actor) => ({
+            displayName: actor.displayName,
+            avatarURL: actor.avatarURL as Link,
+          })),
         },
       };
     }),
