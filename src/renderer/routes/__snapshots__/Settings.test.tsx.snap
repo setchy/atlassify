@@ -448,10 +448,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               type="checkbox"
             />
             <svg
-              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+              height="24"
               role="presentation"
               style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
+              width="24"
             >
               <g
                 fill-rule="evenodd"
@@ -490,10 +492,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -592,10 +596,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -704,10 +710,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -811,10 +819,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -917,10 +927,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -1087,10 +1099,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -1194,10 +1208,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -1301,10 +1317,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
@@ -1493,10 +1511,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw _vc881r31 _1bsb1tcg _4t3i1tcg"
+                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                height="24"
                 role="presentation"
                 style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
+                width="24"
               >
                 <g
                   fill-rule="evenodd"
