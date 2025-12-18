@@ -7,7 +7,6 @@
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases",
     "customManagers:biomeVersions",
-    "group:atlaskit",
     "schedule:daily"
   ],
   "labels": ["dependency"],
@@ -21,12 +20,6 @@
       "description": "Remove word `dependency` from commit messages and PR titles",
       "matchDatasources": ["npm"],
       "commitMessageTopic": "{{depName}}"
-    },
-    {
-      "description": "Override renovate atlaskit preset for cleaner PRs",
-      "extends": ["packages:atlaskit"],
-      "groupName": "@atlaskit",
-      "additionalBranchPrefix": "{{depNameSanitized}}-"
     },
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
