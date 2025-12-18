@@ -100,8 +100,8 @@ importers:
         specifier: 2.3.9
         version: 2.3.9
       '@compiled/webpack-loader':
-        specifier: 0.19.6
-        version: 0.19.6(webpack@5.103.0)
+        specifier: 0.20.0
+        version: 0.20.0(webpack@5.103.0)
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -745,8 +745,8 @@ packages:
   '@compiled/utils@0.13.2':
     resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
 
-  '@compiled/webpack-loader@0.19.6':
-    resolution: {integrity: sha512-8FEF/qC4LzPJSzZsh7jid3iwlWnN8ms1ETFcr4beDn3L8m90r2N7rn0Ms8/MVogcsRdAGn9RPYjlsbuCmVbA6Q==}
+  '@compiled/webpack-loader@0.20.0':
+    resolution: {integrity: sha512-oXkMG/bHwNLQDgnGCiBzj7mK/jh5VuHpIIaixGr1DHnzljCDHk3nq4haFdjbUtVBaPzbAmTkgygRQbwTmyD6Eg==}
     peerDependencies:
       webpack: '>= 4.46.0'
 
@@ -6873,7 +6873,7 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/webpack-loader@0.19.6(webpack@5.103.0)':
+  '@compiled/webpack-loader@0.20.0(webpack@5.103.0)':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/parser': 7.28.5
