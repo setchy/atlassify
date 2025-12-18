@@ -73,8 +73,8 @@ importers:
         specifier: 14.9.3
         version: 14.9.3(@types/react@19.2.7)(prop-types@15.8.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/primitives':
-        specifier: 16.4.4
-        version: 16.4.4(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 17.0.0
+        version: 17.0.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/radio':
         specifier: 8.3.16
         version: 8.3.16(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
