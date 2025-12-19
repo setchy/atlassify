@@ -149,12 +149,12 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                   >
                     <div
                       aria-hidden="true"
-                      class="_v564vrg3 _1e0c1txw _syazazsu _1q5112x7 _y4tiv77o _85i512x7 _bozgv77o _30l3azsu -indicatorContainer"
+                      class="_v564vrg3 _1e0c1txw _syazazsu _ca0q12x7 _u5f3v77o _n3td12x7 _19bvv77o _30l3azsu -indicatorContainer"
                       data-testid="settings-language-selector-select--dropdown-indicator"
                       style="box-sizing: border-box;"
                     >
                       <span
-                        class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _1q5112x7 _y4ti12x7 _85i512x7 _bozg12x7"
+                        class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _ca0q12x7 _u5f312x7 _n3td12x7 _19bv12x7"
                       >
                         <span
                           aria-label="open"
