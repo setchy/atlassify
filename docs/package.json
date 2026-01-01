@@ -1,6 +1,7 @@
 {
   "name": "atlassify-website",
   "version": "latest",
+  "private": true,
   "description": "The source code of atlassify.io",
   "type": "module",
   "scripts": {
