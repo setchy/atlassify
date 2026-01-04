@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@iconify-json/line-md':
-        specifier: 1.2.12
-        version: 1.2.12
+        specifier: 1.2.13
+        version: 1.2.13
       '@iconify-json/mdi':
         specifier: 1.2.3
         version: 1.2.3
@@ -316,8 +316,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/line-md@1.2.12':
-    resolution: {integrity: sha512-5LjAAAAtPBQytr2BsF4GDfdA6SVjfsR6Bd6+jqHBG4PCBhdHy6F8Bcrrev4HkT0FHZ1YGFXhQMnqoP4If9h5jw==}
+  '@iconify-json/line-md@1.2.13':
+    resolution: {integrity: sha512-XFXThXsEQ2Wzzn+ze2T1d+JHkkFvI1AxiVKnOox4qFbdR9EVikckZlUK+/DUsV4zSy6pMQAgXpIk+1xG8qFYPQ==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -2399,7 +2399,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.0':
     optional: true
 
-  '@iconify-json/line-md@1.2.12':
+  '@iconify-json/line-md@1.2.13':
     dependencies:
       '@iconify/types': 2.0.0
 
