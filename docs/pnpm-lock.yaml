@@ -21,8 +21,8 @@ importers:
         specifier: 4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@22.9.0)(jiti@2.6.1)(lightningcss@1.30.2))
       accessible-astro-components:
-        specifier: 5.0.3
-        version: 5.0.3
+        specifier: 5.0.4
+        version: 5.0.4
       astro:
         specifier: 5.16.6
         version: 5.16.6(@types/node@22.9.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.40.1)(typescript@5.5.4)
@@ -899,8 +899,8 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  accessible-astro-components@5.0.3:
-    resolution: {integrity: sha512-RxtlI5JT5we65XMPDEsDui71sUFpgEQEcKTyuLQnc5VYSum2C3S7TXCsLI3m/TEvOcxvR4BY+s/x7ixmIVHwCQ==}
+  accessible-astro-components@5.0.4:
+    resolution: {integrity: sha512-W3rfnmOADsx3f9rbV65SiGUCX0K0iaHry/tgCpj9bxTDo30Lu8Ucj5mByv7WX14U7sHOFk2d8tJDNyRs7l12sQ==}
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -2978,7 +2978,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  accessible-astro-components@5.0.3: {}
+  accessible-astro-components@5.0.4: {}
 
   acorn@8.15.0: {}
 
