@@ -38,7 +38,7 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const boxStyles = xcss({
-    borderRadius: 'border.radius.200',
+    borderRadius: 'radius.large',
     marginInline: 'space.250',
   });
 

@@ -156,44 +156,41 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                       >
                         <span
                           aria-hidden="true"
-                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb7vkz _4t3i7vkz _5fdi7vkz _zbji7vkz"
+                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                           data-testid="sidebar-toggle-unread-only--toggle-check-icon"
-                          data-vc="icon-sidebar-toggle-unread-only--toggle-check-icon"
-                          style="--icon-primary-color: currentColor;"
+                          style="color: currentcolor;"
                         >
                           <svg
-                            height="24"
+                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                            fill="none"
                             role="presentation"
-                            viewBox="0 0 24 24"
-                            width="24"
+                            viewBox="0 0 16 16"
                           >
                             <path
-                              d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                              d="m13.959 3.97-7.25 9a.75.75 0 0 1-1.163.007l-3.5-4.25 1.158-.954 2.914 3.539 6.673-8.283z"
                               fill="currentcolor"
                             />
                           </svg>
                         </span>
                       </span>
                       <span
-                        class="_19itglyw _vchhusvi _r06hglyw _v5641hrg _1e0c116y _4cvr1h6o _1bah1h6o _kqswstnw _152tv77o _1bsb7vkz _4t3i7vkz _rjxp1l7b"
+                        class="_19itglyw _vchhusvi _r06hglyw _v5641hrg _1e0c116y _4cvr1h6o _1bah1h6o _kqswstnw _152tv77o _tzy4idpf _1bsb7vkz _4t3i7vkz _rjxp1l7b"
                       >
                         <span
                           aria-hidden="true"
-                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb7vkz _4t3i7vkz _5fdi7vkz _zbji7vkz"
+                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                           data-testid="sidebar-toggle-unread-only--toggle-cross-icon"
-                          data-vc="icon-sidebar-toggle-unread-only--toggle-cross-icon"
-                          style="--icon-primary-color: currentColor;"
+                          style="color: currentcolor;"
                         >
                           <svg
-                            height="24"
+                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                            fill="none"
                             role="presentation"
-                            viewBox="0 0 24 24"
-                            width="24"
+                            viewBox="0 0 16 16"
                           >
                             <path
-                              d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                              d="M14.03 3.03 9.06 8l4.97 4.97-1.06 1.06L8 9.06l-4.97 4.97-1.06-1.06L6.94 8 1.97 3.03l1.06-1.06L8 6.94l4.97-4.97z"
                               fill="currentcolor"
-                              fill-rule="evenodd"
                             />
                           </svg>
                         </span>
@@ -563,44 +560,41 @@ exports[`renderer/components/layout/AppLayout.tsx should render itself & its chi
                     >
                       <span
                         aria-hidden="true"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb7vkz _4t3i7vkz _5fdi7vkz _zbji7vkz"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                         data-testid="sidebar-toggle-unread-only--toggle-check-icon"
-                        data-vc="icon-sidebar-toggle-unread-only--toggle-check-icon"
-                        style="--icon-primary-color: currentColor;"
+                        style="color: currentcolor;"
                       >
                         <svg
-                          height="24"
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                          fill="none"
                           role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                          viewBox="0 0 16 16"
                         >
                           <path
-                            d="M7.356 10.942a.497.497 0 0 0-.713 0l-.7.701a.5.5 0 0 0-.003.71l3.706 3.707a.5.5 0 0 0 .705.003l7.712-7.712a.493.493 0 0 0-.006-.708l-.7-.7a.504.504 0 0 0-.714 0l-6.286 6.286a.506.506 0 0 1-.713 0z"
+                            d="m13.959 3.97-7.25 9a.75.75 0 0 1-1.163.007l-3.5-4.25 1.158-.954 2.914 3.539 6.673-8.283z"
                             fill="currentcolor"
                           />
                         </svg>
                       </span>
                     </span>
                     <span
-                      class="_19itglyw _vchhusvi _r06hglyw _v5641hrg _1e0c116y _4cvr1h6o _1bah1h6o _kqswstnw _152tv77o _1bsb7vkz _4t3i7vkz _rjxp1l7b"
+                      class="_19itglyw _vchhusvi _r06hglyw _v5641hrg _1e0c116y _4cvr1h6o _1bah1h6o _kqswstnw _152tv77o _tzy4idpf _1bsb7vkz _4t3i7vkz _rjxp1l7b"
                     >
                       <span
                         aria-hidden="true"
-                        class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _1bsb7vkz _4t3i7vkz _5fdi7vkz _zbji7vkz"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                         data-testid="sidebar-toggle-unread-only--toggle-cross-icon"
-                        data-vc="icon-sidebar-toggle-unread-only--toggle-cross-icon"
-                        style="--icon-primary-color: currentColor;"
+                        style="color: currentcolor;"
                       >
                         <svg
-                          height="24"
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                          fill="none"
                           role="presentation"
-                          viewBox="0 0 24 24"
-                          width="24"
+                          viewBox="0 0 16 16"
                         >
                           <path
-                            d="m15.185 7.4-3.184 3.185-3.186-3.186a.507.507 0 0 0-.712.003l-.7.701a.496.496 0 0 0-.004.712l3.185 3.184L7.4 15.185a.507.507 0 0 0 .004.712l.7.7c.206.207.516.2.712.004l3.186-3.185 3.184 3.185a.507.507 0 0 0 .712-.004l.701-.7a.496.496 0 0 0 .003-.712l-3.186-3.186 3.186-3.184a.507.507 0 0 0-.003-.712l-.7-.7a.5.5 0 0 0-.36-.153.5.5 0 0 0-.353.15"
+                            d="M14.03 3.03 9.06 8l4.97 4.97-1.06 1.06L8 9.06l-4.97 4.97-1.06-1.06L6.94 8 1.97 3.03l1.06-1.06L8 6.94l4.97-4.97z"
                             fill="currentcolor"
-                            fill-rule="evenodd"
                           />
                         </svg>
                       </span>

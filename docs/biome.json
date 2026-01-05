@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.3.9/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -8,11 +8,17 @@
           "level": "on",
           "options": {
             "groups": [
-              ["astro:*", "*astro-*", "astro*/*"],
+              [
+                "astro:*",
+                "*astro-*",
+                "astro*/*"
+              ],
               ":BLANK_LINE:",
               ":PACKAGE:",
               ":BLANK_LINE:",
-              ["~/constants"],
+              [
+                "~/constants"
+              ],
               ":BLANK_LINE:",
               ":ALIAS:",
               ":BLANK_LINE:",
@@ -48,7 +54,9 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.astro"],
+      "includes": [
+        "**/*.astro"
+      ],
       "linter": {
         "rules": {
           "correctness": {

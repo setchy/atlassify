@@ -16,8 +16,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   describe('fetchNotifications', () => {
     it('fetchNotifications - unread only', async () => {
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
+      nock('https://team.atlassian.net')
+        .post('/gateway/api/graphql')
         .reply(200, {
           data: {
             notifications: {
@@ -58,8 +58,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - all notifications read/unread', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
+      nock('https://team.atlassian.net')
+        .post('/gateway/api/graphql')
         .reply(200, {
           data: {
             notifications: {
@@ -100,8 +100,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
     it('fetchNotifications - handles missing extensions response object', async () => {
       mockState.settings.fetchOnlyUnreadNotifications = false;
 
-      nock('https://team.atlassian.net//')
-        .post('gateway/api/graphql')
+      nock('https://team.atlassian.net')
+        .post('/gateway/api/graphql')
         .reply(200, {
           data: {
             notifications: {
@@ -134,7 +134,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsRead', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    nock('https://team.atlassian.net').post('/gateway/api/graphql').reply(200);
 
     const { result } = renderHook(() => useNotifications());
 
@@ -152,7 +152,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   it('markNotificationsUnread', async () => {
-    nock('https://team.atlassian.net//').post('gateway/api/graphql').reply(200);
+    nock('https://team.atlassian.net').post('/gateway/api/graphql').reply(200);
 
     const { result } = renderHook(() => useNotifications());
 
