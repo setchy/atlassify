@@ -21,13 +21,11 @@ interface FAQFrontmatter {
     </div>
 
     <Accordion>
-      {
-        faqs.map((faq) => (
+      {faqs.map((faq) => (
           <AccordionItem title={faq.frontmatter.title} variant="chevron">
             <div class="faq" set:html={faq.compiledContent()} />
           </AccordionItem>
-        ))
-      }
+        ))}
     </Accordion>
   </div>
 </Layout>
