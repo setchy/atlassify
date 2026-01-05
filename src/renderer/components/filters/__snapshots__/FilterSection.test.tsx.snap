@@ -27,11 +27,11 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
       >
         <rect
           fill="currentColor"
-          height="12"
-          rx="2"
-          width="12"
-          x="6"
-          y="6"
+          height="13"
+          rx="1.5"
+          width="13"
+          x="5.5"
+          y="5.5"
         />
       </g>
     </svg>
@@ -103,11 +103,11 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
       >
         <rect
           fill="currentColor"
-          height="12"
-          rx="2"
-          width="12"
-          x="6"
-          y="6"
+          height="13"
+          rx="1.5"
+          width="13"
+          x="5.5"
+          y="5.5"
         />
       </g>
     </svg>
@@ -194,11 +194,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
                 >
                   <rect
                     fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
+                    height="13"
+                    rx="1.5"
+                    width="13"
+                    x="5.5"
+                    y="5.5"
                   />
                 </g>
               </svg>
@@ -267,11 +267,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
                 >
                   <rect
                     fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
+                    height="13"
+                    rx="1.5"
+                    width="13"
+                    x="5.5"
+                    y="5.5"
                   />
                 </g>
               </svg>
@@ -340,11 +340,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
                 >
                   <rect
                     fill="currentColor"
-                    height="12"
-                    rx="2"
-                    width="12"
-                    x="6"
-                    y="6"
+                    height="13"
+                    rx="1.5"
+                    width="13"
+                    x="5.5"
+                    y="5.5"
                   />
                 </g>
               </svg>
@@ -429,11 +429,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               >
                 <rect
                   fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
+                  height="13"
+                  rx="1.5"
+                  width="13"
+                  x="5.5"
+                  y="5.5"
                 />
               </g>
             </svg>
@@ -502,11 +502,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               >
                 <rect
                   fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
+                  height="13"
+                  rx="1.5"
+                  width="13"
+                  x="5.5"
+                  y="5.5"
                 />
               </g>
             </svg>
@@ -575,11 +575,11 @@ exports[`renderer/components/filters/FilterSection.tsx should render itself & it
               >
                 <rect
                   fill="currentColor"
-                  height="12"
-                  rx="2"
-                  width="12"
-                  x="6"
-                  y="6"
+                  height="13"
+                  rx="1.5"
+                  width="13"
+                  x="5.5"
+                  y="5.5"
                 />
               </g>
             </svg>
