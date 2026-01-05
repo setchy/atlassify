@@ -62,7 +62,7 @@
     "menubar": "9.5.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-i18next": "16.5.0",
+    "react-i18next": "16.5.1",
     "react-router-dom": "7.11.0"
   },
   "devDependencies": {
@@ -134,7 +134,7 @@
     "webpack-cli": "6.0.1",
     "webpack-merge": "6.0.1"
   },
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.27.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@biomejs/biome",
