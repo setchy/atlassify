@@ -1,6 +1,7 @@
 {
   "name": "atlassify",
   "version": "2.14.0",
+  "private": true,
   "description": "Atlassian notifications on your menu bar.",
   "main": "build/main.js",
   "scripts": {
@@ -61,7 +62,7 @@
     "menubar": "9.5.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-i18next": "16.5.0",
+    "react-i18next": "16.5.1",
     "react-router-dom": "7.11.0"
   },
   "devDependencies": {
@@ -78,7 +79,7 @@
     "@atlaskit/logo": "19.9.7",
     "@atlaskit/modal-dialog": "14.9.3",
     "@atlaskit/primitives": "17.0.0",
-    "@atlaskit/radio": "8.3.16",
+    "@atlaskit/radio": "8.4.0",
     "@atlaskit/select": "21.6.3",
     "@atlaskit/spinner": "19.0.8",
     "@atlaskit/textfield": "8.2.1",
