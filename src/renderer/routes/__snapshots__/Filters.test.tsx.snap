@@ -105,11 +105,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -178,11 +178,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -251,11 +251,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -337,11 +337,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -410,11 +410,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -496,11 +496,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -569,11 +569,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -655,11 +655,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -721,11 +721,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -804,11 +804,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -882,11 +882,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -966,11 +966,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1044,11 +1044,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1122,11 +1122,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1200,11 +1200,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1278,11 +1278,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1356,11 +1356,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1440,11 +1440,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1518,11 +1518,11 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1700,11 +1700,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1773,11 +1773,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1846,11 +1846,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -1932,11 +1932,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2005,11 +2005,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2091,11 +2091,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2164,11 +2164,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2250,11 +2250,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2316,11 +2316,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2400,15 +2400,17 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                       <path
-                        d="M9.707 11.293a1 1 0 1 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L11 12.586l-1.293-1.293z"
+                        clip-rule="evenodd"
+                        d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
                         fill="inherit"
+                        fill-rule="evenodd"
                       />
                     </g>
                   </svg>
@@ -2482,11 +2484,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2566,11 +2568,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2644,11 +2646,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2722,11 +2724,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2800,11 +2802,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2878,11 +2880,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -2956,11 +2958,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -3040,11 +3042,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
@@ -3118,11 +3120,11 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
                     >
                       <rect
                         fill="currentColor"
-                        height="12"
-                        rx="2"
-                        width="12"
-                        x="6"
-                        y="6"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
                       />
                     </g>
                   </svg>
