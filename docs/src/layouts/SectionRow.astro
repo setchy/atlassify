@@ -45,8 +45,7 @@ const {
       />
     </div>
 
-    {
-      screenshot && (
+    {screenshot && (
         <Image
           class:list={["w-full lg:w-96 max-w-md rounded-lg shadow-lg transform", "mt-16 lg:mt-0 mb-8 lg:mb-0", isReversed ? "-rotate-6" : "rotate-6"]}
           width="500"
@@ -54,9 +53,8 @@ const {
           src={import(`../assets/${screenshot.path}.png`)}
           alt={screenshot.alt}
         />
-      )
-    }
+      )}
 
-    <slot/>
+    <slot />
   </div>
 </div>

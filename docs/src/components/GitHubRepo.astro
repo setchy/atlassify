@@ -53,20 +53,20 @@ const { forks, stars, latestReleaseName } = await loadRepoStats();
   <section
     class="flex flex-row gap-2 items-center motion-preset-pop hover:motion-preset-oscillate hover:motion-duration-500"
   >
-    <Icon name="mdi:github" size={32} class="w-6 sm:w-10"/>
+    <Icon name="mdi:github" size={32} class="w-6 sm:w-10" />
     <div class="font-light max-sm:hidden">
       <div class="text-sm">{siteMetadata.repo.fullName}</div>
       <div class="flex flex-row gap-2 text-xs">
         <div class="flex flex-row gap-0.5 items-center">
-          <Icon name="mdi:tag-outline"/>
+          <Icon name="mdi:tag-outline" />
           {latestReleaseName}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:star-outline"/>
+          <Icon name="mdi:star-outline" />
           {stars}
         </div>
         <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:source-branch"/>
+          <Icon name="mdi:source-branch" />
           {forks}
         </div>
       </div>

@@ -54,7 +54,7 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.10",
+    "@biomejs/biome": "2.3.11",
     "husky": "9.1.7"
   },
   "packageManager": "pnpm@10.27.0",
