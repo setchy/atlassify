@@ -158,21 +158,19 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                       >
                         <span
                           aria-label="open"
-                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43"
-                          data-vc="icon-undefined"
+                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4utpp _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                           role="img"
-                          style="--icon-primary-color: currentColor; margin: var(--ds-space-negative-075, -0.375rem);"
+                          style="color: currentcolor;"
                         >
                           <svg
-                            height="24"
+                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbutpp _4t3iutpp"
+                            fill="none"
                             role="presentation"
-                            viewBox="0 0 24 24"
-                            width="24"
+                            viewBox="0 0 16 16"
                           >
                             <path
-                              d="M8.292 10.293a1.01 1.01 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0"
+                              d="m14.53 6.03-6 6a.75.75 0 0 1-1.004.052l-.056-.052-6-6 1.06-1.06L8 10.44l5.47-5.47z"
                               fill="currentcolor"
-                              fill-rule="evenodd"
                             />
                           </svg>
                         </span>
