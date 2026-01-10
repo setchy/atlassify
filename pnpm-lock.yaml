@@ -58,8 +58,8 @@ importers:
         specifier: 15.3.0
         version: 15.3.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/heading':
-        specifier: 5.2.16
-        version: 5.2.16(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 5.2.17
+        version: 5.2.17(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/icon':
         specifier: 29.4.0
         version: 29.4.0(@types/react@19.2.7)(react@19.2.3)
@@ -351,8 +351,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/heading@5.2.16':
-    resolution: {integrity: sha512-uxePa6U2CO4z7dyoeQnb7nVUkOpZ8YEj3V2Th2umjBnt0LSJ1hrcnTWiNtYACGAk5MsIL1BuSnB5LH/DNQQQVg==}
+  '@atlaskit/heading@5.2.17':
+    resolution: {integrity: sha512-pVdv8ccqPeVPkJWTZ6KE4JtaDczaSmT3pqbOoi2slXEToqLH2VfkMQq53Cn2UOSApx0G9T4KgWMhavNCNPu7LQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6305,7 +6305,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 0.19.0(@types/react@19.2.7)(react@19.2.3)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.7)(react@19.2.3)
-      '@atlaskit/heading': 5.2.16(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@atlaskit/heading': 5.2.17(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/icon': 29.4.0(@types/react@19.2.7)(react@19.2.3)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.3)
       '@atlaskit/primitives': 17.0.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -6322,9 +6322,10 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/heading@5.2.16(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@atlaskit/heading@5.2.17(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@atlaskit/css': 0.19.0(@types/react@19.2.7)(react@19.2.3)
+      '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.3)
       '@atlaskit/primitives': 17.0.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/tokens': 9.1.1(@types/react@19.2.7)(react@19.2.3)
       '@babel/runtime': 7.28.4
