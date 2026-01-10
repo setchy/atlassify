@@ -66,7 +66,7 @@
     "react-router-dom": "7.12.0"
   },
   "devDependencies": {
-    "@atlaskit/avatar": "25.6.3",
+    "@atlaskit/avatar": "25.7.0",
     "@atlaskit/avatar-group": "12.4.6",
     "@atlaskit/badge": "18.3.1",
     "@atlaskit/checkbox": "17.3.0",
