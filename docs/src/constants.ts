@@ -14,7 +14,7 @@ export const siteMetadata = {
     site: 'https://setchy.io',
   },
   google: {
-    gtag: 'G-JRB90LB5N9',
+    gtags: ['G-JRB90LB5N9'],
     siteVerification: 'rnCO5LIKeWKdhMaGo6FtO8U_g7ndm56Y1VG',
   },
   menuLinks: [
