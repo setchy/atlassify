@@ -157,8 +157,9 @@ export async function getJiraProjectTypeByKey(
   const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/project/${projectKey}`;
 
   const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
-    account,
     url,
+    'GET',
+    account,
   );
 
   return response.projectTypeKey;
