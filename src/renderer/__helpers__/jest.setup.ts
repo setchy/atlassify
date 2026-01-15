@@ -10,14 +10,6 @@ jest.mock('@atlaskit/platform-feature-flags', () => {
 });
 
 /**
- * Configure axios to use the http adapter instead of XHR
- * This allows nock to intercept HTTP requests in tests
- */
-import axios from 'axios';
-
-axios.defaults.adapter = 'http';
-
-/**
  * Atlassify context bridge API
  */
 window.atlassify = {

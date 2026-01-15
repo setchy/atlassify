@@ -1,4 +1,4 @@
-import axios, { type Method } from 'axios';
+import axios from 'axios';
 
 import type { Account, Token, Username } from '../../types';
 import { decryptValue } from '../comms';
@@ -56,19 +56,17 @@ export async function performRequestForCredentials<TResult, TVariables>(
  * Perform a REST API request for an Atlassian account
  *
  * @param url The API endpoint
- * @param method The REST http method
  * @param account An Atlassian account
  * @returns Resolves to an Atlassian REST response
  */
 export async function performRESTRequestForAccount<TResult>(
   url: string,
-  method: Method,
   account: Account,
 ): Promise<TResult> {
   const decryptedToken = (await decryptValue(account.token)) as Token;
 
   return axios({
-    method: method,
+    method: 'GET',
     url: url,
     headers: getHeaders(account.username, decryptedToken),
   }).then((response) => {

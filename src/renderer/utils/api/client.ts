@@ -158,7 +158,6 @@ export async function getJiraProjectTypeByKey(
 
   const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
     url,
-    'GET',
     account,
   );
 
