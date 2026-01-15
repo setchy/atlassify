@@ -94,8 +94,8 @@ importers:
         specifier: 9.1.2
         version: 9.1.2(@types/react@19.2.8)(react@19.2.3)
       '@atlaskit/tooltip':
-        specifier: 20.13.0
-        version: 20.13.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 20.14.0
+        version: 20.14.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@biomejs/biome':
         specifier: 2.3.11
         version: 2.3.11
@@ -502,8 +502,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/tooltip@20.13.0':
-    resolution: {integrity: sha512-ByPspOrEI/uExerHpWqpgxuQuXiLtpzZlVtDrjc3giG6Pm2yKFCxsb6ciED3VPo1vlp4A7jlMnxppnuHujTgyQ==}
+  '@atlaskit/tooltip@20.14.0':
+    resolution: {integrity: sha512-3i4w5qnBtH+G88/vIbmVjaqbstAnO4OUu7KKDCfOhKAgde3EOLp0vtzC4SCX9g2mO1FYM/bBxe2jc5bnopowcA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6124,7 +6124,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.3)
       '@atlaskit/popup': 4.8.2(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/tokens': 9.1.2(@types/react@19.2.8)(react@19.2.3)
-      '@atlaskit/tooltip': 20.13.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@atlaskit/tooltip': 20.14.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.3)
       bind-event-listener: 3.0.0
@@ -6199,7 +6199,7 @@ snapshots:
       '@atlaskit/spinner': 19.0.8(@types/react@19.2.8)(react@19.2.3)
       '@atlaskit/theme': 21.0.2(@types/react@19.2.8)(react@19.2.3)
       '@atlaskit/tokens': 9.1.2(@types/react@19.2.8)(react@19.2.3)
-      '@atlaskit/tooltip': 20.13.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@atlaskit/tooltip': 20.14.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/visually-hidden': 3.0.4(react@19.2.3)
       '@babel/runtime': 7.28.4
       '@compiled/react': 0.18.6(react@19.2.3)
@@ -6731,7 +6731,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/tooltip@20.13.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@atlaskit/tooltip@20.14.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.8)(react@19.2.3)
