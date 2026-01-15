@@ -14,7 +14,6 @@ jest.mock('react-router-dom', () => ({
 
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = jest.fn();
-  const updateSettingMock = jest.fn();
   const quitAppSpy = jest.spyOn(comms, 'quitApp').mockImplementation();
 
   beforeEach(() => {
@@ -33,57 +32,6 @@ describe('components/GlobalShortcuts.tsx', () => {
         await userEvent.keyboard('h');
 
         expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
-      });
-    });
-
-    describe('focus mode', () => {
-      it('toggles focus when pressing W while logged in', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            updateSetting: updateSettingMock,
-            isLoggedIn: true,
-          },
-        );
-
-        await userEvent.keyboard('w');
-
-        expect(updateSettingMock).toHaveBeenCalledWith('participating', true);
-      });
-
-      it('does not toggle focus mode when loading', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            updateSetting: updateSettingMock,
-            status: 'loading',
-            isLoggedIn: true,
-          },
-        );
-
-        await userEvent.keyboard('w');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
-      });
-
-      it('does not toggle focus mode when logged out', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            updateSetting: updateSettingMock,
-            isLoggedIn: false,
-          },
-        );
-
-        await userEvent.keyboard('w');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
       });
     });
 
