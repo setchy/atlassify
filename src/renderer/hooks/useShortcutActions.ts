@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useAppContext } from '../context/App';
-
 import { quitApp } from '../utils/comms';
+import { useAppContext } from './useAppContext';
 
 type ShortcutName =
   | 'home'
@@ -31,8 +30,8 @@ type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
 export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
-  const { fetchNotifications, isLoggedIn, status, updateSetting } =
-    useAppContext();
+
+  const { fetchNotifications, isLoggedIn, status } = useAppContext();
 
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
@@ -96,7 +95,6 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isOnFiltersRoute,
     isOnSettingsRoute,
     fetchNotifications,
-    updateSetting,
   ]);
 
   return { shortcuts };
