@@ -1,8 +1,9 @@
 import { AxiosError } from 'axios';
 
 import type { AtlassifyError } from '../../types';
-import { Errors } from '../errors';
 import type { AtlassianAPIError } from './types';
+
+import { Errors } from '../errors';
 
 export function determineFailureType(
   err: AxiosError<AtlassianAPIError>,

@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 
 import { Constants } from '../../constants';
+
 import type {
   Account,
   AccountNotifications,
@@ -12,10 +13,11 @@ import type {
   ReadStateType,
   SettingsState,
 } from '../../types';
+import type { AtlassianGraphQLResponse } from '../api/types';
+
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
 import type { AtlassianNotificationFragment } from '../api/graphql/generated/graphql';
-import type { AtlassianGraphQLResponse } from '../api/types';
 import { Errors } from '../errors';
 import { rendererLogError, rendererLogWarn } from '../logger';
 import { inferAtlassianProduct } from '../products';

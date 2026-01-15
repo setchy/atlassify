@@ -2,8 +2,11 @@ import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
+
 import { defaultSettings } from '../../../context/defaults';
+
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+
 import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {

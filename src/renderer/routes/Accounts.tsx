@@ -10,12 +10,15 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { AppContext } from '../context/App';
+
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
-import { AppContext } from '../context/App';
+
 import type { Account } from '../types';
+
 import { refreshAccount } from '../utils/auth/utils';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';

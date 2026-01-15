@@ -1,6 +1,5 @@
 import { type FC, Fragment, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
@@ -20,14 +19,12 @@ import { APPLICATION } from '../../shared/constants';
 
 import { AppContext } from '../context/App';
 import { useShortcutActions } from '../hooks/useShortcutActions';
-import { quitApp } from '../utils/comms';
+
 import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
-  const navigate = useNavigate();
-
   const { t } = useTranslation();
 
   const {
@@ -52,21 +49,19 @@ export const Sidebar: FC = () => {
 
   return (
     <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
-      {/* <Flex direction="column" justifyContent="space-between"> */}
       <Stack grow="fill" spread="space-between">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
             <Tooltip
               content={t('sidebar.home')}
-              key={shortcuts.home.key}
               position="right"
+              shortcut={[shortcuts.home.key]}
             >
               <IconButton
                 appearance="subtle"
                 icon={() => <AtlassifyIcon size={32} />}
-                isDisabled={shortcuts.home.enabled}
                 label={t('sidebar.home')}
-                onClick={() => shortcuts.home.action}
+                onClick={() => shortcuts.home.action()}
                 shape="circle"
                 testId="sidebar-home"
               />
@@ -180,6 +175,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.filters.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.filters.key]}
                 >
                   <IconButton
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -190,7 +186,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.filters.label')}
-                    onClick={() => toggleFilters()}
+                    onClick={() => shortcuts.filters.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-filter-notifications"
@@ -208,6 +204,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.refresh.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.refresh.key]}
                 >
                   <IconButton
                     appearance="subtle"
@@ -227,7 +224,7 @@ export const Sidebar: FC = () => {
                     }
                     isDisabled={status === 'loading'}
                     label={t('sidebar.refresh.label')}
-                    onClick={() => refreshNotifications()}
+                    onClick={() => shortcuts.refresh.action()}
                     shape="circle"
                     testId="sidebar-refresh"
                   />
@@ -236,6 +233,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.settings.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.settings.key]}
                 >
                   <IconButton
                     appearance="subtle"
@@ -258,6 +256,7 @@ export const Sidebar: FC = () => {
                   appName: APPLICATION.NAME,
                 })}
                 position="right"
+                shortcut={[shortcuts.quit.key]}
               >
                 <IconButton
                   appearance="subtle"
@@ -270,7 +269,7 @@ export const Sidebar: FC = () => {
                   label={t('sidebar.quit.label', {
                     appName: APPLICATION.NAME,
                   })}
-                  onClick={() => quitApp()}
+                  onClick={() => shortcuts.quit.action()}
                   shape="circle"
                   testId="sidebar-quit"
                 />
@@ -279,7 +278,6 @@ export const Sidebar: FC = () => {
           </Stack>
         </Box>
       </Stack>
-      {/* </Flex> */}
     </div>
   );
 };

@@ -12,8 +12,10 @@ jest.mock('../logger', () => ({
 }));
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
-import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
+
 import type { JiraProjectType } from '../api/types';
+
+import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import { rendererLogError } from '../logger';
 import {
   __resetProductInferenceCaches,

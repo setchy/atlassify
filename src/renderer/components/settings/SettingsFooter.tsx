@@ -1,6 +1,5 @@
 import { type FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
@@ -11,14 +10,19 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { getAppVersion, quitApp } from '../../utils/comms';
-import { openAtlassifyReleaseNotes } from '../../utils/links';
+import { useShortcutActions } from '../../hooks/useShortcutActions';
+
 import { Footer } from '../primitives/Footer';
+
+import { getAppVersion } from '../../utils/comms';
+import { openAtlassifyReleaseNotes } from '../../utils/links';
 
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);
-  const navigate = useNavigate();
+
   const { t } = useTranslation();
+
+  const { shortcuts } = useShortcutActions();
 
   useEffect(() => {
     (async () => {
@@ -50,7 +54,11 @@ export const SettingsFooter: FC = () => {
       </Tooltip>
 
       <Inline space="space.200">
-        <Tooltip content={t('settings.accounts')} position="top">
+        <Tooltip
+          content={t('settings.accounts')}
+          position="top"
+          shortcut={[shortcuts.accounts.key]}
+        >
           <IconButton
             appearance="subtle"
             icon={() => (
@@ -60,7 +68,7 @@ export const SettingsFooter: FC = () => {
               />
             )}
             label={t('settings.accounts')}
-            onClick={() => navigate('/accounts')}
+            onClick={() => shortcuts.accounts.action()}
             shape="circle"
             testId="settings-accounts"
           />
@@ -68,6 +76,7 @@ export const SettingsFooter: FC = () => {
         <Tooltip
           content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
           position="top"
+          shortcut={[shortcuts.quit.key]}
         >
           <IconButton
             appearance="subtle"
@@ -79,7 +88,7 @@ export const SettingsFooter: FC = () => {
               />
             )}
             label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
-            onClick={() => quitApp()}
+            onClick={() => shortcuts.quit.action()}
             shape="circle"
             testId="settings-quit"
           />

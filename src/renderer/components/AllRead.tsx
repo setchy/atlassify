@@ -2,9 +2,12 @@ import { type FC, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Constants } from '../constants';
+
 import { AppContext } from '../context/App';
-import { hasActiveFilters } from '../utils/notifications/filters';
+
 import { EmojiSplash } from './layout/EmojiSplash';
+
+import { hasActiveFilters } from '../utils/notifications/filters';
 
 export const AllRead: FC = () => {
   const { settings } = useContext(AppContext);

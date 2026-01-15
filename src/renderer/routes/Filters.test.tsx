@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
+
 import { FiltersRoute } from './Filters';
 
 const navigateMock = jest.fn();

@@ -1,6 +1,5 @@
 import { Theme } from '../../shared/theme';
 
-import { DEFAULT_LANGUAGE } from '../i18n';
 import {
   type AppearanceSettingsState,
   type AuthState,
@@ -13,6 +12,8 @@ import {
   type SystemSettingsState,
   type TraySettingsState,
 } from '../types';
+
+import { DEFAULT_LANGUAGE } from '../i18n';
 
 export const defaultAuth: AuthState = {
   accounts: [],

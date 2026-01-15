@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 import type { Account, Token, Username } from '../../types';
+import type { AtlassianGraphQLResponse } from './types';
+
 import { decryptValue } from '../comms';
 import { URLs } from '../links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
-import type { AtlassianGraphQLResponse } from './types';
 
 /**
  * Perform a GraphQL API request for an account

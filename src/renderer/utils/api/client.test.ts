@@ -3,8 +3,11 @@ import axios from 'axios';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
+
 import { Constants } from '../../constants';
+
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
+
 import {
   checkIfCredentialsAreValid,
   getAuthenticatedUser,

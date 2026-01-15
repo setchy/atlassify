@@ -12,6 +12,7 @@ import {
   type SystemSettingsState,
   type TraySettingsState,
 } from '../types';
+
 import { mockAtlassianCloudAccount } from './account-mocks';
 
 export const mockAuth: AuthState = {

@@ -34,8 +34,8 @@ function RequireAuth({ children }) {
 export const App = () => {
   return (
     <AppProvider>
-      <GlobalShortcuts />
       <Router>
+        <GlobalShortcuts />
         <AppLayout>
           <Routes>
             <Route

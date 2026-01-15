@@ -1,5 +1,7 @@
 import { mockSettings } from '../__mocks__/state-mocks';
+
 import type { Token, Username } from '../types';
+
 import { clearState, loadState, saveState } from './storage';
 
 describe('renderer/utils/storage.ts', () => {

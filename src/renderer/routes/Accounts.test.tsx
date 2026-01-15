@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+
 import * as authUtils from '../utils/auth/utils';
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';

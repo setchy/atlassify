@@ -4,7 +4,9 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
+
 import type { ReadStateType } from '../../types';
+
 import * as comms from '../../utils/comms';
 import * as links from '../../utils/links';
 import { PRODUCTS } from '../../utils/products';
