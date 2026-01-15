@@ -35,8 +35,8 @@ export const App = () => {
   return (
     <AppProvider>
       <Router>
-        <GlobalShortcuts />
         <AppLayout>
+          <GlobalShortcuts />
           <Routes>
             <Route
               element={
