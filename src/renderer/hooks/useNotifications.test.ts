@@ -5,6 +5,7 @@ import nock from 'nock';
 import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockState } from '../__mocks__/state-mocks';
+
 import { useNotifications } from './useNotifications';
 
 describe('renderer/hooks/useNotifications.ts', () => {

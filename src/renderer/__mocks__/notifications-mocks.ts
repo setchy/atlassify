@@ -4,6 +4,7 @@ import type {
   Link,
   ProductType,
 } from '../types';
+
 import { PRODUCTS } from '../utils/products';
 import { mockAtlassianCloudAccount } from './account-mocks';
 

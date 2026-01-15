@@ -10,6 +10,7 @@ import {
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
+
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 

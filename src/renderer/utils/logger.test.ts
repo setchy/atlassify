@@ -1,6 +1,7 @@
+import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+
 import * as logger from '../../shared/logger';
 
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
 describe('renderer/utils/logger.ts', () => {

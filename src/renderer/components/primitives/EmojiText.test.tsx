@@ -1,6 +1,7 @@
 import { act } from '@testing-library/react';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
+
 import { EmojiText, type EmojiTextProps } from './EmojiText';
 
 describe('renderer/components/primitives/Emoji.tsx', () => {

@@ -26,12 +26,15 @@ import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Constants } from '../../constants';
+
 import { AppContext } from '../../context/App';
+
 import type {
   Account,
   AtlassifyError,
   AtlassifyNotification,
 } from '../../types';
+
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';

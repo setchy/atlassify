@@ -1,5 +1,6 @@
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+
 import * as comms from './comms';
 import {
   openAccountProfile,

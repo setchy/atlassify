@@ -6,8 +6,10 @@ import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/type
 import { formatDistanceToNowStrict, isValid, parseISO } from 'date-fns';
 
 import { Constants } from '../constants';
-import i18n from '../i18n';
+
 import type { AtlassifyNotification, Chevron } from '../types';
+
+import i18n from '../i18n';
 
 export function formatProperCase(text: string) {
   return text.replace(/\w+/g, (word) => {

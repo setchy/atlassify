@@ -1,4 +1,5 @@
 import type { AtlassifyNotification, SettingsState } from '../../../types';
+
 import {
   actorFilter,
   categoryFilter,

@@ -19,6 +19,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { APPLICATION } from '../../shared/constants';
 
 import { AppContext } from '../context/App';
+
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';

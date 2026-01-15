@@ -11,9 +11,10 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
+import { Footer } from '../primitives/Footer';
+
 import { getAppVersion, quitApp } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
-import { Footer } from '../primitives/Footer';
 
 export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);

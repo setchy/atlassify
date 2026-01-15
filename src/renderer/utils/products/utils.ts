@@ -5,12 +5,13 @@ import type {
   Hostname,
   JiraProjectKey,
 } from '../../types';
+import type { JiraProjectType } from '../api/types';
+
 import {
   getCloudIDsForHostnames,
   getJiraProjectTypeByKey,
 } from '../api/client';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import type { JiraProjectType } from '../api/types';
 import { rendererLogError } from '../logger';
 import { PRODUCTS } from './catalog';
 

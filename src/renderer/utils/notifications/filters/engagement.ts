@@ -2,7 +2,6 @@ import CommentIcon from '@atlaskit/icon/core/comment';
 import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
-import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -10,6 +9,8 @@ import type {
   SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
+
+import i18n from '../../../i18n';
 
 const ENGAGEMENT_DETAILS: Record<EngagementStateType, FilterDetails> = {
   mention: {

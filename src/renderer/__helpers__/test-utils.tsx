@@ -4,7 +4,9 @@ import { type ReactElement, type ReactNode, useMemo } from 'react';
 import axios from 'axios';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+
 import { AppContext, type AppContextState } from '../context/App';
+
 import type { SettingsState } from '../types';
 
 /**

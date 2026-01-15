@@ -8,7 +8,9 @@ import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';
+
 import type { AtlassifyNotification } from '../../types';
+
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
 import { isLightMode } from '../../utils/theme';

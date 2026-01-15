@@ -1,6 +1,5 @@
 import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
-import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -8,6 +7,8 @@ import type {
   SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
+
+import i18n from '../../../i18n';
 
 const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
   unread: {

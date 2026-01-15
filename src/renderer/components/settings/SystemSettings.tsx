@@ -17,7 +17,9 @@ import { APPLICATION } from '../../../shared/constants';
 
 import { AppContext } from '../../context/App';
 import { defaultSettings } from '../../context/defaults';
+
 import { OpenPreference } from '../../types';
+
 import {
   canDecreaseVolume,
   canIncreaseVolume,

@@ -1,6 +1,7 @@
 import { APPLICATION } from '../../shared/constants';
 
 import type { Account, AtlassifyNotification, Link } from '../types';
+
 import { openExternalLink } from './comms';
 
 export const URLs = {

@@ -2,6 +2,7 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
+
 import { SettingsReset } from './SettingsReset';
 
 const navigateMock = jest.fn();

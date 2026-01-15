@@ -4,12 +4,14 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { Constants } from '../constants';
+
+import type { Language } from './types';
+
 // Locales
 import deTranslation from './locales/de.json';
 import enTranslation from './locales/en.json';
 import esTranslation from './locales/es.json';
 import frTranslation from './locales/fr.json';
-import type { Language } from './types';
 
 export const DEFAULT_LANGUAGE: Language = 'en';
 

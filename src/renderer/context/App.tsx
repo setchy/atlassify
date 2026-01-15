@@ -8,8 +8,10 @@ import {
 } from 'react';
 
 import { Constants } from '../constants';
+
 import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useNotifications } from '../hooks/useNotifications';
+
 import type {
   Account,
   AccountNotifications,
@@ -25,6 +27,7 @@ import type {
   Status,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
+
 import {
   addAccount,
   hasAccounts,

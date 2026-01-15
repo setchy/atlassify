@@ -1,4 +1,3 @@
-import i18n from '../../../i18n';
 import type {
   AccountNotifications,
   AtlassianProduct,
@@ -6,8 +5,10 @@ import type {
   ProductType,
   SettingsState,
 } from '../../../types';
-import { PRODUCTS } from '../../products';
 import type { Filter, FilterDetails } from './types';
+
+import i18n from '../../../i18n';
+import { PRODUCTS } from '../../products';
 
 export const productFilter: Filter<ProductType> = {
   get FILTER_TYPES() {
