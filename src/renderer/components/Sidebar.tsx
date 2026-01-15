@@ -19,6 +19,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { APPLICATION } from '../../shared/constants';
 
 import { AppContext } from '../context/App';
+import { useShortcutActions } from '../hooks/useShortcutActions';
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
@@ -26,12 +27,10 @@ import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const { t } = useTranslation();
 
   const {
-    fetchNotifications,
     isLoggedIn,
     settings,
     updateSetting,
@@ -41,27 +40,7 @@ export const Sidebar: FC = () => {
     hasNotifications,
   } = useContext(AppContext);
 
-  const toggleFilters = () => {
-    if (location.pathname.startsWith('/filters')) {
-      navigate('/', { replace: true });
-    } else {
-      navigate('/filters');
-    }
-  };
-
-  const toggleSettings = () => {
-    if (location.pathname.startsWith('/settings')) {
-      navigate('/', { replace: true });
-      fetchNotifications();
-    } else {
-      navigate('/settings');
-    }
-  };
-
-  const refreshNotifications = () => {
-    navigate('/', { replace: true });
-    fetchNotifications();
-  };
+  const { shortcuts } = useShortcutActions();
 
   const hasFilters = hasActiveFilters(settings);
 
@@ -77,12 +56,17 @@ export const Sidebar: FC = () => {
       <Stack grow="fill" spread="space-between">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
-            <Tooltip content={t('sidebar.home')} position="right">
+            <Tooltip
+              content={t('sidebar.home')}
+              key={shortcuts.home.key}
+              position="right"
+            >
               <IconButton
                 appearance="subtle"
                 icon={() => <AtlassifyIcon size={32} />}
+                isDisabled={shortcuts.home.enabled}
                 label={t('sidebar.home')}
-                onClick={() => navigate('/', { replace: true })}
+                onClick={() => shortcuts.home.action}
                 shape="circle"
                 testId="sidebar-home"
               />
@@ -262,7 +246,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.settings.label')}
-                    onClick={() => toggleSettings()}
+                    onClick={() => shortcuts.settings.action()}
                     shape="circle"
                     testId="sidebar-settings"
                   />
