@@ -11,7 +11,7 @@ import type { AtlassianGraphQLResponse } from './types';
  *
  * @param account An Atlassian account
  * @param query The GraphQL operation/query statement
- * @param variables The GraphQL operation variables TVariables
+ * @param variables The GraphQL operation variables
  * @returns Resolves to an Atlassian GraphQL response
  */
 export async function performRequestForAccount<TResult, TVariables>(
@@ -24,10 +24,8 @@ export async function performRequestForAccount<TResult, TVariables>(
   return performGraphQLApiRequest<TResult, TVariables>(
     account.username,
     decryptedToken,
-    {
-      query,
-      variables,
-    },
+    query,
+    variables,
   );
 }
 
@@ -36,7 +34,7 @@ export async function performRequestForAccount<TResult, TVariables>(
  *
  * @param username An Atlassian account username
  * @param token An Atlassian token (decrypted)
- * @param query The GraphQL operation/query statement TVariables
+ * @param query The GraphQL operation/query statement
  * @param variables The GraphQL operation variables
  * @returns Resolves to an Atlassian GraphQL response
  */
@@ -46,10 +44,12 @@ export async function performRequestForCredentials<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
-  return performGraphQLApiRequest<TResult, TVariables>(username, token, {
+  return performGraphQLApiRequest<TResult, TVariables>(
+    username,
+    token,
     query,
     variables,
-  });
+  );
 }
 
 /**
@@ -81,23 +81,25 @@ export async function performRESTRequestForAccount<TResult>(
  *
  * @param username An Atlassian account username
  * @param token An Atlassian token (decrypted)
- * @param data The combined operation document (query and variables)
+ * @param query The GraphQL operation/query statement
+ * @param variables The GraphQL operation variables
  * @returns Resolves to an Atlassian GraphQL response
  */
 function performGraphQLApiRequest<TResult, TVariables>(
   username: Username,
   token: Token,
-  data: {
-    query: TypedDocumentString<TResult, TVariables>;
-    variables?: TVariables;
-  },
+  query: TypedDocumentString<TResult, TVariables>,
+  variables: TVariables,
 ): Promise<AtlassianGraphQLResponse<TResult>> {
   const url = URLs.ATLASSIAN.API;
 
   return axios({
     method: 'POST',
     url,
-    data,
+    data: {
+      query,
+      variables,
+    },
     headers: getHeaders(username, token),
   }).then((response) => {
     return response.data;
