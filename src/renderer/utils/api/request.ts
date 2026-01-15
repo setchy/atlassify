@@ -21,10 +21,14 @@ export async function performRequestForAccount<TResult, TVariables>(
 ): Promise<AtlassianGraphQLResponse<TResult>> {
   const decryptedToken = (await decryptValue(account.token)) as Token;
 
-  return performGraphQLApiRequest<TResult>(account.username, decryptedToken, {
-    query,
-    variables,
-  });
+  return performGraphQLApiRequest<TResult, TVariables>(
+    account.username,
+    decryptedToken,
+    {
+      query,
+      variables,
+    },
+  );
 }
 
 /**
@@ -42,7 +46,7 @@ export async function performRequestForCredentials<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
-  return performGraphQLApiRequest<TResult>(username, token, {
+  return performGraphQLApiRequest<TResult, TVariables>(username, token, {
     query,
     variables,
   });
@@ -80,10 +84,13 @@ export async function performRESTRequestForAccount<TResult>(
  * @param data The combined operation document (query and variables)
  * @returns Resolves to an Atlassian GraphQL response
  */
-function performGraphQLApiRequest<TResult>(
+function performGraphQLApiRequest<TResult, TVariables>(
   username: Username,
   token: Token,
-  data = {},
+  data: {
+    query: TypedDocumentString<TResult, TVariables>;
+    variables?: TVariables;
+  },
 ): Promise<AtlassianGraphQLResponse<TResult>> {
   const url = URLs.ATLASSIAN.API;
 
