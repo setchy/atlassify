@@ -69,8 +69,8 @@
     "@atlaskit/avatar": "25.7.0",
     "@atlaskit/avatar-group": "12.4.6",
     "@atlaskit/badge": "18.3.2",
-    "@atlaskit/checkbox": "17.3.0",
     "@atlaskit/button": "23.9.3",
+    "@atlaskit/checkbox": "17.3.0",
     "@atlaskit/css-reset": "7.3.10",
     "@atlaskit/form": "15.3.0",
     "@atlaskit/heading": "5.2.18",
@@ -140,7 +140,9 @@
       "@biomejs/biome",
       "@parcel/watcher",
       "@tailwindcss/oxide",
-      "electron"
+      "electron",
+      "electron-winstaller",
+      "unrs-resolver"
     ]
   },
   "lint-staged": {
