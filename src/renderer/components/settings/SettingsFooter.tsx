@@ -37,15 +37,12 @@ export const SettingsFooter: FC = () => {
         content={t('settings.view_release_notes', {
           appName: APPLICATION.NAME,
         })}
-        position="top"
+        position="top-start"
       >
         <Button
           appearance="subtle"
           onClick={() => openAtlassifyReleaseNotes(appVersion)}
           testId="settings-release-notes"
-          title={t('settings.view_release_notes', {
-            appName: APPLICATION.NAME,
-          })}
         >
           <span className="font-medium">
             {APPLICATION.NAME} {appVersion}
