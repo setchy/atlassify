@@ -88,7 +88,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     Username
                   </label>
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
+                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c8fhey _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
                     data-ds--text-field--container="true"
                     role="presentation"
                     style="max-width: 100%;"
@@ -98,7 +98,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       aria-labelledby="username-uid3-label"
                       aria-required="false"
                       autocomplete="off"
-                      class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
+                      class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                       data-ds--text-field--input="true"
                       id="username-uid3"
                       name="username"
@@ -126,7 +126,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     API Token
                   </label>
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
+                    class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c8fhey _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
                     data-ds--text-field--container="true"
                     role="presentation"
                     style="max-width: 100%;"
@@ -135,7 +135,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                       aria-describedby="token-uid4-valid token-uid4-helper"
                       aria-labelledby="token-uid4-label"
                       aria-required="false"
-                      class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
+                      class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                       data-ds--text-field--input="true"
                       id="token-uid4"
                       name="token"
@@ -388,7 +388,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   Username
                 </label>
                 <div
-                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c8fhey _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
                   data-ds--text-field--container="true"
                   role="presentation"
                   style="max-width: 100%;"
@@ -398,7 +398,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     aria-labelledby="username-uid3-label"
                     aria-required="false"
                     autocomplete="off"
-                    class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
+                    class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                     data-ds--text-field--input="true"
                     id="username-uid3"
                     name="username"
@@ -426,7 +426,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   API Token
                 </label>
                 <div
-                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c82smr _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
+                  class="_16jlkb7n _1o9zkb7n _i0dl1osq _11c8fhey _1reo15vq _18m915vq _v564r5cv _189ee4h9 _1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4 _lcxv1wug _s7n4jp4b _slp31hna _1tnqfajl _1h6drsbi _1dqonqa1 _syazi7uo _80om1kdv _bfhk1j9a _msj6gir2 _1q51e4h9 _85i5e4h9 _bozgidpf _y4tiidpf _1p9x1v1w _qao9r01l _q433vyy1 _4cvxrsbi _irr3l4ek"
                   data-ds--text-field--container="true"
                   role="presentation"
                   style="max-width: 100%;"
@@ -435,7 +435,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                     aria-describedby="token-uid4-valid token-uid4-helper"
                     aria-labelledby="token-uid4-label"
                     aria-required="false"
-                    class="_19itidpf _11c81ixg _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn22smr _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
+                    class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                     data-ds--text-field--input="true"
                     id="token-uid4"
                     name="token"
