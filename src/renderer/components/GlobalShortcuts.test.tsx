@@ -22,6 +22,20 @@ describe('components/GlobalShortcuts.tsx', () => {
   });
 
   describe('key bindings', () => {
+    describe('ignores keys that are not valid', () => {
+      it('ignores B key', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+        );
+
+        await userEvent.keyboard('b');
+
+        expect(navigateMock).not.toHaveBeenCalled();
+      });
+    });
+
     describe('home', () => {
       it('navigates home when pressing H key', async () => {
         renderWithAppContext(

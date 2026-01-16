@@ -42,6 +42,7 @@ export const GlobalShortcuts: FC = () => {
     };
 
     document.addEventListener('keydown', handler);
+
     return () => {
       document.removeEventListener('keydown', handler);
     };
