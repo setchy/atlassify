@@ -24,8 +24,11 @@ export const TraySettings: FC = () => {
             isChecked={settings.showNotificationsCountInTray}
             label={t('settings.tray.show_count_in_tray')}
             name="showNotificationsCountInTray"
-            onChange={(evt) =>
-              updateSetting('showNotificationsCountInTray', evt.target.checked)
+            onChange={() =>
+              updateSetting(
+                'showNotificationsCountInTray',
+                !settings.showNotificationsCountInTray,
+              )
             }
           />
           <InlineMessage appearance="info">
@@ -41,8 +44,8 @@ export const TraySettings: FC = () => {
           isChecked={settings.useUnreadActiveIcon}
           label={t('settings.tray.unread_active_icon')}
           name="useUnreadActiveIcon"
-          onChange={(evt) =>
-            updateSetting('useUnreadActiveIcon', evt.target.checked)
+          onChange={() =>
+            updateSetting('useUnreadActiveIcon', !settings.useUnreadActiveIcon)
           }
         />
         <InlineMessage appearance="info">
@@ -59,8 +62,11 @@ export const TraySettings: FC = () => {
           isChecked={settings.useAlternateIdleIcon}
           label={t('settings.tray.alternate_icon')}
           name="useAlternateIdleIcon"
-          onChange={(evt) =>
-            updateSetting('useAlternateIdleIcon', evt.target.checked)
+          onChange={() =>
+            updateSetting(
+              'useAlternateIdleIcon',
+              !settings.useAlternateIdleIcon,
+            )
           }
         />
         <InlineMessage appearance="info">

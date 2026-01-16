@@ -125,10 +125,10 @@ export const Sidebar: FC = () => {
                     id="toggle-unread-only"
                     isChecked={settings.fetchOnlyUnreadNotifications}
                     label={t('sidebar.toggles.unreadOnly.label')}
-                    onChange={async (evt) => {
+                    onChange={() => {
                       updateSetting(
                         'fetchOnlyUnreadNotifications',
-                        evt.target.checked,
+                        !settings.fetchOnlyUnreadNotifications,
                       );
                     }}
                     size="regular"
