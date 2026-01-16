@@ -20,7 +20,6 @@ import { APPLICATION } from '../../shared/constants';
 import { AppContext } from '../context/App';
 import { useShortcutActions } from '../hooks/useShortcutActions';
 
-import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
@@ -30,7 +29,6 @@ export const Sidebar: FC = () => {
   const {
     isLoggedIn,
     settings,
-    updateSetting,
     status,
     hasMoreAccountNotifications,
     notificationCount,
@@ -76,6 +74,7 @@ export const Sidebar: FC = () => {
                   : t('sidebar.notifications.read'),
               })}
               position="right"
+              shortcut={[shortcuts.myNotifications.key]}
             >
               <IconButton
                 appearance={hasNotifications ? 'primary' : 'subtle'}
@@ -86,7 +85,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 label={t('sidebar.notifications.label')}
-                onClick={() => openMyNotifications()}
+                onClick={() => shortcuts.myNotifications.action()}
                 shape="circle"
                 spacing="compact"
                 testId="sidebar-notifications"
@@ -98,17 +97,13 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.unreadOnly.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.toggleReadUnread.key]}
                 >
                   <Toggle
                     id="toggle-unread-only"
                     isChecked={settings.fetchOnlyUnreadNotifications}
                     label={t('sidebar.toggles.unreadOnly.label')}
-                    onChange={async (evt) => {
-                      updateSetting(
-                        'fetchOnlyUnreadNotifications',
-                        evt.target.checked,
-                      );
-                    }}
+                    onChange={() => shortcuts.toggleReadUnread.action()}
                     size="regular"
                     testId="sidebar-toggle-unread-only"
                   />
@@ -117,6 +112,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.groupByProduct.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.groupByProduct.key]}
                 >
                   <IconButton
                     appearance={
@@ -131,12 +127,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.toggles.groupByProduct.label')}
-                    onClick={() => {
-                      updateSetting(
-                        'groupNotificationsByProduct',
-                        !settings.groupNotificationsByProduct,
-                      );
-                    }}
+                    onClick={() => shortcuts.groupByProduct.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-group-by-product"
@@ -146,6 +137,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.groupByTitle.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.groupByTitle.key]}
                 >
                   <IconButton
                     appearance={
@@ -160,12 +152,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.toggles.groupByTitle.label')}
-                    onClick={() => {
-                      updateSetting(
-                        'groupNotificationsByTitle',
-                        !settings.groupNotificationsByTitle,
-                      );
-                    }}
+                    onClick={() => shortcuts.groupByTitle.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-group-by-title"

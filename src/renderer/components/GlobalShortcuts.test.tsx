@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
 import * as comms from '../utils/comms';
+import * as links from '../utils/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
 
 const navigateMock = jest.fn();
@@ -97,6 +98,193 @@ describe('components/GlobalShortcuts.tsx', () => {
         await userEvent.keyboard('r');
 
         expect(fetchNotificationsMock).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('myNotifications', () => {
+      const openMyNotificationsSpy = jest
+        .spyOn(links, 'openMyNotifications')
+        .mockImplementation();
+
+      it('opens my notifications when pressing N while logged in', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+          },
+        );
+
+        await userEvent.keyboard('n');
+
+        expect(openMyNotificationsSpy).toHaveBeenCalledTimes(1);
+      });
+
+      it('does not open my notifications when logged out', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: false,
+          },
+        );
+
+        await userEvent.keyboard('n');
+
+        expect(openMyNotificationsSpy).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('toggleReadUnread', () => {
+      it('toggles read/unread setting when pressing U while logged in', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+            updateSetting: updateSettingMock,
+            settings: {
+              fetchOnlyUnreadNotifications: false,
+            },
+          },
+        );
+
+        await userEvent.keyboard('u');
+
+        expect(updateSettingMock).toHaveBeenCalledWith(
+          'fetchOnlyUnreadNotifications',
+          true,
+        );
+      });
+
+      it('does not toggle read/unread when logged out', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: false,
+            updateSetting: updateSettingMock,
+          },
+        );
+
+        await userEvent.keyboard('u');
+
+        expect(updateSettingMock).not.toHaveBeenCalled();
+      });
+
+      it('does not toggle read/unread when status is loading', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+            status: 'loading',
+            updateSetting: updateSettingMock,
+          },
+        );
+
+        await userEvent.keyboard('u');
+
+        expect(updateSettingMock).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('groupByProduct', () => {
+      it('toggles group by product setting when pressing P while logged in', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+            updateSetting: updateSettingMock,
+            settings: {
+              groupNotificationsByProduct: false,
+            },
+          },
+        );
+
+        await userEvent.keyboard('p');
+
+        expect(updateSettingMock).toHaveBeenCalledWith(
+          'groupNotificationsByProduct',
+          true,
+        );
+      });
+
+      it('does not toggle group by product when logged out', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: false,
+            updateSetting: updateSettingMock,
+          },
+        );
+
+        await userEvent.keyboard('p');
+
+        expect(updateSettingMock).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('groupByTitle', () => {
+      it('toggles group by title setting when pressing T while logged in', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+            updateSetting: updateSettingMock,
+            settings: {
+              groupNotificationsByTitle: false,
+            },
+          },
+        );
+
+        await userEvent.keyboard('t');
+
+        expect(updateSettingMock).toHaveBeenCalledWith(
+          'groupNotificationsByTitle',
+          true,
+        );
+      });
+
+      it('does not toggle group by title when logged out', async () => {
+        const updateSettingMock = jest.fn();
+
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: false,
+            updateSetting: updateSettingMock,
+          },
+        );
+
+        await userEvent.keyboard('t');
+
+        expect(updateSettingMock).not.toHaveBeenCalled();
       });
     });
 

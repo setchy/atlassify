@@ -2,13 +2,18 @@ import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { quitApp } from '../utils/comms';
+import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
 
 type ShortcutName =
   | 'home'
+  | 'myNotifications'
+  | 'toggleReadUnread'
+  | 'groupByProduct'
+  | 'groupByTitle'
+  | 'filters'
   | 'refresh'
   | 'settings'
-  | 'filters'
   | 'quit'
   | 'accounts';
 
@@ -31,7 +36,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoggedIn, status } = useAppContext();
+  const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
+    useAppContext();
 
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
@@ -43,6 +49,41 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'h',
         isAllowed: true,
         action: () => navigate('/', { replace: true }),
+      },
+      myNotifications: {
+        key: 'n',
+        isAllowed: isLoggedIn,
+        action: () => openMyNotifications(),
+      },
+      toggleReadUnread: {
+        key: 'u',
+        isAllowed: isLoggedIn && !isLoading,
+        action: () => {
+          updateSetting(
+            'fetchOnlyUnreadNotifications',
+            !settings.fetchOnlyUnreadNotifications,
+          );
+        },
+      },
+      groupByProduct: {
+        key: 'p',
+        isAllowed: isLoggedIn,
+        action: () => {
+          updateSetting(
+            'groupNotificationsByProduct',
+            !settings.groupNotificationsByProduct,
+          );
+        },
+      },
+      groupByTitle: {
+        key: 't',
+        isAllowed: isLoggedIn,
+        action: () => {
+          updateSetting(
+            'groupNotificationsByTitle',
+            !settings.groupNotificationsByTitle,
+          );
+        },
       },
       filters: {
         key: 'f',
@@ -95,6 +136,10 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isOnFiltersRoute,
     isOnSettingsRoute,
     fetchNotifications,
+    settings.fetchOnlyUnreadNotifications,
+    settings.groupNotificationsByProduct,
+    settings.groupNotificationsByTitle,
+    updateSetting,
   ]);
 
   return { shortcuts };
