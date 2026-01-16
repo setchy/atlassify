@@ -204,7 +204,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
           </div>
         </div>
         <div
-          class="css-156yo0n"
+          class="css-145qftn"
         >
           <div
             class="css-1fxbet0"
@@ -504,7 +504,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
         </div>
       </div>
       <div
-        class="css-156yo0n"
+        class="css-145qftn"
       >
         <div
           class="css-1fxbet0"

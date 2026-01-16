@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { Box, Flex } from '@atlaskit/primitives';
+import { Box, Flex, xcss } from '@atlaskit/primitives';
 
 interface FooterProps {
   children: ReactNode;
@@ -8,11 +8,15 @@ interface FooterProps {
 }
 
 export const Footer: FC<FooterProps> = (props: FooterProps) => {
+  const footerBoxStyles = xcss({
+    backgroundColor: 'color.background.accent.gray.subtlest',
+  });
+
   return (
     <Box
-      backgroundColor="color.background.accent.gray.subtlest"
       paddingBlock="space.050"
       paddingInline="space.200"
+      xcss={footerBoxStyles}
     >
       <Flex justifyContent={props.justify}>{props.children}</Flex>
     </Box>
