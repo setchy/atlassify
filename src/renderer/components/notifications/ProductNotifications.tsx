@@ -42,6 +42,11 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
+
+    backgroundColor: isLightMode()
+      ? 'color.background.accent.blue.subtlest'
+      : 'color.background.accent.gray.subtlest',
+
     ':hover': {
       backgroundColor: isLightMode()
         ? 'color.background.accent.blue.subtlest.hovered'
@@ -53,11 +58,6 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     <Stack>
       <Box
         as="div"
-        backgroundColor={
-          isLightMode()
-            ? 'color.background.accent.blue.subtlest'
-            : 'color.background.accent.gray.subtlest'
-        }
         onClick={toggleProductNotifications}
         paddingBlock="space.050"
         paddingInlineEnd="space.100"

@@ -41,7 +41,12 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const boxStyles = xcss({
+    backgroundColor: isLightMode()
+      ? 'color.background.accent.blue.subtlest'
+      : 'color.background.accent.gray.subtlest',
+
     borderRadius: 'radius.large',
+
     marginInline: 'space.250',
   });
 
@@ -52,16 +57,7 @@ export const AccountsRoute: FC = () => {
       <Contents>
         {auth.accounts.map((account) => {
           return (
-            <Box
-              backgroundColor={
-                isLightMode()
-                  ? 'color.background.accent.blue.subtlest'
-                  : 'color.background.accent.gray.subtlest'
-              }
-              key={account.id}
-              padding="space.150"
-              xcss={boxStyles}
-            >
+            <Box key={account.id} padding="space.150" xcss={boxStyles}>
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem
