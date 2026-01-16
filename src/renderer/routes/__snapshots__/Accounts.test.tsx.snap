@@ -60,7 +60,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
-      class="css-ehq807"
+      class="css-exdbqv"
     >
       <div
         class="css-1ja375h"
@@ -200,7 +200,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="css-156yo0n"
+    class="css-145qftn"
   >
     <div
       class="css-11bvkc9"
@@ -308,7 +308,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
-      class="css-e31hud"
+      class="css-agh4u8"
     >
       <div
         class="css-1ja375h"
@@ -448,7 +448,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="css-156yo0n"
+    class="css-145qftn"
   >
     <div
       class="css-11bvkc9"

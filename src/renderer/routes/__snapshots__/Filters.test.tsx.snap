@@ -1573,7 +1573,7 @@ exports[`renderer/routes/Filters.tsx General should render itself & its children
     </div>
   </div>
   <div
-    class="css-156yo0n"
+    class="css-145qftn"
   >
     <div
       class="css-11bvkc9"
@@ -3175,7 +3175,7 @@ exports[`renderer/routes/Filters.tsx filters product filters should filter by pr
     </div>
   </div>
   <div
-    class="css-156yo0n"
+    class="css-145qftn"
   >
     <div
       class="css-11bvkc9"

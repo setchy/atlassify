@@ -1,6 +1,8 @@
 import { B200, DN40, DN50, N10, R300 } from '@atlaskit/theme/colors';
+import { token } from '@atlaskit/tokens';
 
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const sidebarWidth = '3rem'; // 48px
 
@@ -22,12 +24,12 @@ const config: Config = {
           attention: R300,
           heroicon: {
             neutral: {
-              background: 'var(--ds-background-accent-gray-subtler)',
-              outline: 'var(--ds-text-subtle)',
+              background: token('color.background.accent.gray.subtler'),
+              outline: token('color.text.subtle'),
             },
             selected: {
-              background: 'var(--ds-background-accent-blue-subtler)',
-              outline: 'var(--ds-text-selected)',
+              background: token('color.background.accent.blue.subtler'),
+              outline: token('color.text.selected'),
             },
           },
         },
@@ -35,32 +37,38 @@ const config: Config = {
     },
   },
   plugins: [
-    ({ addBase }) => {
+    plugin(({ addBase }) => {
       addBase({
         ':root': {
           '--atlassify-background-sidebar': B200,
           '--atlassify-background-notifications': N10,
 
-          '--atlassify-scrollbar-track':
-            'var(--ds-background-accent-blue-subtlest)',
-          '--atlassify-scrollbar-thumb':
-            'var(--ds-background-accent-blue-subtler)',
-          '--atlassify-scrollbar-thumb-hover':
-            'var(--ds-background-accent-blue-subtler-hovered)',
+          '--atlassify-scrollbar-track': token(
+            'color.background.accent.blue.subtlest',
+          ),
+          '--atlassify-scrollbar-thumb': token(
+            'color.background.accent.blue.subtler',
+          ),
+          '--atlassify-scrollbar-thumb-hover': token(
+            'color.background.accent.blue.subtler.hovered',
+          ),
         },
         '.dark': {
           '--atlassify-background-sidebar': DN50,
           '--atlassify-background-notifications': DN40,
 
-          '--atlassify-scrollbar-track':
-            'var(--ds-background-accent-gray-subtlest)',
-          '--atlassify-scrollbar-thumb':
-            'var(--ds-background-accent-gray-subtler)',
-          '--atlassify-scrollbar-thumb-hover':
-            'var(--ds-background-accent-gray-subtler-hovered)',
+          '--atlassify-scrollbar-track': token(
+            'color.background.accent.gray.subtlest',
+          ),
+          '--atlassify-scrollbar-thumb': token(
+            'color.background.accent.gray.subtler',
+          ),
+          '--atlassify-scrollbar-thumb-hover': token(
+            'color.background.accent.gray.subtler.hovered',
+          ),
         },
       });
-    },
+    }),
   ],
 };
 

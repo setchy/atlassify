@@ -46,6 +46,7 @@ export const SystemSettings: FC = () => {
 
   const volumeBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
+
     visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
   });
 

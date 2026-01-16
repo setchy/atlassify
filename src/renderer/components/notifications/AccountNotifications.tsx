@@ -111,6 +111,13 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
+
+    backgroundColor: props.error
+      ? 'color.background.accent.red.subtler'
+      : isLightMode()
+        ? 'color.background.accent.blue.subtler'
+        : 'color.background.accent.gray.subtler',
+
     ':hover': {
       backgroundColor: isLightMode()
         ? 'color.background.accent.blue.subtler.hovered'
@@ -118,17 +125,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     },
   });
 
-  const backgroundColor = props.error
-    ? 'color.background.accent.red.subtler'
-    : isLightMode()
-      ? 'color.background.accent.blue.subtler'
-      : 'color.background.accent.gray.subtler';
-
   return (
     <Stack>
       <Box
         as="div"
-        backgroundColor={backgroundColor}
         onClick={toggleAccountNotifications}
         paddingBlock="space.050"
         paddingInline="space.100"

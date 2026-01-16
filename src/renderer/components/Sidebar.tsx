@@ -40,6 +40,7 @@ export const Sidebar: FC = () => {
   const hasFilters = hasActiveFilters(settings);
 
   const theme = useThemeObserver();
+
   const sidebarIconColorToken =
     theme.colorMode === 'light'
       ? token('color.text.inverse')
