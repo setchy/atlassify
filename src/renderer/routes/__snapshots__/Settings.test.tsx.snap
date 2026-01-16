@@ -80,7 +80,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-xxi07b"
             >
               <span
-                class="css-aeiv5u"
+                class="css-fm5tr8"
                 id="language-label"
               >
                 Language
@@ -188,7 +188,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-xxi07b"
             >
               <span
-                class="css-aeiv5u"
+                class="css-fm5tr8"
                 id="theme-label"
               >
                 Theme
@@ -270,7 +270,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-gdhcj"
             >
               <span
-                class="css-aeiv5u"
+                class="css-fm5tr8"
                 id="zoom-label"
               >
                 Zoom
@@ -292,7 +292,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                         class="css-13secbl"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           100
                           %
@@ -952,7 +952,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
               class="css-xxi07b"
             >
               <span
-                class="css-aeiv5u"
+                class="css-fm5tr8"
                 id="openLinks-label"
               >
                 Open Links
@@ -1255,7 +1255,7 @@ exports[`renderer/routes/Settings.tsx should render itself & its children 1`] = 
                       class="css-13secbl"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         20
                         %
