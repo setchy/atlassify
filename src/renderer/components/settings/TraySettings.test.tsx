@@ -30,6 +30,24 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
     );
   });
 
+  it('should toggle the useUnreadActiveIcon checkbox', async () => {
+    await act(async () => {
+      renderWithAppContext(<TraySettings />, {
+        updateSetting: updateSettingMock,
+      });
+    });
+
+    await userEvent.click(
+      screen.getByLabelText('Highlight unread notifications'),
+    );
+
+    expect(updateSettingMock).toHaveBeenCalledTimes(1);
+    expect(updateSettingMock).toHaveBeenCalledWith(
+      'useUnreadActiveIcon',
+      false,
+    );
+  });
+
   it('should toggle the useAlternateIdleIcon checkbox', async () => {
     await act(async () => {
       renderWithAppContext(<TraySettings />, {
