@@ -178,8 +178,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       html-webpack-plugin:
-        specifier: 5.6.5
-        version: 5.6.5(webpack@5.104.1)
+        specifier: 5.6.6
+        version: 5.6.6(webpack@5.104.1)
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -481,11 +481,6 @@ packages:
 
   '@atlaskit/tokens@8.6.1':
     resolution: {integrity: sha512-Ka+XXo3rKm3PXdXqSmx7A4MRmOHvd5TeKJb8aO5jUgsehnvPk85QhEeFeYT/D62dorJjA+CvE/wBpvZkT4OqnA==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/tokens@9.1.2':
-    resolution: {integrity: sha512-3JXke1jwMUUWF5nW0YGUEmQa9byg1h6yjF4m5gL4sKJJ0qt6Q/jmaugIFpPyuptwZGov+mBZlVbuwcoMVJDKow==}
     peerDependencies:
       react: ^18.2.0
 
@@ -3380,8 +3375,8 @@ packages:
   html-parse-stringify@3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
 
-  html-webpack-plugin@5.6.5:
-    resolution: {integrity: sha512-4xynFbKNNk+WlzXeQQ+6YYsH2g7mpfPszQZUi3ovKlj+pDmngQ7vRXjrrmGROabmKwyQkcgcX5hqfOwHbFmK5g==}
+  html-webpack-plugin@5.6.6:
+    resolution: {integrity: sha512-bLjW01UTrvoWTJQL5LsMRo1SypHW80FTm12OJRSnr3v6YHNhfe+1r0MYUZJMACxnCHURVnBWRwAsWs2yPU9Ezw==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -6482,19 +6477,6 @@ snapshots:
       - supports-color
 
   '@atlaskit/tokens@8.6.1(@types/react@19.2.8)(react@19.2.3)':
-    dependencies:
-      '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.8)(react@19.2.3)
-      '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.3)
-      '@babel/runtime': 7.28.6
-      '@babel/traverse': 7.28.6
-      '@babel/types': 7.28.6
-      bind-event-listener: 3.0.0
-      react: 19.2.3
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  '@atlaskit/tokens@9.1.2(@types/react@19.2.8)(react@19.2.3)':
     dependencies:
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.8)(react@19.2.3)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.3)
@@ -10058,7 +10040,7 @@ snapshots:
     dependencies:
       void-elements: 3.1.0
 
-  html-webpack-plugin@5.6.5(webpack@5.104.1):
+  html-webpack-plugin@5.6.6(webpack@5.104.1):
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
