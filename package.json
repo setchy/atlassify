@@ -68,7 +68,7 @@
   "devDependencies": {
     "@atlaskit/avatar": "25.7.0",
     "@atlaskit/avatar-group": "12.4.6",
-    "@atlaskit/badge": "18.3.2",
+    "@atlaskit/badge": "18.3.3",
     "@atlaskit/button": "23.9.3",
     "@atlaskit/checkbox": "17.3.0",
     "@atlaskit/css-reset": "7.3.10",
