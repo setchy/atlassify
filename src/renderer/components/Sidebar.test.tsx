@@ -48,7 +48,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('light');
 
       const tree = renderWithAppContext(
-        <MemoryRouter>
+        <MemoryRouter initialEntries={['/']}>
           <Sidebar />
         </MemoryRouter>,
         {
@@ -64,7 +64,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('dark');
 
       const tree = renderWithAppContext(
-        <MemoryRouter>
+        <MemoryRouter initialEntries={['/']}>
           <Sidebar />
         </MemoryRouter>,
         {
@@ -82,7 +82,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('light');
 
       const tree = renderWithAppContext(
-        <MemoryRouter>
+        <MemoryRouter initialEntries={['/landing']}>
           <Sidebar />
         </MemoryRouter>,
         {

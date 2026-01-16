@@ -17,6 +17,7 @@ import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
 
+import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 
 function RequireAuth({ children }) {
@@ -35,6 +36,7 @@ export const App = () => {
     <AppProvider>
       <Router>
         <AppLayout>
+          <GlobalShortcuts />
           <Routes>
             <Route
               element={

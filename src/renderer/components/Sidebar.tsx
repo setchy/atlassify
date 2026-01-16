@@ -1,6 +1,5 @@
 import { type FC, Fragment, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import CollapseVerticalIcon from '@atlaskit/icon/core/collapse-vertical';
@@ -19,50 +18,24 @@ import Tooltip from '@atlaskit/tooltip';
 import { APPLICATION } from '../../shared/constants';
 
 import { AppContext } from '../context/App';
+import { useShortcutActions } from '../hooks/useShortcutActions';
 
-import { quitApp } from '../utils/comms';
-import { openMyNotifications } from '../utils/links';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
   const { t } = useTranslation();
 
   const {
-    fetchNotifications,
     isLoggedIn,
     settings,
-    updateSetting,
     status,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
   } = useContext(AppContext);
 
-  const toggleFilters = () => {
-    if (location.pathname.startsWith('/filters')) {
-      navigate('/', { replace: true });
-    } else {
-      navigate('/filters');
-    }
-  };
-
-  const toggleSettings = () => {
-    if (location.pathname.startsWith('/settings')) {
-      navigate('/', { replace: true });
-      fetchNotifications();
-    } else {
-      navigate('/settings');
-    }
-  };
-
-  const refreshNotifications = () => {
-    navigate('/', { replace: true });
-    fetchNotifications();
-  };
+  const { shortcuts } = useShortcutActions();
 
   const hasFilters = hasActiveFilters(settings);
 
@@ -74,16 +47,19 @@ export const Sidebar: FC = () => {
 
   return (
     <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
-      {/* <Flex direction="column" justifyContent="space-between"> */}
       <Stack grow="fill" spread="space-between">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
-            <Tooltip content={t('sidebar.home')} position="right">
+            <Tooltip
+              content={t('sidebar.home')}
+              position="right"
+              shortcut={[shortcuts.home.key]}
+            >
               <IconButton
                 appearance="subtle"
                 icon={() => <AtlassifyIcon size={32} />}
                 label={t('sidebar.home')}
-                onClick={() => navigate('/', { replace: true })}
+                onClick={() => shortcuts.home.action()}
                 shape="circle"
                 testId="sidebar-home"
               />
@@ -98,6 +74,7 @@ export const Sidebar: FC = () => {
                   : t('sidebar.notifications.read'),
               })}
               position="right"
+              shortcut={[shortcuts.myNotifications.key]}
             >
               <IconButton
                 appearance={hasNotifications ? 'primary' : 'subtle'}
@@ -108,7 +85,7 @@ export const Sidebar: FC = () => {
                   />
                 )}
                 label={t('sidebar.notifications.label')}
-                onClick={() => openMyNotifications()}
+                onClick={() => shortcuts.myNotifications.action()}
                 shape="circle"
                 spacing="compact"
                 testId="sidebar-notifications"
@@ -120,17 +97,13 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.unreadOnly.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.toggleReadUnread.key]}
                 >
                   <Toggle
                     id="toggle-unread-only"
                     isChecked={settings.fetchOnlyUnreadNotifications}
                     label={t('sidebar.toggles.unreadOnly.label')}
-                    onChange={() => {
-                      updateSetting(
-                        'fetchOnlyUnreadNotifications',
-                        !settings.fetchOnlyUnreadNotifications,
-                      );
-                    }}
+                    onChange={() => shortcuts.toggleReadUnread.action()}
                     size="regular"
                     testId="sidebar-toggle-unread-only"
                   />
@@ -139,6 +112,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.groupByProduct.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.groupByProduct.key]}
                 >
                   <IconButton
                     appearance={
@@ -153,12 +127,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.toggles.groupByProduct.label')}
-                    onClick={() => {
-                      updateSetting(
-                        'groupNotificationsByProduct',
-                        !settings.groupNotificationsByProduct,
-                      );
-                    }}
+                    onClick={() => shortcuts.groupByProduct.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-group-by-product"
@@ -168,6 +137,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.groupByTitle.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.groupByTitle.key]}
                 >
                   <IconButton
                     appearance={
@@ -182,12 +152,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.toggles.groupByTitle.label')}
-                    onClick={() => {
-                      updateSetting(
-                        'groupNotificationsByTitle',
-                        !settings.groupNotificationsByTitle,
-                      );
-                    }}
+                    onClick={() => shortcuts.groupByTitle.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-group-by-title"
@@ -197,6 +162,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.filters.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.filters.key]}
                 >
                   <IconButton
                     appearance={hasFilters ? 'discovery' : 'subtle'}
@@ -207,7 +173,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.filters.label')}
-                    onClick={() => toggleFilters()}
+                    onClick={() => shortcuts.filters.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-filter-notifications"
@@ -225,6 +191,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.refresh.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.refresh.key]}
                 >
                   <IconButton
                     appearance="subtle"
@@ -244,7 +211,7 @@ export const Sidebar: FC = () => {
                     }
                     isDisabled={status === 'loading'}
                     label={t('sidebar.refresh.label')}
-                    onClick={() => refreshNotifications()}
+                    onClick={() => shortcuts.refresh.action()}
                     shape="circle"
                     testId="sidebar-refresh"
                   />
@@ -253,6 +220,7 @@ export const Sidebar: FC = () => {
                 <Tooltip
                   content={t('sidebar.settings.tooltip')}
                   position="right"
+                  shortcut={[shortcuts.settings.key]}
                 >
                   <IconButton
                     appearance="subtle"
@@ -263,7 +231,7 @@ export const Sidebar: FC = () => {
                       />
                     )}
                     label={t('sidebar.settings.label')}
-                    onClick={() => toggleSettings()}
+                    onClick={() => shortcuts.settings.action()}
                     shape="circle"
                     testId="sidebar-settings"
                   />
@@ -275,6 +243,7 @@ export const Sidebar: FC = () => {
                   appName: APPLICATION.NAME,
                 })}
                 position="right"
+                shortcut={[shortcuts.quit.key]}
               >
                 <IconButton
                   appearance="subtle"
@@ -287,7 +256,7 @@ export const Sidebar: FC = () => {
                   label={t('sidebar.quit.label', {
                     appName: APPLICATION.NAME,
                   })}
-                  onClick={() => quitApp()}
+                  onClick={() => shortcuts.quit.action()}
                   shape="circle"
                   testId="sidebar-quit"
                 />
@@ -296,7 +265,6 @@ export const Sidebar: FC = () => {
           </Stack>
         </Box>
       </Stack>
-      {/* </Flex> */}
     </div>
   );
 };
