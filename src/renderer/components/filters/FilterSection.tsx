@@ -47,9 +47,7 @@ export const FilterSection = <T extends FilterSettingsValue>({
                 aria-label={typeDetails.name}
                 isChecked={isChecked}
                 label={typeLabel}
-                onChange={(evt) =>
-                  updateFilter(filterSetting, type, evt.target.checked)
-                }
+                onChange={() => updateFilter(filterSetting, type, !isChecked)}
               />
               {typeDetails.icon && (
                 <IconTile

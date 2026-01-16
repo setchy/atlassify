@@ -22,8 +22,8 @@ export const NotificationSettings: FC = () => {
         isChecked={settings.markAsReadOnOpen}
         label={t('settings.notifications.mark_as_read_on_open')}
         name="markAsReadOnOpen"
-        onChange={(evt) =>
-          updateSetting('markAsReadOnOpen', evt.target.checked)
+        onChange={() =>
+          updateSetting('markAsReadOnOpen', !settings.markAsReadOnOpen)
         }
       />
 
@@ -32,10 +32,10 @@ export const NotificationSettings: FC = () => {
           isChecked={settings.groupNotificationsByProductAlphabetically}
           label={t('settings.notifications.group_alphabetically')}
           name="groupNotificationsByProductAlphabetically"
-          onChange={(evt) =>
+          onChange={() =>
             updateSetting(
               'groupNotificationsByProductAlphabetically',
-              evt.target.checked,
+              !settings.groupNotificationsByProductAlphabetically,
             )
           }
         />
@@ -51,8 +51,11 @@ export const NotificationSettings: FC = () => {
           isChecked={settings.delayNotificationState}
           label={t('settings.notifications.delay_notification_state')}
           name="delayNotificationState"
-          onChange={(evt) =>
-            updateSetting('delayNotificationState', evt.target.checked)
+          onChange={() =>
+            updateSetting(
+              'delayNotificationState',
+              !settings.delayNotificationState,
+            )
           }
         />
         <InlineMessage appearance="info">
