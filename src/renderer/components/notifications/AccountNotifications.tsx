@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { BitbucketIcon } from '@atlaskit/logo';
@@ -22,8 +23,8 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { xcss } from '@atlaskit/primitives';
 import { Box, Flex, Grid, Inline, Stack } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Constants } from '../../constants';
@@ -65,17 +66,18 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const [isOpen, setIsOpen] = useState(false);
   const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
-  const gridStyles = xcss({
-    width: '100%',
-  });
 
-  const closeContainerStyles = xcss({
-    gridArea: 'close',
-  });
+  // const gridStyles = xcss({
+  //   width: '100%',
+  // });
 
-  const titleContainerStyles = xcss({
-    gridArea: 'title',
-  });
+  // const closeContainerStyles = xcss({
+  //   gridArea: 'close',
+  // });
+
+  // const titleContainerStyles = xcss({
+  //   gridArea: 'title',
+  // });
 
   const sortedNotifications = useMemo(
     () => [...notifications].sort((a, b) => a.order - b.order),
@@ -110,19 +112,21 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   );
   const ChevronIcon = Chevron.icon;
 
-  const boxStyles = xcss({
-    transitionDuration: '200ms',
+  const styles = cssMap({
+    box: {
+      transitionDuration: '200ms',
 
-    backgroundColor: props.error
-      ? 'color.background.accent.red.subtler'
-      : isLightMode()
-        ? 'color.background.accent.blue.subtler'
-        : 'color.background.accent.gray.subtler',
+      backgroundColor: props.error
+        ? token('color.background.accent.red.subtler')
+        : isLightMode()
+          ? token('color.background.accent.blue.subtler')
+          : token('color.background.accent.gray.subtler'),
 
-    ':hover': {
-      backgroundColor: isLightMode()
-        ? 'color.background.accent.blue.subtler.hovered'
-        : 'color.background.accent.gray.subtler.hovered',
+      '&:hover': {
+        backgroundColor: isLightMode()
+          ? token('color.background.accent.blue.subtler.hovered')
+          : token('color.background.accent.gray.subtler.hovered'),
+      },
     },
   });
 
@@ -133,7 +137,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         onClick={toggleAccountNotifications}
         paddingBlock="space.050"
         paddingInline="space.100"
-        xcss={boxStyles}
+        xcss={cx(styles.box)}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Inline alignBlock="center" space="space.100">
@@ -254,9 +258,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               <Grid
                 gap="space.200"
                 // templateAreas={['title close']}
-                xcss={gridStyles}
+                // xcss={gridStyles}
               >
-                <Flex justifyContent="end" xcss={closeContainerStyles}>
+                <Flex justifyContent="end">
+                  {/* <Flex justifyContent="end" xcss={closeContainerStyles}> */}
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
@@ -265,7 +270,8 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
-                <Flex justifyContent="start" xcss={titleContainerStyles}>
+                <Flex justifyContent="start">
+                  {/* <Flex justifyContent="start" xcss={titleContainerStyles}> */}
                   <ModalTitle appearance="warning">
                     {t('common.are_you_sure')}
                   </ModalTitle>
