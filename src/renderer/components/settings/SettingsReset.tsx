@@ -10,7 +10,8 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
+import { xcss } from '@atlaskit/primitives';
+import { Flex, Grid, Inline } from '@atlaskit/primitives/compiled';
 
 import { APPLICATION } from '../../../shared/constants';
 
@@ -52,7 +53,7 @@ export const SettingsReset: FC = () => {
             <ModalHeader>
               <Grid
                 gap="space.200"
-                templateAreas={['title close']}
+                // templateAreas={['title close']}
                 xcss={gridStyles}
               >
                 <Flex justifyContent="end" xcss={closeContainerStyles}>

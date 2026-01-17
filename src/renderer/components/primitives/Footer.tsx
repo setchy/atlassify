@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
-import { Box, Flex, xcss } from '@atlaskit/primitives';
+import { xcss } from '@atlaskit/primitives';
+import { Box, Flex } from '@atlaskit/primitives/compiled';
 
 interface FooterProps {
   children: ReactNode;

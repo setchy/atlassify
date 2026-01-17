@@ -7,7 +7,8 @@ import { IconButton } from '@atlaskit/button/new';
 import LogOutIcon from '@atlaskit/icon/core/log-out';
 import PersonAddIcon from '@atlaskit/icon/core/person-add';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
-import { Box, Inline, xcss } from '@atlaskit/primitives';
+import { xcss } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives/compiled';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -41,12 +42,7 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const boxStyles = xcss({
-    backgroundColor: isLightMode()
-      ? 'color.background.accent.blue.subtlest'
-      : 'color.background.accent.gray.subtlest',
-
     borderRadius: 'radius.large',
-
     marginInline: 'space.250',
   });
 
@@ -57,7 +53,16 @@ export const AccountsRoute: FC = () => {
       <Contents>
         {auth.accounts.map((account) => {
           return (
-            <Box key={account.id} padding="space.150" xcss={boxStyles}>
+            <Box
+              backgroundColor={
+                isLightMode()
+                  ? 'color.background.accent.blue.subtlest'
+                  : 'color.background.accent.gray.subtlest'
+              }
+              key={account.id}
+              padding="space.150"
+              xcss={boxStyles}
+            >
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem

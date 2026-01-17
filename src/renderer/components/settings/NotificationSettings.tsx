@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import InlineMessage from '@atlaskit/inline-message';
-import { Inline, Stack } from '@atlaskit/primitives';
+import { Inline, Stack } from '@atlaskit/primitives/compiled';
 
 import { APPLICATION } from '../../../shared/constants';
 

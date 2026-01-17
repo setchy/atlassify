@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
-import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { xcss } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives/compiled';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../../context/App';

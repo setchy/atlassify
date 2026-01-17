@@ -22,7 +22,8 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { xcss } from '@atlaskit/primitives';
+import { Box, Flex, Grid, Inline, Stack } from '@atlaskit/primitives/compiled';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Constants } from '../../constants';
@@ -252,7 +253,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             <ModalHeader>
               <Grid
                 gap="space.200"
-                templateAreas={['title close']}
+                // templateAreas={['title close']}
                 xcss={gridStyles}
               >
                 <Flex justifyContent="end" xcss={closeContainerStyles}>

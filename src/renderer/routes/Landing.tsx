@@ -16,7 +16,7 @@ import {
   type LogoProps,
   TeamsIcon,
 } from '@atlaskit/logo';
-import { Inline, Stack, Text } from '@atlaskit/primitives';
+import { Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
