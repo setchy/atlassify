@@ -50,71 +50,6 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
     });
 
-    describe('filters', () => {
-      it('toggles filters when pressing F while logged in', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
-        );
-
-        await userEvent.keyboard('f');
-
-        expect(navigateMock).toHaveBeenCalledWith('/filters');
-      });
-
-      it('does not toggle filters when logged out', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            isLoggedIn: false,
-          },
-        );
-
-        await userEvent.keyboard('f');
-
-        expect(navigateMock).not.toHaveBeenCalled();
-      });
-    });
-
-    describe('refresh', () => {
-      it('refreshes notifications when pressing R key', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            fetchNotifications: fetchNotificationsMock,
-          },
-        );
-
-        await userEvent.keyboard('r');
-
-        expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
-      });
-
-      it('does not refresh when status is loading', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            status: 'loading',
-          },
-        );
-
-        await userEvent.keyboard('r');
-
-        expect(fetchNotificationsMock).not.toHaveBeenCalled();
-      });
-    });
-
     describe('myNotifications', () => {
       const openMyNotificationsSpy = jest
         .spyOn(links, 'openMyNotifications')
@@ -299,6 +234,71 @@ describe('components/GlobalShortcuts.tsx', () => {
         await userEvent.keyboard('t');
 
         expect(updateSettingMock).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('filters', () => {
+      it('toggles filters when pressing F while logged in', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: true,
+          },
+        );
+
+        await userEvent.keyboard('f');
+
+        expect(navigateMock).toHaveBeenCalledWith('/filters');
+      });
+
+      it('does not toggle filters when logged out', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            isLoggedIn: false,
+          },
+        );
+
+        await userEvent.keyboard('f');
+
+        expect(navigateMock).not.toHaveBeenCalled();
+      });
+    });
+
+    describe('refresh', () => {
+      it('refreshes notifications when pressing R key', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            fetchNotifications: fetchNotificationsMock,
+          },
+        );
+
+        await userEvent.keyboard('r');
+
+        expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
+        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      });
+
+      it('does not refresh when status is loading', async () => {
+        renderWithAppContext(
+          <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            status: 'loading',
+          },
+        );
+
+        await userEvent.keyboard('r');
+
+        expect(fetchNotificationsMock).not.toHaveBeenCalled();
       });
     });
 
