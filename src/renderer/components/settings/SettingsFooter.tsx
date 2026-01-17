@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import PeopleGroupIcon from '@atlaskit/icon/core/people-group';
-import { Inline } from '@atlaskit/primitives';
+import { Inline } from '@atlaskit/primitives/compiled';
 import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 

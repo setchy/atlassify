@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Box, Stack } from '@atlaskit/primitives';
+import { Box, Stack } from '@atlaskit/primitives/compiled';
 
 import { EmojiText } from '../primitives/EmojiText';
 

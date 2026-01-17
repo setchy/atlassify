@@ -2,7 +2,7 @@ import { type FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@atlaskit/button/new';
-import { Box, Inline, Stack } from '@atlaskit/primitives';
+import { Box, Inline, Stack } from '@atlaskit/primitives/compiled';
 
 import { AppContext } from '../context/App';
 

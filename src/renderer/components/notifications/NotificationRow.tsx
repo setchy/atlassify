@@ -5,7 +5,7 @@ import Avatar, { type AppearanceType } from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
 import { IconButton } from '@atlaskit/button/new';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
-import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 

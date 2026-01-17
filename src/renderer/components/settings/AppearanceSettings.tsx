@@ -2,15 +2,16 @@ import { type FC, useCallback, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
 import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
-import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import { RadioGroup } from '@atlaskit/radio';
 import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
 import Select from '@atlaskit/select';
-import { setGlobalTheme } from '@atlaskit/tokens';
+import { setGlobalTheme, token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
@@ -38,8 +39,10 @@ export const AppearanceSettings: FC = () => {
 
   const { t } = useTranslation();
 
-  const zoomBoxStyles = xcss({
-    backgroundColor: 'color.background.accent.gray.subtlest',
+  const styles = cssMap({
+    zoomBox: {
+      backgroundColor: token('color.background.accent.gray.subtlest'),
+    },
   });
 
   useEffect(() => {
@@ -124,7 +127,7 @@ export const AppearanceSettings: FC = () => {
           <Text id="zoom-label" weight="medium">
             {t('settings.appearance.zoom')}:
           </Text>
-          <Inline xcss={zoomBoxStyles}>
+          <Inline xcss={cx(styles.zoomBox)}>
             <SplitButton spacing="compact">
               <Inline alignBlock="center">
                 <Box paddingInline="space.150">

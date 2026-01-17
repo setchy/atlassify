@@ -9,7 +9,7 @@ import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
 import NotificationIcon from '@atlaskit/icon/core/notification';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
 import SettingsIcon from '@atlaskit/icon/core/settings';
-import { Box, Stack } from '@atlaskit/primitives';
+import { Box, Stack } from '@atlaskit/primitives/compiled';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
 import { token, useThemeObserver } from '@atlaskit/tokens';

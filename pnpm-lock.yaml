@@ -51,6 +51,9 @@ importers:
       '@atlaskit/checkbox':
         specifier: 17.3.1
         version: 17.3.1(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@atlaskit/css':
+        specifier: ^0.19.1
+        version: 0.19.1(@types/react@19.2.8)(react@19.2.3)
       '@atlaskit/css-reset':
         specifier: 7.3.11
         version: 7.3.11(@types/react@19.2.8)(react@19.2.3)

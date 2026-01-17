@@ -20,7 +20,7 @@ import Form, {
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LockLockedIcon from '@atlaskit/icon/core/lock-locked';
 import LogInIcon from '@atlaskit/icon/core/log-in';
-import { Box, Inline } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives/compiled';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
