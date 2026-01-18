@@ -1,13 +1,13 @@
 ---
 import { siteMetadata } from '../constants.ts';
 
-const GTAG_ID = siteMetadata.google.gtag;
-const GTAG_SRC = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`;
+const GTAG_IDS = siteMetadata.google.gtags;
+const GTAG_SRC = `https://www.googletagmanager.com/gtag/js?id=${GTAG_IDS[0]}`;
 ---
 
 <!-- Google tag (gtag.js) -->
 <script async src={GTAG_SRC}></script>
-<script>
+<script define:vars={{ GTAG_IDS }}>
 window.dataLayer = window.dataLayer || [];
 function gtag() {
   // biome-ignore lint/complexity/noArguments: keep arguments object as per gtag.js spec
@@ -15,5 +15,7 @@ function gtag() {
 }
 gtag('js', new Date());
 
-gtag('config', GTAG_ID);
+GTAG_IDS.forEach((gtagId) => {
+  gtag('config', gtagId);
+});
 </script>

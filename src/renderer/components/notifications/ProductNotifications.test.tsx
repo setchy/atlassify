@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
+
 import * as comms from '../../utils/comms';
 import * as theme from '../../utils/theme';
 import {

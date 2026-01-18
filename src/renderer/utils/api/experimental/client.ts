@@ -1,4 +1,6 @@
 import type { Account, CloudID, JiraProjectKey } from '../../../types';
+import type { AtlassianGraphQLResponse } from '../types';
+
 import {
   MarkGroupAsReadDocument,
   type MarkGroupAsReadMutation,
@@ -8,7 +10,6 @@ import {
   type RetrieveJiraProjectTypesQuery,
 } from '../graphql/generated/graphql';
 import { performRequestForAccount } from '../request';
-import type { AtlassianGraphQLResponse } from '../types';
 
 /**
  * TODO the api client functions in this file are all unused due to different "quirks" with behavior. Ideally each of these would be used.

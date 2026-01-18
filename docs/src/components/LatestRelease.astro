@@ -111,8 +111,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
 ---
 
 <div class="text-sm mt-4">
-  {
-    version ? (
+  {version ? (
       <>
         <div class="sm:flex md:grid md:grid-cols-2">
           {downloadLinks.primary.map((item) => (
@@ -158,6 +157,5 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           }}
         />
       </div>
-    )
-  }
+    )}
 </div>

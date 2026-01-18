@@ -11,8 +11,9 @@ import {
   TeamsIcon,
 } from '@atlaskit/logo';
 
-import i18n from '../../i18n';
 import type { AtlassianProduct, ProductType } from '../../types';
+
+import i18n from '../../i18n';
 import { URLs } from '../links';
 
 export const PRODUCTS: Record<ProductType, AtlassianProduct> = {

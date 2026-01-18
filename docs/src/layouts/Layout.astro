@@ -53,15 +53,15 @@ const ogImage = `${siteMetadata.url}/images/social.png`;
     <meta property="og:image" content={ogImage}>
 
     <!-- Google Analytics and Site Verification -->
-    <GoogleAnalytics/>
+    <GoogleAnalytics />
     <meta
       name="google-site-verification"
       content={siteMetadata.google.siteVerification}
     >
   </head>
   <body class="flex flex-col min-h-screen">
-    <Navbar currentPathname={Astro.url.pathname}/>
-    <slot/>
-    <Footer currentPathname={Astro.url.pathname}/>
+    <Navbar currentPathname={Astro.url.pathname} />
+    <slot />
+    <Footer currentPathname={Astro.url.pathname} />
   </body>
 </html>

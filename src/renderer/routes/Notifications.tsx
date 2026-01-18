@@ -1,11 +1,13 @@
 import { type FC, useContext, useMemo } from 'react';
 
+import { AppContext } from '../context/App';
+
 import { AllRead } from '../components/AllRead';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
 import { Oops } from '../components/Oops';
-import { AppContext } from '../context/App';
+
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {

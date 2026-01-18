@@ -16,14 +16,13 @@ const isHomepage = currentPathname === '/';
     >
       <div class="flex items-center shrink-0 text-white mr-6">
         <a href="/" aria-label={siteMetadata.title}>
-          <Icon name="atlassify-white" size={48} class="w-8 sm:w-12"/>
+          <Icon name="atlassify-white" size={48} class="w-8 sm:w-12" />
         </a>
       </div>
 
       <div class="flex justify-end">
         <ul class="flex flex-row items-center list-none space-x-4">
-          {
-            siteMetadata.menuLinks.map((item) => (
+          {siteMetadata.menuLinks.map((item) => (
               <li>
                 <a
                   href={item.path}
@@ -38,11 +37,10 @@ const isHomepage = currentPathname === '/';
                   {item.name}
                 </a>
               </li>
-            ))
-          }
+            ))}
 
           <li>
-            <GitHubRepo/>
+            <GitHubRepo />
           </li>
         </ul>
       </div>

@@ -4,6 +4,7 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
+
 import { removeNotificationsForAccount } from './remove';
 
 describe('renderer/utils/notifications/remove.ts', () => {

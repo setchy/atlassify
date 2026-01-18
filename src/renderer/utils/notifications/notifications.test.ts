@@ -2,6 +2,7 @@ import {
   mockSingleAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
+
 import {
   getNotificationCount,
   hasMoreNotifications,

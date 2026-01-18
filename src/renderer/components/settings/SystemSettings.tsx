@@ -17,7 +17,9 @@ import { APPLICATION } from '../../../shared/constants';
 
 import { AppContext } from '../../context/App';
 import { defaultSettings } from '../../context/defaults';
+
 import { OpenPreference } from '../../types';
+
 import {
   canDecreaseVolume,
   canIncreaseVolume,
@@ -44,6 +46,7 @@ export const SystemSettings: FC = () => {
 
   const volumeBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
+
     visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
   });
 
@@ -73,8 +76,11 @@ export const SystemSettings: FC = () => {
           isChecked={settings.keyboardShortcutEnabled}
           label={t('settings.system.keyboard_shortcut')}
           name="keyboardShortcutEnabled"
-          onChange={(evt) =>
-            updateSetting('keyboardShortcutEnabled', evt.target.checked)
+          onChange={() =>
+            updateSetting(
+              'keyboardShortcutEnabled',
+              !settings.keyboardShortcutEnabled,
+            )
           }
         />
         <InlineMessage appearance="info">
@@ -92,8 +98,11 @@ export const SystemSettings: FC = () => {
           isChecked={settings.showSystemNotifications}
           label={t('settings.system.system_notifications')}
           name="showNotifications"
-          onChange={(evt) =>
-            updateSetting('showSystemNotifications', evt.target.checked)
+          onChange={() =>
+            updateSetting(
+              'showSystemNotifications',
+              !settings.showSystemNotifications,
+            )
           }
         />
         <InlineMessage appearance="info">
@@ -108,8 +117,11 @@ export const SystemSettings: FC = () => {
           isChecked={settings.playSoundNewNotifications}
           label={t('settings.system.play_sound')}
           name="playSoundNewNotifications"
-          onChange={(evt) =>
-            updateSetting('playSoundNewNotifications', evt.target.checked)
+          onChange={() =>
+            updateSetting(
+              'playSoundNewNotifications',
+              !settings.playSoundNewNotifications,
+            )
           }
         />
         <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
@@ -185,8 +197,8 @@ export const SystemSettings: FC = () => {
             isChecked={settings.openAtStartup}
             label={t('settings.system.startup')}
             name="openAtStartUp"
-            onChange={(evt) =>
-              updateSetting('openAtStartup', evt.target.checked)
+            onChange={() =>
+              updateSetting('openAtStartup', !settings.openAtStartup)
             }
           />
           <InlineMessage appearance="info">

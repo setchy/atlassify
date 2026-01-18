@@ -10,12 +10,15 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { AppContext } from '../context/App';
+
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
-import { AppContext } from '../context/App';
+
 import type { Account } from '../types';
+
 import { refreshAccount } from '../utils/auth/utils';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
@@ -38,7 +41,12 @@ export const AccountsRoute: FC = () => {
   }, []);
 
   const boxStyles = xcss({
+    backgroundColor: isLightMode()
+      ? 'color.background.accent.blue.subtlest'
+      : 'color.background.accent.gray.subtlest',
+
     borderRadius: 'radius.large',
+
     marginInline: 'space.250',
   });
 
@@ -49,16 +57,7 @@ export const AccountsRoute: FC = () => {
       <Contents>
         {auth.accounts.map((account) => {
           return (
-            <Box
-              backgroundColor={
-                isLightMode()
-                  ? 'color.background.accent.blue.subtlest'
-                  : 'color.background.accent.gray.subtlest'
-              }
-              key={account.id}
-              padding="space.150"
-              xcss={boxStyles}
-            >
+            <Box key={account.id} padding="space.150" xcss={boxStyles}>
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem

@@ -1,4 +1,5 @@
 import { renderWithAppContext } from '../../__helpers__/test-utils';
+
 import { AtlassifyIcon } from './AtlassifyIcon';
 
 describe('renderer/components/icons/AtlassifyIconBlue.tsx', () => {

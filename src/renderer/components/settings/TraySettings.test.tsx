@@ -2,6 +2,7 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
+
 import { TraySettings } from './TraySettings';
 
 describe('renderer/components/settings/TraySettings.tsx', () => {
@@ -25,6 +26,24 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
     expect(updateSettingMock).toHaveBeenCalledTimes(1);
     expect(updateSettingMock).toHaveBeenCalledWith(
       'showNotificationsCountInTray',
+      false,
+    );
+  });
+
+  it('should toggle the useUnreadActiveIcon checkbox', async () => {
+    await act(async () => {
+      renderWithAppContext(<TraySettings />, {
+        updateSetting: updateSettingMock,
+      });
+    });
+
+    await userEvent.click(
+      screen.getByLabelText('Highlight unread notifications'),
+    );
+
+    expect(updateSettingMock).toHaveBeenCalledTimes(1);
+    expect(updateSettingMock).toHaveBeenCalledWith(
+      'useUnreadActiveIcon',
       false,
     );
   });

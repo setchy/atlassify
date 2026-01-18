@@ -1,4 +1,5 @@
 import { Constants } from '../../constants';
+
 import type {
   Account,
   CloudID,
@@ -8,6 +9,12 @@ import type {
   Token,
   Username,
 } from '../../types';
+import type {
+  AtlassianGraphQLResponse,
+  JiraProjectRestResponse,
+  JiraProjectType,
+} from './types';
+
 import {
   InfluentsNotificationReadState,
   MarkAsReadDocument,
@@ -28,11 +35,6 @@ import {
   performRequestForAccount,
   performRequestForCredentials,
 } from './request';
-import type {
-  AtlassianGraphQLResponse,
-  JiraProjectRestResponse,
-  JiraProjectType,
-} from './types';
 
 /**
  * Check if provided credentials (username and token) are valid.
@@ -157,8 +159,8 @@ export async function getJiraProjectTypeByKey(
   const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/project/${projectKey}`;
 
   const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
-    account,
     url,
+    account,
   );
 
   return response.projectTypeKey;

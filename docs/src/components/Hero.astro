@@ -14,7 +14,12 @@ import logo from '~/icons/atlassify-blue.svg';
   >
     <div class="flex flex-col justify-center grow">
       <!-- FIXME: For some reason using <Icon /> didn't render correct colors in Google Chrome -->
-      <Image width="48" height="48" src={logo} alt="Atlassify - Notifications"/>
+      <Image
+        width="48"
+        height="48"
+        src={logo}
+        alt="Atlassify - Notifications"
+      />
 
       <h1 class="text-2xl lg:text-4xl font-semibold">{siteMetadata.title}</h1>
 
@@ -22,7 +27,7 @@ import logo from '~/icons/atlassify-blue.svg';
         {siteMetadata.description}.
       </h2>
 
-      <LatestRelease/>
+      <LatestRelease />
     </div>
 
     <div class="motion-preset-pop motion-rotate-in-[-30deg]">

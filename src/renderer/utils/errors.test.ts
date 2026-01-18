@@ -1,5 +1,7 @@
 import { createMockAccountWithError } from '../__mocks__/account-mocks';
+
 import type { AccountNotifications } from '../types';
+
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,

@@ -6,7 +6,9 @@ import {
   mockAtlassifyNotifications,
   mockSingleAtlassifyNotification,
 } from '../__mocks__/notifications-mocks';
+
 import type { Link } from '../types';
+
 import {
   blockAlignmentByLength,
   extractRepositoryName,

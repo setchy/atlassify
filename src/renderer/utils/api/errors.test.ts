@@ -2,9 +2,10 @@ import { AxiosError, type AxiosResponse } from 'axios';
 
 import { EVENTS } from '../../../shared/events';
 
+import type { AtlassianAPIError } from './types';
+
 import { Errors } from '../errors';
 import { determineFailureType } from './errors';
-import type { AtlassianAPIError } from './types';
 
 describe('renderer/utils/api/errors.ts', () => {
   describe('bad credentials errors', () => {

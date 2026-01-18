@@ -1,6 +1,8 @@
 import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
+
 import type { AtlassifyNotification } from '../../types';
+
 import {
   getFlattenedNotificationsByProduct,
   groupNotificationsByProduct,

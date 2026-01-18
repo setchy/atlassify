@@ -19,9 +19,11 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { AppContext } from '../context/App';
+
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';
-import { AppContext } from '../context/App';
+
 import { showWindow } from '../utils/comms';
 
 export const LandingRoute: FC = () => {

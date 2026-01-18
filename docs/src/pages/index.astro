@@ -11,7 +11,7 @@ import SectionRow from '~/layouts/SectionRow.astro';
 
 <Layout title={siteMetadata.description}>
   <main>
-    <Hero/>
+    <Hero />
 
     <SectionRow
       title="All your Atlassian notifications, right on your desktop."
@@ -58,8 +58,7 @@ import SectionRow from '~/layouts/SectionRow.astro';
       description="<p>Atlassify is built with TypeScript, Electron, React, Tailwind CSS, and other open-source libraries.</p>"
     >
       <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
-        {
-          openSourceLibs.map((item) => (
+        {openSourceLibs.map((item) => (
             <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
               <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <Icon
@@ -70,8 +69,7 @@ import SectionRow from '~/layouts/SectionRow.astro';
                 />
               </a>
             </div>
-          ))
-        }
+          ))}
       </div>
     </SectionRow>
   </main>

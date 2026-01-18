@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
   "files": {
     "includes": ["**", "!**/docs/**/*", "!**/generated/**/*"]
   },
@@ -20,7 +20,22 @@
               ":BLANK_LINE:",
               ":PACKAGE:",
               ":BLANK_LINE:",
+              ["**/__mocks__/**", "**/__helpers__/**"],
+              ":BLANK_LINE:",
               "**/shared/**",
+              ":BLANK_LINE:",
+              ["**/constants", "**/constants/**"],
+              ":BLANK_LINE:",
+              ["**/context/**", "**/hooks/**", "**/routes/**"],
+              ":BLANK_LINE:",
+              [
+                "**/layout/**",
+                "**/components/**",
+                "**/fields/**",
+                "**/primitives/**"
+              ],
+              ":BLANK_LINE:",
+              "**/types",
               ":BLANK_LINE:",
               "**"
             ]

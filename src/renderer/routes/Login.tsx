@@ -24,14 +24,17 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
+import { AppContext } from '../context/App';
+
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
-import { AppContext } from '../context/App';
+
 import type { Token, Username } from '../types';
-import { checkIfCredentialsAreValid } from '../utils/api/client';
 import type { LoginOptions } from '../utils/auth/types';
+
+import { checkIfCredentialsAreValid } from '../utils/api/client';
 import { hasUsernameAlready } from '../utils/auth/utils';
 import {
   openAtlassianCreateToken,

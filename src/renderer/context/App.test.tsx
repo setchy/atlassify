@@ -4,9 +4,13 @@ import { useContext } from 'react';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
+
 import { Constants } from '../constants';
+
 import { useNotifications } from '../hooks/useNotifications';
+
 import type { AuthState, SettingsState } from '../types';
+
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { AppContext, type AppContextState, AppProvider } from './App';

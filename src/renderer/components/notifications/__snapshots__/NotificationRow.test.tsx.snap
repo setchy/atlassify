@@ -99,13 +99,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           some-project improved a scorecard
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -150,7 +150,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </span>
                               </div>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -198,7 +198,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 Compass
                               </span>
@@ -212,7 +212,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 +
                                 2
@@ -236,7 +236,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -371,13 +371,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         some-project improved a scorecard
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -422,7 +422,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </span>
                             </div>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -470,7 +470,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               Compass
                             </span>
@@ -484,7 +484,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               +
                               2
@@ -508,7 +508,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -700,13 +700,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -751,7 +751,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </span>
                               </div>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -793,7 +793,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 myorg/notifications-test
                               </span>
@@ -818,7 +818,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -953,13 +953,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -1004,7 +1004,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </span>
                             </div>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -1046,7 +1046,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               myorg/notifications-test
                             </span>
@@ -1071,7 +1071,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -1263,13 +1263,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -1314,7 +1314,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </span>
                               </div>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -1356,7 +1356,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 myorg/notifications-test
                               </span>
@@ -1395,29 +1395,21 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         >
                                           <span
                                             aria-hidden="true"
-                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
-                                            data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
+                                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                                            style="color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
-                                              height="24"
+                                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                                              fill="none"
                                               role="presentation"
-                                              viewBox="0 0 24 24"
-                                              width="24"
+                                              viewBox="-4 -4 24 24"
                                             >
-                                              <g
+                                              <path
+                                                clip-rule="evenodd"
+                                                d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
                                                 fill="currentcolor"
                                                 fill-rule="evenodd"
-                                              >
-                                                <path
-                                                  d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                                                />
-                                                <circle
-                                                  cx="12"
-                                                  cy="7"
-                                                  r="4"
-                                                />
-                                              </g>
+                                              />
                                             </svg>
                                           </span>
                                         </span>
@@ -1446,29 +1438,21 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         >
                                           <span
                                             aria-hidden="true"
-                                            class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
-                                            data-vc="icon-undefined"
-                                            style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
+                                            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                                            style="color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
-                                              height="24"
+                                              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                                              fill="none"
                                               role="presentation"
-                                              viewBox="0 0 24 24"
-                                              width="24"
+                                              viewBox="-4 -4 24 24"
                                             >
-                                              <g
+                                              <path
+                                                clip-rule="evenodd"
+                                                d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
                                                 fill="currentcolor"
                                                 fill-rule="evenodd"
-                                              >
-                                                <path
-                                                  d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                                                />
-                                                <circle
-                                                  cx="12"
-                                                  cy="7"
-                                                  r="4"
-                                                />
-                                              </g>
+                                              />
                                             </svg>
                                           </span>
                                         </span>
@@ -1478,7 +1462,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </li>
                               </ul>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 +
                                 2
@@ -1503,7 +1487,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -1638,13 +1622,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -1689,7 +1673,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </span>
                             </div>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -1731,7 +1715,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               myorg/notifications-test
                             </span>
@@ -1770,29 +1754,21 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       >
                                         <span
                                           aria-hidden="true"
-                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
-                                          data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
+                                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                                          style="color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
-                                            height="24"
+                                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                                            fill="none"
                                             role="presentation"
-                                            viewBox="0 0 24 24"
-                                            width="24"
+                                            viewBox="-4 -4 24 24"
                                           >
-                                            <g
+                                            <path
+                                              clip-rule="evenodd"
+                                              d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
                                               fill="currentcolor"
                                               fill-rule="evenodd"
-                                            >
-                                              <path
-                                                d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                                              />
-                                              <circle
-                                                cx="12"
-                                                cy="7"
-                                                r="4"
-                                              />
-                                            </g>
+                                            />
                                           </svg>
                                         </span>
                                       </span>
@@ -1821,29 +1797,21 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                       >
                                         <span
                                           aria-hidden="true"
-                                          class="_1e0c1o8l _1o9zidpf _vyfuvuon _vwz4kb7n _1szv15vq _1tly15vq _rzyw1osq _17jb1osq _1ksvoz0e _3se1x1jp _re2rglyw _1veoyfq0 _1kg81r31 _jcxd1r8n _gq0g1onz _1trkwc43 _18hbwc43"
-                                          data-vc="icon-undefined"
-                                          style="--icon-primary-color: var(--ds-icon-subtle, #505258); --icon-secondary-color: var(--ds-icon-subtle, #505258);"
+                                          class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                                          style="color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
-                                            height="24"
+                                            class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                                            fill="none"
                                             role="presentation"
-                                            viewBox="0 0 24 24"
-                                            width="24"
+                                            viewBox="-4 -4 24 24"
                                           >
-                                            <g
+                                            <path
+                                              clip-rule="evenodd"
+                                              d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
                                               fill="currentcolor"
                                               fill-rule="evenodd"
-                                            >
-                                              <path
-                                                d="M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0z"
-                                              />
-                                              <circle
-                                                cx="12"
-                                                cy="7"
-                                                r="4"
-                                              />
-                                            </g>
+                                            />
                                           </svg>
                                         </span>
                                       </span>
@@ -1853,7 +1821,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </li>
                             </ul>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               +
                               2
@@ -1878,7 +1846,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -2070,13 +2038,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -2121,7 +2089,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </span>
                               </div>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -2163,7 +2131,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 myorg/notifications-test
                               </span>
@@ -2177,7 +2145,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 +
                                 2
@@ -2201,7 +2169,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -2336,13 +2304,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -2387,7 +2355,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </span>
                             </div>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -2429,7 +2397,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               myorg/notifications-test
                             </span>
@@ -2443,7 +2411,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               +
                               2
@@ -2467,7 +2435,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -2659,13 +2627,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -2713,7 +2681,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -2755,7 +2723,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 myorg/notifications-test
                               </span>
@@ -2769,7 +2737,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 +
                                 2
@@ -2793,7 +2761,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -2928,13 +2896,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -2982,7 +2950,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -3024,7 +2992,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               myorg/notifications-test
                             </span>
@@ -3038,7 +3006,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               +
                               2
@@ -3062,7 +3030,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -3254,13 +3222,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                         id="notification-title"
                       >
                         <span
-                          class="css-bc6vhz"
+                          class="css-mig7xw"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1wofv2j"
+                          class="css-1jnhete"
                         >
                           3 years ago
                         </em>
@@ -3305,7 +3273,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                 </span>
                               </div>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -3347,7 +3315,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                               </span>
                               <span
-                                class="css-1re4vvb"
+                                class="css-lk4q1e"
                               >
                                 myorg/notifications-test
                               </span>
@@ -3372,7 +3340,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                 role="presentation"
               >
                 <button
-                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                   data-testid="notification-mark-as-read"
                   type="button"
                 >
@@ -3507,13 +3475,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                       id="notification-title"
                     >
                       <span
-                        class="css-bc6vhz"
+                        class="css-mig7xw"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1wofv2j"
+                        class="css-1jnhete"
                       >
                         3 years ago
                       </em>
@@ -3558,7 +3526,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                               </span>
                             </div>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -3600,7 +3568,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 
                             </span>
                             <span
-                              class="css-1re4vvb"
+                              class="css-lk4q1e"
                             >
                               myorg/notifications-test
                             </span>
@@ -3625,7 +3593,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
               role="presentation"
             >
               <button
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c82smr _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >

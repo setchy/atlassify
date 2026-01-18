@@ -8,6 +8,7 @@ import type {
   AtlassifyState,
   Status,
 } from '../types';
+
 import {
   getNotificationsByGroupId,
   markNotificationsAsRead,

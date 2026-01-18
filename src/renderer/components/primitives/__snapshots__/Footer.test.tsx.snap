@@ -6,7 +6,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="css-156yo0n"
+        class="css-145qftn"
       >
         <div
           class="css-11bvkc9"
@@ -18,7 +18,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="css-156yo0n"
+      class="css-145qftn"
     >
       <div
         class="css-11bvkc9"
@@ -87,7 +87,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
   "baseElement": <body>
     <div>
       <div
-        class="css-156yo0n"
+        class="css-145qftn"
       >
         <div
           class="css-1fxbet0"
@@ -99,7 +99,7 @@ exports[`renderer/components/primitives/Footer.tsx should render itself & its ch
   </body>,
   "container": <div>
     <div
-      class="css-156yo0n"
+      class="css-145qftn"
     >
       <div
         class="css-1fxbet0"
