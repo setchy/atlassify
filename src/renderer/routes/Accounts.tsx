@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import LogOutIcon from '@atlaskit/icon/core/log-out';
 import PersonAddIcon from '@atlaskit/icon/core/person-add';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
-import { Box, Inline, xcss } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { AppContext } from '../context/App';
@@ -40,14 +42,11 @@ export const AccountsRoute: FC = () => {
     return navigate('/login', { replace: true });
   }, []);
 
-  const boxStyles = xcss({
-    backgroundColor: isLightMode()
-      ? 'color.background.accent.blue.subtlest'
-      : 'color.background.accent.gray.subtlest',
-
-    borderRadius: 'radius.large',
-
-    marginInline: 'space.250',
+  const styles = cssMap({
+    box: {
+      borderRadius: token('radius.large'),
+      marginInline: token('space.250'),
+    },
   });
 
   return (
@@ -57,7 +56,16 @@ export const AccountsRoute: FC = () => {
       <Contents>
         {auth.accounts.map((account) => {
           return (
-            <Box key={account.id} padding="space.150" xcss={boxStyles}>
+            <Box
+              backgroundColor={
+                isLightMode()
+                  ? 'color.background.accent.blue.subtlest'
+                  : 'color.background.accent.gray.subtlest'
+              }
+              key={account.id}
+              padding="space.150"
+              xcss={cx(styles.box)}
+            >
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem

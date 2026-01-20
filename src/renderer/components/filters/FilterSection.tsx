@@ -4,7 +4,7 @@ import Badge from '@atlaskit/badge';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { IconTile } from '@atlaskit/icon';
-import { Box, Inline, Stack } from '@atlaskit/primitives';
+import { Box, Inline, Stack } from '@atlaskit/primitives/compiled';
 
 import { AppContext } from '../../context/App';
 

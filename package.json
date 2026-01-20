@@ -71,6 +71,7 @@
     "@atlaskit/badge": "18.3.3",
     "@atlaskit/button": "23.9.4",
     "@atlaskit/checkbox": "17.3.1",
+    "@atlaskit/css": "^0.19.1",
     "@atlaskit/css-reset": "7.3.11",
     "@atlaskit/form": "15.3.1",
     "@atlaskit/heading": "5.2.19",
