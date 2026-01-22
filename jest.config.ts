@@ -4,7 +4,7 @@ const config: Config = {
   preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/src/renderer/__helpers__/jest.setup.ts'],
   testEnvironment: 'jsdom',
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: ['src/**/*', '!**/__snapshots__/**'],
   moduleNameMapper: {
     // Force CommonJS build for http adapter to be available.
