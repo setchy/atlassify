@@ -28,7 +28,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
   const { t } = useTranslation();
 
-  const [shouldAnimateRepositoryExit, setShouldAnimateRepositoryExit] =
+  const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);
   const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
@@ -42,7 +42,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateRepositoryExit(shouldAnimateExit);
+    setShouldAnimateProductExit(shouldAnimateExit);
     markNotificationsRead(productNotifications);
   };
 
@@ -156,7 +156,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       {isProductNotificationsVisible &&
         productNotifications.map((notification) => (
           <NotificationRow
-            isProductAnimatingExit={shouldAnimateRepositoryExit}
+            isProductAnimatingExit={shouldAnimateProductExit}
             key={notification.id}
             notification={notification}
           />
