@@ -40,6 +40,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
         result.current.fetchNotifications(mockState);
       });
 
+      expect(result.current.status).toBe('loading');
+
       await waitFor(() => {
         expect(result.current.status).toBe('success');
       });
@@ -82,6 +84,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
         result.current.fetchNotifications(mockState);
       });
 
+      expect(result.current.status).toBe('loading');
+
       await waitFor(() => {
         expect(result.current.status).toBe('success');
       });
@@ -116,6 +120,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
       act(() => {
         result.current.fetchNotifications(mockState);
       });
+
+      expect(result.current.status).toBe('loading');
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
