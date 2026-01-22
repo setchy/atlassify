@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useContext, useState } from 'react';
+import { type FC, type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
@@ -7,7 +7,7 @@ import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
@@ -23,7 +23,8 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead, settings } = useContext(AppContext);
+  const { markNotificationsRead, settings } = useAppContext();
+
   const { t } = useTranslation();
 
   const [animateExit, setAnimateExit] = useState(false);

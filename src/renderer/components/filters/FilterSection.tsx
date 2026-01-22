@@ -1,12 +1,10 @@
-import { useContext } from 'react';
-
 import Badge from '@atlaskit/badge';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 
@@ -25,7 +23,7 @@ export const FilterSection = <T extends FilterSettingsValue>({
   filter,
   filterSetting,
 }: FilterSectionProps<T>) => {
-  const { updateFilter, settings, notifications } = useContext(AppContext);
+  const { updateFilter, settings, notifications } = useAppContext();
 
   return (
     <Stack space="space.050">

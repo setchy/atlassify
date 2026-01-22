@@ -3,7 +3,6 @@ import {
   type FC,
   Fragment,
   useCallback,
-  useContext,
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +23,7 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
+import { useAppContext } from '../hooks/useAppContext';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -48,9 +47,12 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
-  const { t } = useTranslation();
-  const { login, auth } = useContext(AppContext);
   const navigate = useNavigate();
+
+  const { login, auth } = useAppContext();
+
+  const { t } = useTranslation();
+
   const [isValidCredentials, setIsValidCredentials] = useState<boolean>(true);
   const [isDuplicateUsername, setIsDuplicateUsername] =
     useState<boolean>(false);

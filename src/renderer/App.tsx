@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import {
   Navigate,
   Route,
@@ -7,7 +6,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { AppContext, AppProvider } from './context/App';
+import { AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';
@@ -17,11 +16,13 @@ import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
 
+import { useAppContext } from './hooks/useAppContext';
+
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 
 function RequireAuth({ children }) {
-  const { isLoggedIn } = useContext(AppContext);
+  const { isLoggedIn } = useAppContext();
   const location = useLocation();
 
   return isLoggedIn ? (

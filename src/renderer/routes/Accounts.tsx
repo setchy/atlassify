@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext } from 'react';
+import { type FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
+import { useAppContext } from '../hooks/useAppContext';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -24,8 +24,10 @@ import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
-  const { auth, logoutFromAccount } = useContext(AppContext);
   const navigate = useNavigate();
+
+  const { auth, logoutFromAccount } = useAppContext();
+
   const { t } = useTranslation();
 
   const logoutAccount = useCallback(

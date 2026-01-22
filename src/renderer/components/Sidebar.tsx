@@ -1,4 +1,4 @@
-import { type FC, Fragment, useContext } from 'react';
+import { type FC, Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -17,15 +17,13 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../shared/constants';
 
-import { AppContext } from '../context/App';
+import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
 
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
-  const { t } = useTranslation();
-
   const {
     isLoggedIn,
     settings,
@@ -33,7 +31,9 @@ export const Sidebar: FC = () => {
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
-  } = useContext(AppContext);
+  } = useAppContext();
+
+  const { t } = useTranslation();
 
   const { shortcuts } = useShortcutActions();
 

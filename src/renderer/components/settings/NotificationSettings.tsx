@@ -1,4 +1,4 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
@@ -8,10 +8,11 @@ import { Inline, Stack } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 export const NotificationSettings: FC = () => {
-  const { settings, updateSetting } = useContext(AppContext);
+  const { settings, updateSetting } = useAppContext();
+
   const { t } = useTranslation();
 
   return (

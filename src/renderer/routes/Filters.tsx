@@ -1,10 +1,10 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
-import { AppContext } from '../context/App';
+import { useAppContext } from '../hooks/useAppContext';
 
 import { FilterSection } from '../components/filters/FilterSection';
 import { Contents } from '../components/layout/Contents';
@@ -21,7 +21,7 @@ import {
 } from '../utils/notifications/filters';
 
 export const FiltersRoute: FC = () => {
-  const { clearFilters } = useContext(AppContext);
+  const { clearFilters } = useAppContext();
 
   const { t } = useTranslation();
 

@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -14,7 +14,7 @@ import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 const gridStyles = xcss({
   width: '100%',
@@ -30,7 +30,7 @@ const titleContainerStyles = xcss({
 
 export const SettingsReset: FC = () => {
   const { t } = useTranslation();
-  const { resetSettings } = useContext(AppContext);
+  const { resetSettings } = useAppContext();
   const [isOpen, setIsOpen] = useState(false);
   const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
