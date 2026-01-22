@@ -5,92 +5,142 @@ import {
 } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 
-import { removeNotificationsForAccount } from './remove';
+import type { SettingsState } from '../../types';
+
+import {
+  removeNotificationsForAccount,
+  shouldRemoveNotificationsFromState,
+} from './remove';
 
 describe('renderer/utils/notifications/remove.ts', () => {
-  it('should remove a notification if it exists', () => {
-    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+  describe('shouldRemoveNotificationsFromState', () => {
+    it.each([
+      {
+        delayNotificationState: false,
+        fetchOnlyUnreadNotifications: false,
+        expected: false,
+        description:
+          'both delayNotificationState and fetchOnlyUnreadNotifications are false',
+      },
+      {
+        delayNotificationState: true,
+        fetchOnlyUnreadNotifications: false,
+        expected: false,
+        description: 'delayNotificationsState is true',
+      },
+      {
+        delayNotificationState: false,
+        fetchOnlyUnreadNotifications: true,
+        expected: true,
+        description: 'fetchOnlyUnreadNotifications is true',
+      },
+      {
+        delayNotificationState: true,
+        fetchOnlyUnreadNotifications: true,
+        expected: false,
+        description:
+          'both delayNotificationState and fetchOnlyUnreadNotifications are true',
+      },
+    ])('should return $expected when $description', ({
+      delayNotificationState,
+      fetchOnlyUnreadNotifications,
+      expected,
+    }) => {
+      const settings: SettingsState = {
+        ...mockSettings,
+        delayNotificationState,
+        fetchOnlyUnreadNotifications,
+      };
 
-    const result = removeNotificationsForAccount(
-      mockSingleAccountNotifications[0].account,
-      { ...mockSettings, delayNotificationState: false },
-      [mockSingleAtlassifyNotification],
-      mockSingleAccountNotifications,
-    );
-
-    expect(result[0].notifications.length).toBe(0);
+      expect(shouldRemoveNotificationsFromState(settings)).toBe(expected);
+    });
   });
 
-  it('should mark as read and skip notification removal if delay state enabled', () => {
-    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+  describe('removeNotificationsForAccount', () => {
+    it('should remove a notification if it exists', () => {
+      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
-    const result = removeNotificationsForAccount(
-      mockSingleAccountNotifications[0].account,
-      { ...mockSettings, delayNotificationState: true },
-      [mockSingleAtlassifyNotification],
-      mockSingleAccountNotifications,
-    );
+      const result = removeNotificationsForAccount(
+        mockSingleAccountNotifications[0].account,
+        { ...mockSettings, delayNotificationState: false },
+        [mockSingleAtlassifyNotification],
+        mockSingleAccountNotifications,
+      );
 
-    expect(result[0].notifications.length).toBe(1);
-    expect(result[0].notifications[0].readState).toBe('read');
-  });
+      expect(result[0].notifications.length).toBe(0);
+    });
 
-  it('should skip notification removal if delay state enabled and nothing to remove', () => {
-    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+    it('should mark as read and skip notification removal if delay state enabled', () => {
+      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
-    const result = removeNotificationsForAccount(
-      mockSingleAccountNotifications[0].account,
-      { ...mockSettings, delayNotificationState: true },
-      [
-        {
-          ...mockSingleAtlassifyNotification,
-          id: 'non-existent-id',
-        },
-      ],
-      mockSingleAccountNotifications,
-    );
+      const result = removeNotificationsForAccount(
+        mockSingleAccountNotifications[0].account,
+        { ...mockSettings, delayNotificationState: true },
+        [mockSingleAtlassifyNotification],
+        mockSingleAccountNotifications,
+      );
 
-    expect(result[0].notifications.length).toBe(1);
-    expect(result[0].notifications[0].readState).toBe('unread');
-  });
+      expect(result[0].notifications.length).toBe(1);
+      expect(result[0].notifications[0].readState).toBe('read');
+    });
 
-  it('should skip notification removal if nothing to remove', () => {
-    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+    it('should skip notification removal if delay state enabled and nothing to remove', () => {
+      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
-    const result = removeNotificationsForAccount(
-      mockSingleAccountNotifications[0].account,
-      { ...mockSettings },
-      [],
-      mockSingleAccountNotifications,
-    );
-
-    expect(result[0].notifications.length).toBe(1);
-    expect(result[0].notifications[0]).toBe(
-      mockSingleAccountNotifications[0].notifications[0],
-    );
-  });
-
-  it('should skip notification removal if no matching accounts found', () => {
-    expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
-
-    const result = removeNotificationsForAccount(
-      mockAtlassianCloudAccountTwo,
-      { ...mockSettings },
-      [
-        {
-          ...mockSingleAtlassifyNotification,
-          account: {
-            ...mockSingleAtlassifyNotification.account,
-            id: 'some-unknown-account',
+      const result = removeNotificationsForAccount(
+        mockSingleAccountNotifications[0].account,
+        { ...mockSettings, delayNotificationState: true },
+        [
+          {
+            ...mockSingleAtlassifyNotification,
+            id: 'non-existent-id',
           },
-        },
-      ],
-      mockSingleAccountNotifications,
-    );
+        ],
+        mockSingleAccountNotifications,
+      );
 
-    expect(result[0].notifications.length).toBe(1);
-    expect(result[0].notifications[0]).toBe(
-      mockSingleAccountNotifications[0].notifications[0],
-    );
+      expect(result[0].notifications.length).toBe(1);
+      expect(result[0].notifications[0].readState).toBe('unread');
+    });
+
+    it('should skip notification removal if nothing to remove', () => {
+      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+
+      const result = removeNotificationsForAccount(
+        mockSingleAccountNotifications[0].account,
+        { ...mockSettings },
+        [],
+        mockSingleAccountNotifications,
+      );
+
+      expect(result[0].notifications.length).toBe(1);
+      expect(result[0].notifications[0]).toBe(
+        mockSingleAccountNotifications[0].notifications[0],
+      );
+    });
+
+    it('should skip notification removal if no matching accounts found', () => {
+      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
+
+      const result = removeNotificationsForAccount(
+        mockAtlassianCloudAccountTwo,
+        { ...mockSettings },
+        [
+          {
+            ...mockSingleAtlassifyNotification,
+            account: {
+              ...mockSingleAtlassifyNotification.account,
+              id: 'some-unknown-account',
+            },
+          },
+        ],
+        mockSingleAccountNotifications,
+      );
+
+      expect(result[0].notifications.length).toBe(1);
+      expect(result[0].notifications[0]).toBe(
+        mockSingleAccountNotifications[0].notifications[0],
+      );
+    });
   });
 });

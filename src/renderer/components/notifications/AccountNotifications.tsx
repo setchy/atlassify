@@ -240,6 +240,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               )
             : sortedNotifications.map((notification) => (
                 <NotificationRow
+                  isProductAnimatingExit={false}
                   key={notification.id}
                   notification={notification}
                 />

@@ -22,7 +22,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
     await act(async () => {
       renderWithAppContext(
         <MemoryRouter initialEntries={['/settings']}>
-          <SettingsFooter />{' '}
+          <SettingsFooter />
         </MemoryRouter>,
       );
     });
