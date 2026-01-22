@@ -53,9 +53,8 @@ export const LoginRoute: FC = () => {
 
   const { t } = useTranslation();
 
-  const [isValidCredentials, setIsValidCredentials] = useState<boolean>(true);
-  const [isDuplicateUsername, setIsDuplicateUsername] =
-    useState<boolean>(false);
+  const [isValidCredentials, setIsValidCredentials] = useState(true);
+  const [isDuplicateUsername, setIsDuplicateUsername] = useState(false);
 
   const loginUser = useCallback(
     async (data: LoginProps) => {

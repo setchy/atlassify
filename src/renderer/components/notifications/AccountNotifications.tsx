@@ -1,11 +1,4 @@
-import {
-  type FC,
-  Fragment,
-  type MouseEvent,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
+import { type FC, Fragment, type MouseEvent, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
@@ -59,12 +52,20 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
   const { t } = useTranslation();
 
-  const [showAccountNotifications, setShowAccountNotifications] =
+  const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
     useState(true);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = useCallback(() => setIsOpen(true), []);
-  const closeModal = useCallback(() => setIsOpen(false), []);
+  const [showMarkAccountAsReadModal, setShowMarkAccountAsReadModal] =
+    useState(false);
+
+  const actionOpenMarkAccountAsReadModal = () => {
+    setShowMarkAccountAsReadModal(true);
+  };
+
+  const actionCloseMarkAccountAsReadModal = () => {
+    setShowMarkAccountAsReadModal(false);
+  };
+
   const gridStyles = xcss({
     width: '100%',
   });
@@ -94,8 +95,8 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     return notifications;
   }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
-  const toggleAccountNotifications = () => {
-    setShowAccountNotifications(!showAccountNotifications);
+  const actionToggleAccountNotifications = () => {
+    setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
   };
 
   const hasNotifications = useMemo(
@@ -105,7 +106,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
   const Chevron = getChevronDetails(
     hasNotifications,
-    showAccountNotifications,
+    isAccountNotificationsVisible,
     'account',
   );
   const ChevronIcon = Chevron.icon;
@@ -130,7 +131,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     <Stack>
       <Box
         as="div"
-        onClick={toggleAccountNotifications}
+        onClick={actionToggleAccountNotifications}
         paddingBlock="space.050"
         paddingInline="space.100"
         xcss={boxStyles}
@@ -200,7 +201,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 label={t('notifications.account.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   event.stopPropagation();
-                  openModal();
+                  actionOpenMarkAccountAsReadModal();
                 }}
                 shape="circle"
                 spacing="compact"
@@ -223,7 +224,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         </Flex>
       </Box>
 
-      {showAccountNotifications && (
+      {isAccountNotificationsVisible && (
         <Fragment>
           {props.error && <Oops error={props.error} />}
 
@@ -249,8 +250,8 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
       )}
 
       <ModalTransition>
-        {isOpen && (
-          <Modal onClose={() => closeModal()}>
+        {showMarkAccountAsReadModal && (
+          <Modal onClose={actionCloseMarkAccountAsReadModal}>
             <ModalHeader>
               <Grid
                 gap="space.200"
@@ -262,7 +263,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                     appearance="subtle"
                     icon={CrossIcon}
                     label={t('common.close')}
-                    onClick={() => closeModal()}
+                    onClick={actionCloseMarkAccountAsReadModal}
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
@@ -285,7 +286,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             <ModalFooter>
               <Button
                 appearance="subtle"
-                onClick={() => closeModal()}
+                onClick={actionCloseMarkAccountAsReadModal}
                 testId="account-mark-as-read-cancel"
               >
                 {t('common.cancel')}
@@ -294,7 +295,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 appearance="warning"
                 onClick={() => {
                   markNotificationsRead(notifications);
-                  closeModal();
+                  actionCloseMarkAccountAsReadModal();
                 }}
                 testId="account-mark-as-read-confirm"
               >
