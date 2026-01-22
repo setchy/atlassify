@@ -14,40 +14,50 @@ import {
 
 describe('renderer/utils/notifications/remove.ts', () => {
   describe('shouldRemoveNotificationsFromState', () => {
-    it('should return true when both delayNotificationState and fetchOnlyUnreadNotifications are false', () => {
-      const settings: SettingsState = {
-        ...mockSettings,
+    it.each([
+      {
         delayNotificationState: false,
         fetchOnlyUnreadNotifications: false,
-      };
-      expect(shouldRemoveNotificationsFromState(settings)).toBe(true);
-    });
-
-    it('should return false when delayNotificationState is true', () => {
-      const settings: SettingsState = {
-        ...mockSettings,
+        markAsReadOnOpen: false,
+        expected: false,
+        description:
+          'all settings are false (delayNotificationState, fetchOnlyUnreadNotifications, markAsReadOnOpen)',
+      },
+      {
         delayNotificationState: true,
         fetchOnlyUnreadNotifications: false,
-      };
-      expect(shouldRemoveNotificationsFromState(settings)).toBe(false);
-    });
-
-    it('should return false when fetchOnlyUnreadNotifications is true', () => {
-      const settings: SettingsState = {
-        ...mockSettings,
+        markAsReadOnOpen: false,
+        expected: false,
+        description: 'delayNotificationsState is true',
+      },
+      {
         delayNotificationState: false,
         fetchOnlyUnreadNotifications: true,
-      };
-      expect(shouldRemoveNotificationsFromState(settings)).toBe(false);
-    });
-
-    it('should return false when both are true', () => {
+        markAsReadOnOpen: false,
+        expected: false,
+        description: 'fetchOnlyUnreadNotifications is true',
+      },
+      {
+        delayNotificationState: false,
+        fetchOnlyUnreadNotifications: true,
+        markAsReadOnOpen: true,
+        expected: true,
+        description: 'markAsReadOnOpen is true',
+      },
+    ])('should return $expected when $description', ({
+      delayNotificationState,
+      fetchOnlyUnreadNotifications,
+      markAsReadOnOpen,
+      expected,
+    }) => {
       const settings: SettingsState = {
         ...mockSettings,
-        delayNotificationState: true,
-        fetchOnlyUnreadNotifications: true,
+        delayNotificationState,
+        fetchOnlyUnreadNotifications,
+        markAsReadOnOpen,
       };
-      expect(shouldRemoveNotificationsFromState(settings)).toBe(false);
+
+      expect(shouldRemoveNotificationsFromState(settings)).toBe(expected);
     });
   });
 

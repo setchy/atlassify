@@ -7,7 +7,6 @@ import type {
 
 /**
  * Determine if notifications should be removed from state or marked as read in-place.
- *
  */
 export function shouldRemoveNotificationsFromState(
   settings: SettingsState,
