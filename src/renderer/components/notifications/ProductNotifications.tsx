@@ -37,6 +37,10 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   const productNotification = productNotifications[0].product;
   const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
 
+  const actionProductInteraction = () => {
+    openExternalLink(productNotification.home);
+  };
+
   const actionMarkAsRead = () => {
     setShouldAnimateRepositoryExit(shouldAnimateExit);
     markNotificationsRead(productNotifications);
@@ -94,7 +98,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                 if (productNotification.home) {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  openExternalLink(productNotification.home);
+                  actionProductInteraction();
                 }
               }}
               testId="product-home"
@@ -109,7 +113,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                   {productNotification.display}
                 </span>
                 <Badge max={false}>{productNotifications.length}</Badge>
-              </Inline>{' '}
+              </Inline>
             </Button>
           </Tooltip>
 
