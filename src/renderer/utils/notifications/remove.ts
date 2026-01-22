@@ -12,9 +12,7 @@ export function shouldRemoveNotificationsFromState(
   settings: SettingsState,
 ): boolean {
   return (
-    !settings.delayNotificationState &&
-    settings.fetchOnlyUnreadNotifications &&
-    settings.markAsReadOnOpen
+    !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
   );
 }
 

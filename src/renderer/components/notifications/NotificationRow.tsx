@@ -48,7 +48,9 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
 
   const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit);
+    setShouldAnimateNotificationExit(
+      shouldAnimateExit && settings.markAsReadOnOpen,
+    );
 
     if (settings.markAsReadOnOpen) {
       markNotificationsRead([notification]);

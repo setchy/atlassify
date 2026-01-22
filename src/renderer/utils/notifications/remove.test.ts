@@ -18,43 +18,38 @@ describe('renderer/utils/notifications/remove.ts', () => {
       {
         delayNotificationState: false,
         fetchOnlyUnreadNotifications: false,
-        markAsReadOnOpen: false,
         expected: false,
         description:
-          'all settings are false (delayNotificationState, fetchOnlyUnreadNotifications, markAsReadOnOpen)',
+          'both delayNotificationState and fetchOnlyUnreadNotifications are false',
       },
       {
         delayNotificationState: true,
         fetchOnlyUnreadNotifications: false,
-        markAsReadOnOpen: false,
         expected: false,
         description: 'delayNotificationsState is true',
       },
       {
         delayNotificationState: false,
         fetchOnlyUnreadNotifications: true,
-        markAsReadOnOpen: false,
-        expected: false,
+        expected: true,
         description: 'fetchOnlyUnreadNotifications is true',
       },
       {
-        delayNotificationState: false,
+        delayNotificationState: true,
         fetchOnlyUnreadNotifications: true,
-        markAsReadOnOpen: true,
-        expected: true,
-        description: 'markAsReadOnOpen is true',
+        expected: false,
+        description:
+          'both delayNotificationState and fetchOnlyUnreadNotifications are true',
       },
     ])('should return $expected when $description', ({
       delayNotificationState,
       fetchOnlyUnreadNotifications,
-      markAsReadOnOpen,
       expected,
     }) => {
       const settings: SettingsState = {
         ...mockSettings,
         delayNotificationState,
         fetchOnlyUnreadNotifications,
-        markAsReadOnOpen,
       };
 
       expect(shouldRemoveNotificationsFromState(settings)).toBe(expected);
