@@ -80,7 +80,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-testid="login-username"
                 >
                   <label
-                    class="_11c8rymc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
+                    class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                     data-testid="login-username--label"
                     for="username-uid3"
                     id="username-uid3-label"
@@ -107,7 +107,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </div>
                   <div
                     aria-live="polite"
-                    class="_zulp12x7 _11c8rymc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                    class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                     id="username-uid3-helper"
                   >
                     Your Atlassian username / email address
@@ -118,7 +118,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   data-testid="login-token"
                 >
                   <label
-                    class="_11c8rymc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
+                    class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                     data-testid="login-token--label"
                     for="token-uid4"
                     id="token-uid4-label"
@@ -145,7 +145,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                   </div>
                   <div
                     aria-live="polite"
-                    class="_zulp12x7 _11c8rymc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                    class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                     id="token-uid4-helper"
                   >
                     <span>
@@ -380,7 +380,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 data-testid="login-username"
               >
                 <label
-                  class="_11c8rymc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
+                  class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                   data-testid="login-username--label"
                   for="username-uid3"
                   id="username-uid3-label"
@@ -407,7 +407,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </div>
                 <div
                   aria-live="polite"
-                  class="_zulp12x7 _11c8rymc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                  class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                   id="username-uid3-helper"
                 >
                   Your Atlassian username / email address
@@ -418,7 +418,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 data-testid="login-token"
               >
                 <label
-                  class="_11c8rymc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
+                  class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                   data-testid="login-token--label"
                   for="token-uid4"
                   id="token-uid4-label"
@@ -445,7 +445,7 @@ exports[`renderer/routes/Login.tsx should render itself & its children 1`] = `
                 </div>
                 <div
                   aria-live="polite"
-                  class="_zulp12x7 _11c8rymc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
+                  class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
                   id="token-uid4-helper"
                 >
                   <span>
