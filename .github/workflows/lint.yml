@@ -29,7 +29,10 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
 
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
         working-directory: ${{ github.event.inputs.directory }}
-      - run: pnpm lint:check
+
+      - name: Run linter
+        run: pnpm lint:check
         working-directory: ${{ github.event.inputs.directory }}
