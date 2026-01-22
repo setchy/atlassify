@@ -1,7 +1,7 @@
 import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 
-import type { AtlassifyNotification } from '../../types';
+import type { AtlassifyNotification, SettingsState } from '../../types';
 
 import {
   getFlattenedNotificationsByProduct,
@@ -73,7 +73,10 @@ describe('renderer/utils/notifications/group.ts', () => {
 
   describe('getFlattenedNotificationsByProduct', () => {
     it('returns product-grouped order when groupNotificationsByProduct is true', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: true };
+      const settings: SettingsState = {
+        ...mockSettings,
+        groupNotificationsByProduct: true,
+      };
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', 'confluence'),
@@ -91,7 +94,7 @@ describe('renderer/utils/notifications/group.ts', () => {
     });
 
     it('returns product-grouped order when groupNotificationsByProductAlphabetically is true', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...mockSettings,
         groupNotificationsByProductAlphabetically: true,
       };
@@ -112,7 +115,10 @@ describe('renderer/utils/notifications/group.ts', () => {
     });
 
     it('returns natural account order when groupNotificationsByProduct is false', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: false };
+      const settings: SettingsState = {
+        ...mockSettings,
+        groupNotificationsByProduct: false,
+      };
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', 'confluence'),
@@ -140,7 +146,7 @@ describe('renderer/utils/notifications/group.ts', () => {
     });
 
     it('handles notifications without product data when grouped', () => {
-      const settings = {
+      const settings: SettingsState = {
         ...mockSettings,
         groupNotificationsByProduct: true,
       };
@@ -161,7 +167,10 @@ describe('renderer/utils/notifications/group.ts', () => {
     });
 
     it('preserves notifications without product data when not grouped', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: false };
+      const settings: SettingsState = {
+        ...mockSettings,
+        groupNotificationsByProduct: false,
+      };
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', null),
