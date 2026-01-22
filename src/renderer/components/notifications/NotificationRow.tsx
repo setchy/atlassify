@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
@@ -9,7 +9,7 @@ import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
@@ -37,10 +37,11 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   isAnimated = false,
 }: NotificationRowProps) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
-    useContext(AppContext);
-  const [animateExit, setAnimateExit] = useState(false);
+    useAppContext();
 
   const { t } = useTranslation();
+
+  const [animateExit, setAnimateExit] = useState(false);
 
   const handleNotificationInteraction = useCallback(() => {
     setAnimateExit(

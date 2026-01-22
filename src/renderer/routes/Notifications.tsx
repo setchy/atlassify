@@ -1,6 +1,6 @@
-import { type FC, useContext, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { AppContext } from '../context/App';
+import { useAppContext } from '../hooks/useAppContext';
 
 import { AllRead } from '../components/AllRead';
 import { Contents } from '../components/layout/Contents';
@@ -12,7 +12,7 @@ import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
   const { notifications, status, globalError, hasNotifications } =
-    useContext(AppContext);
+    useAppContext();
 
   const hasNoAccountErrors = useMemo(
     () => notifications.every((account) => account.error === null),

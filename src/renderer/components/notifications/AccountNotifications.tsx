@@ -3,7 +3,6 @@ import {
   Fragment,
   type MouseEvent,
   useCallback,
-  useContext,
   useMemo,
   useState,
 } from 'react';
@@ -27,7 +26,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Constants } from '../../constants';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import type {
   Account,
@@ -55,8 +54,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
+
+  const { markNotificationsRead, settings } = useAppContext();
+
   const { t } = useTranslation();
-  const { markNotificationsRead, settings } = useContext(AppContext);
 
   const [showAccountNotifications, setShowAccountNotifications] =
     useState(true);

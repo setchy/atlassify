@@ -1,4 +1,4 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -15,8 +15,8 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
 import { defaultSettings } from '../../context/defaults';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import { OpenPreference } from '../../types';
 
@@ -28,7 +28,8 @@ import {
 } from '../../utils/notifications/sound';
 
 export const SystemSettings: FC = () => {
-  const { settings, updateSetting } = useContext(AppContext);
+  const { settings, updateSetting } = useAppContext();
+
   const { t } = useTranslation();
 
   const openLinksOptions: OptionsPropType = [
