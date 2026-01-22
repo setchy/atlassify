@@ -18,10 +18,12 @@ import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
+  selectedNotificationId?: string | null;
 }
 
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
+  selectedNotificationId,
 }) => {
   const { markNotificationsRead, settings } = useContext(AppContext);
   const { t } = useTranslation();
@@ -144,6 +146,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         productNotifications.map((notification) => (
           <NotificationRow
             isAnimated={animateExit}
+            isSelected={selectedNotificationId === notification.id}
             key={notification.id}
             notification={notification}
           />

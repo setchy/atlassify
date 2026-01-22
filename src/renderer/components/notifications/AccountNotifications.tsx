@@ -49,12 +49,18 @@ export interface AccountNotificationsProps {
   notifications: AtlassifyNotification[];
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
+  selectedNotificationId?: string | null;
 }
 
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, hasMoreNotifications } = props;
+  const {
+    account,
+    notifications,
+    hasMoreNotifications,
+    selectedNotificationId,
+  } = props;
   const { t } = useTranslation();
   const { markNotificationsRead, settings } = useContext(AppContext);
 
@@ -234,11 +240,13 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                   <ProductNotifications
                     key={productType}
                     productNotifications={productNotifications}
+                    selectedNotificationId={selectedNotificationId}
                   />
                 ),
               )
             : sortedNotifications.map((notification) => (
                 <NotificationRow
+                  isSelected={selectedNotificationId === notification.id}
                   key={notification.id}
                   notification={notification}
                 />

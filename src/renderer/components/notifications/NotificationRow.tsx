@@ -30,11 +30,13 @@ import {
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
   isAnimated?: boolean;
+  isSelected?: boolean;
 }
 
 export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isAnimated = false,
+  isSelected = false,
 }: NotificationRowProps) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useContext(AppContext);
@@ -92,6 +94,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
     <div
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
+        isSelected && 'ring-2 ring-blue-500',
         (isAnimated || animateExit) &&
           'translate-x-full opacity-0 transition duration-350 ease-in-out',
       )}
