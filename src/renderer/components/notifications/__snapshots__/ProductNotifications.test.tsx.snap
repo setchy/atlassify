@@ -71,7 +71,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </span>
                     </span>
                   </div>
-                   
                 </span>
               </button>
             </div>
@@ -231,7 +230,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </span>
                   </span>
                 </div>
-                 
               </span>
             </button>
           </div>
@@ -448,7 +446,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                       </span>
                     </span>
                   </div>
-                   
                 </span>
               </button>
             </div>
@@ -608,7 +605,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
                     </span>
                   </span>
                 </div>
-                 
               </span>
             </button>
           </div>
@@ -825,7 +821,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </span>
                     </span>
                   </div>
-                   
                 </span>
               </button>
             </div>
@@ -978,7 +973,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                       </span>
                     </span>
                   </div>
-                   
                 </span>
               </button>
             </div>
@@ -1138,7 +1132,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should toggl
                     </span>
                   </span>
                 </div>
-                 
               </span>
             </button>
           </div>
