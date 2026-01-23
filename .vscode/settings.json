@@ -12,10 +12,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ],
   "cSpell.words": ["Atlassify", "codegen", "rovo", "xcss"],
   "i18n-ally.translate.engines": ["google"],
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
