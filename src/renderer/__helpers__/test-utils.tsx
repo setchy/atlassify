@@ -27,10 +27,7 @@ interface AppContextProviderProps {
 /**
  * Wrapper component that provides AppContext with sensible defaults for testing.
  */
-export function AppContextProvider({
-  children,
-  value = {},
-}: AppContextProviderProps) {
+function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       auth: mockAuth,
