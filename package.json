@@ -66,7 +66,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-i18next": "16.5.3",
-    "react-router-dom": "7.12.0"
+    "react-router-dom": "7.13.0"
   },
   "devDependencies": {
     "@atlaskit/avatar": "25.7.2",
