@@ -61,8 +61,8 @@ importers:
         specifier: 5.2.19
         version: 5.2.19(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@atlaskit/icon':
-        specifier: 29.4.2
-        version: 29.4.2(@types/react@19.2.9)(react@19.2.3)
+        specifier: 30.0.0
+        version: 30.0.0(@types/react@19.2.9)(react@19.2.3)
       '@atlaskit/inline-message':
         specifier: 15.5.2
         version: 15.5.2(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
