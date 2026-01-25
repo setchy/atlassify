@@ -102,7 +102,9 @@ describe('renderer/context/App.tsx', () => {
       const getContext = renderWithContext();
       fetchNotificationsMock.mockReset();
 
-      getContext().fetchNotifications();
+      act(() => {
+        getContext().fetchNotifications();
+      });
 
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
@@ -110,7 +112,9 @@ describe('renderer/context/App.tsx', () => {
     it('should call markNotificationsRead', async () => {
       const getContext = renderWithContext();
 
-      getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
+      act(() => {
+        getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
@@ -121,7 +125,9 @@ describe('renderer/context/App.tsx', () => {
     it('should call markNotificationsUnread', async () => {
       const getContext = renderWithContext();
 
-      getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
+      act(() => {
+        getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
@@ -135,7 +141,9 @@ describe('renderer/context/App.tsx', () => {
     it('should call updateSetting', async () => {
       const getContext = renderWithContext();
 
-      getContext().updateSetting('playSoundNewNotifications', true);
+      act(() => {
+        getContext().updateSetting('playSoundNewNotifications', true);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -151,7 +159,9 @@ describe('renderer/context/App.tsx', () => {
     it('should call resetSettings', async () => {
       const getContext = renderWithContext();
 
-      getContext().resetSettings();
+      act(() => {
+        getContext().resetSettings();
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -166,7 +176,9 @@ describe('renderer/context/App.tsx', () => {
     it('should update filter - checked', async () => {
       const getContext = renderWithContext();
 
-      getContext().updateFilter('filterCategories', 'direct', true);
+      act(() => {
+        getContext().updateFilter('filterCategories', 'direct', true);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -182,7 +194,9 @@ describe('renderer/context/App.tsx', () => {
     it('should update filter - unchecked', async () => {
       const getContext = renderWithContext();
 
-      getContext().updateFilter('filterCategories', 'direct', false);
+      act(() => {
+        getContext().updateFilter('filterCategories', 'direct', false);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -198,7 +212,9 @@ describe('renderer/context/App.tsx', () => {
     it('should clear filters back to default', async () => {
       const getContext = renderWithContext();
 
-      getContext().clearFilters();
+      act(() => {
+        getContext().clearFilters();
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -223,9 +239,11 @@ describe('renderer/context/App.tsx', () => {
     it('login calls addAccount ', async () => {
       const getContext = renderWithContext();
 
-      getContext().login({
-        username: mockAtlassianCloudAccount.username,
-        token: mockAtlassianCloudAccount.token,
+      act(() => {
+        getContext().login({
+          username: mockAtlassianCloudAccount.username,
+          token: mockAtlassianCloudAccount.token,
+        });
       });
 
       expect(addAccountSpy).toHaveBeenCalledWith(
@@ -238,7 +256,9 @@ describe('renderer/context/App.tsx', () => {
     it('logout calls removeAccountNotifications and removeAccount ', async () => {
       const getContext = renderWithContext();
 
-      getContext().logoutFromAccount(mockAtlassianCloudAccount);
+      act(() => {
+        getContext().logoutFromAccount(mockAtlassianCloudAccount);
+      });
 
       expect(removeAccountNotificationsMock).toHaveBeenCalledWith(
         mockAtlassianCloudAccount,
