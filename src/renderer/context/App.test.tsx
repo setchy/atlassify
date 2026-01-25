@@ -233,7 +233,9 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = jest.spyOn(authUtils, 'addAccount');
+    const addAccountSpy = jest
+      .spyOn(authUtils, 'addAccount')
+      .mockImplementation(jest.fn());
     const removeAccountSpy = jest.spyOn(authUtils, 'removeAccount');
 
     it('login calls addAccount ', async () => {
