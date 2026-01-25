@@ -1,6 +1,7 @@
-import { act, fireEvent, waitFor } from '@testing-library/react';
+import { act, waitFor } from '@testing-library/react';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
 
@@ -11,6 +12,7 @@ import { useNotifications } from '../hooks/useNotifications';
 
 import type { AuthState, SettingsState } from '../types';
 
+import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
@@ -18,43 +20,29 @@ import { defaultSettings } from './defaults';
 
 jest.mock('../hooks/useNotifications');
 
-// Helper to render a button that calls a context method when clicked
-const renderContextButton = (
-  contextMethodName: keyof AppContextState,
-  ...args: unknown[]
-) => {
-  const TestComponent = () => {
-    const context = useAppContext();
-    const method = context[contextMethodName];
-    return (
-      <button
-        data-testid="context-method-button"
-        onClick={() => {
-          if (typeof method === 'function') {
-            (method as (...args: unknown[]) => void)(...args);
-          }
-        }}
-        type="button"
-      >
-        {String(contextMethodName)}
-      </button>
-    );
+// Helper to render the context
+const renderWithContext = () => {
+  let context!: AppContextState;
+
+  const CaptureContext = () => {
+    context = useAppContext();
+    return null;
   };
 
-  const result = renderWithAppContext(
+  renderWithAppContext(
     <AppProvider>
-      <TestComponent />
+      <CaptureContext />
     </AppProvider>,
   );
 
-  const button = result.getByTestId('context-method-button');
-  return { ...result, button };
+  return () => context;
 };
 
 describe('renderer/context/App.tsx', () => {
   const fetchNotificationsMock = jest.fn();
   const markNotificationsReadMock = jest.fn();
   const markNotificationsUnreadMock = jest.fn();
+  const removeAccountNotificationsMock = jest.fn();
 
   const saveStateSpy = jest
     .spyOn(storage, 'saveState')
@@ -66,6 +54,7 @@ describe('renderer/context/App.tsx', () => {
       fetchNotifications: fetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
+      removeAccountNotifications: removeAccountNotificationsMock,
     });
   });
 
@@ -110,21 +99,22 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call fetchNotifications', async () => {
-      const { button } = renderContextButton('fetchNotifications');
-
+      const getContext = renderWithContext();
       fetchNotificationsMock.mockReset();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().fetchNotifications();
+      });
 
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
-      const { button } = renderContextButton('markNotificationsRead', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
@@ -133,11 +123,11 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call markNotificationsUnread', async () => {
-      const { button } = renderContextButton('markNotificationsUnread', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
@@ -149,13 +139,11 @@ describe('renderer/context/App.tsx', () => {
 
   describe('settings methods', () => {
     it('should call updateSetting', async () => {
-      const { button } = renderContextButton(
-        'updateSetting',
-        'playSoundNewNotifications',
-        true,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().updateSetting('playSoundNewNotifications', true);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -169,9 +157,11 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call resetSettings', async () => {
-      const { button } = renderContextButton('resetSettings');
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().resetSettings();
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -184,14 +174,11 @@ describe('renderer/context/App.tsx', () => {
 
   describe('filter methods', () => {
     it('should update filter - checked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        true,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().updateFilter('filterCategories', 'direct', true);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -205,14 +192,11 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should update filter - unchecked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        false,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().updateFilter('filterCategories', 'direct', false);
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -226,9 +210,11 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should clear filters back to default', async () => {
-      const { button } = renderContextButton('clearFilters');
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().clearFilters();
+      });
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -243,6 +229,44 @@ describe('renderer/context/App.tsx', () => {
           filterProducts: defaultSettings.filterProducts,
         },
       });
+    });
+  });
+
+  describe('authentication methods', () => {
+    const addAccountSpy = jest.spyOn(authUtils, 'addAccount');
+    const removeAccountSpy = jest.spyOn(authUtils, 'removeAccount');
+
+    it('login calls addAccount ', async () => {
+      const getContext = renderWithContext();
+
+      act(() => {
+        getContext().login({
+          username: mockAtlassianCloudAccount.username,
+          token: mockAtlassianCloudAccount.token,
+        });
+      });
+
+      expect(addAccountSpy).toHaveBeenCalledWith(
+        expect.anything(),
+        mockAtlassianCloudAccount.username,
+        mockAtlassianCloudAccount.token,
+      );
+    });
+
+    it('logout calls removeAccountNotifications and removeAccount ', async () => {
+      const getContext = renderWithContext();
+
+      act(() => {
+        getContext().logoutFromAccount(mockAtlassianCloudAccount);
+      });
+
+      expect(removeAccountNotificationsMock).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+      );
+      expect(removeAccountSpy).toHaveBeenCalledWith(
+        expect.anything(),
+        mockAtlassianCloudAccount,
+      );
     });
   });
 });
