@@ -1,6 +1,7 @@
 import { act, waitFor } from '@testing-library/react';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
 
@@ -11,6 +12,7 @@ import { useNotifications } from '../hooks/useNotifications';
 
 import type { AuthState, SettingsState } from '../types';
 
+import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
@@ -40,6 +42,7 @@ describe('renderer/context/App.tsx', () => {
   const fetchNotificationsMock = jest.fn();
   const markNotificationsReadMock = jest.fn();
   const markNotificationsUnreadMock = jest.fn();
+  const removeAccountNotificationsMock = jest.fn();
 
   const saveStateSpy = jest
     .spyOn(storage, 'saveState')
@@ -51,6 +54,7 @@ describe('renderer/context/App.tsx', () => {
       fetchNotifications: fetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
+      removeAccountNotifications: removeAccountNotificationsMock,
     });
   });
 
@@ -209,6 +213,40 @@ describe('renderer/context/App.tsx', () => {
           filterProducts: defaultSettings.filterProducts,
         },
       });
+    });
+  });
+
+  describe('authentication methods', () => {
+    const addAccountSpy = jest.spyOn(authUtils, 'addAccount');
+    const removeAccountSpy = jest.spyOn(authUtils, 'removeAccount');
+
+    it('login calls addAccount ', async () => {
+      const getContext = renderWithContext();
+
+      getContext().login({
+        username: mockAtlassianCloudAccount.username,
+        token: mockAtlassianCloudAccount.token,
+      });
+
+      expect(addAccountSpy).toHaveBeenCalledWith(
+        expect.anything(),
+        mockAtlassianCloudAccount.username,
+        mockAtlassianCloudAccount.token,
+      );
+    });
+
+    it('logout calls removeAccountNotifications and removeAccount ', async () => {
+      const getContext = renderWithContext();
+
+      getContext().logoutFromAccount(mockAtlassianCloudAccount);
+
+      expect(removeAccountNotificationsMock).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+      );
+      expect(removeAccountSpy).toHaveBeenCalledWith(
+        expect.anything(),
+        mockAtlassianCloudAccount,
+      );
     });
   });
 });
