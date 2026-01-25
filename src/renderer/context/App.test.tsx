@@ -1,4 +1,4 @@
-import { act, fireEvent, waitFor } from '@testing-library/react';
+import { act, waitFor } from '@testing-library/react';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
@@ -18,37 +18,22 @@ import { defaultSettings } from './defaults';
 
 jest.mock('../hooks/useNotifications');
 
-// Helper to render a button that calls a context method when clicked
-const renderContextButton = (
-  contextMethodName: keyof AppContextState,
-  ...args: unknown[]
-) => {
-  const TestComponent = () => {
-    const context = useAppContext();
-    const method = context[contextMethodName];
-    return (
-      <button
-        data-testid="context-method-button"
-        onClick={() => {
-          if (typeof method === 'function') {
-            (method as (...args: unknown[]) => void)(...args);
-          }
-        }}
-        type="button"
-      >
-        {String(contextMethodName)}
-      </button>
-    );
+// Helper to render the context
+const renderWithContext = () => {
+  let context!: AppContextState;
+
+  const CaptureContext = () => {
+    context = useAppContext();
+    return null;
   };
 
-  const result = renderWithAppContext(
+  renderWithAppContext(
     <AppProvider>
-      <TestComponent />
+      <CaptureContext />
     </AppProvider>,
   );
 
-  const button = result.getByTestId('context-method-button');
-  return { ...result, button };
+  return () => context;
 };
 
 describe('renderer/context/App.tsx', () => {
@@ -110,21 +95,18 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call fetchNotifications', async () => {
-      const { button } = renderContextButton('fetchNotifications');
-
+      const getContext = renderWithContext();
       fetchNotificationsMock.mockReset();
 
-      fireEvent.click(button);
+      getContext().fetchNotifications();
 
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
-      const { button } = renderContextButton('markNotificationsRead', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
@@ -133,11 +115,9 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call markNotificationsUnread', async () => {
-      const { button } = renderContextButton('markNotificationsUnread', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
@@ -149,13 +129,9 @@ describe('renderer/context/App.tsx', () => {
 
   describe('settings methods', () => {
     it('should call updateSetting', async () => {
-      const { button } = renderContextButton(
-        'updateSetting',
-        'playSoundNewNotifications',
-        true,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().updateSetting('playSoundNewNotifications', true);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -169,9 +145,9 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should call resetSettings', async () => {
-      const { button } = renderContextButton('resetSettings');
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().resetSettings();
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -184,14 +160,9 @@ describe('renderer/context/App.tsx', () => {
 
   describe('filter methods', () => {
     it('should update filter - checked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        true,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().updateFilter('filterCategories', 'direct', true);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -205,14 +176,9 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should update filter - unchecked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        false,
-      );
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().updateFilter('filterCategories', 'direct', false);
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
@@ -226,9 +192,9 @@ describe('renderer/context/App.tsx', () => {
     });
 
     it('should clear filters back to default', async () => {
-      const { button } = renderContextButton('clearFilters');
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      getContext().clearFilters();
 
       expect(saveStateSpy).toHaveBeenCalledWith({
         auth: {
