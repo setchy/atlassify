@@ -16,6 +16,6 @@ export function useNavigationAnalytics() {
         ? 'Notifications'
         : formatProperCase(location.pathname.replaceAll('/', ''));
 
-    trackEvent('navigate', { to: screen });
+    trackEvent('Navigate', { to: screen });
   }, [location]);
 }

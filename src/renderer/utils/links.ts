@@ -67,7 +67,7 @@ function withAnalytics<F extends (...args: unknown[]) => unknown>(
   actionName: string,
 ): F {
   return ((...args: Parameters<F>): ReturnType<F> => {
-    trackEvent('action', { name: actionName });
+    trackEvent('Action', { name: actionName });
     return fn(...args) as ReturnType<F>;
   }) as F;
 }

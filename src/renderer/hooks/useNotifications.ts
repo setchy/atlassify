@@ -188,7 +188,7 @@ export const useNotifications = (): NotificationsState => {
       readNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
-      trackEvent('action', { name: 'Mark as Read' });
+      trackEvent('Action', { name: 'Mark as Read' });
 
       const account = readNotifications[0].account;
 
@@ -240,7 +240,7 @@ export const useNotifications = (): NotificationsState => {
       unreadNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
-      trackEvent('action', {
+      trackEvent('Action', {
         name: 'Mark as Unread',
       });
 
