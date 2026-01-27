@@ -17,6 +17,7 @@ import { initialize, trackEvent } from '@aptabase/electron/main';
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
+  type IAptabaseEvent,
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
@@ -210,6 +211,10 @@ app.whenReady().then(async () => {
 
   onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings: IAutoLaunch) => {
     app.setLoginItemSettings(settings);
+  });
+
+  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
+    trackEvent(event.eventName, event.props);
   });
 
   /**
