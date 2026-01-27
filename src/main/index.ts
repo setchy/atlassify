@@ -12,6 +12,8 @@ import {
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
+import { initialize, trackEvent } from '@aptabase/electron/main';
+
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
@@ -19,7 +21,7 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
-import { logWarn } from '../shared/logger';
+import { logError, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -29,6 +31,16 @@ import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
 log.initialize();
+
+const aptabaseKey = process.env.APTABASE_KEY;
+if (!aptabaseKey) {
+  logError(
+    'main:initialize',
+    'APTABASE_KEY environment variable is not set',
+    new Error('APTABASE_KEY environment variable is not set'),
+  );
+}
+initialize(aptabaseKey);
 
 /**
  * File paths
@@ -75,6 +87,7 @@ let shouldUseAlternateIdleIcon = false;
 let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
+  trackEvent('app', { event: 'launched' });
   preventSecondInstance();
 
   await onFirstRunMaybe();

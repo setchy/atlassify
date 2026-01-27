@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { useShortcutActions } from '../hooks/useShortcutActions';
 
-/**
+/**let
  * Component that registers global keyboard shortcuts for the renderer app.
  * Mount once inside App, within Router + AppProvider.
  */

@@ -38,6 +38,8 @@ jobs:
 
       - name: Build application
         run: pnpm build
+        env:
+          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}

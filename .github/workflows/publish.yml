@@ -40,8 +40,7 @@ jobs:
       - name: Build application
         run: pnpm build
         env:
-          OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package and publish for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}

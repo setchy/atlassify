@@ -69,6 +69,7 @@
     "react-router-dom": "7.13.0"
   },
   "devDependencies": {
+    "@aptabase/electron": "0.3.1",
     "@atlaskit/avatar": "25.7.3",
     "@atlaskit/avatar-group": "12.4.9",
     "@atlaskit/badge": "18.3.3",
@@ -101,6 +102,7 @@
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
+    "@types/dotenv-webpack": "7.0.8",
     "@types/jest": "30.0.0",
     "@types/node": "24.10.9",
     "@types/react": "19.2.10",
@@ -113,6 +115,7 @@
     "css-loader": "7.1.2",
     "css-minimizer-webpack-plugin": "7.0.4",
     "date-fns": "4.1.0",
+    "dotenv-webpack": "8.1.1",
     "electron": "40.0.0",
     "electron-builder": "26.4.0",
     "graphql": "16.12.0",
