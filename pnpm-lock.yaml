@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@aptabase/electron':
+        specifier: 0.3.1
+        version: 0.3.1(electron@40.0.0)
       electron-log:
         specifier: 5.4.3
         version: 5.4.3
@@ -36,9 +39,6 @@ importers:
         specifier: 7.13.0
         version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
-      '@aptabase/electron':
-        specifier: 0.3.1
-        version: 0.3.1(electron@40.0.0)
       '@atlaskit/avatar':
         specifier: 25.7.3
         version: 25.7.3(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
