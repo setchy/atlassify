@@ -59,7 +59,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'u',
         isAllowed: isLoggedIn && !isLoading,
         action: () => {
-          trackEvent('action', {
+          trackEvent('Action', {
             name: 'Toggle Read/Unread',
           });
 
@@ -73,7 +73,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'p',
         isAllowed: isLoggedIn,
         action: () => {
-          trackEvent('action', {
+          trackEvent('Action', {
             name: 'Group By Product',
           });
 
@@ -87,7 +87,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 't',
         isAllowed: isLoggedIn,
         action: () => {
-          trackEvent('action', {
+          trackEvent('Action', {
             name: 'Group By Title',
           });
 
@@ -116,7 +116,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
             return;
           }
 
-          trackEvent('action', { name: 'Refresh' });
+          trackEvent('Action', { name: 'Refresh' });
 
           navigate('/', { replace: true });
           void fetchNotifications();
@@ -143,7 +143,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'q',
         isAllowed: !isLoggedIn || isOnSettingsRoute,
         action: () => {
-          trackEvent('app', { event: 'Quit' });
+          trackEvent('Application', { event: 'Quit' });
 
           quitApp();
         },
