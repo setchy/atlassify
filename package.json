@@ -58,6 +58,7 @@
   },
   "homepage": "https://atlassify.io",
   "dependencies": {
+    "@aptabase/electron": "0.3.1",
     "electron-log": "5.4.3",
     "electron-updater": "6.7.3",
     "i18next": "25.8.0",
@@ -69,7 +70,6 @@
     "react-router-dom": "7.13.0"
   },
   "devDependencies": {
-    "@aptabase/electron": "0.3.1",
     "@atlaskit/avatar": "25.7.3",
     "@atlaskit/avatar-group": "12.4.9",
     "@atlaskit/badge": "18.3.3",
