@@ -20,6 +20,7 @@ export const EVENTS = {
   RESET_APP: `${P}reset-app`,
   UPDATE_THEME: `${P}update-theme`,
   TWEMOJI_DIRECTORY: `${P}twemoji-directory`,
+  APTABASE_TRACK_EVENT: 'aptabase:trackEvent',
 } as const;
 
 export type EventType = (typeof EVENTS)[keyof typeof EVENTS];
@@ -39,10 +40,16 @@ export interface IOpenExternal {
   activate: boolean;
 }
 
+export interface IAptabaseEvent {
+  eventName: string;
+  props?: Record<string, string | number | boolean>;
+}
+
 export type EventData =
   | string
   | number
   | boolean
   | IKeyboardShortcut
   | IAutoLaunch
-  | IOpenExternal;
+  | IOpenExternal
+  | IAptabaseEvent;

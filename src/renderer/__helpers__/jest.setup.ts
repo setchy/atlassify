@@ -44,6 +44,9 @@ window.atlassify = {
   setAutoLaunch: jest.fn(),
   setKeyboardShortcut: jest.fn(),
   raiseNativeNotification: jest.fn(),
+  aptabase: {
+    trackEvent: jest.fn(),
+  },
 };
 
 // prevent ReferenceError: TextEncoder is not defined

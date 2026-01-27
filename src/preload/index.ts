@@ -105,6 +105,13 @@ export const api = {
 
     return notification;
   },
+
+  aptabase: {
+    trackEvent: (
+      eventName: string,
+      props?: Record<string, string | number | boolean>,
+    ) => sendMainEvent(EVENTS.APTABASE_TRACK_EVENT, { eventName, props }),
+  },
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to
