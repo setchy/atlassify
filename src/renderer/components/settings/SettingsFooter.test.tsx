@@ -4,14 +4,15 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
+import * as useLoggedNavigate from '../../hooks/useLoggedNavigate';
+
 import * as comms from '../../utils/comms';
 import { SettingsFooter } from './SettingsFooter';
 
 const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => navigateMock,
-}));
+jest
+  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
+  .mockReturnValue(navigateMock);
 
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
   afterEach(() => {

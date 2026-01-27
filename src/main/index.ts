@@ -12,7 +12,7 @@ import {
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
-import { initialize } from '@aptabase/electron/main';
+import { initialize, trackEvent } from '@aptabase/electron/main';
 
 import { APPLICATION } from '../shared/constants';
 import {
@@ -87,6 +87,7 @@ let shouldUseAlternateIdleIcon = false;
 let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
+  trackEvent('app', { event: 'launched' });
   preventSecondInstance();
 
   await onFirstRunMaybe();

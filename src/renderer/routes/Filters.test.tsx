@@ -4,13 +4,14 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
+import * as useLoggedNavigate from '../hooks/useLoggedNavigate';
+
 import { FiltersRoute } from './Filters';
 
 const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => navigateMock,
-}));
+jest
+  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
+  .mockReturnValue(navigateMock);
 
 describe('renderer/routes/Filters.tsx', () => {
   const updateFilterMock = jest.fn();

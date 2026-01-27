@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
@@ -8,6 +7,7 @@ import { Box, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
+import { useLoggedNavigate } from '../../hooks/useLoggedNavigate';
 
 interface HeaderProps {
   children: string;
@@ -15,7 +15,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = (props: HeaderProps) => {
-  const navigate = useNavigate();
+  const navigate = useLoggedNavigate();
 
   const { fetchNotifications } = useAppContext();
 

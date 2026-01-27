@@ -1,9 +1,12 @@
 import { useMemo } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+import { trackEvent } from '@aptabase/electron/main';
 
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
+import { useLoggedNavigate } from './useLoggedNavigate';
 
 type ShortcutName =
   | 'home'
@@ -33,7 +36,7 @@ type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
  * Used by both the global shortcuts component and UI buttons to avoid duplication.
  */
 export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
-  const navigate = useNavigate();
+  const navigate = useLoggedNavigate();
   const location = useLocation();
 
   const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
@@ -59,6 +62,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'u',
         isAllowed: isLoggedIn && !isLoading,
         action: () => {
+          trackEvent('action', { name: 'Toggle Read/Unread' });
+
           updateSetting(
             'fetchOnlyUnreadNotifications',
             !settings.fetchOnlyUnreadNotifications,
@@ -69,6 +74,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'p',
         isAllowed: isLoggedIn,
         action: () => {
+          trackEvent('action', { name: 'Group By Product' });
+
           updateSetting(
             'groupNotificationsByProduct',
             !settings.groupNotificationsByProduct,
@@ -79,6 +86,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 't',
         isAllowed: isLoggedIn,
         action: () => {
+          trackEvent('action', { name: 'Group By Title' });
+
           updateSetting(
             'groupNotificationsByTitle',
             !settings.groupNotificationsByTitle,
@@ -103,6 +112,9 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
           if (isLoading) {
             return;
           }
+
+          trackEvent('action', { name: 'Refresh' });
+
           navigate('/', { replace: true });
           void fetchNotifications();
         },
@@ -127,7 +139,11 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
       quit: {
         key: 'q',
         isAllowed: !isLoggedIn || isOnSettingsRoute,
-        action: () => quitApp(),
+        action: () => {
+          trackEvent('app', { event: 'Quit' });
+
+          quitApp();
+        },
       },
     };
   }, [

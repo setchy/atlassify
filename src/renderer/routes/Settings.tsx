@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
-import { trackEvent } from '@aptabase/electron/renderer';
-
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
@@ -16,8 +14,6 @@ import { SystemSettings } from '../components/settings/SystemSettings';
 import { TraySettings } from '../components/settings/TraySettings';
 
 export const SettingsRoute: FC = () => {
-  trackEvent('screen_view', { name: 'Settings' });
-
   const { t } = useTranslation();
 
   return (

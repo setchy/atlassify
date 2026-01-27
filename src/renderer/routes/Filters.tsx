@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
-import { trackEvent } from '@aptabase/electron/renderer';
-
 import { useAppContext } from '../hooks/useAppContext';
 
 import { FilterSection } from '../components/filters/FilterSection';
@@ -23,8 +21,6 @@ import {
 } from '../utils/notifications/filters';
 
 export const FiltersRoute: FC = () => {
-  trackEvent('screen_view', { name: 'Filters' });
-
   const { clearFilters } = useAppContext();
 
   const { t } = useTranslation();
