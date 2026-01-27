@@ -10,6 +10,8 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { trackEvent } from '@aptabase/electron/renderer';
+
 import { useAppContext } from '../hooks/useAppContext';
 
 import { Contents } from '../components/layout/Contents';
@@ -24,6 +26,8 @@ import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
+  trackEvent('screen_view', { name: 'Accounts' });
+
   const navigate = useNavigate();
 
   const { auth, logoutFromAccount } = useAppContext();

@@ -23,6 +23,8 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
+import { trackEvent } from '@aptabase/electron/renderer';
+
 import { useAppContext } from '../hooks/useAppContext';
 
 import { Contents } from '../components/layout/Contents';
@@ -47,6 +49,8 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
+  trackEvent('screen_view', { name: 'Login' });
+
   const navigate = useNavigate();
 
   const { login, auth } = useAppContext();

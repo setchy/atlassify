@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import Dotenv from 'dotenv-webpack';
 import type webpack from 'webpack';
 import { merge } from 'webpack-merge';
 
@@ -19,6 +20,8 @@ const configuration: webpack.Configuration = {
     path: webpackPaths.buildPath,
     filename: 'main.js',
   },
+
+  plugins: [new Dotenv()],
 };
 
 export default merge(baseConfig, configuration);

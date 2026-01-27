@@ -19,6 +19,8 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
+import { trackEvent } from '@aptabase/electron/renderer';
+
 import { useAppContext } from '../hooks/useAppContext';
 
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
@@ -27,6 +29,8 @@ import { Centered } from '../components/layout/Centered';
 import { showWindow } from '../utils/comms';
 
 export const LandingRoute: FC = () => {
+  trackEvent('screen_view', { name: 'Landing' });
+
   const navigate = useNavigate();
 
   const { isLoggedIn } = useAppContext();

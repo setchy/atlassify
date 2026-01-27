@@ -2,6 +2,9 @@
 dist/
 build/
 
+# Environment variables
+.env
+
 # Dependency directories
 node_modules/
 

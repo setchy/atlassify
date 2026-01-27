@@ -1,5 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { trackEvent } from '@aptabase/electron/renderer';
+
 import type {
   Account,
   AccountNotifications,
@@ -177,6 +179,7 @@ export const useNotifications = (): NotificationsState => {
       readNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
+      trackEvent('action', { name: 'Mark as Read' });
 
       const account = readNotifications[0].account;
 
@@ -228,6 +231,7 @@ export const useNotifications = (): NotificationsState => {
       unreadNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
+      trackEvent('action', { name: 'Mark as Unread' });
 
       const account = unreadNotifications[0].account;
 

@@ -1,3 +1,5 @@
+import { trackEvent } from '@aptabase/electron/renderer';
+
 import { APPLICATION } from '../../shared/constants';
 
 import type { Account, AtlassifyNotification, Link } from '../types';
@@ -22,6 +24,8 @@ export const URLs = {
 };
 
 export function openAtlassifyReleaseNotes(version: string) {
+  trackEvent('action', { name: 'Open Release Notes' });
+
   openExternalLink(
     `https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link,
   );
@@ -38,20 +42,28 @@ export function openAtlassianCreateToken() {
 }
 
 export function openMyNotifications() {
+  trackEvent('action', { name: 'Open My Notifications' });
+
   const url = new URL(URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS);
   openExternalLink(url.toString() as Link);
 }
 
 export function openMyPullRequests() {
+  trackEvent('action', { name: 'Open My Pull Requests' });
+
   const url = new URL(URLs.ATLASSIAN.WEB.BITBUCKET_HOME);
   openExternalLink(url.toString() as Link);
 }
 
 export function openAccountProfile(account: Account) {
+  trackEvent('action', { name: 'Open Account Profile' });
+
   const url = new URL(`${URLs.ATLASSIAN.WEB.PEOPLE}/${account.id}`);
   openExternalLink(url.toString() as Link);
 }
 
 export async function openNotification(notification: AtlassifyNotification) {
+  trackEvent('action', { name: 'Open Notification' });
+
   openExternalLink(notification.entity.url ?? notification.url);
 }
