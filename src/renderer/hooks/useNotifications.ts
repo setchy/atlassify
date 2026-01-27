@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
 import type {
   Account,
@@ -88,44 +88,54 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
+  const isFetchingRef = useRef(false);
   const fetchNotifications = useCallback(
     async (state: AtlassifyState) => {
+      if (isFetchingRef.current) {
+        // Prevent overlapping fetches
+        return;
+      }
+      isFetchingRef.current = true;
       setStatus('loading');
       setGlobalError(null);
 
-      const previousNotifications = notifications;
-      const fetchedNotifications = await getAllNotifications(state);
-      setNotifications(fetchedNotifications);
+      try {
+        const previousNotifications = notifications;
+        const fetchedNotifications = await getAllNotifications(state);
+        setNotifications(fetchedNotifications);
 
-      // Set Global Error if all accounts have the same error
-      const allAccountsHaveErrors =
-        doesAllAccountsHaveErrors(fetchedNotifications);
-      const allAccountErrorsAreSame =
-        areAllAccountErrorsSame(fetchedNotifications);
+        // Set Global Error if all accounts have the same error
+        const allAccountsHaveErrors =
+          doesAllAccountsHaveErrors(fetchedNotifications);
+        const allAccountErrorsAreSame =
+          areAllAccountErrorsSame(fetchedNotifications);
 
-      if (allAccountsHaveErrors) {
-        const accountError = fetchedNotifications[0].error;
-        setStatus('error');
-        setGlobalError(allAccountErrorsAreSame ? accountError : null);
-        return;
-      }
-
-      const diffNotifications = getNewNotifications(
-        previousNotifications,
-        fetchedNotifications,
-      );
-
-      if (diffNotifications.length > 0) {
-        if (state.settings.playSoundNewNotifications) {
-          raiseSoundNotification(state.settings.notificationVolume);
+        if (allAccountsHaveErrors) {
+          const accountError = fetchedNotifications[0].error;
+          setStatus('error');
+          setGlobalError(allAccountErrorsAreSame ? accountError : null);
+          return;
         }
 
-        if (state.settings.showSystemNotifications) {
-          raiseNativeNotification(diffNotifications);
-        }
-      }
+        const diffNotifications = getNewNotifications(
+          previousNotifications,
+          fetchedNotifications,
+        );
 
-      setStatus('success');
+        if (diffNotifications.length > 0) {
+          if (state.settings.playSoundNewNotifications) {
+            raiseSoundNotification(state.settings.notificationVolume);
+          }
+
+          if (state.settings.showSystemNotifications) {
+            raiseNativeNotification(diffNotifications);
+          }
+        }
+
+        setStatus('success');
+      } finally {
+        isFetchingRef.current = false;
+      }
     },
     [notifications],
   );
