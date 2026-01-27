@@ -99,7 +99,6 @@ export const useNotifications = (): NotificationsState => {
       }
       isFetchingRef.current = true;
       setStatus('loading');
-      setGlobalError(null);
 
       try {
         const previousNotifications = notifications;
@@ -135,6 +134,7 @@ export const useNotifications = (): NotificationsState => {
         }
 
         setStatus('success');
+        setGlobalError(null);
       } finally {
         isFetchingRef.current = false;
       }
