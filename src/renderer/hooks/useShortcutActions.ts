@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { trackEvent } from '@aptabase/electron/main';
+import { trackEvent } from '@aptabase/electron/renderer';
 
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
