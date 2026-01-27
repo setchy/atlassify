@@ -4,14 +4,13 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
-import * as useLoggedNavigate from '../hooks/useLoggedNavigate';
-
 import { SettingsRoute } from './Settings';
 
 const navigateMock = jest.fn();
-jest
-  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
-  .mockReturnValue(navigateMock);
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => navigateMock,
+}));
 
 describe('renderer/routes/Settings.tsx', () => {
   const fetchNotificationsMock = jest.fn();

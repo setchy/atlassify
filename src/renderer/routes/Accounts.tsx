@@ -1,5 +1,6 @@
 import { type FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
@@ -10,7 +11,6 @@ import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../hooks/useAppContext';
-import { useLoggedNavigate } from '../hooks/useLoggedNavigate';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -24,7 +24,7 @@ import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
-  const navigate = useLoggedNavigate();
+  const navigate = useNavigate();
 
   const { auth, logoutFromAccount } = useAppContext();
 

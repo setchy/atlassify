@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { trackEvent } from '@aptabase/electron/renderer';
 
 import { quitApp } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
-import { useLoggedNavigate } from './useLoggedNavigate';
 
 type ShortcutName =
   | 'home'
@@ -36,7 +35,7 @@ type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
  * Used by both the global shortcuts component and UI buttons to avoid duplication.
  */
 export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
-  const navigate = useLoggedNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =

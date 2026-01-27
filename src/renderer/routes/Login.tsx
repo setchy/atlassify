@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
@@ -23,7 +24,6 @@ import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../hooks/useAppContext';
-import { useLoggedNavigate } from '../hooks/useLoggedNavigate';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -47,7 +47,7 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
-  const navigate = useLoggedNavigate();
+  const navigate = useNavigate();
 
   const { login, auth } = useAppContext();
 

@@ -4,17 +4,16 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import * as useLoggedNavigate from '../hooks/useLoggedNavigate';
-
 import * as authUtils from '../utils/auth/utils';
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';
 import { AccountsRoute } from './Accounts';
 
 const navigateMock = jest.fn();
-jest
-  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
-  .mockReturnValue(navigateMock);
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => navigateMock,
+}));
 
 describe('renderer/routes/Accounts.tsx', () => {
   afterEach(() => {

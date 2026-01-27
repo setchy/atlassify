@@ -3,14 +3,13 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
-import * as useLoggedNavigate from '../../hooks/useLoggedNavigate';
-
 import { SettingsReset } from './SettingsReset';
 
 const navigateMock = jest.fn();
-jest
-  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
-  .mockReturnValue(navigateMock);
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => navigateMock,
+}));
 
 describe('renderer/components/settings/SettingsReset.tsx', () => {
   const resetSettingsMock = jest.fn();

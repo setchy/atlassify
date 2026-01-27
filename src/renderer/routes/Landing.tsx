@@ -1,5 +1,6 @@
 import { type FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
@@ -19,7 +20,6 @@ import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../hooks/useAppContext';
-import { useLoggedNavigate } from '../hooks/useLoggedNavigate';
 
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';
@@ -27,7 +27,7 @@ import { Centered } from '../components/layout/Centered';
 import { showWindow } from '../utils/comms';
 
 export const LandingRoute: FC = () => {
-  const navigate = useLoggedNavigate();
+  const navigate = useNavigate();
 
   const { isLoggedIn } = useAppContext();
 

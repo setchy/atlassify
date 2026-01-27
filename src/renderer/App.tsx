@@ -20,6 +20,7 @@ import { useAppContext } from './hooks/useAppContext';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
+import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
@@ -36,6 +37,7 @@ export const App = () => {
   return (
     <AppProvider>
       <Router>
+        <AppAnalytics />
         <AppLayout>
           <GlobalShortcuts />
           <Routes>

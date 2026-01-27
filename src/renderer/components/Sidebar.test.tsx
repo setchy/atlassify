@@ -11,8 +11,6 @@ import {
 } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import * as useLoggedNavigate from '../hooks/useLoggedNavigate';
-
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 
@@ -29,9 +27,10 @@ const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
 };
 
 const navigateMock = jest.fn();
-jest
-  .spyOn(useLoggedNavigate, 'useLoggedNavigate')
-  .mockReturnValue(navigateMock);
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => navigateMock,
+}));
 
 describe('renderer/components/Sidebar.tsx', () => {
   const updateSettingMock = jest.fn();
