@@ -88,7 +88,7 @@ let shouldUseAlternateIdleIcon = false;
 let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
-  trackEvent('app', { event: 'launched' });
+  trackEvent('Application', { event: 'Launched' });
   preventSecondInstance();
 
   await onFirstRunMaybe();
