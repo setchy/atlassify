@@ -36,7 +36,7 @@
   },
   "homepage": "https://atlassify.io/",
   "dependencies": {
-    "@iconify-json/line-md": "1.2.13",
+    "@iconify-json/line-md": "1.2.14",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "27.0.0",
     "@tailwindcss/vite": "4.1.18",
