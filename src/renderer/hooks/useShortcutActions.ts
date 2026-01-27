@@ -1,9 +1,7 @@
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { trackEvent } from '@aptabase/electron/renderer';
-
-import { quitApp } from '../utils/comms';
+import { quitApp, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
 
@@ -61,7 +59,9 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'u',
         isAllowed: isLoggedIn && !isLoading,
         action: () => {
-          trackEvent('action', { name: 'Toggle Read/Unread' });
+          trackEvent('action', {
+            name: 'Toggle Read/Unread',
+          });
 
           updateSetting(
             'fetchOnlyUnreadNotifications',
@@ -73,7 +73,9 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 'p',
         isAllowed: isLoggedIn,
         action: () => {
-          trackEvent('action', { name: 'Group By Product' });
+          trackEvent('action', {
+            name: 'Group By Product',
+          });
 
           updateSetting(
             'groupNotificationsByProduct',
@@ -85,7 +87,9 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         key: 't',
         isAllowed: isLoggedIn,
         action: () => {
-          trackEvent('action', { name: 'Group By Title' });
+          trackEvent('action', {
+            name: 'Group By Title',
+          });
 
           updateSetting(
             'groupNotificationsByTitle',

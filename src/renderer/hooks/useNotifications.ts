@@ -1,7 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import { trackEvent } from '@aptabase/electron/renderer';
-
 import type {
   Account,
   AccountNotifications,
@@ -17,6 +15,7 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
+import { trackEvent } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
@@ -241,7 +240,9 @@ export const useNotifications = (): NotificationsState => {
       unreadNotifications: AtlassifyNotification[],
     ) => {
       setStatus('loading');
-      trackEvent('action', { name: 'Mark as Unread' });
+      trackEvent('action', {
+        name: 'Mark as Unread',
+      });
 
       const account = unreadNotifications[0].account;
 

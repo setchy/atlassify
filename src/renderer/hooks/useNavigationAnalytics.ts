@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { trackEvent } from '@aptabase/electron/renderer';
-
+import { trackEvent } from '../utils/comms';
 import { formatProperCase } from '../utils/helpers';
 
 /**
