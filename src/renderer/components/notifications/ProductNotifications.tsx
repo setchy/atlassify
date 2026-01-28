@@ -5,6 +5,7 @@ import Badge from '@atlaskit/badge';
 import Button, { IconButton } from '@atlaskit/button/new';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
+
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
@@ -13,36 +14,34 @@ import type { AtlassifyNotification } from '../../types';
 
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
-import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
 import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
+  isExitingIds: string[];
+  onExit?: (id: string) => void;
 }
 
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
+  isExitingIds,
+  onExit,
 }) => {
-  const { markNotificationsRead, settings } = useAppContext();
-
+  const { markNotificationsRead } = useAppContext();
   const { t } = useTranslation();
-
-  const [shouldAnimateProductExit, setShouldAnimateProductExit] =
-    useState(false);
   const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
 
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
-  const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
 
   const actionProductInteraction = () => {
     openExternalLink(productNotification.home);
   };
 
+  // Mark all as read (optimistic removal)
   const actionMarkAsRead = () => {
-    setShouldAnimateProductExit(shouldAnimateExit);
     markNotificationsRead(productNotifications);
   };
 
@@ -55,7 +54,6 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     isProductNotificationsVisible,
     'product',
   );
-  const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
     transitionDuration: '200ms',
@@ -141,7 +139,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
               <IconButton
                 appearance="subtle"
                 icon={(iconProps) => (
-                  <ChevronIcon {...iconProps} size="small" />
+                  <Chevron.icon {...iconProps} size="small" />
                 )}
                 label={Chevron.label}
                 shape="circle"
@@ -156,9 +154,10 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       {isProductNotificationsVisible &&
         productNotifications.map((notification) => (
           <NotificationRow
-            isProductAnimatingExit={shouldAnimateProductExit}
+            isExiting={isExitingIds.includes(notification.id)}
             key={notification.id}
             notification={notification}
+            onExit={onExit}
           />
         ))}
     </Stack>

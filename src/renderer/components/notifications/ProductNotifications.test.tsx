@@ -29,6 +29,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
+      isExitingIds: [],
     };
 
     const tree = renderWithAppContext(<ProductNotifications {...props} />);
@@ -41,6 +42,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
+      isExitingIds: [],
     };
 
     const tree = renderWithAppContext(<ProductNotifications {...props} />);
@@ -55,6 +57,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const props: ProductNotificationsProps = {
       productNotifications: [mockBitbucketNotification],
+      isExitingIds: [],
     };
 
     await act(async () => {
@@ -74,6 +77,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     await act(async () => {
       renderWithAppContext(
         <ProductNotifications
+          isExitingIds={[]}
           productNotifications={[mockConfluenceNotification]}
         />,
       );
@@ -87,6 +91,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should toggle product notifications visibility', async () => {
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
+      isExitingIds: [],
     };
 
     await act(async () => {
@@ -103,6 +108,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should mark all product notifications as read', async () => {
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
+      isExitingIds: [],
     };
 
     const markNotificationsReadMock = jest.fn();

@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
@@ -30,37 +30,38 @@ import { shouldRemoveNotificationsFromState } from '../../utils/notifications/re
 
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
-  isProductAnimatingExit: boolean;
+  isExiting: boolean;
+  onExit?: (id: string) => void;
 }
 
 export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
-  isProductAnimatingExit,
-}: NotificationRowProps) => {
+  isExiting,
+  onExit,
+}) => {
   const { markNotificationsRead, markNotificationsUnread, settings } =
     useAppContext();
-
   const { t } = useTranslation();
-
-  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
-    useState(false);
-
   const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
 
-  const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(
-      shouldAnimateExit && settings.markAsReadOnOpen,
-    );
+  const handleTransitionEnd = () => {
+    if (isExiting && onExit) {
+      onExit(notification.id);
+    }
+  };
 
+  const actionNotificationInteraction = () => {
+    if (shouldAnimateExit && settings.markAsReadOnOpen && onExit) {
+      onExit(notification.id);
+    }
     if (settings.markAsReadOnOpen) {
       markNotificationsRead([notification]);
     }
-
     openNotification(notification);
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit);
+    // Only mark as read; let parent set isExiting, which triggers animation, then onExit is called onTransitionEnd
     markNotificationsRead([notification]);
   };
 
@@ -69,23 +70,18 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   };
 
   const updatedAt = formatNotificationUpdatedAt(notification);
-
   const categoryDetails = categoryFilter.getTypeDetails(notification.category);
   const CategoryIcon = categoryDetails.icon;
-
   const isNotificationUnread = readStateFilter.filterNotification(
     notification,
     'unread',
   );
-
   const spaceBetweenSections = 'space.100';
-
   const avatarAppearanceStyle: AppearanceType = isCompassScorecardNotification(
     notification,
   )
     ? 'square'
     : 'circle';
-
   const avatarGroup = notification.notificationGroup.additionalActors.map(
     (actor) => ({
       key: actor.displayName,
@@ -94,7 +90,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       src: actor.avatarURL,
     }),
   );
-
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
   const notificationBodyText = formatNotificationBodyText(notification);
@@ -104,10 +99,11 @@ export const NotificationRow: FC<NotificationRowProps> = ({
     <div
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
-        (isProductAnimatingExit || shouldAnimateNotificationExit) &&
-          'translate-x-full opacity-0 transition duration-350 ease-in-out',
+        isExiting &&
+          'translate-x-full opacity-0 transition duration-500 ease-in-out',
       )}
       id={notification.id}
+      onTransitionEnd={handleTransitionEnd}
     >
       <Box padding="space.100">
         <Inline alignBlock="center" space={spaceBetweenSections}>
@@ -130,7 +126,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                 </Tooltip>
               </Stack>
             </Box>
-
             <Inline grow="fill">
               <Box
                 as="div"
@@ -147,7 +142,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                         {updatedAt}
                       </Text>
                     </Box>
-
                     <Box as="div" id="notification-metadata">
                       <Stack space="space.025">
                         <Box
@@ -187,7 +181,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                             <Text size="small">{notificationBodyText}</Text>
                           </Inline>
                         </Box>
-
                         <Box
                           as="div"
                           id="notification-product"
@@ -207,7 +200,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                             <Text size="small">{notificationFooterText}</Text>
                           </Inline>
                         </Box>
-
                         <Box as="div" id="notification-group">
                           {notification.notificationGroup.size > 1 && (
                             <Inline alignBlock="center" space="space.050">
@@ -235,9 +227,8 @@ export const NotificationRow: FC<NotificationRowProps> = ({
               </Box>
             </Inline>
           </Inline>
-
           <Box as="div" id="notification-actions">
-            {!shouldAnimateNotificationExit &&
+            {!isExiting &&
               (isNotificationUnread ? (
                 <Tooltip
                   content={t('notifications.interactions.mark_as_read')}

@@ -1,4 +1,11 @@
-import { type FC, Fragment, type MouseEvent, useMemo, useState } from 'react';
+import {
+  type FC,
+  Fragment,
+  type MouseEvent,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
@@ -52,11 +59,16 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
   const { t } = useTranslation();
 
+  const [pendingRemoval, setPendingRemoval] = useState<string[]>([]);
   const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
     useState(true);
-
   const [showMarkAccountAsReadModal, setShowMarkAccountAsReadModal] =
     useState(false);
+
+  // Filter out notifications that are pending removal
+  const visibleNotifications = notifications.filter(
+    (n) => !pendingRemoval.includes(n.id),
+  );
 
   const actionOpenMarkAccountAsReadModal = () => {
     setShowMarkAccountAsReadModal(true);
@@ -66,32 +78,21 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     setShowMarkAccountAsReadModal(false);
   };
 
-  const gridStyles = xcss({
-    width: '100%',
-  });
-
-  const closeContainerStyles = xcss({
-    gridArea: 'close',
-  });
-
-  const titleContainerStyles = xcss({
-    gridArea: 'title',
-  });
+  const gridStyles = xcss({ width: '100%' });
+  const closeContainerStyles = xcss({ gridArea: 'close' });
+  const titleContainerStyles = xcss({ gridArea: 'title' });
 
   const sortedNotifications = useMemo(
-    () => [...notifications].sort((a, b) => a.order - b.order),
-    [notifications],
+    () => [...visibleNotifications].sort((a, b) => a.order - b.order),
+    [visibleNotifications],
   );
 
   const groupedNotifications = useMemo(() => {
     const map = groupNotificationsByProduct(sortedNotifications);
-
     const notifications = Array.from(map.entries());
-
     if (settings.groupNotificationsByProductAlphabetically) {
       notifications.sort((a, b) => a[0].localeCompare(b[0]));
     }
-
     return notifications;
   }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
@@ -99,9 +100,24 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
   };
 
+  // Mark all as read (optimistic removal)
+  const actionMarkAllAsRead = () => {
+    setPendingRemoval((prev) => [
+      ...prev,
+      ...notifications.map((n) => n.id).filter((id) => !prev.includes(id)),
+    ]);
+    markNotificationsRead(notifications);
+    actionCloseMarkAccountAsReadModal();
+  };
+
+  // Called by NotificationRow or ProductNotifications when exit animation completes
+  const handleNotificationExit = useCallback((id: string) => {
+    setPendingRemoval((prev) => prev.filter((nid) => nid !== id));
+  }, []);
+
   const hasNotifications = useMemo(
-    () => notifications.length > 0,
-    [notifications],
+    () => visibleNotifications.length > 0,
+    [visibleNotifications],
   );
 
   const Chevron = getChevronDetails(
@@ -166,7 +182,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             >
               {hasMoreNotifications
                 ? Constants.MAX_NOTIFICATIONS_PER_ACCOUNT + 1
-                : notifications.length}
+                : visibleNotifications.length}
             </Badge>
           </Inline>
 
@@ -234,16 +250,19 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
                   <ProductNotifications
+                    isExitingIds={pendingRemoval}
                     key={productType}
+                    onExit={handleNotificationExit}
                     productNotifications={productNotifications}
                   />
                 ),
               )
             : sortedNotifications.map((notification) => (
                 <NotificationRow
-                  isProductAnimatingExit={false}
+                  isExiting={pendingRemoval.includes(notification.id)}
                   key={notification.id}
                   notification={notification}
+                  onExit={handleNotificationExit}
                 />
               ))}
         </Fragment>
@@ -293,10 +312,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               </Button>
               <Button
                 appearance="warning"
-                onClick={() => {
-                  markNotificationsRead(notifications);
-                  actionCloseMarkAccountAsReadModal();
-                }}
+                onClick={actionMarkAllAsRead}
                 testId="account-mark-as-read-confirm"
               >
                 {t('common.proceed')}

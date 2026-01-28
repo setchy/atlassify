@@ -27,7 +27,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('standard notification', async () => {
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
@@ -38,7 +38,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('group by title', async () => {
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
@@ -58,7 +58,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const props: NotificationRowProps = {
         notification: mockNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
@@ -75,7 +75,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const props: NotificationRowProps = {
         notification: mockNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
@@ -92,7 +92,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
           product: PRODUCTS.compass,
           message: 'some-project improved a scorecard',
         },
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
@@ -111,7 +111,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
             iconUrl: null,
           },
         },
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       const tree = renderWithAppContext(<NotificationRow {...props} />, {
@@ -128,7 +128,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       renderWithAppContext(<NotificationRow {...props} />, {
@@ -146,7 +146,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       renderWithAppContext(<NotificationRow {...props} />, {
@@ -168,7 +168,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       renderWithAppContext(<NotificationRow {...props} />, {
@@ -188,7 +188,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
           ...mockSingleAtlassifyNotification,
           readState: 'read' as ReadStateType,
         },
-        isProductAnimatingExit: false,
+        isExiting: false,
       };
 
       renderWithAppContext(<NotificationRow {...props} />, {
