@@ -8,7 +8,9 @@ import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
 describe('renderer/utils/logger.ts', () => {
   // Suppress console output during these tests
-  let originalConsoleLog: any, originalConsoleWarn: any, originalConsoleError: any;
+  let originalConsoleLog: any,
+    originalConsoleWarn: any,
+    originalConsoleError: any;
   beforeAll(() => {
     originalConsoleLog = console.log;
     originalConsoleWarn = console.warn;
