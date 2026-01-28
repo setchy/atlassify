@@ -16,15 +16,21 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
   });
 }
 
-// Stub Atlaskit feature flags and client so tests don't hit the Feature Gate client
+// Completely strip out Atlaskit feature flag modules (never used, prevents all code execution)
+vi.mock('@atlaskit/feature-gate-js-client', () => ({}));
+// Stub Atlaskit feature flags so tests don't hit the Feature Gate client (Jest-style)
 vi.mock('@atlaskit/platform-feature-flags', () => ({
-  fg: vi.fn(() => false),
-  FeatureFlagClient: class {
-    checkGate() {
-      return false;
-    }
-    // Add any other methods if needed
-  },
+  fg: () => false,
+}));
+vi.mock('@atlaskit/ds-lib/dist/cjs/utils/use-id', () => ({
+  useIdSeed: () => () => 'mock-id',
+  useUniqueId: () => 'mock-id',
+}));
+// Minimal Jest-style mock for @atlaskit/tokens
+vi.mock('@atlaskit/tokens', () => ({
+  setGlobalTheme: () => {},
+  token: () => '',
+  useThemeObserver: () => ({}),
 }));
 
 window.atlassify = {
@@ -63,6 +69,23 @@ window.atlassify = {
     trackEvent: vi.fn(),
   },
 };
+
+// Suppress Aptabase fetch errors by mocking fetch
+if (typeof window !== 'undefined' && typeof window.fetch === 'function') {
+  if (!window._originalFetch) {
+    window._originalFetch = window.fetch;
+    window.fetch = (...args) => {
+      if (typeof args[0] === 'string' && args[0].includes('aptabase')) {
+        return Promise.resolve({
+          ok: true,
+          status: 200,
+          json: async () => ({}),
+        });
+      }
+      return window._originalFetch(...args);
+    };
+  }
+}
 
 window.TextEncoder = TextEncoder;
 window.HTMLMediaElement.prototype.play = vi.fn();

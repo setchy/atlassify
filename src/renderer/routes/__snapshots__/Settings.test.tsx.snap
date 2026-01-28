@@ -1546,7 +1546,6 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-label="Accounts"
                 class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 role="img"
-                style="color: var(--ds-icon-accent-blue);"
               >
                 <svg
                   class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
@@ -1586,7 +1585,6 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-label="Quit Atlassify"
                 class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
                 role="img"
-                style="color: var(--ds-icon-accent-red);"
               >
                 <svg
                   class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"

@@ -7,6 +7,21 @@ import * as logger from '../../shared/logger';
 import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
 describe('renderer/utils/logger.ts', () => {
+  // Suppress console output during these tests
+  let originalConsoleLog: any, originalConsoleWarn: any, originalConsoleError: any;
+  beforeAll(() => {
+    originalConsoleLog = console.log;
+    originalConsoleWarn = console.warn;
+    originalConsoleError = console.error;
+    console.log = vi.fn();
+    console.warn = vi.fn();
+    console.error = vi.fn();
+  });
+  afterAll(() => {
+    console.log = originalConsoleLog;
+    console.warn = originalConsoleWarn;
+    console.error = originalConsoleError;
+  });
   const logInfoSpy = vi.spyOn(logger, 'logInfo').mockImplementation();
   const logWarnSpy = vi.spyOn(logger, 'logWarn').mockImplementation();
   const logErrorSpy = vi.spyOn(logger, 'logError').mockImplementation();
