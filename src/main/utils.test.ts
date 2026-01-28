@@ -1,33 +1,56 @@
 import path from 'node:path';
 
-const writeFile = jest.fn((_p: string, _d: unknown, cb: () => void) => cb());
-jest.mock('node:fs', () => ({
+import { vi } from 'vitest';
+
+// Grouped static mocks for clarity
+const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
+const homedir = vi.fn(() => '/home/test');
+const dialogMock = { showMessageBoxSync: vi.fn() };
+const shellMock = { openPath: vi.fn() };
+
+vi.mock('node:fs', () => ({
+  ...vi.importActual('node:fs'),
   writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
+  default: {
+    ...vi.importActual('node:fs'),
+    writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
+  },
 }));
 
-const homedir = jest.fn(() => '/home/test');
-jest.mock('node:os', () => ({ homedir: () => homedir() }));
-
-jest.mock('electron', () => ({
-  dialog: { showMessageBoxSync: jest.fn() },
-  shell: { openPath: jest.fn() },
+vi.mock('node:os', () => ({
+  ...vi.importActual('node:os'),
+  homedir: () => homedir(),
+  default: { ...vi.importActual('node:os'), homedir: () => homedir() },
 }));
 
-const fileTransport = { getFile: () => ({ path: '/var/log/app/app.log' }) };
-const logTransports: { file: { getFile: () => { path: string } | null } } = {
-  file: fileTransport,
-};
-const logInfoMock = jest.fn();
-const logErrorMock = jest.fn();
+vi.mock('electron', () => {
+  const dialogMock = { showMessageBoxSync: vi.fn() };
+  const shellMock = { openPath: vi.fn() };
+  return {
+    ...vi.importActual('electron'),
+    dialog: dialogMock,
+    shell: shellMock,
+  };
+});
 
-jest.mock('electron-log', () => ({ transports: logTransports }));
-jest.mock('../shared/logger', () => ({
+const logInfoMock = vi.fn();
+const logErrorMock = vi.fn();
+vi.mock('electron-log', () => {
+  const fileTransport = { getFile: () => ({ path: '/var/log/app/app.log' }) };
+  return {
+    ...vi.importActual('electron-log'),
+    transports: { file: fileTransport },
+    default: { transports: { file: fileTransport } },
+  };
+});
+
+vi.mock('../shared/logger', () => ({
   logInfo: (...a: unknown[]) => logInfoMock(...a),
   logError: (...a: unknown[]) => logErrorMock(...a),
 }));
 
-const sendRendererEventMock = jest.fn();
-jest.mock('./events', () => ({
+const sendRendererEventMock = vi.fn();
+vi.mock('./events', () => ({
   sendRendererEvent: (...a: unknown[]) => sendRendererEventMock(...a),
 }));
 
@@ -41,13 +64,13 @@ function createMb() {
       capturePage: () =>
         Promise.resolve({ toPNG: () => Buffer.from('image-bytes') }),
     },
-    app: { quit: jest.fn() },
+    app: { quit: vi.fn() },
   };
 }
 
 describe('main/utils', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('takeScreenshot writes file and logs info', async () => {
@@ -63,7 +86,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp sends event and quits on confirm', () => {
-    (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(1);
+    (dialog.showMessageBoxSync as vi.Mock).mockReturnValue(1);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).toHaveBeenCalledWith(
@@ -74,7 +97,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp does nothing on cancel', () => {
-    (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(0);
+    (dialog.showMessageBoxSync as vi.Mock).mockReturnValue(0);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).not.toHaveBeenCalled();
@@ -87,11 +110,17 @@ describe('main/utils', () => {
     expect(logErrorMock).not.toHaveBeenCalled();
   });
 
-  it('openLogsDirectory logs error when no directory', () => {
-    (fileTransport as { getFile: () => { path: string } | null }).getFile =
-      () => null;
-    jest.resetModules();
-    const { openLogsDirectory: openLogsDirectoryReloaded } = require('./utils');
+  it('openLogsDirectory logs error when no directory', async () => {
+    // Swap electron-log mock for this test only
+    vi.doMock('electron-log', () => ({
+      ...vi.importActual('electron-log'),
+      transports: { file: { getFile: () => null } },
+      default: { transports: { file: { getFile: () => null } } },
+    }));
+    vi.resetModules();
+    const { openLogsDirectory: openLogsDirectoryReloaded } = await import(
+      './utils'
+    );
     openLogsDirectoryReloaded();
     expect(logErrorMock).toHaveBeenCalledWith(
       'openLogsDirectory',

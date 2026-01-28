@@ -1,3 +1,35 @@
+describe('main/icons', () => {
+  const originalPlatform = process.platform;
+
+  function mockPlatform(value: NodeJS.Platform) {
+    Object.defineProperty(process, 'platform', { value });
+  }
+
+  afterAll(() => {
+    mockPlatform(originalPlatform as NodeJS.Platform);
+  });
+
+  it('returns correct icon path for macOS', async () => {
+    mockPlatform('darwin');
+    const iconsModule = await import('./icons');
+    expect(iconsModule.getIconPath('icon-mac.png')).toMatch(/icon-mac\.png$/);
+  });
+
+  it('returns correct icon path for Windows', async () => {
+    mockPlatform('win32');
+    const iconsModule = await import('./icons');
+    expect(iconsModule.getIconPath('icon-win.ico')).toMatch(/icon-win\.ico$/);
+  });
+
+  it('returns correct icon path for Linux', async () => {
+    mockPlatform('linux');
+    const iconsModule = await import('./icons');
+    expect(iconsModule.getIconPath('icon-linux.png')).toMatch(
+      /icon-linux\.png$/,
+    );
+  });
+});
+
 import { TrayIcons } from './icons';
 
 describe('main/icons.ts', () => {

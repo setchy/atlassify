@@ -1,6 +1,8 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import {
   ensureStableEmojis,
   renderWithAppContext,
@@ -15,7 +17,7 @@ import {
   type AccountNotificationsProps,
 } from './AccountNotifications';
 
-jest.mock('./ProductNotifications', () => ({
+vi.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>ProductNotifications</div>,
 }));
 
@@ -26,7 +28,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
   describe('account view types', () => {
     it('should render itself - sort by date - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
@@ -41,7 +43,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - sort by date - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
@@ -131,7 +133,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open profile when clicked', async () => {
-    const openAccountProfileSpy = jest
+    const openAccountProfileSpy = vi
       .spyOn(links, 'openAccountProfile')
       .mockImplementation();
 
@@ -155,7 +157,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open my pull requests', async () => {
-    const openPullRequestsSpy = jest
+    const openPullRequestsSpy = vi
       .spyOn(links, 'openMyPullRequests')
       .mockImplementation();
 
@@ -183,7 +185,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {
@@ -205,7 +207,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       error: null,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {

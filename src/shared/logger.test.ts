@@ -1,11 +1,13 @@
 import log from 'electron-log';
 
+import { vi } from 'vitest';
+
 import { logError, logInfo, logWarn } from './logger';
 
 describe('shared/logger.ts', () => {
-  const logInfoSpy = jest.spyOn(log, 'info').mockImplementation();
-  const logWarnSpy = jest.spyOn(log, 'warn').mockImplementation();
-  const logErrorSpy = jest.spyOn(log, 'error').mockImplementation();
+  const logInfoSpy = vi.spyOn(log, 'info').mockImplementation(() => {});
+  const logWarnSpy = vi.spyOn(log, 'warn').mockImplementation(() => {});
+  const logErrorSpy = vi.spyOn(log, 'error').mockImplementation(() => {});
 
   const mockError = new Error('baz');
 

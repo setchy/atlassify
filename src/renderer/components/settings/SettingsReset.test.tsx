@@ -1,21 +1,26 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
 import { SettingsReset } from './SettingsReset';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => navigateMock,
-}));
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', () => {
+  const actual = vi.importActual ? vi.importActual('react-router-dom') : {};
+  return {
+    ...actual,
+    useNavigate: () => navigateMock,
+  };
+});
 
 describe('renderer/components/settings/SettingsReset.tsx', () => {
-  const resetSettingsMock = jest.fn();
+  const resetSettingsMock = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should reset default settings when `confirmed`', async () => {

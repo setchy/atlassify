@@ -1,6 +1,8 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
@@ -13,14 +15,14 @@ import { PRODUCTS } from '../../utils/products';
 import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
-  jest.spyOn(links, 'openNotification').mockImplementation();
-  jest.spyOn(comms, 'openExternalLink').mockImplementation();
-  jest
-    .spyOn(globalThis.Date, 'now')
-    .mockImplementation(() => new Date('2024').valueOf());
+  vi.spyOn(links, 'openNotification').mockImplementation();
+  vi.spyOn(comms, 'openExternalLink').mockImplementation();
+  vi.spyOn(globalThis.Date, 'now').mockImplementation(() =>
+    new Date('2024').valueOf(),
+  );
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('should render notifications', () => {
@@ -124,7 +126,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
   describe('notification interactions', () => {
     it('should open a notification in the browser - click', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const markNotificationsReadMock = vi.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -142,7 +144,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('should open a notification in the browser - delay notification setting enabled', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const markNotificationsReadMock = vi.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -164,7 +166,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('should mark a notification as read', async () => {
-      const markNotificationsReadMock = jest.fn();
+      const markNotificationsReadMock = vi.fn();
 
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
@@ -181,7 +183,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('should mark a notification as unread', async () => {
-      const markNotificationsUnreadMock = jest.fn();
+      const markNotificationsUnreadMock = vi.fn();
 
       const props: NotificationRowProps = {
         notification: {

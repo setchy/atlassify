@@ -1,5 +1,7 @@
 import { act } from '@testing-library/react';
 
+import { vi } from 'vitest';
+
 import {
   ensureStableEmojis,
   renderWithAppContext,
@@ -10,6 +12,7 @@ import { AllRead } from './AllRead';
 
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
+    vi.clearAllMocks();
     ensureStableEmojis();
   });
 

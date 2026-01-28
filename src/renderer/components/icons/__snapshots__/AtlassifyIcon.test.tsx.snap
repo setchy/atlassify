@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - brand color 1`] = `
+exports[`renderer/components/icons/AtlassifyIconBlue.tsx > renders logo - brand color 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -147,7 +147,7 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - brand co
 }
 `;
 
-exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - custom size 1`] = `
+exports[`renderer/components/icons/AtlassifyIconBlue.tsx > renders logo - custom size 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -294,7 +294,7 @@ exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - custom s
 }
 `;
 
-exports[`renderer/components/icons/AtlassifyIconBlue.tsx renders logo - default size and color 1`] = `
+exports[`renderer/components/icons/AtlassifyIconBlue.tsx > renders logo - default size and color 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

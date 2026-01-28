@@ -8,6 +8,6 @@ export const TrayIcons = {
   offline: getIconPath('tray-offline.png'),
 };
 
-function getIconPath(iconName: string) {
+export function getIconPath(iconName: string) {
   return path.join(__dirname, '..', 'assets', 'images', iconName);
 }

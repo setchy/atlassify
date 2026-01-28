@@ -1,15 +1,17 @@
+import { vi } from 'vitest';
+
 import { EVENTS } from '../shared/events';
 
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
-jest.mock('electron', () => {
+vi.mock('electron', () => {
   type Listener = (event: unknown, ...args: unknown[]) => void;
   const listeners: Record<string, Listener[]> = {};
   return {
     ipcRenderer: {
-      send: jest.fn(),
-      invoke: jest.fn().mockResolvedValue('response'),
-      on: jest.fn((channel: string, listener: Listener) => {
+      send: vi.fn(),
+      invoke: vi.fn().mockResolvedValue('response'),
+      on: vi.fn((channel: string, listener: Listener) => {
         if (!listeners[channel]) {
           listeners[channel] = [];
         }
@@ -30,9 +32,9 @@ import { ipcRenderer } from 'electron';
 
 describe('preload/utils', () => {
   afterEach(() => {
-    (ipcRenderer.send as jest.Mock).mockClear();
-    (ipcRenderer.invoke as jest.Mock).mockClear();
-    (ipcRenderer.on as jest.Mock).mockClear();
+    (ipcRenderer.send as unknown as vi.Mock).mockClear();
+    (ipcRenderer.invoke as unknown as vi.Mock).mockClear();
+    (ipcRenderer.on as unknown as vi.Mock).mockClear();
   });
 
   it('sendMainEvent forwards to ipcRenderer.send', () => {
@@ -50,7 +52,7 @@ describe('preload/utils', () => {
   });
 
   it('onRendererEvent registers listener and receives emitted data', () => {
-    const handlerMock = jest.fn();
+    const handlerMock = vi.fn();
     onRendererEvent(
       EVENTS.UPDATE_ICON_TITLE,
       handlerMock as unknown as (
