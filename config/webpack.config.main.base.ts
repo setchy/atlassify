@@ -21,7 +21,7 @@ const configuration: webpack.Configuration = {
     filename: 'main.js',
   },
 
-  plugins: [new Dotenv({ systemvars: true })],
+  plugins: [new Dotenv()],
 };
 
 export default merge(baseConfig, configuration);
