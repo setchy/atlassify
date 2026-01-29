@@ -23,7 +23,7 @@ const config = {
     notarize: false, // Handle notarization in afterSign.js
     target: {
       target: 'default',
-      arch: ['universal'],
+      arch: ['universal', 'arm64', 'x64'],
     },
     hardenedRuntime: true,
     entitlements: 'assets/entitlements.mac.plist',
@@ -38,13 +38,14 @@ const config = {
     target: [
       {
         target: 'nsis',
-        arch: ['x64', 'arm64'],
+        arch: ['x64'],
       },
     ],
     icon: 'assets/images/app-icon.ico',
   },
   nsis: {
     oneClick: false,
+    uninstallDisplayName: '${productName}',
   },
   linux: {
     target: ['AppImage', 'deb', 'rpm'],
