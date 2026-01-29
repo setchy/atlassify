@@ -1,15 +1,15 @@
 ---
-import { Icon } from "astro-icon/components";
-import { format } from "date-fns";
-import { Octokit } from "octokit";
-import { siteMetadata, URLs } from "~/constants";
-import DownloadButton from "~/components/DownloadButton.astro";
+import { Icon } from 'astro-icon/components';
+import { format } from 'date-fns';
+import { Octokit } from 'octokit';
+import { siteMetadata, URLs } from '~/constants';
+import DownloadButton from '~/components/DownloadButton.astro';
 import type {
   DownloadLink,
   DownloadLinks,
   HeroData,
   ReleaseAsset,
-} from "~/types";
+} from '~/types';
 
 const octokit = new Octokit();
 
@@ -21,41 +21,41 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
 
   const supportedOSs: DownloadLink[] = [
     {
-      os: "macOS",
-      name: "macOS (Apple Silicon)",
+      os: 'macOS',
+      name: 'macOS (Apple Silicon)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+-arm64.dmg/g),
       isPrimary: true,
     },
     {
-      os: "macOS",
-      name: "macOS (Intel)",
+      os: 'macOS',
+      name: 'macOS (Intel)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+.dmg/g),
     },
     {
-      os: "macOS",
-      name: "macOS (Universal)",
+      os: 'macOS',
+      name: 'macOS (Universal)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+-universal.dmg/g),
     },
     {
-      os: "Windows",
-      name: "Windows",
+      os: 'Windows',
+      name: 'Windows',
       url: getAssetLink(/Atlassify-Setup-\d+.\d+.\d+.exe/g),
       isPrimary: true,
     },
     {
-      os: "Linux",
-      name: "Linux (AppImage)",
+      os: 'Linux',
+      name: 'Linux (AppImage)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+.AppImage/g),
       isPrimary: true,
     },
     {
-      os: "Linux",
-      name: "Linux (deb)",
+      os: 'Linux',
+      name: 'Linux (deb)',
       url: getAssetLink(/atlassify_\d+.\d+.\d+_amd64.deb/g),
     },
     {
-      os: "Linux",
-      name: "Linux (rpm)",
+      os: 'Linux',
+      name: 'Linux (rpm)',
       url: getAssetLink(/atlassify-\d+.\d+.\d+.x86_64.rpm/g),
     },
   ];
@@ -89,8 +89,8 @@ const loadInitialData = async (): Promise<HeroData> => {
       downloadLinks,
       version: latestRelease.data.name,
       releaseDate: latestRelease.data.published_at
-        ? format(latestRelease.data.published_at, "dd/MM/yyyy")
-        : "",
+        ? format(latestRelease.data.published_at, 'dd/MM/yyyy')
+        : '',
     };
   } catch (error) {
     return {
@@ -98,8 +98,8 @@ const loadInitialData = async (): Promise<HeroData> => {
         alt: [],
         primary: [],
       },
-      version: "",
-      releaseDate: "",
+      version: '',
+      releaseDate: '',
     };
   }
 };
@@ -108,8 +108,7 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
 ---
 
 <div class="text-sm mt-4">
-  {
-    version ? (
+  {version ? (
       <>
         <div class="sm:flex md:grid md:grid-cols-2">
           {downloadLinks.primary.map((item) => (
@@ -155,6 +154,5 @@ const { downloadLinks, version, releaseDate } = await loadInitialData();
           }}
         />
       </div>
-    )
-  }
+    )}
 </div>
