@@ -23,7 +23,7 @@ const config = {
     notarize: false, // Handle notarization in afterSign.js
     target: {
       target: 'default',
-      arch: ['universal', 'arm64', 'x64'],
+      arch: ['universal'],
     },
     hardenedRuntime: true,
     entitlements: 'assets/entitlements.mac.plist',
