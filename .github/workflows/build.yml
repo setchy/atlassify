@@ -42,16 +42,11 @@ jobs:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package for ${{ matrix.platform }}
-        if: matrix.platform == 'macOS'
         run: ${{ matrix.package-cmd }}
         env:
-          # ! macOS MUST sign builds.  Certificates cannot be used across platform (ie: Windows)
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-
-      - name: Package for ${{ matrix.platform }}
-        if: matrix.platform != 'macOS'
-        run: ${{ matrix.package-cmd }}
+          # Signing certificates - important to use the correct cert per platform
+          CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
+          CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
 
       - name: Clean up builds
         shell: bash
