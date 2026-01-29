@@ -35,7 +35,6 @@ const config = {
     icon: 'assets/images/app-icon.icns',
   },
   win: {
-    publisherName: 'Adam Setch',
     target: [
       {
         target: 'nsis',
