@@ -37,10 +37,15 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
 
+      - name: Create .env for build
+        shell: bash
+        run: |
+          {
+            echo "APTABASE_KEY=${{ secrets.APTABASE_KEY }}"
+          } > .env
+
       - name: Build application
         run: pnpm build
-        env:
-          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package and publish for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}
