@@ -22,9 +22,19 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   const supportedOSs: DownloadLink[] = [
     {
       os: 'macOS',
+      name: 'macOS (Apple Silicon)',
+      url: getAssetLink(/Atlassify-\d+.\d+.\d+-arm64.dmg/g),
+      isPrimary: true,
+    },
+    {
+      os: 'macOS',
+      name: 'macOS (Intel)',
+      url: getAssetLink(/Atlassify-\d+.\d+.\d+.dmg/g),
+    },
+    {
+      os: 'macOS',
       name: 'macOS (Universal)',
       url: getAssetLink(/Atlassify-\d+.\d+.\d+-universal.dmg/g),
-      isPrimary: true,
     },
     {
       os: 'Windows',
