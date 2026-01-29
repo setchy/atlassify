@@ -4,14 +4,14 @@
 const config = {
   productName: 'Atlassify',
   appId: 'com.electron.atlassify',
-  copyright: 'Copyright © 2025 Adam Setch',
+  copyright: 'Copyright © 2026 Adam Setch',
   asar: true,
   files: [
-    'assets/images/*',
-    'assets/sounds/*',
+    'assets/images/**/*',
+    'assets/sounds/**/*',
     'build/**/*',
     'LICENSE',
-    'node_modules/**/*',
+    'node_modules/**/*', // Ideally we would have !node_modules and let electron-builder prune deps
     'package.json',
   ],
   electronLanguages: ['en'],
@@ -35,7 +35,12 @@ const config = {
     icon: 'assets/images/app-icon.icns',
   },
   win: {
-    target: 'nsis',
+    target: [
+      {
+        target: 'nsis',
+        arch: ['x64', 'arm64'],
+      },
+    ],
     icon: 'assets/images/app-icon.ico',
   },
   nsis: {
