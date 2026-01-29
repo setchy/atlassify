@@ -42,11 +42,16 @@ jobs:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package for ${{ matrix.platform }}
+        if: matrix.platform == 'macOS'
         run: ${{ matrix.package-cmd }}
         env:
-          # For macOS
+          # ! macOS MUST sign builds.  Certificates cannot be used across platform (ie: Windows)
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+
+      - name: Package for ${{ matrix.platform }}
+        if: matrix.platform != 'macOS'
+        run: ${{ matrix.package-cmd }}
 
       - name: Clean up builds
         shell: bash
@@ -56,5 +61,5 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ matrix.artifact-name }}
-          path: dist/
+          path: dist/*
           overwrite: true

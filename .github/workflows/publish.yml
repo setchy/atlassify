@@ -43,10 +43,11 @@ jobs:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package and publish for ${{ matrix.platform }}
+        if: matrix.platform == 'macOS'
         run: ${{ matrix.package-cmd }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # For macOS
+          # ! macOS MUST sign builds.  Certificates cannot be used across platform (ie: Windows)
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
@@ -54,9 +55,15 @@ jobs:
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           NOTARIZE: ${{ matrix.use-apple-notarization }}
 
+      - name: Package and publish for ${{ matrix.platform }}
+        if: matrix.platform != 'macOS'
+        run: ${{ matrix.package-cmd }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ matrix.artifact-name }}
-          path: dist/
+          path: dist/*
           overwrite: true
