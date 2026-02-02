@@ -79,7 +79,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp sends event and quits on confirm', () => {
-    (dialog.showMessageBoxSync as any).mockReturnValue(1);
+    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(1);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).toHaveBeenCalledWith(
@@ -90,7 +90,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp does nothing on cancel', () => {
-    (dialog.showMessageBoxSync as any).mockReturnValue(0);
+    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(0);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).not.toHaveBeenCalled();

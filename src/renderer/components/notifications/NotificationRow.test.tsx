@@ -15,8 +15,8 @@ import { PRODUCTS } from '../../utils/products';
 import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
-  vi.spyOn(links, 'openNotification').mockImplementation();
-  vi.spyOn(comms, 'openExternalLink').mockImplementation();
+  vi.spyOn(links, 'openNotification').mockImplementation(vi.fn());
+  vi.spyOn(comms, 'openExternalLink').mockImplementation(vi.fn());
   vi.spyOn(globalThis.Date, 'now').mockImplementation(() =>
     new Date('2024').valueOf(),
   );

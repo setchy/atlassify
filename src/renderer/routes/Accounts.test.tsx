@@ -67,7 +67,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     it('open account profile in external browser', async () => {
       const openAccountProfileSpy = vi
         .spyOn(links, 'openAccountProfile')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         renderWithAppContext(<AccountsRoute />, {
@@ -88,7 +88,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     it('should refresh account', async () => {
       const refreshAccountSpy = vi
         .spyOn(authUtils, 'refreshAccount')
-        .mockResolvedValue();
+        .mockResolvedValue(undefined);
 
       await act(async () => {
         renderWithAppContext(<AccountsRoute />, {

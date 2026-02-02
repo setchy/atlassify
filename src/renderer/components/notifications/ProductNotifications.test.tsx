@@ -19,7 +19,7 @@ vi.mock('./NotificationRow', () => ({
 
 const openExternalLinkSpy = vi
   .spyOn(comms, 'openExternalLink')
-  .mockImplementation();
+  .mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   afterEach(() => {

@@ -16,7 +16,7 @@ vi.mock('axios');
 
 describe('renderer/utils/api/experimental/client.ts', () => {
   beforeEach(() => {
-    (axios as anyedFunction<typeof axios>).mockResolvedValue({
+    vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
       },

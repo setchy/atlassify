@@ -1,7 +1,8 @@
-import { Menu, MenuItem, shell } from 'electron';
+import { Menu, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
+import type { Mock } from 'vitest';
 import { vi } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
@@ -21,7 +22,7 @@ vi.mock('electron', () => {
   class MockMenuItem {
     constructor(opts: Record<string, unknown>) {
       Object.assign(this, opts);
-      menuItemInstances.push(opts as any);
+      menuItemInstances.push(opts as (typeof menuItemInstances)[number]);
     }
   }
   return {
@@ -73,7 +74,7 @@ describe('main/menu.ts', () => {
   /** Helper: build menu & return template (first arg passed to buildFromTemplate) */
   const buildAndGetTemplate = () => {
     menuBuilder.buildMenu();
-    return (Menu.buildFromTemplate as any).mock.calls.slice(
+    return (Menu.buildFromTemplate as Mock).mock.calls.slice(
       -1,
     )[0][0] as TemplateItem[];
   };
@@ -251,12 +252,12 @@ describe('main/menu.ts', () => {
       vi.resetModules();
       const { default: MB } = await import('./menu');
       menuItemInstances.length = 0;
-      (Menu.buildFromTemplate as any).mockClear();
+      (Menu.buildFromTemplate as Mock).mockClear();
 
       const mb = new MB({ app: { quit: vi.fn() } } as unknown as Menubar);
       mb.buildMenu();
 
-      const template = (Menu.buildFromTemplate as any).mock.calls.slice(
+      const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
         -1,
       )[0][0] as TemplateItem[];
       const devEntry = template.find(
@@ -279,12 +280,12 @@ describe('main/menu.ts', () => {
       vi.resetModules();
       const { default: MB } = await import('./menu');
       menuItemInstances.length = 0;
-      (Menu.buildFromTemplate as any).mockClear();
+      (Menu.buildFromTemplate as Mock).mockClear();
 
       const mb = new MB({ app: { quit: vi.fn() } } as unknown as Menubar);
       mb.buildMenu();
 
-      const template = (Menu.buildFromTemplate as any).mock.calls.slice(
+      const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
         -1,
       )[0][0] as TemplateItem[];
       const devEntry = template.find(

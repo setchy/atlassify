@@ -35,7 +35,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   it('should open release notes', async () => {
     const openExternalLinkSpy = vi
       .spyOn(comms, 'openExternalLink')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     await act(async () => {
       renderWithAppContext(

@@ -47,7 +47,7 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should save the state to localstorage', () => {
-    vi.spyOn(Storage.prototype, 'setItem').mockImplementation();
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(vi.fn());
 
     saveState({
       auth: {
@@ -68,7 +68,7 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should clear the state from localstorage', () => {
-    vi.spyOn(Storage.prototype, 'clear').mockImplementation();
+    vi.spyOn(Storage.prototype, 'clear').mockImplementation(vi.fn());
 
     clearState();
 

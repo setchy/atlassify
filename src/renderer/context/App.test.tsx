@@ -1,4 +1,4 @@
-import { act, waitFor } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
 import { vi } from 'vitest';
 
@@ -52,12 +52,12 @@ describe('renderer/context/App.tsx', () => {
 
   beforeEach(() => {
     vi.useFakeTimers();
-    (useNotifications as any).mockReturnValue({
+    vi.mocked(useNotifications).mockReturnValue({
       fetchNotifications: fetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
       removeAccountNotifications: removeAccountNotificationsMock,
-    });
+    } as unknown as ReturnType<typeof useNotifications>);
   });
 
   afterEach(() => {

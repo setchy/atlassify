@@ -17,7 +17,7 @@ const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
-    (axios as anyedFunction<typeof axios>).mockResolvedValue({
+    vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
       },

@@ -135,7 +135,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   it('should open profile when clicked', async () => {
     const openAccountProfileSpy = vi
       .spyOn(links, 'openAccountProfile')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
@@ -159,7 +159,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   it('should open my pull requests', async () => {
     const openPullRequestsSpy = vi
       .spyOn(links, 'openMyPullRequests')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,

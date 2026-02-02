@@ -18,7 +18,7 @@ import {
 describe('renderer/utils/links.ts', () => {
   const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
-    .mockImplementation();
+    .mockImplementation(vi.fn());
 
   afterEach(() => {
     vi.clearAllMocks();

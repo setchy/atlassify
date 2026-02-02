@@ -26,7 +26,7 @@ vi.mock('axios');
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    (axios as anyedFunction<typeof axios>).mockResolvedValue({
+    vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
       },
@@ -207,7 +207,7 @@ describe('renderer/utils/api/client.ts', () => {
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
     const mockProjectKey = 'PROJ' as JiraProjectKey;
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    (axios as anyedFunction<typeof axios>).mockResolvedValueOnce({
+    vi.mocked(axios).mockResolvedValueOnce({
       data: { projectTypeKey: 'service_desk' },
     });
     const result = await getJiraProjectTypeByKey(

@@ -39,7 +39,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   const fetchNotificationsMock = vi.fn();
   const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
-    .mockImplementation();
+    .mockImplementation(vi.fn());
 
   afterEach(() => {
     vi.clearAllMocks();

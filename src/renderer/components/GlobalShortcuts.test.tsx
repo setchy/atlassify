@@ -17,7 +17,7 @@ vi.mock('react-router-dom', async () => ({
 
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = vi.fn();
-  const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation();
+  const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation(vi.fn());
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -55,7 +55,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('myNotifications', () => {
       const openMyNotificationsSpy = vi
         .spyOn(links, 'openMyNotifications')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       it('opens my notifications when pressing N while logged in', async () => {
         renderWithAppContext(

@@ -7,9 +7,9 @@ import * as logger from '../../shared/logger';
 import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
 describe('renderer/utils/logger.ts', () => {
-  const logInfoSpy = vi.spyOn(logger, 'logInfo').mockImplementation();
-  const logWarnSpy = vi.spyOn(logger, 'logWarn').mockImplementation();
-  const logErrorSpy = vi.spyOn(logger, 'logError').mockImplementation();
+  const logInfoSpy = vi.spyOn(logger, 'logInfo').mockImplementation(vi.fn());
+  const logWarnSpy = vi.spyOn(logger, 'logWarn').mockImplementation(vi.fn());
+  const logErrorSpy = vi.spyOn(logger, 'logError').mockImplementation(vi.fn());
   const mockError = new Error('boom');
 
   beforeEach(() => {

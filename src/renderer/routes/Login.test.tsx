@@ -29,7 +29,7 @@ describe('renderer/routes/Login.tsx', () => {
     it('should open create new token page', async () => {
       const openExternalLinkSpy = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         renderWithAppContext(<LoginRoute />);
@@ -43,7 +43,7 @@ describe('renderer/routes/Login.tsx', () => {
     it('should open login docs', async () => {
       const openExternalLinkSpy = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         renderWithAppContext(<LoginRoute />);

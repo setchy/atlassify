@@ -5,9 +5,9 @@ import { vi } from 'vitest';
 import { logError, logInfo, logWarn } from './logger';
 
 describe('shared/logger.ts', () => {
-  const logInfoSpy = vi.spyOn(log, 'info').mockImplementation();
-  const logWarnSpy = vi.spyOn(log, 'warn').mockImplementation();
-  const logErrorSpy = vi.spyOn(log, 'error').mockImplementation();
+  const logInfoSpy = vi.spyOn(log, 'info').mockImplementation(vi.fn());
+  const logWarnSpy = vi.spyOn(log, 'warn').mockImplementation(vi.fn());
+  const logErrorSpy = vi.spyOn(log, 'error').mockImplementation(vi.fn());
 
   const mockError = new Error('baz');
 
