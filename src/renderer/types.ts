@@ -29,6 +29,26 @@ export type Token = Branded<string, 'Token'>;
 export type EncryptedToken = Branded<string, 'Token'>;
 
 /**
+ * An OAuth access token for an Atlassian account.
+ */
+export type OAuthAccessToken = Branded<string, 'OAuthAccessToken'>;
+
+/**
+ * An OAuth refresh token for an Atlassian account.
+ */
+export type OAuthRefreshToken = Branded<string, 'OAuthRefreshToken'>;
+
+/**
+ * An encrypted OAuth access token using the electron safe storage API.
+ */
+export type EncryptedOAuthAccessToken = Branded<string, 'EncryptedOAuthAccessToken'>;
+
+/**
+ * An encrypted OAuth refresh token using the electron safe storage API.
+ */
+export type EncryptedOAuthRefreshToken = Branded<string, 'EncryptedOAuthRefreshToken'>;
+
+/**
  * A URL for a web resource.
  */
 export type Link = Branded<string, 'WebUrl'>;
@@ -59,6 +79,20 @@ export type JiraProjectKey = Branded<string, 'JiraProjectKey'>;
 export type Percentage = Branded<number, 'Percentage'>;
 
 /**
+ * Authentication method for an Atlassian account.
+ */
+export enum AuthMethod {
+  /**
+   * API Token authentication (username + API token)
+   */
+  API_TOKEN = 'API_TOKEN',
+  /**
+   * OAuth 2.0 authentication (access token + refresh token)
+   */
+  OAUTH = 'OAUTH',
+}
+
+/**
  * An Atlassian account.
  */
 export interface Account {
@@ -73,9 +107,24 @@ export interface Account {
   username: Username;
 
   /**
-   *  The encrypted API token for the account.
+   *  The authentication method used for this account.
    */
-  token: EncryptedToken;
+  authMethod: AuthMethod;
+
+  /**
+   *  The encrypted API token for the account (only for API_TOKEN auth method).
+   */
+  token?: EncryptedToken;
+
+  /**
+   *  The encrypted OAuth access token for the account (only for OAUTH auth method).
+   */
+  oauthAccessToken?: EncryptedOAuthAccessToken;
+
+  /**
+   *  The encrypted OAuth refresh token for the account (only for OAUTH auth method).
+   */
+  oauthRefreshToken?: EncryptedOAuthRefreshToken;
 
   /**
    * The display name for the account user.

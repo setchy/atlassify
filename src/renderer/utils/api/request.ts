@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import type { Account, Token, Username } from '../../types';
+import type { Account, OAuthAccessToken, Token, Username } from '../../types';
 import type { AtlassianGraphQLResponse } from './types';
 
 import { decryptValue } from '../comms';
@@ -20,14 +20,23 @@ export async function performRequestForAccount<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
-  const decryptedToken = (await decryptValue(account.token)) as Token;
-
-  return performGraphQLApiRequest<TResult, TVariables>(
-    account.username,
-    decryptedToken,
-    query,
-    variables,
-  );
+  if (account.authMethod === 'API_TOKEN') {
+    const decryptedToken = (await decryptValue(account.token!)) as Token;
+    return performGraphQLApiRequestWithBasicAuth<TResult, TVariables>(
+      account.username,
+      decryptedToken,
+      query,
+      variables,
+    );
+  } else {
+    // OAuth
+    const decryptedAccessToken = (await decryptValue(account.oauthAccessToken!)) as OAuthAccessToken;
+    return performGraphQLApiRequestWithOAuth<TResult, TVariables>(
+      decryptedAccessToken,
+      query,
+      variables,
+    );
+  }
 }
 
 /**
@@ -45,7 +54,7 @@ export async function performRequestForCredentials<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
-  return performGraphQLApiRequest<TResult, TVariables>(
+  return performGraphQLApiRequestWithBasicAuth<TResult, TVariables>(
     username,
     token,
     query,
@@ -64,19 +73,28 @@ export async function performRESTRequestForAccount<TResult>(
   url: string,
   account: Account,
 ): Promise<TResult> {
-  const decryptedToken = (await decryptValue(account.token)) as Token;
+  let headers: Record<string, string>;
+
+  if (account.authMethod === 'API_TOKEN') {
+    const decryptedToken = (await decryptValue(account.token!)) as Token;
+    headers = getBasicAuthHeaders(account.username, decryptedToken);
+  } else {
+    // OAuth
+    const decryptedAccessToken = (await decryptValue(account.oauthAccessToken!)) as OAuthAccessToken;
+    headers = getOAuthHeaders(decryptedAccessToken);
+  }
 
   return axios({
     method: 'GET',
     url: url,
-    headers: getHeaders(account.username, decryptedToken),
+    headers,
   }).then((response) => {
     return response.data;
   }) as Promise<TResult>;
 }
 
 /**
- * Perform a GraphQL API request for username and token
+ * Perform a GraphQL API request with Basic Authentication (username + API token)
  *
  * @param username An Atlassian account username
  * @param token An Atlassian token (decrypted)
@@ -84,7 +102,7 @@ export async function performRESTRequestForAccount<TResult>(
  * @param variables The GraphQL operation variables
  * @returns Resolves to an Atlassian GraphQL response
  */
-function performGraphQLApiRequest<TResult, TVariables>(
+function performGraphQLApiRequestWithBasicAuth<TResult, TVariables>(
   username: Username,
   token: Token,
   query: TypedDocumentString<TResult, TVariables>,
@@ -99,24 +117,67 @@ function performGraphQLApiRequest<TResult, TVariables>(
       query,
       variables,
     },
-    headers: getHeaders(username, token),
+    headers: getBasicAuthHeaders(username, token),
   }).then((response) => {
     return response.data;
   }) as Promise<AtlassianGraphQLResponse<TResult>>;
 }
 
 /**
- * Construct headers for API requests
+ * Perform a GraphQL API request with OAuth Bearer token
+ *
+ * @param accessToken An OAuth access token (decrypted)
+ * @param query The GraphQL operation/query statement
+ * @param variables The GraphQL operation variables
+ * @returns Resolves to an Atlassian GraphQL response
+ */
+function performGraphQLApiRequestWithOAuth<TResult, TVariables>(
+  accessToken: OAuthAccessToken,
+  query: TypedDocumentString<TResult, TVariables>,
+  variables: TVariables,
+): Promise<AtlassianGraphQLResponse<TResult>> {
+  const url = URLs.ATLASSIAN.API;
+
+  return axios({
+    method: 'POST',
+    url,
+    data: {
+      query,
+      variables,
+    },
+    headers: getOAuthHeaders(accessToken),
+  }).then((response) => {
+    return response.data;
+  }) as Promise<AtlassianGraphQLResponse<TResult>>;
+}
+
+/**
+ * Construct headers for Basic Auth API requests
  *
  * @param username An Atlassian account username
  * @param token An Atlassian token (decrypted)
  * @returns A headers object to use with API requests
  */
-function getHeaders(username: Username, token: Token) {
+function getBasicAuthHeaders(username: Username, token: Token) {
   const auth = btoa(`${username}:${token}`);
   return {
     Accept: 'application/json',
     Authorization: `Basic ${auth}`,
+    'Cache-Control': 'no-cache',
+    'Content-Type': 'application/json',
+  };
+}
+
+/**
+ * Construct headers for OAuth API requests
+ *
+ * @param accessToken An OAuth access token (decrypted)
+ * @returns A headers object to use with API requests
+ */
+function getOAuthHeaders(accessToken: OAuthAccessToken) {
+  return {
+    Accept: 'application/json',
+    Authorization: `Bearer ${accessToken}`,
     'Cache-Control': 'no-cache',
     'Content-Type': 'application/json',
   };

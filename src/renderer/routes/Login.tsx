@@ -31,7 +31,7 @@ import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
 
 import type { Token, Username } from '../types';
-import type { LoginOptions } from '../utils/auth/types';
+import { AuthMethod } from '../types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
 import { hasUsernameAlready } from '../utils/auth/utils';
@@ -60,7 +60,11 @@ export const LoginRoute: FC = () => {
     async (data: LoginProps) => {
       try {
         await checkIfCredentialsAreValid(data.username, data.token);
-        await login(data as LoginOptions);
+        await login({
+          authMethod: AuthMethod.API_TOKEN,
+          username: data.username,
+          token: data.token,
+        });
         navigate(-1);
       } catch (err) {
         rendererLogError(
