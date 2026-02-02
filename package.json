@@ -20,10 +20,9 @@
     "package:win": "electron-builder --win --config ./config/electron-builder.js",
     "lint:check": "biome check",
     "lint": "biome check --fix",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:watch": "vitest",
     "test:changed": "vitest run --changed",
-    "test:coverage": "vitest run --coverage",
     "start": "electron . --enable-logging",
     "prepare": "husky",
     "codegen": "graphql-codegen --config codegen.ts"
@@ -108,6 +107,7 @@
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
     "@types/react-router-dom": "5.3.3",
+    "@vitest/coverage-v8": "4.0.18",
     "@vitest/expect": "4.0.18",
     "@vitest/ui": "4.0.18",
     "axios": "1.13.4",
@@ -154,6 +154,6 @@
   },
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
-    "*.{js,ts,tsx}": "pnpm test:changed --passWithNoTests -u"
+    "*.{js,ts,tsx}": "pnpm test:changed --passWithNoTests --update"
   }
 }
