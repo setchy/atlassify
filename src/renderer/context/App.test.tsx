@@ -11,6 +11,7 @@ import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
 import type { AuthState, SettingsState } from '../types';
+import { AuthMethod } from '../types';
 
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
@@ -243,8 +244,9 @@ describe('renderer/context/App.tsx', () => {
 
       act(() => {
         getContext().login({
+          authMethod: AuthMethod.API_TOKEN,
           username: mockAtlassianCloudAccount.username,
-          token: mockAtlassianCloudAccount.token,
+          token: mockAtlassianCloudAccount.token!,
         });
       });
 

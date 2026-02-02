@@ -1,20 +1,34 @@
-import type { Account, AuthState, Token, Username } from '../../types';
+import type { Account, AuthState, Username } from '../../types';
 
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';
 import { rendererLogError } from '../logger';
+import type { LoginOptions } from './types';
 
 export async function addAccount(
   auth: AuthState,
-  username: Username,
-  token: Token,
+  loginOptions: LoginOptions,
 ): Promise<AuthState> {
-  const encryptedToken = await encryptValue(token);
+  let newAccount: Account;
 
-  let newAccount = {
-    username: username,
-    token: encryptedToken,
-  } as Account;
+  if (loginOptions.authMethod === 'API_TOKEN') {
+    const encryptedToken = await encryptValue(loginOptions.token);
+    newAccount = {
+      username: loginOptions.username,
+      authMethod: loginOptions.authMethod,
+      token: encryptedToken,
+    } as Account;
+  } else {
+    // OAuth
+    const encryptedAccessToken = await encryptValue(loginOptions.accessToken);
+    const encryptedRefreshToken = await encryptValue(loginOptions.refreshToken);
+    newAccount = {
+      username: loginOptions.username,
+      authMethod: loginOptions.authMethod,
+      oauthAccessToken: encryptedAccessToken,
+      oauthRefreshToken: encryptedRefreshToken,
+    } as Account;
+  }
 
   // Refresh user data
   newAccount = await refreshAccount(newAccount);

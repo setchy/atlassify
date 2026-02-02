@@ -270,8 +270,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [auth]);
 
   const login = useCallback(
-    async ({ username, token }: LoginOptions) => {
-      const updatedAuth = await addAccount(auth, username, token);
+    async (loginOptions: LoginOptions) => {
+      const updatedAuth = await addAccount(auth, loginOptions);
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },

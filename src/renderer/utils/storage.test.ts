@@ -1,6 +1,7 @@
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import type { Token, Username } from '../types';
+import { AuthMethod } from '../types';
 
 import { clearState, loadState, saveState } from './storage';
 
@@ -53,6 +54,7 @@ describe('renderer/utils/storage.ts', () => {
           {
             id: '123',
             username: 'user@atlassify.io' as Username,
+            authMethod: AuthMethod.API_TOKEN,
             token: '123-456' as Token,
             name: 'Atlassify',
             avatar: null,
