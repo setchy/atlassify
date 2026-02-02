@@ -243,10 +243,14 @@ describe('renderer/context/App.tsx', () => {
       const getContext = renderWithContext();
 
       act(() => {
+        const token = mockAtlassianCloudAccount.token;
+        if (!token) {
+          throw new Error('Mock account must have a token');
+        }
         getContext().login({
           authMethod: AuthMethod.API_TOKEN,
           username: mockAtlassianCloudAccount.username,
-          token: mockAtlassianCloudAccount.token!,
+          token,
         });
       });
 

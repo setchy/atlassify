@@ -1,9 +1,9 @@
 import type { Account, AuthState, Username } from '../../types';
+import type { LoginOptions } from './types';
 
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';
 import { rendererLogError } from '../logger';
-import type { LoginOptions } from './types';
 
 export async function addAccount(
   auth: AuthState,

@@ -41,12 +41,18 @@ export type OAuthRefreshToken = Branded<string, 'OAuthRefreshToken'>;
 /**
  * An encrypted OAuth access token using the electron safe storage API.
  */
-export type EncryptedOAuthAccessToken = Branded<string, 'EncryptedOAuthAccessToken'>;
+export type EncryptedOAuthAccessToken = Branded<
+  string,
+  'EncryptedOAuthAccessToken'
+>;
 
 /**
  * An encrypted OAuth refresh token using the electron safe storage API.
  */
-export type EncryptedOAuthRefreshToken = Branded<string, 'EncryptedOAuthRefreshToken'>;
+export type EncryptedOAuthRefreshToken = Branded<
+  string,
+  'EncryptedOAuthRefreshToken'
+>;
 
 /**
  * A URL for a web resource.

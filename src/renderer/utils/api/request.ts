@@ -21,22 +21,29 @@ export async function performRequestForAccount<TResult, TVariables>(
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
   if (account.authMethod === 'API_TOKEN') {
-    const decryptedToken = (await decryptValue(account.token!)) as Token;
+    if (!account.token) {
+      throw new Error('API Token is required for API_TOKEN authentication');
+    }
+    const decryptedToken = (await decryptValue(account.token)) as Token;
     return performGraphQLApiRequestWithBasicAuth<TResult, TVariables>(
       account.username,
       decryptedToken,
       query,
       variables,
     );
-  } else {
-    // OAuth
-    const decryptedAccessToken = (await decryptValue(account.oauthAccessToken!)) as OAuthAccessToken;
-    return performGraphQLApiRequestWithOAuth<TResult, TVariables>(
-      decryptedAccessToken,
-      query,
-      variables,
-    );
   }
+  // OAuth
+  if (!account.oauthAccessToken) {
+    throw new Error('OAuth access token is required for OAUTH authentication');
+  }
+  const decryptedAccessToken = (await decryptValue(
+    account.oauthAccessToken,
+  )) as OAuthAccessToken;
+  return performGraphQLApiRequestWithOAuth<TResult, TVariables>(
+    decryptedAccessToken,
+    query,
+    variables,
+  );
 }
 
 /**
@@ -76,11 +83,21 @@ export async function performRESTRequestForAccount<TResult>(
   let headers: Record<string, string>;
 
   if (account.authMethod === 'API_TOKEN') {
-    const decryptedToken = (await decryptValue(account.token!)) as Token;
+    if (!account.token) {
+      throw new Error('API Token is required for API_TOKEN authentication');
+    }
+    const decryptedToken = (await decryptValue(account.token)) as Token;
     headers = getBasicAuthHeaders(account.username, decryptedToken);
   } else {
     // OAuth
-    const decryptedAccessToken = (await decryptValue(account.oauthAccessToken!)) as OAuthAccessToken;
+    if (!account.oauthAccessToken) {
+      throw new Error(
+        'OAuth access token is required for OAUTH authentication',
+      );
+    }
+    const decryptedAccessToken = (await decryptValue(
+      account.oauthAccessToken,
+    )) as OAuthAccessToken;
     headers = getOAuthHeaders(decryptedAccessToken);
   }
 
