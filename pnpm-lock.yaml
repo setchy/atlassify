@@ -127,10 +127,10 @@ importers:
         specifier: 4.1.18
         version: 4.1.18
       '@testing-library/dom':
-        specifier: ^10.4.1
+        specifier: 10.4.1
         version: 10.4.1
       '@testing-library/jest-dom':
-        specifier: ^6.9.1
+        specifier: 6.9.1
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.2
@@ -154,10 +154,10 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
       '@vitest/expect':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18
       '@vitest/ui':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18)
       axios:
         specifier: 1.13.4
@@ -202,7 +202,7 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       jsdom:
-        specifier: ^27.4.0
+        specifier: 27.4.0
         version: 27.4.0
       mini-css-extract-plugin:
         specifier: 2.10.0
@@ -238,7 +238,7 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(@types/node@24.10.9)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.30.2)(terser@5.46.0)(yaml@2.8.2)
       webpack:
         specifier: 5.104.1
@@ -5736,7 +5736,7 @@ snapshots:
       '@csstools/css-color-parser': 3.1.0(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
-      lru-cache: 11.2.4
+      lru-cache: 11.2.5
 
   '@asamuzakjp/dom-selector@6.7.7':
     dependencies:
@@ -9042,7 +9042,7 @@ snapshots:
       '@asamuzakjp/css-color': 4.1.1
       '@csstools/css-syntax-patches-for-csstree': 1.0.26
       css-tree: 3.1.0
-      lru-cache: 11.2.4
+      lru-cache: 11.2.5
 
   csstype@3.2.3: {}
 
