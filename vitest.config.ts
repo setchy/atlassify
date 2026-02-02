@@ -7,6 +7,16 @@ export default defineConfig({
     globals: true,
     pool: 'threads',
     setupFiles: ['./src/renderer/__helpers__/vitest.setup.ts'],
+    onConsoleLog(log, type) {
+      // suppress noisy Atlaskit feature-gate/platform-feature-flags errors
+      if (
+        type === 'stderr' &&
+        typeof log === 'string' &&
+        log.includes('Client must be initialized before using this method')
+      ) {
+        return false;
+      }
+    },
     coverage: {
       enabled: false,
       reporter: ['html', 'lcovonly'],
@@ -56,6 +66,7 @@ export default defineConfig({
             'src/shared/**/*.test.{ts,tsx}',
             'src/main/**/*.test.{ts,tsx}',
           ],
+          // setupFiles: ['./src/shared/__helpers__/vitest.setup.node.ts'],
           setupFiles: [],
           globals: true,
         },
