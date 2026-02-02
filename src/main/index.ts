@@ -29,6 +29,7 @@ import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
+import { registerOAuthHandlers } from './oauth';
 import AppUpdater from './updater';
 
 log.initialize();
@@ -238,6 +239,9 @@ app.whenReady().then(async () => {
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
     return safeStorage.decryptString(Buffer.from(value, 'base64'));
   });
+
+  // Register OAuth handlers
+  registerOAuthHandlers();
 });
 
 function setIdleIcon() {

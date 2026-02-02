@@ -112,6 +112,15 @@ export const api = {
       props?: Record<string, string | number | boolean>,
     ) => sendMainEvent(EVENTS.APTABASE_TRACK_EVENT, { eventName, props }),
   },
+
+  oauth: {
+    startFlow: (clientId: string, redirectUri: string, scopes: string[]) =>
+      invokeMainEvent(EVENTS.OAUTH_START_FLOW, {
+        clientId,
+        redirectUri,
+        scopes,
+      }),
+  },
 };
 
 // Use `contextBridge` APIs to expose Electron APIs to

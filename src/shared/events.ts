@@ -21,6 +21,8 @@ export const EVENTS = {
   UPDATE_THEME: `${P}update-theme`,
   TWEMOJI_DIRECTORY: `${P}twemoji-directory`,
   APTABASE_TRACK_EVENT: 'aptabase:trackEvent',
+  OAUTH_START_FLOW: `${P}oauth-start-flow`,
+  OAUTH_CALLBACK: `${P}oauth-callback`,
 } as const;
 
 export type EventType = (typeof EVENTS)[keyof typeof EVENTS];
@@ -45,6 +47,19 @@ export interface IAptabaseEvent {
   props?: Record<string, string | number | boolean>;
 }
 
+export interface IOAuthFlowRequest {
+  clientId: string;
+  redirectUri: string;
+  scopes: string[];
+}
+
+export interface IOAuthCallbackData {
+  code?: string;
+  state?: string;
+  error?: string;
+  error_description?: string;
+}
+
 export type EventData =
   | string
   | number
@@ -52,4 +67,6 @@ export type EventData =
   | IKeyboardShortcut
   | IAutoLaunch
   | IOpenExternal
-  | IAptabaseEvent;
+  | IAptabaseEvent
+  | IOAuthFlowRequest
+  | IOAuthCallbackData;
