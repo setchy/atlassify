@@ -4,13 +4,15 @@
 export const ATLASSIAN_OAUTH_CONFIG = {
   authorizationEndpoint: 'https://auth.atlassian.com/authorize',
   tokenEndpoint: 'https://auth.atlassian.com/oauth/token',
-  clientId: '', // To be configured by user
+  clientId: '', // To be configured by user - see docs/OAUTH.md for setup instructions
   redirectUri: 'http://localhost:3000/callback', // Local callback server
   scopes: [
     'read:me', // User profile information
     'read:account', // Account details
     'offline_access', // Refresh token
   ],
+  callbackPort: 3000, // Port for local OAuth callback server
+  timeoutMs: 5 * 60 * 1000, // OAuth flow timeout (5 minutes)
 };
 
 /**

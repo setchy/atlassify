@@ -91,13 +91,13 @@ export const LoginRoute: FC = () => {
       setIsOAuthLoading(true);
       setOAuthError(null);
 
-      // Note: In a real implementation, the clientId would be configurable
-      // For now, using a placeholder that users need to configure
-      const clientId = 'YOUR_OAUTH_CLIENT_ID'; // TODO: Make this configurable
+      // Note: Users need to configure their own OAuth Client ID
+      // See docs/OAUTH.md and FAQ #6 for detailed setup instructions
+      const clientId = 'YOUR_OAUTH_CLIENT_ID'; // TODO: Add user configuration in settings
 
       if (clientId === 'YOUR_OAUTH_CLIENT_ID') {
         setOAuthError(
-          'OAuth Client ID not configured. Please set up an OAuth app in Atlassian Developer Console.',
+          'OAuth Client ID not configured. Please see the OAuth setup guide in the documentation.',
         );
         setIsOAuthLoading(false);
         return;

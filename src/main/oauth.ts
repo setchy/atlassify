@@ -9,6 +9,12 @@ import { logError, logInfo } from '../shared/logger';
 import { handleMainEvent } from './events';
 
 /**
+ * OAuth configuration constants
+ */
+const OAUTH_TIMEOUT_MS = 5 * 60 * 1000; // 5 minutes
+const DEFAULT_OAUTH_PORT = 3000;
+
+/**
  * OAuth flow state
  */
 interface OAuthFlowState {
@@ -213,7 +219,7 @@ export async function handleOAuthFlow(
 
     // Extract port from redirectUri
     const redirectUrl = new URL(request.redirectUri);
-    const port = Number.parseInt(redirectUrl.port) || 3000;
+    const port = Number.parseInt(redirectUrl.port) || DEFAULT_OAUTH_PORT;
 
     // Start callback server
     callbackServer = await startCallbackServer(port);
@@ -253,16 +259,13 @@ export async function handleOAuthFlow(
           reject,
         };
 
-        // Timeout after 5 minutes
-        setTimeout(
-          () => {
-            if (currentFlow) {
-              currentFlow.reject(new Error('OAuth flow timed out'));
-              currentFlow = null;
-            }
-          },
-          5 * 60 * 1000,
-        );
+        // Timeout after configured duration
+        setTimeout(() => {
+          if (currentFlow) {
+            currentFlow.reject(new Error('OAuth flow timed out'));
+            currentFlow = null;
+          }
+        }, OAUTH_TIMEOUT_MS);
       },
     );
 
