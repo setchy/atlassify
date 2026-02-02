@@ -1,1 +1,1 @@
-# Temporarily disabled for agent
+pnpx lint-staged
