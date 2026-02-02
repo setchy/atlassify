@@ -1,14 +1,22 @@
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  plugins: [react()],
   test: {
     globals: true,
-    environment: 'jsdom',
+    pool: 'threads',
     setupFiles: ['./src/renderer/__helpers__/vitest.setup.ts'],
     coverage: {
       enabled: false,
       include: ['src/**/*'],
-      exclude: ['**/__snapshots__/**'],
+      exclude: [
+        '**/__snapshots__/**',
+        '**/graphql/generated/**',
+        '**/*.graphql',
+        '**/*.html',
+        '.DS_Store',
+      ],
     },
     exclude: [
       '**/node_modules/**',
@@ -16,15 +24,41 @@ export default defineConfig({
       '**/dist/**',
       '**/.{idea,git,cache,output,temp}/**',
     ],
-  },
-  resolve: {
-    alias: {
-      // Force CommonJS build for http adapter to be available.
-      // via https://github.com/axios/axios/issues/5101#issuecomment-1276572468
-      axios: require.resolve('axios'),
-
-      // Atlassian Design System - @atlaskit Compiled CSS in JS - https://compiledcssinjs.com/
-      '\\.compiled.css$': 'identity-obj-proxy',
-    },
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'jsdom [storage]',
+          environment: 'jsdom',
+          // localStorage tests require jsdom (doesn't work with happy-dom)
+          include: ['src/renderer/utils/storage.test.{ts,tsx}'],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: 'happy-dom [preload, renderer]',
+          environment: 'happy-dom',
+          include: [
+            'src/preload/**/*.test.{ts,tsx}',
+            'src/renderer/**/*.test.{ts,tsx}',
+          ],
+          exclude: ['src/renderer/utils/storage.test.{ts,tsx}'],
+        },
+      },
+      {
+        // Node/Electron tests in Node environment (no root extends)
+        test: {
+          name: 'node [main, shared]',
+          environment: 'node',
+          include: [
+            'src/shared/**/*.test.{ts,tsx}',
+            'src/main/**/*.test.{ts,tsx}',
+          ],
+          setupFiles: [],
+          globals: true,
+        },
+      },
+    ],
   },
 });
