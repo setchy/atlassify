@@ -246,13 +246,13 @@ describe('renderer/context/App.tsx', () => {
   describe('authentication methods', () => {
     const addAccountSpy = vi
       .spyOn(authUtils, 'addAccount')
-      .mockImplementation(vi.fn());
+      .mockResolvedValue({ accounts: [] } as AuthState);
     const removeAccountSpy = vi.spyOn(authUtils, 'removeAccount');
 
     it('login calls addAccount ', async () => {
       const getContext = renderWithContext();
 
-      act(() => {
+      await act(async () => {
         getContext().login({
           username: mockAtlassianCloudAccount.username,
           token: mockAtlassianCloudAccount.token,
@@ -269,7 +269,7 @@ describe('renderer/context/App.tsx', () => {
     it('logout calls removeAccountNotifications and removeAccount ', async () => {
       const getContext = renderWithContext();
 
-      act(() => {
+      await act(async () => {
         getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 
