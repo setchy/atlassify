@@ -1,4 +1,6 @@
-import { act, waitFor } from '@testing-library/react';
+import { act } from '@testing-library/react';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
@@ -18,7 +20,7 @@ import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
 import { defaultSettings } from './defaults';
 
-jest.mock('../hooks/useNotifications');
+vi.mock('../hooks/useNotifications');
 
 // Helper to render the context
 const renderWithContext = () => {
@@ -39,32 +41,32 @@ const renderWithContext = () => {
 };
 
 describe('renderer/context/App.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-  const markNotificationsReadMock = jest.fn();
-  const markNotificationsUnreadMock = jest.fn();
-  const removeAccountNotificationsMock = jest.fn();
+  const fetchNotificationsMock = vi.fn();
+  const markNotificationsReadMock = vi.fn();
+  const markNotificationsUnreadMock = vi.fn();
+  const removeAccountNotificationsMock = vi.fn();
 
-  const saveStateSpy = jest
+  const saveStateSpy = vi
     .spyOn(storage, 'saveState')
-    .mockImplementation(jest.fn());
+    .mockImplementation(vi.fn());
 
   beforeEach(() => {
-    jest.useFakeTimers();
-    (useNotifications as jest.Mock).mockReturnValue({
+    vi.useFakeTimers();
+    vi.mocked(useNotifications).mockReturnValue({
       fetchNotifications: fetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
       removeAccountNotifications: removeAccountNotificationsMock,
-    });
+    } as unknown as ReturnType<typeof useNotifications>);
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    jest.clearAllMocks();
+    vi.clearAllTimers();
+    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
-    const getNotificationCountSpy = jest.spyOn(
+    const getNotificationCountSpy = vi.spyOn(
       notifications,
       'getNotificationCount',
     );
@@ -78,22 +80,31 @@ describe('renderer/context/App.tsx', () => {
     it('fetch notifications each interval', async () => {
       renderWithAppContext(<AppProvider>{null}</AppProvider>);
 
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
+      // Initial fetch happens on mount - advance timers to ensure it runs
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(0);
+      });
 
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
 
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
 
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
     });
@@ -233,15 +244,15 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = jest
+    const addAccountSpy = vi
       .spyOn(authUtils, 'addAccount')
-      .mockImplementation(jest.fn());
-    const removeAccountSpy = jest.spyOn(authUtils, 'removeAccount');
+      .mockResolvedValue({ accounts: [] } as AuthState);
+    const removeAccountSpy = vi.spyOn(authUtils, 'removeAccount');
 
     it('login calls addAccount ', async () => {
       const getContext = renderWithContext();
 
-      act(() => {
+      await act(async () => {
         getContext().login({
           username: mockAtlassianCloudAccount.username,
           token: mockAtlassianCloudAccount.token,
@@ -258,7 +269,7 @@ describe('renderer/context/App.tsx', () => {
     it('logout calls removeAccountNotifications and removeAccount ', async () => {
       const getContext = renderWithContext();
 
-      act(() => {
+      await act(async () => {
         getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 

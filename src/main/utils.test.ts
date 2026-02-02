@@ -1,33 +1,48 @@
 import path from 'node:path';
 
-const writeFile = jest.fn((_p: string, _d: unknown, cb: () => void) => cb());
-jest.mock('node:fs', () => ({
+import { vi } from 'vitest';
+
+const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
+vi.mock('node:fs', () => ({
+  default: {
+    writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
+  },
   writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
 }));
 
-const homedir = jest.fn(() => '/home/test');
-jest.mock('node:os', () => ({ homedir: () => homedir() }));
-
-jest.mock('electron', () => ({
-  dialog: { showMessageBoxSync: jest.fn() },
-  shell: { openPath: jest.fn() },
+const homedir = vi.fn(() => '/home/test');
+vi.mock('node:os', () => ({
+  default: { homedir: () => homedir() },
+  homedir: () => homedir(),
 }));
 
-const fileTransport = { getFile: () => ({ path: '/var/log/app/app.log' }) };
-const logTransports: { file: { getFile: () => { path: string } | null } } = {
-  file: fileTransport,
-};
-const logInfoMock = jest.fn();
-const logErrorMock = jest.fn();
+vi.mock('electron', () => ({
+  dialog: { showMessageBoxSync: vi.fn() },
+  shell: { openPath: vi.fn() },
+}));
 
-jest.mock('electron-log', () => ({ transports: logTransports }));
-jest.mock('../shared/logger', () => ({
+const fileGetFileMock = vi.fn(() => ({ path: '/var/log/app/app.log' }));
+vi.mock('electron-log', () => ({
+  default: {
+    transports: {
+      file: { getFile: () => fileGetFileMock() },
+    },
+  },
+  transports: {
+    file: { getFile: () => fileGetFileMock() },
+  },
+}));
+
+const logInfoMock = vi.fn();
+const logErrorMock = vi.fn();
+
+vi.mock('../shared/logger', () => ({
   logInfo: (...a: unknown[]) => logInfoMock(...a),
   logError: (...a: unknown[]) => logErrorMock(...a),
 }));
 
-const sendRendererEventMock = jest.fn();
-jest.mock('./events', () => ({
+const sendRendererEventMock = vi.fn();
+vi.mock('./events', () => ({
   sendRendererEvent: (...a: unknown[]) => sendRendererEventMock(...a),
 }));
 
@@ -41,13 +56,14 @@ function createMb() {
       capturePage: () =>
         Promise.resolve({ toPNG: () => Buffer.from('image-bytes') }),
     },
-    app: { quit: jest.fn() },
+    app: { quit: vi.fn() },
   };
 }
 
 describe('main/utils', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
+    fileGetFileMock.mockReturnValue({ path: '/var/log/app/app.log' });
   });
 
   it('takeScreenshot writes file and logs info', async () => {
@@ -63,7 +79,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp sends event and quits on confirm', () => {
-    (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(1);
+    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(1);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).toHaveBeenCalledWith(
@@ -74,7 +90,7 @@ describe('main/utils', () => {
   });
 
   it('resetApp does nothing on cancel', () => {
-    (dialog.showMessageBoxSync as jest.Mock).mockReturnValue(0);
+    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(0);
     const mb = createMb();
     resetApp(mb as unknown as import('menubar').Menubar);
     expect(sendRendererEventMock).not.toHaveBeenCalled();
@@ -88,11 +104,8 @@ describe('main/utils', () => {
   });
 
   it('openLogsDirectory logs error when no directory', () => {
-    (fileTransport as { getFile: () => { path: string } | null }).getFile =
-      () => null;
-    jest.resetModules();
-    const { openLogsDirectory: openLogsDirectoryReloaded } = require('./utils');
-    openLogsDirectoryReloaded();
+    fileGetFileMock.mockReturnValue(null);
+    openLogsDirectory();
     expect(logErrorMock).toHaveBeenCalledWith(
       'openLogsDirectory',
       'Could not find log directory!',

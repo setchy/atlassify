@@ -1,18 +1,20 @@
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';
 
-jest.mock('../components/notifications/AccountNotifications', () => ({
+vi.mock('../components/notifications/AccountNotifications', () => ({
   AccountNotifications: () => <p>AccountNotifications</p>,
 }));
 
-jest.mock('../components/AllRead', () => ({
+vi.mock('../components/AllRead', () => ({
   AllRead: () => <p>AllRead</p>,
 }));
 
-jest.mock('../components/Oops', () => ({
+vi.mock('../components/Oops', () => ({
   Oops: () => <p>Oops</p>,
 }));
 

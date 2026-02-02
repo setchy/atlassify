@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 
@@ -10,13 +11,13 @@ import {
   performRequestForCredentials,
 } from './request';
 
-jest.mock('axios');
+vi.mock('axios');
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+    vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
       },
@@ -24,7 +25,7 @@ describe('renderer/utils/api/request.ts', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('performRequestForAccount - should execute graphql request with the correct parameters', async () => {

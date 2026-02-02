@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import type { Token, Username } from '../types';
@@ -6,7 +8,7 @@ import { clearState, loadState, saveState } from './storage';
 
 describe('renderer/utils/storage.ts', () => {
   it('should load the state from localstorage - existing', () => {
-    jest.spyOn(Storage.prototype, 'getItem').mockReturnValueOnce(
+    vi.spyOn(Storage.prototype, 'getItem').mockReturnValueOnce(
       JSON.stringify({
         auth: {
           accounts: [
@@ -35,7 +37,7 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should load the state from localstorage - empty', () => {
-    jest.spyOn(localStorage, 'getItem').mockReturnValueOnce(JSON.stringify({}));
+    vi.spyOn(localStorage, 'getItem').mockReturnValueOnce(JSON.stringify({}));
 
     const result = loadState();
 
@@ -45,7 +47,7 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should save the state to localstorage', () => {
-    jest.spyOn(Storage.prototype, 'setItem').mockImplementation();
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(vi.fn());
 
     saveState({
       auth: {
@@ -66,7 +68,7 @@ describe('renderer/utils/storage.ts', () => {
   });
 
   it('should clear the state from localstorage', () => {
-    jest.spyOn(Storage.prototype, 'clear').mockImplementation();
+    vi.spyOn(Storage.prototype, 'clear').mockImplementation(vi.fn());
 
     clearState();
 

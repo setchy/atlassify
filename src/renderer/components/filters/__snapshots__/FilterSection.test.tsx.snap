@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/filters/FilterSection.tsx should be able to toggle filter value - none already set 1`] = `
+exports[`renderer/components/filters/FilterSection.tsx > should be able to toggle filter value - none already set 1`] = `
 <div
   class="css-5fz2td"
 >
@@ -76,7 +76,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
 </div>
 `;
 
-exports[`renderer/components/filters/FilterSection.tsx should be able to toggle filter value - some filters already set 1`] = `
+exports[`renderer/components/filters/FilterSection.tsx > should be able to toggle filter value - some filters already set 1`] = `
 <div
   class="css-5fz2td"
 >
@@ -152,7 +152,7 @@ exports[`renderer/components/filters/FilterSection.tsx should be able to toggle 
 </div>
 `;
 
-exports[`renderer/components/filters/FilterSection.tsx should render itself & its children 1`] = `
+exports[`renderer/components/filters/FilterSection.tsx > should render itself & its children 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

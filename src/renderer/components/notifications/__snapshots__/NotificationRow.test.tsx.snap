@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications compass avatar as square 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > compass avatar as square 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -601,7 +601,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1164,7 +1164,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple named actors 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title with multiple named actors 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1396,7 +1396,6 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                           <span
                                             aria-hidden="true"
                                             class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                                            style="color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
                                               class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
@@ -1439,7 +1438,6 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                           <span
                                             aria-hidden="true"
                                             class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                                            style="color: var(--ds-icon-subtle, #505258);"
                                           >
                                             <svg
                                               class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
@@ -1755,7 +1753,6 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         <span
                                           aria-hidden="true"
                                           class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                                          style="color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
                                             class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
@@ -1798,7 +1795,6 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
                                         <span
                                           aria-hidden="true"
                                           class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                                          style="color: var(--ds-icon-subtle, #505258);"
                                         >
                                           <svg
                                             class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
@@ -1939,7 +1935,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple unnamed actors 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title with multiple unnamed actors 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -2528,7 +2524,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications missing entity icon url should default to product logo 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > missing entity icon url should default to product logo 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -3123,7 +3119,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications standard notification 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > standard notification 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

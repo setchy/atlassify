@@ -1,6 +1,8 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
@@ -11,21 +13,21 @@ import {
   type ProductNotificationsProps,
 } from './ProductNotifications';
 
-jest.mock('./NotificationRow', () => ({
+vi.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
 }));
 
-const openExternalLinkSpy = jest
+const openExternalLinkSpy = vi
   .spyOn(comms, 'openExternalLink')
-  .mockImplementation();
+  .mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children - light mode', () => {
-    jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+    vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
@@ -37,7 +39,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   });
 
   it('should render itself & its children - dark mode', () => {
-    jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+    vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
     const props: ProductNotificationsProps = {
       productNotifications: mockAtlassifyNotifications,
@@ -105,7 +107,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     renderWithAppContext(<ProductNotifications {...props} />, {
       markNotificationsRead: markNotificationsReadMock,
