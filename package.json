@@ -21,8 +21,9 @@
     "lint:check": "biome check",
     "lint": "biome check --fix",
     "test": "vitest run --coverage",
-    "test:watch": "vitest",
     "test:changed": "vitest run --changed",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "start": "electron . --enable-logging",
     "prepare": "husky",
     "codegen": "graphql-codegen --config codegen.ts"
