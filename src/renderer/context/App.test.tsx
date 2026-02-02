@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { act, waitFor } from '@testing-library/react';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
@@ -18,7 +20,7 @@ import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
 import { defaultSettings } from './defaults';
 
-jest.mock('../hooks/useNotifications');
+vi.mock('../hooks/useNotifications');
 
 // Helper to render the context
 const renderWithContext = () => {
@@ -39,18 +41,18 @@ const renderWithContext = () => {
 };
 
 describe('renderer/context/App.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-  const markNotificationsReadMock = jest.fn();
-  const markNotificationsUnreadMock = jest.fn();
-  const removeAccountNotificationsMock = jest.fn();
+  const fetchNotificationsMock = vi.fn();
+  const markNotificationsReadMock = vi.fn();
+  const markNotificationsUnreadMock = vi.fn();
+  const removeAccountNotificationsMock = vi.fn();
 
-  const saveStateSpy = jest
+  const saveStateSpy = vi
     .spyOn(storage, 'saveState')
-    .mockImplementation(jest.fn());
+    .mockImplementation(vi.fn());
 
   beforeEach(() => {
-    jest.useFakeTimers();
-    (useNotifications as jest.Mock).mockReturnValue({
+    vi.useFakeTimers();
+    (useNotifications as any).mockReturnValue({
       fetchNotifications: fetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
@@ -59,12 +61,12 @@ describe('renderer/context/App.tsx', () => {
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    jest.clearAllMocks();
+    vi.clearAllTimers();
+    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
-    const getNotificationCountSpy = jest.spyOn(
+    const getNotificationCountSpy = vi.spyOn(
       notifications,
       'getNotificationCount',
     );
@@ -83,17 +85,17 @@ describe('renderer/context/App.tsx', () => {
       );
 
       act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
 
       act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
 
       act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
     });
@@ -233,10 +235,10 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = jest
+    const addAccountSpy = vi
       .spyOn(authUtils, 'addAccount')
-      .mockImplementation(jest.fn());
-    const removeAccountSpy = jest.spyOn(authUtils, 'removeAccount');
+      .mockImplementation(vi.fn());
+    const removeAccountSpy = vi.spyOn(authUtils, 'removeAccount');
 
     it('login calls addAccount ', async () => {
       const getContext = renderWithContext();

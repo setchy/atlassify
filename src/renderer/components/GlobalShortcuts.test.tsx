@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -7,18 +9,18 @@ import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...await vi.importActual('react-router-dom'),
   useNavigate: () => navigateMock,
 }));
 
 describe('components/GlobalShortcuts.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-  const quitAppSpy = jest.spyOn(comms, 'quitApp').mockImplementation();
+  const fetchNotificationsMock = vi.fn();
+  const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation();
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('key bindings', () => {
@@ -51,7 +53,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     });
 
     describe('myNotifications', () => {
-      const openMyNotificationsSpy = jest
+      const openMyNotificationsSpy = vi
         .spyOn(links, 'openMyNotifications')
         .mockImplementation();
 
@@ -88,7 +90,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('toggleReadUnread', () => {
       it('toggles read/unread setting when pressing U while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -112,7 +114,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle read/unread when logged out', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -130,7 +132,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle read/unread when status is loading', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -151,7 +153,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('groupByProduct', () => {
       it('toggles group by product setting when pressing P while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -175,7 +177,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by product when logged out', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -195,7 +197,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('groupByTitle', () => {
       it('toggles group by title setting when pressing T while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>
@@ -219,7 +221,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by title when logged out', async () => {
-        const updateSettingMock = jest.fn();
+        const updateSettingMock = vi.fn();
 
         renderWithAppContext(
           <MemoryRouter>

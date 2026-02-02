@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import axios from 'axios';
 
 import { mockAtlassianCloudAccount } from '../../../__mocks__/account-mocks';
@@ -11,11 +13,11 @@ import {
   markNotificationGroupAsUnread,
 } from './client';
 
-jest.mock('axios');
+vi.mock('axios');
 
 describe('renderer/utils/api/experimental/client.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+    (axios as anyedFunction<typeof axios>).mockResolvedValue({
       data: {
         data: {},
       },
@@ -23,7 +25,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('markNotificationGroupAsRead - should mark notification group as read', async () => {

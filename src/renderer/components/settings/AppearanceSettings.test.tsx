@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -7,10 +9,10 @@ import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
-  const updateSettingMock = jest.fn();
+  const updateSettingMock = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should change the theme radio group', async () => {
@@ -27,9 +29,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
-    const zoomOutSpy = jest.spyOn(zoom, 'decreaseZoom').mockImplementation();
-    const zoomInSpy = jest.spyOn(zoom, 'increaseZoom').mockImplementation();
-    const zoomResetSpy = jest
+    const zoomOutSpy = vi.spyOn(zoom, 'decreaseZoom').mockImplementation();
+    const zoomInSpy = vi.spyOn(zoom, 'increaseZoom').mockImplementation();
+    const zoomResetSpy = vi
       .spyOn(zoom, 'resetZoomLevel')
       .mockImplementation();
 

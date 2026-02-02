@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -9,10 +11,10 @@ import type { Percentage } from '../../types';
 import { SystemSettings } from './SystemSettings';
 
 describe('renderer/components/settings/SystemSettings.tsx', () => {
-  const updateSettingMock = jest.fn();
+  const updateSettingMock = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should change the open links radio group', async () => {

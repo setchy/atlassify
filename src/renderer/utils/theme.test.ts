@@ -1,20 +1,22 @@
+import { vi } from 'vitest';
+
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
 import { Theme } from '../../shared/theme';
 
 import { getTheme, isLightMode, setTheme } from './theme';
 
-jest.mock('@atlaskit/tokens', () => ({
-  getGlobalTheme: jest.fn(),
-  setGlobalTheme: jest.fn(),
+vi.mock('@atlaskit/tokens', () => ({
+  getGlobalTheme: vi.fn(),
+  setGlobalTheme: vi.fn(),
 }));
 
 describe('renderer/utils/theme.ts', () => {
   const htmlElement = document.createElement('html');
 
   beforeEach(() => {
-    document.querySelector = jest.fn(() => htmlElement);
-    jest.clearAllMocks();
+    document.querySelector = vi.fn(() => htmlElement);
+    vi.clearAllMocks();
   });
 
   describe('setTheme', () => {
@@ -33,7 +35,7 @@ describe('renderer/utils/theme.ts', () => {
     it("should use the system's mode - light", () => {
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
-        value: jest.fn().mockImplementation((_query) => ({
+        value: vi.fn().mockImplementation((_query) => ({
           matches: false,
         })),
       });
@@ -45,7 +47,7 @@ describe('renderer/utils/theme.ts', () => {
     it("should use the system's mode - dark", () => {
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
-        value: jest.fn().mockImplementation((_query) => ({
+        value: vi.fn().mockImplementation((_query) => ({
           matches: true,
         })),
       });
@@ -57,24 +59,24 @@ describe('renderer/utils/theme.ts', () => {
 
   describe('getTheme', () => {
     it('should return light theme when global theme is light', () => {
-      (getGlobalTheme as jest.Mock).mockReturnValue({ colorMode: 'light' });
+      (getGlobalTheme as any).mockReturnValue({ colorMode: 'light' });
       expect(getTheme()).toBe(Theme.LIGHT);
     });
 
     it('should return dark theme when global theme is dark', () => {
-      (getGlobalTheme as jest.Mock).mockReturnValue({ colorMode: 'dark' });
+      (getGlobalTheme as any).mockReturnValue({ colorMode: 'dark' });
       expect(getTheme()).toBe(Theme.DARK);
     });
   });
 
   describe('isLightMode', () => {
     it('should correctly identify light mode', () => {
-      (getGlobalTheme as jest.Mock).mockReturnValue({ colorMode: 'light' });
+      (getGlobalTheme as any).mockReturnValue({ colorMode: 'light' });
       expect(isLightMode()).toBe(true);
     });
 
     it('should correctly identify dark mode', () => {
-      (getGlobalTheme as jest.Mock).mockReturnValue({ colorMode: 'dark' });
+      (getGlobalTheme as any).mockReturnValue({ colorMode: 'dark' });
       expect(isLightMode()).toBe(false);
     });
   });

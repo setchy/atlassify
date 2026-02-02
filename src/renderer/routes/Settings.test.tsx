@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -6,17 +8,17 @@ import { renderWithAppContext } from '../__helpers__/test-utils';
 
 import { SettingsRoute } from './Settings';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...await vi.importActual('react-router-dom'),
   useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Settings.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
+  const fetchNotificationsMock = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', async () => {

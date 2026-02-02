@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -6,15 +8,15 @@ import { renderWithAppContext } from '../__helpers__/test-utils';
 import * as comms from '../utils/comms';
 import { LandingRoute } from './Landing';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...await vi.importActual('react-router-dom'),
   useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Landing.tsx', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', () => {
@@ -24,7 +26,7 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should redirect to notifications once logged in', () => {
-    const showWindowSpy = jest.spyOn(comms, 'showWindow');
+    const showWindowSpy = vi.spyOn(comms, 'showWindow');
 
     renderWithAppContext(<LandingRoute />, {
       isLoggedIn: true,

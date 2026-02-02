@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -6,10 +8,10 @@ import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { TraySettings } from './TraySettings';
 
 describe('renderer/components/settings/TraySettings.tsx', () => {
-  const updateSettingMock = jest.fn();
+  const updateSettingMock = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should toggle the showNotificationsCountInTray checkbox', async () => {

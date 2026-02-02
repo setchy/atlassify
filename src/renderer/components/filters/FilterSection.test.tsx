@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -8,7 +10,7 @@ import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
-  const updateFilterMock = jest.fn();
+  const updateFilterMock = vi.fn();
 
   const mockFilter = engagementFilter;
   const mockFilterSetting = 'filterEngagementStates';

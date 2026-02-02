@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -14,33 +16,33 @@ import { mockSettings } from '../__mocks__/state-mocks';
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
 
-jest.mock('@atlaskit/tokens', () => {
-  const actual = jest.requireActual('@atlaskit/tokens');
+vi.mock('@atlaskit/tokens', async () => {
+  const actual = await vi.importActual('@atlaskit/tokens');
   return {
     ...actual,
-    useThemeObserver: jest.fn(() => ({ colorMode: 'light' })),
+    useThemeObserver: vi.fn(() => ({ colorMode: 'light' })),
   };
 });
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
-  (useThemeObserver as jest.Mock).mockReturnValue({ colorMode: mode });
+  (useThemeObserver as any).mockReturnValue({ colorMode: mode });
 };
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...await vi.importActual('react-router-dom'),
   useNavigate: () => navigateMock,
 }));
 
 describe('renderer/components/Sidebar.tsx', () => {
-  const updateSettingMock = jest.fn();
-  const fetchNotificationsMock = jest.fn();
-  const openExternalLinkSpy = jest
+  const updateSettingMock = vi.fn();
+  const fetchNotificationsMock = vi.fn();
+  const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
     .mockImplementation();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('logged in', () => {
@@ -443,7 +445,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   it('should quit the app', async () => {
-    const quitAppSpy = jest.spyOn(comms, 'quitApp');
+    const quitAppSpy = vi.spyOn(comms, 'quitApp');
 
     renderWithAppContext(
       <MemoryRouter>

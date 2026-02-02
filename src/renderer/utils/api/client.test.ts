@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import axios from 'axios';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
@@ -21,11 +23,11 @@ import {
 
 // Experimental API tests moved to experimental/client.test.ts
 
-jest.mock('axios');
+vi.mock('axios');
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+    (axios as anyedFunction<typeof axios>).mockResolvedValue({
       data: {
         data: {},
       },
@@ -33,7 +35,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {
@@ -206,7 +208,7 @@ describe('renderer/utils/api/client.ts', () => {
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
     const mockProjectKey = 'PROJ' as JiraProjectKey;
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValueOnce({
+    (axios as anyedFunction<typeof axios>).mockResolvedValueOnce({
       data: { projectTypeKey: 'service_desk' },
     });
     const result = await getJiraProjectTypeByKey(

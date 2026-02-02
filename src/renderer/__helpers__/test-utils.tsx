@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
+import { vi } from 'vitest';
 
 import axios from 'axios';
 
@@ -69,7 +70,7 @@ export function renderWithAppContext(
  * Ensure stable snapshots for our randomized emoji use-cases
  */
 export function ensureStableEmojis() {
-  globalThis.Math.random = jest.fn(() => 0.1);
+  globalThis.Math.random = vi.fn(() => 0.1);
 }
 
 /**
