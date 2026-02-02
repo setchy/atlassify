@@ -1,6 +1,6 @@
-import { vi } from 'vitest';
-
 import { act, waitFor } from '@testing-library/react';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
@@ -80,22 +80,31 @@ describe('renderer/context/App.tsx', () => {
     it('fetch notifications each interval', async () => {
       renderWithAppContext(<AppProvider>{null}</AppProvider>);
 
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
+      // Initial fetch happens on mount - advance timers to ensure it runs
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(0);
+      });
 
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
 
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
 
-      act(() => {
-        vi.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(
+          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+        );
       });
       expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
     });

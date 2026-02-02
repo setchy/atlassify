@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/notifications/ProductNotifications.tsx should render itself & its children - dark mode 1`] = `
+exports[`renderer/components/notifications/ProductNotifications.tsx > should render itself & its children - dark mode 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -375,7 +375,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 }
 `;
 
-exports[`renderer/components/notifications/ProductNotifications.tsx should render itself & its children - light mode 1`] = `
+exports[`renderer/components/notifications/ProductNotifications.tsx > should render itself & its children - light mode 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -750,7 +750,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx should rende
 }
 `;
 
-exports[`renderer/components/notifications/ProductNotifications.tsx should toggle product notifications visibility 1`] = `
+exports[`renderer/components/notifications/ProductNotifications.tsx > should toggle product notifications visibility 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

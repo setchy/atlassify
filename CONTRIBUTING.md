@@ -37,7 +37,7 @@ To reload the app with the changes that `pnpm watch` has detected, you can use t
 
 There are 2 checks:
 1. linter & formatter with [biome][biome-website]
-2. unit tests with [jest][jest-website]
+2. unit tests with [vitest][vitest-website]
 
 ```shell
 # Run biome to check linting and formatting
@@ -46,7 +46,7 @@ pnpm lint:check
 # Run unit tests with coverage
 pnpm test
 
-# Update jest snapshots
+# Update vitest snapshots
 pnpm test -u
 ```
 
@@ -87,5 +87,5 @@ To add new locales
 [github-new-milestone]: https://github.com/setchy/atlassify/milestones/new
 [github-new-release]: https://github.com/setchy/atlassify/releases/new
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
-[jest-website]: https://jestjs.io/
+[vitest-website]: https://vitest.dev/
 

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/routes/Accounts.tsx General should render itself & its children - dark mode 1`] = `
+exports[`renderer/routes/Accounts.tsx > General > should render itself & its children - dark mode 1`] = `
 <div
   class="flex flex-col h-screen"
   data-testid="accounts"
@@ -248,7 +248,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
 </div>
 `;
 
-exports[`renderer/routes/Accounts.tsx General should render itself & its children - light mode 1`] = `
+exports[`renderer/routes/Accounts.tsx > General > should render itself & its children - light mode 1`] = `
 <div
   class="flex flex-col h-screen"
   data-testid="accounts"

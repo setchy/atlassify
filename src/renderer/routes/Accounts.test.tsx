@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
-
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
@@ -13,7 +13,7 @@ import { AccountsRoute } from './Accounts';
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
-  ...await vi.importActual('react-router-dom'),
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 
@@ -88,7 +88,7 @@ describe('renderer/routes/Accounts.tsx', () => {
     it('should refresh account', async () => {
       const refreshAccountSpy = vi
         .spyOn(authUtils, 'refreshAccount')
-        .mockImplementation();
+        .mockResolvedValue();
 
       await act(async () => {
         renderWithAppContext(<AccountsRoute />, {
@@ -99,6 +99,11 @@ describe('renderer/routes/Accounts.tsx', () => {
       });
 
       await userEvent.click(screen.getByTestId('account-refresh'));
+
+      // Wait for async operations to complete
+      await act(async () => {
+        await Promise.resolve();
+      });
 
       expect(refreshAccountSpy).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledTimes(1);

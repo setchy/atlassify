@@ -1,23 +1,35 @@
-import { vi } from 'vitest';
-
 import path from 'node:path';
+
+import { vi } from 'vitest';
 
 const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
 vi.mock('node:fs', () => ({
+  default: {
+    writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
+  },
   writeFile: (p: string, d: unknown, cb: () => void) => writeFile(p, d, cb),
 }));
 
 const homedir = vi.fn(() => '/home/test');
-vi.mock('node:os', () => ({ homedir: () => homedir() }));
+vi.mock('node:os', () => ({
+  default: { homedir: () => homedir() },
+  homedir: () => homedir(),
+}));
 
 vi.mock('electron', () => ({
   dialog: { showMessageBoxSync: vi.fn() },
   shell: { openPath: vi.fn() },
 }));
 
+const fileGetFileMock = vi.fn(() => ({ path: '/var/log/app/app.log' }));
 vi.mock('electron-log', () => ({
+  default: {
+    transports: {
+      file: { getFile: () => fileGetFileMock() },
+    },
+  },
   transports: {
-    file: { getFile: () => ({ path: '/var/log/app/app.log' }) },
+    file: { getFile: () => fileGetFileMock() },
   },
 }));
 
@@ -51,6 +63,7 @@ function createMb() {
 describe('main/utils', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    fileGetFileMock.mockReturnValue({ path: '/var/log/app/app.log' });
   });
 
   it('takeScreenshot writes file and logs info', async () => {
@@ -91,11 +104,8 @@ describe('main/utils', () => {
   });
 
   it('openLogsDirectory logs error when no directory', () => {
-    (fileTransport as { getFile: () => { path: string } | null }).getFile =
-      () => null;
-    vi.resetModules();
-    const { openLogsDirectory: openLogsDirectoryReloaded } = require('./utils');
-    openLogsDirectoryReloaded();
+    fileGetFileMock.mockReturnValue(null);
+    openLogsDirectory();
     expect(logErrorMock).toHaveBeenCalledWith(
       'openLogsDirectory',
       'Could not find log directory!',

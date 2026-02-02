@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications compass avatar as square 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > compass avatar as square 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -601,7 +601,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1164,7 +1164,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple named actors 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title with multiple named actors 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1939,7 +1939,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications group by title with multiple unnamed actors 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > group by title with multiple unnamed actors 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -2528,7 +2528,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications missing entity icon url should default to product logo 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > missing entity icon url should default to product logo 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -3123,7 +3123,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx should render not
 }
 `;
 
-exports[`renderer/components/notifications/NotificationRow.tsx should render notifications standard notification 1`] = `
+exports[`renderer/components/notifications/NotificationRow.tsx > should render notifications > standard notification 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
