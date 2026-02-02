@@ -74,3 +74,4 @@ I would like to acknowledge the following projects and resources that have inspi
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
 [wakatime-badge]: https://wakatime.com/badge/user/2b948ae2-4be1-4020-8a57-7de60b53fe1d/project/60db4d24-0691-43a4-8762-9823d1ad5784.svg
 [watatime]: https://wakatime.com
+
