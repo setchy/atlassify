@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
-
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
@@ -31,9 +31,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   it('should update the zoom values when using the zoom buttons', async () => {
     const zoomOutSpy = vi.spyOn(zoom, 'decreaseZoom').mockImplementation();
     const zoomInSpy = vi.spyOn(zoom, 'increaseZoom').mockImplementation();
-    const zoomResetSpy = vi
-      .spyOn(zoom, 'resetZoomLevel')
-      .mockImplementation();
+    const zoomResetSpy = vi.spyOn(zoom, 'resetZoomLevel').mockImplementation();
 
     await act(async () => {
       renderWithAppContext(<AppearanceSettings />, {

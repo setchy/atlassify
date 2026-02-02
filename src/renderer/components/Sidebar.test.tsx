@@ -1,10 +1,10 @@
-import { vi } from 'vitest';
-
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
 import { useThemeObserver } from '@atlaskit/tokens';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
@@ -30,7 +30,7 @@ const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
-  ...await vi.importActual('react-router-dom'),
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 

@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 
 import { TextEncoder } from 'node:util';
+
 import { vi } from 'vitest';
 
 // Stub Atlaskit feature flags so tests don't hit the Feature Gate client
@@ -69,4 +70,3 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: vi.fn(),
   })),
 });
-

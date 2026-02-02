@@ -1,6 +1,6 @@
-import { vi } from 'vitest';
-
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
+
+import { vi } from 'vitest';
 
 import { Theme } from '../../shared/theme';
 

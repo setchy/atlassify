@@ -1,6 +1,5 @@
-import { vi } from 'vitest';
-
 import axios from 'axios';
+import { vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 

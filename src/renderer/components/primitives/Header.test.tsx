@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
-
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
@@ -9,7 +9,7 @@ import { Header } from './Header';
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
-  ...await vi.importActual('react-router-dom'),
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 

@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
-import { vi } from 'vitest';
 
 import axios from 'axios';
+import { vi } from 'vitest';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 

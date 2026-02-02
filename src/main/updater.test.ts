@@ -1,7 +1,7 @@
-import { vi } from 'vitest';
-
 import { dialog } from 'electron';
 import type { Menubar } from 'menubar';
+
+import { vi } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
@@ -232,9 +232,7 @@ describe('main/updater.ts', () => {
 
         const callsBefore =
           menuBuilder.setNoUpdateAvailableMenuVisibility.mock.calls.length;
-        vi.advanceTimersByTime(
-          APPLICATION.UPDATE_NOT_AVAILABLE_DISPLAY_MS * 2,
-        );
+        vi.advanceTimersByTime(APPLICATION.UPDATE_NOT_AVAILABLE_DISPLAY_MS * 2);
         // No additional hide call due to cleared timeout
         expect(
           menuBuilder.setNoUpdateAvailableMenuVisibility.mock.calls.length,

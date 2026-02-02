@@ -26,12 +26,11 @@ import {
 } from '.';
 
 // Access mocked API functions via requireMock to avoid type-side effects
-const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = await vi.importMock(
-  '../api/client',
-) as {
-  getCloudIDsForHostnames: ReturnType<typeof vi.fn>;
-  getJiraProjectTypeByKey: ReturnType<typeof vi.fn>;
-};
+const { getCloudIDsForHostnames, getJiraProjectTypeByKey } =
+  (await vi.importMock('../api/client')) as {
+    getCloudIDsForHostnames: ReturnType<typeof vi.fn>;
+    getJiraProjectTypeByKey: ReturnType<typeof vi.fn>;
+  };
 
 describe('renderer/utils/products/utils.ts', () => {
   describe('inferAtlassianProduct', () => {
