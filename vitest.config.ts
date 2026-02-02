@@ -47,7 +47,7 @@ export default defineConfig({
         },
       },
       {
-        // Node/Electron tests in Node environment (no root extends)
+        // TODO - Opportunity in future to move some of the renderer util tests to node environment
         test: {
           name: 'node [main, shared]',
           environment: 'node',
