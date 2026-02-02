@@ -47,6 +47,13 @@ window.atlassify = {
   aptabase: {
     trackEvent: jest.fn(),
   },
+  oauth: {
+    startFlow: jest.fn().mockResolvedValue({
+      code: 'mock-code',
+      state: 'mock-state',
+      codeVerifier: 'mock-verifier',
+    }),
+  },
 };
 
 // prevent ReferenceError: TextEncoder is not defined
