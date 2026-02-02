@@ -4,12 +4,10 @@ import { TextEncoder } from 'node:util';
 
 import { vi } from 'vitest';
 
-// Stub Atlaskit feature flags so tests don't hit the Feature Gate client
-vi.mock('@atlaskit/platform-feature-flags', () => {
-  return {
-    fg: vi.fn(() => false),
-  };
-});
+// No-op Aptabase renderer analytics to avoid custom scheme fetch in tests
+vi.mock('@aptabase/electron/renderer', () => ({
+  trackEvent: vi.fn(),
+}));
 
 /**
  * Atlassify context bridge API
