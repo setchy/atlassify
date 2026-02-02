@@ -9,7 +9,7 @@ export default defineConfig({
     setupFiles: ['./src/renderer/__helpers__/vitest.setup.ts'],
     coverage: {
       enabled: false,
-      reporter: ['html-spa', 'lcovonly'],
+      reporter: ['html', 'lcovonly'],
       include: ['src/**/*'],
       exclude: [
         '**/__snapshots__/**',
