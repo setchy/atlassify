@@ -67,8 +67,8 @@ importers:
         specifier: 30.0.2
         version: 30.0.2(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/inline-message':
-        specifier: 15.5.3
-        version: 15.5.3(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 15.5.4
+        version: 15.5.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/logo':
         specifier: 19.10.2
         version: 19.10.2(@types/react@19.2.10)(react@19.2.4)
@@ -394,8 +394,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-message@15.5.3':
-    resolution: {integrity: sha512-OspDVyMzYgI18r3jNfRmB8SyOPvme/nyprlImAnVH1ywXaRnN+qlN7/ElgnaUayEfPrj+fH+Y3EanwKmvIUkZw==}
+  '@atlaskit/inline-message@15.5.4':
+    resolution: {integrity: sha512-PxTSnknD6hje3ZJ3WB8kae6LQkBdWEL0f2G8jtK+W3WmsHhCopFlkluLvpkQwYaunMSSGCyWHRKbkAOCoWfdUA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -6147,7 +6147,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/inline-message@15.5.3(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/inline-message@15.5.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/button': 23.9.5(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.10)(react@19.2.4)
@@ -6156,9 +6156,9 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
       '@atlaskit/popper': 7.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/popup': 4.13.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/primitives': 17.1.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/primitives': 18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/theme': 21.0.4(@types/react@19.2.10)(react@19.2.4)
-      '@atlaskit/tokens': 10.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
       react: 19.2.4
