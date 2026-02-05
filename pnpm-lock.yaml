@@ -43,8 +43,8 @@ importers:
         specifier: 25.7.4
         version: 25.7.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/avatar-group':
-        specifier: 12.4.9
-        version: 12.4.9(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 12.4.10
+        version: 12.4.10(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/badge':
         specifier: 18.3.4
         version: 18.3.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -311,8 +311,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar-group@12.4.9':
-    resolution: {integrity: sha512-Cdn7f/SGhpbDmA98yLvLXvwgUvt6k+OP955oySDJW/v/gWeY57PXkon3iVTRpqT/XoE6P5KytvyORoaFzvD38g==}
+  '@atlaskit/avatar-group@12.4.10':
+    resolution: {integrity: sha512-q6D2Dzjadsf5nCN7woJR1BlSBA2yYOItDyA9u1ew75X9hUg/FMUQyebCR9xK7OmIHutyyM/zSkgmC9dFMq+Npw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5917,7 +5917,7 @@ snapshots:
       '@babel/runtime': 7.28.6
       react: 19.2.4
 
-  '@atlaskit/avatar-group@12.4.9(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/avatar-group@12.4.10(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/avatar': 25.7.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
@@ -5925,7 +5925,7 @@ snapshots:
       '@atlaskit/menu': 8.4.15(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
       '@atlaskit/popup': 4.13.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/tokens': 10.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/tooltip': 20.14.3(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
