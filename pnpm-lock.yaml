@@ -91,8 +91,8 @@ importers:
         specifier: 8.2.2
         version: 8.2.2(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/toggle':
-        specifier: 15.2.8
-        version: 15.2.8(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 15.2.9
+        version: 15.2.9(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/tokens':
         specifier: 10.1.0
         version: 10.1.0(@types/react@19.2.10)(react@19.2.4)
@@ -301,6 +301,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/app-provider@4.0.0':
+    resolution: {integrity: sha512-4Guist3Lrwk28+MHofORbN3U7pj8yaAFOGaciAC22GFjBq+hFgV5G/KEIppJjrWPGVFXbB16uhMWagk3+/m3oA==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/atlassian-context@0.6.0':
     resolution: {integrity: sha512-TjaV1OIjP8DaOyaqzPI5OkYvVckn3hYwE92v8RcdnpOiMKI0taedg1sLXD7x0nPx5MtXPmCJNNVJJprDN7pmxQ==}
     peerDependencies:
@@ -458,6 +463,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/primitives@18.0.0':
+    resolution: {integrity: sha512-1NJvzJHN9d7I2w3Yp9AYJN/55FFZcQUhxlvVU9UxIiiSqejCZ4URLWRwBg107J4+mfULBjaajpGXHzyBaK177g==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/radio@8.4.1':
     resolution: {integrity: sha512-fTpOiALt20S/zMFuGezu0Fz+4BimwURNwWzHxbFhwuAIrSBQLSqlKPOL/tFzlkhR1RmdmcNVXxKtOBzMh7A/MQ==}
     peerDependencies:
@@ -500,13 +510,18 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.2.8':
-    resolution: {integrity: sha512-tHvMLcNcuTCnQeii0rmNCeeyHg/LGuaXFk1gkDcSUroG8QiLC7Cl7ESlo9owPvmxmCIlSZwzV/oAi/4i5SnvXA==}
+  '@atlaskit/toggle@15.2.9':
+    resolution: {integrity: sha512-LMSv2gCrvhprOAnMU3yVqGqLf5UuPZSh/5/ggR/4JPwHbhfpP9W52V3LQR0gCE/hiTvINaZUqbAE8SaTuqqEXA==}
     peerDependencies:
       react: ^18.2.0
 
   '@atlaskit/tokens@10.1.0':
     resolution: {integrity: sha512-F7T551Jwqv6kDt3oY/fW0teUzKgZp4OGfWbji0ejeUSF9++suMDzSbsQ5rD8mu6Wui3D1Ru7Q6wtdX4h77k0+A==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/tokens@11.0.0':
+    resolution: {integrity: sha512-uAej+DW3Oujh2sdEK7NqzQtKof0XQzfRx5cX9wBvag/rYQwAclYWLQ17LqNzJhwaF7SQykFnWKucsL3Y4Cmo3Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5884,6 +5899,19 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/app-provider@4.0.0(@types/react@19.2.10)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/browser-apis': 0.0.1(react@19.2.4)
+      '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
+      '@babel/runtime': 7.28.6
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/atlassian-context@0.6.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.6
@@ -6317,6 +6345,27 @@ snapshots:
       - react-dom
       - supports-color
 
+  '@atlaskit/primitives@18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/app-provider': 4.0.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/interaction-context': 3.1.0(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/visually-hidden': 3.0.4(react@19.2.4)
+      '@babel/runtime': 7.28.6
+      '@compiled/react': 0.18.6(react@19.2.4)
+      '@emotion/react': 11.14.0(@types/react@19.2.10)(react@19.2.4)
+      '@emotion/serialize': 1.3.3
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+      tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
   '@atlaskit/radio@8.4.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -6433,17 +6482,17 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.2.8(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/toggle@15.2.9(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/icon': 30.0.1(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
-      '@atlaskit/primitives': 17.1.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/primitives': 18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/spinner': 19.0.9(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/theme': 21.0.4(@types/react@19.2.10)(react@19.2.4)
-      '@atlaskit/tokens': 10.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/visually-hidden': 3.0.4(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
@@ -6461,6 +6510,19 @@ snapshots:
       '@babel/runtime': 7.28.6
       '@babel/traverse': 7.28.6
       '@babel/types': 7.28.6
+      bind-event-listener: 3.0.0
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@atlaskit/tokens@11.0.0(@types/react@19.2.10)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
+      '@babel/runtime': 7.28.6
+      '@babel/traverse': 7.29.0
+      '@babel/types': 7.29.0
       bind-event-listener: 3.0.0
       react: 19.2.4
     transitivePeerDependencies:
