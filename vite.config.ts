@@ -6,28 +6,16 @@ import { defineConfig } from 'vite';
 import electron from 'vite-plugin-electron/simple';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-// Import constants to get emoji list
+import { Constants } from './src/renderer/constants';
+
+import { Errors } from './src/renderer/utils/errors';
+
 const ALL_EMOJIS = [
-  '🎉',
-  '🎊',
-  '🥳',
-  '👏',
-  '🙌',
-  '😎',
-  '🏖️',
-  '🚀',
-  '✨',
-  '🏆', // ALL_READ_EMOJIS
-  '🧐',
-  '😕',
-  '🤔',
-  '😖',
-  '😞',
-  '😟',
-  '😢',
-  '😭',
-  '😱',
-  '😳', // Various error emojis
+  ...Constants.ALL_READ_EMOJIS,
+  ...Errors.BAD_CREDENTIALS.emojis,
+  ...Errors.BAD_REQUEST.emojis,
+  ...Errors.NETWORK.emojis,
+  ...Errors.UNKNOWN.emojis,
 ];
 
 function extractSvgFilename(imgHtml: string) {
@@ -51,6 +39,8 @@ export default defineConfig(({ mode }) => {
         babel: {
           plugins: ['@compiled/babel-plugin'],
         },
+        // Exclude large generated files from Babel transformation
+        exclude: [/\/generated\/graphql\.ts$/],
       }),
       electron({
         main: {
@@ -96,17 +86,25 @@ export default defineConfig(({ mode }) => {
         renderer: mode === 'development' ? undefined : {},
       }),
       viteStaticCopy({
-        targets: ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
-          src: path.resolve(
-            __dirname,
-            `node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-          ),
-          dest: 'images/twemoji',
-        })),
+        targets: [
+          // Copy twemoji SVGs
+          ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
+            src: path.resolve(
+              __dirname,
+              `node_modules/@discordapp/twemoji/dist/svg/${filename}`,
+            ),
+            dest: 'images/twemoji',
+          })),
+          // Copy assets (images, sounds, etc.) to build directory
+          {
+            src: path.resolve(__dirname, 'assets'),
+            dest: '.',
+          },
+        ],
       }),
     ],
     root: 'src/renderer',
-    publicDir: '../../public',
+    publicDir: false, // Disable default public directory since we use assets/
     base: './',
     build: {
       outDir: '../../build',

@@ -22,7 +22,6 @@ import { initialize, trackEvent } from '@aptabase/electron/main';
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
-  type IAptabaseEvent,
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
@@ -226,20 +225,6 @@ app.whenReady().then(async () => {
 
   onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings: IAutoLaunch) => {
     app.setLoginItemSettings(settings);
-  });
-
-  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
-    try {
-      log.debug('Aptabase event received:', {
-        eventName: event.eventName,
-        propsType: typeof event.props,
-        props: event.props,
-      });
-      trackEvent(event.eventName, event.props);
-      log.debug('Aptabase event sent successfully');
-    } catch (error) {
-      logError('main:aptabase', 'Failed to track event', error);
-    }
   });
 
   /**
