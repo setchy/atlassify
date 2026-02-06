@@ -28,6 +28,9 @@ export default defineConfig({
     },
     coverage: {
       enabled: false,
+      provider: 'v8',
+      reportsDirectory: './coverage',
+      cleanOnRerun: true,
       reporter: ['html', 'lcovonly'],
       include: ['src/**/*'],
       exclude: [
