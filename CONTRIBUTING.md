@@ -6,7 +6,7 @@ Before submitting your contribution, please read through the following guide.
 
 ### Project Philosophy
 
-This project is a tool for monitoring new notifications from Atlassian.
+This project is a tool for monitoring new notifications from Atlassian Cloud products.
 
 ### Installation
 
@@ -18,19 +18,11 @@ pnpm install
 
 ### Development
 
-To watch for changes (Vite) in the `src` directory:
+For local development, including GraphQL codegen and hot module reload (HMR):
 
 ```shell
-pnpm watch
+pnpm dev
 ```
-
-To run the **electron app**:
-
-```shell
-pnpm start
-```
-
-To reload the app with the changes that `pnpm watch` has detected, you can use the `CmdOrCtrl+R` shortcut.
 
 ### Tests
 
