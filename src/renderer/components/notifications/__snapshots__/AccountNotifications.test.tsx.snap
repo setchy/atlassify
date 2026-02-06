@@ -9,7 +9,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-1j51aww"
+          class="css-1avekiu"
         >
           <div
             class="css-58xle2"
@@ -243,7 +243,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-1j51aww"
+        class="css-1avekiu"
       >
         <div
           class="css-58xle2"
@@ -534,7 +534,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -736,7 +736,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-k511ku"
+        class="css-e8vej0"
       >
         <div
           class="css-58xle2"
@@ -995,7 +995,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -1197,7 +1197,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-k511ku"
+        class="css-e8vej0"
       >
         <div
           class="css-58xle2"
@@ -1456,7 +1456,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -1681,7 +1681,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-k511ku"
+        class="css-e8vej0"
       >
         <div
           class="css-58xle2"
@@ -1963,7 +1963,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -2245,13 +2245,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             #103: chore(deps): update dependency eslint
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -2296,7 +2296,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -2338,7 +2338,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   myorg/notifications-test
                                 </span>
@@ -2495,13 +2495,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             atlassify-app edited your page
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -2546,7 +2546,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Home
                                 </span>
@@ -2588,7 +2588,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Space
                                 </span>
@@ -2635,7 +2635,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </li>
                                 </ul>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   +
                                   1
@@ -2705,7 +2705,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-k511ku"
+        class="css-e8vej0"
       >
         <div
           class="css-58xle2"
@@ -2987,13 +2987,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -3038,7 +3038,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -3080,7 +3080,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -3237,13 +3237,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           atlassify-app edited your page
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -3288,7 +3288,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Home
                               </span>
@@ -3330,7 +3330,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Space
                               </span>
@@ -3377,7 +3377,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </li>
                               </ul>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 1
@@ -3504,7 +3504,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
         class="css-18nlz2h"
       >
         <div
-          class="css-1itldic"
+          class="css-1b8wful"
         >
           <div
             class="css-58xle2"
@@ -3786,13 +3786,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             #103: chore(deps): update dependency eslint
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -3837,7 +3837,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -3879,7 +3879,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   myorg/notifications-test
                                 </span>
@@ -4036,13 +4036,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             atlassify-app edited your page
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -4087,7 +4087,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Home
                                 </span>
@@ -4129,7 +4129,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Space
                                 </span>
@@ -4176,7 +4176,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   </li>
                                 </ul>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   +
                                   1
@@ -4246,7 +4246,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
       class="css-18nlz2h"
     >
       <div
-        class="css-1itldic"
+        class="css-1b8wful"
       >
         <div
           class="css-58xle2"
@@ -4528,13 +4528,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -4579,7 +4579,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -4621,7 +4621,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -4778,13 +4778,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           atlassify-app edited your page
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -4829,7 +4829,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Home
                               </span>
@@ -4871,7 +4871,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Space
                               </span>
@@ -4918,7 +4918,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                 </li>
                               </ul>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 1
@@ -5049,7 +5049,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -5244,7 +5244,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
         class="css-18nlz2h"
       >
         <div
-          class="css-k511ku"
+          class="css-e8vej0"
         >
           <div
             class="css-58xle2"
@@ -5526,13 +5526,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             #103: chore(deps): update dependency eslint
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -5577,7 +5577,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   #103: chore(deps): update dependency eslint
                                 </span>
@@ -5619,7 +5619,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   myorg/notifications-test
                                 </span>
@@ -5776,13 +5776,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                           id="notification-title"
                         >
                           <span
-                            class="css-mig7xw"
+                            class="css-1y3vbql"
                           >
                             atlassify-app edited your page
                           </span>
                             
                           <em
-                            class="css-1jnhete"
+                            class="css-xlxqv6"
                           >
                             5 years ago
                           </em>
@@ -5827,7 +5827,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                   </span>
                                 </div>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Home
                                 </span>
@@ -5869,7 +5869,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
 
                                 </span>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   Atlassify Space
                                 </span>
@@ -5916,7 +5916,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                   </li>
                                 </ul>
                                 <span
-                                  class="css-lk4q1e"
+                                  class="css-x828h5"
                                 >
                                   +
                                   1
@@ -5986,7 +5986,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
       class="css-18nlz2h"
     >
       <div
-        class="css-k511ku"
+        class="css-e8vej0"
       >
         <div
           class="css-58xle2"
@@ -6268,13 +6268,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -6319,7 +6319,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -6361,7 +6361,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -6518,13 +6518,13 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           atlassify-app edited your page
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           5 years ago
                         </em>
@@ -6569,7 +6569,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Home
                               </span>
@@ -6611,7 +6611,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Atlassify Space
                               </span>
@@ -6658,7 +6658,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > should tog
                                 </li>
                               </ul>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 1

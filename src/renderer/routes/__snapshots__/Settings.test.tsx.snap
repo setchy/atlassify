@@ -50,7 +50,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syazi7uo"
+        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
       >
         Settings
       </h3>
@@ -69,7 +69,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
           >
             Appearance
           </h4>
@@ -80,7 +80,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               class="css-xxi07b"
             >
               <span
-                class="css-fm5tr8"
+                class="css-1w9vgw2"
                 id="language-label"
               >
                 Language
@@ -188,7 +188,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               class="css-xxi07b"
             >
               <span
-                class="css-fm5tr8"
+                class="css-1w9vgw2"
                 id="theme-label"
               >
                 Theme
@@ -270,14 +270,14 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               class="css-gdhcj"
             >
               <span
-                class="css-fm5tr8"
+                class="css-1w9vgw2"
                 id="zoom-label"
               >
                 Zoom
                 :
               </span>
               <div
-                class="css-1by9qc2"
+                class="css-onzy6r"
               >
                 <div
                   class="_2rkofajl _12ji1l7x _1cwg1n1a _1qu2nqa1 _12y3t94y _1e0c116y _kqswh2mm _4cvr1h6o _o5721q9c"
@@ -292,7 +292,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                         class="css-13secbl"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           100
                           %
@@ -430,7 +430,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
           >
             Notifications
           </h4>
@@ -657,7 +657,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
           >
             Tray
           </h4>
@@ -941,7 +941,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
           >
             System
           </h4>
@@ -952,7 +952,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               class="css-xxi07b"
             >
               <span
-                class="css-fm5tr8"
+                class="css-1w9vgw2"
                 id="openLinks-label"
               >
                 Open Links
@@ -1239,7 +1239,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="css-1436gvr"
+              class="css-z626nj"
               data-testid="settings-volume-group"
             >
               <div
@@ -1255,7 +1255,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                       class="css-13secbl"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         20
                         %
@@ -1502,7 +1502,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
     </div>
   </div>
   <div
-    class="css-145qftn"
+    class="css-ujmiwr"
   >
     <div
       class="css-1fxbet0"

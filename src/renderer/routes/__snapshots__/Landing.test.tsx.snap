@@ -57,13 +57,13 @@ exports[`renderer/routes/Landing.tsx > should render itself & its children 1`] =
             class="css-1o3s557"
           >
             <h2
-              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syazi7uo"
+              class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c810sd _syazi7uo"
             >
               Atlassian 
               notifications
             </h2>
             <span
-              class="css-1h3xrxm"
+              class="css-xk9blv"
             >
               on your menu bar
             </span>
@@ -400,13 +400,13 @@ exports[`renderer/routes/Landing.tsx > should render itself & its children 1`] =
           class="css-1o3s557"
         >
           <h2
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nf1z _syazi7uo"
+            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c810sd _syazi7uo"
           >
             Atlassian 
             notifications
           </h2>
           <span
-            class="css-1h3xrxm"
+            class="css-xk9blv"
           >
             on your menu bar
           </span>

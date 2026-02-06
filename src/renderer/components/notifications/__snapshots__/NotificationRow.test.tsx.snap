@@ -99,13 +99,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           some-project improved a scorecard
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -150,7 +150,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -198,7 +198,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 Compass
                               </span>
@@ -212,7 +212,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 2
@@ -371,13 +371,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         some-project improved a scorecard
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -422,7 +422,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </span>
                             </div>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -470,7 +470,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               Compass
                             </span>
@@ -484,7 +484,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               +
                               2
@@ -700,13 +700,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -751,7 +751,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -793,7 +793,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -953,13 +953,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -1004,7 +1004,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </span>
                             </div>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -1046,7 +1046,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               myorg/notifications-test
                             </span>
@@ -1263,13 +1263,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -1314,7 +1314,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -1356,7 +1356,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -1460,7 +1460,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </li>
                               </ul>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 2
@@ -1620,13 +1620,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -1671,7 +1671,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </span>
                             </div>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -1713,7 +1713,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               myorg/notifications-test
                             </span>
@@ -1817,7 +1817,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </li>
                             </ul>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               +
                               2
@@ -2034,13 +2034,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -2085,7 +2085,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -2127,7 +2127,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -2141,7 +2141,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 2
@@ -2300,13 +2300,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -2351,7 +2351,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </span>
                             </div>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -2393,7 +2393,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               myorg/notifications-test
                             </span>
@@ -2407,7 +2407,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               +
                               2
@@ -2623,13 +2623,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -2677,7 +2677,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -2719,7 +2719,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -2733,7 +2733,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               class="css-5fz2td"
                             >
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 +
                                 2
@@ -2892,13 +2892,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -2946,7 +2946,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -2988,7 +2988,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               myorg/notifications-test
                             </span>
@@ -3002,7 +3002,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                             class="css-5fz2td"
                           >
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               +
                               2
@@ -3218,13 +3218,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                         id="notification-title"
                       >
                         <span
-                          class="css-mig7xw"
+                          class="css-1y3vbql"
                         >
                           #103: chore(deps): update dependency eslint
                         </span>
                           
                         <em
-                          class="css-1jnhete"
+                          class="css-xlxqv6"
                         >
                           3 years ago
                         </em>
@@ -3269,7 +3269,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                                 </span>
                               </div>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 #103: chore(deps): update dependency eslint
                               </span>
@@ -3311,7 +3311,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                               </span>
                               <span
-                                class="css-lk4q1e"
+                                class="css-x828h5"
                               >
                                 myorg/notifications-test
                               </span>
@@ -3471,13 +3471,13 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                       id="notification-title"
                     >
                       <span
-                        class="css-mig7xw"
+                        class="css-1y3vbql"
                       >
                         #103: chore(deps): update dependency eslint
                       </span>
                         
                       <em
-                        class="css-1jnhete"
+                        class="css-xlxqv6"
                       >
                         3 years ago
                       </em>
@@ -3522,7 +3522,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
                               </span>
                             </div>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               #103: chore(deps): update dependency eslint
                             </span>
@@ -3564,7 +3564,7 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 
                             </span>
                             <span
-                              class="css-lk4q1e"
+                              class="css-x828h5"
                             >
                               myorg/notifications-test
                             </span>

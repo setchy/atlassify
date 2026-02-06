@@ -21,8 +21,8 @@ importers:
         specifier: 6.8.2
         version: 6.8.2
       i18next:
-        specifier: 25.8.0
-        version: 25.8.0(typescript@5.9.3)
+        specifier: 25.8.1
+        version: 25.8.1(typescript@5.9.3)
       i18next-browser-languagedetector:
         specifier: 8.2.0
         version: 8.2.0
@@ -37,7 +37,7 @@ importers:
         version: 19.2.4(react@19.2.4)
       react-i18next:
         specifier: 16.5.4
-        version: 16.5.4(i18next@25.8.0(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
+        version: 16.5.4(i18next@25.8.1(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
       react-router-dom:
         specifier: 7.13.0
         version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -64,8 +64,8 @@ importers:
         specifier: 15.3.4
         version: 15.3.4(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/heading':
-        specifier: 5.2.19
-        version: 5.2.19(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 5.2.20
+        version: 5.2.20(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/icon':
         specifier: 30.0.2
         version: 30.0.2(@types/react@19.2.10)(react@19.2.4)
@@ -79,8 +79,8 @@ importers:
         specifier: 14.10.3
         version: 14.10.3(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/primitives':
-        specifier: 17.1.1
-        version: 17.1.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 18.0.0
+        version: 18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/radio':
         specifier: 8.4.2
         version: 8.4.2(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -352,8 +352,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/heading@5.2.19':
-    resolution: {integrity: sha512-J+cH0+oIZklzFntsDr3glaILBuc816jUsixw/cBC55bwO+cl25HROCuFGdINxaVAc3Uguu7ack48TG63pDbXWA==}
+  '@atlaskit/heading@5.2.20':
+    resolution: {integrity: sha512-O3ZTEZqdR8AByPDfMEMgBrlP1GSNo1DGDJTrS0IqV7js+qtU3cDJd9lvrNHj1myCDCc5bYGicx2VhSd9iCLphg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -3152,8 +3152,8 @@ packages:
   i18next-browser-languagedetector@8.2.0:
     resolution: {integrity: sha512-P+3zEKLnOF0qmiesW383vsLdtQVyKtCNA9cjSoKCppTKPQVfKd2W8hbVo5ZhNJKDqeM7BOcvNoKJOjpHh4Js9g==}
 
-  i18next@25.8.0:
-    resolution: {integrity: sha512-urrg4HMFFMQZ2bbKRK7IZ8/CTE7D8H4JRlAwqA2ZwDRFfdd0K/4cdbNNLgfn9mo+I/h9wJu61qJzH7jCFAhUZQ==}
+  i18next@25.8.1:
+    resolution: {integrity: sha512-nFFxhwcRNggIrkv2hx/xMYVMG7Z8iMUA4ZuH4tgcbZiI0bK1jn3kSDIXNWuQDt1xVAu7mb7Qn82TpH7ZAk/okA==}
     peerDependencies:
       typescript: ^5
     peerDependenciesMeta:
@@ -5327,7 +5327,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.10)(react@19.2.4)
-      '@atlaskit/heading': 5.2.19(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/heading': 5.2.20(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/icon': 30.0.2(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
       '@atlaskit/primitives': 18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5344,12 +5344,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/heading@5.2.19(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/heading@5.2.20(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/css': 0.19.1(@types/react@19.2.10)(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.2(react@19.2.4)
-      '@atlaskit/primitives': 17.1.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/tokens': 10.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@atlaskit/primitives': 18.0.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/tokens': 11.0.0(@types/react@19.2.10)(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
       react: 19.2.4
@@ -8969,7 +8969,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.28.6
 
-  i18next@25.8.0(typescript@5.9.3):
+  i18next@25.8.1(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.28.6
     optionalDependencies:
@@ -9911,11 +9911,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.10
 
-  react-i18next@16.5.4(i18next@25.8.0(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3):
+  react-i18next@16.5.4(i18next@25.8.1(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.28.6
       html-parse-stringify: 3.0.1
-      i18next: 25.8.0(typescript@5.9.3)
+      i18next: 25.8.1(typescript@5.9.3)
       react: 19.2.4
       use-sync-external-store: 1.6.0(react@19.2.4)
     optionalDependencies:
