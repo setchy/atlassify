@@ -25,6 +25,31 @@ import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
 /**
+ * Filter notifications based on read state settings.
+ *
+ * @param notifications - The notifications to filter.
+ * @param settings - The user settings.
+ * @returns Filtered notifications based on settings.
+ */
+export function filterVisibleNotifications(
+  notifications: AtlassifyNotification[],
+  settings: SettingsState,
+): AtlassifyNotification[] {
+  // Show all notifications if:
+  // 1. Not filtering unread only, OR
+  // 2. Delay notification state is enabled (keeps read notifications visible during animation)
+  if (
+    !settings.fetchOnlyUnreadNotifications ||
+    settings.delayNotificationState
+  ) {
+    return notifications;
+  }
+
+  // Only hide read notifications if both conditions are met
+  return notifications.filter((n) => n.readState === 'unread');
+}
+
+/**
  * Get the count of notifications across all accounts.
  *
  * @param notifications - The account notifications to check.

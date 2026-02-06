@@ -31,6 +31,7 @@ import { useNotificationsStore } from '../../stores/notifications';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';
+import { filterVisibleNotifications } from '../../utils/notifications/notifications';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -83,12 +84,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   });
 
   // Filter notifications based on settings
-  const visibleNotifications = useMemo(() => {
-    if (!settings.fetchOnlyUnreadNotifications) {
-      return notifications;
-    }
-    return notifications.filter((n) => n.readState === 'unread');
-  }, [notifications, settings.fetchOnlyUnreadNotifications]);
+  const visibleNotifications = useMemo(
+    () => filterVisibleNotifications(notifications, settings),
+    [notifications, settings],
+  );
 
   // Hide entire account section if no visible notifications
   if (visibleNotifications.length === 0) {

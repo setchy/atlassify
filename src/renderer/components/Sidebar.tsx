@@ -36,8 +36,12 @@ export const Sidebar: FC = () => {
   const hasMoreAccountNotifications = useNotificationsStore(
     selectHasMoreAccountNotifications,
   );
-  const notificationCount = useNotificationsStore(selectNotificationCount);
-  const hasNotifications = useNotificationsStore(selectHasNotifications);
+  const notificationCount = useNotificationsStore((state) =>
+    selectNotificationCount(state, settings),
+  );
+  const hasNotifications = useNotificationsStore((state) =>
+    selectHasNotifications(state, settings),
+  );
 
   const { t } = useTranslation();
 

@@ -6,6 +6,7 @@ import type {
   AtlassifyError,
   AtlassifyNotification,
   AtlassifyState,
+  SettingsState,
   Status,
 } from '../types';
 
@@ -23,12 +24,55 @@ import {
 import { rendererLogError } from '../utils/logger';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
+  filterVisibleNotifications,
   getAllNotifications,
   isGroupNotification,
 } from '../utils/notifications/notifications';
-import { shouldRemoveNotificationsFromState } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
+
+// Helper to get all notification IDs including grouped notifications
+async function getNotificationIds(
+  account: Account,
+  settings: any,
+  notifications: AtlassifyNotification[],
+): Promise<string[]> {
+  const singleGroupNotifications = notifications.filter(
+    (notification) => !isGroupNotification(notification),
+  );
+  const singleNotificationIDs = singleGroupNotifications.map((n) => n.id);
+
+  const groupNotifications = notifications.filter((notification) =>
+    isGroupNotification(notification),
+  );
+
+  const groupNotificationIDs: string[] = [];
+
+  for (const group of groupNotifications) {
+    try {
+      const res = await getNotificationsByGroupId(
+        account,
+        settings,
+        group.notificationGroup.id,
+        group.notificationGroup.size,
+      );
+
+      const groupNotificationsList = res.data.notifications.notificationGroup
+        .nodes as GroupNotificationDetailsFragment[];
+
+      const ids = groupNotificationsList.map((n) => n.notificationId);
+      groupNotificationIDs.push(...ids);
+    } catch (err) {
+      rendererLogError(
+        'getNotificationIds',
+        'Error occurred while fetching notification ids for notification groups',
+        err,
+      );
+    }
+  }
+
+  return [...singleNotificationIDs, ...groupNotificationIDs];
+}
 
 interface NotificationsState {
   notifications: AccountNotifications[];
@@ -37,13 +81,6 @@ interface NotificationsState {
   isFetching: boolean;
 
   // Actions
-  setNotifications: (notifications: AccountNotifications[]) => void;
-  updateAccountNotifications: (
-    account: Account,
-    updates: Partial<AccountNotifications>,
-  ) => void;
-  clearNotifications: () => void;
-
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
   removeAccountNotifications: (account: Account) => Promise<void>;
   markNotificationsRead: (
@@ -61,19 +98,6 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
   status: 'success',
   globalError: null,
   isFetching: false,
-
-  setNotifications: (notifications) => set({ notifications }),
-
-  updateAccountNotifications: (account, updates) =>
-    set((state) => ({
-      notifications: state.notifications.map((accountNotifications) =>
-        accountNotifications.account.id === account.id
-          ? { ...accountNotifications, ...updates }
-          : accountNotifications,
-      ),
-    })),
-
-  clearNotifications: () => set({ notifications: [] }),
 
   removeAccountNotifications: async (account: Account) => {
     set({ status: 'loading' });
@@ -145,53 +169,18 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
 
     const account = readNotifications[0].account;
 
-    const singleGroupNotifications = readNotifications.filter(
-      (notification) => !isGroupNotification(notification),
-    );
-    const singleNotificationIDs = singleGroupNotifications.map(
-      (notification) => notification.id,
-    );
-
     try {
-      // Get notification IDs for grouped notifications
-      const notificationIDs: string[] = [];
-      const groupNotifications = readNotifications.filter((notification) =>
-        isGroupNotification(notification),
+      const notificationIDs = await getNotificationIds(
+        account,
+        state.settings,
+        readNotifications,
       );
 
-      for (const group of groupNotifications) {
-        try {
-          const res = await getNotificationsByGroupId(
-            account,
-            state.settings,
-            group.notificationGroup.id,
-            group.notificationGroup.size,
-          );
-
-          const groupNotificationsList = res.data.notifications
-            .notificationGroup.nodes as GroupNotificationDetailsFragment[];
-
-          const groupNotificationIDs = groupNotificationsList.map(
-            (notification) => notification.notificationId,
-          );
-
-          notificationIDs.push(...groupNotificationIDs);
-        } catch (err) {
-          rendererLogError(
-            'getNotificationIdsForGroups',
-            'Error occurred while fetching notification ids for notification groups',
-            err,
-          );
-        }
-      }
-
-      singleNotificationIDs.push(...notificationIDs);
-
-      await markNotificationsAsRead(account, singleNotificationIDs);
+      await markNotificationsAsRead(account, notificationIDs);
 
       const notificationIDsToMark = new Set(readNotifications.map((n) => n.id));
 
-      // Just update readState - let UI filter based on settings
+      // Update readState - UI filtering handles visibility
       set((currentState) => ({
         notifications: currentState.notifications.map((accountNotifications) =>
           accountNotifications.account.id === account.id
@@ -222,64 +211,31 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
     unreadNotifications: AtlassifyNotification[],
   ) => {
     set({ status: 'loading' });
-    trackEvent('Action', {
-      name: 'Mark as Unread',
-    });
+    trackEvent('Action', { name: 'Mark as Unread' });
 
     const account = unreadNotifications[0].account;
 
-    const singleGroupNotifications = unreadNotifications.filter(
-      (notification) => !isGroupNotification(notification),
-    );
-    const singleNotificationIDs = singleGroupNotifications.map(
-      (notification) => notification.id,
-    );
-
     try {
-      // Get notification IDs for grouped notifications
-      const notificationIDs: string[] = [];
-      const groupNotifications = unreadNotifications.filter((notification) =>
-        isGroupNotification(notification),
+      const notificationIDs = await getNotificationIds(
+        account,
+        state.settings,
+        unreadNotifications,
       );
 
-      for (const group of groupNotifications) {
-        try {
-          const res = await getNotificationsByGroupId(
-            account,
-            state.settings,
-            group.notificationGroup.id,
-            group.notificationGroup.size,
-          );
+      await markNotificationsAsUnread(account, notificationIDs);
 
-          const groupNotificationsList = res.data.notifications
-            .notificationGroup.nodes as GroupNotificationDetailsFragment[];
+      const notificationIDsToMark = new Set(
+        unreadNotifications.map((n) => n.id),
+      );
 
-          const groupNotificationIDs = groupNotificationsList.map(
-            (notification) => notification.notificationId,
-          );
-
-          notificationIDs.push(...groupNotificationIDs);
-        } catch (err) {
-          rendererLogError(
-            'getNotificationIdsForGroups',
-            'Error occurred while fetching notification ids for notification groups',
-            err,
-          );
-        }
-      }
-
-      singleNotificationIDs.push(...notificationIDs);
-
-      await markNotificationsAsUnread(account, singleNotificationIDs);
-
-      // Update readState in place and trigger re-render
-      set((state) => ({
-        notifications: state.notifications.map((accountNotifications) =>
+      // Update readState - UI filtering handles visibility
+      set((currentState) => ({
+        notifications: currentState.notifications.map((accountNotifications) =>
           accountNotifications.account.id === account.id
             ? {
                 ...accountNotifications,
                 notifications: accountNotifications.notifications.map((n) =>
-                  unreadNotifications.some((un) => un.id === n.id)
+                  notificationIDsToMark.has(n.id)
                     ? { ...n, readState: 'unread' as const }
                     : n,
                 ),
@@ -300,19 +256,34 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
 }));
 
 // Selectors for common queries
-export const selectNotificationCount = (state: NotificationsState) =>
-  state.notifications.reduce(
-    (total, accountNotifications) =>
-      total + accountNotifications.notifications.length,
-    0,
-  );
+export const selectNotificationCount = (
+  state: NotificationsState,
+  settings: SettingsState,
+) =>
+  state.notifications.reduce((total, accountNotifications) => {
+    const visible = filterVisibleNotifications(
+      accountNotifications.notifications,
+      settings,
+    );
+    return total + visible.length;
+  }, 0);
 
-export const selectHasNotifications = (state: NotificationsState) =>
-  state.notifications.some(
-    (accountNotifications) => accountNotifications.notifications.length > 0,
-  );
+export const selectHasNotifications = (
+  state: NotificationsState,
+  settings: SettingsState,
+) =>
+  state.notifications.some((accountNotifications) => {
+    const visible = filterVisibleNotifications(
+      accountNotifications.notifications,
+      settings,
+    );
+    return visible.length > 0;
+  });
 
 export const selectHasMoreAccountNotifications = (state: NotificationsState) =>
   state.notifications.some(
     (accountNotifications) => accountNotifications.hasMoreNotifications,
   );
+
+// Export the filter helper for use in components
+export { filterVisibleNotifications };

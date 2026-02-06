@@ -15,10 +15,13 @@ import {
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
+  const { settings } = useAppContext();
   const notifications = useNotificationsStore((state) => state.notifications);
   const status = useNotificationsStore((state) => state.status);
   const globalError = useNotificationsStore((state) => state.globalError);
-  const hasNotifications = useNotificationsStore(selectHasNotifications);
+  const hasNotifications = useNotificationsStore((state) =>
+    selectHasNotifications(state, settings),
+  );
 
   // Store previous successful state
   const prevStateRef = useRef({
