@@ -38,7 +38,7 @@ export default defineConfig(() => ({
         entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
         vite: {
           build: {
-            outDir: 'build',
+            outDir: fileURLToPath(new URL('build', import.meta.url)),
             rollupOptions: {
               output: { entryFileNames: 'main.js', format: 'cjs' },
               external: [
@@ -57,7 +57,7 @@ export default defineConfig(() => ({
         input: fileURLToPath(new URL('src/preload/index.ts', import.meta.url)),
         vite: {
           build: {
-            outDir: 'build',
+            outDir: fileURLToPath(new URL('build', import.meta.url)),
             rollupOptions: { output: { entryFileNames: 'preload.js' } },
           },
           resolve: { conditions: ['node'] },
@@ -73,11 +73,11 @@ export default defineConfig(() => ({
               import.meta.url,
             ),
           ),
-          dest: 'build/images/twemoji',
+          dest: 'images/twemoji',
         })),
         {
           src: fileURLToPath(new URL('assets', import.meta.url)),
-          dest: 'build',
+          dest: '.',
         },
       ],
     }),
