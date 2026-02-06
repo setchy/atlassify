@@ -6,7 +6,7 @@ Before submitting your contribution, please read through the following guide.
 
 ### Project Philosophy
 
-This project is a tool for monitoring new notifications from Atlassian.
+This project is a tool for monitoring new notifications from Atlassian Cloud products.
 
 ### Installation
 
@@ -18,20 +18,11 @@ pnpm install
 
 ### Development
 
-
-To watch for changes (`webpack`) in the `src` directory:
-
-```shell
-pnpm watch
-```
-
-To run the **electron app**:
+For local development, including GraphQL codegen and hot module reload (HMR):
 
 ```shell
-pnpm start
+pnpm dev
 ```
-
-To reload the app with the changes that `pnpm watch` has detected, you can use the `CmdOrCtrl+R` shortcut.
 
 ### Tests
 

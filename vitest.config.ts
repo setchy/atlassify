@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -16,9 +16,21 @@ export default defineConfig({
       ) {
         return false;
       }
+
+      // suppress noisy i18next logs
+      if (
+        type === 'stdout' &&
+        typeof log === 'string' &&
+        log.includes('i18next is maintained with support from locize.com')
+      ) {
+        return false;
+      }
     },
     coverage: {
       enabled: false,
+      provider: 'v8',
+      reportsDirectory: './coverage',
+      cleanOnRerun: true,
       reporter: ['html', 'lcovonly'],
       include: ['src/**/*'],
       exclude: [

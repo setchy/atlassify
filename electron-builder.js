@@ -45,7 +45,7 @@ const config = {
   },
   nsis: {
     oneClick: false,
-    uninstallDisplayName: '${productName}',
+    uninstallDisplayName: 'Atlassify',
   },
   linux: {
     target: ['AppImage', 'deb', 'rpm'],

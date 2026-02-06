@@ -1,5 +1,10 @@
 import path from 'node:path';
 
+import { config } from 'dotenv';
+
+// Load environment variables
+config();
+
 import {
   app,
   type BrowserWindowConstructorOptions,
@@ -17,12 +22,11 @@ import { initialize, trackEvent } from '@aptabase/electron/main';
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
-  type IAptabaseEvent,
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
-import { logError, logWarn } from '../shared/logger';
+import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -40,14 +44,22 @@ if (!aptabaseKey) {
     'APTABASE_KEY environment variable is not set',
     new Error('APTABASE_KEY environment variable is not set'),
   );
+} else {
+  try {
+    initialize(aptabaseKey);
+    logInfo('aptabase', 'initialized successfully');
+  } catch (error) {
+    logError('main:aptabase', 'Failed to initialize Aptabase', error);
+  }
 }
-initialize(aptabaseKey);
 
 /**
  * File paths
  */
 const preloadFilePath = path.join(__dirname, 'preload.js');
-const indexHtmlFilePath = `file://${__dirname}/index.html`;
+const indexHtmlFilePath = process.env.VITE_DEV_SERVER_URL
+  ? process.env.VITE_DEV_SERVER_URL
+  : `file://${__dirname}/index.html`;
 const notificationSoundFilePath = path.join(
   __dirname,
   '..',
@@ -68,6 +80,8 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     preload: preloadFilePath,
     contextIsolation: true,
     nodeIntegration: false,
+    // Disable web security in development to allow CORS requests
+    webSecurity: !process.env.VITE_DEV_SERVER_URL,
   },
 };
 
@@ -213,10 +227,6 @@ app.whenReady().then(async () => {
     app.setLoginItemSettings(settings);
   });
 
-  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
-    trackEvent(event.eventName, event.props);
-  });
-
   /**
    * Atlassify custom IPC events - response expected
    */
@@ -236,7 +246,18 @@ app.whenReady().then(async () => {
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
-    return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    try {
+      return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    } catch (error) {
+      // If decryption fails, the data was likely encrypted with a different app identity
+      // This can happen when migrating between build systems or changing app configuration
+      logError(
+        'main:safe-storage-decrypt',
+        'Failed to decrypt value - data may be from old build',
+        error,
+      );
+      throw error;
+    }
   });
 });
 
