@@ -27,6 +27,7 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
+import { useNotificationsStore } from '../../stores/notifications';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';
@@ -48,7 +49,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
 
-  const { markNotificationsRead, settings } = useAppContext();
+  const { settings, auth } = useAppContext();
+  const markNotificationsRead = useNotificationsStore(
+    (state) => state.markNotificationsRead,
+  );
 
   const { t } = useTranslation();
 
@@ -78,9 +82,22 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     gridArea: 'title',
   });
 
+  // Filter notifications based on settings
+  const visibleNotifications = useMemo(() => {
+    if (!settings.fetchOnlyUnreadNotifications) {
+      return notifications;
+    }
+    return notifications.filter((n) => n.readState === 'unread');
+  }, [notifications, settings.fetchOnlyUnreadNotifications]);
+
+  // Hide entire account section if no visible notifications
+  if (visibleNotifications.length === 0) {
+    return null;
+  }
+
   const sortedNotifications = useMemo(
-    () => [...notifications].sort((a, b) => a.order - b.order),
-    [notifications],
+    () => [...visibleNotifications].sort((a, b) => a.order - b.order),
+    [visibleNotifications],
   );
 
   const groupedNotifications = useMemo(() => {
@@ -294,7 +311,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               <Button
                 appearance="warning"
                 onClick={() => {
-                  markNotificationsRead(notifications);
+                  markNotificationsRead({ auth, settings }, notifications);
                   actionCloseMarkAccountAsReadModal();
                 }}
                 testId="account-mark-as-read-confirm"

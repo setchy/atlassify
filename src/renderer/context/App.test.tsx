@@ -10,17 +10,15 @@ import { mockSettings } from '../__mocks__/state-mocks';
 import { Constants } from '../constants';
 
 import { useAppContext } from '../hooks/useAppContext';
-import { useNotifications } from '../hooks/useNotifications';
 
 import type { AuthState, SettingsState } from '../types';
 
+import { useNotificationsStore } from '../stores/notifications';
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
 import { defaultSettings } from './defaults';
-
-vi.mock('../hooks/useNotifications');
 
 // Helper to render the context
 const renderWithContext = () => {
@@ -41,23 +39,19 @@ const renderWithContext = () => {
 };
 
 describe('renderer/context/App.tsx', () => {
-  const fetchNotificationsMock = vi.fn();
-  const markNotificationsReadMock = vi.fn();
-  const markNotificationsUnreadMock = vi.fn();
-  const removeAccountNotificationsMock = vi.fn();
-
   const saveStateSpy = vi
     .spyOn(storage, 'saveState')
     .mockImplementation(vi.fn());
 
   beforeEach(() => {
     vi.useFakeTimers();
-    vi.mocked(useNotifications).mockReturnValue({
-      fetchNotifications: fetchNotificationsMock,
-      markNotificationsRead: markNotificationsReadMock,
-      markNotificationsUnread: markNotificationsUnreadMock,
-      removeAccountNotifications: removeAccountNotificationsMock,
-    } as unknown as ReturnType<typeof useNotifications>);
+    // Reset Zustand store state before each test
+    useNotificationsStore.setState({
+      notifications: [],
+      status: 'success',
+      globalError: null,
+      isFetching: false,
+    });
   });
 
   afterEach(() => {
@@ -65,88 +59,7 @@ describe('renderer/context/App.tsx', () => {
     vi.clearAllMocks();
   });
 
-  describe('notification methods', () => {
-    const getNotificationCountSpy = vi.spyOn(
-      notifications,
-      'getNotificationCount',
-    );
-    getNotificationCountSpy.mockReturnValue(1);
-
-    const mockDefaultState = {
-      auth: { accounts: [] },
-      settings: mockSettings,
-    };
-
-    it('fetch notifications each interval', async () => {
-      renderWithAppContext(<AppProvider>{null}</AppProvider>);
-
-      // Initial fetch happens on mount - advance timers to ensure it runs
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(0);
-      });
-
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
-    });
-
-    it('should call fetchNotifications', async () => {
-      const getContext = renderWithContext();
-      fetchNotificationsMock.mockReset();
-
-      act(() => {
-        getContext().fetchNotifications();
-      });
-
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
-    });
-
-    it('should call markNotificationsRead', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
-      });
-
-      expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
-        mockSingleAtlassifyNotification,
-      ]);
-    });
-
-    it('should call markNotificationsUnread', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
-      });
-
-      expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
-        mockDefaultState,
-        [mockSingleAtlassifyNotification],
-      );
-    });
-  });
+  // Notification methods are now tested in the Zustand store tests
 
   describe('settings methods', () => {
     it('should call updateSetting', async () => {

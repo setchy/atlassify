@@ -1,5 +1,4 @@
 import {
-  createContext,
   type ReactNode,
   useCallback,
   useEffect,
@@ -10,13 +9,9 @@ import {
 import { Constants } from '../constants';
 
 import { useIntervalTimer } from '../hooks/useIntervalTimer';
-import { useNotifications } from '../hooks/useNotifications';
 
 import type {
   Account,
-  AccountNotifications,
-  AtlassifyError,
-  AtlassifyNotification,
   AuthState,
   ConfigSettingsState,
   ConfigSettingsValue,
@@ -28,6 +23,12 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
+import {
+  selectHasMoreAccountNotifications,
+  selectHasNotifications,
+  selectNotificationCount,
+  useNotificationsStore,
+} from '../stores/notifications';
 import {
   addAccount,
   hasAccounts,
@@ -44,53 +45,12 @@ import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
+import { AppContext } from './App.context';
 import {
   defaultAuth,
   defaultFilterSettings,
   defaultSettings,
 } from './defaults';
-
-export interface AppContextState {
-  auth: AuthState;
-  isLoggedIn: boolean;
-  login: (data: LoginOptions) => Promise<void>;
-  logoutFromAccount: (account: Account) => void;
-
-  status: Status;
-  globalError: AtlassifyError;
-
-  notifications: AccountNotifications[];
-  notificationCount: number;
-  hasNotifications: boolean;
-  hasMoreAccountNotifications: boolean;
-
-  fetchNotifications: () => Promise<void>;
-  removeAccountNotifications: (account: Account) => Promise<void>;
-
-  markNotificationsRead: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
-  markNotificationsUnread: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
-
-  settings: SettingsState;
-  clearFilters: () => void;
-  resetSettings: () => void;
-  updateSetting: (
-    name: keyof ConfigSettingsState,
-    value: ConfigSettingsValue,
-  ) => void;
-  updateFilter: (
-    name: keyof FilterSettingsState,
-    value: FilterSettingsValue,
-    checked: boolean,
-  ) => void;
-}
-
-export const AppContext = createContext<Partial<AppContextState> | undefined>(
-  undefined,
-);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const existingState = loadState();
@@ -107,21 +67,22 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       : defaultSettings,
   );
 
+  // Get notifications actions and state from Zustand store
   const {
     status,
     globalError,
-
-    notifications,
-    notificationCount,
-    hasNotifications,
-    hasMoreAccountNotifications,
-
     fetchNotifications,
     removeAccountNotifications,
-
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications();
+  } = useNotificationsStore();
+
+  const notifications = useNotificationsStore((state) => state.notifications);
+  const notificationCount = useNotificationsStore(selectNotificationCount);
+  const hasNotifications = useNotificationsStore(selectHasNotifications);
+  const hasMoreAccountNotifications = useNotificationsStore(
+    selectHasMoreAccountNotifications,
+  );
 
   const refreshAllAccounts = useCallback(() => {
     if (!auth.accounts.length) {
@@ -342,20 +303,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       isLoggedIn,
       login,
       logoutFromAccount,
-
-      status,
-      globalError,
-
-      notifications,
-      notificationCount,
-      hasNotifications,
-      hasMoreAccountNotifications,
-
-      fetchNotificationsWithAccounts,
-      removeAccountNotifications,
-
-      markNotificationsReadWithAccounts,
-      markNotificationsUnreadWithAccounts,
 
       settings,
       clearFilters,

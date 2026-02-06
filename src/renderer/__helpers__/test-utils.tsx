@@ -1,14 +1,16 @@
 import { render } from '@testing-library/react';
-import { type ReactElement, type ReactNode, useMemo } from 'react';
+import { type ReactElement, type ReactNode, useEffect, useMemo } from 'react';
 
 import axios from 'axios';
 import { vi } from 'vitest';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
-import { AppContext, type AppContextState } from '../context/App';
+import { AppContext, type AppContextState } from '../context/App.context';
 
 import type { SettingsState } from '../types';
+
+import { useNotificationsStore } from '../stores/notifications';
 
 /**
  * Test context that allows partial settings
@@ -29,6 +31,13 @@ interface AppContextProviderProps {
  * Wrapper component that provides AppContext with sensible defaults for testing.
  */
 function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
+  // Initialize Zustand store with test data
+  useEffect(() => {
+    useNotificationsStore.setState({
+      notifications: value.notifications || [],
+    });
+  }, [value.notifications]);
+
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       auth: mockAuth,

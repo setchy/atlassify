@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 import { config } from 'dotenv';
 
@@ -238,7 +239,7 @@ app.whenReady().then(async () => {
   });
 
   handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
-    return twemojiDirPath;
+    return pathToFileURL(twemojiDirPath).href;
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {

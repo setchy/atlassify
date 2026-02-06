@@ -13,6 +13,7 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
+import { useNotificationsStore } from '../../stores/notifications';
 import { cn } from '../../utils/cn';
 import {
   blockAlignmentByLength,
@@ -37,8 +38,13 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread, settings } =
-    useAppContext();
+  const { settings, auth } = useAppContext();
+  const markNotificationsRead = useNotificationsStore(
+    (state) => state.markNotificationsRead,
+  );
+  const markNotificationsUnread = useNotificationsStore(
+    (state) => state.markNotificationsUnread,
+  );
 
   const { t } = useTranslation();
 
@@ -53,7 +59,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
     );
 
     if (settings.markAsReadOnOpen) {
-      markNotificationsRead([notification]);
+      markNotificationsRead({ auth, settings }, [notification]);
     }
 
     openNotification(notification);
@@ -61,11 +67,11 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const actionMarkAsRead = () => {
     setShouldAnimateNotificationExit(shouldAnimateExit);
-    markNotificationsRead([notification]);
+    markNotificationsRead({ auth, settings }, [notification]);
   };
 
   const actionMarkAsUnread = () => {
-    markNotificationsUnread([notification]);
+    markNotificationsUnread({ auth, settings }, [notification]);
   };
 
   const updatedAt = formatNotificationUpdatedAt(notification);

@@ -55981,6 +55981,14 @@ export type TrelloTemplateGalleryFilterInput = {
   supportedPowerUps?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
+/** Arguments passed into toggleLabsFeatureForMember mutation */
+export type TrelloToggleLabsFeatureForMemberInput = {
+  /** Whether the feature is enabled */
+  enabled: Scalars['Boolean']['input'];
+  /** The feature to toggle */
+  feature: TrelloLabsFeature;
+};
+
 /** Arguments passed into the archiveCard mutation */
 export type TrelloUnarchiveCardInput = {
   cardId: Scalars['ID']['input'];

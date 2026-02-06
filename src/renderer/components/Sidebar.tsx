@@ -20,18 +20,24 @@ import { APPLICATION } from '../../shared/constants';
 import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
 
+import {
+  selectHasMoreAccountNotifications,
+  selectHasNotifications,
+  selectNotificationCount,
+  useNotificationsStore,
+} from '../stores/notifications';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 export const Sidebar: FC = () => {
-  const {
-    isLoggedIn,
-    settings,
-    status,
-    hasMoreAccountNotifications,
-    notificationCount,
-    hasNotifications,
-  } = useAppContext();
+  const { isLoggedIn, settings } = useAppContext();
+
+  const status = useNotificationsStore((state) => state.status);
+  const hasMoreAccountNotifications = useNotificationsStore(
+    selectHasMoreAccountNotifications,
+  );
+  const notificationCount = useNotificationsStore(selectNotificationCount);
+  const hasNotifications = useNotificationsStore(selectHasNotifications);
 
   const { t } = useTranslation();
 

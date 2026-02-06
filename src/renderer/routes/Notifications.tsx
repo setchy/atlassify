@@ -8,11 +8,17 @@ import { Page } from '../components/layout/Page';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
 import { Oops } from '../components/Oops';
 
+import {
+  selectHasNotifications,
+  useNotificationsStore,
+} from '../stores/notifications';
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
-  const { notifications, status, globalError, hasNotifications } =
-    useAppContext();
+  const notifications = useNotificationsStore((state) => state.notifications);
+  const status = useNotificationsStore((state) => state.status);
+  const globalError = useNotificationsStore((state) => state.globalError);
+  const hasNotifications = useNotificationsStore(selectHasNotifications);
 
   // Store previous successful state
   const prevStateRef = useRef({
