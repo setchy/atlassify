@@ -50,7 +50,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
+        class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
       >
         Accounts
       </h3>
@@ -298,7 +298,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
+        class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
       >
         Accounts
       </h3>
