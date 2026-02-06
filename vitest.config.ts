@@ -16,6 +16,15 @@ export default defineConfig({
       ) {
         return false;
       }
+
+      // suppress noisy i18next logs
+      if (
+        type === 'stdout' &&
+        typeof log === 'string' &&
+        log.includes('i18next is maintained with support from locize.com')
+      ) {
+        return false;
+      }
     },
     coverage: {
       enabled: false,
