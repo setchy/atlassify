@@ -50,7 +50,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
+        class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
       >
         Settings
       </h3>
@@ -69,7 +69,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
           >
             Appearance
           </h4>
@@ -430,7 +430,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
           >
             Notifications
           </h4>
@@ -657,7 +657,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
           >
             Tray
           </h4>
@@ -941,7 +941,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           class="css-u5wwvt"
         >
           <h4
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
           >
             System
           </h4>

@@ -50,7 +50,7 @@ exports[`renderer/components/primitives/Header.tsx > should render itself & its 
             </button>
           </div>
           <h3
-            class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
           >
             Test Header
           </h3>
@@ -104,7 +104,7 @@ exports[`renderer/components/primitives/Header.tsx > should render itself & its 
           </button>
         </div>
         <h3
-          class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81af2 _syazi7uo"
+          class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
         >
           Test Header
         </h3>
