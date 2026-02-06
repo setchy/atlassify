@@ -26,7 +26,7 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
-import { logError, logWarn } from '../shared/logger';
+import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -47,7 +47,7 @@ if (!aptabaseKey) {
 } else {
   try {
     initialize(aptabaseKey);
-    log.info('Aptabase initialized successfully');
+    logInfo('aptabase', 'initialized successfully');
   } catch (error) {
     logError('main:aptabase', 'Failed to initialize Aptabase', error);
   }
