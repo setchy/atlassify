@@ -2,7 +2,6 @@ import { contextBridge, webFrame } from 'electron';
 
 import { APPLICATION } from '../shared/constants';
 import { EVENTS } from '../shared/events';
-import { logError } from '../shared/logger';
 import { isLinux, isMacOS, isWindows } from '../shared/platform';
 
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
@@ -119,5 +118,6 @@ export const api = {
 try {
   contextBridge.exposeInMainWorld('atlassify', api);
 } catch (error) {
-  logError('preload', 'Failed to expose API to renderer', error);
+  // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
+  console.error('[preload] Failed to expose API to renderer', error);
 }

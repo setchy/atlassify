@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
     "build": "vite build",
-    "watch": "pnpm build && concurrently --names \"vite,codegen\" --prefix-colors \"green,cyan\" \"vite --mode development\" \"pnpm watch:codegen\"",
+    "watch": "concurrently --names \"vite,codegen\" --prefix-colors \"green,cyan\" \"vite --mode development\" \"pnpm watch:codegen\"",
     "watch:codegen": "pnpm codegen --watch",
     "dev": "vite",
     "package:linux": "electron-builder --linux --config ./config/electron-builder.js",

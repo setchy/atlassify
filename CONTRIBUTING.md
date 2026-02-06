@@ -18,8 +18,7 @@ pnpm install
 
 ### Development
 
-
-To watch for changes (`webpack`) in the `src` directory:
+To watch for changes (Vite) in the `src` directory:
 
 ```shell
 pnpm watch

@@ -75,6 +75,8 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     preload: preloadFilePath,
     contextIsolation: true,
     nodeIntegration: false,
+    // Disable web security in development to allow CORS requests
+    webSecurity: !process.env.VITE_DEV_SERVER_URL,
   },
 };
 

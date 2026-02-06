@@ -61,6 +61,7 @@ export default defineConfig(({ mode }) => {
               rollupOptions: {
                 output: {
                   entryFileNames: 'main.js',
+                  format: 'cjs',
                 },
                 external: [
                   'electron',
@@ -83,8 +84,12 @@ export default defineConfig(({ mode }) => {
                 output: {
                   entryFileNames: 'preload.js',
                 },
-                external: ['electron', 'electron-log'],
               },
+            },
+            // Preload scripts don't need Node.js polyfills
+            // as they run in a sandboxed context
+            resolve: {
+              conditions: ['node'],
             },
           },
         },
