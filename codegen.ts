@@ -5,20 +5,13 @@ const config: CodegenConfig = {
   schema: 'https://developer.atlassian.com/gateway/api/graphql',
   documents: ['src/renderer/utils/api/**/*.graphql'],
   generates: {
-    'src/renderer/utils/api/graphql/generated/': {
-      preset: 'client',
-      presetConfig: {
-        fragmentMasking: false, // Disables masking
-      },
+    'src/renderer/utils/api/graphql/generated/graphql.ts': {
+      plugins: ['typescript', 'typescript-operations', 'typed-document-node'],
       config: {
+        onlyOperationTypes: true,
         documentMode: 'string',
         useTypeImports: true,
-      },
-    },
-    'src/renderer/utils/api/graphql/generated/schema.graphql': {
-      plugins: ['schema-ast'],
-      config: {
-        includeDirectives: true,
+        skipTypename: true,
       },
     },
   },

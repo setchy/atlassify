@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /** Tailwind CSS Configuration */
-@config "../../tailwind.config.ts";
+@config "../../tailwind.config.mts";
 
 a:not(.atlassify-navbar) {
   @apply font-semibold;
