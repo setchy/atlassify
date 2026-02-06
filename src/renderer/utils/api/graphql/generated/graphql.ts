@@ -42672,6 +42672,17 @@ export enum MercuryFocusAreaSortField {
   Watching = 'WATCHING'
 }
 
+/**
+ *  ------------------------------------------------------
+ *   Atlassian Intelligence
+ *  ------------------------------------------------------
+ */
+export enum MercuryFocusAreaSummaryType {
+  FocusArea = 'FOCUS_AREA',
+  Goals = 'GOALS',
+  Work = 'WORK'
+}
+
 export type MercuryFocusAreaTargetDateInput = {
   targetDate?: InputMaybe<Scalars['String']['input']>;
   targetDateType?: InputMaybe<MercuryTargetDateType>;
