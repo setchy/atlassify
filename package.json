@@ -59,7 +59,7 @@
     "@aptabase/electron": "0.3.1",
     "electron-log": "5.4.3",
     "electron-updater": "6.8.2",
-    "i18next": "25.8.0",
+    "i18next": "25.8.1",
     "i18next-browser-languagedetector": "8.2.0",
     "menubar": "9.5.2",
     "react": "19.2.4",
