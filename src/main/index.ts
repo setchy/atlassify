@@ -1,5 +1,10 @@
 import path from 'node:path';
 
+import { config } from 'dotenv';
+
+// Load environment variables
+config();
+
 import {
   app,
   type BrowserWindowConstructorOptions,
@@ -47,7 +52,9 @@ initialize(aptabaseKey);
  * File paths
  */
 const preloadFilePath = path.join(__dirname, 'preload.js');
-const indexHtmlFilePath = `file://${__dirname}/index.html`;
+const indexHtmlFilePath = process.env.VITE_DEV_SERVER_URL
+  ? process.env.VITE_DEV_SERVER_URL
+  : `file://${__dirname}/index.html`;
 const notificationSoundFilePath = path.join(
   __dirname,
   '..',

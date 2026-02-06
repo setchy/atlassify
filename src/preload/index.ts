@@ -114,15 +114,10 @@ export const api = {
   },
 };
 
-// Use `contextBridge` APIs to expose Electron APIs to
-// renderer only if context isolation is enabled, otherwise
-// just add to the DOM global.
-if (process.contextIsolated) {
-  try {
-    contextBridge.exposeInMainWorld('atlassify', api);
-  } catch (error) {
-    logError('preload', 'Failed to expose API to renderer', error);
-  }
-} else {
-  window.atlassify = api;
+// Use `contextBridge` APIs to expose Electron APIs to renderer
+// Context isolation is always enabled in this app
+try {
+  contextBridge.exposeInMainWorld('atlassify', api);
+} catch (error) {
+  logError('preload', 'Failed to expose API to renderer', error);
 }
