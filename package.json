@@ -116,7 +116,7 @@
     "css-minimizer-webpack-plugin": "7.0.4",
     "date-fns": "4.1.0",
     "dotenv-webpack": "8.1.1",
-    "electron": "40.1.0",
+    "electron": "40.2.1",
     "electron-builder": "26.7.0",
     "graphql": "16.12.0",
     "happy-dom": "20.5.0",
