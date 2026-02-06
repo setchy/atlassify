@@ -161,7 +161,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should render itself & 
         class="css-1rn971c"
       >
         <h4
-          class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+          class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
         >
           FilterSectionTitle
         </h4>
@@ -396,7 +396,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should render itself & 
       class="css-1rn971c"
     >
       <h4
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8nbxd _syazi7uo"
+        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c81e3o _syazi7uo"
       >
         FilterSectionTitle
       </h4>
