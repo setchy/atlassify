@@ -119,5 +119,8 @@ try {
   contextBridge.exposeInMainWorld('atlassify', api);
 } catch (error) {
   // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
-  console.error('[preload] Failed to expose API to renderer', error);
+  console.error(
+    '[preload] Failed to expose Atlassify Bridge API to renderer',
+    error,
+  );
 }

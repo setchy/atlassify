@@ -84,7 +84,6 @@ export function updateTrayTitle(title: string): void {
 /**
  * Renderer app analytics events
  */
-
 export function trackEvent(
   eventName: string,
   props?: Record<string, string | number | boolean>,
