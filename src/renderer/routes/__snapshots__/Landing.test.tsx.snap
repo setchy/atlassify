@@ -63,7 +63,7 @@ exports[`renderer/routes/Landing.tsx > should render itself & its children 1`] =
               notifications
             </h2>
             <span
-              class="css-1h3xrxm"
+              class="css-xk9blv"
             >
               on your menu bar
             </span>
@@ -406,7 +406,7 @@ exports[`renderer/routes/Landing.tsx > should render itself & its children 1`] =
             notifications
           </h2>
           <span
-            class="css-1h3xrxm"
+            class="css-xk9blv"
           >
             on your menu bar
           </span>
