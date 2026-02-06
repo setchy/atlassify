@@ -77,16 +77,11 @@ export default defineConfig(() => ({
     viteStaticCopy({
       targets: [
         ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
-          src: fileURLToPath(
-            new URL(
-              `./node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-              import.meta.url,
-            ),
-          ),
+          src: `../../node_modules/@discordapp/twemoji/dist/svg/${filename}`,
           dest: 'images/twemoji',
         })),
         {
-          src: fileURLToPath(new URL('./assets', import.meta.url)),
+          src: '../../assets',
           dest: '.',
         },
       ],
