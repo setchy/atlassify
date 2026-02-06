@@ -55564,12 +55564,6 @@ export type TrelloGenerateCheckItemsForCardInput = {
   checklistTarget: TrelloChecklistTarget;
 };
 
-/** Arguments passed into the generateChecklistsForCard mutation. */
-export type TrelloGenerateChecklistsForCardInput = {
-  /** The ID of the card to generate checklists for. */
-  cardId: Scalars['ID']['input'];
-};
-
 /** The feature of the labs preference. */
 export enum TrelloLabsFeature {
   /** The generate checklist feature. */
@@ -55781,6 +55775,12 @@ export type TrelloPlannerCalendarEventsUpdatedFilter = {
 /** The input filters for fetching provider calendars */
 export type TrelloPlannerCalendarProviderCalendarsFilter = {
   updateCursor?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The input filters for fetching boards with cards that have due dates in a range. */
+export type TrelloPlannerCardsWithDueDatesFilter = {
+  dueEnd?: InputMaybe<Scalars['DateTime']['input']>;
+  dueStart?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
 /** Time filter for event queries. */

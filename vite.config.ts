@@ -1,5 +1,6 @@
-import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
+import compiled from '@compiled/vite-plugin';
 import twemoji from '@discordapp/twemoji';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
@@ -18,103 +19,63 @@ const ALL_EMOJIS = [
   ...Errors.UNKNOWN.emojis,
 ];
 
-function extractSvgFilename(imgHtml: string) {
-  const srcMatch = /src="(.*)"/.exec(imgHtml);
-  const src = srcMatch ? srcMatch[1] : '';
-  const filename = src.split('/').pop();
-  return filename;
-}
+const extractSvgFilename = (imgHtml: string) =>
+  imgHtml
+    .match(/src="(.*)"/)?.[1]
+    .split('/')
+    .pop();
 
-const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) => {
-  const imgHtml = twemoji.parse(emoji, { folder: 'svg', ext: '.svg' });
-  return extractSvgFilename(imgHtml);
-});
+const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
+  extractSvgFilename(twemoji.parse(emoji, { folder: 'svg', ext: '.svg' })),
+);
 
-export default defineConfig(({ mode }) => {
-  const rootPath = path.resolve(__dirname);
-
-  return {
-    plugins: [
-      react({
-        babel: {
-          plugins: ['@compiled/babel-plugin'],
-        },
-        // Exclude large generated files from Babel transformation
-        exclude: [/\/generated\/graphql\.ts$/],
-      }),
-      electron({
-        main: {
-          entry: path.join(rootPath, 'src/main/index.ts'),
-          vite: {
-            build: {
-              outDir: path.join(rootPath, 'build'),
-              rollupOptions: {
-                output: {
-                  entryFileNames: 'main.js',
-                  format: 'cjs',
-                },
-                external: [
-                  'electron',
-                  'electron-log',
-                  'electron-updater',
-                  'menubar',
-                  '@aptabase/electron',
-                  'dotenv',
-                ],
-              },
+export default defineConfig(() => ({
+  plugins: [
+    compiled(),
+    react(),
+    electron({
+      main: {
+        entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
+        vite: {
+          build: {
+            outDir: 'build',
+            rollupOptions: {
+              output: { entryFileNames: 'main.js', format: 'cjs' },
+              external: [
+                'electron',
+                'electron-log',
+                'electron-updater',
+                'menubar',
+                '@aptabase/electron',
+                'dotenv',
+              ],
             },
           },
         },
-        preload: {
-          input: path.join(rootPath, 'src/preload/index.ts'),
-          vite: {
-            build: {
-              outDir: path.join(rootPath, 'build'),
-              rollupOptions: {
-                output: {
-                  entryFileNames: 'preload.js',
-                },
-              },
-            },
-            // Preload scripts don't need Node.js polyfills
-            // as they run in a sandboxed context
-            resolve: {
-              conditions: ['node'],
-            },
+      },
+      preload: {
+        input: fileURLToPath(new URL('src/preload/index.ts', import.meta.url)),
+        vite: {
+          build: {
+            outDir: 'build',
+            rollupOptions: { output: { entryFileNames: 'preload.js' } },
           },
+          resolve: { conditions: ['node'] },
         },
-        renderer: mode === 'development' ? undefined : {},
-      }),
-      viteStaticCopy({
-        targets: [
-          // Copy twemoji SVGs
-          ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
-            src: path.resolve(
-              __dirname,
-              `node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-            ),
-            dest: 'images/twemoji',
-          })),
-          // Copy assets (images, sounds, etc.) to build directory
-          {
-            src: path.resolve(__dirname, 'assets'),
-            dest: '.',
-          },
-        ],
-      }),
-    ],
-    root: 'src/renderer',
-    publicDir: false, // Disable default public directory since we use assets/
-    base: './',
-    build: {
-      outDir: '../../build',
-      emptyOutDir: true,
-    },
-    resolve: {
-      extensions: ['.js', '.ts', '.tsx', '.json'],
-    },
-    server: {
-      port: 5173,
-    },
-  };
-});
+      },
+    }),
+    viteStaticCopy({
+      targets: [
+        ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
+          src: `node_modules/@discordapp/twemoji/dist/svg/${filename}`,
+          dest: 'images/twemoji',
+        })),
+        { src: 'assets', dest: '.' },
+      ],
+    }),
+  ],
+  root: 'src/renderer',
+  publicDir: false as const,
+  base: './',
+  build: { outDir: '../../build', emptyOutDir: true },
+}));
