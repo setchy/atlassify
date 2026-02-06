@@ -6,20 +6,17 @@
   "main": "build/main.js",
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
-    "build": "vite build",
-    "watch": "concurrently --names \"vite,codegen\" --prefix-colors \"green,cyan\" \"vite --mode development\" \"pnpm watch:codegen\"",
-    "watch:codegen": "pnpm codegen --watch",
+    "prepare": "husky",
+    "codegen": "graphql-codegen --config codegen.ts",
     "dev": "vite",
+    "build": "vite build",
     "package:linux": "electron-builder --linux --config ./config/electron-builder.js",
     "package:macos": "electron-builder --mac --config ./config/electron-builder.js",
     "package:win": "electron-builder --win --config ./config/electron-builder.js",
-    "lint:check": "biome check",
     "lint": "biome check --fix",
+    "lint:check": "biome check",
     "test": "vitest --coverage",
-    "test:ui": "vitest --ui",
-    "start": "electron . --enable-logging",
-    "prepare": "husky",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "test:ui": "vitest --ui"
   },
   "engines": {
     "node": ">=24"

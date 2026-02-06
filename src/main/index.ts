@@ -45,8 +45,14 @@ if (!aptabaseKey) {
     'APTABASE_KEY environment variable is not set',
     new Error('APTABASE_KEY environment variable is not set'),
   );
+} else {
+  try {
+    initialize(aptabaseKey);
+    log.info('Aptabase initialized successfully');
+  } catch (error) {
+    logError('main:aptabase', 'Failed to initialize Aptabase', error);
+  }
 }
-initialize(aptabaseKey);
 
 /**
  * File paths
@@ -223,7 +229,17 @@ app.whenReady().then(async () => {
   });
 
   onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
-    trackEvent(event.eventName, event.props);
+    try {
+      log.debug('Aptabase event received:', {
+        eventName: event.eventName,
+        propsType: typeof event.props,
+        props: event.props,
+      });
+      trackEvent(event.eventName, event.props);
+      log.debug('Aptabase event sent successfully');
+    } catch (error) {
+      logError('main:aptabase', 'Failed to track event', error);
+    }
   });
 
   /**
@@ -245,7 +261,18 @@ app.whenReady().then(async () => {
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
-    return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    try {
+      return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    } catch (error) {
+      // If decryption fails, the data was likely encrypted with a different app identity
+      // This can happen when migrating between build systems or changing app configuration
+      logError(
+        'main:safe-storage-decrypt',
+        'Failed to decrypt value - data may be from old build',
+        error,
+      );
+      throw error;
+    }
   });
 });
 
