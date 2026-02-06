@@ -64,9 +64,7 @@ interface TestApi {
 describe('preload/index', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // default to non-isolated environment for most tests
-    (process as unknown as { contextIsolated?: boolean }).contextIsolated =
-      false;
+    MockNotification.instances = [];
   });
 
   const importPreload = async () => {
@@ -75,31 +73,27 @@ describe('preload/index', () => {
     return await import('./index');
   };
 
-  it('exposes api on window when context isolation disabled', async () => {
-    await importPreload();
+  const getExposedApi = (): TestApi => {
+    // API is always exposed via contextBridge
+    const [, api] = exposeInMainWorldMock.mock.calls[0];
+    return api as TestApi;
+  };
 
-    const w = window as unknown as { atlassify: Record<string, unknown> };
-
-    expect(w.atlassify).toBeDefined();
-    expect(exposeInMainWorldMock).not.toHaveBeenCalled();
-  });
-
-  it('exposes api via contextBridge when context isolation enabled', async () => {
-    (process as unknown as { contextIsolated?: boolean }).contextIsolated =
-      true;
-
+  it('exposes api via contextBridge', async () => {
     await importPreload();
 
     expect(exposeInMainWorldMock).toHaveBeenCalledTimes(1);
     const [key, api] = exposeInMainWorldMock.mock.calls[0];
     expect(key).toBe('atlassify');
     expect(api).toHaveProperty('openExternalLink');
+    expect(api).toHaveProperty('app');
+    expect(api).toHaveProperty('tray');
   });
 
   it('tray.updateColor sends correct events', async () => {
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify; // casting only in test boundary
+    const api = getExposedApi();
     api.tray.updateColor(-1);
 
     expect(sendMainEventMock).toHaveBeenNthCalledWith(
@@ -112,7 +106,7 @@ describe('preload/index', () => {
   it('openExternalLink sends event with payload', async () => {
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = getExposedApi();
 
     api.openExternalLink('https://example.com', true);
 
@@ -128,7 +122,7 @@ describe('preload/index', () => {
 
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = getExposedApi();
 
     await expect(api.app.version()).resolves.toBe('dev');
 
@@ -142,7 +136,7 @@ describe('preload/index', () => {
 
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = getExposedApi();
 
     await expect(api.app.version()).resolves.toBe('v1.2.3');
     process.env.NODE_ENV = originalEnv;
@@ -151,7 +145,7 @@ describe('preload/index', () => {
   it('onSystemThemeUpdate registers listener', async () => {
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
+    const api = getExposedApi();
     const callback = vi.fn();
     api.onSystemThemeUpdate(callback);
 
@@ -171,8 +165,7 @@ describe('preload/index', () => {
   it('raiseNativeNotification without url calls app.show', async () => {
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
-    api.app.show = vi.fn();
+    const api = getExposedApi();
 
     const notification = api.raiseNativeNotification(
       'Title',
@@ -181,15 +174,13 @@ describe('preload/index', () => {
 
     notification.triggerClick();
 
-    expect(api.app.show).toHaveBeenCalled();
+    expect(sendMainEventMock).toHaveBeenCalledWith(EVENTS.WINDOW_SHOW);
   });
 
   it('raiseNativeNotification with url hides app then opens link', async () => {
     await importPreload();
 
-    const api = (window as unknown as { atlassify: TestApi }).atlassify;
-    api.app.hide = vi.fn();
-    api.openExternalLink = vi.fn();
+    const api = getExposedApi();
 
     const notification = api.raiseNativeNotification(
       'Title',
@@ -199,7 +190,10 @@ describe('preload/index', () => {
 
     notification.triggerClick();
 
-    expect(api.app.hide).toHaveBeenCalled();
-    expect(api.openExternalLink).toHaveBeenCalledWith('https://x', true);
+    expect(sendMainEventMock).toHaveBeenCalledWith(EVENTS.WINDOW_HIDE);
+    expect(sendMainEventMock).toHaveBeenCalledWith(EVENTS.OPEN_EXTERNAL, {
+      url: 'https://x',
+      activate: true,
+    });
   });
 });
