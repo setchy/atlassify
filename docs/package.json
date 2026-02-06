@@ -5,14 +5,13 @@
   "description": "The source code of atlassify.io",
   "type": "module",
   "scripts": {
+    "prepare": "cd .. && husky",
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "pnpm dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prepare": "cd .. && husky",
-    "astro": "astro",
-    "lint:check": "biome check",
-    "lint": "biome check --fix"
+    "lint": "biome check --fix",
+    "lint:check": "biome check"
   },
   "repository": {
     "type": "git",
