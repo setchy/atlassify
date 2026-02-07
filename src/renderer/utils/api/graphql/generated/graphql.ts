@@ -42736,6 +42736,15 @@ export enum MercuryInsightTypeEnum {
   Work = 'WORK'
 }
 
+export type MercuryInvestmentCategorySort = {
+  field: MercuryInvestmentCategorySortField;
+  order: SortOrder;
+};
+
+export enum MercuryInvestmentCategorySortField {
+  Name = 'NAME'
+}
+
 export type MercuryInviteInput = {
   cloudId: Scalars['ID']['input'];
   userId: Scalars['ID']['input'];
@@ -55979,6 +55988,14 @@ export type TrelloTemplateGalleryFilterInput = {
    * - A missing or empty list means include all templates.
    */
   supportedPowerUps?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+/** Arguments passed into toggleLabsFeatureForMember mutation */
+export type TrelloToggleLabsFeatureForMemberInput = {
+  /** Whether the feature is enabled */
+  enabled: Scalars['Boolean']['input'];
+  /** The feature to toggle */
+  feature: TrelloLabsFeature;
 };
 
 /** Arguments passed into the archiveCard mutation */

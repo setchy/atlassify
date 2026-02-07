@@ -11,6 +11,7 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
+import { useNotificationsStore } from '../../stores/notifications';
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
@@ -24,7 +25,10 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead, settings } = useAppContext();
+  const { settings, auth } = useAppContext();
+  const markNotificationsRead = useNotificationsStore(
+    (state) => state.markNotificationsRead,
+  );
 
   const { t } = useTranslation();
 
@@ -43,7 +47,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
   const actionMarkAsRead = () => {
     setShouldAnimateProductExit(shouldAnimateExit);
-    markNotificationsRead(productNotifications);
+    markNotificationsRead({ auth, settings }, productNotifications);
   };
 
   const actionToggleProductNotifications = () => {

@@ -3,19 +3,10 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 
-import {
-  getNotificationCount,
-  hasMoreNotifications,
-  isGroupNotification,
-} from './notifications';
+import { isGroupNotification } from './group';
+import { hasMoreNotifications } from './notifications';
 
 describe('renderer/utils/notifications/notifications.ts', () => {
-  it('getNotificationCount', () => {
-    const result = getNotificationCount(mockSingleAccountNotifications);
-
-    expect(result).toBe(1);
-  });
-
   describe('hasMoreNotifications', () => {
     it('should return false if no additional pages available', () => {
       const result = hasMoreNotifications(mockSingleAccountNotifications);

@@ -27,9 +27,11 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
+import { useNotificationsStore } from '../../stores/notifications';
 import { getChevronDetails } from '../../utils/helpers';
 import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';
+import { filterVisibleNotifications } from '../../utils/notifications/notifications';
 import { isLightMode } from '../../utils/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -48,7 +50,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
 
-  const { markNotificationsRead, settings } = useAppContext();
+  const { settings, auth } = useAppContext();
+  const markNotificationsRead = useNotificationsStore(
+    (state) => state.markNotificationsRead,
+  );
 
   const { t } = useTranslation();
 
@@ -78,9 +83,15 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     gridArea: 'title',
   });
 
+  // Filter notifications based on settings
+  const visibleNotifications = useMemo(
+    () => filterVisibleNotifications(notifications, settings),
+    [notifications, settings],
+  );
+
   const sortedNotifications = useMemo(
-    () => [...notifications].sort((a, b) => a.order - b.order),
-    [notifications],
+    () => [...visibleNotifications].sort((a, b) => a.order - b.order),
+    [visibleNotifications],
   );
 
   const groupedNotifications = useMemo(() => {
@@ -95,14 +106,19 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     return notifications;
   }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
-  const actionToggleAccountNotifications = () => {
-    setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
-  };
-
   const hasNotifications = useMemo(
     () => notifications.length > 0,
     [notifications],
   );
+
+  // Hide entire account section if no visible notifications
+  if (visibleNotifications.length === 0) {
+    return null;
+  }
+
+  const actionToggleAccountNotifications = () => {
+    setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
+  };
 
   const Chevron = getChevronDetails(
     hasNotifications,
@@ -166,7 +182,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             >
               {hasMoreNotifications
                 ? Constants.MAX_NOTIFICATIONS_PER_ACCOUNT + 1
-                : notifications.length}
+                : visibleNotifications.length}
             </Badge>
           </Inline>
 
@@ -294,7 +310,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               <Button
                 appearance="warning"
                 onClick={() => {
-                  markNotificationsRead(notifications);
+                  markNotificationsRead({ auth, settings }, notifications);
                   actionCloseMarkAccountAsReadModal();
                 }}
                 testId="account-mark-as-read-confirm"

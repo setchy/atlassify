@@ -140,7 +140,7 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
           {
             isLoggedIn: true,
-            status: 'loading',
+            fetchStatus: 'loading',
             updateSetting: updateSettingMock,
           },
         );
@@ -294,7 +294,7 @@ describe('components/GlobalShortcuts.tsx', () => {
             <GlobalShortcuts />
           </MemoryRouter>,
           {
-            status: 'loading',
+            fetchStatus: 'loading',
           },
         );
 
