@@ -116,7 +116,8 @@ export type FilterSettingsValue =
 /**
  * All allowed Config and Filter Settings keys to be stored in the application.
  */
-export type SettingsState = ConfigSettingsState & FilterSettingsState;
+export type SettingsState = ConfigSettingsState;
+// export type SettingsState = ConfigSettingsState & FilterSettingsState;
 
 /**
  * All Config Settings keys to be stored in the application.
@@ -243,27 +244,27 @@ export interface FilterSettingsState {
   /**
    * The engagement states to filter notifications by.
    */
-  filterEngagementStates: EngagementStateType[];
+  engagementStates: EngagementStateType[];
 
   /**
    * The categories to filter notifications by.
    */
-  filterCategories: CategoryType[];
+  categories: CategoryType[];
 
   /**
    * The read states to filter notifications by.
    */
-  filterReadStates: ReadStateType[];
+  readStates: ReadStateType[];
 
   /**
    * The products to filter notifications by.
    */
-  filterProducts: ProductType[];
+  products: ProductType[];
 
   /**
    * The notification actors / authors .
    */
-  filterActors: ActorType[];
+  actors: ActorType[];
 }
 
 export interface AuthState {

@@ -1,36 +1,66 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import { defaultFilterSettings } from '../../../context/defaults';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type {
+  AtlassifyNotification,
+  FilterSettingsState,
+} from '../../../types';
 
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
+// Mock the useFiltersStore
+vi.mock('../../../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 describe('renderer/utils/notifications/filters/actor.ts', () => {
   it('hasActorFilters', () => {
-    expect(actorFilter.hasFilters(defaultSettings)).toBe(false);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(
-      actorFilter.hasFilters({
-        ...defaultSettings,
-        filterActors: ['user'],
-      } as SettingsState),
-    ).toBe(true);
+    expect(actorFilter.hasFilters()).toBe(false);
+
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      actors: ['user'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
+
+    expect(actorFilter.hasFilters()).toBe(true);
   });
 
   it('isActorFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterActors: ['user'],
-    };
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      actors: ['user'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(actorFilter.isFilterSet(settings, 'user')).toBe(true);
+    expect(actorFilter.isFilterSet('user')).toBe(true);
 
-    expect(actorFilter.isFilterSet(settings, 'automation')).toBe(false);
+    expect(actorFilter.isFilterSet('automation')).toBe(false);
   });
 
   it('getActorFilterCount', () => {

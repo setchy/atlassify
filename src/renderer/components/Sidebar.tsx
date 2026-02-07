@@ -37,7 +37,7 @@ export const Sidebar: FC = () => {
 
   const { shortcuts } = useShortcutActions();
 
-  const hasFilters = hasActiveFilters(settings);
+  const hasFilters = hasActiveFilters();
 
   const theme = useThemeObserver();
 

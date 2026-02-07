@@ -2,11 +2,12 @@ import CommentIcon from '@atlaskit/icon/core/comment';
 import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
   EngagementStateType,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
@@ -37,12 +38,14 @@ export const engagementFilter: Filter<EngagementStateType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterEngagementStates.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.engagementStates.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: EngagementStateType): boolean {
-    return settings.filterEngagementStates.includes(type);
+  isFilterSet(type: EngagementStateType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.engagementStates.includes(type);
   },
 
   getFilterCount(

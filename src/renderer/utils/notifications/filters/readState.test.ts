@@ -1,35 +1,65 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import { defaultFilterSettings } from '../../../context/defaults';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type {
+  AtlassifyNotification,
+  FilterSettingsState,
+} from '../../../types';
 
 import { readStateFilter } from '.';
 
+// Mock the useFiltersStore
+vi.mock('../../../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   it('hasReadStateFilters', () => {
-    expect(readStateFilter.hasFilters(defaultSettings)).toBe(false);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(
-      readStateFilter.hasFilters({
-        ...defaultSettings,
-        filterReadStates: ['read'],
-      } as SettingsState),
-    ).toBe(true);
+    expect(readStateFilter.hasFilters()).toBe(false);
+
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      readStates: ['read'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
+
+    expect(readStateFilter.hasFilters()).toBe(true);
   });
 
   it('isReadStateFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterReadStates: ['read'],
-    };
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      readStates: ['read'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(readStateFilter.isFilterSet(settings, 'read')).toBe(true);
+    expect(readStateFilter.isFilterSet('read')).toBe(true);
 
-    expect(readStateFilter.isFilterSet(settings, 'unread')).toBe(false);
+    expect(readStateFilter.isFilterSet('unread')).toBe(false);
   });
 
   it('getReadStateFilterCount', () => {

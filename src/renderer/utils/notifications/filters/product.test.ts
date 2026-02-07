@@ -1,36 +1,66 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import { defaultFilterSettings } from '../../../context/defaults';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type {
+  AtlassifyNotification,
+  FilterSettingsState,
+} from '../../../types';
 
 import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
+// Mock the useFiltersStore
+vi.mock('../../../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {
-    expect(productFilter.hasFilters(defaultSettings)).toBe(false);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(
-      productFilter.hasFilters({
-        ...defaultSettings,
-        filterProducts: ['bitbucket'],
-      } as SettingsState),
-    ).toBe(true);
+    expect(productFilter.hasFilters()).toBe(false);
+
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      products: ['bitbucket'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
+
+    expect(productFilter.hasFilters()).toBe(true);
   });
 
   it('isProductFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterProducts: ['bitbucket'],
-    };
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      products: ['bitbucket'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(productFilter.isFilterSet(settings, 'compass')).toBe(false);
+    expect(productFilter.isFilterSet('compass')).toBe(false);
 
-    expect(productFilter.isFilterSet(settings, 'bitbucket')).toBe(true);
+    expect(productFilter.isFilterSet('bitbucket')).toBe(true);
   });
 
   it('getProductFilterCount', () => {

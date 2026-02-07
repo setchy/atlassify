@@ -9,6 +9,7 @@ import {
 
 import { Constants } from '../constants';
 
+import useFiltersStore from '../hooks/useFiltersStore';
 import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useNotifications } from '../hooks/useNotifications';
 
@@ -20,8 +21,6 @@ import type {
   AuthState,
   ConfigSettingsState,
   ConfigSettingsValue,
-  FilterSettingsState,
-  FilterSettingsValue,
   SettingsState,
   SettingsValue,
   Status,
@@ -44,11 +43,7 @@ import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import {
-  defaultAuth,
-  defaultFilterSettings,
-  defaultSettings,
-} from './defaults';
+import { defaultAuth, defaultSettings } from './defaults';
 
 export interface AppContextState {
   auth: AuthState;
@@ -75,16 +70,10 @@ export interface AppContextState {
   ) => Promise<void>;
 
   settings: SettingsState;
-  clearFilters: () => void;
   resetSettings: () => void;
   updateSetting: (
     name: keyof ConfigSettingsState,
     value: ConfigSettingsValue,
-  ) => void;
-  updateFilter: (
-    name: keyof FilterSettingsState,
-    value: FilterSettingsValue,
-    checked: boolean,
   ) => void;
 }
 
@@ -131,18 +120,22 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     return Promise.all(auth.accounts.map(refreshAccount));
   }, [auth.accounts]);
 
+  const filters = useFiltersStore((s) => s);
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
-    fetchNotifications({ auth, settings });
+    const combinedSettings = { ...settings, ...filters };
+
+    fetchNotifications({ auth, settings: combinedSettings });
   }, [
     auth.accounts.length,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByTitle,
-    settings.filterEngagementStates,
-    settings.filterCategories,
-    settings.filterActors,
-    settings.filterReadStates,
-    settings.filterProducts,
+    filters.engagementStates,
+    filters.categories,
+    filters.actors,
+    filters.readStates,
+    filters.products,
   ]);
 
   useIntervalTimer(() => {
@@ -193,14 +186,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     });
   }, []);
 
-  const clearFilters = useCallback(() => {
-    setSettings((prevSettings) => {
-      const newSettings = { ...prevSettings, ...defaultFilterSettings };
-      saveState({ auth, settings: newSettings });
-      return newSettings;
-    });
-  }, [auth]);
-
   const resetSettings = useCallback(() => {
     setSettings(() => {
       saveState({ auth, settings: defaultSettings });
@@ -219,20 +204,16 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [auth],
   );
 
-  const updateFilter = useCallback(
-    (
-      name: keyof FilterSettingsState,
-      value: FilterSettingsValue,
-      checked: boolean,
-    ) => {
-      const updatedFilters = checked
-        ? [...settings[name], value]
-        : settings[name].filter((item) => item !== value);
-
-      updateSetting(name, updatedFilters);
-    },
-    [updateSetting, settings],
-  );
+  // Keep local `settings` in sync with the filters stored in zustand and
+  // persist the merged settings into the app storage so consumers based on
+  // `settings` continue to work as before.
+  useEffect(() => {
+    setSettings((prev) => {
+      const merged = { ...prev, ...filters };
+      saveState({ auth, settings: merged });
+      return merged;
+    });
+  }, [filters, auth]);
 
   // Global window zoom handler / listener
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update on settings.zoomPercentage changes
@@ -332,10 +313,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
 
       settings,
-      clearFilters,
       resetSettings,
       updateSetting,
-      updateFilter,
     }),
     [
       auth,
@@ -358,10 +337,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnreadWithAccounts,
 
       settings,
-      clearFilters,
       resetSettings,
       updateSetting,
-      updateFilter,
     ],
   );
 

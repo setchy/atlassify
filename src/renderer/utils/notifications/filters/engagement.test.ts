@@ -1,37 +1,67 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import { defaultFilterSettings } from '../../../context/defaults';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type {
+  AtlassifyNotification,
+  FilterSettingsState,
+} from '../../../types';
 
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
+// Mock the useFiltersStore
+vi.mock('../../../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   it('hasEngagementStateFilters', () => {
-    expect(engagementFilter.hasFilters(defaultSettings)).toBe(false);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(
-      engagementFilter.hasFilters({
-        ...defaultSettings,
-        filterEngagementStates: ['comment'],
-      }),
-    ).toBe(true);
+    expect(engagementFilter.hasFilters()).toBe(false);
+
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      engagementStates: ['comment'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
+
+    expect(engagementFilter.hasFilters()).toBe(true);
   });
 
   it('isEngagementStateFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterEngagementStates: ['comment'],
-    };
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      engagementStates: ['comment'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(engagementFilter.isFilterSet(settings, 'comment')).toBe(true);
+    expect(engagementFilter.isFilterSet('comment')).toBe(true);
 
-    expect(engagementFilter.isFilterSet(settings, 'mention')).toBe(false);
+    expect(engagementFilter.isFilterSet('mention')).toBe(false);
 
-    expect(engagementFilter.isFilterSet(settings, 'reaction')).toBe(false);
+    expect(engagementFilter.isFilterSet('reaction')).toBe(false);
   });
 
   it('getEngagementStateFilterCount', () => {

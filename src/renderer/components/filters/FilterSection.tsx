@@ -5,6 +5,7 @@ import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
+import useFiltersStore from '../../hooks/useFiltersStore';
 
 import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 
@@ -23,7 +24,8 @@ export const FilterSection = <T extends FilterSettingsValue>({
   filter,
   filterSetting,
 }: FilterSectionProps<T>) => {
-  const { updateFilter, settings, notifications } = useAppContext();
+  const { notifications } = useAppContext();
+  const updateFilter = useFiltersStore((s) => s.updateFilter);
 
   return (
     <Stack space="space.050">
@@ -32,7 +34,7 @@ export const FilterSection = <T extends FilterSettingsValue>({
         {(Object.keys(filter.FILTER_TYPES) as T[]).map((type) => {
           const typeDetails = filter.getTypeDetails(type);
           const typeLabel = formatProperCase(typeDetails.name);
-          const isChecked = filter.isFilterSet(settings, type);
+          const isChecked = filter.isFilterSet(type);
           const count = filter.getFilterCount(notifications, type);
 
           return (

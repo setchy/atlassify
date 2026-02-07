@@ -8,6 +8,18 @@ import { mockSettings } from '../__mocks__/state-mocks';
 
 import { FiltersRoute } from './Filters';
 
+// Mock the useFiltersStore
+vi.mock('../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import { defaultFilterSettings } from '../context/defaults';
+import useFiltersStore from '../hooks/useFiltersStore';
+
+import type { FilterSettingsState } from '../types';
+
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
   ...(await vi.importActual('react-router-dom')),
@@ -56,35 +68,41 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterEngagementStates',
+          'engagementStates',
           'mention',
           true,
         );
       });
 
       it('should filter by engagement state - existing filter set', async () => {
+        vi.mocked(useFiltersStore.getState).mockReturnValue({
+          ...defaultFilterSettings,
+          engagementStates: ['mention'],
+        } as FilterSettingsState & {
+          setFilters: any;
+          updateFilter: any;
+          clearFilters: any;
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterEngagementStates: ['mention'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterEngagementStates',
+          'engagementStates',
           'mention',
           false,
         );
@@ -96,35 +114,41 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterCategories',
+          'categories',
           'direct',
           true,
         );
       });
 
       it('should filter by category - existing filter set', async () => {
+        vi.mocked(useFiltersStore.getState).mockReturnValue({
+          ...defaultFilterSettings,
+          categories: ['direct'],
+        } as FilterSettingsState & {
+          setFilters: any;
+          updateFilter: any;
+          clearFilters: any;
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterCategories: ['direct'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterCategories',
+          'categories',
           'direct',
           false,
         );
@@ -136,35 +160,41 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterActors',
+          'actors',
           'automation',
           true,
         );
       });
 
       it('should filter by actor - existing filter set', async () => {
+        vi.mocked(useFiltersStore.getState).mockReturnValue({
+          ...defaultFilterSettings,
+          actors: ['automation'],
+        } as FilterSettingsState & {
+          setFilters: any;
+          updateFilter: any;
+          clearFilters: any;
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterActors: ['automation'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterActors',
+          'actors',
           'automation',
           false,
         );
@@ -176,35 +206,41 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterReadStates',
+          'readStates',
           'unread',
           true,
         );
       });
 
       it('should filter by read state - existing filter set', async () => {
+        vi.mocked(useFiltersStore.getState).mockReturnValue({
+          ...defaultFilterSettings,
+          readStates: ['unread'],
+        } as FilterSettingsState & {
+          setFilters: any;
+          updateFilter: any;
+          clearFilters: any;
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterReadStates: ['unread'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterReadStates',
+          'readStates',
           'unread',
           false,
         );
@@ -216,7 +252,6 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
@@ -226,21 +261,28 @@ describe('renderer/routes/Filters.tsx', () => {
         await userEvent.click(bitbucketInput);
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterProducts',
+          'products',
           'bitbucket',
           true,
         );
       });
 
       it('should filter by product - existing filter set', async () => {
+        vi.mocked(useFiltersStore.getState).mockReturnValue({
+          ...defaultFilterSettings,
+          products: ['bitbucket'],
+        } as FilterSettingsState & {
+          setFilters: any;
+          updateFilter: any;
+          clearFilters: any;
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterProducts: ['bitbucket'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
@@ -250,7 +292,7 @@ describe('renderer/routes/Filters.tsx', () => {
         await userEvent.click(bitbucketInput);
 
         expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterProducts',
+          'products',
           'bitbucket',
           false,
         );
@@ -265,7 +307,6 @@ describe('renderer/routes/Filters.tsx', () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
-          clearFilters: clearFiltersMock,
         });
       });
 

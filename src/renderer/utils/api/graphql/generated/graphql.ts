@@ -9191,9 +9191,17 @@ export type ConfluencePermissionTransitionBulkRemoveAccessInput = {
 };
 
 export enum ConfluencePermissionTransitionPrincipalType {
+  AccessClass = 'ACCESS_CLASS',
   Anonymous = 'ANONYMOUS',
+  App = 'APP',
   Group = 'GROUP',
   Guest = 'GUEST',
+  Team = 'TEAM',
+  User = 'USER'
+}
+
+export enum ConfluencePermissionTransitionSpaceOwnerType {
+  Group = 'GROUP',
   User = 'USER'
 }
 
@@ -9215,6 +9223,12 @@ export enum ConfluencePermissionTransitionSpaceTypeFilter {
   Global = 'GLOBAL',
   KnowledgeBase = 'KNOWLEDGE_BASE',
   Personal = 'PERSONAL'
+}
+
+export enum ConfluencePermissionTransitionSpaceUsageType {
+  AdminOversight = 'ADMIN_OVERSIGHT',
+  TeamCollaboration = 'TEAM_COLLABORATION',
+  UserbaseGroup = 'USERBASE_GROUP'
 }
 
 export enum ConfluencePermissionTypeAssignabilityCode {
@@ -9334,6 +9348,10 @@ export enum ConfluenceRecipientType {
   Group = 'GROUP',
   Team = 'TEAM',
   User = 'USER'
+}
+
+export enum ConfluenceRecommendedAction {
+  ConvertToRole = 'CONVERT_TO_ROLE'
 }
 
 export type ConfluenceReopenInlineCommentInput = {
@@ -27663,6 +27681,8 @@ export type GrowthUnifiedProfileJiraOnboardingContextInput = {
   jiraFamiliarity?: InputMaybe<GrowthUnifiedProfileJiraFamiliarity>;
   /** jobs to be done */
   jobsToBeDone?: InputMaybe<Array<InputMaybe<GrowthUnifiedProfileJtbd>>>;
+  /** Mature example project ids */
+  matureExampleProjectIds?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   persona?: InputMaybe<Scalars['String']['input']>;
   /** Project landing selection */
   projectLandingSelection?: InputMaybe<GrowthUnifiedProfileOnboardingContextProjectLandingSelection>;

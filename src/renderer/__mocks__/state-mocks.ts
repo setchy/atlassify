@@ -50,11 +50,11 @@ const mockSystemSettings: SystemSettingsState = {
 };
 
 const mockFilters: FilterSettingsState = {
-  filterEngagementStates: [],
-  filterCategories: [],
-  filterReadStates: [],
-  filterProducts: [],
-  filterActors: [],
+  engagementStates: [],
+  categories: [],
+  readStates: [],
+  products: [],
+  actors: [],
 };
 
 export const mockSettings: SettingsState = {

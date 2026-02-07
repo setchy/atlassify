@@ -1,35 +1,65 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import { defaultFilterSettings } from '../../../context/defaults';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type {
+  AtlassifyNotification,
+  FilterSettingsState,
+} from '../../../types';
 
 import { categoryFilter } from '.';
 
+// Mock the useFiltersStore
+vi.mock('../../../hooks/useFiltersStore', () => ({
+  default: {
+    getState: vi.fn(),
+  },
+}));
+
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 describe('renderer/utils/notifications/filters/category.ts', () => {
   it('hasCategoryFilters', () => {
-    expect(categoryFilter.hasFilters(defaultSettings)).toBe(false);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(
-      categoryFilter.hasFilters({
-        ...defaultSettings,
-        filterCategories: ['direct'],
-      } as SettingsState),
-    ).toBe(true);
+    expect(categoryFilter.hasFilters()).toBe(false);
+
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      categories: ['direct'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
+
+    expect(categoryFilter.hasFilters()).toBe(true);
   });
 
   it('isCategoryFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterCategories: ['direct'],
-    };
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...defaultFilterSettings,
+      categories: ['direct'],
+    } as FilterSettingsState & {
+      setFilters: any;
+      updateFilter: any;
+      clearFilters: any;
+    });
 
-    expect(categoryFilter.isFilterSet(settings, 'watching')).toBe(false);
+    expect(categoryFilter.isFilterSet('watching')).toBe(false);
 
-    expect(categoryFilter.isFilterSet(settings, 'direct')).toBe(true);
+    expect(categoryFilter.isFilterSet('direct')).toBe(true);
   });
 
   it('getCategoryFilterCount', () => {

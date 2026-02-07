@@ -183,66 +183,6 @@ describe('renderer/context/App.tsx', () => {
     });
   });
 
-  describe('filter methods', () => {
-    it('should update filter - checked', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().updateFilter('filterCategories', 'direct', true);
-      });
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterCategories: ['direct'],
-        },
-      });
-    });
-
-    it('should update filter - unchecked', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().updateFilter('filterCategories', 'direct', false);
-      });
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterCategories: [],
-        },
-      });
-    });
-
-    it('should clear filters back to default', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().clearFilters();
-      });
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterEngagementStates: defaultSettings.filterEngagementStates,
-          filterCategories: defaultSettings.filterCategories,
-          filterActors: defaultSettings.filterActors,
-          filterReadStates: defaultSettings.filterReadStates,
-          filterProducts: defaultSettings.filterProducts,
-        },
-      });
-    });
-  });
-
   describe('authentication methods', () => {
     const addAccountSpy = vi
       .spyOn(authUtils, 'addAccount')

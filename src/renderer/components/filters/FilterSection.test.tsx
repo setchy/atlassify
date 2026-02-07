@@ -13,7 +13,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   const updateFilterMock = vi.fn();
 
   const mockFilter = engagementFilter;
-  const mockFilterSetting = 'filterEngagementStates';
+  const mockFilterSetting = 'engagementStates';
 
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(
@@ -39,7 +39,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       />,
       {
         notifications: [],
-        updateFilter: updateFilterMock,
       },
     );
 
@@ -64,11 +63,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         title={'FilterSectionTitle'}
       />,
       {
-        settings: {
-          filterEngagementStates: ['mention'],
-        },
         notifications: [],
-        updateFilter: updateFilterMock,
       },
     );
 

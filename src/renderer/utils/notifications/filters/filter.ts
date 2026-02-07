@@ -1,4 +1,6 @@
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
+import type { AtlassifyNotification } from '../../../types';
 
 import {
   actorFilter,
@@ -10,47 +12,48 @@ import {
 
 export function filterNotifications(
   notifications: AtlassifyNotification[],
-  settings: SettingsState,
 ): AtlassifyNotification[] {
+  const filters = useFiltersStore.getState();
+
   return notifications.filter((notification) => {
     let passesFilters = true;
 
-    if (engagementFilter.hasFilters(settings)) {
+    if (engagementFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        settings.filterEngagementStates.some((ts) =>
+        filters.engagementStates.some((ts) =>
           engagementFilter.filterNotification(notification, ts),
         );
     }
 
-    if (categoryFilter.hasFilters(settings)) {
+    if (categoryFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        settings.filterCategories.some((c) =>
+        filters.categories.some((c) =>
           categoryFilter.filterNotification(notification, c),
         );
     }
 
-    if (actorFilter.hasFilters(settings)) {
+    if (actorFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        settings.filterActors.some((c) =>
+        filters.actors.some((c) =>
           actorFilter.filterNotification(notification, c),
         );
     }
 
-    if (readStateFilter.hasFilters(settings)) {
+    if (readStateFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        settings.filterReadStates.some((rs) =>
+        filters.readStates.some((rs) =>
           readStateFilter.filterNotification(notification, rs),
         );
     }
 
-    if (productFilter.hasFilters(settings)) {
+    if (productFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        settings.filterProducts.some((p) =>
+        filters.products.some((p) =>
           productFilter.filterNotification(notification, p),
         );
     }
@@ -59,12 +62,12 @@ export function filterNotifications(
   });
 }
 
-export function hasActiveFilters(settings: SettingsState): boolean {
+export function hasActiveFilters(): boolean {
   return (
-    engagementFilter.hasFilters(settings) ||
-    categoryFilter.hasFilters(settings) ||
-    actorFilter.hasFilters(settings) ||
-    readStateFilter.hasFilters(settings) ||
-    productFilter.hasFilters(settings)
+    engagementFilter.hasFilters() ||
+    categoryFilter.hasFilters() ||
+    actorFilter.hasFilters() ||
+    readStateFilter.hasFilters() ||
+    productFilter.hasFilters()
   );
 }

@@ -1,10 +1,11 @@
 import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
+import useFiltersStore from '../../../hooks/useFiltersStore';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
   ReadStateType,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
@@ -30,12 +31,14 @@ export const readStateFilter: Filter<ReadStateType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterReadStates.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.readStates.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: ReadStateType): boolean {
-    return settings.filterReadStates.includes(type);
+  isFilterSet(type: ReadStateType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.readStates.includes(type);
   },
 
   getFilterCount(

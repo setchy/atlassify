@@ -50,11 +50,11 @@ const defaultSystemSettings: SystemSettingsState = {
 };
 
 export const defaultFilterSettings: FilterSettingsState = {
-  filterEngagementStates: [],
-  filterCategories: [],
-  filterReadStates: [],
-  filterProducts: [],
-  filterActors: [],
+  engagementStates: [],
+  categories: [],
+  readStates: [],
+  products: [],
+  actors: [],
 };
 
 export const defaultConfigSettings: ConfigSettingsState = {
