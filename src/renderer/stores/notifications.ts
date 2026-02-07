@@ -3,9 +3,9 @@ import { create } from 'zustand';
 import type {
   Account,
   AccountNotifications,
-  AtlassifyError,
   AtlassifyNotification,
   AtlassifyState,
+  ReadStateType,
   SettingsState,
   Status,
 } from '../types';
@@ -31,29 +31,51 @@ import {
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
 
+// Helper to trigger side effects for new notifications
+function triggerNotificationSideEffects(
+  newNotifications: AtlassifyNotification[],
+  settings: SettingsState,
+) {
+  if (newNotifications.length === 0) {
+    return;
+  }
+
+  if (settings.playSoundNewNotifications) {
+    raiseSoundNotification(settings.notificationVolume);
+  }
+
+  if (settings.showSystemNotifications) {
+    raiseNativeNotification(newNotifications);
+  }
+}
+
 interface NotificationsState {
   notifications: AccountNotifications[];
   status: Status;
-  globalError: AtlassifyError;
   isFetching: boolean;
+}
 
-  // Actions
+interface NotificationActions {
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
+
   removeAccountNotifications: (account: Account) => Promise<void>;
+
   markNotificationsRead: (
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+
   markNotificationsUnread: (
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
 }
 
-export const useNotificationsStore = create<NotificationsState>((set, get) => ({
+export const useNotificationsStore = create<
+  NotificationsState & NotificationActions
+>((set, get) => ({
   notifications: [],
   status: 'success',
-  globalError: null,
   isFetching: false,
 
   removeAccountNotifications: async (account: Account) => {
@@ -80,38 +102,20 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
 
       set({ notifications: fetchedNotifications });
 
-      // Set Global Error if all accounts have the same error
-      const allAccountsHaveErrors =
-        doesAllAccountsHaveErrors(fetchedNotifications);
-      const allAccountErrorsAreSame =
-        areAllAccountErrorsSame(fetchedNotifications);
-
-      if (allAccountsHaveErrors) {
-        const accountError = fetchedNotifications[0].error;
-        set({
-          status: 'error',
-          globalError: allAccountErrorsAreSame ? accountError : null,
-          isFetching: false,
-        });
+      // Check if all accounts have errors
+      if (doesAllAccountsHaveErrors(fetchedNotifications)) {
+        set({ status: 'error', isFetching: false });
         return;
       }
 
+      // Trigger side effects for new notifications
       const diffNotifications = getNewNotifications(
         previousNotifications,
         fetchedNotifications,
       );
+      triggerNotificationSideEffects(diffNotifications, state.settings);
 
-      if (diffNotifications.length > 0) {
-        if (state.settings.playSoundNewNotifications) {
-          raiseSoundNotification(state.settings.notificationVolume);
-        }
-
-        if (state.settings.showSystemNotifications) {
-          raiseNativeNotification(diffNotifications);
-        }
-      }
-
-      set({ status: 'success', globalError: null });
+      set({ status: 'success' });
     } finally {
       set({ isFetching: false });
     }
@@ -177,10 +181,20 @@ export const selectHasMoreAccountNotifications = (state: NotificationsState) =>
     (accountNotifications) => accountNotifications.hasMoreNotifications,
   );
 
+// Computed selector for global error - only returns error if all accounts have the same error
+export const selectGlobalError = (state: NotificationsState) => {
+  const allAccountsHaveErrors = doesAllAccountsHaveErrors(state.notifications);
+  const allAccountErrorsAreSame = areAllAccountErrorsSame(state.notifications);
+
+  return allAccountsHaveErrors && allAccountErrorsAreSame
+    ? (state.notifications[0]?.error ?? null)
+    : null;
+};
+
 // Helper to get all notification IDs including grouped notifications
 async function getNotificationIds(
   account: Account,
-  settings: any,
+  settings: SettingsState,
   notifications: AtlassifyNotification[],
 ): Promise<string[]> {
   const singleGroupNotifications = notifications.filter(
@@ -224,7 +238,7 @@ async function getNotificationIds(
 async function updateNotificationReadState(
   state: AtlassifyState,
   notifications: AtlassifyNotification[],
-  readState: 'read' | 'unread',
+  readState: ReadStateType,
   set: (fn: (state: NotificationsState) => Partial<NotificationsState>) => void,
 ) {
   const account = notifications[0].account;
@@ -259,7 +273,7 @@ async function updateNotificationReadState(
     }));
   } catch (err) {
     rendererLogError(
-      `markNotifications${readState === 'read' ? 'Read' : 'Unread'}`,
+      'updateNotificationReadState',
       `Error occurred while marking notifications as ${readState}`,
       err,
     );

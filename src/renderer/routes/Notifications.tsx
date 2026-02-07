@@ -9,6 +9,7 @@ import { AccountNotifications } from '../components/notifications/AccountNotific
 import { Oops } from '../components/Oops';
 
 import {
+  selectGlobalError,
   selectHasNotifications,
   useNotificationsStore,
 } from '../stores/notifications';
@@ -18,7 +19,7 @@ export const NotificationsRoute: FC = () => {
   const { settings } = useAppContext();
   const notifications = useNotificationsStore((state) => state.notifications);
   const status = useNotificationsStore((state) => state.status);
-  const globalError = useNotificationsStore((state) => state.globalError);
+  const globalError = useNotificationsStore(selectGlobalError);
   const hasNotifications = useNotificationsStore((state) =>
     selectHasNotifications(state, settings),
   );

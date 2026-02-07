@@ -89,11 +89,6 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     [notifications, settings],
   );
 
-  // Hide entire account section if no visible notifications
-  if (visibleNotifications.length === 0) {
-    return null;
-  }
-
   const sortedNotifications = useMemo(
     () => [...visibleNotifications].sort((a, b) => a.order - b.order),
     [visibleNotifications],
@@ -111,14 +106,19 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     return notifications;
   }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
 
-  const actionToggleAccountNotifications = () => {
-    setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
-  };
-
   const hasNotifications = useMemo(
     () => notifications.length > 0,
     [notifications],
   );
+
+  // Hide entire account section if no visible notifications
+  if (visibleNotifications.length === 0) {
+    return null;
+  }
+
+  const actionToggleAccountNotifications = () => {
+    setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
+  };
 
   const Chevron = getChevronDetails(
     hasNotifications,
@@ -182,7 +182,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             >
               {hasMoreNotifications
                 ? Constants.MAX_NOTIFICATIONS_PER_ACCOUNT + 1
-                : notifications.length}
+                : visibleNotifications.length}
             </Badge>
           </Inline>
 

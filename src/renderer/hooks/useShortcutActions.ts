@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { useNotificationsStore } from '../stores/notifications';
 import { quitApp, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
@@ -36,8 +37,11 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
-    useAppContext();
+  const { isLoggedIn, settings, updateSetting, auth } = useAppContext();
+  const status = useNotificationsStore((state) => state.status);
+  const fetchNotifications = useNotificationsStore(
+    (state) => state.fetchNotifications,
+  );
 
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
@@ -119,7 +123,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
           trackEvent('Action', { name: 'Refresh' });
 
           navigate('/', { replace: true });
-          void fetchNotifications();
+          void fetchNotifications({ auth, settings });
         },
       },
       settings: {
@@ -128,7 +132,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         action: () => {
           if (isOnSettingsRoute) {
             navigate('/', { replace: true });
-            void fetchNotifications();
+            void fetchNotifications({ auth, settings });
           } else {
             navigate('/settings');
           }
@@ -150,14 +154,14 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
       },
     };
   }, [
+    auth,
+    fetchNotifications,
     isLoggedIn,
     isLoading,
     isOnFiltersRoute,
     isOnSettingsRoute,
-    fetchNotifications,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByProduct,
-    settings.groupNotificationsByTitle,
+    navigate,
+    settings,
     updateSetting,
   ]);
 

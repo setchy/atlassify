@@ -45,9 +45,7 @@ function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
       isLoggedIn: true,
 
       notifications: [],
-
       status: 'success',
-      globalError: null,
 
       ...value,
     } as Partial<AppContextState>;

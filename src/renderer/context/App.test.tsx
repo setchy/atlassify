@@ -4,10 +4,7 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
-
-import { Constants } from '../constants';
 
 import { useAppContext } from '../hooks/useAppContext';
 
@@ -15,9 +12,9 @@ import type { AuthState, SettingsState } from '../types';
 
 import { useNotificationsStore } from '../stores/notifications';
 import * as authUtils from '../utils/auth/utils';
-import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
-import { type AppContextState, AppProvider } from './App';
+import { AppProvider } from './App';
+import type { AppContextState } from './App.context';
 import { defaultSettings } from './defaults';
 
 // Helper to render the context
@@ -49,7 +46,6 @@ describe('renderer/context/App.tsx', () => {
     useNotificationsStore.setState({
       notifications: [],
       status: 'success',
-      globalError: null,
       isFetching: false,
     });
   });
