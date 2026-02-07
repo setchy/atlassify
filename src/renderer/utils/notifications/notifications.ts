@@ -8,7 +8,10 @@ import type {
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import { mapAtlassianNotificationsToAtlassifyNotifications } from '../api/transform';
+import {
+  mapAtlassianNotificationToAtlassifyNotification,
+  transformNotifications,
+} from '../api/transform';
 import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../errors';
 import { rendererLogError } from '../logger';
@@ -80,11 +83,10 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
-          let notifications =
-            await mapAtlassianNotificationsToAtlassifyNotifications(
-              accountNotifications.account,
-              rawNotifications,
-            );
+          let notifications = await transformNotifications(
+            rawNotifications,
+            accountNotifications.account,
+          );
 
           notifications = filterNotifications(notifications, state.settings);
 
