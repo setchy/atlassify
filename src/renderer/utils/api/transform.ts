@@ -39,7 +39,7 @@ export async function transformNotifications(
  * @param account - The account.
  * @returns A transformed Atlassify notification.
  */
-export async function mapAtlassianNotificationToAtlassifyNotification(
+async function mapAtlassianNotificationToAtlassifyNotification(
   raw: AtlassianNotificationFragment,
   account: Account,
 ): Promise<AtlassifyNotification> {
