@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import Badge from '@atlaskit/badge';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
@@ -8,13 +10,11 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 
-import {
-  selectVisibleNotifications,
-  useNotificationsStore,
-} from '../../stores/notifications';
+import { useNotificationsStore } from '../../stores/notifications';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
+import { filterVisibleNotifications } from '../../utils/notifications/notifications';
 
 export interface FilterSectionProps<T extends FilterSettingsValue> {
   title: string;
@@ -29,8 +29,20 @@ export const FilterSection = <T extends FilterSettingsValue>({
 }: FilterSectionProps<T>) => {
   const { updateFilter, settings } = useAppContext();
 
-  const allVisibleNotifications = useNotificationsStore((state) =>
-    selectVisibleNotifications(state, settings),
+  const allNotifications = useNotificationsStore(
+    (state) => state.allNotifications,
+  );
+
+  const allVisibleNotifications = useMemo(
+    () =>
+      allNotifications.map((accountNotifications) => ({
+        ...accountNotifications,
+        notifications: filterVisibleNotifications(
+          accountNotifications.notifications,
+          settings,
+        ),
+      })),
+    [allNotifications, settings],
   );
 
   return (
