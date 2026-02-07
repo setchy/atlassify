@@ -9,6 +9,8 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
 
+import { useNotificationsStore } from '../../stores/notifications';
+
 interface HeaderProps {
   children: string;
   fetchOnBack?: boolean;
@@ -17,7 +19,10 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = (props: HeaderProps) => {
   const navigate = useNavigate();
 
-  const { fetchNotifications } = useAppContext();
+  const { auth, settings } = useAppContext();
+  const fetchNotifications = useNotificationsStore(
+    (state) => state.fetchNotifications,
+  );
 
   return (
     <Box
@@ -34,7 +39,7 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
             onClick={() => {
               navigate(-1);
               if (props.fetchOnBack) {
-                fetchNotifications();
+                fetchNotifications({ auth, settings });
               }
             }}
             shape="circle"

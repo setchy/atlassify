@@ -33,7 +33,7 @@ const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
 export default defineConfig(() => ({
   plugins: [
     checker({
-      // typescript: true,
+      typescript: true,
       biome: {
         dev: {
           logLevel: ['error'],

@@ -177,6 +177,10 @@ describe('renderer/context/App.tsx', () => {
 
     it('logout calls removeAccountNotifications and removeAccount ', async () => {
       const getContext = renderWithContext();
+      const removeAccountNotificationsMock = vi.spyOn(
+        useNotificationsStore.getState(),
+        'removeAccountNotifications',
+      );
 
       await act(async () => {
         getContext().logoutFromAccount(mockAtlassianCloudAccount);

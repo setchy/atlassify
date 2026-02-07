@@ -160,7 +160,6 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isLoading,
     isOnFiltersRoute,
     isOnSettingsRoute,
-    navigate,
     settings,
     updateSetting,
   ]);

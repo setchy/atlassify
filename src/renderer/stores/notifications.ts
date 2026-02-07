@@ -49,13 +49,13 @@ function triggerNotificationSideEffects(
   }
 }
 
-interface NotificationsState {
+export interface NotificationsState {
   notifications: AccountNotifications[];
   status: Status;
   isFetching: boolean;
 }
 
-interface NotificationActions {
+export interface NotificationActions {
   fetchNotifications: (state: AtlassifyState) => Promise<void>;
 
   removeAccountNotifications: (account: Account) => Promise<void>;

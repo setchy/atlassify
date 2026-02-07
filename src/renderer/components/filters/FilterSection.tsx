@@ -8,9 +8,11 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 
+import { useNotificationsStore } from '../../stores/notifications';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
+import { filterVisibleNotifications } from '../../utils/notifications/notifications';
 
 export interface FilterSectionProps<T extends FilterSettingsValue> {
   title: string;
@@ -23,7 +25,19 @@ export const FilterSection = <T extends FilterSettingsValue>({
   filter,
   filterSetting,
 }: FilterSectionProps<T>) => {
-  const { updateFilter, settings, notifications } = useAppContext();
+  const { updateFilter, settings } = useAppContext();
+  const allNotifications = useNotificationsStore(
+    (state) => state.notifications,
+  );
+
+  // Apply visibility filtering based on settings
+  const notifications = allNotifications.map((accountNotifications) => ({
+    ...accountNotifications,
+    notifications: filterVisibleNotifications(
+      accountNotifications.notifications,
+      settings,
+    ),
+  }));
 
   return (
     <Stack space="space.050">
