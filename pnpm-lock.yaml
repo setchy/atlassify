@@ -214,7 +214,7 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vite-plugin-checker:
-        specifier: ^0.12.0
+        specifier: 0.12.0
         version: 0.12.0(@biomejs/biome@2.3.14)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.11)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(yaml@2.8.2))
       vite-plugin-electron:
         specifier: 0.29.0
