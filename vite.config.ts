@@ -30,74 +30,81 @@ const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
   extractSvgFilename(twemoji.parse(emoji, { folder: 'svg', ext: '.svg' })),
 );
 
-export default defineConfig(() => ({
-  plugins: [
-    checker({
-      biome: {
-        dev: {
-          logLevel: ['error'],
-        },
-      },
-      typescript: true,
-    }),
-    compiled(),
-    react({
-      plugins: [
-        [
-          '@swc-contrib/plugin-graphql-codegen-client-preset',
-          {
-            artifactDirectory: './src/renderer/utils/api/graphql/generated',
-            gqlTagName: 'graphql',
-          },
+export default defineConfig(({ command }) => {
+  const isBuild = command === 'build';
+
+  return {
+    plugins: [
+      // only run the checker plugin in dev (not during `vite build`)
+      ...(isBuild
+        ? []
+        : [
+            checker({
+              typescript: true,
+              biome: { dev: { logLevel: ['error'] } },
+            }),
+          ]),
+      compiled(),
+      react({
+        plugins: [
+          [
+            '@swc-contrib/plugin-graphql-codegen-client-preset',
+            {
+              artifactDirectory: './src/renderer/utils/api/graphql/generated',
+              gqlTagName: 'graphql',
+            },
+          ],
         ],
-      ],
-    }),
-    electron({
-      main: {
-        entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
-        vite: {
-          build: {
-            outDir: fileURLToPath(new URL('build', import.meta.url)),
-            rollupOptions: {
-              output: { entryFileNames: 'main.js', format: 'cjs' },
-              external: [
-                'electron',
-                'electron-log',
-                'electron-updater',
-                'menubar',
-                '@aptabase/electron',
-                'dotenv',
-              ],
+      }),
+      electron({
+        main: {
+          entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
+          vite: {
+            build: {
+              outDir: fileURLToPath(new URL('build', import.meta.url)),
+              rollupOptions: {
+                output: { entryFileNames: 'main.js', format: 'cjs' },
+                external: [
+                  'electron',
+                  'electron-log',
+                  'electron-updater',
+                  'menubar',
+                  '@aptabase/electron',
+                  'dotenv',
+                ],
+              },
             },
           },
         },
-      },
-      preload: {
-        input: fileURLToPath(new URL('src/preload/index.ts', import.meta.url)),
-        vite: {
-          build: {
-            outDir: fileURLToPath(new URL('build', import.meta.url)),
-            rollupOptions: { output: { entryFileNames: 'preload.js' } },
+        preload: {
+          input: fileURLToPath(
+            new URL('src/preload/index.ts', import.meta.url),
+          ),
+          vite: {
+            build: {
+              outDir: fileURLToPath(new URL('build', import.meta.url)),
+              rollupOptions: { output: { entryFileNames: 'preload.js' } },
+            },
+            resolve: { conditions: ['node'] },
           },
-          resolve: { conditions: ['node'] },
         },
-      },
-    }),
-    viteStaticCopy({
-      targets: [
-        ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
-          src: `../../node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-          dest: 'images/twemoji',
-        })),
-        {
-          src: '../../assets',
-          dest: '.',
-        },
-      ],
-    }),
-  ],
-  root: 'src/renderer',
-  publicDir: false as const,
-  base: './',
-  build: { outDir: '../../build', emptyOutDir: true },
-}));
+      }),
+      viteStaticCopy({
+        targets: [
+          ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
+            src: `../../node_modules/@discordapp/twemoji/dist/svg/${filename}`,
+            dest: 'images/twemoji',
+          })),
+          {
+            src: '../../assets',
+            dest: '.',
+          },
+        ],
+      }),
+    ],
+    root: 'src/renderer',
+    publicDir: false as const,
+    base: './',
+    build: { outDir: '../../build', emptyOutDir: true },
+  };
+});
