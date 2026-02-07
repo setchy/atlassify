@@ -1,4 +1,7 @@
-import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
+import {
+  createMockNotificationForProductType,
+  mockSingleAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 
 import type { AtlassifyNotification, SettingsState } from '../../types';
@@ -6,9 +9,28 @@ import type { AtlassifyNotification, SettingsState } from '../../types';
 import {
   getFlattenedNotificationsByProduct,
   groupNotificationsByProduct,
+  isGroupNotification,
 } from './group';
 
 describe('renderer/utils/notifications/group.ts', () => {
+  describe('isGroupNotification', () => {
+    it('should return false if insufficient group size', () => {
+      mockSingleAtlassifyNotification.notificationGroup.size = 1;
+
+      const result = isGroupNotification(mockSingleAtlassifyNotification);
+
+      expect(result).toBe(false);
+    });
+
+    it('should return true if insufficient group size', () => {
+      mockSingleAtlassifyNotification.notificationGroup.size = 2;
+
+      const result = isGroupNotification(mockSingleAtlassifyNotification);
+
+      expect(result).toBe(true);
+    });
+  });
+
   describe('groupNotificationsByProduct', () => {
     it('groups notifications by product type', () => {
       const notifications: AtlassifyNotification[] = [
