@@ -42736,6 +42736,15 @@ export enum MercuryInsightTypeEnum {
   Work = 'WORK'
 }
 
+export type MercuryInvestmentCategorySort = {
+  field: MercuryInvestmentCategorySortField;
+  order: SortOrder;
+};
+
+export enum MercuryInvestmentCategorySortField {
+  Name = 'NAME'
+}
+
 export type MercuryInviteInput = {
   cloudId: Scalars['ID']['input'];
   userId: Scalars['ID']['input'];

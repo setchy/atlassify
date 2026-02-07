@@ -35,9 +35,6 @@ export function filterVisibleNotifications(
   notifications: AtlassifyNotification[],
   settings: SettingsState,
 ): AtlassifyNotification[] {
-  // Show all notifications if:
-  // 1. Not filtering unread only, OR
-  // 2. Delay notification state is enabled (keeps read notifications visible during animation)
   if (
     !settings.fetchOnlyUnreadNotifications ||
     settings.delayNotificationState
