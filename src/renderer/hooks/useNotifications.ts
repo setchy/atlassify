@@ -21,12 +21,12 @@ import {
   doesAllAccountsHaveErrors,
 } from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
+import { isGroupNotification } from '../utils/notifications/group';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
   getAllNotifications,
   getNotificationCount,
   hasMoreNotifications,
-  isGroupNotification,
 } from '../utils/notifications/notifications';
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
