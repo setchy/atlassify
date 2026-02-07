@@ -4,6 +4,7 @@ import compiled from '@compiled/vite-plugin';
 import twemoji from '@discordapp/twemoji';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
+import checker from 'vite-plugin-checker';
 import electron from 'vite-plugin-electron/simple';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -31,6 +32,14 @@ const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
 
 export default defineConfig(() => ({
   plugins: [
+    checker({
+      typescript: true,
+      biome: {
+        dev: {
+          logLevel: ['error'],
+        },
+      },
+    }),
     compiled(),
     react({
       plugins: [
