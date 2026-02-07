@@ -8,10 +8,7 @@ import type {
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import {
-  mapAtlassianNotificationToAtlassifyNotification,
-  transformNotifications,
-} from '../api/transform';
+import { transformNotifications } from '../api/transform';
 import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../errors';
 import { rendererLogError } from '../logger';
