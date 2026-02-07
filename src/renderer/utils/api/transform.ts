@@ -84,7 +84,6 @@ export async function mapAtlassianNotificationToAtlassifyNotification(
       })),
     },
     account: account,
-    // Order will be set later in stabilizeNotificationsOrder
-    order: 0,
+    order: 0, // Will be set later in stabilizeNotificationsOrder
   };
 }
