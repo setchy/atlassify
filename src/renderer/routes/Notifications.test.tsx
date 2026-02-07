@@ -21,7 +21,7 @@ vi.mock('../components/Oops', () => ({
 describe('renderer/routes/Notifications.tsx', () => {
   it('should render itself & its children (with notifications)', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
-      notifications: mockAccountNotifications,
+      allNotifications: mockAccountNotifications,
     });
 
     expect(tree).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe('renderer/routes/Notifications.tsx', () => {
 
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
-      notifications: [],
+      allNotifications: [],
     });
 
     expect(tree).toMatchSnapshot();
@@ -38,8 +38,8 @@ describe('renderer/routes/Notifications.tsx', () => {
   describe('should render itself & its children (error conditions - oops)', () => {
     it('bad credentials', () => {
       const tree = renderWithAppContext(<NotificationsRoute />, {
-        notifications: [],
-        status: 'error',
+        allNotifications: [],
+        fetchStatus: 'error',
         globalError: Errors.BAD_CREDENTIALS,
       });
 
@@ -48,8 +48,8 @@ describe('renderer/routes/Notifications.tsx', () => {
 
     it('unknown error', () => {
       const tree = renderWithAppContext(<NotificationsRoute />, {
-        notifications: [],
-        status: 'error',
+        allNotifications: [],
+        fetchStatus: 'error',
         globalError: Errors.UNKNOWN,
       });
 
@@ -58,8 +58,8 @@ describe('renderer/routes/Notifications.tsx', () => {
 
     it('default error', () => {
       const tree = renderWithAppContext(<NotificationsRoute />, {
-        notifications: [],
-        status: 'error',
+        allNotifications: [],
+        fetchStatus: 'error',
         globalError: null,
       });
 

@@ -44,9 +44,8 @@ describe('renderer/context/App.tsx', () => {
     vi.useFakeTimers();
     // Reset Zustand store state before each test
     useNotificationsStore.setState({
-      notifications: [],
-      status: 'success',
-      isFetching: false,
+      allNotifications: [],
+      fetchStatus: 'success',
     });
   });
 

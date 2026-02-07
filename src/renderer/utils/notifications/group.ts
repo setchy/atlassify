@@ -1,4 +1,67 @@
-import type { AtlassifyNotification, SettingsState } from '../../types';
+import type {
+  Account,
+  AtlassifyNotification,
+  SettingsState,
+} from '../../types';
+
+import { getNotificationsByGroupId } from '../api/client';
+import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
+import { rendererLogError } from '../logger';
+
+/**
+ * Check if a notification is a group notification.
+ */
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
+}
+
+/**
+ * Get all notification IDs including grouped notifications.
+ * For group notifications, fetches all IDs from the group.
+ */
+export async function getNotificationIds(
+  account: Account,
+  settings: SettingsState,
+  notifications: AtlassifyNotification[],
+): Promise<string[]> {
+  const singleGroupNotifications = notifications.filter(
+    (notification) => !isGroupNotification(notification),
+  );
+  const singleNotificationIDs = singleGroupNotifications.map((n) => n.id);
+
+  const groupNotifications = notifications.filter((notification) =>
+    isGroupNotification(notification),
+  );
+
+  const groupNotificationIDs: string[] = [];
+
+  for (const group of groupNotifications) {
+    try {
+      const res = await getNotificationsByGroupId(
+        account,
+        settings,
+        group.notificationGroup.id,
+        group.notificationGroup.size,
+      );
+
+      const groupNotificationsList = res.data.notifications.notificationGroup
+        .nodes as GroupNotificationDetailsFragment[];
+
+      const ids = groupNotificationsList.map((n) => n.notificationId);
+      groupNotificationIDs.push(...ids);
+    } catch (err) {
+      rendererLogError(
+        'getNotificationIds',
+        'Error occurred while fetching notification ids for notification groups',
+        err,
+      );
+    }
+  }
+
+  return [...singleNotificationIDs, ...groupNotificationIDs];
+}
 
 /**
  * Group notifications by product type preserving first-seen product order.

@@ -55,7 +55,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           isLoggedIn: true,
-          notifications: mockAccountNotifications,
+          allNotifications: mockAccountNotifications,
         },
       );
 
@@ -71,7 +71,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           isLoggedIn: true,
-          notifications: mockAccountNotifications,
+          allNotifications: mockAccountNotifications,
         },
       );
 
@@ -89,7 +89,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           isLoggedIn: false,
-          notifications: mockAccountNotifications,
+          allNotifications: mockAccountNotifications,
         },
       );
 
@@ -105,7 +105,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           isLoggedIn: false,
-          notifications: mockAccountNotifications,
+          allNotifications: mockAccountNotifications,
         },
       );
 
@@ -147,7 +147,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          notifications: [],
+          allNotifications: [],
         },
       );
 
@@ -160,7 +160,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          notifications: mockAccountNotifications,
+          allNotifications: mockAccountNotifications,
         },
       );
 
@@ -173,7 +173,7 @@ describe('renderer/components/Sidebar.tsx', () => {
           <Sidebar />
         </MemoryRouter>,
         {
-          notifications: mockAccountNotificationsWithMorePages,
+          allNotifications: mockAccountNotificationsWithMorePages,
         },
       );
 
@@ -386,7 +386,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           fetchNotifications: fetchNotificationsMock,
-          status: 'success',
+          fetchStatus: 'success',
         },
       );
 
@@ -402,7 +402,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           fetchNotifications: fetchNotificationsMock,
-          status: 'loading',
+          fetchStatus: 'loading',
         },
       );
 

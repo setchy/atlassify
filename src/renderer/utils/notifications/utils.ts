@@ -16,12 +16,21 @@ export function getNewNotifications(
       return accountNotifications.notifications;
     }
 
-    const previousIds = new Set(
-      accountPreviousNotifications.notifications.map((item) => item.id),
+    const previousMap = new Map(
+      accountPreviousNotifications.notifications.map((item) => [
+        item.id,
+        item.readState,
+      ]),
     );
 
-    return accountNotifications.notifications.filter(
-      (notification) => !previousIds.has(notification.id),
-    );
+    return accountNotifications.notifications.filter((notification) => {
+      const prevState = previousMap.get(notification.id);
+      // Include if: 1) ID doesn't exist (new notification), or
+      // 2) readState changed from 'read' to 'unread' (sync failure recovery)
+      return (
+        !prevState ||
+        (prevState === 'read' && notification.readState === 'unread')
+      );
+    });
   });
 }

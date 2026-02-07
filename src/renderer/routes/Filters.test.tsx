@@ -27,7 +27,7 @@ describe('renderer/routes/Filters.tsx', () => {
     it('should render itself & its children', async () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
-          notifications: [],
+          allNotifications: [],
         });
       });
 
@@ -38,7 +38,7 @@ describe('renderer/routes/Filters.tsx', () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
           fetchNotifications: fetchNotificationsMock,
-          notifications: [],
+          allNotifications: [],
         });
       });
 
@@ -55,7 +55,7 @@ describe('renderer/routes/Filters.tsx', () => {
       it('should filter by time sensitive - no existing filters set', async () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -76,7 +76,7 @@ describe('renderer/routes/Filters.tsx', () => {
               ...mockSettings,
               filterEngagementStates: ['mention'],
             },
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -95,7 +95,7 @@ describe('renderer/routes/Filters.tsx', () => {
       it('should filter by category - no existing filters set', async () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -116,7 +116,7 @@ describe('renderer/routes/Filters.tsx', () => {
               ...mockSettings,
               filterCategories: ['direct'],
             },
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -135,7 +135,7 @@ describe('renderer/routes/Filters.tsx', () => {
       it('should filter by actor - no existing filters set', async () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -156,7 +156,7 @@ describe('renderer/routes/Filters.tsx', () => {
               ...mockSettings,
               filterActors: ['automation'],
             },
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -175,7 +175,7 @@ describe('renderer/routes/Filters.tsx', () => {
       it('should filter by read state - no existing filters set', async () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -196,7 +196,7 @@ describe('renderer/routes/Filters.tsx', () => {
               ...mockSettings,
               filterReadStates: ['unread'],
             },
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -215,7 +215,7 @@ describe('renderer/routes/Filters.tsx', () => {
       it('should filter by product - no existing filters set', async () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -239,7 +239,7 @@ describe('renderer/routes/Filters.tsx', () => {
               ...mockSettings,
               filterProducts: ['bitbucket'],
             },
-            notifications: [],
+            allNotifications: [],
             updateFilter: updateFilterMock,
           });
         });
@@ -264,7 +264,7 @@ describe('renderer/routes/Filters.tsx', () => {
     it('should clear filters', async () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
-          notifications: [],
+          allNotifications: [],
           clearFilters: clearFiltersMock,
         });
       });

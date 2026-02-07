@@ -44,8 +44,8 @@ interface AppContextProviderProps {
 function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   // Initialize Zustand store with store-related props
   const {
-    notifications,
-    status,
+    allNotifications,
+    fetchStatus: status,
     fetchNotifications,
     markNotificationsRead,
     markNotificationsUnread,
@@ -54,10 +54,10 @@ function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   } = value;
 
   // Set store state if provided
-  if (notifications !== undefined || status !== undefined) {
+  if (allNotifications !== undefined || status !== undefined) {
     useNotificationsStore.setState({
-      notifications: notifications || [],
-      status: status || 'success',
+      allNotifications: allNotifications || [],
+      fetchStatus: status || 'success',
     });
   }
 

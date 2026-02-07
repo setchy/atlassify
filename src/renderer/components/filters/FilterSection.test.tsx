@@ -23,7 +23,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         title={'FilterSectionTitle'}
       />,
       {
-        notifications: mockAccountNotifications,
+        allNotifications: mockAccountNotifications,
       },
     );
 
@@ -38,7 +38,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         title={'FilterSectionTitle'}
       />,
       {
-        notifications: [],
+        allNotifications: [],
         updateFilter: updateFilterMock,
       },
     );
@@ -67,7 +67,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         settings: {
           filterEngagementStates: ['mention'],
         },
-        notifications: [],
+        allNotifications: [],
         updateFilter: updateFilterMock,
       },
     );

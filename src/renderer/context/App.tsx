@@ -22,7 +22,7 @@ import type { LoginOptions } from '../utils/auth/types';
 
 import {
   selectHasMoreAccountNotifications,
-  selectNotificationCount,
+  selectVisibleNotificationCount,
   useNotificationsStore,
 } from '../stores/notifications';
 import {
@@ -64,16 +64,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   // Get notifications actions and state from Zustand store
-  const status = useNotificationsStore((state) => state.status);
+  const status = useNotificationsStore((state) => state.fetchStatus);
   const fetchNotifications = useNotificationsStore(
     (state) => state.fetchNotifications,
   );
   const removeAccountNotifications = useNotificationsStore(
     (state) => state.removeAccountNotifications,
   );
-  const notifications = useNotificationsStore((state) => state.notifications);
+  const allNotifications = useNotificationsStore(
+    (state) => state.allNotifications,
+  );
   const notificationCount = useNotificationsStore((state) =>
-    selectNotificationCount(state, settings),
+    selectVisibleNotificationCount(state, settings),
   );
   const hasMoreAccountNotifications = useNotificationsStore(
     selectHasMoreAccountNotifications,
@@ -130,7 +132,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     settings.showNotificationsCountInTray,
     settings.useUnreadActiveIcon,
     settings.useAlternateIdleIcon,
-    notifications,
+    allNotifications,
   ]);
 
   useEffect(() => {

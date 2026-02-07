@@ -17,8 +17,10 @@ import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
   const { settings } = useAppContext();
-  const notifications = useNotificationsStore((state) => state.notifications);
-  const status = useNotificationsStore((state) => state.status);
+  const allNotifications = useNotificationsStore(
+    (state) => state.allNotifications,
+  );
+  const status = useNotificationsStore((state) => state.fetchStatus);
   const globalError = useNotificationsStore(selectGlobalError);
   const hasNotifications = useNotificationsStore((state) =>
     selectHasNotifications(state, settings),
@@ -26,7 +28,7 @@ export const NotificationsRoute: FC = () => {
 
   // Store previous successful state
   const prevStateRef = useRef({
-    notifications,
+    allNotifications,
     status,
     globalError,
     hasNotifications,
@@ -35,7 +37,7 @@ export const NotificationsRoute: FC = () => {
   if (status !== 'loading') {
     // Update ref only if not loading
     prevStateRef.current = {
-      notifications,
+      allNotifications,
       status,
       globalError,
       hasNotifications,
@@ -47,15 +49,16 @@ export const NotificationsRoute: FC = () => {
     status === 'loading'
       ? prevStateRef.current
       : {
-          notifications,
+          allNotifications,
           status,
           globalError,
           hasNotifications,
         };
 
   const hasNoAccountErrors = useMemo(
-    () => displayState.notifications.every((account) => account.error === null),
-    [displayState.notifications],
+    () =>
+      displayState.allNotifications.every((account) => account.error === null),
+    [displayState.allNotifications],
   );
 
   if (displayState.status === 'error') {
@@ -69,7 +72,7 @@ export const NotificationsRoute: FC = () => {
   return (
     <Page testId="notifications">
       <Contents>
-        {displayState.notifications.map((accountNotifications) => (
+        {displayState.allNotifications.map((accountNotifications) => (
           <AccountNotifications
             account={accountNotifications.account}
             error={accountNotifications.error}

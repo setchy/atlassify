@@ -11,7 +11,7 @@ describe('renderer/components/layout/AppLayout.tsx', () => {
         <AppLayout>Test</AppLayout>
       </MemoryRouter>,
       {
-        notifications: [],
+        allNotifications: [],
       },
     );
 

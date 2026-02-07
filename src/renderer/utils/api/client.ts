@@ -2,9 +2,11 @@ import { Constants } from '../../constants';
 
 import type {
   Account,
+  AtlassifyNotification,
   CloudID,
   Hostname,
   JiraProjectKey,
+  ReadStateType,
   SettingsState,
   Token,
   Username,
@@ -164,4 +166,29 @@ export async function getJiraProjectTypeByKey(
   );
 
   return response.projectTypeKey;
+}
+
+/**
+ * Update notification read state (mark as read or unread).
+ * Handles both single and grouped notifications.
+ */
+export async function updateNotificationReadState(
+  account: Account,
+  settings: SettingsState,
+  notifications: AtlassifyNotification[],
+  readState: ReadStateType,
+): Promise<void> {
+  const { getNotificationIds } = await import('../notifications/group');
+
+  const notificationIDs = await getNotificationIds(
+    account,
+    settings,
+    notifications,
+  );
+
+  if (readState === 'read') {
+    await markNotificationsAsRead(account, notificationIDs);
+  } else {
+    await markNotificationsAsUnread(account, notificationIDs);
+  }
 }

@@ -23,7 +23,7 @@ import { useShortcutActions } from '../hooks/useShortcutActions';
 import {
   selectHasMoreAccountNotifications,
   selectHasNotifications,
-  selectNotificationCount,
+  selectVisibleNotificationCount,
   useNotificationsStore,
 } from '../stores/notifications';
 import { hasActiveFilters } from '../utils/notifications/filters';
@@ -32,12 +32,12 @@ import { AtlassifyIcon } from './icons/AtlassifyIcon';
 export const Sidebar: FC = () => {
   const { isLoggedIn, settings } = useAppContext();
 
-  const status = useNotificationsStore((state) => state.status);
+  const fetchStatus = useNotificationsStore((state) => state.fetchStatus);
   const hasMoreAccountNotifications = useNotificationsStore(
     selectHasMoreAccountNotifications,
   );
   const notificationCount = useNotificationsStore((state) =>
-    selectNotificationCount(state, settings),
+    selectVisibleNotificationCount(state, settings),
   );
   const hasNotifications = useNotificationsStore((state) =>
     selectHasNotifications(state, settings),
@@ -207,7 +207,7 @@ export const Sidebar: FC = () => {
                   <IconButton
                     appearance="subtle"
                     icon={(iconProps) =>
-                      status === 'loading' ? (
+                      fetchStatus === 'loading' ? (
                         <Spinner
                           appearance="invert"
                           label={t('sidebar.refresh.label')}
@@ -220,7 +220,7 @@ export const Sidebar: FC = () => {
                         />
                       )
                     }
-                    isDisabled={status === 'loading'}
+                    isDisabled={fetchStatus === 'loading'}
                     label={t('sidebar.refresh.label')}
                     onClick={() => shortcuts.refresh.action()}
                     shape="circle"

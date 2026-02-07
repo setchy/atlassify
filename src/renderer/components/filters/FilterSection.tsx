@@ -8,11 +8,13 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { FilterSettingsState, FilterSettingsValue } from '../../types';
 
-import { useNotificationsStore } from '../../stores/notifications';
+import {
+  selectVisibleNotifications,
+  useNotificationsStore,
+} from '../../stores/notifications';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
-import { filterVisibleNotifications } from '../../utils/notifications/notifications';
 
 export interface FilterSectionProps<T extends FilterSettingsValue> {
   title: string;
@@ -26,18 +28,10 @@ export const FilterSection = <T extends FilterSettingsValue>({
   filterSetting,
 }: FilterSectionProps<T>) => {
   const { updateFilter, settings } = useAppContext();
-  const allNotifications = useNotificationsStore(
-    (state) => state.notifications,
-  );
 
-  // Apply visibility filtering based on settings
-  const notifications = allNotifications.map((accountNotifications) => ({
-    ...accountNotifications,
-    notifications: filterVisibleNotifications(
-      accountNotifications.notifications,
-      settings,
-    ),
-  }));
+  const allVisibleNotifications = useNotificationsStore((state) =>
+    selectVisibleNotifications(state, settings),
+  );
 
   return (
     <Stack space="space.050">
@@ -47,7 +41,7 @@ export const FilterSection = <T extends FilterSettingsValue>({
           const typeDetails = filter.getTypeDetails(type);
           const typeLabel = formatProperCase(typeDetails.name);
           const isChecked = filter.isFilterSet(settings, type);
-          const count = filter.getFilterCount(notifications, type);
+          const count = filter.getFilterCount(allVisibleNotifications, type);
 
           return (
             <Inline

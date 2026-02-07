@@ -38,7 +38,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const location = useLocation();
 
   const { isLoggedIn, settings, updateSetting, auth } = useAppContext();
-  const status = useNotificationsStore((state) => state.status);
+  const status = useNotificationsStore((state) => state.fetchStatus);
   const fetchNotifications = useNotificationsStore(
     (state) => state.fetchNotifications,
   );
