@@ -1,6 +1,18 @@
 import type { AtlassifyNotification, SettingsState } from '../../types';
 
 /**
+ * Check if a notification is a group notification.
+ *
+ * @param notification
+ * @returns true if group notification, false otherwise
+ */
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
+}
+
+/**
  * Group notifications by product type preserving first-seen product order.
  * Returns a Map where keys are product types and values are arrays of notifications.
  * Skips notifications without valid repository data.

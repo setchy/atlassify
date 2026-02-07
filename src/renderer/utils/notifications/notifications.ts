@@ -1,26 +1,17 @@
 import { AxiosError } from 'axios';
 
-import { Constants } from '../../constants';
-
 import type {
-  Account,
   AccountNotifications,
-  AtlassifyNotification,
-  AtlassifyNotificationPath,
   AtlassifyState,
-  CategoryType,
-  Link,
-  ReadStateType,
   SettingsState,
 } from '../../types';
-import type { AtlassianGraphQLResponse } from '../api/types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import type { AtlassianNotificationFragment } from '../api/graphql/generated/graphql';
+import { transformNotifications } from '../api/transform';
+import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../errors';
-import { rendererLogError, rendererLogWarn } from '../logger';
-import { inferAtlassianProduct } from '../products';
+import { rendererLogError } from '../logger';
 import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
@@ -51,18 +42,6 @@ export function hasMoreNotifications(
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
-/**
- * Check if a notification is a group notification.
- *
- * @param notification
- * @returns true if group notification, false otherwise
- */
-export function isGroupNotification(
-  notification: AtlassifyNotification,
-): boolean {
-  return notification.notificationGroup.size > 1;
-}
-
 function getNotifications(state: AtlassifyState) {
   return state.auth.accounts.map((account) => {
     return {
@@ -75,7 +54,13 @@ function getNotifications(state: AtlassifyState) {
 /**
  * Get all notifications for all accounts.
  *
- * @param state - The Gitify state.
+ * Notifications follow these stages:
+ *  - Fetch / retrieval
+ *  - Transform
+ *  - Filtering
+ *  - Ordering
+ *
+ * @param state - The Atlassify state.
  * @returns A promise that resolves to an array of account notifications.
  */
 export async function getAllNotifications(
@@ -95,11 +80,10 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
-          let notifications =
-            await mapAtlassianNotificationsToAtlassifyNotifications(
-              accountNotifications.account,
-              rawNotifications,
-            );
+          let notifications = await transformNotifications(
+            rawNotifications,
+            accountNotifications.account,
+          );
 
           notifications = filterNotifications(notifications, state.settings);
 
@@ -130,81 +114,6 @@ export async function getAllNotifications(
   stabilizeNotificationsOrder(accountNotifications, state.settings);
 
   return accountNotifications;
-}
-
-async function mapAtlassianNotificationsToAtlassifyNotifications(
-  account: Account,
-  notifications: AtlassianNotificationFragment[],
-): Promise<AtlassifyNotification[]> {
-  return Promise.all(
-    notifications?.map(async (notification) => {
-      const path = notification.headNotification.content.path?.[0];
-
-      const headNotification = notification.headNotification;
-
-      let notificationPath: AtlassifyNotificationPath;
-      if (path) {
-        notificationPath = {
-          title: path.title,
-          url: path.url as Link,
-          iconUrl: path.iconUrl as Link,
-        };
-      }
-
-      return {
-        id: headNotification.notificationId,
-        order: 0, // Will be set later in stabilizeNotificationsOrder
-        message: headNotification.content.message,
-        readState: headNotification.readState as ReadStateType,
-        updated_at: headNotification.timestamp,
-        type: headNotification.content.type,
-        url: headNotification.content.url as Link,
-        path: notificationPath,
-        entity: {
-          title: headNotification.content.entity.title,
-          url: headNotification.content.entity.url as Link,
-          iconUrl: headNotification.content.entity.iconUrl as Link,
-        },
-        category: headNotification.category as CategoryType,
-        actor: {
-          displayName: headNotification.content.actor.displayName,
-          avatarURL: headNotification.content.actor.avatarURL as Link,
-        },
-        product: await inferAtlassianProduct(account, headNotification),
-        account: account,
-        notificationGroup: {
-          id: notification.groupId,
-          size: notification.groupSize,
-          additionalActors: notification.additionalActors.map((actor) => ({
-            displayName: actor.displayName,
-            avatarURL: actor.avatarURL as Link,
-          })),
-        },
-      };
-    }),
-  );
-}
-
-/**
- * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.
- * Instead we can check the extensions response size to determine if there are more notifications.
- */
-function determineIfMorePagesAvailable<TResult>(
-  res: AtlassianGraphQLResponse<TResult>,
-): boolean {
-  try {
-    return (
-      res.extensions.notifications.response_info.responseSize ===
-      Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
-    );
-  } catch (_err) {
-    rendererLogWarn(
-      'determineIfMorePagesAvailable',
-      'Response did not contain extensions object, assuming no more pages',
-    );
-  }
-
-  return false;
 }
 
 /**
