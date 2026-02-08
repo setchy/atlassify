@@ -6,32 +6,10 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import { FiltersRoute } from './Filters';
-
-// Mock the useFiltersStore
-vi.mock('../stores/useFiltersStore', () => ({
-  default: vi.fn(() => ({
-    engagementStates: [],
-    categories: [],
-    actors: [],
-    readStates: [],
-    products: [],
-    setFilters: vi.fn(),
-    updateFilter: vi.fn(),
-    clearFilters: vi.fn(),
-  })),
-  defaultFiltersState: {
-    engagementStates: [],
-    categories: [],
-    actors: [],
-    readStates: [],
-    products: [],
-  },
-}));
-
 import useFiltersStore, {
   defaultFiltersState,
 } from '../stores/useFiltersStore';
+import { FiltersRoute } from './Filters';
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
@@ -40,23 +18,22 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  const updateFilterMock = vi.fn();
-  const clearFiltersMock = vi.fn();
+  let updateSpy: any;
+  let clearSpy: any;
   const fetchNotificationsMock = vi.fn();
 
   beforeEach(() => {
-    // Setup default mock implementation
-    vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-      const state = {
-        ...defaultFiltersState,
-        setFilters: vi.fn(),
-        updateFilter: updateFilterMock,
-        clearFilters: clearFiltersMock,
-      };
-      // ensure getState is available for non-hook consumers
-      (useFiltersStore as any).getState = vi.fn().mockReturnValue(state);
-      return selector ? selector(state) : state;
+    // reset store state to defaults and provide action functions
+    (useFiltersStore as any).setState({
+      ...defaultFiltersState,
+      setFilters: vi.fn(),
+      updateFilter: vi.fn(),
+      clearFilters: vi.fn(),
     });
+
+    // spy the actions on the real store
+    updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
+    clearSpy = vi.spyOn((useFiltersStore as any).getState(), 'clearFilters');
   });
 
   afterEach(() => {
@@ -101,7 +78,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
+        expect(updateSpy).toHaveBeenCalledWith(
           'engagementStates',
           'mention',
           true,
@@ -109,16 +86,22 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by engagement state - existing filter set', async () => {
-        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-          const state = {
-            ...defaultFiltersState,
-            engagementStates: ['mention'],
-            setFilters: vi.fn(),
-            updateFilter: updateFilterMock,
-            clearFilters: clearFiltersMock,
-          };
-          return selector ? selector(state) : state;
+        (useFiltersStore as any).setState({
+          ...defaultFiltersState,
+          engagementStates: ['mention'],
+          setFilters: vi.fn(),
+          updateFilter: vi.fn(),
+          clearFilters: vi.fn(),
         });
+
+        updateSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'updateFilter',
+        );
+        clearSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'clearFilters',
+        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -131,7 +114,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
+        expect(updateSpy).toHaveBeenCalledWith(
           'engagementStates',
           'mention',
           false,
@@ -149,24 +132,26 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'categories',
-          'direct',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('categories', 'direct', true);
       });
 
       it('should filter by category - existing filter set', async () => {
-        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-          const state = {
-            ...defaultFiltersState,
-            categories: ['direct'],
-            setFilters: vi.fn(),
-            updateFilter: updateFilterMock,
-            clearFilters: clearFiltersMock,
-          };
-          return selector ? selector(state) : state;
+        (useFiltersStore as any).setState({
+          ...defaultFiltersState,
+          categories: ['direct'],
+          setFilters: vi.fn(),
+          updateFilter: vi.fn(),
+          clearFilters: vi.fn(),
         });
+
+        updateSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'updateFilter',
+        );
+        clearSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'clearFilters',
+        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -179,11 +164,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'categories',
-          'direct',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('categories', 'direct', false);
       });
     });
 
@@ -197,24 +178,26 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'actors',
-          'automation',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('actors', 'automation', true);
       });
 
       it('should filter by actor - existing filter set', async () => {
-        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-          const state = {
-            ...defaultFiltersState,
-            actors: ['automation'],
-            setFilters: vi.fn(),
-            updateFilter: updateFilterMock,
-            clearFilters: clearFiltersMock,
-          };
-          return selector ? selector(state) : state;
+        (useFiltersStore as any).setState({
+          ...defaultFiltersState,
+          actors: ['automation'],
+          setFilters: vi.fn(),
+          updateFilter: vi.fn(),
+          clearFilters: vi.fn(),
         });
+
+        updateSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'updateFilter',
+        );
+        clearSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'clearFilters',
+        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -227,11 +210,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'actors',
-          'automation',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('actors', 'automation', false);
       });
     });
 
@@ -245,24 +224,26 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'readStates',
-          'unread',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('readStates', 'unread', true);
       });
 
       it('should filter by read state - existing filter set', async () => {
-        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-          const state = {
-            ...defaultFiltersState,
-            readStates: ['unread'],
-            setFilters: vi.fn(),
-            updateFilter: updateFilterMock,
-            clearFilters: clearFiltersMock,
-          };
-          return selector ? selector(state) : state;
+        (useFiltersStore as any).setState({
+          ...defaultFiltersState,
+          readStates: ['unread'],
+          setFilters: vi.fn(),
+          updateFilter: vi.fn(),
+          clearFilters: vi.fn(),
         });
+
+        updateSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'updateFilter',
+        );
+        clearSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'clearFilters',
+        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -275,11 +256,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'readStates',
-          'unread',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('readStates', 'unread', false);
       });
     });
 
@@ -296,24 +273,26 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'products',
-          'bitbucket',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('products', 'bitbucket', true);
       });
 
       it('should filter by product - existing filter set', async () => {
-        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
-          const state = {
-            ...defaultFiltersState,
-            products: ['bitbucket'],
-            setFilters: vi.fn(),
-            updateFilter: updateFilterMock,
-            clearFilters: clearFiltersMock,
-          };
-          return selector ? selector(state) : state;
+        (useFiltersStore as any).setState({
+          ...defaultFiltersState,
+          products: ['bitbucket'],
+          setFilters: vi.fn(),
+          updateFilter: vi.fn(),
+          clearFilters: vi.fn(),
         });
+
+        updateSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'updateFilter',
+        );
+        clearSpy = vi.spyOn(
+          (useFiltersStore as any).getState(),
+          'clearFilters',
+        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -329,11 +308,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'products',
-          'bitbucket',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('products', 'bitbucket', false);
 
         expect(screen.getByTestId('filters')).toMatchSnapshot();
       });
@@ -350,7 +325,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
       await userEvent.click(screen.getByTestId('filters-clear'));
 
-      expect(clearFiltersMock).toHaveBeenCalled();
+      expect(clearSpy).toHaveBeenCalled();
     });
   });
 });

@@ -12,7 +12,6 @@ import {
   type TraySettingsState,
 } from '../types';
 
-import type { FiltersState } from '../stores/useFiltersStore';
 import { mockAtlassianCloudAccount } from './account-mocks';
 
 export const mockAuth: AuthState = {
@@ -49,20 +48,11 @@ const mockSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-const mockFilters: FiltersState = {
-  engagementStates: [],
-  categories: [],
-  readStates: [],
-  products: [],
-  actors: [],
-};
-
 export const mockSettings: SettingsState = {
   ...mockAppearanceSettings,
   ...mockNotificationSettings,
   ...mockTraySettings,
   ...mockSystemSettings,
-  ...mockFilters,
 };
 
 export const mockState: AtlassifyState = {
