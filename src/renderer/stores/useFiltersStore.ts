@@ -69,6 +69,11 @@ interface FilterActions {
 
 type FiltersStore = FiltersState & FilterActions;
 
+/**
+ * Atlassify Filters store.
+ *
+ * Automatically persisted to local storage
+ */
 export const useFiltersStore = create<FiltersStore>()(
   persist(
     (set, get, store) => ({
