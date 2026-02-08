@@ -12,6 +12,7 @@ import type {
   Status,
 } from '../types';
 
+import useFiltersStore from '../stores/useFiltersStore';
 import {
   getNotificationsByGroupId,
   markNotificationsAsRead,
@@ -60,6 +61,12 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
+  const engagementStates = useFiltersStore((s) => s.engagementStates);
+  const categories = useFiltersStore((s) => s.categories);
+  const actors = useFiltersStore((s) => s.actors);
+  const readStates = useFiltersStore((s) => s.readStates);
+  const products = useFiltersStore((s) => s.products);
+
   // Query for fetching notifications - React Query handles polling and refetching
   const {
     data: notifications = [],
@@ -71,6 +78,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
       'notifications',
       state.auth.accounts.length,
       state.settings.fetchOnlyUnreadNotifications,
+      engagementStates,
+      categories,
+      actors,
+      readStates,
+      products,
     ],
 
     queryFn: async () => {
