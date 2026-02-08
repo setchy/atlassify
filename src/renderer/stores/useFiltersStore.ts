@@ -76,17 +76,21 @@ type FiltersStore = FiltersState & FilterActions;
  */
 export const useFiltersStore = create<FiltersStore>()(
   persist(
-    (set, get, store) => ({
+    (set, _get, store) => ({
       ...defaultFiltersState,
 
       updateFilter: (key, value, checked) => {
-        const current = get()[key];
+        set((state) => {
+          const current = state[key];
 
-        const updated = checked
-          ? [...current, value]
-          : current.filter((item) => item !== value);
+          if (checked) {
+            return {
+              [key]: [...current, value],
+            };
+          }
 
-        set({ [key]: updated });
+          return { [key]: current.filter((item) => item !== value) };
+        });
       },
 
       reset: () => {
