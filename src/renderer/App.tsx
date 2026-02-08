@@ -16,11 +16,15 @@ import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
 
+import { QueryClientProvider } from '@tanstack/react-query';
+
 import { useAppContext } from './hooks/useAppContext';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
+
+import { queryClient } from './utils/api/client';
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
@@ -35,49 +39,51 @@ function RequireAuth({ children }) {
 
 export const App = () => {
   return (
-    <AppProvider>
-      <Router>
-        <AppAnalytics />
-        <AppLayout>
-          <GlobalShortcuts />
-          <Routes>
-            <Route
-              element={
-                <RequireAuth>
-                  <NotificationsRoute />
-                </RequireAuth>
-              }
-              path="/"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <FiltersRoute />
-                </RequireAuth>
-              }
-              path="/filters"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <SettingsRoute />
-                </RequireAuth>
-              }
-              path="/settings"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <AccountsRoute />
-                </RequireAuth>
-              }
-              path="/accounts"
-            />
-            <Route element={<LandingRoute />} path="/landing" />
-            <Route element={<LoginRoute />} path="/login" />
-          </Routes>
-        </AppLayout>
-      </Router>
-    </AppProvider>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <Router>
+          <AppAnalytics />
+          <AppLayout>
+            <GlobalShortcuts />
+            <Routes>
+              <Route
+                element={
+                  <RequireAuth>
+                    <NotificationsRoute />
+                  </RequireAuth>
+                }
+                path="/"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <FiltersRoute />
+                  </RequireAuth>
+                }
+                path="/filters"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <SettingsRoute />
+                  </RequireAuth>
+                }
+                path="/settings"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <AccountsRoute />
+                  </RequireAuth>
+                }
+                path="/accounts"
+              />
+              <Route element={<LandingRoute />} path="/landing" />
+              <Route element={<LoginRoute />} path="/login" />
+            </Routes>
+          </AppLayout>
+        </Router>
+      </AppProvider>
+    </QueryClientProvider>
   );
 };

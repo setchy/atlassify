@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 import { vi } from 'vitest';
 
@@ -59,9 +60,21 @@ export function renderWithAppContext(
   ui: ReactElement,
   context: TestAppContext = {},
 ) {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
+      },
+    },
+  });
+
   return render(ui, {
     wrapper: ({ children }) => (
-      <AppContextProvider value={context}>{children}</AppContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <AppContextProvider value={context}>{children}</AppContextProvider>
+      </QueryClientProvider>
     ),
   });
 }

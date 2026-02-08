@@ -284,6 +284,21 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('r');
 
+        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      });
+
+      it('refreshes notifications from other screen', async () => {
+        renderWithAppContext(
+          <MemoryRouter initialEntries={['/settings']}>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            fetchNotifications: fetchNotificationsMock,
+          },
+        );
+
+        await userEvent.keyboard('r');
+
         expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
         expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
       });

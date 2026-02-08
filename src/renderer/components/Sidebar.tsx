@@ -1,4 +1,4 @@
-import { type FC, Fragment } from 'react';
+import { type FC, Fragment, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -20,10 +20,11 @@ import { APPLICATION } from '../../shared/constants';
 import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
 
+import useFiltersStore from '../stores/useFiltersStore';
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
-export const Sidebar: FC = () => {
+const SidebarComponent: FC = () => {
   const {
     isLoggedIn,
     settings,
@@ -37,7 +38,19 @@ export const Sidebar: FC = () => {
 
   const { shortcuts } = useShortcutActions();
 
-  const hasFilters = hasActiveFilters();
+  // Subscribe to all filter states to re-render when they change
+  const engagementStates = useFiltersStore((s) => s.engagementStates);
+  const categories = useFiltersStore((s) => s.categories);
+  const actors = useFiltersStore((s) => s.actors);
+  const readStates = useFiltersStore((s) => s.readStates);
+  const products = useFiltersStore((s) => s.products);
+
+  // Memoize filter check to avoid recalculating on every render
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We intentionally subscribe to all filter states to trigger recalculation
+  const hasFilters = useMemo(
+    () => hasActiveFilters(),
+    [engagementStates, categories, actors, readStates, products],
+  );
 
   const theme = useThemeObserver();
 
@@ -269,3 +282,6 @@ export const Sidebar: FC = () => {
     </div>
   );
 };
+
+// Memoize the component to prevent unnecessary re-renders
+export const Sidebar = memo(SidebarComponent);

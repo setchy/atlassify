@@ -7,9 +7,7 @@ import {
   useState,
 } from 'react';
 
-import { Constants } from '../constants';
-
-import { useIntervalTimer } from '../hooks/useIntervalTimer';
+import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
 
 import type {
@@ -25,15 +23,9 @@ import type {
 import type { LoginOptions } from '../utils/auth/types';
 
 import useFiltersStore from '../stores/useFiltersStore';
-import {
-  addAccount,
-  hasAccounts,
-  refreshAccount,
-  removeAccount,
-} from '../utils/auth/utils';
+import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import {
   setAutoLaunch,
-  setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
 } from '../utils/comms';
@@ -58,7 +50,6 @@ export interface AppContextState {
   hasMoreAccountNotifications: boolean;
 
   fetchNotifications: () => Promise<void>;
-  removeAccountNotifications: (account: Account) => Promise<void>;
 
   markNotificationsRead: (
     notifications: AtlassifyNotification[],
@@ -78,6 +69,8 @@ export const AppContext = createContext<Partial<AppContextState> | undefined>(
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const existingState = loadState();
+
+  const resetFilters = useFiltersStore((s) => s.reset);
 
   const [auth, setAuth] = useState<AuthState>(
     existingState.auth
@@ -100,55 +93,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     hasNotifications,
     hasMoreAccountNotifications,
 
-    fetchNotifications,
-    removeAccountNotifications,
+    refetchNotifications,
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications();
+  } = useNotifications({ auth, settings });
 
-  const refreshAllAccounts = useCallback(() => {
-    if (!auth.accounts.length) {
-      return;
-    }
-
-    return Promise.all(auth.accounts.map(refreshAccount));
-  }, [auth.accounts]);
-
-  // Filter states from store
-  const engagementStates = useFiltersStore((s) => s.engagementStates);
-  const categories = useFiltersStore((s) => s.categories);
-  const actors = useFiltersStore((s) => s.actors);
-  const readStates = useFiltersStore((s) => s.readStates);
-  const products = useFiltersStore((s) => s.products);
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
-  useEffect(() => {
-    fetchNotifications({ auth, settings });
-  }, [
-    auth.accounts.length,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByTitle,
-    engagementStates,
-    categories,
-    actors,
-    readStates,
-    products,
-  ]);
-
-  useIntervalTimer(() => {
-    fetchNotifications({ auth, settings });
-  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
-  useEffect(() => {
-    refreshAllAccounts();
-  }, []);
-
-  // Refresh account details on interval
-  useIntervalTimer(() => {
-    refreshAllAccounts();
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
+  useAccounts(auth.accounts);
 
   useEffect(() => {
     setTheme(settings.theme);
@@ -169,10 +120,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   ]);
 
   useEffect(() => {
-    setKeyboardShortcut(settings.keyboardShortcutEnabled);
-  }, [settings.keyboardShortcutEnabled]);
-
-  useEffect(() => {
     setAutoLaunch(settings.openAtStartup);
   }, [settings.openAtStartup]);
 
@@ -181,6 +128,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       clearState();
       setAuth(defaultAuth);
       setSettings(defaultSettings);
+      resetFilters();
     });
   }, []);
 
@@ -250,20 +198,17 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const logoutFromAccount = useCallback(
     async (account: Account) => {
-      // Remove notifications for account
-      removeAccountNotifications(account);
-
       const updatedAuth = removeAccount(auth, account);
 
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },
-    [auth, settings, removeAccountNotifications],
+    [auth, settings],
   );
 
   const fetchNotificationsWithAccounts = useCallback(
-    async () => await fetchNotifications({ auth, settings }),
-    [auth, settings, fetchNotifications],
+    async () => await refetchNotifications(),
+    [refetchNotifications],
   );
 
   const markNotificationsReadWithAccounts = useCallback(
@@ -294,7 +239,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasMoreAccountNotifications,
 
       fetchNotifications: fetchNotificationsWithAccounts,
-      removeAccountNotifications,
 
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
@@ -318,7 +262,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasMoreAccountNotifications,
 
       fetchNotificationsWithAccounts,
-      removeAccountNotifications,
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,

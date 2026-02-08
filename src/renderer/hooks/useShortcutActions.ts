@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { quitApp, trackEvent } from '../utils/comms';
+import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
 
@@ -43,6 +43,10 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
+
+  useEffect(() => {
+    setKeyboardShortcut(settings.keyboardShortcutEnabled);
+  }, [settings.keyboardShortcutEnabled]);
 
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {

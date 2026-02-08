@@ -7,8 +7,6 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import { Constants } from '../constants';
-
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
@@ -41,10 +39,9 @@ const renderWithContext = () => {
 };
 
 describe('renderer/context/App.tsx', () => {
-  const fetchNotificationsMock = vi.fn();
+  const refetchMock = vi.fn();
   const markNotificationsReadMock = vi.fn();
   const markNotificationsUnreadMock = vi.fn();
-  const removeAccountNotificationsMock = vi.fn();
 
   const saveStateSpy = vi
     .spyOn(storage, 'saveState')
@@ -53,10 +50,15 @@ describe('renderer/context/App.tsx', () => {
   beforeEach(() => {
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({
-      fetchNotifications: fetchNotificationsMock,
+      status: 'success',
+      globalError: null,
+      notifications: [],
+      notificationCount: 0,
+      hasNotifications: false,
+      hasMoreAccountNotifications: false,
+      refetch: refetchMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-      removeAccountNotifications: removeAccountNotificationsMock,
     } as unknown as ReturnType<typeof useNotifications>);
   });
 
@@ -77,47 +79,15 @@ describe('renderer/context/App.tsx', () => {
       settings: mockSettings,
     };
 
-    it('fetch notifications each interval', async () => {
-      renderWithAppContext(<AppProvider>{null}</AppProvider>);
-
-      // Initial fetch happens on mount - advance timers to ensure it runs
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(0);
-      });
-
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
-
-      await act(async () => {
-        await vi.advanceTimersByTimeAsync(
-          Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-        );
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
-    });
-
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
-      fetchNotificationsMock.mockReset();
+      refetchMock.mockReset();
 
-      act(() => {
-        getContext().fetchNotifications();
+      await act(async () => {
+        await getContext().fetchNotifications();
       });
 
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(refetchMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
@@ -206,16 +176,13 @@ describe('renderer/context/App.tsx', () => {
       );
     });
 
-    it('logout calls removeAccountNotifications and removeAccount ', async () => {
+    it('logout calls removeAccount', async () => {
       const getContext = renderWithContext();
 
       await act(async () => {
         getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 
-      expect(removeAccountNotificationsMock).toHaveBeenCalledWith(
-        mockAtlassianCloudAccount,
-      );
       expect(removeAccountSpy).toHaveBeenCalledWith(
         expect.anything(),
         mockAtlassianCloudAccount,
