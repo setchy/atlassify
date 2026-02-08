@@ -45,7 +45,7 @@ interface NotificationsState {
   hasNotifications: boolean;
   hasMoreAccountNotifications: boolean;
 
-  refetch: () => Promise<void>;
+  refetchNotifications: () => Promise<void>;
 
   markNotificationsRead: (
     state: AtlassifyState,
@@ -72,7 +72,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     data: notifications = [],
     isLoading,
     isError,
-    refetch: queryRefetch,
+    refetch,
   } = useQuery<AccountNotifications[], Error>({
     queryKey: [
       'notifications',
@@ -134,9 +134,9 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     return null;
   }, [isError, notifications]);
 
-  const refetch = useCallback(async () => {
-    await queryRefetch();
-  }, [queryRefetch]);
+  const refetchNotifications = useCallback(async () => {
+    await refetch();
+  }, [refetch]);
 
   // Handle sound and native notifications when new notifications arrive
   useEffect(() => {
@@ -365,7 +365,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     hasNotifications,
     hasMoreAccountNotifications,
 
-    refetch,
+    refetchNotifications,
 
     markNotificationsRead,
     markNotificationsUnread,

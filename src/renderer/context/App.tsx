@@ -93,7 +93,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     hasNotifications,
     hasMoreAccountNotifications,
 
-    refetch,
+    refetchNotifications,
 
     markNotificationsRead,
     markNotificationsUnread,
@@ -207,8 +207,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const fetchNotificationsWithAccounts = useCallback(
-    async () => await refetch(),
-    [refetch],
+    async () => await refetchNotifications(),
+    [refetchNotifications],
   );
 
   const markNotificationsReadWithAccounts = useCallback(
