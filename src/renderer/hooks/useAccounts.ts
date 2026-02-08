@@ -13,7 +13,7 @@ interface AccountsState {
 }
 
 export const useAccounts = (accounts: Account[]): AccountsState => {
-  const { refetch: queryRefetch } = useQuery<void, Error>({
+  const { refetch } = useQuery<void, Error>({
     queryKey: ['accounts', accounts.length],
 
     queryFn: async () => {
@@ -28,8 +28,8 @@ export const useAccounts = (accounts: Account[]): AccountsState => {
   });
 
   const refetchAccounts = useCallback(async () => {
-    await queryRefetch();
-  }, [queryRefetch]);
+    await refetch();
+  }, [refetch]);
 
   return {
     refetchAccounts,
