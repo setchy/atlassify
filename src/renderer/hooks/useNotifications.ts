@@ -72,9 +72,14 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
       state.auth.accounts.length,
       state.settings.fetchOnlyUnreadNotifications,
     ],
+
     queryFn: async () => {
       return await getAllNotifications(state);
     },
+
+    refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+    refetchOnReconnect: true,
+    refetchOnWindowFocus: true,
   });
 
   const notificationCount = getNotificationCount(notifications);
@@ -231,9 +236,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
       return updatedNotifications;
     },
+
     onSuccess: (updatedNotifications) => {
       queryClient.setQueryData(['notifications'], updatedNotifications);
     },
+
     onError: (err) => {
       rendererLogError(
         'markNotificationsRead',
@@ -280,9 +287,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
       return notifications;
     },
+
     onSuccess: (updatedNotifications) => {
       queryClient.setQueryData(['notifications'], updatedNotifications);
     },
+
     onError: (err) => {
       rendererLogError(
         'markNotificationsUnread',

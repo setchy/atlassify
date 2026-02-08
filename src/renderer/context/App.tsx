@@ -7,9 +7,7 @@ import {
   useState,
 } from 'react';
 
-import { Constants } from '../constants';
-
-import { useIntervalTimer } from '../hooks/useIntervalTimer';
+import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
 
 import type {
@@ -24,12 +22,7 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
-import {
-  addAccount,
-  hasAccounts,
-  refreshAccount,
-  removeAccount,
-} from '../utils/auth/utils';
+import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import {
   setAutoLaunch,
   setKeyboardShortcut,
@@ -57,7 +50,6 @@ export interface AppContextState {
   hasMoreAccountNotifications: boolean;
 
   fetchNotifications: () => Promise<void>;
-  removeAccountNotifications: (account: Account) => Promise<void>;
 
   markNotificationsRead: (
     notifications: AtlassifyNotification[],
@@ -100,29 +92,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     hasMoreAccountNotifications,
 
     refetch,
-    removeAccountNotifications,
 
     markNotificationsRead,
     markNotificationsUnread,
   } = useNotifications({ auth, settings });
 
-  const refreshAllAccounts = useCallback(() => {
-    if (!auth.accounts.length) {
-      return;
-    }
-
-    return Promise.all(auth.accounts.map(refreshAccount));
-  }, [auth.accounts]);
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
-  useEffect(() => {
-    refreshAllAccounts();
-  }, []);
-
-  // Refresh account details on interval
-  useIntervalTimer(() => {
-    refreshAllAccounts();
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
+  useAccounts(auth.accounts);
 
   useEffect(() => {
     setTheme(settings.theme);
@@ -265,7 +240,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasMoreAccountNotifications,
 
       fetchNotifications: fetchNotificationsWithAccounts,
-      removeAccountNotifications,
 
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
@@ -289,7 +263,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasMoreAccountNotifications,
 
       fetchNotificationsWithAccounts,
-      removeAccountNotifications,
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,

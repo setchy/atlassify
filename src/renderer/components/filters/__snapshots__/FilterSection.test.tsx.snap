@@ -33,6 +33,12 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
           x="5.5"
           y="5.5"
         />
+        <path
+          clip-rule="evenodd"
+          d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
+          fill="inherit"
+          fill-rule="evenodd"
+        />
       </g>
     </svg>
     <span
@@ -42,7 +48,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
     </span>
   </label>
   <span
-    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
+    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1dy8 _syaz6txe _1bsb7vkz _4t3i7vkz _2rko12b0"
   >
     <span
       aria-hidden="true"
@@ -65,7 +71,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
     </span>
   </span>
   <span
-    class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
+    class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1ymo _syazwwip"
   >
     <span
       class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
@@ -109,6 +115,12 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
           x="5.5"
           y="5.5"
         />
+        <path
+          clip-rule="evenodd"
+          d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
+          fill="inherit"
+          fill-rule="evenodd"
+        />
       </g>
     </svg>
     <span
@@ -118,7 +130,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
     </span>
   </label>
   <span
-    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
+    class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk1dy8 _syaz6txe _1bsb7vkz _4t3i7vkz _2rko12b0"
   >
     <span
       aria-hidden="true"
@@ -141,7 +153,7 @@ exports[`renderer/components/filters/FilterSection.tsx > should be able to toggl
     </span>
   </span>
   <span
-    class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
+    class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1ymo _syazwwip"
   >
     <span
       class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"

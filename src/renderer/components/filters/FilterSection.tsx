@@ -1,3 +1,5 @@
+import { memo, useMemo } from 'react';
+
 import Badge from '@atlaskit/badge';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
@@ -20,13 +22,24 @@ export interface FilterSectionProps<T extends FilterValue> {
   filterSetting: keyof FiltersState;
 }
 
-export const FilterSection = <T extends FilterValue>({
+const FilterSectionComponent = <T extends FilterValue>({
   title,
   filter,
   filterSetting,
 }: FilterSectionProps<T>) => {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
+  // Subscribe to the specific filter state so component re-renders when filters change
+  useFiltersStore((s) => s[filterSetting]);
+
+  // Memoize filter counts to avoid recalculating on every render
+  const filterCounts = useMemo(() => {
+    const counts = new Map<T, number>();
+    for (const type of Object.keys(filter.FILTER_TYPES) as T[]) {
+      counts.set(type, filter.getFilterCount(notifications, type));
+    }
+    return counts;
+  }, [notifications, filter]);
 
   return (
     <Stack space="space.050">
@@ -36,7 +49,7 @@ export const FilterSection = <T extends FilterValue>({
           const typeDetails = filter.getTypeDetails(type);
           const typeLabel = formatProperCase(typeDetails.name);
           const isChecked = filter.isFilterSet(type);
-          const count = filter.getFilterCount(notifications, type);
+          const count = filterCounts.get(type) ?? 0;
 
           return (
             <Inline
@@ -85,3 +98,8 @@ export const FilterSection = <T extends FilterValue>({
     </Stack>
   );
 };
+
+// Memoize the component to prevent unnecessary re-renders
+export const FilterSection = memo(
+  FilterSectionComponent,
+) as typeof FilterSectionComponent;

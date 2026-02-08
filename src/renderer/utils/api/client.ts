@@ -1,3 +1,5 @@
+import { QueryClient } from '@tanstack/react-query';
+
 import { Constants } from '../../constants';
 
 import type {
@@ -35,6 +37,20 @@ import {
   performRequestForAccount,
   performRequestForCredentials,
 } from './request';
+
+/**
+ * Tanstack Query Client
+ */
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchIntervalInBackground: true,
+
+      staleTime: 30000, // 30 seconds
+    },
+  },
+});
 
 /**
  * Check if provided credentials (username and token) are valid.

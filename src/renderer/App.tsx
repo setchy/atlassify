@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 
 import { AppProvider } from './context/App';
-import { QueryProvider } from './context/QueryProvider';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';
@@ -17,11 +16,15 @@ import { SettingsRoute } from './routes/Settings';
 
 import './App.css';
 
+import { QueryClientProvider } from '@tanstack/react-query';
+
 import { useAppContext } from './hooks/useAppContext';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
+
+import { queryClient } from './utils/api/client';
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
@@ -36,7 +39,7 @@ function RequireAuth({ children }) {
 
 export const App = () => {
   return (
-    <QueryProvider>
+    <QueryClientProvider client={queryClient}>
       <AppProvider>
         <Router>
           <AppAnalytics />
@@ -81,6 +84,6 @@ export const App = () => {
           </AppLayout>
         </Router>
       </AppProvider>
-    </QueryProvider>
+    </QueryClientProvider>
   );
 };
