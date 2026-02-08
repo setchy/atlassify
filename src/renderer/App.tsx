@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { AppProvider } from './context/App';
+import { QueryProvider } from './context/QueryProvider';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';
@@ -35,49 +36,51 @@ function RequireAuth({ children }) {
 
 export const App = () => {
   return (
-    <AppProvider>
-      <Router>
-        <AppAnalytics />
-        <AppLayout>
-          <GlobalShortcuts />
-          <Routes>
-            <Route
-              element={
-                <RequireAuth>
-                  <NotificationsRoute />
-                </RequireAuth>
-              }
-              path="/"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <FiltersRoute />
-                </RequireAuth>
-              }
-              path="/filters"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <SettingsRoute />
-                </RequireAuth>
-              }
-              path="/settings"
-            />
-            <Route
-              element={
-                <RequireAuth>
-                  <AccountsRoute />
-                </RequireAuth>
-              }
-              path="/accounts"
-            />
-            <Route element={<LandingRoute />} path="/landing" />
-            <Route element={<LoginRoute />} path="/login" />
-          </Routes>
-        </AppLayout>
-      </Router>
-    </AppProvider>
+    <QueryProvider>
+      <AppProvider>
+        <Router>
+          <AppAnalytics />
+          <AppLayout>
+            <GlobalShortcuts />
+            <Routes>
+              <Route
+                element={
+                  <RequireAuth>
+                    <NotificationsRoute />
+                  </RequireAuth>
+                }
+                path="/"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <FiltersRoute />
+                  </RequireAuth>
+                }
+                path="/filters"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <SettingsRoute />
+                  </RequireAuth>
+                }
+                path="/settings"
+              />
+              <Route
+                element={
+                  <RequireAuth>
+                    <AccountsRoute />
+                  </RequireAuth>
+                }
+                path="/accounts"
+              />
+              <Route element={<LandingRoute />} path="/landing" />
+              <Route element={<LoginRoute />} path="/login" />
+            </Routes>
+          </AppLayout>
+        </Router>
+      </AppProvider>
+    </QueryProvider>
   );
 };

@@ -24,7 +24,6 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
-import useFiltersStore from '../stores/useFiltersStore';
 import {
   addAccount,
   hasAccounts,
@@ -100,12 +99,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     hasNotifications,
     hasMoreAccountNotifications,
 
-    fetchNotifications,
+    refetch,
     removeAccountNotifications,
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications();
+  } = useNotifications({ auth, settings });
 
   const refreshAllAccounts = useCallback(() => {
     if (!auth.accounts.length) {
@@ -114,31 +113,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     return Promise.all(auth.accounts.map(refreshAccount));
   }, [auth.accounts]);
-
-  // Filter states from store
-  const engagementStates = useFiltersStore((s) => s.engagementStates);
-  const categories = useFiltersStore((s) => s.categories);
-  const actors = useFiltersStore((s) => s.actors);
-  const readStates = useFiltersStore((s) => s.readStates);
-  const products = useFiltersStore((s) => s.products);
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
-  useEffect(() => {
-    fetchNotifications({ auth, settings });
-  }, [
-    auth.accounts.length,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByTitle,
-    engagementStates,
-    categories,
-    actors,
-    readStates,
-    products,
-  ]);
-
-  useIntervalTimer(() => {
-    fetchNotifications({ auth, settings });
-  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Refresh account details on startup
   useEffect(() => {
@@ -250,20 +224,17 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const logoutFromAccount = useCallback(
     async (account: Account) => {
-      // Remove notifications for account
-      removeAccountNotifications(account);
-
       const updatedAuth = removeAccount(auth, account);
 
       setAuth(updatedAuth);
       saveState({ auth: updatedAuth, settings });
     },
-    [auth, settings, removeAccountNotifications],
+    [auth, settings],
   );
 
   const fetchNotificationsWithAccounts = useCallback(
-    async () => await fetchNotifications({ auth, settings }),
-    [auth, settings, fetchNotifications],
+    async () => await refetch(),
+    [refetch],
   );
 
   const markNotificationsReadWithAccounts = useCallback(

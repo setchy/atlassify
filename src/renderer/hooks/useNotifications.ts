@@ -1,7 +1,10 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+
+import { Constants } from '../constants';
 
 import type {
-  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -41,8 +44,7 @@ interface NotificationsState {
   hasNotifications: boolean;
   hasMoreAccountNotifications: boolean;
 
-  fetchNotifications: (state: AtlassifyState) => Promise<void>;
-  removeAccountNotifications: (account: Account) => Promise<void>;
+  refetch: () => Promise<void>;
 
   markNotificationsRead: (
     state: AtlassifyState,
@@ -54,13 +56,26 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (): NotificationsState => {
-  const [status, setStatus] = useState<Status>('success');
-  const [globalError, setGlobalError] = useState<AtlassifyError>();
+export const useNotifications = (state: AtlassifyState): NotificationsState => {
+  const queryClient = useQueryClient();
+  const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
-  const [notifications, setNotifications] = useState<AccountNotifications[]>(
-    [],
-  );
+  // Query for fetching notifications - React Query handles polling and refetching
+  const {
+    data: notifications = [],
+    isLoading,
+    isError,
+    refetch: queryRefetch,
+  } = useQuery<AccountNotifications[], Error>({
+    queryKey: [
+      'notifications',
+      state.auth.accounts.length,
+      state.settings.fetchOnlyUnreadNotifications,
+    ],
+    queryFn: async () => {
+      return await getAllNotifications(state);
+    },
+  });
 
   const notificationCount = getNotificationCount(notifications);
 
@@ -74,72 +89,64 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  const removeAccountNotifications = useCallback(
-    async (account: Account) => {
-      setStatus('loading');
+  // Determine status and globalError from query state
+  const status: Status = useMemo(() => {
+    if (isLoading) {
+      return 'loading';
+    }
+    if (isError) {
+      return 'error';
+    }
+    return 'success';
+  }, [isLoading, isError]);
 
-      const updatedNotifications = notifications.filter(
-        (notification) => notification.account !== account,
-      );
+  const globalError: AtlassifyError = useMemo(() => {
+    if (!isError || notifications.length === 0) {
+      return null;
+    }
 
-      setNotifications(updatedNotifications);
+    const allAccountsHaveErrors = doesAllAccountsHaveErrors(notifications);
+    const allAccountErrorsAreSame = areAllAccountErrorsSame(notifications);
 
-      setStatus('success');
-    },
-    [notifications],
-  );
+    if (allAccountsHaveErrors && allAccountErrorsAreSame) {
+      return notifications[0].error;
+    }
 
-  const isFetchingRef = useRef(false);
-  const fetchNotifications = useCallback(
-    async (state: AtlassifyState) => {
-      if (isFetchingRef.current) {
-        // Prevent overlapping fetches
-        return;
+    return null;
+  }, [isError, notifications]);
+
+  const refetch = useCallback(async () => {
+    await queryRefetch();
+  }, [queryRefetch]);
+
+  // Handle sound and native notifications when new notifications arrive
+  useEffect(() => {
+    if (isLoading || isError || notifications.length === 0) {
+      return;
+    }
+
+    const allAccountsHaveErrors = doesAllAccountsHaveErrors(notifications);
+    if (allAccountsHaveErrors) {
+      return;
+    }
+
+    const diffNotifications = getNewNotifications(
+      previousNotificationsRef.current,
+      notifications,
+    );
+
+    if (diffNotifications.length > 0) {
+      if (state.settings.playSoundNewNotifications) {
+        raiseSoundNotification(state.settings.notificationVolume);
       }
-      isFetchingRef.current = true;
-      setStatus('loading');
 
-      try {
-        const previousNotifications = notifications;
-        const fetchedNotifications = await getAllNotifications(state);
-        setNotifications(fetchedNotifications);
-
-        // Set Global Error if all accounts have the same error
-        const allAccountsHaveErrors =
-          doesAllAccountsHaveErrors(fetchedNotifications);
-        const allAccountErrorsAreSame =
-          areAllAccountErrorsSame(fetchedNotifications);
-
-        if (allAccountsHaveErrors) {
-          const accountError = fetchedNotifications[0].error;
-          setStatus('error');
-          setGlobalError(allAccountErrorsAreSame ? accountError : null);
-          return;
-        }
-
-        const diffNotifications = getNewNotifications(
-          previousNotifications,
-          fetchedNotifications,
-        );
-
-        if (diffNotifications.length > 0) {
-          if (state.settings.playSoundNewNotifications) {
-            raiseSoundNotification(state.settings.notificationVolume);
-          }
-
-          if (state.settings.showSystemNotifications) {
-            raiseNativeNotification(diffNotifications);
-          }
-        }
-
-        setStatus('success');
-        setGlobalError(null);
-      } finally {
-        isFetchingRef.current = false;
+      if (state.settings.showSystemNotifications) {
+        raiseNativeNotification(diffNotifications);
       }
-    },
-    [notifications],
-  );
+    }
+
+    previousNotificationsRef.current = notifications;
+  }, [notifications, isLoading, isError, state.settings]);
 
   const getNotificationIdsForGroups = useCallback(
     async (state: AtlassifyState, notifications: AtlassifyNotification[]) => {
@@ -182,12 +189,15 @@ export const useNotifications = (): NotificationsState => {
     [],
   );
 
-  const markNotificationsRead = useCallback(
-    async (
-      state: AtlassifyState,
-      readNotifications: AtlassifyNotification[],
-    ) => {
-      setStatus('loading');
+  // Mutation for marking notifications as read
+  const markAsReadMutation = useMutation({
+    mutationFn: async ({
+      state,
+      readNotifications,
+    }: {
+      state: AtlassifyState;
+      readNotifications: AtlassifyNotification[];
+    }) => {
       trackEvent('Action', { name: 'Mark as Read' });
 
       const account = readNotifications[0].account;
@@ -199,47 +209,49 @@ export const useNotifications = (): NotificationsState => {
         (notification) => notification.id,
       );
 
-      try {
-        const groupedNotificationIds = await getNotificationIdsForGroups(
-          state,
-          readNotifications,
-        );
+      const groupedNotificationIds = await getNotificationIdsForGroups(
+        state,
+        readNotifications,
+      );
 
-        singleNotificationIDs.push(...groupedNotificationIds);
+      singleNotificationIDs.push(...groupedNotificationIds);
 
-        await markNotificationsAsRead(account, singleNotificationIDs);
+      await markNotificationsAsRead(account, singleNotificationIDs);
 
-        for (const notification of readNotifications) {
-          notification.readState = 'read';
-        }
-
-        const updatedNotifications = removeNotificationsForAccount(
-          account,
-          state.settings,
-          readNotifications,
-          notifications,
-        );
-
-        setNotifications(updatedNotifications);
-      } catch (err) {
-        rendererLogError(
-          'markNotificationsRead',
-          'Error occurred while marking notifications as read',
-          err,
-        );
+      for (const notification of readNotifications) {
+        notification.readState = 'read';
       }
 
-      setStatus('success');
-    },
-    [notifications, getNotificationIdsForGroups],
-  );
+      const updatedNotifications = removeNotificationsForAccount(
+        account,
+        state.settings,
+        readNotifications,
+        notifications,
+      );
 
-  const markNotificationsUnread = useCallback(
-    async (
-      state: AtlassifyState,
-      unreadNotifications: AtlassifyNotification[],
-    ) => {
-      setStatus('loading');
+      return updatedNotifications;
+    },
+    onSuccess: (updatedNotifications) => {
+      queryClient.setQueryData(['notifications'], updatedNotifications);
+    },
+    onError: (err) => {
+      rendererLogError(
+        'markNotificationsRead',
+        'Error occurred while marking notifications as read',
+        err,
+      );
+    },
+  });
+
+  // Mutation for marking notifications as unread
+  const markAsUnreadMutation = useMutation({
+    mutationFn: async ({
+      state,
+      unreadNotifications,
+    }: {
+      state: AtlassifyState;
+      unreadNotifications: AtlassifyNotification[];
+    }) => {
       trackEvent('Action', {
         name: 'Mark as Unread',
       });
@@ -253,30 +265,51 @@ export const useNotifications = (): NotificationsState => {
         (notification) => notification.id,
       );
 
-      try {
-        const groupedNotificationIds = await getNotificationIdsForGroups(
-          state,
-          unreadNotifications,
-        );
+      const groupedNotificationIds = await getNotificationIdsForGroups(
+        state,
+        unreadNotifications,
+      );
 
-        singleNotificationIDs.push(...groupedNotificationIds);
+      singleNotificationIDs.push(...groupedNotificationIds);
 
-        await markNotificationsAsUnread(account, singleNotificationIDs);
+      await markNotificationsAsUnread(account, singleNotificationIDs);
 
-        for (const notification of unreadNotifications) {
-          notification.readState = 'unread';
-        }
-      } catch (err) {
-        rendererLogError(
-          'markNotificationsUnread',
-          'Error occurred while marking notifications as unread',
-          err,
-        );
+      for (const notification of unreadNotifications) {
+        notification.readState = 'unread';
       }
 
-      setStatus('success');
+      return notifications;
     },
-    [getNotificationIdsForGroups],
+    onSuccess: (updatedNotifications) => {
+      queryClient.setQueryData(['notifications'], updatedNotifications);
+    },
+    onError: (err) => {
+      rendererLogError(
+        'markNotificationsUnread',
+        'Error occurred while marking notifications as unread',
+        err,
+      );
+    },
+  });
+
+  const markNotificationsRead = useCallback(
+    async (
+      state: AtlassifyState,
+      readNotifications: AtlassifyNotification[],
+    ) => {
+      await markAsReadMutation.mutateAsync({ state, readNotifications });
+    },
+    [markAsReadMutation],
+  );
+
+  const markNotificationsUnread = useCallback(
+    async (
+      state: AtlassifyState,
+      unreadNotifications: AtlassifyNotification[],
+    ) => {
+      await markAsUnreadMutation.mutateAsync({ state, unreadNotifications });
+    },
+    [markAsUnreadMutation],
   );
 
   return {
@@ -288,8 +321,7 @@ export const useNotifications = (): NotificationsState => {
     hasNotifications,
     hasMoreAccountNotifications,
 
-    fetchNotifications,
-    removeAccountNotifications,
+    refetch,
 
     markNotificationsRead,
     markNotificationsUnread,
