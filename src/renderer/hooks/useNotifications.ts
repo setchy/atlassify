@@ -67,6 +67,28 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
+  // Flattened, stable query key that includes current filter values
+  const notificationsQueryKey = useMemo(() => {
+    return [
+      'notifications',
+      state.auth.accounts.length,
+      state.settings.fetchOnlyUnreadNotifications,
+      ...engagementStates,
+      ...categories,
+      ...actors,
+      ...readStates,
+      ...products,
+    ] as const;
+  }, [
+    state.auth.accounts.length,
+    state.settings.fetchOnlyUnreadNotifications,
+    engagementStates,
+    categories,
+    actors,
+    readStates,
+    products,
+  ]);
+
   // Query for fetching notifications - React Query handles polling and refetching
   const {
     data: notifications = [],
@@ -74,16 +96,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     isError,
     refetch,
   } = useQuery<AccountNotifications[], Error>({
-    queryKey: [
-      'notifications',
-      state.auth.accounts.length,
-      state.settings.fetchOnlyUnreadNotifications,
-      engagementStates,
-      categories,
-      actors,
-      readStates,
-      products,
-    ],
+    queryKey: notificationsQueryKey,
 
     queryFn: async () => {
       return await getAllNotifications(state);
@@ -259,14 +272,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     },
 
     onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(
-        [
-          'notifications',
-          state.auth.accounts.length,
-          state.settings.fetchOnlyUnreadNotifications,
-        ],
-        updatedNotifications,
-      );
+      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
     },
 
     onError: (err) => {
@@ -317,14 +323,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     },
 
     onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(
-        [
-          'notifications',
-          state.auth.accounts.length,
-          state.settings.fetchOnlyUnreadNotifications,
-        ],
-        updatedNotifications,
-      );
+      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
     },
 
     onError: (err) => {
