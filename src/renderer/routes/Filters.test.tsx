@@ -3,24 +3,34 @@ import userEvent from '@testing-library/user-event';
 
 import { vi } from 'vitest';
 
-import {
-  mockFilterStoreState,
-  renderWithAppContext,
-} from '../__helpers__/test-utils';
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import { FiltersRoute } from './Filters';
 
 // Mock the useFiltersStore
-vi.mock('../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
+vi.mock('../stores/useFiltersStore', () => ({
+  default: vi.fn(() => ({
+    engagementStates: [],
+    categories: [],
+    actors: [],
+    readStates: [],
+    products: [],
+    setFilters: vi.fn(),
+    updateFilter: vi.fn(),
+    clearFilters: vi.fn(),
+  })),
+  defaultFiltersState: {
+    engagementStates: [],
+    categories: [],
+    actors: [],
+    readStates: [],
+    products: [],
   },
 }));
 
 import useFiltersStore, {
   defaultFiltersState,
-  type FiltersState,
 } from '../stores/useFiltersStore';
 
 const navigateMock = vi.fn();
@@ -33,6 +43,21 @@ describe('renderer/routes/Filters.tsx', () => {
   const updateFilterMock = vi.fn();
   const clearFiltersMock = vi.fn();
   const fetchNotificationsMock = vi.fn();
+
+  beforeEach(() => {
+    // Setup default mock implementation
+    vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+      const state = {
+        ...defaultFiltersState,
+        setFilters: vi.fn(),
+        updateFilter: updateFilterMock,
+        clearFilters: clearFiltersMock,
+      };
+      // ensure getState is available for non-hook consumers
+      (useFiltersStore as any).getState = vi.fn().mockReturnValue(state);
+      return selector ? selector(state) : state;
+    });
+  });
 
   afterEach(() => {
     vi.clearAllMocks();
@@ -84,13 +109,15 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by engagement state - existing filter set', async () => {
-        vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFiltersState,
-          engagementStates: ['mention'],
-        } as FiltersState & {
-          setFilters: any;
-          updateFilter: any;
-          clearFilters: any;
+        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+          const state = {
+            ...defaultFiltersState,
+            engagementStates: ['mention'],
+            setFilters: vi.fn(),
+            updateFilter: updateFilterMock,
+            clearFilters: clearFiltersMock,
+          };
+          return selector ? selector(state) : state;
         });
 
         await act(async () => {
@@ -130,8 +157,15 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by category - existing filter set', async () => {
-        mockFilterStoreState(useFiltersStore, {
-          categories: ['direct'],
+        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+          const state = {
+            ...defaultFiltersState,
+            categories: ['direct'],
+            setFilters: vi.fn(),
+            updateFilter: updateFilterMock,
+            clearFilters: clearFiltersMock,
+          };
+          return selector ? selector(state) : state;
         });
 
         await act(async () => {
@@ -171,8 +205,15 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by actor - existing filter set', async () => {
-        mockFilterStoreState(useFiltersStore, {
-          actors: ['automation'],
+        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+          const state = {
+            ...defaultFiltersState,
+            actors: ['automation'],
+            setFilters: vi.fn(),
+            updateFilter: updateFilterMock,
+            clearFilters: clearFiltersMock,
+          };
+          return selector ? selector(state) : state;
         });
 
         await act(async () => {
@@ -212,8 +253,15 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by read state - existing filter set', async () => {
-        mockFilterStoreState(useFiltersStore, {
-          readStates: ['unread'],
+        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+          const state = {
+            ...defaultFiltersState,
+            readStates: ['unread'],
+            setFilters: vi.fn(),
+            updateFilter: updateFilterMock,
+            clearFilters: clearFiltersMock,
+          };
+          return selector ? selector(state) : state;
         });
 
         await act(async () => {
@@ -256,8 +304,15 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by product - existing filter set', async () => {
-        mockFilterStoreState(useFiltersStore, {
-          products: ['bitbucket'],
+        vi.mocked(useFiltersStore).mockImplementation((selector: any) => {
+          const state = {
+            ...defaultFiltersState,
+            products: ['bitbucket'],
+            setFilters: vi.fn(),
+            updateFilter: updateFilterMock,
+            clearFilters: clearFiltersMock,
+          };
+          return selector ? selector(state) : state;
         });
 
         await act(async () => {

@@ -120,22 +120,25 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     return Promise.all(auth.accounts.map(refreshAccount));
   }, [auth.accounts]);
 
-  const filters = useFiltersStore((s) => s);
+  // Filter states from store
+  const engagementStates = useFiltersStore((s) => s.engagementStates);
+  const categories = useFiltersStore((s) => s.categories);
+  const actors = useFiltersStore((s) => s.actors);
+  const readStates = useFiltersStore((s) => s.readStates);
+  const products = useFiltersStore((s) => s.products);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Fetch new notifications when account count or filters change
   useEffect(() => {
-    const combinedSettings = { ...settings, ...filters };
-
-    fetchNotifications({ auth, settings: combinedSettings });
+    fetchNotifications({ auth, settings });
   }, [
     auth.accounts.length,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByTitle,
-    filters.engagementStates,
-    filters.categories,
-    filters.actors,
-    filters.readStates,
-    filters.products,
+    engagementStates,
+    categories,
+    actors,
+    readStates,
+    products,
   ]);
 
   useIntervalTimer(() => {
@@ -203,17 +206,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     },
     [auth],
   );
-
-  // Keep local `settings` in sync with the filters stored in zustand and
-  // persist the merged settings into the app storage so consumers based on
-  // `settings` continue to work as before.
-  useEffect(() => {
-    setSettings((prev) => {
-      const merged = { ...prev, ...filters };
-      saveState({ auth, settings: merged });
-      return merged;
-    });
-  }, [filters, auth]);
 
   // Global window zoom handler / listener
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update on settings.zoomPercentage changes

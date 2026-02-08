@@ -102,7 +102,7 @@ export function mockFilterStoreState(
   useFiltersStore: any,
   filters: Partial<FiltersState> = {},
 ) {
-  vi.mocked(useFiltersStore.getState).mockReturnValue({
+  useFiltersStore.getState = vi.fn().mockReturnValue({
     ...defaultFiltersState,
     ...filters,
     setFilters: vi.fn(),
