@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { devtools, persist } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
@@ -77,39 +77,41 @@ export const defaultFiltersState: FiltersState = {
  * Automatically persisted to local storage
  */
 export const useFiltersStore = create<FiltersStore>()(
-  persist(
-    (set, _get, store) => ({
-      ...defaultFiltersState,
+  devtools(
+    persist(
+      (set, _get, store) => ({
+        ...defaultFiltersState,
 
-      updateFilter: (key, value, checked) => {
-        set((state) => {
-          const current = state[key];
+        updateFilter: (key, value, checked) => {
+          set((state) => {
+            const current = state[key];
 
-          if (checked) {
-            return {
-              [key]: [...current, value],
-            };
-          }
+            if (checked) {
+              return {
+                [key]: [...current, value],
+              };
+            }
 
-          return { [key]: current.filter((item) => item !== value) };
-        });
-      },
+            return { [key]: current.filter((item) => item !== value) };
+          });
+        },
 
-      reset: () => {
-        set(store.getInitialState());
-      },
-    }),
-    {
-      name: Constants.FILTERS_STORE_KEY,
-
-      partialize: (state) => ({
-        engagementStates: state.engagementStates,
-        categories: state.categories,
-        actors: state.actors,
-        readStates: state.readStates,
-        products: state.products,
+        reset: () => {
+          set(store.getInitialState());
+        },
       }),
-    },
+      {
+        name: Constants.FILTERS_STORE_KEY,
+
+        partialize: (state) => ({
+          engagementStates: state.engagementStates,
+          categories: state.categories,
+          actors: state.actors,
+          readStates: state.readStates,
+          products: state.products,
+        }),
+      },
+    ),
   ),
 );
 
