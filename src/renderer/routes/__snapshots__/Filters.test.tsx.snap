@@ -2406,12 +2406,6 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                         x="5.5"
                         y="5.5"
                       />
-                      <path
-                        clip-rule="evenodd"
-                        d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
-                        fill="inherit"
-                        fill-rule="evenodd"
-                      />
                     </g>
                   </svg>
                   <span
@@ -2422,7 +2416,7 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                 </label>
                 <span
                   aria-label="Bitbucket"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -2449,7 +2443,7 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
 
                 </span>
                 <span
-                  class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1ymo _syazwwip"
+                  class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
                 >
                   <span
                     class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"

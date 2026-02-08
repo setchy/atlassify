@@ -47,12 +47,22 @@ export interface FiltersState {
  */
 export type FilterKey = keyof FiltersState;
 
-/**
- * All allowed Filter values to be stored in the application.
- * Automatically derived from the array element types in FiltersState.
- */
-export type FilterValue = FiltersState[keyof FiltersState][number];
+type UpdateFilter = <K extends FilterKey>(
+  key: T,
+  value: FiltersState[K][number],
+  checked: boolean,
+) => void;
 
+interface FilterActions {
+  updateFilter: UpdateFilter;
+  reset: () => void;
+}
+
+type FiltersStore = FiltersState & FilterActions;
+
+/**
+ * Default filter state
+ */
 export const defaultFiltersState: FiltersState = {
   engagementStates: [],
   categories: [],
@@ -60,14 +70,6 @@ export const defaultFiltersState: FiltersState = {
   products: [],
   actors: [],
 };
-
-interface FilterActions {
-  updateFilter: (key: FilterKey, value: FilterValue, checked: boolean) => void;
-
-  reset: () => void;
-}
-
-type FiltersStore = FiltersState & FilterActions;
 
 /**
  * Atlassify Filters store.
