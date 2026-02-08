@@ -16,11 +16,9 @@ export const useAccounts = (accounts: Account[]): AccountsState => {
   const { refetch } = useQuery<boolean, Error>({
     queryKey: ['accounts', accounts.length],
 
-    queryFn: async () => {
-      if (!accounts.length) {
-        return true;
-      }
+    enabled: accounts.length > 0,
 
+    queryFn: async () => {
       await Promise.all(accounts.map(refreshAccount));
       return true;
     },
