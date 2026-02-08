@@ -10,23 +10,22 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import useFiltersStore, {
   type FiltersState,
-  type FilterValue,
 } from '../../stores/useFiltersStore';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
-export interface FilterSectionProps<T extends FilterValue> {
+export interface FilterSectionProps<K extends keyof FiltersState> {
   title: string;
-  filter: Filter<T>;
-  filterSetting: keyof FiltersState;
+  filter: Filter<FiltersState[K][number]>;
+  filterSetting: K;
 }
 
-const FilterSectionComponent = <T extends FilterValue>({
+const FilterSectionComponent = <K extends keyof FiltersState>({
   title,
   filter,
   filterSetting,
-}: FilterSectionProps<T>) => {
+}: FilterSectionProps<K>) => {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
   // Subscribe to the specific filter state so component re-renders when filters change
@@ -34,8 +33,10 @@ const FilterSectionComponent = <T extends FilterValue>({
 
   // Memoize filter counts to avoid recalculating on every render
   const filterCounts = useMemo(() => {
-    const counts = new Map<T, number>();
-    for (const type of Object.keys(filter.FILTER_TYPES) as T[]) {
+    const counts = new Map<FiltersState[K][number], number>();
+    for (const type of Object.keys(
+      filter.FILTER_TYPES,
+    ) as FiltersState[K][number][]) {
       counts.set(type, filter.getFilterCount(notifications, type));
     }
     return counts;
@@ -45,55 +46,60 @@ const FilterSectionComponent = <T extends FilterValue>({
     <Stack space="space.050">
       <Heading size="small">{title}</Heading>
       <Box>
-        {(Object.keys(filter.FILTER_TYPES) as T[]).map((type) => {
-          const typeDetails = filter.getTypeDetails(type);
-          const typeLabel = formatProperCase(typeDetails.name);
-          const isChecked = filter.isFilterSet(type);
-          const count = filterCounts.get(type) ?? 0;
+        {(Object.keys(filter.FILTER_TYPES) as FiltersState[K][number][]).map(
+          (type) => {
+            const typeDetails = filter.getTypeDetails(type);
+            const typeLabel = formatProperCase(typeDetails.name);
+            const isChecked = filter.isFilterSet(type);
+            const count = filterCounts.get(type) ?? 0;
 
-          return (
-            <Inline
-              alignBlock="center"
-              key={typeDetails.name}
-              space="space.050"
-            >
-              <Checkbox
-                aria-label={typeDetails.name}
-                isChecked={isChecked}
-                label={typeLabel}
-                onChange={() => updateFilter(filterSetting, type, !isChecked)}
-              />
-              {typeDetails.icon && (
-                <IconTile
-                  appearance={isChecked ? 'blue' : 'gray'}
-                  icon={typeDetails.icon}
-                  label=""
-                  size="16"
+            return (
+              <Inline
+                alignBlock="center"
+                key={typeDetails.name}
+                space="space.050"
+              >
+                <Checkbox
+                  aria-label={typeDetails.name}
+                  isChecked={isChecked}
+                  label={typeLabel}
+                  onChange={() => updateFilter(filterSetting, type, !isChecked)}
                 />
-              )}
-              {typeDetails.logo && (
-                <typeDetails.logo
-                  appearance={isChecked ? 'brand' : 'neutral'}
-                  shouldUseNewLogoDesign
-                  size="xxsmall"
-                />
-              )}
-              {typeDetails.heroicon && (
-                <typeDetails.heroicon
-                  className={cn(
-                    'size-4 p-px rounded border',
-                    isChecked
-                      ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
-                      : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
-                  )}
-                />
-              )}
-              <Badge appearance={isChecked ? 'primary' : 'default'} max={false}>
-                {count}
-              </Badge>
-            </Inline>
-          );
-        })}
+                {typeDetails.icon && (
+                  <IconTile
+                    appearance={isChecked ? 'blue' : 'gray'}
+                    icon={typeDetails.icon}
+                    label=""
+                    size="16"
+                  />
+                )}
+                {typeDetails.logo && (
+                  <typeDetails.logo
+                    appearance={isChecked ? 'brand' : 'neutral'}
+                    shouldUseNewLogoDesign
+                    size="xxsmall"
+                  />
+                )}
+                {typeDetails.heroicon && (
+                  <typeDetails.heroicon
+                    className={cn(
+                      'size-4 p-px rounded border',
+                      isChecked
+                        ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
+                        : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
+                    )}
+                  />
+                )}
+                <Badge
+                  appearance={isChecked ? 'primary' : 'default'}
+                  max={false}
+                >
+                  {count}
+                </Badge>
+              </Inline>
+            );
+          },
+        )}
       </Box>
     </Stack>
   );

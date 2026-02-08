@@ -48,7 +48,7 @@ export interface FiltersState {
 export type FilterKey = keyof FiltersState;
 
 type UpdateFilter = <K extends FilterKey>(
-  key: T,
+  key: K,
   value: FiltersState[K][number],
   checked: boolean,
 ) => void;
