@@ -158,7 +158,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isLoading,
     isOnFiltersRoute,
     isOnSettingsRoute,
-    location.pathname,
+    isOnNotificationsRoute,
     fetchNotifications,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByProduct,
