@@ -6,9 +6,7 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../stores/useFiltersStore';
+import useFiltersStore, {} from '../stores/useFiltersStore';
 import { FiltersRoute } from './Filters';
 
 const navigateMock = vi.fn();
