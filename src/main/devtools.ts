@@ -10,7 +10,7 @@ import { isDevMode } from './utils';
 
 let installTask: Promise<void> | null = null;
 
-export async function installReactDevtools() {
+export async function installDevToolsExtensions() {
   if (!isDevMode) {
     return;
   }

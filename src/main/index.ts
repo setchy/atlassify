@@ -30,7 +30,7 @@ import {
 import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
-import { installReactDevtools } from './devtools';
+import { installDevToolsExtensions } from './devtools';
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
@@ -107,7 +107,7 @@ app.whenReady().then(async () => {
   trackEvent('Application', { event: 'Launched' });
   preventSecondInstance();
 
-  await installReactDevtools();
+  await installDevToolsExtensions();
   await onFirstRunMaybe();
 
   appUpdater.start();
