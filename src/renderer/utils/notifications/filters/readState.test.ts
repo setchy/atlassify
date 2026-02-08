@@ -1,16 +1,12 @@
 import { vi } from 'vitest';
 
+import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultFilterSettings } from '../../../context/defaults';
-
-import type {
-  AtlassifyNotification,
-  FilterSettingsState,
-} from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { readStateFilter } from '.';
 
@@ -25,37 +21,17 @@ import useFiltersStore from '../../../hooks/useFiltersStore';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   it('hasReadStateFilters', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore);
 
     expect(readStateFilter.hasFilters()).toBe(false);
 
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      readStates: ['read'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { readStates: ['read'] });
 
     expect(readStateFilter.hasFilters()).toBe(true);
   });
 
   it('isReadStateFilterSet', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      readStates: ['read'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { readStates: ['read'] });
 
     expect(readStateFilter.isFilterSet('read')).toBe(true);
 

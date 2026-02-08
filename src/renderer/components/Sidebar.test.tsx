@@ -31,10 +31,9 @@ vi.mock('../hooks/useFiltersStore', () => ({
   },
 }));
 
-import { defaultFilterSettings } from '../context/defaults';
-import useFiltersStore from '../hooks/useFiltersStore';
+import { mockFilterStoreState } from '../__helpers__/test-utils';
 
-import type { FilterSettingsState } from '../types';
+import useFiltersStore from '../hooks/useFiltersStore';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as any).mockReturnValue({ colorMode: mode });
@@ -372,13 +371,8 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('highlight filters sidebar if any are saved', () => {
-      vi.mocked(useFiltersStore.getState).mockReturnValue({
-        ...defaultFilterSettings,
+      mockFilterStoreState(useFiltersStore, {
         products: ['bitbucket'],
-      } as FilterSettingsState & {
-        setFilters: any;
-        updateFilter: any;
-        clearFilters: any;
       });
 
       renderWithAppContext(

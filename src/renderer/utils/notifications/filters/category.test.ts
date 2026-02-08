@@ -1,16 +1,12 @@
 import { vi } from 'vitest';
 
+import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultFilterSettings } from '../../../context/defaults';
-
-import type {
-  AtlassifyNotification,
-  FilterSettingsState,
-} from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { categoryFilter } from '.';
 
@@ -25,37 +21,17 @@ import useFiltersStore from '../../../hooks/useFiltersStore';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
   it('hasCategoryFilters', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore);
 
     expect(categoryFilter.hasFilters()).toBe(false);
 
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      categories: ['direct'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { categories: ['direct'] });
 
     expect(categoryFilter.hasFilters()).toBe(true);
   });
 
   it('isCategoryFilterSet', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      categories: ['direct'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { categories: ['direct'] });
 
     expect(categoryFilter.isFilterSet('watching')).toBe(false);
 

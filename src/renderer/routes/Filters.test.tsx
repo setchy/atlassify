@@ -3,7 +3,10 @@ import userEvent from '@testing-library/user-event';
 
 import { vi } from 'vitest';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import {
+  mockFilterStoreState,
+  renderWithAppContext,
+} from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import { FiltersRoute } from './Filters';
@@ -15,10 +18,10 @@ vi.mock('../hooks/useFiltersStore', () => ({
   },
 }));
 
-import { defaultFilterSettings } from '../context/defaults';
-import useFiltersStore from '../hooks/useFiltersStore';
-
-import type { FilterSettingsState } from '../types';
+import useFiltersStore, {
+  defaultFiltersState,
+  type FiltersState,
+} from '../hooks/useFiltersStore';
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({
@@ -82,9 +85,9 @@ describe('renderer/routes/Filters.tsx', () => {
 
       it('should filter by engagement state - existing filter set', async () => {
         vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFilterSettings,
+          ...defaultFiltersState,
           engagementStates: ['mention'],
-        } as FilterSettingsState & {
+        } as FiltersState & {
           setFilters: any;
           updateFilter: any;
           clearFilters: any;
@@ -127,13 +130,8 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by category - existing filter set', async () => {
-        vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFilterSettings,
+        mockFilterStoreState(useFiltersStore, {
           categories: ['direct'],
-        } as FilterSettingsState & {
-          setFilters: any;
-          updateFilter: any;
-          clearFilters: any;
         });
 
         await act(async () => {
@@ -173,13 +171,8 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by actor - existing filter set', async () => {
-        vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFilterSettings,
+        mockFilterStoreState(useFiltersStore, {
           actors: ['automation'],
-        } as FilterSettingsState & {
-          setFilters: any;
-          updateFilter: any;
-          clearFilters: any;
         });
 
         await act(async () => {
@@ -219,13 +212,8 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by read state - existing filter set', async () => {
-        vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFilterSettings,
+        mockFilterStoreState(useFiltersStore, {
           readStates: ['unread'],
-        } as FilterSettingsState & {
-          setFilters: any;
-          updateFilter: any;
-          clearFilters: any;
         });
 
         await act(async () => {
@@ -268,13 +256,8 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by product - existing filter set', async () => {
-        vi.mocked(useFiltersStore.getState).mockReturnValue({
-          ...defaultFilterSettings,
+        mockFilterStoreState(useFiltersStore, {
           products: ['bitbucket'],
-        } as FilterSettingsState & {
-          setFilters: any;
-          updateFilter: any;
-          clearFilters: any;
         });
 
         await act(async () => {

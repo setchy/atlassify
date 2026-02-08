@@ -17,10 +17,9 @@ vi.mock('../hooks/useFiltersStore', () => ({
   },
 }));
 
-import { defaultFilterSettings } from '../context/defaults';
-import useFiltersStore from '../hooks/useFiltersStore';
+import { mockFilterStoreState } from '../__helpers__/test-utils';
 
-import type { FilterSettingsState } from '../types';
+import useFiltersStore from '../hooks/useFiltersStore';
 
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
@@ -28,13 +27,7 @@ describe('renderer/components/AllRead.tsx', () => {
   });
 
   it('should render itself & its children - no filters', async () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore);
 
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
@@ -50,13 +43,8 @@ describe('renderer/components/AllRead.tsx', () => {
   });
 
   it('should render itself & its children - with filters', async () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
+    mockFilterStoreState(useFiltersStore, {
       products: ['jira'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
     });
 
     let tree: ReturnType<typeof renderWithAppContext> | null = null;

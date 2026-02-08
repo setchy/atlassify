@@ -1,16 +1,12 @@
 import { vi } from 'vitest';
 
+import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultFilterSettings } from '../../../context/defaults';
-
-import type {
-  AtlassifyNotification,
-  FilterSettingsState,
-} from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
@@ -25,37 +21,17 @@ import useFiltersStore from '../../../hooks/useFiltersStore';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   it('hasEngagementStateFilters', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore);
 
     expect(engagementFilter.hasFilters()).toBe(false);
 
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      engagementStates: ['comment'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { engagementStates: ['comment'] });
 
     expect(engagementFilter.hasFilters()).toBe(true);
   });
 
   it('isEngagementStateFilterSet', () => {
-    vi.mocked(useFiltersStore.getState).mockReturnValue({
-      ...defaultFilterSettings,
-      engagementStates: ['comment'],
-    } as FilterSettingsState & {
-      setFilters: any;
-      updateFilter: any;
-      clearFilters: any;
-    });
+    mockFilterStoreState(useFiltersStore, { engagementStates: ['comment'] });
 
     expect(engagementFilter.isFilterSet('comment')).toBe(true);
 

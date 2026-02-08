@@ -3,11 +3,12 @@ import userEvent from '@testing-library/user-event';
 
 import { vi } from 'vitest';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithAppContext, mockFilterStoreState } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
+import useFiltersStore from '../../hooks/useFiltersStore';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
   const updateFilterMock = vi.fn();
@@ -31,6 +32,13 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - none already set', async () => {
+    // mock store with default filters and inject our mock updateFilter
+    mockFilterStoreState(useFiltersStore);
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...useFiltersStore.getState(),
+      updateFilter: updateFilterMock,
+    });
+
     renderWithAppContext(
       <FilterSection
         filter={mockFilter}
@@ -56,6 +64,13 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
+    // mock store with 'mention' already set and inject our mock updateFilter
+    mockFilterStoreState(useFiltersStore, { engagementStates: ['mention'] });
+    vi.mocked(useFiltersStore.getState).mockReturnValue({
+      ...useFiltersStore.getState(),
+      updateFilter: updateFilterMock,
+    });
+
     renderWithAppContext(
       <FilterSection
         filter={mockFilter}

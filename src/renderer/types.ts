@@ -237,36 +237,6 @@ export interface SystemSettingsState {
   openAtStartup: boolean;
 }
 
-/**
- * Settings related to the filtering of notifications within the application.
- */
-export interface FilterSettingsState {
-  /**
-   * The engagement states to filter notifications by.
-   */
-  engagementStates: EngagementStateType[];
-
-  /**
-   * The categories to filter notifications by.
-   */
-  categories: CategoryType[];
-
-  /**
-   * The read states to filter notifications by.
-   */
-  readStates: ReadStateType[];
-
-  /**
-   * The products to filter notifications by.
-   */
-  products: ProductType[];
-
-  /**
-   * The notification actors / authors .
-   */
-  actors: ActorType[];
-}
-
 export interface AuthState {
   accounts: Account[];
 }

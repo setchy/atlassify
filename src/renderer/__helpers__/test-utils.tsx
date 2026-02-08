@@ -7,6 +7,10 @@ import { vi } from 'vitest';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
 import { AppContext, type AppContextState } from '../context/App';
+import {
+  defaultFiltersState,
+  type FiltersState,
+} from '../hooks/useFiltersStore';
 
 import type { SettingsState } from '../types';
 
@@ -81,4 +85,27 @@ export function ensureStableEmojis() {
  */
 export function configureAxiosHttpAdapterForNock() {
   axios.defaults.adapter = 'http';
+}
+
+/**
+ * Mock the filter store state for testing.
+ * This is a helper to simplify mocking useFiltersStore.getState() calls.
+ *
+ * Usage:
+ *   mockFilterStoreState(useFiltersStore, { products: ['jira'] })
+ *
+ * @param useFiltersStore - The mocked useFiltersStore module
+ * @param filters - Partial filter settings to override defaults
+ */
+export function mockFilterStoreState(
+  useFiltersStore: any,
+  filters: Partial<FiltersState> = {},
+) {
+  vi.mocked(useFiltersStore.getState).mockReturnValue({
+    ...defaultFiltersState,
+    ...filters,
+    setFilters: vi.fn(),
+    updateFilter: vi.fn(),
+    clearFilters: vi.fn(),
+  });
 }

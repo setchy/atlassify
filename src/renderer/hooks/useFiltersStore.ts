@@ -1,24 +1,66 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import { defaultFilterSettings } from '../context/defaults';
+import type {
+  ActorType,
+  CategoryType,
+  EngagementStateType,
+  ProductType,
+  ReadStateType,
+} from '../types';
 
-import type { FilterSettingsState } from '../types';
+/**
+ * Settings related to the filtering of notifications within the application.
+ */
+export interface FiltersState {
+  /**
+   * The engagement states to filter notifications by.
+   */
+  engagementStates: EngagementStateType[];
+
+  /**
+   * The categories to filter notifications by.
+   */
+  categories: CategoryType[];
+
+  /**
+   * The read states to filter notifications by.
+   */
+  readStates: ReadStateType[];
+
+  /**
+   * The products to filter notifications by.
+   */
+  products: ProductType[];
+
+  /**
+   * The notification actors / authors .
+   */
+  actors: ActorType[];
+}
+
+export const defaultFiltersState: FiltersState = {
+  engagementStates: [],
+  categories: [],
+  readStates: [],
+  products: [],
+  actors: [],
+};
 
 interface FilterActions {
-  setFilters: (next: FilterSettingsState) => void;
+  setFilters: (next: FiltersState) => void;
   updateFilter: (
-    key: keyof FilterSettingsState,
+    key: keyof FiltersState,
     value: any,
     checked?: boolean,
   ) => void;
   clearFilters: () => void;
 }
 
-export const useFiltersStore = create<FilterSettingsState & FilterActions>()(
+export const useFiltersStore = create<FiltersState & FilterActions>()(
   persist(
     (set, get, store) => ({
-      ...defaultFilterSettings,
+      ...defaultFiltersState,
 
       setFilters: (next) => {
         set(next);

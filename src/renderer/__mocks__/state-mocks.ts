@@ -1,10 +1,11 @@
 import { Theme } from '../../shared/theme';
 
+import type { FiltersState } from '../hooks/useFiltersStore';
+
 import {
   type AppearanceSettingsState,
   type AtlassifyState,
   type AuthState,
-  type FilterSettingsState,
   type NotificationSettingsState,
   OpenPreference,
   type Percentage,
@@ -49,7 +50,7 @@ const mockSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-const mockFilters: FilterSettingsState = {
+const mockFilters: FiltersState = {
   engagementStates: [],
   categories: [],
   readStates: [],

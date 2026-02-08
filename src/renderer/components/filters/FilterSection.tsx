@@ -5,9 +5,11 @@ import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import useFiltersStore from '../../hooks/useFiltersStore';
+import useFiltersStore, {
+  type FiltersState,
+} from '../../hooks/useFiltersStore';
 
-import type { FilterSettingsState, FilterSettingsValue } from '../../types';
+import type { FilterSettingsValue } from '../../types';
 
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
@@ -16,7 +18,7 @@ import type { Filter } from '../../utils/notifications/filters';
 export interface FilterSectionProps<T extends FilterSettingsValue> {
   title: string;
   filter: Filter<T>;
-  filterSetting: keyof FilterSettingsState;
+  filterSetting: keyof FiltersState;
 }
 
 export const FilterSection = <T extends FilterSettingsValue>({

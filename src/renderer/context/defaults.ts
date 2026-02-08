@@ -4,7 +4,6 @@ import {
   type AppearanceSettingsState,
   type AuthState,
   type ConfigSettingsState,
-  type FilterSettingsState,
   type NotificationSettingsState,
   OpenPreference,
   type Percentage,
@@ -49,14 +48,6 @@ const defaultSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-export const defaultFilterSettings: FilterSettingsState = {
-  engagementStates: [],
-  categories: [],
-  readStates: [],
-  products: [],
-  actors: [],
-};
-
 export const defaultConfigSettings: ConfigSettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
@@ -66,5 +57,4 @@ export const defaultConfigSettings: ConfigSettingsState = {
 
 export const defaultSettings: SettingsState = {
   ...defaultConfigSettings,
-  ...defaultFilterSettings,
 };
