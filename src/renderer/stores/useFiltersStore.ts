@@ -62,7 +62,7 @@ export const defaultFiltersState: FiltersState = {
 };
 
 interface FilterActions {
-  updateFilter: (key: FilterKey, value: FilterValue, checked?: boolean) => void;
+  updateFilter: (key: FilterKey, value: FilterValue, checked: boolean) => void;
 
   reset: () => void;
 }
@@ -81,12 +81,10 @@ export const useFiltersStore = create<FiltersStore>()(
 
       updateFilter: (key, value, checked) => {
         const current = get()[key];
-        const updated =
-          typeof checked === 'boolean'
-            ? checked
-              ? [...current, value]
-              : current.filter((item) => item !== value)
-            : value;
+
+        const updated = checked
+          ? [...current, value]
+          : current.filter((item) => item !== value);
 
         set({ [key]: updated });
       },
