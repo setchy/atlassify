@@ -1,7 +1,5 @@
 import type { FC, ReactNode } from 'react';
 
-import { useNavigationAnalytics } from '../../hooks/useNavigationAnalytics';
-
 import { Sidebar } from '../Sidebar';
 
 type AppLayoutProps = { children: ReactNode };
@@ -11,8 +9,6 @@ type AppLayoutProps = { children: ReactNode };
  * It handles the basic layout with sidebar and content area.
  */
 export const AppLayout: FC<AppLayoutProps> = ({ children }) => {
-  useNavigationAnalytics();
-
   const setFocusRef = (el: HTMLButtonElement | null) => {
     if (el) {
       el.focus();
