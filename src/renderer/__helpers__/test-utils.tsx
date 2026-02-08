@@ -7,12 +7,13 @@ import { vi } from 'vitest';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
 import { AppContext, type AppContextState } from '../context/App';
+
+import type { SettingsState } from '../types';
+
 import {
   defaultFiltersState,
   type FiltersState,
-} from '../hooks/useFiltersStore';
-
-import type { SettingsState } from '../types';
+} from '../stores/useFiltersStore';
 
 /**
  * Test context that allows partial settings

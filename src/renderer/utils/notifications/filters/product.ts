@@ -1,5 +1,3 @@
-import useFiltersStore from '../../../hooks/useFiltersStore';
-
 import type {
   AccountNotifications,
   AtlassianProduct,
@@ -9,6 +7,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 
 export const productFilter: Filter<ProductType> = {

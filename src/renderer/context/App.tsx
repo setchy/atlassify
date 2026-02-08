@@ -9,7 +9,6 @@ import {
 
 import { Constants } from '../constants';
 
-import useFiltersStore from '../hooks/useFiltersStore';
 import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useNotifications } from '../hooks/useNotifications';
 
@@ -27,6 +26,7 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
+import useFiltersStore from '../stores/useFiltersStore';
 import {
   addAccount,
   hasAccounts,

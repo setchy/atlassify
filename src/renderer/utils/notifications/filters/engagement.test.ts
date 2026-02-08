@@ -17,7 +17,7 @@ vi.mock('../../../hooks/useFiltersStore', () => ({
   },
 }));
 
-import useFiltersStore from '../../../hooks/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   it('hasEngagementStateFilters', () => {

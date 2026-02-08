@@ -21,7 +21,7 @@ vi.mock('../hooks/useFiltersStore', () => ({
 import useFiltersStore, {
   defaultFiltersState,
   type FiltersState,
-} from '../hooks/useFiltersStore';
+} from '../stores/useFiltersStore';
 
 const navigateMock = vi.fn();
 vi.mock('react-router-dom', async () => ({

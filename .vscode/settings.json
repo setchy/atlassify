@@ -12,7 +12,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["Atlassify", "codegen", "rovo", "xcss"],
+  "cSpell.words": ["Atlassify", "codegen", "partialize", "rovo", "xcss"],
   "i18n-ally.translate.engines": ["google"],
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
   "i18n-ally.sourceLanguage": "en",

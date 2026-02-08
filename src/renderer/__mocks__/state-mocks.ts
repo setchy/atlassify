@@ -1,7 +1,5 @@
 import { Theme } from '../../shared/theme';
 
-import type { FiltersState } from '../hooks/useFiltersStore';
-
 import {
   type AppearanceSettingsState,
   type AtlassifyState,
@@ -14,6 +12,7 @@ import {
   type TraySettingsState,
 } from '../types';
 
+import type { FiltersState } from '../stores/useFiltersStore';
 import { mockAtlassianCloudAccount } from './account-mocks';
 
 export const mockAuth: AuthState = {

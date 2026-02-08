@@ -19,7 +19,7 @@ vi.mock('../hooks/useFiltersStore', () => ({
 
 import { mockFilterStoreState } from '../__helpers__/test-utils';
 
-import useFiltersStore from '../hooks/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
 
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {

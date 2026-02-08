@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+import { Constants } from '../constants';
+
 import type {
   ActorType,
   CategoryType,
@@ -83,7 +85,7 @@ export const useFiltersStore = create<FiltersState & FilterActions>()(
       },
     }),
     {
-      name: 'atlassify-filters',
+      name: Constants.FILTERS_STORE_KEY,
 
       partialize: (state) => ({
         engagementStates: state.engagementStates,

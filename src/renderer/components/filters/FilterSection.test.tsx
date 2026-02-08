@@ -3,12 +3,15 @@ import userEvent from '@testing-library/user-event';
 
 import { vi } from 'vitest';
 
-import { renderWithAppContext, mockFilterStoreState } from '../../__helpers__/test-utils';
+import {
+  mockFilterStoreState,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
+import useFiltersStore from '../../stores/useFiltersStore';
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
-import useFiltersStore from '../../hooks/useFiltersStore';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
   const updateFilterMock = vi.fn();

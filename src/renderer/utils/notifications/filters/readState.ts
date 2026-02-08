@@ -1,7 +1,5 @@
 import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
-import useFiltersStore from '../../../hooks/useFiltersStore';
-
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -10,6 +8,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
 const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
   unread: {

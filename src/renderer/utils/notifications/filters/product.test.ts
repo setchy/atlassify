@@ -18,7 +18,7 @@ vi.mock('../../../hooks/useFiltersStore', () => ({
   },
 }));
 
-import useFiltersStore from '../../../hooks/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {

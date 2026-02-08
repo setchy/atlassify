@@ -33,7 +33,7 @@ vi.mock('../hooks/useFiltersStore', () => ({
 
 import { mockFilterStoreState } from '../__helpers__/test-utils';
 
-import useFiltersStore from '../hooks/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as any).mockReturnValue({ colorMode: mode });
