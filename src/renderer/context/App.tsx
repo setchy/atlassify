@@ -22,10 +22,10 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
+import useFiltersStore from '../stores/useFiltersStore';
 import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import {
   setAutoLaunch,
-  setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
 } from '../utils/comms';
@@ -69,6 +69,8 @@ export const AppContext = createContext<Partial<AppContextState> | undefined>(
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const existingState = loadState();
+
+  const resetFilters = useFiltersStore((s) => s.reset);
 
   const [auth, setAuth] = useState<AuthState>(
     existingState.auth
@@ -118,10 +120,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   ]);
 
   useEffect(() => {
-    setKeyboardShortcut(settings.keyboardShortcutEnabled);
-  }, [settings.keyboardShortcutEnabled]);
-
-  useEffect(() => {
     setAutoLaunch(settings.openAtStartup);
   }, [settings.openAtStartup]);
 
@@ -130,6 +128,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       clearState();
       setAuth(defaultAuth);
       setSettings(defaultSettings);
+      resetFilters();
     });
   }, []);
 

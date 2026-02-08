@@ -46,7 +46,6 @@ export const queryClient = new QueryClient({
     queries: {
       retry: 1,
       refetchIntervalInBackground: true,
-
       staleTime: 30000, // 30 seconds
     },
   },

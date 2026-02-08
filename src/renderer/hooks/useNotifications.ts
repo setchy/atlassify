@@ -99,9 +99,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     if (isLoading) {
       return 'loading';
     }
+
     if (isError) {
       return 'error';
     }
+
     return 'success';
   }, [isLoading, isError]);
 
@@ -151,7 +153,14 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     }
 
     previousNotificationsRef.current = notifications;
-  }, [notifications, isLoading, isError, state.settings]);
+  }, [
+    notifications,
+    isLoading,
+    isError,
+    state.settings.playSoundNewNotifications,
+    state.settings.showSystemNotifications,
+    state.settings.notificationVolume,
+  ]);
 
   const getNotificationIdsForGroups = useCallback(
     async (state: AtlassifyState, notifications: AtlassifyNotification[]) => {
@@ -238,7 +247,14 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     },
 
     onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(['notifications'], updatedNotifications);
+      queryClient.setQueryData(
+        [
+          'notifications',
+          state.auth.accounts.length,
+          state.settings.fetchOnlyUnreadNotifications,
+        ],
+        updatedNotifications,
+      );
     },
 
     onError: (err) => {
@@ -289,7 +305,14 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     },
 
     onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(['notifications'], updatedNotifications);
+      queryClient.setQueryData(
+        [
+          'notifications',
+          state.auth.accounts.length,
+          state.settings.fetchOnlyUnreadNotifications,
+        ],
+        updatedNotifications,
+      );
     },
 
     onError: (err) => {

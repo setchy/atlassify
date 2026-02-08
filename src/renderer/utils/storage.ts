@@ -4,6 +4,7 @@ import type { Language } from '../i18n/types';
 import type { AtlassifyState } from '../types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
+import useFiltersStore from '../stores/useFiltersStore';
 
 export function loadState(): AtlassifyState {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
@@ -22,6 +23,7 @@ export async function saveState(atlassifyState: AtlassifyState) {
 
 export function clearState() {
   localStorage.clear();
+  useFiltersStore.getState().reset();
 }
 
 export function loadLanguageLocale(): Language {
