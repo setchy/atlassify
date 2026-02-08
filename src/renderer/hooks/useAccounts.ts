@@ -13,15 +13,16 @@ interface AccountsState {
 }
 
 export const useAccounts = (accounts: Account[]): AccountsState => {
-  const { refetch } = useQuery<void, Error>({
+  const { refetch } = useQuery<boolean, Error>({
     queryKey: ['accounts', accounts.length],
 
     queryFn: async () => {
       if (!accounts.length) {
-        return;
+        return true;
       }
 
       await Promise.all(accounts.map(refreshAccount));
+      return true;
     },
 
     refetchInterval: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,

@@ -23,7 +23,7 @@ export async function installReactDevtools() {
   installTask = (async () => {
     try {
       const results = await installExtension(
-        [REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS],
+        [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS],
         {
           loadExtensionOptions: {
             allowFileAccess: true,
@@ -33,21 +33,15 @@ export async function installReactDevtools() {
       );
 
       results.forEach((ext) => {
-        logInfo(
-          'devtools',
-          `Installed extensions ${ext.name} v${ext.version}}`,
-        );
+        logInfo('devtools', `Installed ${ext.name} v${ext.version}`);
       });
 
       // Verify the extension is loaded
       const extensions = session.defaultSession.extensions.getAllExtensions();
+
       const installedReactDevTools = extensions.find((ext) =>
         ext.name.includes('React Developer Tools'),
       );
-      const installedReduxDevTools = extensions.find((ext) =>
-        ext.name.includes('Redux Developer Tools'),
-      );
-
       if (installedReactDevTools) {
         logInfo(
           'devtools',
@@ -60,21 +54,21 @@ export async function installReactDevtools() {
         );
       }
 
-      if (installedReduxDevTools) {
+      const installedReduxtDevTools = extensions.find((ext) =>
+        ext.name.includes('Redux DevTools'),
+      );
+      if (installedReduxtDevTools) {
         logInfo(
           'devtools',
-          `Redux Developer Tools verified: ${installedReactDevTools.name} v${installedReactDevTools.version}`,
+          `Redux DevTools verified: ${installedReduxtDevTools.name} v${installedReduxtDevTools.version}`,
         );
       } else {
-        logWarn(
-          'devtools',
-          'Redux Developer Tools not found after installation',
-        );
+        logWarn('devtools', 'Redux DevTools not found after installation');
       }
     } catch (error) {
       logWarn(
         'devtools',
-        'Failed to install DevTools extensions via installer',
+        'Failed to install Developer Tools extensions via installer',
         error,
       );
     } finally {
