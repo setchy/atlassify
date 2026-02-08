@@ -89,14 +89,9 @@ export interface Account {
 }
 
 /**
- * All allowed Config and Filter Settings values to be stored in the application.
+ * All Settings values to be stored in the application.
  */
-export type SettingsValue = ConfigSettingsValue | FilterSettingsValue[];
-
-/**
- * All Config Settings values to be stored in the application.
- */
-export type ConfigSettingsValue =
+export type SettingsValue =
   | boolean
   | number
   | OpenPreference
@@ -104,24 +99,9 @@ export type ConfigSettingsValue =
   | Theme;
 
 /**
- * All Filter Settings values to be stored in the application.
+ * All Settings keys to be stored in the application.
  */
-export type FilterSettingsValue =
-  | ActorType
-  | CategoryType
-  | EngagementStateType
-  | ProductType
-  | ReadStateType;
-
-/**
- * All allowed Config and Filter Settings keys to be stored in the application.
- */
-export type SettingsState = ConfigSettingsState & FilterSettingsState;
-
-/**
- * All Config Settings keys to be stored in the application.
- */
-export type ConfigSettingsState = AppearanceSettingsState &
+export type SettingsState = AppearanceSettingsState &
   NotificationSettingsState &
   TraySettingsState &
   SystemSettingsState;
@@ -234,36 +214,6 @@ export interface SystemSettingsState {
    * Whether to open the application on system startup.
    */
   openAtStartup: boolean;
-}
-
-/**
- * Settings related to the filtering of notifications within the application.
- */
-export interface FilterSettingsState {
-  /**
-   * The engagement states to filter notifications by.
-   */
-  filterEngagementStates: EngagementStateType[];
-
-  /**
-   * The categories to filter notifications by.
-   */
-  filterCategories: CategoryType[];
-
-  /**
-   * The read states to filter notifications by.
-   */
-  filterReadStates: ReadStateType[];
-
-  /**
-   * The products to filter notifications by.
-   */
-  filterProducts: ProductType[];
-
-  /**
-   * The notification actors / authors .
-   */
-  filterActors: ActorType[];
 }
 
 export interface AuthState {

@@ -3,34 +3,38 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import type { AtlassifyNotification } from '../../../types';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
-
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
   it('hasActorFilters', () => {
-    expect(actorFilter.hasFilters(defaultSettings)).toBe(false);
+    expect(actorFilter.hasFilters()).toBe(false);
 
-    expect(
-      actorFilter.hasFilters({
-        ...defaultSettings,
-        filterActors: ['user'],
-      } as SettingsState),
-    ).toBe(true);
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      actors: ['automation'],
+    });
+
+    expect(actorFilter.hasFilters()).toBe(true);
   });
 
   it('isActorFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterActors: ['user'],
-    };
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      actors: ['user'],
+    });
 
-    expect(actorFilter.isFilterSet(settings, 'user')).toBe(true);
+    expect(actorFilter.isFilterSet('user')).toBe(true);
 
-    expect(actorFilter.isFilterSet(settings, 'automation')).toBe(false);
+    expect(actorFilter.isFilterSet('automation')).toBe(false);
   });
 
   it('getActorFilterCount', () => {

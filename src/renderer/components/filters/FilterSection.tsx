@@ -6,24 +6,27 @@ import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
 
-import type { FilterSettingsState, FilterSettingsValue } from '../../types';
-
+import useFiltersStore, {
+  type FiltersState,
+  type FilterValue,
+} from '../../stores/useFiltersStore';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
-export interface FilterSectionProps<T extends FilterSettingsValue> {
+export interface FilterSectionProps<T extends FilterValue> {
   title: string;
   filter: Filter<T>;
-  filterSetting: keyof FilterSettingsState;
+  filterSetting: keyof FiltersState;
 }
 
-export const FilterSection = <T extends FilterSettingsValue>({
+export const FilterSection = <T extends FilterValue>({
   title,
   filter,
   filterSetting,
 }: FilterSectionProps<T>) => {
-  const { updateFilter, settings, notifications } = useAppContext();
+  const { notifications } = useAppContext();
+  const updateFilter = useFiltersStore((s) => s.updateFilter);
 
   return (
     <Stack space="space.050">
@@ -32,7 +35,7 @@ export const FilterSection = <T extends FilterSettingsValue>({
         {(Object.keys(filter.FILTER_TYPES) as T[]).map((type) => {
           const typeDetails = filter.getTypeDetails(type);
           const typeLabel = formatProperCase(typeDetails.name);
-          const isChecked = filter.isFilterSet(settings, type);
+          const isChecked = filter.isFilterSet(type);
           const count = filter.getFilterCount(notifications, type);
 
           return (

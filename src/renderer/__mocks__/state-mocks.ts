@@ -4,7 +4,6 @@ import {
   type AppearanceSettingsState,
   type AtlassifyState,
   type AuthState,
-  type FilterSettingsState,
   type NotificationSettingsState,
   OpenPreference,
   type Percentage,
@@ -49,20 +48,11 @@ const mockSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-const mockFilters: FilterSettingsState = {
-  filterEngagementStates: [],
-  filterCategories: [],
-  filterReadStates: [],
-  filterProducts: [],
-  filterActors: [],
-};
-
 export const mockSettings: SettingsState = {
   ...mockAppearanceSettings,
   ...mockNotificationSettings,
   ...mockTraySettings,
   ...mockSystemSettings,
-  ...mockFilters,
 };
 
 export const mockState: AtlassifyState = {

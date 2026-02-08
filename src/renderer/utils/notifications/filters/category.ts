@@ -5,11 +5,11 @@ import type {
   AccountNotifications,
   AtlassifyNotification,
   CategoryType,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
 const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
   direct: {
@@ -31,12 +31,14 @@ export const categoryFilter: Filter<CategoryType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterCategories.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.categories.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: CategoryType): boolean {
-    return settings.filterCategories.includes(type);
+  isFilterSet(type: CategoryType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.categories.includes(type);
   },
 
   getFilterCount(

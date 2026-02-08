@@ -6,11 +6,11 @@ import type {
   AccountNotifications,
   AtlassifyNotification,
   EngagementStateType,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
 const ENGAGEMENT_DETAILS: Record<EngagementStateType, FilterDetails> = {
   mention: {
@@ -37,12 +37,14 @@ export const engagementFilter: Filter<EngagementStateType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterEngagementStates.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.engagementStates.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: EngagementStateType): boolean {
-    return settings.filterEngagementStates.includes(type);
+  isFilterSet(type: EngagementStateType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.engagementStates.includes(type);
   },
 
   getFilterCount(

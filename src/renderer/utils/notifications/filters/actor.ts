@@ -5,11 +5,11 @@ import type {
   AccountNotifications,
   ActorType,
   AtlassifyNotification,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { isCompassScorecardNotification } from '../../helpers';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
@@ -32,12 +32,14 @@ export const actorFilter: Filter<ActorType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterActors.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.actors.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, type: ActorType): boolean {
-    return settings.filterActors.includes(type);
+  isFilterSet(type: ActorType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.actors.includes(type);
   },
 
   getFilterCount(

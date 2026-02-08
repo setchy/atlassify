@@ -6,6 +6,7 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
+import useFiltersStore, {} from '../stores/useFiltersStore';
 import { FiltersRoute } from './Filters';
 
 const navigateMock = vi.fn();
@@ -15,9 +16,18 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  const updateFilterMock = vi.fn();
-  const clearFiltersMock = vi.fn();
+  let updateSpy: any;
+  let resetSpy: any;
   const fetchNotificationsMock = vi.fn();
+
+  beforeEach(() => {
+    // reset store to defaults
+    useFiltersStore.getState().reset();
+
+    // spy the actions on the real store
+    updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
+    resetSpy = vi.spyOn((useFiltersStore as any).getState(), 'reset');
+  });
 
   afterEach(() => {
     vi.clearAllMocks();
@@ -56,35 +66,36 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterEngagementStates',
+        expect(updateSpy).toHaveBeenCalledWith(
+          'engagementStates',
           'mention',
           true,
         );
       });
 
       it('should filter by engagement state - existing filter set', async () => {
+        useFiltersStore.setState({
+          engagementStates: ['mention'],
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterEngagementStates: ['mention'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterEngagementStates',
+        expect(updateSpy).toHaveBeenCalledWith(
+          'engagementStates',
           'mention',
           false,
         );
@@ -96,38 +107,31 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterCategories',
-          'direct',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('categories', 'direct', true);
       });
 
       it('should filter by category - existing filter set', async () => {
+        useFiltersStore.setState({
+          categories: ['direct'],
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterCategories: ['direct'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterCategories',
-          'direct',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('categories', 'direct', false);
       });
     });
 
@@ -136,38 +140,31 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterActors',
-          'automation',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('actors', 'automation', true);
       });
 
       it('should filter by actor - existing filter set', async () => {
+        useFiltersStore.setState({
+          actors: ['automation'],
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterActors: ['automation'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterActors',
-          'automation',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('actors', 'automation', false);
       });
     });
 
@@ -176,38 +173,31 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterReadStates',
-          'unread',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('readStates', 'unread', true);
       });
 
       it('should filter by read state - existing filter set', async () => {
+        useFiltersStore.setState({
+          readStates: ['unread'],
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterReadStates: ['unread'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterReadStates',
-          'unread',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('readStates', 'unread', false);
       });
     });
 
@@ -216,7 +206,6 @@ describe('renderer/routes/Filters.tsx', () => {
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
@@ -225,22 +214,20 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterProducts',
-          'bitbucket',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('products', 'bitbucket', true);
       });
 
       it('should filter by product - existing filter set', async () => {
+        useFiltersStore.setState({
+          products: ['bitbucket'],
+        });
+
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
             settings: {
               ...mockSettings,
-              filterProducts: ['bitbucket'],
             },
             notifications: [],
-            updateFilter: updateFilterMock,
           });
         });
 
@@ -249,11 +236,7 @@ describe('renderer/routes/Filters.tsx', () => {
         });
         await userEvent.click(bitbucketInput);
 
-        expect(updateFilterMock).toHaveBeenCalledWith(
-          'filterProducts',
-          'bitbucket',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('products', 'bitbucket', false);
 
         expect(screen.getByTestId('filters')).toMatchSnapshot();
       });
@@ -265,13 +248,12 @@ describe('renderer/routes/Filters.tsx', () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
-          clearFilters: clearFiltersMock,
         });
       });
 
       await userEvent.click(screen.getByTestId('filters-clear'));
 
-      expect(clearFiltersMock).toHaveBeenCalled();
+      expect(resetSpy).toHaveBeenCalled();
     });
   });
 });

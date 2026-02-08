@@ -4,7 +4,6 @@ import type { LogoProps } from '@atlaskit/logo';
 import type {
   AccountNotifications,
   AtlassifyNotification,
-  SettingsState,
 } from '../../../types';
 
 /**
@@ -48,11 +47,31 @@ export interface Filter<T extends string> {
 
   getTypeDetails(type: T): FilterDetails;
 
-  hasFilters(settings: SettingsState): boolean;
+  /**
+   * Check if any filters have been set.
+   */
+  hasFilters(): boolean;
 
-  isFilterSet(settings: SettingsState, type: T): boolean;
+  /**
+   * Check if a specific filter is set.
+   *
+   * @param type filter value to check against
+   */
+  isFilterSet(type: T): boolean;
 
+  /**
+   * Return the count of notifications for a given filter type.
+   *
+   * @param accountNotifications Notifications
+   * @param type Filter type to count
+   */
   getFilterCount(accountNotifications: AccountNotifications[], type: T): number;
 
+  /**
+   * Perform notification filtering.
+   *
+   * @param notification Notifications
+   * @param type filter value to use
+   */
   filterNotification(notification: AtlassifyNotification, type: T): boolean;
 }

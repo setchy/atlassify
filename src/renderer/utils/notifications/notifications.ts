@@ -85,7 +85,7 @@ export async function getAllNotifications(
             accountNotifications.account,
           );
 
-          notifications = filterNotifications(notifications, state.settings);
+          notifications = filterNotifications(notifications);
 
           return {
             account: accountNotifications.account,
