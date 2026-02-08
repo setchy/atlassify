@@ -39,6 +39,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
     useAppContext();
 
+  const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
@@ -118,7 +119,10 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
 
           trackEvent('Action', { name: 'Refresh' });
 
-          navigate('/', { replace: true });
+          if (!isOnNotificationsRoute) {
+            navigate('/', { replace: true });
+          }
+
           void fetchNotifications();
         },
       },
@@ -154,6 +158,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isLoading,
     isOnFiltersRoute,
     isOnSettingsRoute,
+    location.pathname,
     fetchNotifications,
     settings.fetchOnlyUnreadNotifications,
     settings.groupNotificationsByProduct,
