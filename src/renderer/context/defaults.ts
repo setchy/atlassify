@@ -3,7 +3,6 @@ import { Theme } from '../../shared/theme';
 import {
   type AppearanceSettingsState,
   type AuthState,
-  type ConfigSettingsState,
   type NotificationSettingsState,
   OpenPreference,
   type Percentage,
@@ -48,13 +47,9 @@ const defaultSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
-export const defaultConfigSettings: ConfigSettingsState = {
+export const defaultSettings: SettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
   ...defaultTraySettings,
   ...defaultSystemSettings,
-};
-
-export const defaultSettings: SettingsState = {
-  ...defaultConfigSettings,
 };

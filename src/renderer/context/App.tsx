@@ -18,8 +18,6 @@ import type {
   AtlassifyError,
   AtlassifyNotification,
   AuthState,
-  ConfigSettingsState,
-  ConfigSettingsValue,
   SettingsState,
   SettingsValue,
   Status,
@@ -71,10 +69,7 @@ export interface AppContextState {
 
   settings: SettingsState;
   resetSettings: () => void;
-  updateSetting: (
-    name: keyof ConfigSettingsState,
-    value: ConfigSettingsValue,
-  ) => void;
+  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(

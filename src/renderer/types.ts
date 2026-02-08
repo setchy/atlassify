@@ -89,14 +89,9 @@ export interface Account {
 }
 
 /**
- * All allowed Config and Filter Settings values to be stored in the application.
+ * All Settings values to be stored in the application.
  */
-export type SettingsValue = ConfigSettingsValue | FilterSettingsValue[];
-
-/**
- * All Config Settings values to be stored in the application.
- */
-export type ConfigSettingsValue =
+export type SettingsValue =
   | boolean
   | number
   | OpenPreference
@@ -114,15 +109,9 @@ export type FilterSettingsValue =
   | ReadStateType;
 
 /**
- * All allowed Config and Filter Settings keys to be stored in the application.
+ * All Settings keys to be stored in the application.
  */
-export type SettingsState = ConfigSettingsState;
-// export type SettingsState = ConfigSettingsState & FilterSettingsState;
-
-/**
- * All Config Settings keys to be stored in the application.
- */
-export type ConfigSettingsState = AppearanceSettingsState &
+export type SettingsState = AppearanceSettingsState &
   NotificationSettingsState &
   TraySettingsState &
   SystemSettingsState;
