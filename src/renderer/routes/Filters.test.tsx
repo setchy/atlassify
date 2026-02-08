@@ -19,21 +19,16 @@ vi.mock('react-router-dom', async () => ({
 
 describe('renderer/routes/Filters.tsx', () => {
   let updateSpy: any;
-  let clearSpy: any;
+  let resetSpy: any;
   const fetchNotificationsMock = vi.fn();
 
   beforeEach(() => {
-    // reset store state to defaults and provide action functions
-    (useFiltersStore as any).setState({
-      ...defaultFiltersState,
-      setFilters: vi.fn(),
-      updateFilter: vi.fn(),
-      clearFilters: vi.fn(),
-    });
+    // reset store to defaults
+    useFiltersStore.getState().reset();
 
     // spy the actions on the real store
     updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
-    clearSpy = vi.spyOn((useFiltersStore as any).getState(), 'clearFilters');
+    resetSpy = vi.spyOn((useFiltersStore as any).getState(), 'reset');
   });
 
   afterEach(() => {
@@ -86,22 +81,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by engagement state - existing filter set', async () => {
-        (useFiltersStore as any).setState({
-          ...defaultFiltersState,
+        useFiltersStore.setState({
           engagementStates: ['mention'],
-          setFilters: vi.fn(),
-          updateFilter: vi.fn(),
-          clearFilters: vi.fn(),
         });
-
-        updateSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'updateFilter',
-        );
-        clearSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'clearFilters',
-        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -136,22 +118,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by category - existing filter set', async () => {
-        (useFiltersStore as any).setState({
-          ...defaultFiltersState,
+        useFiltersStore.setState({
           categories: ['direct'],
-          setFilters: vi.fn(),
-          updateFilter: vi.fn(),
-          clearFilters: vi.fn(),
         });
-
-        updateSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'updateFilter',
-        );
-        clearSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'clearFilters',
-        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -182,22 +151,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by actor - existing filter set', async () => {
-        (useFiltersStore as any).setState({
-          ...defaultFiltersState,
+        useFiltersStore.setState({
           actors: ['automation'],
-          setFilters: vi.fn(),
-          updateFilter: vi.fn(),
-          clearFilters: vi.fn(),
         });
-
-        updateSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'updateFilter',
-        );
-        clearSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'clearFilters',
-        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -228,22 +184,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by read state - existing filter set', async () => {
-        (useFiltersStore as any).setState({
-          ...defaultFiltersState,
+        useFiltersStore.setState({
           readStates: ['unread'],
-          setFilters: vi.fn(),
-          updateFilter: vi.fn(),
-          clearFilters: vi.fn(),
         });
-
-        updateSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'updateFilter',
-        );
-        clearSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'clearFilters',
-        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -277,22 +220,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by product - existing filter set', async () => {
-        (useFiltersStore as any).setState({
-          ...defaultFiltersState,
+        useFiltersStore.setState({
           products: ['bitbucket'],
-          setFilters: vi.fn(),
-          updateFilter: vi.fn(),
-          clearFilters: vi.fn(),
         });
-
-        updateSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'updateFilter',
-        );
-        clearSpy = vi.spyOn(
-          (useFiltersStore as any).getState(),
-          'clearFilters',
-        );
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
@@ -325,7 +255,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
       await userEvent.click(screen.getByTestId('filters-clear'));
 
-      expect(clearSpy).toHaveBeenCalled();
+      expect(resetSpy).toHaveBeenCalled();
     });
   });
 });

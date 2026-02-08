@@ -50,23 +50,21 @@ export const defaultFiltersState: FiltersState = {
 };
 
 interface FilterActions {
-  setFilters: (next: FiltersState) => void;
   updateFilter: (
     key: keyof FiltersState,
     value: any,
     checked?: boolean,
   ) => void;
-  clearFilters: () => void;
+
+  reset: () => void;
 }
 
-export const useFiltersStore = create<FiltersState & FilterActions>()(
+type FiltersStore = FiltersState & FilterActions;
+
+export const useFiltersStore = create<FiltersStore>()(
   persist(
     (set, get, store) => ({
       ...defaultFiltersState,
-
-      setFilters: (next) => {
-        set(next);
-      },
 
       updateFilter: (key, value, checked) => {
         const current = (get() as any)[key] || [];
@@ -80,7 +78,7 @@ export const useFiltersStore = create<FiltersState & FilterActions>()(
         set({ [key]: updated });
       },
 
-      clearFilters: () => {
+      reset: () => {
         set(store.getInitialState());
       },
     }),

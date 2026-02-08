@@ -1,6 +1,3 @@
-import { vi } from 'vitest';
-
-import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
@@ -8,30 +5,31 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { readStateFilter } from '.';
 
-// Mock the useFiltersStore
-vi.mock('../../../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import useFiltersStore from '../../../stores/useFiltersStore';
-
 describe('renderer/utils/notifications/filters/readState.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
   it('hasReadStateFilters', () => {
-    mockFilterStoreState(useFiltersStore);
-
     expect(readStateFilter.hasFilters()).toBe(false);
 
-    mockFilterStoreState(useFiltersStore, { readStates: ['read'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      readStates: ['read'],
+    });
 
     expect(readStateFilter.hasFilters()).toBe(true);
   });
 
   it('isReadStateFilterSet', () => {
-    mockFilterStoreState(useFiltersStore, { readStates: ['read'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      readStates: ['read'],
+    });
 
     expect(readStateFilter.isFilterSet('read')).toBe(true);
 

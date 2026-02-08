@@ -1,20 +1,17 @@
 import { vi } from 'vitest';
 
-import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-mocks';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { filterNotifications, hasActiveFilters } from '.';
 
-// Mock the useFiltersStore
-vi.mock('../../../hooks/useFiltersStore', () => ({
-  useFiltersStore: {
-    getState: vi.fn(),
-  },
-}));
-
-import { useFiltersStore } from '../../../stores/useFiltersStore';
-
 describe('renderer/utils/notifications/filter.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -24,7 +21,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].message = 'Some message';
       mockAtlassifyNotifications[1].message = 'someone mentioned you on a page';
 
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         engagementStates: ['mention'],
       });
 
@@ -39,7 +37,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].category = 'watching';
       mockAtlassifyNotifications[1].category = 'direct';
 
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         categories: ['direct'],
       });
 
@@ -54,7 +53,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].actor.displayName = 'Some user';
       mockAtlassifyNotifications[1].actor.displayName = 'Automation for Jira';
 
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         actors: ['user'],
       });
 
@@ -69,7 +69,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].readState = 'read';
       mockAtlassifyNotifications[1].readState = 'unread';
 
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         readStates: ['unread'],
       });
 
@@ -84,7 +85,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].product.type = 'bitbucket';
       mockAtlassifyNotifications[1].product.type = 'compass';
 
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         products: ['compass'],
       });
 
@@ -96,8 +98,6 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('should do nothing if no filters set', async () => {
-      mockFilterStoreState(useFiltersStore);
-
       const result = filterNotifications(mockAtlassifyNotifications);
 
       expect(mockAtlassifyNotifications.length).toBe(2);
@@ -107,13 +107,12 @@ describe('renderer/utils/notifications/filter.ts', () => {
 
   describe('hasActiveFilters', () => {
     it('default filter settings', () => {
-      mockFilterStoreState(useFiltersStore);
-
       expect(hasActiveFilters()).toBe(false);
     });
 
     it('non-default engagement state filters', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         engagementStates: ['mention'],
       });
 
@@ -121,7 +120,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default category filters', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         categories: ['direct'],
       });
 
@@ -129,7 +129,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default actor filters', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         actors: ['automation'],
       });
 
@@ -137,7 +138,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default read state filters', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         readStates: ['read'],
       });
 
@@ -145,7 +147,8 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default product filters', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         products: ['bitbucket'],
       });
 

@@ -1,6 +1,3 @@
-import { vi } from 'vitest';
-
-import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
@@ -8,30 +5,31 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
-// Mock the useFiltersStore
-vi.mock('../../../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import useFiltersStore from '../../../stores/useFiltersStore';
-
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
   it('hasEngagementStateFilters', () => {
-    mockFilterStoreState(useFiltersStore);
-
     expect(engagementFilter.hasFilters()).toBe(false);
 
-    mockFilterStoreState(useFiltersStore, { engagementStates: ['comment'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      engagementStates: ['mention'],
+    });
 
     expect(engagementFilter.hasFilters()).toBe(true);
   });
 
   it('isEngagementStateFilterSet', () => {
-    mockFilterStoreState(useFiltersStore, { engagementStates: ['comment'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      engagementStates: ['comment'],
+    });
 
     expect(engagementFilter.isFilterSet('comment')).toBe(true);
 

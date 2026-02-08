@@ -1,34 +1,23 @@
 import { act } from '@testing-library/react';
 
-import { vi } from 'vitest';
-
 import {
   ensureStableEmojis,
   renderWithAppContext,
 } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../stores/useFiltersStore';
 import { AllRead } from './AllRead';
-
-// Mock the useFiltersStore
-vi.mock('../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import { mockFilterStoreState } from '../__helpers__/test-utils';
-
-import useFiltersStore from '../stores/useFiltersStore';
 
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
+    useFiltersStore.getState().reset();
   });
 
   it('should render itself & its children - no filters', async () => {
-    mockFilterStoreState(useFiltersStore);
-
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
@@ -43,7 +32,8 @@ describe('renderer/components/AllRead.tsx', () => {
   });
 
   it('should render itself & its children - with filters', async () => {
-    mockFilterStoreState(useFiltersStore, {
+    useFiltersStore.setState({
+      ...defaultFiltersState,
       products: ['jira'],
     });
 

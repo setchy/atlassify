@@ -24,16 +24,9 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-// Mock the useFiltersStore
-vi.mock('../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import { mockFilterStoreState } from '../__helpers__/test-utils';
-
-import useFiltersStore from '../stores/useFiltersStore';
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../stores/useFiltersStore';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as any).mockReturnValue({ colorMode: mode });
@@ -51,6 +44,10 @@ describe('renderer/components/Sidebar.tsx', () => {
   const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());
+
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
 
   afterEach(() => {
     vi.clearAllMocks();
@@ -371,7 +368,8 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('highlight filters sidebar if any are saved', () => {
-      mockFilterStoreState(useFiltersStore, {
+      useFiltersStore.setState({
+        ...defaultFiltersState,
         products: ['bitbucket'],
       });
 

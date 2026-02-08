@@ -1,6 +1,3 @@
-import { vi } from 'vitest';
-
-import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
@@ -8,31 +5,32 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
-// Mock the useFiltersStore
-vi.mock('../../../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import useFiltersStore from '../../../stores/useFiltersStore';
-
 describe('renderer/utils/notifications/filters/actor.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
   it('hasActorFilters', () => {
-    mockFilterStoreState(useFiltersStore);
-
     expect(actorFilter.hasFilters()).toBe(false);
 
-    mockFilterStoreState(useFiltersStore, { actors: ['user'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      actors: ['automation'],
+    });
 
     expect(actorFilter.hasFilters()).toBe(true);
   });
 
   it('isActorFilterSet', () => {
-    mockFilterStoreState(useFiltersStore, { actors: ['user'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      actors: ['user'],
+    });
 
     expect(actorFilter.isFilterSet('user')).toBe(true);
 

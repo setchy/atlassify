@@ -1,6 +1,3 @@
-import { vi } from 'vitest';
-
-import { mockFilterStoreState } from '../../../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockSingleAtlassifyNotification,
@@ -8,31 +5,32 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
+import useFiltersStore, {
+  defaultFiltersState,
+} from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
-// Mock the useFiltersStore
-vi.mock('../../../hooks/useFiltersStore', () => ({
-  default: {
-    getState: vi.fn(),
-  },
-}));
-
-import useFiltersStore from '../../../stores/useFiltersStore';
-
 describe('renderer/utils/notifications/filters/product.ts', () => {
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+  });
   it('hasProductFilters', () => {
-    mockFilterStoreState(useFiltersStore);
-
     expect(productFilter.hasFilters()).toBe(false);
 
-    mockFilterStoreState(useFiltersStore, { products: ['bitbucket'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      products: ['bitbucket'],
+    });
 
     expect(productFilter.hasFilters()).toBe(true);
   });
 
   it('isProductFilterSet', () => {
-    mockFilterStoreState(useFiltersStore, { products: ['bitbucket'] });
+    useFiltersStore.setState({
+      ...defaultFiltersState,
+      products: ['bitbucket'],
+    });
 
     expect(productFilter.isFilterSet('compass')).toBe(false);
 
