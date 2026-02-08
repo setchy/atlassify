@@ -6,22 +6,21 @@ import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
 
-import type { FilterSettingsValue } from '../../types';
-
 import useFiltersStore, {
   type FiltersState,
+  type FilterValue,
 } from '../../stores/useFiltersStore';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
 
-export interface FilterSectionProps<T extends FilterSettingsValue> {
+export interface FilterSectionProps<T extends FilterValue> {
   title: string;
   filter: Filter<T>;
   filterSetting: keyof FiltersState;
 }
 
-export const FilterSection = <T extends FilterSettingsValue>({
+export const FilterSection = <T extends FilterValue>({
   title,
   filter,
   filterSetting,

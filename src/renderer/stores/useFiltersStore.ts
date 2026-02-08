@@ -41,6 +41,18 @@ export interface FiltersState {
   actors: ActorType[];
 }
 
+/**
+ * All allowed Filter types.
+ * Automatically derived from the FiltersState
+ */
+export type FilterKey = keyof FiltersState;
+
+/**
+ * All allowed Filter values to be stored in the application.
+ * Automatically derived from the array element types in FiltersState.
+ */
+export type FilterValue = FiltersState[keyof FiltersState][number];
+
 export const defaultFiltersState: FiltersState = {
   engagementStates: [],
   categories: [],
@@ -50,11 +62,7 @@ export const defaultFiltersState: FiltersState = {
 };
 
 interface FilterActions {
-  updateFilter: (
-    key: keyof FiltersState,
-    value: any,
-    checked?: boolean,
-  ) => void;
+  updateFilter: (key: FilterKey, value: FilterValue, checked?: boolean) => void;
 
   reset: () => void;
 }
@@ -67,12 +75,12 @@ export const useFiltersStore = create<FiltersStore>()(
       ...defaultFiltersState,
 
       updateFilter: (key, value, checked) => {
-        const current = (get() as any)[key] || [];
+        const current = get()[key];
         const updated =
           typeof checked === 'boolean'
             ? checked
               ? [...current, value]
-              : current.filter((item: any) => item !== value)
+              : current.filter((item) => item !== value)
             : value;
 
         set({ [key]: updated });

@@ -99,16 +99,6 @@ export type SettingsValue =
   | Theme;
 
 /**
- * All Filter Settings values to be stored in the application.
- */
-export type FilterSettingsValue =
-  | ActorType
-  | CategoryType
-  | EngagementStateType
-  | ProductType
-  | ReadStateType;
-
-/**
  * All Settings keys to be stored in the application.
  */
 export type SettingsState = AppearanceSettingsState &
