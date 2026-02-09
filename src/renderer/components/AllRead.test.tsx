@@ -6,9 +6,7 @@ import {
 } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../stores/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
 import { AllRead } from './AllRead';
 
 describe('renderer/components/AllRead.tsx', () => {
@@ -32,10 +30,7 @@ describe('renderer/components/AllRead.tsx', () => {
   });
 
   it('should render itself & its children - with filters', async () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      products: ['jira'],
-    });
+    useFiltersStore.setState({ products: ['jira'] });
 
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 

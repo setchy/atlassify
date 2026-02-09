@@ -5,31 +5,24 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   beforeEach(() => {
     useFiltersStore.getState().reset();
   });
+
   it('hasEngagementStateFilters', () => {
     expect(engagementFilter.hasFilters()).toBe(false);
 
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      engagementStates: ['mention'],
-    });
+    useFiltersStore.setState({ engagementStates: ['mention'] });
 
     expect(engagementFilter.hasFilters()).toBe(true);
   });
 
   it('isEngagementStateFilterSet', () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      engagementStates: ['comment'],
-    });
+    useFiltersStore.setState({ engagementStates: ['comment'] });
 
     expect(engagementFilter.isFilterSet('comment')).toBe(true);
 

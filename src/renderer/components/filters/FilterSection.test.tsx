@@ -6,9 +6,7 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../stores/useFiltersStore';
+import useFiltersStore from '../../stores/useFiltersStore';
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
@@ -33,7 +31,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
   it('should be able to toggle filter value - none already set', async () => {
     // reset store to defaults and spy on the real store action
-    (useFiltersStore as any).setState({ ...defaultFiltersState });
+    (useFiltersStore as any).getState().reset();
     const updateSpy = vi.spyOn(
       (useFiltersStore as any).getState(),
       'updateFilter',
@@ -61,10 +59,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
   it('should be able to toggle filter value - some filters already set', async () => {
     // set store state with 'mention' already set and spy on the real store action
-    (useFiltersStore as any).setState({
-      ...defaultFiltersState,
-      engagementStates: ['mention'],
-    });
+    (useFiltersStore as any).setState({ engagementStates: ['mention'] });
     const updateSpy = vi.spyOn(
       (useFiltersStore as any).getState(),
       'updateFilter',

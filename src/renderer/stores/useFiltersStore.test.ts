@@ -4,7 +4,7 @@ import { defaultFiltersState, useFiltersStore } from './useFiltersStore';
 
 describe('useFiltersStore', () => {
   beforeEach(() => {
-    useFiltersStore.setState(defaultFiltersState);
+    useFiltersStore.getState().reset();
   });
 
   test('should update a filter (add value)', () => {

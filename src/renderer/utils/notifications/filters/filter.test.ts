@@ -2,9 +2,7 @@ import { vi } from 'vitest';
 
 import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-mocks';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { filterNotifications, hasActiveFilters } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
@@ -21,10 +19,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].message = 'Some message';
       mockAtlassifyNotifications[1].message = 'someone mentioned you on a page';
 
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        engagementStates: ['mention'],
-      });
+      useFiltersStore.setState({ engagementStates: ['mention'] });
 
       const result = filterNotifications(mockAtlassifyNotifications);
 
@@ -37,10 +32,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].category = 'watching';
       mockAtlassifyNotifications[1].category = 'direct';
 
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        categories: ['direct'],
-      });
+      useFiltersStore.setState({ categories: ['direct'] });
 
       const result = filterNotifications(mockAtlassifyNotifications);
 
@@ -53,10 +45,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].actor.displayName = 'Some user';
       mockAtlassifyNotifications[1].actor.displayName = 'Automation for Jira';
 
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        actors: ['user'],
-      });
+      useFiltersStore.setState({ actors: ['user'] });
 
       const result = filterNotifications(mockAtlassifyNotifications);
 
@@ -69,10 +58,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].readState = 'read';
       mockAtlassifyNotifications[1].readState = 'unread';
 
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        readStates: ['unread'],
-      });
+      useFiltersStore.setState({ readStates: ['unread'] });
 
       const result = filterNotifications(mockAtlassifyNotifications);
 
@@ -85,10 +71,7 @@ describe('renderer/utils/notifications/filter.ts', () => {
       mockAtlassifyNotifications[0].product.type = 'bitbucket';
       mockAtlassifyNotifications[1].product.type = 'compass';
 
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        products: ['compass'],
-      });
+      useFiltersStore.setState({ products: ['compass'] });
 
       const result = filterNotifications(mockAtlassifyNotifications);
 
@@ -111,46 +94,31 @@ describe('renderer/utils/notifications/filter.ts', () => {
     });
 
     it('non-default engagement state filters', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        engagementStates: ['mention'],
-      });
+      useFiltersStore.setState({ engagementStates: ['mention'] });
 
       expect(hasActiveFilters()).toBe(true);
     });
 
     it('non-default category filters', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        categories: ['direct'],
-      });
+      useFiltersStore.setState({ categories: ['direct'] });
 
       expect(hasActiveFilters()).toBe(true);
     });
 
     it('non-default actor filters', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        actors: ['automation'],
-      });
+      useFiltersStore.setState({ actors: ['automation'] });
 
       expect(hasActiveFilters()).toBe(true);
     });
 
     it('non-default read state filters', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        readStates: ['read'],
-      });
+      useFiltersStore.setState({ readStates: ['read'] });
 
       expect(hasActiveFilters()).toBe(true);
     });
 
     it('non-default product filters', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        products: ['bitbucket'],
-      });
+      useFiltersStore.setState({ products: ['bitbucket'] });
 
       expect(hasActiveFilters()).toBe(true);
     });
