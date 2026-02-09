@@ -13,7 +13,10 @@ import { defaultSettings } from './defaults';
  */
 type SettingsKey = keyof SettingsState;
 
-type UpdateSettings = <K extends SettingsKey>(key: K, value: SettingsState[K]) => void;
+type UpdateSettings = <K extends SettingsKey>(
+  key: K,
+  value: SettingsState[K],
+) => void;
 
 interface SettingsActions {
   updateSetting: UpdateSettings;

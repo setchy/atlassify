@@ -6,8 +6,8 @@ import {
 } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import useFiltersStore from '../stores/useFiltersStore';
 import { defaultFiltersState } from '../stores/defaults';
+import useFiltersStore from '../stores/useFiltersStore';
 import { AllRead } from './AllRead';
 
 describe('renderer/components/AllRead.tsx', () => {

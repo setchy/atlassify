@@ -5,8 +5,8 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
 import { defaultFiltersState } from '../../../stores/defaults';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 

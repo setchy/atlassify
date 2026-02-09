@@ -6,8 +6,8 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
-import useFiltersStore from '../../stores/useFiltersStore';
 import { defaultFiltersState } from '../../stores/defaults';
+import useFiltersStore from '../../stores/useFiltersStore';
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 

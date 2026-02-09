@@ -7,15 +7,14 @@ import type { Theme } from '../shared/theme';
 
 // Language type is used in `stores/types` defaults; not needed here
 export type {
-  SettingsState,
   AppearanceSettingsState,
   NotificationSettingsState,
-  TraySettingsState,
+  SettingsState,
   SystemSettingsState,
+  TraySettingsState,
 } from './stores/types';
-import type {
-  SettingsState as _SettingsState,
-} from './stores/types';
+
+import type { SettingsState as _SettingsState } from './stores/types';
 
 declare const __brand: unique symbol;
 

@@ -4,8 +4,8 @@ import {
 } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 
-import type { AtlassifyNotification } from '../../types';
 import type { SettingsState } from '../../stores/types';
+import type { AtlassifyNotification } from '../../types';
 
 import {
   getFlattenedNotificationsByProduct,
