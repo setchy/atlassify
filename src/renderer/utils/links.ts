@@ -1,10 +1,8 @@
-import { trackEvent } from '@aptabase/electron/renderer';
-
 import { APPLICATION } from '../../shared/constants';
 
 import type { Account, AtlassifyNotification, Link } from '../types';
 
-import { openExternalLink } from './comms';
+import { openExternalLink, trackEvent } from './comms';
 
 export const URLs = {
   ATLASSIAN: {
