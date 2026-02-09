@@ -20,7 +20,7 @@ export const EVENTS = {
   RESET_APP: `${P}reset-app`,
   UPDATE_THEME: `${P}update-theme`,
   TWEMOJI_DIRECTORY: `${P}twemoji-directory`,
-  APTABASE_TRACK_EVENT: 'aptabase:trackEvent',
+  APTABASE_TRACK_EVENT: `${P}aptabase-track-event`,
 } as const;
 
 export type EventType = (typeof EVENTS)[keyof typeof EVENTS];

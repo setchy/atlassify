@@ -1,5 +1,3 @@
-import { trackEvent as aptabaseTrackEvent } from '@aptabase/electron/renderer';
-
 import { defaultSettings } from '../context/defaults';
 
 import { type Link, OpenPreference } from '../types';
@@ -88,5 +86,5 @@ export function trackEvent(
   eventName: string,
   props?: Record<string, string | number | boolean>,
 ): void {
-  aptabaseTrackEvent(eventName, props);
+  window.atlassify.aptabase.trackEvent(eventName, props);
 }
