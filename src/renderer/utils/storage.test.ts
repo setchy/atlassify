@@ -1,7 +1,5 @@
 import { vi } from 'vitest';
 
-import { mockSettings } from '../__mocks__/state-mocks';
-
 import type { Token, Username } from '../types';
 
 import { clearState, loadState, saveState } from './storage';
@@ -20,7 +18,6 @@ describe('renderer/utils/storage.ts', () => {
             },
           ],
         },
-        settings: { theme: 'DARK' },
       }),
     );
     const result = loadState();
@@ -33,7 +30,6 @@ describe('renderer/utils/storage.ts', () => {
         user: null,
       },
     ]);
-    expect(result.settings.theme).toBe('DARK');
   });
 
   it('should load the state from localstorage - empty', () => {
@@ -42,8 +38,6 @@ describe('renderer/utils/storage.ts', () => {
     const result = loadState();
 
     expect(result.auth).toBeUndefined();
-    expect(result.auth).toBeUndefined();
-    expect(result.settings).toBeUndefined();
   });
 
   it('should save the state to localstorage', () => {
@@ -61,7 +55,6 @@ describe('renderer/utils/storage.ts', () => {
           },
         ],
       },
-      settings: mockSettings,
     });
 
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);

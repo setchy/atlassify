@@ -5,18 +5,18 @@ import type { AtlassifyState } from '../types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
 import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 export function loadState(): AtlassifyState {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
-  const { auth, settings } = (existing && JSON.parse(existing)) || {};
+  const { auth } = (existing && JSON.parse(existing)) || {};
 
-  return { auth, settings };
+  return { auth };
 }
 
 export async function saveState(atlassifyState: AtlassifyState) {
   const auth = atlassifyState.auth;
-  const settings = atlassifyState.settings;
-  const settingsString = JSON.stringify({ auth, settings });
+  const settingsString = JSON.stringify({ auth });
 
   localStorage.setItem(Constants.STORAGE_KEY, settingsString);
 }
@@ -24,6 +24,7 @@ export async function saveState(atlassifyState: AtlassifyState) {
 export function clearState() {
   localStorage.clear();
   useFiltersStore.getState().reset();
+  useSettingsStore.getState().reset();
 }
 
 export function loadLanguageLocale(): Language {

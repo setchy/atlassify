@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { defaultFiltersState, useFiltersStore } from './useFiltersStore';
+import useFiltersStore from './useFiltersStore';
+import { defaultFiltersState } from './defaults';
 
 describe('useFiltersStore', () => {
   beforeEach(() => {

@@ -3,49 +3,15 @@ import { persist } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
-import type {
-  ActorType,
-  CategoryType,
-  EngagementStateType,
-  ProductType,
-  ReadStateType,
-} from '../types';
+import type { FiltersState } from './types';
 
-/**
- * Settings related to the filtering of notifications within the application.
- */
-export interface FiltersState {
-  /**
-   * The engagement states to filter notifications by.
-   */
-  engagementStates: EngagementStateType[];
-
-  /**
-   * The categories to filter notifications by.
-   */
-  categories: CategoryType[];
-
-  /**
-   * The read states to filter notifications by.
-   */
-  readStates: ReadStateType[];
-
-  /**
-   * The products to filter notifications by.
-   */
-  products: ProductType[];
-
-  /**
-   * The notification actors / authors .
-   */
-  actors: ActorType[];
-}
+import { defaultFiltersState } from './defaults';
 
 /**
  * All allowed Filter types.
  * Automatically derived from the FiltersState
  */
-export type FilterKey = keyof FiltersState;
+type FilterKey = keyof FiltersState;
 
 type UpdateFilter = <K extends FilterKey>(
   key: K,
@@ -59,17 +25,6 @@ interface FilterActions {
 }
 
 type FiltersStore = FiltersState & FilterActions;
-
-/**
- * Default filter state
- */
-export const defaultFiltersState: FiltersState = {
-  engagementStates: [],
-  categories: [],
-  readStates: [],
-  products: [],
-  actors: [],
-};
 
 /**
  * Atlassify Filters store.

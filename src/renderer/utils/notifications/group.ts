@@ -1,4 +1,5 @@
-import type { AtlassifyNotification, SettingsState } from '../../types';
+import type { AtlassifyNotification } from '../../types';
+import type { SettingsState } from '../../stores/types';
 
 /**
  * Check if a notification is a group notification.

@@ -3,6 +3,8 @@ export const Constants = {
 
   FILTERS_STORE_KEY: 'atlassify-filters',
 
+  SETTINGS_STORE_KEY: 'atlassify-settings',
+
   LANGUAGE_STORAGE_KEY: 'atlassify-language',
 
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],

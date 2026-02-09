@@ -1,14 +1,13 @@
 import { trackEvent as aptabaseTrackEvent } from '@aptabase/electron/renderer';
 
-import { defaultSettings } from '../context/defaults';
-
 import { type Link, OpenPreference } from '../types';
 
-import { loadState } from './storage';
+import { defaultSettings } from '../stores/defaults';
+import useSettingsStore from '../stores/useSettingsStore';
 
 export function openExternalLink(url: Link): void {
-  // Load the state from local storage to avoid having to pass settings as a parameter
-  const { settings } = loadState();
+  // Read current settings from the settings store
+  const settings = useSettingsStore.getState();
   const openPreference = settings
     ? settings.openLinks
     : defaultSettings.openLinks;

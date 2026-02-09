@@ -10,13 +10,14 @@ import { mockSettings } from '../__mocks__/state-mocks';
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import type { AuthState, SettingsState } from '../types';
+import type { AuthState } from '../types';
+import type { SettingsState } from '../stores/types';
 
+import { defaultSettings } from '../stores/defaults';
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
-import { defaultSettings } from './defaults';
 
 vi.mock('../hooks/useNotifications');
 

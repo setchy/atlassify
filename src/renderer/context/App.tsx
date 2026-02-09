@@ -22,7 +22,9 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
+import { defaultAuth } from '../stores/defaults';
 import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import {
   setAutoLaunch,
@@ -33,7 +35,6 @@ import { clearState, loadState, saveState } from '../utils/storage';
 import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import { defaultAuth, defaultSettings } from './defaults';
 
 export interface AppContextState {
   auth: AuthState;
@@ -78,11 +79,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       : defaultAuth,
   );
 
-  const [settings, setSettings] = useState<SettingsState>(
-    existingState.settings
-      ? { ...defaultSettings, ...existingState.settings }
-      : defaultSettings,
-  );
+  const settings = useSettingsStore((s) => s as SettingsState);
 
   const {
     status,
@@ -127,25 +124,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     window.atlassify.onResetApp(() => {
       clearState();
       setAuth(defaultAuth);
-      setSettings(defaultSettings);
       resetFilters();
     });
   }, []);
 
   const resetSettings = useCallback(() => {
-    setSettings(() => {
-      saveState({ auth, settings: defaultSettings });
-      return defaultSettings;
-    });
+    useSettingsStore.getState().reset();
+    saveState({ auth });
   }, [auth]);
 
   const updateSetting = useCallback(
     (name: keyof SettingsState, value: SettingsValue) => {
-      setSettings((prevSettings) => {
-        const newSettings = { ...prevSettings, [name]: value };
-        saveState({ auth, settings: newSettings });
-        return newSettings;
-      });
+      useSettingsStore.getState().updateSetting(name as any, value as any);
     },
     [auth],
   );
@@ -191,7 +181,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     async ({ username, token }: LoginOptions) => {
       const updatedAuth = await addAccount(auth, username, token);
       setAuth(updatedAuth);
-      saveState({ auth: updatedAuth, settings });
+      saveState({ auth: updatedAuth });
     },
     [auth, settings],
   );
@@ -201,7 +191,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       const updatedAuth = removeAccount(auth, account);
 
       setAuth(updatedAuth);
-      saveState({ auth: updatedAuth, settings });
+      saveState({ auth: updatedAuth });
     },
     [auth, settings],
   );

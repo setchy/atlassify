@@ -24,9 +24,8 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../stores/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import { defaultFiltersState } from '../stores/defaults';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as any).mockReturnValue({ colorMode: mode });

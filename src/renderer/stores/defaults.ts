@@ -1,15 +1,14 @@
 import { Theme } from '../../shared/theme';
 
-import {
-  type AppearanceSettingsState,
-  type AuthState,
-  type NotificationSettingsState,
-  OpenPreference,
-  type Percentage,
-  type SettingsState,
-  type SystemSettingsState,
-  type TraySettingsState,
-} from '../types';
+import { type AuthState, OpenPreference, type Percentage } from '../types';
+import type {
+  AppearanceSettingsState,
+  FiltersState,
+  NotificationSettingsState,
+  SettingsState,
+  SystemSettingsState,
+  TraySettingsState,
+} from './types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
 
@@ -47,9 +46,23 @@ const defaultSystemSettings: SystemSettingsState = {
   openAtStartup: true,
 };
 
+/**
+ * Default settings state
+ */
 export const defaultSettings: SettingsState = {
   ...defaultAppearanceSettings,
   ...defaultNotificationSettings,
   ...defaultTraySettings,
   ...defaultSystemSettings,
+};
+
+/**
+ * Default filter state
+ */
+export const defaultFiltersState: FiltersState = {
+  engagementStates: [],
+  categories: [],
+  readStates: [],
+  products: [],
+  actors: [],
 };

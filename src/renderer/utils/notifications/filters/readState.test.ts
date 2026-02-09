@@ -5,9 +5,8 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
+import { defaultFiltersState } from '../../../stores/defaults';
 import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {

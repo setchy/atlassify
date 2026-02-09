@@ -1,4 +1,4 @@
-import type { SettingsState } from '../types';
+import type { SettingsState } from '../stores/types';
 
 import { updateTrayColor, updateTrayTitle } from './comms';
 

@@ -1,8 +1,8 @@
+import type { SettingsState } from '../../stores/types';
 import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
-  SettingsState,
 } from '../../types';
 
 /**

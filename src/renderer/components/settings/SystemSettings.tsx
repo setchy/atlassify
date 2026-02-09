@@ -15,11 +15,11 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { defaultSettings } from '../../context/defaults';
 import { useAppContext } from '../../hooks/useAppContext';
 
 import { OpenPreference } from '../../types';
 
+import { defaultSettings } from '../../stores/defaults';
 import {
   canDecreaseVolume,
   canIncreaseVolume,
