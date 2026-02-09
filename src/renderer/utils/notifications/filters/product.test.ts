@@ -5,9 +5,7 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
@@ -15,22 +13,17 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
   beforeEach(() => {
     useFiltersStore.getState().reset();
   });
+
   it('hasProductFilters', () => {
     expect(productFilter.hasFilters()).toBe(false);
 
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      products: ['bitbucket'],
-    });
+    useFiltersStore.setState({ products: ['bitbucket'] });
 
     expect(productFilter.hasFilters()).toBe(true);
   });
 
   it('isProductFilterSet', () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      products: ['bitbucket'],
-    });
+    useFiltersStore.setState({ products: ['bitbucket'] });
 
     expect(productFilter.isFilterSet('compass')).toBe(false);
 

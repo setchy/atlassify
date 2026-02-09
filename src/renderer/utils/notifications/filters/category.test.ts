@@ -5,31 +5,24 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { categoryFilter } from '.';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
   beforeEach(() => {
     useFiltersStore.getState().reset();
   });
+
   it('hasCategoryFilters', () => {
     expect(categoryFilter.hasFilters()).toBe(false);
 
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      categories: ['direct'],
-    });
+    useFiltersStore.setState({ categories: ['direct'] });
 
     expect(categoryFilter.hasFilters()).toBe(true);
   });
 
   it('isCategoryFilterSet', () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      categories: ['direct'],
-    });
+    useFiltersStore.setState({ categories: ['direct'] });
 
     expect(categoryFilter.isFilterSet('watching')).toBe(false);
 

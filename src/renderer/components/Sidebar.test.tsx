@@ -24,9 +24,7 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../stores/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   (useThemeObserver as any).mockReturnValue({ colorMode: mode });
@@ -368,10 +366,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('highlight filters sidebar if any are saved', () => {
-      useFiltersStore.setState({
-        ...defaultFiltersState,
-        products: ['bitbucket'],
-      });
+      useFiltersStore.setState({ products: ['bitbucket'] });
 
       renderWithAppContext(
         <MemoryRouter>

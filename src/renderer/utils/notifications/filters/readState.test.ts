@@ -5,31 +5,24 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   beforeEach(() => {
     useFiltersStore.getState().reset();
   });
+
   it('hasReadStateFilters', () => {
     expect(readStateFilter.hasFilters()).toBe(false);
 
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      readStates: ['read'],
-    });
+    useFiltersStore.setState({ readStates: ['read'] });
 
     expect(readStateFilter.hasFilters()).toBe(true);
   });
 
   it('isReadStateFilterSet', () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      readStates: ['read'],
-    });
+    useFiltersStore.setState({ readStates: ['read'] });
 
     expect(readStateFilter.isFilterSet('read')).toBe(true);
 

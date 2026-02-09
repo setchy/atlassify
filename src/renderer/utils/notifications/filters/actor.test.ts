@@ -5,9 +5,7 @@ import {
 
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../../stores/useFiltersStore';
+import useFiltersStore from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
@@ -15,22 +13,17 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
   beforeEach(() => {
     useFiltersStore.getState().reset();
   });
+
   it('hasActorFilters', () => {
     expect(actorFilter.hasFilters()).toBe(false);
 
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      actors: ['automation'],
-    });
+    useFiltersStore.setState({ actors: ['automation'] });
 
     expect(actorFilter.hasFilters()).toBe(true);
   });
 
   it('isActorFilterSet', () => {
-    useFiltersStore.setState({
-      ...defaultFiltersState,
-      actors: ['user'],
-    });
+    useFiltersStore.setState({ actors: ['user'] });
 
     expect(actorFilter.isFilterSet('user')).toBe(true);
 

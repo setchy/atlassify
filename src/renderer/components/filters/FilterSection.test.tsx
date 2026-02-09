@@ -6,15 +6,23 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
-import useFiltersStore, {
-  defaultFiltersState,
-} from '../../stores/useFiltersStore';
+import useFiltersStore from '../../stores/useFiltersStore';
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
   const mockFilter = engagementFilter;
   const mockFilterSetting = 'engagementStates';
+  let updateFilterSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(() => {
+    useFiltersStore.getState().reset();
+    updateFilterSpy = vi.spyOn(useFiltersStore.getState(), 'updateFilter');
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
 
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(
@@ -32,13 +40,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - none already set', async () => {
-    // reset store to defaults and spy on the real store action
-    (useFiltersStore as any).setState({ ...defaultFiltersState });
-    const updateSpy = vi.spyOn(
-      (useFiltersStore as any).getState(),
-      'updateFilter',
-    );
-
     renderWithAppContext(
       <FilterSection
         filter={mockFilter}
@@ -52,7 +53,11 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Mentions'));
 
-    expect(updateSpy).toHaveBeenCalledWith(mockFilterSetting, 'mention', true);
+    expect(updateFilterSpy).toHaveBeenCalledWith(
+      mockFilterSetting,
+      'mention',
+      true,
+    );
 
     expect(
       screen.getByLabelText('Mentions').parentNode.parentNode,
@@ -60,15 +65,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    // set store state with 'mention' already set and spy on the real store action
-    (useFiltersStore as any).setState({
-      ...defaultFiltersState,
-      engagementStates: ['mention'],
-    });
-    const updateSpy = vi.spyOn(
-      (useFiltersStore as any).getState(),
-      'updateFilter',
-    );
+    useFiltersStore.setState({ engagementStates: ['mention'] });
 
     renderWithAppContext(
       <FilterSection
@@ -83,7 +80,11 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Comments'));
 
-    expect(updateSpy).toHaveBeenCalledWith(mockFilterSetting, 'comment', true);
+    expect(updateFilterSpy).toHaveBeenCalledWith(
+      mockFilterSetting,
+      'comment',
+      true,
+    );
 
     expect(
       screen.getByLabelText('Comments').parentNode.parentNode,
