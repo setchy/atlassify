@@ -133,9 +133,11 @@
     "onlyBuiltDependencies": [
       "@biomejs/biome",
       "@parcel/watcher",
+      "@swc/core",
       "@tailwindcss/oxide",
       "electron",
       "electron-winstaller",
+      "esbuild",
       "unrs-resolver"
     ]
   },
