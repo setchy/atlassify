@@ -1923,6 +1923,52 @@ export enum AgentWorkspaceCapacityStatus {
   Overloaded = 'OVERLOADED'
 }
 
+/** Filter input for catalog queries */
+export type AgentWorkspaceCatalogFilter = {
+  /** Filter by custom attributes */
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  /** Filter by catalog type ID */
+  catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Filter by catalog IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter by name (contains) */
+  nameContains?: InputMaybe<Scalars['String']['input']>;
+  /** Filter by parent catalog ID */
+  parentCatalogId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Filter input for catalog-type queries */
+export type AgentWorkspaceCatalogTypeFilter = {
+  /** Filter by custom attributes */
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  /** Filter by IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter by name (contains) */
+  nameContains?: InputMaybe<Scalars['String']['input']>;
+  /** Filter by parent type ID */
+  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type AgentWorkspaceCreateCatalogInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  catalogTypeId: Scalars['ID']['input'];
+  cloudId: Scalars['ID']['input'];
+  description?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  skillIds: Array<Scalars['ID']['input']>;
+};
+
+export type AgentWorkspaceCreateCatalogTypeInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  cloudId: Scalars['ID']['input'];
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+  nestedChildCatalogTypeIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
 export type AgentWorkspaceCreateScheduleInput = {
   /** Agent IDs to assign (required) */
   agentIds: Array<Scalars['ID']['input']>;
@@ -2058,6 +2104,26 @@ export type AgentWorkspaceSkillFilter = {
   nameContains?: InputMaybe<Scalars['String']['input']>;
   /** Filter by parent catalog IDs */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+export type AgentWorkspaceUpdateCatalogInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
+  cloudId: Scalars['ID']['input'];
+  description?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+  name?: InputMaybe<Scalars['String']['input']>;
+  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+export type AgentWorkspaceUpdateCatalogTypeInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  cloudId: Scalars['ID']['input'];
+  id: Scalars['ID']['input'];
+  name?: InputMaybe<Scalars['String']['input']>;
+  nestedChildCatalogTypeIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export type AgentWorkspaceUpdateScheduleInput = {
@@ -21409,6 +21475,11 @@ export type GraphStorePullRequestLinksToServiceSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreRiskHasProjectSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreScorecardHasAtlasGoalSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -22011,7 +22082,6 @@ export type GraphStoreUserAttendedCalendarEventConditionalFilterInput = {
   fromAti?: InputMaybe<GraphStoreAtiFilterInput>;
   /** Filter by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreDateFilterInput>;
-  relationship_isRecurringEvent?: InputMaybe<GraphStoreBooleanFilterInput>;
   relationship_rsvpStatus?: InputMaybe<GraphStoreUserAttendedCalendarEventRsvpStatusFilterInput>;
   /** Filter by the ATI of the to node */
   toAti?: InputMaybe<GraphStoreAtiFilterInput>;
@@ -22048,7 +22118,6 @@ export type GraphStoreUserAttendedCalendarEventSortInput = {
   fromAti?: InputMaybe<GraphStoreSortInput>;
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
-  relationship_isRecurringEvent?: InputMaybe<GraphStoreSortInput>;
   relationship_rsvpStatus?: InputMaybe<GraphStoreSortInput>;
   /** Sort by the ATI of the to node */
   toAti?: InputMaybe<GraphStoreSortInput>;
@@ -24924,7 +24993,6 @@ export type GraphStoreV2ExternalUserAttendedExternalCalendarEventConditionalFilt
   fromAti?: InputMaybe<GraphStoreAtiFilterInput>;
   /** Filter by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreDateFilterInput>;
-  relationship_isRecurringEvent?: InputMaybe<GraphStoreBooleanFilterInput>;
   relationship_rsvpStatus?: InputMaybe<GraphStoreV2ExternalUserAttendedExternalCalendarEventRsvpStatusFilterInput>;
   /** Filter by the ATI of the to node */
   toAti?: InputMaybe<GraphStoreAtiFilterInput>;
@@ -24961,7 +25029,6 @@ export type GraphStoreV2ExternalUserAttendedExternalCalendarEventSortInput = {
   fromAti?: InputMaybe<GraphStoreSortInput>;
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
-  relationship_isRecurringEvent?: InputMaybe<GraphStoreSortInput>;
   relationship_rsvpStatus?: InputMaybe<GraphStoreSortInput>;
   /** Sort by the ATI of the to node */
   toAti?: InputMaybe<GraphStoreSortInput>;
@@ -25350,6 +25417,11 @@ export type GraphStoreV2FocusFocusAreaHasThirdPartyDocumentSortInput = {
 };
 
 export type GraphStoreV2FocusFocusAreaHasWorkEntitySortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2FocusRiskHasWorkEntitySortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -53385,6 +53457,22 @@ export type TeamTypeUpdatePayload = {
    * Optional, If provided must not be blank, max 25 characters
    * If not provided, then name will not be modified
    */
+  name?: InputMaybe<Scalars['String']['input']>;
+};
+
+/**
+ * Input payload for updating a custom field.
+ *
+ * Notes:
+ * - All fields are optional.
+ * - `name: null` means leave unchanged.
+ * - `description: null` means leave unchanged.
+ * - Clearing fields is not supported.
+ */
+export type TeamUpdateCustomFieldPayload = {
+  /** Optional description of the custom field. If null, the existing description remains unchanged. */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** The display name of the custom field. If null, the existing name remains unchanged. */
   name?: InputMaybe<Scalars['String']['input']>;
 };
 
