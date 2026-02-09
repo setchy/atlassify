@@ -33,6 +33,9 @@ vi.mock('electron', () => ({
   dialog: { showMessageBox: () => showMessageBoxMock() },
 }));
 
+// Ensure the module under test thinks we're not in dev mode
+vi.mock('./utils', () => ({ isDevMode: () => false }));
+
 const logErrorMock = vi.fn();
 vi.mock('../shared/logger', () => ({
   logError: (...a: unknown[]) => logErrorMock(...a),
@@ -49,6 +52,10 @@ describe('main/first-run', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mac = true;
+    // Ensure tests run as non-dev by default (some runners set this)
+    // so prompt behaviour executes as expected.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    delete (process as any).defaultApp;
   });
 
   function configPath() {

@@ -35,6 +35,7 @@ import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
+import { isDevMode } from './utils';
 
 log.initialize();
 
@@ -55,20 +56,18 @@ if (!aptabaseKey) {
 }
 
 /**
- * File paths
+ * File and directory paths / URLs
  */
-const preloadFilePath = path.join(__dirname, 'preload.js');
-const indexHtmlFilePath = process.env.VITE_DEV_SERVER_URL
+const preloadFilePath = path.resolve(__dirname, 'preload.js');
+const indexHtmlFileURL = isDevMode()
   ? process.env.VITE_DEV_SERVER_URL
-  : `file://${__dirname}/index.html`;
-const notificationSoundFilePath = path.join(
-  __dirname,
-  '..',
-  'assets',
-  'sounds',
-  APPLICATION.NOTIFICATION_SOUND,
-);
-const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
+  : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
+const notificationSoundFileURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
+).href;
+const twemojiFolderURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'images', 'twemoji'),
+).href;
 
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
@@ -88,7 +87,7 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
 
 const mb = menubar({
   icon: TrayIcons.idle,
-  index: indexHtmlFilePath,
+  index: indexHtmlFileURL,
   browserWindow: browserWindowOpts,
   preloadWindow: true,
   showDockIcon: false, // Hide the app from the macOS dock
@@ -235,11 +234,11 @@ app.whenReady().then(async () => {
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
 
   handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
-    return notificationSoundFilePath;
+    return notificationSoundFileURL;
   });
 
   handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
-    return pathToFileURL(twemojiDirPath).href;
+    return twemojiFolderURL;
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
