@@ -60,6 +60,15 @@ export default defineConfig(({ command }) => {
         main: {
           entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
           vite: {
+            // Define build-time replacements for the main process bundle.
+            // During CI builds `process.env.APTABASE_KEY` will be injected via the environment.
+            define: isBuild
+              ? {
+                  'process.env.APTABASE_KEY': JSON.stringify(
+                    process.env.APTABASE_KEY ?? '',
+                  ),
+                }
+              : {},
             build: {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
               rollupOptions: {
