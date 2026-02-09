@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { AppContext, type AppContextState } from '../context/App';
+import { AppContext, type AppContextState } from '../context/AppContext';
 
 /**
  * Custom hook that provides type-safe access to AppContext.

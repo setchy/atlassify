@@ -7,7 +7,7 @@ import { vi } from 'vitest';
 
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
-import { AppContext, type AppContextState } from '../context/App';
+import { AppContext, type AppContextState } from '../context/AppContext';
 
 import type { SettingsState } from '../types';
 
