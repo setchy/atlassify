@@ -93,7 +93,7 @@ export default defineConfig(({ command }) => {
         targets: [
           ...ALL_EMOJI_SVG_FILENAMES.map((filename) => ({
             src: `../../node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-            dest: 'images/twemoji',
+            dest: 'assets/images/twemoji',
           })),
           {
             src: '../../assets',
