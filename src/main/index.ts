@@ -23,6 +23,7 @@ import { initialize, trackEvent } from '@aptabase/electron/main';
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
+  type IAptabaseEvent,
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
@@ -47,12 +48,8 @@ if (!aptabaseKey) {
     new Error('APTABASE_KEY environment variable is not set'),
   );
 } else {
-  try {
-    initialize(aptabaseKey);
-    logInfo('aptabase', 'initialized successfully');
-  } catch (error) {
-    logError('main:aptabase', 'Failed to initialize Aptabase', error);
-  }
+  initialize(aptabaseKey);
+  logInfo('aptabase', 'initialized successfully');
 }
 
 /**
@@ -225,6 +222,13 @@ app.whenReady().then(async () => {
 
   onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings: IAutoLaunch) => {
     app.setLoginItemSettings(settings);
+  });
+
+  /**
+   * Custom Aptabase TrackEvent handler, since we don't expose their IPC channels
+   */
+  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
+    trackEvent(event.eventName, event.props);
   });
 
   /**
