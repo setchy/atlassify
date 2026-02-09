@@ -21,7 +21,7 @@ pnpm install
 For local development, including GraphQL codegen and hot module reload (HMR):
 
 ```shell
-pnpm dev
+pnpm build && pnpm dev
 ```
 
 ### Tests

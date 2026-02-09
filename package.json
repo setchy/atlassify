@@ -7,11 +7,11 @@
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
     "prepare": "husky",
+    "build": "vite build",
     "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "pnpm codegen --watch",
     "dev": "concurrently --names \"vite,codegen\" --prefix-colors \"blue,magenta\" \"vite\" \"pnpm codegen:watch\"",
-    "start": "pnpm dev",
-    "build": "vite build",
+    "start": "pnpm build && pnpm dev",
     "package:linux": "electron-builder --linux",
     "package:macos": "electron-builder --mac",
     "package:win": "electron-builder --win",

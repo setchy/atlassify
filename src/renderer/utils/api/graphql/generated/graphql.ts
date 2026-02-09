@@ -39668,6 +39668,27 @@ export type JiraWorklogSortInput = {
   order: SortDirection;
 };
 
+export type JpdImportIdeasInput = {
+  csvContent?: InputMaybe<Scalars['String']['input']>;
+  /** Base64 encoded image content (PNG, JPEG, GIF, WebP) - use with sourceType: IMAGE */
+  imageContent?: InputMaybe<Scalars['String']['input']>;
+  /** MIME type for image (e.g., image/png, image/jpeg) */
+  imageMimeType?: InputMaybe<Scalars['String']['input']>;
+  jpdProjectId?: InputMaybe<Scalars['String']['input']>;
+  /** Base64 encoded PDF content - use with sourceType: PDF */
+  pdfContent?: InputMaybe<Scalars['String']['input']>;
+  sourceLabel?: InputMaybe<Scalars['String']['input']>;
+  sourceType: JpdImportSourceType;
+  textContent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum JpdImportSourceType {
+  Csv = 'CSV',
+  Image = 'IMAGE',
+  Pdf = 'PDF',
+  Text = 'TEXT'
+}
+
 /** Supported connection types */
 export enum JsmChannelsConnectionType {
   Identitynow = 'IDENTITYNOW',
