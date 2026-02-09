@@ -39,7 +39,7 @@ const renderWithContext = () => {
 };
 
 describe('renderer/context/App.tsx', () => {
-  const refetchMock = vi.fn();
+  const refetchNotificationsMock = vi.fn();
   const markNotificationsReadMock = vi.fn();
   const markNotificationsUnreadMock = vi.fn();
 
@@ -56,10 +56,10 @@ describe('renderer/context/App.tsx', () => {
       notificationCount: 0,
       hasNotifications: false,
       hasMoreAccountNotifications: false,
-      refetch: refetchMock,
+      refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-    } as unknown as ReturnType<typeof useNotifications>);
+    } as ReturnType<typeof useNotifications>);
   });
 
   afterEach(() => {
@@ -81,13 +81,13 @@ describe('renderer/context/App.tsx', () => {
 
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
-      refetchMock.mockReset();
+      refetchNotificationsMock.mockReset();
 
       await act(async () => {
         await getContext().fetchNotifications();
       });
 
-      expect(refetchMock).toHaveBeenCalledTimes(1);
+      expect(refetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
