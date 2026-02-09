@@ -20,6 +20,10 @@ pnpm install
 
 For local development, including GraphQL codegen and hot module reload (HMR):
 
+> [!NOTE]
+> This will also auto-install React Developer Tools & Redux Developer Tools extensions.
+> Make sure you force a reload when first opening the `Developer Tools`.
+
 ```shell
 pnpm dev
 ```
