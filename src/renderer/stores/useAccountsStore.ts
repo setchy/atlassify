@@ -24,7 +24,8 @@ export const defaultAccountsState: AuthState = {
 /**
  * Atlassify Accounts store.
  *
- * Automatically persisted to local storage (excluding tokens for security)
+ * Automatically persisted to local storage.
+ * Tokens are encrypted via safeStorage before storage.
  */
 export const useAccountsStore = create<AccountsStore>()(
   persist(
@@ -53,15 +54,6 @@ export const useAccountsStore = create<AccountsStore>()(
     }),
     {
       name: Constants.ACCOUNTS_STORE_KEY,
-
-      partialize: (state) => ({
-        // Exclude tokens from localStorage for security
-        // Tokens are stored encrypted via electron's safeStorage
-        accounts: state.accounts.map((account) => ({
-          ...account,
-          // token: '' as EncryptedToken, // Don't persist tokens in localStorage
-        })),
-      }),
     },
   ),
 );

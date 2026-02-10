@@ -101,14 +101,6 @@ export const useFiltersStore = create<FiltersStore>()(
     }),
     {
       name: Constants.FILTERS_STORE_KEY,
-
-      partialize: (state) => ({
-        engagementStates: state.engagementStates,
-        categories: state.categories,
-        actors: state.actors,
-        readStates: state.readStates,
-        products: state.products,
-      }),
     },
   ),
 );

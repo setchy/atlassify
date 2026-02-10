@@ -35,12 +35,6 @@ export const useSettingsStore = create<SettingsStore>()(
       }),
       {
         name: Constants.SETTINGS_STORE_KEY,
-
-        partialize: (state) => {
-          // Exclude actions from persistence
-          const { updateSetting, reset, ...persistedState } = state;
-          return persistedState;
-        },
       },
     ),
   ),

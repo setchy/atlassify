@@ -7,14 +7,16 @@ import { DEFAULT_LANGUAGE } from '../i18n';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
-import { encryptValue } from './comms';
 import { rendererLogError, rendererLogInfo } from './logger';
 
 /**
  * Migrate from Context-based storage to Zustand stores.
  * This function reads the old unified storage format and splits it into separate stores.
- * Tokens are encrypted and stored via electron's safeStorage.
  * Should be called once on app startup.
+ *
+ * TODO: Remove this migration function in a future major release (v3.0.0+)
+ * once all users have migrated from the old Context-based storage format.
+ * Migration was introduced in v2.17.0.
  */
 export async function migrateContextToZustand() {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
@@ -40,30 +42,12 @@ export async function migrateContextToZustand() {
 
     // Migrate auth to AccountsStore if it exists and store is empty
     if (auth?.accounts && useAccountsStore.getState().accounts.length === 0) {
-      // Encrypt tokens before storing
-      const accountsWithEncryptedTokens = await Promise.all(
-        auth.accounts.map(async (account: { id: string; token: string }) => {
-          if (account.token && !account.token.startsWith('encrypted:')) {
-            // Encrypt the token using the account ID as context
-            const encrypted = await encryptValue(
-              `${account.id}:${account.token}`,
-            );
-            return { ...account, token: encrypted };
-          }
-          return account;
-        }),
-      );
-
-      useAccountsStore.setState({ accounts: accountsWithEncryptedTokens });
+      useAccountsStore.setState({ accounts: auth.accounts });
     }
 
-    // Migrate settings to SettingsStore if they exist
+    // Migrate settings to SettingsStore if they exist and store is empty
     if (settings) {
-      // Get current settings (may have defaults already)
-      const currentSettings = useSettingsStore.getState();
-      // Only update with values from old storage
-      const { updateSetting, reset, ...persistedSettings } = currentSettings;
-      useSettingsStore.setState({ ...persistedSettings, ...settings });
+      useSettingsStore.setState({ ...settings });
     }
 
     // Mark old storage key as migrated instead of removing it
@@ -72,13 +56,12 @@ export async function migrateContextToZustand() {
       JSON.stringify({
         migrated: true,
         migratedAt: new Date().toISOString(),
-        version: 2, // Zustand-based storage
       }),
     );
 
     rendererLogInfo(
       'migrateContextToStore',
-      'Successfully migrated from Context storage to Zustand stores with encrypted tokens',
+      'Successfully migrated from Context storage to Zustand stores',
     );
   } catch (error) {
     rendererLogError(
