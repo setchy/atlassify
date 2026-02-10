@@ -56177,6 +56177,12 @@ export type TrelloUnarchiveCardInput = {
   cardId: Scalars['ID']['input'];
 };
 
+/** Arguments passed into the undoAction mutation. */
+export type TrelloUndoActionInput = {
+  /** The ID of the action to undo. */
+  actionId: Scalars['ID']['input'];
+};
+
 /** Arguments passed into the updateAiRule mutation. */
 export type TrelloUpdateAiRuleInput = {
   /** The ARI of the AI rule to update. */
