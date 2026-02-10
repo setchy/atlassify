@@ -1,6 +1,10 @@
 export const Constants = {
   STORAGE_KEY: 'atlassify-storage',
 
+  ACCOUNTS_STORE_KEY: 'atlassify-accounts',
+
+  SETTINGS_STORE_KEY: 'atlassify-settings',
+
   FILTERS_STORE_KEY: 'atlassify-filters',
 
   LANGUAGE_STORAGE_KEY: 'atlassify-language',

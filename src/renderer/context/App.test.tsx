@@ -10,11 +10,12 @@ import { mockSettings } from '../__mocks__/state-mocks';
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import type { AuthState, SettingsState } from '../types';
+import type { AuthState } from '../types';
 
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
-import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
 import { defaultSettings } from './defaults';
 
@@ -43,11 +44,11 @@ describe('renderer/context/App.tsx', () => {
   const markNotificationsReadMock = vi.fn();
   const markNotificationsUnreadMock = vi.fn();
 
-  const saveStateSpy = vi
-    .spyOn(storage, 'saveState')
-    .mockImplementation(vi.fn());
-
   beforeEach(() => {
+    // Initialize stores with default values
+    useAccountsStore.setState({ accounts: [] });
+    useSettingsStore.setState(mockSettings);
+
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({
       status: 'success',
@@ -126,44 +127,43 @@ describe('renderer/context/App.tsx', () => {
         getContext().updateSetting('playSoundNewNotifications', true);
       });
 
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          playSoundNewNotifications: true,
-        } as SettingsState,
-      });
+      // Verify the store was updated
+      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(true);
     });
 
     it('should call resetSettings', async () => {
       const getContext = renderWithContext();
 
+      // First set a different value
+      useSettingsStore.setState({
+        ...mockSettings,
+        playSoundNewNotifications: false,
+      });
+
       act(() => {
         getContext().resetSettings();
       });
 
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: defaultSettings,
-      });
+      // Verify the store was reset to defaults
+      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(
+        defaultSettings.playSoundNewNotifications,
+      );
     });
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = vi
-      .spyOn(authUtils, 'addAccount')
-      .mockResolvedValue({ accounts: [] } as AuthState);
-    const removeAccountSpy = vi.spyOn(authUtils, 'removeAccount');
+    const addAccountSpy = vi.spyOn(authUtils, 'addAccount').mockResolvedValue({
+      accounts: [mockAtlassianCloudAccount],
+    } as AuthState);
+    const removeAccountSpy = vi
+      .spyOn(authUtils, 'removeAccount')
+      .mockReturnValue({ accounts: [] } as AuthState);
 
     it('login calls addAccount ', async () => {
       const getContext = renderWithContext();
 
       await act(async () => {
-        getContext().login({
+        await getContext().login({
           username: mockAtlassianCloudAccount.username,
           token: mockAtlassianCloudAccount.token,
         });
@@ -174,19 +174,29 @@ describe('renderer/context/App.tsx', () => {
         mockAtlassianCloudAccount.username,
         mockAtlassianCloudAccount.token,
       );
+
+      // Verify the store was updated
+      expect(useAccountsStore.getState().accounts).toEqual([
+        mockAtlassianCloudAccount,
+      ]);
     });
 
     it('logout calls removeAccount', async () => {
+      // Set up with an account
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       const getContext = renderWithContext();
 
       await act(async () => {
-        getContext().logoutFromAccount(mockAtlassianCloudAccount);
+        await getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 
       expect(removeAccountSpy).toHaveBeenCalledWith(
         expect.anything(),
         mockAtlassianCloudAccount,
       );
+
+      // Verify the store was updated
+      expect(useAccountsStore.getState().accounts).toEqual([]);
     });
   });
 });

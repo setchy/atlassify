@@ -24,7 +24,18 @@ import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
+import { setupSettingsSideEffects } from './stores/side-effects';
 import { queryClient } from './utils/api/client';
+import { rendererLogError } from './utils/logger';
+import { migrateContextToZustand } from './utils/storage';
+
+// Run migration from Context storage to Zustand stores (async)
+migrateContextToZustand().catch((error) => {
+  rendererLogError('App', 'Failed to migrate storage', error);
+});
+
+// Set up side-effect subscribers for settings changes
+setupSettingsSideEffects();
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
