@@ -361,15 +361,17 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     onSettled: (_data, _error, variables, context) => {
       const ANIMATION_DURATION = 700; // ms
       const MIN_REMOVAL_DELAY = 100; // ms buffer
-      
+
       // Calculate how long the API call took
-      const apiDuration = context?.startTime ? Date.now() - context.startTime : 0;
-      
+      const apiDuration = context?.startTime
+        ? Date.now() - context.startTime
+        : 0;
+
       // If API was faster than animation, wait for animation to complete
       // If API was slower, remove almost immediately (animation already done)
       const removalDelay = Math.max(
         MIN_REMOVAL_DELAY,
-        ANIMATION_DURATION - apiDuration + MIN_REMOVAL_DELAY
+        ANIMATION_DURATION - apiDuration + MIN_REMOVAL_DELAY,
       );
 
       setTimeout(() => {
@@ -524,7 +526,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     // Refetch to ensure we're in sync with server and remove from pending
     onSettled: (_data, _error, variables, _context) => {
       const MIN_REMOVAL_DELAY = 100; // ms buffer
-      
+
       // For unread, no removal animation, so just use minimal delay
       // Could be made dynamic based on _context?.startTime if needed
       const removalDelay = MIN_REMOVAL_DELAY;
