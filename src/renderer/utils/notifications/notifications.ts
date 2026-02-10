@@ -12,7 +12,6 @@ import { transformNotifications } from '../api/transform';
 import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../errors';
 import { rendererLogError } from '../logger';
-import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
 /**
@@ -80,12 +79,10 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
-          let notifications = await transformNotifications(
+          const notifications = await transformNotifications(
             rawNotifications,
             accountNotifications.account,
           );
-
-          notifications = filterNotifications(notifications);
 
           return {
             account: accountNotifications.account,

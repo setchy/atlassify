@@ -3,14 +3,19 @@
  * These subscribers watch for store changes and trigger corresponding side effects.
  */
 
+import type { QueryClient } from '@tanstack/react-query';
+
 import {
   setAutoLaunch,
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
 } from '../utils/comms';
+import { notificationsKeys } from '../utils/queryKeys';
 import { setTheme } from '../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
+import { useAccountsStore } from './useAccountsStore';
+import { useFiltersStore } from './useFiltersStore';
 import { useSettingsStore } from './useSettingsStore';
 
 /**
@@ -103,6 +108,41 @@ export function setupSettingsSideEffects(): () => void {
   });
 
   // Return cleanup function that unsubscribes all listeners
+  return () => {
+    for (const unsubscribe of unsubscribers) {
+      unsubscribe();
+    }
+  };
+}
+
+/**
+ * Set up filter side-effect subscriber to apply client-side filtering
+ * when filter state changes without refetching from API.
+ *
+ * @param queryClient - TanStack Query client instance
+ * @returns Cleanup function to unsubscribe listener
+ */
+export function setupFiltersSideEffects(queryClient: QueryClient): () => void {
+  const unsubscribers: Array<() => void> = [];
+
+  // Subscribe to filters store changes
+  const unsubFilters = useFiltersStore.subscribe(() => {
+    // Build the query key to match useNotifications
+    const accounts = useAccountsStore.getState().accounts;
+    const fetchOnlyUnreadNotifications =
+      useSettingsStore.getState().fetchOnlyUnreadNotifications;
+    const queryKey = notificationsKeys.list(
+      accounts.length,
+      fetchOnlyUnreadNotifications,
+    );
+
+    // When filters change, invalidate queries to trigger select re-execution
+    // The select function in useQuery will reapply filters to cached unfiltered data
+    // This happens instantly without API calls
+    queryClient.invalidateQueries({ queryKey, refetchType: 'none' });
+  });
+  unsubscribers.push(unsubFilters);
+
   return () => {
     for (const unsubscribe of unsubscribers) {
       unsubscribe();

@@ -24,7 +24,10 @@ import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
-import { setupSettingsSideEffects } from './stores/side-effects';
+import {
+  setupFiltersSideEffects,
+  setupSettingsSideEffects,
+} from './stores/side-effects';
 import { queryClient } from './utils/api/client';
 import { rendererLogError } from './utils/logger';
 import { migrateContextToZustand } from './utils/storage';
@@ -36,6 +39,9 @@ migrateContextToZustand().catch((error) => {
 
 // Set up side-effect subscribers for settings changes
 setupSettingsSideEffects();
+
+// Set up side-effect subscribers for filter changes
+setupFiltersSideEffects(queryClient);
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();

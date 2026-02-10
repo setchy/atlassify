@@ -25,7 +25,7 @@ export const FiltersRoute: FC = () => {
 
   return (
     <Page testId="filters">
-      <Header fetchOnBack={true}>{t('filters.title')}</Header>
+      <Header>{t('filters.title')}</Header>
 
       <Contents>
         <Box paddingBlockEnd="space.200" paddingInlineStart="space.250">

@@ -25,6 +25,7 @@ import {
   doesAllAccountsHaveErrors,
 } from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
+import { filterNotifications } from '../utils/notifications/filters';
 import { isGroupNotification } from '../utils/notifications/group';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
@@ -35,6 +36,7 @@ import {
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
+import { notificationsKeys } from '../utils/queryKeys';
 
 interface NotificationsState {
   status: Status;
@@ -61,33 +63,35 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
+  // Subscribe to filter store to trigger re-render when filters change
+  // This ensures the select function gets recreated with latest filter state
   const engagementStates = useFiltersStore((s) => s.engagementStates);
   const categories = useFiltersStore((s) => s.categories);
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
-  // Flattened, stable query key that includes current filter values
-  const notificationsQueryKey = useMemo(() => {
-    return [
-      'notifications',
-      state.auth.accounts.length,
-      state.settings.fetchOnlyUnreadNotifications,
-      ...engagementStates,
-      ...categories,
-      ...actors,
-      ...readStates,
-      ...products,
-    ] as const;
-  }, [
-    state.auth.accounts.length,
-    state.settings.fetchOnlyUnreadNotifications,
-    engagementStates,
-    categories,
-    actors,
-    readStates,
-    products,
-  ]);
+  // Query key excludes filters to prevent API refetches on filter changes
+  // Filters are applied client-side via subscription in side-effects.ts
+  const notificationsQueryKey = useMemo(
+    () =>
+      notificationsKeys.list(
+        state.auth.accounts.length,
+        state.settings.fetchOnlyUnreadNotifications,
+      ),
+    [state.auth.accounts.length, state.settings.fetchOnlyUnreadNotifications],
+  );
+
+  // Create select function that depends on filter state
+  // When filters change, this function is recreated, causing React Query to re-run it
+  const selectFilteredNotifications = useMemo(
+    () => (data: AccountNotifications[]) =>
+      data.map((accountNotifications) => ({
+        ...accountNotifications,
+        notifications: filterNotifications(accountNotifications.notifications),
+      })),
+    [engagementStates, categories, actors, readStates, products],
+  );
 
   // Query for fetching notifications - React Query handles polling and refetching
   const {
@@ -101,6 +105,10 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     queryFn: async () => {
       return await getAllNotifications(state);
     },
+
+    // Apply filters as a transformation on the cached data
+    // This allows filter changes to instantly update without refetching
+    select: selectFilteredNotifications,
 
     refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,

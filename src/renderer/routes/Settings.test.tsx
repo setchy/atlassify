@@ -15,8 +15,6 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/routes/Settings.tsx', () => {
-  const fetchNotificationsMock = vi.fn();
-
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -39,15 +37,11 @@ describe('renderer/routes/Settings.tsx', () => {
         <MemoryRouter initialEntries={['/settings']}>
           <SettingsRoute />
         </MemoryRouter>,
-        {
-          fetchNotifications: fetchNotificationsMock,
-        },
       );
     });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith(-1);
   });
