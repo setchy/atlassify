@@ -1590,6 +1590,11 @@ export enum AgentStudioDatasetResolution {
   Unresolved = 'UNRESOLVED'
 }
 
+export enum AgentStudioDatasetType {
+  QuestionAnswer = 'QUESTION_ANSWER',
+  QuestionOnly = 'QUESTION_ONLY'
+}
+
 /** Input for duplicating an agent */
 export type AgentStudioDuplicateAgentInput = {
   /** Name for the duplicated agent. If not provided, will append '- copy' to the original name. */
@@ -2008,6 +2013,14 @@ export type AgentWorkspaceCreateSkillInput = {
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
+export type AgentWorkspaceCreateUserSkillInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  cloudId: Scalars['ID']['input'];
+  proficiency?: InputMaybe<Scalars['Int']['input']>;
+  skillId: Scalars['ID']['input'];
+  userId: Scalars['ID']['input'];
+};
+
 export enum AgentWorkspaceDayOfWeek {
   Friday = 'FRIDAY',
   Monday = 'MONDAY',
@@ -2162,6 +2175,27 @@ export type AgentWorkspaceUpdateSkillInput = {
   name?: InputMaybe<Scalars['String']['input']>;
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+export type AgentWorkspaceUpdateUserSkillInput = {
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  cloudId: Scalars['ID']['input'];
+  id: Scalars['ID']['input'];
+  proficiency?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** Filter input for user-skill queries */
+export type AgentWorkspaceUserSkillFilter = {
+  /** Filter by custom attributes */
+  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  /** Filter by IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter by proficiency >= value */
+  proficiencyGreaterThanOrEqual?: InputMaybe<Scalars['Int']['input']>;
+  /** Filter by skill ID */
+  skillId?: InputMaybe<Scalars['ID']['input']>;
+  /** Filter by user ID */
+  userId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export enum AiCoreApiQuestionType {
@@ -2526,6 +2560,11 @@ export type AppInstallationsFilter = {
   appId: Scalars['ID']['input'];
   environmentType?: InputMaybe<AppEnvironmentType>;
 };
+
+export enum AppLicenseCapabilitySet {
+  CapabilityAdvanced = 'capabilityAdvanced',
+  CapabilityStandard = 'capabilityStandard'
+}
 
 export enum AppNetworkEgressCategory {
   Analytics = 'ANALYTICS'
@@ -3782,6 +3821,7 @@ export type BlockServiceDeleteBlockInput = {
 export type BlockServiceUpdateBlockInput = {
   blockAri: Scalars['String']['input'];
   content: Scalars['String']['input'];
+  status?: InputMaybe<Scalars['String']['input']>;
   stepVersion?: InputMaybe<Scalars['Float']['input']>;
 };
 
@@ -40138,13 +40178,6 @@ export enum KitsuneLogicalOperator {
   Or = 'OR'
 }
 
-export type KitsunePaginationInput = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
-};
-
 export enum KitsuneSourceCategoryType {
   FeedbackApp = 'FEEDBACK_APP',
   Loom = 'LOOM'
@@ -43329,6 +43362,18 @@ export type MercuryUnrankChangeProposalInViewInput = {
   changeProposalId: Scalars['ID']['input'];
   /** The ARI of the Change Proposals View to remove Change Proposals from. */
   changeProposalsViewId: Scalars['ID']['input'];
+};
+
+/**
+ *  ------------------------------------------------------
+ *  Currencies
+ *  ------------------------------------------------------
+ */
+export type MercuryUpdateActiveCurrencyInput = {
+  /** The site ID. */
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** The currency code */
+  currencyCode: Scalars['String']['input'];
 };
 
 export type MercuryUpdateChangeFocusAreaInput = {
@@ -56130,6 +56175,12 @@ export type TrelloToggleLabsFeatureForMemberInput = {
 /** Arguments passed into the archiveCard mutation */
 export type TrelloUnarchiveCardInput = {
   cardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the undoAction mutation. */
+export type TrelloUndoActionInput = {
+  /** The ID of the action to undo. */
+  actionId: Scalars['ID']['input'];
 };
 
 /** Arguments passed into the updateAiRule mutation. */

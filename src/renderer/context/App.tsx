@@ -58,6 +58,11 @@ export interface AppContextState {
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
 
+  // Mutation loading states
+  isMarkingAsRead: boolean;
+  isMarkingAsUnread: boolean;
+  isNotificationPending: (notificationId: string) => boolean;
+
   settings: SettingsState;
   resetSettings: () => void;
   updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
@@ -97,6 +102,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
+
+    isMarkingAsRead,
+    isMarkingAsUnread,
+    isNotificationPending,
   } = useNotifications({ auth, settings });
 
   useAccounts(auth.accounts);
@@ -130,7 +139,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       setSettings(defaultSettings);
       resetFilters();
     });
-  }, []);
+  }, [resetFilters]);
 
   const resetSettings = useCallback(() => {
     setSettings(() => {
@@ -243,6 +252,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
 
+      // Mutation loading states
+      isMarkingAsRead,
+      isMarkingAsUnread,
+      isNotificationPending,
+
       settings,
       resetSettings,
       updateSetting,
@@ -265,6 +279,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,
+
+      isMarkingAsRead,
+      isMarkingAsUnread,
+      isNotificationPending,
 
       settings,
       resetSettings,

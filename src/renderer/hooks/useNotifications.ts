@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
@@ -55,11 +55,21 @@ interface NotificationsState {
     state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+
+  // Mutation states for showing loading indicators
+  isMarkingAsRead: boolean;
+  isMarkingAsUnread: boolean;
+  isNotificationPending: (notificationId: string) => boolean;
 }
 
 export const useNotifications = (state: AtlassifyState): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
+
+  // Track which specific notification IDs are currently being processed
+  const [pendingNotificationIds, setPendingNotificationIds] = useState<
+    Set<string>
+  >(new Set());
 
   const engagementStates = useFiltersStore((s) => s.engagementStates);
   const categories = useFiltersStore((s) => s.categories);
@@ -228,8 +238,80 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     [],
   );
 
+  // Helper to check if a specific notification is pending
+  const isNotificationPending = useCallback(
+    (notificationId: string) => pendingNotificationIds.has(notificationId),
+    [pendingNotificationIds],
+  );
+
   // Mutation for marking notifications as read
   const markAsReadMutation = useMutation({
+    // Optimistically update the cache before API call for instant UI feedback
+    onMutate: async ({
+      state: _state,
+      readNotifications,
+    }: {
+      state: AtlassifyState;
+      readNotifications: AtlassifyNotification[];
+    }) => {
+      // Add these notification IDs to pending set
+      setPendingNotificationIds((prev) => {
+        const next = new Set(prev);
+        for (const n of readNotifications) {
+          next.add(n.id);
+        }
+        return next;
+      });
+
+      // Cancel any outgoing refetches so they don't overwrite our optimistic update
+      await queryClient.cancelQueries({ queryKey: notificationsQueryKey });
+
+      // Snapshot the previous value for rollback
+      const previousNotifications = queryClient.getQueryData<
+        AccountNotifications[]
+      >(notificationsQueryKey);
+
+      // Optimistically update the cache
+      queryClient.setQueryData<AccountNotifications[]>(
+        notificationsQueryKey,
+        (old) => {
+          if (!old) {
+            return old;
+          }
+
+          const account = readNotifications[0].account;
+
+          return old.map((accountNotifications) => {
+            if (accountNotifications.account.id !== account.id) {
+              return accountNotifications;
+            }
+
+            // Update readState for the notifications
+            const notificationIDsToUpdate = new Set(
+              readNotifications.map((n) => n.id),
+            );
+
+            const updatedNotifications = accountNotifications.notifications.map(
+              (n) =>
+                notificationIDsToUpdate.has(n.id)
+                  ? { ...n, readState: 'read' as const }
+                  : n,
+            );
+
+            // Don't filter out notifications yet - let animation play
+            // Removal happens in onSettled after animation completes
+            return {
+              ...accountNotifications,
+              notifications: updatedNotifications,
+            };
+          });
+        },
+      );
+
+      // Return context for rollback and timing
+      return { previousNotifications, startTime: Date.now() };
+    },
+
     mutationFn: async ({
       state,
       readNotifications,
@@ -255,37 +337,143 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
       singleNotificationIDs.push(...groupedNotificationIds);
 
+      // Make the API call
       await markNotificationsAsRead(account, singleNotificationIDs);
+    },
 
-      for (const notification of readNotifications) {
-        notification.readState = 'read';
+    onError: (err, _variables, context) => {
+      // Rollback to previous state on error
+      if (context?.previousNotifications) {
+        queryClient.setQueryData(
+          notificationsQueryKey,
+          context.previousNotifications,
+        );
       }
 
-      const updatedNotifications = removeNotificationsForAccount(
-        account,
-        state.settings,
-        readNotifications,
-        notifications,
-      );
-
-      return updatedNotifications;
-    },
-
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
-    },
-
-    onError: (err) => {
       rendererLogError(
         'markNotificationsRead',
         'Error occurred while marking notifications as read',
         err,
       );
     },
+
+    // Refetch to ensure we're in sync with server and remove from pending
+    onSettled: (_data, _error, variables, context) => {
+      const ANIMATION_DURATION = 700; // ms
+      const MIN_REMOVAL_DELAY = 100; // ms buffer
+      
+      // Calculate how long the API call took
+      const apiDuration = context?.startTime ? Date.now() - context.startTime : 0;
+      
+      // If API was faster than animation, wait for animation to complete
+      // If API was slower, remove almost immediately (animation already done)
+      const removalDelay = Math.max(
+        MIN_REMOVAL_DELAY,
+        ANIMATION_DURATION - apiDuration + MIN_REMOVAL_DELAY
+      );
+
+      setTimeout(() => {
+        // Remove notification IDs from pending set
+        setPendingNotificationIds((prev) => {
+          const next = new Set(prev);
+          for (const n of variables.readNotifications) {
+            next.delete(n.id);
+          }
+          return next;
+        });
+
+        // Now apply the actual removal from cache if needed using helper
+        queryClient.setQueryData<AccountNotifications[]>(
+          notificationsQueryKey,
+          (old) => {
+            if (!old) {
+              return old;
+            }
+
+            const account = variables.readNotifications[0].account;
+
+            // Use the helper function to handle removal/update logic
+            return removeNotificationsForAccount(
+              account,
+              variables.state.settings,
+              variables.readNotifications,
+              old,
+            );
+          },
+        );
+
+        queryClient.invalidateQueries({ queryKey: notificationsQueryKey });
+      }, removalDelay);
+    },
   });
 
   // Mutation for marking notifications as unread
   const markAsUnreadMutation = useMutation({
+    // Optimistically update the cache before API call
+    onMutate: async ({
+      state: _state,
+      unreadNotifications,
+    }: {
+      state: AtlassifyState;
+      unreadNotifications: AtlassifyNotification[];
+    }) => {
+      // Add these notification IDs to pending set
+      setPendingNotificationIds((prev) => {
+        const next = new Set(prev);
+        for (const n of unreadNotifications) {
+          next.add(n.id);
+        }
+        return next;
+      });
+
+      // Cancel any outgoing refetches
+      await queryClient.cancelQueries({ queryKey: notificationsQueryKey });
+
+      // Snapshot the previous value for rollback
+      const previousNotifications = queryClient.getQueryData<
+        AccountNotifications[]
+      >(notificationsQueryKey);
+
+      // Optimistically update the cache
+      queryClient.setQueryData<AccountNotifications[]>(
+        notificationsQueryKey,
+        (old) => {
+          if (!old) {
+            return old;
+          }
+
+          const account = unreadNotifications[0].account;
+
+          return old.map((accountNotifications) => {
+            if (accountNotifications.account.id !== account.id) {
+              return accountNotifications;
+            }
+
+            // Update readState for the notifications
+            const updatedNotifications = accountNotifications.notifications.map(
+              (n) => {
+                const shouldMarkUnread = unreadNotifications.some(
+                  (un) => un.id === n.id,
+                );
+                if (shouldMarkUnread) {
+                  return { ...n, readState: 'unread' as const };
+                }
+                return n;
+              },
+            );
+
+            return {
+              ...accountNotifications,
+              notifications: updatedNotifications,
+            };
+          });
+        },
+      );
+
+      // Return context for rollback
+      return { previousNotifications, startTime: Date.now() };
+    },
+
     mutationFn: async ({
       state,
       unreadNotifications,
@@ -313,25 +501,46 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
       singleNotificationIDs.push(...groupedNotificationIds);
 
+      // Make the API call
       await markNotificationsAsUnread(account, singleNotificationIDs);
+    },
 
-      for (const notification of unreadNotifications) {
-        notification.readState = 'unread';
+    onError: (err, _variables, context) => {
+      // Rollback to previous state on error
+      if (context?.previousNotifications) {
+        queryClient.setQueryData(
+          notificationsQueryKey,
+          context.previousNotifications,
+        );
       }
 
-      return notifications;
-    },
-
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
-    },
-
-    onError: (err) => {
       rendererLogError(
         'markNotificationsUnread',
         'Error occurred while marking notifications as unread',
         err,
       );
+    },
+
+    // Refetch to ensure we're in sync with server and remove from pending
+    onSettled: (_data, _error, variables, _context) => {
+      const MIN_REMOVAL_DELAY = 100; // ms buffer
+      
+      // For unread, no removal animation, so just use minimal delay
+      // Could be made dynamic based on _context?.startTime if needed
+      const removalDelay = MIN_REMOVAL_DELAY;
+
+      setTimeout(() => {
+        // Remove notification IDs from pending set
+        setPendingNotificationIds((prev) => {
+          const next = new Set(prev);
+          for (const n of variables.unreadNotifications) {
+            next.delete(n.id);
+          }
+          return next;
+        });
+
+        queryClient.invalidateQueries({ queryKey: notificationsQueryKey });
+      }, removalDelay);
     },
   });
 
@@ -368,5 +577,10 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
     markNotificationsRead,
     markNotificationsUnread,
+
+    // Expose mutation states for loading indicators
+    isMarkingAsRead: markAsReadMutation.isPending,
+    isMarkingAsUnread: markAsUnreadMutation.isPending,
+    isNotificationPending,
   };
 };

@@ -59,6 +59,9 @@ describe('renderer/context/App.tsx', () => {
       refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
+      isMarkingAsRead: false,
+      isMarkingAsUnread: false,
+      isNotificationPending: vi.fn(() => false),
     } as ReturnType<typeof useNotifications>);
   });
 

@@ -37,8 +37,12 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread, settings } =
-    useAppContext();
+  const {
+    markNotificationsRead,
+    markNotificationsUnread,
+    settings,
+    isNotificationPending,
+  } = useAppContext();
 
   const { t } = useTranslation();
 
@@ -47,7 +51,14 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
 
+  // Check if this specific notification is pending an action
+  const isPending = isNotificationPending(notification.id);
+
   const actionNotificationInteraction = () => {
+    if (isPending) {
+      return; // Prevent double-actions during pending state
+    }
+
     setShouldAnimateNotificationExit(
       shouldAnimateExit && settings.markAsReadOnOpen,
     );
@@ -60,11 +71,19 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   };
 
   const actionMarkAsRead = () => {
+    if (isPending) {
+      return; // Prevent double-actions during pending state
+    }
+
     setShouldAnimateNotificationExit(shouldAnimateExit);
     markNotificationsRead([notification]);
   };
 
   const actionMarkAsUnread = () => {
+    if (isPending) {
+      return; // Prevent double-actions during pending state
+    }
+
     markNotificationsUnread([notification]);
   };
 
@@ -103,9 +122,10 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   return (
     <div
       className={cn(
-        'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
+        'border-b border-atlassify-notifications hover:bg-atlassify-notifications transition-opacity',
         (isProductAnimatingExit || shouldAnimateNotificationExit) &&
-          'translate-x-full opacity-0 transition duration-350 ease-in-out',
+          'translate-x-full opacity-0 transition duration-1000 ease-in-out',
+        isPending && 'opacity-60 pointer-events-none',
       )}
       id={notification.id}
     >
