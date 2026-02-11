@@ -20,7 +20,7 @@ import './App.css';
 import { QueryClientProvider } from '@tanstack/react-query';
 
 import { useAppContext } from './hooks/useAppContext';
-import { initializeStoreSubscriptions } from './stores/side-effects';
+import { initializeStoreSubscriptions } from './stores/subscriptions';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';

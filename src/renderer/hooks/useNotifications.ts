@@ -74,7 +74,7 @@ export const useNotifications = (
   const products = useFiltersStore((s) => s.products);
 
   // Query key excludes filters to prevent API refetches on filter changes
-  // Filters are applied client-side via subscription in side-effects.ts
+  // Filters are applied client-side via subscription in subscriptions.ts
   const notificationsQueryKey = useMemo(
     () =>
       notificationsKeys.list(

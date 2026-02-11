@@ -1,6 +1,5 @@
 /**
- * Side effects subscribers for Zustand stores.
- * These subscribers watch for store changes and trigger corresponding side effects.
+ * Store subscriptions that watch for state changes and trigger corresponding side effects.
  *
  * Should be initialized once during app startup within a React useEffect hook
  * to ensure proper lifecycle management and cleanup on unmount.
