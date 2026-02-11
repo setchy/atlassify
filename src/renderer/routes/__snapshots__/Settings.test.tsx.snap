@@ -87,7 +87,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 :
               </span>
               <div
-                class="_11c81ixg _kqswh2mm _lcxv1rj4 _1tn22smr -container"
+                class="_11c81d4k _kqswh2mm _lcxv1rj4 _1tn2fhey -container"
                 data-testid="settings-language-selector-select--container"
                 style="box-sizing: border-box;"
               >
