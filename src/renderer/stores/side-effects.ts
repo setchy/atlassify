@@ -72,6 +72,10 @@ export function setupSettingsSideEffects(): () => void {
   );
   unsubscribers.push(unsubAlternateIdle);
 
+  // Initialize zoom level from saved settings on startup
+  const initialZoomPercentage = useSettingsStore.getState().zoomPercentage;
+  window.atlassify.zoom.setLevel(zoomPercentageToLevel(initialZoomPercentage));
+
   // Zoom percentage changes
   const unsubZoom = useSettingsStore.subscribe(
     (state) => state.zoomPercentage,
