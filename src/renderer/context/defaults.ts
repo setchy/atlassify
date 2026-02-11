@@ -1,55 +1,21 @@
-import { Theme } from '../../shared/theme';
+/**
+ * Default values for application state.
+ *
+ * @deprecated This file is deprecated. Import from '../stores/defaults' instead.
+ * Kept for backward compatibility during migration.
+ */
 
 import {
-  type AppearanceSettingsState,
-  type AuthState,
-  type NotificationSettingsState,
-  OpenPreference,
-  type Percentage,
-  type SettingsState,
-  type SystemSettingsState,
-  type TraySettingsState,
-} from '../types';
+  DEFAULT_ACCOUNTS_STATE,
+  DEFAULT_SETTINGS_STATE,
+} from '../stores/defaults';
 
-import { DEFAULT_LANGUAGE } from '../i18n';
+/**
+ * @deprecated Use DEFAULT_ACCOUNTS_STATE from '../stores/defaults' instead
+ */
+export const defaultAuth = DEFAULT_ACCOUNTS_STATE;
 
-export const defaultAuth: AuthState = {
-  accounts: [],
-};
-
-const defaultAppearanceSettings: AppearanceSettingsState = {
-  language: DEFAULT_LANGUAGE,
-  theme: Theme.LIGHT,
-  zoomPercentage: 100 as Percentage,
-};
-
-const defaultNotificationSettings: NotificationSettingsState = {
-  markAsReadOnOpen: true,
-  delayNotificationState: false,
-  fetchOnlyUnreadNotifications: true,
-  groupNotificationsByProduct: false,
-  groupNotificationsByProductAlphabetically: false,
-  groupNotificationsByTitle: true,
-};
-
-const defaultTraySettings: TraySettingsState = {
-  showNotificationsCountInTray: true,
-  useUnreadActiveIcon: true,
-  useAlternateIdleIcon: false,
-};
-
-const defaultSystemSettings: SystemSettingsState = {
-  openLinks: OpenPreference.FOREGROUND,
-  keyboardShortcutEnabled: true,
-  showSystemNotifications: true,
-  playSoundNewNotifications: true,
-  notificationVolume: 20 as Percentage,
-  openAtStartup: true,
-};
-
-export const defaultSettings: SettingsState = {
-  ...defaultAppearanceSettings,
-  ...defaultNotificationSettings,
-  ...defaultTraySettings,
-  ...defaultSystemSettings,
-};
+/**
+ * @deprecated Use DEFAULT_SETTINGS_STATE from '../stores/defaults' instead
+ */
+export const defaultSettings = DEFAULT_SETTINGS_STATE;

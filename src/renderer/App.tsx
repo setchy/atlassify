@@ -1,3 +1,4 @@
+import { type FC, useEffect } from 'react';
 import {
   Navigate,
   Route,
@@ -19,10 +20,7 @@ import './App.css';
 import { QueryClientProvider } from '@tanstack/react-query';
 
 import { useAppContext } from './hooks/useAppContext';
-import {
-  setupFiltersSideEffects,
-  setupSettingsSideEffects,
-} from './stores/side-effects';
+import { initializeStoreSubscriptions } from './stores/side-effects';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
@@ -37,12 +35,6 @@ migrateContextToZustand().catch((error) => {
   rendererLogError('App', 'Failed to migrate storage', error);
 });
 
-// Set up side-effect subscribers for settings changes
-setupSettingsSideEffects();
-
-// Set up side-effect subscribers for filter changes
-setupFiltersSideEffects();
-
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
   const location = useLocation();
@@ -54,7 +46,13 @@ function RequireAuth({ children }) {
   );
 }
 
-export const App = () => {
+export const App: FC = () => {
+  // Initialize store subscriptions with proper cleanup
+  useEffect(() => {
+    const cleanup = initializeStoreSubscriptions();
+    return cleanup;
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <AppProvider>

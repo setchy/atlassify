@@ -15,10 +15,9 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { defaultSettings } from '../../context/defaults';
 import { useAppContext } from '../../hooks/useAppContext';
-
-import { OpenPreference } from '../../types';
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
+import { OpenPreference } from '../../stores/types';
 
 import {
   canDecreaseVolume,
@@ -180,7 +179,7 @@ export const SystemSettings: FC = () => {
                 onClick={() =>
                   updateSetting(
                     'notificationVolume',
-                    defaultSettings.notificationVolume,
+                    DEFAULT_SETTINGS_STATE.notificationVolume,
                   )
                 }
                 shape="circle"

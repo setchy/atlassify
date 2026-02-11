@@ -3,23 +3,9 @@ import { persist } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
-import type { Account, AuthState } from '../types';
+import type { AccountsStore } from './types';
 
-interface AccountsActions {
-  setAccounts: (accounts: Account[]) => void;
-  addAccount: (account: Account) => void;
-  removeAccount: (account: Account) => void;
-  reset: () => void;
-}
-
-type AccountsStore = AuthState & AccountsActions;
-
-/**
- * Default accounts state
- */
-export const defaultAccountsState: AuthState = {
-  accounts: [],
-};
+import { DEFAULT_ACCOUNTS_STATE } from './defaults';
 
 /**
  * Atlassify Accounts store.
@@ -30,7 +16,7 @@ export const defaultAccountsState: AuthState = {
 export const useAccountsStore = create<AccountsStore>()(
   persist(
     (set, _get, store) => ({
-      ...defaultAccountsState,
+      ...DEFAULT_ACCOUNTS_STATE,
 
       setAccounts: (accounts) => {
         set({ accounts });

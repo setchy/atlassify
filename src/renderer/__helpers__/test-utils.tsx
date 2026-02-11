@@ -8,8 +8,7 @@ import { vi } from 'vitest';
 import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
 import { AppContext, type AppContextState } from '../context/App';
-
-import type { SettingsState } from '../types';
+import type { SettingsState } from '../stores/types';
 
 /**
  * Test context that allows partial settings

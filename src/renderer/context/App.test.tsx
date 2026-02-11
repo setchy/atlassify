@@ -9,6 +9,7 @@ import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
@@ -17,7 +18,6 @@ import type { AuthState } from '../types';
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import { type AppContextState, AppProvider } from './App';
-import { defaultSettings } from './defaults';
 
 vi.mock('../hooks/useNotifications');
 
@@ -140,7 +140,7 @@ describe('renderer/context/App.tsx', () => {
 
       // Verify the store was reset to defaults
       expect(useSettingsStore.getState().playSoundNewNotifications).toBe(
-        defaultSettings.playSoundNewNotifications,
+        DEFAULT_SETTINGS_STATE.playSoundNewNotifications,
       );
     });
   });

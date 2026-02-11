@@ -2,15 +2,14 @@ import { Theme } from '../../shared/theme';
 
 import {
   type AppearanceSettingsState,
-  type AtlassifyState,
-  type AuthState,
   type NotificationSettingsState,
   OpenPreference,
-  type Percentage,
   type SettingsState,
   type SystemSettingsState,
   type TraySettingsState,
-} from '../types';
+} from '../stores/types';
+
+import type { AtlassifyState, AuthState, Percentage } from '../types';
 
 import { mockAtlassianCloudAccount } from './account-mocks';
 

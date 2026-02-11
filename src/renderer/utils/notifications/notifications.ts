@@ -1,10 +1,8 @@
 import { AxiosError } from 'axios';
 
-import type {
-  AccountNotifications,
-  AtlassifyState,
-  SettingsState,
-} from '../../types';
+import type { SettingsState } from '../../stores/types';
+
+import type { AccountNotifications, AtlassifyState } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';

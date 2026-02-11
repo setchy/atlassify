@@ -2,9 +2,10 @@ import { vi } from 'vitest';
 
 import { mockSettings } from '../__mocks__/state-mocks';
 
+import { OpenPreference } from '../stores/types';
 import useSettingsStore from '../stores/useSettingsStore';
 
-import { type Link, OpenPreference } from '../types';
+import type { Link } from '../types';
 
 import {
   decryptValue,

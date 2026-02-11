@@ -8,6 +8,7 @@ import {
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
+import type { SettingsState } from '../stores/types';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
@@ -18,8 +19,6 @@ import type {
   AtlassifyError,
   AtlassifyNotification,
   AuthState,
-  SettingsState,
-  SettingsValue,
   Status,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
@@ -52,7 +51,10 @@ export interface AppContextState {
 
   settings: SettingsState;
   resetSettings: () => void;
-  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+  updateSetting: <K extends keyof SettingsState>(
+    name: K,
+    value: SettingsState[K],
+  ) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -191,7 +193,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, [resetSettings]);
 
   const handleUpdateSetting = useCallback(
-    (name: keyof SettingsState, value: SettingsValue) => {
+    <K extends keyof SettingsState>(name: K, value: SettingsState[K]) => {
       useSettingsStore.getState().updateSetting(name, value);
     },
     [],

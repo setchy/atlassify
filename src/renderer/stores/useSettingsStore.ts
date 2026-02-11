@@ -3,16 +3,9 @@ import { persist, subscribeWithSelector } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
-import { defaultSettings } from '../context/defaults';
+import type { SettingsStore } from './types';
 
-import type { SettingsState, SettingsValue } from '../types';
-
-interface SettingsActions {
-  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
-  reset: () => void;
-}
-
-type SettingsStore = SettingsState & SettingsActions;
+import { DEFAULT_SETTINGS_STATE } from './defaults';
 
 /**
  * Atlassify Settings store.
@@ -23,7 +16,7 @@ export const useSettingsStore = create<SettingsStore>()(
   subscribeWithSelector(
     persist(
       (set, _get, store) => ({
-        ...defaultSettings,
+        ...DEFAULT_SETTINGS_STATE,
 
         updateSetting: (name, value) => {
           set({ [name]: value });

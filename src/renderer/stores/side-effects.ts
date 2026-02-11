@@ -1,6 +1,9 @@
 /**
  * Side effects subscribers for Zustand stores.
  * These subscribers watch for store changes and trigger corresponding side effects.
+ *
+ * Should be initialized once during app startup within a React useEffect hook
+ * to ensure proper lifecycle management and cleanup on unmount.
  */
 
 import { queryClient } from '../utils/api/client';
@@ -18,13 +21,17 @@ import { useFiltersStore } from './useFiltersStore';
 import { useSettingsStore } from './useSettingsStore';
 
 /**
- * Set up all side-effect subscribers for settings changes.
- * Should be called once on app initialization.
+ * Initialize all store side-effect subscriptions.
+ * Should be called once on app initialization within a React useEffect hook.
  *
  * @returns Cleanup function to unsubscribe all listeners
  */
-export function setupSettingsSideEffects(): () => void {
+export function initializeStoreSubscriptions(): () => void {
   const unsubscribers: Array<() => void> = [];
+
+  // ========================================================================
+  // Settings Store Side Effects
+  // ========================================================================
 
   // Theme changes
   const unsubTheme = useSettingsStore.subscribe(
@@ -110,22 +117,9 @@ export function setupSettingsSideEffects(): () => void {
     clearTimeout(timeout);
   });
 
-  // Return cleanup function that unsubscribes all listeners
-  return () => {
-    for (const unsubscribe of unsubscribers) {
-      unsubscribe();
-    }
-  };
-}
-
-/**
- * Set up filter side-effect subscriber to apply client-side filtering
- * when filter state changes without refetching from API.
- *
- * @returns Cleanup function to unsubscribe listener
- */
-export function setupFiltersSideEffects(): () => void {
-  const unsubscribers: Array<() => void> = [];
+  // ========================================================================
+  // Filters Store Side Effects
+  // ========================================================================
 
   // Subscribe to filters store changes
   const unsubFilters = useFiltersStore.subscribe(() => {
@@ -145,6 +139,7 @@ export function setupFiltersSideEffects(): () => void {
   });
   unsubscribers.push(unsubFilters);
 
+  // Return cleanup function that unsubscribes all listeners
   return () => {
     for (const unsubscribe of unsubscribers) {
       unsubscribe();
