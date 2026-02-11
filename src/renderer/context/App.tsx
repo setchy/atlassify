@@ -8,7 +8,7 @@ import {
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
-import type { SettingsState } from '../stores/types';
+import type { AccountsState, SettingsState } from '../stores/types';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
@@ -18,16 +18,14 @@ import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  AuthState,
   Status,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
-import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 
 export interface AppContextState {
-  auth: AuthState;
+  auth: AccountsState;
   isLoggedIn: boolean;
   login: (data: LoginOptions) => Promise<void>;
   logoutFromAccount: (account: Account) => void;
@@ -66,10 +64,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const resetFilters = useFiltersStore((s) => s.reset);
   const resetAccounts = useAccountsStore((s) => s.reset);
   const resetSettings = useSettingsStore((s) => s.reset);
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn);
+  const createAccount = useAccountsStore((s) => s.createAccount);
+  const removeAccount = useAccountsStore((s) => s.removeAccount);
 
   // Read accounts from store
   const accounts = useAccountsStore((state) => state.accounts);
-  const auth = useMemo<AuthState>(() => ({ accounts }), [accounts]);
+  const auth = useMemo<AccountsState>(() => ({ accounts }), [accounts]);
 
   // Subscribe to all settings values individually to avoid creating new objects
   const language = useSettingsStore((s) => s.language);
@@ -165,7 +166,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications({ auth, settings });
+  } = useNotifications(auth, settings);
 
   useAccounts(auth.accounts);
 
@@ -199,24 +200,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     [],
   );
 
-  const isLoggedIn = useMemo(() => {
-    return hasAccounts(auth);
-  }, [auth]);
-
   const login = useCallback(
     async ({ username, token }: LoginOptions) => {
-      const updatedAuth = await addAccount(auth, username, token);
-      useAccountsStore.getState().setAccounts(updatedAuth.accounts);
+      await createAccount(username, token);
     },
-    [auth],
+    [createAccount],
   );
 
   const logoutFromAccount = useCallback(
     async (account: Account) => {
-      const updatedAuth = removeAccount(auth, account);
-      useAccountsStore.getState().setAccounts(updatedAuth.accounts);
+      removeAccount(account);
     },
-    [auth],
+    [removeAccount],
   );
 
   const fetchNotificationsWithAccounts = useCallback(
@@ -239,7 +234,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const contextValues: AppContextState = useMemo(
     () => ({
       auth,
-      isLoggedIn,
+      isLoggedIn: isLoggedIn(),
       login,
       logoutFromAccount,
 

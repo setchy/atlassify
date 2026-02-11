@@ -9,6 +9,8 @@ import type {
   Percentage,
   ProductType,
   ReadStateType,
+  Token,
+  Username,
 } from '../types';
 
 /**
@@ -47,6 +49,11 @@ export interface AccountsActions {
   setAccounts: (accounts: Account[]) => void;
   addAccount: (account: Account) => void;
   removeAccount: (account: Account) => void;
+  createAccount: (username: Username, token: Token) => Promise<void>;
+  refreshAccount: (account: Account) => Promise<Account>;
+  hasAccounts: () => boolean;
+  isLoggedIn: () => boolean;
+  hasUsernameAlready: (username: Username) => boolean;
   reset: () => void;
 }
 

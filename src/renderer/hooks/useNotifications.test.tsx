@@ -6,7 +6,7 @@ import nock from 'nock';
 
 import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockState } from '../__mocks__/state-mocks';
+import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
 
 import { useNotifications } from './useNotifications';
 
@@ -52,9 +52,12 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockState), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHook(
+        () => useNotifications(mockAuth, mockSettings),
+        {
+          wrapper: createWrapper(),
+        },
+      );
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -62,7 +65,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockState.auth.accounts[0],
+          account: mockAuth.accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -71,7 +74,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - all notifications read/unread', async () => {
-      mockState.settings.fetchOnlyUnreadNotifications = false;
+      mockSettings.fetchOnlyUnreadNotifications = false;
 
       nock('https://team.atlassian.net')
         .post('/gateway/api/graphql')
@@ -92,9 +95,12 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockState), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHook(
+        () => useNotifications(mockAuth, mockSettings),
+        {
+          wrapper: createWrapper(),
+        },
+      );
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -102,7 +108,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockState.auth.accounts[0],
+          account: mockAuth.accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -111,7 +117,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - handles missing extensions response object', async () => {
-      mockState.settings.fetchOnlyUnreadNotifications = false;
+      mockSettings.fetchOnlyUnreadNotifications = false;
 
       nock('https://team.atlassian.net')
         .post('/gateway/api/graphql')
@@ -125,9 +131,12 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockState), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHook(
+        () => useNotifications(mockAuth, mockSettings),
+        {
+          wrapper: createWrapper(),
+        },
+      );
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -135,7 +144,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockState.auth.accounts[0],
+          account: mockAuth.accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -188,9 +197,12 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockState), {
-      wrapper: createWrapper(),
-    });
+    const { result } = renderHook(
+      () => useNotifications(mockAuth, mockSettings),
+      {
+        wrapper: createWrapper(),
+      },
+    );
 
     await waitFor(() => {
       expect(result.current.status).toBe('success');
@@ -253,9 +265,12 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockState), {
-      wrapper: createWrapper(),
-    });
+    const { result } = renderHook(
+      () => useNotifications(mockAuth, mockSettings),
+      {
+        wrapper: createWrapper(),
+      },
+    );
 
     await waitFor(() => {
       expect(result.current.status).toBe('success');

@@ -1,8 +1,8 @@
 import { AxiosError } from 'axios';
 
-import type { SettingsState } from '../../stores/types';
+import type { AccountsState, SettingsState } from '../../stores/types';
 
-import type { AccountNotifications, AtlassifyState } from '../../types';
+import type { AccountNotifications } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -39,8 +39,8 @@ export function hasMoreNotifications(
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
-function getNotifications(state: AtlassifyState) {
-  return state.auth.accounts.map((account) => {
+function getNotifications(auth: AccountsState) {
+  return auth.accounts.map((account) => {
     return {
       account,
       notifications: getNotificationsForUser(account),
@@ -57,14 +57,16 @@ function getNotifications(state: AtlassifyState) {
  *  - Filtering
  *  - Ordering
  *
- * @param state - The Atlassify state.
+ * @param auth - The accounts state.
+ * @param settings - The settings state.
  * @returns A promise that resolves to an array of account notifications.
  */
 export async function getAllNotifications(
-  state: AtlassifyState,
+  auth: AccountsState,
+  settings: SettingsState,
 ): Promise<AccountNotifications[]> {
   const accountNotifications: AccountNotifications[] = await Promise.all(
-    getNotifications(state)
+    getNotifications(auth)
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
@@ -106,7 +108,7 @@ export async function getAllNotifications(
   );
 
   // Set the order property for the notifications
-  stabilizeNotificationsOrder(accountNotifications, state.settings);
+  stabilizeNotificationsOrder(accountNotifications, settings);
 
   return accountNotifications;
 }

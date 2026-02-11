@@ -4,13 +4,13 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
+import type { AccountsState, SettingsState } from '../stores/types';
 import useFiltersStore from '../stores/useFiltersStore';
 
 import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  AtlassifyState,
   Status,
 } from '../types';
 
@@ -58,7 +58,10 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (state: AtlassifyState): NotificationsState => {
+export const useNotifications = (
+  auth: AccountsState,
+  settings: SettingsState,
+): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
@@ -75,10 +78,10 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   const notificationsQueryKey = useMemo(
     () =>
       notificationsKeys.list(
-        state.auth.accounts.length,
-        state.settings.fetchOnlyUnreadNotifications,
+        auth.accounts.length,
+        settings.fetchOnlyUnreadNotifications,
       ),
-    [state.auth.accounts.length, state.settings.fetchOnlyUnreadNotifications],
+    [auth.accounts.length, settings.fetchOnlyUnreadNotifications],
   );
 
   // Create select function that depends on filter state
@@ -102,7 +105,7 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(state);
+      return await getAllNotifications(auth, settings);
     },
 
     // Apply filters as a transformation on the cached data
@@ -175,11 +178,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     );
 
     if (diffNotifications.length > 0) {
-      if (state.settings.playSoundNewNotifications) {
-        raiseSoundNotification(state.settings.notificationVolume);
+      if (settings.playSoundNewNotifications) {
+        raiseSoundNotification(settings.notificationVolume);
       }
 
-      if (state.settings.showSystemNotifications) {
+      if (settings.showSystemNotifications) {
         raiseNativeNotification(diffNotifications);
       }
     }
@@ -189,9 +192,9 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     notifications,
     isLoading,
     isError,
-    state.settings.playSoundNewNotifications,
-    state.settings.showSystemNotifications,
-    state.settings.notificationVolume,
+    settings.playSoundNewNotifications,
+    settings.showSystemNotifications,
+    settings.notificationVolume,
   ]);
 
   const getNotificationIdsForGroups = useCallback(

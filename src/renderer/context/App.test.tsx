@@ -13,9 +13,6 @@ import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
-import type { AuthState } from '../types';
-
-import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import { type AppContextState, AppProvider } from './App';
 
@@ -146,14 +143,11 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = vi.spyOn(authUtils, 'addAccount').mockResolvedValue({
-      accounts: [mockAtlassianCloudAccount],
-    } as AuthState);
-    const removeAccountSpy = vi
-      .spyOn(authUtils, 'removeAccount')
-      .mockReturnValue({ accounts: [] } as AuthState);
-
-    it('login calls addAccount ', async () => {
+    it('login calls createAccount', async () => {
+      const createAccountSpy = vi.spyOn(
+        useAccountsStore.getState(),
+        'createAccount',
+      );
       const getContext = renderWithContext();
 
       await act(async () => {
@@ -163,34 +157,26 @@ describe('renderer/context/App.tsx', () => {
         });
       });
 
-      expect(addAccountSpy).toHaveBeenCalledWith(
-        expect.anything(),
+      expect(createAccountSpy).toHaveBeenCalledWith(
         mockAtlassianCloudAccount.username,
         mockAtlassianCloudAccount.token,
       );
-
-      // Verify the store was updated
-      expect(useAccountsStore.getState().accounts).toEqual([
-        mockAtlassianCloudAccount,
-      ]);
     });
 
     it('logout calls removeAccount', async () => {
       // Set up with an account
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+      const removeAccountSpy = vi.spyOn(
+        useAccountsStore.getState(),
+        'removeAccount',
+      );
       const getContext = renderWithContext();
 
       await act(async () => {
         await getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 
-      expect(removeAccountSpy).toHaveBeenCalledWith(
-        expect.anything(),
-        mockAtlassianCloudAccount,
-      );
-
-      // Verify the store was updated
-      expect(useAccountsStore.getState().accounts).toEqual([]);
+      expect(removeAccountSpy).toHaveBeenCalledWith(mockAtlassianCloudAccount);
     });
   });
 });

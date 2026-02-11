@@ -1,6 +1,7 @@
 import { Theme } from '../../shared/theme';
 
 import {
+  type AccountsState,
   type AppearanceSettingsState,
   type NotificationSettingsState,
   OpenPreference,
@@ -9,11 +10,11 @@ import {
   type TraySettingsState,
 } from '../stores/types';
 
-import type { AtlassifyState, AuthState, Percentage } from '../types';
+import type { Percentage } from '../types';
 
 import { mockAtlassianCloudAccount } from './account-mocks';
 
-export const mockAuth: AuthState = {
+export const mockAuth: AccountsState = {
   accounts: [mockAtlassianCloudAccount],
 };
 
@@ -52,9 +53,4 @@ export const mockSettings: SettingsState = {
   ...mockNotificationSettings,
   ...mockTraySettings,
   ...mockSystemSettings,
-};
-
-export const mockState: AtlassifyState = {
-  auth: mockAuth,
-  settings: mockSettings,
 };

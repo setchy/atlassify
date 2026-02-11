@@ -3,8 +3,6 @@ import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { LogoProps } from '@atlaskit/logo';
 
-import type { SettingsState } from './stores/types';
-
 declare const __brand: unique symbol;
 
 type Brand<B> = { [__brand]: B };
@@ -84,25 +82,6 @@ export interface Account {
    * The avatar for the account user.
    */
   avatar: Link | null;
-}
-
-export interface AuthState {
-  accounts: Account[];
-}
-
-/**
- * The state of the application, including authenticated accounts and application settings.
- */
-export interface AtlassifyState {
-  /**
-   * Authenticated Atlassian accounts for use by Atlassify.
-   */
-  auth?: AuthState;
-
-  /**
-   * The settings for the application.
-   */
-  settings?: SettingsState;
 }
 
 /**

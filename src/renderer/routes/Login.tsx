@@ -24,6 +24,7 @@ import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../hooks/useAppContext';
+import useAccountsStore from '../stores/useAccountsStore';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -34,7 +35,6 @@ import type { Token, Username } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
-import { hasUsernameAlready } from '../utils/auth/utils';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -49,7 +49,8 @@ interface LoginProps {
 export const LoginRoute: FC = () => {
   const navigate = useNavigate();
 
-  const { login, auth } = useAppContext();
+  const { login } = useAppContext();
+  const hasUsernameAlready = useAccountsStore((s) => s.hasUsernameAlready);
 
   const { t } = useTranslation();
 
@@ -104,10 +105,7 @@ export const LoginRoute: FC = () => {
                         const onChange = (e: ChangeEvent<HTMLInputElement>) => {
                           fieldProps.onChange(e);
                           setIsDuplicateUsername(
-                            hasUsernameAlready(
-                              auth,
-                              e.target.value as Username,
-                            ),
+                            hasUsernameAlready(e.target.value as Username),
                           );
                         };
                         return (

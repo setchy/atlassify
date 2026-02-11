@@ -11,6 +11,7 @@ import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../hooks/useAppContext';
+import useAccountsStore from '../stores/useAccountsStore';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -19,7 +20,6 @@ import { Header } from '../components/primitives/Header';
 
 import type { Account } from '../types';
 
-import { refreshAccount } from '../utils/auth/utils';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
@@ -27,6 +27,7 @@ export const AccountsRoute: FC = () => {
   const navigate = useNavigate();
 
   const { auth, logoutFromAccount } = useAppContext();
+  const refreshAccount = useAccountsStore((s) => s.refreshAccount);
 
   const { t } = useTranslation();
 
