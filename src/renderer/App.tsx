@@ -41,7 +41,7 @@ migrateContextToZustand().catch((error) => {
 setupSettingsSideEffects();
 
 // Set up side-effect subscribers for filter changes
-setupFiltersSideEffects(queryClient);
+setupFiltersSideEffects();
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();

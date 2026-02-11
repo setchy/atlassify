@@ -3,8 +3,7 @@
  * These subscribers watch for store changes and trigger corresponding side effects.
  */
 
-import type { QueryClient } from '@tanstack/react-query';
-
+import { queryClient } from '../utils/api/client';
 import {
   setAutoLaunch,
   setKeyboardShortcut,
@@ -123,10 +122,9 @@ export function setupSettingsSideEffects(): () => void {
  * Set up filter side-effect subscriber to apply client-side filtering
  * when filter state changes without refetching from API.
  *
- * @param queryClient - TanStack Query client instance
  * @returns Cleanup function to unsubscribe listener
  */
-export function setupFiltersSideEffects(queryClient: QueryClient): () => void {
+export function setupFiltersSideEffects(): () => void {
   const unsubscribers: Array<() => void> = [];
 
   // Subscribe to filters store changes
