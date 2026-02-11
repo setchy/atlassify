@@ -11,7 +11,8 @@ import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
-import { mockSettings } from '../__mocks__/state-mocks';
+
+import useSettingsStore from '../stores/useSettingsStore';
 
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
@@ -45,6 +46,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   beforeEach(() => {
     useFiltersStore.getState().reset();
+    useSettingsStore.getState().reset();
   });
 
   afterEach(() => {
@@ -189,26 +191,24 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('show read / unread notifications', () => {
     it('renders correct icon when in unread only mode', () => {
+      useSettingsStore.setState({ fetchOnlyUnreadNotifications: true });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: { ...mockSettings, fetchOnlyUnreadNotifications: true },
-        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when in unread and read mode', () => {
+      useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: { ...mockSettings, fetchOnlyUnreadNotifications: false },
-        },
       );
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
@@ -236,32 +236,24 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by products', () => {
     it('should order notifications by date', () => {
+      useSettingsStore.setState({ groupNotificationsByProduct: false });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: {
-            ...mockSettings,
-            groupNotificationsByProduct: false,
-          },
-        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should group notifications by product', () => {
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: {
-            ...mockSettings,
-            groupNotificationsByProduct: true,
-          },
-        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
@@ -285,32 +277,24 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by titles', () => {
     it('should group notifications by title', () => {
+      useSettingsStore.setState({ groupNotificationsByTitle: true });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: {
-            ...mockSettings,
-            groupNotificationsByTitle: true,
-          },
-        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should not group notifications by title - flat notifications', () => {
+      useSettingsStore.setState({ groupNotificationsByTitle: false });
+
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: {
-            ...mockSettings,
-            groupNotificationsByTitle: false,
-          },
-        },
       );
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
@@ -372,11 +356,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          settings: {
-            ...mockSettings,
-          },
-        },
       );
 
       expect(

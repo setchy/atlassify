@@ -5,27 +5,30 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
-  const updateSettingMock = vi.fn();
-
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should change the theme radio group', async () => {
+    const updateSettingSpy = vi.spyOn(
+      useSettingsStore.getState(),
+      'updateSetting',
+    );
+
     await act(async () => {
-      renderWithAppContext(<AppearanceSettings />, {
-        updateSetting: updateSettingMock,
-      });
+      renderWithAppContext(<AppearanceSettings />);
     });
 
     await userEvent.click(screen.getByTestId('theme-dark--radio-label'));
 
-    expect(updateSettingMock).toHaveBeenCalledTimes(1);
-    expect(updateSettingMock).toHaveBeenCalledWith('theme', 'DARK');
+    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
+    expect(updateSettingSpy).toHaveBeenCalledWith('theme', 'DARK');
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
@@ -40,9 +43,7 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
       .mockImplementation(vi.fn());
 
     await act(async () => {
-      renderWithAppContext(<AppearanceSettings />, {
-        updateSetting: updateSettingMock,
-      });
+      renderWithAppContext(<AppearanceSettings />);
     });
 
     // Zoom Out

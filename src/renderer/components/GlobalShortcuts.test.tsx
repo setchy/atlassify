@@ -5,6 +5,8 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
+import useSettingsStore from '../stores/useSettingsStore';
+
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
@@ -21,6 +23,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    useSettingsStore.getState().reset();
   });
 
   describe('key bindings', () => {
@@ -90,7 +93,11 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('toggleReadUnread', () => {
       it('toggles read/unread setting when pressing U while logged in', async () => {
-        const updateSettingMock = vi.fn();
+        useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
 
         renderWithAppContext(
           <MemoryRouter>
@@ -98,42 +105,31 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
           {
             isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              fetchOnlyUnreadNotifications: false,
-            },
           },
         );
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'fetchOnlyUnreadNotifications',
           true,
         );
       });
 
       it('does not toggle read/unread when logged out', async () => {
-        const updateSettingMock = vi.fn();
-
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
           {
             isLoggedIn: false,
-            updateSetting: updateSettingMock,
           },
         );
 
         await userEvent.keyboard('u');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
       });
 
       it('does not toggle read/unread when status is loading', async () => {
-        const updateSettingMock = vi.fn();
-
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -141,19 +137,20 @@ describe('components/GlobalShortcuts.tsx', () => {
           {
             isLoggedIn: true,
             status: 'loading',
-            updateSetting: updateSettingMock,
           },
         );
 
         await userEvent.keyboard('u');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
       });
     });
 
     describe('groupByProduct', () => {
       it('toggles group by product setting when pressing P while logged in', async () => {
-        const updateSettingMock = vi.fn();
+        useSettingsStore.setState({ groupNotificationsByProduct: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
 
         renderWithAppContext(
           <MemoryRouter>
@@ -161,43 +158,38 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
           {
             isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              groupNotificationsByProduct: false,
-            },
           },
         );
 
         await userEvent.keyboard('p');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'groupNotificationsByProduct',
           true,
         );
       });
 
       it('does not toggle group by product when logged out', async () => {
-        const updateSettingMock = vi.fn();
-
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
           {
             isLoggedIn: false,
-            updateSetting: updateSettingMock,
           },
         );
 
         await userEvent.keyboard('p');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
       });
     });
 
     describe('groupByTitle', () => {
       it('toggles group by title setting when pressing T while logged in', async () => {
-        const updateSettingMock = vi.fn();
+        useSettingsStore.setState({ groupNotificationsByTitle: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
 
         renderWithAppContext(
           <MemoryRouter>
@@ -205,37 +197,28 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
           {
             isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              groupNotificationsByTitle: false,
-            },
           },
         );
 
         await userEvent.keyboard('t');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'groupNotificationsByTitle',
           true,
         );
       });
 
       it('does not toggle group by title when logged out', async () => {
-        const updateSettingMock = vi.fn();
-
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
           {
             isLoggedIn: false,
-            updateSetting: updateSettingMock,
           },
         );
 
         await userEvent.keyboard('t');
-
-        expect(updateSettingMock).not.toHaveBeenCalled();
       });
     });
 

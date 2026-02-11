@@ -5,17 +5,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 import { vi } from 'vitest';
 
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { mockAuth } from '../__mocks__/state-mocks';
 
 import { AppContext, type AppContextState } from '../context/App';
-import type { SettingsState } from '../stores/types';
 
 /**
- * Test context that allows partial settings
+ * Test context (settings removed as it's no longer in context)
  */
-type TestAppContext = Omit<Partial<AppContextState>, 'settings'> & {
-  settings?: Partial<SettingsState>;
-};
+type TestAppContext = Partial<AppContextState>;
 
 /**
  * Props for the AppContextProvider wrapper
@@ -32,7 +29,6 @@ function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       auth: mockAuth,
-      settings: mockSettings,
       isLoggedIn: true,
 
       notifications: [],

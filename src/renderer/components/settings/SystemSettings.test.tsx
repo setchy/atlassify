@@ -4,7 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
-import { mockSettings } from '../../__mocks__/state-mocks';
+
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { Percentage } from '../../types';
 
@@ -15,6 +16,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    useSettingsStore.getState().reset();
   });
 
   it('should change the open links radio group', async () => {
@@ -80,18 +82,20 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('volume controls should not be shown if playSound checkbox is false', async () => {
+      useSettingsStore.setState({ playSoundNewNotifications: false });
+
       renderWithAppContext(<SystemSettings />, {
         updateSetting: updateSettingMock,
-        settings: { ...mockSettings, playSoundNewNotifications: false },
       });
 
       expect(screen.getByTestId('settings-volume-group')).not.toBeVisible();
     });
 
     it('volume controls should be shown if playSound checkbox is true', async () => {
+      useSettingsStore.setState({ playSoundNewNotifications: true });
+
       renderWithAppContext(<SystemSettings />, {
         updateSetting: updateSettingMock,
-        settings: { ...mockSettings, playSoundNewNotifications: true },
       });
 
       expect(screen.getByTestId('settings-volume-group')).toBeVisible();
@@ -120,10 +124,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should reset notification volume', async () => {
+      useSettingsStore.setState({ notificationVolume: 30 as Percentage });
+
       renderWithAppContext(<SystemSettings />, {
-        settings: {
-          notificationVolume: 30 as Percentage,
-        },
         updateSetting: updateSettingMock,
       });
 

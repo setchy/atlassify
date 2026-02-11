@@ -15,7 +15,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
 
-import { useAppContext } from '../../hooks/useAppContext';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import { LANGUAGES } from '../../i18n/types';
 
@@ -31,9 +31,12 @@ import {
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
-  const { settings, updateSetting } = useAppContext();
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   const { t, i18n } = useTranslation();
+
+  const theme = useSettingsStore((s) => s.theme);
+  const language = useSettingsStore((s) => s.language);
 
   const zoomPercentage = zoomLevelToPercentage(
     window.atlassify.zoom.getLevel(),
@@ -45,12 +48,12 @@ export const AppearanceSettings: FC = () => {
 
   useEffect(() => {
     window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
-      if (settings.theme === Theme.SYSTEM) {
+      if (theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
         setGlobalTheme({ colorMode: 'auto' });
       }
     });
-  }, [settings.theme]);
+  }, [theme]);
 
   const themeOptions: OptionsPropType = [
     {
@@ -107,13 +110,13 @@ export const AppearanceSettings: FC = () => {
             {t('settings.appearance.theme')}:
           </Text>
           <RadioGroup
-            defaultValue={settings.theme}
+            defaultValue={theme}
             labelId="theme-label"
             onChange={(evt) => {
               updateSetting('theme', evt.target.value as Theme);
             }}
             options={themeOptions}
-            value={settings.theme}
+            value={theme}
           />
         </Inline>
       </Box>

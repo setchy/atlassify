@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import { Constants } from '../constants';
 
-import { EmojiSplash } from './layout/EmojiSplash';
+import useFiltersStore from '../stores/useFiltersStore';
 
-import { hasActiveFilters } from '../utils/notifications/filters';
+import { EmojiSplash } from './layout/EmojiSplash';
 
 export const AllRead: FC = () => {
   const { t } = useTranslation();
 
-  const hasFilters = hasActiveFilters();
+  const hasFilters = useFiltersStore.getState().hasActiveFilters();
 
   const emoji = useMemo(
     () =>

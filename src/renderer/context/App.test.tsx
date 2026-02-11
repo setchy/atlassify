@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 
 import { vi } from 'vitest';
 
@@ -107,38 +107,6 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
-    });
-  });
-
-  describe('settings methods', () => {
-    it('should call updateSetting', async () => {
-      const getContext = renderWithContext();
-
-      act(() => {
-        getContext().updateSetting('playSoundNewNotifications', true);
-      });
-
-      // Verify the store was updated
-      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(true);
-    });
-
-    it('should call resetSettings', async () => {
-      const getContext = renderWithContext();
-
-      // First set a different value
-      useSettingsStore.setState({
-        ...mockSettings,
-        playSoundNewNotifications: false,
-      });
-
-      act(() => {
-        getContext().resetSettings();
-      });
-
-      // Verify the store was reset to defaults
-      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(
-        DEFAULT_SETTINGS_STATE.playSoundNewNotifications,
-      );
     });
   });
 

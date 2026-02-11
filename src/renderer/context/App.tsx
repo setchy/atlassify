@@ -46,13 +46,6 @@ export interface AppContextState {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
-
-  settings: SettingsState;
-  resetSettings: () => void;
-  updateSetting: <K extends keyof SettingsState>(
-    name: K,
-    value: SettingsState[K],
-  ) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -63,7 +56,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // Get store actions and reset functions
   const resetFilters = useFiltersStore((s) => s.reset);
   const resetAccounts = useAccountsStore((s) => s.reset);
-  const resetSettings = useSettingsStore((s) => s.reset);
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn);
   const createAccount = useAccountsStore((s) => s.createAccount);
   const removeAccount = useAccountsStore((s) => s.removeAccount);
@@ -72,86 +64,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const accounts = useAccountsStore((state) => state.accounts);
   const auth = useMemo<AccountsState>(() => ({ accounts }), [accounts]);
 
-  // Subscribe to all settings values individually to avoid creating new objects
-  const language = useSettingsStore((s) => s.language);
-  const theme = useSettingsStore((s) => s.theme);
-  const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
-  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
-  const delayNotificationState = useSettingsStore(
-    (s) => s.delayNotificationState,
-  );
-  const fetchOnlyUnreadNotifications = useSettingsStore(
-    (s) => s.fetchOnlyUnreadNotifications,
-  );
-  const groupNotificationsByProduct = useSettingsStore(
-    (s) => s.groupNotificationsByProduct,
-  );
-  const groupNotificationsByProductAlphabetically = useSettingsStore(
-    (s) => s.groupNotificationsByProductAlphabetically,
-  );
-  const groupNotificationsByTitle = useSettingsStore(
-    (s) => s.groupNotificationsByTitle,
-  );
+  // Subscribe to tray-related settings for useEffect dependencies
   const showNotificationsCountInTray = useSettingsStore(
     (s) => s.showNotificationsCountInTray,
   );
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
-  const openLinks = useSettingsStore((s) => s.openLinks);
-  const keyboardShortcutEnabled = useSettingsStore(
-    (s) => s.keyboardShortcutEnabled,
-  );
-  const showSystemNotifications = useSettingsStore(
-    (s) => s.showSystemNotifications,
-  );
-  const playSoundNewNotifications = useSettingsStore(
-    (s) => s.playSoundNewNotifications,
-  );
-  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
-  const openAtStartup = useSettingsStore((s) => s.openAtStartup);
-
-  const settings = useMemo<SettingsState>(
-    () => ({
-      language,
-      theme,
-      zoomPercentage,
-      markAsReadOnOpen,
-      delayNotificationState,
-      fetchOnlyUnreadNotifications,
-      groupNotificationsByProduct,
-      groupNotificationsByProductAlphabetically,
-      groupNotificationsByTitle,
-      showNotificationsCountInTray,
-      useUnreadActiveIcon,
-      useAlternateIdleIcon,
-      openLinks,
-      keyboardShortcutEnabled,
-      showSystemNotifications,
-      playSoundNewNotifications,
-      notificationVolume,
-      openAtStartup,
-    }),
-    [
-      language,
-      theme,
-      zoomPercentage,
-      markAsReadOnOpen,
-      delayNotificationState,
-      fetchOnlyUnreadNotifications,
-      groupNotificationsByProduct,
-      groupNotificationsByProductAlphabetically,
-      groupNotificationsByTitle,
-      showNotificationsCountInTray,
-      useUnreadActiveIcon,
-      useAlternateIdleIcon,
-      openLinks,
-      keyboardShortcutEnabled,
-      showSystemNotifications,
-      playSoundNewNotifications,
-      notificationVolume,
-      openAtStartup,
-    ],
-  );
 
   const {
     status,
@@ -166,7 +84,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications(auth, settings);
+  } = useNotifications(auth);
 
   useAccounts(auth.accounts);
 
@@ -184,21 +102,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     window.atlassify.onResetApp(() => {
       resetAccounts();
-      resetSettings();
+      useSettingsStore.getState().reset();
       resetFilters();
     });
-  }, [resetAccounts, resetSettings, resetFilters]);
-
-  const handleResetSettings = useCallback(() => {
-    resetSettings();
-  }, [resetSettings]);
-
-  const handleUpdateSetting = useCallback(
-    <K extends keyof SettingsState>(name: K, value: SettingsState[K]) => {
-      useSettingsStore.getState().updateSetting(name, value);
-    },
-    [],
-  );
+  }, [resetAccounts, resetFilters]);
 
   const login = useCallback(
     async ({ username, token }: LoginOptions) => {
@@ -250,10 +157,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsRead: markNotificationsReadWithAccounts,
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
-
-      settings,
-      resetSettings: handleResetSettings,
-      updateSetting: handleUpdateSetting,
     }),
     [
       auth,
@@ -273,10 +176,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsReadWithAccounts,
       markNotificationsUnreadWithAccounts,
-
-      settings,
-      handleResetSettings,
-      handleUpdateSetting,
     ],
   );
 

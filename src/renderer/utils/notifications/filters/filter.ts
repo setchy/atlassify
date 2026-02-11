@@ -61,13 +61,3 @@ export function filterNotifications(
     return passesFilters;
   });
 }
-
-export function hasActiveFilters(): boolean {
-  return (
-    engagementFilter.hasFilters() ||
-    categoryFilter.hasFilters() ||
-    actorFilter.hasFilters() ||
-    readStateFilter.hasFilters() ||
-    productFilter.hasFilters()
-  );
-}

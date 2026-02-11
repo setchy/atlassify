@@ -115,6 +115,7 @@ export type UpdateFilter = <K extends FilterKey>(
  * Actions for managing filters.
  */
 export interface FiltersActions {
+  hasActiveFilters: () => boolean;
   updateFilter: UpdateFilter;
   reset: () => void;
 }

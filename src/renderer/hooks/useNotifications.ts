@@ -4,8 +4,9 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import type { AccountsState, SettingsState } from '../stores/types';
+import type { AccountsState } from '../stores/types';
 import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import type {
   AccountNotifications,
@@ -58,10 +59,7 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (
-  auth: AccountsState,
-  settings: SettingsState,
-): NotificationsState => {
+export const useNotifications = (auth: AccountsState): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
@@ -73,15 +71,20 @@ export const useNotifications = (
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
+  // Get settings to determine query key
+  const fetchOnlyUnreadNotifications = useSettingsStore(
+    (s) => s.fetchOnlyUnreadNotifications,
+  );
+
   // Query key excludes filters to prevent API refetches on filter changes
   // Filters are applied client-side via subscription in subscriptions.ts
   const notificationsQueryKey = useMemo(
     () =>
       notificationsKeys.list(
         auth.accounts.length,
-        settings.fetchOnlyUnreadNotifications,
+        fetchOnlyUnreadNotifications,
       ),
-    [auth.accounts.length, settings.fetchOnlyUnreadNotifications],
+    [auth.accounts.length, fetchOnlyUnreadNotifications],
   );
 
   // Create select function that depends on filter state
@@ -105,7 +108,7 @@ export const useNotifications = (
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(auth, settings);
+      return await getAllNotifications(auth);
     },
 
     // Apply filters as a transformation on the cached data
@@ -161,6 +164,15 @@ export const useNotifications = (
     await refetch();
   }, [refetch]);
 
+  // Get settings for notifications side effects
+  const playSoundNewNotifications = useSettingsStore(
+    (s) => s.playSoundNewNotifications,
+  );
+  const showSystemNotifications = useSettingsStore(
+    (s) => s.showSystemNotifications,
+  );
+  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
+
   // Handle sound and native notifications when new notifications arrive
   useEffect(() => {
     if (isLoading || isError || notifications.length === 0) {
@@ -178,11 +190,11 @@ export const useNotifications = (
     );
 
     if (diffNotifications.length > 0) {
-      if (settings.playSoundNewNotifications) {
-        raiseSoundNotification(settings.notificationVolume);
+      if (playSoundNewNotifications) {
+        raiseSoundNotification(notificationVolume);
       }
 
-      if (settings.showSystemNotifications) {
+      if (showSystemNotifications) {
         raiseNativeNotification(diffNotifications);
       }
     }
@@ -192,9 +204,9 @@ export const useNotifications = (
     notifications,
     isLoading,
     isError,
-    settings.playSoundNewNotifications,
-    settings.showSystemNotifications,
-    settings.notificationVolume,
+    playSoundNewNotifications,
+    showSystemNotifications,
+    notificationVolume,
   ]);
 
   const getNotificationIdsForGroups = useCallback(

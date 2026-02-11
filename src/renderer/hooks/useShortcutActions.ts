@@ -1,6 +1,8 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import useSettingsStore from '../stores/useSettingsStore';
+
 import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
@@ -36,17 +38,20 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
-    useAppContext();
+  const { fetchNotifications, isLoggedIn, status } = useAppContext();
 
   const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
 
+  const keyboardShortcutEnabled = useSettingsStore(
+    (s) => s.keyboardShortcutEnabled,
+  );
+
   useEffect(() => {
-    setKeyboardShortcut(settings.keyboardShortcutEnabled);
-  }, [settings.keyboardShortcutEnabled]);
+    setKeyboardShortcut(keyboardShortcutEnabled);
+  }, [keyboardShortcutEnabled]);
 
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {
@@ -68,10 +73,12 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
             name: 'Toggle Read/Unread',
           });
 
-          updateSetting(
-            'fetchOnlyUnreadNotifications',
-            !settings.fetchOnlyUnreadNotifications,
-          );
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'fetchOnlyUnreadNotifications',
+              !useSettingsStore.getState().fetchOnlyUnreadNotifications,
+            );
         },
       },
       groupByProduct: {
@@ -82,10 +89,12 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
             name: 'Group By Product',
           });
 
-          updateSetting(
-            'groupNotificationsByProduct',
-            !settings.groupNotificationsByProduct,
-          );
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'groupNotificationsByProduct',
+              !useSettingsStore.getState().groupNotificationsByProduct,
+            );
         },
       },
       groupByTitle: {
@@ -96,10 +105,12 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
             name: 'Group By Title',
           });
 
-          updateSetting(
-            'groupNotificationsByTitle',
-            !settings.groupNotificationsByTitle,
-          );
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'groupNotificationsByTitle',
+              !useSettingsStore.getState().groupNotificationsByTitle,
+            );
         },
       },
       filters: {
@@ -164,10 +175,6 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isOnSettingsRoute,
     isOnNotificationsRoute,
     fetchNotifications,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByProduct,
-    settings.groupNotificationsByTitle,
-    updateSetting,
   ]);
 
   return { shortcuts };

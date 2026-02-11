@@ -1,4 +1,4 @@
-import { type FC, Fragment, memo, useMemo } from 'react';
+import { type FC, Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -20,14 +20,15 @@ import { APPLICATION } from '../../shared/constants';
 import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
 import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
-import { hasActiveFilters } from '../utils/notifications/filters';
+import type { AtlassifyFilter } from '../types';
+
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
   const {
     isLoggedIn,
-    settings,
     status,
     hasMoreAccountNotifications,
     notificationCount,
@@ -38,19 +39,18 @@ const SidebarComponent: FC = () => {
 
   const { shortcuts } = useShortcutActions();
 
-  // Subscribe to all filter states to re-render when they change
-  const engagementStates = useFiltersStore((s) => s.engagementStates);
-  const categories = useFiltersStore((s) => s.categories);
-  const actors = useFiltersStore((s) => s.actors);
-  const readStates = useFiltersStore((s) => s.readStates);
-  const products = useFiltersStore((s) => s.products);
-
-  // Memoize filter check to avoid recalculating on every render
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We intentionally subscribe to all filter states to trigger recalculation
-  const hasFilters = useMemo(
-    () => hasActiveFilters(),
-    [engagementStates, categories, actors, readStates, products],
+  // Subscribe to settings from store
+  const fetchOnlyUnreadNotifications = useSettingsStore(
+    (s) => s.fetchOnlyUnreadNotifications,
   );
+  const groupNotificationsByProduct = useSettingsStore(
+    (s) => s.groupNotificationsByProduct,
+  );
+  const groupNotificationsByTitle = useSettingsStore(
+    (s) => s.groupNotificationsByTitle,
+  );
+
+  const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
 
   const theme = useThemeObserver();
 
@@ -83,7 +83,7 @@ const SidebarComponent: FC = () => {
               content={t('sidebar.notifications.tooltip', {
                 count: notificationCount,
                 countSuffix: hasMoreAccountNotifications ? '+' : '',
-                countType: settings.fetchOnlyUnreadNotifications
+                countType: fetchOnlyUnreadNotifications
                   ? t('sidebar.notifications.unread')
                   : t('sidebar.notifications.read'),
               })}
@@ -115,7 +115,7 @@ const SidebarComponent: FC = () => {
                 >
                   <Toggle
                     id="toggle-unread-only"
-                    isChecked={settings.fetchOnlyUnreadNotifications}
+                    isChecked={fetchOnlyUnreadNotifications}
                     label={t('sidebar.toggles.unreadOnly.label')}
                     onChange={() => shortcuts.toggleReadUnread.action()}
                     size="regular"
@@ -130,9 +130,7 @@ const SidebarComponent: FC = () => {
                 >
                   <IconButton
                     appearance={
-                      settings.groupNotificationsByProduct
-                        ? 'discovery'
-                        : 'subtle'
+                      groupNotificationsByProduct ? 'discovery' : 'subtle'
                     }
                     icon={() => (
                       <ListBulletedIcon
@@ -155,9 +153,7 @@ const SidebarComponent: FC = () => {
                 >
                   <IconButton
                     appearance={
-                      settings.groupNotificationsByTitle
-                        ? 'discovery'
-                        : 'subtle'
+                      groupNotificationsByTitle ? 'discovery' : 'subtle'
                     }
                     icon={() => (
                       <CollapseVerticalIcon
