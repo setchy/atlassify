@@ -1616,6 +1616,8 @@ export enum AgentStudioJobRunStatus {
 }
 
 export type AgentStudioJsmKnowledgeFilterInput = {
+  /** ARI of a jsm help center */
+  helpCenterAri?: InputMaybe<Scalars['ID']['input']>;
   /** A list of jsm project ARIs */
   jsmProjectFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -1866,6 +1868,18 @@ export type AgentStudioWidgetInput = {
   isEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** Input for assigning a skill to a user */
+export type AgentWorkspaceAssignSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Proficiency level index (0-based index into the skill's proficiencyDefinitions array) */
+  proficiencyLevel: Scalars['Int']['input'];
+  /** ID of the skill to assign */
+  skillId: Scalars['ID']['input'];
+  /** ID of the user to assign the skill to */
+  userId: Scalars['ID']['input'];
+};
+
 /**
  * ============================================
  * Availability Types
@@ -1928,49 +1942,49 @@ export enum AgentWorkspaceCapacityStatus {
   Overloaded = 'OVERLOADED'
 }
 
-/** Filter input for catalog queries */
-export type AgentWorkspaceCatalogFilter = {
-  /** Filter by custom attributes */
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  /** Filter by catalog type ID */
+/** Filter criteria for querying catalogs */
+export type AgentWorkspaceCatalogFilterInput = {
+  /** Filter catalogs by their type ID */
   catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
-  /** Filter by catalog IDs */
+  /** Filter by specific catalog IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Filter by name (contains) */
+  /** Filter catalogs whose names contain this string (case-insensitive) */
   nameContains?: InputMaybe<Scalars['String']['input']>;
-  /** Filter by parent catalog ID */
-  parentCatalogId?: InputMaybe<Scalars['ID']['input']>;
 };
 
-/** Filter input for catalog-type queries */
-export type AgentWorkspaceCatalogTypeFilter = {
-  /** Filter by custom attributes */
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  /** Filter by IDs */
+/** Filter criteria for querying catalog types */
+export type AgentWorkspaceCatalogTypeFilterInput = {
+  /** Filter by specific catalog type IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Filter by name (contains) */
+  /** Filter catalog types whose names contain this string (case-insensitive) */
   nameContains?: InputMaybe<Scalars['String']['input']>;
-  /** Filter by parent type ID */
-  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+/** Input for creating a new catalog */
 export type AgentWorkspaceCreateCatalogInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  /** ID of the catalog type */
   catalogTypeId: Scalars['ID']['input'];
+  /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
+  /** Description of the catalog */
   description?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['ID']['input'];
+  /** Name of the catalog */
   name: Scalars['String']['input'];
+  /** IDs of the parent catalogs (optional) */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  skillIds: Array<Scalars['ID']['input']>;
+  /** Proficiency level definitions for this catalog (array of 5 strings for levels 0-4) */
+  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
+/** Input for creating a new catalog type */
 export type AgentWorkspaceCreateCatalogTypeInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
+  /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
-  id: Scalars['ID']['input'];
+  /** Description of the catalog type */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Name of the catalog type */
   name: Scalars['String']['input'];
-  nestedChildCatalogTypeIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** ID of the parent catalog type (optional) */
   parentTypeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
@@ -1997,30 +2011,6 @@ export type AgentWorkspaceCreateScheduleInput = {
   startTime: Scalars['DateTime']['input'];
 };
 
-/**
- * ============================================
- * Input Types for Mutations
- * ============================================
- */
-export type AgentWorkspaceCreateSkillInput = {
-  assessmentIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  cloudId: Scalars['ID']['input'];
-  description?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['ID']['input'];
-  name: Scalars['String']['input'];
-  parentCatalogIds: Array<Scalars['ID']['input']>;
-  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
-};
-
-export type AgentWorkspaceCreateUserSkillInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  cloudId: Scalars['ID']['input'];
-  proficiency?: InputMaybe<Scalars['Int']['input']>;
-  skillId: Scalars['ID']['input'];
-  userId: Scalars['ID']['input'];
-};
-
 export enum AgentWorkspaceDayOfWeek {
   Friday = 'FRIDAY',
   Monday = 'MONDAY',
@@ -2036,6 +2026,28 @@ export type AgentWorkspaceDeleteScheduleInput = {
   projectId?: InputMaybe<Scalars['ID']['input']>;
   projectKey?: InputMaybe<Scalars['String']['input']>;
   scheduleId: Scalars['ID']['input'];
+};
+
+/** Input for deleting a user skill assignment */
+export type AgentWorkspaceDeleteUserSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** ID of the skill */
+  skillId: Scalars['ID']['input'];
+  /** ID of the user */
+  userId: Scalars['ID']['input'];
+};
+
+/** Standard cursor-based pagination input */
+export type AgentWorkspacePaginationInput = {
+  /** Cursor to start fetching from */
+  after?: InputMaybe<Scalars['String']['input']>;
+  /** Cursor to fetch items before */
+  before?: InputMaybe<Scalars['String']['input']>;
+  /** Number of items to return after the cursor */
+  first?: InputMaybe<Scalars['Int']['input']>;
+  /** Number of items to return before the cursor */
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /**
@@ -2107,35 +2119,71 @@ export type AgentWorkspaceShiftsQueryInput = {
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
-/** Filter input for skill queries */
-export type AgentWorkspaceSkillFilter = {
-  /** Filter by custom attributes */
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  /** Filter by skill IDs */
-  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Filter by name (contains) */
-  nameContains?: InputMaybe<Scalars['String']['input']>;
-  /** Filter by parent catalog IDs */
-  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-};
-
-export type AgentWorkspaceUpdateCatalogInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
+/** Input for creating a new skill */
+export type AgentWorkspaceSkillCreateInput = {
+  /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
+  /** Description of the skill */
   description?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['ID']['input'];
-  name?: InputMaybe<Scalars['String']['input']>;
-  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Name of the skill */
+  name: Scalars['String']['input'];
+  /** List of parent catalog IDs this skill belongs to */
+  parentCatalogIds: Array<Scalars['ID']['input']>;
+  /** Proficiency level definitions for this skill (array of 5 strings for levels 0-4). If not provided, defaults will be used. */
+  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
-export type AgentWorkspaceUpdateCatalogTypeInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  cloudId: Scalars['ID']['input'];
-  id: Scalars['ID']['input'];
+/** Filter criteria for querying skills */
+export type AgentWorkspaceSkillFilterInput = {
+  /** Filter by specific skill IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter skills whose names contain this string (case-insensitive) */
+  nameContains?: InputMaybe<Scalars['String']['input']>;
+  /** Filter skills by parent catalog IDs */
+  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+/** Determines how skills should be matched when filtering users */
+export enum AgentWorkspaceSkillMatchType {
+  /** Match users who have all of the specified skills */
+  All = 'ALL',
+  /** Match users who have any of the specified skills */
+  Any = 'ANY'
+}
+
+/** Input for updating an existing skill */
+export type AgentWorkspaceSkillUpdateInput = {
+  /** Description of the skill */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Name of the skill */
   name?: InputMaybe<Scalars['String']['input']>;
-  nestedChildCatalogTypeIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** List of parent catalog IDs this skill belongs to */
+  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Proficiency level definitions for this skill (array of 5 strings for levels 0-4) */
+  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+/** Input for updating an existing catalog */
+export type AgentWorkspaceUpdateCatalogInput = {
+  /** ID of the catalog type */
+  catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Description of the catalog */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Name of the catalog */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** IDs of the parent catalogs */
+  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Proficiency level definitions for this catalog (array of 5 strings for levels 0-4) */
+  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+/** Input for updating an existing catalog type */
+export type AgentWorkspaceUpdateCatalogTypeInput = {
+  /** Description of the catalog type */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Name of the catalog type */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the parent catalog type */
   parentTypeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
@@ -2166,36 +2214,28 @@ export type AgentWorkspaceUpdateScheduleInput = {
   startTime: Scalars['DateTime']['input'];
 };
 
-export type AgentWorkspaceUpdateSkillInput = {
-  assessmentIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
+/** Input for updating skill proficiency */
+export type AgentWorkspaceUpdateSkillProficiencyInput = {
+  /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
-  description?: InputMaybe<Scalars['String']['input']>;
-  id: Scalars['ID']['input'];
-  name?: InputMaybe<Scalars['String']['input']>;
-  parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** New proficiency level index (0-based index into the skill's proficiencyDefinitions array) */
+  proficiencyLevel: Scalars['Int']['input'];
+  /** ID of the skill */
+  skillId: Scalars['ID']['input'];
+  /** ID of the user */
+  userId: Scalars['ID']['input'];
 };
 
-export type AgentWorkspaceUpdateUserSkillInput = {
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  cloudId: Scalars['ID']['input'];
-  id: Scalars['ID']['input'];
-  proficiency?: InputMaybe<Scalars['Int']['input']>;
-};
-
-/** Filter input for user-skill queries */
-export type AgentWorkspaceUserSkillFilter = {
-  /** Filter by custom attributes */
-  attributes?: InputMaybe<Scalars['JSON']['input']>;
-  /** Filter by IDs */
+/** Filter criteria for querying user skills */
+export type AgentWorkspaceUserSkillFilterInput = {
+  /** Filter by specific user skill IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Filter by proficiency >= value */
-  proficiencyGreaterThanOrEqual?: InputMaybe<Scalars['Int']['input']>;
-  /** Filter by skill ID */
-  skillId?: InputMaybe<Scalars['ID']['input']>;
-  /** Filter by user ID */
-  userId?: InputMaybe<Scalars['ID']['input']>;
+  /** Filter by proficiency level */
+  proficiencyLevel?: InputMaybe<Scalars['Int']['input']>;
+  /** Filter by skill IDs */
+  skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter by user IDs */
+  userIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
 export enum AiCoreApiQuestionType {
@@ -9460,6 +9500,13 @@ export enum ConfluenceRecommendedAction {
   ConvertToRole = 'CONVERT_TO_ROLE'
 }
 
+export type ConfluenceRemoveContentApprovalReviewerInput = {
+  contentApprovalReviewId: Scalars['ID']['input'];
+  principalId: Scalars['ID']['input'];
+  principalType: ConfluencePrincipalType;
+  workflowApplicationId: Scalars['ID']['input'];
+};
+
 export type ConfluenceReopenInlineCommentInput = {
   id: Scalars['ID']['input'];
 };
@@ -12603,7 +12650,16 @@ export type CustomerServiceProductUpdateInput = {
   name: Scalars['String']['input'];
 };
 
+export enum CustomerServiceReportedByFilter {
+  /** Filter for requests where the current user is a participant but not the reporter */
+  Other = 'OTHER',
+  /** Filter for requests reported by the current user */
+  User = 'USER'
+}
+
 export type CustomerServiceRequestFilterInput = {
+  /** Filter requests by who reported them (USER = current user, OTHER = user is participant but not reporter) */
+  reportedBy?: InputMaybe<CustomerServiceReportedByFilter>;
   /** Filter requests by search text (case insensitive) */
   searchText?: InputMaybe<Scalars['String']['input']>;
   /** Filter requests by status key (SUBMITTED, RESOLVED) */
@@ -14383,6 +14439,7 @@ export enum ExternalDocumentCategory {
   Blogpost = 'BLOGPOST',
   Code = 'CODE',
   Document = 'DOCUMENT',
+  Drive = 'DRIVE',
   Folder = 'FOLDER',
   Form = 'FORM',
   Image = 'IMAGE',
@@ -30122,6 +30179,18 @@ export type JiraBoardViewSettings = {
   swimlanesSupported?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** Group By options for board view settings */
+export enum JiraBoardViewSettingsGroupBy {
+  Assignee = 'ASSIGNEE',
+  Epic = 'EPIC',
+  None = 'NONE',
+  Projects = 'PROJECTS',
+  Queries = 'QUERIES',
+  Spaces = 'SPACES',
+  Stories = 'STORIES',
+  Unset = 'UNSET'
+}
+
 /** Input describing one status column mapping. */
 export type JiraBoardViewStatusColumnMapping = {
   /**
@@ -33739,6 +33808,16 @@ export type JiraIssueSearchStaticViewInput = {
   isHierarchyEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** The child issue planning mode for timeline views. */
+export enum JiraIssueSearchTimelineChildIssuePlanningMode {
+  /** Child issue planning by date. */
+  Date = 'DATE',
+  /** Child issue planning is disabled. */
+  Disabled = 'DISABLED',
+  /** Child issue planning by sprint. */
+  Sprint = 'SPRINT'
+}
+
 /**
  * The view config data used for an issue search.
  * E.g. we can load different results depending on the hierarchy toggle value for a specific namespace/experience or view.
@@ -34504,6 +34583,18 @@ export enum JiraJqlViewContext {
   ShadowRequest = 'SHADOW_REQUEST'
 }
 
+/** The card option input in board view settings. */
+export type JiraJswBoardViewSettingsCardOptionInput = {
+  enabled: Scalars['Boolean']['input'];
+  id: Scalars['ID']['input'];
+};
+
+/** Input to retrieve a Jira board view settings */
+export type JiraJswBoardViewSettingsQueryInput = {
+  /** ARI of the board view settings to query. */
+  viewId: Scalars['ID']['input'];
+};
+
 /** Represents the location where the created issue should be placed in the Backlog view */
 export enum JiraKanbanDestination {
   /**  for kanban boards */
@@ -34646,9 +34737,9 @@ export enum JiraLongRunningTaskStatus {
 }
 
 export type JiraLookAndFeelImageInput = {
-  /** ID of the image stored in media platform */
+  /** ID of the image stored in media platform. */
   mediaFileId?: InputMaybe<Scalars['ID']['input']>;
-  /** External URL of the image (non-Atlassian URL) */
+  /** External URL of the image (non-Atlassian URL). */
   url?: InputMaybe<Scalars['URL']['input']>;
 };
 
@@ -34897,7 +34988,6 @@ export enum JiraNavigationItemTypeKey {
   Requests = 'REQUESTS',
   Security = 'SECURITY',
   Shortcuts = 'SHORTCUTS',
-  Staffing = 'STAFFING',
   Summary = 'SUMMARY',
   Teams = 'TEAMS',
   Timeline = 'TIMELINE'
@@ -36666,6 +36756,7 @@ export type JiraScopedResetFieldsetsInput = {
 /** The input used to specify the search scope for the natural language to JQL conversion */
 export type JiraSearchContextInput = {
   projectKey?: InputMaybe<Scalars['String']['input']>;
+  subcontainerId?: InputMaybe<Scalars['Long']['input']>;
 };
 
 /** The entity types of searchable items. */
@@ -37234,7 +37325,7 @@ export type JiraSetDefaultNavigationItemInput = {
 
 export type JiraSetFaviconInput = {
   cloudId: Scalars['ID']['input'];
-  /** Input for the specific image to set as favicon */
+  /** Input for the specific image to set as favicon. */
   faviconImageInput: JiraLookAndFeelImageInput;
 };
 
@@ -37352,9 +37443,33 @@ export type JiraSetIssueSearchViewLayoutInput = {
   viewLayout: JiraIssueSearchViewLayout;
 };
 
+/** Input to set the view setting card options field of a board. */
+export type JiraSetJswBoardViewSettingCardOptionsInput = {
+  /** The value of the card options field. */
+  cardOptions: Array<JiraJswBoardViewSettingsCardOptionInput>;
+  /** ARI of the view to set the view setting field for. */
+  viewId: Scalars['ID']['input'];
+};
+
+/** Input to set the view setting group by field of a board. */
+export type JiraSetJswBoardViewSettingGroupByInput = {
+  /** The value of the groupBy field. */
+  groupBy: JiraBoardViewSettingsGroupBy;
+  /** ARI of the view to set the view setting field for. */
+  viewId: Scalars['ID']['input'];
+};
+
+/** Input to set a toggle type view setting field of a board. */
+export type JiraSetJswBoardViewSettingsToggleInput = {
+  /** The value of the view setting field. */
+  enabled: Scalars['Boolean']['input'];
+  /** ARI of the view to set the view setting field for. */
+  viewId: Scalars['ID']['input'];
+};
+
 export type JiraSetLogoInput = {
   cloudId: Scalars['ID']['input'];
-  /** Input for the specific image to set as logo */
+  /** Input for the specific image to set as logo. */
   logoImageInput: JiraLookAndFeelImageInput;
 };
 
@@ -37980,6 +38095,12 @@ export type JiraTimelineIssueSearchCustomInput = {
   customFilterIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** The quick filters ids. BE will fetch the JQL for each quick filter and combine them with the base JQL of the board */
   quickFilterIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+/** Input for specifying either a project or board for timeline project settings. */
+export type JiraTimelineProjectOrBoardInput = {
+  boardId?: InputMaybe<Scalars['Int']['input']>;
+  projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
 /**
@@ -40177,6 +40298,13 @@ export enum KitsuneLogicalOperator {
   And = 'AND',
   Or = 'OR'
 }
+
+export type KitsunePaginationInput = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+};
 
 export enum KitsuneSourceCategoryType {
   FeedbackApp = 'FEEDBACK_APP',
@@ -52169,6 +52297,18 @@ export type SpfCreatePlanScenarioInvestmentInput = {
   planScenarioId: Scalars['ID']['input'];
 };
 
+export type SpfCreatePlanScenarioInvestmentItemInput = {
+  committedEffort?: InputMaybe<Scalars['Int']['input']>;
+  committedOwnerId?: InputMaybe<Scalars['String']['input']>;
+  groupType?: InputMaybe<SpfPlanScenarioInvestmentGroupType>;
+  investmentId: Scalars['String']['input'];
+};
+
+export type SpfCreatePlanScenarioInvestmentsInput = {
+  investments: Array<SpfCreatePlanScenarioInvestmentItemInput>;
+  planScenarioId: Scalars['ID']['input'];
+};
+
 export type SpfDeleteAskCommentInput = {
   id: Scalars['ID']['input'];
 };
@@ -55971,7 +56111,7 @@ export type TrelloPlannerCalendarProviderCalendarsFilter = {
   updateCursor?: InputMaybe<Scalars['String']['input']>;
 };
 
-/** The input filters for fetching boards with cards that have due dates in a range. */
+/** The input filters for fetching cards with due dates in a range. */
 export type TrelloPlannerCardsWithDueDatesFilter = {
   dueEnd?: InputMaybe<Scalars['DateTime']['input']>;
   dueStart?: InputMaybe<Scalars['DateTime']['input']>;

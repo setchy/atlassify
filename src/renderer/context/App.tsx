@@ -25,7 +25,6 @@ import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
-import { clearState } from '../utils/storage';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 
 export interface AppContextState {
@@ -181,7 +180,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     window.atlassify.onResetApp(() => {
-      clearState();
       resetAccounts();
       resetSettings();
       resetFilters();

@@ -51,22 +51,12 @@ export default defineConfig({
       {
         extends: true,
         test: {
-          name: 'jsdom [storage]',
-          environment: 'jsdom',
-          // localStorage tests require jsdom (doesn't work with happy-dom)
-          include: ['src/renderer/utils/storage.test.{ts,tsx}'],
-        },
-      },
-      {
-        extends: true,
-        test: {
           name: 'happy-dom [preload, renderer]',
           environment: 'happy-dom',
           include: [
             'src/preload/**/*.test.{ts,tsx}',
             'src/renderer/**/*.test.{ts,tsx}',
           ],
-          exclude: ['src/renderer/utils/storage.test.{ts,tsx}'],
         },
       },
       {

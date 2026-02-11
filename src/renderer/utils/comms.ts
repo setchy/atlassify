@@ -1,5 +1,3 @@
-import { defaultSettings } from '../context/defaults';
-
 import { type Link, OpenPreference } from '../types';
 
 import useSettingsStore from '../stores/useSettingsStore';
@@ -7,7 +5,7 @@ import useSettingsStore from '../stores/useSettingsStore';
 export function openExternalLink(url: Link): void {
   // Load the settings from the store to avoid having to pass settings as a parameter
   const settings = useSettingsStore.getState();
-  const openPreference = settings.openLinks ?? defaultSettings.openLinks;
+  const openPreference = settings.openLinks;
 
   if (url.toLowerCase().startsWith('https://')) {
     window.atlassify.openExternalLink(
