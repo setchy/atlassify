@@ -1,10 +1,8 @@
 import { AxiosError } from 'axios';
 
-import type {
-  AccountNotifications,
-  AtlassifyState,
-  SettingsState,
-} from '../../types';
+import type { AccountsState, SettingsState } from '../../stores/types';
+
+import type { AccountNotifications } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -12,7 +10,6 @@ import { transformNotifications } from '../api/transform';
 import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../errors';
 import { rendererLogError } from '../logger';
-import { filterNotifications } from './filters';
 import { getFlattenedNotificationsByProduct } from './group';
 
 /**
@@ -42,11 +39,11 @@ export function hasMoreNotifications(
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
-function getNotifications(state: AtlassifyState) {
-  return state.auth.accounts.map((account) => {
+function getNotifications(auth: AccountsState) {
+  return auth.accounts.map((account) => {
     return {
       account,
-      notifications: getNotificationsForUser(account, state.settings),
+      notifications: getNotificationsForUser(account),
     };
   });
 }
@@ -60,14 +57,16 @@ function getNotifications(state: AtlassifyState) {
  *  - Filtering
  *  - Ordering
  *
- * @param state - The Atlassify state.
+ * @param auth - The accounts state.
+ * @param settings - The settings state.
  * @returns A promise that resolves to an array of account notifications.
  */
 export async function getAllNotifications(
-  state: AtlassifyState,
+  auth: AccountsState,
+  settings: SettingsState,
 ): Promise<AccountNotifications[]> {
   const accountNotifications: AccountNotifications[] = await Promise.all(
-    getNotifications(state)
+    getNotifications(auth)
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
@@ -80,12 +79,10 @@ export async function getAllNotifications(
           const rawNotifications =
             res.data.notifications.notificationFeed.nodes;
 
-          let notifications = await transformNotifications(
+          const notifications = await transformNotifications(
             rawNotifications,
             accountNotifications.account,
           );
-
-          notifications = filterNotifications(notifications);
 
           return {
             account: accountNotifications.account,
@@ -111,7 +108,7 @@ export async function getAllNotifications(
   );
 
   // Set the order property for the notifications
-  stabilizeNotificationsOrder(accountNotifications, state.settings);
+  stabilizeNotificationsOrder(accountNotifications, settings);
 
   return accountNotifications;
 }
@@ -125,14 +122,13 @@ export async function getAllNotifications(
  */
 export function stabilizeNotificationsOrder(
   accountNotifications: AccountNotifications[],
-  settings: SettingsState,
+  _settings: SettingsState,
 ) {
   let orderIndex = 0;
 
   for (const account of accountNotifications) {
     const flattenedNotifications = getFlattenedNotificationsByProduct(
       account.notifications,
-      settings,
     );
 
     for (const notification of flattenedNotifications) {

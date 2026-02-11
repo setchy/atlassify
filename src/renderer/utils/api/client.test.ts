@@ -7,6 +7,8 @@ import { mockSettings } from '../../__mocks__/state-mocks';
 
 import { Constants } from '../../constants';
 
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 
 import {
@@ -71,7 +73,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('listNotificationsForAuthenticatedUser - should list notifications for user', async () => {
-    await getNotificationsForUser(mockAtlassianCloudAccount, mockSettings);
+    await getNotificationsForUser(mockAtlassianCloudAccount);
 
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -131,9 +133,13 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch unread notifications by group id', async () => {
       const mockGroupSize = 5;
 
+      useSettingsStore.setState({
+        ...mockSettings,
+        fetchOnlyUnreadNotifications: true,
+      });
+
       await getNotificationsByGroupId(
         mockAtlassianCloudAccount,
-        { ...mockSettings, fetchOnlyUnreadNotifications: true },
         mockSingleAtlassifyNotification.notificationGroup.id,
         mockGroupSize,
       );
@@ -159,9 +165,13 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch all notifications by group id', async () => {
       const mockGroupSize = 5;
 
+      useSettingsStore.setState({
+        ...mockSettings,
+        fetchOnlyUnreadNotifications: false,
+      });
+
       await getNotificationsByGroupId(
         mockAtlassianCloudAccount,
-        { ...mockSettings, fetchOnlyUnreadNotifications: false },
         mockSingleAtlassifyNotification.notificationGroup.id,
         mockGroupSize,
       );

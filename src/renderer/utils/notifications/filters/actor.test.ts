@@ -3,9 +3,10 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
 import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 

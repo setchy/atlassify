@@ -1,6 +1,8 @@
 import AutomationIcon from '@atlaskit/icon/core/automation';
 import PersonIcon from '@atlaskit/icon/core/person';
 
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type {
   AccountNotifications,
   ActorType,
@@ -9,7 +11,6 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import useFiltersStore from '../../../stores/useFiltersStore';
 import { isCompassScorecardNotification } from '../../helpers';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {

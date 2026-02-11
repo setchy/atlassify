@@ -24,7 +24,7 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead, settings } = useAppContext();
+  const { markNotificationsRead } = useAppContext();
 
   const { t } = useTranslation();
 
@@ -35,7 +35,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
-  const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
+  const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
   const actionProductInteraction = () => {
     openExternalLink(productNotification.home);

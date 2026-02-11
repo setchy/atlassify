@@ -7,10 +7,9 @@ import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
+import type { FiltersState } from '../../stores/types';
+import useFiltersStore from '../../stores/useFiltersStore';
 
-import useFiltersStore, {
-  type FiltersState,
-} from '../../stores/useFiltersStore';
 import { cn } from '../../utils/cn';
 import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';

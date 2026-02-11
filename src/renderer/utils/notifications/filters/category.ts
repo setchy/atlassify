@@ -1,6 +1,8 @@
 import EyeOpenIcon from '@atlaskit/icon/core/eye-open';
 import FlagIcon from '@atlaskit/icon/core/flag';
 
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type {
   AccountNotifications,
   AtlassifyNotification,
@@ -9,7 +11,6 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import useFiltersStore from '../../../stores/useFiltersStore';
 
 const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
   direct: {

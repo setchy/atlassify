@@ -6,7 +6,8 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import useFiltersStore, {} from '../stores/useFiltersStore';
+import useFiltersStore from '../stores/useFiltersStore';
+
 import { FiltersRoute } from './Filters';
 
 const navigateMock = vi.fn();
@@ -18,7 +19,6 @@ vi.mock('react-router-dom', async () => ({
 describe('renderer/routes/Filters.tsx', () => {
   let updateSpy: any;
   let resetSpy: any;
-  const fetchNotificationsMock = vi.fn();
 
   beforeEach(() => {
     // reset store to defaults
@@ -47,14 +47,12 @@ describe('renderer/routes/Filters.tsx', () => {
     it('should go back by pressing the icon', async () => {
       await act(async () => {
         renderWithAppContext(<FiltersRoute />, {
-          fetchNotifications: fetchNotificationsMock,
           notifications: [],
         });
       });
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith(-1);
     });

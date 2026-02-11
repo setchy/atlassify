@@ -6,7 +6,8 @@ import { vi } from 'vitest';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import * as authUtils from '../utils/auth/utils';
+import useAccountsStore from '../stores/useAccountsStore';
+
 import * as links from '../utils/links';
 import * as theme from '../utils/theme';
 import { AccountsRoute } from './Accounts';
@@ -87,8 +88,8 @@ describe('renderer/routes/Accounts.tsx', () => {
 
     it('should refresh account', async () => {
       const refreshAccountSpy = vi
-        .spyOn(authUtils, 'refreshAccount')
-        .mockResolvedValue(undefined);
+        .spyOn(useAccountsStore.getState(), 'refreshAccount')
+        .mockResolvedValue(mockAtlassianCloudAccount);
 
       await act(async () => {
         renderWithAppContext(<AccountsRoute />, {

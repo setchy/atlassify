@@ -9,14 +9,12 @@ import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
-import type { AuthState, SettingsState } from '../types';
-
-import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
-import * as storage from '../utils/storage';
 import { type AppContextState, AppProvider } from './App';
-import { defaultSettings } from './defaults';
 
 vi.mock('../hooks/useNotifications');
 
@@ -43,11 +41,11 @@ describe('renderer/context/App.tsx', () => {
   const markNotificationsReadMock = vi.fn();
   const markNotificationsUnreadMock = vi.fn();
 
-  const saveStateSpy = vi
-    .spyOn(storage, 'saveState')
-    .mockImplementation(vi.fn());
-
   beforeEach(() => {
+    // Initialize stores with default values
+    useAccountsStore.setState({ accounts: [] });
+    useSettingsStore.setState(mockSettings);
+
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({
       status: 'success',
@@ -74,11 +72,6 @@ describe('renderer/context/App.tsx', () => {
     );
     getNotificationCountSpy.mockReturnValue(1);
 
-    const mockDefaultState = {
-      auth: { accounts: [] },
-      settings: mockSettings,
-    };
-
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
       refetchNotificationsMock.mockReset();
@@ -98,7 +91,7 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
+      expect(markNotificationsReadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
     });
@@ -111,10 +104,9 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
-        mockDefaultState,
-        [mockSingleAtlassifyNotification],
-      );
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
+        mockSingleAtlassifyNotification,
+      ]);
     });
   });
 
@@ -126,67 +118,65 @@ describe('renderer/context/App.tsx', () => {
         getContext().updateSetting('playSoundNewNotifications', true);
       });
 
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          playSoundNewNotifications: true,
-        } as SettingsState,
-      });
+      // Verify the store was updated
+      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(true);
     });
 
     it('should call resetSettings', async () => {
       const getContext = renderWithContext();
 
+      // First set a different value
+      useSettingsStore.setState({
+        ...mockSettings,
+        playSoundNewNotifications: false,
+      });
+
       act(() => {
         getContext().resetSettings();
       });
 
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: defaultSettings,
-      });
+      // Verify the store was reset to defaults
+      expect(useSettingsStore.getState().playSoundNewNotifications).toBe(
+        DEFAULT_SETTINGS_STATE.playSoundNewNotifications,
+      );
     });
   });
 
   describe('authentication methods', () => {
-    const addAccountSpy = vi
-      .spyOn(authUtils, 'addAccount')
-      .mockResolvedValue({ accounts: [] } as AuthState);
-    const removeAccountSpy = vi.spyOn(authUtils, 'removeAccount');
-
-    it('login calls addAccount ', async () => {
+    it('login calls createAccount', async () => {
+      const createAccountSpy = vi.spyOn(
+        useAccountsStore.getState(),
+        'createAccount',
+      );
       const getContext = renderWithContext();
 
       await act(async () => {
-        getContext().login({
+        await getContext().login({
           username: mockAtlassianCloudAccount.username,
           token: mockAtlassianCloudAccount.token,
         });
       });
 
-      expect(addAccountSpy).toHaveBeenCalledWith(
-        expect.anything(),
+      expect(createAccountSpy).toHaveBeenCalledWith(
         mockAtlassianCloudAccount.username,
         mockAtlassianCloudAccount.token,
       );
     });
 
     it('logout calls removeAccount', async () => {
+      // Set up with an account
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+      const removeAccountSpy = vi.spyOn(
+        useAccountsStore.getState(),
+        'removeAccount',
+      );
       const getContext = renderWithContext();
 
       await act(async () => {
-        getContext().logoutFromAccount(mockAtlassianCloudAccount);
+        await getContext().logoutFromAccount(mockAtlassianCloudAccount);
       });
 
-      expect(removeAccountSpy).toHaveBeenCalledWith(
-        expect.anything(),
-        mockAtlassianCloudAccount,
-      );
+      expect(removeAccountSpy).toHaveBeenCalledWith(mockAtlassianCloudAccount);
     });
   });
 });

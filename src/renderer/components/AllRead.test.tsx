@@ -7,6 +7,7 @@ import {
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import useFiltersStore from '../stores/useFiltersStore';
+
 import { AllRead } from './AllRead';
 
 describe('renderer/components/AllRead.tsx', () => {

@@ -4,15 +4,16 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
+import type { AccountsState, SettingsState } from '../stores/types';
+import useFiltersStore from '../stores/useFiltersStore';
+
 import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  AtlassifyState,
   Status,
 } from '../types';
 
-import useFiltersStore from '../stores/useFiltersStore';
 import {
   getNotificationsByGroupId,
   markNotificationsAsRead,
@@ -25,6 +26,7 @@ import {
   doesAllAccountsHaveErrors,
 } from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
+import { filterNotifications } from '../utils/notifications/filters';
 import { isGroupNotification } from '../utils/notifications/group';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
@@ -35,6 +37,7 @@ import {
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
+import { notificationsKeys } from '../utils/queryKeys';
 
 interface NotificationsState {
   status: Status;
@@ -48,46 +51,49 @@ interface NotificationsState {
   refetchNotifications: () => Promise<void>;
 
   markNotificationsRead: (
-    state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
   markNotificationsUnread: (
-    state: AtlassifyState,
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
 }
 
-export const useNotifications = (state: AtlassifyState): NotificationsState => {
+export const useNotifications = (
+  auth: AccountsState,
+  settings: SettingsState,
+): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
+  // Subscribe to filter store to trigger re-render when filters change
+  // This ensures the select function gets recreated with latest filter state
   const engagementStates = useFiltersStore((s) => s.engagementStates);
   const categories = useFiltersStore((s) => s.categories);
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
-  // Flattened, stable query key that includes current filter values
-  const notificationsQueryKey = useMemo(() => {
-    return [
-      'notifications',
-      state.auth.accounts.length,
-      state.settings.fetchOnlyUnreadNotifications,
-      ...engagementStates,
-      ...categories,
-      ...actors,
-      ...readStates,
-      ...products,
-    ] as const;
-  }, [
-    state.auth.accounts.length,
-    state.settings.fetchOnlyUnreadNotifications,
-    engagementStates,
-    categories,
-    actors,
-    readStates,
-    products,
-  ]);
+  // Query key excludes filters to prevent API refetches on filter changes
+  // Filters are applied client-side via subscription in subscriptions.ts
+  const notificationsQueryKey = useMemo(
+    () =>
+      notificationsKeys.list(
+        auth.accounts.length,
+        settings.fetchOnlyUnreadNotifications,
+      ),
+    [auth.accounts.length, settings.fetchOnlyUnreadNotifications],
+  );
+
+  // Create select function that depends on filter state
+  // biome-ignore lint/correctness/useExhaustiveDependencies: specify all filters to ensure this function is recreated on change, causing Tanstack Query to re-run.
+  const selectFilteredNotifications = useMemo(
+    () => (data: AccountNotifications[]) =>
+      data.map((accountNotifications) => ({
+        ...accountNotifications,
+        notifications: filterNotifications(accountNotifications.notifications),
+      })),
+    [engagementStates, categories, actors, readStates, products],
+  );
 
   // Query for fetching notifications - React Query handles polling and refetching
   const {
@@ -99,8 +105,12 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(state);
+      return await getAllNotifications(auth, settings);
     },
+
+    // Apply filters as a transformation on the cached data
+    // This allows filter changes to instantly update without refetching
+    select: selectFilteredNotifications,
 
     refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,
@@ -168,11 +178,11 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     );
 
     if (diffNotifications.length > 0) {
-      if (state.settings.playSoundNewNotifications) {
-        raiseSoundNotification(state.settings.notificationVolume);
+      if (settings.playSoundNewNotifications) {
+        raiseSoundNotification(settings.notificationVolume);
       }
 
-      if (state.settings.showSystemNotifications) {
+      if (settings.showSystemNotifications) {
         raiseNativeNotification(diffNotifications);
       }
     }
@@ -182,13 +192,13 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
     notifications,
     isLoading,
     isError,
-    state.settings.playSoundNewNotifications,
-    state.settings.showSystemNotifications,
-    state.settings.notificationVolume,
+    settings.playSoundNewNotifications,
+    settings.showSystemNotifications,
+    settings.notificationVolume,
   ]);
 
   const getNotificationIdsForGroups = useCallback(
-    async (state: AtlassifyState, notifications: AtlassifyNotification[]) => {
+    async (notifications: AtlassifyNotification[]) => {
       const notificationIDs: string[] = [];
 
       const account = notifications[0].account;
@@ -201,7 +211,6 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
         for (const group of groupNotifications) {
           const res = await getNotificationsByGroupId(
             account,
-            state.settings,
             group.notificationGroup.id,
             group.notificationGroup.size,
           );
@@ -231,10 +240,8 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   // Mutation for marking notifications as read
   const markAsReadMutation = useMutation({
     mutationFn: async ({
-      state,
       readNotifications,
     }: {
-      state: AtlassifyState;
       readNotifications: AtlassifyNotification[];
     }) => {
       trackEvent('Action', { name: 'Mark as Read' });
@@ -248,10 +255,8 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
         (notification) => notification.id,
       );
 
-      const groupedNotificationIds = await getNotificationIdsForGroups(
-        state,
-        readNotifications,
-      );
+      const groupedNotificationIds =
+        await getNotificationIdsForGroups(readNotifications);
 
       singleNotificationIDs.push(...groupedNotificationIds);
 
@@ -263,7 +268,6 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
 
       const updatedNotifications = removeNotificationsForAccount(
         account,
-        state.settings,
         readNotifications,
         notifications,
       );
@@ -287,10 +291,8 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   // Mutation for marking notifications as unread
   const markAsUnreadMutation = useMutation({
     mutationFn: async ({
-      state,
       unreadNotifications,
     }: {
-      state: AtlassifyState;
       unreadNotifications: AtlassifyNotification[];
     }) => {
       trackEvent('Action', {
@@ -306,10 +308,8 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
         (notification) => notification.id,
       );
 
-      const groupedNotificationIds = await getNotificationIdsForGroups(
-        state,
-        unreadNotifications,
-      );
+      const groupedNotificationIds =
+        await getNotificationIdsForGroups(unreadNotifications);
 
       singleNotificationIDs.push(...groupedNotificationIds);
 
@@ -336,21 +336,15 @@ export const useNotifications = (state: AtlassifyState): NotificationsState => {
   });
 
   const markNotificationsRead = useCallback(
-    async (
-      state: AtlassifyState,
-      readNotifications: AtlassifyNotification[],
-    ) => {
-      await markAsReadMutation.mutateAsync({ state, readNotifications });
+    async (readNotifications: AtlassifyNotification[]) => {
+      await markAsReadMutation.mutateAsync({ readNotifications });
     },
     [markAsReadMutation],
   );
 
   const markNotificationsUnread = useCallback(
-    async (
-      state: AtlassifyState,
-      unreadNotifications: AtlassifyNotification[],
-    ) => {
-      await markAsUnreadMutation.mutateAsync({ state, unreadNotifications });
+    async (unreadNotifications: AtlassifyNotification[]) => {
+      await markAsUnreadMutation.mutateAsync({ unreadNotifications });
     },
     [markAsUnreadMutation],
   );

@@ -3,9 +3,10 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
 import { categoryFilter } from '.';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {

@@ -5,7 +5,7 @@ import {
 } from '../../__mocks__/notifications-mocks';
 import { mockSettings } from '../../__mocks__/state-mocks';
 
-import type { SettingsState } from '../../types';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import {
   removeNotificationsForAccount,
@@ -46,23 +46,27 @@ describe('renderer/utils/notifications/remove.ts', () => {
       fetchOnlyUnreadNotifications,
       expected,
     }) => {
-      const settings: SettingsState = {
+      useSettingsStore.setState({
         ...mockSettings,
         delayNotificationState,
         fetchOnlyUnreadNotifications,
-      };
+      });
 
-      expect(shouldRemoveNotificationsFromState(settings)).toBe(expected);
+      expect(shouldRemoveNotificationsFromState()).toBe(expected);
     });
   });
 
   describe('removeNotificationsForAccount', () => {
     it('should remove a notification if it exists', () => {
+      useSettingsStore.setState({
+        ...mockSettings,
+        delayNotificationState: false,
+      });
+
       expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
       const result = removeNotificationsForAccount(
         mockSingleAccountNotifications[0].account,
-        { ...mockSettings, delayNotificationState: false },
         [mockSingleAtlassifyNotification],
         mockSingleAccountNotifications,
       );
@@ -71,11 +75,15 @@ describe('renderer/utils/notifications/remove.ts', () => {
     });
 
     it('should mark as read and skip notification removal if delay state enabled', () => {
+      useSettingsStore.setState({
+        ...mockSettings,
+        delayNotificationState: true,
+      });
+
       expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
       const result = removeNotificationsForAccount(
         mockSingleAccountNotifications[0].account,
-        { ...mockSettings, delayNotificationState: true },
         [mockSingleAtlassifyNotification],
         mockSingleAccountNotifications,
       );
@@ -85,11 +93,15 @@ describe('renderer/utils/notifications/remove.ts', () => {
     });
 
     it('should skip notification removal if delay state enabled and nothing to remove', () => {
+      useSettingsStore.setState({
+        ...mockSettings,
+        delayNotificationState: true,
+      });
+
       expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
 
       const result = removeNotificationsForAccount(
         mockSingleAccountNotifications[0].account,
-        { ...mockSettings, delayNotificationState: true },
         [
           {
             ...mockSingleAtlassifyNotification,
@@ -108,7 +120,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
 
       const result = removeNotificationsForAccount(
         mockSingleAccountNotifications[0].account,
-        { ...mockSettings },
         [],
         mockSingleAccountNotifications,
       );
@@ -124,7 +135,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
 
       const result = removeNotificationsForAccount(
         mockAtlassianCloudAccountTwo,
-        { ...mockSettings },
         [
           {
             ...mockSingleAtlassifyNotification,

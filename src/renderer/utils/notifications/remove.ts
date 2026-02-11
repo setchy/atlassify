@@ -1,16 +1,16 @@
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
-  SettingsState,
 } from '../../types';
 
 /**
  * Determine if notifications should be removed from state or marked as read in-place.
  */
-export function shouldRemoveNotificationsFromState(
-  settings: SettingsState,
-): boolean {
+export function shouldRemoveNotificationsFromState(): boolean {
+  const settings = useSettingsStore.getState();
   return (
     !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
   );
@@ -24,7 +24,6 @@ export function shouldRemoveNotificationsFromState(
  */
 export function removeNotificationsForAccount(
   account: Account,
-  settings: SettingsState,
   notificationsToRemove: AtlassifyNotification[],
   accountNotifications: AccountNotifications[],
 ): AccountNotifications[] {
@@ -36,7 +35,7 @@ export function removeNotificationsForAccount(
     notificationsToRemove.map((notification) => notification.id),
   );
 
-  const shouldRemove = shouldRemoveNotificationsFromState(settings);
+  const shouldRemove = shouldRemoveNotificationsFromState();
 
   return accountNotifications.map((accountNotifications) =>
     account.id === accountNotifications.account.id

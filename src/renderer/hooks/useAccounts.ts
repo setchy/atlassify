@@ -4,9 +4,9 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import type { Account } from '../types';
+import useAccountsStore from '../stores/useAccountsStore';
 
-import { refreshAccount } from '../utils/auth/utils';
+import type { Account } from '../types';
 
 interface AccountsState {
   refetchAccounts: () => Promise<void>;
@@ -17,6 +17,7 @@ export const useAccounts = (accounts: Account[]): AccountsState => {
     queryKey: ['accounts', accounts.length],
 
     queryFn: async () => {
+      const refreshAccount = useAccountsStore.getState().refreshAccount;
       await Promise.all(accounts.map(refreshAccount));
 
       return true;

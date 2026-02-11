@@ -3,6 +3,7 @@ import { vi } from 'vitest';
 import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-mocks';
 
 import useFiltersStore from '../../../stores/useFiltersStore';
+
 import { filterNotifications, hasActiveFilters } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {

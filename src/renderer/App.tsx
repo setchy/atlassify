@@ -1,3 +1,4 @@
+import { type FC, useEffect } from 'react';
 import {
   Navigate,
   Route,
@@ -19,12 +20,20 @@ import './App.css';
 import { QueryClientProvider } from '@tanstack/react-query';
 
 import { useAppContext } from './hooks/useAppContext';
+import { initializeStoreSubscriptions } from './stores/subscriptions';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
 import { queryClient } from './utils/api/client';
+import { rendererLogError } from './utils/logger';
+import { migrateContextToZustand } from './utils/storage';
+
+// Run migration from Context storage to Zustand stores (async)
+migrateContextToZustand().catch((error) => {
+  rendererLogError('App', 'Failed to migrate storage', error);
+});
 
 function RequireAuth({ children }) {
   const { isLoggedIn } = useAppContext();
@@ -37,7 +46,13 @@ function RequireAuth({ children }) {
   );
 }
 
-export const App = () => {
+export const App: FC = () => {
+  // Initialize store subscriptions with proper cleanup
+  useEffect(() => {
+    const cleanup = initializeStoreSubscriptions();
+    return cleanup;
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <AppProvider>

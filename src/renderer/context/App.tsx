@@ -4,39 +4,28 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useState,
 } from 'react';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
+import type { AccountsState, SettingsState } from '../stores/types';
+import useAccountsStore from '../stores/useAccountsStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import type {
   Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  AuthState,
-  SettingsState,
-  SettingsValue,
   Status,
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
-import useFiltersStore from '../stores/useFiltersStore';
-import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
-import {
-  setAutoLaunch,
-  setUseAlternateIdleIcon,
-  setUseUnreadActiveIcon,
-} from '../utils/comms';
-import { clearState, loadState, saveState } from '../utils/storage';
-import { setTheme } from '../utils/theme';
 import { setTrayIconColorAndTitle } from '../utils/tray';
-import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import { defaultAuth, defaultSettings } from './defaults';
 
 export interface AppContextState {
-  auth: AuthState;
+  auth: AccountsState;
   isLoggedIn: boolean;
   login: (data: LoginOptions) => Promise<void>;
   logoutFromAccount: (account: Account) => void;
@@ -60,7 +49,10 @@ export interface AppContextState {
 
   settings: SettingsState;
   resetSettings: () => void;
-  updateSetting: (name: keyof SettingsState, value: SettingsValue) => void;
+  updateSetting: <K extends keyof SettingsState>(
+    name: K,
+    value: SettingsState[K],
+  ) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -68,20 +60,97 @@ export const AppContext = createContext<Partial<AppContextState> | undefined>(
 );
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const existingState = loadState();
-
+  // Get store actions and reset functions
   const resetFilters = useFiltersStore((s) => s.reset);
+  const resetAccounts = useAccountsStore((s) => s.reset);
+  const resetSettings = useSettingsStore((s) => s.reset);
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn);
+  const createAccount = useAccountsStore((s) => s.createAccount);
+  const removeAccount = useAccountsStore((s) => s.removeAccount);
 
-  const [auth, setAuth] = useState<AuthState>(
-    existingState.auth
-      ? { ...defaultAuth, ...existingState.auth }
-      : defaultAuth,
+  // Read accounts from store
+  const accounts = useAccountsStore((state) => state.accounts);
+  const auth = useMemo<AccountsState>(() => ({ accounts }), [accounts]);
+
+  // Subscribe to all settings values individually to avoid creating new objects
+  const language = useSettingsStore((s) => s.language);
+  const theme = useSettingsStore((s) => s.theme);
+  const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+  const delayNotificationState = useSettingsStore(
+    (s) => s.delayNotificationState,
   );
+  const fetchOnlyUnreadNotifications = useSettingsStore(
+    (s) => s.fetchOnlyUnreadNotifications,
+  );
+  const groupNotificationsByProduct = useSettingsStore(
+    (s) => s.groupNotificationsByProduct,
+  );
+  const groupNotificationsByProductAlphabetically = useSettingsStore(
+    (s) => s.groupNotificationsByProductAlphabetically,
+  );
+  const groupNotificationsByTitle = useSettingsStore(
+    (s) => s.groupNotificationsByTitle,
+  );
+  const showNotificationsCountInTray = useSettingsStore(
+    (s) => s.showNotificationsCountInTray,
+  );
+  const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
+  const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
+  const openLinks = useSettingsStore((s) => s.openLinks);
+  const keyboardShortcutEnabled = useSettingsStore(
+    (s) => s.keyboardShortcutEnabled,
+  );
+  const showSystemNotifications = useSettingsStore(
+    (s) => s.showSystemNotifications,
+  );
+  const playSoundNewNotifications = useSettingsStore(
+    (s) => s.playSoundNewNotifications,
+  );
+  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
+  const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
-  const [settings, setSettings] = useState<SettingsState>(
-    existingState.settings
-      ? { ...defaultSettings, ...existingState.settings }
-      : defaultSettings,
+  const settings = useMemo<SettingsState>(
+    () => ({
+      language,
+      theme,
+      zoomPercentage,
+      markAsReadOnOpen,
+      delayNotificationState,
+      fetchOnlyUnreadNotifications,
+      groupNotificationsByProduct,
+      groupNotificationsByProductAlphabetically,
+      groupNotificationsByTitle,
+      showNotificationsCountInTray,
+      useUnreadActiveIcon,
+      useAlternateIdleIcon,
+      openLinks,
+      keyboardShortcutEnabled,
+      showSystemNotifications,
+      playSoundNewNotifications,
+      notificationVolume,
+      openAtStartup,
+    }),
+    [
+      language,
+      theme,
+      zoomPercentage,
+      markAsReadOnOpen,
+      delayNotificationState,
+      fetchOnlyUnreadNotifications,
+      groupNotificationsByProduct,
+      groupNotificationsByProductAlphabetically,
+      groupNotificationsByTitle,
+      showNotificationsCountInTray,
+      useUnreadActiveIcon,
+      useAlternateIdleIcon,
+      openLinks,
+      keyboardShortcutEnabled,
+      showSystemNotifications,
+      playSoundNewNotifications,
+      notificationVolume,
+      openAtStartup,
+    ],
   );
 
   const {
@@ -97,113 +166,52 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications({ auth, settings });
+  } = useNotifications(auth, settings);
 
   useAccounts(auth.accounts);
 
-  useEffect(() => {
-    setTheme(settings.theme);
-  }, [settings.theme]);
-
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
-    setUseUnreadActiveIcon(settings.useUnreadActiveIcon);
-    setUseAlternateIdleIcon(settings.useAlternateIdleIcon);
-
     const trayCount = status === 'error' ? -1 : notificationCount;
-    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, settings);
+    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications);
   }, [
-    settings.showNotificationsCountInTray,
-    settings.useUnreadActiveIcon,
-    settings.useAlternateIdleIcon,
+    showNotificationsCountInTray,
+    useUnreadActiveIcon,
+    useAlternateIdleIcon,
     notifications,
   ]);
 
   useEffect(() => {
-    setAutoLaunch(settings.openAtStartup);
-  }, [settings.openAtStartup]);
-
-  useEffect(() => {
     window.atlassify.onResetApp(() => {
-      clearState();
-      setAuth(defaultAuth);
-      setSettings(defaultSettings);
+      resetAccounts();
+      resetSettings();
       resetFilters();
     });
-  }, []);
+  }, [resetAccounts, resetSettings, resetFilters]);
 
-  const resetSettings = useCallback(() => {
-    setSettings(() => {
-      saveState({ auth, settings: defaultSettings });
-      return defaultSettings;
-    });
-  }, [auth]);
+  const handleResetSettings = useCallback(() => {
+    resetSettings();
+  }, [resetSettings]);
 
-  const updateSetting = useCallback(
-    (name: keyof SettingsState, value: SettingsValue) => {
-      setSettings((prevSettings) => {
-        const newSettings = { ...prevSettings, [name]: value };
-        saveState({ auth, settings: newSettings });
-        return newSettings;
-      });
+  const handleUpdateSetting = useCallback(
+    <K extends keyof SettingsState>(name: K, value: SettingsState[K]) => {
+      useSettingsStore.getState().updateSetting(name, value);
     },
-    [auth],
+    [],
   );
-
-  // Global window zoom handler / listener
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update on settings.zoomPercentage changes
-  useEffect(() => {
-    // Set the zoom level when settings.zoomPercentage changes
-    window.atlassify.zoom.setLevel(
-      zoomPercentageToLevel(settings.zoomPercentage),
-    );
-
-    // Sync zoom percentage in settings when window is resized
-    let timeout: NodeJS.Timeout;
-    const DELAY = 200;
-
-    const handleResize = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        const zoomPercentage = zoomLevelToPercentage(
-          window.atlassify.zoom.getLevel(),
-        );
-
-        if (zoomPercentage !== settings.zoomPercentage) {
-          updateSetting('zoomPercentage', zoomPercentage);
-        }
-      }, DELAY);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timeout);
-    };
-  }, [settings.zoomPercentage]);
-
-  const isLoggedIn = useMemo(() => {
-    return hasAccounts(auth);
-  }, [auth]);
 
   const login = useCallback(
     async ({ username, token }: LoginOptions) => {
-      const updatedAuth = await addAccount(auth, username, token);
-      setAuth(updatedAuth);
-      saveState({ auth: updatedAuth, settings });
+      await createAccount(username, token);
     },
-    [auth, settings],
+    [createAccount],
   );
 
   const logoutFromAccount = useCallback(
     async (account: Account) => {
-      const updatedAuth = removeAccount(auth, account);
-
-      setAuth(updatedAuth);
-      saveState({ auth: updatedAuth, settings });
+      removeAccount(account);
     },
-    [auth, settings],
+    [removeAccount],
   );
 
   const fetchNotificationsWithAccounts = useCallback(
@@ -213,20 +221,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const markNotificationsReadWithAccounts = useCallback(
     async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsRead({ auth, settings }, notifications),
-    [auth, settings, markNotificationsRead],
+      await markNotificationsRead(notifications),
+    [markNotificationsRead],
   );
 
   const markNotificationsUnreadWithAccounts = useCallback(
     async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsUnread({ auth, settings }, notifications),
-    [auth, settings, markNotificationsUnread],
+      await markNotificationsUnread(notifications),
+    [markNotificationsUnread],
   );
 
   const contextValues: AppContextState = useMemo(
     () => ({
       auth,
-      isLoggedIn,
+      isLoggedIn: isLoggedIn(),
       login,
       logoutFromAccount,
 
@@ -244,8 +252,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread: markNotificationsUnreadWithAccounts,
 
       settings,
-      resetSettings,
-      updateSetting,
+      resetSettings: handleResetSettings,
+      updateSetting: handleUpdateSetting,
     }),
     [
       auth,
@@ -267,8 +275,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnreadWithAccounts,
 
       settings,
-      resetSettings,
-      updateSetting,
+      handleResetSettings,
+      handleUpdateSetting,
     ],
   );
 

@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { defaultFiltersState, useFiltersStore } from './useFiltersStore';
+import { DEFAULT_FILTERS_STATE } from './defaults';
+import { useFiltersStore } from './useFiltersStore';
 
 describe('useFiltersStore', () => {
   beforeEach(() => {
@@ -36,6 +37,6 @@ describe('useFiltersStore', () => {
       result.current.reset();
     });
 
-    expect(result.current).toMatchObject(defaultFiltersState);
+    expect(result.current).toMatchObject(DEFAULT_FILTERS_STATE);
   });
 });

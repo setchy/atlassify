@@ -3,73 +3,9 @@ import { persist } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
-import type {
-  ActorType,
-  CategoryType,
-  EngagementStateType,
-  ProductType,
-  ReadStateType,
-} from '../types';
+import type { FiltersStore } from './types';
 
-/**
- * Settings related to the filtering of notifications within the application.
- */
-export interface FiltersState {
-  /**
-   * The engagement states to filter notifications by.
-   */
-  engagementStates: EngagementStateType[];
-
-  /**
-   * The categories to filter notifications by.
-   */
-  categories: CategoryType[];
-
-  /**
-   * The read states to filter notifications by.
-   */
-  readStates: ReadStateType[];
-
-  /**
-   * The products to filter notifications by.
-   */
-  products: ProductType[];
-
-  /**
-   * The notification actors / authors .
-   */
-  actors: ActorType[];
-}
-
-/**
- * All allowed Filter types.
- * Automatically derived from the FiltersState
- */
-export type FilterKey = keyof FiltersState;
-
-type UpdateFilter = <K extends FilterKey>(
-  key: K,
-  value: FiltersState[K][number],
-  checked: boolean,
-) => void;
-
-interface FilterActions {
-  updateFilter: UpdateFilter;
-  reset: () => void;
-}
-
-type FiltersStore = FiltersState & FilterActions;
-
-/**
- * Default filter state
- */
-export const defaultFiltersState: FiltersState = {
-  engagementStates: [],
-  categories: [],
-  readStates: [],
-  products: [],
-  actors: [],
-};
+import { DEFAULT_FILTERS_STATE } from './defaults';
 
 /**
  * Atlassify Filters store.
@@ -79,7 +15,7 @@ export const defaultFiltersState: FiltersState = {
 export const useFiltersStore = create<FiltersStore>()(
   persist(
     (set, _get, store) => ({
-      ...defaultFiltersState,
+      ...DEFAULT_FILTERS_STATE,
 
       updateFilter: (key, value, checked) => {
         set((state) => {
@@ -101,14 +37,6 @@ export const useFiltersStore = create<FiltersStore>()(
     }),
     {
       name: Constants.FILTERS_STORE_KEY,
-
-      partialize: (state) => ({
-        engagementStates: state.engagementStates,
-        categories: state.categories,
-        actors: state.actors,
-        readStates: state.readStates,
-        products: state.products,
-      }),
     },
   ),
 );
