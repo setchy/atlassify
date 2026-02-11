@@ -36,7 +36,6 @@ export const AppearanceSettings: FC = () => {
   const { t, i18n } = useTranslation();
 
   const theme = useSettingsStore((s) => s.theme);
-  const language = useSettingsStore((s) => s.language);
 
   const zoomPercentage = zoomLevelToPercentage(
     window.atlassify.zoom.getLevel(),

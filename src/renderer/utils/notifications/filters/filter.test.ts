@@ -4,7 +4,7 @@ import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-moc
 
 import useFiltersStore from '../../../stores/useFiltersStore';
 
-import { filterNotifications, hasActiveFilters } from '.';
+import { filterNotifications } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
   beforeEach(() => {

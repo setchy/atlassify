@@ -52,12 +52,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(
-        () => useNotifications(mockAuth, mockSettings),
-        {
-          wrapper: createWrapper(),
-        },
-      );
+      const { result } = renderHook(() => useNotifications(mockAuth), {
+        wrapper: createWrapper(),
+      });
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -95,12 +92,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(
-        () => useNotifications(mockAuth, mockSettings),
-        {
-          wrapper: createWrapper(),
-        },
-      );
+      const { result } = renderHook(() => useNotifications(mockAuth), {
+        wrapper: createWrapper(),
+      });
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -131,12 +125,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(
-        () => useNotifications(mockAuth, mockSettings),
-        {
-          wrapper: createWrapper(),
-        },
-      );
+      const { result } = renderHook(() => useNotifications(mockAuth), {
+        wrapper: createWrapper(),
+      });
 
       await waitFor(() => {
         expect(result.current.status).toBe('success');
@@ -197,12 +188,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(
-      () => useNotifications(mockAuth, mockSettings),
-      {
-        wrapper: createWrapper(),
-      },
-    );
+    const { result } = renderHook(() => useNotifications(mockAuth), {
+      wrapper: createWrapper(),
+    });
 
     await waitFor(() => {
       expect(result.current.status).toBe('success');
@@ -265,12 +253,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(
-      () => useNotifications(mockAuth, mockSettings),
-      {
-        wrapper: createWrapper(),
-      },
-    );
+    const { result } = renderHook(() => useNotifications(mockAuth), {
+      wrapper: createWrapper(),
+    });
 
     await waitFor(() => {
       expect(result.current.status).toBe('success');

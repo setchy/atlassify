@@ -8,7 +8,7 @@ import {
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AccountsState, SettingsState } from '../stores/types';
+import type { AccountsState } from '../stores/types';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';

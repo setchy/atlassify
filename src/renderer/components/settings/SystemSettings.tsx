@@ -15,7 +15,6 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { useAppContext } from '../../hooks/useAppContext';
 import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import { OpenPreference } from '../../stores/types';
 import useSettingsStore from '../../stores/useSettingsStore';
@@ -28,8 +27,7 @@ import {
 } from '../../utils/notifications/sound';
 
 export const SystemSettings: FC = () => {
-  const { updateSetting } = useAppContext();
-
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
   const openLinks = useSettingsStore((s) => s.openLinks);
   const keyboardShortcutEnabled = useSettingsStore(
     (s) => s.keyboardShortcutEnabled,

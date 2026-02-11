@@ -38,7 +38,6 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/components/Sidebar.tsx', () => {
-  const updateSettingMock = vi.fn();
   const fetchNotificationsMock = vi.fn();
   const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
@@ -219,9 +218,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          updateSetting: updateSettingMock,
-        },
+        {},
       );
 
       await userEvent.click(
@@ -264,9 +261,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          updateSetting: updateSettingMock,
-        },
+        {},
       );
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
@@ -305,9 +300,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
-        {
-          updateSetting: updateSettingMock,
-        },
+        {},
       );
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-title'));

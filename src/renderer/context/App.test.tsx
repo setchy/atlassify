@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
 import { vi } from 'vitest';
 
@@ -9,7 +9,6 @@ import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
-import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 

@@ -22,8 +22,6 @@ import { useShortcutActions } from '../hooks/useShortcutActions';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
-import type { AtlassifyFilter } from '../types';
-
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
