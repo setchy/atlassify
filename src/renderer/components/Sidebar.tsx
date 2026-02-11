@@ -55,9 +55,9 @@ const SidebarComponent: FC = () => {
   const theme = useThemeObserver();
 
   const sidebarIconColorToken =
-    theme.colorMode === 'light'
-      ? token('color.text.inverse')
-      : token('color.text.accent.gray.bolder');
+    theme.colorMode === 'dark'
+      ? token('color.text.accent.gray.bolder')
+      : token('color.text.inverse');
 
   return (
     <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
