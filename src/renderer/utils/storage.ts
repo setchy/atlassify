@@ -4,7 +4,6 @@ import type { Language } from '../i18n/types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
 import useAccountsStore from '../stores/useAccountsStore';
-import useFiltersStore, { type FiltersState } from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 import { rendererLogError, rendererLogInfo } from './logger';
 
