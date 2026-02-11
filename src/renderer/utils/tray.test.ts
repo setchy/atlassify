@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 
 import { mockSettings } from '../__mocks__/state-mocks';
 
-import type { SettingsState } from '../types';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import * as comms from './comms';
 import { setTrayIconColorAndTitle } from './tray';
@@ -17,12 +17,12 @@ describe('renderer/utils/tray.ts', () => {
 
   describe('setTrayIconColorAndTitle', () => {
     it('should update tray color and title when showNotificationsCountInTray is true and has notifications', () => {
-      const settings: SettingsState = {
+      useSettingsStore.setState({
         ...mockSettings,
         showNotificationsCountInTray: true,
-      };
+      });
 
-      setTrayIconColorAndTitle(5, false, settings);
+      setTrayIconColorAndTitle(5, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
@@ -31,12 +31,12 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should update tray color and title when showNotificationsCountInTray is true and has more notifications', () => {
-      const settings: SettingsState = {
+      useSettingsStore.setState({
         ...mockSettings,
         showNotificationsCountInTray: true,
-      };
+      });
 
-      setTrayIconColorAndTitle(5, true, settings);
+      setTrayIconColorAndTitle(5, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
@@ -45,12 +45,12 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should update tray color and empty title when showNotificationsCountInTray is false and has notifications', () => {
-      const settings: SettingsState = {
+      useSettingsStore.setState({
         ...mockSettings,
         showNotificationsCountInTray: false,
-      };
+      });
 
-      setTrayIconColorAndTitle(5, false, settings);
+      setTrayIconColorAndTitle(5, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
@@ -59,12 +59,12 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should update tray with empty title when no notifications', () => {
-      const settings: SettingsState = {
+      useSettingsStore.setState({
         ...mockSettings,
         showNotificationsCountInTray: true,
-      };
+      });
 
-      setTrayIconColorAndTitle(0, false, settings);
+      setTrayIconColorAndTitle(0, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayColorSpy).toHaveBeenCalledWith(0);

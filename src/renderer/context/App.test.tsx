@@ -9,11 +9,11 @@ import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import type { AuthState } from '../types';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
 import * as authUtils from '../utils/auth/utils';
 import * as notifications from '../utils/notifications/notifications';
 import { type AppContextState, AppProvider } from './App';
@@ -75,11 +75,6 @@ describe('renderer/context/App.tsx', () => {
     );
     getNotificationCountSpy.mockReturnValue(1);
 
-    const mockDefaultState = {
-      auth: { accounts: [] },
-      settings: mockSettings,
-    };
-
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
       refetchNotificationsMock.mockReset();
@@ -99,7 +94,7 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
+      expect(markNotificationsReadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
     });
@@ -112,10 +107,9 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
-        mockDefaultState,
-        [mockSingleAtlassifyNotification],
-      );
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
+        mockSingleAtlassifyNotification,
+      ]);
     });
   });
 

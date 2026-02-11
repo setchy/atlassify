@@ -8,6 +8,9 @@ import {
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
+import useAccountsStore from '../stores/useAccountsStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import type {
   Account,
@@ -21,9 +24,6 @@ import type {
 } from '../types';
 import type { LoginOptions } from '../utils/auth/types';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
 import { addAccount, hasAccounts, removeAccount } from '../utils/auth/utils';
 import { setTrayIconColorAndTitle } from '../utils/tray';
 
@@ -170,7 +170,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
     const trayCount = status === 'error' ? -1 : notificationCount;
-    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, settings);
+    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications);
   }, [
     showNotificationsCountInTray,
     useUnreadActiveIcon,
@@ -224,14 +224,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const markNotificationsReadWithAccounts = useCallback(
     async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsRead({ auth, settings }, notifications),
-    [auth, settings, markNotificationsRead],
+      await markNotificationsRead(notifications),
+    [markNotificationsRead],
   );
 
   const markNotificationsUnreadWithAccounts = useCallback(
     async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsUnread({ auth, settings }, notifications),
-    [auth, settings, markNotificationsUnread],
+      await markNotificationsUnread(notifications),
+    [markNotificationsUnread],
   );
 
   const contextValues: AppContextState = useMemo(

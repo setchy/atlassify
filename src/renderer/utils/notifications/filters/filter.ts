@@ -1,6 +1,7 @@
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type { AtlassifyNotification } from '../../../types';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
 import {
   actorFilter,
   categoryFilter,

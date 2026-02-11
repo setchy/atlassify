@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next';
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
+import useFiltersStore from '../stores/useFiltersStore';
+
 import { FilterSection } from '../components/filters/FilterSection';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
 
-import useFiltersStore from '../stores/useFiltersStore';
 import {
   actorFilter,
   categoryFilter,

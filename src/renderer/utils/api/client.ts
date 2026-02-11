@@ -2,12 +2,13 @@ import { QueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../../constants';
 
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type {
   Account,
   CloudID,
   Hostname,
   JiraProjectKey,
-  SettingsState,
   Token,
   Username,
 } from '../../types';
@@ -80,8 +81,8 @@ export function getAuthenticatedUser(
  */
 export function getNotificationsForUser(
   account: Account,
-  settings: SettingsState,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
+  const settings = useSettingsStore.getState();
   return performRequestForAccount(account, MyNotificationsDocument, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,
@@ -126,10 +127,10 @@ export function markNotificationsAsUnread(
  */
 export function getNotificationsByGroupId(
   account: Account,
-  settings: SettingsState,
   notificationGroupId: string,
   notificationGroupSize: number,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
+  const settings = useSettingsStore.getState();
   return performRequestForAccount(
     account,
     RetrieveNotificationsByGroupIdDocument,

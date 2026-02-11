@@ -1,10 +1,11 @@
 import { Constants } from '../constants';
 
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
+
 import type { Language } from '../i18n/types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
 import { rendererLogError, rendererLogInfo } from './logger';
 
 /**

@@ -19,8 +19,8 @@ import { APPLICATION } from '../../shared/constants';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
-
 import useFiltersStore from '../stores/useFiltersStore';
+
 import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 

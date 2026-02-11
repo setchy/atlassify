@@ -26,7 +26,7 @@
               ":BLANK_LINE:",
               ["**/constants", "**/constants/**"],
               ":BLANK_LINE:",
-              ["**/context/**", "**/hooks/**", "**/routes/**"],
+              ["**/context/**", "**/hooks/**", "**/routes/**", "**/stores/**"],
               ":BLANK_LINE:",
               [
                 "**/layout/**",

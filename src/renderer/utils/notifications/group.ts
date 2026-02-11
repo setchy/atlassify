@@ -1,4 +1,6 @@
-import type { AtlassifyNotification, SettingsState } from '../../types';
+import useSettingsStore from '../../stores/useSettingsStore';
+
+import type { AtlassifyNotification } from '../../types';
 
 /**
  * Check if a notification is a group notification.
@@ -48,8 +50,9 @@ export function groupNotificationsByProduct(
  */
 export function getFlattenedNotificationsByProduct(
   notifications: AtlassifyNotification[],
-  settings: SettingsState,
 ): AtlassifyNotification[] {
+  const settings = useSettingsStore.getState();
+
   if (
     settings.groupNotificationsByProduct ||
     settings.groupNotificationsByProductAlphabetically

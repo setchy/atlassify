@@ -197,7 +197,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await act(async () => {
-      await result.current.markNotificationsRead(mockState, [
+      await result.current.markNotificationsRead([
         mockSingleAtlassifyNotification,
       ]);
     });
@@ -262,7 +262,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await act(async () => {
-      await result.current.markNotificationsUnread(mockState, [
+      await result.current.markNotificationsUnread([
         mockSingleAtlassifyNotification,
       ]);
     });

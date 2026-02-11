@@ -45,7 +45,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
 
-  const shouldAnimateExit = shouldRemoveNotificationsFromState(settings);
+  const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
   const actionNotificationInteraction = () => {
     setShouldAnimateNotificationExit(

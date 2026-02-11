@@ -19,15 +19,15 @@ import './App.css';
 import { QueryClientProvider } from '@tanstack/react-query';
 
 import { useAppContext } from './hooks/useAppContext';
+import {
+  setupFiltersSideEffects,
+  setupSettingsSideEffects,
+} from './stores/side-effects';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
-import {
-  setupFiltersSideEffects,
-  setupSettingsSideEffects,
-} from './stores/side-effects';
 import { queryClient } from './utils/api/client';
 import { rendererLogError } from './utils/logger';
 import { migrateContextToZustand } from './utils/storage';

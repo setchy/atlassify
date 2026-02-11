@@ -45,7 +45,7 @@ function getNotifications(state: AtlassifyState) {
   return state.auth.accounts.map((account) => {
     return {
       account,
-      notifications: getNotificationsForUser(account, state.settings),
+      notifications: getNotificationsForUser(account),
     };
   });
 }
@@ -122,14 +122,13 @@ export async function getAllNotifications(
  */
 export function stabilizeNotificationsOrder(
   accountNotifications: AccountNotifications[],
-  settings: SettingsState,
+  _settings: SettingsState,
 ) {
   let orderIndex = 0;
 
   for (const account of accountNotifications) {
     const flattenedNotifications = getFlattenedNotificationsByProduct(
       account.notifications,
-      settings,
     );
 
     for (const notification of flattenedNotifications) {

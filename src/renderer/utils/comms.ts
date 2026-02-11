@@ -1,6 +1,6 @@
-import { type Link, OpenPreference } from '../types';
-
 import useSettingsStore from '../stores/useSettingsStore';
+
+import { type Link, OpenPreference } from '../types';
 
 export function openExternalLink(url: Link): void {
   // Load the settings from the store to avoid having to pass settings as a parameter
