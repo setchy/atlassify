@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@40.2.1)
+        version: 0.3.1(electron@40.3.0)
       '@tanstack/react-query':
         specifier: 5.90.20
         version: 5.90.20(react@19.2.4)
@@ -31,7 +31,7 @@ importers:
         version: 8.2.0
       menubar:
         specifier: 9.5.2
-        version: 9.5.2(electron@40.2.1)
+        version: 9.5.2(electron@40.3.0)
       react:
         specifier: 19.2.4
         version: 19.2.4
@@ -181,8 +181,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       electron:
-        specifier: 40.2.1
-        version: 40.2.1
+        specifier: 40.3.0
+        version: 40.3.0
       electron-builder:
         specifier: 26.7.0
         version: 26.7.0(electron-builder-squirrel-windows@26.4.0)
@@ -2821,8 +2821,8 @@ packages:
     resolution: {integrity: sha512-bO3y10YikuUwUuDUQRM4KfwNkKhnpVO7IPdbsrejwN9/AABJzzTQ4GeHwyzNSrVO+tEH3/Np255a3sVZpZDjvg==}
     engines: {node: '>=8.0.0'}
 
-  electron@40.2.1:
-    resolution: {integrity: sha512-0zOeyN8LB1KHIjVV5jyMmQmkqx3J8OkkVlab3p7vOM28jI46blxW7M52Tcdi6X2m5o2jj8ejOlAh5+boL3w8aQ==}
+  electron@40.3.0:
+    resolution: {integrity: sha512-ZaDkTZpNHr863tyZHieoqbaiLI0e3RVCXoEC5y1Ld70/Q5H1mPV9d5TK0h1dWtaSFVOW0w8iDvtdLwAXtasXpg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -5217,9 +5217,9 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@aptabase/electron@0.3.1(electron@40.2.1)':
+  '@aptabase/electron@0.3.1(electron@40.3.0)':
     dependencies:
-      electron: 40.2.1
+      electron: 40.3.0
 
   '@ardatan/relay-compiler@12.0.3(encoding@0.1.13)(graphql@16.12.0)':
     dependencies:
@@ -8661,7 +8661,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@40.2.1:
+  electron@40.3.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 24.10.12
@@ -9525,9 +9525,9 @@ snapshots:
 
   memoize-one@6.0.0: {}
 
-  menubar@9.5.2(electron@40.2.1):
+  menubar@9.5.2(electron@40.3.0):
     dependencies:
-      electron: 40.2.1
+      electron: 40.3.0
       electron-positioner: 4.1.0
 
   merge2@1.4.1: {}
