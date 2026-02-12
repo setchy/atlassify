@@ -12,8 +12,7 @@ import {
 import { performRequestForAccount } from '../request';
 
 /**
- * TODO the api client functions in this file are all unused due to different "quirks" with behavior.
- * Ideally each of these would be used and migrated into the main api/client.
+ * TODO the api client functions in this file are all unused due to different "quirks" with behavior. Ideally each of these would be used.
  */
 
 /**

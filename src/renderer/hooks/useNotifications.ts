@@ -20,10 +20,6 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
-import {
-  markNotificationGroupAsRead,
-  markNotificationGroupAsUnread,
-} from '../utils/api/experimental/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { trackEvent } from '../utils/comms';
 import {
@@ -209,14 +205,6 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     notificationVolume,
   ]);
 
-  /**
-   * @deprecated Retained as a fallback while trailing the experimental group
-   * mutations (markNotificationGroupAsRead/Unread). Prefer the experimental
-   * client mutations whenever possible.
-   *
-   * TODO - this is deprecated.  Remove in a future stable release.
-   */
-  // @ts-expect-error
   const getNotificationIdsForGroups = useCallback(
     async (notifications: AtlassifyNotification[]) => {
       const notificationIDs: string[] = [];
@@ -268,28 +256,19 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
       const account = readNotifications[0].account;
 
-      const singleNotifications = readNotifications.filter(
+      const singleGroupNotifications = readNotifications.filter(
         (notification) => !isGroupNotification(notification),
       );
-      const groupNotifications = readNotifications.filter((notification) =>
-        isGroupNotification(notification),
-      );
-
-      const singleNotificationIDs = singleNotifications.map(
+      const singleNotificationIDs = singleGroupNotifications.map(
         (notification) => notification.id,
       );
 
-      if (singleNotificationIDs.length > 0) {
-        await markNotificationsAsRead(account, singleNotificationIDs);
-      }
+      const groupedNotificationIds =
+        await getNotificationIdsForGroups(readNotifications);
 
-      if (groupNotifications.length > 0) {
-        await Promise.all(
-          groupNotifications.map((group) =>
-            markNotificationGroupAsRead(account, group.notificationGroup.id),
-          ),
-        );
-      }
+      singleNotificationIDs.push(...groupedNotificationIds);
+
+      await markNotificationsAsRead(account, singleNotificationIDs);
 
       for (const notification of readNotifications) {
         notification.readState = 'read';
@@ -330,28 +309,19 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
       const account = unreadNotifications[0].account;
 
-      const singleNotifications = unreadNotifications.filter(
+      const singleGroupNotifications = unreadNotifications.filter(
         (notification) => !isGroupNotification(notification),
       );
-      const groupNotifications = unreadNotifications.filter((notification) =>
-        isGroupNotification(notification),
-      );
-
-      const singleNotificationIDs = singleNotifications.map(
+      const singleNotificationIDs = singleGroupNotifications.map(
         (notification) => notification.id,
       );
 
-      if (singleNotificationIDs.length > 0) {
-        await markNotificationsAsUnread(account, singleNotificationIDs);
-      }
+      const groupedNotificationIds =
+        await getNotificationIdsForGroups(unreadNotifications);
 
-      if (groupNotifications.length > 0) {
-        await Promise.all(
-          groupNotifications.map((group) =>
-            markNotificationGroupAsUnread(account, group.notificationGroup.id),
-          ),
-        );
-      }
+      singleNotificationIDs.push(...groupedNotificationIds);
+
+      await markNotificationsAsUnread(account, singleNotificationIDs);
 
       for (const notification of unreadNotifications) {
         notification.readState = 'unread';
