@@ -213,8 +213,10 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
    * @deprecated Retained as a fallback while trailing the experimental group
    * mutations (markNotificationGroupAsRead/Unread). Prefer the experimental
    * client mutations whenever possible.
+   *
+   * TODO - this is deprecated.  Remove in a future stable release.
    */
-  const getNotificationIdsForGroups = useCallback(
+  const _getNotificationIdsForGroups = useCallback(
     async (notifications: AtlassifyNotification[]) => {
       const notificationIDs: string[] = [];
 
