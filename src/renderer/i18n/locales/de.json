@@ -160,7 +160,7 @@
       "zoom_out": "Zoomen",
       "zoom_reset": "Zoom zurücksetzen"
     },
-    "keybindings": {
+    "keyboard_shortcuts": {
       "accounts": "Konten eröffnen (aus den Einstellungen)",
       "expand": "Benachrichtigung erweitern",
       "filters": "Filter",
@@ -176,7 +176,7 @@
       "quit": "Beenden Sie die App",
       "refresh": "Benachrichtigungen aktualisieren",
       "settings": "Einstellungen öffnen",
-      "title": "Tastenkombinationen",
+      "title": "Tastaturkürzel",
       "toggle_read": "Lesestatus ändern",
       "toggle_unread": "Nur ungelesen umschalten"
     },

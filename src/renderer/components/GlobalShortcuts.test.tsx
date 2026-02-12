@@ -336,7 +336,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     });
 
     describe('accounts', () => {
-      it('navigates to accounts when pressing C on settings route', async () => {
+      it('navigates to accounts when pressing A on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter initialEntries={['/settings']}>
@@ -344,7 +344,7 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
         );
 
-        await userEvent.keyboard('c');
+        await userEvent.keyboard('a');
 
         expect(navigateMock).toHaveBeenCalledWith('/accounts');
       });
@@ -357,7 +357,7 @@ describe('components/GlobalShortcuts.tsx', () => {
           </MemoryRouter>,
         );
 
-        await userEvent.keyboard('c');
+        await userEvent.keyboard('a');
 
         expect(navigateMock).not.toHaveBeenCalledWith('/accounts');
       });

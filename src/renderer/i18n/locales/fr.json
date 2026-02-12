@@ -160,7 +160,7 @@
       "zoom_out": "Zoom out",
       "zoom_reset": "Réinitialiser le zoom"
     },
-    "keybindings": {
+    "keyboard_shortcuts": {
       "accounts": "Ouvrir des comptes (à partir des paramètres)",
       "expand": "Développer la notification",
       "filters": "Filtres",

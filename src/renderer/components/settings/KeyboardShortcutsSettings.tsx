@@ -25,104 +25,108 @@ interface KeybindingRowProps {
 
 const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
   return (
-    <Inline alignBlock="center" space="space.200" spread="space-between">
-      <Text>{label}</Text>
-      <Inline alignBlock="center" space="space.050">
-        {keys.map((key, index) => (
-          <Fragment key={`${label}-${key}`}>
-            {index > 0 && <Text size="small">+</Text>}
-            <Box as="span" style={keycapStyle}>
-              {key}
-            </Box>
-          </Fragment>
-        ))}
+    <Box paddingInlineEnd="space.150">
+      <Inline alignBlock="center" space="space.200" spread="space-between">
+        <Text>{label}</Text>
+        <Inline alignBlock="center" space="space.050">
+          {keys.map((key, index) => (
+            <Fragment key={`${label}-${key}`}>
+              {index > 0 && <Text size="small">+</Text>}
+              <Box as="span" style={keycapStyle}>
+                {key}
+              </Box>
+            </Fragment>
+          ))}
+        </Inline>
       </Inline>
-    </Inline>
+    </Box>
   );
 };
 
-export const KeybindingsOverview: FC = () => {
+export const KeyboardShortcutsSettings: FC = () => {
   const { t } = useTranslation();
   const { shortcuts } = useShortcutActions();
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.keybindings.title')}</Heading>
+      <Heading size="small">{t('settings.keyboard_shortcuts.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
         <Stack space="space.250">
           <Stack space="space.100">
-            <Text weight="medium">{t('settings.keybindings.general')}</Text>
+            <Text weight="bold">
+              {t('settings.keyboard_shortcuts.general')}
+            </Text>
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
                   keys={[shortcuts.home.key]}
-                  label={t('settings.keybindings.home')}
+                  label={t('settings.keyboard_shortcuts.home')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.myNotifications.key]}
-                  label={t('settings.keybindings.my_notifications')}
+                  label={t('settings.keyboard_shortcuts.my_notifications')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.toggleReadUnread.key]}
-                  label={t('settings.keybindings.toggle_unread')}
+                  label={t('settings.keyboard_shortcuts.toggle_unread')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.groupByProduct.key]}
-                  label={t('settings.keybindings.group_by_product')}
+                  label={t('settings.keyboard_shortcuts.group_by_product')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.groupByTitle.key]}
-                  label={t('settings.keybindings.group_by_title')}
+                  label={t('settings.keyboard_shortcuts.group_by_title')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.filters.key]}
-                  label={t('settings.keybindings.filters')}
+                  label={t('settings.keyboard_shortcuts.filters')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.refresh.key]}
-                  label={t('settings.keybindings.refresh')}
+                  label={t('settings.keyboard_shortcuts.refresh')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.settings.key]}
-                  label={t('settings.keybindings.settings')}
+                  label={t('settings.keyboard_shortcuts.settings')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.accounts.key]}
-                  label={t('settings.keybindings.accounts')}
+                  label={t('settings.keyboard_shortcuts.accounts')}
                 />
                 <KeybindingRow
                   keys={[shortcuts.quit.key]}
-                  label={t('settings.keybindings.quit')}
+                  label={t('settings.keyboard_shortcuts.quit')}
                 />
               </Stack>
             </Box>
           </Stack>
           <Stack space="space.100">
-            <Text weight="medium">
-              {t('settings.keybindings.notifications')}
+            <Text weight="bold">
+              {t('settings.keyboard_shortcuts.notifications')}
             </Text>
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
                   keys={['↑', '↓']}
-                  label={t('settings.keybindings.navigate')}
+                  label={t('settings.keyboard_shortcuts.navigate')}
                 />
                 <KeybindingRow
                   keys={['Shift', '↑']}
-                  label={t('settings.keybindings.first')}
+                  label={t('settings.keyboard_shortcuts.first')}
                 />
                 <KeybindingRow
                   keys={['Shift', '↓']}
-                  label={t('settings.keybindings.last')}
+                  label={t('settings.keyboard_shortcuts.last')}
                 />
                 <KeybindingRow
                   keys={['Enter']}
-                  label={t('settings.keybindings.expand')}
+                  label={t('settings.keyboard_shortcuts.expand')}
                 />
                 <KeybindingRow
                   keys={['a']}
-                  label={t('settings.keybindings.toggle_read')}
+                  label={t('settings.keyboard_shortcuts.toggle_read')}
                 />
               </Stack>
             </Box>

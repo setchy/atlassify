@@ -193,8 +193,8 @@
       "startup": "Open at startup",
       "startup_help": "Launch {{appName}} automatically at startup."
     },
-    "keybindings": {
-      "title": "Keybindings",
+    "keyboard_shortcuts": {
+      "title": "Keyboard Shortcuts",
       "general": "General",
       "notifications": "Notifications list",
       "home": "Home",

@@ -160,7 +160,7 @@
       "zoom_out": "Alejarse",
       "zoom_reset": "Restablecer zoom"
     },
-    "keybindings": {
+    "keyboard_shortcuts": {
       "accounts": "Abrir cuentas (desde Configuración)",
       "expand": "Ampliar notificación",
       "filters": "Filtros",
@@ -176,7 +176,7 @@
       "quit": "Salir de la aplicación",
       "refresh": "Actualizar notificaciones",
       "settings": "Abrir configuración",
-      "title": "Combinaciones de teclas",
+      "title": "Atajos de teclado",
       "toggle_read": "Cambiar estado de lectura",
       "toggle_unread": "Alternar solo no leídos"
     },
