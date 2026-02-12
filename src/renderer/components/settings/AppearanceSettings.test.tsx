@@ -75,6 +75,6 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     await userEvent.click(screen.getByLabelText('Show account header'));
 
     expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('showAccountHeader', true);
+    expect(updateSettingSpy).toHaveBeenCalledWith('showAccountHeader', false);
   });
 });

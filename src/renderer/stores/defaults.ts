@@ -39,7 +39,7 @@ const DEFAULT_APPEARANCE_SETTINGS: AppearanceSettingsState = {
   language: DEFAULT_LANGUAGE,
   theme: Theme.LIGHT,
   zoomPercentage: 100 as Percentage,
-  showAccountHeader: false,
+  showAccountHeader: true,
 };
 
 /**

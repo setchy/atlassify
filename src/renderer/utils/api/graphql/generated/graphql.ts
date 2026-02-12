@@ -8949,6 +8949,11 @@ export enum ConfluenceNbmCategoryTypes {
   Unverified = 'UNVERIFIED'
 }
 
+export type ConfluenceNbmExecuteTestTransformationInput = {
+  chain: Scalars['String']['input'];
+  scanId: Scalars['ID']['input'];
+};
+
 export type ConfluenceNbmRetryPerfScanLongTaskInput = {
   /** Existing scanId to associate this perf scan task to. */
   scanId: Scalars['ID']['input'];
@@ -8966,6 +8971,12 @@ export enum ConfluenceNbmScanStatus {
   Pending = 'PENDING',
   Running = 'RUNNING'
 }
+
+export type ConfluenceNbmSetChainReadyForTransformationInput = {
+  chain: Scalars['String']['input'];
+  isReady: Scalars['Boolean']['input'];
+  scanId: Scalars['ID']['input'];
+};
 
 export type ConfluenceNbmStartPerfScanLongTaskInput = {
   /** Scan all spaces */
@@ -28422,6 +28433,8 @@ export enum HelpCenterProjectType {
 export type HelpCenterRovoConfig = {
   /** Rovo Agent Id */
   agentId?: InputMaybe<Scalars['String']['input']>;
+  /** Is Rovo Agent Enabled */
+  isRovoEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export enum HelpCenterSortMode {
@@ -40338,6 +40351,16 @@ export type KitsunePaginationInput = {
   before?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type KitsuneRankInput = {
+  after?: InputMaybe<Scalars['ID']['input']>;
+  before?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type KitsuneSearchFeedbackInput = {
+  config?: InputMaybe<KitsuneViewConfigInput>;
+  viewId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export enum KitsuneSourceCategoryType {
