@@ -159,7 +159,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     }
 
     return 'success';
-  }, [isLoading, isError]);
+  }, [isLoading, isFetching, isError]);
 
   const globalError: AtlassifyError = useMemo(() => {
     if (!isError || notifications.length === 0) {
