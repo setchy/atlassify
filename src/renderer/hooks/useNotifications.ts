@@ -102,6 +102,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   const {
     data: notifications = [],
     isLoading,
+    isFetching,
     isError,
     refetch,
   } = useQuery<AccountNotifications[], Error>({
@@ -134,7 +135,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
   // Determine status and globalError from query state
   const status: Status = useMemo(() => {
-    if (isLoading) {
+    if (isLoading || isFetching) {
       return 'loading';
     }
 
