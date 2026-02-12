@@ -152,6 +152,7 @@
     "appearance": {
       "language": "Sprache",
       "language_select": "Sprache auswählen",
+      "show_account_header": "Kontokopf anzeigen",
       "theme": "Thema",
       "title": "Aussehen",
       "zoom": "Zoom",

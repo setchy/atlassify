@@ -2,6 +2,7 @@ import { type FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
+import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
@@ -31,6 +32,7 @@ import {
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   const { t, i18n } = useTranslation();
@@ -177,6 +179,13 @@ export const AppearanceSettings: FC = () => {
           </Inline>
         </Inline>
       </Box>
+
+      <Checkbox
+        isChecked={showAccountHeader}
+        label={t('settings.appearance.show_account_header')}
+        name="showAccountHeader"
+        onChange={() => updateSetting('showAccountHeader', !showAccountHeader)}
+      />
     </Stack>
   );
 };

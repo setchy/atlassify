@@ -147,6 +147,11 @@ export interface AppearanceSettingsState {
    * The zoom percentage of the application.
    */
   zoomPercentage: Percentage;
+
+  /**
+   * Show account header
+   */
+  showAccountHeader: boolean;
 }
 
 /**
