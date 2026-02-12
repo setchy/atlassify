@@ -1532,7 +1532,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           <h4
             class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
           >
-            Keybindings
+            Keyboard Shortcuts
           </h4>
           <div
             class="css-5shg4o"
@@ -1544,7 +1544,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 class="css-u5wwvt"
               >
                 <span
-                  class="css-1w9vgw2"
+                  class="css-oogki2"
                 >
                   General
                 </span>
@@ -1555,193 +1555,233 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     class="css-1vb9eil"
                   >
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Home
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          h
+                          Home
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            h
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Open My Notifications
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          n
+                          Open My Notifications
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            n
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Toggle unread only
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          u
+                          Toggle unread only
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            u
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Group by product
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          p
+                          Group by product
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            p
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Group by title
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          t
+                          Group by title
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            t
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Filters
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          f
+                          Filters
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            f
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Refresh notifications
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          r
+                          Refresh notifications
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            r
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Open settings
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          s
+                          Open settings
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            s
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Open accounts (from Settings)
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          c
+                          Open accounts (from Settings)
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            c
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Quit app
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          q
+                          Quit app
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            q
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1751,7 +1791,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 class="css-u5wwvt"
               >
                 <span
-                  class="css-1w9vgw2"
+                  class="css-oogki2"
                 >
                   Notifications list
                 </span>
@@ -1762,131 +1802,151 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     class="css-1vb9eil"
                   >
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Move between notifications
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          ↑
+                          Move between notifications
                         </span>
-                        <span
-                          class="css-x828h5"
+                        <div
+                          class="css-5fz2td"
                         >
-                          +
-                        </span>
-                        <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
-                        >
-                          ↓
-                        </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            ↑
+                          </span>
+                          <span
+                            class="css-x828h5"
+                          >
+                            +
+                          </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            ↓
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        First notification
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          Shift
+                          First notification
                         </span>
-                        <span
-                          class="css-x828h5"
+                        <div
+                          class="css-5fz2td"
                         >
-                          +
-                        </span>
-                        <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
-                        >
-                          ↑
-                        </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            Shift
+                          </span>
+                          <span
+                            class="css-x828h5"
+                          >
+                            +
+                          </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            ↑
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Last notification
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          Shift
+                          Last notification
                         </span>
-                        <span
-                          class="css-x828h5"
+                        <div
+                          class="css-5fz2td"
                         >
-                          +
-                        </span>
-                        <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
-                        >
-                          ↓
-                        </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            Shift
+                          </span>
+                          <span
+                            class="css-x828h5"
+                          >
+                            +
+                          </span>
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            ↓
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Expand notification
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          Enter
+                          Expand notification
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            Enter
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="css-12w5ctl"
+                      class="css-1rqd9x3"
                     >
-                      <span
-                        class="css-1y3vbql"
-                      >
-                        Change read state
-                      </span>
                       <div
-                        class="css-5fz2td"
+                        class="css-12w5ctl"
                       >
                         <span
-                          class="css-k5cxwk"
-                          style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          class="css-1y3vbql"
                         >
-                          a
+                          Change read state
                         </span>
+                        <div
+                          class="css-5fz2td"
+                        >
+                          <span
+                            class="css-k5cxwk"
+                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                          >
+                            a
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>

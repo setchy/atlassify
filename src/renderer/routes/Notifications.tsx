@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
 import useAccountsStore from '../stores/useAccountsStore';
@@ -7,14 +7,11 @@ import { useSettingsStore } from '../stores/useSettingsStore';
 import { AllRead } from '../components/AllRead';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
+import { NotificationsShortcuts } from '../components/NotificationsShortcuts';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
 import { Oops } from '../components/Oops';
 
-import type { AtlassifyNotification } from '../types';
-
 import { Errors } from '../utils/errors';
-import { openNotification } from '../utils/links';
-import { shouldRemoveNotificationsFromState } from '../utils/notifications/remove';
 
 export const NotificationsRoute: FC = () => {
   const {
@@ -35,216 +32,6 @@ export const NotificationsRoute: FC = () => {
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
-  const [focusedNotificationId, setFocusedNotificationId] = useState<
-    string | null
-  >(null);
-
-  const notificationsById = useMemo(() => {
-    const map = new Map<string, AtlassifyNotification>();
-
-    notifications.forEach((accountNotifications) => {
-      accountNotifications.notifications.forEach((notification) => {
-        map.set(notification.id, notification);
-      });
-    });
-
-    return map;
-  }, [notifications]);
-
-  const getVisibleNotificationIds = useCallback(() => {
-    if (typeof document === 'undefined') {
-      return [] as string[];
-    }
-
-    return Array.from(
-      document.querySelectorAll<HTMLElement>('[data-notification-row="true"]'),
-    )
-      .map((element) => element.dataset.notificationId)
-      .filter((id): id is string => Boolean(id));
-  }, []);
-
-  const focusNotification = useCallback((notificationId: string | null) => {
-    setFocusedNotificationId(notificationId);
-
-    if (!notificationId) {
-      return;
-    }
-
-    requestAnimationFrame(() => {
-      const element = document.querySelector<HTMLElement>(
-        `[data-notification-id="${notificationId}"]`,
-      );
-
-      element?.scrollIntoView({ block: 'nearest' });
-    });
-  }, []);
-
-  const moveFocus = useCallback(
-    (direction: 'next' | 'previous' | 'first' | 'last') => {
-      const visibleIds = getVisibleNotificationIds();
-
-      if (visibleIds.length === 0) {
-        focusNotification(null);
-        return;
-      }
-
-      if (direction === 'first') {
-        focusNotification(visibleIds[0]);
-        return;
-      }
-
-      if (direction === 'last') {
-        focusNotification(visibleIds[visibleIds.length - 1]);
-        return;
-      }
-
-      const currentIndex = focusedNotificationId
-        ? visibleIds.indexOf(focusedNotificationId)
-        : -1;
-
-      if (direction === 'next') {
-        const nextIndex =
-          currentIndex < 0
-            ? 0
-            : Math.min(currentIndex + 1, visibleIds.length - 1);
-        focusNotification(visibleIds[nextIndex]);
-        return;
-      }
-
-      const previousIndex =
-        currentIndex < 0
-          ? visibleIds.length - 1
-          : Math.max(currentIndex - 1, 0);
-
-      focusNotification(visibleIds[previousIndex]);
-    },
-    [focusNotification, focusedNotificationId, getVisibleNotificationIds],
-  );
-
-  const openFocusedNotification = useCallback(() => {
-    if (!focusedNotificationId) {
-      return;
-    }
-
-    const notification = notificationsById.get(focusedNotificationId);
-    if (!notification) {
-      return;
-    }
-
-    if (markAsReadOnOpen) {
-      markNotificationsRead([notification]);
-    }
-
-    openNotification(notification);
-  }, [
-    focusedNotificationId,
-    markAsReadOnOpen,
-    markNotificationsRead,
-    notificationsById,
-  ]);
-
-  const toggleFocusedReadState = useCallback(() => {
-    if (!focusedNotificationId) {
-      return;
-    }
-
-    const notification = notificationsById.get(focusedNotificationId);
-    if (!notification) {
-      return;
-    }
-
-    const shouldRemoveOnRead =
-      notification.readState === 'unread' &&
-      shouldRemoveNotificationsFromState();
-
-    if (shouldRemoveOnRead) {
-      const visibleIds = getVisibleNotificationIds();
-      const currentIndex = visibleIds.indexOf(focusedNotificationId);
-      const nextId =
-        currentIndex >= 0 ? (visibleIds[currentIndex + 1] ?? null) : null;
-
-      const waitForRemoval = () => {
-        const currentElement = document.querySelector(
-          `[data-notification-id="${focusedNotificationId}"]`,
-        );
-
-        if (currentElement) {
-          requestAnimationFrame(waitForRemoval);
-          return;
-        }
-
-        if (nextId) {
-          focusNotification(nextId);
-        } else {
-          focusNotification(null);
-        }
-      };
-
-      requestAnimationFrame(waitForRemoval);
-    }
-
-    if (notification.readState === 'read') {
-      markNotificationsUnread([notification]);
-      return;
-    }
-
-    markNotificationsRead([notification]);
-  }, [
-    focusedNotificationId,
-    focusNotification,
-    getVisibleNotificationIds,
-    markNotificationsRead,
-    markNotificationsUnread,
-    notificationsById,
-  ]);
-
-  useEffect(() => {
-    const handler = (event: KeyboardEvent) => {
-      if (
-        event.target instanceof HTMLInputElement ||
-        event.target instanceof HTMLTextAreaElement ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.altKey
-      ) {
-        return;
-      }
-
-      const key = event.key;
-
-      if (key === 'ArrowDown') {
-        event.preventDefault();
-        moveFocus(event.shiftKey ? 'last' : 'next');
-        return;
-      }
-
-      if (key === 'ArrowUp') {
-        event.preventDefault();
-        moveFocus(event.shiftKey ? 'first' : 'previous');
-        return;
-      }
-
-      const lowerKey = key.toLowerCase();
-
-      if (key === 'Enter') {
-        event.preventDefault();
-        openFocusedNotification();
-        return;
-      }
-
-      if (lowerKey === 'a') {
-        event.preventDefault();
-        toggleFocusedReadState();
-      }
-    };
-
-    document.addEventListener('keydown', handler);
-
-    return () => {
-      document.removeEventListener('keydown', handler);
-    };
-  }, [moveFocus, openFocusedNotification, toggleFocusedReadState]);
-
   if (status === 'error') {
     return <Oops error={globalError ?? Errors.UNKNOWN} />;
   }
@@ -254,21 +41,30 @@ export const NotificationsRoute: FC = () => {
   }
 
   return (
-    <Page testId="notifications">
-      <Contents>
-        {notifications.map((accountNotifications) => (
-          <AccountNotifications
-            account={accountNotifications.account}
-            error={accountNotifications.error}
-            focusedNotificationId={focusedNotificationId}
-            hasMoreNotifications={accountNotifications.hasMoreNotifications}
-            key={accountNotifications.account.id}
-            notifications={accountNotifications.notifications}
-            onNotificationFocus={focusNotification}
-            showAccountHeader={hasMultipleAccounts || showAccountHeader}
-          />
-        ))}
-      </Contents>
-    </Page>
+    <NotificationsShortcuts
+      markAsReadOnOpen={markAsReadOnOpen}
+      markNotificationsRead={markNotificationsRead}
+      markNotificationsUnread={markNotificationsUnread}
+      notifications={notifications}
+    >
+      {({ focusedNotificationId, focusNotification }) => (
+        <Page testId="notifications">
+          <Contents>
+            {notifications.map((accountNotifications) => (
+              <AccountNotifications
+                account={accountNotifications.account}
+                error={accountNotifications.error}
+                focusedNotificationId={focusedNotificationId}
+                hasMoreNotifications={accountNotifications.hasMoreNotifications}
+                key={accountNotifications.account.id}
+                notifications={accountNotifications.notifications}
+                onNotificationFocus={focusNotification}
+                showAccountHeader={hasMultipleAccounts || showAccountHeader}
+              />
+            ))}
+          </Contents>
+        </Page>
+      )}
+    </NotificationsShortcuts>
   );
 };

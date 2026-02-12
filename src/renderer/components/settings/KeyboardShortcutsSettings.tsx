@@ -6,7 +6,7 @@ import Heading from '@atlaskit/heading';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
 
-import { useShortcutActions } from '../../hooks/useShortcutActions';
+import { keybindings } from '../../constants/keybindings';
 
 const keycapStyle: CSSProperties = {
   backgroundColor: token('color.background.neutral.subtle'),
@@ -20,7 +20,7 @@ const keycapStyle: CSSProperties = {
 
 interface KeybindingRowProps {
   label: string;
-  keys: string[];
+  keys: readonly string[];
 }
 
 const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
@@ -45,7 +45,6 @@ const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
 
 export const KeyboardShortcutsSettings: FC = () => {
   const { t } = useTranslation();
-  const { shortcuts } = useShortcutActions();
 
   return (
     <Stack space="space.100">
@@ -60,43 +59,43 @@ export const KeyboardShortcutsSettings: FC = () => {
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
-                  keys={[shortcuts.home.key]}
+                  keys={keybindings.shortcuts.home.display}
                   label={t('settings.keyboard_shortcuts.home')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.myNotifications.key]}
+                  keys={keybindings.shortcuts.myNotifications.display}
                   label={t('settings.keyboard_shortcuts.my_notifications')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.toggleReadUnread.key]}
+                  keys={keybindings.shortcuts.toggleReadUnread.display}
                   label={t('settings.keyboard_shortcuts.toggle_unread')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.groupByProduct.key]}
+                  keys={keybindings.shortcuts.groupByProduct.display}
                   label={t('settings.keyboard_shortcuts.group_by_product')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.groupByTitle.key]}
+                  keys={keybindings.shortcuts.groupByTitle.display}
                   label={t('settings.keyboard_shortcuts.group_by_title')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.filters.key]}
+                  keys={keybindings.shortcuts.filters.display}
                   label={t('settings.keyboard_shortcuts.filters')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.refresh.key]}
+                  keys={keybindings.shortcuts.refresh.display}
                   label={t('settings.keyboard_shortcuts.refresh')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.settings.key]}
+                  keys={keybindings.shortcuts.settings.display}
                   label={t('settings.keyboard_shortcuts.settings')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.accounts.key]}
+                  keys={keybindings.shortcuts.accounts.display}
                   label={t('settings.keyboard_shortcuts.accounts')}
                 />
                 <KeybindingRow
-                  keys={[shortcuts.quit.key]}
+                  keys={keybindings.shortcuts.quit.display}
                   label={t('settings.keyboard_shortcuts.quit')}
                 />
               </Stack>
@@ -109,23 +108,23 @@ export const KeyboardShortcutsSettings: FC = () => {
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
-                  keys={['↑', '↓']}
+                  keys={keybindings.notifications.navigate.display}
                   label={t('settings.keyboard_shortcuts.navigate')}
                 />
                 <KeybindingRow
-                  keys={['Shift', '↑']}
+                  keys={keybindings.notifications.first.display}
                   label={t('settings.keyboard_shortcuts.first')}
                 />
                 <KeybindingRow
-                  keys={['Shift', '↓']}
+                  keys={keybindings.notifications.last.display}
                   label={t('settings.keyboard_shortcuts.last')}
                 />
                 <KeybindingRow
-                  keys={['Enter']}
+                  keys={keybindings.notifications.action.display}
                   label={t('settings.keyboard_shortcuts.expand')}
                 />
                 <KeybindingRow
-                  keys={['a']}
+                  keys={keybindings.notifications.toggleRead.display}
                   label={t('settings.keyboard_shortcuts.toggle_read')}
                 />
               </Stack>
