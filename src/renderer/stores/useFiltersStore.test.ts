@@ -4,10 +4,6 @@ import { DEFAULT_FILTERS_STATE } from './defaults';
 import { useFiltersStore } from './useFiltersStore';
 
 describe('useFiltersStore', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   test('should update a filter (add value)', () => {
     const { result } = renderHook(() => useFiltersStore());
 

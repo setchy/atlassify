@@ -7,10 +7,6 @@ import useFiltersStore from '../../../stores/useFiltersStore';
 import { filterNotifications } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   afterEach(() => {
     vi.clearAllMocks();
   });

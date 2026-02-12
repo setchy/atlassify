@@ -17,7 +17,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   let updateFilterSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
-    useFiltersStore.getState().reset();
     updateFilterSpy = vi.spyOn(useFiltersStore.getState(), 'updateFilter');
   });
 

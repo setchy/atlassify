@@ -20,9 +20,6 @@ describe('renderer/routes/Filters.tsx', () => {
   let resetSpy: any;
 
   beforeEach(() => {
-    // reset store to defaults
-    useFiltersStore.getState().reset();
-
     // spy the actions on the real store
     updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
     resetSpy = vi.spyOn((useFiltersStore as any).getState(), 'reset');

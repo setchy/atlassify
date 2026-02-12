@@ -2923,15 +2923,3 @@ exports[`renderer/components/Sidebar.tsx > show read / unread notifications > re
   </span>
 </button>
 `;
-
-exports[`renderer/components/Sidebar.tsx > show read / unread notifications > should toggle show only unread notifications 1`] = `
-<input
-  aria-labelledby="uid172"
-  checked=""
-  data-testid="sidebar-toggle-unread-only--input"
-  id="toggle-unread-only"
-  name=""
-  type="checkbox"
-  value=""
-/>
-`;

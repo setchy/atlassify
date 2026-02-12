@@ -1,35 +1,21 @@
-import {
-  createContext,
-  type ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-} from 'react';
+import { createContext, type ReactNode, useEffect, useMemo } from 'react';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useNotifications } from '../hooks/useNotifications';
-import type { AccountsState } from '../stores/types';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import type {
-  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
   Status,
 } from '../types';
-import type { LoginOptions } from '../utils/auth/types';
 
 import { setTrayIconColorAndTitle } from '../utils/tray';
 
 export interface AppContextState {
-  auth: AccountsState;
-  isLoggedIn: boolean;
-  login: (data: LoginOptions) => Promise<void>;
-  logoutFromAccount: (account: Account) => void;
-
   status: Status;
   globalError: AtlassifyError;
 
@@ -56,13 +42,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // Get store actions and reset functions
   const resetFilters = useFiltersStore((s) => s.reset);
   const resetAccounts = useAccountsStore((s) => s.reset);
-  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn);
-  const createAccount = useAccountsStore((s) => s.createAccount);
-  const removeAccount = useAccountsStore((s) => s.removeAccount);
 
   // Read accounts from store
   const accounts = useAccountsStore((state) => state.accounts);
-  const auth = useMemo<AccountsState>(() => ({ accounts }), [accounts]);
 
   // Subscribe to tray-related settings for useEffect dependencies
   const showNotificationsCountInTray = useSettingsStore(
@@ -84,9 +66,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications(auth);
+  } = useNotifications(accounts);
 
-  useAccounts(auth.accounts);
+  // Periodic account refreshes
+  useAccounts(accounts);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
@@ -107,44 +90,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     });
   }, [resetAccounts, resetFilters]);
 
-  const login = useCallback(
-    async ({ username, token }: LoginOptions) => {
-      await createAccount(username, token);
-    },
-    [createAccount],
-  );
-
-  const logoutFromAccount = useCallback(
-    async (account: Account) => {
-      removeAccount(account);
-    },
-    [removeAccount],
-  );
-
-  const fetchNotificationsWithAccounts = useCallback(
-    async () => await refetchNotifications(),
-    [refetchNotifications],
-  );
-
-  const markNotificationsReadWithAccounts = useCallback(
-    async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsRead(notifications),
-    [markNotificationsRead],
-  );
-
-  const markNotificationsUnreadWithAccounts = useCallback(
-    async (notifications: AtlassifyNotification[]) =>
-      await markNotificationsUnread(notifications),
-    [markNotificationsUnread],
-  );
-
   const contextValues: AppContextState = useMemo(
     () => ({
-      auth,
-      isLoggedIn: isLoggedIn(),
-      login,
-      logoutFromAccount,
-
       status,
       globalError,
 
@@ -153,17 +100,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasNotifications,
       hasMoreAccountNotifications,
 
-      fetchNotifications: fetchNotificationsWithAccounts,
+      fetchNotifications: refetchNotifications,
 
-      markNotificationsRead: markNotificationsReadWithAccounts,
-      markNotificationsUnread: markNotificationsUnreadWithAccounts,
+      markNotificationsRead,
+      markNotificationsUnread,
     }),
     [
-      auth,
-      isLoggedIn,
-      login,
-      logoutFromAccount,
-
       status,
       globalError,
 
@@ -172,10 +114,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       hasNotifications,
       hasMoreAccountNotifications,
 
-      fetchNotificationsWithAccounts,
+      refetchNotifications,
 
-      markNotificationsReadWithAccounts,
-      markNotificationsUnreadWithAccounts,
+      markNotificationsRead,
+      markNotificationsUnread,
     ],
   );
 

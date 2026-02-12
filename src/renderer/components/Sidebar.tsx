@@ -19,6 +19,7 @@ import { APPLICATION } from '../../shared/constants';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useShortcutActions } from '../hooks/useShortcutActions';
+import { useAccountsStore } from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
@@ -26,12 +27,13 @@ import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
   const {
-    isLoggedIn,
     status,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
   } = useAppContext();
+
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   const { t } = useTranslation();
 

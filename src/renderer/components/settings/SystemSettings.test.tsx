@@ -14,7 +14,6 @@ import { SystemSettings } from './SystemSettings';
 describe('renderer/components/settings/SystemSettings.tsx', () => {
   afterEach(() => {
     vi.clearAllMocks();
-    useSettingsStore.getState().reset();
   });
 
   it('should change the open links radio group', async () => {

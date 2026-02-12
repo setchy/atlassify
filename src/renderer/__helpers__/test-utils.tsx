@@ -5,8 +5,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 import { vi } from 'vitest';
 
-import { mockAuth } from '../__mocks__/state-mocks';
-
 import { AppContext, type AppContextState } from '../context/App';
 
 /**
@@ -28,9 +26,6 @@ interface AppContextProviderProps {
 function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
-      auth: mockAuth,
-      isLoggedIn: true,
-
       notifications: [],
 
       status: 'success',

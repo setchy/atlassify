@@ -11,10 +11,6 @@ import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   it('hasActorFilters', () => {
     expect(actorFilter.hasFilters()).toBe(false);
 

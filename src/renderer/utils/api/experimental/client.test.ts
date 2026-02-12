@@ -6,16 +6,20 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 
 import type { CloudID, JiraProjectKey } from '../../../types';
 
-import {
-  getJiraProjectTypesByKeys,
-  markNotificationGroupAsRead,
-  markNotificationGroupAsUnread,
-} from './client';
+type ExperimentalClientModule = typeof import('./client');
 
-vi.mock('axios');
+vi.mock('axios', () => ({
+  __esModule: true,
+  default: vi.fn(),
+}));
 
 describe('renderer/utils/api/experimental/client.ts', () => {
-  beforeEach(() => {
+  let client: ExperimentalClientModule;
+
+  beforeEach(async () => {
+    vi.resetModules();
+    client = await import('./client');
+
     vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
@@ -28,7 +32,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
   });
 
   it('markNotificationGroupAsRead - should mark notification group as read', async () => {
-    await markNotificationGroupAsRead(
+    await client.markNotificationGroupAsRead(
       mockAtlassianCloudAccount,
       mockSingleAtlassifyNotification.notificationGroup.id,
     );
@@ -48,7 +52,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
   });
 
   it('markNotificationGroupAsUnread - should mark notification group as unread', async () => {
-    await markNotificationGroupAsUnread(
+    await client.markNotificationGroupAsUnread(
       mockAtlassianCloudAccount,
       mockSingleAtlassifyNotification.notificationGroup.id,
     );
@@ -70,7 +74,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
   it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {
     const mockProjectKeys = ['PROJ-1', 'PROJ-2'] as JiraProjectKey[];
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    await getJiraProjectTypesByKeys(
+    await client.getJiraProjectTypesByKeys(
       mockAtlassianCloudAccount,
       mockCloudID,
       mockProjectKeys,

@@ -6,17 +6,21 @@ import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import type { Link, Token, Username } from '../../types';
 
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
-import {
-  performRequestForAccount,
-  performRequestForCredentials,
-} from './request';
 
-vi.mock('axios');
+vi.mock('axios', () => ({
+  __esModule: true,
+  default: vi.fn(),
+}));
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
+  let performRequestForAccount: typeof import('./request').performRequestForAccount;
+  let performRequestForCredentials: typeof import('./request').performRequestForCredentials;
+
   beforeEach(() => {
+    vi.resetModules();
+
     vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
@@ -29,6 +33,8 @@ describe('renderer/utils/api/request.ts', () => {
   });
 
   it('performRequestForAccount - should execute graphql request with the correct parameters', async () => {
+    ({ performRequestForAccount } = await import('./request'));
+
     const data = {
       query: 'foo',
       variables: {
@@ -58,6 +64,8 @@ describe('renderer/utils/api/request.ts', () => {
   });
 
   it('performRequestForCredentials - should execute graphql request with the correct parameters', async () => {
+    ({ performRequestForCredentials } = await import('./request'));
+
     const data = {
       query: 'foo',
       variables: {

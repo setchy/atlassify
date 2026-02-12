@@ -10,7 +10,6 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { useAppContext } from '../hooks/useAppContext';
 import useAccountsStore from '../stores/useAccountsStore';
 
 import { Contents } from '../components/layout/Contents';
@@ -26,17 +25,18 @@ import { isLightMode } from '../utils/theme';
 export const AccountsRoute: FC = () => {
   const navigate = useNavigate();
 
-  const { auth, logoutFromAccount } = useAppContext();
+  const accounts = useAccountsStore((s) => s.accounts);
+  const removeAccount = useAccountsStore((s) => s.removeAccount);
   const refreshAccount = useAccountsStore((s) => s.refreshAccount);
 
   const { t } = useTranslation();
 
   const logoutAccount = useCallback(
     (account: Account) => {
-      logoutFromAccount(account);
+      removeAccount(account);
       navigate(-1);
     },
-    [logoutFromAccount],
+    [removeAccount],
   );
 
   const login = useCallback(() => {
@@ -58,7 +58,7 @@ export const AccountsRoute: FC = () => {
       <Header>{t('accounts.title')}</Header>
 
       <Contents>
-        {auth.accounts.map((account) => {
+        {accounts.map((account) => {
           return (
             <Box key={account.id} padding="space.150" xcss={boxStyles}>
               <Inline alignBlock="center" grow="fill" spread="space-between">

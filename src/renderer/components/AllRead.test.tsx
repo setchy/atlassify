@@ -12,7 +12,6 @@ import { AllRead } from './AllRead';
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
-    useFiltersStore.getState().reset();
   });
 
   it('should render itself & its children - no filters', async () => {

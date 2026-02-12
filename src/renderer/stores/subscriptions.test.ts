@@ -52,17 +52,6 @@ describe('renderer/stores/subscriptions.ts', () => {
   let cleanup: (() => void) | null = null;
 
   beforeEach(() => {
-    // Reset all stores to default state
-    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
-    useAccountsStore.setState({ accounts: [] });
-    useFiltersStore.setState({
-      engagementStates: [],
-      categories: [],
-      readStates: [],
-      products: [],
-      actors: [],
-    });
-
     // Clear all mocks
     vi.clearAllMocks();
   });

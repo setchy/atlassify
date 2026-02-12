@@ -1,15 +1,13 @@
-import { act } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { vi } from 'vitest';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
-import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
-import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import * as notifications from '../utils/notifications/notifications';
@@ -21,15 +19,27 @@ vi.mock('../hooks/useNotifications');
 const renderWithContext = () => {
   let context!: AppContextState;
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
+      },
+    },
+  });
+
   const CaptureContext = () => {
     context = useAppContext();
     return null;
   };
 
-  renderWithAppContext(
-    <AppProvider>
-      <CaptureContext />
-    </AppProvider>,
+  render(
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <CaptureContext />
+      </AppProvider>
+    </QueryClientProvider>,
   );
 
   return () => context;
@@ -42,7 +52,6 @@ describe('renderer/context/App.tsx', () => {
 
   beforeEach(() => {
     // Initialize stores with default values
-    useAccountsStore.setState({ accounts: [] });
     useSettingsStore.setState(mockSettings);
 
     vi.useFakeTimers();
@@ -106,44 +115,6 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
-    });
-  });
-
-  describe('authentication methods', () => {
-    it('login calls createAccount', async () => {
-      const createAccountSpy = vi.spyOn(
-        useAccountsStore.getState(),
-        'createAccount',
-      );
-      const getContext = renderWithContext();
-
-      await act(async () => {
-        await getContext().login({
-          username: mockAtlassianCloudAccount.username,
-          token: mockAtlassianCloudAccount.token,
-        });
-      });
-
-      expect(createAccountSpy).toHaveBeenCalledWith(
-        mockAtlassianCloudAccount.username,
-        mockAtlassianCloudAccount.token,
-      );
-    });
-
-    it('logout calls removeAccount', async () => {
-      // Set up with an account
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      const removeAccountSpy = vi.spyOn(
-        useAccountsStore.getState(),
-        'removeAccount',
-      );
-      const getContext = renderWithContext();
-
-      await act(async () => {
-        await getContext().logoutFromAccount(mockAtlassianCloudAccount);
-      });
-
-      expect(removeAccountSpy).toHaveBeenCalledWith(mockAtlassianCloudAccount);
     });
   });
 });

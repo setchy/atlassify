@@ -2,7 +2,26 @@ import '@testing-library/jest-dom/vitest';
 
 import { TextEncoder } from 'node:util';
 
-import { vi } from 'vitest';
+import { beforeEach, vi } from 'vitest';
+
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+
+import useAccountsStore from '../stores/useAccountsStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
+
+/**
+ * Reset stores
+ */
+beforeEach(() => {
+  useAccountsStore.getState().reset();
+  useSettingsStore.getState().reset();
+  useFiltersStore.getState().reset();
+  useAccountsStore.setState({
+    accounts: [mockAtlassianCloudAccount],
+    refreshAccount: vi.fn(async (account) => account),
+  });
+});
 
 /**
  * Atlassify context bridge API

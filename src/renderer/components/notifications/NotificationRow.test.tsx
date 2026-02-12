@@ -24,7 +24,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
-    useSettingsStore.getState().reset();
   });
 
   describe('should render notifications', () => {

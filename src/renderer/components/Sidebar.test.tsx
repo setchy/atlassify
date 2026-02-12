@@ -7,11 +7,13 @@ import { useThemeObserver } from '@atlaskit/tokens';
 import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
 
+import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import * as comms from '../utils/comms';
@@ -28,7 +30,7 @@ vi.mock('@atlaskit/tokens', async () => {
 import useFiltersStore from '../stores/useFiltersStore';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
-  (useThemeObserver as any).mockReturnValue({ colorMode: mode });
+  vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
 };
 
 const navigateMock = vi.fn();
@@ -43,11 +45,6 @@ describe('renderer/components/Sidebar.tsx', () => {
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());
 
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-    useSettingsStore.getState().reset();
-  });
-
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -55,13 +52,13 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       const tree = renderWithAppContext(
         <MemoryRouter initialEntries={['/']}>
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
           notifications: mockAccountNotifications,
         },
       );
@@ -71,13 +68,13 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       const tree = renderWithAppContext(
         <MemoryRouter initialEntries={['/']}>
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: true,
           notifications: mockAccountNotifications,
         },
       );
@@ -89,13 +86,13 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('logged out', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
+      useAccountsStore.setState({ accounts: [] });
 
       const tree = renderWithAppContext(
         <MemoryRouter initialEntries={['/landing']}>
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: false,
           notifications: mockAccountNotifications,
         },
       );
@@ -105,13 +102,13 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
+      useAccountsStore.setState({ accounts: [] });
 
       const tree = renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
         </MemoryRouter>,
         {
-          isLoggedIn: false,
           notifications: mockAccountNotifications,
         },
       );
@@ -214,6 +211,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should toggle show only unread notifications', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -221,19 +219,24 @@ describe('renderer/components/Sidebar.tsx', () => {
         {},
       );
 
+      expect(
+        screen.getByTestId('sidebar-toggle-unread-only--input'),
+      ).toBeChecked();
+
       await userEvent.click(
         screen.getByTestId('sidebar-toggle-unread-only--toggle-cross-icon'),
       );
 
       expect(
         screen.getByTestId('sidebar-toggle-unread-only--input'),
-      ).toMatchSnapshot();
+      ).not.toBeChecked();
     });
   });
 
   describe('Group by products', () => {
     it('should order notifications by date', () => {
       useSettingsStore.setState({ groupNotificationsByProduct: false });
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       renderWithAppContext(
         <MemoryRouter>
@@ -246,6 +249,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should group notifications by product', () => {
       useSettingsStore.setState({ groupNotificationsByProduct: true });
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       renderWithAppContext(
         <MemoryRouter>
@@ -257,6 +261,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should toggle group notifications by products', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -273,6 +278,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('Group by titles', () => {
     it('should group notifications by title', () => {
       useSettingsStore.setState({ groupNotificationsByTitle: true });
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       renderWithAppContext(
         <MemoryRouter>
@@ -285,6 +291,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should not group notifications by title - flat notifications', () => {
       useSettingsStore.setState({ groupNotificationsByTitle: false });
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       renderWithAppContext(
         <MemoryRouter>
@@ -296,6 +303,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should toggle group notifications by title', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -311,6 +319,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Filter notifications', () => {
     it('go to the filters route', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -327,6 +336,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if filters path already shown', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter initialEntries={['/filters']}>
           <Sidebar />
@@ -344,6 +354,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('highlight filters sidebar if any are saved', () => {
       useFiltersStore.setState({ products: ['bitbucket'] });
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
       renderWithAppContext(
         <MemoryRouter>
@@ -359,6 +370,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Refresh Notifications', () => {
     it('should refresh the notifications when status is not loading', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -375,6 +387,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should not refresh the notifications when status is loading', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -393,6 +406,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Settings', () => {
     it('go to the settings route', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter>
           <Sidebar />
@@ -406,6 +420,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if settings path already shown', async () => {
+      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
       renderWithAppContext(
         <MemoryRouter initialEntries={['/settings']}>
           <Sidebar />
@@ -425,14 +440,12 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
+    useAccountsStore.setState({ accounts: [] });
 
     renderWithAppContext(
       <MemoryRouter>
         <Sidebar />
       </MemoryRouter>,
-      {
-        isLoggedIn: false,
-      },
     );
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));

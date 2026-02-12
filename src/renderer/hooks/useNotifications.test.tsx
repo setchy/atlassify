@@ -6,7 +6,7 @@ import nock from 'nock';
 
 import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { mockAccounts, mockSettings } from '../__mocks__/state-mocks';
 
 import { useNotifications } from './useNotifications';
 
@@ -52,7 +52,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAuth), {
+      const { result } = renderHook(() => useNotifications(mockAccounts), {
         wrapper: createWrapper(),
       });
 
@@ -62,7 +62,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAuth.accounts[0],
+          account: mockAccounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -92,7 +92,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAuth), {
+      const { result } = renderHook(() => useNotifications(mockAccounts), {
         wrapper: createWrapper(),
       });
 
@@ -102,7 +102,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAuth.accounts[0],
+          account: mockAccounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -125,7 +125,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAuth), {
+      const { result } = renderHook(() => useNotifications(mockAccounts), {
         wrapper: createWrapper(),
       });
 
@@ -135,7 +135,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAuth.accounts[0],
+          account: mockAccounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -188,7 +188,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockAuth), {
+    const { result } = renderHook(() => useNotifications(mockAccounts), {
       wrapper: createWrapper(),
     });
 
@@ -253,7 +253,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockAuth), {
+    const { result } = renderHook(() => useNotifications(mockAccounts), {
       wrapper: createWrapper(),
     });
 

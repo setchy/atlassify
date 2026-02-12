@@ -5,6 +5,8 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
+import useAccountsStore from '../stores/useAccountsStore';
+
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
 
@@ -15,6 +17,10 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/routes/Login.tsx', () => {
+  beforeEach(() => {
+    useAccountsStore.setState({ accounts: [] });
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });

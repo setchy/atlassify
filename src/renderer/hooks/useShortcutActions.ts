@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
@@ -38,7 +39,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoggedIn, status } = useAppContext();
+  const { fetchNotifications, status } = useAppContext();
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');

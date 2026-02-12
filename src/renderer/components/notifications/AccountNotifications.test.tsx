@@ -28,10 +28,6 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     ensureStableEmojis();
   });
 
-  afterEach(() => {
-    useSettingsStore.getState().reset();
-  });
-
   describe('account view types', () => {
     it('should render itself - sort by date - light mode', () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
@@ -107,13 +103,11 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('No new notifications')).toBeInTheDocument();
     });
 
     it('should render itself - account error', async () => {
@@ -128,13 +122,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         },
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('Error title')).toBeInTheDocument();
+      expect(screen.getByText('Error description')).toBeInTheDocument();
     });
   });
 
@@ -239,9 +232,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       renderWithAppContext(<AccountNotifications {...props} />);
     });
 
+    expect(
+      screen.getAllByTestId('notification-details').length,
+    ).toBeGreaterThan(0);
+
     await userEvent.click(screen.getByTestId('account-toggle'));
 
-    const tree = renderWithAppContext(<AccountNotifications {...props} />);
-    expect(tree).toMatchSnapshot();
+    expect(screen.queryAllByTestId('notification-details')).toHaveLength(0);
   });
 });

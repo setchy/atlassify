@@ -12,7 +12,6 @@ import { NotificationSettings } from './NotificationSettings';
 describe('renderer/components/settings/NotificationSettings.tsx', () => {
   afterEach(() => {
     vi.clearAllMocks();
-    useSettingsStore.getState().reset();
   });
 
   it('should toggle the markAsReadOnOpen checkbox', async () => {

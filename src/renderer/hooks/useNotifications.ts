@@ -4,11 +4,11 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import type { AccountsState } from '../stores/types';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import type {
+  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -59,7 +59,7 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (auth: AccountsState): NotificationsState => {
+export const useNotifications = (accounts: Account[]): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
@@ -79,12 +79,8 @@ export const useNotifications = (auth: AccountsState): NotificationsState => {
   // Query key excludes filters to prevent API refetches on filter changes
   // Filters are applied client-side via subscription in subscriptions.ts
   const notificationsQueryKey = useMemo(
-    () =>
-      notificationsKeys.list(
-        auth.accounts.length,
-        fetchOnlyUnreadNotifications,
-      ),
-    [auth.accounts.length, fetchOnlyUnreadNotifications],
+    () => notificationsKeys.list(accounts.length, fetchOnlyUnreadNotifications),
+    [accounts.length, fetchOnlyUnreadNotifications],
   );
 
   // Create select function that depends on filter state
@@ -108,7 +104,7 @@ export const useNotifications = (auth: AccountsState): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(auth);
+      return await getAllNotifications(accounts);
     },
 
     // Apply filters as a transformation on the cached data

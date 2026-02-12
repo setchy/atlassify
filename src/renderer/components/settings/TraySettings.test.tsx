@@ -12,7 +12,6 @@ import { TraySettings } from './TraySettings';
 describe('renderer/components/settings/TraySettings.tsx', () => {
   afterEach(() => {
     vi.clearAllMocks();
-    useSettingsStore.getState().reset();
   });
 
   it('should toggle the showNotificationsCountInTray checkbox', async () => {

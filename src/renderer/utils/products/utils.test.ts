@@ -1,17 +1,19 @@
-// Mock API client before importing module under test so internal imports use mocks
-vi.mock('../api/client', () => {
-  return {
-    getCloudIDsForHostnames: vi.fn(async () => ({
-      data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
-    })),
-    getJiraProjectTypeByKey: vi.fn(),
-  };
-});
+import { vi } from 'vitest';
+
+const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = vi.hoisted(() => ({
+  getCloudIDsForHostnames: vi.fn(async () => ({
+    data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
+  })),
+  getJiraProjectTypeByKey: vi.fn(),
+}));
+
+vi.mock('../api/client', () => ({
+  getCloudIDsForHostnames,
+  getJiraProjectTypeByKey,
+}));
 vi.mock('../logger', () => ({
   rendererLogError: vi.fn(),
 }));
-
-import { vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 
@@ -25,16 +27,7 @@ import {
   PRODUCTS,
 } from '.';
 
-// Access mocked API functions via importMock to avoid type-side effects
-const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = vi.hoisted(() => ({
-  getCloudIDsForHostnames: vi.fn(),
-  getJiraProjectTypeByKey: vi.fn(),
-}));
-
-vi.mock('../api/client', () => ({
-  getCloudIDsForHostnames,
-  getJiraProjectTypeByKey,
-}));
+// Access mocked API functions via hoisted references
 
 describe('renderer/utils/products/utils.ts', () => {
   describe('inferAtlassianProduct', () => {

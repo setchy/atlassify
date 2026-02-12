@@ -14,8 +14,10 @@ import type { Percentage } from '../types';
 
 import { mockAtlassianCloudAccount } from './account-mocks';
 
+export const mockAccounts = [mockAtlassianCloudAccount];
+
 export const mockAuth: AccountsState = {
-  accounts: [mockAtlassianCloudAccount],
+  accounts: mockAccounts,
 };
 
 const mockAppearanceSettings: AppearanceSettingsState = {
