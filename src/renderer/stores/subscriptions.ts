@@ -126,9 +126,13 @@ export function initializeStoreSubscriptions(): () => void {
     const accounts = useAccountsStore.getState().accounts;
     const fetchOnlyUnreadNotifications =
       useSettingsStore.getState().fetchOnlyUnreadNotifications;
+    const groupNotificationsByTitle =
+      useSettingsStore.getState().groupNotificationsByTitle;
+
     const queryKey = notificationsKeys.list(
       accounts.length,
       fetchOnlyUnreadNotifications,
+      groupNotificationsByTitle,
     );
 
     // When filters change, invalidate queries to trigger select re-execution

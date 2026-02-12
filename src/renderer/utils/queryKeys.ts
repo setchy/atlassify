@@ -20,7 +20,17 @@ export const notificationsKeys = {
    * Key for listing notifications with specific parameters
    * @param accountsLength - Number of accounts
    * @param fetchOnlyUnread - Whether to fetch only unread notifications
+   * @param groupByTitle - Whether to group notifications by title
    */
-  list: (accountsLength: number, fetchOnlyUnread: boolean) =>
-    [...notificationsKeys.all, accountsLength, fetchOnlyUnread] as const,
+  list: (
+    accountsLength: number,
+    fetchOnlyUnread: boolean,
+    groupByTitle: boolean,
+  ) =>
+    [
+      ...notificationsKeys.all,
+      accountsLength,
+      fetchOnlyUnread,
+      groupByTitle,
+    ] as const,
 };
