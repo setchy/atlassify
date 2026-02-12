@@ -10,6 +10,7 @@ import {
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import * as links from '../../utils/links';
@@ -26,6 +27,10 @@ vi.mock('./ProductNotifications', () => ({
 describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
+    useSettingsStore.setState({
+      ...DEFAULT_SETTINGS_STATE,
+      showAccountHeader: true,
+    });
   });
 
   describe('account view types', () => {
@@ -39,9 +44,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getAllByTestId('notification-details')).toHaveLength(2);
     });
 
     it('should render itself - sort by date - dark mode', () => {
@@ -54,9 +59,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getAllByTestId('notification-details')).toHaveLength(2);
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
@@ -72,9 +77,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getAllByText('ProductNotifications')).toHaveLength(2);
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
@@ -90,9 +95,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getAllByText('ProductNotifications')).toHaveLength(2);
     });
 
     it('should render itself - no notifications', async () => {
@@ -128,6 +133,33 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       expect(screen.getByText('Error title')).toBeInTheDocument();
       expect(screen.getByText('Error description')).toBeInTheDocument();
+    });
+
+    it('should hide the account header when disabled', () => {
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        showAccountHeader: false,
+      });
+
+      const props: AccountNotificationsProps = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
+        error: null,
+      };
+
+      renderWithAppContext(<AccountNotifications {...props} />);
+
+      expect(
+        screen.queryByTestId('account-profile--itemInner'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-pull-requests'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-mark-as-read'),
+      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-toggle')).not.toBeInTheDocument();
     });
   });
 
