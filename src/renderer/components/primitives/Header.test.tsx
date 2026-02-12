@@ -23,7 +23,7 @@ describe('renderer/components/primitives/Header.tsx', () => {
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<Header>Test Header</Header>);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should navigate back', async () => {

@@ -42,7 +42,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - sort by date - dark mode', () => {
@@ -58,7 +58,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
@@ -77,7 +77,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
@@ -96,7 +96,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - no notifications', async () => {

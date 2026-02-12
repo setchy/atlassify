@@ -28,7 +28,7 @@ describe('renderer/routes/Login.tsx', () => {
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<LoginRoute />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   describe('login web pages', () => {

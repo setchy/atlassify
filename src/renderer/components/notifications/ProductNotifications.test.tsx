@@ -35,7 +35,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should render itself & its children - dark mode', () => {
@@ -47,7 +47,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should open product home when available', async () => {
@@ -99,7 +99,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const tree = renderWithAppContext(<ProductNotifications {...props} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should mark all product notifications as read', async () => {

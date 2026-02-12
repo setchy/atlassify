@@ -35,7 +35,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('group by title', async () => {
@@ -48,7 +48,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('group by title with multiple named actors', async () => {
@@ -68,7 +68,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('group by title with multiple unnamed actors', async () => {
@@ -85,7 +85,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('compass avatar as square', async () => {
@@ -102,7 +102,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('missing entity icon url should default to product logo', async () => {
@@ -121,7 +121,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithAppContext(<NotificationRow {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
   });
 
