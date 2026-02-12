@@ -79,7 +79,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     showNotificationsCountInTray,
     useUnreadActiveIcon,
     useAlternateIdleIcon,
-    notifications,
+    status,
+    notificationCount,
+    hasMoreAccountNotifications,
   ]);
 
   useEffect(() => {
