@@ -16,6 +16,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
 
+import useAccountsStore from '../../stores/useAccountsStore';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import { LANGUAGES } from '../../i18n/types';
@@ -34,6 +35,7 @@ import {
 export const AppearanceSettings: FC = () => {
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
   const { t, i18n } = useTranslation();
 
@@ -180,12 +182,16 @@ export const AppearanceSettings: FC = () => {
         </Inline>
       </Box>
 
-      <Checkbox
-        isChecked={showAccountHeader}
-        label={t('settings.appearance.show_account_header')}
-        name="showAccountHeader"
-        onChange={() => updateSetting('showAccountHeader', !showAccountHeader)}
-      />
+      {!hasMultipleAccounts && (
+        <Checkbox
+          isChecked={showAccountHeader}
+          label={t('settings.appearance.show_account_header')}
+          name="showAccountHeader"
+          onChange={() =>
+            updateSetting('showAccountHeader', !showAccountHeader)
+          }
+        />
+      )}
     </Stack>
   );
 };

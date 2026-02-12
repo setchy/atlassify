@@ -42,12 +42,14 @@ export interface AccountNotificationsProps {
   notifications: AtlassifyNotification[];
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
+  showAccountHeader: boolean;
 }
 
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, hasMoreNotifications } = props;
+  const { account, notifications, hasMoreNotifications, showAccountHeader } =
+    props;
 
   const { markNotificationsRead } = useAppContext();
 
@@ -87,8 +89,6 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const groupNotificationsByProductAlphabetically = useSettingsStore(
     (s) => s.groupNotificationsByProductAlphabetically,
   );
-
-  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
 
   const groupedNotifications = useMemo(() => {
     const map = groupNotificationsByProduct(sortedNotifications);

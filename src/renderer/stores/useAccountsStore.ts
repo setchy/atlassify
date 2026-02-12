@@ -78,6 +78,11 @@ export const useAccountsStore = create<AccountsStore>()(
         return get().accounts.length > 0;
       },
 
+      hasMultipleAccounts: () => {
+        const get = _get as () => AccountsStore;
+        return get().accounts.length > 1;
+      },
+
       isLoggedIn: () => {
         const get = _get as () => AccountsStore;
         return get().hasAccounts();

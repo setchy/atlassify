@@ -1,6 +1,8 @@
 import { type FC, useMemo, useRef } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
+import useAccountsStore from '../stores/useAccountsStore';
+import { useSettingsStore } from '../stores/useSettingsStore';
 
 import { AllRead } from '../components/AllRead';
 import { Contents } from '../components/layout/Contents';
@@ -48,6 +50,9 @@ export const NotificationsRoute: FC = () => {
     [displayState.notifications],
   );
 
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
+
   if (displayState.status === 'error') {
     return <Oops error={displayState.globalError ?? Errors.UNKNOWN} />;
   }
@@ -66,6 +71,7 @@ export const NotificationsRoute: FC = () => {
             hasMoreNotifications={accountNotifications.hasMoreNotifications}
             key={accountNotifications.account.id}
             notifications={accountNotifications.notifications}
+            showAccountHeader={hasMultipleAccounts || showAccountHeader}
           />
         ))}
       </Contents>
