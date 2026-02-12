@@ -6,6 +6,7 @@ import Heading from '@atlaskit/heading';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
 
+import type { KeybindingEntry } from '../../constants/keybindings';
 import { keybindings } from '../../constants/keybindings';
 
 const keycapStyle: CSSProperties = {
@@ -43,6 +44,9 @@ const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
   );
 };
 
+const getDisplayKeys = (entry: KeybindingEntry) =>
+  entry.display ?? [entry.eventKey];
+
 export const KeyboardShortcutsSettings: FC = () => {
   const { t } = useTranslation();
 
@@ -59,43 +63,43 @@ export const KeyboardShortcutsSettings: FC = () => {
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
-                  keys={keybindings.shortcuts.home.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.home)}
                   label={t('settings.keyboard_shortcuts.home')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.myNotifications.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.myNotifications)}
                   label={t('settings.keyboard_shortcuts.my_notifications')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.toggleReadUnread.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.toggleReadUnread)}
                   label={t('settings.keyboard_shortcuts.toggle_unread')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.groupByProduct.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.groupByProduct)}
                   label={t('settings.keyboard_shortcuts.group_by_product')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.groupByTitle.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.groupByTitle)}
                   label={t('settings.keyboard_shortcuts.group_by_title')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.filters.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.filters)}
                   label={t('settings.keyboard_shortcuts.filters')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.refresh.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.refresh)}
                   label={t('settings.keyboard_shortcuts.refresh')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.settings.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.settings)}
                   label={t('settings.keyboard_shortcuts.settings')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.accounts.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.accounts)}
                   label={t('settings.keyboard_shortcuts.accounts')}
                 />
                 <KeybindingRow
-                  keys={keybindings.shortcuts.quit.display}
+                  keys={getDisplayKeys(keybindings.shortcuts.quit)}
                   label={t('settings.keyboard_shortcuts.quit')}
                 />
               </Stack>
@@ -120,11 +124,11 @@ export const KeyboardShortcutsSettings: FC = () => {
                   label={t('settings.keyboard_shortcuts.last')}
                 />
                 <KeybindingRow
-                  keys={keybindings.notifications.action.display}
+                  keys={getDisplayKeys(keybindings.notifications.action)}
                   label={t('settings.keyboard_shortcuts.expand')}
                 />
                 <KeybindingRow
-                  keys={keybindings.notifications.toggleRead.display}
+                  keys={getDisplayKeys(keybindings.notifications.toggleRead)}
                   label={t('settings.keyboard_shortcuts.toggle_read')}
                 />
               </Stack>
