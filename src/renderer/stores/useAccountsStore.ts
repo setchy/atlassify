@@ -19,7 +19,7 @@ import { DEFAULT_ACCOUNTS_STATE } from './defaults';
  */
 export const useAccountsStore = create<AccountsStore>()(
   persist(
-    (set, _get, store) => ({
+    (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,
 
       setAccounts: (accounts) => {
@@ -47,7 +47,6 @@ export const useAccountsStore = create<AccountsStore>()(
         } as Account;
 
         // Refresh user data
-        const get = _get as () => AccountsStore;
         newAccount = await get().refreshAccount(newAccount);
 
         set((state) => ({
@@ -74,22 +73,18 @@ export const useAccountsStore = create<AccountsStore>()(
       },
 
       hasAccounts: () => {
-        const get = _get as () => AccountsStore;
         return get().accounts.length > 0;
       },
 
       hasMultipleAccounts: () => {
-        const get = _get as () => AccountsStore;
         return get().accounts.length > 1;
       },
 
       isLoggedIn: () => {
-        const get = _get as () => AccountsStore;
         return get().hasAccounts();
       },
 
       hasUsernameAlready: (username: Username) => {
-        const get = _get as () => AccountsStore;
         return get().accounts.some(
           (a) =>
             a.username.trim().toLowerCase() === username.trim().toLowerCase(),
