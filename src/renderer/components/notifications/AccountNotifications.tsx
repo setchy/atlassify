@@ -43,6 +43,8 @@ export interface AccountNotificationsProps {
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
   showAccountHeader: boolean;
+  focusedNotificationId?: string | null;
+  onNotificationFocus?: (id: string) => void;
 }
 
 export const AccountNotifications: FC<AccountNotificationsProps> = (
@@ -244,16 +246,20 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
                   <ProductNotifications
+                    focusedNotificationId={props.focusedNotificationId}
                     key={productType}
+                    onNotificationFocus={props.onNotificationFocus}
                     productNotifications={productNotifications}
                   />
                 ),
               )
             : sortedNotifications.map((notification) => (
                 <NotificationRow
+                  isFocused={props.focusedNotificationId === notification.id}
                   isProductAnimatingExit={false}
                   key={notification.id}
                   notification={notification}
+                  onFocus={props.onNotificationFocus}
                 />
               ))}
         </Fragment>

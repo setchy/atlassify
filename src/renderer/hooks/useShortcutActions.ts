@@ -156,7 +156,7 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         },
       },
       accounts: {
-        key: 'a',
+        key: 'c',
         isAllowed: isLoggedIn && isOnSettingsRoute,
         action: () => navigate('/accounts'),
       },

@@ -32,11 +32,15 @@ import { shouldRemoveNotificationsFromState } from '../../utils/notifications/re
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
   isProductAnimatingExit: boolean;
+  isFocused?: boolean;
+  onFocus?: (id: string) => void;
 }
 
 export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
+  isFocused = false,
+  onFocus,
 }: NotificationRowProps) => {
   const { markNotificationsRead, markNotificationsUnread } = useAppContext();
 
@@ -50,6 +54,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
 
   const actionNotificationInteraction = () => {
+    onFocus?.(notification.id);
     setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
 
     if (markAsReadOnOpen) {
@@ -60,11 +65,13 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   };
 
   const actionMarkAsRead = () => {
+    onFocus?.(notification.id);
     setShouldAnimateNotificationExit(shouldAnimateExit);
     markNotificationsRead([notification]);
   };
 
   const actionMarkAsUnread = () => {
+    onFocus?.(notification.id);
     markNotificationsUnread([notification]);
   };
 
@@ -99,15 +106,25 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
   const notificationBodyText = formatNotificationBodyText(notification);
   const notificationFooterText = formatNotificationFooterText(notification);
+  const focusedStyles = isFocused
+    ? {
+        backgroundColor: token('color.background.selected'),
+        boxShadow: `inset 0 0 0 2px ${token('color.border.focused')}`,
+      }
+    : undefined;
 
   return (
     <div
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
+        isFocused && 'bg-atlassify-notifications',
         (isProductAnimatingExit || shouldAnimateNotificationExit) &&
           'translate-x-full opacity-0 transition duration-350 ease-in-out',
       )}
+      data-notification-id={notification.id}
+      data-notification-row="true"
       id={notification.id}
+      style={focusedStyles}
     >
       <Box padding="space.100">
         <Inline alignBlock="center" space={spaceBetweenSections}>
