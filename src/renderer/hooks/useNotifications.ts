@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
@@ -75,12 +80,20 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );
+  const groupNotificationsByTitle = useSettingsStore(
+    (s) => s.groupNotificationsByTitle,
+  );
 
   // Query key excludes filters to prevent API refetches on filter changes
   // Filters are applied client-side via subscription in subscriptions.ts
   const notificationsQueryKey = useMemo(
-    () => notificationsKeys.list(accounts.length, fetchOnlyUnreadNotifications),
-    [accounts.length, fetchOnlyUnreadNotifications],
+    () =>
+      notificationsKeys.list(
+        accounts.length,
+        fetchOnlyUnreadNotifications,
+        groupNotificationsByTitle,
+      ),
+    [accounts.length, fetchOnlyUnreadNotifications, groupNotificationsByTitle],
   );
 
   // Create select function that depends on filter state
@@ -98,6 +111,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   const {
     data: notifications = [],
     isLoading,
+    isFetching,
     isError,
     refetch,
   } = useQuery<AccountNotifications[], Error>({
@@ -110,6 +124,8 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     // Apply filters as a transformation on the cached data
     // This allows filter changes to instantly update without refetching
     select: selectFilteredNotifications,
+
+    placeholderData: keepPreviousData,
 
     refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,
@@ -130,7 +146,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
   // Determine status and globalError from query state
   const status: Status = useMemo(() => {
-    if (isLoading) {
+    if (isLoading || isFetching) {
       return 'loading';
     }
 
@@ -139,7 +155,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     }
 
     return 'success';
-  }, [isLoading, isError]);
+  }, [isLoading, isFetching, isError]);
 
   const globalError: AtlassifyError = useMemo(() => {
     if (!isError || notifications.length === 0) {

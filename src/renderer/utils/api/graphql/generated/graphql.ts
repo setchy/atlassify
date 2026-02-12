@@ -34,6 +34,7 @@ export type Scalars = {
   URL: { input: any; output: any; }
   UUID: { input: any; output: any; }
   Upload: { input: any; output: any; }
+  VTRI: { input: any; output: any; }
 };
 
 export type AvpAddDashboardElementInput = {
@@ -27623,6 +27624,191 @@ export type GraphStoreWorkerAssociatedExternalWorkerSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+/** Input for creating a view instance from a template. */
+export type GravityCreateViewFromTemplateInput = {
+  /**
+   * Optional custom name for the created view.
+   * If not provided, uses the template's default view name.
+   */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The project where the view will be created. */
+  projectId: Scalars['ID']['input'];
+  /**
+   * Explicit mapping from template references (fields) to concrete instances.
+   * Optional – if omitted, resolutionStrategy decides how to handle missing mappings.
+   */
+  refMappings?: InputMaybe<GravityRefMappingsInput>;
+  /**
+   * Strategy for resolving template references (fields) to concrete instances.
+   * Defaults to CREATE_IF_MISSING.
+   */
+  refResolutionStrategy?: InputMaybe<GravityRefResolutionStrategy>;
+  /** The ID of the template from which to create the view. */
+  templateId: Scalars['ID']['input'];
+};
+
+/** Single mapping of a template field reference to existing field key. */
+export type GravityFieldRefMappingInput = {
+  /** Target field key (e.g. 'customfield_10055'). */
+  key: Scalars['String']['input'];
+  /** Template field reference (e.g. 'vtri:field:ref:polaris-rating-effort'). */
+  ref: Scalars['VTRI']['input'];
+};
+
+/** Collection of reference mappings - currently only fields. */
+export type GravityRefMappingsInput = {
+  /**
+   * List of field mappings. If a field reference is omitted, the server will apply
+   * the specified resolution strategy to determine the mapping.
+   */
+  fields: Array<GravityFieldRefMappingInput>;
+};
+
+/**
+ * Strategy for resolving template resource references into concrete entities
+ * in the target context when creating a view from a template.
+ */
+export enum GravityRefResolutionStrategy {
+  /** Default. Create missing fields where possible; fail only on unrecoverable errors. */
+  CreateIfMissing = 'CREATE_IF_MISSING',
+  /**
+   * Fail the operation if any required mapping cannot be resolved.
+   * No new fields are created.
+   */
+  FailIfMissing = 'FAIL_IF_MISSING',
+  /**
+   * Use the first best match for each template field; for any unresolved ones,
+   * attempt to create missing fields.
+   */
+  FirstBestMatchThenCreate = 'FIRST_BEST_MATCH_THEN_CREATE',
+  /**
+   * Use the first best match for each template field; if any mapping
+   * is still unresolved, fail the operation.
+   */
+  FirstBestMatchThenFail = 'FIRST_BEST_MATCH_THEN_FAIL',
+  /**
+   * Attempt to match existing fields only. If a suitable match is not found,
+   * the mapping is considered unresolved; behavior depends on additional rules.
+   */
+  Match = 'MATCH'
+}
+
+/** Sort order used across different features. */
+export enum GravitySortOrder {
+  Asc = 'ASC',
+  Desc = 'DESC'
+}
+
+/** How to apply color styling to view items. */
+export enum GravityViewColorStyle {
+  Background = 'BACKGROUND',
+  Highlight = 'HIGHLIGHT'
+}
+
+/** Column size configuration for table views. */
+export enum GravityViewColumnSize {
+  Default = 'DEFAULT',
+  Large = 'LARGE',
+  Small = 'SMALL'
+}
+
+/**
+ * Special enum type for filter context matching.
+ * Used for matching filters against board columns or view groups.
+ */
+export enum GravityViewFilterEnumType {
+  /** Match against board column values. */
+  BoardColumn = 'BOARD_COLUMN',
+  /** Match against view group values. */
+  ViewGroup = 'VIEW_GROUP'
+}
+
+/** Filter kind - defines the type of filtering logic to apply. */
+export enum GravityViewFilterKind {
+  /** Filter connections by field identity. */
+  ConnectionFieldIdentity = 'CONNECTION_FIELD_IDENTITY',
+  /** Filter by whether a field has any value (is not empty). */
+  FieldHasValue = 'FIELD_HAS_VALUE',
+  /** Filter by exact field identity/value match. */
+  FieldIdentity = 'FIELD_IDENTITY',
+  /** Filter by numeric comparison (GT, LT, EQ, etc.). */
+  FieldNumeric = 'FIELD_NUMERIC',
+  /** Filter by time interval (for date fields). */
+  Interval = 'INTERVAL',
+  /** Filter by text matching. */
+  Text = 'TEXT'
+}
+
+/** Filter operator for numeric and interval comparisons. */
+export enum GravityViewFilterOperator {
+  /** End date is after now */
+  EndAfterNow = 'END_AFTER_NOW',
+  /** End date is before now */
+  EndBeforeNow = 'END_BEFORE_NOW',
+  /** Equal to */
+  Eq = 'EQ',
+  /** Greater than */
+  Gt = 'GT',
+  /** Greater than or equal */
+  Gte = 'GTE',
+  /** Item ends after (date comparison) */
+  ItemEndsAfter = 'ITEM_ENDS_AFTER',
+  /** Item ends after past N period */
+  ItemEndsAfterPast = 'ITEM_ENDS_AFTER_PAST',
+  /** Item starts before (date comparison) */
+  ItemStartsBefore = 'ITEM_STARTS_BEFORE',
+  /** Item starts before next N period */
+  ItemStartsBeforeNext = 'ITEM_STARTS_BEFORE_NEXT',
+  /** Less than */
+  Lt = 'LT',
+  /** Less than or equal */
+  Lte = 'LTE',
+  /** Not equal to */
+  Neq = 'NEQ',
+  /** Start date is after now */
+  StartAfterNow = 'START_AFTER_NOW',
+  /** Start date is before now */
+  StartBeforeNow = 'START_BEFORE_NOW'
+}
+
+/** Layout type for how ideas/issues are displayed in a view. */
+export enum GravityViewLayoutType {
+  Compact = 'COMPACT',
+  Detailed = 'DETAILED',
+  Summary = 'SUMMARY'
+}
+
+/** View sort mode - determines how sorting is applied. */
+export enum GravityViewSortMode {
+  FieldsSort = 'FIELDS_SORT',
+  ProjectRank = 'PROJECT_RANK',
+  ViewRank = 'VIEW_RANK'
+}
+
+/**
+ * Available color schemes for templates.
+ * Used for visual differentiation of templates in the UI.
+ */
+export enum GravityViewTemplateColorScheme {
+  Blue = 'BLUE',
+  Default = 'DEFAULT',
+  Green = 'GREEN',
+  Lime = 'LIME',
+  Magenta = 'MAGENTA',
+  Orange = 'ORANGE',
+  Purple = 'PURPLE',
+  Teal = 'TEAL'
+}
+
+/** Visualization type for views. */
+export enum GravityViewVisualizationType {
+  Board = 'BOARD',
+  List = 'LIST',
+  Matrix = 'MATRIX',
+  Table = 'TABLE',
+  Timeline = 'TIMELINE'
+}
+
 export type GroupWithPermissionsInput = {
   id: Scalars['ID']['input'];
   operations: Array<InputMaybe<OperationCheckResultInput>>;
@@ -39876,14 +40062,15 @@ export type JiraWorklogSortInput = {
   order: SortDirection;
 };
 
+/**  --------------------------------------------------------------------------------------------- */
 export type JpdImportIdeasInput = {
   csvContent?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded image content (PNG, JPEG, GIF, WebP) - use with sourceType: IMAGE */
+  /** Base64 encoded image content */
   imageContent?: InputMaybe<Scalars['String']['input']>;
   /** MIME type for image (e.g., image/png, image/jpeg) */
   imageMimeType?: InputMaybe<Scalars['String']['input']>;
   jpdProjectId?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded PDF content - use with sourceType: PDF */
+  /** Base64 encoded PDF content */
   pdfContent?: InputMaybe<Scalars['String']['input']>;
   sourceLabel?: InputMaybe<Scalars['String']['input']>;
   sourceType: JpdImportSourceType;

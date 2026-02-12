@@ -89,6 +89,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const groupNotificationsByProductAlphabetically = useSettingsStore(
     (s) => s.groupNotificationsByProductAlphabetically,
   );
+  const groupByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
 
   const groupedNotifications = useMemo(() => {
     const map = groupNotificationsByProduct(sortedNotifications);
@@ -239,7 +240,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
           {!hasNotifications && !props.error && <AllRead />}
 
-          {useSettingsStore.getState().groupNotificationsByProduct
+          {groupByProduct
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
                   <ProductNotifications

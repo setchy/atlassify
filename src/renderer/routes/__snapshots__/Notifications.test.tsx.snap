@@ -40,20 +40,9 @@ exports[`renderer/routes/Notifications.tsx > should keep previous state while lo
 
 exports[`renderer/routes/Notifications.tsx > should keep previous state while loading 2`] = `
 <div>
-  <div
-    class="flex flex-col h-screen"
-    data-testid="notifications"
-  >
-    <div
-      class="grow overflow-x-hidden overflow-y-auto"
-    >
-      <div
-        data-account-id="123456789"
-        data-show-header="false"
-        data-testid="account-notifications"
-      />
-    </div>
-  </div>
+  <p>
+    AllRead
+  </p>
 </div>
 `;
 

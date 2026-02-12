@@ -164,7 +164,7 @@ describe('renderer/stores/subscriptions.ts', () => {
       useFiltersStore.getState().updateFilter('categories', 'direct', true);
 
       expect(queryClient.invalidateQueries).toHaveBeenCalledWith({
-        queryKey: ['notifications', 2, true],
+        queryKey: ['notifications', 2, true, true],
         refetchType: 'none',
       });
     });
