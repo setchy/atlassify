@@ -10,6 +10,22 @@ import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
 
+vi.mock('axios', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('axios')>();
+  const realAxios = actual.default;
+  const wrapped = vi.fn((...args: Parameters<typeof realAxios>) =>
+    realAxios(...args),
+  );
+
+  Object.assign(wrapped, realAxios);
+
+  return {
+    __esModule: true,
+    default: wrapped,
+    AxiosError: actual.AxiosError,
+  };
+});
+
 /**
  * Reset stores
  */

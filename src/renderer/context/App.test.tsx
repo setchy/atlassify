@@ -4,10 +4,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { vi } from 'vitest';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockSettings } from '../__mocks__/state-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import * as notifications from '../utils/notifications/notifications';
@@ -52,7 +52,7 @@ describe('renderer/context/App.tsx', () => {
 
   beforeEach(() => {
     // Initialize stores with default values
-    useSettingsStore.setState(mockSettings);
+    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
 
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({

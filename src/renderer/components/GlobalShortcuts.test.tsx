@@ -112,6 +112,10 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle read/unread when logged out', async () => {
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
         useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
@@ -120,9 +124,15 @@ describe('components/GlobalShortcuts.tsx', () => {
         );
 
         await userEvent.keyboard('u');
+
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
 
       it('does not toggle read/unread when status is loading', async () => {
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
@@ -134,6 +144,8 @@ describe('components/GlobalShortcuts.tsx', () => {
         );
 
         await userEvent.keyboard('u');
+
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 
@@ -161,6 +173,10 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by product when logged out', async () => {
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
         useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
@@ -169,6 +185,8 @@ describe('components/GlobalShortcuts.tsx', () => {
         );
 
         await userEvent.keyboard('p');
+
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 
@@ -196,6 +214,10 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by title when logged out', async () => {
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
         useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
@@ -204,6 +226,8 @@ describe('components/GlobalShortcuts.tsx', () => {
         );
 
         await userEvent.keyboard('t');
+
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 

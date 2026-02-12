@@ -2,8 +2,8 @@ import {
   createMockNotificationForProductType,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
 
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { AtlassifyNotification } from '../../types';
@@ -98,7 +98,7 @@ describe('renderer/utils/notifications/group.ts', () => {
   describe('getFlattenedNotificationsByProduct', () => {
     it('returns product-grouped order when groupNotificationsByProduct is true', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProduct: true,
       });
 
@@ -117,7 +117,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
     it('returns product-grouped order when groupNotificationsByProductAlphabetically is true', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProductAlphabetically: true,
       });
 
@@ -136,7 +136,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
     it('returns natural account order when groupNotificationsByProduct is false', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProduct: false,
       });
 
@@ -162,7 +162,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
     it('handles notifications without product data when grouped', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProduct: true,
       });
 
@@ -180,7 +180,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
     it('preserves notifications without product data when not grouped', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProduct: false,
       });
 

@@ -1,5 +1,7 @@
 import path from 'node:path';
 
+import type { Menubar } from 'menubar';
+
 import { vi } from 'vitest';
 
 const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
@@ -68,7 +70,7 @@ describe('main/utils', () => {
 
   it('takeScreenshot writes file and logs info', async () => {
     const mb = createMb();
-    await takeScreenshot(mb as unknown as import('menubar').Menubar);
+    await takeScreenshot(mb as unknown as Menubar);
     expect(writeFile).toHaveBeenCalled();
     const writtenPath = (writeFile.mock.calls[0] as unknown[])[0] as string;
     expect(writtenPath.startsWith(path.join('/home/test'))).toBe(true);
@@ -81,7 +83,7 @@ describe('main/utils', () => {
   it('resetApp sends event and quits on confirm', () => {
     vi.mocked(dialog.showMessageBoxSync).mockReturnValue(1);
     const mb = createMb();
-    resetApp(mb as unknown as import('menubar').Menubar);
+    resetApp(mb as unknown as Menubar);
     expect(sendRendererEventMock).toHaveBeenCalledWith(
       mb,
       'atlassify:reset-app',
@@ -92,7 +94,7 @@ describe('main/utils', () => {
   it('resetApp does nothing on cancel', () => {
     vi.mocked(dialog.showMessageBoxSync).mockReturnValue(0);
     const mb = createMb();
-    resetApp(mb as unknown as import('menubar').Menubar);
+    resetApp(mb as unknown as Menubar);
     expect(sendRendererEventMock).not.toHaveBeenCalled();
     expect(mb.app.quit).not.toHaveBeenCalled();
   });

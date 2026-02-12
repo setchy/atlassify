@@ -1,7 +1,6 @@
 import { vi } from 'vitest';
 
-import { mockSettings } from '../__mocks__/state-mocks';
-
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import { OpenPreference } from '../stores/types';
 import useSettingsStore from '../stores/useSettingsStore';
 
@@ -25,7 +24,7 @@ import {
 describe('renderer/utils/comms.ts', () => {
   beforeEach(() => {
     // Reset store to defaults before each test
-    useSettingsStore.setState(mockSettings);
+    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
   });
 
   afterEach(() => {
@@ -35,7 +34,7 @@ describe('renderer/utils/comms.ts', () => {
   describe('openExternalLink', () => {
     it('should open an external link', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         openLinks: OpenPreference.BACKGROUND,
       });
 
@@ -50,7 +49,7 @@ describe('renderer/utils/comms.ts', () => {
 
     it('should open in foreground when preference set to FOREGROUND', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         openLinks: OpenPreference.FOREGROUND,
       });
 
@@ -64,7 +63,7 @@ describe('renderer/utils/comms.ts', () => {
 
     it('should use default open preference if user settings not found', () => {
       // Reset to defaults - store will use default values
-      useSettingsStore.setState(mockSettings);
+      useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
 
       openExternalLink('https://atlassify.io/' as Link);
 

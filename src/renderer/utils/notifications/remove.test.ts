@@ -3,8 +3,8 @@ import {
   mockSingleAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
 
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import {
@@ -47,7 +47,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
       expected,
     }) => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         delayNotificationState,
         fetchOnlyUnreadNotifications,
       });
@@ -59,7 +59,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
   describe('removeNotificationsForAccount', () => {
     it('should remove a notification if it exists', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         delayNotificationState: false,
       });
 
@@ -76,7 +76,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
 
     it('should mark as read and skip notification removal if delay state enabled', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         delayNotificationState: true,
       });
 
@@ -94,7 +94,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
 
     it('should skip notification removal if delay state enabled and nothing to remove', () => {
       useSettingsStore.setState({
-        ...mockSettings,
+        ...DEFAULT_SETTINGS_STATE,
         delayNotificationState: true,
       });
 

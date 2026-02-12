@@ -5,8 +5,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import nock from 'nock';
 
 import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockAccounts, mockSettings } from '../__mocks__/state-mocks';
+
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import { useNotifications } from './useNotifications';
 
@@ -27,8 +30,11 @@ const createWrapper = () => {
 };
 
 describe('renderer/hooks/useNotifications.ts', () => {
+  const accounts = [mockAtlassianCloudAccount];
+
   beforeEach(() => {
     configureAxiosHttpAdapterForNock();
+    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
   });
 
   describe('fetchNotifications', () => {
@@ -52,7 +58,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAccounts), {
+      const { result } = renderHook(() => useNotifications(accounts), {
         wrapper: createWrapper(),
       });
 
@@ -62,7 +68,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAccounts[0],
+          account: accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -71,7 +77,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - all notifications read/unread', async () => {
-      mockSettings.fetchOnlyUnreadNotifications = false;
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        fetchOnlyUnreadNotifications: false,
+      });
 
       nock('https://team.atlassian.net')
         .post('/gateway/api/graphql')
@@ -92,7 +101,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAccounts), {
+      const { result } = renderHook(() => useNotifications(accounts), {
         wrapper: createWrapper(),
       });
 
@@ -102,7 +111,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAccounts[0],
+          account: accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -111,7 +120,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('fetchNotifications - handles missing extensions response object', async () => {
-      mockSettings.fetchOnlyUnreadNotifications = false;
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        fetchOnlyUnreadNotifications: false,
+      });
 
       nock('https://team.atlassian.net')
         .post('/gateway/api/graphql')
@@ -125,7 +137,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(mockAccounts), {
+      const { result } = renderHook(() => useNotifications(accounts), {
         wrapper: createWrapper(),
       });
 
@@ -135,7 +147,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: mockAccounts[0],
+          account: accounts[0],
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -188,7 +200,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockAccounts), {
+    const { result } = renderHook(() => useNotifications(accounts), {
       wrapper: createWrapper(),
     });
 
@@ -253,7 +265,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(mockAccounts), {
+    const { result } = renderHook(() => useNotifications(accounts), {
       wrapper: createWrapper(),
     });
 

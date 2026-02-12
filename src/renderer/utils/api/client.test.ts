@@ -3,32 +3,20 @@ import { vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
 
 import { Constants } from '../../constants';
 
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 
-type ClientModule = typeof import('./client');
-type SettingsStoreModule = typeof import('../../stores/useSettingsStore');
+import * as client from './client';
 
 // Experimental API tests moved to experimental/client.test.ts
 
-vi.mock('axios', () => ({
-  __esModule: true,
-  default: vi.fn(),
-}));
-
 describe('renderer/utils/api/client.ts', () => {
-  let client: ClientModule;
-  let settingsStore: SettingsStoreModule['default'];
-
-  beforeEach(async () => {
-    vi.resetModules();
-
-    client = await import('./client');
-    settingsStore = (await import('../../stores/useSettingsStore')).default;
-
+  beforeEach(() => {
     vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
@@ -84,7 +72,7 @@ describe('renderer/utils/api/client.ts', () => {
           query: expect.stringContaining('query MyNotifications'),
           variables: {
             first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-            flat: !mockSettings.groupNotificationsByTitle,
+            flat: !DEFAULT_SETTINGS_STATE.groupNotificationsByTitle,
             readState: 'unread',
           },
         },
@@ -134,8 +122,8 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch unread notifications by group id', async () => {
       const mockGroupSize = 5;
 
-      settingsStore.setState({
-        ...mockSettings,
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: true,
       });
 
@@ -166,8 +154,8 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch all notifications by group id', async () => {
       const mockGroupSize = 5;
 
-      settingsStore.setState({
-        ...mockSettings,
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: false,
       });
 

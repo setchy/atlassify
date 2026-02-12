@@ -6,20 +6,10 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 
 import type { CloudID, JiraProjectKey } from '../../../types';
 
-type ExperimentalClientModule = typeof import('./client');
-
-vi.mock('axios', () => ({
-  __esModule: true,
-  default: vi.fn(),
-}));
+import * as client from './client';
 
 describe('renderer/utils/api/experimental/client.ts', () => {
-  let client: ExperimentalClientModule;
-
-  beforeEach(async () => {
-    vi.resetModules();
-    client = await import('./client');
-
+  beforeEach(() => {
     vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
