@@ -28,7 +28,14 @@ describe('renderer/routes/Settings.tsx', () => {
       );
     });
 
-    expect(screen.getByTestId('settings')).toMatchSnapshot();
+    expect(screen.getByTestId('settings')).toBeInTheDocument();
+    expect(screen.getByText('Settings')).toBeInTheDocument();
+    expect(screen.getByText('Appearance')).toBeInTheDocument();
+    expect(screen.getByText('Notifications')).toBeInTheDocument();
+    expect(screen.getByText('Tray')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'System' })).toBeInTheDocument();
+    expect(screen.getByLabelText('Show account header')).toBeInTheDocument();
+    expect(screen.getByTestId('settings-reset-defaults')).toBeInTheDocument();
   });
 
   it('should go back by pressing the icon', async () => {

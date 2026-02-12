@@ -61,4 +61,20 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     await userEvent.click(screen.getByTestId('settings-zoom-reset'));
     expect(zoomResetSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('should toggle the account header setting', async () => {
+    const updateSettingSpy = vi.spyOn(
+      useSettingsStore.getState(),
+      'updateSetting',
+    );
+
+    await act(async () => {
+      renderWithAppContext(<AppearanceSettings />);
+    });
+
+    await userEvent.click(screen.getByLabelText('Show account header'));
+
+    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
+    expect(updateSettingSpy).toHaveBeenCalledWith('showAccountHeader', true);
+  });
 });
