@@ -216,7 +216,8 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
    *
    * TODO - this is deprecated.  Remove in a future stable release.
    */
-  const _getNotificationIdsForGroups = useCallback(
+  // @ts-expect-error
+  const getNotificationIdsForGroups = useCallback(
     async (notifications: AtlassifyNotification[]) => {
       const notificationIDs: string[] = [];
 
