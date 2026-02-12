@@ -9,10 +9,6 @@ import { DEFAULT_SETTINGS_STATE } from './defaults';
 import { useSettingsStore } from './useSettingsStore';
 
 describe('useSettingsStore', () => {
-  beforeEach(() => {
-    useSettingsStore.getState().reset();
-  });
-
   test('should start with default settings', () => {
     const { result } = renderHook(() => useSettingsStore());
 

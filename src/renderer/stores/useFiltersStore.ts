@@ -14,8 +14,19 @@ import { DEFAULT_FILTERS_STATE } from './defaults';
  */
 export const useFiltersStore = create<FiltersStore>()(
   persist(
-    (set, _get, store) => ({
+    (set, get, store) => ({
       ...DEFAULT_FILTERS_STATE,
+
+      hasActiveFilters: () => {
+        const state = get();
+        return (
+          state.engagementStates.length > 0 ||
+          state.categories.length > 0 ||
+          state.actors.length > 0 ||
+          state.readStates.length > 0 ||
+          state.products.length > 0
+        );
+      },
 
       updateFilter: (key, value, checked) => {
         set((state) => {

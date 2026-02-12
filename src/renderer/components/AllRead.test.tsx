@@ -4,7 +4,6 @@ import {
   ensureStableEmojis,
   renderWithAppContext,
 } from '../__helpers__/test-utils';
-import { mockSettings } from '../__mocks__/state-mocks';
 
 import useFiltersStore from '../stores/useFiltersStore';
 
@@ -13,18 +12,13 @@ import { AllRead } from './AllRead';
 describe('renderer/components/AllRead.tsx', () => {
   beforeEach(() => {
     ensureStableEmojis();
-    useFiltersStore.getState().reset();
   });
 
   it('should render itself & its children - no filters', async () => {
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<AllRead />, {
-        settings: {
-          ...mockSettings,
-        },
-      });
+      tree = renderWithAppContext(<AllRead />);
     });
 
     expect(tree).toMatchSnapshot();
@@ -36,11 +30,7 @@ describe('renderer/components/AllRead.tsx', () => {
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<AllRead />, {
-        settings: {
-          ...mockSettings,
-        },
-      });
+      tree = renderWithAppContext(<AllRead />);
     });
 
     expect(tree).toMatchSnapshot();

@@ -2,7 +2,42 @@ import '@testing-library/jest-dom/vitest';
 
 import { TextEncoder } from 'node:util';
 
-import { vi } from 'vitest';
+import { beforeEach, vi } from 'vitest';
+
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+
+import useAccountsStore from '../stores/useAccountsStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
+
+vi.mock('axios', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('axios')>();
+  const realAxios = actual.default;
+  const wrapped = vi.fn((...args: Parameters<typeof realAxios>) =>
+    realAxios(...args),
+  );
+
+  Object.assign(wrapped, realAxios);
+
+  return {
+    __esModule: true,
+    default: wrapped,
+    AxiosError: actual.AxiosError,
+  };
+});
+
+/**
+ * Reset stores
+ */
+beforeEach(() => {
+  useAccountsStore.getState().reset();
+  useSettingsStore.getState().reset();
+  useFiltersStore.getState().reset();
+  useAccountsStore.setState({
+    accounts: [mockAtlassianCloudAccount],
+    refreshAccount: vi.fn(async (account) => account),
+  });
+});
 
 /**
  * Atlassify context bridge API

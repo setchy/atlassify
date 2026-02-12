@@ -14,7 +14,7 @@ import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { useAppContext } from '../../hooks/useAppContext';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 const gridStyles = xcss({
   width: '100%',
@@ -30,7 +30,7 @@ const titleContainerStyles = xcss({
 
 export const SettingsReset: FC = () => {
   const { t } = useTranslation();
-  const { resetSettings } = useAppContext();
+  const resetSettings = useSettingsStore((s) => s.reset);
   const [showResetSettingsModal, setShowResetSettingsModal] = useState(false);
 
   const actionOpenResetSettingsModal = () => {

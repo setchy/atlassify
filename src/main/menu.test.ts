@@ -6,6 +6,7 @@ import type { Mock } from 'vitest';
 import { vi } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
+import { isMacOS } from '../shared/platform';
 
 import MenuBuilder from './menu';
 import { openLogsDirectory, resetApp, takeScreenshot } from './utils';
@@ -47,6 +48,10 @@ vi.mock('./utils', () => ({
   resetApp: vi.fn(),
 }));
 
+vi.mock('../shared/platform', () => ({
+  isMacOS: vi.fn(),
+}));
+
 describe('main/menu.ts', () => {
   let menubar: Menubar;
   let menuBuilder: MenuBuilder;
@@ -81,6 +86,7 @@ describe('main/menu.ts', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(isMacOS).mockReturnValue(false);
     menuItemInstances.length = 0; // Clear tracked instances
     menubar = { app: { quit: vi.fn() } } as unknown as Menubar;
     menuBuilder = new MenuBuilder(menubar);
@@ -245,16 +251,13 @@ describe('main/menu.ts', () => {
     // by building the menu and inspecting the template
 
     it('uses mac accelerator for toggleDevTools when on macOS', async () => {
-      // Mock platform module for this test
-      vi.doMock('../shared/platform', () => ({ isMacOS: () => true }));
-
-      // Clear module cache and re-import
-      vi.resetModules();
-      const { default: MB } = await import('./menu');
+      vi.mocked(isMacOS).mockReturnValue(true);
       menuItemInstances.length = 0;
       (Menu.buildFromTemplate as Mock).mockClear();
 
-      const mb = new MB({ app: { quit: vi.fn() } } as unknown as Menubar);
+      const mb = new MenuBuilder({
+        app: { quit: vi.fn() },
+      } as unknown as Menubar);
       mb.buildMenu();
 
       const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
@@ -267,22 +270,16 @@ describe('main/menu.ts', () => {
         (i) => i.role === 'toggleDevTools',
       );
       expect(toggleItem?.accelerator).toBe('Alt+Cmd+I');
-
-      // Restore mock
-      vi.doUnmock('../shared/platform');
     });
 
     it('uses non-mac accelerator for toggleDevTools otherwise', async () => {
-      // Mock platform module for this test
-      vi.doMock('../shared/platform', () => ({ isMacOS: () => false }));
-
-      // Clear module cache and re-import
-      vi.resetModules();
-      const { default: MB } = await import('./menu');
+      vi.mocked(isMacOS).mockReturnValue(false);
       menuItemInstances.length = 0;
       (Menu.buildFromTemplate as Mock).mockClear();
 
-      const mb = new MB({ app: { quit: vi.fn() } } as unknown as Menubar);
+      const mb = new MenuBuilder({
+        app: { quit: vi.fn() },
+      } as unknown as Menubar);
       mb.buildMenu();
 
       const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
@@ -295,9 +292,6 @@ describe('main/menu.ts', () => {
         (i) => i.role === 'toggleDevTools',
       );
       expect(toggleItem?.accelerator).toBe('Ctrl+Shift+I');
-
-      // Restore mock
-      vi.doUnmock('../shared/platform');
     });
   });
 });

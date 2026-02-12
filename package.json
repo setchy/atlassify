@@ -17,7 +17,8 @@
     "package:win": "electron-builder --win",
     "lint": "biome check --fix",
     "lint:check": "biome check",
-    "test": "vitest --coverage",
+    "test": "vitest --coverage --run",
+    "test:watch": "vitest --watch --coverage",
     "test:ui": "vitest --ui"
   },
   "engines": {
@@ -142,6 +143,6 @@
   },
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
-    "*.{js,ts,tsx}": "pnpm test --changed --passWithNoTests --update --run"
+    "*.{js,ts,tsx}": "pnpm test --changed --passWithNoTests --update"
   }
 }

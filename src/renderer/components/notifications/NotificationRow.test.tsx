@@ -5,7 +5,8 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
+
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { ReadStateType } from '../../types';
 
@@ -38,14 +39,14 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     });
 
     it('group by title', async () => {
+      useSettingsStore.setState({ groupNotificationsByTitle: true });
+
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { ...mockSettings, groupNotificationsByTitle: true },
-      });
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -63,9 +64,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { ...mockSettings, groupNotificationsByTitle: true },
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
+
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -80,9 +81,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { ...mockSettings, groupNotificationsByTitle: true },
-      });
+      useSettingsStore.setState({ groupNotificationsByTitle: true });
+
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -97,9 +98,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { ...mockSettings, groupNotificationsByProduct: true },
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
+
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -116,9 +117,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByProduct: true },
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
+
+      const tree = renderWithAppContext(<NotificationRow {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -146,16 +147,14 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = vi.fn();
 
+      useSettingsStore.setState({ delayNotificationState: true });
+
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
         isProductAnimatingExit: false,
       };
 
       renderWithAppContext(<NotificationRow {...props} />, {
-        settings: {
-          ...mockSettings,
-          delayNotificationState: true,
-        },
         markNotificationsRead: markNotificationsReadMock,
       });
 

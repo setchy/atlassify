@@ -20,6 +20,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { Constants } from '../../constants';
 
 import { useAppContext } from '../../hooks/useAppContext';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type {
   Account,
@@ -48,7 +49,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 ) => {
   const { account, notifications, hasMoreNotifications } = props;
 
-  const { markNotificationsRead, settings } = useAppContext();
+  const { markNotificationsRead } = useAppContext();
 
   const { t } = useTranslation();
 
@@ -83,17 +84,21 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     [notifications],
   );
 
+  const groupNotificationsByProductAlphabetically = useSettingsStore(
+    (s) => s.groupNotificationsByProductAlphabetically,
+  );
+
   const groupedNotifications = useMemo(() => {
     const map = groupNotificationsByProduct(sortedNotifications);
 
     const notifications = Array.from(map.entries());
 
-    if (settings.groupNotificationsByProductAlphabetically) {
+    if (groupNotificationsByProductAlphabetically) {
       notifications.sort((a, b) => a[0].localeCompare(b[0]));
     }
 
     return notifications;
-  }, [sortedNotifications, settings.groupNotificationsByProductAlphabetically]);
+  }, [sortedNotifications, groupNotificationsByProductAlphabetically]);
 
   const actionToggleAccountNotifications = () => {
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
@@ -230,7 +235,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
           {!hasNotifications && !props.error && <AllRead />}
 
-          {settings.groupNotificationsByProduct
+          {useSettingsStore.getState().groupNotificationsByProduct
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
                   <ProductNotifications

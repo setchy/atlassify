@@ -5,6 +5,8 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import { SettingsReset } from './SettingsReset';
 
 const navigateMock = vi.fn();
@@ -14,35 +16,33 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/components/settings/SettingsReset.tsx', () => {
-  const resetSettingsMock = vi.fn();
-
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should reset default settings when `confirmed`', async () => {
+    const resetSpy = vi.spyOn(useSettingsStore.getState(), 'reset');
+
     await act(async () => {
-      renderWithAppContext(<SettingsReset />, {
-        resetSettings: resetSettingsMock,
-      });
+      renderWithAppContext(<SettingsReset />);
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-confirm'));
 
-    expect(resetSettingsMock).toHaveBeenCalled();
+    expect(resetSpy).toHaveBeenCalled();
   });
 
   it('should skip reset default settings when `cancelled`', async () => {
+    const resetSpy = vi.spyOn(useSettingsStore.getState(), 'reset');
+
     await act(async () => {
-      renderWithAppContext(<SettingsReset />, {
-        resetSettings: resetSettingsMock,
-      });
+      renderWithAppContext(<SettingsReset />);
     });
 
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-cancel'));
 
-    expect(resetSettingsMock).not.toHaveBeenCalled();
+    expect(resetSpy).not.toHaveBeenCalled();
   });
 });

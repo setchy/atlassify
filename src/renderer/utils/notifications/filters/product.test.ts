@@ -11,10 +11,6 @@ import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   it('hasProductFilters', () => {
     expect(productFilter.hasFilters()).toBe(false);
 

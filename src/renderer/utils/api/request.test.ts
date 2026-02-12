@@ -11,8 +11,6 @@ import {
   performRequestForCredentials,
 } from './request';
 
-vi.mock('axios');
-
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {

@@ -10,6 +10,8 @@ import {
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
 import {
@@ -58,6 +60,11 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
+      useSettingsStore.setState({
+        groupNotificationsByProduct: true,
+        groupNotificationsByProductAlphabetically: false,
+      });
+
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -65,17 +72,17 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
-        settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: false,
-        },
-      });
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
+      useSettingsStore.setState({
+        groupNotificationsByProduct: true,
+        groupNotificationsByProductAlphabetically: true,
+      });
+
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -83,12 +90,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
-        settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: true,
-        },
-      });
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
       expect(tree).toMatchSnapshot();
     });
@@ -101,13 +103,11 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         error: null,
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('No new notifications')).toBeInTheDocument();
     });
 
     it('should render itself - account error', async () => {
@@ -122,13 +122,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         },
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('Error title')).toBeInTheDocument();
+      expect(screen.getByText('Error description')).toBeInTheDocument();
     });
   });
 
@@ -233,9 +232,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       renderWithAppContext(<AccountNotifications {...props} />);
     });
 
+    expect(
+      screen.getAllByTestId('notification-details').length,
+    ).toBeGreaterThan(0);
+
     await userEvent.click(screen.getByTestId('account-toggle'));
 
-    const tree = renderWithAppContext(<AccountNotifications {...props} />);
-    expect(tree).toMatchSnapshot();
+    expect(screen.queryAllByTestId('notification-details')).toHaveLength(0);
   });
 });

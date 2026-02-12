@@ -4,7 +4,6 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
-import { mockSettings } from '../__mocks__/state-mocks';
 
 import useFiltersStore from '../stores/useFiltersStore';
 
@@ -21,9 +20,6 @@ describe('renderer/routes/Filters.tsx', () => {
   let resetSpy: any;
 
   beforeEach(() => {
-    // reset store to defaults
-    useFiltersStore.getState().reset();
-
     // spy the actions on the real store
     updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
     resetSpy = vi.spyOn((useFiltersStore as any).getState(), 'reset');
@@ -83,9 +79,6 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            settings: {
-              ...mockSettings,
-            },
             notifications: [],
           });
         });
@@ -120,9 +113,6 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            settings: {
-              ...mockSettings,
-            },
             notifications: [],
           });
         });
@@ -153,9 +143,6 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            settings: {
-              ...mockSettings,
-            },
             notifications: [],
           });
         });
@@ -186,9 +173,6 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            settings: {
-              ...mockSettings,
-            },
             notifications: [],
           });
         });
@@ -222,9 +206,6 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await act(async () => {
           renderWithAppContext(<FiltersRoute />, {
-            settings: {
-              ...mockSettings,
-            },
             notifications: [],
           });
         });

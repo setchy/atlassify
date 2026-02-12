@@ -2,6 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { Theme } from '../../shared/theme';
 
+import type { Account, Percentage } from '../types';
+
+import { queryClient } from '../utils/api/client';
 import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
 import * as zoom from '../utils/zoom';
@@ -52,17 +55,6 @@ describe('renderer/stores/subscriptions.ts', () => {
   let cleanup: (() => void) | null = null;
 
   beforeEach(() => {
-    // Reset all stores to default state
-    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
-    useAccountsStore.setState({ accounts: [] });
-    useFiltersStore.setState({
-      engagementStates: [],
-      categories: [],
-      readStates: [],
-      products: [],
-      actors: [],
-    });
-
     // Clear all mocks
     vi.clearAllMocks();
   });
@@ -83,7 +75,9 @@ describe('renderer/stores/subscriptions.ts', () => {
     });
 
     it('should initialize zoom level on startup', () => {
-      useSettingsStore.setState({ zoomPercentage: 150 as any });
+      useSettingsStore.setState({
+        zoomPercentage: 150 as Percentage,
+      });
 
       cleanup = initializeStoreSubscriptions();
 
@@ -131,7 +125,9 @@ describe('renderer/stores/subscriptions.ts', () => {
     });
 
     it('should update zoom level when zoomPercentage changes', () => {
-      useSettingsStore.getState().updateSetting('zoomPercentage', 200 as any);
+      useSettingsStore
+        .getState()
+        .updateSetting('zoomPercentage', 200 as Percentage);
 
       expect(zoom.zoomPercentageToLevel).toHaveBeenCalledWith(200);
       expect(mockZoom.setLevel).toHaveBeenCalledWith(20); // 200 / 10
@@ -139,16 +135,13 @@ describe('renderer/stores/subscriptions.ts', () => {
   });
 
   describe('Filters Store Subscriptions', () => {
-    beforeEach(async () => {
-      const { queryClient } = await import('../utils/api/client');
+    beforeEach(() => {
       cleanup = initializeStoreSubscriptions();
       vi.clearAllMocks(); // Clear calls from initialization
       vi.mocked(queryClient.invalidateQueries).mockClear();
     });
 
-    it('should invalidate queries when filters change', async () => {
-      const { queryClient } = await import('../utils/api/client');
-
+    it('should invalidate queries when filters change', () => {
       useFiltersStore.getState().updateFilter('readStates', 'unread', true);
 
       expect(queryClient.invalidateQueries).toHaveBeenCalledWith({
@@ -157,12 +150,10 @@ describe('renderer/stores/subscriptions.ts', () => {
       });
     });
 
-    it('should invalidate queries with correct query key based on accounts and settings', async () => {
-      const { queryClient } = await import('../utils/api/client');
-
+    it('should invalidate queries with correct query key based on accounts and settings', () => {
       // Set up accounts and settings
       useAccountsStore.setState({
-        accounts: [{ id: '1' } as any, { id: '2' } as any],
+        accounts: [{ id: '1' } as Account, { id: '2' } as Account],
       });
       useSettingsStore.setState({
         ...DEFAULT_SETTINGS_STATE,
@@ -180,9 +171,7 @@ describe('renderer/stores/subscriptions.ts', () => {
   });
 
   describe('Cleanup', () => {
-    it('should unsubscribe all listeners when cleanup is called', async () => {
-      const { queryClient } = await import('../utils/api/client');
-
+    it('should unsubscribe all listeners when cleanup is called', () => {
       cleanup = initializeStoreSubscriptions();
       vi.clearAllMocks();
 
@@ -255,7 +244,7 @@ describe('renderer/stores/subscriptions.ts', () => {
       // Set current zoom to 100%
       useSettingsStore.setState({
         ...DEFAULT_SETTINGS_STATE,
-        zoomPercentage: 100 as any,
+        zoomPercentage: 100 as Percentage,
       });
 
       // Mock getLevel to return same value (100%)
@@ -267,7 +256,11 @@ describe('renderer/stores/subscriptions.ts', () => {
       );
 
       // Trigger resize
-      resizeHandler!();
+      expect(resizeHandler).toBeDefined();
+      if (!resizeHandler) {
+        throw new Error('Resize handler not registered');
+      }
+      resizeHandler();
       vi.advanceTimersByTime(200);
 
       expect(updateSettingSpy).not.toHaveBeenCalled();
@@ -281,7 +274,11 @@ describe('renderer/stores/subscriptions.ts', () => {
       mockZoom.getLevel.mockReturnValue(12); // 120%
 
       // Trigger multiple resize events
-      resizeHandler!();
+      expect(resizeHandler).toBeDefined();
+      if (!resizeHandler) {
+        throw new Error('Resize handler not registered');
+      }
+      resizeHandler();
       resizeHandler();
       resizeHandler();
 

@@ -1,8 +1,6 @@
 import { AxiosError } from 'axios';
 
-import type { AccountsState, SettingsState } from '../../stores/types';
-
-import type { AccountNotifications } from '../../types';
+import type { Account, AccountNotifications } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -39,8 +37,8 @@ export function hasMoreNotifications(
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
-function getNotifications(auth: AccountsState) {
-  return auth.accounts.map((account) => {
+function getNotifications(accounts: Account[]) {
+  return accounts.map((account) => {
     return {
       account,
       notifications: getNotificationsForUser(account),
@@ -58,15 +56,13 @@ function getNotifications(auth: AccountsState) {
  *  - Ordering
  *
  * @param auth - The accounts state.
- * @param settings - The settings state.
  * @returns A promise that resolves to an array of account notifications.
  */
 export async function getAllNotifications(
-  auth: AccountsState,
-  settings: SettingsState,
+  accounts: Account[],
 ): Promise<AccountNotifications[]> {
   const accountNotifications: AccountNotifications[] = await Promise.all(
-    getNotifications(auth)
+    getNotifications(accounts)
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {
@@ -108,7 +104,7 @@ export async function getAllNotifications(
   );
 
   // Set the order property for the notifications
-  stabilizeNotificationsOrder(accountNotifications, settings);
+  stabilizeNotificationsOrder(accountNotifications);
 
   return accountNotifications;
 }
@@ -118,11 +114,9 @@ export async function getAllNotifications(
  * during notification interaction events (mark as read, mark as done, etc.)
  *
  * @param accountNotifications
- * @param settings
  */
 export function stabilizeNotificationsOrder(
   accountNotifications: AccountNotifications[],
-  _settings: SettingsState,
 ) {
   let orderIndex = 0;
 

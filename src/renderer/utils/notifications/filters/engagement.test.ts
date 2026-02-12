@@ -10,10 +10,6 @@ import type { AtlassifyNotification } from '../../../types';
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   it('hasEngagementStateFilters', () => {
     expect(engagementFilter.hasFilters()).toBe(false);
 

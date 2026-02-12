@@ -11014,6 +11014,7 @@ export type CplsUpdateViewSettingsInput = {
 export type CplsViewSettingsInput = {
   alwaysShowNumbersInGraph?: InputMaybe<Scalars['Boolean']['input']>;
   contributionValueType?: InputMaybe<CplsContributionValueType>;
+  showWorkViewResourcing?: InputMaybe<Scalars['Boolean']['input']>;
   timeScale?: InputMaybe<CplsTimeScaleType>;
 };
 
@@ -29094,6 +29095,7 @@ export enum InfluentsNotificationActorType {
 export enum InfluentsNotificationAppearance {
   Danger = 'DANGER',
   Default = 'DEFAULT',
+  Hidden = 'HIDDEN',
   Link = 'LINK',
   Primary = 'PRIMARY',
   Subtle = 'SUBTLE',
@@ -30075,6 +30077,14 @@ export enum JiraBacklogViewStrategy {
   None = 'NONE',
   /** Issues grouped by sprints, with a non-sprint backlog at the end. */
   Sprint = 'SPRINT'
+}
+
+/** Bar color mode for timeline view */
+export enum JiraBarColorMode {
+  /** Color timeline bars by custom colors */
+  Custom = 'CUSTOM',
+  /** Color timeline bars by status color */
+  Status = 'STATUS'
 }
 
 export enum JiraBatchWindowPreference {
@@ -37459,6 +37469,14 @@ export type JiraSetJswBoardViewSettingGroupByInput = {
   viewId: Scalars['ID']['input'];
 };
 
+/** Input to set a string list type view setting field of a board. */
+export type JiraSetJswBoardViewSettingsStringListInput = {
+  /** The swimlane value of the view setting field (list of swimlane Id in string). */
+  values: Array<Scalars['String']['input']>;
+  /** ARI of the view to set the view setting field for. */
+  viewId: Scalars['ID']['input'];
+};
+
 /** Input to set a toggle type view setting field of a board. */
 export type JiraSetJswBoardViewSettingsToggleInput = {
   /** The value of the view setting field. */
@@ -37490,11 +37508,27 @@ export type JiraSetProjectSelectedDeploymentAppsPropertyInput = {
   projectId: Scalars['ID']['input'];
 };
 
+/** Input to set bar color mode for a timeline view. */
+export type JiraSetTimelineBarColorModeInput = {
+  /** The bar color mode to set for the timeline view. */
+  barColorMode: JiraBarColorMode;
+  /** ARI of the timeline view to manipulate. */
+  viewId: Scalars['ID']['input'];
+};
+
 /** Input to set highlighted releases for a timeline view. */
 export type JiraSetTimelineHighlightedReleasesInput = {
   /** A list of version IDs to highlight on the timeline view. */
   highlightedReleases: Array<Scalars['ID']['input']>;
   /** ARI of the issue search view to manipulate. */
+  viewId: Scalars['ID']['input'];
+};
+
+/** Input to modify the hide releases of the timeline view config. */
+export type JiraSetTimelineViewHideReleasesInput = {
+  /** A boolean indicating whether or not to hide releases on the timeline. */
+  hideReleases: Scalars['Boolean']['input'];
+  /** ARI of the timeline view to manipulate. */
   viewId: Scalars['ID']['input'];
 };
 
@@ -42326,6 +42360,8 @@ export type MercuryAddWatcherToFocusAreaInput = {
 };
 
 export type MercuryArchiveFocusAreaChangeInput = {
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the Focus Area to archive. */
   targetFocusAreaId: Scalars['ID']['input'];
 };
@@ -42359,6 +42395,8 @@ export type MercuryAssignUserAccessToFocusAreaInput = {
 export type MercuryChangeParentFocusAreaChangeInput = {
   /** The ARI of the Focus Area being moved. */
   focusAreaId: Scalars['ID']['input'];
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the new parent Focus Area. */
   targetFocusAreaId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -42535,6 +42573,8 @@ export type MercuryCreateFocusAreaChangeInput = {
   focusAreaName: Scalars['String']['input'];
   /** The ARI of the Focus Area Type of the proposed Focus Area. */
   focusAreaTypeId: Scalars['ID']['input'];
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the parent Focus Area of the proposed Focus Area. */
   targetFocusAreaId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -43093,9 +43133,28 @@ export type MercuryLinkGoalsToFocusAreaInput = {
   focusAreaAri: Scalars['String']['input'];
 };
 
+export type MercuryLinkRiskToFocusAreasInput = {
+  /** The ARIs of the focus areas to link. */
+  focusAreaIds: Array<Scalars['ID']['input']>;
+  /** The ARI of the Risk to link focus areas to. */
+  id: Scalars['ID']['input'];
+};
+
 /**
  *  ------------------------------------------------------
- *   Work links
+ *   Change Proposal Work links
+ *  ------------------------------------------------------
+ */
+export type MercuryLinkWorkToChangeProposalInput = {
+  /** The proposal ID (ARI) to link work to. */
+  changeProposalId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to link to the proposal. */
+  workIds: Array<Scalars['ID']['input']>;
+};
+
+/**
+ *  ------------------------------------------------------
+ *   Focus Area Work links
  *  ------------------------------------------------------
  */
 export type MercuryLinkWorkToFocusAreaInput = {
@@ -43126,6 +43185,8 @@ export type MercuryMoveChangesInput = {
 export type MercuryMoveFundsChangeInput = {
   /** The amount of funds being requested to move. */
   amount: Scalars['BigDecimal']['input'];
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the Focus Area the Funds are being requested to move to. */
   sourceFocusAreaId: Scalars['ID']['input'];
   /** The ARI of the Focus Area the Funds are being requested for. */
@@ -43135,6 +43196,8 @@ export type MercuryMoveFundsChangeInput = {
 export type MercuryMovePositionsChangeInput = {
   /** The cost of the positions. */
   cost?: InputMaybe<Scalars['BigDecimal']['input']>;
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The amount of positions being requested to move. */
   positionsAmount: Scalars['Int']['input'];
   /** The ARI of the Focus Area the Positions are being requested to move to. */
@@ -43148,6 +43211,19 @@ export type MercuryMultiSelectCustomFieldInput = {
   options?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
+export type MercuryNormalizedWorkSearchFiltersInput = {
+  owner?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  source?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  status?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  targetDate?: InputMaybe<MercuryNormalizedWorkTargetDateInput>;
+  type?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type MercuryNormalizedWorkSortInput = {
+  fieldKey?: InputMaybe<Scalars['String']['input']>;
+  order: SortOrder;
+};
+
 export enum MercuryNormalizedWorkStatusColor {
   Blue = 'BLUE',
   Gray = 'GRAY',
@@ -43155,6 +43231,11 @@ export enum MercuryNormalizedWorkStatusColor {
   Red = 'RED',
   Yellow = 'YELLOW'
 }
+
+export type MercuryNormalizedWorkTargetDateInput = {
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryNormalizedWorkTargetDateType>;
+};
 
 export enum MercuryNormalizedWorkTargetDateType {
   Day = 'DAY',
@@ -43174,6 +43255,7 @@ export enum MercuryPermission {
   CreateFocusAreaUpdate = 'CREATE_FOCUS_AREA_UPDATE',
   CreateFocusAreaWorkLink = 'CREATE_FOCUS_AREA_WORK_LINK',
   CreateProposal = 'CREATE_PROPOSAL',
+  CreateRisk = 'CREATE_RISK',
   CreateStrategicEvent = 'CREATE_STRATEGIC_EVENT',
   DeleteFocusArea = 'DELETE_FOCUS_AREA',
   DeleteFocusAreaGoalLink = 'DELETE_FOCUS_AREA_GOAL_LINK',
@@ -43182,6 +43264,7 @@ export enum MercuryPermission {
   DeleteFocusAreaView = 'DELETE_FOCUS_AREA_VIEW',
   DeleteFocusAreaWorkLink = 'DELETE_FOCUS_AREA_WORK_LINK',
   DeleteProposal = 'DELETE_PROPOSAL',
+  DeleteRisk = 'DELETE_RISK',
   DeleteStrategicEvent = 'DELETE_STRATEGIC_EVENT',
   EditFocusAreaAbout = 'EDIT_FOCUS_AREA_ABOUT',
   EditFocusAreaName = 'EDIT_FOCUS_AREA_NAME',
@@ -43189,17 +43272,21 @@ export enum MercuryPermission {
   EditFocusAreaType = 'EDIT_FOCUS_AREA_TYPE',
   EditProposal = 'EDIT_PROPOSAL',
   EditProposalStatus = 'EDIT_PROPOSAL_STATUS',
+  EditRisk = 'EDIT_RISK',
   EditStrategicEvent = 'EDIT_STRATEGIC_EVENT',
   ExportFocusArea = 'EXPORT_FOCUS_AREA',
   ExportFocusAreaView = 'EXPORT_FOCUS_AREA_VIEW',
   Manage = 'MANAGE',
   Read = 'READ',
   ViewFocusAreaFund = 'VIEW_FOCUS_AREA_FUND',
+  ViewRisk = 'VIEW_RISK',
   ViewStrategicEvent = 'VIEW_STRATEGIC_EVENT',
   Write = 'WRITE'
 }
 
 export type MercuryPositionAllocationChangeInput = {
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the Position being allocated. */
   positionId: Scalars['ID']['input'];
   /** The ARI of the Focus Area the Position is being allocated from. */
@@ -43327,6 +43414,8 @@ export type MercuryRemoveWatcherFromFocusAreaInput = {
 export type MercuryRenameFocusAreaChangeInput = {
   /** The new name of the Focus Area (current value calculated from current). */
   newFocusAreaName: Scalars['String']['input'];
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the Focus Area being renamed. */
   targetFocusAreaId: Scalars['ID']['input'];
 };
@@ -43341,6 +43430,8 @@ export type MercuryReorderCustomFieldDefinitionOptionsInput = {
 export type MercuryRequestFundsChangeInput = {
   /** The amount of funds being requested for. */
   amount: Scalars['BigDecimal']['input'];
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The ARI of the Focus Area the Funds are being requested for. */
   targetFocusAreaId: Scalars['ID']['input'];
 };
@@ -43348,6 +43439,8 @@ export type MercuryRequestFundsChangeInput = {
 export type MercuryRequestPositionsChangeInput = {
   /** The cost of the positions. */
   cost?: InputMaybe<Scalars['BigDecimal']['input']>;
+  /** The reason or business justification for the proposed change. */
+  note?: InputMaybe<Scalars['String']['input']>;
   /** The amount of positions being requested. */
   positionsAmount?: InputMaybe<Scalars['Int']['input']>;
   /** The ARI of the Focus Area the Positions are being requested for. */
@@ -43459,7 +43552,6 @@ export type MercuryTransitionFocusAreaStatusInput = {
 };
 
 export type MercuryTransitionRiskStatusInput = {
-  cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The ID of the Risk to transition. */
   id: Scalars['ID']['input'];
   /** The ID of the status transition to apply. */
@@ -43483,6 +43575,20 @@ export type MercuryUnarchiveFocusAreaInput = {
 export type MercuryUnlinkGoalsFromChangeProposalInput = {
   changeProposalAri: Scalars['ID']['input'];
   goalAris: Array<Scalars['ID']['input']>;
+};
+
+export type MercuryUnlinkRiskFromFocusAreasInput = {
+  /** The ARIs of the focus areas to unlink. */
+  focusAreaIds: Array<Scalars['ID']['input']>;
+  /** The ARI of the Risk to unlink focus areas from. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUnlinkWorkFromChangeProposalInput = {
+  /** The proposal ID (ARI) to unlink work from. */
+  changeProposalId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to unlink from the proposal. */
+  workIds: Array<Scalars['ID']['input']>;
 };
 
 export type MercuryUnrankChangeProposalInViewInput = {

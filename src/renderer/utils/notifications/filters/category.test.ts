@@ -10,10 +10,6 @@ import type { AtlassifyNotification } from '../../../types';
 import { categoryFilter } from '.';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   it('hasCategoryFilters', () => {
     expect(categoryFilter.hasFilters()).toBe(false);
 

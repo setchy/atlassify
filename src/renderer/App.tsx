@@ -19,8 +19,8 @@ import './App.css';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 
-import { useAppContext } from './hooks/useAppContext';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
+import useAccountsStore from './stores/useAccountsStore';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';
@@ -36,7 +36,7 @@ migrateContextToZustand().catch((error) => {
 });
 
 function RequireAuth({ children }) {
-  const { isLoggedIn } = useAppContext();
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
   const location = useLocation();
 
   return isLoggedIn ? (

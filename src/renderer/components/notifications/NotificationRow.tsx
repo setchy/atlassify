@@ -10,6 +10,7 @@ import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { AtlassifyNotification } from '../../types';
 
@@ -37,8 +38,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread, settings } =
-    useAppContext();
+  const { markNotificationsRead, markNotificationsUnread } = useAppContext();
 
   const { t } = useTranslation();
 
@@ -47,12 +47,12 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(
-      shouldAnimateExit && settings.markAsReadOnOpen,
-    );
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
 
-    if (settings.markAsReadOnOpen) {
+  const actionNotificationInteraction = () => {
+    setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
+
+    if (markAsReadOnOpen) {
       markNotificationsRead([notification]);
     }
 

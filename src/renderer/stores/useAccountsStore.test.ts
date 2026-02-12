@@ -23,7 +23,7 @@ const mockAccount2: Account = {
 
 describe('useAccountsStore', () => {
   beforeEach(() => {
-    useAccountsStore.getState().reset();
+    useAccountsStore.setState({ accounts: [] });
   });
 
   test('should start with default state', () => {

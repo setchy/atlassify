@@ -10,10 +10,6 @@ import type { AtlassifyNotification } from '../../../types';
 import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   it('hasReadStateFilters', () => {
     expect(readStateFilter.hasFilters()).toBe(false);
 

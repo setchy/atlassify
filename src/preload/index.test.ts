@@ -2,6 +2,8 @@ import { vi } from 'vitest';
 
 import { EVENTS } from '../shared/events';
 
+import { api } from './index';
+
 // Mocks shared modules used inside preload
 const sendMainEventMock = vi.fn();
 const invokeMainEventMock = vi.fn();
@@ -65,13 +67,8 @@ describe('preload/index', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     MockNotification.instances = [];
+    exposeInMainWorldMock('atlassify', api);
   });
-
-  const importPreload = async () => {
-    // Ensure a fresh module instance each time
-    vi.resetModules();
-    return await import('./index');
-  };
 
   const getExposedApi = (): TestApi => {
     // API is always exposed via contextBridge
@@ -80,8 +77,6 @@ describe('preload/index', () => {
   };
 
   it('exposes api via contextBridge', async () => {
-    await importPreload();
-
     expect(exposeInMainWorldMock).toHaveBeenCalledTimes(1);
     const [key, api] = exposeInMainWorldMock.mock.calls[0];
     expect(key).toBe('atlassify');
@@ -91,8 +86,6 @@ describe('preload/index', () => {
   });
 
   it('tray.updateColor sends correct events', async () => {
-    await importPreload();
-
     const api = getExposedApi();
     api.tray.updateColor(-1);
 
@@ -104,8 +97,6 @@ describe('preload/index', () => {
   });
 
   it('openExternalLink sends event with payload', async () => {
-    await importPreload();
-
     const api = getExposedApi();
 
     api.openExternalLink('https://example.com', true);
@@ -119,9 +110,6 @@ describe('preload/index', () => {
   it('app.version returns dev in development', async () => {
     const originalEnv = process.env.NODE_ENV;
     process.env.NODE_ENV = 'development';
-
-    await importPreload();
-
     const api = getExposedApi();
 
     await expect(api.app.version()).resolves.toBe('dev');
@@ -133,9 +121,6 @@ describe('preload/index', () => {
     const originalEnv = process.env.NODE_ENV;
     process.env.NODE_ENV = 'production';
     invokeMainEventMock.mockResolvedValueOnce('1.2.3');
-
-    await importPreload();
-
     const api = getExposedApi();
 
     await expect(api.app.version()).resolves.toBe('v1.2.3');
@@ -143,8 +128,6 @@ describe('preload/index', () => {
   });
 
   it('onSystemThemeUpdate registers listener', async () => {
-    await importPreload();
-
     const api = getExposedApi();
     const callback = vi.fn();
     api.onSystemThemeUpdate(callback);
@@ -163,8 +146,6 @@ describe('preload/index', () => {
   });
 
   it('raiseNativeNotification without url calls app.show', async () => {
-    await importPreload();
-
     const api = getExposedApi();
 
     const notification = api.raiseNativeNotification(
@@ -178,8 +159,6 @@ describe('preload/index', () => {
   });
 
   it('raiseNativeNotification with url hides app then opens link', async () => {
-    await importPreload();
-
     const api = getExposedApi();
 
     const notification = api.raiseNativeNotification(

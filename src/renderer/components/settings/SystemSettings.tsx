@@ -15,9 +15,9 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { useAppContext } from '../../hooks/useAppContext';
 import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import { OpenPreference } from '../../stores/types';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import {
   canDecreaseVolume,
@@ -27,7 +27,19 @@ import {
 } from '../../utils/notifications/sound';
 
 export const SystemSettings: FC = () => {
-  const { settings, updateSetting } = useAppContext();
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+  const openLinks = useSettingsStore((s) => s.openLinks);
+  const keyboardShortcutEnabled = useSettingsStore(
+    (s) => s.keyboardShortcutEnabled,
+  );
+  const showSystemNotifications = useSettingsStore(
+    (s) => s.showSystemNotifications,
+  );
+  const playSoundNewNotifications = useSettingsStore(
+    (s) => s.playSoundNewNotifications,
+  );
+  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
+  const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
   const { t } = useTranslation();
 
@@ -47,7 +59,7 @@ export const SystemSettings: FC = () => {
   const volumeBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
 
-    visibility: settings.playSoundNewNotifications ? 'visible' : 'hidden',
+    visibility: playSoundNewNotifications ? 'visible' : 'hidden',
   });
 
   return (
@@ -60,27 +72,24 @@ export const SystemSettings: FC = () => {
             {t('settings.system.open_links')}:
           </Text>
           <RadioGroup
-            defaultValue={settings.openLinks}
+            defaultValue={openLinks}
             labelId="openLinks-label"
             onChange={(evt) => {
               updateSetting('openLinks', evt.target.value as OpenPreference);
             }}
             options={openLinksOptions}
-            value={settings.openLinks}
+            value={openLinks}
           />
         </Inline>
       </Box>
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.keyboardShortcutEnabled}
+          isChecked={keyboardShortcutEnabled}
           label={t('settings.system.keyboard_shortcut')}
           name="keyboardShortcutEnabled"
           onChange={() =>
-            updateSetting(
-              'keyboardShortcutEnabled',
-              !settings.keyboardShortcutEnabled,
-            )
+            updateSetting('keyboardShortcutEnabled', !keyboardShortcutEnabled)
           }
         />
         <InlineMessage appearance="info">
@@ -95,14 +104,11 @@ export const SystemSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.showSystemNotifications}
+          isChecked={showSystemNotifications}
           label={t('settings.system.system_notifications')}
           name="showNotifications"
           onChange={() =>
-            updateSetting(
-              'showSystemNotifications',
-              !settings.showSystemNotifications,
-            )
+            updateSetting('showSystemNotifications', !showSystemNotifications)
           }
         />
         <InlineMessage appearance="info">
@@ -114,13 +120,13 @@ export const SystemSettings: FC = () => {
 
       <Inline alignBlock="center" space="space.100">
         <Checkbox
-          isChecked={settings.playSoundNewNotifications}
+          isChecked={playSoundNewNotifications}
           label={t('settings.system.play_sound')}
           name="playSoundNewNotifications"
           onChange={() =>
             updateSetting(
               'playSoundNewNotifications',
-              !settings.playSoundNewNotifications,
+              !playSoundNewNotifications,
             )
           }
         />
@@ -128,7 +134,7 @@ export const SystemSettings: FC = () => {
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
               <Box paddingInline="space.150">
-                <Text>{settings.notificationVolume.toFixed(0)}%</Text>
+                <Text>{notificationVolume.toFixed(0)}%</Text>
               </Box>
               <Tooltip
                 content={t('settings.system.volume_down')}
@@ -136,12 +142,12 @@ export const SystemSettings: FC = () => {
               >
                 <IconButton
                   icon={VolumeLowIcon}
-                  isDisabled={!canDecreaseVolume(settings.notificationVolume)}
+                  isDisabled={!canDecreaseVolume(notificationVolume)}
                   label={t('settings.system.volume_down')}
                   onClick={() => {
                     updateSetting(
                       'notificationVolume',
-                      decreaseVolume(settings.notificationVolume),
+                      decreaseVolume(notificationVolume),
                     );
                   }}
                   shape="circle"
@@ -155,12 +161,12 @@ export const SystemSettings: FC = () => {
               >
                 <IconButton
                   icon={VolumeHighIcon}
-                  isDisabled={!canIncreaseVolume(settings.notificationVolume)}
+                  isDisabled={!canIncreaseVolume(notificationVolume)}
                   label={t('settings.system.volume_up')}
                   onClick={() => {
                     updateSetting(
                       'notificationVolume',
-                      increaseVolume(settings.notificationVolume),
+                      increaseVolume(notificationVolume),
                     );
                   }}
                   shape="circle"
@@ -194,12 +200,10 @@ export const SystemSettings: FC = () => {
       {!window.atlassify.platform.isLinux() && (
         <Inline space="space.100">
           <Checkbox
-            isChecked={settings.openAtStartup}
+            isChecked={openAtStartup}
             label={t('settings.system.startup')}
             name="openAtStartUp"
-            onChange={() =>
-              updateSetting('openAtStartup', !settings.openAtStartup)
-            }
+            onChange={() => updateSetting('openAtStartup', !openAtStartup)}
           />
           <InlineMessage appearance="info">
             <div className="w-60 text-xs">

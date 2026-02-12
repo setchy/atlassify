@@ -4,13 +4,9 @@ import { mockAtlassifyNotifications } from '../../../__mocks__/notifications-moc
 
 import useFiltersStore from '../../../stores/useFiltersStore';
 
-import { filterNotifications, hasActiveFilters } from '.';
+import { filterNotifications } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
-  beforeEach(() => {
-    useFiltersStore.getState().reset();
-  });
-
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -91,37 +87,37 @@ describe('renderer/utils/notifications/filter.ts', () => {
 
   describe('hasActiveFilters', () => {
     it('default filter settings', () => {
-      expect(hasActiveFilters()).toBe(false);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(false);
     });
 
     it('non-default engagement state filters', () => {
       useFiltersStore.setState({ engagementStates: ['mention'] });
 
-      expect(hasActiveFilters()).toBe(true);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
     });
 
     it('non-default category filters', () => {
       useFiltersStore.setState({ categories: ['direct'] });
 
-      expect(hasActiveFilters()).toBe(true);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
     });
 
     it('non-default actor filters', () => {
       useFiltersStore.setState({ actors: ['automation'] });
 
-      expect(hasActiveFilters()).toBe(true);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
     });
 
     it('non-default read state filters', () => {
       useFiltersStore.setState({ readStates: ['read'] });
 
-      expect(hasActiveFilters()).toBe(true);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
     });
 
     it('non-default product filters', () => {
       useFiltersStore.setState({ products: ['bitbucket'] });
 
-      expect(hasActiveFilters()).toBe(true);
+      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
     });
   });
 });
