@@ -1,10 +1,10 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { keybindings } from '../constants/keybindings';
+
 import useAccountsStore from '../stores/useAccountsStore';
 import useSettingsStore from '../stores/useSettingsStore';
-
-import { keybindings } from '../constants/keybindings';
 
 import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
