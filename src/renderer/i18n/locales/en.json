@@ -157,7 +157,8 @@
       "zoom": "Zoom",
       "zoom_in": "Zoom in",
       "zoom_out": "Zoom out",
-      "zoom_reset": "Reset zoom"
+      "zoom_reset": "Reset zoom",
+      "show_account_header": "Show account header"
     },
     "notifications": {
       "title": "Notifications",

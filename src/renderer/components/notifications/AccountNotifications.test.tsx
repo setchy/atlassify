@@ -37,6 +37,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
@@ -52,6 +53,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
@@ -70,6 +72,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
@@ -88,6 +91,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
@@ -101,6 +105,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: [],
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       await act(async () => {
@@ -120,6 +125,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
           descriptions: ['Error description'],
           emojis: ['🔥'],
         },
+        showAccountHeader: true,
       };
 
       await act(async () => {
@@ -129,8 +135,33 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       expect(screen.getByText('Error title')).toBeInTheDocument();
       expect(screen.getByText('Error description')).toBeInTheDocument();
     });
-  });
 
+    it('should hide the account header when disabled', () => {
+      const props: AccountNotificationsProps = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
+        error: null,
+        showAccountHeader: false,
+      };
+
+      renderWithAppContext(<AccountNotifications {...props} />);
+
+      expect(
+        screen.queryByTestId('account-profile--itemInner'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-pull-requests'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-mark-as-read'),
+      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-toggle')).not.toBeInTheDocument();
+    });
+  });
+});
+
+describe('account actions', () => {
   it('should open profile when clicked', async () => {
     const openAccountProfileSpy = vi
       .spyOn(links, 'openAccountProfile')
@@ -141,6 +172,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: [],
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {
@@ -165,6 +197,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: [],
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {
@@ -182,6 +215,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     const markNotificationsReadMock = vi.fn();
@@ -204,6 +238,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     const markNotificationsReadMock = vi.fn();
@@ -226,6 +261,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {

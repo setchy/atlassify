@@ -52,6 +52,7 @@ export interface AccountsActions {
   createAccount: (username: Username, token: Token) => Promise<void>;
   refreshAccount: (account: Account) => Promise<Account>;
   hasAccounts: () => boolean;
+  hasMultipleAccounts: () => boolean;
   isLoggedIn: () => boolean;
   hasUsernameAlready: (username: Username) => boolean;
   reset: () => void;
@@ -147,6 +148,11 @@ export interface AppearanceSettingsState {
    * The zoom percentage of the application.
    */
   zoomPercentage: Percentage;
+
+  /**
+   * Show account header
+   */
+  showAccountHeader: boolean;
 }
 
 /**
