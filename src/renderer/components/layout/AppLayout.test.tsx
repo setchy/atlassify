@@ -19,6 +19,6 @@ describe('renderer/components/layout/AppLayout.tsx', () => {
       },
     );
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 });

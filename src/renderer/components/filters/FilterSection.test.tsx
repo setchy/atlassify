@@ -36,7 +36,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       },
     );
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - none already set', async () => {

@@ -26,7 +26,7 @@ describe('renderer/routes/Landing.tsx', () => {
     useAccountsStore.setState({ accounts: [] });
     const tree = renderWithAppContext(<LandingRoute />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should redirect to notifications once logged in', () => {
