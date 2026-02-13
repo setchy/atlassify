@@ -5,34 +5,21 @@ import { keybindings } from '../constants/keybindings';
 import type { AccountNotifications, AtlassifyNotification } from '../types';
 
 import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/keyboard';
-import { openNotification } from '../utils/links';
 import { shouldRemoveNotificationsFromState } from '../utils/notifications/remove';
 
-interface UseNotificationsShortcutsOptions {
+interface UseKeyboardNavigationOptions {
   notifications: AccountNotifications[];
-  markAsReadOnOpen: boolean;
-  markNotificationsRead: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
-  markNotificationsUnread: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
 }
 
-interface UseNotificationsShortcutsResult {
+interface UseKeyboardNavigationResult {
   focusedNotificationId: string | null;
   focusNotification: (notificationId: string | null) => void;
 }
 
-export const useNotificationsShortcuts = (
-  options: UseNotificationsShortcutsOptions,
-): UseNotificationsShortcutsResult => {
-  const {
-    notifications,
-    markAsReadOnOpen,
-    markNotificationsRead,
-    markNotificationsUnread,
-  } = options;
+export const useKeyboardNavigation = (
+  options: UseKeyboardNavigationOptions,
+): UseKeyboardNavigationResult => {
+  const { notifications } = options;
 
   const [focusedNotificationId, setFocusedNotificationId] = useState<
     string | null
@@ -125,22 +112,20 @@ export const useNotificationsShortcuts = (
       return;
     }
 
-    const notification = notificationsById.get(focusedNotificationId);
-    if (!notification) {
+    const notificationElement = document.querySelector<HTMLElement>(
+      `[data-notification-id="${focusedNotificationId}"]`,
+    );
+
+    if (!notificationElement) {
       return;
     }
 
-    if (markAsReadOnOpen) {
-      markNotificationsRead([notification]);
-    }
+    const detailsButton = notificationElement.querySelector<HTMLElement>(
+      '[data-testid="notification-details"]',
+    );
 
-    openNotification(notification);
-  }, [
-    focusedNotificationId,
-    markAsReadOnOpen,
-    markNotificationsRead,
-    notificationsById,
-  ]);
+    detailsButton?.click();
+  }, [focusedNotificationId]);
 
   const toggleFocusedReadState = useCallback(() => {
     if (!focusedNotificationId) {
@@ -152,48 +137,46 @@ export const useNotificationsShortcuts = (
       return;
     }
 
-    const shouldRemoveOnRead =
-      notification.readState === 'unread' &&
-      shouldRemoveNotificationsFromState();
+    const notificationElement = document.querySelector<HTMLElement>(
+      `[data-notification-id="${focusedNotificationId}"]`,
+    );
 
-    if (shouldRemoveOnRead) {
-      const visibleIds = getVisibleNotificationIds();
-      const currentIndex = visibleIds.indexOf(focusedNotificationId);
-      const nextId =
-        currentIndex >= 0 ? (visibleIds[currentIndex + 1] ?? null) : null;
-
-      const waitForRemoval = () => {
-        const currentElement = document.querySelector(
-          `[data-notification-id="${focusedNotificationId}"]`,
-        );
-
-        if (currentElement) {
-          requestAnimationFrame(waitForRemoval);
-          return;
-        }
-
-        if (nextId) {
-          focusNotification(nextId);
-        } else {
-          focusNotification(null);
-        }
-      };
-
-      requestAnimationFrame(waitForRemoval);
-    }
-
-    if (notification.readState === 'read') {
-      markNotificationsUnread([notification]);
+    if (!notificationElement) {
       return;
     }
 
-    markNotificationsRead([notification]);
+    const isUnread = notification.readState === 'unread';
+    const buttonTestId = isUnread
+      ? 'notification-mark-as-read'
+      : 'notification-mark-as-unread';
+
+    const button = notificationElement.querySelector<HTMLElement>(
+      `[data-testid="${buttonTestId}"]`,
+    );
+
+    if (button) {
+      button.click();
+
+      // If marking as read and will be removed, advance focus to the next notification
+      if (isUnread && shouldRemoveNotificationsFromState()) {
+        const visibleIds = getVisibleNotificationIds();
+        const currentIndex = visibleIds.indexOf(focusedNotificationId);
+        const nextId =
+          currentIndex >= 0 ? (visibleIds[currentIndex + 1] ?? null) : null;
+
+        setTimeout(() => {
+          if (nextId) {
+            focusNotification(nextId);
+          } else {
+            focusNotification(null);
+          }
+        }, 100);
+      }
+    }
   }, [
     focusedNotificationId,
     focusNotification,
     getVisibleNotificationIds,
-    markNotificationsRead,
-    markNotificationsUnread,
     notificationsById,
   ]);
 
@@ -240,5 +223,8 @@ export const useNotificationsShortcuts = (
     };
   }, [moveFocus, openFocusedNotification, toggleFocusedReadState]);
 
-  return { focusedNotificationId, focusNotification };
+  return {
+    focusedNotificationId,
+    focusNotification,
+  };
 };

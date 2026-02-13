@@ -32,19 +32,21 @@ import { shouldRemoveNotificationsFromState } from '../../utils/notifications/re
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
   isProductAnimatingExit: boolean;
-  isFocused?: boolean;
-  onFocus?: (id: string) => void;
 }
 
 export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
-  isFocused = false,
-  onFocus,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread } = useAppContext();
+  const {
+    markNotificationsRead,
+    markNotificationsUnread,
+    focusedNotificationId,
+  } = useAppContext();
 
   const { t } = useTranslation();
+
+  const isFocused = focusedNotificationId === notification.id;
 
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
@@ -54,7 +56,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
 
   const actionNotificationInteraction = () => {
-    onFocus?.(notification.id);
     setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
 
     if (markAsReadOnOpen) {
@@ -65,13 +66,11 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   };
 
   const actionMarkAsRead = () => {
-    onFocus?.(notification.id);
     setShouldAnimateNotificationExit(shouldAnimateExit);
     markNotificationsRead([notification]);
   };
 
   const actionMarkAsUnread = () => {
-    onFocus?.(notification.id);
     markNotificationsUnread([notification]);
   };
 

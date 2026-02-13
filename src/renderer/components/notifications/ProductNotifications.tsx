@@ -19,14 +19,10 @@ import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
-  focusedNotificationId?: string | null;
-  onNotificationFocus?: (id: string) => void;
 }
 
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
-  focusedNotificationId,
-  onNotificationFocus,
 }) => {
   const { markNotificationsRead } = useAppContext();
 
@@ -160,11 +156,9 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       {isProductNotificationsVisible &&
         productNotifications.map((notification) => (
           <NotificationRow
-            isFocused={focusedNotificationId === notification.id}
             isProductAnimatingExit={shouldAnimateProductExit}
             key={notification.id}
             notification={notification}
-            onFocus={onNotificationFocus}
           />
         ))}
     </Stack>
