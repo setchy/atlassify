@@ -30,6 +30,7 @@ import { trackEvent } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
+  Errors,
 } from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
 import { filterNotifications } from '../utils/notifications/filters';
@@ -113,6 +114,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     isLoading,
     isFetching,
     isError,
+    isPaused,
     refetch,
   } = useQuery<AccountNotifications[], Error>({
     queryKey: notificationsQueryKey,
@@ -150,14 +152,24 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
       return 'loading';
     }
 
+    // Check if paused due to offline state first (instant detection)
+    if (isPaused) {
+      return 'error';
+    }
+
     if (isError) {
       return 'error';
     }
 
     return 'success';
-  }, [isLoading, isFetching, isError]);
+  }, [isLoading, isFetching, isPaused, isError]);
 
   const globalError: AtlassifyError = useMemo(() => {
+    // If paused due to offline, show network error
+    if (isPaused) {
+      return Errors.NETWORK;
+    }
+
     if (!isError || notifications.length === 0) {
       return null;
     }
@@ -170,7 +182,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     }
 
     return null;
-  }, [isError, notifications]);
+  }, [isPaused, isError, notifications]);
 
   const refetchNotifications = useCallback(async () => {
     await refetch();
