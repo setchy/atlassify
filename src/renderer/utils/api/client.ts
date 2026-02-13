@@ -47,7 +47,7 @@ export const queryClient = new QueryClient({
     queries: {
       retry: 1,
       refetchIntervalInBackground: true,
-      staleTime: 30000, // 30 seconds
+      staleTime: Constants.QUERY_STALE_TIME_MS,
       networkMode: 'online',
     },
   },
