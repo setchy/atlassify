@@ -5,7 +5,6 @@ import { keybindings } from '../constants/keybindings';
 import type { AccountNotifications, AtlassifyNotification } from '../types';
 
 import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/keyboard';
-import { shouldRemoveNotificationsFromState } from '../utils/notifications/remove';
 
 interface UseKeyboardNavigationOptions {
   notifications: AccountNotifications[];
@@ -157,21 +156,7 @@ export const useKeyboardNavigation = (
     if (button) {
       button.click();
 
-      // If marking as read and will be removed, advance focus to the next notification
-      if (isUnread && shouldRemoveNotificationsFromState()) {
-        const visibleIds = getVisibleNotificationIds();
-        const currentIndex = visibleIds.indexOf(focusedNotificationId);
-        const nextId =
-          currentIndex >= 0 ? (visibleIds[currentIndex + 1] ?? null) : null;
-
-        setTimeout(() => {
-          if (nextId) {
-            focusNotification(nextId);
-          } else {
-            focusNotification(null);
-          }
-        }, 100);
-      }
+      // TODO - Set focus for next notification after removing current one
     }
   }, [
     focusedNotificationId,
