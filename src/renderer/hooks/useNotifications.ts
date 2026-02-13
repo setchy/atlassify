@@ -196,8 +196,6 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
       return;
     }
 
-    // Get unfiltered data from cache to detect truly new notifications
-    // This prevents filter changes from triggering false "new notification" alerts
     const unfilteredNotifications =
       queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ||
       [];
