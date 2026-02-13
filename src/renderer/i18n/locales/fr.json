@@ -160,6 +160,26 @@
       "zoom_out": "Zoom out",
       "zoom_reset": "Réinitialiser le zoom"
     },
+    "keyboard_shortcuts": {
+      "accounts": "Ouvrir des comptes (à partir des paramètres)",
+      "expand": "Développer la notification",
+      "filters": "Filtres",
+      "first": "Première notification",
+      "general": "Général",
+      "group_by_product": "Regrouper par produit",
+      "group_by_title": "Regrouper par titre",
+      "home": "Maison",
+      "last": "Dernière notification",
+      "my_notifications": "Ouvrir mes notifications",
+      "navigate": "Se déplacer entre les notifications",
+      "notifications": "Liste des notifications",
+      "quit": "Quitter l'application",
+      "refresh": "Actualiser les notifications",
+      "settings": "Ouvrir les paramètres",
+      "title": "Raccourcis clavier",
+      "toggle_read": "Changer l'état de lecture",
+      "toggle_unread": "Activer/désactiver non lu uniquement"
+    },
     "notifications": {
       "delay_notification_state": "État de notification de retard",
       "delay_notification_state_help": "Gardez la notification dans {{appName}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",

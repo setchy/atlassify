@@ -38,9 +38,15 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread } = useAppContext();
+  const {
+    markNotificationsRead,
+    markNotificationsUnread,
+    focusedNotificationId,
+  } = useAppContext();
 
   const { t } = useTranslation();
+
+  const isFocused = focusedNotificationId === notification.id;
 
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
@@ -99,15 +105,25 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
   const notificationBodyText = formatNotificationBodyText(notification);
   const notificationFooterText = formatNotificationFooterText(notification);
+  const focusedStyles = isFocused
+    ? {
+        backgroundColor: token('color.background.selected'),
+        boxShadow: `inset 0 0 0 2px ${token('color.border.focused')}`,
+      }
+    : undefined;
 
   return (
     <div
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
+        isFocused && 'bg-atlassify-notifications',
         (isProductAnimatingExit || shouldAnimateNotificationExit) &&
           'translate-x-full opacity-0 transition duration-350 ease-in-out',
       )}
+      data-notification-id={notification.id}
+      data-notification-row="true"
       id={notification.id}
+      style={focusedStyles}
     >
       <Box padding="space.100">
         <Inline alignBlock="center" space={spaceBetweenSections}>

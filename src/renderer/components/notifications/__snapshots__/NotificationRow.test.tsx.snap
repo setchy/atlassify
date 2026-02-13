@@ -4,6 +4,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div
@@ -278,6 +280,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div
@@ -533,6 +537,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div
@@ -892,6 +898,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div
@@ -1160,6 +1168,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div
@@ -1431,6 +1441,8 @@ exports[`renderer/components/notifications/NotificationRow.tsx > should render n
 <div>
   <div
     class="border-b border-atlassify-notifications hover:bg-atlassify-notifications"
+    data-notification-id="138661096"
+    data-notification-row="true"
     id="138661096"
   >
     <div

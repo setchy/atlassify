@@ -18,7 +18,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { APPLICATION } from '../../shared/constants';
 
 import { useAppContext } from '../hooks/useAppContext';
-import { useShortcutActions } from '../hooks/useShortcutActions';
+import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 import { useAccountsStore } from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
 import useSettingsStore from '../stores/useSettingsStore';
@@ -37,7 +37,7 @@ const SidebarComponent: FC = () => {
 
   const { t } = useTranslation();
 
-  const { shortcuts } = useShortcutActions();
+  const { shortcuts } = useGlobalShortcuts();
 
   // Subscribe to settings from store
   const fetchOnlyUnreadNotifications = useSettingsStore(

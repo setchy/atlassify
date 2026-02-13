@@ -1,6 +1,7 @@
 import { createContext, type ReactNode, useEffect, useMemo } from 'react';
 
 import { useAccounts } from '../hooks/useAccounts';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import { useNotifications } from '../hooks/useNotifications';
 import useAccountsStore from '../stores/useAccountsStore';
 import useFiltersStore from '../stores/useFiltersStore';
@@ -32,6 +33,8 @@ export interface AppContextState {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+
+  focusedNotificationId: string | null;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -71,6 +74,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // Periodic account refreshes
   useAccounts(accounts);
 
+  // Keyboard navigation
+  const { focusedNotificationId } = useKeyboardNavigation({
+    notifications,
+  });
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
     const trayCount = status === 'error' ? -1 : notificationCount;
@@ -106,6 +114,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsRead,
       markNotificationsUnread,
+
+      focusedNotificationId,
     }),
     [
       status,
@@ -120,6 +130,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsRead,
       markNotificationsUnread,
+
+      focusedNotificationId,
     ],
   );
 
