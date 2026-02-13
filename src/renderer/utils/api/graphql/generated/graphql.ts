@@ -40567,6 +40567,12 @@ export type KitsuneSourceInputWeb = {
   url: Scalars['String']['input'];
 };
 
+export enum KitsuneSummaryStatus {
+  Done = 'DONE',
+  Error = 'ERROR',
+  Generating = 'GENERATING'
+}
+
 export type KitsuneViewConfigInput = {
   filters: Array<KitsuneFilterInput>;
   logicalOperator: KitsuneLogicalOperator;
@@ -45021,6 +45027,7 @@ export enum PolarisViewSetType {
   Capture = 'CAPTURE',
   Custom = 'CUSTOM',
   Deliver = 'DELIVER',
+  Global = 'GLOBAL',
   Prioritize = 'PRIORITIZE',
   /**  for views that are used to manage the display of single ideas (e.g., Idea views) */
   Section = 'SECTION',
