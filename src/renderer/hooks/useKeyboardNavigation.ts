@@ -12,7 +12,6 @@ interface UseKeyboardNavigationOptions {
 
 interface UseKeyboardNavigationResult {
   focusedNotificationId: string | null;
-  focusNotification: (notificationId: string | null) => void;
 }
 
 export const useKeyboardNavigation = (
@@ -210,6 +209,5 @@ export const useKeyboardNavigation = (
 
   return {
     focusedNotificationId,
-    focusNotification,
   };
 };

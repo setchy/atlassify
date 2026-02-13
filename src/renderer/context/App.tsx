@@ -35,7 +35,6 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
-  focusNotification: (notificationId: string | null) => void;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -76,7 +75,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   useAccounts(accounts);
 
   // Keyboard navigation
-  const { focusedNotificationId, focusNotification } = useKeyboardNavigation({
+  const { focusedNotificationId } = useKeyboardNavigation({
     notifications,
   });
 
@@ -117,7 +116,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-      focusNotification,
     }),
     [
       status,
@@ -134,7 +132,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-      focusNotification,
     ],
   );
 

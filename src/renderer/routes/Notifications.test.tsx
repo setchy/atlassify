@@ -114,7 +114,6 @@ describe('renderer/routes/Notifications.tsx', () => {
       markNotificationsRead: vi.fn(),
       markNotificationsUnread: vi.fn(),
       focusedNotificationId: null,
-      focusNotification: vi.fn(),
     };
 
     const tree = render(
