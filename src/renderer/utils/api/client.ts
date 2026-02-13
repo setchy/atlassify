@@ -48,6 +48,7 @@ export const queryClient = new QueryClient({
       retry: 1,
       refetchIntervalInBackground: true,
       staleTime: 30000, // 30 seconds
+      networkMode: 'online',
     },
   },
 });
