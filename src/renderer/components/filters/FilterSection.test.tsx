@@ -1,17 +1,28 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
+
+import useFiltersStore from '../../stores/useFiltersStore';
 
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';
 
 describe('renderer/components/filters/FilterSection.tsx', () => {
-  const updateFilterMock = jest.fn();
-
   const mockFilter = engagementFilter;
-  const mockFilterSetting = 'filterEngagementStates';
+  const mockFilterSetting = 'engagementStates';
+  let updateFilterSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(() => {
+    updateFilterSpy = vi.spyOn(useFiltersStore.getState(), 'updateFilter');
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
 
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(
@@ -25,7 +36,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       },
     );
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - none already set', async () => {
@@ -37,13 +48,12 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       />,
       {
         notifications: [],
-        updateFilter: updateFilterMock,
       },
     );
 
     await userEvent.click(screen.getByLabelText('Mentions'));
 
-    expect(updateFilterMock).toHaveBeenCalledWith(
+    expect(updateFilterSpy).toHaveBeenCalledWith(
       mockFilterSetting,
       'mention',
       true,
@@ -55,6 +65,8 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
+    useFiltersStore.setState({ engagementStates: ['mention'] });
+
     renderWithAppContext(
       <FilterSection
         filter={mockFilter}
@@ -62,17 +74,13 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
         title={'FilterSectionTitle'}
       />,
       {
-        settings: {
-          filterEngagementStates: ['mention'],
-        },
         notifications: [],
-        updateFilter: updateFilterMock,
       },
     );
 
     await userEvent.click(screen.getByLabelText('Comments'));
 
-    expect(updateFilterMock).toHaveBeenCalledWith(
+    expect(updateFilterSpy).toHaveBeenCalledWith(
       mockFilterSetting,
       'comment',
       true,

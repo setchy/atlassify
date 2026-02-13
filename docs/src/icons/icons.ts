@@ -17,6 +17,11 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'react',
   },
   {
+    name: 'Electron Vite',
+    link: 'https://electron-vite.github.io/',
+    svg: 'electron-vite',
+  },
+  {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
     svg: 'tailwindcss',

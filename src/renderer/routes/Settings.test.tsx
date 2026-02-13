@@ -2,21 +2,21 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
 import { SettingsRoute } from './Settings';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Settings.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', async () => {
@@ -29,6 +29,12 @@ describe('renderer/routes/Settings.tsx', () => {
     });
 
     expect(screen.getByTestId('settings')).toMatchSnapshot();
+    expect(screen.getByTestId('settings')).toBeInTheDocument();
+    expect(screen.getByText('Appearance')).toBeInTheDocument();
+    expect(screen.getByText('Notifications')).toBeInTheDocument();
+    expect(screen.getByText('Tray')).toBeInTheDocument();
+    expect(screen.getByText('Settings')).toBeInTheDocument();
+    expect(screen.getByTestId('settings-reset-defaults')).toBeInTheDocument();
   });
 
   it('should go back by pressing the icon', async () => {
@@ -37,15 +43,11 @@ describe('renderer/routes/Settings.tsx', () => {
         <MemoryRouter initialEntries={['/settings']}>
           <SettingsRoute />
         </MemoryRouter>,
-        {
-          fetchNotifications: fetchNotificationsMock,
-        },
       );
     });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
-    expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith(-1);
   });

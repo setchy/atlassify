@@ -1,4 +1,4 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
@@ -8,10 +8,19 @@ import { Inline, Stack } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 export const NotificationSettings: FC = () => {
-  const { settings, updateSetting } = useContext(AppContext);
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+  const groupNotificationsByProductAlphabetically = useSettingsStore(
+    (s) => s.groupNotificationsByProductAlphabetically,
+  );
+  const delayNotificationState = useSettingsStore(
+    (s) => s.delayNotificationState,
+  );
+
   const { t } = useTranslation();
 
   return (
@@ -19,23 +28,21 @@ export const NotificationSettings: FC = () => {
       <Heading size="small">{t('settings.notifications.title')}</Heading>
 
       <Checkbox
-        isChecked={settings.markAsReadOnOpen}
+        isChecked={markAsReadOnOpen}
         label={t('settings.notifications.mark_as_read_on_open')}
         name="markAsReadOnOpen"
-        onChange={() =>
-          updateSetting('markAsReadOnOpen', !settings.markAsReadOnOpen)
-        }
+        onChange={() => updateSetting('markAsReadOnOpen', !markAsReadOnOpen)}
       />
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.groupNotificationsByProductAlphabetically}
+          isChecked={groupNotificationsByProductAlphabetically}
           label={t('settings.notifications.group_alphabetically')}
           name="groupNotificationsByProductAlphabetically"
           onChange={() =>
             updateSetting(
               'groupNotificationsByProductAlphabetically',
-              !settings.groupNotificationsByProductAlphabetically,
+              !groupNotificationsByProductAlphabetically,
             )
           }
         />
@@ -48,14 +55,11 @@ export const NotificationSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.delayNotificationState}
+          isChecked={delayNotificationState}
           label={t('settings.notifications.delay_notification_state')}
           name="delayNotificationState"
           onChange={() =>
-            updateSetting(
-              'delayNotificationState',
-              !settings.delayNotificationState,
-            )
+            updateSetting('delayNotificationState', !delayNotificationState)
           }
         />
         <InlineMessage appearance="info">

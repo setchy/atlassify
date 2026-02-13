@@ -1,248 +1,120 @@
-import { act, fireEvent, waitFor } from '@testing-library/react';
-import { useContext } from 'react';
+import { act, render } from '@testing-library/react';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { vi } from 'vitest';
+
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
-import { mockSettings } from '../__mocks__/state-mocks';
 
-import { Constants } from '../constants';
-
+import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
-
-import type { AuthState, SettingsState } from '../types';
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import * as notifications from '../utils/notifications/notifications';
-import * as storage from '../utils/storage';
-import { AppContext, type AppContextState, AppProvider } from './App';
-import { defaultSettings } from './defaults';
+import { type AppContextState, AppProvider } from './App';
 
-jest.mock('../hooks/useNotifications');
+vi.mock('../hooks/useNotifications');
 
-// Helper to render a button that calls a context method when clicked
-const renderContextButton = (
-  contextMethodName: keyof AppContextState,
-  ...args: unknown[]
-) => {
-  const TestComponent = () => {
-    const context = useContext(AppContext);
-    const method = context[contextMethodName];
-    return (
-      <button
-        data-testid="context-method-button"
-        onClick={() => {
-          if (typeof method === 'function') {
-            (method as (...args: unknown[]) => void)(...args);
-          }
-        }}
-        type="button"
-      >
-        {String(contextMethodName)}
-      </button>
-    );
+// Helper to render the context
+const renderWithContext = () => {
+  let context!: AppContextState;
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
+      },
+    },
+  });
+
+  const CaptureContext = () => {
+    context = useAppContext();
+    return null;
   };
 
-  const result = renderWithAppContext(
-    <AppProvider>
-      <TestComponent />
-    </AppProvider>,
+  render(
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <CaptureContext />
+      </AppProvider>
+    </QueryClientProvider>,
   );
 
-  const button = result.getByTestId('context-method-button');
-  return { ...result, button };
+  return () => context;
 };
 
 describe('renderer/context/App.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-  const markNotificationsReadMock = jest.fn();
-  const markNotificationsUnreadMock = jest.fn();
-
-  const saveStateSpy = jest
-    .spyOn(storage, 'saveState')
-    .mockImplementation(jest.fn());
+  const refetchNotificationsMock = vi.fn();
+  const markNotificationsReadMock = vi.fn();
+  const markNotificationsUnreadMock = vi.fn();
 
   beforeEach(() => {
-    jest.useFakeTimers();
-    (useNotifications as jest.Mock).mockReturnValue({
-      fetchNotifications: fetchNotificationsMock,
+    // Initialize stores with default values
+    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
+
+    vi.useFakeTimers();
+    vi.mocked(useNotifications).mockReturnValue({
+      status: 'success',
+      globalError: null,
+      notifications: [],
+      notificationCount: 0,
+      hasNotifications: false,
+      hasMoreAccountNotifications: false,
+      refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-    });
+    } as ReturnType<typeof useNotifications>);
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    jest.clearAllMocks();
+    vi.clearAllTimers();
+    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
-    const getNotificationCountSpy = jest.spyOn(
+    const getNotificationCountSpy = vi.spyOn(
       notifications,
       'getNotificationCount',
     );
     getNotificationCountSpy.mockReturnValue(1);
 
-    const mockDefaultState = {
-      auth: { accounts: [] },
-      settings: mockSettings,
-    };
-
-    it('fetch notifications each interval', async () => {
-      renderWithAppContext(<AppProvider>{null}</AppProvider>);
-
-      await waitFor(() =>
-        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1),
-      );
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(2);
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(3);
-
-      act(() => {
-        jest.advanceTimersByTime(Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
-      });
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(4);
-    });
-
     it('should call fetchNotifications', async () => {
-      const { button } = renderContextButton('fetchNotifications');
+      const getContext = renderWithContext();
+      refetchNotificationsMock.mockReset();
 
-      fetchNotificationsMock.mockReset();
+      await act(async () => {
+        await getContext().fetchNotifications();
+      });
 
-      fireEvent.click(button);
-
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      expect(refetchNotificationsMock).toHaveBeenCalledTimes(1);
     });
 
     it('should call markNotificationsRead', async () => {
-      const { button } = renderContextButton('markNotificationsRead', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith(mockDefaultState, [
+      expect(markNotificationsReadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
     });
 
     it('should call markNotificationsUnread', async () => {
-      const { button } = renderContextButton('markNotificationsUnread', [
-        mockSingleAtlassifyNotification,
-      ]);
+      const getContext = renderWithContext();
 
-      fireEvent.click(button);
+      act(() => {
+        getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
+      });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith(
-        mockDefaultState,
-        [mockSingleAtlassifyNotification],
-      );
-    });
-  });
-
-  describe('settings methods', () => {
-    it('should call updateSetting', async () => {
-      const { button } = renderContextButton(
-        'updateSetting',
-        'playSoundNewNotifications',
-        true,
-      );
-
-      fireEvent.click(button);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...defaultSettings,
-          playSoundNewNotifications: true,
-        } as SettingsState,
-      });
-    });
-
-    it('should call resetSettings', async () => {
-      const { button } = renderContextButton('resetSettings');
-
-      fireEvent.click(button);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: defaultSettings,
-      });
-    });
-  });
-
-  describe('filter methods', () => {
-    it('should update filter - checked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        true,
-      );
-
-      fireEvent.click(button);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterCategories: ['direct'],
-        },
-      });
-    });
-
-    it('should update filter - unchecked', async () => {
-      const { button } = renderContextButton(
-        'updateFilter',
-        'filterCategories',
-        'direct',
-        false,
-      );
-
-      fireEvent.click(button);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterCategories: [],
-        },
-      });
-    });
-
-    it('should clear filters back to default', async () => {
-      const { button } = renderContextButton('clearFilters');
-
-      fireEvent.click(button);
-
-      expect(saveStateSpy).toHaveBeenCalledWith({
-        auth: {
-          accounts: [],
-        } as AuthState,
-        settings: {
-          ...mockSettings,
-          filterEngagementStates: defaultSettings.filterEngagementStates,
-          filterCategories: defaultSettings.filterCategories,
-          filterActors: defaultSettings.filterActors,
-          filterReadStates: defaultSettings.filterReadStates,
-          filterProducts: defaultSettings.filterProducts,
-        },
-      });
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
+        mockSingleAtlassifyNotification,
+      ]);
     });
   });
 });

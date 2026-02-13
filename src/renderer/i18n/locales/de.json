@@ -152,12 +152,33 @@
     "appearance": {
       "language": "Sprache",
       "language_select": "Sprache auswählen",
+      "show_account_header": "Kontokopf anzeigen",
       "theme": "Thema",
       "title": "Aussehen",
       "zoom": "Zoom",
       "zoom_in": "Zoomen",
       "zoom_out": "Zoomen",
       "zoom_reset": "Zoom zurücksetzen"
+    },
+    "keyboard_shortcuts": {
+      "accounts": "Konten eröffnen (aus den Einstellungen)",
+      "expand": "Benachrichtigung erweitern",
+      "filters": "Filter",
+      "first": "Erste Benachrichtigung",
+      "general": "Allgemein",
+      "group_by_product": "Nach Produkt gruppieren",
+      "group_by_title": "Nach Titel gruppieren",
+      "home": "Heim",
+      "last": "Letzte Benachrichtigung",
+      "my_notifications": "Öffnen Sie „Meine Benachrichtigungen“.",
+      "navigate": "Wechseln Sie zwischen Benachrichtigungen",
+      "notifications": "Benachrichtigungsliste",
+      "quit": "Beenden Sie die App",
+      "refresh": "Benachrichtigungen aktualisieren",
+      "settings": "Einstellungen öffnen",
+      "title": "Tastaturkürzel",
+      "toggle_read": "Lesestatus ändern",
+      "toggle_unread": "Nur ungelesen umschalten"
     },
     "notifications": {
       "delay_notification_state": "Verzögerung des Benachrichtigungszustands",

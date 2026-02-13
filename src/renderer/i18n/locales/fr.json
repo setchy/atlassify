@@ -152,12 +152,33 @@
     "appearance": {
       "language": "Langue",
       "language_select": "Sélectionner la langue",
+      "show_account_header": "Afficher l'en-tête du compte",
       "theme": "Thème",
       "title": "Apparence",
       "zoom": "Zoom",
       "zoom_in": "Zoomer",
       "zoom_out": "Zoom out",
       "zoom_reset": "Réinitialiser le zoom"
+    },
+    "keyboard_shortcuts": {
+      "accounts": "Ouvrir des comptes (à partir des paramètres)",
+      "expand": "Développer la notification",
+      "filters": "Filtres",
+      "first": "Première notification",
+      "general": "Général",
+      "group_by_product": "Regrouper par produit",
+      "group_by_title": "Regrouper par titre",
+      "home": "Maison",
+      "last": "Dernière notification",
+      "my_notifications": "Ouvrir mes notifications",
+      "navigate": "Se déplacer entre les notifications",
+      "notifications": "Liste des notifications",
+      "quit": "Quitter l'application",
+      "refresh": "Actualiser les notifications",
+      "settings": "Ouvrir les paramètres",
+      "title": "Raccourcis clavier",
+      "toggle_read": "Changer l'état de lecture",
+      "toggle_unread": "Activer/désactiver non lu uniquement"
     },
     "notifications": {
       "delay_notification_state": "État de notification de retard",

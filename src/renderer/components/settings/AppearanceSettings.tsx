@@ -1,7 +1,8 @@
-import { type FC, useCallback, useContext, useEffect } from 'react';
+import { type FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
+import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
@@ -15,7 +16,8 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
 
-import { AppContext } from '../../context/App';
+import useAccountsStore from '../../stores/useAccountsStore';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import { LANGUAGES } from '../../i18n/types';
 
@@ -31,12 +33,17 @@ import {
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
-  const { settings, updateSetting } = useContext(AppContext);
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
+
+  const { t, i18n } = useTranslation();
+
+  const theme = useSettingsStore((s) => s.theme);
+
   const zoomPercentage = zoomLevelToPercentage(
     window.atlassify.zoom.getLevel(),
   );
-
-  const { t } = useTranslation();
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
@@ -44,12 +51,12 @@ export const AppearanceSettings: FC = () => {
 
   useEffect(() => {
     window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
-      if (settings.theme === Theme.SYSTEM) {
+      if (theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
         setGlobalTheme({ colorMode: 'auto' });
       }
     });
-  }, [settings.theme]);
+  }, [theme]);
 
   const themeOptions: OptionsPropType = [
     {
@@ -66,8 +73,6 @@ export const AppearanceSettings: FC = () => {
     },
     { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
   ];
-
-  const { i18n } = useTranslation();
 
   const handleLanguageChange = useCallback(
     (option) => {
@@ -108,13 +113,13 @@ export const AppearanceSettings: FC = () => {
             {t('settings.appearance.theme')}:
           </Text>
           <RadioGroup
-            defaultValue={settings.theme}
+            defaultValue={theme}
             labelId="theme-label"
             onChange={(evt) => {
               updateSetting('theme', evt.target.value as Theme);
             }}
             options={themeOptions}
-            value={settings.theme}
+            value={theme}
           />
         </Inline>
       </Box>
@@ -176,6 +181,17 @@ export const AppearanceSettings: FC = () => {
           </Inline>
         </Inline>
       </Box>
+
+      {!hasMultipleAccounts && (
+        <Checkbox
+          isChecked={showAccountHeader}
+          label={t('settings.appearance.show_account_header')}
+          name="showAccountHeader"
+          onChange={() =>
+            updateSetting('showAccountHeader', !showAccountHeader)
+          }
+        />
+      )}
     </Stack>
   );
 };

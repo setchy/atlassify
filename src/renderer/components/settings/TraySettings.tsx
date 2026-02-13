@@ -1,4 +1,4 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
@@ -8,10 +8,17 @@ import { Inline, Stack } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 export const TraySettings: FC = () => {
-  const { settings, updateSetting } = useContext(AppContext);
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  const showNotificationsCountInTray = useSettingsStore(
+    (s) => s.showNotificationsCountInTray,
+  );
+  const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
+  const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
+
   const { t } = useTranslation();
 
   return (
@@ -21,13 +28,13 @@ export const TraySettings: FC = () => {
       {window.atlassify.platform.isMacOS() && (
         <Inline space="space.100">
           <Checkbox
-            isChecked={settings.showNotificationsCountInTray}
+            isChecked={showNotificationsCountInTray}
             label={t('settings.tray.show_count_in_tray')}
             name="showNotificationsCountInTray"
             onChange={() =>
               updateSetting(
                 'showNotificationsCountInTray',
-                !settings.showNotificationsCountInTray,
+                !showNotificationsCountInTray,
               )
             }
           />
@@ -41,11 +48,11 @@ export const TraySettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.useUnreadActiveIcon}
+          isChecked={useUnreadActiveIcon}
           label={t('settings.tray.unread_active_icon')}
           name="useUnreadActiveIcon"
           onChange={() =>
-            updateSetting('useUnreadActiveIcon', !settings.useUnreadActiveIcon)
+            updateSetting('useUnreadActiveIcon', !useUnreadActiveIcon)
           }
         />
         <InlineMessage appearance="info">
@@ -59,14 +66,11 @@ export const TraySettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={settings.useAlternateIdleIcon}
+          isChecked={useAlternateIdleIcon}
           label={t('settings.tray.alternate_icon')}
           name="useAlternateIdleIcon"
           onChange={() =>
-            updateSetting(
-              'useAlternateIdleIcon',
-              !settings.useAlternateIdleIcon,
-            )
+            updateSetting('useAlternateIdleIcon', !useAlternateIdleIcon)
           }
         />
         <InlineMessage appearance="info">

@@ -1,4 +1,10 @@
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+
+import { config } from 'dotenv';
+
+// Load environment variables
+config();
 
 import {
   app,
@@ -12,14 +18,17 @@ import {
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
+import { initialize, trackEvent } from '@aptabase/electron/main';
+
 import { APPLICATION } from '../shared/constants';
 import {
   EVENTS,
+  type IAptabaseEvent,
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../shared/events';
-import { logWarn } from '../shared/logger';
+import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
@@ -27,22 +36,35 @@ import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
+import { isDevMode } from './utils';
 
 log.initialize();
 
+const aptabaseKey = process.env.APTABASE_KEY;
+if (!aptabaseKey) {
+  logError(
+    'main:initialize',
+    'APTABASE_KEY environment variable is not set',
+    new Error('APTABASE_KEY environment variable is not set'),
+  );
+} else {
+  initialize(aptabaseKey);
+  logInfo('aptabase', 'initialized successfully');
+}
+
 /**
- * File paths
+ * File and directory paths / URLs
  */
-const preloadFilePath = path.join(__dirname, 'preload.js');
-const indexHtmlFilePath = `file://${__dirname}/index.html`;
-const notificationSoundFilePath = path.join(
-  __dirname,
-  '..',
-  'assets',
-  'sounds',
-  APPLICATION.NOTIFICATION_SOUND,
-);
-const twemojiDirPath = path.join(__dirname, 'images', 'twemoji');
+const preloadFilePath = path.resolve(__dirname, 'preload.js');
+const indexHtmlFileURL = isDevMode()
+  ? process.env.VITE_DEV_SERVER_URL
+  : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
+const notificationSoundFileURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
+).href;
+const twemojiFolderURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'images', 'twemoji'),
+).href;
 
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
@@ -55,12 +77,14 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     preload: preloadFilePath,
     contextIsolation: true,
     nodeIntegration: false,
+    // Disable web security in development to allow CORS requests
+    webSecurity: !process.env.VITE_DEV_SERVER_URL,
   },
 };
 
 const mb = menubar({
   icon: TrayIcons.idle,
-  index: indexHtmlFilePath,
+  index: indexHtmlFileURL,
   browserWindow: browserWindowOpts,
   preloadWindow: true,
   showDockIcon: false, // Hide the app from the macOS dock
@@ -75,6 +99,7 @@ let shouldUseAlternateIdleIcon = false;
 let shouldUseUnreadActiveIcon = true;
 
 app.whenReady().then(async () => {
+  trackEvent('Application', { event: 'Launched' });
   preventSecondInstance();
 
   await onFirstRunMaybe();
@@ -200,17 +225,24 @@ app.whenReady().then(async () => {
   });
 
   /**
+   * Custom Aptabase TrackEvent handler, since we don't expose their IPC channels
+   */
+  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
+    trackEvent(event.eventName, event.props);
+  });
+
+  /**
    * Atlassify custom IPC events - response expected
    */
 
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
 
   handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
-    return notificationSoundFilePath;
+    return notificationSoundFileURL;
   });
 
   handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
-    return twemojiDirPath;
+    return twemojiFolderURL;
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
@@ -218,7 +250,18 @@ app.whenReady().then(async () => {
   });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
-    return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    try {
+      return safeStorage.decryptString(Buffer.from(value, 'base64'));
+    } catch (error) {
+      // If decryption fails, the data was likely encrypted with a different app identity
+      // This can happen when migrating between build systems or changing app configuration
+      logError(
+        'main:safe-storage-decrypt',
+        'Failed to decrypt value - data may be from old build',
+        error,
+      );
+      throw error;
+    }
   });
 });
 

@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import {
   mockAccountNotifications,
   mockSingleAccountNotifications,
@@ -7,7 +9,7 @@ import * as native from './native';
 
 describe('renderer/utils/notifications/native.ts', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should raise a native notification for a single new notification', () => {

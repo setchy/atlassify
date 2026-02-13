@@ -1,7 +1,12 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { quitApp } from '../utils/comms';
+import { keybindings } from '../constants/keybindings';
+
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
+
+import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
 
@@ -32,61 +37,88 @@ type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
  * Centralized shortcut actions + enabled state + hotkeys.
  * Used by both the global shortcuts component and UI buttons to avoid duplication.
  */
-export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
+export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoggedIn, status, settings, updateSetting } =
-    useAppContext();
+  const { fetchNotifications, status } = useAppContext();
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
+  const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
 
+  const keyboardShortcutEnabled = useSettingsStore(
+    (s) => s.keyboardShortcutEnabled,
+  );
+
+  useEffect(() => {
+    setKeyboardShortcut(keyboardShortcutEnabled);
+  }, [keyboardShortcutEnabled]);
+
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {
       home: {
-        key: 'h',
+        key: keybindings.shortcuts.home.eventKey,
         isAllowed: true,
         action: () => navigate('/', { replace: true }),
       },
       myNotifications: {
-        key: 'n',
+        key: keybindings.shortcuts.myNotifications.eventKey,
         isAllowed: isLoggedIn,
         action: () => openMyNotifications(),
       },
       toggleReadUnread: {
-        key: 'u',
+        key: keybindings.shortcuts.toggleReadUnread.eventKey,
         isAllowed: isLoggedIn && !isLoading,
         action: () => {
-          updateSetting(
-            'fetchOnlyUnreadNotifications',
-            !settings.fetchOnlyUnreadNotifications,
-          );
+          trackEvent('Action', {
+            name: 'Toggle Read/Unread',
+          });
+
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'fetchOnlyUnreadNotifications',
+              !useSettingsStore.getState().fetchOnlyUnreadNotifications,
+            );
         },
       },
       groupByProduct: {
-        key: 'p',
+        key: keybindings.shortcuts.groupByProduct.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
-          updateSetting(
-            'groupNotificationsByProduct',
-            !settings.groupNotificationsByProduct,
-          );
+          trackEvent('Action', {
+            name: 'Group By Product',
+          });
+
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'groupNotificationsByProduct',
+              !useSettingsStore.getState().groupNotificationsByProduct,
+            );
         },
       },
       groupByTitle: {
-        key: 't',
+        key: keybindings.shortcuts.groupByTitle.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
-          updateSetting(
-            'groupNotificationsByTitle',
-            !settings.groupNotificationsByTitle,
-          );
+          trackEvent('Action', {
+            name: 'Group By Title',
+          });
+
+          useSettingsStore
+            .getState()
+            .updateSetting(
+              'groupNotificationsByTitle',
+              !useSettingsStore.getState().groupNotificationsByTitle,
+            );
         },
       },
       filters: {
-        key: 'f',
+        key: keybindings.shortcuts.filters.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
           if (isOnFiltersRoute) {
@@ -97,18 +129,24 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         },
       },
       refresh: {
-        key: 'r',
+        key: keybindings.shortcuts.refresh.eventKey,
         isAllowed: !isLoading,
         action: () => {
           if (isLoading) {
             return;
           }
-          navigate('/', { replace: true });
+
+          trackEvent('Action', { name: 'Refresh' });
+
+          if (!isOnNotificationsRoute) {
+            navigate('/', { replace: true });
+          }
+
           void fetchNotifications();
         },
       },
       settings: {
-        key: 's',
+        key: keybindings.shortcuts.settings.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
           if (isOnSettingsRoute) {
@@ -120,14 +158,18 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
         },
       },
       accounts: {
-        key: 'a',
+        key: keybindings.shortcuts.accounts.eventKey,
         isAllowed: isLoggedIn && isOnSettingsRoute,
         action: () => navigate('/accounts'),
       },
       quit: {
-        key: 'q',
+        key: keybindings.shortcuts.quit.eventKey,
         isAllowed: !isLoggedIn || isOnSettingsRoute,
-        action: () => quitApp(),
+        action: () => {
+          trackEvent('Application', { event: 'Quit' });
+
+          quitApp();
+        },
       },
     };
   }, [
@@ -135,11 +177,8 @@ export function useShortcutActions(): { shortcuts: ShortcutConfigs } {
     isLoading,
     isOnFiltersRoute,
     isOnSettingsRoute,
+    isOnNotificationsRoute,
     fetchNotifications,
-    settings.fetchOnlyUnreadNotifications,
-    settings.groupNotificationsByProduct,
-    settings.groupNotificationsByTitle,
-    updateSetting,
   ]);
 
   return { shortcuts };

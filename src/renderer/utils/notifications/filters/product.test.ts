@@ -3,34 +3,28 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {
-    expect(productFilter.hasFilters(defaultSettings)).toBe(false);
+    expect(productFilter.hasFilters()).toBe(false);
 
-    expect(
-      productFilter.hasFilters({
-        ...defaultSettings,
-        filterProducts: ['bitbucket'],
-      } as SettingsState),
-    ).toBe(true);
+    useFiltersStore.setState({ products: ['bitbucket'] });
+
+    expect(productFilter.hasFilters()).toBe(true);
   });
 
   it('isProductFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterProducts: ['bitbucket'],
-    };
+    useFiltersStore.setState({ products: ['bitbucket'] });
 
-    expect(productFilter.isFilterSet(settings, 'compass')).toBe(false);
+    expect(productFilter.isFilterSet('compass')).toBe(false);
 
-    expect(productFilter.isFilterSet(settings, 'bitbucket')).toBe(true);
+    expect(productFilter.isFilterSet('bitbucket')).toBe(true);
   });
 
   it('getProductFilterCount', () => {

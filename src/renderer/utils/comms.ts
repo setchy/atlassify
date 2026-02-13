@@ -1,15 +1,12 @@
-import { defaultSettings } from '../context/defaults';
+import { OpenPreference } from '../stores/types';
+import useSettingsStore from '../stores/useSettingsStore';
 
-import { type Link, OpenPreference } from '../types';
-
-import { loadState } from './storage';
+import type { Link } from '../types';
 
 export function openExternalLink(url: Link): void {
-  // Load the state from local storage to avoid having to pass settings as a parameter
-  const { settings } = loadState();
-  const openPreference = settings
-    ? settings.openLinks
-    : defaultSettings.openLinks;
+  // Load the settings from the store to avoid having to pass settings as a parameter
+  const settings = useSettingsStore.getState();
+  const openPreference = settings.openLinks;
 
   if (url.toLowerCase().startsWith('https://')) {
     window.atlassify.openExternalLink(
@@ -77,4 +74,14 @@ export function updateTrayColor(notificationsLength: number): void {
  */
 export function updateTrayTitle(title: string): void {
   window.atlassify.tray.updateTitle(title);
+}
+
+/**
+ * Renderer app analytics events
+ */
+export function trackEvent(
+  eventName: string,
+  props?: Record<string, string | number | boolean>,
+): void {
+  window.atlassify.aptabase.trackEvent(eventName, props);
 }

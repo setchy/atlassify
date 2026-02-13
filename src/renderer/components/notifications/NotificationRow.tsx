@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
@@ -9,7 +9,8 @@ import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { AtlassifyNotification } from '../../types';
 
@@ -26,35 +27,52 @@ import {
   categoryFilter,
   readStateFilter,
 } from '../../utils/notifications/filters';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
 
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
-  isAnimated?: boolean;
+  isProductAnimatingExit: boolean;
 }
 
 export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
-  isAnimated = false,
+  isProductAnimatingExit,
 }: NotificationRowProps) => {
-  const { markNotificationsRead, markNotificationsUnread, settings } =
-    useContext(AppContext);
-  const [animateExit, setAnimateExit] = useState(false);
+  const {
+    markNotificationsRead,
+    markNotificationsUnread,
+    focusedNotificationId,
+  } = useAppContext();
 
   const { t } = useTranslation();
 
-  const handleNotificationInteraction = useCallback(() => {
-    setAnimateExit(
-      settings.fetchOnlyUnreadNotifications &&
-        !settings.delayNotificationState &&
-        settings.markAsReadOnOpen,
-    );
+  const isFocused = focusedNotificationId === notification.id;
 
-    if (settings.markAsReadOnOpen) {
+  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
+    useState(false);
+
+  const shouldAnimateExit = shouldRemoveNotificationsFromState();
+
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+
+  const actionNotificationInteraction = () => {
+    setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
+
+    if (markAsReadOnOpen) {
       markNotificationsRead([notification]);
     }
 
     openNotification(notification);
-  }, [notification, markNotificationsRead, settings]);
+  };
+
+  const actionMarkAsRead = () => {
+    setShouldAnimateNotificationExit(shouldAnimateExit);
+    markNotificationsRead([notification]);
+  };
+
+  const actionMarkAsUnread = () => {
+    markNotificationsUnread([notification]);
+  };
 
   const updatedAt = formatNotificationUpdatedAt(notification);
 
@@ -87,15 +105,25 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
   const notificationBodyText = formatNotificationBodyText(notification);
   const notificationFooterText = formatNotificationFooterText(notification);
+  const focusedStyles = isFocused
+    ? {
+        backgroundColor: token('color.background.selected'),
+        boxShadow: `inset 0 0 0 2px ${token('color.border.focused')}`,
+      }
+    : undefined;
 
   return (
     <div
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
-        (isAnimated || animateExit) &&
+        isFocused && 'bg-atlassify-notifications',
+        (isProductAnimatingExit || shouldAnimateNotificationExit) &&
           'translate-x-full opacity-0 transition duration-350 ease-in-out',
       )}
+      data-notification-id={notification.id}
+      data-notification-row="true"
       id={notification.id}
+      style={focusedStyles}
     >
       <Box padding="space.100">
         <Inline alignBlock="center" space={spaceBetweenSections}>
@@ -123,7 +151,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
               <Box
                 as="div"
                 id="notification-details"
-                onClick={handleNotificationInteraction}
+                onClick={actionNotificationInteraction}
                 testId="notification-details"
               >
                 <div className="cursor-pointer">
@@ -225,7 +253,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
           </Inline>
 
           <Box as="div" id="notification-actions">
-            {!animateExit &&
+            {!shouldAnimateNotificationExit &&
               (isNotificationUnread ? (
                 <Tooltip
                   content={t('notifications.interactions.mark_as_read')}
@@ -240,13 +268,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                       />
                     )}
                     label={t('notifications.interactions.mark_as_read')}
-                    onClick={() => {
-                      setAnimateExit(
-                        settings.fetchOnlyUnreadNotifications &&
-                          !settings.delayNotificationState,
-                      );
-                      markNotificationsRead([notification]);
-                    }}
+                    onClick={actionMarkAsRead}
                     shape="circle"
                     spacing="compact"
                     testId="notification-mark-as-read"
@@ -261,9 +283,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                     appearance="subtle"
                     icon={() => null}
                     label={t('notifications.interactions.mark_as_unread')}
-                    onClick={() => {
-                      markNotificationsUnread([notification]);
-                    }}
+                    onClick={actionMarkAsUnread}
                     shape="circle"
                     spacing="compact"
                     testId="notification-mark-as-unread"

@@ -10,7 +10,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { useShortcutActions } from '../../hooks/useShortcutActions';
+import { useGlobalShortcuts } from '../../hooks/useGlobalShortcuts';
 
 import { Footer } from '../primitives/Footer';
 
@@ -22,7 +22,7 @@ export const SettingsFooter: FC = () => {
 
   const { t } = useTranslation();
 
-  const { shortcuts } = useShortcutActions();
+  const { shortcuts } = useGlobalShortcuts();
 
   useEffect(() => {
     (async () => {

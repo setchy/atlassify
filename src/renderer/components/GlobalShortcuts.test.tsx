@@ -1,24 +1,30 @@
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../__helpers__/test-utils';
+import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 
 describe('components/GlobalShortcuts.tsx', () => {
-  const fetchNotificationsMock = jest.fn();
-  const quitAppSpy = jest.spyOn(comms, 'quitApp').mockImplementation();
+  const fetchNotificationsMock = vi.fn();
+  const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation(vi.fn());
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('key bindings', () => {
@@ -51,18 +57,16 @@ describe('components/GlobalShortcuts.tsx', () => {
     });
 
     describe('myNotifications', () => {
-      const openMyNotificationsSpy = jest
+      const openMyNotificationsSpy = vi
         .spyOn(links, 'openMyNotifications')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       it('opens my notifications when pressing N while logged in', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('n');
@@ -71,13 +75,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not open my notifications when logged out', async () => {
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-          },
         );
 
         await userEvent.keyboard('n');
@@ -88,164 +90,154 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('toggleReadUnread', () => {
       it('toggles read/unread setting when pressing U while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              fetchOnlyUnreadNotifications: false,
-            },
-          },
         );
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'fetchOnlyUnreadNotifications',
           true,
         );
       });
 
       it('does not toggle read/unread when logged out', async () => {
-        const updateSettingMock = jest.fn();
-
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-            updateSetting: updateSettingMock,
-          },
         );
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingMock).not.toHaveBeenCalled();
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
 
       it('does not toggle read/unread when status is loading', async () => {
-        const updateSettingMock = jest.fn();
-
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
           {
-            isLoggedIn: true,
             status: 'loading',
-            updateSetting: updateSettingMock,
           },
         );
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingMock).not.toHaveBeenCalled();
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 
     describe('groupByProduct', () => {
       it('toggles group by product setting when pressing P while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        useSettingsStore.setState({ groupNotificationsByProduct: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              groupNotificationsByProduct: false,
-            },
-          },
         );
 
         await userEvent.keyboard('p');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'groupNotificationsByProduct',
           true,
         );
       });
 
       it('does not toggle group by product when logged out', async () => {
-        const updateSettingMock = jest.fn();
-
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-            updateSetting: updateSettingMock,
-          },
         );
 
         await userEvent.keyboard('p');
 
-        expect(updateSettingMock).not.toHaveBeenCalled();
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 
     describe('groupByTitle', () => {
       it('toggles group by title setting when pressing T while logged in', async () => {
-        const updateSettingMock = jest.fn();
+        useSettingsStore.setState({ groupNotificationsByTitle: false });
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-            updateSetting: updateSettingMock,
-            settings: {
-              groupNotificationsByTitle: false,
-            },
-          },
         );
 
         await userEvent.keyboard('t');
 
-        expect(updateSettingMock).toHaveBeenCalledWith(
+        expect(updateSettingSpy).toHaveBeenCalledWith(
           'groupNotificationsByTitle',
           true,
         );
       });
 
       it('does not toggle group by title when logged out', async () => {
-        const updateSettingMock = jest.fn();
-
+        const updateSettingSpy = vi.spyOn(
+          useSettingsStore.getState(),
+          'updateSetting',
+        );
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-            updateSetting: updateSettingMock,
-          },
         );
 
         await userEvent.keyboard('t');
 
-        expect(updateSettingMock).not.toHaveBeenCalled();
+        expect(updateSettingSpy).not.toHaveBeenCalled();
       });
     });
 
     describe('filters', () => {
       it('toggles filters when pressing F while logged in', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('f');
@@ -254,13 +246,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle filters when logged out', async () => {
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-          },
         );
 
         await userEvent.keyboard('f');
@@ -273,6 +263,21 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('refreshes notifications when pressing R key', async () => {
         renderWithAppContext(
           <MemoryRouter>
+            <GlobalShortcuts />
+          </MemoryRouter>,
+          {
+            fetchNotifications: fetchNotificationsMock,
+          },
+        );
+
+        await userEvent.keyboard('r');
+
+        expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
+      });
+
+      it('refreshes notifications from other screen', async () => {
+        renderWithAppContext(
+          <MemoryRouter initialEntries={['/settings']}>
             <GlobalShortcuts />
           </MemoryRouter>,
           {
@@ -304,13 +309,11 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('settings', () => {
       it('toggles settings when pressing S while logged in', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('s');
@@ -319,13 +322,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle settings when logged out', async () => {
+        useAccountsStore.setState({ accounts: [] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: false,
-          },
         );
 
         await userEvent.keyboard('s');
@@ -336,13 +337,11 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('accounts', () => {
       it('navigates to accounts when pressing A on settings route', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter initialEntries={['/settings']}>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('a');
@@ -351,13 +350,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not trigger accounts when not on settings route', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('a');
@@ -368,13 +365,11 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('quit app', () => {
       it('quits the app when pressing Q on settings route', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter initialEntries={['/settings']}>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('q');
@@ -383,13 +378,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not quit the app when not on settings route', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         await userEvent.keyboard('q');
@@ -400,14 +393,12 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('modifiers', () => {
       it('ignores shortcuts when typing in an input', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
             <input id="test-input" />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         const input = document.getElementById(
@@ -420,14 +411,12 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('ignores shortcuts when typing in a textarea', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
             <textarea id="test-textarea" />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         const textarea = document.getElementById(
@@ -440,13 +429,11 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('ignores shortcuts when modifier keys are pressed', async () => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
           </MemoryRouter>,
-          {
-            isLoggedIn: true,
-          },
         );
 
         const event = new KeyboardEvent('keydown', { key: 'h', metaKey: true });

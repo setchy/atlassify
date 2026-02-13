@@ -1,27 +1,79 @@
 import { Constants } from '../constants';
 
+import useAccountsStore from '../stores/useAccountsStore';
+import useSettingsStore from '../stores/useSettingsStore';
+
 import type { Language } from '../i18n/types';
-import type { AtlassifyState } from '../types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
+import { rendererLogError, rendererLogInfo } from './logger';
 
-export function loadState(): AtlassifyState {
+/**
+ * Migrate from Context-based storage to Zustand stores.
+ * This function reads the old unified storage format and splits it into separate stores.
+ * Should be called once on app startup.
+ *
+ * In v2.16.7 and earlier, settings contained both app settings AND filter values.
+ * This migration splits them into separate stores.
+ *
+ * TODO: Remove this migration function in a future major release (v3.0.0+)
+ * once all users have migrated from the old Context-based storage format.
+ * Migration was introduced in v2.17.0.
+ */
+export async function migrateContextToZustand() {
   const existing = localStorage.getItem(Constants.STORAGE_KEY);
-  const { auth, settings } = (existing && JSON.parse(existing)) || {};
 
-  return { auth, settings };
-}
+  if (!existing) {
+    // No old data to migrate
+    return;
+  }
 
-export async function saveState(atlassifyState: AtlassifyState) {
-  const auth = atlassifyState.auth;
-  const settings = atlassifyState.settings;
-  const settingsString = JSON.stringify({ auth, settings });
+  try {
+    const parsed = JSON.parse(existing);
 
-  localStorage.setItem(Constants.STORAGE_KEY, settingsString);
-}
+    // Skip if already migrated
+    if (parsed.migrated) {
+      rendererLogInfo(
+        'migrateContextToStore',
+        `Storage already migrated on ${parsed.migratedAt}`,
+      );
+      return;
+    }
 
-export function clearState() {
-  localStorage.clear();
+    const { auth, settings } = parsed;
+
+    // Migrate auth to AccountsStore if it exists and store is empty
+    if (auth?.accounts && useAccountsStore.getState().accounts.length === 0) {
+      useAccountsStore.setState({ accounts: auth.accounts });
+    }
+
+    // Migrate settings to SettingsStore
+    if (settings) {
+      // Migrate app settings to SettingsStore (Zustand will ignore unknown properties)
+      useSettingsStore.setState({ ...settings });
+    }
+
+    // Mark old storage key as migrated instead of removing it
+    localStorage.setItem(
+      Constants.STORAGE_KEY,
+      JSON.stringify({
+        migrated: true,
+        migratedAt: new Date().toISOString(),
+      }),
+    );
+
+    rendererLogInfo(
+      'migrateContextToStore',
+      'Successfully migrated from Context storage to Zustand stores',
+    );
+  } catch (error) {
+    rendererLogError(
+      'migrateContextToStore',
+      'Error during storage migration',
+      error,
+    );
+    // Don't throw - let the app continue with defaults
+  }
 }
 
 export function loadLanguageLocale(): Language {

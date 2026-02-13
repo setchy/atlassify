@@ -1,12 +1,16 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import {
   ensureStableEmojis,
   renderWithAppContext,
 } from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
+
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';
@@ -15,7 +19,7 @@ import {
   type AccountNotificationsProps,
 } from './AccountNotifications';
 
-jest.mock('./ProductNotifications', () => ({
+vi.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>ProductNotifications</div>,
 }));
 
@@ -26,69 +30,73 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
   describe('account view types', () => {
     it('should render itself - sort by date - light mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(true);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - sort by date - dark mode', () => {
-      jest.spyOn(theme, 'isLightMode').mockReturnValue(false);
+      vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
 
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
       const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
+      useSettingsStore.setState({
+        groupNotificationsByProduct: true,
+        groupNotificationsByProductAlphabetically: false,
+      });
+
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
-        settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: false,
-        },
-      });
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
+      useSettingsStore.setState({
+        groupNotificationsByProduct: true,
+        groupNotificationsByProductAlphabetically: true,
+      });
+
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
-        settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: true,
-        },
-      });
+      const tree = renderWithAppContext(<AccountNotifications {...props} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - no notifications', async () => {
@@ -97,15 +105,14 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         notifications: [],
         hasMoreNotifications: false,
         error: null,
+        showAccountHeader: true,
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('No new notifications')).toBeInTheDocument();
     });
 
     it('should render itself - account error', async () => {
@@ -118,28 +125,54 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
           descriptions: ['Error description'],
           emojis: ['🔥'],
         },
+        showAccountHeader: true,
       };
 
-      let tree: ReturnType<typeof renderWithAppContext> | null = null;
-
       await act(async () => {
-        tree = renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithAppContext(<AccountNotifications {...props} />);
       });
 
-      expect(tree).toMatchSnapshot();
+      expect(screen.getByText('Error title')).toBeInTheDocument();
+      expect(screen.getByText('Error description')).toBeInTheDocument();
+    });
+
+    it('should hide the account header when disabled', () => {
+      const props: AccountNotificationsProps = {
+        account: mockAtlassianCloudAccount,
+        notifications: mockAtlassifyNotifications,
+        hasMoreNotifications: false,
+        error: null,
+        showAccountHeader: false,
+      };
+
+      renderWithAppContext(<AccountNotifications {...props} />);
+
+      expect(
+        screen.queryByTestId('account-profile--itemInner'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-pull-requests'),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId('account-mark-as-read'),
+      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-toggle')).not.toBeInTheDocument();
     });
   });
+});
 
+describe('account actions', () => {
   it('should open profile when clicked', async () => {
-    const openAccountProfileSpy = jest
+    const openAccountProfileSpy = vi
       .spyOn(links, 'openAccountProfile')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {
@@ -155,15 +188,16 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
   });
 
   it('should open my pull requests', async () => {
-    const openPullRequestsSpy = jest
+    const openPullRequestsSpy = vi
       .spyOn(links, 'openMyPullRequests')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
       notifications: [],
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {
@@ -181,9 +215,10 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {
@@ -203,9 +238,10 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
-    const markNotificationsReadMock = jest.fn();
+    const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />, {
@@ -225,15 +261,19 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       notifications: mockAtlassifyNotifications,
       hasMoreNotifications: false,
       error: null,
+      showAccountHeader: true,
     };
 
     await act(async () => {
       renderWithAppContext(<AccountNotifications {...props} />);
     });
 
+    expect(
+      screen.getAllByTestId('notification-details').length,
+    ).toBeGreaterThan(0);
+
     await userEvent.click(screen.getByTestId('account-toggle'));
 
-    const tree = renderWithAppContext(<AccountNotifications {...props} />);
-    expect(tree).toMatchSnapshot();
+    expect(screen.queryAllByTestId('notification-details')).toHaveLength(0);
   });
 });

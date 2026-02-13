@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useContext, useState } from 'react';
+import { type FC, type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
@@ -7,12 +7,13 @@ import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
 import { openExternalLink } from '../../utils/comms';
 import { getChevronDetails } from '../../utils/helpers';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
 import { isLightMode } from '../../utils/theme';
 import { NotificationRow } from './NotificationRow';
 
@@ -23,21 +24,37 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead, settings } = useContext(AppContext);
+  const { markNotificationsRead } = useAppContext();
+
   const { t } = useTranslation();
 
-  const [animateExit, setAnimateExit] = useState(false);
-  const [showProductNotifications, setShowProductNotifications] =
+  const [shouldAnimateProductExit, setShouldAnimateProductExit] =
+    useState(false);
+  const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
 
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
+  const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  const toggleProductNotifications = () => {
-    setShowProductNotifications(!showProductNotifications);
+  const actionProductInteraction = () => {
+    openExternalLink(productNotification.home);
   };
 
-  const Chevron = getChevronDetails(true, showProductNotifications, 'product');
+  const actionMarkAsRead = () => {
+    setShouldAnimateProductExit(shouldAnimateExit);
+    markNotificationsRead(productNotifications);
+  };
+
+  const actionToggleProductNotifications = () => {
+    setIsProductNotificationsVisible(!isProductNotificationsVisible);
+  };
+
+  const Chevron = getChevronDetails(
+    true,
+    isProductNotificationsVisible,
+    'product',
+  );
   const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
@@ -58,7 +75,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     <Stack>
       <Box
         as="div"
-        onClick={toggleProductNotifications}
+        onClick={actionToggleProductNotifications}
         paddingBlock="space.050"
         paddingInlineEnd="space.100"
         paddingInlineStart="space.050"
@@ -81,7 +98,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                 if (productNotification.home) {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  openExternalLink(productNotification.home);
+                  actionProductInteraction();
                 }
               }}
               testId="product-home"
@@ -96,7 +113,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                   {productNotification.display}
                 </span>
                 <Badge max={false}>{productNotifications.length}</Badge>
-              </Inline>{' '}
+              </Inline>
             </Button>
           </Tooltip>
 
@@ -112,11 +129,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();
-                  setAnimateExit(
-                    settings.fetchOnlyUnreadNotifications &&
-                      !settings.delayNotificationState,
-                  );
-                  markNotificationsRead(productNotifications);
+                  actionMarkAsRead();
                 }}
                 shape="circle"
                 spacing="compact"
@@ -140,10 +153,10 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         </Flex>
       </Box>
 
-      {showProductNotifications &&
+      {isProductNotificationsVisible &&
         productNotifications.map((notification) => (
           <NotificationRow
-            isAnimated={animateExit}
+            isProductAnimatingExit={shouldAnimateProductExit}
             key={notification.id}
             notification={notification}
           />

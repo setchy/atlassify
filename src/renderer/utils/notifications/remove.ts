@@ -1,9 +1,20 @@
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type {
   Account,
   AccountNotifications,
   AtlassifyNotification,
-  SettingsState,
 } from '../../types';
+
+/**
+ * Determine if notifications should be removed from state or marked as read in-place.
+ */
+export function shouldRemoveNotificationsFromState(): boolean {
+  const settings = useSettingsStore.getState();
+  return (
+    !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
+  );
+}
 
 /**
  * Remove notifications from the account notifications list.
@@ -13,7 +24,6 @@ import type {
  */
 export function removeNotificationsForAccount(
   account: Account,
-  settings: SettingsState,
   notificationsToRemove: AtlassifyNotification[],
   accountNotifications: AccountNotifications[],
 ): AccountNotifications[] {
@@ -25,22 +35,21 @@ export function removeNotificationsForAccount(
     notificationsToRemove.map((notification) => notification.id),
   );
 
+  const shouldRemove = shouldRemoveNotificationsFromState();
+
   return accountNotifications.map((accountNotifications) =>
     account.id === accountNotifications.account.id
       ? {
           ...accountNotifications,
-          notifications:
-            settings.delayNotificationState ||
-            !settings.fetchOnlyUnreadNotifications
-              ? accountNotifications.notifications.map((notification) =>
-                  notificationIDsToRemove.has(notification.id)
-                    ? { ...notification, readState: 'read' }
-                    : notification,
-                )
-              : accountNotifications.notifications.filter(
-                  (notification) =>
-                    !notificationIDsToRemove.has(notification.id),
-                ),
+          notifications: shouldRemove
+            ? accountNotifications.notifications.filter(
+                (notification) => !notificationIDsToRemove.has(notification.id),
+              )
+            : accountNotifications.notifications.map((notification) =>
+                notificationIDsToRemove.has(notification.id)
+                  ? { ...notification, readState: 'read' }
+                  : notification,
+              ),
         }
       : accountNotifications,
   );

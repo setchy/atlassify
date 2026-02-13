@@ -1,9 +1,12 @@
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
-import { mockAuth } from '../../__mocks__/state-mocks';
 
 import type { Account, Username } from '../../types';
 
 import * as auth from './utils';
+
+const mockAuth = {
+  accounts: [mockAtlassianCloudAccount],
+};
 
 describe('renderer/utils/auth/utils.ts', () => {
   describe('removeAccount', () => {

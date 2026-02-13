@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext } from 'react';
+import { type FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
+import useAccountsStore from '../stores/useAccountsStore';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -19,21 +19,24 @@ import { Header } from '../components/primitives/Header';
 
 import type { Account } from '../types';
 
-import { refreshAccount } from '../utils/auth/utils';
 import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
-  const { auth, logoutFromAccount } = useContext(AppContext);
   const navigate = useNavigate();
+
+  const accounts = useAccountsStore((s) => s.accounts);
+  const removeAccount = useAccountsStore((s) => s.removeAccount);
+  const refreshAccount = useAccountsStore((s) => s.refreshAccount);
+
   const { t } = useTranslation();
 
   const logoutAccount = useCallback(
     (account: Account) => {
-      logoutFromAccount(account);
+      removeAccount(account);
       navigate(-1);
     },
-    [logoutFromAccount],
+    [removeAccount],
   );
 
   const login = useCallback(() => {
@@ -55,7 +58,7 @@ export const AccountsRoute: FC = () => {
       <Header>{t('accounts.title')}</Header>
 
       <Contents>
-        {auth.accounts.map((account) => {
+        {accounts.map((account) => {
           return (
             <Box key={account.id} padding="space.150" xcss={boxStyles}>
               <Inline alignBlock="center" grow="fill" spread="space-between">

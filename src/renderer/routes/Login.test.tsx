@@ -1,33 +1,41 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../__helpers__/test-utils';
+
+import useAccountsStore from '../stores/useAccountsStore';
 
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';
 
-const navigateMock = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...(await vi.importActual('react-router-dom')),
   useNavigate: () => navigateMock,
 }));
 
 describe('renderer/routes/Login.tsx', () => {
+  beforeEach(() => {
+    useAccountsStore.setState({ accounts: [] });
+  });
+
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<LoginRoute />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   describe('login web pages', () => {
     it('should open create new token page', async () => {
-      const openExternalLinkSpy = jest
+      const openExternalLinkSpy = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         renderWithAppContext(<LoginRoute />);
@@ -39,9 +47,9 @@ describe('renderer/routes/Login.tsx', () => {
     });
 
     it('should open login docs', async () => {
-      const openExternalLinkSpy = jest
+      const openExternalLinkSpy = vi
         .spyOn(comms, 'openExternalLink')
-        .mockImplementation();
+        .mockImplementation(vi.fn());
 
       await act(async () => {
         renderWithAppContext(<LoginRoute />);

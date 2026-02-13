@@ -5,14 +5,13 @@
   "description": "The source code of atlassify.io",
   "type": "module",
   "scripts": {
+    "prepare": "cd .. && husky",
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "pnpm dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prepare": "cd .. && husky",
-    "astro": "astro",
-    "lint:check": "biome check",
-    "lint": "biome check --fix"
+    "lint": "biome check --fix",
+    "lint:check": "biome check"
   },
   "repository": {
     "type": "git",
@@ -36,17 +35,17 @@
   },
   "homepage": "https://atlassify.io/",
   "dependencies": {
-    "@iconify-json/line-md": "1.2.13",
+    "@iconify-json/line-md": "1.2.14",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "27.0.0",
     "@tailwindcss/vite": "4.1.18",
-    "accessible-astro-components": "5.1.1",
-    "astro": "5.16.11",
+    "accessible-astro-components": "5.1.2",
+    "astro": "5.17.2",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "marked": "17.0.1",
+    "marked": "17.0.2",
     "octokit": "5.0.5",
     "sharp": "0.34.5",
     "tailwind-merge": "3.4.0",
@@ -54,10 +53,10 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.11",
+    "@biomejs/biome": "2.3.15",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "pnpm@10.29.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",

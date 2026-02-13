@@ -1,10 +1,10 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
-import { AppContext } from '../context/App';
+import useFiltersStore from '../stores/useFiltersStore';
 
 import { FilterSection } from '../components/filters/FilterSection';
 import { Contents } from '../components/layout/Contents';
@@ -21,13 +21,12 @@ import {
 } from '../utils/notifications/filters';
 
 export const FiltersRoute: FC = () => {
-  const { clearFilters } = useContext(AppContext);
-
   const { t } = useTranslation();
+  const clearFilters = useFiltersStore((s) => s.reset);
 
   return (
     <Page testId="filters">
-      <Header fetchOnBack={true}>{t('filters.title')}</Header>
+      <Header>{t('filters.title')}</Header>
 
       <Contents>
         <Box paddingBlockEnd="space.200" paddingInlineStart="space.250">
@@ -35,25 +34,25 @@ export const FiltersRoute: FC = () => {
             <Stack space="space.200">
               <FilterSection
                 filter={engagementFilter}
-                filterSetting="filterEngagementStates"
+                filterSetting="engagementStates"
                 title={t('filters.engagement.title')}
               />
 
               <FilterSection
                 filter={categoryFilter}
-                filterSetting="filterCategories"
+                filterSetting="categories"
                 title={t('filters.category.title')}
               />
 
               <FilterSection
                 filter={actorFilter}
-                filterSetting="filterActors"
+                filterSetting="actors"
                 title={t('filters.actors.title')}
               />
 
               <FilterSection
                 filter={readStateFilter}
-                filterSetting="filterReadStates"
+                filterSetting="readStates"
                 title={t('filters.read_state.title')}
               />
             </Stack>
@@ -61,7 +60,7 @@ export const FiltersRoute: FC = () => {
             <Stack>
               <FilterSection
                 filter={productFilter}
-                filterSetting="filterProducts"
+                filterSetting="products"
                 title={t('filters.products.title')}
               />
             </Stack>

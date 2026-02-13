@@ -12,15 +12,12 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ],
-  "cSpell.words": ["Atlassify", "codegen", "rovo", "xcss"],
+  "cSpell.words": ["Atlassify", "codegen", "partialize", "rovo", "xcss"],
   "i18n-ally.translate.engines": ["google"],
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sortKeys": true,
-  "jest.runMode": "on-save"
+  // Disable Jest extension - this project uses Vitest
+  "jest.enable": false
 }

@@ -6,6 +6,6 @@ describe('renderer/components/layout/Centered.tsx', () => {
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<Centered>Test</Centered>);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 });

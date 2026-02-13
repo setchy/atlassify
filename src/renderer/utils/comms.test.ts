@@ -1,6 +1,10 @@
-import { mockSettings } from '../__mocks__/state-mocks';
+import { vi } from 'vitest';
 
-import { type Link, OpenPreference } from '../types';
+import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
+import { OpenPreference } from '../stores/types';
+import useSettingsStore from '../stores/useSettingsStore';
+
+import type { Link } from '../types';
 
 import {
   decryptValue,
@@ -16,17 +20,22 @@ import {
   updateTrayColor,
   updateTrayTitle,
 } from './comms';
-import * as storage from './storage';
 
 describe('renderer/utils/comms.ts', () => {
+  beforeEach(() => {
+    // Reset store to defaults before each test
+    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
+  });
+
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('openExternalLink', () => {
     it('should open an external link', () => {
-      jest.spyOn(storage, 'loadState').mockReturnValue({
-        settings: { ...mockSettings, openLinks: OpenPreference.BACKGROUND },
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        openLinks: OpenPreference.BACKGROUND,
       });
 
       openExternalLink('https://atlassify.io/' as Link);
@@ -39,8 +48,9 @@ describe('renderer/utils/comms.ts', () => {
     });
 
     it('should open in foreground when preference set to FOREGROUND', () => {
-      jest.spyOn(storage, 'loadState').mockReturnValue({
-        settings: { ...mockSettings, openLinks: OpenPreference.FOREGROUND },
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        openLinks: OpenPreference.FOREGROUND,
       });
 
       openExternalLink('https://atlassify.io/' as Link);
@@ -52,7 +62,8 @@ describe('renderer/utils/comms.ts', () => {
     });
 
     it('should use default open preference if user settings not found', () => {
-      jest.spyOn(storage, 'loadState').mockReturnValue({ settings: null });
+      // Reset to defaults - store will use default values
+      useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
 
       openExternalLink('https://atlassify.io/' as Link);
 

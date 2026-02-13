@@ -1,42 +1,54 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { vi } from 'vitest';
+
 import { renderWithAppContext } from '../../__helpers__/test-utils';
+import {
+  mockAtlassianCloudAccount,
+  mockAtlassianCloudAccountTwo,
+} from '../../__mocks__/account-mocks';
+
+import useAccountsStore from '../../stores/useAccountsStore';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
-  const updateSettingMock = jest.fn();
-
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should change the theme radio group', async () => {
+    const updateSettingSpy = vi.spyOn(
+      useSettingsStore.getState(),
+      'updateSetting',
+    );
+
     await act(async () => {
-      renderWithAppContext(<AppearanceSettings />, {
-        updateSetting: updateSettingMock,
-      });
+      renderWithAppContext(<AppearanceSettings />);
     });
 
     await userEvent.click(screen.getByTestId('theme-dark--radio-label'));
 
-    expect(updateSettingMock).toHaveBeenCalledTimes(1);
-    expect(updateSettingMock).toHaveBeenCalledWith('theme', 'DARK');
+    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
+    expect(updateSettingSpy).toHaveBeenCalledWith('theme', 'DARK');
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
-    const zoomOutSpy = jest.spyOn(zoom, 'decreaseZoom').mockImplementation();
-    const zoomInSpy = jest.spyOn(zoom, 'increaseZoom').mockImplementation();
-    const zoomResetSpy = jest
+    const zoomOutSpy = vi
+      .spyOn(zoom, 'decreaseZoom')
+      .mockImplementation(vi.fn());
+    const zoomInSpy = vi
+      .spyOn(zoom, 'increaseZoom')
+      .mockImplementation(vi.fn());
+    const zoomResetSpy = vi
       .spyOn(zoom, 'resetZoomLevel')
-      .mockImplementation();
+      .mockImplementation(vi.fn());
 
     await act(async () => {
-      renderWithAppContext(<AppearanceSettings />, {
-        updateSetting: updateSettingMock,
-      });
+      renderWithAppContext(<AppearanceSettings />);
     });
 
     // Zoom Out
@@ -53,5 +65,41 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     // Zoom Reset
     await userEvent.click(screen.getByTestId('settings-zoom-reset'));
     expect(zoomResetSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should toggle the account header setting', async () => {
+    const updateSettingSpy = vi.spyOn(
+      useSettingsStore.getState(),
+      'updateSetting',
+    );
+
+    await act(async () => {
+      renderWithAppContext(<AppearanceSettings />);
+    });
+
+    await userEvent.click(screen.getByLabelText('Show account header'));
+
+    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
+    expect(updateSettingSpy).toHaveBeenCalledWith('showAccountHeader', false);
+  });
+
+  it('should hide the account header setting when there are multiple accounts', async () => {
+    const updateSettingSpy = vi.spyOn(
+      useSettingsStore.getState(),
+      'updateSetting',
+    );
+
+    useAccountsStore
+      .getState()
+      .setAccounts([mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo]);
+
+    await act(async () => {
+      renderWithAppContext(<AppearanceSettings />);
+    });
+
+    expect(screen.queryByLabelText('Show account header')).toBeNull();
+
+    expect(updateSettingSpy).toHaveBeenCalledTimes(0);
+    expect(useAccountsStore.getState().hasMultipleAccounts()).toBe(true);
   });
 });

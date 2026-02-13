@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
+      - "docs/**"
   pull_request:
     paths:
-      - 'docs/**'
+      - "docs/**"
 
 permissions:
   contents: read
@@ -18,5 +18,4 @@ jobs:
     name: Lint Docs
     uses: ./.github/workflows/lint.yml
     with:
-      directory: 'docs'
-  
+      directory: "docs"

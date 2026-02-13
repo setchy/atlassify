@@ -3,33 +3,27 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { categoryFilter } from '.';
 
 describe('renderer/utils/notifications/filters/category.ts', () => {
   it('hasCategoryFilters', () => {
-    expect(categoryFilter.hasFilters(defaultSettings)).toBe(false);
+    expect(categoryFilter.hasFilters()).toBe(false);
 
-    expect(
-      categoryFilter.hasFilters({
-        ...defaultSettings,
-        filterCategories: ['direct'],
-      } as SettingsState),
-    ).toBe(true);
+    useFiltersStore.setState({ categories: ['direct'] });
+
+    expect(categoryFilter.hasFilters()).toBe(true);
   });
 
   it('isCategoryFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterCategories: ['direct'],
-    };
+    useFiltersStore.setState({ categories: ['direct'] });
 
-    expect(categoryFilter.isFilterSet(settings, 'watching')).toBe(false);
+    expect(categoryFilter.isFilterSet('watching')).toBe(false);
 
-    expect(categoryFilter.isFilterSet(settings, 'direct')).toBe(true);
+    expect(categoryFilter.isFilterSet('direct')).toBe(true);
   });
 
   it('getCategoryFilterCount', () => {

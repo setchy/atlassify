@@ -3,33 +3,27 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { readStateFilter } from '.';
 
 describe('renderer/utils/notifications/filters/readState.ts', () => {
   it('hasReadStateFilters', () => {
-    expect(readStateFilter.hasFilters(defaultSettings)).toBe(false);
+    expect(readStateFilter.hasFilters()).toBe(false);
 
-    expect(
-      readStateFilter.hasFilters({
-        ...defaultSettings,
-        filterReadStates: ['read'],
-      } as SettingsState),
-    ).toBe(true);
+    useFiltersStore.setState({ readStates: ['read'] });
+
+    expect(readStateFilter.hasFilters()).toBe(true);
   });
 
   it('isReadStateFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterReadStates: ['read'],
-    };
+    useFiltersStore.setState({ readStates: ['read'] });
 
-    expect(readStateFilter.isFilterSet(settings, 'read')).toBe(true);
+    expect(readStateFilter.isFilterSet('read')).toBe(true);
 
-    expect(readStateFilter.isFilterSet(settings, 'unread')).toBe(false);
+    expect(readStateFilter.isFilterSet('unread')).toBe(false);
   });
 
   it('getReadStateFilterCount', () => {

@@ -1,4 +1,4 @@
-import { type FC, useContext } from 'react';
+import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -7,7 +7,7 @@ import ArrowLeftIcon from '@atlaskit/icon/core/arrow-left';
 import { Box, Inline } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../../context/App';
+import { useAppContext } from '../../hooks/useAppContext';
 
 interface HeaderProps {
   children: string;
@@ -17,7 +17,7 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = (props: HeaderProps) => {
   const navigate = useNavigate();
 
-  const { fetchNotifications } = useContext(AppContext);
+  const { fetchNotifications } = useAppContext();
 
   return (
     <Box

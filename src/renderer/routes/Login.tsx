@@ -3,7 +3,6 @@ import {
   type FC,
   Fragment,
   useCallback,
-  useContext,
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +23,7 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import { AppContext } from '../context/App';
+import useAccountsStore from '../stores/useAccountsStore';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -32,10 +31,8 @@ import { Footer } from '../components/primitives/Footer';
 import { Header } from '../components/primitives/Header';
 
 import type { Token, Username } from '../types';
-import type { LoginOptions } from '../utils/auth/types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
-import { hasUsernameAlready } from '../utils/auth/utils';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
@@ -48,18 +45,21 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
-  const { t } = useTranslation();
-  const { login, auth } = useContext(AppContext);
   const navigate = useNavigate();
-  const [isValidCredentials, setIsValidCredentials] = useState<boolean>(true);
-  const [isDuplicateUsername, setIsDuplicateUsername] =
-    useState<boolean>(false);
+
+  const createAccount = useAccountsStore((s) => s.createAccount);
+  const hasUsernameAlready = useAccountsStore((s) => s.hasUsernameAlready);
+
+  const { t } = useTranslation();
+
+  const [isValidCredentials, setIsValidCredentials] = useState(true);
+  const [isDuplicateUsername, setIsDuplicateUsername] = useState(false);
 
   const loginUser = useCallback(
     async (data: LoginProps) => {
       try {
         await checkIfCredentialsAreValid(data.username, data.token);
-        await login(data as LoginOptions);
+        await createAccount(data.username, data.token);
         navigate(-1);
       } catch (err) {
         rendererLogError(
@@ -70,7 +70,7 @@ export const LoginRoute: FC = () => {
         setIsValidCredentials(false);
       }
     },
-    [login],
+    [createAccount],
   );
 
   return (
@@ -103,10 +103,7 @@ export const LoginRoute: FC = () => {
                         const onChange = (e: ChangeEvent<HTMLInputElement>) => {
                           fieldProps.onChange(e);
                           setIsDuplicateUsername(
-                            hasUsernameAlready(
-                              auth,
-                              e.target.value as Username,
-                            ),
+                            hasUsernameAlready(e.target.value as Username),
                           );
                         };
                         return (

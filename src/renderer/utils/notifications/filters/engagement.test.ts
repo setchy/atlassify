@@ -3,35 +3,29 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import { defaultSettings } from '../../../context/defaults';
+import useFiltersStore from '../../../stores/useFiltersStore';
 
-import type { AtlassifyNotification, SettingsState } from '../../../types';
+import type { AtlassifyNotification } from '../../../types';
 
 import { engagementFilter, inferNotificationEngagementState } from '.';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   it('hasEngagementStateFilters', () => {
-    expect(engagementFilter.hasFilters(defaultSettings)).toBe(false);
+    expect(engagementFilter.hasFilters()).toBe(false);
 
-    expect(
-      engagementFilter.hasFilters({
-        ...defaultSettings,
-        filterEngagementStates: ['comment'],
-      }),
-    ).toBe(true);
+    useFiltersStore.setState({ engagementStates: ['mention'] });
+
+    expect(engagementFilter.hasFilters()).toBe(true);
   });
 
   it('isEngagementStateFilterSet', () => {
-    const settings: SettingsState = {
-      ...defaultSettings,
-      filterEngagementStates: ['comment'],
-    };
+    useFiltersStore.setState({ engagementStates: ['comment'] });
 
-    expect(engagementFilter.isFilterSet(settings, 'comment')).toBe(true);
+    expect(engagementFilter.isFilterSet('comment')).toBe(true);
 
-    expect(engagementFilter.isFilterSet(settings, 'mention')).toBe(false);
+    expect(engagementFilter.isFilterSet('mention')).toBe(false);
 
-    expect(engagementFilter.isFilterSet(settings, 'reaction')).toBe(false);
+    expect(engagementFilter.isFilterSet('reaction')).toBe(false);
   });
 
   it('getEngagementStateFilterCount', () => {

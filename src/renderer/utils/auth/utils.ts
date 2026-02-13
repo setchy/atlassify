@@ -1,14 +1,16 @@
-import type { Account, AuthState, Token, Username } from '../../types';
+import type { AccountsState } from '../../stores/types';
+
+import type { Account, Token, Username } from '../../types';
 
 import { getAuthenticatedUser } from '../api/client';
 import { encryptValue } from '../comms';
 import { rendererLogError } from '../logger';
 
 export async function addAccount(
-  auth: AuthState,
+  auth: AccountsState,
   username: Username,
   token: Token,
-): Promise<AuthState> {
+): Promise<AccountsState> {
   const encryptedToken = await encryptValue(token);
 
   let newAccount = {
@@ -24,7 +26,10 @@ export async function addAccount(
   };
 }
 
-export function removeAccount(auth: AuthState, account: Account): AuthState {
+export function removeAccount(
+  auth: AccountsState,
+  account: Account,
+): AccountsState {
   const updatedAccounts = auth.accounts.filter((a) => a.id !== account.id);
 
   return {
@@ -50,11 +55,11 @@ export async function refreshAccount(account: Account): Promise<Account> {
   return account;
 }
 
-export function hasAccounts(auth: AuthState) {
+export function hasAccounts(auth: AccountsState) {
   return auth.accounts.length > 0;
 }
 
-export function hasUsernameAlready(auth: AuthState, username: Username) {
+export function hasUsernameAlready(auth: AccountsState, username: Username) {
   return auth.accounts.some(
     (a) => a.username.trim().toLowerCase() === username.trim().toLowerCase(),
   );

@@ -13,7 +13,7 @@ jobs:
     name: Lint App
     uses: ./.github/workflows/lint.yml
     with:
-      directory: '.'
+      directory: "."
 
   tests:
     name: Tests
@@ -26,5 +26,5 @@ jobs:
     uses: ./.github/workflows/publish.yml
     needs: tests
     secrets: inherit
-    permissions: 
+    permissions:
       contents: write

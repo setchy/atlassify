@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import type { Percentage } from '../types';
 
 import {
@@ -11,10 +13,10 @@ import {
 } from './zoom';
 
 describe('renderer/utils/zoom.ts', () => {
-  window.atlassify.zoom.setLevel = jest.fn();
+  window.atlassify.zoom.setLevel = vi.fn();
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should convert percentage to zoom level', () => {

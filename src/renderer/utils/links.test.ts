@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
@@ -14,12 +16,12 @@ import {
 } from './links';
 
 describe('renderer/utils/links.ts', () => {
-  const openExternalLinkSpy = jest
+  const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
-    .mockImplementation();
+    .mockImplementation(vi.fn());
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('openAtlassifyReleaseNotes', () => {

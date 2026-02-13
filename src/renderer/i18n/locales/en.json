@@ -157,7 +157,8 @@
       "zoom": "Zoom",
       "zoom_in": "Zoom in",
       "zoom_out": "Zoom out",
-      "zoom_reset": "Reset zoom"
+      "zoom_reset": "Reset zoom",
+      "show_account_header": "Show account header"
     },
     "notifications": {
       "title": "Notifications",
@@ -191,6 +192,26 @@
       "volume_reset": "Reset volume",
       "startup": "Open at startup",
       "startup_help": "Launch {{appName}} automatically at startup."
+    },
+    "keyboard_shortcuts": {
+      "title": "Keyboard Shortcuts",
+      "general": "General",
+      "notifications": "Notifications list",
+      "home": "Home",
+      "my_notifications": "Open My Notifications",
+      "toggle_unread": "Toggle unread only",
+      "group_by_product": "Group by product",
+      "group_by_title": "Group by title",
+      "filters": "Filters",
+      "refresh": "Refresh notifications",
+      "settings": "Open settings",
+      "accounts": "Open accounts (from Settings)",
+      "quit": "Quit app",
+      "navigate": "Move between notifications",
+      "first": "First notification",
+      "last": "Last notification",
+      "expand": "Expand notification",
+      "toggle_read": "Change read state"
     },
     "reset": {
       "title": "Reset Settings",

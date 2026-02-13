@@ -1,9 +1,10 @@
+import useFiltersStore from '../../../stores/useFiltersStore';
+
 import type {
   AccountNotifications,
   AtlassianProduct,
   AtlassifyNotification,
   ProductType,
-  SettingsState,
 } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
@@ -19,12 +20,14 @@ export const productFilter: Filter<ProductType> = {
     return this.FILTER_TYPES[type];
   },
 
-  hasFilters(settings: SettingsState): boolean {
-    return settings.filterProducts.length > 0;
+  hasFilters(): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.products.length > 0;
   },
 
-  isFilterSet(settings: SettingsState, product: ProductType): boolean {
-    return settings.filterProducts.includes(product);
+  isFilterSet(product: ProductType): boolean {
+    const filters = useFiltersStore.getState();
+    return filters.products.includes(product);
   },
 
   getFilterCount(

@@ -2,7 +2,7 @@ import { APPLICATION } from '../../shared/constants';
 
 import type { Account, AtlassifyNotification, Link } from '../types';
 
-import { openExternalLink } from './comms';
+import { openExternalLink, trackEvent } from './comms';
 
 export const URLs = {
   ATLASSIAN: {
@@ -21,37 +21,86 @@ export const URLs = {
   },
 };
 
-export function openAtlassifyReleaseNotes(version: string) {
-  openExternalLink(
-    `https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link,
-  );
+// 1. Actual implementations (private)
+const _links = {
+  openAtlassifyReleaseNotes(version: string) {
+    openExternalLink(
+      `https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link,
+    );
+  },
+
+  openAtlassianSecurityDocs() {
+    const url = new URL(URLs.ATLASSIAN.DOCS.API_TOKEN);
+    openExternalLink(url.toString() as Link);
+  },
+
+  openAtlassianCreateToken() {
+    const url = new URL(URLs.ATLASSIAN.WEB.SECURITY_TOKENS);
+    openExternalLink(url.toString() as Link);
+  },
+
+  openMyNotifications() {
+    const url = new URL(URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS);
+    openExternalLink(url.toString() as Link);
+  },
+
+  openMyPullRequests() {
+    const url = new URL(URLs.ATLASSIAN.WEB.BITBUCKET_HOME);
+    openExternalLink(url.toString() as Link);
+  },
+
+  openAccountProfile(account: Account) {
+    const url = new URL(`${URLs.ATLASSIAN.WEB.PEOPLE}/${account.id}`);
+    openExternalLink(url.toString() as Link);
+  },
+
+  async openNotification(notification: AtlassifyNotification) {
+    openExternalLink(notification.entity.url ?? notification.url);
+  },
+};
+
+// 2. Analytics wrapper
+function withAnalytics<F extends (...args: unknown[]) => unknown>(
+  fn: F,
+  actionName: string,
+): F {
+  return ((...args: Parameters<F>): ReturnType<F> => {
+    trackEvent('Action', { name: actionName });
+    return fn(...args) as ReturnType<F>;
+  }) as F;
 }
 
-export function openAtlassianSecurityDocs() {
-  const url = new URL(URLs.ATLASSIAN.DOCS.API_TOKEN);
-  openExternalLink(url.toString() as Link);
-}
+// 3. Export wrapped functions
+export const openAtlassifyReleaseNotes = withAnalytics(
+  _links.openAtlassifyReleaseNotes,
+  'Open Release Notes',
+);
 
-export function openAtlassianCreateToken() {
-  const url = new URL(URLs.ATLASSIAN.WEB.SECURITY_TOKENS);
-  openExternalLink(url.toString() as Link);
-}
+export const openAtlassianSecurityDocs = withAnalytics(
+  _links.openAtlassianSecurityDocs,
+  'Open Atlassian Security Docs',
+);
 
-export function openMyNotifications() {
-  const url = new URL(URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS);
-  openExternalLink(url.toString() as Link);
-}
+export const openAtlassianCreateToken = withAnalytics(
+  _links.openAtlassianCreateToken,
+  'Open Atlassian Create Token',
+);
 
-export function openMyPullRequests() {
-  const url = new URL(URLs.ATLASSIAN.WEB.BITBUCKET_HOME);
-  openExternalLink(url.toString() as Link);
-}
+export const openMyNotifications = withAnalytics(
+  _links.openMyNotifications,
+  'Open My Notifications',
+);
+export const openMyPullRequests = withAnalytics(
+  _links.openMyPullRequests,
+  'Open My Pull Requests',
+);
 
-export function openAccountProfile(account: Account) {
-  const url = new URL(`${URLs.ATLASSIAN.WEB.PEOPLE}/${account.id}`);
-  openExternalLink(url.toString() as Link);
-}
+export const openAccountProfile = withAnalytics(
+  _links.openAccountProfile,
+  'Open Account Profile',
+);
 
-export async function openNotification(notification: AtlassifyNotification) {
-  openExternalLink(notification.entity.url ?? notification.url);
-}
+export const openNotification = withAnalytics(
+  _links.openNotification,
+  'Open Notification',
+);

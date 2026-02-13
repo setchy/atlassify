@@ -1,4 +1,4 @@
-import { type FC, Fragment, useContext } from 'react';
+import { type FC, Fragment, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -17,34 +17,47 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../shared/constants';
 
-import { AppContext } from '../context/App';
-import { useShortcutActions } from '../hooks/useShortcutActions';
+import { useAppContext } from '../hooks/useAppContext';
+import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
+import { useAccountsStore } from '../stores/useAccountsStore';
+import useFiltersStore from '../stores/useFiltersStore';
+import useSettingsStore from '../stores/useSettingsStore';
 
-import { hasActiveFilters } from '../utils/notifications/filters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
-export const Sidebar: FC = () => {
-  const { t } = useTranslation();
-
+const SidebarComponent: FC = () => {
   const {
-    isLoggedIn,
-    settings,
     status,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
-  } = useContext(AppContext);
+  } = useAppContext();
 
-  const { shortcuts } = useShortcutActions();
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
-  const hasFilters = hasActiveFilters(settings);
+  const { t } = useTranslation();
+
+  const { shortcuts } = useGlobalShortcuts();
+
+  // Subscribe to settings from store
+  const fetchOnlyUnreadNotifications = useSettingsStore(
+    (s) => s.fetchOnlyUnreadNotifications,
+  );
+  const groupNotificationsByProduct = useSettingsStore(
+    (s) => s.groupNotificationsByProduct,
+  );
+  const groupNotificationsByTitle = useSettingsStore(
+    (s) => s.groupNotificationsByTitle,
+  );
+
+  const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
 
   const theme = useThemeObserver();
 
   const sidebarIconColorToken =
-    theme.colorMode === 'light'
-      ? token('color.text.inverse')
-      : token('color.text.accent.gray.bolder');
+    theme.colorMode === 'dark'
+      ? token('color.text.accent.gray.bolder')
+      : token('color.text.inverse');
 
   return (
     <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
@@ -70,7 +83,7 @@ export const Sidebar: FC = () => {
               content={t('sidebar.notifications.tooltip', {
                 count: notificationCount,
                 countSuffix: hasMoreAccountNotifications ? '+' : '',
-                countType: settings.fetchOnlyUnreadNotifications
+                countType: fetchOnlyUnreadNotifications
                   ? t('sidebar.notifications.unread')
                   : t('sidebar.notifications.read'),
               })}
@@ -102,7 +115,7 @@ export const Sidebar: FC = () => {
                 >
                   <Toggle
                     id="toggle-unread-only"
-                    isChecked={settings.fetchOnlyUnreadNotifications}
+                    isChecked={fetchOnlyUnreadNotifications}
                     label={t('sidebar.toggles.unreadOnly.label')}
                     onChange={() => shortcuts.toggleReadUnread.action()}
                     size="regular"
@@ -117,9 +130,7 @@ export const Sidebar: FC = () => {
                 >
                   <IconButton
                     appearance={
-                      settings.groupNotificationsByProduct
-                        ? 'discovery'
-                        : 'subtle'
+                      groupNotificationsByProduct ? 'discovery' : 'subtle'
                     }
                     icon={() => (
                       <ListBulletedIcon
@@ -142,9 +153,7 @@ export const Sidebar: FC = () => {
                 >
                   <IconButton
                     appearance={
-                      settings.groupNotificationsByTitle
-                        ? 'discovery'
-                        : 'subtle'
+                      groupNotificationsByTitle ? 'discovery' : 'subtle'
                     }
                     icon={() => (
                       <CollapseVerticalIcon
@@ -269,3 +278,6 @@ export const Sidebar: FC = () => {
     </div>
   );
 };
+
+// Memoize the component to prevent unnecessary re-renders
+export const Sidebar = memo(SidebarComponent);

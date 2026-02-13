@@ -1,4 +1,18 @@
-import type { AtlassifyNotification, SettingsState } from '../../types';
+import useSettingsStore from '../../stores/useSettingsStore';
+
+import type { AtlassifyNotification } from '../../types';
+
+/**
+ * Check if a notification is a group notification.
+ *
+ * @param notification
+ * @returns true if group notification, false otherwise
+ */
+export function isGroupNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return notification.notificationGroup.size > 1;
+}
 
 /**
  * Group notifications by product type preserving first-seen product order.
@@ -36,8 +50,9 @@ export function groupNotificationsByProduct(
  */
 export function getFlattenedNotificationsByProduct(
   notifications: AtlassifyNotification[],
-  settings: SettingsState,
 ): AtlassifyNotification[] {
+  const settings = useSettingsStore.getState();
+
   if (
     settings.groupNotificationsByProduct ||
     settings.groupNotificationsByProductAlphabetically

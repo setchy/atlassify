@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renderer/routes/Accounts.tsx General should render itself & its children - dark mode 1`] = `
+exports[`renderer/routes/Accounts.tsx > General > should render itself & its children - dark mode 1`] = `
 <div
   class="flex flex-col h-screen"
   data-testid="accounts"
@@ -50,7 +50,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syazi7uo"
+        class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
       >
         Accounts
       </h3>
@@ -60,7 +60,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
-      class="css-exdbqv"
+      class="css-x41h1"
     >
       <div
         class="css-1ja375h"
@@ -200,7 +200,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="css-145qftn"
+    class="css-ujmiwr"
   >
     <div
       class="css-11bvkc9"
@@ -248,7 +248,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
 </div>
 `;
 
-exports[`renderer/routes/Accounts.tsx General should render itself & its children - light mode 1`] = `
+exports[`renderer/routes/Accounts.tsx > General > should render itself & its children - light mode 1`] = `
 <div
   class="flex flex-col h-screen"
   data-testid="accounts"
@@ -298,7 +298,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
         </button>
       </div>
       <h3
-        class="_1mouidpf _1dyz4jg8 _1p1dglyw _11c8lodh _syazi7uo"
+        class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
       >
         Accounts
       </h3>
@@ -308,7 +308,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     class="grow overflow-x-hidden overflow-y-auto"
   >
     <div
-      class="css-agh4u8"
+      class="css-pixoan"
     >
       <div
         class="css-1ja375h"
@@ -448,7 +448,7 @@ exports[`renderer/routes/Accounts.tsx General should render itself & its childre
     </div>
   </div>
   <div
-    class="css-145qftn"
+    class="css-ujmiwr"
   >
     <div
       class="css-11bvkc9"

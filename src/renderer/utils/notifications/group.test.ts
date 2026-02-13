@@ -1,14 +1,38 @@
-import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
+import {
+  createMockNotificationForProductType,
+  mockSingleAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
+
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { AtlassifyNotification } from '../../types';
 
 import {
   getFlattenedNotificationsByProduct,
   groupNotificationsByProduct,
+  isGroupNotification,
 } from './group';
 
 describe('renderer/utils/notifications/group.ts', () => {
+  describe('isGroupNotification', () => {
+    it('should return false if insufficient group size', () => {
+      mockSingleAtlassifyNotification.notificationGroup.size = 1;
+
+      const result = isGroupNotification(mockSingleAtlassifyNotification);
+
+      expect(result).toBe(false);
+    });
+
+    it('should return true if insufficient group size', () => {
+      mockSingleAtlassifyNotification.notificationGroup.size = 2;
+
+      const result = isGroupNotification(mockSingleAtlassifyNotification);
+
+      expect(result).toBe(true);
+    });
+  });
+
   describe('groupNotificationsByProduct', () => {
     it('groups notifications by product type', () => {
       const notifications: AtlassifyNotification[] = [
@@ -73,7 +97,11 @@ describe('renderer/utils/notifications/group.ts', () => {
 
   describe('getFlattenedNotificationsByProduct', () => {
     it('returns product-grouped order when groupNotificationsByProduct is true', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: true };
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        groupNotificationsByProduct: true,
+      });
+
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', 'confluence'),
@@ -81,20 +109,18 @@ describe('renderer/utils/notifications/group.ts', () => {
         createMockNotificationForProductType('4', 'confluence'),
       ];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        settings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       // First repo-b notifications, then repo-a notifications
       expect(result.map((n) => n.id)).toEqual(['1', '3', '2', '4']);
     });
 
     it('returns product-grouped order when groupNotificationsByProductAlphabetically is true', () => {
-      const settings = {
-        ...mockSettings,
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProductAlphabetically: true,
-      };
+      });
+
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', 'confluence'),
@@ -102,27 +128,25 @@ describe('renderer/utils/notifications/group.ts', () => {
         createMockNotificationForProductType('4', 'confluence'),
       ];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        settings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       // First repo-b notifications, then repo-a notifications
       expect(result.map((n) => n.id)).toEqual(['1', '3', '2', '4']);
     });
 
     it('returns natural account order when groupNotificationsByProduct is false', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: false };
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        groupNotificationsByProduct: false,
+      });
+
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', 'confluence'),
         createMockNotificationForProductType('3', 'bitbucket'),
       ];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        settings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       // Natural order preserved
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
@@ -131,19 +155,16 @@ describe('renderer/utils/notifications/group.ts', () => {
     it('returns empty array when no notifications', () => {
       const notifications: AtlassifyNotification[] = [];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        mockSettings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       expect(result).toEqual([]);
     });
 
     it('handles notifications without product data when grouped', () => {
-      const settings = {
-        ...mockSettings,
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
         groupNotificationsByProduct: true,
-      };
+      });
 
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
@@ -151,27 +172,25 @@ describe('renderer/utils/notifications/group.ts', () => {
         createMockNotificationForProductType('3', 'bitbucket'),
       ];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        settings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       // Only notifications with repository data are included when grouped
       expect(result.map((n) => n.id)).toEqual(['1', '3']);
     });
 
     it('preserves notifications without product data when not grouped', () => {
-      const settings = { ...mockSettings, groupNotificationsByProduct: false };
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        groupNotificationsByProduct: false,
+      });
+
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
         createMockNotificationForProductType('2', null),
         createMockNotificationForProductType('3', 'bitbucket'),
       ];
 
-      const result = getFlattenedNotificationsByProduct(
-        notifications,
-        settings,
-      );
+      const result = getFlattenedNotificationsByProduct(notifications);
 
       // All notifications preserved in natural order
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);

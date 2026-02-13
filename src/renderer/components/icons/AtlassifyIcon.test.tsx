@@ -6,18 +6,18 @@ describe('renderer/components/icons/AtlassifyIconBlue.tsx', () => {
   it('renders logo - default size and color', () => {
     const tree = renderWithAppContext(<AtlassifyIcon />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('renders logo - custom size', () => {
     const tree = renderWithAppContext(<AtlassifyIcon size={48} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 
   it('renders logo - brand color', () => {
     const tree = renderWithAppContext(<AtlassifyIcon color="brand" />);
 
-    expect(tree).toMatchSnapshot();
+    expect(tree.container).toMatchSnapshot();
   });
 });

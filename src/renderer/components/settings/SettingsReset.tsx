@@ -1,4 +1,4 @@
-import { type FC, useCallback, useContext, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -14,7 +14,7 @@ import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { AppContext } from '../../context/App';
+import useSettingsStore from '../../stores/useSettingsStore';
 
 const gridStyles = xcss({
   width: '100%',
@@ -30,25 +30,30 @@ const titleContainerStyles = xcss({
 
 export const SettingsReset: FC = () => {
   const { t } = useTranslation();
-  const { resetSettings } = useContext(AppContext);
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = useCallback(() => setIsOpen(true), []);
-  const closeModal = useCallback(() => setIsOpen(false), []);
+  const resetSettings = useSettingsStore((s) => s.reset);
+  const [showResetSettingsModal, setShowResetSettingsModal] = useState(false);
+
+  const actionOpenResetSettingsModal = () => {
+    setShowResetSettingsModal(true);
+  };
+  const actionCloseResetSettingsModal = () => {
+    setShowResetSettingsModal(false);
+  };
 
   return (
     <Inline alignInline="center">
       <Button
         appearance="danger"
         aria-haspopup="dialog"
-        onClick={openModal}
+        onClick={actionOpenResetSettingsModal}
         testId="settings-reset-defaults"
       >
         {t('settings.reset.title')}
       </Button>
 
       <ModalTransition>
-        {isOpen && (
-          <Modal onClose={closeModal}>
+        {showResetSettingsModal && (
+          <Modal onClose={actionCloseResetSettingsModal}>
             <ModalHeader>
               <Grid
                 gap="space.200"
@@ -60,7 +65,7 @@ export const SettingsReset: FC = () => {
                     appearance="subtle"
                     icon={CrossIcon}
                     label={t('common.close')}
-                    onClick={closeModal}
+                    onClick={actionCloseResetSettingsModal}
                     testId="settings-reset-close"
                   />
                 </Flex>
@@ -79,7 +84,7 @@ export const SettingsReset: FC = () => {
             <ModalFooter>
               <Button
                 appearance="subtle"
-                onClick={() => closeModal()}
+                onClick={actionCloseResetSettingsModal}
                 testId="settings-reset-cancel"
               >
                 {t('common.cancel')}
@@ -88,7 +93,7 @@ export const SettingsReset: FC = () => {
                 appearance="danger"
                 onClick={() => {
                   resetSettings();
-                  closeModal();
+                  actionCloseResetSettingsModal();
                 }}
                 testId="settings-reset-confirm"
               >

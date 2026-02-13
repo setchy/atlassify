@@ -7,6 +7,7 @@ import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
+import { KeyboardShortcutsSettings } from '../components/settings/KeyboardShortcutsSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';
 import { SettingsReset } from '../components/settings/SettingsReset';
@@ -18,7 +19,7 @@ export const SettingsRoute: FC = () => {
 
   return (
     <Page testId="settings">
-      <Header fetchOnBack>{t('settings.title')}</Header>
+      <Header>{t('settings.title')}</Header>
 
       <Contents>
         <Box paddingBlockEnd="space.200" paddingInline="space.250">
@@ -27,6 +28,7 @@ export const SettingsRoute: FC = () => {
             <NotificationSettings />
             <TraySettings />
             <SystemSettings />
+            <KeyboardShortcutsSettings />
             <SettingsReset />
           </Stack>
         </Box>

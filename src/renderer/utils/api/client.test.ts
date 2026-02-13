@@ -1,31 +1,23 @@
 import axios from 'axios';
+import { vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-import { mockSettings } from '../../__mocks__/state-mocks';
 
 import { Constants } from '../../constants';
 
+import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
+import useSettingsStore from '../../stores/useSettingsStore';
+
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 
-import {
-  checkIfCredentialsAreValid,
-  getAuthenticatedUser,
-  getCloudIDsForHostnames,
-  getJiraProjectTypeByKey,
-  getNotificationsByGroupId,
-  getNotificationsForUser,
-  markNotificationsAsRead,
-  markNotificationsAsUnread,
-} from './client';
+import * as client from './client';
 
 // Experimental API tests moved to experimental/client.test.ts
 
-jest.mock('axios');
-
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValue({
+    vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
       },
@@ -33,11 +25,11 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {
-    await checkIfCredentialsAreValid(
+    await client.checkIfCredentialsAreValid(
       mockAtlassianCloudAccount.username,
       mockAtlassianCloudAccount.token,
     );
@@ -55,7 +47,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('getAuthenticatedUser - should fetch authenticated user details', async () => {
-    await getAuthenticatedUser(mockAtlassianCloudAccount);
+    await client.getAuthenticatedUser(mockAtlassianCloudAccount);
 
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -70,7 +62,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('listNotificationsForAuthenticatedUser - should list notifications for user', async () => {
-    await getNotificationsForUser(mockAtlassianCloudAccount, mockSettings);
+    await client.getNotificationsForUser(mockAtlassianCloudAccount);
 
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -80,7 +72,7 @@ describe('renderer/utils/api/client.ts', () => {
           query: expect.stringContaining('query MyNotifications'),
           variables: {
             first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-            flat: !mockSettings.groupNotificationsByTitle,
+            flat: !DEFAULT_SETTINGS_STATE.groupNotificationsByTitle,
             readState: 'unread',
           },
         },
@@ -89,7 +81,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('markNotificationsAsRead - should mark notifications as read', async () => {
-    await markNotificationsAsRead(mockAtlassianCloudAccount, [
+    await client.markNotificationsAsRead(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,
     ]);
 
@@ -108,7 +100,7 @@ describe('renderer/utils/api/client.ts', () => {
   });
 
   it('markNotificationsAsUnread - should mark notifications as unread', async () => {
-    await markNotificationsAsUnread(mockAtlassianCloudAccount, [
+    await client.markNotificationsAsUnread(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,
     ]);
 
@@ -130,9 +122,13 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch unread notifications by group id', async () => {
       const mockGroupSize = 5;
 
-      await getNotificationsByGroupId(
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        fetchOnlyUnreadNotifications: true,
+      });
+
+      await client.getNotificationsByGroupId(
         mockAtlassianCloudAccount,
-        { ...mockSettings, fetchOnlyUnreadNotifications: true },
         mockSingleAtlassifyNotification.notificationGroup.id,
         mockGroupSize,
       );
@@ -158,9 +154,13 @@ describe('renderer/utils/api/client.ts', () => {
     it('getNotificationsByGroupId - should fetch all notifications by group id', async () => {
       const mockGroupSize = 5;
 
-      await getNotificationsByGroupId(
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        fetchOnlyUnreadNotifications: false,
+      });
+
+      await client.getNotificationsByGroupId(
         mockAtlassianCloudAccount,
-        { ...mockSettings, fetchOnlyUnreadNotifications: false },
         mockSingleAtlassifyNotification.notificationGroup.id,
         mockGroupSize,
       );
@@ -187,7 +187,10 @@ describe('renderer/utils/api/client.ts', () => {
   it('getCloudIDsForHostnames - should fetch cloud ID for hostname', async () => {
     const mockHostnames = ['https://example.atlassian.net'] as Hostname[];
 
-    await getCloudIDsForHostnames(mockAtlassianCloudAccount, mockHostnames);
+    await client.getCloudIDsForHostnames(
+      mockAtlassianCloudAccount,
+      mockHostnames,
+    );
 
     expect(axios).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -206,10 +209,10 @@ describe('renderer/utils/api/client.ts', () => {
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
     const mockProjectKey = 'PROJ' as JiraProjectKey;
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    (axios as jest.MockedFunction<typeof axios>).mockResolvedValueOnce({
+    vi.mocked(axios).mockResolvedValueOnce({
       data: { projectTypeKey: 'service_desk' },
     });
-    const result = await getJiraProjectTypeByKey(
+    const result = await client.getJiraProjectTypeByKey(
       mockAtlassianCloudAccount,
       mockCloudID,
       mockProjectKey,

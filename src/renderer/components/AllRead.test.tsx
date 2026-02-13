@@ -4,7 +4,8 @@ import {
   ensureStableEmojis,
   renderWithAppContext,
 } from '../__helpers__/test-utils';
-import { mockSettings } from '../__mocks__/state-mocks';
+
+import useFiltersStore from '../stores/useFiltersStore';
 
 import { AllRead } from './AllRead';
 
@@ -17,33 +18,21 @@ describe('renderer/components/AllRead.tsx', () => {
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<AllRead />, {
-        settings: {
-          ...mockSettings,
-          filterProducts: [],
-          filterActors: [],
-          filterCategories: [],
-          filterEngagementStates: [],
-          filterReadStates: [],
-        },
-      });
+      tree = renderWithAppContext(<AllRead />);
     });
 
-    expect(tree).toMatchSnapshot();
+    expect(tree?.container).toMatchSnapshot();
   });
 
   it('should render itself & its children - with filters', async () => {
+    useFiltersStore.setState({ products: ['jira'] });
+
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<AllRead />, {
-        settings: {
-          ...mockSettings,
-          filterProducts: ['jira'],
-        },
-      });
+      tree = renderWithAppContext(<AllRead />);
     });
 
-    expect(tree).toMatchSnapshot();
+    expect(tree?.container).toMatchSnapshot();
   });
 });

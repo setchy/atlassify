@@ -1,20 +1,16 @@
 import { render } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
-
-import { mockAuth, mockSettings } from '../__mocks__/state-mocks';
+import { vi } from 'vitest';
 
 import { AppContext, type AppContextState } from '../context/App';
 
-import type { SettingsState } from '../types';
-
 /**
- * Test context that allows partial settings
+ * Test context (settings removed as it's no longer in context)
  */
-type TestAppContext = Omit<Partial<AppContextState>, 'settings'> & {
-  settings?: Partial<SettingsState>;
-};
+type TestAppContext = Partial<AppContextState>;
 
 /**
  * Props for the AppContextProvider wrapper
@@ -27,16 +23,9 @@ interface AppContextProviderProps {
 /**
  * Wrapper component that provides AppContext with sensible defaults for testing.
  */
-export function AppContextProvider({
-  children,
-  value = {},
-}: AppContextProviderProps) {
+function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
-      auth: mockAuth,
-      settings: mockSettings,
-      isLoggedIn: true,
-
       notifications: [],
 
       status: 'success',
@@ -61,9 +50,21 @@ export function renderWithAppContext(
   ui: ReactElement,
   context: TestAppContext = {},
 ) {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
+      },
+    },
+  });
+
   return render(ui, {
     wrapper: ({ children }) => (
-      <AppContextProvider value={context}>{children}</AppContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <AppContextProvider value={context}>{children}</AppContextProvider>
+      </QueryClientProvider>
     ),
   });
 }
@@ -72,7 +73,7 @@ export function renderWithAppContext(
  * Ensure stable snapshots for our randomized emoji use-cases
  */
 export function ensureStableEmojis() {
-  globalThis.Math.random = jest.fn(() => 0.1);
+  globalThis.Math.random = vi.fn(() => 0.1);
 }
 
 /**

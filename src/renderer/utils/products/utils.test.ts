@@ -1,14 +1,18 @@
-// Mock API client before importing module under test so internal imports use mocks
-jest.mock('../api/client', () => {
-  return {
-    getCloudIDsForHostnames: jest.fn(async () => ({
-      data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
-    })),
-    getJiraProjectTypeByKey: jest.fn(),
-  };
-});
-jest.mock('../logger', () => ({
-  rendererLogError: jest.fn(),
+import { vi } from 'vitest';
+
+const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = vi.hoisted(() => ({
+  getCloudIDsForHostnames: vi.fn(async () => ({
+    data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
+  })),
+  getJiraProjectTypeByKey: vi.fn(),
+}));
+
+vi.mock('../api/client', () => ({
+  getCloudIDsForHostnames,
+  getJiraProjectTypeByKey,
+}));
+vi.mock('../logger', () => ({
+  rendererLogError: vi.fn(),
 }));
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
@@ -23,13 +27,7 @@ import {
   PRODUCTS,
 } from '.';
 
-// Access mocked API functions via requireMock to avoid type-side effects
-const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = jest.requireMock(
-  '../api/client',
-) as {
-  getCloudIDsForHostnames: jest.Mock;
-  getJiraProjectTypeByKey: jest.Mock;
-};
+// Access mocked API functions via hoisted references
 
 describe('renderer/utils/products/utils.ts', () => {
   describe('inferAtlassianProduct', () => {
@@ -116,7 +114,7 @@ describe('renderer/utils/products/utils.ts', () => {
         }) as AtlassianHeadNotificationFragment;
 
       const setProjectType = (t: JiraProjectType) =>
-        (getJiraProjectTypeByKey as jest.Mock).mockResolvedValueOnce(t);
+        (getJiraProjectTypeByKey as any).mockResolvedValueOnce(t);
 
       test.each<
         [JiraProjectType, string, (typeof PRODUCTS)[keyof typeof PRODUCTS]]
@@ -178,9 +176,9 @@ describe('renderer/utils/products/utils.ts', () => {
           makeJiraNotif('BBB'),
         );
 
-        const cloudCalls = (getCloudIDsForHostnames as jest.Mock).mock.calls;
+        const cloudCalls = (getCloudIDsForHostnames as any).mock.calls;
         expect(cloudCalls.length).toBe(1);
-        const projCalls = (getJiraProjectTypeByKey as jest.Mock).mock.calls;
+        const projCalls = (getJiraProjectTypeByKey as any).mock.calls;
         // 1st key fetch + 2nd key fetch = 2
         expect(
           projCalls.filter((c) => ['AAA', 'BBB'].includes(c[2])).length,
@@ -189,7 +187,7 @@ describe('renderer/utils/products/utils.ts', () => {
 
       it('logs and falls back when cloud id retrieval fails', async () => {
         __resetProductInferenceCaches();
-        (getCloudIDsForHostnames as jest.Mock).mockRejectedValueOnce(
+        (getCloudIDsForHostnames as any).mockRejectedValueOnce(
           new Error('cloud boom'),
         );
         const notif = makeJiraNotif('ERR1');
@@ -201,10 +199,10 @@ describe('renderer/utils/products/utils.ts', () => {
 
       it('logs and falls back when project type lookup fails', async () => {
         __resetProductInferenceCaches();
-        (getCloudIDsForHostnames as jest.Mock).mockResolvedValueOnce({
+        (getCloudIDsForHostnames as any).mockResolvedValueOnce({
           data: { tenantContexts: [{ cloudId: 'cloud-2' }] },
         });
-        (getJiraProjectTypeByKey as jest.Mock).mockRejectedValueOnce(
+        (getJiraProjectTypeByKey as any).mockRejectedValueOnce(
           new Error('project boom'),
         );
         const notif = makeJiraNotif('ERR2');
@@ -238,6 +236,6 @@ function createProductNotificationMock(
 }
 
 afterEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
   __resetProductInferenceCaches();
 });

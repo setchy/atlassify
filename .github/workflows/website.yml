@@ -3,7 +3,7 @@ name: Website
 on:
   workflow_dispatch: # For manually running website deployment
   release:
-    types: 
+    types:
       - published # For running on release publish
 
 permissions:
