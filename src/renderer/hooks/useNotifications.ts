@@ -196,22 +196,31 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
       return;
     }
 
+    const unfilteredNotifications =
+      queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ||
+      [];
+
     const diffNotifications = getNewNotifications(
       previousNotificationsRef.current,
-      notifications,
+      unfilteredNotifications,
     );
 
     if (diffNotifications.length > 0) {
-      if (playSoundNewNotifications) {
-        raiseSoundNotification(notificationVolume);
-      }
+      // Apply filters to new notifications so only filtered notifications trigger alerts
+      const filteredDiffNotifications = filterNotifications(diffNotifications);
 
-      if (showSystemNotifications) {
-        raiseNativeNotification(diffNotifications);
+      if (filteredDiffNotifications.length > 0) {
+        if (playSoundNewNotifications) {
+          raiseSoundNotification(notificationVolume);
+        }
+
+        if (showSystemNotifications) {
+          raiseNativeNotification(filteredDiffNotifications);
+        }
       }
     }
 
-    previousNotificationsRef.current = notifications;
+    previousNotificationsRef.current = unfilteredNotifications;
   }, [
     notifications,
     isLoading,
@@ -219,6 +228,8 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     playSoundNewNotifications,
     showSystemNotifications,
     notificationVolume,
+    queryClient,
+    notificationsQueryKey,
   ]);
 
   const getNotificationIdsForGroups = useCallback(
