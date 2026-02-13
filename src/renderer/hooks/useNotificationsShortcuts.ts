@@ -93,7 +93,7 @@ export const useNotificationsShortcuts = (
       }
 
       if (direction === 'last') {
-        focusNotification(visibleIds[visibleIds.length - 1]);
+        focusNotification(visibleIds.at(-1) ?? null);
         return;
       }
 
