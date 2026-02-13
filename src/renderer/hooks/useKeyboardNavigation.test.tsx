@@ -69,7 +69,6 @@ describe('useKeyboardNavigation', () => {
   beforeEach(() => {
     originalRaf = globalThis.requestAnimationFrame;
     // run rAF callbacks synchronously in tests
-    // @ts-expect-error
     globalThis.requestAnimationFrame = (cb: FrameRequestCallback) => {
       cb(0);
       return 0 as unknown as number;
@@ -79,7 +78,6 @@ describe('useKeyboardNavigation', () => {
   afterEach(() => {
     cleanup();
     // restore rAF
-    // @ts-expect-error
     globalThis.requestAnimationFrame = originalRaf;
     vi.restoreAllMocks();
   });
