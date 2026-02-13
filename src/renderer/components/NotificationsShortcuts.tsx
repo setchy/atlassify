@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react';
+import { useEffect } from 'react';
 
 import { useNotificationsShortcuts } from '../hooks/useNotificationsShortcuts';
 
@@ -39,6 +40,18 @@ export const NotificationsShortcuts: FC<NotificationsShortcutsProps> = (
       markNotificationsRead,
       markNotificationsUnread,
     });
+
+  useEffect(() => {
+    const handleBlur = () => {
+      focusNotification(null);
+    };
+
+    window.addEventListener('blur', handleBlur);
+
+    return () => {
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, [focusNotification]);
 
   return <>{children({ focusedNotificationId, focusNotification })}</>;
 };
