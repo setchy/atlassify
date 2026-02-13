@@ -208,6 +208,19 @@ export const useKeyboardNavigation = (
     };
   }, [moveFocus, openFocusedNotification, toggleFocusedReadState]);
 
+  // Clear focus when window loses focus
+  useEffect(() => {
+    const handleBlur = () => {
+      setFocusedNotificationId(null);
+    };
+
+    window.addEventListener('blur', handleBlur);
+
+    return () => {
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, []);
+
   return {
     focusedNotificationId,
   };
