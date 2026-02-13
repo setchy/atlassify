@@ -14,6 +14,12 @@ interface UseKeyboardNavigationResult {
   focusedNotificationId: string | null;
 }
 
+/**
+ * Handles keyboard navigation for notifications list.
+ *
+ * @param options Configuration options
+ * @returns Navigation state and controls
+ */
 export const useKeyboardNavigation = (
   options: UseKeyboardNavigationOptions,
 ): UseKeyboardNavigationResult => {
@@ -157,12 +163,7 @@ export const useKeyboardNavigation = (
 
       // TODO - Set focus for next notification after removing current one
     }
-  }, [
-    focusedNotificationId,
-    focusNotification,
-    getVisibleNotificationIds,
-    notificationsById,
-  ]);
+  }, [focusedNotificationId, notificationsById]);
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
