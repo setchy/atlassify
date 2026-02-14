@@ -56,16 +56,22 @@ if (!aptabaseKey) {
  * File and directory paths / URLs
  */
 const preloadFilePath = path.resolve(__dirname, 'preload.js');
+
 const indexHtmlFileURL = isDevMode()
   ? process.env.VITE_DEV_SERVER_URL
   : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
+
 const notificationSoundFileURL = pathToFileURL(
   path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
 ).href;
+
 const twemojiFolderURL = pathToFileURL(
   path.resolve(__dirname, 'assets', 'images', 'twemoji'),
 ).href;
 
+/**
+ * Menubar app setup
+ */
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,

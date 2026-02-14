@@ -18,10 +18,14 @@ pnpm install
 
 ### Development
 
-For local development, including GraphQL codegen and hot module reload (HMR):
-
+For local development, run build at least once to copy static resources (tray icons, twemojis, etc)
 ```shell
-pnpm build && pnpm dev
+pnpm build
+```
+
+There after, you can do most development, including GraphQL codegen and hot module reload (HMR) via
+```shell
+ pnpm dev
 ```
 
 ### Tests
