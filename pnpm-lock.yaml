@@ -8,15 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@aptabase/electron':
-        specifier: 0.3.1
-        version: 0.3.1(electron@40.4.1)
-      '@tanstack/react-query':
-        specifier: 5.90.21
-        version: 5.90.21(react@19.2.4)
-      dotenv:
-        specifier: 17.3.1
-        version: 17.3.1
       electron-log:
         specifier: 5.4.3
         version: 5.4.3
@@ -44,10 +35,10 @@ importers:
       react-router-dom:
         specifier: 7.13.0
         version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      zustand:
-        specifier: 5.0.11
-        version: 5.0.11(@types/react@19.2.14)(react@19.2.4)(use-sync-external-store@1.6.0(react@19.2.4))
     devDependencies:
+      '@aptabase/electron':
+        specifier: 0.3.1
+        version: 0.3.1(electron@40.4.1)
       '@atlaskit/avatar':
         specifier: 25.7.4
         version: 25.7.4(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -99,6 +90,9 @@ importers:
       '@atlaskit/textfield':
         specifier: 8.2.3
         version: 8.2.3(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/theme':
+        specifier: ^21.0.5
+        version: 21.0.5(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/toggle':
         specifier: 15.2.9
         version: 15.2.9(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -126,6 +120,9 @@ importers:
       '@graphql-codegen/schema-ast':
         specifier: 5.0.0
         version: 5.0.0(graphql@16.12.0)
+      '@graphql-typed-document-node/core':
+        specifier: ^3.2.0
+        version: 3.2.0(graphql@16.12.0)
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@19.2.4)
@@ -138,6 +135,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: 4.1.18
         version: 4.1.18
+      '@tanstack/react-query':
+        specifier: 5.90.21
+        version: 5.90.21(react@19.2.4)
       '@testing-library/jest-dom':
         specifier: 6.9.1
         version: 6.9.1
@@ -180,6 +180,9 @@ importers:
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
+      dotenv:
+        specifier: 17.3.1
+        version: 17.3.1
       electron:
         specifier: 40.4.1
         version: 40.4.1
@@ -216,6 +219,9 @@ importers:
       typescript:
         specifier: 5.9.3
         version: 5.9.3
+      vite:
+        specifier: 7.3.1
+        version: 7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
       vite-plugin-checker:
         specifier: 0.12.0
         version: 0.12.0(@biomejs/biome@2.3.15)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
@@ -231,6 +237,9 @@ importers:
       vitest:
         specifier: 4.0.18
         version: 4.0.18(@types/node@24.10.13)(@vitest/ui@4.0.18)(happy-dom@20.6.1)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
+      zustand:
+        specifier: 5.0.11
+        version: 5.0.11(@types/react@19.2.14)(react@19.2.4)(use-sync-external-store@1.6.0(react@19.2.4))
 
 packages:
 
