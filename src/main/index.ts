@@ -37,6 +37,7 @@ import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
+import { isDevMode } from './utils';
 
 log.initialize();
 
@@ -55,35 +56,20 @@ if (!aptabaseKey) {
 /**
  * File and directory paths / URLs
  */
-// Forge builds to specific paths - use MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY in dev
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string | undefined;
-declare const MAIN_WINDOW_VITE_NAME: string | undefined;
 
-const isDev = !app.isPackaged;
-
-// In Forge, preload path is injected via globals
-const preloadFilePath = isDev
-  ? path.join(__dirname, 'preload.js') // Forge builds all to same dir in dev
-  : path.join(__dirname, '../preload/index.js');
+const preloadFilePath = path.join(__dirname, 'preload.js');
 
 logInfo('main:paths', `Preload path: ${preloadFilePath}`);
 logInfo('main:paths', `Preload exists: ${fs.existsSync(preloadFilePath)}`);
 
-const indexHtmlFileURL =
-  isDev && typeof MAIN_WINDOW_VITE_DEV_SERVER_URL !== 'undefined'
-    ? MAIN_WINDOW_VITE_DEV_SERVER_URL
-    : pathToFileURL(path.join(__dirname, '../renderer/main_window/index.html'))
-        .href;
+const indexHtmlFileURL = isDevMode()
+  ? MAIN_WINDOW_VITE_DEV_SERVER_URL
+  : pathToFileURL(path.join(__dirname, 'renderer', 'main_window', 'index.html'))
+      .href;
 
-logInfo('main:paths', `Development mode: ${isDev}`);
+logInfo('main:paths', `Development mode: ${isDevMode()}`);
 logInfo('main:paths', `Loading app from: ${indexHtmlFileURL}`);
-
-const notificationSoundFileURL = pathToFileURL(
-  path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
-).href;
-const twemojiFolderURL = pathToFileURL(
-  path.resolve(__dirname, 'assets', 'images', 'twemoji'),
-).href;
 
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
@@ -97,7 +83,7 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     contextIsolation: true,
     nodeIntegration: false,
     // Disable web security in development to allow CORS requests
-    webSecurity: !isDev,
+    webSecurity: !isDevMode(),
   },
 };
 
@@ -255,14 +241,6 @@ app.whenReady().then(async () => {
    */
 
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
-
-  handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
-    return notificationSoundFileURL;
-  });
-
-  handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
-    return twemojiFolderURL;
-  });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
     return safeStorage.encryptString(value).toString('base64');

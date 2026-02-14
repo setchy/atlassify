@@ -29,16 +29,16 @@ export default defineConfig(({ command }) => {
           'electron-updater',
           'menubar',
           '@aptabase/electron',
-          'dotenv',
         ],
       },
     },
     plugins: [
+      // TODO - I believe there is a more native way to do this
       // Copy assets to main build output
       viteStaticCopy({
         targets: [
           {
-            src: 'assets',
+            src: 'src/main/assets',
             dest: '.',
           },
         ],

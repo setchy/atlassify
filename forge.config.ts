@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { notarize } from '@electron/notarize';
+import twemoji from '@discordapp/twemoji';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerDMG } from '@electron-forge/maker-dmg';
 import MakerRpm from '@electron-forge/maker-rpm';
@@ -10,6 +10,10 @@ import MakerZIP from '@electron-forge/maker-zip';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import { PublisherGithub } from '@electron-forge/publisher-github';
 import type { ForgeConfig } from '@electron-forge/shared-types';
+
+import { Constants } from './src/renderer/constants';
+
+import { Errors } from './src/renderer/utils/errors';
 
 function logForgeProgress(msg: string) {
   // biome-ignore lint/suspicious/noConsole: log packaging progress
@@ -21,6 +25,7 @@ const config: ForgeConfig = {
     name: 'Atlassify',
     appBundleId: 'com.electron.atlassify',
     appCopyright: 'Copyright © 2026 Adam Setch',
+    appCategoryType: 'public.app-category.developer-tools',
     asar: true,
     icon: 'assets/images/app-icon',
     extraResource: ['assets'],
@@ -125,44 +130,50 @@ const config: ForgeConfig = {
     }),
   ],
   hooks: {
-    packageAfterPrune: async (
-      _config,
-      buildPath,
-      _electronVersion,
-      platform,
-      _arch,
-    ) => {
-      // Remove unused macOS locales (equivalent to afterPack.js)
-      if (platform === 'darwin') {
-        logForgeProgress('removing unused locales');
+    generateAssets: async () => {
+      logForgeProgress('Copying twemoji assets...');
 
-        const electronLanguages = ['en'];
-        const resourcesPath = path.join(
-          buildPath,
-          'Atlassify.app',
-          'Contents',
-          'Frameworks',
-          'Electron Framework.framework',
-          'Versions',
-          'A',
-          'Resources',
+      const ALL_EMOJIS = [
+        ...Constants.ALL_READ_EMOJIS,
+        ...Errors.BAD_CREDENTIALS.emojis,
+        ...Errors.BAD_REQUEST.emojis,
+        ...Errors.NETWORK.emojis,
+        ...Errors.UNKNOWN.emojis,
+      ];
+
+      const extractSvgFilename = (imgHtml: string) =>
+        imgHtml
+          .match(/src="(.*)"/)?.[1]
+          .split('/')
+          .pop();
+
+      const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
+        extractSvgFilename(
+          twemoji.parse(emoji, { folder: 'svg', ext: '.svg' }),
+        ),
+      ) as string[];
+
+      for (const filename of ALL_EMOJI_SVG_FILENAMES) {
+        const srcPath = path.resolve(
+          __dirname,
+          'node_modules/@discordapp/twemoji/dist/svg',
+          filename,
+        );
+        const destPath = path.resolve(
+          __dirname,
+          'src',
+          'renderer',
+          'public',
+          'images',
+          'twemoji',
+          filename,
         );
 
-        if (fs.existsSync(resourcesPath)) {
-          const allLocales = fs
-            .readdirSync(resourcesPath)
-            .filter((file) => file.endsWith('.lproj'));
-
-          const langLocales = electronLanguages.map((lang) => `${lang}.lproj`);
-
-          for (const locale of allLocales) {
-            if (!langLocales.includes(locale)) {
-              const localePath = path.join(resourcesPath, locale);
-              fs.rmSync(localePath, { recursive: true });
-            }
-          }
-        }
+        await fs.promises.mkdir(path.dirname(destPath), { recursive: true });
+        await fs.promises.copyFile(srcPath, destPath);
       }
+
+      logForgeProgress('Twemoji assets copied.');
     },
   },
 };
