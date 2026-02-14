@@ -37,10 +37,9 @@ jobs:
         run: ${{ matrix.make-cmd }}
         env:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
-          # Signing certificates - important to use the correct cert per platform
-          APPLE_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_USERNAME || '' }}
-          APPLE_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_PASSWORD || '' }}
-          APPLE_TEAM_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_TEAM_ID || '' }}
+          APPLE_ID: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD  }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0

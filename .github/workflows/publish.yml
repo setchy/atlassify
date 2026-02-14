@@ -16,15 +16,12 @@ jobs:
           - os: macos-latest
             platform: macOS
             artifact-name: Atlassify-release-mac
-            use-apple-notarization: true
           - os: windows-latest
             platform: Windows
             artifact-name: Atlassify-release-win
-            use-apple-notarization: false
           - os: ubuntu-latest
             platform: Linux
             artifact-name: Atlassify-release-linux
-            use-apple-notarization: false
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -35,18 +32,13 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Publish for ${{ matrix.platform }}
-        run: pnpm publish
+        run: pnpm electron-publish
         env:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
-          # Signing certificates - important to use the correct cert per platform (via osxSign in forge.config.ts)
-          APPLE_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_USERNAME || '' }}
-          APPLE_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_PASSWORD || '' }}
-          APPLE_TEAM_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_TEAM_ID || '' }}
           # macOS notarization
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
-          NOTARIZE: ${{ matrix.use-apple-notarization }}
+          APPLE_ID: ${{ secrets.APPLE_ID_USERNAME  }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD  }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID  }}
           # General
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

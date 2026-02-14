@@ -21,7 +21,6 @@ const config: ForgeConfig = {
     extraResource: ['app-update.yml'],
     osxSign: {},
     osxNotarize:
-      process.env.NOTARIZE === 'true' &&
       process.env.APPLE_ID &&
       process.env.APPLE_ID_PASSWORD &&
       process.env.APPLE_TEAM_ID
