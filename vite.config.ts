@@ -72,15 +72,8 @@ export default defineConfig(({ command }) => {
             build: {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
               rollupOptions: {
-                output: { entryFileNames: 'main.js', format: 'cjs' },
-                external: [
-                  'electron',
-                  'electron-log',
-                  'electron-updater',
-                  'menubar',
-                  '@aptabase/electron',
-                  'dotenv',
-                ],
+                output: { entryFileNames: 'main.js' },
+                external: ['electron'],
               },
             },
           },
@@ -114,6 +107,9 @@ export default defineConfig(({ command }) => {
     root: 'src/renderer',
     publicDir: false as const,
     base: './',
-    build: { outDir: '../../build', emptyOutDir: true },
+    build: {
+      outDir: fileURLToPath(new URL('build', import.meta.url)),
+      emptyOutDir: true,
+    },
   };
 });

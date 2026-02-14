@@ -31,4 +31,10 @@ export const Constants = {
 
   // Threshold for determining if a notification content block is "long" and needs truncating
   BLOCK_ALIGNMENT_LENGTH_THRESHOLD: 55,
+
+  // Path to the notification sound file
+  NOTIFICATION_SOUND_PATH: '/assets/sounds/notification.wav',
+
+  // Twemoji base directory
+  TWEMOJI_BASE_DIRECTORY: '/assets/images/twemoji',
 };
