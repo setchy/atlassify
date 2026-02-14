@@ -21,7 +21,7 @@ export default defineConfig({
       if (
         type === 'stdout' &&
         typeof log === 'string' &&
-        log.includes('i18next is maintained with support from locize.com')
+        log.includes('i18next is maintained with support from Locize')
       ) {
         return false;
       }
