@@ -1,5 +1,3 @@
-import { Constants } from '../../constants';
-
 import type { Percentage } from '../../types';
 
 const MINIMUM_VOLUME_PERCENTAGE = 0 as Percentage;
@@ -7,8 +5,9 @@ const MAXIMUM_VOLUME_PERCENTAGE = 100 as Percentage;
 const VOLUME_STEP = 10 as Percentage;
 
 export async function raiseSoundNotification(volume: Percentage) {
-  const audio = new Audio(Constants.NOTIFICATION_SOUND_PATH);
+  const path = await window.atlassify.notificationSoundPath();
 
+  const audio = new Audio(path);
   audio.volume = volumePercentageToLevel(volume);
   audio.play();
 }

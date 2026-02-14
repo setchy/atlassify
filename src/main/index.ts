@@ -61,6 +61,17 @@ const indexHtmlFileURL = isDevMode()
   ? process.env.VITE_DEV_SERVER_URL
   : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
 
+const notificationSoundFileURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
+).href;
+
+const twemojiFolderURL = pathToFileURL(
+  path.resolve(__dirname, 'assets', 'images', 'twemoji'),
+).href;
+
+/**
+ * Menubar app setup
+ */
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
@@ -231,6 +242,14 @@ app.whenReady().then(async () => {
    */
 
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
+
+  handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
+    return notificationSoundFileURL;
+  });
+
+  handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
+    return twemojiFolderURL;
+  });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
     return safeStorage.encryptString(value).toString('base64');

@@ -47,6 +47,10 @@ export const api = {
       sendMainEvent(EVENTS.USE_UNREAD_ACTIVE_ICON, value),
   },
 
+  notificationSoundPath: () => invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH),
+
+  twemojiDirectory: () => invokeMainEvent(EVENTS.TWEMOJI_DIRECTORY),
+
   platform: {
     isLinux: () => isLinux(),
 
