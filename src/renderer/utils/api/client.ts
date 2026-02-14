@@ -48,7 +48,7 @@ export const queryClient = new QueryClient({
       retry: 1,
       refetchIntervalInBackground: true,
       staleTime: Constants.QUERY_STALE_TIME_MS,
-      networkMode: 'online',
+      networkMode: 'always',
     },
   },
 });

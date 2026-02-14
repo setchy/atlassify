@@ -1,3 +1,4 @@
+import { onlineManager } from '@tanstack/react-query';
 import axios from 'axios';
 
 import type { Account, Token, Username } from '../../types';
@@ -90,6 +91,15 @@ function performGraphQLApiRequest<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   variables: TVariables,
 ): Promise<AtlassianGraphQLResponse<TResult>> {
+  // Short-circuit network requests when the application is offline.
+  // We still keep `networkMode: 'always'` at the Query layer if desired,
+  // but avoid making HTTP calls and generating noisy stack traces while offline.
+  if (!onlineManager.isOnline()) {
+    const offlineErr = new Error('Offline');
+    (offlineErr as any).isOffline = true;
+    return Promise.reject(offlineErr);
+  }
+
   const url = URLs.ATLASSIAN.API;
 
   return axios({

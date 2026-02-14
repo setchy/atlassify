@@ -25,6 +25,11 @@ export function rendererLogError(
   err: Error,
   notification?: AtlassifyNotification,
 ) {
+  // Avoid spamming logs with expected offline errors (noisy stack traces).
+  if ((err as any)?.isOffline) {
+    return;
+  }
+
   logError(type, message, err, buildContexts(notification));
 }
 
