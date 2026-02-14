@@ -1,3 +1,4 @@
+import { onlineManager } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 
 import type { AtlassifyError } from '../../types';
@@ -8,6 +9,10 @@ import { Errors } from '../errors';
 export function determineFailureType(
   err: AxiosError<AtlassianAPIError>,
 ): AtlassifyError {
+  if (!onlineManager.isOnline()) {
+    return Errors.NETWORK;
+  }
+
   if (err.message === Errors.BAD_REQUEST.title) {
     return Errors.BAD_REQUEST;
   }

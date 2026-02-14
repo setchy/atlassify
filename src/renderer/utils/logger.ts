@@ -1,3 +1,5 @@
+import { onlineManager } from '@tanstack/react-query';
+
 import { logError, logInfo, logWarn } from '../../shared/logger';
 
 import type { AtlassifyNotification } from '../types';
@@ -25,8 +27,8 @@ export function rendererLogError(
   err: Error,
   notification?: AtlassifyNotification,
 ) {
-  // Avoid spamming logs with expected offline errors (noisy stack traces).
-  if ((err as any)?.isOffline) {
+  // Short-circuit logging errors when the application is offline.
+  if (!onlineManager.isOnline()) {
     return;
   }
 
