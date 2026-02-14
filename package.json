@@ -15,7 +15,7 @@
     "make:linux": "electron-forge make --platform=linux",
     "make:macos": "electron-forge make --platform=darwin",
     "make:win": "electron-forge make --platform=win32",
-    "publish": "electron-forge publish",
+    "electron-publish": "electron-forge publish",
     "lint": "biome check --fix",
     "lint:check": "biome check",
     "test": "vitest --coverage --run",
