@@ -1,6 +1,8 @@
 # Build files
 dist/
 build/
+out/
+.vite/
 
 # Environment variables
 .env
@@ -10,6 +12,9 @@ node_modules/
 
 # Generated GraphQL Files
 schema.graphql
+
+# Generated Twemoji Assets
+src/renderer/public/images/twemoji/
 
 # Astro Docs - generated
 .astro/

@@ -31,4 +31,10 @@ export const Constants = {
 
   // Threshold for determining if a notification content block is "long" and needs truncating
   BLOCK_ALIGNMENT_LENGTH_THRESHOLD: 55,
+
+  // Notification sound path from /public folder
+  NOTIFICATION_SOUND_PATH: '/sounds/notification.wav',
+
+  // Twemoji image path from /public folder, sync'd via Electron Forge generateAssets hook
+  TWEMOJI_IMAGE_PATH: '/images/twemoji',
 };

@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -55,16 +56,19 @@ if (!aptabaseKey) {
 /**
  * File and directory paths / URLs
  */
-const preloadFilePath = path.resolve(__dirname, 'preload.js');
+declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string | undefined;
+
+const preloadFilePath = path.join(__dirname, 'preload.js');
+
+logInfo('main:paths', `Preload path: ${preloadFilePath}`);
+logInfo('main:paths', `Preload exists: ${fs.existsSync(preloadFilePath)}`);
+
 const indexHtmlFileURL = isDevMode()
-  ? process.env.VITE_DEV_SERVER_URL
-  : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
-const notificationSoundFileURL = pathToFileURL(
-  path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
-).href;
-const twemojiFolderURL = pathToFileURL(
-  path.resolve(__dirname, 'assets', 'images', 'twemoji'),
-).href;
+  ? MAIN_WINDOW_VITE_DEV_SERVER_URL
+  : pathToFileURL(path.join(__dirname, 'renderer', 'index.html')).href;
+
+logInfo('main:paths', `Development mode: ${isDevMode()}`);
+logInfo('main:paths', `Loading app from: ${indexHtmlFileURL}`);
 
 const browserWindowOpts: BrowserWindowConstructorOptions = {
   width: 500,
@@ -78,7 +82,7 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     contextIsolation: true,
     nodeIntegration: false,
     // Disable web security in development to allow CORS requests
-    webSecurity: !process.env.VITE_DEV_SERVER_URL,
+    webSecurity: !isDevMode(),
   },
 };
 
@@ -236,14 +240,6 @@ app.whenReady().then(async () => {
    */
 
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
-
-  handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
-    return notificationSoundFileURL;
-  });
-
-  handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
-    return twemojiFolderURL;
-  });
 
   handleMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, (_, value: string) => {
     return safeStorage.encryptString(value).toString('base64');

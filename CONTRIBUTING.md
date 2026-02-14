@@ -21,8 +21,10 @@ pnpm install
 For local development, including GraphQL codegen and hot module reload (HMR):
 
 ```shell
-pnpm build && pnpm dev
+pnpm dev
 ```
+
+This runs Electron Forge with Vite for development, along with GraphQL codegen in watch mode.
 
 ### Tests
 

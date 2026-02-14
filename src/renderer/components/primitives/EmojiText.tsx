@@ -6,6 +6,7 @@ export interface EmojiTextProps {
   text: string;
 }
 
+// FIXME - this is loading the wrong path
 export const EmojiText: FC<EmojiTextProps> = ({ text }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const mountedRef = useRef(true);
