@@ -9,23 +9,20 @@ permissions:
 
 jobs:
   release:
-    name: Publish ${{ matrix.platform }} (electron-builder)
+    name: Publish ${{ matrix.platform }} (electron-forge)
     strategy:
       matrix:
         include:
           - os: macos-latest
             platform: macOS
-            package-cmd: pnpm package:macos --publish onTagOrDraft
             artifact-name: Atlassify-release-mac
             use-apple-notarization: true
           - os: windows-latest
             platform: Windows
-            package-cmd: pnpm package:win --publish onTagOrDraft
             artifact-name: Atlassify-release-win
             use-apple-notarization: false
           - os: ubuntu-latest
             platform: Linux
-            package-cmd: pnpm package:linux --publish onTagOrDraft
             artifact-name: Atlassify-release-linux
             use-apple-notarization: false
     runs-on: ${{ matrix.os }}
@@ -37,31 +34,25 @@ jobs:
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
 
-      - name: Build application
-        run: pnpm build
+      - name: Publish for ${{ matrix.platform }}
+        run: pnpm publish
         env:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
-
-      - name: Package and publish for ${{ matrix.platform }}
-        run: ${{ matrix.package-cmd }}
-        env:
-          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
-          # Signing certificates - important to use the correct cert per platform
-          CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
-          CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
-          # macOS specific
+          # Signing certificates - important to use the correct cert per platform (via osxSign in forge.config.ts)
+          APPLE_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_USERNAME || '' }}
+          APPLE_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_PASSWORD || '' }}
+          APPLE_TEAM_ID: ${{ matrix.platform == 'macOS' && secrets.APPLE_ID_TEAM_ID || '' }}
+          # macOS notarization
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
           APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
           NOTARIZE: ${{ matrix.use-apple-notarization }}
           # General
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ matrix.artifact-name }}
-          path: |
-            dist/*
-            !dist/*/
+          path: out/make/**/*
           overwrite: true

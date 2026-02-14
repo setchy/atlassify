@@ -45,6 +45,8 @@ export default defineConfig({
       '**/node_modules/**',
       '**/build/**',
       '**/dist/**',
+      '**/.vite/**',
+      '**/out/**',
       '**/.{idea,git,cache,output,temp}/**',
     ],
     projects: [

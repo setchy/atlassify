@@ -1,6 +1,8 @@
 # Build files
 dist/
 build/
+out/
+.vite/
 
 # Environment variables
 .env

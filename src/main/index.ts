@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -36,7 +37,6 @@ import { onFirstRunMaybe } from './first-run';
 import { TrayIcons } from './icons';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
-import { isDevMode } from './utils';
 
 log.initialize();
 
@@ -55,10 +55,29 @@ if (!aptabaseKey) {
 /**
  * File and directory paths / URLs
  */
-const preloadFilePath = path.resolve(__dirname, 'preload.js');
-const indexHtmlFileURL = isDevMode()
-  ? process.env.VITE_DEV_SERVER_URL
-  : pathToFileURL(path.resolve(__dirname, 'index.html')).href;
+// Forge builds to specific paths - use MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY in dev
+declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string | undefined;
+declare const MAIN_WINDOW_VITE_NAME: string | undefined;
+
+const isDev = !app.isPackaged;
+
+// In Forge, preload path is injected via globals
+const preloadFilePath = isDev
+  ? path.join(__dirname, 'preload.js') // Forge builds all to same dir in dev
+  : path.join(__dirname, '../preload/index.js');
+
+logInfo('main:paths', `Preload path: ${preloadFilePath}`);
+logInfo('main:paths', `Preload exists: ${fs.existsSync(preloadFilePath)}`);
+
+const indexHtmlFileURL =
+  isDev && typeof MAIN_WINDOW_VITE_DEV_SERVER_URL !== 'undefined'
+    ? MAIN_WINDOW_VITE_DEV_SERVER_URL
+    : pathToFileURL(path.join(__dirname, '../renderer/main_window/index.html'))
+        .href;
+
+logInfo('main:paths', `Development mode: ${isDev}`);
+logInfo('main:paths', `Loading app from: ${indexHtmlFileURL}`);
+
 const notificationSoundFileURL = pathToFileURL(
   path.resolve(__dirname, 'assets', 'sounds', APPLICATION.NOTIFICATION_SOUND),
 ).href;
@@ -78,7 +97,7 @@ const browserWindowOpts: BrowserWindowConstructorOptions = {
     contextIsolation: true,
     nodeIntegration: false,
     // Disable web security in development to allow CORS requests
-    webSecurity: !process.env.VITE_DEV_SERVER_URL,
+    webSecurity: !isDev,
   },
 };
 

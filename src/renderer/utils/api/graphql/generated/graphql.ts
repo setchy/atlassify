@@ -1655,6 +1655,34 @@ export type AgentStudioKnowledgeFiltersInput = {
   slackFilter?: InputMaybe<AgentStudioSlackKnowledgeFilterInput>;
 };
 
+/** Status of a knowledge gap suggestion article. */
+export enum AgentStudioKnowledgeGapSuggestionArticleStatus {
+  /** Suggestion has been accepted */
+  Accepted = 'ACCEPTED',
+  /** Suggestion is pending review */
+  Pending = 'PENDING',
+  /** Suggestion has been rejected */
+  Rejected = 'REJECTED'
+}
+
+/** Status of a knowledge gap upload job. */
+export enum AgentStudioKnowledgeGapUploadJobStatus {
+  /** Job is clustering the data */
+  Clustering = 'CLUSTERING',
+  /** Job completed successfully */
+  Completed = 'COMPLETED',
+  /** Job failed with errors */
+  Failed = 'FAILED',
+  /** Job is generating suggestion articles */
+  Generating = 'GENERATING',
+  /** Job partially completed with some errors */
+  PartialComplete = 'PARTIAL_COMPLETE',
+  /** Job is pending execution */
+  Pending = 'PENDING',
+  /** Job is currently processing the uploaded file */
+  Processing = 'PROCESSING'
+}
+
 export type AgentStudioKnowledgeSourceInput = {
   /** Enable individual knowledge source */
   enabled?: InputMaybe<Scalars['Boolean']['input']>;
@@ -42670,6 +42698,15 @@ export enum MercuryChangeType {
   RequestPositions = 'REQUEST_POSITIONS'
 }
 
+export type MercuryCostItemSort = {
+  field: MercuryCostItemSortField;
+  order: SortOrder;
+};
+
+export enum MercuryCostItemSortField {
+  Name = 'NAME'
+}
+
 export type MercuryCostSubtypeSort = {
   field: MercuryCostSubtypeSortField;
   order: SortOrder;
@@ -42764,8 +42801,6 @@ export type MercuryCreateCoreCustomFieldDefinitionInput = {
  *  ------------------------------------------------------
  */
 export type MercuryCreateCostSubtypeInput = {
-  /** The site ID. */
-  cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The Cost Type of the Cost Subtype. */
   costTypeId: Scalars['ID']['input'];
   /** The name of the Cost Subtype. */
@@ -43679,6 +43714,14 @@ export type MercurySetChangeProposalCustomFieldInput = {
   coreField?: InputMaybe<MercuryCustomFieldInput>;
   /** The ARI of the custom field definition to set the value for. */
   customFieldDefinitionId: Scalars['ID']['input'];
+};
+
+/** Input for setting multiple custom fields */
+export type MercurySetChangeProposalCustomFieldsInput = {
+  /** Cloud ID only when routing via AGG */
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** List of custom field to set. */
+  customFields: Array<MercurySetChangeProposalCustomFieldInput>;
 };
 
 /**
@@ -56784,6 +56827,12 @@ export type TrelloUpdateOAuth2ClientInput = {
   id: Scalars['ID']['input'];
   /** The new scopes to register for the OAuth2 Client */
   scopes?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+/** Arguments passed into updatePlannerDueDateCardSettings mutation */
+export type TrelloUpdatePlannerDueDateCardSettingsInput = {
+  /** Whether to include due date cards assigned to the current user in planner */
+  assignedToMe?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Arguments passed into updatePrimaryPlannerAccount mutation */
