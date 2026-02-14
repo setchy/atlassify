@@ -44,12 +44,6 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
     },
     {
       os: 'Linux',
-      name: 'Linux (AppImage)',
-      url: getAssetLink(/Atlassify-\d+.\d+.\d+.AppImage/g),
-      isPrimary: true,
-    },
-    {
-      os: 'Linux',
       name: 'Linux (deb)',
       url: getAssetLink(/atlassify_\d+.\d+.\d+_amd64.deb/g),
     },

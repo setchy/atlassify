@@ -1,6 +1,6 @@
 {
   "name": "atlassify",
-  "version": "0.0.0-forge-alpha",
+  "version": "0.0.0",
   "private": true,
   "description": "Atlassian notifications on your menu bar.",
   "main": ".vite/build/index.js",
