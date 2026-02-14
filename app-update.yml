@@ -1,3 +1,7 @@
+# App Update Configuration
+# See https://www.electron.build/configuration/app-update
+# We use Electron Builders app update package instead of Electron Forge's version
+# as it supports auto-updates for all platforms
 provider: github
 owner: setchy
 repo: atlassify
