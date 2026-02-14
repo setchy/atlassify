@@ -73,7 +73,14 @@ export default defineConfig(({ command }) => {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
               rollupOptions: {
                 output: { entryFileNames: 'main.js' },
-                external: ['electron'],
+                external: [
+                  'electron',
+                  // TODO - how many of these are truly needed?
+                  'electron-log',
+                  'electron-updater',
+                  'menubar',
+                  '@aptabase/electron',
+                ],
               },
             },
           },
