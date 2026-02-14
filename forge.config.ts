@@ -13,6 +13,7 @@ import { copyTwemojiAssets } from './scripts/twemoji';
 const config: ForgeConfig = {
   packagerConfig: {
     name: 'Atlassify',
+    executableName: 'atlassify',
     appBundleId: 'com.electron.atlassify',
     appCopyright: 'Copyright © 2026 Adam Setch',
     appCategoryType: 'public.app-category.developer-tools',
