@@ -1,6 +1,6 @@
 {
   "name": "atlassify",
-  "version": "2.17.0",
+  "version": "3.0.0",
   "private": true,
   "description": "Atlassian notifications on your menu bar.",
   "main": "build/main.js",
