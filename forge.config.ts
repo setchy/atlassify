@@ -1,7 +1,3 @@
-import fs from 'node:fs';
-import path from 'node:path';
-
-import twemoji from '@discordapp/twemoji';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerDMG } from '@electron-forge/maker-dmg';
 import MakerRpm from '@electron-forge/maker-rpm';
@@ -11,14 +7,7 @@ import { VitePlugin } from '@electron-forge/plugin-vite';
 import { PublisherGithub } from '@electron-forge/publisher-github';
 import type { ForgeConfig } from '@electron-forge/shared-types';
 
-import { Constants } from './src/renderer/constants';
-
-import { Errors } from './src/renderer/utils/errors';
-
-function logForgeProgress(msg: string) {
-  // biome-ignore lint/suspicious/noConsole: log packaging progress
-  console.log(`  • [forge]: ${msg}`);
-}
+import { copyTwemojiAssets } from './scripts/twemoji';
 
 const config: ForgeConfig = {
   packagerConfig: {
@@ -28,7 +17,7 @@ const config: ForgeConfig = {
     appCategoryType: 'public.app-category.developer-tools',
     asar: true,
     icon: 'assets/images/app-icon',
-    extraResource: ['assets'],
+    // extraResource: ['assets'],
     osxSign: {},
     osxNotarize:
       process.env.NOTARIZE === 'true' &&
@@ -131,49 +120,7 @@ const config: ForgeConfig = {
   ],
   hooks: {
     generateAssets: async () => {
-      logForgeProgress('Copying twemoji assets...');
-
-      const ALL_EMOJIS = [
-        ...Constants.ALL_READ_EMOJIS,
-        ...Errors.BAD_CREDENTIALS.emojis,
-        ...Errors.BAD_REQUEST.emojis,
-        ...Errors.NETWORK.emojis,
-        ...Errors.UNKNOWN.emojis,
-      ];
-
-      const extractSvgFilename = (imgHtml: string) =>
-        imgHtml
-          .match(/src="(.*)"/)?.[1]
-          .split('/')
-          .pop();
-
-      const ALL_EMOJI_SVG_FILENAMES = ALL_EMOJIS.map((emoji) =>
-        extractSvgFilename(
-          twemoji.parse(emoji, { folder: 'svg', ext: '.svg' }),
-        ),
-      ) as string[];
-
-      for (const filename of ALL_EMOJI_SVG_FILENAMES) {
-        const srcPath = path.resolve(
-          __dirname,
-          'node_modules/@discordapp/twemoji/dist/svg',
-          filename,
-        );
-        const destPath = path.resolve(
-          __dirname,
-          'src',
-          'renderer',
-          'public',
-          'images',
-          'twemoji',
-          filename,
-        );
-
-        await fs.promises.mkdir(path.dirname(destPath), { recursive: true });
-        await fs.promises.copyFile(srcPath, destPath);
-      }
-
-      logForgeProgress('Twemoji assets copied.');
+      await copyTwemojiAssets();
     },
   },
 };
