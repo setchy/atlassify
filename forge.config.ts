@@ -7,6 +7,7 @@ import { VitePlugin } from '@electron-forge/plugin-vite';
 import { PublisherGithub } from '@electron-forge/publisher-github';
 import type { ForgeConfig } from '@electron-forge/shared-types';
 
+import { version } from './package.json';
 import { copyTwemojiAssets } from './scripts/twemoji';
 
 const config: ForgeConfig = {
@@ -17,7 +18,7 @@ const config: ForgeConfig = {
     appCategoryType: 'public.app-category.developer-tools',
     asar: true,
     icon: 'assets/images/app-icon',
-    // extraResource: ['assets'],
+    extraResource: ['app-update.yml'],
     osxSign: {},
     osxNotarize:
       process.env.NOTARIZE === 'true' &&
@@ -32,11 +33,39 @@ const config: ForgeConfig = {
         : undefined,
   },
   rebuildConfig: {},
+  plugins: [
+    new VitePlugin({
+      build: [
+        {
+          entry: 'src/main/index.ts',
+          config: 'vite.main.config.ts',
+          target: 'main',
+        },
+        {
+          entry: 'src/preload/index.ts',
+          config: 'vite.preload.config.ts',
+          target: 'preload',
+        },
+      ],
+      renderer: [
+        {
+          name: 'main_window',
+          config: 'vite.renderer.config.ts',
+        },
+      ],
+    }),
+  ],
+  hooks: {
+    generateAssets: async () => {
+      await copyTwemojiAssets();
+    },
+  },
   makers: [
     new MakerDMG(
       {
         icon: 'assets/images/app-icon.icns',
         overwrite: true,
+        title: `Atlassify v${version}`,
       },
       ['darwin'],
     ),
@@ -95,37 +124,6 @@ const config: ForgeConfig = {
       authToken: process.env.GITHUB_TOKEN,
     }),
   ],
-  plugins: [
-    new VitePlugin({
-      // `build` can specify multiple entry builds, which can be
-      // Main process, Preload scripts, Worker process, etc.
-      build: [
-        {
-          // `entry` is an alias for `build.lib.entry`
-          // in the corresponding file of `config`.
-          entry: 'src/main/index.ts',
-          config: 'vite.main.config.ts',
-          target: 'main',
-        },
-        {
-          entry: 'src/preload/index.ts',
-          config: 'vite.preload.config.ts',
-          target: 'preload',
-        },
-      ],
-      renderer: [
-        {
-          name: 'main_window',
-          config: 'vite.renderer.config.ts',
-        },
-      ],
-    }),
-  ],
-  hooks: {
-    generateAssets: async () => {
-      await copyTwemojiAssets();
-    },
-  },
 };
 
 export default config;

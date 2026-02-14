@@ -32,6 +32,10 @@ export default defineConfig(({ command }) => {
     ],
     root: 'src/renderer',
     base: './',
+    build: {
+      outDir: '../../.vite/build/renderer',
+      emptyOutDir: true,
+    },
   };
 
   return config;

@@ -65,8 +65,7 @@ logInfo('main:paths', `Preload exists: ${fs.existsSync(preloadFilePath)}`);
 
 const indexHtmlFileURL = isDevMode()
   ? MAIN_WINDOW_VITE_DEV_SERVER_URL
-  : pathToFileURL(path.join(__dirname, 'renderer', 'main_window', 'index.html'))
-      .href;
+  : pathToFileURL(path.join(__dirname, 'renderer', 'index.html')).href;
 
 logInfo('main:paths', `Development mode: ${isDevMode()}`);
 logInfo('main:paths', `Loading app from: ${indexHtmlFileURL}`);

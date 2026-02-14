@@ -23,13 +23,7 @@ export default defineConfig(({ command }) => {
         output: {
           format: 'cjs',
         },
-        external: [
-          'electron',
-          'electron-log',
-          'electron-updater',
-          'menubar',
-          '@aptabase/electron',
-        ],
+        external: ['electron'],
       },
     },
     plugins: [
