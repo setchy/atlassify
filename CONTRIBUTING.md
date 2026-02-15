@@ -16,23 +16,27 @@ To get started, you'll need to clone the repository and install the dependencies
 pnpm install
 ```
 
+
 ### Development
 
-For local development, run build at least once to copy static resources (tray icons, twemojis, etc)
+For local development, run `pnpm build` once to copy static resources (tray icons, twemojis, etc). You only need to rebuild if you change static assets.
+
 ```shell
 pnpm build
 ```
 
-There after, you can do most development, including GraphQL codegen and hot module reload (HMR) via
+After that, you can do most development, including GraphQL codegen and hot module reload (HMR), with:
+
 ```shell
- pnpm dev
+pnpm dev
 ```
+
 
 ### Tests
 
-There are 2 checks:
-1. linter & formatter with [biome][biome-website]
-2. unit tests with [vitest][vitest-website]
+There are two main checks:
+1. Linter & formatter with [Biome][biome-website]
+2. Unit tests with [Vitest][vitest-website]
 
 ```shell
 # Run biome to check linting and formatting
@@ -44,6 +48,19 @@ pnpm test
 # Update vitest snapshots
 pnpm test -u
 ```
+
+### Code Style & Conventions
+
+- We use [Biome][biome-website] for linting and formatting. Please run `pnpm lint:check` before submitting a PR.
+- Follow existing file and folder naming conventions.
+- Keep commit messages clear and descriptive.
+
+
+### How to Report Bugs or Request Features
+
+If you encounter a bug or have a feature request, please [open an issue][github-issues] with clear steps to reproduce or a detailed description of your idea. Check for existing issues before creating a new one.
+
+
 
 ### Releases
 
@@ -73,18 +90,19 @@ The release process is automated. Follow the steps below.
 
 ### Locales
 
-Atlassify supports multiple languages / locales.
+Atlassify supports multiple languages/locales.
 
-To add new locales
-- Add a new locale file under `./src/renderer/i18n/locales`
-- Import and update the resources in `./src/renderer/i18n/index.ts`
-- Use the VSCode Extensions `i18n Ally` to automatically translate the keys
-- Verify the translated values. It's important that the placeholder variables `{{ }}` are not translated.  You may need to manually update these.
+To add a new locale:
+- Add a new locale file under `./src/renderer/i18n/locales`.
+- Import and update the resources in `./src/renderer/i18n/index.ts`.
+- Use the VSCode Extension `i18n Ally` to automatically translate the keys.
+- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`.  You may need to manually update these if needed.
 
 
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/
 [github-dependency-dashboard]: https://github.com/setchy/atlassify/issues/1
+[github-issues]: https://github.com/setchy/atlassify/issues
 [github-milestones]: https://github.com/setchy/atlassify/milestones
 [github-new-milestone]: https://github.com/setchy/atlassify/milestones/new
 [github-new-release]: https://github.com/setchy/atlassify/releases/new
