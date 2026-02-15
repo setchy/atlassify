@@ -1,7 +1,6 @@
 import { act, render } from '@testing-library/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { vi } from 'vitest';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 

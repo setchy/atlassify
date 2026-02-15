@@ -1,7 +1,5 @@
 import path from 'node:path';
 
-import { vi } from 'vitest';
-
 const existsSyncMock = vi.fn();
 const mkdirSyncMock = vi.fn();
 const writeFileSyncMock = vi.fn();

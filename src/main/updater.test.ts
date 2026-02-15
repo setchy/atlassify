@@ -1,8 +1,6 @@
 import { dialog } from 'electron';
 import type { Menubar } from 'menubar';
 
-import { vi } from 'vitest';
-
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
 

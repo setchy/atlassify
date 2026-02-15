@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useSettingsStore from '../stores/useSettingsStore';
 

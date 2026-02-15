@@ -3,7 +3,6 @@ import { type ReactElement, type ReactNode, useMemo } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
-import { vi } from 'vitest';
 
 import { AppContext, type AppContextState } from '../context/App';
 

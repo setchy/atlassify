@@ -2,8 +2,6 @@ import path from 'node:path';
 
 import type { Menubar } from 'menubar';
 
-import { vi } from 'vitest';
-
 const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
 vi.mock('node:fs', () => ({
   default: {

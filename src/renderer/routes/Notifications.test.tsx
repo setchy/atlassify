@@ -1,7 +1,5 @@
 import { render } from '@testing-library/react';
 
-import { vi } from 'vitest';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,

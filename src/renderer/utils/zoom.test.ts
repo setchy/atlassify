@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import type { Percentage } from '../types';
 
 import {

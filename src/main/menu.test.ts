@@ -3,7 +3,6 @@ import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
 import type { Mock } from 'vitest';
-import { vi } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
 import { isMacOS } from '../shared/platform';

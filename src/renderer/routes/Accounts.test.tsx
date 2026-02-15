@@ -1,8 +1,6 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { vi } from 'vitest';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 

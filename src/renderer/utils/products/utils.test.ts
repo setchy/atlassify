@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = vi.hoisted(() => ({
   getCloudIDsForHostnames: vi.fn(async () => ({
     data: { tenantContexts: [{ cloudId: 'cloud-1' }] },

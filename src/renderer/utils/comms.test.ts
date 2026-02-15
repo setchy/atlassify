@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import { OpenPreference } from '../stores/types';
 import useSettingsStore from '../stores/useSettingsStore';

@@ -1,7 +1,5 @@
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
-import { vi } from 'vitest';
-
 import { Theme } from '../../shared/theme';
 
 import { getTheme, isLightMode, setTheme } from './theme';

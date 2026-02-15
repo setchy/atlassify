@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { EVENTS } from '../shared/events';
 
 const onMock = vi.fn();
