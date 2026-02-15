@@ -19,10 +19,11 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 ├── ...              # Config files, project metadata
 ```
 
+
 ## Core Components
 - **Main Process (`src/main`)**: Handles app lifecycle, system events, tray/menu bar, auto-launch, updater, and IPC communication.
 - **Preload (`src/preload`)**: Secure bridge exposing whitelisted APIs to the renderer.
-- **Renderer (`src/renderer`)**: React-based UI, state management (stores), hooks, components, and settings.
+- **Renderer (`src/renderer`)**: React-based UI, state management (stores via [Zustand](https://github.com/pmndrs/zustand)), hooks, components, and settings. Uses [TanStack Query](https://tanstack.com/query/latest) for data fetching and caching.
 - **Shared (`src/shared`)**: Common utilities, types, and constants used across main, preload, and renderer.
 
 ## Data Flow
@@ -30,12 +31,19 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 - **Subscriptions**: Side-effect subscriptions sync store state to Electron APIs and UI.
 - **IPC Communication**: Main ↔ Preload ↔ Renderer via secure IPC channels.
 
+## UI
+- **Component Library**: Uses [Atlassian @atlaskit](https://atlassian.design/components/) for UI components, ensuring a native Atlassian look and feel.
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) is used for utility-first styling and layout.
+- **Design Tokens**: Atlassian design tokens are integrated for consistent theming and design language across the app.
+
 ## API & Integrations
 - **Atlassian API**: Accessed via secure requests, using API tokens with scopes.
+- **State & Query**: [Zustand](https://github.com/pmndrs/zustand) for state management, [TanStack Query](https://tanstack.com/query/latest) for server state and caching.
 - **Third-party Integrations**: Homebrew, Netlify, SonarCloud, GitHub Actions for CI/CD and releases.
 
 ## Build & Deployment
 - **Build Tools**: Vite for frontend, Electron Builder for packaging.
+- **Testing**: [Vitest](https://vitest.dev/) for unit tests and coverage.
 - **CI/CD**: Automated workflows for linting, testing, building, signing, and releasing.
 - **Release Process**: See CONTRIBUTING.md for details.
 
