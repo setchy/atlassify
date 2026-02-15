@@ -42,6 +42,28 @@ jobs:
         env:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
+      - name: Parse release branch
+        if: startsWith(github.ref, 'refs/heads/release/')
+        run: |
+          # Extract the branch name (e.g. release/v1.2.3[-meta])
+          ref=${GITHUB_REF#refs/heads/}
+          echo "RELEASE_BRANCH=$ref" >> $GITHUB_ENV
+          # Also export a RELEASE_TAG by removing the `release/` prefix (keeps leading 'v')
+          tag=${ref#release/}
+          echo "RELEASE_TAG=$tag" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Create draft release
+        uses: softprops/action-gh-release #v2.5.0
+        with:
+          name: "${{ env.RELEASE_TAG }}"
+          tag_name: "${{ env.RELEASE_TAG }}"
+          draft: true
+          body: "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\"  /> Atlassify ${{ env.RELEASE_TAG }}\n\n"
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Package and publish for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}
         env:
