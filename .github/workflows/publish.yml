@@ -8,8 +8,31 @@ permissions:
   contents: write
 
 jobs:
+  prepare:
+    name: Prepare release info
+    runs-on: ubuntu-latest
+    outputs:
+      RELEASE_TAG: ${{ steps.parse.outputs.release_tag }}
+      RELEASE_BRANCH: ${{ steps.parse.outputs.release_branch }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+
+      - id: parse
+        name: Parse release branch
+        if: startsWith(github.ref, 'refs/heads/release/')
+        run: |
+          # Extract the branch name (e.g. release/v1.2.3[-meta])
+          ref=${GITHUB_REF#refs/heads/}
+          echo "release_branch=$ref" >> $GITHUB_OUTPUT
+          # Also export a RELEASE_TAG by removing the `release/` prefix (keeps leading 'v')
+          tag=${ref#release/}
+          echo "release_tag=$tag" >> $GITHUB_OUTPUT
+        shell: bash
+
   release:
     name: Publish ${{ matrix.platform }} (electron-builder)
+    needs: prepare
     strategy:
       matrix:
         include:
