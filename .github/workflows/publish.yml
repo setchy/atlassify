@@ -54,7 +54,7 @@ jobs:
         shell: bash
 
       - name: Create draft release
-        uses: softprops/action-gh-release #v2.5.0
+        uses: softprops/action-gh-release@v2.5.0 #v2.5.0
         with:
           name: "${{ env.RELEASE_TAG }}"
           tag_name: "${{ env.RELEASE_TAG }}"
