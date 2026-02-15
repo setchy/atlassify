@@ -42,6 +42,11 @@
       "description2": "Veuillez vérifier votre connexion réseau, y compris si vous avez besoin d'un VPN et réessayer.",
       "title": "Erreur de réseau"
     },
+    "offline": {
+      "description1": "Votre appareil est hors ligne.",
+      "description2": "Veuillez vérifier votre connexion réseau.",
+      "title": "Réseau hors ligne"
+    },
     "unknown": {
       "description1": "Veuillez réessayer plus tard.",
       "title": "Oups! Quelque chose s'est mal passé"

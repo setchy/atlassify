@@ -42,6 +42,11 @@
       "description2": "Consulte su conexión de red, incluso si necesita una VPN, y vuelva a intentarlo.",
       "title": "Error de red"
     },
+    "offline": {
+      "description1": "Su dispositivo está desconectado.",
+      "description2": "Por favor verifique su conexión de red.",
+      "title": "Red sin conexión"
+    },
     "unknown": {
       "description1": "Vuelva a intentarlo más tarde.",
       "title": "¡Ups! Algo salió mal"
