@@ -8,14 +8,15 @@
 
 ---
 
+
 ## Features
 
-- Unified notifications from Atlassian Cloud products
-- Cross-platform: macOS, Windows, and Linux
-- Customizable filters and themes
-- Tray/menu bar integration
-- Fast, native experience
-- Open source and privacy-friendly
+- 🔔 Unified notifications from Atlassian Cloud products
+- 💻 Cross-platform: macOS, Windows, and Linux
+- 🎨 Customizable filters and themes
+- 🖥️ Tray/menu bar integration
+- ⚡ Fast, native experience
+- 🛡️ Open source and privacy-friendly
 
 
 ## Quick Start
