@@ -92,7 +92,7 @@ const loadInitialData = async (): Promise<HeroData> => {
         ? format(latestRelease.data.published_at, 'dd/MM/yyyy')
         : '',
     };
-  } catch (error) {
+  } catch (err) {
     return {
       downloadLinks: {
         alt: [],

@@ -128,11 +128,11 @@ async function lookupJiraProjectType(
       default:
         return PRODUCTS.jira;
     }
-  } catch (error) {
+  } catch (err) {
     rendererLogError(
       'lookupJiraProjectType',
       'Error fetching Jira project type:',
-      error,
+      err,
     );
     return PRODUCTS.jira;
   }

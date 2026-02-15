@@ -42,6 +42,11 @@
       "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, einschließlich der Frage, ob Sie ein VPN benötigen, und versuchen Sie es erneut.",
       "title": "Netzwerkfehler"
     },
+    "offline": {
+      "description1": "Ihr Gerät ist offline.",
+      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung.",
+      "title": "Netzwerk offline"
+    },
     "unknown": {
       "description1": "Bitte versuchen Sie es später erneut.",
       "title": "Hoppla! Etwas lief schief"

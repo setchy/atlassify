@@ -63,8 +63,11 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  *
  * @param notificationsLength The number of unread notifications
  */
-export function updateTrayColor(notificationsLength: number): void {
-  window.atlassify.tray.updateColor(notificationsLength);
+export function updateTrayColor(
+  notificationsLength: number,
+  isOnline: boolean,
+): void {
+  window.atlassify.tray.updateColor(notificationsLength, isOnline);
 }
 
 /**

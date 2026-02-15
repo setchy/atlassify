@@ -11,7 +11,6 @@ import {
   type BrowserWindowConstructorOptions,
   globalShortcut,
   nativeTheme,
-  net,
   safeStorage,
   shell,
 } from 'electron';
@@ -27,6 +26,7 @@ import {
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
+  type ITrayColorUpdate,
 } from '../shared/events';
 import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
@@ -181,26 +181,29 @@ app.whenReady().then(async () => {
     },
   );
 
-  onMainEvent(EVENTS.UPDATE_ICON_COLOR, (_, notificationsCount: number) => {
-    if (!mb.tray.isDestroyed()) {
-      if (!net.isOnline()) {
-        setOfflineIcon();
-        return;
-      }
+  onMainEvent(
+    EVENTS.UPDATE_ICON_COLOR,
+    (_, { notificationsCount, isOnline }: ITrayColorUpdate) => {
+      if (!mb.tray.isDestroyed()) {
+        if (!isOnline) {
+          setOfflineIcon();
+          return;
+        }
 
-      if (notificationsCount < 0) {
-        setErrorIcon();
-        return;
-      }
+        if (notificationsCount < 0) {
+          setErrorIcon();
+          return;
+        }
 
-      if (notificationsCount > 0) {
-        setActiveIcon();
-        return;
-      }
+        if (notificationsCount > 0) {
+          setActiveIcon();
+          return;
+        }
 
-      setIdleIcon();
-    }
-  });
+        setIdleIcon();
+      }
+    },
+  );
 
   onMainEvent(EVENTS.UPDATE_ICON_TITLE, (_, title: string) => {
     if (!mb.tray.isDestroyed()) {
@@ -258,15 +261,15 @@ app.whenReady().then(async () => {
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
     try {
       return safeStorage.decryptString(Buffer.from(value, 'base64'));
-    } catch (error) {
+    } catch (err) {
       // If decryption fails, the data was likely encrypted with a different app identity
       // This can happen when migrating between build systems or changing app configuration
       logError(
         'main:safe-storage-decrypt',
         'Failed to decrypt value - data may be from old build',
-        error,
+        err,
       );
-      throw error;
+      throw err;
     }
   });
 });
