@@ -9,26 +9,31 @@ permissions:
 
 jobs:
   prepare:
-    name: Prepare release info
+    name: Prepare draft release
     runs-on: ubuntu-latest
-    outputs:
-      RELEASE_TAG: ${{ steps.parse.outputs.release_tag }}
-      RELEASE_BRANCH: ${{ steps.parse.outputs.release_branch }}
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - id: parse
-        name: Parse release branch
+      - name: Parse release branch
         if: startsWith(github.ref, 'refs/heads/release/')
         run: |
           # Extract the branch name (e.g. release/v1.2.3[-meta])
           ref=${GITHUB_REF#refs/heads/}
-          echo "release_branch=$ref" >> $GITHUB_OUTPUT
+          echo "RELEASE_BRANCH=$ref" >> $GITHUB_ENV
           # Also export a RELEASE_TAG by removing the `release/` prefix (keeps leading 'v')
           tag=${ref#release/}
-          echo "release_tag=$tag" >> $GITHUB_OUTPUT
+          echo "RELEASE_TAG=$tag" >> $GITHUB_ENV
         shell: bash
+
+      - name: Create draft release
+        uses: softprops/action-gh-release@v2.5.0 #v2.5.0
+        with:
+          name: "${{ env.RELEASE_TAG }}"
+          tag_name: "${{ env.RELEASE_TAG }}"
+          draft: true
+          body: "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\"  /> Atlassify ${{ env.RELEASE_TAG }}\n\n"
+          generate_release_notes: true
 
   release:
     name: Publish ${{ matrix.platform }} (electron-builder)
@@ -64,26 +69,6 @@ jobs:
         run: pnpm build
         env:
           APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
-
-      - name: Parse release branch
-        if: startsWith(github.ref, 'refs/heads/release/')
-        run: |
-          # Extract the branch name (e.g. release/v1.2.3[-meta])
-          ref=${GITHUB_REF#refs/heads/}
-          echo "RELEASE_BRANCH=$ref" >> $GITHUB_ENV
-          # Also export a RELEASE_TAG by removing the `release/` prefix (keeps leading 'v')
-          tag=${ref#release/}
-          echo "RELEASE_TAG=$tag" >> $GITHUB_ENV
-        shell: bash
-
-      - name: Create draft release
-        uses: softprops/action-gh-release@v2.5.0 #v2.5.0
-        with:
-          name: "${{ env.RELEASE_TAG }}"
-          tag_name: "${{ env.RELEASE_TAG }}"
-          draft: true
-          body: "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\"  /> Atlassify ${{ env.RELEASE_TAG }}\n\n"
-          generate_release_notes: true
 
       - name: Package and publish for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}
