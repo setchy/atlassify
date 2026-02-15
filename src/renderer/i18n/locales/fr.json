@@ -221,7 +221,7 @@
       "show_count_in_tray_help": "Affichez le nombre de notifications non lues à côté de l'icône de la barre d'état. \nUtile pour un aperçu rapide des activités non lues.",
       "title": "Plateau",
       "unread_active_icon": "Mettre en évidence les notifications non lues",
-      "unread_active_icon_help": "Utilisez un logo vert {{appName}} lorsqu'il existe des notifications non lues."
+      "unread_active_icon_help": "Utilisez un logo bleu {{appName}} lorsqu'il y a des notifications non lues."
     },
     "view_release_notes": "Afficher {{appName}} Notes de version"
   },
