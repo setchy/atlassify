@@ -13,9 +13,10 @@
 
 - 🔔 Unified notifications from Atlassian Cloud products
 - 💻 Cross-platform: macOS, Windows, and Linux
-- 🎨 Customizable filters and themes
+- 🎨 Customizable settings, filters and themes
 - 🖥️ Tray/menu bar integration
 - ⚡ Fast, native experience
+- 🌐 Multi-language/localization support
 
 
 ## Quick Start
