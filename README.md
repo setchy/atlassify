@@ -55,13 +55,11 @@ See our [Atlassify FAQs][faqs] for answers to common questions.
 - Open an [issue][github-issues] for bugs or feature requests
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved
 
----
 
 ## License
 
 Atlassify is licensed under the MIT Open Source license. See [LICENSE](LICENSE) for details.
 
----
 
 ## Acknowledgements
 
