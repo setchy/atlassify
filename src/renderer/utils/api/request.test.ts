@@ -4,6 +4,7 @@ import { vi } from 'vitest';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 
 import type { Link, Token, Username } from '../../types';
+import type { AtlassianGraphQLResponse } from './types';
 
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
 import {
@@ -18,7 +19,7 @@ describe('renderer/utils/api/request.ts', () => {
     vi.mocked(axios).mockResolvedValue({
       data: {
         data: {},
-      },
+      } as AtlassianGraphQLResponse<unknown>,
     });
   });
 

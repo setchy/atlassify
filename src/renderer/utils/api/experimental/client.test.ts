@@ -4,6 +4,7 @@ import { mockAtlassianCloudAccount } from '../../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../../__mocks__/notifications-mocks';
 
 import type { CloudID, JiraProjectKey } from '../../../types';
+import type { AtlassianGraphQLResponse } from '../types';
 
 import * as request from '../request';
 import * as client from './client';
@@ -11,10 +12,8 @@ import * as client from './client';
 describe('renderer/utils/api/experimental/client.ts', () => {
   beforeEach(() => {
     vi.spyOn(request, 'performRequestForAccount').mockResolvedValue({
-      data: {
-        data: {},
-      },
-    });
+      data: {},
+    } as AtlassianGraphQLResponse<unknown>);
   });
 
   afterEach(() => {

@@ -9,6 +9,10 @@ import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
+import type {
+  AtlassianGraphQLResponse,
+  JiraProjectRestResponse,
+} from './types';
 
 import * as client from './client';
 import {
@@ -21,10 +25,10 @@ describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
     vi.spyOn(request, 'performRequestForAccount').mockResolvedValue({
       data: {},
-    });
+    } as AtlassianGraphQLResponse<unknown>);
     vi.spyOn(request, 'performRequestForCredentials').mockResolvedValue({
       data: {},
-    });
+    } as AtlassianGraphQLResponse<unknown>);
   });
 
   afterEach(() => {
@@ -169,7 +173,7 @@ describe('renderer/utils/api/client.ts', () => {
     const mockCloudID = 'mock-cloud-id' as CloudID;
     vi.spyOn(request, 'performRESTRequestForAccount').mockResolvedValueOnce({
       projectTypeKey: 'service_desk',
-    } as any);
+    } as JiraProjectRestResponse);
 
     const result = await client.getJiraProjectTypeByKey(
       mockAtlassianCloudAccount,

@@ -65,13 +65,13 @@ describe('renderer/utils/theme.ts', () => {
 
   describe('getTheme', () => {
     it('should return light theme when global theme is light', () => {
-      (getGlobalTheme as any).mockReturnValue({ colorMode: 'light' });
+      vi.mocked(getGlobalTheme).mockReturnValue({ colorMode: 'light' });
 
       expect(getTheme()).toBe(Theme.LIGHT);
     });
 
     it('should return dark theme when global theme is dark', () => {
-      (getGlobalTheme as any).mockReturnValue({ colorMode: 'dark' });
+      vi.mocked(getGlobalTheme).mockReturnValue({ colorMode: 'dark' });
 
       expect(getTheme()).toBe(Theme.DARK);
     });
@@ -79,13 +79,13 @@ describe('renderer/utils/theme.ts', () => {
 
   describe('isLightMode', () => {
     it('should correctly identify light mode', () => {
-      (getGlobalTheme as any).mockReturnValue({ colorMode: 'light' });
+      vi.mocked(getGlobalTheme).mockReturnValue({ colorMode: 'light' });
 
       expect(isLightMode()).toBe(true);
     });
 
     it('should correctly identify dark mode', () => {
-      (getGlobalTheme as any).mockReturnValue({ colorMode: 'dark' });
+      vi.mocked(getGlobalTheme).mockReturnValue({ colorMode: 'dark' });
 
       expect(isLightMode()).toBe(false);
     });

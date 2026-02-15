@@ -8,6 +8,8 @@ import {
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
+
 import { useKeyboardNavigation } from './useKeyboardNavigation';
 
 type MockNotification = {
@@ -22,11 +24,8 @@ function TestHost({
   notifications: MockNotification[];
   onDetailsClick?: (id: string) => void;
 }) {
-  // adapt to hook expected shape: AccountNotifications[]
-  const accountNotifications = [{ notifications }] as any;
-
   const { focusedNotificationId } = useKeyboardNavigation({
-    notifications: accountNotifications,
+    notifications: mockAccountNotifications,
   });
 
   return (
