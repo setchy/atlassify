@@ -29,6 +29,15 @@ export function initializeStoreSubscriptions(): () => void {
   const unsubscribers: Array<() => void> = [];
 
   // ========================================================================
+  // Startup Initialization
+  // ========================================================================
+  setTheme(useSettingsStore.getState().theme);
+  setAutoLaunch(useSettingsStore.getState().openAtStartup);
+  setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
+  setUseUnreadActiveIcon(useSettingsStore.getState().useUnreadActiveIcon);
+  setUseAlternateIdleIcon(useSettingsStore.getState().useAlternateIdleIcon);
+
+  // ========================================================================
   // Settings Store Side Effects
   // ========================================================================
 
