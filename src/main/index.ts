@@ -11,7 +11,6 @@ import {
   type BrowserWindowConstructorOptions,
   globalShortcut,
   nativeTheme,
-  net,
   safeStorage,
   shell,
 } from 'electron';
@@ -27,6 +26,7 @@ import {
   type IAutoLaunch,
   type IKeyboardShortcut,
   type IOpenExternal,
+  type ITrayColorUpdate,
 } from '../shared/events';
 import { logError, logInfo, logWarn } from '../shared/logger';
 import { Theme } from '../shared/theme';
@@ -181,26 +181,29 @@ app.whenReady().then(async () => {
     },
   );
 
-  onMainEvent(EVENTS.UPDATE_ICON_COLOR, (_, notificationsCount: number) => {
-    if (!mb.tray.isDestroyed()) {
-      if (!net.isOnline()) {
-        setOfflineIcon();
-        return;
-      }
+  onMainEvent(
+    EVENTS.UPDATE_ICON_COLOR,
+    (_, { notificationsCount, isOnline }: ITrayColorUpdate) => {
+      if (!mb.tray.isDestroyed()) {
+        if (!isOnline) {
+          setOfflineIcon();
+          return;
+        }
 
-      if (notificationsCount < 0) {
-        setErrorIcon();
-        return;
-      }
+        if (notificationsCount < 0) {
+          setErrorIcon();
+          return;
+        }
 
-      if (notificationsCount > 0) {
-        setActiveIcon();
-        return;
-      }
+        if (notificationsCount > 0) {
+          setActiveIcon();
+          return;
+        }
 
-      setIdleIcon();
-    }
-  });
+        setIdleIcon();
+      }
+    },
+  );
 
   onMainEvent(EVENTS.UPDATE_ICON_TITLE, (_, title: string) => {
     if (!mb.tray.isDestroyed()) {

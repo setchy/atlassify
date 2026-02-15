@@ -45,6 +45,11 @@ export interface IAptabaseEvent {
   props?: Record<string, string | number | boolean>;
 }
 
+export interface ITrayColorUpdate {
+  notificationsCount: number;
+  isOnline: boolean;
+}
+
 export type EventData =
   | string
   | number
@@ -52,4 +57,5 @@ export type EventData =
   | IKeyboardShortcut
   | IAutoLaunch
   | IOpenExternal
-  | IAptabaseEvent;
+  | IAptabaseEvent
+  | ITrayColorUpdate;

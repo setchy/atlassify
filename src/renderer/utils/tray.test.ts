@@ -21,10 +21,10 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: true,
       });
 
-      setTrayIconColorAndTitle(5, false);
+      setTrayIconColorAndTitle(5, false, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5');
     });
@@ -35,10 +35,10 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: true,
       });
 
-      setTrayIconColorAndTitle(5, true);
+      setTrayIconColorAndTitle(5, true, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5+');
     });
@@ -49,10 +49,24 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: false,
       });
 
-      setTrayIconColorAndTitle(5, false);
+      setTrayIconColorAndTitle(5, false, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
+      expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
+      expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
+    });
+
+    it('should update tray color and empty title when offline and has notifications', () => {
+      useSettingsStore.setState({
+        ...DEFAULT_SETTINGS_STATE,
+        showNotificationsCountInTray: false,
+      });
+
+      setTrayIconColorAndTitle(5, false, false);
+
+      expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -63,10 +77,10 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: true,
       });
 
-      setTrayIconColorAndTitle(0, false);
+      setTrayIconColorAndTitle(0, false, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(0);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, true);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });

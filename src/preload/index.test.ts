@@ -92,7 +92,10 @@ describe('preload/index', () => {
     expect(sendMainEventMock).toHaveBeenNthCalledWith(
       1,
       EVENTS.UPDATE_ICON_COLOR,
-      -1,
+      {
+        isOnline: true,
+        notificationsCount: -1,
+      },
     );
   });
 

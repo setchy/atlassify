@@ -42,6 +42,11 @@
       "description1": "Unable to connect to Atlassian Cloud.",
       "description2": "Please check your network connection, including whether you require a VPN, and try again."
     },
+    "offline": {
+      "title": "Network Offline",
+      "description1": "Your device is offline.",
+      "description2": "Please check your network connection."
+    },
     "unknown": {
       "title": "Oops! Something went wrong",
       "description1": "Please try again later."

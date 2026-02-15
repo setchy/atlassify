@@ -13,7 +13,7 @@ import { Oops } from '../components/Oops';
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
-  const { notifications, status, globalError, hasNotifications } =
+  const { notifications, status, globalError, hasNotifications, isOnline } =
     useAppContext();
 
   const hasNoAccountErrors = useMemo(
@@ -23,6 +23,12 @@ export const NotificationsRoute: FC = () => {
 
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
+
+  console.log('ADAM HERE WITH ', isOnline);
+
+  if (!isOnline) {
+    return <Oops error={Errors.OFFLINE} />;
+  }
 
   if (status === 'error') {
     return <Oops error={globalError ?? Errors.UNKNOWN} />;
