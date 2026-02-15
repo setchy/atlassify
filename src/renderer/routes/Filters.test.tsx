@@ -5,6 +5,7 @@ import { vi } from 'vitest';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
+import type { FiltersStore } from '../stores/types';
 import useFiltersStore from '../stores/useFiltersStore';
 
 import { FiltersRoute } from './Filters';
@@ -16,13 +17,16 @@ vi.mock('react-router-dom', async () => ({
 }));
 
 describe('renderer/routes/Filters.tsx', () => {
-  let updateSpy: any;
-  let resetSpy: any;
+  let updateSpy: ReturnType<typeof vi.spyOn>;
+  let resetSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
     // spy the actions on the real store
-    updateSpy = vi.spyOn((useFiltersStore as any).getState(), 'updateFilter');
-    resetSpy = vi.spyOn((useFiltersStore as any).getState(), 'reset');
+    updateSpy = vi.spyOn(
+      useFiltersStore.getState() as FiltersStore,
+      'updateFilter',
+    );
+    resetSpy = vi.spyOn(useFiltersStore.getState() as FiltersStore, 'reset');
   });
 
   afterEach(() => {

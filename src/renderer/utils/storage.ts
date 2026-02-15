@@ -66,11 +66,11 @@ export async function migrateContextToZustand() {
       'migrateContextToStore',
       'Successfully migrated from Context storage to Zustand stores',
     );
-  } catch (error) {
+  } catch (err) {
     rendererLogError(
       'migrateContextToStore',
       'Error during storage migration',
-      error,
+      err,
     );
     // Don't throw - let the app continue with defaults
   }

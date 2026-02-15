@@ -24,8 +24,6 @@ export const NotificationsRoute: FC = () => {
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
-  console.log('ADAM HERE WITH ', isOnline);
-
   if (!isOnline) {
     return <Oops error={Errors.OFFLINE} />;
   }

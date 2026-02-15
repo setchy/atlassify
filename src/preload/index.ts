@@ -117,10 +117,10 @@ export const api = {
 // Context isolation is always enabled in this app
 try {
   contextBridge.exposeInMainWorld('atlassify', api);
-} catch (error) {
+} catch (err) {
   // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
   console.error(
     '[preload] Failed to expose Atlassify Bridge API to renderer',
-    error,
+    err,
   );
 }

@@ -120,7 +120,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         const online = onlineManager.isOnline();
 
         setIsOnline(online);
-      } catch (error) {
+      } catch (_err) {
         // ignore
       }
     };

@@ -261,15 +261,15 @@ app.whenReady().then(async () => {
   handleMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, (_, value: string) => {
     try {
       return safeStorage.decryptString(Buffer.from(value, 'base64'));
-    } catch (error) {
+    } catch (err) {
       // If decryption fails, the data was likely encrypted with a different app identity
       // This can happen when migrating between build systems or changing app configuration
       logError(
         'main:safe-storage-decrypt',
         'Failed to decrypt value - data may be from old build',
-        error,
+        err,
       );
-      throw error;
+      throw err;
     }
   });
 });
