@@ -8,28 +8,25 @@ Before submitting your contribution, please read through the following guide.
 
 This project is a tool for monitoring new notifications from Atlassian Cloud products.
 
-### Installation
 
-To get started, you'll need to clone the repository and install the dependencies.
+### Getting Started
 
-```shell
-pnpm install
-```
+To get started:
 
+Clone the repository and install dependencies:
+  ```shell
+  pnpm install
+  ```
 
-### Development
+Build static resources (tray icons, twemojis, etc). You only need to rebuild if you change static assets:
+  ```shell
+  pnpm build
+  ```
 
-For local development, run `pnpm build` once to copy static resources (tray icons, twemojis, etc). You only need to rebuild if you change static assets.
-
-```shell
-pnpm build
-```
-
-After that, you can do most development, including GraphQL codegen and hot module reload (HMR), with:
-
-```shell
-pnpm dev
-```
+Start development mode (includes GraphQL codegen and hot module reload):
+  ```shell
+  pnpm dev
+  ```
 
 
 ### Tests
