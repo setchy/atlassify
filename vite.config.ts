@@ -2,6 +2,7 @@ import { fileURLToPath } from 'node:url';
 
 import compiled from '@compiled/vite-plugin';
 import twemoji from '@discordapp/twemoji';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
@@ -56,6 +57,7 @@ export default defineConfig(({ command }) => {
           ],
         ],
       }),
+      tailwindcss(),
       electron({
         main: {
           entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
