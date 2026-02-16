@@ -26,7 +26,7 @@
 3. **Authenticate** with your Atlassian account and start receiving notifications.
 
 #### Experimental 
-You can install via [Homebrew][brew]
+macOS users can also install via [Homebrew][brew]
 ```shell
 brew install --cask setchy/brews/atlassify
 ```
