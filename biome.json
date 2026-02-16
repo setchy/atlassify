@@ -65,6 +65,12 @@
               }
             ]
           }
+        },
+        "useHookAtTopLevel": {
+          "level": "error",
+          "options": {
+            "ignore": ["useAlternateIdleIcon", "useUnreadActiveIcon"]
+          }
         }
       },
       "style": {
