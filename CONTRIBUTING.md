@@ -8,7 +8,6 @@ Before submitting your contribution, please read through the following guide.
 
 This project is a tool for monitoring new notifications from Atlassian Cloud products.
 
-
 ### Getting Started
 
 To get started:
@@ -27,7 +26,6 @@ Start development mode (includes GraphQL codegen and hot module reload):
   ```shell
   pnpm dev
   ```
-
 
 ### Tests
 
@@ -56,8 +54,6 @@ pnpm test -u
 ### How to Report Bugs or Request Features
 
 If you encounter a bug or have a feature request, please [open an issue][github-issues] with clear steps to reproduce or a detailed description of your idea. Check for existing issues before creating a new one.
-
-
 
 ### Releases
 

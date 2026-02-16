@@ -85,6 +85,7 @@ describe('preload/index', () => {
 
   it('tray.updateColor sends correct events', async () => {
     const api = getExposedApi();
+
     api.tray.updateColor(-1);
 
     expect(sendMainEventMock).toHaveBeenNthCalledWith(

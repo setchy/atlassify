@@ -32,7 +32,7 @@ jobs:
           name: "${{ env.RELEASE_TAG }}"
           tag_name: "${{ env.RELEASE_TAG }}"
           draft: true
-          body: '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png"  /> Atlassify ${{ env.RELEASE_TAG }}'
+          body: '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${{ env.RELEASE_TAG }}'
           generate_release_notes: true
 
   release:
