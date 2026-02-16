@@ -20,13 +20,22 @@ import { useFiltersStore } from './useFiltersStore';
 import { useSettingsStore } from './useSettingsStore';
 
 /**
- * Initialize all store side-effect subscriptions.
+ * Initialize all store side-effect subscriptions and startup values for main.
  * Should be called once on app initialization within a React useEffect hook.
  *
  * @returns Cleanup function to unsubscribe all listeners
  */
 export function initializeStoreSubscriptions(): () => void {
   const unsubscribers: Array<() => void> = [];
+
+  // ========================================================================
+  // Startup Initialization
+  // ========================================================================
+  setTheme(useSettingsStore.getState().theme);
+  setAutoLaunch(useSettingsStore.getState().openAtStartup);
+  setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
+  setUseUnreadActiveIcon(useSettingsStore.getState().useUnreadActiveIcon);
+  setUseAlternateIdleIcon(useSettingsStore.getState().useAlternateIdleIcon);
 
   // ========================================================================
   // Settings Store Side Effects

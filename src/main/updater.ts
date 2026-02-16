@@ -111,8 +111,8 @@ export default class AppUpdater {
     try {
       logInfo('app updater', 'Checking for updates on application launch');
       await autoUpdater.checkForUpdatesAndNotify();
-    } catch (e) {
-      logError('auto updater', 'Initial check failed', e as Error);
+    } catch (err) {
+      logError('auto updater', 'Initial check failed', err as Error);
     }
   }
 
@@ -121,8 +121,8 @@ export default class AppUpdater {
       try {
         logInfo('app updater', 'Checking for updates on a periodic schedule');
         await autoUpdater.checkForUpdatesAndNotify();
-      } catch (e) {
-        logError('auto updater', 'Scheduled check failed', e as Error);
+      } catch (err) {
+        logError('auto updater', 'Scheduled check failed', err as Error);
       }
     }, APPLICATION.UPDATE_CHECK_INTERVAL_MS);
   }

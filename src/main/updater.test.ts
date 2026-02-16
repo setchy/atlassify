@@ -1,8 +1,6 @@
 import { dialog } from 'electron';
 import type { Menubar } from 'menubar';
 
-import { vi } from 'vitest';
-
 import { APPLICATION } from '../shared/constants';
 import { logError, logInfo } from '../shared/logger';
 
@@ -93,7 +91,10 @@ describe('main/updater.ts', () => {
 
   describe('update available dialog', () => {
     it('shows dialog with expected message and does NOT install when user chooses Later', async () => {
-      (dialog.showMessageBox as any).mockResolvedValue({ response: 1 }); // "Later"
+      vi.mocked(dialog.showMessageBox).mockResolvedValue({
+        response: 1, // "Later" button index
+        checkboxChecked: false,
+      });
 
       await updater.start();
 
@@ -120,7 +121,10 @@ describe('main/updater.ts', () => {
     });
 
     it('invokes quitAndInstall when user clicks Restart', async () => {
-      (dialog.showMessageBox as any).mockResolvedValue({ response: 0 }); // "Restart"
+      vi.mocked(dialog.showMessageBox).mockResolvedValue({
+        response: 0, // "Restart" button index
+        checkboxChecked: false,
+      });
 
       await updater.start();
       emit('update-downloaded', { releaseName: 'v9.9.9' });
@@ -275,7 +279,7 @@ describe('main/updater.ts', () => {
         await updater.start();
         // initial + immediate scheduled invocation
         expect(
-          (autoUpdater.checkForUpdatesAndNotify as any).mock.calls.length,
+          vi.mocked(autoUpdater.checkForUpdatesAndNotify).mock.calls.length,
         ).toBe(2);
         expect(setIntervalSpy).toHaveBeenCalledWith(
           expect.any(Function),

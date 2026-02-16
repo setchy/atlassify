@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { EVENTS } from '../shared/events';
 
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
@@ -32,9 +30,9 @@ import { ipcRenderer } from 'electron';
 
 describe('preload/utils', () => {
   afterEach(() => {
-    (ipcRenderer.send as any).mockClear();
-    (ipcRenderer.invoke as any).mockClear();
-    (ipcRenderer.on as any).mockClear();
+    vi.mocked(ipcRenderer.send).mockClear();
+    vi.mocked(ipcRenderer.invoke).mockClear();
+    vi.mocked(ipcRenderer.on).mockClear();
   });
 
   it('sendMainEvent forwards to ipcRenderer.send', () => {

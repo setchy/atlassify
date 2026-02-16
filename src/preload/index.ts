@@ -34,8 +34,8 @@ export const api = {
   },
 
   tray: {
-    updateColor: (notificationsCount = 0) => {
-      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, notificationsCount);
+    updateColor: (notificationsCount = 0, isOnline = true) => {
+      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, { notificationsCount, isOnline });
     },
 
     updateTitle: (title = '') => sendMainEvent(EVENTS.UPDATE_ICON_TITLE, title),
@@ -117,10 +117,10 @@ export const api = {
 // Context isolation is always enabled in this app
 try {
   contextBridge.exposeInMainWorld('atlassify', api);
-} catch (error) {
+} catch (err) {
   // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
   console.error(
     '[preload] Failed to expose Atlassify Bridge API to renderer',
-    error,
+    err,
   );
 }

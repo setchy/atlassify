@@ -1,4 +1,4 @@
-# Atlassify 
+# Atlassify
 
 [![CI Workflow][ci-workflow-badge]][github-actions] [![Release Workflow][release-workflow-badge]][github-actions] [![Netlify Status][netlify-badge]][netlify-deploys] [![Coverage][coverage-badge]][coverage] [![Quality Gate Status][quality-badge]][quality] [![Contributors][contributors-badge]][github] [![OSS License][license-badge]][license] [![Renovate enabled][renovate-badge]][renovate] [![Downloads - Total][downloads-total-badge]][website] [![Downloads - Latest Release][downloads-latest-badge]][website] [![Latest Release][github-release-badge]][github-releases] [![wakatime][wakatime-badge]][watatime]
 
@@ -6,11 +6,24 @@
 
 ![Atlassify][social]
 
-### Download
+---
 
-You can download Atlassify for **free** from [atlassify.io][website].
 
-Atlassify supports macOS, Windows and Linux.
+## Features
+
+- 🔔 Unified notifications from Atlassian Cloud products
+- 💻 Cross-platform: macOS, Windows, and Linux
+- 🎨 Customizable settings, filters and themes
+- 🖥️ Tray/menu bar integration
+- ⚡ Fast, native experience
+- 🌐 Multi-language/localization support
+
+
+## Quick Start
+
+1. **Download** Atlassify for free from [atlassify.io][website].
+2. **Install** and launch the app for your platform.
+3. **Authenticate** with your Atlassian account and start receiving notifications.
 
 #### Experimental 
 You can install via [Homebrew][brew]
@@ -18,26 +31,42 @@ You can install via [Homebrew][brew]
 brew install --cask setchy/brews/atlassify
 ```
 
-### FAQ
 
-Please visit our [Atlassify FAQs][faqs] for all commonly asked questions.
+## Build & Development
 
-### Contributing
+To build and run Atlassify locally:
 
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+```shell
+pnpm install
+pnpm build
+pnpm dev
+```
 
-### License
-
-Atlassify is licensed under the MIT Open Source license. 
-For more information, see [LICENSE](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full development and contribution instructions.
 
 
-### Acknowledgements
+## FAQ
+
+See our [Atlassify FAQs][faqs] for answers to common questions.
+
+
+## Community & Support
+
+- Open an [issue][github-issues] for bugs or feature requests
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved
+
+
+## License
+
+Atlassify is licensed under the MIT Open Source license. See [LICENSE](LICENSE) for details.
+
+
+## Acknowledgements
 
 I would like to acknowledge the following projects and resources that have inspired and contributed to the development of Atlassify:
 
-1. [Gitify][attribution-gitify] - An open-source GitHub notification app, which I am a maintainer of, served as the launchpad for Atlassify.
-2. [Atlassian Design System][attribution-atlassian] - The design principles and UI components (@atlaskit) from Atlassian have helped shape the user interface of Atlassify.
+1. [Gitify][attribution-gitify] – An open-source GitHub notification app, which I am the lead maintainer of, served as the launchpad for Atlassify.
+2. [Atlassian Design System][attribution-atlassian] – The design principles and UI components (@atlaskit) from Atlassian have helped shape the user interface of Atlassify.
 
 
 <!-- LINK LABELS -->
@@ -50,6 +79,7 @@ I would like to acknowledge the following projects and resources that have inspi
 
 [github]: https://github.com/setchy/atlassify
 [github-actions]: https://github.com/setchy/atlassify/actions
+[github-issues]: https://github.com/setchy/atlassify/issues
 [github-releases]: https://github.com/setchy/atlassify/releases/latest
 [github-website]: https://github.com/setchy/atlassify-website
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls

@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import * as logger from '../../shared/logger';

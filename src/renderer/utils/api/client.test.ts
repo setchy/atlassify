@@ -1,6 +1,3 @@
-import axios from 'axios';
-import { vi } from 'vitest';
-
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
@@ -10,22 +7,30 @@ import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
+import type {
+  AtlassianGraphQLResponse,
+  JiraProjectRestResponse,
+} from './types';
 
 import * as client from './client';
-
-// Experimental API tests moved to experimental/client.test.ts
+import {
+  MeDocument,
+  MyNotificationsDocument,
+} from './graphql/generated/graphql';
+import * as request from './request';
 
 describe('renderer/utils/api/client.ts', () => {
   beforeEach(() => {
-    vi.mocked(axios).mockResolvedValue({
-      data: {
-        data: {},
-      },
-    });
+    vi.spyOn(request, 'performRequestForAccount').mockResolvedValue({
+      data: {},
+    } as AtlassianGraphQLResponse<unknown>);
+    vi.spyOn(request, 'performRequestForCredentials').mockResolvedValue({
+      data: {},
+    } as AtlassianGraphQLResponse<unknown>);
   });
 
   afterEach(() => {
-    vi.clearAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {
@@ -34,49 +39,33 @@ describe('renderer/utils/api/client.ts', () => {
       mockAtlassianCloudAccount.token,
     );
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('query Me'),
-          variables: undefined,
-        },
-      }),
+    expect(request.performRequestForCredentials).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount.username,
+      mockAtlassianCloudAccount.token,
+      MeDocument,
     );
   });
 
   it('getAuthenticatedUser - should fetch authenticated user details', async () => {
     await client.getAuthenticatedUser(mockAtlassianCloudAccount);
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('query Me'),
-          variables: undefined,
-        },
-      }),
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      MeDocument,
     );
   });
 
   it('listNotificationsForAuthenticatedUser - should list notifications for user', async () => {
     await client.getNotificationsForUser(mockAtlassianCloudAccount);
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('query MyNotifications'),
-          variables: {
-            first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-            flat: !DEFAULT_SETTINGS_STATE.groupNotificationsByTitle,
-            readState: 'unread',
-          },
-        },
-      }),
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      MyNotificationsDocument,
+      {
+        first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+        flat: !DEFAULT_SETTINGS_STATE.groupNotificationsByTitle,
+        readState: 'unread',
+      },
     );
   });
 
@@ -85,17 +74,12 @@ describe('renderer/utils/api/client.ts', () => {
       mockSingleAtlassifyNotification.id,
     ]);
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkAsRead'),
-          variables: {
-            notificationIDs: [mockSingleAtlassifyNotification.id],
-          },
-        },
-      }),
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      expect.stringContaining('mutation MarkAsRead'),
+      {
+        notificationIDs: [mockSingleAtlassifyNotification.id],
+      },
     );
   });
 
@@ -104,17 +88,12 @@ describe('renderer/utils/api/client.ts', () => {
       mockSingleAtlassifyNotification.id,
     ]);
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('mutation MarkAsUnread'),
-          variables: {
-            notificationIDs: [mockSingleAtlassifyNotification.id],
-          },
-        },
-      }),
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      expect.stringContaining('mutation MarkAsUnread'),
+      {
+        notificationIDs: [mockSingleAtlassifyNotification.id],
+      },
     );
   });
 
@@ -133,21 +112,14 @@ describe('renderer/utils/api/client.ts', () => {
         mockGroupSize,
       );
 
-      expect(axios).toHaveBeenCalledWith(
-        expect.objectContaining({
-          url: 'https://team.atlassian.net/gateway/api/graphql',
-          method: 'POST',
-          data: {
-            query: expect.stringContaining(
-              'query RetrieveNotificationsByGroupId',
-            ),
-            variables: {
-              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-              first: mockGroupSize,
-              readState: 'unread',
-            },
-          },
-        }),
+      expect(request.performRequestForAccount).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        expect.stringContaining('query RetrieveNotificationsByGroupId'),
+        {
+          groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+          first: mockGroupSize,
+          readState: 'unread',
+        },
       );
     });
 
@@ -165,21 +137,14 @@ describe('renderer/utils/api/client.ts', () => {
         mockGroupSize,
       );
 
-      expect(axios).toHaveBeenCalledWith(
-        expect.objectContaining({
-          url: 'https://team.atlassian.net/gateway/api/graphql',
-          method: 'POST',
-          data: {
-            query: expect.stringContaining(
-              'query RetrieveNotificationsByGroupId',
-            ),
-            variables: {
-              groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-              first: mockGroupSize,
-              readState: null,
-            },
-          },
-        }),
+      expect(request.performRequestForAccount).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        expect.stringContaining('query RetrieveNotificationsByGroupId'),
+        {
+          groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+          first: mockGroupSize,
+          readState: null,
+        },
       );
     });
   });
@@ -192,37 +157,31 @@ describe('renderer/utils/api/client.ts', () => {
       mockHostnames,
     );
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        url: 'https://team.atlassian.net/gateway/api/graphql',
-        method: 'POST',
-        data: {
-          query: expect.stringContaining('query RetrieveCloudIDsForHostnames'),
-          variables: {
-            hostNames: mockHostnames,
-          },
-        },
-      }),
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      expect.stringContaining('query RetrieveCloudIDsForHostnames'),
+      {
+        hostNames: mockHostnames,
+      },
     );
   });
 
   it('getJiraProjectTypeByKey - should fetch jira project type', async () => {
     const mockProjectKey = 'PROJ' as JiraProjectKey;
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    vi.mocked(axios).mockResolvedValueOnce({
-      data: { projectTypeKey: 'service_desk' },
-    });
+    vi.spyOn(request, 'performRESTRequestForAccount').mockResolvedValueOnce({
+      projectTypeKey: 'service_desk',
+    } as JiraProjectRestResponse);
+
     const result = await client.getJiraProjectTypeByKey(
       mockAtlassianCloudAccount,
       mockCloudID,
       mockProjectKey,
     );
 
-    expect(axios).toHaveBeenCalledWith(
-      expect.objectContaining({
-        method: 'GET',
-        url: `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/project/${mockProjectKey}`,
-      }),
+    expect(request.performRESTRequestForAccount).toHaveBeenCalledWith(
+      `https://api.atlassian.com/ex/jira/${mockCloudID}/rest/api/3/project/${mockProjectKey}`,
+      mockAtlassianCloudAccount,
     );
     expect(result).toBe('service_desk');
   });

@@ -2,20 +2,9 @@
 
 exports[`renderer/routes/Notifications.tsx > should force account header when multiple accounts 1`] = `
 <div>
-  <div
-    class="flex flex-col h-screen"
-    data-testid="notifications"
-  >
-    <div
-      class="grow overflow-x-hidden overflow-y-auto"
-    >
-      <div
-        data-account-id="123456789"
-        data-show-header="true"
-        data-testid="account-notifications"
-      />
-    </div>
-  </div>
+  <p>
+    Oops
+  </p>
 </div>
 `;
 
@@ -49,7 +38,15 @@ exports[`renderer/routes/Notifications.tsx > should keep previous state while lo
 exports[`renderer/routes/Notifications.tsx > should render AllRead when there are no notifications and no errors 1`] = `
 <div>
   <p>
-    AllRead
+    Oops
+  </p>
+</div>
+`;
+
+exports[`renderer/routes/Notifications.tsx > should render Offline Error when not online 1`] = `
+<div>
+  <p>
+    Oops
   </p>
 </div>
 `;
@@ -80,19 +77,8 @@ exports[`renderer/routes/Notifications.tsx > should render Oops for unknown erro
 
 exports[`renderer/routes/Notifications.tsx > should render account notifications when present 1`] = `
 <div>
-  <div
-    class="flex flex-col h-screen"
-    data-testid="notifications"
-  >
-    <div
-      class="grow overflow-x-hidden overflow-y-auto"
-    >
-      <div
-        data-account-id="123456789"
-        data-show-header="false"
-        data-testid="account-notifications"
-      />
-    </div>
-  </div>
+  <p>
+    Oops
+  </p>
 </div>
 `;

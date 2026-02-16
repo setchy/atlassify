@@ -24,6 +24,14 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
     ],
     emojis: ['🛜'],
   },
+  OFFLINE: {
+    title: i18n.t('errors.offline.title'),
+    descriptions: [
+      i18n.t('errors.offline.description1'),
+      i18n.t('errors.offline.description2'),
+    ],
+    emojis: ['🛜'],
+  },
   UNKNOWN: {
     title: i18n.t('errors.unknown.title'),
     descriptions: [i18n.t('errors.unknown.description1')],

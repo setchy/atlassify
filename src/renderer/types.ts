@@ -254,6 +254,7 @@ export type ErrorType =
   | 'BAD_CREDENTIALS'
   | 'BAD_REQUEST'
   | 'NETWORK'
+  | 'OFFLINE'
   | 'UNKNOWN';
 
 /**

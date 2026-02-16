@@ -4,8 +4,6 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
-import { vi } from 'vitest';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import {

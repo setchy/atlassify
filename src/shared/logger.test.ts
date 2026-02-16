@@ -1,7 +1,5 @@
 import log from 'electron-log';
 
-import { vi } from 'vitest';
-
 import { logError, logInfo, logWarn } from './logger';
 
 describe('shared/logger.ts', () => {

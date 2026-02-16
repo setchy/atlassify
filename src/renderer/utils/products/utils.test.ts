@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 const { getCloudIDsForHostnames, getJiraProjectTypeByKey } = vi.hoisted(() => ({
   getCloudIDsForHostnames: vi.fn(async () => ({
     data: { tenantContexts: [{ cloudId: 'cloud-1' }] },
@@ -26,8 +24,6 @@ import {
   inferAtlassianProduct,
   PRODUCTS,
 } from '.';
-
-// Access mocked API functions via hoisted references
 
 describe('renderer/utils/products/utils.ts', () => {
   describe('inferAtlassianProduct', () => {
@@ -114,7 +110,7 @@ describe('renderer/utils/products/utils.ts', () => {
         }) as AtlassianHeadNotificationFragment;
 
       const setProjectType = (t: JiraProjectType) =>
-        (getJiraProjectTypeByKey as any).mockResolvedValueOnce(t);
+        vi.mocked(getJiraProjectTypeByKey).mockResolvedValueOnce(t);
 
       test.each<
         [JiraProjectType, string, (typeof PRODUCTS)[keyof typeof PRODUCTS]]
@@ -176,9 +172,9 @@ describe('renderer/utils/products/utils.ts', () => {
           makeJiraNotif('BBB'),
         );
 
-        const cloudCalls = (getCloudIDsForHostnames as any).mock.calls;
+        const cloudCalls = vi.mocked(getCloudIDsForHostnames).mock.calls;
         expect(cloudCalls.length).toBe(1);
-        const projCalls = (getJiraProjectTypeByKey as any).mock.calls;
+        const projCalls = vi.mocked(getJiraProjectTypeByKey).mock.calls;
         // 1st key fetch + 2nd key fetch = 2
         expect(
           projCalls.filter((c) => ['AAA', 'BBB'].includes(c[2])).length,
@@ -187,7 +183,7 @@ describe('renderer/utils/products/utils.ts', () => {
 
       it('logs and falls back when cloud id retrieval fails', async () => {
         __resetProductInferenceCaches();
-        (getCloudIDsForHostnames as any).mockRejectedValueOnce(
+        vi.mocked(getCloudIDsForHostnames).mockRejectedValueOnce(
           new Error('cloud boom'),
         );
         const notif = makeJiraNotif('ERR1');
@@ -199,10 +195,10 @@ describe('renderer/utils/products/utils.ts', () => {
 
       it('logs and falls back when project type lookup fails', async () => {
         __resetProductInferenceCaches();
-        (getCloudIDsForHostnames as any).mockResolvedValueOnce({
+        vi.mocked(getCloudIDsForHostnames).mockResolvedValueOnce({
           data: { tenantContexts: [{ cloudId: 'cloud-2' }] },
         });
-        (getJiraProjectTypeByKey as any).mockRejectedValueOnce(
+        vi.mocked(getJiraProjectTypeByKey).mockRejectedValueOnce(
           new Error('project boom'),
         );
         const notif = makeJiraNotif('ERR2');

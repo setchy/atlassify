@@ -1,5 +1,3 @@
-import { vi } from 'vitest';
-
 import { EVENTS } from '../shared/events';
 
 import { api } from './index';
@@ -92,7 +90,10 @@ describe('preload/index', () => {
     expect(sendMainEventMock).toHaveBeenNthCalledWith(
       1,
       EVENTS.UPDATE_ICON_COLOR,
-      -1,
+      {
+        isOnline: true,
+        notificationsCount: -1,
+      },
     );
   });
 

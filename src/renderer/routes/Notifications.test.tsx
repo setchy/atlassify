@@ -1,7 +1,5 @@
 import { render } from '@testing-library/react';
 
-import { vi } from 'vitest';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
@@ -85,6 +83,18 @@ describe('renderer/routes/Notifications.tsx', () => {
     expect(tree.container).toMatchSnapshot();
   });
 
+  it('should render Offline Error when not online', () => {
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+      hasNotifications: false,
+      status: 'success',
+      globalError: null,
+      isOnline: false,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
   it.each([
     ['bad credentials', Errors.BAD_CREDENTIALS, Errors.BAD_CREDENTIALS],
     ['unknown error', Errors.UNKNOWN, Errors.UNKNOWN],
@@ -114,6 +124,7 @@ describe('renderer/routes/Notifications.tsx', () => {
       markNotificationsRead: vi.fn(),
       markNotificationsUnread: vi.fn(),
       focusedNotificationId: null,
+      isOnline: true,
     };
 
     const tree = render(

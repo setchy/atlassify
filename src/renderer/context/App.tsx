@@ -1,4 +1,12 @@
-import { createContext, type ReactNode, useEffect, useMemo } from 'react';
+import {
+  createContext,
+  type ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+
+import { onlineManager } from '@tanstack/react-query';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
@@ -35,6 +43,8 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
+
+  isOnline: boolean;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -55,6 +65,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
+
+  const [isOnline, setIsOnline] = useState(false);
 
   const {
     status,
@@ -82,7 +94,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
   useEffect(() => {
     const trayCount = status === 'error' ? -1 : notificationCount;
-    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications);
+    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, isOnline);
   }, [
     showNotificationsCountInTray,
     useUnreadActiveIcon,
@@ -90,6 +102,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     status,
     notificationCount,
     hasMoreAccountNotifications,
+    isOnline,
   ]);
 
   useEffect(() => {
@@ -99,6 +112,25 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       resetFilters();
     });
   }, [resetAccounts, resetFilters]);
+
+  // Online / Offline status monitoring via TanStack Query onlineManager
+  useEffect(() => {
+    const handle = () => {
+      try {
+        const online = onlineManager.isOnline();
+
+        setIsOnline(online);
+      } catch (_err) {
+        // ignore
+      }
+    };
+
+    // Subscribe and call immediately to set initial status
+    const unsubscribe = onlineManager.subscribe(handle);
+    handle();
+
+    return () => unsubscribe();
+  }, []);
 
   const contextValues: AppContextState = useMemo(
     () => ({
@@ -116,6 +148,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      isOnline,
     }),
     [
       status,
@@ -132,6 +166,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      isOnline,
     ],
   );
 

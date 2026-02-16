@@ -42,6 +42,11 @@
       "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, einschließlich der Frage, ob Sie ein VPN benötigen, und versuchen Sie es erneut.",
       "title": "Netzwerkfehler"
     },
+    "offline": {
+      "description1": "Ihr Gerät ist offline.",
+      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung.",
+      "title": "Netzwerk offline"
+    },
     "unknown": {
       "description1": "Bitte versuchen Sie es später erneut.",
       "title": "Hoppla! Etwas lief schief"
@@ -211,12 +216,12 @@
     "title": "Einstellungen",
     "tray": {
       "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} -Logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
+      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
       "show_count_in_tray_help": "Zeigt die Anzahl der ungelesenen Benachrichtigungen neben dem Taskleistensymbol an. \nNützlich für einen schnellen Blick auf ungelesene Aktivitäten.",
       "title": "Tablett",
       "unread_active_icon": "Machen Sie ungelesene Benachrichtigungen hervor",
-      "unread_active_icon_help": "Verwenden Sie ein grünes {{appName}} -Logo, wenn es ungelesene Benachrichtigungen gibt."
+      "unread_active_icon_help": "Verwenden Sie ein blaues {{appName}} logo, wenn ungelesene Benachrichtigungen vorliegen."
     },
     "view_release_notes": "View {{appName}} Versionshinweise"
   },

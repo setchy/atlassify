@@ -45,10 +45,14 @@ export function setAutoLaunch(value: boolean): void {
 }
 
 export function setUseAlternateIdleIcon(value: boolean): void {
+  // TODO remove biome-ignore once fixed upstream
+  // biome-ignore lint/correctness/useHookAtTopLevel: false positive
   window.atlassify.tray.useAlternateIdleIcon(value);
 }
 
 export function setUseUnreadActiveIcon(value: boolean): void {
+  // TODO remove biome-ignore once fixed upstream
+  // biome-ignore lint/correctness/useHookAtTopLevel: false positive
   window.atlassify.tray.useUnreadActiveIcon(value);
 }
 
@@ -63,8 +67,11 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  *
  * @param notificationsLength The number of unread notifications
  */
-export function updateTrayColor(notificationsLength: number): void {
-  window.atlassify.tray.updateColor(notificationsLength);
+export function updateTrayColor(
+  notificationsLength: number,
+  isOnline: boolean,
+): void {
+  window.atlassify.tray.updateColor(notificationsLength, isOnline);
 }
 
 /**

@@ -42,6 +42,11 @@
       "description2": "Consulte su conexión de red, incluso si necesita una VPN, y vuelva a intentarlo.",
       "title": "Error de red"
     },
+    "offline": {
+      "description1": "Su dispositivo está desconectado.",
+      "description2": "Por favor verifique su conexión de red.",
+      "title": "Red sin conexión"
+    },
     "unknown": {
       "description1": "Vuelva a intentarlo más tarde.",
       "title": "¡Ups! Algo salió mal"
@@ -216,7 +221,7 @@
       "show_count_in_tray_help": "Muestra el recuento de notificaciones no leídas junto al icono de la bandeja. \nÚtil para echar un vistazo rápido a la actividad no leída.",
       "title": "Bandeja",
       "unread_active_icon": "Resaltar las notificaciones no leídas",
-      "unread_active_icon_help": "Use un logotipo verde {{appName}} cuando hay notificaciones no leídas."
+      "unread_active_icon_help": "Utilice un logotipo azul {{appName}} cuando haya notificaciones no leídas."
     },
     "view_release_notes": "Ver {{appName}} Notas de versión"
   },
