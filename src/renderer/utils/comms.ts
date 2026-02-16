@@ -45,10 +45,14 @@ export function setAutoLaunch(value: boolean): void {
 }
 
 export function setUseAlternateIdleIcon(value: boolean): void {
+  // TODO remove biome-ignore once fixed upstream
+  // biome-ignore lint/correctness/useHookAtTopLevel: false positive
   window.atlassify.tray.useAlternateIdleIcon(value);
 }
 
 export function setUseUnreadActiveIcon(value: boolean): void {
+  // TODO remove biome-ignore once fixed upstream
+  // biome-ignore lint/correctness/useHookAtTopLevel: false positive
   window.atlassify.tray.useUnreadActiveIcon(value);
 }
 
