@@ -130,8 +130,8 @@ importers:
         specifier: 2.5.6
         version: 2.5.6
       '@swc-contrib/plugin-graphql-codegen-client-preset':
-        specifier: 0.17.0
-        version: 0.17.0
+        specifier: 0.18.0
+        version: 0.18.0
       '@tailwindcss/vite':
         specifier: 4.1.18
         version: 4.1.18(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
@@ -1700,8 +1700,8 @@ packages:
   '@statsig/js-client@3.31.2':
     resolution: {integrity: sha512-uEIt2Zg0NTgIhg4jaMQYtdttrTDgQRtlk4E8N6cNBcq2i/Igea1DzVYD7RyEV9oiq3InHDOfuuP+p+w5oO+qeA==}
 
-  '@swc-contrib/plugin-graphql-codegen-client-preset@0.17.0':
-    resolution: {integrity: sha512-HKvWjKT/9ND5zz/L6JtIh5YjjczE44CzZogKz/Tg1rP/WULEqose9YGxog8uvHaqBaqRBgdHneVFIRSJk+UoVQ==}
+  '@swc-contrib/plugin-graphql-codegen-client-preset@0.18.0':
+    resolution: {integrity: sha512-g5cwxN2B6pXQ2zTls448SrbwVu5yNRBNQcrDwWJGCMuRxwXcTh8fb654TT3mmCMxpHeQTB5NJoYNsOBevlkGhw==}
     engines: {node: '>=16'}
 
   '@swc/core-darwin-arm64@1.15.11':
@@ -7024,7 +7024,7 @@ snapshots:
     dependencies:
       '@statsig/client-core': 3.31.2
 
-  '@swc-contrib/plugin-graphql-codegen-client-preset@0.17.0': {}
+  '@swc-contrib/plugin-graphql-codegen-client-preset@0.18.0': {}
 
   '@swc/core-darwin-arm64@1.15.11':
     optional: true
