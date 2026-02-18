@@ -6,8 +6,6 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
-import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
-import useSettingsStore from '../stores/useSettingsStore';
 
 import * as notifications from '../utils/notifications/notifications';
 import { type AppContextState, AppProvider } from './App';
@@ -50,9 +48,6 @@ describe('renderer/context/App.tsx', () => {
   const markNotificationsUnreadMock = vi.fn();
 
   beforeEach(() => {
-    // Initialize stores with default values
-    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
-
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({
       status: 'success',

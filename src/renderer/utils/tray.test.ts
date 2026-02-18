@@ -1,4 +1,3 @@
-import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import * as comms from './comms';
@@ -15,7 +14,6 @@ describe('renderer/utils/tray.ts', () => {
   describe('setTrayIconColorAndTitle', () => {
     it('should update tray color and title when showNotificationsCountInTray is true and has notifications', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         showNotificationsCountInTray: true,
       });
 
@@ -29,7 +27,6 @@ describe('renderer/utils/tray.ts', () => {
 
     it('should update tray color and title when showNotificationsCountInTray is true and has more notifications', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         showNotificationsCountInTray: true,
       });
 
@@ -43,7 +40,6 @@ describe('renderer/utils/tray.ts', () => {
 
     it('should update tray color and empty title when showNotificationsCountInTray is false and has notifications', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         showNotificationsCountInTray: false,
       });
 
@@ -57,7 +53,6 @@ describe('renderer/utils/tray.ts', () => {
 
     it('should update tray color and empty title when offline and has notifications', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         showNotificationsCountInTray: false,
       });
 
@@ -71,7 +66,6 @@ describe('renderer/utils/tray.ts', () => {
 
     it('should update tray with empty title when no notifications', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         showNotificationsCountInTray: true,
       });
 

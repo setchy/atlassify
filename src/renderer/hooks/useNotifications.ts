@@ -26,6 +26,7 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
+import { notificationsKeys } from '../utils/api/queryKeys';
 import { trackEvent } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
@@ -44,7 +45,6 @@ import {
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
-import { notificationsKeys } from '../utils/queryKeys';
 
 interface NotificationsState {
   status: Status;
@@ -120,7 +120,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(accounts);
+      return await getAllNotifications();
     },
 
     // Apply filters as a transformation on the cached data

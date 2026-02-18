@@ -84,6 +84,7 @@ export function getNotificationsForUser(
   account: Account,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
   const settings = useSettingsStore.getState();
+
   return performRequestForAccount(account, MyNotificationsDocument, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,

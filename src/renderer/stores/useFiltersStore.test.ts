@@ -4,6 +4,12 @@ import { DEFAULT_FILTERS_STATE } from './defaults';
 import { useFiltersStore } from './useFiltersStore';
 
 describe('useFiltersStore', () => {
+  test('should start with default filters', () => {
+    const { result } = renderHook(() => useFiltersStore());
+
+    expect(result.current).toMatchObject(DEFAULT_FILTERS_STATE);
+  });
+
   test('should update a filter (add value)', () => {
     const { result } = renderHook(() => useFiltersStore());
 
