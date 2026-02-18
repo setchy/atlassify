@@ -79,8 +79,8 @@ importers:
         specifier: 18.0.0
         version: 18.0.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/radio':
-        specifier: 8.4.2
-        version: 8.4.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 8.4.3
+        version: 8.4.3(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/select':
         specifier: 21.7.5
         version: 21.7.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -427,8 +427,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/radio@8.4.2':
-    resolution: {integrity: sha512-pPl9YayVte/BUTM7luqDd2PGaVA8H6p8t4KjewSL5McZ1aeZwUfQ9izSp8Y9R9blttnlZipSq7KfSSzJnbNR0A==}
+  '@atlaskit/radio@8.4.3':
+    resolution: {integrity: sha512-DpLqKRD+RRNPMgHN7oOvh2YQPz6AbqNF5CASYSBIip1jPGqNb2qLU7kgwLXoduJv7qYunV/+Yf6IiJBa8kOzSw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5435,7 +5435,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/radio@8.4.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/radio@8.4.3(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
