@@ -53,7 +53,7 @@
   "dependencies": {
     "electron-log": "5.4.3",
     "electron-updater": "6.8.3",
-    "i18next": "25.8.7",
+    "i18next": "25.8.10",
     "i18next-browser-languagedetector": "8.2.1",
     "menubar": "9.5.2",
     "react": "19.2.4",
