@@ -51,9 +51,9 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const { account, notifications, hasMoreNotifications, showAccountHeader } =
     props;
 
-  const { markNotificationsRead } = useAppContext();
-
   const { t } = useTranslation();
+
+  const { markNotificationsRead } = useAppContext();
 
   const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
     useState(true);

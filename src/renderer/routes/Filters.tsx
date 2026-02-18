@@ -22,6 +22,7 @@ import {
 
 export const FiltersRoute: FC = () => {
   const { t } = useTranslation();
+
   const clearFilters = useFiltersStore((s) => s.reset);
 
   return (

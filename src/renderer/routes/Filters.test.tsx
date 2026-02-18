@@ -1,4 +1,4 @@
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
@@ -33,20 +33,16 @@ describe('renderer/routes/Filters.tsx', () => {
 
   describe('General', () => {
     it('should render itself & its children', async () => {
-      await act(async () => {
-        renderWithAppContext(<FiltersRoute />, {
-          notifications: [],
-        });
+      renderWithAppContext(<FiltersRoute />, {
+        notifications: [],
       });
 
       expect(screen.getByTestId('filters')).toMatchSnapshot();
     });
 
     it('should go back by pressing the icon', async () => {
-      await act(async () => {
-        renderWithAppContext(<FiltersRoute />, {
-          notifications: [],
-        });
+      renderWithAppContext(<FiltersRoute />, {
+        notifications: [],
       });
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
@@ -59,10 +55,8 @@ describe('renderer/routes/Filters.tsx', () => {
   describe('filters', () => {
     describe('time sensitive filters', () => {
       it('should filter by time sensitive - no existing filters set', async () => {
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
@@ -79,10 +73,8 @@ describe('renderer/routes/Filters.tsx', () => {
           engagementStates: ['mention'],
         });
 
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
@@ -97,10 +89,8 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('category filters', () => {
       it('should filter by category - no existing filters set', async () => {
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
@@ -113,10 +103,8 @@ describe('renderer/routes/Filters.tsx', () => {
           categories: ['direct'],
         });
 
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
@@ -127,10 +115,8 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('actor filters', () => {
       it('should filter by actor - no existing filters set', async () => {
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
@@ -143,10 +129,8 @@ describe('renderer/routes/Filters.tsx', () => {
           actors: ['automation'],
         });
 
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
@@ -157,10 +141,8 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('read state filters', () => {
       it('should filter by read state - no existing filters set', async () => {
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
@@ -173,10 +155,8 @@ describe('renderer/routes/Filters.tsx', () => {
           readStates: ['unread'],
         });
 
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
@@ -187,10 +167,8 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('product filters', () => {
       it('should filter by product - no existing filters set', async () => {
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {
@@ -206,10 +184,8 @@ describe('renderer/routes/Filters.tsx', () => {
           products: ['bitbucket'],
         });
 
-        await act(async () => {
-          renderWithAppContext(<FiltersRoute />, {
-            notifications: [],
-          });
+        renderWithAppContext(<FiltersRoute />, {
+          notifications: [],
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {
@@ -226,10 +202,8 @@ describe('renderer/routes/Filters.tsx', () => {
 
   describe('Footer section', () => {
     it('should clear filters', async () => {
-      await act(async () => {
-        renderWithAppContext(<FiltersRoute />, {
-          notifications: [],
-        });
+      renderWithAppContext(<FiltersRoute />, {
+        notifications: [],
       });
 
       await userEvent.click(screen.getByTestId('filters-clear'));

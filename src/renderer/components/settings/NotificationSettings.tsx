@@ -11,6 +11,8 @@ import { APPLICATION } from '../../../shared/constants';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 export const NotificationSettings: FC = () => {
+  const { t } = useTranslation();
+
   const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
@@ -20,8 +22,6 @@ export const NotificationSettings: FC = () => {
   const delayNotificationState = useSettingsStore(
     (s) => s.delayNotificationState,
   );
-
-  const { t } = useTranslation();
 
   return (
     <Stack space="space.100">

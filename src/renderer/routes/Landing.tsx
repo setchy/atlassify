@@ -27,11 +27,11 @@ import { Centered } from '../components/layout/Centered';
 import { showWindow } from '../utils/comms';
 
 export const LandingRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
-
-  const { t } = useTranslation();
 
   useEffect(() => {
     if (isLoggedIn) {

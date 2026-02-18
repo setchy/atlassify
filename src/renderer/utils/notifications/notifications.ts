@@ -1,6 +1,8 @@
 import { AxiosError } from 'axios';
 
-import type { Account, AccountNotifications } from '../../types';
+import useAccountsStore from '../../stores/useAccountsStore';
+
+import type { AccountNotifications } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -13,7 +15,7 @@ import { getFlattenedNotificationsByProduct } from './group';
 /**
  * Get the count of notifications across all accounts.
  *
- * @param notifications - The account notifications to check.
+ * @param accountNotifications - The account notifications to check.
  * @returns The count of all notifications.
  */
 export function getNotificationCount(
@@ -28,7 +30,7 @@ export function getNotificationCount(
 /**
  * Check if any accounts have more notifications beyond the max page size fetched per account.
  *
- * @param notifications - The account notifications to check.
+ * @param accountNotifications - The account notifications to check.
  * @returns The count of all notifications.
  */
 export function hasMoreNotifications(
@@ -37,7 +39,8 @@ export function hasMoreNotifications(
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
-function getNotifications(accounts: Account[]) {
+function getNotifications() {
+  const accounts = useAccountsStore.getState().accounts;
   return accounts.map((account) => {
     return {
       account,
@@ -55,14 +58,11 @@ function getNotifications(accounts: Account[]) {
  *  - Filtering
  *  - Ordering
  *
- * @param auth - The accounts state.
  * @returns A promise that resolves to an array of account notifications.
  */
-export async function getAllNotifications(
-  accounts: Account[],
-): Promise<AccountNotifications[]> {
+export async function getAllNotifications(): Promise<AccountNotifications[]> {
   const accountNotifications: AccountNotifications[] = await Promise.all(
-    getNotifications(accounts)
+    getNotifications()
       .filter((response) => !!response)
       .map(async (accountNotifications) => {
         try {

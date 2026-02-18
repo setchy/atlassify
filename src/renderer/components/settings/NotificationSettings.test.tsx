@@ -1,4 +1,4 @@
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
@@ -8,20 +8,20 @@ import useSettingsStore from '../../stores/useSettingsStore';
 import { NotificationSettings } from './NotificationSettings';
 
 describe('renderer/components/settings/NotificationSettings.tsx', () => {
+  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(async () => {
+    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should toggle the markAsReadOnOpen checkbox', async () => {
     useSettingsStore.setState({ markAsReadOnOpen: true });
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
 
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
@@ -30,14 +30,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(
       screen.getByLabelText('Group product notifications alphabetically'),
@@ -51,14 +44,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should toggle the delayNotificationState checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(screen.getByLabelText('Delay notification state'));
 

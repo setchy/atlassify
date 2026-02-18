@@ -11,7 +11,7 @@ import { APPLICATION } from '../../../shared/constants';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 export const TraySettings: FC = () => {
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
+  const { t } = useTranslation();
 
   const showNotificationsCountInTray = useSettingsStore(
     (s) => s.showNotificationsCountInTray,
@@ -19,7 +19,7 @@ export const TraySettings: FC = () => {
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
 
-  const { t } = useTranslation();
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   return (
     <Stack space="space.100">

@@ -35,13 +35,11 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
       .spyOn(comms, 'openExternalLink')
       .mockImplementation(vi.fn());
 
-    await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsFooter />
-        </MemoryRouter>,
-      );
-    });
+    renderWithAppContext(
+      <MemoryRouter initialEntries={['/settings']}>
+        <SettingsFooter />
+      </MemoryRouter>,
+    );
 
     await userEvent.click(screen.getByTestId('settings-release-notes'));
 
@@ -52,13 +50,11 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should open account management', async () => {
-    await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsFooter />
-        </MemoryRouter>,
-      );
-    });
+    renderWithAppContext(
+      <MemoryRouter initialEntries={['/settings']}>
+        <SettingsFooter />
+      </MemoryRouter>,
+    );
 
     await userEvent.click(screen.getByTestId('settings-accounts'));
 
@@ -68,13 +64,11 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
 
-    await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsFooter />
-        </MemoryRouter>,
-      );
-    });
+    renderWithAppContext(
+      <MemoryRouter initialEntries={['/settings']}>
+        <SettingsFooter />
+      </MemoryRouter>,
+    );
 
     await userEvent.click(screen.getByTestId('settings-quit'));
 

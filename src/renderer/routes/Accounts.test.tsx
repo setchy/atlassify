@@ -26,9 +26,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
     });
@@ -37,17 +35,13 @@ describe('renderer/routes/Accounts.tsx', () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
     });
 
     it('should go back by pressing the icon', async () => {
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
@@ -63,9 +57,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         .mockImplementation(vi.fn());
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
@@ -81,9 +73,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         .mockResolvedValue(mockAtlassianCloudAccount);
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-refresh'));
 
@@ -105,9 +95,7 @@ describe('renderer/routes/Accounts.tsx', () => {
         .mockImplementation(vi.fn());
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      await act(async () => {
-        renderWithAppContext(<AccountsRoute />);
-      });
+      renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-logout'));
 
@@ -120,9 +108,8 @@ describe('renderer/routes/Accounts.tsx', () => {
 
   it('should add new accounts', async () => {
     useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-    await act(async () => {
-      renderWithAppContext(<AccountsRoute />);
-    });
+
+    renderWithAppContext(<AccountsRoute />);
 
     await userEvent.click(screen.getByTestId('account-add-new'));
 

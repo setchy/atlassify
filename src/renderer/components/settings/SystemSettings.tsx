@@ -27,6 +27,8 @@ import {
 } from '../../utils/notifications/sound';
 
 export const SystemSettings: FC = () => {
+  const { t } = useTranslation();
+
   const updateSetting = useSettingsStore((s) => s.updateSetting);
   const openLinks = useSettingsStore((s) => s.openLinks);
   const keyboardShortcutEnabled = useSettingsStore(
@@ -40,8 +42,6 @@ export const SystemSettings: FC = () => {
   );
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
-
-  const { t } = useTranslation();
 
   const openLinksOptions: OptionsPropType = [
     {

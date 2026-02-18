@@ -23,7 +23,13 @@ const mockAccount2: Account = {
 
 describe('useAccountsStore', () => {
   beforeEach(() => {
-    useAccountsStore.setState({ accounts: [] });
+    useAccountsStore.setState({ ...DEFAULT_ACCOUNTS_STATE });
+  });
+
+  test('should start with default accounts', () => {
+    const { result } = renderHook(() => useAccountsStore());
+
+    expect(result.current).toMatchObject(DEFAULT_ACCOUNTS_STATE);
   });
 
   test('should start with default state', () => {

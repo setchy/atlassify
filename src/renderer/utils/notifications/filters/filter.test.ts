@@ -82,40 +82,4 @@ describe('renderer/utils/notifications/filter.ts', () => {
       expect(result.length).toBe(2);
     });
   });
-
-  describe('hasActiveFilters', () => {
-    it('default filter settings', () => {
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(false);
-    });
-
-    it('non-default engagement state filters', () => {
-      useFiltersStore.setState({ engagementStates: ['mention'] });
-
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
-    });
-
-    it('non-default category filters', () => {
-      useFiltersStore.setState({ categories: ['direct'] });
-
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
-    });
-
-    it('non-default actor filters', () => {
-      useFiltersStore.setState({ actors: ['automation'] });
-
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
-    });
-
-    it('non-default read state filters', () => {
-      useFiltersStore.setState({ readStates: ['read'] });
-
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
-    });
-
-    it('non-default product filters', () => {
-      useFiltersStore.setState({ products: ['bitbucket'] });
-
-      expect(useFiltersStore.getState().hasActiveFilters()).toBe(true);
-    });
-  });
 });

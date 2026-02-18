@@ -6,13 +6,13 @@
  */
 
 import { queryClient } from '../utils/api/client';
+import { notificationsKeys } from '../utils/api/queryKeys';
 import {
   setAutoLaunch,
   setKeyboardShortcut,
   setUseAlternateIdleIcon,
   setUseUnreadActiveIcon,
 } from '../utils/comms';
-import { notificationsKeys } from '../utils/queryKeys';
 import { setTheme } from '../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
 import { useAccountsStore } from './useAccountsStore';

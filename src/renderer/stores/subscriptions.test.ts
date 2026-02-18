@@ -8,7 +8,6 @@ import { queryClient } from '../utils/api/client';
 import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
 import * as zoom from '../utils/zoom';
-import { DEFAULT_SETTINGS_STATE } from './defaults';
 import { initializeStoreSubscriptions } from './subscriptions';
 import { useAccountsStore } from './useAccountsStore';
 import { useFiltersStore } from './useFiltersStore';
@@ -156,7 +155,6 @@ describe('renderer/stores/subscriptions.ts', () => {
         accounts: [{ id: '1' } as Account, { id: '2' } as Account],
       });
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: true,
       });
 
@@ -243,7 +241,6 @@ describe('renderer/stores/subscriptions.ts', () => {
 
       // Set current zoom to 100%
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         zoomPercentage: 100 as Percentage,
       });
 

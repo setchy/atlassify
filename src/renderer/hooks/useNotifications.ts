@@ -26,6 +26,7 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
+import { notificationsKeys } from '../utils/api/queryKeys';
 import { trackEvent } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
@@ -44,7 +45,6 @@ import {
 import { removeNotificationsForAccount } from '../utils/notifications/remove';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
-import { notificationsKeys } from '../utils/queryKeys';
 
 interface NotificationsState {
   status: Status;
@@ -76,7 +76,6 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
-
   // Get settings to determine query key
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
@@ -98,7 +97,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   );
 
   // Create select function that depends on filter state
-  // biome-ignore lint/correctness/useExhaustiveDependencies: specify all filters to ensure this function is recreated on change, causing Tanstack Query to re-run.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recreate selection function on filter store changes
   const selectFilteredNotifications = useMemo(
     () => (data: AccountNotifications[]) =>
       data.map((accountNotifications) => ({
@@ -120,7 +119,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(accounts);
+      return await getAllNotifications();
     },
 
     // Apply filters as a transformation on the cached data

@@ -8,7 +8,6 @@ import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
-import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import useSettingsStore from '../stores/useSettingsStore';
 
 import { useNotifications } from './useNotifications';
@@ -34,7 +33,6 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   beforeEach(() => {
     configureAxiosHttpAdapterForNock();
-    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
   });
 
   describe('fetchNotifications', () => {
@@ -78,7 +76,6 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
     it('fetchNotifications - all notifications read/unread', async () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: false,
       });
 
@@ -121,7 +118,6 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
     it('fetchNotifications - handles missing extensions response object', async () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: false,
       });
 

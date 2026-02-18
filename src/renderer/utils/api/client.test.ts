@@ -3,7 +3,6 @@ import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-m
 
 import { Constants } from '../../constants';
 
-import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
 import useSettingsStore from '../../stores/useSettingsStore';
 
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
@@ -63,7 +62,7 @@ describe('renderer/utils/api/client.ts', () => {
       MyNotificationsDocument,
       {
         first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
-        flat: !DEFAULT_SETTINGS_STATE.groupNotificationsByTitle,
+        flat: false,
         readState: 'unread',
       },
     );
@@ -102,7 +101,6 @@ describe('renderer/utils/api/client.ts', () => {
       const mockGroupSize = 5;
 
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: true,
       });
 
@@ -127,7 +125,6 @@ describe('renderer/utils/api/client.ts', () => {
       const mockGroupSize = 5;
 
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: false,
       });
 

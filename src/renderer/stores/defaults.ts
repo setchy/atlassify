@@ -1,16 +1,16 @@
 import { Theme } from '../../shared/theme';
 
 import type { Percentage } from '../types';
-import type {
-  AccountsState,
-  AppearanceSettingsState,
-  FiltersState,
-  NotificationSettingsState,
-  SettingsState,
-  SystemSettingsState,
-  TraySettingsState,
+import {
+  type AccountsState,
+  type AppearanceSettingsState,
+  type FiltersState,
+  type NotificationSettingsState,
+  OpenPreference,
+  type SettingsState,
+  type SystemSettingsState,
+  type TraySettingsState,
 } from './types';
-import { OpenPreference } from './types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
 

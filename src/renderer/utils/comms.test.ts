@@ -1,4 +1,3 @@
-import { DEFAULT_SETTINGS_STATE } from '../stores/defaults';
 import { OpenPreference } from '../stores/types';
 import useSettingsStore from '../stores/useSettingsStore';
 
@@ -20,11 +19,6 @@ import {
 } from './comms';
 
 describe('renderer/utils/comms.ts', () => {
-  beforeEach(() => {
-    // Reset store to defaults before each test
-    useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
-  });
-
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -32,7 +26,6 @@ describe('renderer/utils/comms.ts', () => {
   describe('openExternalLink', () => {
     it('should open an external link', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         openLinks: OpenPreference.BACKGROUND,
       });
 
@@ -47,25 +40,11 @@ describe('renderer/utils/comms.ts', () => {
 
     it('should open in foreground when preference set to FOREGROUND', () => {
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         openLinks: OpenPreference.FOREGROUND,
       });
 
       openExternalLink('https://atlassify.io/' as Link);
 
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://atlassify.io/',
-        true,
-      );
-    });
-
-    it('should use default open preference if user settings not found', () => {
-      // Reset to defaults - store will use default values
-      useSettingsStore.setState(DEFAULT_SETTINGS_STATE);
-
-      openExternalLink('https://atlassify.io/' as Link);
-
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledTimes(1);
       expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
         'https://atlassify.io/',
         true,

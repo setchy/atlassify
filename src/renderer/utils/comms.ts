@@ -4,7 +4,6 @@ import useSettingsStore from '../stores/useSettingsStore';
 import type { Link } from '../types';
 
 export function openExternalLink(url: Link): void {
-  // Load the settings from the store to avoid having to pass settings as a parameter
   const settings = useSettingsStore.getState();
   const openPreference = settings.openLinks;
 
