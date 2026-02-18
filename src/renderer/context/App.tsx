@@ -53,8 +53,9 @@ export const AppContext = createContext<Partial<AppContextState> | undefined>(
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   // Get store actions and reset functions
-  const resetFilters = useFiltersStore((s) => s.reset);
   const resetAccounts = useAccountsStore((s) => s.reset);
+  const resetFilters = useFiltersStore((s) => s.reset);
+  const resetSettings = useSettingsStore((s) => s.reset);
 
   // Read accounts from store
   const accounts = useAccountsStore((state) => state.accounts);
@@ -108,10 +109,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     window.atlassify.onResetApp(() => {
       resetAccounts();
-      useSettingsStore.getState().reset();
+      resetSettings();
       resetFilters();
     });
-  }, [resetAccounts, resetFilters]);
+  }, [resetAccounts, resetSettings, resetFilters]);
 
   // Online / Offline status monitoring via TanStack Query onlineManager
   useEffect(() => {
