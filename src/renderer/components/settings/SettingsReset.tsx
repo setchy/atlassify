@@ -30,6 +30,7 @@ const titleContainerStyles = xcss({
 
 export const SettingsReset: FC = () => {
   const { t } = useTranslation();
+
   const resetSettings = useSettingsStore((s) => s.reset);
   const [showResetSettingsModal, setShowResetSettingsModal] = useState(false);
 
