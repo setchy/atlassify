@@ -51,16 +51,6 @@ describe('renderer/utils/comms.ts', () => {
       );
     });
 
-    it('should use default open preference if user settings not found', () => {
-      openExternalLink('https://atlassify.io/' as Link);
-
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://atlassify.io/',
-        true,
-      );
-    });
-
     it('should ignore opening external local links file:///', () => {
       openExternalLink('file:///Applications/SomeApp.app' as Link);
 

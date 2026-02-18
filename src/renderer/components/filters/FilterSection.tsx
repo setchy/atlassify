@@ -27,6 +27,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
 }: FilterSectionProps<K>) => {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
+
   // Subscribe to the specific filter state so component re-renders when filters change
   useFiltersStore((s) => s[filterSetting]);
 

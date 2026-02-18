@@ -40,6 +40,7 @@ describe('renderer/routes/Landing.tsx', () => {
 
   it('should navigate to login with api token', async () => {
     useAccountsStore.setState({ accounts: [] });
+
     renderWithAppContext(<LandingRoute />);
 
     await userEvent.click(screen.getByTestId('login'));

@@ -32730,10 +32730,14 @@ export enum JiraFieldOptionIdsFilterOperation {
 }
 
 export type JiraFieldSchemeAssociatedFieldsInput = {
+  /** Search fields by associated issue types. If null or empty, fields will not be filtered by associated issue types. */
+  associatedIssueTypesFilter?: InputMaybe<Array<JiraFieldsAssociatedIssueTypesFilterInput>>;
   /** Search fields by list of field type groups. If empty, fields will not be filtered by field type group. */
   fieldTypeGroupsFilter?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Search fields by field name or description. If null or empty, fields will not be filtered by field name or description. */
   nameOrDescriptionFilter?: InputMaybe<Scalars['String']['input']>;
+  /** Search fields by whether they are required on the given issue types. If null or empty, fields will not be filtered by required on issue types. */
+  requiredOnIssueTypesFilter?: InputMaybe<Array<JiraFieldsRequiredOnIssueTypesFilterInput>>;
   /** Unique identifier of the field scheme. */
   schemeId: Scalars['ID']['input'];
 };
@@ -32866,6 +32870,20 @@ export type JiraFieldWorkTypeRequiredOnCustomizationInput = {
   isRequired: Scalars['Boolean']['input'];
   /** The IDs of specific work types this customization applies to. Empty if appliesToAllWorkTypes is true. */
   workTypeIds: Array<Scalars['ID']['input']>;
+};
+
+export type JiraFieldsAssociatedIssueTypesFilterInput = {
+  /** Filter to fields associated to all issue types */
+  allIssueTypes?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Filter to fields associated to a specific issue type */
+  issueTypeId?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JiraFieldsRequiredOnIssueTypesFilterInput = {
+  /** Filter to fields required on all issue types */
+  allIssueTypes?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Filter to fields required on a specific issue type */
+  issueTypeId?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** The options for filter search mode for user preference in List Filter switcher tab. */
