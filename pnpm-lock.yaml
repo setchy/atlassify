@@ -106,8 +106,8 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
       '@compiled/vite-plugin':
-        specifier: 1.1.2
-        version: 1.1.2(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
+        specifier: 1.1.3
+        version: 1.1.3(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -667,8 +667,8 @@ packages:
   '@compiled/utils@0.13.2':
     resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
 
-  '@compiled/vite-plugin@1.1.2':
-    resolution: {integrity: sha512-eq6JvEp7bUZ9T8Llw8g8kX0yUESq8M2mCN3v2U3wfzdN1ssJCP49Sl5VMrSlEx/t3aKMMGGtix38IZgr6GanXQ==}
+  '@compiled/vite-plugin@1.1.3':
+    resolution: {integrity: sha512-gd7x9YIixkXFmRdvLuiaS7NVBE7byBd96S9TdsTDYgPJvm831e/uKscraRgWU04f1JFaqQfUjkauaiP/Kge0Bw==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -5822,7 +5822,7 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@1.1.2(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))':
+  '@compiled/vite-plugin@1.1.3(vite@7.3.1(@types/node@24.10.13)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/parser': 7.29.0
