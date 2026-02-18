@@ -48,12 +48,14 @@ export interface AccountNotificationsProps {
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, hasMoreNotifications, showAccountHeader } =
+    const { account, notifications, hasMoreNotifications, showAccountHeader } =
     props;
+    
+    const { t } = useTranslation();
+
+
 
   const { markNotificationsRead } = useAppContext();
-
-  const { t } = useTranslation();
 
   const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
     useState(true);

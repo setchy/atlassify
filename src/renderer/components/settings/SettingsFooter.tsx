@@ -18,11 +18,11 @@ import { getAppVersion } from '../../utils/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/links';
 
 export const SettingsFooter: FC = () => {
-  const [appVersion, setAppVersion] = useState<string | null>(null);
-
   const { t } = useTranslation();
 
   const { shortcuts } = useGlobalShortcuts();
+
+  const [appVersion, setAppVersion] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {

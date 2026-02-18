@@ -24,9 +24,9 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead } = useAppContext();
-
   const { t } = useTranslation();
+
+  const { markNotificationsRead } = useAppContext();
 
   const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);

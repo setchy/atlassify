@@ -38,22 +38,22 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
+  const { t } = useTranslation();
+
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+
   const {
     markNotificationsRead,
     markNotificationsUnread,
     focusedNotificationId,
   } = useAppContext();
 
-  const { t } = useTranslation();
-
-  const isFocused = focusedNotificationId === notification.id;
-
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
 
-  const shouldAnimateExit = shouldRemoveNotificationsFromState();
+  const isFocused = focusedNotificationId === notification.id;
 
-  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+  const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
   const actionNotificationInteraction = () => {
     setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);

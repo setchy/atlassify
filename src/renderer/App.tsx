@@ -36,8 +36,9 @@ migrateContextToZustand().catch((error) => {
 });
 
 function RequireAuth({ children }) {
-  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
   const location = useLocation();
+
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   return isLoggedIn ? (
     children

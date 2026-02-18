@@ -6,7 +6,6 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import { useShallow } from 'zustand/react/shallow';
 
 import { Constants } from '../constants';
 
@@ -72,17 +71,11 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
   // Subscribe to filter store to trigger re-render when filters change
   // This ensures the select function gets recreated with latest filter state
-  const { engagementStates, categories, actors, readStates, products } =
-    useFiltersStore(
-      useShallow((s) => ({
-        engagementStates: s.engagementStates,
-        categories: s.categories,
-        actors: s.actors,
-        readStates: s.readStates,
-        products: s.products,
-      })),
-    );
-
+  const engagementStates = useFiltersStore((s) => s.engagementStates);
+  const categories = useFiltersStore((s) => s.categories);
+  const actors = useFiltersStore((s) => s.actors);
+  const readStates = useFiltersStore((s) => s.readStates);
+  const products = useFiltersStore((s) => s.products);
   // Get settings to determine query key
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
@@ -104,6 +97,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   );
 
   // Create select function that depends on filter state
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recreate selection function on filter store changes
   const selectFilteredNotifications = useMemo(
     () => (data: AccountNotifications[]) =>
       data.map((accountNotifications) => ({

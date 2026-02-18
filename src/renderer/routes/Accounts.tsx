@@ -23,13 +23,13 @@ import { openAccountProfile } from '../utils/links';
 import { isLightMode } from '../utils/theme';
 
 export const AccountsRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const accounts = useAccountsStore((s) => s.accounts);
   const removeAccount = useAccountsStore((s) => s.removeAccount);
   const refreshAccount = useAccountsStore((s) => s.refreshAccount);
-
-  const { t } = useTranslation();
 
   const logoutAccount = useCallback(
     (account: Account) => {

@@ -26,6 +26,12 @@ import useSettingsStore from '../stores/useSettingsStore';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
+  const { t } = useTranslation();
+
+  const { shortcuts } = useGlobalShortcuts();
+
+  const theme = useThemeObserver();
+
   const {
     status,
     hasMoreAccountNotifications,
@@ -34,10 +40,6 @@ const SidebarComponent: FC = () => {
   } = useAppContext();
 
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
-
-  const { t } = useTranslation();
-
-  const { shortcuts } = useGlobalShortcuts();
 
   // Subscribe to settings from store
   const fetchOnlyUnreadNotifications = useSettingsStore(
@@ -51,8 +53,6 @@ const SidebarComponent: FC = () => {
   );
 
   const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
-
-  const theme = useThemeObserver();
 
   const sidebarIconColorToken =
     theme.colorMode === 'dark'

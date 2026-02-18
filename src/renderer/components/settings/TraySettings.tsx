@@ -6,28 +6,20 @@ import Heading from '@atlaskit/heading';
 import InlineMessage from '@atlaskit/inline-message';
 import { Inline, Stack } from '@atlaskit/primitives';
 
-import { useShallow } from 'zustand/react/shallow';
-
 import { APPLICATION } from '../../../shared/constants';
 
 import useSettingsStore from '../../stores/useSettingsStore';
 
 export const TraySettings: FC = () => {
-  const {
-    updateSetting,
-    showNotificationsCountInTray,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
-  } = useSettingsStore(
-    useShallow((s) => ({
-      updateSetting: s.updateSetting,
-      showNotificationsCountInTray: s.showNotificationsCountInTray,
-      useUnreadActiveIcon: s.useUnreadActiveIcon,
-      useAlternateIdleIcon: s.useAlternateIdleIcon,
-    })),
-  );
-
   const { t } = useTranslation();
+
+  const showNotificationsCountInTray = useSettingsStore(
+    (s) => s.showNotificationsCountInTray,
+  );
+  const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
+  const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
+
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   return (
     <Stack space="space.100">

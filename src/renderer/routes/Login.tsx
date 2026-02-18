@@ -45,12 +45,12 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const createAccount = useAccountsStore((s) => s.createAccount);
   const hasUsernameAlready = useAccountsStore((s) => s.hasUsernameAlready);
-
-  const { t } = useTranslation();
 
   const [isValidCredentials, setIsValidCredentials] = useState(true);
   const [isDuplicateUsername, setIsDuplicateUsername] = useState(false);
