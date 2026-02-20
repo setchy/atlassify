@@ -1,8 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
+
 import { format } from 'date-fns';
 import { Octokit } from 'octokit';
+
 import { siteMetadata, URLs } from '~/constants';
+
 import DownloadButton from '~/components/DownloadButton.astro';
 import type {
   DownloadLink,
