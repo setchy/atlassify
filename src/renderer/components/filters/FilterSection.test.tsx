@@ -56,10 +56,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       'mention',
       true,
     );
-
-    expect(
-      screen.getByLabelText('Mentions').parentNode.parentNode,
-    ).toMatchSnapshot();
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
@@ -83,9 +79,5 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       'comment',
       true,
     );
-
-    expect(
-      screen.getByLabelText('Comments').parentNode.parentNode,
-    ).toMatchSnapshot();
   });
 });

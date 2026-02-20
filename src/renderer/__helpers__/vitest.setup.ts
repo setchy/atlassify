@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom/vitest';
 
-import { beforeEach, vi } from 'vitest';
-
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';

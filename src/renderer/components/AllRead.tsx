@@ -10,7 +10,7 @@ import { EmojiSplash } from './layout/EmojiSplash';
 export const AllRead: FC = () => {
   const { t } = useTranslation();
 
-  const hasFilters = useFiltersStore.getState().hasActiveFilters();
+  const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
 
   const emoji = useMemo(
     () =>
