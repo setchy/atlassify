@@ -6,6 +6,8 @@ import { EmojiText } from '../primitives/EmojiText';
 
 import { Centered } from './Centered';
 
+const EMPTY_SUBHEADINGS: string[] = [];
+
 interface EmojiSplashProps {
   emoji: string;
   heading: string;
@@ -13,7 +15,7 @@ interface EmojiSplashProps {
 }
 
 export const EmojiSplash: FC<EmojiSplashProps> = ({
-  subHeadings = [],
+  subHeadings = EMPTY_SUBHEADINGS,
   ...props
 }: EmojiSplashProps) => {
   return (

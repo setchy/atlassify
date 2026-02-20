@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import type { Account } from '../types';
 

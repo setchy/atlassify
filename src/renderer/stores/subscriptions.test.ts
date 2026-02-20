@@ -8,10 +8,8 @@ import { queryClient } from '../utils/api/client';
 import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
 import * as zoom from '../utils/zoom';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from './';
 import { initializeStoreSubscriptions } from './subscriptions';
-import { useAccountsStore } from './useAccountsStore';
-import { useFiltersStore } from './useFiltersStore';
-import { useSettingsStore } from './useSettingsStore';
 
 // Mock window.atlassify
 const mockZoom = {

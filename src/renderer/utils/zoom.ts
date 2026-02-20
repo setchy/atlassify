@@ -1,4 +1,4 @@
-import useSettingsStore from '../stores/useSettingsStore';
+import { useSettingsStore } from '../stores';
 
 import type { Percentage } from '../types';
 

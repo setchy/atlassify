@@ -1,7 +1,6 @@
 import { Constants } from '../constants';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
 import type { Language } from '../i18n/types';
 

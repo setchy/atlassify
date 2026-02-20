@@ -19,7 +19,7 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';

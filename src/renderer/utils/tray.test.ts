@@ -1,4 +1,4 @@
-import useSettingsStore from '../stores/useSettingsStore';
+import { useSettingsStore } from '../stores';
 
 import * as comms from './comms';
 import { setTrayIconColorAndTitle } from './tray';

@@ -26,7 +26,13 @@
               ":BLANK_LINE:",
               ["**/constants", "**/constants/**"],
               ":BLANK_LINE:",
-              ["**/context/**", "**/hooks/**", "**/routes/**", "**/stores/**"],
+              [
+                "**/context/**",
+                "**/hooks/**",
+                "**/routes/**",
+                "**/stores",
+                "**/stores/**"
+              ],
               ":BLANK_LINE:",
               [
                 "**/layout/**",

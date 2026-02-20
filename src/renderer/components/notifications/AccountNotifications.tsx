@@ -20,7 +20,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { Constants } from '../../constants';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type {
   Account,
@@ -107,13 +107,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
   };
 
-  const hasNotifications = useMemo(
-    () => notifications.length > 0,
-    [notifications],
-  );
+  const hasAccountNotifications = notifications.length > 0;
 
   const Chevron = getChevronDetails(
-    hasNotifications,
+    hasAccountNotifications,
     isAccountNotificationsVisible,
     'account',
   );
@@ -238,7 +235,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         <Fragment>
           {props.error && <Oops error={props.error} />}
 
-          {!hasNotifications && !props.error && <AllRead />}
+          {!hasAccountNotifications && !props.error && <AllRead />}
 
           {groupByProduct
             ? groupedNotifications.map(

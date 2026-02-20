@@ -1,6 +1,6 @@
 import { AxiosError } from 'axios';
 
-import useAccountsStore from '../../stores/useAccountsStore';
+import { useAccountsStore } from '../../stores';
 
 import type { AccountNotifications } from '../../types';
 

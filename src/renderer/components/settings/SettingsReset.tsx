@@ -14,7 +14,7 @@ import { Flex, Grid, Inline, xcss } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 const gridStyles = xcss({
   width: '100%',

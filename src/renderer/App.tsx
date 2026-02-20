@@ -19,8 +19,8 @@ import './App.css';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 
+import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
-import useAccountsStore from './stores/useAccountsStore';
 
 import { GlobalShortcuts } from './components/GlobalShortcuts';
 import { AppLayout } from './components/layout/AppLayout';

@@ -1,7 +1,7 @@
 import EyeOpenIcon from '@atlaskit/icon/core/eye-open';
 import FlagIcon from '@atlaskit/icon/core/flag';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,

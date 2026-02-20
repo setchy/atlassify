@@ -3,7 +3,7 @@ import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-m
 
 import { Constants } from '../../constants';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
 import type {

@@ -1,6 +1,6 @@
 import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,

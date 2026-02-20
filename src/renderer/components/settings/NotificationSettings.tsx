@@ -8,7 +8,7 @@ import { Inline, Stack } from '@atlaskit/primitives';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 export const NotificationSettings: FC = () => {
   const { t } = useTranslation();

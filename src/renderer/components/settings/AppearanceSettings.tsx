@@ -16,8 +16,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
 
-import useAccountsStore from '../../stores/useAccountsStore';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import { LANGUAGES } from '../../i18n/types';
 

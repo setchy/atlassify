@@ -8,7 +8,7 @@ import {
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import * as links from '../../utils/links';
 import * as theme from '../../utils/theme';

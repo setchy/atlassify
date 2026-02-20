@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { DEFAULT_FILTERS_STATE } from './defaults';
-import { useFiltersStore } from './useFiltersStore';
+import useFiltersStore from './useFiltersStore';
 
 describe('useFiltersStore', () => {
   test('should start with default filters', () => {

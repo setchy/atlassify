@@ -5,7 +5,7 @@ import {
   renderWithAppContext,
 } from '../__helpers__/test-utils';
 
-import useFiltersStore from '../stores/useFiltersStore';
+import { useFiltersStore } from '../stores';
 
 import { AllRead } from './AllRead';
 

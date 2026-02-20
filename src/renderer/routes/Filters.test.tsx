@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
+import { useFiltersStore } from '../stores';
 import type { FiltersStore } from '../stores/types';
-import useFiltersStore from '../stores/useFiltersStore';
 
 import { FiltersRoute } from './Filters';
 

@@ -1,8 +1,7 @@
 import { type FC, useMemo } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
-import useAccountsStore from '../stores/useAccountsStore';
-import { useSettingsStore } from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { AllRead } from '../components/AllRead';
 import { Contents } from '../components/layout/Contents';

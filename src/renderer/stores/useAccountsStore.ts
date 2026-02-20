@@ -17,7 +17,7 @@ import { DEFAULT_ACCOUNTS_STATE } from './defaults';
  * Automatically persisted to local storage.
  * Tokens are encrypted via safeStorage before storage.
  */
-export const useAccountsStore = create<AccountsStore>()(
+const useAccountsStore = create<AccountsStore>()(
   persist(
     (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,

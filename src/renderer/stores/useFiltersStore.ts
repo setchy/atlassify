@@ -12,7 +12,7 @@ import { DEFAULT_FILTERS_STATE } from './defaults';
  *
  * Automatically persisted to local storage
  */
-export const useFiltersStore = create<FiltersStore>()(
+const useFiltersStore = create<FiltersStore>()(
   persist(
     (set, get, store) => ({
       ...DEFAULT_FILTERS_STATE,

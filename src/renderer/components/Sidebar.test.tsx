@@ -11,8 +11,7 @@ import {
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
 import * as comms from '../utils/comms';
 import { Sidebar } from './Sidebar';
@@ -25,7 +24,7 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-import useFiltersStore from '../stores/useFiltersStore';
+import { useFiltersStore } from '../stores';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '@atlaskit/button/new';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
-import useFiltersStore from '../stores/useFiltersStore';
+import { useFiltersStore } from '../stores';
 
 import { FilterSection } from '../components/filters/FilterSection';
 import { Contents } from '../components/layout/Contents';
