@@ -7,8 +7,7 @@ import {
   mockAtlassianCloudAccountTwo,
 } from '../../__mocks__/account-mocks';
 
-import useAccountsStore from '../../stores/useAccountsStore';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';

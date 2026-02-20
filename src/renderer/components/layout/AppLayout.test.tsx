@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 
-import useAccountsStore from '../../stores/useAccountsStore';
+import { useAccountsStore } from '../../stores';
 
 import { AppLayout } from './AppLayout';
 

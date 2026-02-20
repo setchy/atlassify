@@ -2,7 +2,7 @@ import { QueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../../constants';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type {
   Account,

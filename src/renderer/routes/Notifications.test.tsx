@@ -8,8 +8,7 @@ import {
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
 import { AppContext, type AppContextState } from '../context/App';
-import useAccountsStore from '../stores/useAccountsStore';
-import { useSettingsStore } from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';

@@ -11,9 +11,7 @@ import { onlineManager } from '@tanstack/react-query';
 import { useAccounts } from '../hooks/useAccounts';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import { useNotifications } from '../hooks/useNotifications';
-import useAccountsStore from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import type {
   AccountNotifications,

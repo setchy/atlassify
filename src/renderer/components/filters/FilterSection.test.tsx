@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
-import useFiltersStore from '../../stores/useFiltersStore';
+import { useFiltersStore } from '../../stores';
 
 import { engagementFilter } from '../../utils/notifications/filters';
 import { FilterSection } from './FilterSection';

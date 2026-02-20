@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import * as comms from '../utils/comms';
 import { LoginRoute } from './Login';

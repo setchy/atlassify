@@ -2,7 +2,7 @@ import CommentIcon from '@atlaskit/icon/core/comment';
 import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,

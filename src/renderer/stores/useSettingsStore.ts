@@ -12,7 +12,7 @@ import { DEFAULT_SETTINGS_STATE } from './defaults';
  *
  * Automatically persisted to local storage
  */
-export const useSettingsStore = create<SettingsStore>()(
+const useSettingsStore = create<SettingsStore>()(
   subscribeWithSelector(
     persist(
       (set, _get, store) => ({

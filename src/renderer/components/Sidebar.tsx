@@ -19,9 +19,7 @@ import { APPLICATION } from '../../shared/constants';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
-import { useAccountsStore } from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 

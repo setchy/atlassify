@@ -4,8 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
 import * as comms from '../utils/comms';
 import * as links from '../utils/links';

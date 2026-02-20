@@ -21,16 +21,6 @@ export enum OpenPreference {
   BACKGROUND = 'BACKGROUND',
 }
 
-/**
- * All Settings values to be stored in the application.
- */
-export type SettingsValue =
-  | boolean
-  | number
-  | OpenPreference
-  | Percentage
-  | Theme;
-
 // ============================================================================
 // Accounts Store Types
 // ============================================================================

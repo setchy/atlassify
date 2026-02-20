@@ -9,8 +9,7 @@ import {
 
 import { Constants } from '../constants';
 
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useFiltersStore, useSettingsStore } from '../stores';
 
 import type {
   Account,

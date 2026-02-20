@@ -1,5 +1,4 @@
-import { OpenPreference } from '../stores/types';
-import useSettingsStore from '../stores/useSettingsStore';
+import { OpenPreference, useSettingsStore } from '../stores';
 
 import type { Link } from '../types';
 

@@ -15,9 +15,7 @@ import {
 } from '../utils/comms';
 import { setTheme } from '../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import { useAccountsStore } from './useAccountsStore';
-import { useFiltersStore } from './useFiltersStore';
-import { useSettingsStore } from './useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from './';
 
 /**
  * Initialize all store side-effect subscriptions and startup values for main.

@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import type { Account, EncryptedToken, Link, Username } from '../types';
 
 import { DEFAULT_ACCOUNTS_STATE } from './defaults';
-import { useAccountsStore } from './useAccountsStore';
+import useAccountsStore from './useAccountsStore';
 
 const mockAccount: Account = {
   id: '123',

@@ -1,4 +1,4 @@
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,

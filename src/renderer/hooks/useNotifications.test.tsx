@@ -8,7 +8,7 @@ import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
-import useSettingsStore from '../stores/useSettingsStore';
+import { useSettingsStore } from '../stores';
 
 import { useNotifications } from './useNotifications';
 

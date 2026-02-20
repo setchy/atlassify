@@ -4,9 +4,7 @@ import { beforeEach, vi } from 'vitest';
 
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 vi.mock('axios', async (importOriginal) => {
   const actual = await importOriginal<typeof import('axios')>();

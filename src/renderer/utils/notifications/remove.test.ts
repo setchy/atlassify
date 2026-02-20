@@ -4,7 +4,7 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import {
   removeNotificationsForAccount,

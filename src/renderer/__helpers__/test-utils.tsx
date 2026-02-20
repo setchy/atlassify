@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/App';
 
+const EMPTY_APP_CONTEXT: Partial<AppContextState> = {};
+
 /**
  * Test context (settings removed as it's no longer in context)
  */
@@ -22,14 +24,15 @@ interface AppContextProviderProps {
 /**
  * Wrapper component that provides AppContext with sensible defaults for testing.
  */
-function AppContextProvider({ children, value = {} }: AppContextProviderProps) {
+function AppContextProvider({
+  children,
+  value = EMPTY_APP_CONTEXT,
+}: AppContextProviderProps) {
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       notifications: [],
-
       status: 'success',
       globalError: null,
-
       ...value,
     } as Partial<AppContextState>;
   }, [value]);

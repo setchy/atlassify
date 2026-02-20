@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Constants } from '../constants';
 
-import useFiltersStore from '../stores/useFiltersStore';
+import { useFiltersStore } from '../stores';
 
 import { EmojiSplash } from './layout/EmojiSplash';
 

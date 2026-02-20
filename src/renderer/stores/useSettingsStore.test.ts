@@ -6,7 +6,7 @@ import type { Percentage } from '../types';
 import { OpenPreference } from './types';
 
 import { DEFAULT_SETTINGS_STATE } from './defaults';
-import { useSettingsStore } from './useSettingsStore';
+import useSettingsStore from './useSettingsStore';
 
 describe('useSettingsStore', () => {
   test('should start with default settings', () => {

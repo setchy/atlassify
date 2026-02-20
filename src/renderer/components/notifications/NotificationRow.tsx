@@ -10,7 +10,7 @@ import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type { AtlassifyNotification } from '../../types';
 
