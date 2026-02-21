@@ -22,19 +22,9 @@ const useAccountsStore = create<AccountsStore>()(
     (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,
 
-      setAccounts: (accounts) => {
-        set({ accounts });
-      },
-
       addAccount: (account) => {
         set((state) => ({
           accounts: [...state.accounts, account],
-        }));
-      },
-
-      removeAccount: (account) => {
-        set((state) => ({
-          accounts: state.accounts.filter((a) => a.id !== account.id),
         }));
       },
 
@@ -70,6 +60,12 @@ const useAccountsStore = create<AccountsStore>()(
         }
 
         return account;
+      },
+
+      removeAccount: (account) => {
+        set((state) => ({
+          accounts: state.accounts.filter((a) => a.id !== account.id),
+        }));
       },
 
       hasAccounts: () => {

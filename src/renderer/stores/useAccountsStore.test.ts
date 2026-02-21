@@ -62,18 +62,6 @@ describe('useAccountsStore', () => {
     expect(result.current.accounts[1]).toEqual(mockAccount2);
   });
 
-  test('should set accounts (replace all)', () => {
-    const { result } = renderHook(() => useAccountsStore());
-
-    act(() => {
-      result.current.addAccount(mockAccount);
-      result.current.setAccounts([mockAccount2]);
-    });
-
-    expect(result.current.accounts).toHaveLength(1);
-    expect(result.current.accounts[0]).toEqual(mockAccount2);
-  });
-
   test('should remove an account', () => {
     const { result } = renderHook(() => useAccountsStore());
 

@@ -22,7 +22,7 @@ export function getNotificationCount(
   accountNotifications: AccountNotifications[],
 ) {
   return accountNotifications.reduce(
-    (memo, account) => memo + account.notifications.length,
+    (sum, account) => sum + account.notifications.length,
     0,
   );
 }

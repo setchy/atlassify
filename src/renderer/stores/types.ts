@@ -36,11 +36,10 @@ export interface AccountsState {
  * Actions for managing accounts.
  */
 export interface AccountsActions {
-  setAccounts: (accounts: Account[]) => void;
   addAccount: (account: Account) => void;
-  removeAccount: (account: Account) => void;
   createAccount: (username: Username, token: Token) => Promise<void>;
   refreshAccount: (account: Account) => Promise<Account>;
+  removeAccount: (account: Account) => void;
   hasAccounts: () => boolean;
   hasMultipleAccounts: () => boolean;
   isLoggedIn: () => boolean;

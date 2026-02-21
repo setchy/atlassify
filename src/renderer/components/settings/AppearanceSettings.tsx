@@ -32,13 +32,13 @@ import {
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
-  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
-  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
-
   const { t, i18n } = useTranslation();
 
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
+
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
   const theme = useSettingsStore((s) => s.theme);
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
 
   const zoomPercentage = zoomLevelToPercentage(
     window.atlassify.zoom.getLevel(),

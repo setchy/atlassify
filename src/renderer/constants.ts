@@ -1,15 +1,16 @@
 export const Constants = {
   // Main storage key (deprecated - used for migration only)
+  // TODO - remove after a few versions
   STORAGE_KEY: 'atlassify-storage',
 
   // Accounts store key
   ACCOUNTS_STORE_KEY: 'atlassify-accounts',
 
-  // Settings store key
-  SETTINGS_STORE_KEY: 'atlassify-settings',
-
   // Filters store key
   FILTERS_STORE_KEY: 'atlassify-filters',
+
+  // Settings store key
+  SETTINGS_STORE_KEY: 'atlassify-settings',
 
   // i18n language storage key
   LANGUAGE_STORAGE_KEY: 'atlassify-language',

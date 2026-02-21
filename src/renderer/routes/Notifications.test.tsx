@@ -43,7 +43,7 @@ describe('renderer/routes/Notifications.tsx', () => {
 
   it('should render account notifications when present', () => {
     useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore.getState().setAccounts([mockAtlassianCloudAccount]);
+    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,
@@ -57,9 +57,9 @@ describe('renderer/routes/Notifications.tsx', () => {
 
   it('should force account header when multiple accounts', () => {
     useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore
-      .getState()
-      .setAccounts([mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo]);
+    useAccountsStore.setState({
+      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+    });
 
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,

@@ -67,9 +67,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should hide the account header setting when there are multiple accounts', async () => {
-    useAccountsStore
-      .getState()
-      .setAccounts([mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo]);
+    useAccountsStore.setState({
+      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+    });
 
     renderWithAppContext(<AppearanceSettings />);
 

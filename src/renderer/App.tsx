@@ -7,6 +7,10 @@ import {
   useLocation,
 } from 'react-router-dom';
 
+import { QueryClientProvider } from '@tanstack/react-query';
+
+import './App.css';
+
 import { AppProvider } from './context/App';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
@@ -14,11 +18,6 @@ import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
-
-import './App.css';
-
-import { QueryClientProvider } from '@tanstack/react-query';
-
 import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
 
