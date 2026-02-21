@@ -60,6 +60,7 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  * Passing a negative number will set the error state color.
  *
  * @param notificationsLength The number of unread notifications
+ * @param isOnline Whether the application is currently online
  */
 export function updateTrayColor(
   notificationsLength: number,
