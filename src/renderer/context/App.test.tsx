@@ -1,7 +1,6 @@
-import { act, render } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
@@ -16,27 +15,15 @@ vi.mock('../hooks/useNotifications');
 const renderWithContext = () => {
   let context!: AppContextState;
 
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-      },
-    },
-  });
-
   const CaptureContext = () => {
     context = useAppContext();
     return null;
   };
 
-  render(
-    <QueryClientProvider client={queryClient}>
-      <AppProvider>
-        <CaptureContext />
-      </AppProvider>
-    </QueryClientProvider>,
+  renderWithAppContext(
+    <AppProvider>
+      <CaptureContext />
+    </AppProvider>,
   );
 
   return () => context;

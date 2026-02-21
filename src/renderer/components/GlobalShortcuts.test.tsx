@@ -19,8 +19,13 @@ vi.mock('react-router-dom', async () => ({
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = vi.fn();
   const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation(vi.fn());
+  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
+    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+  });
+
+  afterEach(() => {
     vi.clearAllMocks();
   });
 
@@ -60,6 +65,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('opens my notifications when pressing N while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -73,6 +79,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('does not open my notifications when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -88,10 +95,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('toggleReadUnread', () => {
       it('toggles read/unread setting when pressing U while logged in', async () => {
         useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
+
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
@@ -109,11 +113,8 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle read/unread when logged out', async () => {
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -126,11 +127,8 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle read/unread when status is loading', async () => {
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -149,10 +147,6 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('groupByProduct', () => {
       it('toggles group by product setting when pressing P while logged in', async () => {
         useSettingsStore.setState({ groupNotificationsByProduct: false });
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
@@ -170,11 +164,8 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by product when logged out', async () => {
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -190,10 +181,6 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('groupByTitle', () => {
       it('toggles group by title setting when pressing T while logged in', async () => {
         useSettingsStore.setState({ groupNotificationsByTitle: false });
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
@@ -211,11 +198,8 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not toggle group by title when logged out', async () => {
-        const updateSettingSpy = vi.spyOn(
-          useSettingsStore.getState(),
-          'updateSetting',
-        );
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -231,6 +215,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('filters', () => {
       it('toggles filters when pressing F while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -244,6 +229,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('does not toggle filters when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -307,6 +293,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('settings', () => {
       it('toggles settings when pressing S while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -320,6 +307,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('does not toggle settings when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -335,6 +323,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('accounts', () => {
       it('navigates to accounts when pressing A on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter initialEntries={['/settings']}>
             <GlobalShortcuts />
@@ -348,6 +337,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('does not trigger accounts when not on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -363,6 +353,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('quit app', () => {
       it('quits the app when pressing Q on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter initialEntries={['/settings']}>
             <GlobalShortcuts />
@@ -376,6 +367,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('does not quit the app when not on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -391,6 +383,7 @@ describe('components/GlobalShortcuts.tsx', () => {
     describe('modifiers', () => {
       it('ignores shortcuts when typing in an input', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -409,6 +402,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('ignores shortcuts when typing in a textarea', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
@@ -427,6 +421,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
       it('ignores shortcuts when modifier keys are pressed', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
         renderWithAppContext(
           <MemoryRouter>
             <GlobalShortcuts />
