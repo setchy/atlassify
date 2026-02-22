@@ -107,8 +107,6 @@ describe('renderer/routes/Accounts.tsx', () => {
   });
 
   it('should add new accounts', async () => {
-    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
     renderWithAppContext(<AccountsRoute />);
 
     await userEvent.click(screen.getByTestId('account-add-new'));

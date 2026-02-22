@@ -70,10 +70,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'fetchOnlyUnreadNotifications',
-              !useSettingsStore.getState().fetchOnlyUnreadNotifications,
-            );
+            .toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
       groupByProduct: {
@@ -86,10 +83,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByProduct',
-              !useSettingsStore.getState().groupNotificationsByProduct,
-            );
+            .toggleSetting('groupNotificationsByProduct');
         },
       },
       groupByTitle: {
@@ -102,10 +96,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByTitle',
-              !useSettingsStore.getState().groupNotificationsByTitle,
-            );
+            .toggleSetting('groupNotificationsByTitle');
         },
       },
       filters: {
