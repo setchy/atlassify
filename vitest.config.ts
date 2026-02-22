@@ -30,6 +30,7 @@ export default defineConfig({
       provider: 'v8',
       reportsDirectory: './coverage',
       cleanOnRerun: true,
+      reportOnFailure: true,
       reporter: ['html', 'lcovonly'],
       include: ['src/**/*'],
       exclude: [

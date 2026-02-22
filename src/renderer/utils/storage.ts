@@ -12,10 +12,7 @@ import { rendererLogError, rendererLogInfo } from './logger';
  * This function reads the old unified storage format and splits it into separate stores.
  * Should be called once on app startup.
  *
- * In v2.16.7 and earlier, settings contained both app settings AND filter values.
- * This migration splits them into separate stores.
- *
- * TODO: Remove this migration function in a future major release (v3.0.0+)
+ * TODO: Remove this migration function in a future major release (v4.0.0+)
  * once all users have migrated from the old Context-based storage format.
  * Migration was introduced in v2.17.0.
  */
