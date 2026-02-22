@@ -19,10 +19,11 @@ vi.mock('react-router-dom', async () => ({
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = vi.fn();
   const quitAppSpy = vi.spyOn(comms, 'quitApp').mockImplementation(vi.fn());
-  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
+
+  let toggleSettingsSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
-    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+    toggleSettingsSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
   });
 
   afterEach(() => {
@@ -106,9 +107,8 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingSpy).toHaveBeenCalledWith(
+        expect(toggleSettingsSpy).toHaveBeenCalledWith(
           'fetchOnlyUnreadNotifications',
-          true,
         );
       });
 
@@ -123,7 +123,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingSpy).not.toHaveBeenCalled();
+        expect(toggleSettingsSpy).not.toHaveBeenCalled();
       });
 
       it('does not toggle read/unread when status is loading', async () => {
@@ -140,7 +140,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('u');
 
-        expect(updateSettingSpy).not.toHaveBeenCalled();
+        expect(toggleSettingsSpy).not.toHaveBeenCalled();
       });
     });
 
@@ -157,9 +157,8 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('p');
 
-        expect(updateSettingSpy).toHaveBeenCalledWith(
+        expect(toggleSettingsSpy).toHaveBeenCalledWith(
           'groupNotificationsByProduct',
-          true,
         );
       });
 
@@ -174,7 +173,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('p');
 
-        expect(updateSettingSpy).not.toHaveBeenCalled();
+        expect(toggleSettingsSpy).not.toHaveBeenCalled();
       });
     });
 
@@ -191,9 +190,8 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('t');
 
-        expect(updateSettingSpy).toHaveBeenCalledWith(
+        expect(toggleSettingsSpy).toHaveBeenCalledWith(
           'groupNotificationsByTitle',
-          true,
         );
       });
 
@@ -208,7 +206,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('t');
 
-        expect(updateSettingSpy).not.toHaveBeenCalled();
+        expect(toggleSettingsSpy).not.toHaveBeenCalled();
       });
     });
 

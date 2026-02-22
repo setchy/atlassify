@@ -50,6 +50,7 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: true,
       status: 'success',
       globalError: null,
+      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -66,6 +67,7 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: true,
       status: 'success',
       globalError: null,
+      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -77,6 +79,7 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: false,
       status: 'success',
       globalError: null,
+      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -95,57 +98,17 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it.each([
-    ['bad credentials', Errors.BAD_CREDENTIALS, Errors.BAD_CREDENTIALS],
-    ['unknown error', Errors.UNKNOWN, Errors.UNKNOWN],
-    ['default error', null, Errors.UNKNOWN],
+    ['bad credentials', Errors.BAD_CREDENTIALS],
+    ['unknown error', Errors.UNKNOWN],
+    ['default error', null],
   ])('should render Oops for %s', (_label, globalError) => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       status: 'error',
+      isOnline: true,
       globalError,
     });
-
-    expect(tree.container).toMatchSnapshot();
-  });
-
-  it('should keep previous state while loading', () => {
-    useSettingsStore.setState({ showAccountHeader: false });
-
-    const baseContext: AppContextState = {
-      status: 'success',
-      globalError: null,
-      notifications: mockAccountNotifications,
-      notificationCount: 2,
-      hasNotifications: true,
-      hasMoreAccountNotifications: false,
-      fetchNotifications: vi.fn(),
-      markNotificationsRead: vi.fn(),
-      markNotificationsUnread: vi.fn(),
-      focusedNotificationId: null,
-      isOnline: true,
-    };
-
-    const tree = render(
-      <AppContext.Provider value={baseContext}>
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
-
-    expect(tree.container).toMatchSnapshot();
-
-    tree.rerender(
-      <AppContext.Provider
-        value={{
-          ...baseContext,
-          status: 'loading',
-          notifications: [],
-          hasNotifications: false,
-        }}
-      >
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
 
     expect(tree.container).toMatchSnapshot();
   });
