@@ -22,12 +22,6 @@ const useAccountsStore = create<AccountsStore>()(
     (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,
 
-      addAccount: (account) => {
-        set((state) => ({
-          accounts: [...state.accounts, account],
-        }));
-      },
-
       createAccount: async (username: Username, token: Token) => {
         const encryptedToken = await encryptValue(token);
 
@@ -68,16 +62,12 @@ const useAccountsStore = create<AccountsStore>()(
         }));
       },
 
-      hasAccounts: () => {
+      isLoggedIn: () => {
         return get().accounts.length > 0;
       },
 
       hasMultipleAccounts: () => {
         return get().accounts.length > 1;
-      },
-
-      isLoggedIn: () => {
-        return get().hasAccounts();
       },
 
       hasUsernameAlready: (username: Username) => {

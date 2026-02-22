@@ -36,14 +36,39 @@ export interface AccountsState {
  * Actions for managing accounts.
  */
 export interface AccountsActions {
-  addAccount: (account: Account) => void;
-  createAccount: (username: Username, token: Token) => Promise<void>;
-  refreshAccount: (account: Account) => Promise<Account>;
-  removeAccount: (account: Account) => void;
-  hasAccounts: () => boolean;
-  hasMultipleAccounts: () => boolean;
-  isLoggedIn: () => boolean;
+  /**
+   * Checks if a username is already associated with an existing account.
+   */
   hasUsernameAlready: (username: Username) => boolean;
+
+  /**
+   * Creates and adds a new account.
+   */
+  createAccount: (username: Username, token: Token) => Promise<void>;
+
+  /**
+   * Refreshes the user details for an account.
+   */
+  refreshAccount: (account: Account) => Promise<Account>;
+
+  /**
+   * Removes an account.
+   */
+  removeAccount: (account: Account) => void;
+
+  /**
+   * Checks if the user is logged in (has at least one account).
+   */
+  isLoggedIn: () => boolean;
+
+  /**
+   * Checks if there are multiple accounts.
+   */
+  hasMultipleAccounts: () => boolean;
+
+  /**
+   * Resets accounts to default state.
+   */
   reset: () => void;
 }
 

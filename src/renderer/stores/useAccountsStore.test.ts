@@ -38,36 +38,12 @@ describe('renderer/stores/useAccountsStore.ts', () => {
     expect(result.current.accounts).toEqual([]);
   });
 
-  test('should add an account', () => {
-    const { result } = renderHook(() => useAccountsStore());
-
-    act(() => {
-      result.current.addAccount(mockAccount);
-    });
-
-    expect(result.current.accounts).toHaveLength(1);
-    expect(result.current.accounts[0]).toEqual(mockAccount);
-  });
-
-  test('should add multiple accounts', () => {
-    const { result } = renderHook(() => useAccountsStore());
-
-    act(() => {
-      result.current.addAccount(mockAccount);
-      result.current.addAccount(mockAccount2);
-    });
-
-    expect(result.current.accounts).toHaveLength(2);
-    expect(result.current.accounts[0]).toEqual(mockAccount);
-    expect(result.current.accounts[1]).toEqual(mockAccount2);
-  });
-
   test('should remove an account', () => {
+    useAccountsStore.setState({ accounts: [mockAccount, mockAccount2] });
+
     const { result } = renderHook(() => useAccountsStore());
 
     act(() => {
-      result.current.addAccount(mockAccount);
-      result.current.addAccount(mockAccount2);
       result.current.removeAccount(mockAccount);
     });
 
@@ -76,10 +52,11 @@ describe('renderer/stores/useAccountsStore.ts', () => {
   });
 
   test('should not remove account if not found', () => {
+    useAccountsStore.setState({ accounts: [mockAccount] });
+
     const { result } = renderHook(() => useAccountsStore());
 
     act(() => {
-      result.current.addAccount(mockAccount);
       result.current.removeAccount(mockAccount2);
     });
 
@@ -88,11 +65,11 @@ describe('renderer/stores/useAccountsStore.ts', () => {
   });
 
   test('should reset accounts to default', () => {
+    useAccountsStore.setState({ accounts: [mockAccount, mockAccount2] });
+
     const { result } = renderHook(() => useAccountsStore());
 
     act(() => {
-      result.current.addAccount(mockAccount);
-      result.current.addAccount(mockAccount2);
       result.current.reset();
     });
 
