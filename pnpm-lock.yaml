@@ -40,8 +40,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@40.4.1)
       '@atlaskit/avatar':
-        specifier: 25.7.5
-        version: 25.7.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 25.8.0
+        version: 25.8.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/avatar-group':
         specifier: 12.4.10
         version: 12.4.10(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -280,8 +280,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.7.5':
-    resolution: {integrity: sha512-JJ2K16uK1IQ9vuqsi3akxF72eMhLSymbbpbHREQaKtrM7+AzxQ637QUW8iGgzkAAboyx1w/gFsDwA2h/RD33cw==}
+  '@atlaskit/avatar@25.8.0':
+    resolution: {integrity: sha512-VAm+V9SfBhM0pd24ZA6u5cxGRWObwBGJbjsgyP0UwSQuT+X3IVxXqb4/frFmRmxB0N2KKtsiAf9hBj/C9U8XaQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5011,7 +5011,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.4.10(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@atlaskit/avatar': 25.7.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/avatar': 25.8.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/menu': 8.4.17(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5028,7 +5028,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.7.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/avatar@25.8.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
