@@ -28,7 +28,6 @@ import {
   decreaseZoom,
   increaseZoom,
   resetZoomLevel,
-  zoomLevelToPercentage,
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
@@ -39,10 +38,7 @@ export const AppearanceSettings: FC = () => {
   const updateSetting = useSettingsStore((s) => s.updateSetting);
   const theme = useSettingsStore((s) => s.theme);
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
-
-  const zoomPercentage = zoomLevelToPercentage(
-    window.atlassify.zoom.getLevel(),
-  );
+  const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
