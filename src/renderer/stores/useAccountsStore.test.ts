@@ -21,7 +21,7 @@ const mockAccount2: Account = {
   avatar: 'https://example.com/avatar.png' as Link,
 };
 
-describe('useAccountsStore', () => {
+describe('renderer/stores/useAccountsStore.ts', () => {
   beforeEach(() => {
     useAccountsStore.setState({ ...DEFAULT_ACCOUNTS_STATE });
   });

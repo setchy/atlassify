@@ -8,10 +8,10 @@ import { useSettingsStore } from '../../stores';
 import { TraySettings } from './TraySettings';
 
 describe('renderer/components/settings/TraySettings.tsx', () => {
-  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(async () => {
-    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
 
     renderWithAppContext(<TraySettings />);
   });
@@ -25,10 +25,9 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
       screen.getByLabelText('Show notifications count in tray'),
     );
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith(
       'showNotificationsCountInTray',
-      false,
     );
   });
 
@@ -37,14 +36,14 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
       screen.getByLabelText('Highlight unread notifications'),
     );
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('useUnreadActiveIcon', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('useUnreadActiveIcon');
   });
 
   it('should toggle the useAlternateIdleIcon checkbox', async () => {
     await userEvent.click(screen.getByLabelText('Use alternate idle icon'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('useAlternateIdleIcon', true);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('useAlternateIdleIcon');
   });
 });

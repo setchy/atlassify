@@ -10,12 +10,13 @@ import type { Percentage } from '../../types';
 import { SystemSettings } from './SystemSettings';
 
 describe('renderer/components/settings/SystemSettings.tsx', () => {
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
   let updateSettingSpy: ReturnType<typeof vi.spyOn>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
   });
-
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -34,11 +35,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'keyboardShortcutEnabled',
-      false,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('keyboardShortcutEnabled');
   });
 
   it('should toggle the showSystemNotifications checkbox', async () => {
@@ -46,11 +44,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Show system notifications'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'showSystemNotifications',
-      false,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('showSystemNotifications');
   });
 
   describe('playSoundNewNotifications', () => {
@@ -61,10 +56,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
         screen.getByLabelText('Play sound for new notifications'),
       );
 
-      expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-      expect(updateSettingSpy).toHaveBeenCalledWith(
+      expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+      expect(toggleSettingSpy).toHaveBeenCalledWith(
         'playSoundNewNotifications',
-        false,
       );
     });
 
@@ -119,7 +113,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Open at startup'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('openAtStartup', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('openAtStartup');
   });
 });

@@ -246,10 +246,22 @@ export type SettingsState = AppearanceSettingsState &
  * Actions for managing settings.
  */
 export interface SettingsActions {
+  /**
+   * Updates a specific setting by key to a new value.
+   */
   updateSetting: <K extends keyof SettingsState>(
     name: K,
     value: SettingsState[K],
   ) => void;
+
+  /**
+   * Toggles a boolean setting by key. Throws if the setting is not boolean.
+   */
+  toggleSetting: <K extends keyof SettingsState>(name: K) => void;
+
+  /**
+   * Resets all settings to their default values.
+   */
   reset: () => void;
 }
 

@@ -33,9 +33,14 @@ import {
 export const AppearanceSettings: FC = () => {
   const { t, i18n } = useTranslation();
 
+  // Account store values
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  // Setting store values
   const theme = useSettingsStore((s) => s.theme);
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
@@ -182,9 +187,7 @@ export const AppearanceSettings: FC = () => {
           isChecked={showAccountHeader}
           label={t('settings.appearance.show_account_header')}
           name="showAccountHeader"
-          onChange={() =>
-            updateSetting('showAccountHeader', !showAccountHeader)
-          }
+          onChange={() => toggleSetting('showAccountHeader')}
         />
       )}
     </Stack>

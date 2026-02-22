@@ -13,8 +13,10 @@ import { useSettingsStore } from '../../stores';
 export const NotificationSettings: FC = () => {
   const { t } = useTranslation();
 
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
 
+  // Setting store values
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
   const groupNotificationsByProductAlphabetically = useSettingsStore(
     (s) => s.groupNotificationsByProductAlphabetically,
@@ -31,7 +33,7 @@ export const NotificationSettings: FC = () => {
         isChecked={markAsReadOnOpen}
         label={t('settings.notifications.mark_as_read_on_open')}
         name="markAsReadOnOpen"
-        onChange={() => updateSetting('markAsReadOnOpen', !markAsReadOnOpen)}
+        onChange={() => toggleSetting('markAsReadOnOpen')}
       />
 
       <Inline space="space.100">
@@ -40,10 +42,7 @@ export const NotificationSettings: FC = () => {
           label={t('settings.notifications.group_alphabetically')}
           name="groupNotificationsByProductAlphabetically"
           onChange={() =>
-            updateSetting(
-              'groupNotificationsByProductAlphabetically',
-              !groupNotificationsByProductAlphabetically,
-            )
+            toggleSetting('groupNotificationsByProductAlphabetically')
           }
         />
         <InlineMessage appearance="info">
@@ -58,9 +57,7 @@ export const NotificationSettings: FC = () => {
           isChecked={delayNotificationState}
           label={t('settings.notifications.delay_notification_state')}
           name="delayNotificationState"
-          onChange={() =>
-            updateSetting('delayNotificationState', !delayNotificationState)
-          }
+          onChange={() => toggleSetting('delayNotificationState')}
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
