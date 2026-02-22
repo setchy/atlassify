@@ -17,6 +17,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
   });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
