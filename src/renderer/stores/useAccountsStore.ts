@@ -92,7 +92,7 @@ const useAccountsStore = create<AccountsStore>()(
       },
     }),
     {
-      name: Constants.ACCOUNTS_STORE_KEY,
+      name: Constants.STORAGE.ACCOUNTS,
     },
   ),
 );

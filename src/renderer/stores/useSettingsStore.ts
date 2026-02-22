@@ -27,7 +27,7 @@ const useSettingsStore = create<SettingsStore>()(
         },
       }),
       {
-        name: Constants.SETTINGS_STORE_KEY,
+        name: Constants.STORAGE.SETTINGS,
       },
     ),
   ),

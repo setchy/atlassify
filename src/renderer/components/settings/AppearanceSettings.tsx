@@ -20,7 +20,7 @@ import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import { LANGUAGES } from '../../i18n/types';
 
-import { loadLanguageLocale } from '../../utils/storage';
+import { loadLanguageLocale } from '../../i18n';
 import { setTheme } from '../../utils/theme';
 import {
   canDecreaseZoom,
