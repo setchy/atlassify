@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@aptabase/electron": "0.3.1",
-    "@atlaskit/avatar": "25.7.5",
+    "@atlaskit/avatar": "25.8.0",
     "@atlaskit/avatar-group": "12.4.10",
     "@atlaskit/badge": "18.4.0",
     "@atlaskit/button": "23.9.8",
