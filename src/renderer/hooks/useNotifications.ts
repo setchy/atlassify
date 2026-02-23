@@ -71,15 +71,14 @@ export const useNotifications = (): NotificationsState => {
   // Account store values
   const accounts = useAccountsStore((s) => s.accounts);
 
-  // Subscribe to filter store to trigger re-render when filters change
-  // This ensures the select function gets recreated with latest filter state
+  // Filter store values
   const engagementStates = useFiltersStore((s) => s.engagementStates);
   const categories = useFiltersStore((s) => s.categories);
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
-  // Get settings to determine query key
+  // Setting store values
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );

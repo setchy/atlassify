@@ -80,10 +80,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
-  } = useNotifications(accounts);
+  } = useNotifications();
 
   // Periodic account refreshes
-  useAccounts(accounts);
+  useAccounts();
 
   // Keyboard navigation
   const { focusedNotificationId } = useKeyboardNavigation({
