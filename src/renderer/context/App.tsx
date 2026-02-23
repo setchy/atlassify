@@ -55,9 +55,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const resetFilters = useFiltersStore((s) => s.reset);
   const resetSettings = useSettingsStore((s) => s.reset);
 
-  // Read accounts from store
-  const accounts = useAccountsStore((state) => state.accounts);
-
   // Subscribe to tray-related settings for useEffect dependencies
   const showNotificationsCountInTray = useSettingsStore(
     (s) => s.showNotificationsCountInTray,

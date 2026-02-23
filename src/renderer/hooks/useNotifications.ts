@@ -12,7 +12,6 @@ import { Constants } from '../constants';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import type {
-  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -310,6 +309,7 @@ export const useNotifications = (): NotificationsState => {
 
       await markNotificationsAsRead(account, singleNotificationIDs);
 
+      // TODO is this required
       for (const notification of readNotifications) {
         notification.readState = 'read';
       }
@@ -363,6 +363,7 @@ export const useNotifications = (): NotificationsState => {
 
       await markNotificationsAsUnread(account, singleNotificationIDs);
 
+      // TODO is this required
       for (const notification of unreadNotifications) {
         notification.readState = 'unread';
       }
