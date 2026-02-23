@@ -84,6 +84,13 @@ export const useNotifications = (): NotificationsState => {
   const groupNotificationsByTitle = useSettingsStore(
     (s) => s.groupNotificationsByTitle,
   );
+  const playSoundNewNotifications = useSettingsStore(
+    (s) => s.playSoundNewNotifications,
+  );
+  const showSystemNotifications = useSettingsStore(
+    (s) => s.showSystemNotifications,
+  );
+  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
 
   // Query key excludes filters to prevent API refetches on filter changes
   // Filters are applied client-side via subscription in subscriptions.ts
@@ -167,7 +174,7 @@ export const useNotifications = (): NotificationsState => {
   const globalError: AtlassifyError = useMemo(() => {
     // If paused due to offline, show network error
     if (isPaused) {
-      return Errors.NETWORK;
+      return Errors.OFFLINE;
     }
 
     if (!isError || notifications.length === 0) {
@@ -187,15 +194,6 @@ export const useNotifications = (): NotificationsState => {
   const refetchNotifications = useCallback(async () => {
     await refetch();
   }, [refetch]);
-
-  // Get settings for notifications side effects
-  const playSoundNewNotifications = useSettingsStore(
-    (s) => s.playSoundNewNotifications,
-  );
-  const showSystemNotifications = useSettingsStore(
-    (s) => s.showSystemNotifications,
-  );
-  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
 
   // Handle sound and native notifications when new notifications arrive
   useEffect(() => {
@@ -309,11 +307,6 @@ export const useNotifications = (): NotificationsState => {
 
       await markNotificationsAsRead(account, singleNotificationIDs);
 
-      // TODO is this required
-      for (const notification of readNotifications) {
-        notification.readState = 'read';
-      }
-
       const updatedNotifications = removeNotificationsForAccount(
         account,
         readNotifications,
@@ -362,11 +355,6 @@ export const useNotifications = (): NotificationsState => {
       singleNotificationIDs.push(...groupedNotificationIds);
 
       await markNotificationsAsUnread(account, singleNotificationIDs);
-
-      // TODO is this required
-      for (const notification of unreadNotifications) {
-        notification.readState = 'unread';
-      }
 
       return notifications;
     },
