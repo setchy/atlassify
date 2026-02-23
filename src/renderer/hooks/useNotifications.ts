@@ -9,7 +9,7 @@ import {
 
 import { Constants } from '../constants';
 
-import { useFiltersStore, useSettingsStore } from '../stores';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import type {
   Account,
@@ -64,9 +64,12 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (accounts: Account[]): NotificationsState => {
+export const useNotifications = (): NotificationsState => {
   const queryClient = useQueryClient();
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
+
+  // Account store values
+  const accounts = useAccountsStore((s) => s.accounts);
 
   // Subscribe to filter store to trigger re-render when filters change
   // This ensures the select function gets recreated with latest filter state

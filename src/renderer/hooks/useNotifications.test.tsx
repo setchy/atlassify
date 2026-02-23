@@ -29,8 +29,6 @@ const createWrapper = () => {
 };
 
 describe('renderer/hooks/useNotifications.ts', () => {
-  const accounts = [mockAtlassianCloudAccount];
-
   beforeEach(() => {
     configureAxiosHttpAdapterForNock();
   });
@@ -56,7 +54,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(accounts), {
+      const { result } = renderHook(() => useNotifications(), {
         wrapper: createWrapper(),
       });
 
@@ -66,7 +64,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: accounts[0],
+          account: mockAtlassianCloudAccount,
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -98,7 +96,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(accounts), {
+      const { result } = renderHook(() => useNotifications(), {
         wrapper: createWrapper(),
       });
 
@@ -108,7 +106,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: accounts[0],
+          account: mockAtlassianCloudAccount,
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -133,7 +131,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(accounts), {
+      const { result } = renderHook(() => useNotifications(), {
         wrapper: createWrapper(),
       });
 
@@ -143,7 +141,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       expect(result.current.notifications).toEqual([
         {
-          account: accounts[0],
+          account: mockAtlassianCloudAccount,
           notifications: [],
           error: null,
           hasMoreNotifications: false,
@@ -196,7 +194,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(accounts), {
+    const { result } = renderHook(() => useNotifications(), {
       wrapper: createWrapper(),
     });
 
@@ -261,7 +259,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(accounts), {
+    const { result } = renderHook(() => useNotifications(), {
       wrapper: createWrapper(),
     });
 
