@@ -1,5 +1,3 @@
-import { render } from '@testing-library/react';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
@@ -7,7 +5,6 @@ import {
 } from '../__mocks__/account-mocks';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
-import { AppContext, type AppContextState } from '../context/App';
 import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { Errors } from '../utils/errors';

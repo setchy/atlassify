@@ -6,7 +6,6 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import * as notifications from '../utils/notifications/notifications';
 import * as tray from '../utils/tray';
 import { type AppContextState, AppProvider } from './App';
 
