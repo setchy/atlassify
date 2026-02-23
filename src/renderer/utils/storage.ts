@@ -2,9 +2,6 @@ import { Constants } from '../constants';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import type { Language } from '../i18n/types';
-
-import { DEFAULT_LANGUAGE } from '../i18n';
 import { rendererLogError, rendererLogInfo } from './logger';
 
 /**
@@ -12,15 +9,12 @@ import { rendererLogError, rendererLogInfo } from './logger';
  * This function reads the old unified storage format and splits it into separate stores.
  * Should be called once on app startup.
  *
- * In v2.16.7 and earlier, settings contained both app settings AND filter values.
- * This migration splits them into separate stores.
- *
- * TODO: Remove this migration function in a future major release (v3.0.0+)
+ * TODO: Remove this migration function in a future major release (v4.0.0+)
  * once all users have migrated from the old Context-based storage format.
  * Migration was introduced in v2.17.0.
  */
-export async function migrateContextToZustand() {
-  const existing = localStorage.getItem(Constants.STORAGE_KEY);
+export async function migrateLegacyStoreToZustand() {
+  const existing = localStorage.getItem(Constants.STORAGE.LEGACY);
 
   if (!existing) {
     // No old data to migrate
@@ -33,7 +27,7 @@ export async function migrateContextToZustand() {
     // Skip if already migrated
     if (parsed.migrated) {
       rendererLogInfo(
-        'migrateContextToStore',
+        'migrateLegacyStoreToZustand',
         `Storage already migrated on ${parsed.migratedAt}`,
       );
       return;
@@ -54,7 +48,7 @@ export async function migrateContextToZustand() {
 
     // Mark old storage key as migrated instead of removing it
     localStorage.setItem(
-      Constants.STORAGE_KEY,
+      Constants.STORAGE.LEGACY,
       JSON.stringify({
         migrated: true,
         migratedAt: new Date().toISOString(),
@@ -62,22 +56,14 @@ export async function migrateContextToZustand() {
     );
 
     rendererLogInfo(
-      'migrateContextToStore',
-      'Successfully migrated from Context storage to Zustand stores',
+      'migrateLegacyStoreToZustand',
+      'Successfully migrated from legacy storage state to Zustand stores',
     );
   } catch (err) {
     rendererLogError(
-      'migrateContextToStore',
+      'migrateLegacyStoreToZustand',
       'Error during storage migration',
       err,
     );
-    // Don't throw - let the app continue with defaults
   }
-}
-
-export function loadLanguageLocale(): Language {
-  const existing = localStorage.getItem(Constants.LANGUAGE_STORAGE_KEY);
-  const language = (existing as Language) || DEFAULT_LANGUAGE;
-
-  return language;
 }

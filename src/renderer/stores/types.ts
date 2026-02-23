@@ -36,15 +36,39 @@ export interface AccountsState {
  * Actions for managing accounts.
  */
 export interface AccountsActions {
-  setAccounts: (accounts: Account[]) => void;
-  addAccount: (account: Account) => void;
-  removeAccount: (account: Account) => void;
-  createAccount: (username: Username, token: Token) => Promise<void>;
-  refreshAccount: (account: Account) => Promise<Account>;
-  hasAccounts: () => boolean;
-  hasMultipleAccounts: () => boolean;
-  isLoggedIn: () => boolean;
+  /**
+   * Checks if a username is already associated with an existing account.
+   */
   hasUsernameAlready: (username: Username) => boolean;
+
+  /**
+   * Creates and adds a new account.
+   */
+  createAccount: (username: Username, token: Token) => Promise<void>;
+
+  /**
+   * Refreshes the user details for an account.
+   */
+  refreshAccount: (account: Account) => Promise<Account>;
+
+  /**
+   * Removes an account.
+   */
+  removeAccount: (account: Account) => void;
+
+  /**
+   * Checks if the user is logged in (has at least one account).
+   */
+  isLoggedIn: () => boolean;
+
+  /**
+   * Checks if there are multiple accounts.
+   */
+  hasMultipleAccounts: () => boolean;
+
+  /**
+   * Resets accounts to default state.
+   */
   reset: () => void;
 }
 
@@ -247,10 +271,22 @@ export type SettingsState = AppearanceSettingsState &
  * Actions for managing settings.
  */
 export interface SettingsActions {
+  /**
+   * Updates a specific setting by key to a new value.
+   */
   updateSetting: <K extends keyof SettingsState>(
     name: K,
     value: SettingsState[K],
   ) => void;
+
+  /**
+   * Toggles a boolean setting by key. Throws if the setting is not boolean.
+   */
+  toggleSetting: <K extends keyof SettingsState>(name: K) => void;
+
+  /**
+   * Resets all settings to their default values.
+   */
   reset: () => void;
 }
 

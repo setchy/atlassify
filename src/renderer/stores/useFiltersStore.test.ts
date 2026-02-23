@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { DEFAULT_FILTERS_STATE } from './defaults';
 import useFiltersStore from './useFiltersStore';
 
-describe('useFiltersStore', () => {
+describe('renderer/stores/useFiltersStore.ts', () => {
   test('should start with default filters', () => {
     const { result } = renderHook(() => useFiltersStore());
 

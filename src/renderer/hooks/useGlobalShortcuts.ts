@@ -1,11 +1,11 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { keybindings } from '../constants/keybindings';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
+import { quitApp, trackEvent } from '../utils/comms';
 import { openMyNotifications } from '../utils/links';
 import { useAppContext } from './useAppContext';
 
@@ -48,14 +48,6 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
 
-  const keyboardShortcutEnabled = useSettingsStore(
-    (s) => s.keyboardShortcutEnabled,
-  );
-
-  useEffect(() => {
-    setKeyboardShortcut(keyboardShortcutEnabled);
-  }, [keyboardShortcutEnabled]);
-
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {
       home: {
@@ -78,10 +70,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'fetchOnlyUnreadNotifications',
-              !useSettingsStore.getState().fetchOnlyUnreadNotifications,
-            );
+            .toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
       groupByProduct: {
@@ -94,10 +83,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByProduct',
-              !useSettingsStore.getState().groupNotificationsByProduct,
-            );
+            .toggleSetting('groupNotificationsByProduct');
         },
       },
       groupByTitle: {
@@ -110,10 +96,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByTitle',
-              !useSettingsStore.getState().groupNotificationsByTitle,
-            );
+            .toggleSetting('groupNotificationsByTitle');
         },
       },
       filters: {

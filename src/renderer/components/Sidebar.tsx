@@ -37,9 +37,10 @@ const SidebarComponent: FC = () => {
     hasNotifications,
   } = useAppContext();
 
+  // Account store values
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
-  // Subscribe to settings from store
+  // Setting store values
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );
@@ -50,6 +51,7 @@ const SidebarComponent: FC = () => {
     (s) => s.groupNotificationsByTitle,
   );
 
+  // Filter store values
   const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
 
   const sidebarIconColorToken =

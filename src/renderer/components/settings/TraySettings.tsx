@@ -13,13 +13,15 @@ import { useSettingsStore } from '../../stores';
 export const TraySettings: FC = () => {
   const { t } = useTranslation();
 
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
+
+  // Setting store values
   const showNotificationsCountInTray = useSettingsStore(
     (s) => s.showNotificationsCountInTray,
   );
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
-
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   return (
     <Stack space="space.100">
@@ -31,12 +33,7 @@ export const TraySettings: FC = () => {
             isChecked={showNotificationsCountInTray}
             label={t('settings.tray.show_count_in_tray')}
             name="showNotificationsCountInTray"
-            onChange={() =>
-              updateSetting(
-                'showNotificationsCountInTray',
-                !showNotificationsCountInTray,
-              )
-            }
+            onChange={() => toggleSetting('showNotificationsCountInTray')}
           />
           <InlineMessage appearance="info">
             <div className="w-60 text-xs">
@@ -51,9 +48,7 @@ export const TraySettings: FC = () => {
           isChecked={useUnreadActiveIcon}
           label={t('settings.tray.unread_active_icon')}
           name="useUnreadActiveIcon"
-          onChange={() =>
-            updateSetting('useUnreadActiveIcon', !useUnreadActiveIcon)
-          }
+          onChange={() => toggleSetting('useUnreadActiveIcon')}
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
@@ -69,9 +64,7 @@ export const TraySettings: FC = () => {
           isChecked={useAlternateIdleIcon}
           label={t('settings.tray.alternate_icon')}
           name="useAlternateIdleIcon"
-          onChange={() =>
-            updateSetting('useAlternateIdleIcon', !useAlternateIdleIcon)
-          }
+          onChange={() => toggleSetting('useAlternateIdleIcon')}
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">

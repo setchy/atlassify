@@ -1,18 +1,13 @@
 export const Constants = {
-  // Main storage key (deprecated - used for migration only)
-  STORAGE_KEY: 'atlassify-storage',
-
-  // Accounts store key
-  ACCOUNTS_STORE_KEY: 'atlassify-accounts',
-
-  // Settings store key
-  SETTINGS_STORE_KEY: 'atlassify-settings',
-
-  // Filters store key
-  FILTERS_STORE_KEY: 'atlassify-filters',
-
-  // i18n language storage key
-  LANGUAGE_STORAGE_KEY: 'atlassify-language',
+  // Local storage keys
+  STORAGE: {
+    // Legacy storage key (deprecated - used for migration only)
+    LEGACY: 'atlassify-storage',
+    ACCOUNTS: 'atlassify-accounts',
+    FILTERS: 'atlassify-filters',
+    SETTINGS: 'atlassify-settings',
+    LANGUAGE: 'atlassify-language',
+  },
 
   // Emojis to use when all notifications are read
   ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],

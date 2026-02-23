@@ -15,9 +15,7 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { useSettingsStore } from '../../stores';
-import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
-import { OpenPreference } from '../../stores/types';
+import { OpenPreference, useSettingsStore } from '../../stores';
 
 import {
   canDecreaseVolume,
@@ -29,7 +27,11 @@ import {
 export const SystemSettings: FC = () => {
   const { t } = useTranslation();
 
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  // Setting store values
   const openLinks = useSettingsStore((s) => s.openLinks);
   const keyboardShortcutEnabled = useSettingsStore(
     (s) => s.keyboardShortcutEnabled,
@@ -88,9 +90,7 @@ export const SystemSettings: FC = () => {
           isChecked={keyboardShortcutEnabled}
           label={t('settings.system.keyboard_shortcut')}
           name="keyboardShortcutEnabled"
-          onChange={() =>
-            updateSetting('keyboardShortcutEnabled', !keyboardShortcutEnabled)
-          }
+          onChange={() => toggleSetting('keyboardShortcutEnabled')}
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
@@ -107,9 +107,7 @@ export const SystemSettings: FC = () => {
           isChecked={showSystemNotifications}
           label={t('settings.system.system_notifications')}
           name="showNotifications"
-          onChange={() =>
-            updateSetting('showSystemNotifications', !showSystemNotifications)
-          }
+          onChange={() => toggleSetting('showSystemNotifications')}
         />
         <InlineMessage appearance="info">
           <div className="w-60 text-xs">
@@ -123,12 +121,7 @@ export const SystemSettings: FC = () => {
           isChecked={playSoundNewNotifications}
           label={t('settings.system.play_sound')}
           name="playSoundNewNotifications"
-          onChange={() =>
-            updateSetting(
-              'playSoundNewNotifications',
-              !playSoundNewNotifications,
-            )
-          }
+          onChange={() => toggleSetting('playSoundNewNotifications')}
         />
         <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
           <SplitButton spacing="compact">
@@ -185,7 +178,7 @@ export const SystemSettings: FC = () => {
                 onClick={() =>
                   updateSetting(
                     'notificationVolume',
-                    DEFAULT_SETTINGS_STATE.notificationVolume,
+                    useSettingsStore.getInitialState().notificationVolume,
                   )
                 }
                 shape="circle"
@@ -203,7 +196,7 @@ export const SystemSettings: FC = () => {
             isChecked={openAtStartup}
             label={t('settings.system.startup')}
             name="openAtStartUp"
-            onChange={() => updateSetting('openAtStartup', !openAtStartup)}
+            onChange={() => toggleSetting('openAtStartup')}
           />
           <InlineMessage appearance="info">
             <div className="w-60 text-xs">

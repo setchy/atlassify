@@ -22,22 +22,6 @@ const useAccountsStore = create<AccountsStore>()(
     (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,
 
-      setAccounts: (accounts) => {
-        set({ accounts });
-      },
-
-      addAccount: (account) => {
-        set((state) => ({
-          accounts: [...state.accounts, account],
-        }));
-      },
-
-      removeAccount: (account) => {
-        set((state) => ({
-          accounts: state.accounts.filter((a) => a.id !== account.id),
-        }));
-      },
-
       createAccount: async (username: Username, token: Token) => {
         const encryptedToken = await encryptValue(token);
 
@@ -72,16 +56,18 @@ const useAccountsStore = create<AccountsStore>()(
         return account;
       },
 
-      hasAccounts: () => {
+      removeAccount: (account) => {
+        set((state) => ({
+          accounts: state.accounts.filter((a) => a.id !== account.id),
+        }));
+      },
+
+      isLoggedIn: () => {
         return get().accounts.length > 0;
       },
 
       hasMultipleAccounts: () => {
         return get().accounts.length > 1;
-      },
-
-      isLoggedIn: () => {
-        return get().hasAccounts();
       },
 
       hasUsernameAlready: (username: Username) => {
@@ -96,7 +82,7 @@ const useAccountsStore = create<AccountsStore>()(
       },
     }),
     {
-      name: Constants.ACCOUNTS_STORE_KEY,
+      name: Constants.STORAGE.ACCOUNTS,
     },
   ),
 );

@@ -8,10 +8,10 @@ import { useSettingsStore } from '../../stores';
 import { NotificationSettings } from './NotificationSettings';
 
 describe('renderer/components/settings/NotificationSettings.tsx', () => {
-  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(async () => {
-    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
   });
 
   afterEach(() => {
@@ -25,8 +25,8 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen');
   });
 
   it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox', async () => {
@@ -36,10 +36,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       screen.getByLabelText('Group product notifications alphabetically'),
     );
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith(
       'groupNotificationsByProductAlphabetically',
-      true,
     );
   });
 
@@ -48,10 +47,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Delay notification state'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'delayNotificationState',
-      true,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('delayNotificationState');
   });
 });

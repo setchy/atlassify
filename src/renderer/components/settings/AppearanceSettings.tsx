@@ -20,7 +20,7 @@ import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import { LANGUAGES } from '../../i18n/types';
 
-import { loadLanguageLocale } from '../../utils/storage';
+import { loadLanguageLocale } from '../../i18n';
 import { setTheme } from '../../utils/theme';
 import {
   canDecreaseZoom,
@@ -28,21 +28,22 @@ import {
   decreaseZoom,
   increaseZoom,
   resetZoomLevel,
-  zoomLevelToPercentage,
 } from '../../utils/zoom';
 
 export const AppearanceSettings: FC = () => {
-  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
-  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
-
   const { t, i18n } = useTranslation();
 
-  const theme = useSettingsStore((s) => s.theme);
+  // Account store values
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
-  const zoomPercentage = zoomLevelToPercentage(
-    window.atlassify.zoom.getLevel(),
-  );
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  // Setting store values
+  const theme = useSettingsStore((s) => s.theme);
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
+  const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
@@ -186,9 +187,7 @@ export const AppearanceSettings: FC = () => {
           isChecked={showAccountHeader}
           label={t('settings.appearance.show_account_header')}
           name="showAccountHeader"
-          onChange={() =>
-            updateSetting('showAccountHeader', !showAccountHeader)
-          }
+          onChange={() => toggleSetting('showAccountHeader')}
         />
       )}
     </Stack>

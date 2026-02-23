@@ -13,9 +13,11 @@ import * as zoom from '../../utils/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
   let updateSettingSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(async () => {
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
 
     renderWithAppContext(<AppearanceSettings />);
@@ -62,20 +64,20 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   it('should toggle the account header setting', async () => {
     await userEvent.click(screen.getByLabelText('Show account header'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('showAccountHeader', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('showAccountHeader');
   });
 
   it('should hide the account header setting when there are multiple accounts', async () => {
-    useAccountsStore
-      .getState()
-      .setAccounts([mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo]);
+    useAccountsStore.setState({
+      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+    });
 
     renderWithAppContext(<AppearanceSettings />);
 
     expect(screen.queryByLabelText('Show account header')).toBeNull();
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(0);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
     expect(useAccountsStore.getState().hasMultipleAccounts()).toBe(true);
   });
 });

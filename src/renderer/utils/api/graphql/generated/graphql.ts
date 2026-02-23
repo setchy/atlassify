@@ -559,6 +559,16 @@ export type AvpToggleCanvasElementExpandedInput = {
   elementId: Scalars['ID']['input'];
 };
 
+/** Input for tracking dashboard view analytics */
+export type AvpTrackDashboardViewInput = {
+  /** The ARI of the dashboard being viewed */
+  dashboardAri: Scalars['ID']['input'];
+  /** The product hosting the dashboard view (e.g., townsquare, jira, confluence) */
+  hostingProduct: Scalars['String']['input'];
+  /** The workspace ID (activation ID) where the dashboard is located */
+  workspaceId: Scalars['String']['input'];
+};
+
 export type AvpUpdateChartInput = {
   chart: AvpChartInput;
   /** the ARI of the chart to update */
@@ -999,6 +1009,51 @@ export type AdminAssignRoleInput = {
   roleId: Scalars['String']['input'];
 };
 
+export type AdminAuditLogContainer = {
+  /** ID of the container object */
+  id: Scalars['ID']['input'];
+  /** The type of the container object */
+  type: AdminAuditLogContainerType;
+};
+
+/** The type of the container */
+export enum AdminAuditLogContainerType {
+  /** App/workspace */
+  App = 'APP',
+  /** Organization */
+  Org = 'ORG',
+  /** Site */
+  Site = 'SITE'
+}
+
+/**  --------------------------------------------------------------------------------------------- */
+export type AdminAuditLogEventExportInput = {
+  /** The event action(s) to filter on. */
+  action?: InputMaybe<Scalars['String']['input']>;
+  /** The event actor to filter on. */
+  actor?: InputMaybe<Scalars['String']['input']>;
+  /** The end of the date range to filter on. */
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  /** The event IP address to filter on. */
+  ip?: InputMaybe<Scalars['String']['input']>;
+  /** The event location to filter on. */
+  location?: InputMaybe<Scalars['String']['input']>;
+  /** The event product to filter on. */
+  product?: InputMaybe<Scalars['String']['input']>;
+  /** The search query made by the user. */
+  searchQuery?: InputMaybe<Scalars['String']['input']>;
+  /** The start of the date range to filter on. */
+  startDate?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** The format of the audit log message */
+export enum AdminAuditLogEventMessageFormat {
+  /** Atlassian Document Format */
+  Adf = 'ADF',
+  /** Simple text format */
+  Simple = 'SIMPLE'
+}
+
 /** Type of authentication policy. */
 export enum AdminAuthenticationPolicyType {
   Basic = 'BASIC',
@@ -1047,6 +1102,14 @@ export type AdminDateFilterInput = {
    * Required for: searchType=[GREATER_THAN, LESS_THAN]
    */
   value?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** Input to fetch audit log events. */
+export type AdminFetchAdminAuditLogEventsInput = {
+  /** The format that events should be returned. Either SIMPLE or ADF */
+  format?: InputMaybe<AdminAuditLogEventMessageFormat>;
+  /** The ALQL query string. */
+  query: Scalars['String']['input'];
 };
 
 export type AdminFieldMapping = {
@@ -1782,6 +1845,8 @@ export type AgentStudioToolIdAndSource = {
 };
 
 export type AgentStudioToolInput = {
+  /** Indicates if a tool is a configured or not */
+  configured?: InputMaybe<Scalars['Boolean']['input']>;
   /** Id of the definition */
   definitionId: Scalars['String']['input'];
   /** Source of the definition */
@@ -1960,10 +2025,6 @@ export type AgentWorkspaceCapacityInput = {
   agentIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
-  /** Page number (1-based, default: 1) */
-  page?: InputMaybe<Scalars['Int']['input']>;
-  /** Number of agents per page (default: 10, max: 100) */
-  pageSize?: InputMaybe<Scalars['Int']['input']>;
   /** Project key (required) */
   projectKey: Scalars['String']['input'];
   /** Filter by multiple capacity statuses (optional) */
@@ -2050,6 +2111,10 @@ export type AgentWorkspaceCreateScheduleInput = {
   recurrence?: InputMaybe<AgentWorkspaceRecurrenceRuleInput>;
   /** Shift start time in UTC (required) */
   startTime: Scalars['DateTime']['input'];
+  /** Team ARI ID (optional) */
+  teamId?: InputMaybe<Scalars['ID']['input']>;
+  /** IANA timezone ID (e.g., Australia/Sydney). Defaults to UTC if not provided. */
+  timezone?: InputMaybe<Scalars['String']['input']>;
 };
 
 export enum AgentWorkspaceDayOfWeek {
@@ -2253,6 +2318,10 @@ export type AgentWorkspaceUpdateScheduleInput = {
   scheduleId: Scalars['ID']['input'];
   /** Shift start time in UTC (required) */
   startTime: Scalars['DateTime']['input'];
+  /** Team ARI ID (optional) */
+  teamId?: InputMaybe<Scalars['ID']['input']>;
+  /** IANA timezone ID (e.g., Australia/Sydney). Defaults to UTC if not provided. */
+  timezone?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Input for updating skill proficiency */
@@ -3862,10 +3931,18 @@ export enum BitbucketPermission {
  * !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
  * -----------------------------------------------
  */
+export type BlockServiceBatchCreateBlocksInput = {
+  blocks: Array<BlockServiceCreateBlockInput>;
+};
+
 export type BlockServiceBatchRetrieveBlocksInput = {
   blockAris: Array<Scalars['String']['input']>;
   blockIdentifiers?: InputMaybe<Array<BlockServiceBlockIdentifierInput>>;
   documentAri?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BlockServiceBatchUpdateBlocksInput = {
+  blocks: Array<BlockServiceUpdateBlockInput>;
 };
 
 export type BlockServiceBlockIdentifierInput = {
@@ -4802,6 +4879,7 @@ export enum CcpUsageQueryStatistics {
 }
 
 export type ChangeManagementUpdateGlobalRiskAssessmentSettingsInput = {
+  aiRiskAssessmentEnabled?: InputMaybe<Scalars['Boolean']['input']>;
   cloudId: Scalars['ID']['input'];
   isEnabled: Scalars['Boolean']['input'];
   projectId: Scalars['String']['input'];
@@ -8465,7 +8543,7 @@ export type ConfluenceCreateCommentOnQuestionInput = {
 
 export type ConfluenceCreateContentApprovalRequestInput = {
   comment?: InputMaybe<Scalars['String']['input']>;
-  contentId: Scalars['Long']['input'];
+  contentId: Scalars['ID']['input'];
   contentStatus: GraphQlContentStatus;
   reviewers?: InputMaybe<Array<InputMaybe<ConfluenceContentApprovalReviewerInput>>>;
   version: Scalars['Int']['input'];
@@ -8566,7 +8644,7 @@ export type ConfluenceCreateTopicInput = {
 };
 
 export type ConfluenceCreateWorkflowApplicationRequestInput = {
-  contentId: Scalars['Long']['input'];
+  contentId: Scalars['ID']['input'];
   contentStatus: GraphQlContentStatus;
   isActive?: InputMaybe<Scalars['Boolean']['input']>;
   version?: InputMaybe<Scalars['Int']['input']>;
@@ -9379,7 +9457,8 @@ export enum ConfluencePermission {
 }
 
 export type ConfluencePermissionCombinationPrincipalTypeAssignmentInput = {
-  principalType: ConfluencePermissionTransitionPrincipalType;
+  mutationPrincipalType?: InputMaybe<ConfluencePermissionTransitionMutationPrincipalType>;
+  principalType?: InputMaybe<ConfluencePermissionTransitionPrincipalType>;
   removeAccess: Scalars['Boolean']['input'];
   roleId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -9398,6 +9477,15 @@ export type ConfluencePermissionTransitionBulkRemoveAccessInput = {
   permissionCombinationIds: Array<InputMaybe<Scalars['String']['input']>>;
   spaceTargetSelection: ConfluencePermissionTransitionSpaceTargetSelectionInput;
 };
+
+export enum ConfluencePermissionTransitionMutationPrincipalType {
+  AllLicensedUsersUserClass = 'ALL_LICENSED_USERS_USER_CLASS',
+  AllProductAdminsUserClass = 'ALL_PRODUCT_ADMINS_USER_CLASS',
+  Anonymous = 'ANONYMOUS',
+  Group = 'GROUP',
+  Guest = 'GUEST',
+  User = 'USER'
+}
 
 export enum ConfluencePermissionTransitionPrincipalType {
   AccessClass = 'ACCESS_CLASS',
@@ -11718,12 +11806,6 @@ export type CreatePolarisViewSetInput = {
   name: Scalars['String']['input'];
 };
 
-/**  Types */
-export type CreateRankingListInput = {
-  items?: InputMaybe<Array<Scalars['String']['input']>>;
-  listId: Scalars['ID']['input'];
-};
-
 export type CreateSpaceAdditionalSettingsInput = {
   jiraProject?: InputMaybe<CreateSpaceJiraProjectInput>;
   spaceTypeSettings?: InputMaybe<SpaceTypeSettingsInput>;
@@ -13296,6 +13378,16 @@ export enum DevAiIssueScopingLabel {
   Unsolvable = 'UNSOLVABLE'
 }
 
+/** Filter sessions by ownership */
+export enum DevAiOwnershipFilter {
+  /** All sessions visible to the user, either owned or shared with them */
+  All = 'ALL',
+  /** Sessions owned by the current user */
+  Own = 'OWN',
+  /** Sessions shared with the current user */
+  Shared = 'SHARED'
+}
+
 export enum DevAiResourceType {
   NoActiveProduct = 'NO_ACTIVE_PRODUCT',
   RovoDevBeta = 'ROVO_DEV_BETA',
@@ -13396,6 +13488,8 @@ export type DevAiRovoDevCreateSessionByCloudIdInput = {
   promptAdf?: InputMaybe<Scalars['JSON']['input']>;
   /** The repository that Rovo Dev will be coding in */
   repository: DevAiRovoDevRepositoryInput;
+  /** The source that triggered the session (e.g., assigned, mentioned, workflow) */
+  source?: InputMaybe<Scalars['String']['input']>;
   /** The use-case associated with this session */
   useCase?: InputMaybe<Scalars['String']['input']>;
   /** Experience ID for tracking user experience flows */
@@ -13419,6 +13513,8 @@ export type DevAiRovoDevCreateSessionInput = {
   promptAdf?: InputMaybe<Scalars['JSON']['input']>;
   /** The repository that Rovo Dev will be coding in */
   repository: DevAiRovoDevRepositoryInput;
+  /** The source that triggered the session (e.g., assigned, mentioned, workflow) */
+  source?: InputMaybe<Scalars['String']['input']>;
   /** The use-case associated with this session */
   useCase?: InputMaybe<Scalars['String']['input']>;
   /** The Rovo Dev Workspace the session belongs to */
@@ -13555,6 +13651,9 @@ export type DevAiRunAutofixScanInput = {
 };
 
 export enum DevAiSandboxError {
+  ApplicationsStartFailed = 'APPLICATIONS_START_FAILED',
+  HibernationRestoreFailed = 'HIBERNATION_RESTORE_FAILED',
+  RepoCloneFailed = 'REPO_CLONE_FAILED',
   Unknown = 'UNKNOWN'
 }
 
@@ -15451,6 +15550,8 @@ export enum GraphIntegrationMcpAdminManagementMcpToolStatus {
 }
 
 export type GraphIntegrationMcpAdminManagementRegisterMcpServerInput = {
+  /** Whether newly discovered tools should be automatically enabled after a tool sync. Defaults to false. */
+  autoEnableNewTools?: InputMaybe<Scalars['Boolean']['input']>;
   /** The cloudId where the operation is being performed. */
   cloudId: Scalars['ID']['input'];
   /** The display name of the MCP server */
@@ -18298,6 +18399,11 @@ export type GraphStoreCalendarHasLinkedDocumentSortInput = {
 };
 
 export type GraphStoreChangeProposalHasAtlasGoalSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreChangeProposalHasWorkSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -22923,6 +23029,11 @@ export type GraphStoreUserUpdatedAtlasProjectSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreUserUpdatedComponentSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreUserUpdatedConfluenceBlogpostSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -23735,6 +23846,11 @@ export type GraphStoreV2AtlassianUserUpdatedAtlassianGoalSortInput = {
 };
 
 export type GraphStoreV2AtlassianUserUpdatedAtlassianProjectSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianUserUpdatedCompassComponentSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -25580,6 +25696,11 @@ export type GraphStoreV2ExternalWorkerLinksThirdPartyUserSortInput = {
 };
 
 export type GraphStoreV2FocusAskImpactsWorkEntitySortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2FocusChangeProposalHasWorkEntitySortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -32507,6 +32628,14 @@ export type JiraEstimateInput = {
   timeInSeconds: Scalars['Long']['input'];
 };
 
+/** Experience context enum for controlling feature availability in bulk operations */
+export enum JiraExperienceContext {
+  /** Standard experience - uses default bulk edit behavior */
+  Standard = 'STANDARD',
+  /** Timeline experience - enables Timeline-specific features like Issue Links as default */
+  Timeline = 'TIMELINE'
+}
+
 /**
  * Input for Jira export issue details
  * Takes in issueId, along with options to include fields, comments, history and worklog
@@ -32740,6 +32869,8 @@ export type JiraFieldSchemeAssociatedFieldsInput = {
   requiredOnIssueTypesFilter?: InputMaybe<Array<JiraFieldsRequiredOnIssueTypesFilterInput>>;
   /** Unique identifier of the field scheme. */
   schemeId: Scalars['ID']['input'];
+  /** Sort order. Note: only a single sort order is supported at present. Supplying multiples would result in an error. */
+  sortBy?: InputMaybe<Array<JiraFieldSchemesSort>>;
 };
 
 export type JiraFieldSchemeAssociatedIssueTypesInput = {
@@ -32765,6 +32896,13 @@ export type JiraFieldSchemeSourceInput = {
 
 export type JiraFieldSchemesInput = {
   nameOrDescriptionFilter?: InputMaybe<Scalars['String']['input']>;
+  /** Sort order. Note: only a single sort order is supported at present. Supplying multiples would result in an error. */
+  sortBy?: InputMaybe<Array<JiraFieldSchemesSort>>;
+};
+
+export type JiraFieldSchemesSort = {
+  direction: SortDirection;
+  key: Scalars['String']['input'];
 };
 
 export enum JiraFieldScopeType {
@@ -36099,6 +36237,11 @@ export type JiraProjectAvailableFieldsInput = {
   filterContains?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type JiraProjectAvailableIssueTypesInput = {
+  /** Filter issue types by name (case-insensitive match). */
+  nameFilter?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type JiraProjectCategoryFilterInput = {
   /** Filter the project categories list with these category ids */
   categoryIds?: InputMaybe<Array<Scalars['Int']['input']>>;
@@ -36363,6 +36506,13 @@ export enum JiraProjectRoleActorUserStatus {
   /** The user associated with this project role actor is not active. */
   Inactive = 'INACTIVE'
 }
+
+export type JiraProjectSchemeAssociatedFieldsInput = {
+  /** Search fields by list of field type groups. If null or empty, fields will not be filtered by field type group. */
+  fieldTypeGroupsFilter?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Search fields by field name or description. If null or empty, fields will not be filtered by field name or description. */
+  nameOrDescriptionFilter?: InputMaybe<Scalars['String']['input']>;
+};
 
 /** The supported different shortcut types */
 export enum JiraProjectShortcutType {
@@ -37592,6 +37742,18 @@ export type JiraSetBoardViewStatusColumnMappingRenameStatusInput = {
   name: Scalars['String']['input'];
   /** ID of the status to rename. */
   statusId: Scalars['ID']['input'];
+};
+
+/** Input to collapse or expand a swimlane within the board view. */
+export type JiraSetBoardViewSwimlaneStateInput = {
+  /** Whether the board view swimlane is collapsed. */
+  collapsed: Scalars['Boolean']['input'];
+  /** Input for settings applied to the board view. */
+  settings?: InputMaybe<JiraBoardViewSettings>;
+  /** ARI of the swimlane within the board view to collapse or expand. */
+  swimlaneId: Scalars['ID']['input'];
+  /** ARI of the board view to manipulate. */
+  viewId: Scalars['ID']['input'];
 };
 
 /** Input to set the selected workflow for the board view. */
@@ -40402,8 +40564,8 @@ export enum JpdViewsServiceViewSortMode {
  */
 export enum JpdViewsServiceVisualizationType {
   Board = 'BOARD',
-  List = 'LIST',
   Matrix = 'MATRIX',
+  Table = 'TABLE',
   Timeline = 'TIMELINE'
 }
 
@@ -40875,12 +41037,138 @@ export type KitsuneSearchFeedbackInput = {
 };
 
 export enum KitsuneSourceCategoryType {
+  AdaCx = 'ADA_CX',
+  Aircall = 'AIRCALL',
+  Airtable = 'AIRTABLE',
+  AlternativeTo = 'ALTERNATIVE_TO',
+  Amplitude = 'AMPLITUDE',
+  Api = 'API',
+  AppleAppStore = 'APPLE_APP_STORE',
+  Asana = 'ASANA',
+  Attio = 'ATTIO',
+  AudioFiles = 'AUDIO_FILES',
+  BigqueryByGoogle = 'BIGQUERY_BY_GOOGLE',
+  Bitbucket = 'BITBUCKET',
+  Blueconic = 'BLUECONIC',
+  Bluesky = 'BLUESKY',
+  Capterra = 'CAPTERRA',
+  ChorusByZoominfo = 'CHORUS_BY_ZOOMINFO',
+  Chrome = 'CHROME',
+  Circle = 'CIRCLE',
+  CiscoWebex = 'CISCO_WEBEX',
+  Claap = 'CLAAP',
+  Clickup = 'CLICKUP',
+  Close = 'CLOSE',
+  Confluence = 'CONFLUENCE',
+  Copper = 'COPPER',
+  Crisp = 'CRISP',
+  CsvFiles = 'CSV_FILES',
+  Customerly = 'CUSTOMERLY',
+  Discord = 'DISCORD',
+  Discourse = 'DISCOURSE',
+  Drift = 'DRIFT',
+  DropboxPaper = 'DROPBOX_PAPER',
+  Email = 'EMAIL',
+  Evernote = 'EVERNOTE',
+  ExcelSpreadsheets = 'EXCEL_SPREADSHEETS',
+  Facebook = 'FACEBOOK',
+  Fathom = 'FATHOM',
   FeedbackApp = 'FEEDBACK_APP',
-  Loom = 'LOOM'
+  Fillout = 'FILLOUT',
+  Fireflies = 'FIREFLIES',
+  Folk = 'FOLK',
+  Formstack = 'FORMSTACK',
+  Front = 'FRONT',
+  G2 = 'G2',
+  Gainsight = 'GAINSIGHT',
+  Getapp = 'GETAPP',
+  Github = 'GITHUB',
+  Gitlab = 'GITLAB',
+  Gong = 'GONG',
+  GoogleChat = 'GOOGLE_CHAT',
+  GoogleDocs = 'GOOGLE_DOCS',
+  GoogleForms = 'GOOGLE_FORMS',
+  GoogleMeet = 'GOOGLE_MEET',
+  GooglePlayStore = 'GOOGLE_PLAY_STORE',
+  GoogleSheets = 'GOOGLE_SHEETS',
+  Grain = 'GRAIN',
+  HelpScout = 'HELP_SCOUT',
+  Hubspot = 'HUBSPOT',
+  Ifttt = 'IFTTT',
+  ImageFiles = 'IMAGE_FILES',
+  Intercom = 'INTERCOM',
+  Jira = 'JIRA',
+  JiraProductDiscovery = 'JIRA_PRODUCT_DISCOVERY',
+  Jotform = 'JOTFORM',
+  Kustomer = 'KUSTOMER',
+  Linear = 'LINEAR',
+  Linkedin = 'LINKEDIN',
+  LogmeinGotomeeting = 'LOGMEIN_GOTOMEETING',
+  Loom = 'LOOM',
+  Make = 'MAKE',
+  Mattermost = 'MATTERMOST',
+  MicrosoftDynamics_365 = 'MICROSOFT_DYNAMICS_365',
+  Modjo = 'MODJO',
+  Monday = 'MONDAY',
+  N8N = 'N8N',
+  Notion = 'NOTION',
+  NotionTables = 'NOTION_TABLES',
+  Otter = 'OTTER',
+  PdfFiles = 'PDF_FILES',
+  Pipedrive = 'PIPEDRIVE',
+  Planhat = 'PLANHAT',
+  Pylon = 'PYLON',
+  Qualtrics = 'QUALTRICS',
+  Quip = 'QUIP',
+  Reddit = 'REDDIT',
+  Rewatch = 'REWATCH',
+  Salesforce = 'SALESFORCE',
+  Salesloft = 'SALESLOFT',
+  Segment = 'SEGMENT',
+  Sharepoint = 'SHAREPOINT',
+  Shortcut = 'SHORTCUT',
+  Slack = 'SLACK',
+  SlackHuddles = 'SLACK_HUDDLES',
+  Slite = 'SLITE',
+  Smartsheet = 'SMARTSHEET',
+  Snowflake = 'SNOWFLAKE',
+  SoftwareAdvice = 'SOFTWARE_ADVICE',
+  Surveymonkey = 'SURVEYMONKEY',
+  Surveyplanet = 'SURVEYPLANET',
+  Surveysparrow = 'SURVEYSPARROW',
+  Survicate = 'SURVICATE',
+  Tally = 'TALLY',
+  Tealium = 'TEALIUM',
+  Teams = 'TEAMS',
+  TextFiles = 'TEXT_FILES',
+  Threads = 'THREADS',
+  TlDv = 'TL_DV',
+  Totango = 'TOTANGO',
+  Trello = 'TRELLO',
+  Trustpilot = 'TRUSTPILOT',
+  Twist = 'TWIST',
+  TwitterX = 'TWITTER_X',
+  Typeform = 'TYPEFORM',
+  VideoFiles = 'VIDEO_FILES',
+  Vidyard = 'VIDYARD',
+  Vitally = 'VITALLY',
+  Word = 'WORD',
+  WorkplaceByMeta = 'WORKPLACE_BY_META',
+  Wufoo = 'WUFOO',
+  Zapier = 'ZAPIER',
+  Zendesk = 'ZENDESK',
+  Zoho = 'ZOHO',
+  Zoom = 'ZOOM',
+  ZoomTeamChat = 'ZOOM_TEAM_CHAT'
 }
 
 export type KitsuneSourceInput = {
   sourceWeb?: InputMaybe<KitsuneSourceInputWeb>;
+};
+
+export type KitsuneSourceInputNew = {
+  type: KitsuneSourceCategoryType;
+  url: Scalars['String']['input'];
 };
 
 export type KitsuneSourceInputWeb = {
@@ -42990,6 +43278,13 @@ export enum MercuryChangeType {
   RequestPositions = 'REQUEST_POSITIONS'
 }
 
+export type MercuryCostItemClassificationInput = {
+  /** Sets the classification to the Cost Subtype ARI. Cost Type is automatically inferred. */
+  costSubtypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Sets the classification to the Cost Type ARI. Clears any existing Cost Subtype. */
+  costTypeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
 export type MercuryCostItemSort = {
   field: MercuryCostItemSortField;
   order: SortOrder;
@@ -43082,6 +43377,34 @@ export type MercuryCreateCoreCustomFieldDefinitionInput = {
   numberField?: InputMaybe<MercuryCreateNumberCustomFieldDefinitionInput>;
   singleSelectField?: InputMaybe<MercuryCreateSingleSelectCustomFieldDefinitionInput>;
   textField?: InputMaybe<MercuryCreateTextCustomFieldDefinitionInput>;
+};
+
+/**
+ *  ------------------------------------------------------
+ *  Cost Items
+ *  ------------------------------------------------------
+ */
+export type MercuryCreateCostItemInput = {
+  /** The ARI of the Focus Area. */
+  focusAreaId: Scalars['ID']['input'];
+  /** The name of the Cost Item. */
+  name: Scalars['String']['input'];
+};
+
+/**
+ *  ------------------------------------------------------
+ *  Cost Period Values
+ *  ------------------------------------------------------
+ */
+export type MercuryCreateCostPeriodValueInput = {
+  /** The amount of funds. */
+  amount: Scalars['String']['input'];
+  /** The ARI of the Cost Item. */
+  costItemId: Scalars['ID']['input'];
+  /** The ARI of the Financial Version. */
+  financialVersionId: Scalars['ID']['input'];
+  /** The year and month for the value in ISO 8601 format 'uuuu-MM', e.g. '2026-02'. */
+  yearMonth: Scalars['String']['input'];
 };
 
 /**
@@ -43327,6 +43650,16 @@ export type MercuryDeleteCommentInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryDeleteCostItemInput = {
+  /** The ID of the Cost Item to delete. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteCostPeriodValueInput = {
+  /** The ARI of the Cost Period Value. */
+  id: Scalars['ID']['input'];
+};
+
 export type MercuryDeleteCostSubtypeInput = {
   id: Scalars['ID']['input'];
 };
@@ -43442,6 +43775,13 @@ export enum MercuryEventType {
   Unarchive = 'UNARCHIVE',
   Unlink = 'UNLINK',
   Update = 'UPDATE'
+}
+
+export enum MercuryFinancialVersionType {
+  Actual = 'ACTUAL',
+  Baseline = 'BASELINE',
+  Budget = 'BUDGET',
+  Forecast = 'FORECAST'
 }
 
 export type MercuryFiscalCalendarConfigurationSort = {
@@ -44282,6 +44622,34 @@ export type MercuryUpdateCommentInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryUpdateCostItemClassificationInput = {
+  /** The new classification to apply. Pass null to clear the classification entirely. */
+  classification?: InputMaybe<MercuryCostItemClassificationInput>;
+  /** The ARI of the Cost Item. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateCostItemExpenditureTypeInput = {
+  /** The ARI of the expenditure type. Empty/null to clear. */
+  expenditureTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** The ARI of the Cost Item. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateCostItemInvestmentCategoryInput = {
+  /** The ARI of the Cost Item. */
+  id: Scalars['ID']['input'];
+  /** The ARI of the investment category. Empty/null to clear. */
+  investmentCategoryId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type MercuryUpdateCostPeriodValueAmountInput = {
+  /** The new amount of funds. */
+  amount: Scalars['String']['input'];
+  /** The ARI of the Cost Period Value. */
+  id: Scalars['ID']['input'];
+};
+
 export type MercuryUpdateCostSubtypeNameInput = {
   id: Scalars['ID']['input'];
   /** The name of the Cost Subtype. */
@@ -44955,7 +45323,6 @@ export type PageGroupRestrictionInput = {
 };
 
 export type PageInput = {
-  /**  the parent page ID, default is no parent page (i.e. root page in the space) */
   body?: InputMaybe<PageBodyInput>;
   parentId?: InputMaybe<Scalars['ID']['input']>;
   status?: InputMaybe<PageStatusInput>;
@@ -45299,15 +45666,6 @@ export enum PolarisViewFieldRollupType {
   Range = 'RANGE',
   Sum = 'SUM'
 }
-
-export type PolarisViewFilterGroupInput = {
-  /** Filter enums currently for group/column matches for connections */
-  filterEnums?: InputMaybe<Array<PolarisFilterEnumType>>;
-  /** The filters to apply within this group */
-  filters: Array<PolarisViewFilterInput>;
-  /** The filter that defines this group (e.g., issue type = "Opportunity") */
-  groupFilter: PolarisViewFilterInput;
-};
 
 export type PolarisViewFilterInput = {
   field?: InputMaybe<Scalars['ID']['input']>;
@@ -46559,6 +46917,7 @@ export enum Scope {
   DeleteConfluencePage = 'DELETE_CONFLUENCE_PAGE',
   DeleteConfluenceSpace = 'DELETE_CONFLUENCE_SPACE',
   DeleteConfluenceWhiteboard = 'DELETE_CONFLUENCE_WHITEBOARD',
+  DeleteInsightJpd = 'DELETE_INSIGHT_JPD',
   DeleteJswBoardScopeAdmin = 'DELETE_JSW_BOARD_SCOPE_ADMIN',
   DeleteJswSprint = 'DELETE_JSW_SPRINT',
   DeleteOrganization = 'DELETE_ORGANIZATION',
@@ -46571,6 +46930,10 @@ export enum Scope {
   DeleteServicedeskCustomer = 'DELETE_SERVICEDESK_CUSTOMER',
   DeleteServicedeskOrganization = 'DELETE_SERVICEDESK_ORGANIZATION',
   DeleteServicedeskProperty = 'DELETE_SERVICEDESK_PROPERTY',
+  DeleteStakeholderCommsPage = 'DELETE_STAKEHOLDER_COMMS_PAGE',
+  DeleteStakeholderCommsStakeholder = 'DELETE_STAKEHOLDER_COMMS_STAKEHOLDER',
+  DeleteStakeholderCommsSubscriber = 'DELETE_STAKEHOLDER_COMMS_SUBSCRIBER',
+  DeleteViewJpd = 'DELETE_VIEW_JPD',
   DeployAppEnvironment = 'DEPLOY_APP_ENVIRONMENT',
   DevelopAppEnvironment = 'DEVELOP_APP_ENVIRONMENT',
   FieldConfigurationDelete = 'FIELD_CONFIGURATION_DELETE',
@@ -46762,6 +47125,8 @@ export enum Scope {
   ReadDeveloperSpace = 'READ_DEVELOPER_SPACE',
   /** feedback */
   ReadFeedbackFeedback = 'READ_FEEDBACK_FEEDBACK',
+  /** jira product discovery */
+  ReadInsightJpd = 'READ_INSIGHT_JPD',
   /**
    * jira - non granular
    * Please add a granular scope as well.
@@ -46811,6 +47176,13 @@ export enum Scope {
    * Please add a granular scope as well.
    */
   ReadServicedeskRequest = 'READ_SERVICEDESK_REQUEST',
+  ReadStakeholderCommsAssignment = 'READ_STAKEHOLDER_COMMS_ASSIGNMENT',
+  ReadStakeholderCommsComponent = 'READ_STAKEHOLDER_COMMS_COMPONENT',
+  ReadStakeholderCommsIncident = 'READ_STAKEHOLDER_COMMS_INCIDENT',
+  /** Stakeholder Comms [JSM] */
+  ReadStakeholderCommsPage = 'READ_STAKEHOLDER_COMMS_PAGE',
+  ReadStakeholderCommsStakeholder = 'READ_STAKEHOLDER_COMMS_STAKEHOLDER',
+  ReadStakeholderCommsSubscriber = 'READ_STAKEHOLDER_COMMS_SUBSCRIBER',
   /** teams */
   ReadTeam = 'READ_TEAM',
   ReadTeamMembers = 'READ_TEAM_MEMBERS',
@@ -46827,6 +47199,7 @@ export enum Scope {
   /** townsquare (Atlas) */
   ReadTownsquareProject = 'READ_TOWNSQUARE_PROJECT',
   ReadTownsquareWorkspace = 'READ_TOWNSQUARE_WORKSPACE',
+  ReadViewJpd = 'READ_VIEW_JPD',
   ResolutionRead = 'RESOLUTION_READ',
   /** rovo */
   RovoAtlassianExternal = 'ROVO_ATLASSIAN_EXTERNAL',
@@ -46901,6 +47274,7 @@ export enum Scope {
   WriteDesign = 'WRITE_DESIGN',
   WriteDeveloperSpace = 'WRITE_DEVELOPER_SPACE',
   WriteFeedbackFeedback = 'WRITE_FEEDBACK_FEEDBACK',
+  WriteInsightJpd = 'WRITE_INSIGHT_JPD',
   WriteJiraWork = 'WRITE_JIRA_WORK',
   WriteJswBoardScope = 'WRITE_JSW_BOARD_SCOPE',
   WriteJswBoardScopeAdmin = 'WRITE_JSW_BOARD_SCOPE_ADMIN',
@@ -46931,12 +47305,18 @@ export enum Scope {
   WriteServicedeskOrganization = 'WRITE_SERVICEDESK_ORGANIZATION',
   WriteServicedeskProperty = 'WRITE_SERVICEDESK_PROPERTY',
   WriteServicedeskRequest = 'WRITE_SERVICEDESK_REQUEST',
+  WriteStakeholderCommsComponent = 'WRITE_STAKEHOLDER_COMMS_COMPONENT',
+  WriteStakeholderCommsIncident = 'WRITE_STAKEHOLDER_COMMS_INCIDENT',
+  WriteStakeholderCommsPage = 'WRITE_STAKEHOLDER_COMMS_PAGE',
+  WriteStakeholderCommsStakeholder = 'WRITE_STAKEHOLDER_COMMS_STAKEHOLDER',
+  WriteStakeholderCommsSubscriber = 'WRITE_STAKEHOLDER_COMMS_SUBSCRIBER',
   WriteTeam = 'WRITE_TEAM',
   WriteTeamMembersTemp = 'WRITE_TEAM_MEMBERS_TEMP',
   WriteTeamTemp = 'WRITE_TEAM_TEMP',
   WriteTownsquareGoal = 'WRITE_TOWNSQUARE_GOAL',
   WriteTownsquareProject = 'WRITE_TOWNSQUARE_PROJECT',
-  WriteTownsquareRelationship = 'WRITE_TOWNSQUARE_RELATIONSHIP'
+  WriteTownsquareRelationship = 'WRITE_TOWNSQUARE_RELATIONSHIP',
+  WriteViewJpd = 'WRITE_VIEW_JPD'
 }
 
 /** Metadata on any analytics related fields, these do not affect the search */
@@ -54561,6 +54941,12 @@ export type TownsquareArchiveGoalInput = {
   id: Scalars['String']['input'];
 };
 
+export enum TownsquareBundledUpdateNodeMissingReason {
+  Deleted = 'DELETED',
+  NotFound = 'NOT_FOUND',
+  NotPermitted = 'NOT_PERMITTED'
+}
+
 /** Result of setting up a sync between a Jira Issue and a Project or a Goal. */
 export enum TownsquareCanCreateFusionResult {
   CanCreate = 'CAN_CREATE',
@@ -54682,6 +55068,16 @@ export type TownsquareEditGoalTypeInputV2 = {
   namePlural?: InputMaybe<Scalars['String']['input']>;
   state?: InputMaybe<TownsquareGoalTypeState>;
 };
+
+/**
+ * The access level of the goal. Determines whether anyone can edit the goal or only specific people.
+ * - OPEN_EDIT: Anyone can view or edit the goal.
+ * - OPEN_VIEW: Only specific people can edit the goal.
+ */
+export enum TownsquareGoalAccessLevel {
+  OpenEdit = 'OPEN_EDIT',
+  OpenView = 'OPEN_VIEW'
+}
 
 export enum TownsquareGoalAccessRole {
   Editor = 'EDITOR',
@@ -54890,6 +55286,8 @@ export type TownsquareGoalsCreateGoalTypePairInput = {
 export type TownsquareGoalsCreateInput = {
   /** ID of the site to create the goal in. */
   containerId: Scalars['ID']['input'];
+  /** Description for the goal, if any. */
+  description?: InputMaybe<Scalars['String']['input']>;
   /** ID of the goal type that the goal is. */
   goalTypeId: Scalars['ID']['input'];
   /** Name of the goal. */
@@ -57065,6 +57463,11 @@ export type TrelloUpdateCardCoverInput = {
   cover: TrelloCardCoverInput;
 };
 
+/** Arguments passed into the update card date viewed by creator mutation */
+export type TrelloUpdateCardDateViewedByCreatorInput = {
+  cardId: Scalars['ID']['input'];
+};
+
 /** Arguments passed into the update card name mutation */
 export type TrelloUpdateCardNameInput = {
   cardId: Scalars['ID']['input'];
@@ -57995,15 +58398,13 @@ export type UpdatePolarisViewInput = {
   fields?: InputMaybe<Array<Scalars['ID']['input']>>;
   /**  a field to sort by */
   filter?: InputMaybe<Array<PolarisViewFilterInput>>;
-  /**  columns filter configuration */
-  filterGroups?: InputMaybe<Array<PolarisViewFilterGroupInput>>;
   /**  the table columns list of fields (table viz) or fields to show */
   groupBy?: InputMaybe<Scalars['ID']['input']>;
   /**  what field to group by (board viz) */
   groupValues?: InputMaybe<Array<PolarisGroupValueInput>>;
   /**  view filter congfiguration */
   groupsFilter?: InputMaybe<Array<PolarisViewFilterInput>>;
-  /**  grouped filters configuration */
+  /**  columns filter configuration */
   hidden?: InputMaybe<Array<Scalars['ID']['input']>>;
   hideEmptyColumns?: InputMaybe<Scalars['Boolean']['input']>;
   hideEmptyGroups?: InputMaybe<Scalars['Boolean']['input']>;

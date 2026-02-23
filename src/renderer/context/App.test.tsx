@@ -1,13 +1,12 @@
-import { act, render } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+import { renderWithAppContext } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import * as notifications from '../utils/notifications/notifications';
+import * as tray from '../utils/tray';
 import { type AppContextState, AppProvider } from './App';
 
 vi.mock('../hooks/useNotifications');
@@ -16,27 +15,15 @@ vi.mock('../hooks/useNotifications');
 const renderWithContext = () => {
   let context!: AppContextState;
 
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-      },
-    },
-  });
-
   const CaptureContext = () => {
     context = useAppContext();
     return null;
   };
 
-  render(
-    <QueryClientProvider client={queryClient}>
-      <AppProvider>
-        <CaptureContext />
-      </AppProvider>
-    </QueryClientProvider>,
+  renderWithAppContext(
+    <AppProvider>
+      <CaptureContext />
+    </AppProvider>,
   );
 
   return () => context;
@@ -68,11 +55,9 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('notification methods', () => {
-    const getNotificationCountSpy = vi.spyOn(
-      notifications,
-      'getNotificationCount',
-    );
-    getNotificationCountSpy.mockReturnValue(1);
+    const setTrayIconColorAndTitleSpy = vi
+      .spyOn(tray, 'setTrayIconColorAndTitle')
+      .mockImplementation(vi.fn());
 
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
@@ -96,6 +81,7 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsReadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
+      expect(setTrayIconColorAndTitleSpy).toHaveBeenCalledTimes(2);
     });
 
     it('should call markNotificationsUnread', async () => {
@@ -109,6 +95,7 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
+      expect(setTrayIconColorAndTitleSpy).toHaveBeenCalledTimes(2);
     });
   });
 });

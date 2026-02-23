@@ -75,6 +75,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
+
   // Get settings to determine query key
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,

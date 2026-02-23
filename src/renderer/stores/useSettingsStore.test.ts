@@ -8,37 +8,47 @@ import { OpenPreference } from './types';
 import { DEFAULT_SETTINGS_STATE } from './defaults';
 import useSettingsStore from './useSettingsStore';
 
-describe('useSettingsStore', () => {
+describe('renderer/stores/useSettingsStore.ts', () => {
   test('should start with default settings', () => {
     const { result } = renderHook(() => useSettingsStore());
 
     expect(result.current).toMatchObject(DEFAULT_SETTINGS_STATE);
   });
 
-  describe('Appearance Settings', () => {
-    test('should update theme', () => {
+  describe('Toggle Setting', () => {
+    test('should toggle a representative setting', () => {
       const { result } = renderHook(() => useSettingsStore());
 
+      expect(result.current.openAtStartup).toBe(true);
+
       act(() => {
-        result.current.updateSetting('theme', Theme.DARK);
+        result.current.toggleSetting('openAtStartup');
       });
 
-      expect(result.current.theme).toBe(Theme.DARK);
+      expect(result.current.openAtStartup).toBe(false);
     });
 
-    test('should update zoom percentage', () => {
+    test('should throw error toggling non-boolean settings', () => {
       const { result } = renderHook(() => useSettingsStore());
 
-      act(() => {
-        result.current.updateSetting('zoomPercentage', 150 as Percentage);
-      });
-
-      expect(result.current.zoomPercentage).toBe(150);
+      expect(() => {
+        act(() => {
+          result.current.toggleSetting('openLinks');
+        });
+      }).toThrowError("toggleSetting: 'openLinks' is not a boolean setting");
     });
   });
 
-  describe('Notification Settings', () => {
-    test('should update markAsReadOnOpen', () => {
+  describe('Update Setting', () => {
+    test('should update a representative appearance setting', () => {
+      const { result } = renderHook(() => useSettingsStore());
+      act(() => {
+        result.current.updateSetting('theme', Theme.DARK);
+      });
+      expect(result.current.theme).toBe(Theme.DARK);
+    });
+
+    test('should update a representative notification setting', () => {
       const { result } = renderHook(() => useSettingsStore());
 
       act(() => {
@@ -48,39 +58,7 @@ describe('useSettingsStore', () => {
       expect(result.current.markAsReadOnOpen).toBe(false);
     });
 
-    test('should update fetchOnlyUnreadNotifications', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('fetchOnlyUnreadNotifications', false);
-      });
-
-      expect(result.current.fetchOnlyUnreadNotifications).toBe(false);
-    });
-
-    test('should update groupNotificationsByProduct', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('groupNotificationsByProduct', true);
-      });
-
-      expect(result.current.groupNotificationsByProduct).toBe(true);
-    });
-
-    test('should update groupNotificationsByTitle', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('groupNotificationsByTitle', false);
-      });
-
-      expect(result.current.groupNotificationsByTitle).toBe(false);
-    });
-  });
-
-  describe('Tray Settings', () => {
-    test('should update showNotificationsCountInTray', () => {
+    test('should update a representative tray setting', () => {
       const { result } = renderHook(() => useSettingsStore());
 
       act(() => {
@@ -90,29 +68,7 @@ describe('useSettingsStore', () => {
       expect(result.current.showNotificationsCountInTray).toBe(false);
     });
 
-    test('should update useUnreadActiveIcon', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('useUnreadActiveIcon', false);
-      });
-
-      expect(result.current.useUnreadActiveIcon).toBe(false);
-    });
-
-    test('should update useAlternateIdleIcon', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('useAlternateIdleIcon', true);
-      });
-
-      expect(result.current.useAlternateIdleIcon).toBe(true);
-    });
-  });
-
-  describe('System Settings', () => {
-    test('should update openLinks preference', () => {
+    test('should update a representative system setting', () => {
       const { result } = renderHook(() => useSettingsStore());
 
       act(() => {
@@ -122,58 +78,16 @@ describe('useSettingsStore', () => {
       expect(result.current.openLinks).toBe(OpenPreference.BACKGROUND);
     });
 
-    test('should update keyboardShortcutEnabled', () => {
+    test('should update arbitrary setting key', () => {
       const { result } = renderHook(() => useSettingsStore());
 
       act(() => {
-        result.current.updateSetting('keyboardShortcutEnabled', false);
+        result.current.updateSetting('zoomPercentage', 150 as Percentage);
       });
 
-      expect(result.current.keyboardShortcutEnabled).toBe(false);
+      expect(result.current.zoomPercentage).toBe(150);
     });
 
-    test('should update showSystemNotifications', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('showSystemNotifications', false);
-      });
-
-      expect(result.current.showSystemNotifications).toBe(false);
-    });
-
-    test('should update playSoundNewNotifications', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('playSoundNewNotifications', false);
-      });
-
-      expect(result.current.playSoundNewNotifications).toBe(false);
-    });
-
-    test('should update notificationVolume', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('notificationVolume', 50 as Percentage);
-      });
-
-      expect(result.current.notificationVolume).toBe(50);
-    });
-
-    test('should update openAtStartup', () => {
-      const { result } = renderHook(() => useSettingsStore());
-
-      act(() => {
-        result.current.updateSetting('openAtStartup', false);
-      });
-
-      expect(result.current.openAtStartup).toBe(false);
-    });
-  });
-
-  describe('Multiple Settings Updates', () => {
     test('should update multiple settings independently', () => {
       const { result } = renderHook(() => useSettingsStore());
 

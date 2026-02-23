@@ -4,10 +4,18 @@ const MINIMUM_VOLUME_PERCENTAGE = 0 as Percentage;
 const MAXIMUM_VOLUME_PERCENTAGE = 100 as Percentage;
 const VOLUME_STEP = 10 as Percentage;
 
-export async function raiseSoundNotification(volume: Percentage) {
-  const path = await window.atlassify.notificationSoundPath();
+// Cache audio instance to avoid re-creating elements on every notification.
+let cachedAudio: HTMLAudioElement | null = null;
 
-  const audio = new Audio(path);
+export async function raiseSoundNotification(volume: Percentage) {
+  if (!cachedAudio) {
+    const path = await window.atlassify.notificationSoundPath();
+
+    cachedAudio = new Audio(path);
+  }
+
+  const audio = cachedAudio;
+
   audio.volume = volumePercentageToLevel(volume);
   audio.play();
 }
