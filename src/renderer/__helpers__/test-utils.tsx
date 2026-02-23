@@ -33,6 +33,7 @@ function AppContextProvider({
       notifications: [],
       status: 'success',
       globalError: null,
+      isOnline: true,
       ...value,
     } as Partial<AppContextState>;
   }, [value]);

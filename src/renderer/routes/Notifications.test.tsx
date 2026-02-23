@@ -47,7 +47,6 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: true,
       status: 'success',
       globalError: null,
-      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -64,7 +63,6 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: true,
       status: 'success',
       globalError: null,
-      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -76,7 +74,6 @@ describe('renderer/routes/Notifications.tsx', () => {
       hasNotifications: false,
       status: 'success',
       globalError: null,
-      isOnline: true,
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -103,7 +100,6 @@ describe('renderer/routes/Notifications.tsx', () => {
       notifications: [],
       hasNotifications: false,
       status: 'error',
-      isOnline: true,
       globalError,
     });
 
