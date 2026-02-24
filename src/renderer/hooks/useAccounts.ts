@@ -7,6 +7,7 @@ import { Constants } from '../constants';
 import { useAccountsStore } from '../stores';
 
 import { accountsKeys } from '../utils/api/queryKeys';
+import { rendererLogWarn } from '../utils/logger';
 
 /**
  * Custom hook to manage scheduled refresh of accounts.
@@ -39,6 +40,10 @@ export const useAccounts = (): AccountsState => {
             return await refreshAccount(account);
           } catch (_err) {
             // If refresh fails, keep the original account
+            rendererLogWarn(
+              'useAccounts',
+              `Failed to refresh account for user ${account.username}, keeping existing data.`,
+            );
             return account;
           }
         }),

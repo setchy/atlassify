@@ -22,7 +22,6 @@ import {
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
-// import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { notificationsKeys } from '../utils/api/queryKeys';
 import { trackEvent } from '../utils/comms';
 import {
