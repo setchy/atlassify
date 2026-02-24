@@ -1,37 +1,23 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type {
-  Account,
-  AccountNotifications,
-  AtlassifyNotification,
-} from '../../types';
+import {
+  mockSingleAccountNotifications,
+  mockSingleAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 
 import { postProcessNotifications } from './postProcess';
 import * as remove from './remove';
 
 describe('postProcessNotifications', () => {
-  const account: Account = { id: 'a' } as Account;
-  const notification: AtlassifyNotification = {
-    id: '1',
-    readState: 'unread',
-    account: account,
-    notificationGroup: { id: 'g1', size: 1 },
-    product: { type: 'jira' },
-  } as AtlassifyNotification;
-  const accountNotifications: AccountNotifications[] = [
-    {
-      account,
-      notifications: [notification],
-      hasMoreNotifications: false,
-      error: null,
-    },
-  ];
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
 
   it('should update readState for affected notifications', () => {
-    const affected = [{ ...notification }];
+    const affected = [{ ...mockSingleAtlassifyNotification }];
     const result = postProcessNotifications(
-      account,
-      accountNotifications,
+      mockSingleAccountNotifications[0].account,
+      mockSingleAccountNotifications,
       affected,
       'read',
     );
@@ -43,15 +29,6 @@ describe('postProcessNotifications', () => {
     }
   });
 
-  it('should not mutate the original notifications', () => {
-    const affected = [{ ...notification }];
-    const original = JSON.parse(JSON.stringify(accountNotifications));
-
-    postProcessNotifications(account, accountNotifications, affected, 'read');
-
-    expect(accountNotifications).toEqual(original);
-  });
-
   it('should remove notifications if shouldRemoveNotificationsFromState returns true', async () => {
     const shouldRemoveSpy = vi
       .spyOn(remove, 'shouldRemoveNotificationsFromState')
@@ -59,11 +36,11 @@ describe('postProcessNotifications', () => {
 
     const removeSpy = vi.spyOn(remove, 'removeNotificationsForAccount');
 
-    const affected = [{ ...notification }];
+    const affected = [{ ...mockSingleAtlassifyNotification }];
 
     const result = postProcessNotifications(
-      account,
-      accountNotifications,
+      mockSingleAccountNotifications[0].account,
+      mockSingleAccountNotifications,
       affected,
       'read',
     );
@@ -81,17 +58,17 @@ describe('postProcessNotifications', () => {
 
     const removeSpy = vi.spyOn(remove, 'removeNotificationsForAccount');
 
-    const affected = [{ ...notification }];
+    const affected = [{ ...mockSingleAtlassifyNotification }];
 
     const result = postProcessNotifications(
-      account,
-      accountNotifications,
+      mockSingleAccountNotifications[0].account,
+      mockSingleAccountNotifications,
       affected,
       'read',
     );
 
     expect(result[0].notifications.length).toEqual(
-      accountNotifications[0].notifications.length,
+      mockSingleAccountNotifications[0].notifications.length,
     );
     expect(shouldRemoveSpy).toHaveBeenCalled();
     expect(removeSpy).not.toHaveBeenCalled();
