@@ -255,6 +255,7 @@ export const useNotifications = (): NotificationsState => {
         throw new Error('All notifications must belong to the same account');
       }
 
+      // TODO - Ideally we would achieve this in a better way
       const account = readNotifications[0].account;
 
       const notificationIDs = await resolveNotificationIdsForGroup(
