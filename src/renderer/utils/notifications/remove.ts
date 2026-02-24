@@ -27,19 +27,13 @@ export function shouldRemoveNotificationsFromState(
  * @param account The account to which the notifications belong.
  * @param accountNotifications Current state of account notifications
  * @param notificationIDsToRemove Set of notification IDs to remove
- * @param actionType The action performed: 'read' or 'unread'
  * @returns Updated account notifications state
  */
 export function removeNotificationsForAccount(
   account: Account,
   accountNotifications: AccountNotifications[],
   notificationIDsToRemove: Set<string>,
-  actionType: NotificationActionType = 'read',
 ): AccountNotifications[] {
-  if (!shouldRemoveNotificationsFromState(actionType)) {
-    return accountNotifications;
-  }
-
   return accountNotifications.map((acct) => {
     if (account.id !== acct.account.id) {
       return acct;

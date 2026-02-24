@@ -71,7 +71,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
         mockSingleAccountNotifications[0].account,
         mockSingleAccountNotifications,
         new Set([mockSingleAtlassifyNotification.id]),
-        'read',
       );
 
       expect(result[0].notifications.length).toBe(0);
@@ -84,7 +83,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
         mockSingleAccountNotifications[0].account,
         mockSingleAccountNotifications,
         new Set(['non-existent-id']),
-        'read',
       );
 
       expect(result[0].notifications.length).toBe(1);
@@ -98,7 +96,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
         mockSingleAccountNotifications[0].account,
         mockSingleAccountNotifications,
         new Set(),
-        'read',
       );
 
       expect(result[0].notifications.length).toBe(1);
@@ -112,7 +109,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
         mockAtlassianCloudAccountTwo,
         mockSingleAccountNotifications,
         new Set(['some-unknown-id']),
-        'read',
       );
 
       expect(result[0].notifications.length).toBe(1);
@@ -132,7 +128,6 @@ describe('renderer/utils/notifications/remove.ts', () => {
         mockSingleAccountNotifications[0].account,
         mockSingleAccountNotifications,
         new Set([mockSingleAtlassifyNotification.id]),
-        'read',
       );
 
       expect(result[0].notifications.length).toBe(1);

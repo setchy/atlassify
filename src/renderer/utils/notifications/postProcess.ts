@@ -47,7 +47,6 @@ export function postProcessNotifications(
       account,
       updatedAccountNotifications,
       affectedNotificationIds,
-      actionType,
     );
   }
 
