@@ -3,16 +3,17 @@
 ## Overview
 Atlassify is a cross-platform desktop app for monitoring notifications from Atlassian Cloud products. Built with Electron, React, and TypeScript, it provides a fast, native experience with customizable filters, themes, and tray/menu bar integration.
 
+
 ## Folder Structure
 ```
 /
 ├── src/
-│   ├── main/        # Electron main process (app lifecycle, events)
+│   ├── main/        # Electron main process (lifecycle, events, updater, menu, tray)
 │   ├── preload/     # Preload scripts (secure bridge between main & renderer)
-│   ├── renderer/    # React UI, stores, hooks, components
-│   ├── shared/      # Shared utilities and types
+│   ├── renderer/    # React UI, state, components, hooks, stores, i18n
+│   ├── shared/      # Shared utilities, constants, logger
 ├── assets/          # Static assets (icons, images, sounds)
-├── build/           # Build output (bundled JS, HTML, CSS)
+├── build/           # Build output (bundled JS, HTML, CSS, assets)
 ├── docs/            # Documentation, FAQs, public site
 ├── scripts/         # Build and packaging scripts
 ├── coverage/        # Test coverage reports
@@ -26,10 +27,11 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 - **Renderer (`src/renderer`)**: React-based UI, state management (stores via [Zustand](https://github.com/pmndrs/zustand)), hooks, components, and settings. Uses [TanStack Query](https://tanstack.com/query/latest) for data fetching and caching.
 - **Shared (`src/shared`)**: Common utilities, types, and constants used across main, preload, and renderer.
 
+
 ## Data Flow
-- **State Management**: Uses custom stores (e.g., `useSettingsStore`, `useAccountsStore`) for app state and settings.
-- **Subscriptions**: Side-effect subscriptions sync store state to Electron APIs and UI.
-- **IPC Communication**: Main ↔ Preload ↔ Renderer via secure IPC channels.
+- **State Management**: Uses modular Zustand stores (e.g., `useSettingsStore`, `useAccountsStore`, `useFiltersStore`) in `src/renderer/stores` for persistent app state, settings, and filters. Hooks in `src/renderer/hooks` (e.g., `useNotifications`, `useAccounts`) provide derived state, effects, and business logic. Store subscriptions and selectors optimize reactivity and performance.
+- **Subscriptions**: Store subscriptions and effects synchronize state with Electron APIs, system events, and UI updates.
+- **IPC Communication**: Main ↔ Preload ↔ Renderer via secure, typed IPC channels for data, commands, and notifications.
 
 ## UI
 - **Component Library**: Uses [Atlassian @atlaskit](https://atlassian.design/components/) for UI components, ensuring a native Atlassian look and feel.
