@@ -76,6 +76,45 @@ export function getFlattenedNotificationsByProduct(
 }
 
 /**
+ * Resolves all notification IDs for a given list of notifications, including both single and grouped notifications.
+ *
+ * @param account The account to use for fetching group notifications
+ * @param notifications List of notifications (may include group notifications)
+ * @returns Promise resolving to a flat array of notification IDs
+ */
+export async function resolveNotificationIdsForGroup(
+  account: Account,
+  notifications: AtlassifyNotification[],
+): Promise<string[]> {
+  // Separate single and group notifications
+
+  const singleNotificationIDs = getNotificationIdsForNonGroups(notifications);
+
+  // Resolve group notification IDs
+  const groupedNotificationIds = await getNotificationIdsForGroups(
+    account,
+    notifications,
+  );
+
+  return [...singleNotificationIDs, ...groupedNotificationIds];
+}
+
+/**
+ * Given a list of notifications, resolves all notification IDs for non-group notifications.
+ *
+ * @param notifications List of notifications (may include group notifications)
+ */
+export function getNotificationIdsForNonGroups(
+  notifications: AtlassifyNotification[],
+): string[] {
+  const singleGroupNotifications = notifications.filter(
+    (notification) => !isGroupNotification(notification),
+  );
+
+  return singleGroupNotifications.map((notification) => notification.id);
+}
+
+/**
  * Given a list of notifications, resolves all notification IDs for group notifications.
  *
  * @param account The account to use for fetching group notifications
@@ -117,31 +156,4 @@ export async function getNotificationIdsForGroups(
   }
 
   return notificationIDs;
-}
-
-/**
- * Resolves all notification IDs for a given list of notifications, including both single and grouped notifications.
- *
- * @param account The account to use for fetching group notifications
- * @param notifications List of notifications (may include group notifications)
- * @returns Promise resolving to a flat array of notification IDs
- */
-export async function resolveNotificationIdsForGroup(
-  account: Account,
-  notifications: AtlassifyNotification[],
-): Promise<string[]> {
-  const singleGroupNotifications = notifications.filter(
-    (notification) => !isGroupNotification(notification),
-  );
-
-  const singleNotificationIDs = singleGroupNotifications.map(
-    (notification) => notification.id,
-  );
-
-  const groupedNotificationIds = await getNotificationIdsForGroups(
-    account,
-    notifications,
-  );
-
-  return [...singleNotificationIDs, ...groupedNotificationIds];
 }

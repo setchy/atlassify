@@ -43,6 +43,9 @@ import { postProcessNotifications } from '../utils/notifications/postProcess';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
 
+/**
+ * State and actions for notifications management.
+ */
 interface NotificationsState {
   status: Status;
   globalError: AtlassifyError;
@@ -62,8 +65,14 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
+/**
+ * Custom hook for managing notifications state, actions, and side effects.
+ * Handles fetching, filtering, marking as read/unread, and notification triggers.
+ */
 export const useNotifications = (): NotificationsState => {
   const queryClient = useQueryClient();
+
+  // Track previous notifications for diffing new notifications
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
   // Account store values
@@ -209,6 +218,7 @@ export const useNotifications = (): NotificationsState => {
       queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ||
       [];
 
+    // Find new notifications by diffing previous and current
     const diffNotifications = getNewNotifications(
       previousNotificationsRef.current,
       unfilteredNotifications,
@@ -219,6 +229,7 @@ export const useNotifications = (): NotificationsState => {
       const filteredDiffNotifications = filterNotifications(diffNotifications);
 
       if (filteredDiffNotifications.length > 0) {
+        // Play sound and show system notifications for new filtered notifications
         if (playSoundNewNotifications) {
           raiseSoundNotification(notificationVolume);
         }

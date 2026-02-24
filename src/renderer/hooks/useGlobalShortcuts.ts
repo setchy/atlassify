@@ -33,8 +33,10 @@ type ShortcutConfig = {
 type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
 
 /**
- * Centralized shortcut actions + enabled state + hotkeys.
+ * Centralized shortcut actions, enabled state, and hotkeys.
  * Used by both the global shortcuts component and UI buttons to avoid duplication.
+ *
+ * @returns { shortcuts: ShortcutConfigs } - All shortcut configs and actions.
  */
 export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
@@ -48,6 +50,9 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
   const isLoading = status === 'loading';
 
+  /**
+   * All shortcut configs and actions.
+   */
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {
       home: {
@@ -124,7 +129,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
             navigate('/', { replace: true });
           }
 
-          void fetchNotifications();
+          fetchNotifications();
         },
       },
       settings: {
@@ -133,7 +138,8 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
         action: () => {
           if (isOnSettingsRoute) {
             navigate('/', { replace: true });
-            void fetchNotifications();
+
+            fetchNotifications();
           } else {
             navigate('/settings');
           }
