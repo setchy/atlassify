@@ -51,10 +51,10 @@ describe('postProcessNotifications', () => {
     expect(removeSpy).toHaveBeenCalled();
   });
 
-  it('should not remove notifications if shouldRemoveNotificationsFromState returns false', async () => {
+  it('should not remove notifications actionType is "unread"', async () => {
     const shouldRemoveSpy = vi
       .spyOn(remove, 'shouldRemoveNotificationsFromState')
-      .mockReturnValue(false);
+      .mockReturnValue(true);
 
     const removeSpy = vi.spyOn(remove, 'removeNotificationsForAccount');
 
@@ -64,7 +64,7 @@ describe('postProcessNotifications', () => {
       mockSingleAccountNotifications[0].account,
       mockSingleAccountNotifications,
       affected,
-      'read',
+      'unread',
     );
 
     expect(result[0].notifications.length).toEqual(

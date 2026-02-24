@@ -2,23 +2,14 @@ import { useSettingsStore } from '../../stores';
 
 import type { Account, AccountNotifications } from '../../types';
 
-import type { NotificationActionType } from './postProcess';
-
 /**
- * Determine if notifications should be removed from state or left in-place, based on action type.
+ * Determine if notifications should be removed from state or left in-place.
  */
-export function shouldRemoveNotificationsFromState(
-  actionType: NotificationActionType,
-): boolean {
-  if (actionType === 'read') {
-    const settings = useSettingsStore.getState();
-    return (
-      !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
-    );
-  }
-
-  // For 'unread', do not remove from state
-  return false;
+export function shouldRemoveNotificationsFromState(): boolean {
+  const settings = useSettingsStore.getState();
+  return (
+    !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
+  );
 }
 
 /**

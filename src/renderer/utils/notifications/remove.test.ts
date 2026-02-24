@@ -6,7 +6,6 @@ import {
 
 import { useSettingsStore } from '../../stores';
 
-import type { NotificationActionType } from './postProcess';
 import {
   removeNotificationsForAccount,
   shouldRemoveNotificationsFromState,
@@ -51,15 +50,7 @@ describe('renderer/utils/notifications/remove.ts', () => {
         fetchOnlyUnreadNotifications,
       });
 
-      expect(
-        shouldRemoveNotificationsFromState('read' as NotificationActionType),
-      ).toBe(expected);
-    });
-
-    it('should return false for unread action regardless of settings', () => {
-      expect(
-        shouldRemoveNotificationsFromState('unread' as NotificationActionType),
-      ).toBe(false);
+      expect(shouldRemoveNotificationsFromState()).toBe(expected);
     });
   });
 

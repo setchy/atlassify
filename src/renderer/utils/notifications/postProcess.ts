@@ -42,7 +42,7 @@ export function postProcessNotifications(
   );
 
   // Decide if notifications should be removed from state
-  if (shouldRemoveNotificationsFromState(actionType)) {
+  if (actionType !== 'unread' && shouldRemoveNotificationsFromState()) {
     return removeNotificationsForAccount(
       account,
       updatedAccountNotifications,

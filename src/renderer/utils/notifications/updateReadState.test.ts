@@ -1,5 +1,6 @@
 import { mockAtlassianCloudAccountTwo } from '../../__mocks__/account-mocks';
 import {
+  mockAccountNotifications,
   mockSingleAccountNotifications,
   mockSingleAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
@@ -57,20 +58,13 @@ describe('renderer/utils/notifications/updateReadState.ts', () => {
     });
 
     it('should update readState for multiple notifications if IDs match', () => {
-      // Create a notifications array with two notifications
-      const notifications = [
-        { ...mockSingleAtlassifyNotification, id: '1', readState: 'unread' },
-        { ...mockSingleAtlassifyNotification, id: '2', readState: 'unread' },
-      ];
-      const account = mockSingleAccountNotifications[0].account;
-      const accountNotifications = [
-        { ...mockSingleAccountNotifications[0], notifications },
-      ];
-
       const result = updateNotificationsReadState(
-        account,
-        accountNotifications,
-        new Set(['1', '2']),
+        mockAccountNotifications[0].account,
+        mockAccountNotifications,
+        new Set([
+          mockAccountNotifications[0].notifications[0].id,
+          mockAccountNotifications[0].notifications[1].id,
+        ]),
         'read',
       );
 

@@ -1988,10 +1988,6 @@ export type AgentWorkspaceAvailabilityInput = {
   agentIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
-  /** Page number (1-based, default: 1) */
-  page?: InputMaybe<Scalars['Int']['input']>;
-  /** Number of agents to return per page (default: 10, max: 100) */
-  pageSize?: InputMaybe<Scalars['Int']['input']>;
   /** Project ID (optional) */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project key (optional) */
@@ -40752,23 +40748,10 @@ export type JpdViewsServiceRerankGlobalViewInput = {
   moveAfter?: InputMaybe<Scalars['ID']['input']>;
 };
 
-/**  --------------------------------------------------------------------------------------------- */
-export type JpdViewsServiceSortByInput = {
-  /** Key is optional as is used with FIELDS_SORT mode only. */
-  key?: InputMaybe<Scalars['String']['input']>;
-  mode?: InputMaybe<JpdViewsServiceViewSortMode>;
-  order?: InputMaybe<JpdViewsServiceSortOrder>;
-};
-
 export type JpdViewsServiceSortInput = {
   field: Scalars['String']['input'];
   order: Scalars['String']['input'];
 };
-
-export enum JpdViewsServiceSortOrder {
-  Asc = 'ASC',
-  Desc = 'DESC'
-}
 
 export type JpdViewsServiceTableColumnSizeInput = {
   field: Scalars['String']['input'];
@@ -40782,6 +40765,15 @@ export type JpdViewsServiceTimelineConfigInput = {
   startDateField: Scalars['String']['input'];
   startTimestamp: Scalars['String']['input'];
   summaryCardField: Scalars['String']['input'];
+};
+
+/**  unassociate global view from a container (e.g. project) */
+export type JpdViewsServiceUnassociateGlobalViewInput = {
+  /** The ID of the container to unassociate the global view from (e.g. Jira project ID). */
+  containerId: Scalars['String']['input'];
+  /** The type of the container to unassociate the global view from. */
+  containerType: JpdViewsServiceGlobalViewAssociationContainerType;
+  id: Scalars['ID']['input'];
 };
 
 export type JpdViewsServiceUpdateGlobalViewInput = {
@@ -40817,12 +40809,6 @@ export type JpdViewsServiceUpdateGlobalViewInput = {
   verticalGroupsFilter?: InputMaybe<Array<InputMaybe<JpdViewsServiceFilterInput>>>;
   visualizationType: JpdViewsServiceVisualizationType;
 };
-
-export enum JpdViewsServiceViewSortMode {
-  FieldsSort = 'FIELDS_SORT',
-  ProjectRank = 'PROJECT_RANK',
-  ViewRank = 'VIEW_RANK'
-}
 
 /**
  * ## Views
@@ -44372,18 +44358,20 @@ export type MercuryNormalizedWorkSearchFiltersInput = {
   type?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export enum MercuryNormalizedWorkSortField {
+  FocusAreaId = 'FOCUS_AREA_ID',
+  Key = 'KEY',
+  Name = 'NAME',
+  Source = 'SOURCE',
+  Status = 'STATUS',
+  TargetDate = 'TARGET_DATE',
+  Type = 'TYPE'
+}
+
 export type MercuryNormalizedWorkSortInput = {
-  fieldKey?: InputMaybe<Scalars['String']['input']>;
+  field: MercuryNormalizedWorkSortField;
   order: SortOrder;
 };
-
-export enum MercuryNormalizedWorkStatusColor {
-  Blue = 'BLUE',
-  Gray = 'GRAY',
-  Green = 'GREEN',
-  Red = 'RED',
-  Yellow = 'YELLOW'
-}
 
 export type MercuryNormalizedWorkTargetDateInput = {
   targetDate?: InputMaybe<Scalars['String']['input']>;
@@ -46584,6 +46572,7 @@ export enum RateLimitingCurrency {
   HelpLayoutCurrency = 'HELP_LAYOUT_CURRENCY',
   HelpObjectStoreCurrency = 'HELP_OBJECT_STORE_CURRENCY',
   JpdContainerQueryCurrency = 'JPD_CONTAINER_QUERY_CURRENCY',
+  JpdContainerWriteCurrency = 'JPD_CONTAINER_WRITE_CURRENCY',
   KnowledgeBaseCurrency = 'KNOWLEDGE_BASE_CURRENCY',
   PolarisBetaUserCurrency = 'POLARIS_BETA_USER_CURRENCY',
   PolarisCollabTokenQueryCurrency = 'POLARIS_COLLAB_TOKEN_QUERY_CURRENCY',
@@ -47996,12 +47985,15 @@ export enum SearchResultType {
   Tag = 'tag',
   Type = 'type',
   Unrecognised = 'unrecognised',
+  Video = 'video',
   Whiteboard = 'whiteboard'
 }
 
 export type SearchSalesforceFilters = {
   /** Search for only entities that match the Close Date */
   closeDate?: InputMaybe<Scalars['String']['input']>;
+  /** Filter deals by their closed state. true = closed deals, false = open deals. */
+  isClosed?: InputMaybe<Scalars['Boolean']['input']>;
   /** Search for only entities from the Owners, values should be 1P Atlassian account Ids. */
   owners?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Search for only entities that match the given Stage */
