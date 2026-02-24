@@ -250,13 +250,13 @@ export const useNotifications = (): NotificationsState => {
     }) => {
       trackEvent('Action', { name: 'Mark as Read' });
 
+      // TODO - Ideally we would achieve this in a better way
+      const account = readNotifications[0].account;
+
       // Assert all notifications are for the same account
       if (!readNotifications.every((n) => n.account === account)) {
         throw new Error('All notifications must belong to the same account');
       }
-
-      // TODO - Ideally we would achieve this in a better way
-      const account = readNotifications[0].account;
 
       const notificationIDs = await resolveNotificationIdsForGroup(
         account,
@@ -298,12 +298,13 @@ export const useNotifications = (): NotificationsState => {
         name: 'Mark as Unread',
       });
 
+      // TODO - Ideally we would achieve this in a better way
+      const account = unreadNotifications[0].account;
+
       // Assert all notifications are for the same account
       if (!unreadNotifications.every((n) => n.account === account)) {
         throw new Error('All notifications must belong to the same account');
       }
-
-      const account = unreadNotifications[0].account;
 
       const notificationIDs = await resolveNotificationIdsForGroup(
         account,
