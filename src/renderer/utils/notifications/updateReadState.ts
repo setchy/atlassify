@@ -28,6 +28,7 @@ export function updateNotificationsReadState(
         if (notificationIDsToUpdate.has(notification.id)) {
           return { ...notification, readState: readState };
         }
+
         return notification;
       }),
     };
