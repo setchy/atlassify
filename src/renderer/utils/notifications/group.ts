@@ -87,10 +87,6 @@ export async function getNotificationIdsForGroups(
 ): Promise<string[]> {
   const notificationIDs: string[] = [];
 
-  if (!notifications.length) {
-    return notificationIDs;
-  }
-
   const groupNotifications = notifications.filter((notification) =>
     isGroupNotification(notification),
   );
