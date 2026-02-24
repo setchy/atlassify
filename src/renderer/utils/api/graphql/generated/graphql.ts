@@ -28098,6 +28098,28 @@ export type GravityFieldRefMappingInput = {
   ref: Scalars['VTRI']['input'];
 };
 
+/** Aggregation function for field rollups. */
+export enum GravityFieldRollupType {
+  /** Average */
+  Avg = 'AVG',
+  /** Count of items */
+  Count = 'COUNT',
+  /** Count of empty values */
+  Empty = 'EMPTY',
+  /** Count of filled values */
+  Filled = 'FILLED',
+  /** Maximum value */
+  Max = 'MAX',
+  /** Median value */
+  Median = 'MEDIAN',
+  /** Minimum value */
+  Min = 'MIN',
+  /** Range (max - min) */
+  Range = 'RANGE',
+  /** Sum of values */
+  Sum = 'SUM'
+}
+
 /** Input for the gravity_importIdeas operation. */
 export type GravityImportIdeasInput = {
   /** CSV file content, required when sourceType is CSV. */
@@ -46015,6 +46037,30 @@ export enum PolarisVisualizationType {
   Tree = 'TREE',
   Twoxtwo = 'TWOXTWO'
 }
+
+export type PostOfficeActiveScopesInput = {
+  current?: InputMaybe<Array<PostOfficeScopeEntryInput>>;
+  previous?: InputMaybe<Array<PostOfficeScopeEntryInput>>;
+};
+
+export type PostOfficeContextInput = {
+  isSiteAdmin?: InputMaybe<Scalars['Boolean']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  orgId?: InputMaybe<Scalars['String']['input']>;
+  productEdition?: InputMaybe<Scalars['String']['input']>;
+  scopes?: InputMaybe<PostOfficeActiveScopesInput>;
+  subproduct?: InputMaybe<Scalars['String']['input']>;
+  tenantId?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum PostOfficeMessageCreationType {
+  Explicit = 'explicit',
+  Implicit = 'implicit'
+}
+
+export type PostOfficeScopeEntryInput = {
+  name: Scalars['String']['input'];
+};
 
 export enum PrincipalFilterType {
   App = 'APP',

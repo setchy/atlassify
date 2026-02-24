@@ -41,13 +41,22 @@ const useAccountsStore = create<AccountsStore>()(
       refreshAccount: async (account: Account): Promise<Account> => {
         try {
           const res = await getAuthenticatedUser(account);
-          // Return a new account object with updated details (immutability)
-          return {
+          const updatedAccount = {
             ...account,
             id: res.data.me.user.accountId,
             name: res.data.me.user.name,
             avatar: res.data.me.user.picture,
           };
+
+          set((state) => ({
+            accounts: state.accounts.map((a) =>
+              a.id === account.id || a.username === account.username
+                ? updatedAccount
+                : a,
+            ),
+          }));
+
+          return updatedAccount;
         } catch (err) {
           rendererLogError(
             'refreshAccount',

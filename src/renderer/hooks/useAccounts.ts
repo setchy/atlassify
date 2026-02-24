@@ -7,7 +7,6 @@ import { Constants } from '../constants';
 import { useAccountsStore } from '../stores';
 
 import { accountsKeys } from '../utils/api/queryKeys';
-import { rendererLogWarn } from '../utils/logger';
 
 /**
  * Custom hook to manage scheduled refresh of accounts.
@@ -20,7 +19,6 @@ interface AccountsState {
 
 export const useAccounts = (): AccountsState => {
   const accounts = useAccountsStore((s) => s.accounts);
-  const setAccounts = useAccountsStore.setState;
   const refreshAccount = useAccountsStore.getState().refreshAccount;
 
   // Query key
@@ -34,24 +32,11 @@ export const useAccounts = (): AccountsState => {
 
     queryFn: async () => {
       // Perform partial refreshes: update only successfully refreshed accounts
-      const refreshedAccounts = await Promise.all(
+      await Promise.all(
         accounts.map(async (account) => {
-          try {
-            return await refreshAccount(account);
-          } catch (_err) {
-            // If refresh fails, keep the original account
-            rendererLogWarn(
-              'useAccounts',
-              `Failed to refresh account for user ${account.username}, keeping existing data.`,
-            );
-            return account;
-          }
+          await refreshAccount(account);
         }),
       );
-
-      // Update the store immutably with the refreshed accounts
-      setAccounts({ accounts: refreshedAccounts });
-
       return true;
     },
 
