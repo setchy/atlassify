@@ -73,8 +73,8 @@ importers:
         specifier: 19.10.2
         version: 19.10.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/modal-dialog':
-        specifier: 14.10.5
-        version: 14.10.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 14.11.0
+        version: 14.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/primitives':
         specifier: 18.0.0
         version: 18.0.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -384,8 +384,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.10.5':
-    resolution: {integrity: sha512-n8M45c0su+OZRjPMkbK/uZ1ppW2xJPvkJfZ4vruK7SJH4zP4H/e24eNd+qdDEGMlI1pcmbUvEuhtkVDkquH9Yw==}
+  '@atlaskit/modal-dialog@14.11.0':
+    resolution: {integrity: sha512-EtXgXOrc0kZDd+ERJQ05sn8m/6e8Dt6dVTSdclo54kpeKNPCx+KKOGxSGLXlv5lMOGy1Wdj2QZg94wn15zpKRA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5287,7 +5287,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.10.5(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/modal-dialog@14.11.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/blanket': 15.0.24(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
