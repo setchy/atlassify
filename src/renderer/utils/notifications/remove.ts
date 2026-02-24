@@ -36,7 +36,9 @@ export function removeNotificationsForAccount(
   notificationIDsToRemove: Set<string>,
   actionType: NotificationActionType = 'read',
 ): AccountNotifications[] {
-  const shouldRemove = shouldRemoveNotificationsFromState(actionType);
+  if (!shouldRemoveNotificationsFromState(actionType)) {
+    return accountNotifications;
+  }
 
   return accountNotifications.map((acct) => {
     if (account.id !== acct.account.id) {
@@ -45,11 +47,9 @@ export function removeNotificationsForAccount(
 
     return {
       ...acct,
-      notifications: shouldRemove
-        ? acct.notifications.filter(
-            (notification) => !notificationIDsToRemove.has(notification.id),
-          )
-        : acct.notifications,
+      notifications: acct.notifications.filter(
+        (notification) => !notificationIDsToRemove.has(notification.id),
+      ),
     };
   });
 }
