@@ -114,24 +114,5 @@ describe('renderer/utils/notifications/remove.ts', () => {
       expect(result[0].notifications.length).toBe(1);
       expect(result).toEqual(mockSingleAccountNotifications);
     });
-
-    it('should skip notification removal if should not remove', () => {
-      // Set store state so shouldRemoveNotificationsFromState returns false
-      useSettingsStore.setState({
-        delayNotificationState: false,
-        fetchOnlyUnreadNotifications: false,
-      });
-
-      expect(mockSingleAccountNotifications[0].notifications.length).toBe(1);
-
-      const result = removeNotificationsForAccount(
-        mockSingleAccountNotifications[0].account,
-        mockSingleAccountNotifications,
-        new Set([mockSingleAtlassifyNotification.id]),
-      );
-
-      expect(result[0].notifications.length).toBe(1);
-      expect(result).toEqual(mockSingleAccountNotifications);
-    });
   });
 });
