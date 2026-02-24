@@ -7,7 +7,7 @@ import type {
 } from '../../types';
 
 import { postProcessNotifications } from './postProcess';
-import * as removeModule from './remove';
+import * as remove from './remove';
 
 describe('postProcessNotifications', () => {
   const account: Account = { id: 'a' } as Account;
@@ -54,10 +54,10 @@ describe('postProcessNotifications', () => {
 
   it('should remove notifications if shouldRemoveNotificationsFromState returns true', async () => {
     const shouldRemoveSpy = vi
-      .spyOn(removeModule, 'shouldRemoveNotificationsFromState')
+      .spyOn(remove, 'shouldRemoveNotificationsFromState')
       .mockReturnValue(true);
 
-    const removeSpy = vi.spyOn(removeModule, 'removeNotificationsForAccount');
+    const removeSpy = vi.spyOn(remove, 'removeNotificationsForAccount');
 
     const affected = [{ ...notification }];
 
@@ -76,10 +76,10 @@ describe('postProcessNotifications', () => {
 
   it('should not remove notifications if shouldRemoveNotificationsFromState returns false', async () => {
     const shouldRemoveSpy = vi
-      .spyOn(removeModule, 'shouldRemoveNotificationsFromState')
+      .spyOn(remove, 'shouldRemoveNotificationsFromState')
       .mockReturnValue(false);
 
-    const removeSpy = vi.spyOn(removeModule, 'removeNotificationsForAccount');
+    const removeSpy = vi.spyOn(remove, 'removeNotificationsForAccount');
 
     const affected = [{ ...notification }];
 
