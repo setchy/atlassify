@@ -8,6 +8,23 @@
  */
 
 /**
+ * Query keys for accounts
+ */
+export const accountsKeys = {
+  /**
+   * Base key for all account queries
+   */
+  all: ['accounts'] as const,
+
+  /**
+   * Key for listing accounts with specific parameters
+   * @param accountsLength - Number of accounts
+   */
+  list: (accountsLength: number) =>
+    [...accountsKeys.all, accountsLength] as const,
+};
+
+/**
  * Query keys for notifications
  */
 export const notificationsKeys = {

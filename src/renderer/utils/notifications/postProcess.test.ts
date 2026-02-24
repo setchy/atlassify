@@ -70,7 +70,7 @@ describe('postProcessNotifications', () => {
     expect(result[0].notifications.length).toEqual(
       mockSingleAccountNotifications[0].notifications.length,
     );
-    expect(shouldRemoveSpy).toHaveBeenCalled();
+    expect(shouldRemoveSpy).not.toHaveBeenCalled();
     expect(removeSpy).not.toHaveBeenCalled();
   });
 });

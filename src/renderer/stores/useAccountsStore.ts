@@ -41,19 +41,22 @@ const useAccountsStore = create<AccountsStore>()(
       refreshAccount: async (account: Account): Promise<Account> => {
         try {
           const res = await getAuthenticatedUser(account);
-
-          account.id = res.data.me.user.accountId;
-          account.name = res.data.me.user.name;
-          account.avatar = res.data.me.user.picture;
+          // Return a new account object with updated details (immutability)
+          return {
+            ...account,
+            id: res.data.me.user.accountId,
+            name: res.data.me.user.name,
+            avatar: res.data.me.user.picture,
+          };
         } catch (err) {
           rendererLogError(
             'refreshAccount',
             `failed to refresh account for user ${account.username}`,
             err,
           );
+          // Return the original account if refresh fails
+          return account;
         }
-
-        return account;
       },
 
       removeAccount: (account) => {
