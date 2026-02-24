@@ -19,11 +19,10 @@ import type {
 } from '../types';
 
 import {
-  getNotificationsByGroupId,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
-import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
+// import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
 import { notificationsKeys } from '../utils/api/queryKeys';
 import { trackEvent } from '../utils/comms';
 import {
@@ -33,14 +32,14 @@ import {
 } from '../utils/errors';
 import { rendererLogError } from '../utils/logger';
 import { filterNotifications } from '../utils/notifications/filters';
-import { isGroupNotification } from '../utils/notifications/group';
+import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
 import { raiseNativeNotification } from '../utils/notifications/native';
 import {
   getAllNotifications,
   getNotificationCount,
   hasMoreNotifications,
 } from '../utils/notifications/notifications';
-import { removeNotificationsForAccount } from '../utils/notifications/remove';
+import { postProcessNotifications } from '../utils/notifications/postProcess';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
 
@@ -242,46 +241,6 @@ export const useNotifications = (): NotificationsState => {
     notificationsQueryKey,
   ]);
 
-  const getNotificationIdsForGroups = useCallback(
-    async (notifications: AtlassifyNotification[]) => {
-      const notificationIDs: string[] = [];
-
-      const account = notifications[0].account;
-
-      const groupNotifications = notifications.filter((notification) =>
-        isGroupNotification(notification),
-      );
-
-      try {
-        for (const group of groupNotifications) {
-          const res = await getNotificationsByGroupId(
-            account,
-            group.notificationGroup.id,
-            group.notificationGroup.size,
-          );
-
-          const groupNotifications = res.data.notifications.notificationGroup
-            .nodes as GroupNotificationDetailsFragment[];
-
-          const groupNotificationIDs = groupNotifications.map(
-            (notification) => notification.notificationId,
-          );
-
-          notificationIDs.push(...groupNotificationIDs);
-        }
-      } catch (err) {
-        rendererLogError(
-          'getNotificationIdsForGroups',
-          'Error occurred while fetching notification ids for notification groups',
-          err,
-        );
-      }
-
-      return notificationIDs;
-    },
-    [],
-  );
-
   // Mutation for marking notifications as read
   const markAsReadMutation = useMutation({
     mutationFn: async ({
@@ -291,28 +250,26 @@ export const useNotifications = (): NotificationsState => {
     }) => {
       trackEvent('Action', { name: 'Mark as Read' });
 
+      // Assert all notifications are for the same account
+      if (!readNotifications.every((n) => n.account === account)) {
+        throw new Error('All notifications must belong to the same account');
+      }
+
       const account = readNotifications[0].account;
 
-      const singleGroupNotifications = readNotifications.filter(
-        (notification) => !isGroupNotification(notification),
-      );
-      const singleNotificationIDs = singleGroupNotifications.map(
-        (notification) => notification.id,
-      );
-
-      const groupedNotificationIds =
-        await getNotificationIdsForGroups(readNotifications);
-
-      singleNotificationIDs.push(...groupedNotificationIds);
-
-      await markNotificationsAsRead(account, singleNotificationIDs);
-
-      const updatedNotifications = removeNotificationsForAccount(
+      const notificationIDs = await resolveNotificationIdsForGroup(
         account,
         readNotifications,
-        notifications,
       );
 
+      await markNotificationsAsRead(account, notificationIDs);
+
+      const updatedNotifications = postProcessNotifications(
+        account,
+        notifications,
+        readNotifications,
+        'read',
+      );
       return updatedNotifications;
     },
 
@@ -340,23 +297,28 @@ export const useNotifications = (): NotificationsState => {
         name: 'Mark as Unread',
       });
 
+      // Assert all notifications are for the same account
+      if (!unreadNotifications.every((n) => n.account === account)) {
+        throw new Error('All notifications must belong to the same account');
+      }
+
       const account = unreadNotifications[0].account;
 
-      const singleGroupNotifications = unreadNotifications.filter(
-        (notification) => !isGroupNotification(notification),
-      );
-      const singleNotificationIDs = singleGroupNotifications.map(
-        (notification) => notification.id,
+      const notificationIDs = await resolveNotificationIdsForGroup(
+        account,
+        unreadNotifications,
       );
 
-      const groupedNotificationIds =
-        await getNotificationIdsForGroups(unreadNotifications);
+      await markNotificationsAsUnread(account, notificationIDs);
 
-      singleNotificationIDs.push(...groupedNotificationIds);
+      const updatedNotifications = postProcessNotifications(
+        account,
+        notifications,
+        unreadNotifications,
+        'unread',
+      );
 
-      await markNotificationsAsUnread(account, singleNotificationIDs);
-
-      return notifications;
+      return updatedNotifications;
     },
 
     onSuccess: (updatedNotifications) => {

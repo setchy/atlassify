@@ -28102,6 +28102,34 @@ export type GravityFieldRefMappingInput = {
   ref: Scalars['VTRI']['input'];
 };
 
+/** Input for the gravity_importIdeas operation. */
+export type GravityImportIdeasInput = {
+  /** CSV file content, required when sourceType is CSV. */
+  csvContent?: InputMaybe<Scalars['String']['input']>;
+  /** Base64-encoded image content, required when sourceType is IMAGE. */
+  imageContent?: InputMaybe<Scalars['String']['input']>;
+  /** MIME type of the image (e.g. image/png, image/jpeg), required when sourceType is IMAGE. */
+  imageMimeType?: InputMaybe<Scalars['String']['input']>;
+  /** Base64-encoded PDF content, required when sourceType is PDF. */
+  pdfContent?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the JPD project to import ideas into. */
+  projectId?: InputMaybe<Scalars['String']['input']>;
+  /** Human-readable label identifying the source (e.g. file name or URL). */
+  sourceLabel?: InputMaybe<Scalars['String']['input']>;
+  /** Type of content being imported. */
+  sourceType: GravityImportSourceType;
+  /** Plain text content, required when sourceType is TEXT. */
+  textContent?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Supported content source types for idea import. */
+export enum GravityImportSourceType {
+  Csv = 'CSV',
+  Image = 'IMAGE',
+  Pdf = 'PDF',
+  Text = 'TEXT'
+}
+
 /** Collection of reference mappings - currently only fields. */
 export type GravityRefMappingsInput = {
   /**
@@ -44372,6 +44400,17 @@ export type MercuryNumberCustomFieldInput = {
   numberValue?: InputMaybe<Scalars['Float']['input']>;
 };
 
+export enum MercuryPassionfruitPermission {
+  CreateAsk = 'CREATE_ASK',
+  CreatePlan = 'CREATE_PLAN',
+  DeleteAsk = 'DELETE_ASK',
+  DeletePlan = 'DELETE_PLAN',
+  EditAsk = 'EDIT_ASK',
+  EditPlan = 'EDIT_PLAN',
+  ViewAsk = 'VIEW_ASK',
+  ViewPlan = 'VIEW_PLAN'
+}
+
 export enum MercuryPermission {
   ArchiveFocusArea = 'ARCHIVE_FOCUS_AREA',
   CreateFocusArea = 'CREATE_FOCUS_AREA',
@@ -57823,6 +57862,30 @@ export type TrelloUpdateWorkspaceTagInput = {
 export type TrelloWatchCardInput = {
   cardId: Scalars['ID']['input'];
 };
+
+/** Required information to create a new work overview dashboard for the current member. */
+export type TrelloWorkOverviewDashboardInput = {
+  /** The workspace to create the overview dashboard in. */
+  workspaceId: Scalars['ID']['input'];
+};
+
+/** Indicates what step we are at in the dashboard scaffolding process. */
+export enum TrelloWorkOverviewDashboardJobStatus {
+  /**
+   * The scaffolding job has completed all work.
+   * Note that some errors may have still been encountered, but not considered fatal.
+   */
+  Completed = 'COMPLETED',
+  /** The scaffolding job is creating the host board. */
+  Creating = 'CREATING',
+  /**
+   * The scaffolding job encountered a fatal error and could not complete.
+   * No further progress will be made.
+   */
+  Failed = 'FAILED',
+  /** The scaffolding job is still waiting to begin. */
+  Pending = 'PENDING'
+}
 
 /** Membership types for a TrelloWorkspace */
 export enum TrelloWorkspaceMembershipType {

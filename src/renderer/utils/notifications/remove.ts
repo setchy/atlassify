@@ -1,56 +1,55 @@
 import { useSettingsStore } from '../../stores';
 
-import type {
-  Account,
-  AccountNotifications,
-  AtlassifyNotification,
-} from '../../types';
+import type { Account, AccountNotifications } from '../../types';
+
+import type { NotificationActionType } from './postProcess';
 
 /**
- * Determine if notifications should be removed from state or marked as read in-place.
+ * Determine if notifications should be removed from state or left in-place, based on action type.
  */
-export function shouldRemoveNotificationsFromState(): boolean {
-  const settings = useSettingsStore.getState();
-  return (
-    !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
-  );
+export function shouldRemoveNotificationsFromState(
+  actionType: NotificationActionType,
+): boolean {
+  if (actionType === 'read') {
+    const settings = useSettingsStore.getState();
+    return (
+      !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
+    );
+  }
+
+  // For 'unread', do not remove from state
+  return false;
 }
 
 /**
- * Remove notifications from the account notifications list.
+ * Remove notifications (if applicable) from the account notifications list.
  *
- * If fetching all notifications (read and unread), no need to remove from state, just mark as read.
- * If delayNotificationState is enabled in settings, mark notifications as read instead of removing them.
+ * @param account The account to which the notifications belong.
+ * @param accountNotifications Current state of account notifications
+ * @param notificationIDsToRemove Set of notification IDs to remove
+ * @param actionType The action performed: 'read' or 'unread'
+ * @returns Updated account notifications state
  */
 export function removeNotificationsForAccount(
   account: Account,
-  notificationsToRemove: AtlassifyNotification[],
   accountNotifications: AccountNotifications[],
+  notificationIDsToRemove: Set<string>,
+  actionType: NotificationActionType = 'read',
 ): AccountNotifications[] {
-  if (notificationsToRemove.length === 0) {
-    return accountNotifications;
-  }
+  const shouldRemove = shouldRemoveNotificationsFromState(actionType);
 
-  const notificationIDsToRemove = new Set(
-    notificationsToRemove.map((notification) => notification.id),
-  );
+  return accountNotifications.map((acct) => {
+    if (account.id !== acct.account.id) {
+      return acct;
+    }
 
-  const shouldRemove = shouldRemoveNotificationsFromState();
-
-  return accountNotifications.map((accountNotifications) =>
-    account.id === accountNotifications.account.id
-      ? {
-          ...accountNotifications,
-          notifications: shouldRemove
-            ? accountNotifications.notifications.filter(
-                (notification) => !notificationIDsToRemove.has(notification.id),
-              )
-            : accountNotifications.notifications.map((notification) =>
-                notificationIDsToRemove.has(notification.id)
-                  ? { ...notification, readState: 'read' }
-                  : notification,
-              ),
-        }
-      : accountNotifications,
-  );
+    return {
+      ...acct,
+      notifications: shouldRemove
+        ? acct.notifications.filter(
+            (notification) => !notificationIDsToRemove.has(notification.id),
+          )
+        : acct.notifications,
+    };
+  });
 }
