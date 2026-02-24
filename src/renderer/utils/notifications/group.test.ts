@@ -1,3 +1,4 @@
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import {
   createMockNotificationForProductType,
   mockSingleAtlassifyNotification,
@@ -9,6 +10,7 @@ import type { AtlassifyNotification } from '../../types';
 
 import {
   getFlattenedNotificationsByProduct,
+  getNotificationIdsForGroups,
   groupNotificationsByProduct,
   isGroupNotification,
 } from './group';
@@ -188,6 +190,17 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       // All notifications preserved in natural order
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
+    });
+  });
+
+  describe('getNotificationIdsForGroups', () => {
+    it('returns empty array if no notifications', async () => {
+      const result = await getNotificationIdsForGroups(
+        mockAtlassianCloudAccount,
+        [],
+      );
+
+      expect(result).toEqual([]);
     });
   });
 });

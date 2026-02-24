@@ -29,18 +29,20 @@ export const useKeyboardNavigation = (
     string | null
   >(null);
 
+  // Map notification IDs to notification objects for quick lookup
   const notificationsById = useMemo(() => {
     const map = new Map<string, AtlassifyNotification>();
-
     notifications.forEach((accountNotifications) => {
       accountNotifications.notifications.forEach((notification) => {
         map.set(notification.id, notification);
       });
     });
-
     return map;
   }, [notifications]);
 
+  /**
+   * Get IDs of visible notification rows in the DOM.
+   */
   const getVisibleNotificationIds = useCallback(() => {
     if (typeof document === 'undefined') {
       return [] as string[];
@@ -53,6 +55,9 @@ export const useKeyboardNavigation = (
       .filter((id): id is string => Boolean(id));
   }, []);
 
+  /**
+   * Set focus to a notification by ID and scroll it into view.
+   */
   const focusNotification = useCallback((notificationId: string | null) => {
     setFocusedNotificationId(notificationId);
 
@@ -69,10 +74,12 @@ export const useKeyboardNavigation = (
     });
   }, []);
 
+  /**
+   * Move focus in the notifications list based on direction.
+   */
   const moveFocus = useCallback(
     (direction: 'next' | 'previous' | 'first' | 'last') => {
       const visibleIds = getVisibleNotificationIds();
-
       if (visibleIds.length === 0) {
         focusNotification(null);
         return;
@@ -111,6 +118,9 @@ export const useKeyboardNavigation = (
     [focusNotification, focusedNotificationId, getVisibleNotificationIds],
   );
 
+  /**
+   * Open the focused notification's details.
+   */
   const openFocusedNotification = useCallback(() => {
     if (!focusedNotificationId) {
       return;
@@ -131,6 +141,11 @@ export const useKeyboardNavigation = (
     detailsButton?.click();
   }, [focusedNotificationId]);
 
+  /**
+   * Toggle the read state of the focused notification.
+   *
+   * TODO: Set focus for next notification after removing current one.
+   */
   const toggleFocusedReadState = useCallback(() => {
     if (!focusedNotificationId) {
       return;
@@ -160,8 +175,6 @@ export const useKeyboardNavigation = (
 
     if (button) {
       button.click();
-
-      // TODO - Set focus for next notification after removing current one
     }
   }, [focusedNotificationId, notificationsById]);
 
