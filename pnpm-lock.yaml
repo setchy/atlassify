@@ -46,8 +46,8 @@ importers:
         specifier: 12.4.10
         version: 12.4.10(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/badge':
-        specifier: 18.4.0
-        version: 18.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 18.4.1
+        version: 18.4.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/button':
         specifier: 23.9.9
         version: 23.9.9(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -285,8 +285,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/badge@18.4.0':
-    resolution: {integrity: sha512-x+RQwZveKxVoNwtPCH/pmNZ8OSd9pbX6fsDta269VLy9gdK98tvlnbBB2KW/gHq3qAPSTymRoVruoEHeLhv6HA==}
+  '@atlaskit/badge@18.4.1':
+    resolution: {integrity: sha512-Ay7cCvHk/N2XP8OLayEJFITVOI93fSjdKSZ65TYap4qS+6bQJ5Jcy3Sd7OmGI1brRALd57fdvDGlKFzjTAJoGQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5033,7 +5033,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/badge@18.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/badge@18.4.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.0.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
