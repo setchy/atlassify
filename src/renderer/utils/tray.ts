@@ -1,3 +1,5 @@
+import { onlineManager } from '@tanstack/react-query';
+
 import { useSettingsStore } from '../stores';
 
 import { updateTrayColor, updateTrayTitle } from './comms';
@@ -7,23 +9,29 @@ import { updateTrayColor, updateTrayTitle } from './comms';
  *
  * @param unreadNotifications - The number of unread notifications
  * @param hasMoreNotifications - Whether there are more notifications beyond the unread count
- * @param isOnline - Whether the application is currently online
  */
 export function setTrayIconColorAndTitle(
   unreadNotifications: number,
   hasMoreNotifications: boolean,
-  isOnline: boolean,
 ) {
   const settings = useSettingsStore.getState();
+  const {
+    showNotificationsCountInTray,
+    useUnreadActiveIcon,
+    useAlternateIdleIcon,
+  } = settings;
+
+  const isOnline = onlineManager.isOnline();
+
   let title = '';
-  if (
-    isOnline &&
-    settings.showNotificationsCountInTray &&
-    unreadNotifications > 0
-  ) {
+  if (isOnline && showNotificationsCountInTray && unreadNotifications > 0) {
     title = `${unreadNotifications.toString()}${hasMoreNotifications ? '+' : ''}`;
   }
 
-  updateTrayColor(unreadNotifications, isOnline);
+  updateTrayColor(
+    unreadNotifications,
+    useUnreadActiveIcon,
+    useAlternateIdleIcon,
+  );
   updateTrayTitle(title);
 }

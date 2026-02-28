@@ -9,31 +9,28 @@ describe('renderer/utils/tray.ts', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    useSettingsStore.setState({
+      showNotificationsCountInTray: true,
+      useUnreadActiveIcon: true,
+      useAlternateIdleIcon: false,
+    });
   });
 
   describe('setTrayIconColorAndTitle', () => {
     it('should update tray color and title when showNotificationsCountInTray is true and has notifications', () => {
-      useSettingsStore.setState({
-        showNotificationsCountInTray: true,
-      });
-
-      setTrayIconColorAndTitle(5, false, true);
+      setTrayIconColorAndTitle(5, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5');
     });
 
     it('should update tray color and title when showNotificationsCountInTray is true and has more notifications', () => {
-      useSettingsStore.setState({
-        showNotificationsCountInTray: true,
-      });
-
-      setTrayIconColorAndTitle(5, true, true);
+      setTrayIconColorAndTitle(5, true);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5+');
     });
@@ -43,10 +40,10 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: false,
       });
 
-      setTrayIconColorAndTitle(5, false, true);
+      setTrayIconColorAndTitle(5, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -56,25 +53,32 @@ describe('renderer/utils/tray.ts', () => {
         showNotificationsCountInTray: false,
       });
 
-      setTrayIconColorAndTitle(5, false, false);
+      setTrayIconColorAndTitle(5, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
 
     it('should update tray with empty title when no notifications', () => {
-      useSettingsStore.setState({
-        showNotificationsCountInTray: true,
-      });
-
-      setTrayIconColorAndTitle(0, false, true);
+      setTrayIconColorAndTitle(0, false);
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, true);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, true, false);
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
+    });
+
+    it('should use icon settings from store when updating tray color', () => {
+      useSettingsStore.setState({
+        useUnreadActiveIcon: false,
+        useAlternateIdleIcon: true,
+      });
+
+      setTrayIconColorAndTitle(5, false);
+
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, false, true);
     });
   });
 });

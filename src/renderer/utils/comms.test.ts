@@ -11,7 +11,6 @@ import {
   quitApp,
   setAutoLaunch,
   setKeyboardShortcut,
-  setUseAlternateIdleIcon,
   showWindow,
   updateTrayColor,
   updateTrayTitle,
@@ -111,17 +110,6 @@ describe('renderer/utils/comms.ts', () => {
       expect(window.atlassify.setAutoLaunch).toHaveBeenCalledWith(true);
     });
 
-    it('sets alternate idle icon', () => {
-      setUseAlternateIdleIcon(false);
-
-      expect(window.atlassify.tray.useAlternateIdleIcon).toHaveBeenCalledTimes(
-        1,
-      );
-      expect(window.atlassify.tray.useAlternateIdleIcon).toHaveBeenCalledWith(
-        false,
-      );
-    });
-
     it('sets keyboard shortcut', () => {
       setKeyboardShortcut(true);
 
@@ -132,10 +120,15 @@ describe('renderer/utils/comms.ts', () => {
 
   describe('tray helpers', () => {
     it('updates tray icon color with count', () => {
-      updateTrayColor(5, true);
+      updateTrayColor(5, true, false);
 
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(5, true);
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(
+        5,
+        true,
+        true,
+        false,
+      );
     });
 
     it('updates tray title with provided value', () => {

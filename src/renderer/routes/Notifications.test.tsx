@@ -1,3 +1,5 @@
+import { onlineManager } from '@tanstack/react-query';
+
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
@@ -9,6 +11,13 @@ import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';
+
+vi.mock('@tanstack/react-query', () => ({
+  onlineManager: {
+    isOnline: vi.fn().mockReturnValue(true),
+    subscribe: vi.fn(),
+  },
+}));
 
 vi.mock('../components/notifications/AccountNotifications', () => ({
   AccountNotifications: (props: {
@@ -80,12 +89,12 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render Offline Error when not online', () => {
+    vi.mocked(onlineManager.isOnline).mockReturnValue(false);
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       status: 'success',
       globalError: null,
-      isOnline: false,
     });
 
     expect(tree.container).toMatchSnapshot();

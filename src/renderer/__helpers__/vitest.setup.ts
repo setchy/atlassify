@@ -59,8 +59,6 @@ window.atlassify = {
   tray: {
     updateColor: vi.fn(),
     updateTitle: vi.fn(),
-    useAlternateIdleIcon: vi.fn(),
-    useUnreadActiveIcon: vi.fn(),
   },
   notificationSoundPath: vi.fn().mockResolvedValue('/mock/assets/sounds'),
   onResetApp: vi.fn(),
