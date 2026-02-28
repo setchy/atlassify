@@ -2,6 +2,8 @@ import type { Menubar } from 'menubar';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { EVENTS } from '../../shared/events';
+
 const onMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -49,8 +51,8 @@ describe('main/handlers/system.ts', () => {
 
     const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
-    expect(registeredEvents).toContain('atlassify:open-external');
-    expect(registeredEvents).toContain('atlassify:update-keyboard-shortcut');
-    expect(registeredEvents).toContain('atlassify:update-auto-launch');
+    expect(registeredEvents).toContain(EVENTS.OPEN_EXTERNAL);
+    expect(registeredEvents).toContain(EVENTS.UPDATE_KEYBOARD_SHORTCUT);
+    expect(registeredEvents).toContain(EVENTS.UPDATE_AUTO_LAUNCH);
   });
 });

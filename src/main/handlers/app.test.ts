@@ -1,5 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { EVENTS } from '../../shared/events';
+
 const handleMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -43,9 +45,9 @@ describe('main/handlers/app.ts', () => {
       (call: [string]) => call[0],
     );
 
-    expect(registeredHandlers).toContain('atlassify:version');
-    expect(registeredHandlers).toContain('atlassify:notification-sound-path');
-    expect(registeredHandlers).toContain('atlassify:twemoji-directory');
-    expect(registeredHandlers).toContain('atlassify:aptabase-track-event');
+    expect(registeredHandlers).toContain(EVENTS.VERSION);
+    expect(registeredHandlers).toContain(EVENTS.NOTIFICATION_SOUND_PATH);
+    expect(registeredHandlers).toContain(EVENTS.TWEMOJI_DIRECTORY);
+    expect(registeredHandlers).toContain(EVENTS.APTABASE_TRACK_EVENT);
   });
 });

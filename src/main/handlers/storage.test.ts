@@ -1,5 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { EVENTS } from '../../shared/events';
+
 const handleMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -38,7 +40,7 @@ describe('main/handlers/storage.ts', () => {
       (call: [string]) => call[0],
     );
 
-    expect(registeredHandlers).toContain('atlassify:safe-storage-encrypt');
-    expect(registeredHandlers).toContain('atlassify:safe-storage-decrypt');
+    expect(registeredHandlers).toContain(EVENTS.SAFE_STORAGE_ENCRYPT);
+    expect(registeredHandlers).toContain(EVENTS.SAFE_STORAGE_DECRYPT);
   });
 });

@@ -2,6 +2,8 @@ import type { Menubar } from 'menubar';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { EVENTS } from '../../shared/events';
+
 const onMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -52,10 +54,10 @@ describe('main/handlers/tray.ts', () => {
 
     const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
-    expect(registeredEvents).toContain('atlassify:window-show');
-    expect(registeredEvents).toContain('atlassify:window-hide');
-    expect(registeredEvents).toContain('atlassify:quit');
-    expect(registeredEvents).toContain('atlassify:update-icon-color');
-    expect(registeredEvents).toContain('atlassify:update-icon-title');
+    expect(registeredEvents).toContain(EVENTS.WINDOW_SHOW);
+    expect(registeredEvents).toContain(EVENTS.WINDOW_HIDE);
+    expect(registeredEvents).toContain(EVENTS.QUIT);
+    expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_COLOR);
+    expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_TITLE);
   });
 });
