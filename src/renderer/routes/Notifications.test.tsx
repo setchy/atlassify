@@ -12,13 +12,6 @@ import { useAccountsStore, useSettingsStore } from '../stores';
 import { Errors } from '../utils/errors';
 import { NotificationsRoute } from './Notifications';
 
-vi.mock('@tanstack/react-query', () => ({
-  onlineManager: {
-    isOnline: vi.fn().mockReturnValue(true),
-    subscribe: vi.fn(),
-  },
-}));
-
 vi.mock('../components/notifications/AccountNotifications', () => ({
   AccountNotifications: (props: {
     account: { id: string };
@@ -89,7 +82,8 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render Offline Error when not online', () => {
-    vi.mocked(onlineManager.isOnline).mockReturnValue(false);
+    vi.spyOn(onlineManager, 'isOnline').mockReturnValue(false);
+
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
