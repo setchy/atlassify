@@ -94,6 +94,8 @@ describe('preload/index', () => {
       {
         isOnline: true,
         notificationsCount: -1,
+        useAlternateIdleIcon: false,
+        useUnreadActiveIcon: true,
       },
     );
   });
