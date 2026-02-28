@@ -52,12 +52,7 @@ vi.mock('./events', () => ({
 
 import { dialog, shell } from 'electron';
 
-import {
-  isDevMode,
-  openLogsDirectory,
-  resetApp,
-  takeScreenshot,
-} from './utils';
+import { openLogsDirectory, resetApp, takeScreenshot } from './utils';
 
 function createMb() {
   return {
