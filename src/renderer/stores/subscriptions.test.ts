@@ -33,8 +33,6 @@ vi.mock('../utils/theme', () => ({
 vi.mock('../utils/comms', () => ({
   setAutoLaunch: vi.fn(),
   setKeyboardShortcut: vi.fn(),
-  setUseAlternateIdleIcon: vi.fn(),
-  setUseUnreadActiveIcon: vi.fn(),
 }));
 
 vi.mock('../utils/zoom', () => ({
@@ -107,18 +105,6 @@ describe('renderer/stores/subscriptions.ts', () => {
         .updateSetting('keyboardShortcutEnabled', false);
 
       expect(comms.setKeyboardShortcut).toHaveBeenCalledWith(false);
-    });
-
-    it('should trigger setUseUnreadActiveIcon when useUnreadActiveIcon changes', () => {
-      useSettingsStore.getState().updateSetting('useUnreadActiveIcon', false);
-
-      expect(comms.setUseUnreadActiveIcon).toHaveBeenCalledWith(false);
-    });
-
-    it('should trigger setUseAlternateIdleIcon when useAlternateIdleIcon changes', () => {
-      useSettingsStore.getState().updateSetting('useAlternateIdleIcon', true);
-
-      expect(comms.setUseAlternateIdleIcon).toHaveBeenCalledWith(true);
     });
 
     it('should update zoom level when zoomPercentage changes', () => {

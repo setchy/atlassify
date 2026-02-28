@@ -9,8 +9,6 @@ export const EVENTS = {
   VERSION: `${P}version`,
   UPDATE_ICON_COLOR: `${P}update-icon-color`,
   UPDATE_ICON_TITLE: `${P}update-icon-title`,
-  USE_ALTERNATE_IDLE_ICON: `${P}use-alternate-idle-icon`,
-  USE_UNREAD_ACTIVE_ICON: `${P}use-unread-active-icon`,
   UPDATE_KEYBOARD_SHORTCUT: `${P}update-keyboard-shortcut`,
   UPDATE_AUTO_LAUNCH: `${P}update-auto-launch`,
   SAFE_STORAGE_ENCRYPT: `${P}safe-storage-encrypt`,
@@ -48,6 +46,8 @@ export interface IAptabaseEvent {
 export interface ITrayColorUpdate {
   notificationsCount: number;
   isOnline: boolean;
+  useUnreadActiveIcon: boolean;
+  useAlternateIdleIcon: boolean;
 }
 
 export type EventData =

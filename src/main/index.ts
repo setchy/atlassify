@@ -101,9 +101,6 @@ const contextMenu = menuBuilder.buildMenu();
 
 const appUpdater = new AppUpdater(mb, menuBuilder);
 
-let shouldUseAlternateIdleIcon = false;
-let shouldUseUnreadActiveIcon = true;
-
 app.whenReady().then(async () => {
   trackEvent('Application', { event: 'Launched' });
   preventSecondInstance();
@@ -168,22 +165,16 @@ app.whenReady().then(async () => {
   );
 
   onMainEvent(
-    EVENTS.USE_ALTERNATE_IDLE_ICON,
-    (_, useAlternateIdleIcon: boolean) => {
-      shouldUseAlternateIdleIcon = useAlternateIdleIcon;
-    },
-  );
-
-  onMainEvent(
-    EVENTS.USE_UNREAD_ACTIVE_ICON,
-    (_, useUnreadActiveIcon: boolean) => {
-      shouldUseUnreadActiveIcon = useUnreadActiveIcon;
-    },
-  );
-
-  onMainEvent(
     EVENTS.UPDATE_ICON_COLOR,
-    (_, { notificationsCount, isOnline }: ITrayColorUpdate) => {
+    (
+      _,
+      {
+        notificationsCount,
+        isOnline,
+        useUnreadActiveIcon,
+        useAlternateIdleIcon,
+      }: ITrayColorUpdate,
+    ) => {
       if (!mb.tray.isDestroyed()) {
         if (!isOnline) {
           setOfflineIcon();
@@ -196,11 +187,15 @@ app.whenReady().then(async () => {
         }
 
         if (notificationsCount > 0) {
-          setActiveIcon();
+          if (useUnreadActiveIcon) {
+            mb.tray.setImage(TrayIcons.active);
+          } else {
+            setIdleIcon(useAlternateIdleIcon);
+          }
           return;
         }
 
-        setIdleIcon();
+        setIdleIcon(useAlternateIdleIcon);
       }
     },
   );
@@ -274,19 +269,11 @@ app.whenReady().then(async () => {
   });
 });
 
-function setIdleIcon() {
-  if (shouldUseAlternateIdleIcon) {
+function setIdleIcon(useAlternateIdleIcon: boolean) {
+  if (useAlternateIdleIcon) {
     mb.tray.setImage(TrayIcons.idleAlternate);
   } else {
     mb.tray.setImage(TrayIcons.idle);
-  }
-}
-
-function setActiveIcon() {
-  if (shouldUseUnreadActiveIcon) {
-    mb.tray.setImage(TrayIcons.active);
-  } else {
-    setIdleIcon();
   }
 }
 

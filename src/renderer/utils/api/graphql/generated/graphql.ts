@@ -703,6 +703,8 @@ export type ActionsActionableAppsFilter = {
   byActionAri?: InputMaybe<Scalars['String']['input']>;
   /** Only an action that match this actionId will be returned. Will overwrite actionAri if provided. */
   byActionId?: InputMaybe<Scalars['String']['input']>;
+  /** Only actions that match any of the provided actionIds will be returned. */
+  byActionIds?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Types of actions to be returned. Any action that matches types in this list will be returned. */
   byActionType?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Only actions for the given actionVerb will be returned. */
@@ -1067,6 +1069,10 @@ export type AdminCompound = {
   operation: AdminOperation;
   /** When singles are specified, no more recursion. */
   single?: InputMaybe<Array<AdminSingle>>;
+};
+
+export type AdminDataResidencyInput = {
+  realm: Scalars['String']['input'];
 };
 
 export type AdminDateFilterInput = {
@@ -1446,6 +1452,7 @@ export enum AdminTokenType {
 
 /**  --------------------------------------------------------------------------------------------- */
 export type AdminUnitCreateInput = {
+  dataResidency?: InputMaybe<AdminDataResidencyInput>;
   name: Scalars['String']['input'];
 };
 
@@ -1962,6 +1969,18 @@ export type AgentStudioWidgetInput = {
   isEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** Input for archiving a skill in a project */
+export type AgentWorkspaceArchiveSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the skill to archive */
+  skillId: Scalars['ID']['input'];
+};
+
 /** Input for assigning a skill to a user */
 export type AgentWorkspaceAssignSkillInput = {
   /** Cloud ID (required) */
@@ -2072,8 +2091,6 @@ export type AgentWorkspaceCatalogInput = {
   cloudId: Scalars['ID']['input'];
   /** Catalog ID (required) */
   id: Scalars['ID']['input'];
-  /** Maximum depth to scan */
-  maxDepth?: InputMaybe<Scalars['Int']['input']>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project Key */
@@ -2220,6 +2237,21 @@ export type AgentWorkspaceDeleteScheduleInput = {
   scheduleId: Scalars['ID']['input'];
 };
 
+/** Input for cancelling a specific shift occurrence for a given agent. */
+export type AgentWorkspaceDeleteShiftInput = {
+  /** The agent whose shift occurrence is being cancelled. */
+  agentId: Scalars['ID']['input'];
+  /**
+   * The start time of the occurrence to cancel, in UTC (e.g. "2026-03-10T09:00:00Z").
+   * Together with scheduleId, this uniquely identifies the occurrence.
+   */
+  occurrenceStartTime: Scalars['DateTime']['input'];
+  /** Project ARI (required) */
+  projectARI: Scalars['ID']['input'];
+  /** The schedule this shift belongs to. */
+  scheduleId: Scalars['ID']['input'];
+};
+
 /** Input for deleting a user skill assignment */
 export type AgentWorkspaceDeleteUserSkillInput = {
   /** Cloud ID (required) */
@@ -2234,6 +2266,25 @@ export type AgentWorkspaceDeleteUserSkillInput = {
   userId: Scalars['ID']['input'];
 };
 
+/** Input for changing the time of a specific shift occurrence for a given agent. */
+export type AgentWorkspaceEditShiftInput = {
+  /** The agent whose shift occurrence is being edited. */
+  agentId: Scalars['ID']['input'];
+  /** New shift end time (required). */
+  newEndTime: Scalars['DateTime']['input'];
+  /** New shift start time (required). */
+  newStartTime: Scalars['DateTime']['input'];
+  /**
+   * The start time of the occurrence to edit, in UTC (e.g. "2026-03-10T09:00:00Z").
+   * Together with scheduleId, this uniquely identifies the occurrence.
+   */
+  occurrenceStartTime: Scalars['DateTime']['input'];
+  /** Project ARI (required) */
+  projectARI: Scalars['ID']['input'];
+  /** The schedule this shift belongs to. */
+  scheduleId: Scalars['ID']['input'];
+};
+
 /** Standard cursor-based pagination input */
 export type AgentWorkspacePaginationInput = {
   /** Cursor to start fetching from */
@@ -2244,6 +2295,48 @@ export type AgentWorkspacePaginationInput = {
   first?: InputMaybe<Scalars['Int']['input']>;
   /** Number of items to return before the cursor */
   last?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** Filter criteria for querying project skills */
+export type AgentWorkspaceProjectSkillFilterInput = {
+  /** Filter by skill IDs */
+  skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter by statuses */
+  statuses?: InputMaybe<Array<AgentWorkspaceProjectSkillStatus>>;
+};
+
+/** Input for querying a single project skill assignment */
+export type AgentWorkspaceProjectSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project Skill ID (required) */
+  id: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Status of a project skill assignment */
+export enum AgentWorkspaceProjectSkillStatus {
+  /** Project skill is active */
+  Active = 'ACTIVE',
+  /** Project skill is archived */
+  Archived = 'ARCHIVED'
+}
+
+/** Input for querying project skill assignments */
+export type AgentWorkspaceProjectSkillsInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Filter criteria for querying project skill assignments */
+  filter?: InputMaybe<AgentWorkspaceProjectSkillFilterInput>;
+  /** Standard cursor-based pagination input */
+  pagination?: InputMaybe<AgentWorkspacePaginationInput>;
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
 /**
@@ -2269,6 +2362,18 @@ export type AgentWorkspaceRecurrenceRuleInput = {
   frequency: AgentWorkspaceRecurrenceFrequency;
   interval?: InputMaybe<Scalars['Int']['input']>;
   weekOfMonth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** Input for restoring an archived skill in a project */
+export type AgentWorkspaceRestoreSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the skill to restore */
+  skillId: Scalars['ID']['input'];
 };
 
 export enum AgentWorkspaceScheduleErrorCode {
@@ -2309,6 +2414,8 @@ export type AgentWorkspaceShiftsQueryInput = {
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project key (optional) */
   projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** Filter by specific schedule IDs (optional) - only include shifts generated from these schedules */
+  scheduleIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Start of the time range to fetch shifts (required) */
   startTime: Scalars['DateTime']['input'];
   /** Filter by specific team IDs (optional) - only include agents belonging to these teams */
@@ -2421,10 +2528,52 @@ export type AgentWorkspaceSkillsInput = {
   projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Input for subscribing a skill to a project */
+export type AgentWorkspaceSubscribeSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the skill to subscribe */
+  skillId: Scalars['ID']['input'];
+};
+
+/**
+ * ============================================
+ * Team Schedules Query Types
+ * ============================================
+ */
+export type AgentWorkspaceTeamSchedulesQueryInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** End of the time range to fetch schedules (required) */
+  endTime: Scalars['DateTime']['input'];
+  /** Project ID (optional) */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project key (optional) */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** Start of the time range to fetch schedules (required) */
+  startTime: Scalars['DateTime']['input'];
+  /** Filter by specific team IDs (optional) */
+  teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+/** Input for unsubscribing a skill from a project */
+export type AgentWorkspaceUnsubscribeSkillInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the skill to unsubscribe */
+  skillId: Scalars['ID']['input'];
+};
+
 /** Input for updating an existing catalog */
 export type AgentWorkspaceUpdateCatalogInput = {
-  /** ID of the catalog type */
-  catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
   /** Description of the catalog */
@@ -2453,8 +2602,6 @@ export type AgentWorkspaceUpdateCatalogTypeInput = {
   id: Scalars['ID']['input'];
   /** Name of the catalog type */
   name?: InputMaybe<Scalars['String']['input']>;
-  /** ID of the parent catalog type */
-  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project Key */
@@ -8568,6 +8715,8 @@ export type ConfluenceContentInput = {
   minorEdit?: InputMaybe<Scalars['Boolean']['input']>;
   moveRequest?: InputMaybe<ConfluenceMoveRequestInput>;
   ncsStepVersion?: InputMaybe<Scalars['String']['input']>;
+  permissions?: InputMaybe<ConfluenceContentPermissionsInput>;
+  restrictionState?: InputMaybe<ConfluenceContentRestrictionStateInput>;
   restrictions?: InputMaybe<PageRestrictionsInput>;
   schedulePublishDate?: InputMaybe<Scalars['String']['input']>;
   spaceKey?: InputMaybe<Scalars['String']['input']>;
@@ -8575,6 +8724,16 @@ export type ConfluenceContentInput = {
   title?: InputMaybe<Scalars['String']['input']>;
   version?: InputMaybe<Scalars['Int']['input']>;
   versionMessage?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ConfluenceContentPermissionPrincipalInput = {
+  id: Scalars['String']['input'];
+  type: ConfluencePrincipalType;
+};
+
+export type ConfluenceContentPermissionsInput = {
+  edit?: InputMaybe<Array<InputMaybe<ConfluenceContentPermissionPrincipalInput>>>;
+  view?: InputMaybe<Array<InputMaybe<ConfluenceContentPermissionPrincipalInput>>>;
 };
 
 export enum ConfluenceContentPosition {
@@ -9700,6 +9859,7 @@ export enum ConfluencePermissionTransitionMutationPrincipalType {
   AllLicensedUsersUserClass = 'ALL_LICENSED_USERS_USER_CLASS',
   AllProductAdminsUserClass = 'ALL_PRODUCT_ADMINS_USER_CLASS',
   Anonymous = 'ANONYMOUS',
+  App = 'APP',
   Group = 'GROUP',
   Guest = 'GUEST',
   User = 'USER'
@@ -28947,6 +29107,17 @@ export type HelpCenterNameInput = {
   translations?: InputMaybe<Array<InputMaybe<HelpCenterTranslationInput>>>;
 };
 
+export enum HelpCenterNavigationBarBorderType {
+  AllBorder = 'ALL_BORDER',
+  BottomBorder = 'BOTTOM_BORDER',
+  NoBorder = 'NO_BORDER'
+}
+
+export enum HelpCenterNavigationBarPositionType {
+  Fixed = 'FIXED',
+  Floating = 'FLOATING'
+}
+
 export type HelpCenterPageCreateInput = {
   /** Ari of existing page, if page is being cloned */
   clonePageAri?: InputMaybe<Scalars['String']['input']>;
@@ -30200,6 +30371,15 @@ export type JiraAddCommentInput = {
   visibility?: InputMaybe<JiraServiceManagementCommentVisibility>;
 };
 
+export type JiraAddCustomFieldDefaultContextOptionInput = {
+  /** An external UUID of the option to add to the default context of the custom field. */
+  optionExternalUuid: Scalars['String']['input'];
+  /** The position of the option to add to the default context of the custom field. */
+  position: JiraBaseCustomFieldDefaultContextOptionPositionInput;
+  /** The value of the option to add to the default context of the custom field. */
+  value: Scalars['String']['input'];
+};
+
 export type JiraAddFieldsToFieldSchemeInput = {
   fieldIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   schemeId: Scalars['ID']['input'];
@@ -30305,6 +30485,11 @@ export type JiraAffectedServicesInput = {
   serviceId: Scalars['ID']['input'];
 };
 
+export type JiraAfterCustomFieldDefaultContextOptionPositionInput = {
+  /** The (child) option after which to move the (child) option. */
+  relativeToOption: JiraCustomFieldDefaultContextOptionReference;
+};
+
 /**
  * Input for identifying an agent. Must provide exactly one of the available identifiers.
  * Uses @oneOf directive to enforce mutual exclusivity.
@@ -30383,26 +30568,6 @@ export enum JiraApplicationLinkTargetType {
   Cloud = 'CLOUD',
   Dc = 'DC'
 }
-
-/** The input for applying an action to a suggestion group */
-export type JiraApplySuggestionGroupInput = {
-  /** The action to apply to all suggestions in the group */
-  action: JiraSuggestionActionType;
-  /** CloudID is required for AGG routing. */
-  cloudId: Scalars['ID']['input'];
-  /** The IDs of the suggestions in the group to apply the action to */
-  suggestionIds: Array<Scalars['ID']['input']>;
-};
-
-/** The input for applying an action to a single suggestion */
-export type JiraApplySuggestionInput = {
-  /** The action to apply to the suggestion */
-  action: JiraSuggestionActionType;
-  /** CloudID is required for AGG routing. */
-  cloudId: Scalars['ID']['input'];
-  /** The ID of the suggestion to apply the action to */
-  suggestionId: Scalars['ID']['input'];
-};
 
 export enum JiraApprovalDecision {
   Approved = 'APPROVED',
@@ -30779,6 +30944,28 @@ export enum JiraBarColorMode {
   Status = 'STATUS'
 }
 
+export type JiraBaseCustomFieldDefaultContextOptionInput = {
+  /** An option to add to the default context of the custom field. */
+  add?: InputMaybe<JiraAddCustomFieldDefaultContextOptionInput>;
+  /** An option to remove from the default context of the custom field. */
+  remove?: InputMaybe<JiraRemoveCustomFieldDefaultContextOptionInput>;
+  /** An option to update in the default context of the custom field. */
+  update?: InputMaybe<JiraUpdateCustomFieldDefaultContextOptionInput>;
+};
+
+export type JiraBaseCustomFieldDefaultContextOptionPositionInput = {
+  /** Move the (child) option after another (child) option in the default context of the custom field. */
+  after?: InputMaybe<JiraAfterCustomFieldDefaultContextOptionPositionInput>;
+  /** Move the option to the bottom of the options of the default context of the custom field. */
+  bottom?: InputMaybe<JiraBottomCustomFieldDefaultContextOptionPositionInput>;
+  /** Move the child option to the bottom of the child options of the parent option of the default context of the custom field. */
+  bottomChild?: InputMaybe<JiraBottomChildCustomFieldDefaultContextOptionPositionInput>;
+  /** Move the option to the top of the options of the default context of the custom field. */
+  top?: InputMaybe<JiraTopCustomFieldDefaultContextOptionPositionInput>;
+  /** Move the child option to the top of the child options of the parent option of the default context of the custom field. */
+  topChild?: InputMaybe<JiraTopChildCustomFieldDefaultContextOptionPositionInput>;
+};
+
 export enum JiraBatchWindowPreference {
   DefaultBatching = 'DEFAULT_BATCHING',
   FifteenMinutes = 'FIFTEEN_MINUTES',
@@ -30907,6 +31094,16 @@ export type JiraBoardViewStatusColumnMapping = {
    * May also include the JiraSetBoardViewStatusColumnMappingCreateStatusInput.reference of newly created statuses.
    */
   statusIds: Array<Scalars['ID']['input']>;
+};
+
+export type JiraBottomChildCustomFieldDefaultContextOptionPositionInput = {
+  /** The parent option of the child option. */
+  parentOption: JiraCustomFieldDefaultContextOptionReference;
+};
+
+export type JiraBottomCustomFieldDefaultContextOptionPositionInput = {
+  /** This field is ignored and only exists to satisfy the requirement that GraphQL input object types must define at least one field. */
+  dummy?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** The input type for scheduling the execution of project cleanup recommendations */
@@ -31410,6 +31607,14 @@ export type JiraCheckboxesFieldOperationInput = {
   operation: JiraMultiValueFieldOperations;
 };
 
+/** Controls who can change the classification (e.g. container admins only). */
+export enum JiraClassificationControl {
+  /** Any user with edit permission may change the classification. */
+  Any = 'ANY',
+  /** Only container (e.g. project) admins may change the classification. */
+  ContainerAdminOnly = 'CONTAINER_ADMIN_ONLY'
+}
+
 export type JiraClassificationLevelFilterInput = {
   /** Filter the available classification levels by JiraClassificationLevelStatus. */
   filterByStatus: Array<JiraClassificationLevelStatus>;
@@ -31419,9 +31624,22 @@ export type JiraClassificationLevelFilterInput = {
 
 /** Enum to define the classification level source. */
 export enum JiraClassificationLevelSource {
+  /** Classification was set by auto-classification. */
+  AutoClassification = 'AUTO_CLASSIFICATION',
+  /** @deprecated Use USER_CLASSIFICATION or AUTO_CLASSIFICATION instead. */
   Issue = 'ISSUE',
+  /** No classification source. */
+  None = 'NONE',
+  /** @deprecated Use ORG_DEFAULT_CLASSIFICATION instead. */
   Organization = 'ORGANIZATION',
-  Project = 'PROJECT'
+  /** Classification comes from the organization default. */
+  OrgDefaultClassification = 'ORG_DEFAULT_CLASSIFICATION',
+  /** @deprecated Use SPACE_DEFAULT_CLASSIFICATION instead. */
+  Project = 'PROJECT',
+  /** Classification comes from the space (project) default. */
+  SpaceDefaultClassification = 'SPACE_DEFAULT_CLASSIFICATION',
+  /** Classification was set by the user. */
+  UserClassification = 'USER_CLASSIFICATION'
 }
 
 /** Enum to define the classification level status. */
@@ -31435,6 +31653,16 @@ export enum JiraClassificationLevelStatus {
 export enum JiraClassificationLevelType {
   System = 'SYSTEM',
   User = 'USER'
+}
+
+/** Controls whether users can override the classification level. */
+export enum JiraClassificationUserOverride {
+  /** Users may set any permitted classification level. */
+  Any = 'ANY',
+  /** Users may not override the classification level. */
+  Disallow = 'DISALLOW',
+  /** Users may set the same or higher classification level only. */
+  EqualOrHigher = 'EQUAL_OR_HIGHER'
 }
 
 /** Input to clear the card cover of an issue on the board view. */
@@ -31970,6 +32198,39 @@ export type JiraConfluenceRemoteIssueLinksFieldOperationInput = {
   operation: JiraMultiValueFieldOperations;
 };
 
+export type JiraConsolidatedResourcesInput = {
+  /**
+   * Cursor for pagination (optional).
+   *
+   * When set, fetches items AFTER this cursor.
+   * Returned from previous query's pageInfo.endCursor.
+   * Leave null/empty for first page.
+   */
+  after?: InputMaybe<Scalars['String']['input']>;
+  /** The input for the Jira attachments with filters query. */
+  filters?: InputMaybe<Array<InputMaybe<JiraIssueResourceFilters>>>;
+  /**
+   * First N items to fetch (required).
+   *
+   * Recommended range: 10-50
+   * Max recommended: 100 (larger values may timeout with whiteboards)
+   *
+   * Type: Positive integer
+   */
+  first: Scalars['Int']['input'];
+  /**
+   * Whether to hydrate (load) resource details (optional, default: true).
+   *
+   * Type: Boolean
+   * Default: true
+   */
+  hydrate?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Sort direction */
+  orderDirection?: InputMaybe<JiraResourcesSortDirection>;
+  /** Field to sort resources by (optional, default: CREATED_DATE). */
+  orderField?: InputMaybe<JiraResourcesOrderField>;
+};
+
 /** State of the modal for contacting the org admin to enable Atlassian Intelligence. */
 export enum JiraContactOrgAdminToEnableAtlassianIntelligenceState {
   /** The modal is available to be shown. */
@@ -32338,6 +32599,13 @@ export enum JiraCustomBackgroundBrightness {
   Dark = 'DARK',
   Light = 'LIGHT'
 }
+
+export type JiraCustomFieldDefaultContextOptionReference = {
+  /** The external UUID of an option to add to the default context of the custom field. */
+  optionExternalUuid?: InputMaybe<Scalars['String']['input']>;
+  /** The ID of the option of the default context of the custom field. */
+  optionId?: InputMaybe<Scalars['Long']['input']>;
+};
 
 export type JiraCustomFieldOptionInput = {
   /** The color of the field option. */
@@ -32795,26 +33063,6 @@ export type JiraDismissInContextConfigPromptInput = {
   isDismissed?: InputMaybe<Scalars['Boolean']['input']>;
   /** The location of the dismissed prompt. If array is empty, it won't do anything. */
   locations: Array<JiraDevOpsInContextConfigPromptLocation>;
-};
-
-/** The input for dismissing a suggestion group */
-export type JiraDismissSuggestionGroupInput = {
-  /** CloudID is required for AGG routing. */
-  cloudId: Scalars['ID']['input'];
-  /** The reason for dismissing the suggestions */
-  reason: Scalars['String']['input'];
-  /** The IDs of the suggestions in the group to dismiss */
-  suggestionIds: Array<Scalars['ID']['input']>;
-};
-
-/** The input for dismissing a single suggestion */
-export type JiraDismissSuggestionInput = {
-  /** CloudID is required for AGG routing. */
-  cloudId: Scalars['ID']['input'];
-  /** The reason for dismissing the suggestion */
-  reason: Scalars['String']['input'];
-  /** The ID of the suggestion to dismiss */
-  suggestionId: Scalars['ID']['input'];
 };
 
 /** Represents the input data required for Jira issue on a drag and drop mutation */
@@ -36792,10 +37040,14 @@ export enum JiraProjectRoleActorUserStatus {
 }
 
 export type JiraProjectSchemeAssociatedFieldsInput = {
+  /** Search fields by associated issue types. If null or empty, fields will not be filtered by associated issue types. */
+  associatedIssueTypesFilter?: InputMaybe<Array<JiraFieldsAssociatedIssueTypesFilterInput>>;
   /** Search fields by list of field type groups. If null or empty, fields will not be filtered by field type group. */
   fieldTypeGroupsFilter?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Search fields by field name or description. If null or empty, fields will not be filtered by field name or description. */
   nameOrDescriptionFilter?: InputMaybe<Scalars['String']['input']>;
+  /** Search fields by whether they are required on the given issue types. If null or empty, fields will not be filtered by required on issue types. */
+  requiredOnIssueTypesFilter?: InputMaybe<Array<JiraFieldsRequiredOnIssueTypesFilterInput>>;
 };
 
 /** The supported different shortcut types */
@@ -37170,6 +37422,13 @@ export enum JiraRemoteLinkedIssueErrorType {
 export type JiraRemoveActiveBackgroundInput = {
   /** The entityId (ARI) of the entity to remove the active background for */
   entityId: Scalars['ID']['input'];
+};
+
+export type JiraRemoveCustomFieldDefaultContextOptionInput = {
+  /** The option to which to map all the issues associated with the option to remove from the default context of the custom field. */
+  mapToOption?: InputMaybe<JiraCustomFieldDefaultContextOptionReference>;
+  /** The ID of the option to remove from the default context of the custom field. */
+  optionId: Scalars['Long']['input'];
 };
 
 export type JiraRemoveCustomFieldInput = {
@@ -38769,47 +39028,6 @@ export type JiraSuggestedIssueInput = {
   summary?: InputMaybe<Scalars['String']['input']>;
 };
 
-/** The currently supported actions for suggestions */
-export enum JiraSuggestionActionType {
-  MergeIssues = 'MERGE_ISSUES'
-}
-
-/** The possible statuses of a suggestion */
-export enum JiraSuggestionStatus {
-  Dismissed = 'DISMISSED',
-  Done = 'DONE',
-  Pending = 'PENDING'
-}
-
-/** The currently supported suggestions types */
-export enum JiraSuggestionType {
-  DuplicateIssues = 'DUPLICATE_ISSUES'
-}
-
-/** The input for retrieving suggestions by context */
-export type JiraSuggestionsByContextInput = {
-  /**
-   * NOTE: Field not supported yet
-   *
-   * The index based cursor to specify the beginning of the items.
-   * If not specified it's assumed as the cursor for the item before the beginning.
-   */
-  after?: InputMaybe<Scalars['String']['input']>;
-  /**
-   * NOTE: Field not supported yet
-   *
-   * The number of items after the cursor to be returned in a forward page.
-   * If not specified, it is up to the server to determine a page size.
-   */
-  first?: InputMaybe<Scalars['Int']['input']>;
-  /** The entityId (ARI) of the entity to fetch suggestions for. ProjectARI and Board ARI supported as of now. */
-  id: Scalars['ID']['input'];
-  /** The status of suggestions to fetch */
-  status?: InputMaybe<Array<JiraSuggestionStatus>>;
-  /** The types of suggestions to fetch */
-  types: Array<JiraSuggestionType>;
-};
-
 /** List of values identifying the different synthetic field types. */
 export enum JiraSyntheticFieldCardOptionType {
   CardCover = 'CARD_COVER',
@@ -38930,6 +39148,16 @@ export type JiraTimelineViewSettings = {
   jql?: InputMaybe<Scalars['String']['input']>;
   /** Range mode (JiraTimelineViewRangeMode) to display the timeline view */
   rangeMode?: InputMaybe<JiraTimelineViewRangeMode>;
+};
+
+export type JiraTopChildCustomFieldDefaultContextOptionPositionInput = {
+  /** The parent option of the child option. */
+  parentOption: JiraCustomFieldDefaultContextOptionReference;
+};
+
+export type JiraTopCustomFieldDefaultContextOptionPositionInput = {
+  /** This field is ignored and only exists to satisfy the requirement that GraphQL input object types must define at least one field. */
+  dummy?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Input for tracking a recent issue. */
@@ -39176,6 +39404,27 @@ export type JiraUpdateCustomBackgroundInput = {
   cloudId: Scalars['ID']['input'];
   /** The customBackgroundId of the custom background to update */
   customBackgroundId: Scalars['ID']['input'];
+};
+
+export type JiraUpdateCustomFieldDefaultContextOptionInput = {
+  /**
+   * A boolean that indicates whether the option of the default context of the custom field is disabled or enabled.
+   * If this field is true, the option will be disabled. Otherwise, the option will be enabled.
+   */
+  disabled?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ID of the option of the default context of the custom field. */
+  optionId: Scalars['Long']['input'];
+  /** The position of the option of the default context of the custom field. */
+  position?: InputMaybe<JiraBaseCustomFieldDefaultContextOptionPositionInput>;
+  /** The value of the option of the default context of the custom field. */
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JiraUpdateCustomFieldDefaultContextOptionsInput = {
+  /** The ID of the custom field. */
+  fieldId: Scalars['String']['input'];
+  /** The options of the default context of the custom field. */
+  options: Array<JiraBaseCustomFieldDefaultContextOptionInput>;
 };
 
 export type JiraUpdateCustomFieldInput = {
@@ -40840,7 +41089,8 @@ export enum JpdViewsServiceVisualizationType {
   Board = 'BOARD',
   Matrix = 'MATRIX',
   Table = 'TABLE',
-  Timeline = 'TIMELINE'
+  Timeline = 'TIMELINE',
+  Tree = 'TREE'
 }
 
 /** Supported connection types */
@@ -41263,6 +41513,13 @@ export enum KitsuneComparisonOperator {
   IsTrue = 'IS_TRUE'
 }
 
+export enum KitsuneFeedbackType {
+  Call = 'CALL',
+  Conversation = 'CONVERSATION',
+  Form = 'FORM',
+  Other = 'OTHER'
+}
+
 export enum KitsuneFieldType {
   Content = 'CONTENT',
   CreationDate = 'CREATION_DATE',
@@ -41281,7 +41538,6 @@ export type KitsuneFilterInput = {
 };
 
 export type KitsuneFilterValueInput = {
-  sourceCategoryId?: InputMaybe<Array<Scalars['ID']['input']>>;
   valueDate?: InputMaybe<Array<Scalars['Date']['input']>>;
   valueId?: InputMaybe<Array<Scalars['ID']['input']>>;
   valueNumber?: InputMaybe<Array<Scalars['Float']['input']>>;
@@ -43155,11 +43411,38 @@ export enum MarketplaceProgramStatus {
   Rejected = 'REJECTED'
 }
 
+export enum MarketplaceStoreAcceptableResponse {
+  False = 'FALSE',
+  NotApplicable = 'NOT_APPLICABLE',
+  True = 'TRUE'
+}
+
 /**  --------------------------------------------------------------------------------------------- */
 export type MarketplaceStoreAppDetailInput = {
   appId: Scalars['ID']['input'];
   appKey: Scalars['String']['input'];
 };
+
+export enum MarketplaceStoreAppNetworkEgressCategory {
+  Analytics = 'ANALYTICS'
+}
+
+export enum MarketplaceStoreAppNetworkPermissionType {
+  FetchBackendSide = 'FETCH_BACKEND_SIDE',
+  FetchClientSide = 'FETCH_CLIENT_SIDE',
+  Fonts = 'FONTS',
+  Frames = 'FRAMES',
+  Images = 'IMAGES',
+  Media = 'MEDIA',
+  Navigation = 'NAVIGATION',
+  Scripts = 'SCRIPTS',
+  Styles = 'STYLES'
+}
+
+export enum MarketplaceStoreAppVersionFrameworkType {
+  Connect = 'CONNECT',
+  Forge = 'FORGE'
+}
 
 export enum MarketplaceStoreAtlassianProductHostingType {
   Cloud = 'CLOUD',
@@ -43183,6 +43466,12 @@ export enum MarketplaceStoreCloudComplianceBoundary {
   IsolatedCloud = 'ISOLATED_CLOUD'
 }
 
+export enum MarketplaceStoreComplianceBoundary {
+  Commercial = 'COMMERCIAL',
+  FedrampModerate = 'FEDRAMP_MODERATE',
+  IsolatedCloud = 'ISOLATED_CLOUD'
+}
+
 export type MarketplaceStoreCreateOrUpdateReviewInput = {
   appKey: Scalars['String']['input'];
   hosting?: InputMaybe<MarketplaceStoreAtlassianProductHostingType>;
@@ -43197,6 +43486,14 @@ export type MarketplaceStoreCreateOrUpdateReviewResponseInput = {
   reviewId: Scalars['ID']['input'];
   text: Scalars['String']['input'];
 };
+
+export enum MarketplaceStoreDataResidencyResponse {
+  AppDoesNotSupportDr = 'APP_DOES_NOT_SUPPORT_DR',
+  NotApplicable = 'NOT_APPLICABLE',
+  StoredExternalToAtlassian = 'STORED_EXTERNAL_TO_ATLASSIAN',
+  StoredInAtlassianAndDrNotSupported = 'STORED_IN_ATLASSIAN_AND_DR_NOT_SUPPORTED',
+  StoredInAtlassianAndDrSupported = 'STORED_IN_ATLASSIAN_AND_DR_SUPPORTED'
+}
 
 export type MarketplaceStoreDeleteReviewInput = {
   appKey: Scalars['String']['input'];
@@ -43245,6 +43542,13 @@ export type MarketplaceStoreEligibleAppOfferingsTargetInput = {
 export enum MarketplaceStoreEnterpriseProduct {
   Confluence = 'CONFLUENCE',
   Jira = 'JIRA'
+}
+
+export enum MarketplaceStoreFormStatus {
+  Approved = 'APPROVED',
+  Rejected = 'REJECTED',
+  Saved = 'SAVED',
+  Submitted = 'SUBMITTED'
 }
 
 /**  --------------------------------------------------------------------------------------------- */
@@ -43297,6 +43601,13 @@ export enum MarketplaceStoreInstalledAppManageLinkType {
   Manage = 'MANAGE'
 }
 
+export enum MarketplaceStoreLayoutSectionKeys {
+  BestSellers = 'BEST_SELLERS',
+  PickupWhereYouLeft = 'PICKUP_WHERE_YOU_LEFT',
+  RisingStars = 'RISING_STARS',
+  Spotlight = 'SPOTLIGHT'
+}
+
 export type MarketplaceStoreMultiInstanceEntitlementForAppInput = {
   cloudId: Scalars['String']['input'];
   product: MarketplaceStoreProduct;
@@ -43306,6 +43617,10 @@ export type MarketplaceStoreMultiInstanceEntitlementsForUserInput = {
   cloudIds: Array<Scalars['String']['input']>;
   product: MarketplaceStoreEnterpriseProduct;
 };
+
+export enum MarketplaceStoreObjectType {
+  App = 'APP'
+}
 
 /**  --------------------------------------------------------------------------------------------- */
 export enum MarketplaceStorePartnerEnrollmentProgram {
@@ -43329,10 +43644,33 @@ export enum MarketplaceStorePartnerSupportAvailabilityDay {
   Wednesday = 'WEDNESDAY'
 }
 
+export type MarketplaceStorePersonalisationContextInput = {
+  userLocation?: InputMaybe<Scalars['String']['input']>;
+};
+
+/**  --------------------------------------------------------------------------------------------- */
+export enum MarketplaceStorePersonalisationTargetSurface {
+  StoreHome = 'STORE_HOME'
+}
+
+export type MarketplaceStorePersonalisedContextAndLayoutInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  objectKey?: InputMaybe<Scalars['String']['input']>;
+  objectType?: InputMaybe<MarketplaceStoreObjectType>;
+  orgId?: InputMaybe<Scalars['ID']['input']>;
+  surface?: InputMaybe<MarketplaceStorePersonalisationTargetSurface>;
+};
+
 export enum MarketplaceStorePricingCurrency {
   Jpy = 'JPY',
   Usd = 'USD'
 }
+
+export type MarketplaceStorePrivacyAndSecurityRequestInput = {
+  appKey: Scalars['String']['input'];
+  complianceBoundary?: InputMaybe<MarketplaceStoreComplianceBoundary>;
+  state?: InputMaybe<Scalars['String']['input']>;
+};
 
 export type MarketplaceStoreProduct = {
   appKey?: InputMaybe<Scalars['String']['input']>;
@@ -43389,12 +43727,9 @@ export type MediaAttachmentInput = {
 };
 
 export type MediaFile = {
-  /**  this is the media store ID */
   id: Scalars['ID']['input'];
-  /**  optional mime type of the file */
   mimeType?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
-  /**  size of the file in bytes */
   size: Scalars['Int']['input'];
 };
 
@@ -43810,6 +44145,8 @@ export type MercuryCreateRiskInput = {
   name: Scalars['String']['input'];
   /** The owner of the Risk (user ARI). Defaults to the requesting user if not provided. */
   owner?: InputMaybe<Scalars['ID']['input']>;
+  /** The target date of the Risk (ISO date format). */
+  targetDate?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MercuryCreateSingleSelectCustomFieldDefinitionInput = {
@@ -44397,14 +44734,8 @@ export type MercuryNormalizedWorkSortInput = {
 
 export type MercuryNormalizedWorkTargetDateInput = {
   targetDate?: InputMaybe<Scalars['String']['input']>;
-  targetDateType?: InputMaybe<MercuryNormalizedWorkTargetDateType>;
+  targetDateType?: InputMaybe<MercuryProjectTargetDateType>;
 };
-
-export enum MercuryNormalizedWorkTargetDateType {
-  Day = 'DAY',
-  Month = 'MONTH',
-  Quarter = 'QUARTER'
-}
 
 export type MercuryNumberCustomFieldInput = {
   numberValue?: InputMaybe<Scalars['Float']['input']>;
@@ -44620,6 +44951,21 @@ export type MercuryRequestPositionsChangeInput = {
   /** The ARI of the Focus Area the Positions are being requested for. */
   targetFocusAreaId: Scalars['ID']['input'];
 };
+
+/**
+ *  ----------------------------------------
+ *   Risk Pagination
+ *  ----------------------------------------
+ */
+export type MercuryRiskSort = {
+  field: MercuryRiskSortField;
+  order: SortOrder;
+};
+
+export enum MercuryRiskSortField {
+  Name = 'NAME',
+  Status = 'STATUS'
+}
 
 export enum MercuryRiskStatusColor {
   Gray = 'GRAY',
@@ -45093,6 +45439,13 @@ export type MercuryUpdateRiskOwnerInput = {
   id: Scalars['ID']['input'];
   /** The new owner of the Risk. */
   owner: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateRiskTargetDateInput = {
+  /** The ID of the Risk to update. */
+  id: Scalars['ID']['input'];
+  /** The new target date of the Risk (ISO date format). Pass null to clear. */
+  targetDate?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MercuryUpdateStrategicEventBudgetInput = {
@@ -46113,6 +46466,7 @@ export enum PublicLinkPageStatus {
   BlockedByClassificationLevel = 'BLOCKED_BY_CLASSIFICATION_LEVEL',
   BlockedByContainerPolicy = 'BLOCKED_BY_CONTAINER_POLICY',
   BlockedByOrg = 'BLOCKED_BY_ORG',
+  BlockedByOrgDefaultPolicy = 'BLOCKED_BY_ORG_DEFAULT_POLICY',
   BlockedByProduct = 'BLOCKED_BY_PRODUCT',
   BlockedBySpace = 'BLOCKED_BY_SPACE',
   Off = 'OFF',
@@ -46120,7 +46474,8 @@ export enum PublicLinkPageStatus {
   SiteBlocked = 'SITE_BLOCKED',
   SiteDisabled = 'SITE_DISABLED',
   SpaceBlocked = 'SPACE_BLOCKED',
-  SpaceDisabled = 'SPACE_DISABLED'
+  SpaceDisabled = 'SPACE_DISABLED',
+  Trashed = 'TRASHED'
 }
 
 export enum PublicLinkPermissionsObjectType {
@@ -46155,6 +46510,7 @@ export enum PublicLinkStatus {
   BlockedByClassificationLevel = 'BLOCKED_BY_CLASSIFICATION_LEVEL',
   BlockedByContainerPolicy = 'BLOCKED_BY_CONTAINER_POLICY',
   BlockedByOrg = 'BLOCKED_BY_ORG',
+  BlockedByOrgDefaultPolicy = 'BLOCKED_BY_ORG_DEFAULT_POLICY',
   BlockedByProduct = 'BLOCKED_BY_PRODUCT',
   BlockedBySpace = 'BLOCKED_BY_SPACE',
   Off = 'OFF',
@@ -46162,7 +46518,8 @@ export enum PublicLinkStatus {
   SiteBlocked = 'SITE_BLOCKED',
   SiteDisabled = 'SITE_DISABLED',
   SpaceBlocked = 'SPACE_BLOCKED',
-  SpaceDisabled = 'SPACE_DISABLED'
+  SpaceDisabled = 'SPACE_DISABLED',
+  Trashed = 'TRASHED'
 }
 
 export enum PublicLinksByCriteriaOrder {
@@ -48026,6 +48383,7 @@ export enum SearchResultType {
   Question = 'question',
   Repository = 'repository',
   Schema = 'schema',
+  Slide = 'slide',
   Space = 'space',
   Spreadsheet = 'spreadsheet',
   Tag = 'tag',
@@ -53650,6 +54008,13 @@ export type SpfCreatePlanInput = {
   portfolioId: Scalars['String']['input'];
   status: SpfPlanStatus;
   timeframe: SpfPlanTimeframeInput;
+  visibility?: InputMaybe<SpfPlanVisibility>;
+};
+
+export type SpfCreatePlanPortfolioAllowedTypeInput = {
+  allowedItemTypeIds: Array<Scalars['String']['input']>;
+  cloudId: Scalars['ID']['input'];
+  portfolioTypeId: Scalars['ID']['input'];
 };
 
 export type SpfCreatePlanScenarioInput = {
@@ -53690,6 +54055,11 @@ export type SpfDeletePlanInput = {
   id: Scalars['ID']['input'];
 };
 
+export type SpfDeletePlanPortfolioAllowedTypeInput = {
+  cloudId: Scalars['ID']['input'];
+  portfolioTypeId: Scalars['ID']['input'];
+};
+
 export type SpfDeletePlanScenarioInput = {
   id: Scalars['ID']['input'];
 };
@@ -53701,6 +54071,11 @@ export type SpfDeletePlanScenarioInvestmentsInput = {
 export enum SpfMediaTokenUsageType {
   Read = 'READ',
   Write = 'WRITE'
+}
+
+export enum SpfPlanPortfolioAllowedTypeRuleType {
+  Any = 'ANY',
+  Specific = 'SPECIFIC'
 }
 
 export enum SpfPlanScenarioInvestmentGroupType {
@@ -53729,6 +54104,11 @@ export type SpfPlanTimeframeInput = {
   startDate: Scalars['String']['input'];
   timeframeGranularity: SpfPlanTimeframeGranularity;
 };
+
+export enum SpfPlanVisibility {
+  Private = 'PRIVATE',
+  Public = 'PUBLIC'
+}
 
 export type SpfPrioritizePlanScenarioInvestmentInput = {
   groupType: SpfPlanScenarioInvestmentGroupType;
@@ -53810,6 +54190,13 @@ export type SpfUpdatePlanNameInput = {
   name: Scalars['String']['input'];
 };
 
+export type SpfUpdatePlanPortfolioAllowedTypeInput = {
+  allowedItemTypeIds: Array<Scalars['String']['input']>;
+  cloudId: Scalars['ID']['input'];
+  portfolioTypeId?: InputMaybe<Scalars['ID']['input']>;
+  ruleType: SpfPlanPortfolioAllowedTypeRuleType;
+};
+
 export type SpfUpdatePlanPortfolioInput = {
   id: Scalars['ID']['input'];
   portfolioId: Scalars['String']['input'];
@@ -53848,6 +54235,11 @@ export type SpfUpdatePlanStatusInput = {
 export type SpfUpdatePlanTimeframeInput = {
   id: Scalars['ID']['input'];
   timeframe: SpfPlanTimeframeInput;
+};
+
+export type SpfUpdatePlanVisibilityInput = {
+  id: Scalars['ID']['input'];
+  visibility: SpfPlanVisibility;
 };
 
 export type SplitIssueInput = {
@@ -54724,6 +55116,12 @@ export enum TaskStatus {
   Checked = 'CHECKED',
   Unchecked = 'UNCHECKED'
 }
+
+/** Input for archiving teams in bulk */
+export type TeamBulkArchiveTeamsInput = {
+  scopeId: Scalars['ID']['input'];
+  teamIds: Array<Scalars['ID']['input']>;
+};
 
 export enum TeamCalendarDayOfWeek {
   Friday = 'FRIDAY',
@@ -56795,6 +57193,14 @@ export type TrelloAiBoardUserInput = {
   newYearsResolutionInput?: InputMaybe<TrelloNewYearsResolutionAiBoardInput>;
 };
 
+/** The action taken on an entity by an AI feature. */
+export enum TrelloAiFeatureEntityAction {
+  /** The entity was created by the AI feature. */
+  Create = 'CREATE',
+  /** The entity was updated by the AI feature. */
+  Update = 'UPDATE'
+}
+
 /** Type options for an AI rule */
 export enum TrelloAiRuleType {
   /** An AI rule for how to smart schedule cards */
@@ -57629,21 +58035,6 @@ export type TrelloSendBoardEmailKeyInput = {
   boardId: Scalars['ID']['input'];
 };
 
-/** Arguments required to smart schedule cards to planner */
-export type TrelloSmartScheduleCardsInput = {
-  cardIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  endDate?: InputMaybe<Scalars['DateTime']['input']>;
-  startDate?: InputMaybe<Scalars['DateTime']['input']>;
-  timezoneOffsetHours?: InputMaybe<Scalars['Float']['input']>;
-};
-
-/** Arguments required to smart schedule cards with smart selection */
-export type TrelloSmartScheduleCardsWithSmartSelectionInput = {
-  endDate?: InputMaybe<Scalars['DateTime']['input']>;
-  startDate?: InputMaybe<Scalars['DateTime']['input']>;
-  timezoneOffsetHours?: InputMaybe<Scalars['Float']['input']>;
-};
-
 /** The status of the proactive smart schedule for a user */
 export enum TrelloSmartScheduleStatus {
   /** Proactive smart schedule for this user is active. */
@@ -57702,6 +58093,14 @@ export type TrelloToggleLabsFeatureForMemberInput = {
   /** The feature to toggle */
   feature: TrelloLabsFeature;
 };
+
+/** Filter for token types. */
+export enum TrelloTokenFilter {
+  /** Mobile application tokens. */
+  Mobile = 'MOBILE',
+  /** Third-party application tokens. */
+  ThirdParty = 'THIRD_PARTY'
+}
 
 /** Arguments passed into the archiveCard mutation */
 export type TrelloUnarchiveCardInput = {
@@ -57903,6 +58302,8 @@ export type TrelloWatchCardInput = {
 
 /** Required information to create a new work overview dashboard for the current member. */
 export type TrelloWorkOverviewDashboardInput = {
+  /** The member to own the overview dashboard. */
+  memberId: Scalars['ID']['input'];
   /** The workspace to create the overview dashboard in. */
   workspaceId: Scalars['ID']['input'];
 };
@@ -57990,6 +58391,51 @@ export type UnifiedCacheFieldKey = {
   requiresHashing?: InputMaybe<Scalars['Boolean']['input']>;
   requiresSorting?: InputMaybe<Scalars['Boolean']['input']>;
   values?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+/**  --------------------------------------------------------------------------------------------- */
+export type UnifiedChampionSignupInput = {
+  aceExperience?: InputMaybe<Scalars['String']['input']>;
+  activeCug?: InputMaybe<Scalars['String']['input']>;
+  activityAndEvent?: InputMaybe<Scalars['String']['input']>;
+  agreeNda?: InputMaybe<Scalars['Boolean']['input']>;
+  agreePrivacy?: InputMaybe<Scalars['Boolean']['input']>;
+  attendedAce?: InputMaybe<Scalars['String']['input']>;
+  bestContent1?: InputMaybe<Scalars['String']['input']>;
+  bestContent2?: InputMaybe<Scalars['String']['input']>;
+  bestContent3?: InputMaybe<Scalars['String']['input']>;
+  birthDate?: InputMaybe<Scalars['String']['input']>;
+  championPreference?: InputMaybe<Scalars['String']['input']>;
+  city?: InputMaybe<Scalars['String']['input']>;
+  coeFocus?: InputMaybe<Scalars['String']['input']>;
+  commitSharingContent?: InputMaybe<Scalars['String']['input']>;
+  communityProfileUrl?: InputMaybe<Scalars['String']['input']>;
+  contentSharingFrequency?: InputMaybe<Scalars['String']['input']>;
+  country?: InputMaybe<Scalars['String']['input']>;
+  discussInCoE?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  eventsPerYear?: InputMaybe<Scalars['String']['input']>;
+  firstName?: InputMaybe<Scalars['String']['input']>;
+  fourEventsPerYear?: InputMaybe<Scalars['String']['input']>;
+  howContributeOnline?: InputMaybe<Scalars['String']['input']>;
+  howHeard?: InputMaybe<Scalars['String']['input']>;
+  howHeardOther?: InputMaybe<Scalars['String']['input']>;
+  lastName?: InputMaybe<Scalars['String']['input']>;
+  linkedinUrl?: InputMaybe<Scalars['String']['input']>;
+  otherAtlassianProducts?: InputMaybe<Scalars['String']['input']>;
+  otherExcellence?: InputMaybe<Scalars['String']['input']>;
+  otherURL?: InputMaybe<Scalars['String']['input']>;
+  partnerType?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  postalCode?: InputMaybe<Scalars['String']['input']>;
+  primarySocialProfile?: InputMaybe<Scalars['String']['input']>;
+  products?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  referrerName?: InputMaybe<Scalars['String']['input']>;
+  stateProvince?: InputMaybe<Scalars['String']['input']>;
+  street?: InputMaybe<Scalars['String']['input']>;
+  trainingFrequency?: InputMaybe<Scalars['String']['input']>;
+  trainingSources?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  whyBecomeChampion?: InputMaybe<Scalars['String']['input']>;
+  whyToCreateContent?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type UnifiedConsentObjInput = {

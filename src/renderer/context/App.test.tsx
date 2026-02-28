@@ -6,7 +6,6 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import * as tray from '../utils/tray';
 import { type AppContextState, AppProvider } from './App';
 
 vi.mock('../hooks/useNotifications');
@@ -55,10 +54,6 @@ describe('renderer/context/App.tsx', () => {
   });
 
   describe('notification methods', () => {
-    const setTrayIconColorAndTitleSpy = vi
-      .spyOn(tray, 'setTrayIconColorAndTitle')
-      .mockImplementation(vi.fn());
-
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
       refetchNotificationsMock.mockReset();
@@ -81,7 +76,6 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsReadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
-      expect(setTrayIconColorAndTitleSpy).toHaveBeenCalledTimes(2);
     });
 
     it('should call markNotificationsUnread', async () => {
@@ -95,7 +89,6 @@ describe('renderer/context/App.tsx', () => {
       expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
         mockSingleAtlassifyNotification,
       ]);
-      expect(setTrayIconColorAndTitleSpy).toHaveBeenCalledTimes(2);
     });
   });
 });

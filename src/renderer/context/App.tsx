@@ -1,12 +1,4 @@
-import {
-  createContext,
-  type ReactNode,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
-
-import { onlineManager } from '@tanstack/react-query';
+import { createContext, type ReactNode, useEffect, useMemo } from 'react';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
@@ -19,8 +11,6 @@ import type {
   AtlassifyNotification,
   Status,
 } from '../types';
-
-import { setTrayIconColorAndTitle } from '../utils/tray';
 
 export interface AppContextState {
   status: Status;
@@ -41,8 +31,6 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
-
-  isOnline: boolean;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -54,15 +42,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const resetAccounts = useAccountsStore((s) => s.reset);
   const resetFilters = useFiltersStore((s) => s.reset);
   const resetSettings = useSettingsStore((s) => s.reset);
-
-  // Subscribe to tray-related settings for useEffect dependencies
-  const showNotificationsCountInTray = useSettingsStore(
-    (s) => s.showNotificationsCountInTray,
-  );
-  const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
-  const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
-
-  const [isOnline, setIsOnline] = useState(false);
 
   const {
     status,
@@ -87,20 +66,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     notifications,
   });
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: We want to update the tray on setting or notification changes
-  useEffect(() => {
-    const trayCount = status === 'error' ? -1 : notificationCount;
-    setTrayIconColorAndTitle(trayCount, hasMoreAccountNotifications, isOnline);
-  }, [
-    showNotificationsCountInTray,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
-    status,
-    notificationCount,
-    hasMoreAccountNotifications,
-    isOnline,
-  ]);
-
   useEffect(() => {
     window.atlassify.onResetApp(() => {
       resetAccounts();
@@ -108,25 +73,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       resetFilters();
     });
   }, [resetAccounts, resetSettings, resetFilters]);
-
-  // Online / Offline status monitoring via TanStack Query onlineManager
-  useEffect(() => {
-    const handle = () => {
-      try {
-        const online = onlineManager.isOnline();
-
-        setIsOnline(online);
-      } catch (_err) {
-        // ignore
-      }
-    };
-
-    // Subscribe and call immediately to set initial status
-    const unsubscribe = onlineManager.subscribe(handle);
-    handle();
-
-    return () => unsubscribe();
-  }, []);
 
   const contextValues: AppContextState = useMemo(
     () => ({
@@ -144,8 +90,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-
-      isOnline,
     }),
     [
       status,
@@ -162,8 +106,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-
-      isOnline,
     ],
   );
 

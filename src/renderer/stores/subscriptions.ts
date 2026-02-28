@@ -7,12 +7,7 @@
 
 import { queryClient } from '../utils/api/client';
 import { notificationsKeys } from '../utils/api/queryKeys';
-import {
-  setAutoLaunch,
-  setKeyboardShortcut,
-  setUseAlternateIdleIcon,
-  setUseUnreadActiveIcon,
-} from '../utils/comms';
+import { setAutoLaunch, setKeyboardShortcut } from '../utils/comms';
 import { setTheme } from '../utils/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from './';
@@ -32,8 +27,6 @@ export function initializeStoreSubscriptions(): () => void {
   setTheme(useSettingsStore.getState().theme);
   setAutoLaunch(useSettingsStore.getState().openAtStartup);
   setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
-  setUseUnreadActiveIcon(useSettingsStore.getState().useUnreadActiveIcon);
-  setUseAlternateIdleIcon(useSettingsStore.getState().useAlternateIdleIcon);
 
   // ========================================================================
   // Settings Store Side Effects
@@ -66,23 +59,40 @@ export function initializeStoreSubscriptions(): () => void {
   );
   unsubscribers.push(unsubKeyboard);
 
-  // Tray icon settings (unread active icon)
+  // Tray icon settings - invalidate query to trigger tray update via useNotifications
+  const handleTraySettingsChange = () => {
+    const accounts = useAccountsStore.getState().accounts;
+    const fetchOnlyUnreadNotifications =
+      useSettingsStore.getState().fetchOnlyUnreadNotifications;
+    const groupNotificationsByTitle =
+      useSettingsStore.getState().groupNotificationsByTitle;
+
+    const queryKey = notificationsKeys.list(
+      accounts.length,
+      fetchOnlyUnreadNotifications,
+      groupNotificationsByTitle,
+    );
+
+    queryClient.invalidateQueries({ queryKey, refetchType: 'none' });
+  };
+
   const unsubUnreadActive = useSettingsStore.subscribe(
     (state) => state.useUnreadActiveIcon,
-    (useUnreadActiveIcon) => {
-      setUseUnreadActiveIcon(useUnreadActiveIcon);
-    },
+    handleTraySettingsChange,
   );
   unsubscribers.push(unsubUnreadActive);
 
-  // Tray icon settings (alternate idle icon)
   const unsubAlternateIdle = useSettingsStore.subscribe(
     (state) => state.useAlternateIdleIcon,
-    (useAlternateIdleIcon) => {
-      setUseAlternateIdleIcon(useAlternateIdleIcon);
-    },
+    handleTraySettingsChange,
   );
   unsubscribers.push(unsubAlternateIdle);
+
+  const unsubShowCount = useSettingsStore.subscribe(
+    (state) => state.showNotificationsCountInTray,
+    handleTraySettingsChange,
+  );
+  unsubscribers.push(unsubShowCount);
 
   // Initialize zoom level from saved settings on startup
   const initialZoomPercentage = useSettingsStore.getState().zoomPercentage;

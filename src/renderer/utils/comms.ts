@@ -1,3 +1,5 @@
+import { onlineManager } from '@tanstack/react-query';
+
 import { OpenPreference, useSettingsStore } from '../stores';
 
 import type { Link } from '../types';
@@ -42,14 +44,6 @@ export function setAutoLaunch(value: boolean): void {
   window.atlassify.setAutoLaunch(value);
 }
 
-export function setUseAlternateIdleIcon(value: boolean): void {
-  window.atlassify.tray.useAlternateIdleIcon(value);
-}
-
-export function setUseUnreadActiveIcon(value: boolean): void {
-  window.atlassify.tray.useUnreadActiveIcon(value);
-}
-
 export function setKeyboardShortcut(keyboardShortcut: boolean): void {
   window.atlassify.setKeyboardShortcut(keyboardShortcut);
 }
@@ -60,13 +54,21 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  * Passing a negative number will set the error state color.
  *
  * @param notificationsLength The number of unread notifications
- * @param isOnline Whether the application is currently online
+ * @param useUnreadActiveIcon Whether to use the active icon for unread notifications
+ * @param useAlternateIdleIcon Whether to use the alternate idle icon
  */
 export function updateTrayColor(
   notificationsLength: number,
-  isOnline: boolean,
+  useUnreadActiveIcon: boolean,
+  useAlternateIdleIcon: boolean,
 ): void {
-  window.atlassify.tray.updateColor(notificationsLength, isOnline);
+  const isOnline = onlineManager.isOnline();
+  window.atlassify.tray.updateColor(
+    notificationsLength,
+    isOnline,
+    useUnreadActiveIcon,
+    useAlternateIdleIcon,
+  );
 }
 
 /**

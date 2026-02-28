@@ -34,17 +34,21 @@ export const api = {
   },
 
   tray: {
-    updateColor: (notificationsCount = 0, isOnline = true) => {
-      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, { notificationsCount, isOnline });
+    updateColor: (
+      notificationsCount = 0,
+      isOnline = true,
+      useUnreadActiveIcon = true,
+      useAlternateIdleIcon = false,
+    ) => {
+      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, {
+        notificationsCount,
+        isOnline,
+        useUnreadActiveIcon,
+        useAlternateIdleIcon,
+      });
     },
 
     updateTitle: (title = '') => sendMainEvent(EVENTS.UPDATE_ICON_TITLE, title),
-
-    useAlternateIdleIcon: (value: boolean) =>
-      sendMainEvent(EVENTS.USE_ALTERNATE_IDLE_ICON, value),
-
-    useUnreadActiveIcon: (value: boolean) =>
-      sendMainEvent(EVENTS.USE_UNREAD_ACTIVE_ICON, value),
   },
 
   notificationSoundPath: () => invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH),
