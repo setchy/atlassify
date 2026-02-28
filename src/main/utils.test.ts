@@ -2,6 +2,15 @@ import path from 'node:path';
 
 import type { Menubar } from 'menubar';
 
+const isPackagedMock = vi.fn();
+vi.mock('electron', () => ({
+  app: {
+    isPackaged: () => isPackagedMock(),
+  },
+  dialog: { showMessageBoxSync: vi.fn(() => 0) },
+  shell: { openPath: vi.fn(() => Promise.resolve('')) },
+}));
+
 const writeFile = vi.fn((_p: string, _d: unknown, cb: () => void) => cb());
 vi.mock('node:fs', () => ({
   default: {
@@ -14,11 +23,6 @@ const homedir = vi.fn(() => '/home/test');
 vi.mock('node:os', () => ({
   default: { homedir: () => homedir() },
   homedir: () => homedir(),
-}));
-
-vi.mock('electron', () => ({
-  dialog: { showMessageBoxSync: vi.fn() },
-  shell: { openPath: vi.fn() },
 }));
 
 const fileGetFileMock = vi.fn(() => ({ path: '/var/log/app/app.log' }));
