@@ -12,16 +12,22 @@ export function sendMainEvent(event: EventType, data?: EventData): void {
 }
 
 /**
- * Send renderer event and expect a response
- * @param event the type of event to send
+ * Invoke main process handler and expect a response
+ * @param event the type of event to invoke
  * @param data the data to send with the event
- * @returns
+ * @returns Promise resolving to the response
  */
-export function invokeMainEvent(
+export async function invokeMainEvent<T = string>(
   event: EventType,
-  data?: string,
-): Promise<string> {
-  return ipcRenderer.invoke(event, data);
+  data?: EventData,
+): Promise<T> {
+  try {
+    return await ipcRenderer.invoke(event, data);
+  } catch (err) {
+    // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
+    console.error(`[IPC] invoke failed: ${event}`, err);
+    throw err;
+  }
 }
 
 /**
