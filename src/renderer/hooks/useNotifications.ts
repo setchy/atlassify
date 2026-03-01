@@ -9,7 +9,12 @@ import {
 
 import { Constants } from '../constants';
 
-import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useNotificationsStore,
+  useSettingsStore,
+} from '../stores';
 
 import type {
   AccountNotifications,
@@ -41,7 +46,6 @@ import {
 import { postProcessNotifications } from '../utils/notifications/postProcess';
 import { raiseSoundNotification } from '../utils/notifications/sound';
 import { getNewNotifications } from '../utils/notifications/utils';
-import { setTrayIconColorAndTitle } from '../utils/tray';
 
 /**
  * State and actions for notifications management.
@@ -179,22 +183,19 @@ export const useNotifications = (): NotificationsState => {
     return 'success';
   }, [isLoading, isFetching, isPaused, isError]);
 
-  // Update tray icon and title when query state changes
-  // This runs on every fetch completion (success or error) and ensures tray stays in sync
-  // biome-ignore lint/correctness/useExhaustiveDependencies: status is needed to trigger on query invalidation
+  // Sync filtered notification status to store so tray updates outside React
+  // can read pre-filtered values without re-applying filter logic.
   useEffect(() => {
-    const unfilteredNotifications =
-      queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ??
-      [];
-    const count = getNotificationCount(unfilteredNotifications);
-    const more = hasMoreNotifications(unfilteredNotifications);
+    const isErrorOrOffline = status === 'error';
 
-    if (isError) {
-      setTrayIconColorAndTitle(-1, more);
-    } else {
-      setTrayIconColorAndTitle(count, more);
-    }
-  }, [isError, status, notificationsQueryKey, queryClient]);
+    useNotificationsStore
+      .getState()
+      .updateNotificationStatus(
+        notificationCount,
+        hasMoreAccountNotifications,
+        isErrorOrOffline,
+      );
+  }, [notificationCount, hasMoreAccountNotifications, status]);
 
   const globalError: AtlassifyError = useMemo(() => {
     // If paused due to offline, show network error

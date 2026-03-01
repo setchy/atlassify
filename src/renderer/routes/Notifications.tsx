@@ -1,6 +1,4 @@
-import { type FC, useEffect, useMemo, useState } from 'react';
-
-import { onlineManager } from '@tanstack/react-query';
+import { type FC, useMemo } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useAccountsStore, useSettingsStore } from '../stores';
@@ -14,17 +12,8 @@ import { Oops } from '../components/Oops';
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
-  const { notifications, status, globalError, hasNotifications } =
+  const { notifications, status, globalError, hasNotifications, isOnline } =
     useAppContext();
-
-  const [isOnline, setIsOnline] = useState(() => onlineManager.isOnline());
-
-  useEffect(() => {
-    const handle = () => setIsOnline(onlineManager.isOnline());
-    const unsubscribe = onlineManager.subscribe(handle);
-    handle();
-    return () => unsubscribe();
-  }, []);
 
   const hasNoAccountErrors = useMemo(
     () => notifications.every((account) => account.error === null),

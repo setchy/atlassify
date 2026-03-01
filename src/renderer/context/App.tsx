@@ -1,9 +1,22 @@
-import { createContext, type ReactNode, useEffect, useMemo } from 'react';
+import {
+  createContext,
+  type ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+
+import { onlineManager } from '@tanstack/react-query';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import { useNotifications } from '../hooks/useNotifications';
-import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useNotificationsStore,
+  useSettingsStore,
+} from '../stores';
 
 import type {
   AccountNotifications,
@@ -31,6 +44,8 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
+
+  isOnline: boolean;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -57,6 +72,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsRead,
     markNotificationsUnread,
   } = useNotifications();
+
+  const [isOnline, setIsOnline] = useState(() => onlineManager.isOnline());
+
+  // Online Manager subscription to update online status in state and notifications store
+  useEffect(() => {
+    const handle = () => {
+      const online = onlineManager.isOnline();
+      setIsOnline(online);
+      useNotificationsStore.getState().updateIsOnline(online);
+    };
+    const unsubscribe = onlineManager.subscribe(handle);
+    handle();
+    return () => unsubscribe();
+  }, []);
 
   // Periodic account refreshes
   useAccounts();
@@ -90,6 +119,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      isOnline,
     }),
     [
       status,
@@ -106,6 +137,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      isOnline,
     ],
   );
 
