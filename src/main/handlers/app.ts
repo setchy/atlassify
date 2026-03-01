@@ -1,24 +1,31 @@
 import { app } from 'electron';
+import type { Menubar } from 'menubar';
 
-import { trackEvent } from '@aptabase/electron/main';
-
-import { EVENTS, type IAptabaseEvent } from '../../shared/events';
+import { EVENTS } from '../../shared/events';
 
 import { Paths } from '../config';
-import { handleMainEvent } from '../events';
+import { handleMainEvent, onMainEvent } from '../events';
 
-export function registerAppHandlers(): void {
+/**
+ * Register IPC handlers for general application queries and window/app control.
+ *
+ * @param mb - The menubar instance used for window visibility and app quit control.
+ */
+export function registerAppHandlers(mb: Menubar): void {
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
 
+  onMainEvent(EVENTS.WINDOW_SHOW, () => mb.showWindow());
+
+  onMainEvent(EVENTS.WINDOW_HIDE, () => mb.hideWindow());
+
+  onMainEvent(EVENTS.QUIT, () => mb.app.quit());
+
+  // Path handlers for renderer queries about resource locations
   handleMainEvent(EVENTS.NOTIFICATION_SOUND_PATH, () => {
     return Paths.notificationSound;
   });
 
   handleMainEvent(EVENTS.TWEMOJI_DIRECTORY, () => {
     return Paths.twemojiFolder;
-  });
-
-  handleMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
-    trackEvent(event.eventName, event.props);
   });
 }

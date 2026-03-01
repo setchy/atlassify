@@ -5,13 +5,15 @@ import { EVENTS, type ITrayColorUpdate } from '../../shared/events';
 import { onMainEvent } from '../events';
 import { TrayIcons } from '../icons';
 
+/**
+ * Register IPC handlers for tray icon visual state.
+ *
+ * @param mb - The menubar instance whose tray is controlled.
+ */
 export function registerTrayHandlers(mb: Menubar): void {
-  onMainEvent(EVENTS.WINDOW_SHOW, () => mb.showWindow());
-
-  onMainEvent(EVENTS.WINDOW_HIDE, () => mb.hideWindow());
-
-  onMainEvent(EVENTS.QUIT, () => mb.app.quit());
-
+  /**
+   * Update the tray icon based on the provided color update data.
+   */
   onMainEvent(
     EVENTS.UPDATE_ICON_COLOR,
     (
@@ -52,6 +54,9 @@ export function registerTrayHandlers(mb: Menubar): void {
     },
   );
 
+  /**
+   * Update the tray icon title based on the provided title string.
+   */
   onMainEvent(EVENTS.UPDATE_ICON_TITLE, (_, title: string) => {
     if (!mb.tray.isDestroyed()) {
       mb.tray.setTitle(title);

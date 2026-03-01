@@ -1,20 +1,20 @@
+import type { Menubar } from 'menubar';
+
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { EVENTS } from '../../shared/events';
 
 const handleMock = vi.fn();
+const onMock = vi.fn();
 
 vi.mock('electron', () => ({
   ipcMain: {
     handle: (...args: unknown[]) => handleMock(...args),
+    on: (...args: unknown[]) => onMock(...args),
   },
   app: {
     getVersion: vi.fn(() => '1.0.0'),
   },
-}));
-
-vi.mock('@aptabase/electron/main', () => ({
-  trackEvent: vi.fn(),
 }));
 
 vi.mock('../config', () => ({
@@ -25,29 +25,41 @@ vi.mock('../config', () => ({
 }));
 
 describe('main/handlers/app.ts', () => {
+  let menubar: Menubar;
+
   beforeEach(() => {
     vi.clearAllMocks();
     handleMock.mockClear();
+    onMock.mockClear();
+
+    menubar = {
+      showWindow: vi.fn(),
+      hideWindow: vi.fn(),
+      app: { quit: vi.fn() },
+    } as unknown as Menubar;
   });
 
   it('registers handlers without throwing', async () => {
     const { registerAppHandlers } = await import('./app');
 
-    expect(() => registerAppHandlers()).not.toThrow();
+    expect(() => registerAppHandlers(menubar)).not.toThrow();
   });
 
-  it('registers VERSION, NOTIFICATION_SOUND_PATH, TWEMOJI_DIRECTORY, and APTABASE_TRACK_EVENT handlers', async () => {
+  it('registers VERSION, NOTIFICATION_SOUND_PATH, TWEMOJI_DIRECTORY, WINDOW_SHOW, WINDOW_HIDE, and QUIT handlers', async () => {
     const { registerAppHandlers } = await import('./app');
 
-    registerAppHandlers();
+    registerAppHandlers(menubar);
 
     const registeredHandlers = handleMock.mock.calls.map(
       (call: [string]) => call[0],
     );
+    const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
     expect(registeredHandlers).toContain(EVENTS.VERSION);
     expect(registeredHandlers).toContain(EVENTS.NOTIFICATION_SOUND_PATH);
     expect(registeredHandlers).toContain(EVENTS.TWEMOJI_DIRECTORY);
-    expect(registeredHandlers).toContain(EVENTS.APTABASE_TRACK_EVENT);
+    expect(registeredEvents).toContain(EVENTS.WINDOW_SHOW);
+    expect(registeredEvents).toContain(EVENTS.WINDOW_HIDE);
+    expect(registeredEvents).toContain(EVENTS.QUIT);
   });
 });

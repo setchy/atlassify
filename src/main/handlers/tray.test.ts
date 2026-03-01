@@ -30,9 +30,6 @@ describe('main/handlers/tray.ts', () => {
     onMock.mockClear();
 
     menubar = {
-      showWindow: vi.fn(),
-      hideWindow: vi.fn(),
-      app: { quit: vi.fn() },
       tray: {
         isDestroyed: vi.fn().mockReturnValue(false),
         setImage: vi.fn(),
@@ -54,9 +51,6 @@ describe('main/handlers/tray.ts', () => {
 
     const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
-    expect(registeredEvents).toContain(EVENTS.WINDOW_SHOW);
-    expect(registeredEvents).toContain(EVENTS.WINDOW_HIDE);
-    expect(registeredEvents).toContain(EVENTS.QUIT);
     expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_COLOR);
     expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_TITLE);
   });

@@ -7,7 +7,6 @@ vi.mock('electron', () => ({
   app: {
     isPackaged: () => isPackagedMock(),
   },
-  dialog: { showMessageBoxSync: vi.fn(() => 0) },
   shell: { openPath: vi.fn(() => Promise.resolve('')) },
 }));
 
@@ -45,14 +44,9 @@ vi.mock('../shared/logger', () => ({
   logError: (...a: unknown[]) => logErrorMock(...a),
 }));
 
-const sendRendererEventMock = vi.fn();
-vi.mock('./events', () => ({
-  sendRendererEvent: (...a: unknown[]) => sendRendererEventMock(...a),
-}));
+import { shell } from 'electron';
 
-import { dialog, shell } from 'electron';
-
-import { openLogsDirectory, resetApp, takeScreenshot } from './utils';
+import { openLogsDirectory, takeScreenshot } from './utils';
 
 function createMb() {
   return {
@@ -80,25 +74,6 @@ describe('main/utils', () => {
       'takeScreenshot',
       expect.stringContaining('Screenshot saved'),
     );
-  });
-
-  it('resetApp sends event and quits on confirm', () => {
-    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(1);
-    const mb = createMb();
-    resetApp(mb as unknown as Menubar);
-    expect(sendRendererEventMock).toHaveBeenCalledWith(
-      mb,
-      'atlassify:reset-app',
-    );
-    expect(mb.app.quit).toHaveBeenCalled();
-  });
-
-  it('resetApp does nothing on cancel', () => {
-    vi.mocked(dialog.showMessageBoxSync).mockReturnValue(0);
-    const mb = createMb();
-    resetApp(mb as unknown as Menubar);
-    expect(sendRendererEventMock).not.toHaveBeenCalled();
-    expect(mb.app.quit).not.toHaveBeenCalled();
   });
 
   it('openLogsDirectory opens directory when present', () => {

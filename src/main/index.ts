@@ -6,21 +6,26 @@ import { app } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
 
-import { initializeAptabase, trackEvent } from './aptabase';
 import { Paths, WindowConfig } from './config';
-import { onFirstRunMaybe } from './first-run';
+import {
+  initializeAnalytics,
+  registerAnalyticsHandlers,
+  trackEvent,
+} from './handlers/analytics';
 import { registerAppHandlers } from './handlers/app';
 import { registerStorageHandlers } from './handlers/storage';
 import { registerSystemHandlers } from './handlers/system';
 import { registerTrayHandlers } from './handlers/tray';
 import { TrayIcons } from './icons';
-import { configureWindowEvents, initializeAppLifecycle } from './lifecycle';
+import { onFirstRunMaybe } from './lifecycle/first-run';
+import { initializeAppLifecycle } from './lifecycle/startup';
+import { configureWindowEvents } from './lifecycle/window';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
 log.initialize();
 
-initializeAptabase();
+initializeAnalytics();
 
 const mb = menubar({
   icon: TrayIcons.idle,
@@ -51,10 +56,13 @@ app.whenReady().then(async () => {
     });
   });
 
+  // Configure window event handlers
   configureWindowEvents(mb);
 
+  // Register IPC handlers for various channels
   registerTrayHandlers(mb);
   registerSystemHandlers(mb);
   registerStorageHandlers();
-  registerAppHandlers();
+  registerAppHandlers(mb);
+  registerAnalyticsHandlers();
 });

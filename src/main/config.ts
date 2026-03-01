@@ -7,6 +7,9 @@ import { APPLICATION } from '../shared/constants';
 
 import { isDevMode } from './utils';
 
+/**
+ * Resolved file-system and URL paths used throughout the main process.
+ */
 export const Paths = {
   preload: path.resolve(__dirname, 'preload.js'),
 
@@ -33,6 +36,9 @@ export const Paths = {
   },
 };
 
+/**
+ * Default browser window construction options for the menubar popup.
+ */
 export const WindowConfig: BrowserWindowConstructorOptions = {
   width: 500,
   height: 400,
