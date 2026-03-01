@@ -294,3 +294,43 @@ export interface SettingsActions {
  * Complete settings store type.
  */
 export type SettingsStore = SettingsState & SettingsActions;
+
+// ============================================================================
+// Notifications Store Types
+// ============================================================================
+
+/**
+ * Runtime tray-relevant state derived from filtered notification data.
+ * Written by useNotifications (inside React) so tray updates outside React
+ * can read pre-filtered values without re-applying filter logic.
+ */
+export interface NotificationsState {
+  notificationCount: number;
+  hasMoreAccountNotifications: boolean;
+  isError: boolean;
+  isOnline: boolean;
+}
+
+/**
+ * Actions for managing notifications status state.
+ */
+export interface NotificationsActions {
+  /**
+   * Updates the tray-relevant notification status snapshot.
+   */
+  updateNotificationStatus: (
+    notificationCount: number,
+    hasMoreAccountNotifications: boolean,
+    isError: boolean,
+  ) => void;
+
+  /**
+   * Updates the online status.
+   */
+  updateIsOnline: (isOnline: boolean) => void;
+}
+
+/**
+ * Complete notifications store type.
+ */
+export type NotificationsStore = NotificationsState & NotificationsActions;

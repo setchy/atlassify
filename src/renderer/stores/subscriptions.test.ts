@@ -7,6 +7,7 @@ import type { Account, Percentage } from '../types';
 import { queryClient } from '../utils/api/client';
 import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
+import * as tray from '../utils/tray';
 import * as zoom from '../utils/zoom';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from './';
 import { initializeStoreSubscriptions } from './subscriptions';
@@ -44,6 +45,10 @@ vi.mock('../utils/api/client', () => ({
   queryClient: {
     invalidateQueries: vi.fn(),
   },
+}));
+
+vi.mock('../utils/tray', () => ({
+  setTrayIconColorAndTitle: vi.fn(),
 }));
 
 describe('renderer/stores/subscriptions.ts', () => {
@@ -105,6 +110,26 @@ describe('renderer/stores/subscriptions.ts', () => {
         .updateSetting('keyboardShortcutEnabled', false);
 
       expect(comms.setKeyboardShortcut).toHaveBeenCalledWith(false);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when useUnreadActiveIcon changes', () => {
+      useSettingsStore.getState().updateSetting('useUnreadActiveIcon', false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when useAlternateIdleIcon changes', () => {
+      useSettingsStore.getState().updateSetting('useAlternateIdleIcon', true);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when showNotificationsCountInTray changes', () => {
+      useSettingsStore
+        .getState()
+        .updateSetting('showNotificationsCountInTray', false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
 
     it('should update zoom level when zoomPercentage changes', () => {

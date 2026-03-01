@@ -1,5 +1,3 @@
-import { onlineManager } from '@tanstack/react-query';
-
 import { OpenPreference, useSettingsStore } from '../stores';
 
 import type { Link } from '../types';
@@ -54,15 +52,16 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  * Passing a negative number will set the error state color.
  *
  * @param notificationsLength The number of unread notifications
+ * @param isOnline Whether the app is currently online
  * @param useUnreadActiveIcon Whether to use the active icon for unread notifications
  * @param useAlternateIdleIcon Whether to use the alternate idle icon
  */
 export function updateTrayColor(
   notificationsLength: number,
+  isOnline: boolean,
   useUnreadActiveIcon: boolean,
   useAlternateIdleIcon: boolean,
 ): void {
-  const isOnline = onlineManager.isOnline();
   window.atlassify.tray.updateColor(
     notificationsLength,
     isOnline,

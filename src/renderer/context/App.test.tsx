@@ -45,6 +45,7 @@ describe('renderer/context/App.tsx', () => {
       refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
+      isOnline: true,
     } as ReturnType<typeof useNotifications>);
   });
 

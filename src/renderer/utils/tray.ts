@@ -1,35 +1,40 @@
-import { onlineManager } from '@tanstack/react-query';
-
-import { useSettingsStore } from '../stores';
+import { useNotificationsStore, useSettingsStore } from '../stores';
 
 import { updateTrayColor, updateTrayTitle } from './comms';
 
 /**
- * Sets the tray icon color and title based on the number of unread notifications.
+ * Updates the tray icon and title using the current notification status,
+ * online status, and settings store values.
  *
- * @param unreadNotifications - The number of unread notifications
- * @param hasMoreNotifications - Whether there are more notifications beyond the unread count
+ * Notification status (count, hasMore, isError) is read from useNotificationsStore,
+ * which is kept up-to-date by useNotifications with already-filtered values.
+ * This avoids re-applying filter logic against the raw query cache.
+ *
+ * Designed to be called any time the tray needs to reflect current state,
+ * whether triggered by a notification fetch, a settings change, or an online/offline event.
  */
-export function setTrayIconColorAndTitle(
-  unreadNotifications: number,
-  hasMoreNotifications: boolean,
-) {
-  const settings = useSettingsStore.getState();
+export function setTrayIconColorAndTitle() {
+  const { notificationCount, hasMoreAccountNotifications, isError, isOnline } =
+    useNotificationsStore.getState();
   const {
     showNotificationsCountInTray,
     useUnreadActiveIcon,
     useAlternateIdleIcon,
-  } = settings;
-
-  const isOnline = onlineManager.isOnline();
+  } = useSettingsStore.getState();
 
   let title = '';
-  if (isOnline && showNotificationsCountInTray && unreadNotifications > 0) {
-    title = `${unreadNotifications.toString()}${hasMoreNotifications ? '+' : ''}`;
+  if (
+    isOnline &&
+    showNotificationsCountInTray &&
+    !isError &&
+    notificationCount > 0
+  ) {
+    title = `${notificationCount.toString()}${hasMoreAccountNotifications ? '+' : ''}`;
   }
 
   updateTrayColor(
-    unreadNotifications,
+    isError ? -1 : notificationCount,
+    isOnline,
     useUnreadActiveIcon,
     useAlternateIdleIcon,
   );
