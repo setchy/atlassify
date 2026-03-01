@@ -2,6 +2,8 @@ import type { Menubar } from 'menubar';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { configureWindowEvents } from './window';
+
 vi.mock('../config', () => ({
   WindowConfig: {
     width: 500,
@@ -36,14 +38,12 @@ describe('main/lifecycle/window.ts', () => {
     } as unknown as Menubar;
   });
 
-  it('configureWindowEvents returns early if no window', async () => {
-    const { configureWindowEvents } = await import('./window');
+  it('configureWindowEvents returns early if no window', () => {
     const mbNoWindow = { ...menubar, window: null };
     expect(() => configureWindowEvents(mbNoWindow as Menubar)).not.toThrow();
   });
 
-  it('configureWindowEvents registers webContents event listeners', async () => {
-    const { configureWindowEvents } = await import('./window');
+  it('configureWindowEvents registers webContents event listeners', () => {
     configureWindowEvents(menubar);
 
     expect(menubar.window.webContents.on).toHaveBeenCalledWith(

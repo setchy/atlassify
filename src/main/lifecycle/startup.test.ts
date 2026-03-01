@@ -2,6 +2,8 @@ import type { Menubar } from 'menubar';
 
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { initializeAppLifecycle } from './startup';
+
 vi.mock('electron', () => ({
   app: {
     requestSingleInstanceLock: vi.fn(() => true),
@@ -38,8 +40,7 @@ describe('main/lifecycle/startup.ts', () => {
     } as unknown as Menubar;
   });
 
-  it('initializeAppLifecycle registers menubar ready handler', async () => {
-    const { initializeAppLifecycle } = await import('./startup');
+  it('initializeAppLifecycle registers menubar ready handler', () => {
     initializeAppLifecycle(menubar);
 
     expect(menubar.on).toHaveBeenCalledWith('ready', expect.any(Function));

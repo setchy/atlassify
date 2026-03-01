@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { EVENTS } from '../../shared/events';
 
+import { registerSystemHandlers } from './system';
+
 const onMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -38,15 +40,11 @@ describe('main/handlers/system.ts', () => {
     } as unknown as Menubar;
   });
 
-  it('registers handlers without throwing', async () => {
-    const { registerSystemHandlers } = await import('./system');
-
+  it('registers handlers without throwing', () => {
     expect(() => registerSystemHandlers(menubar)).not.toThrow();
   });
 
-  it('registers expected IPC event handlers', async () => {
-    const { registerSystemHandlers } = await import('./system');
-
+  it('registers expected IPC event handlers', () => {
     registerSystemHandlers(menubar);
 
     const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);

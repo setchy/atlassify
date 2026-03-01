@@ -2,6 +2,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { EVENTS } from '../../shared/events';
 
+import { registerStorageHandlers } from './storage';
+
 const handleMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -25,15 +27,11 @@ describe('main/handlers/storage.ts', () => {
     handleMock.mockClear();
   });
 
-  it('registers handlers without throwing', async () => {
-    const { registerStorageHandlers } = await import('./storage');
-
+  it('registers handlers without throwing', () => {
     expect(() => registerStorageHandlers()).not.toThrow();
   });
 
-  it('registers SAFE_STORAGE_ENCRYPT and SAFE_STORAGE_DECRYPT handlers', async () => {
-    const { registerStorageHandlers } = await import('./storage');
-
+  it('registers SAFE_STORAGE_ENCRYPT and SAFE_STORAGE_DECRYPT handlers', () => {
     registerStorageHandlers();
 
     const registeredHandlers = handleMock.mock.calls.map(

@@ -2,6 +2,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { EVENTS } from '../../shared/events';
 
+import { initializeAnalytics, registerAnalyticsHandlers } from './analytics';
+
 const handleMock = vi.fn();
 
 vi.mock('electron', () => ({
@@ -37,8 +39,6 @@ describe('main/handlers/analytics.ts', () => {
     it('logs an error and skips initialization when APTABASE_KEY is not set', async () => {
       delete process.env.APTABASE_KEY;
 
-      const { initializeAnalytics } = await import('./analytics');
-
       await initializeAnalytics();
 
       expect(initializeMock).not.toHaveBeenCalled();
@@ -51,8 +51,6 @@ describe('main/handlers/analytics.ts', () => {
 
     it('initializes the SDK and logs success when APTABASE_KEY is set', async () => {
       process.env.APTABASE_KEY = 'test-key-123';
-
-      const { initializeAnalytics } = await import('./analytics');
 
       await initializeAnalytics();
 
@@ -71,8 +69,6 @@ describe('main/handlers/analytics.ts', () => {
         throw sdkError;
       });
 
-      const { initializeAnalytics } = await import('./analytics');
-
       await initializeAnalytics();
 
       expect(logErrorMock).toHaveBeenCalledWith(
@@ -84,15 +80,11 @@ describe('main/handlers/analytics.ts', () => {
   });
 
   describe('registerAnalyticsHandlers', () => {
-    it('registers handlers without throwing', async () => {
-      const { registerAnalyticsHandlers } = await import('./analytics');
-
+    it('registers handlers without throwing', () => {
       expect(() => registerAnalyticsHandlers()).not.toThrow();
     });
 
-    it('registers the APTABASE_TRACK_EVENT handler', async () => {
-      const { registerAnalyticsHandlers } = await import('./analytics');
-
+    it('registers the APTABASE_TRACK_EVENT handler', () => {
       registerAnalyticsHandlers();
 
       const registeredHandlers = handleMock.mock.calls.map(
@@ -102,9 +94,7 @@ describe('main/handlers/analytics.ts', () => {
       expect(registeredHandlers).toContain(EVENTS.APTABASE_TRACK_EVENT);
     });
 
-    it('calls trackEvent with the correct arguments when the handler is invoked', async () => {
-      const { registerAnalyticsHandlers } = await import('./analytics');
-
+    it('calls trackEvent with the correct arguments when the handler is invoked', () => {
       registerAnalyticsHandlers();
 
       const handlerCallback = handleMock.mock.calls.find(
@@ -121,9 +111,7 @@ describe('main/handlers/analytics.ts', () => {
       });
     });
 
-    it('calls trackEvent without props when props are omitted', async () => {
-      const { registerAnalyticsHandlers } = await import('./analytics');
-
+    it('calls trackEvent without props when props are omitted', () => {
       registerAnalyticsHandlers();
 
       const handlerCallback = handleMock.mock.calls.find(

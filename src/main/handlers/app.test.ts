@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { EVENTS } from '../../shared/events';
 
+import { registerAppHandlers } from './app';
+
 const handleMock = vi.fn();
 const onMock = vi.fn();
 
@@ -39,15 +41,11 @@ describe('main/handlers/app.ts', () => {
     } as unknown as Menubar;
   });
 
-  it('registers handlers without throwing', async () => {
-    const { registerAppHandlers } = await import('./app');
-
+  it('registers handlers without throwing', () => {
     expect(() => registerAppHandlers(menubar)).not.toThrow();
   });
 
-  it('registers VERSION, NOTIFICATION_SOUND_PATH, TWEMOJI_DIRECTORY, WINDOW_SHOW, WINDOW_HIDE, and QUIT handlers', async () => {
-    const { registerAppHandlers } = await import('./app');
-
+  it('registers VERSION, NOTIFICATION_SOUND_PATH, TWEMOJI_DIRECTORY, WINDOW_SHOW, WINDOW_HIDE, and QUIT handlers', () => {
     registerAppHandlers(menubar);
 
     const registeredHandlers = handleMock.mock.calls.map(

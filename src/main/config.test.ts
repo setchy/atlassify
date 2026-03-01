@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
+import { Paths, WindowConfig } from './config';
+
 vi.mock('./utils', () => ({
   isDevMode: vi.fn().mockReturnValue(false),
 }));
@@ -11,9 +13,7 @@ vi.mock('electron', () => ({
 }));
 
 describe('main/config.ts', () => {
-  it('exports Paths object with expected properties', async () => {
-    const { Paths } = await import('./config');
-
+  it('exports Paths object with expected properties', () => {
     expect(Paths.preload).toBeDefined();
     expect(Paths.preload).toContain('preload.js');
 
@@ -27,9 +27,7 @@ describe('main/config.ts', () => {
     expect(Paths.twemojiFolder).toContain('twemoji');
   });
 
-  it('exports WindowConfig with expected properties', async () => {
-    const { WindowConfig } = await import('./config');
-
+  it('exports WindowConfig with expected properties', () => {
     expect(WindowConfig.width).toBe(500);
     expect(WindowConfig.height).toBe(400);
     expect(WindowConfig.minWidth).toBe(500);
