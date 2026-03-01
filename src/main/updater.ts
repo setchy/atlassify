@@ -30,6 +30,10 @@ export default class AppUpdater {
     autoUpdater.logger = log;
   }
 
+  /**
+   * Start the updater: register event listeners, perform the initial update check,
+   * and schedule periodic checks. Idempotent — safe to call multiple times.
+   */
   async start(): Promise<void> {
     if (this.started) {
       return; // idempotent
@@ -52,6 +56,9 @@ export default class AppUpdater {
     this.started = true;
   }
 
+  /**
+   * Attach all electron-updater event listeners and wire them to menu state setters.
+   */
   private registerListeners() {
     autoUpdater.on('checking-for-update', () => {
       logInfo('auto updater', 'Checking for update');
@@ -107,6 +114,9 @@ export default class AppUpdater {
     });
   }
 
+  /**
+   * Run an immediate update check on application launch.
+   */
   private async performInitialCheck() {
     try {
       logInfo('app updater', 'Checking for updates on application launch');
@@ -116,6 +126,9 @@ export default class AppUpdater {
     }
   }
 
+  /**
+   * Schedule recurring update checks.
+   */
   private schedulePeriodicChecks() {
     setInterval(async () => {
       try {
@@ -127,10 +140,18 @@ export default class AppUpdater {
     }, APPLICATION.UPDATE_CHECK_INTERVAL_MS);
   }
 
+  /**
+   * Update the tray tooltip to show the application name alongside a status message.
+   *
+   * @param status - The status string appended below the application name.
+   */
   private setTooltipWithStatus(status: string) {
     this.menubar.tray.setToolTip(`${APPLICATION.NAME}\n${status}`);
   }
 
+  /**
+   * Cancel the pending timeout that hides the "no update available" menu item, if any.
+   */
   private clearNoUpdateTimeout() {
     if (this.noUpdateMessageTimeout) {
       clearTimeout(this.noUpdateMessageTimeout);
@@ -138,6 +159,9 @@ export default class AppUpdater {
     }
   }
 
+  /**
+   * Reset tray tooltip and all update-related menu items to their default state.
+   */
   private resetState() {
     this.menubar.tray.setToolTip(APPLICATION.NAME);
     this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
@@ -146,6 +170,12 @@ export default class AppUpdater {
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
   }
 
+  /**
+   * Show a dialog informing the user that an update is ready to install.
+   * If the user chooses to restart, quitAndInstall is called immediately.
+   *
+   * @param releaseName - The version string shown in the dialog message.
+   */
   private showUpdateReadyDialog(releaseName: string) {
     const dialogOpts: MessageBoxOptions = {
       type: 'info',

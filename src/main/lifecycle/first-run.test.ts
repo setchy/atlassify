@@ -32,21 +32,21 @@ vi.mock('electron', () => ({
 }));
 
 // Ensure the module under test thinks we're not in dev mode
-vi.mock('./utils', () => ({ isDevMode: () => false }));
+vi.mock('../utils', () => ({ isDevMode: () => false }));
 
 const logErrorMock = vi.fn();
-vi.mock('../shared/logger', () => ({
+vi.mock('../../shared/logger', () => ({
   logError: (...a: unknown[]) => logErrorMock(...a),
 }));
 
 let mac = true;
-vi.mock('../shared/platform', () => ({ isMacOS: () => mac }));
+vi.mock('../../shared/platform', () => ({ isMacOS: () => mac }));
 
-import { APPLICATION } from '../shared/constants';
+import { APPLICATION } from '../../shared/constants';
 
 import { onFirstRunMaybe } from './first-run';
 
-describe('main/first-run', () => {
+describe('main/lifecycle/first-run', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mac = true;
