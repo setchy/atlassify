@@ -120,7 +120,7 @@ describe('renderer/utils/comms.ts', () => {
 
   describe('tray helpers', () => {
     it('updates tray icon color with count', () => {
-      updateTrayColor(5, true, false);
+      updateTrayColor(5, true, true, false);
 
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(
