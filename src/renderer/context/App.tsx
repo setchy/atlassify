@@ -75,8 +75,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const [isOnline, setIsOnline] = useState(() => onlineManager.isOnline());
 
-  // Synchronous subscription — updates the store and tray immediately,
-  // without waiting for a React render cycle.
+  // Online Manager subscription to update online status in state and notifications store
   useEffect(() => {
     const handle = () => {
       const online = onlineManager.isOnline();
