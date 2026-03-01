@@ -13,23 +13,25 @@ import type { NotificationsStore } from './types';
  *
  * Not persisted — values are re-established on each render cycle.
  */
-const useNotificationsStore = create<NotificationsStore>()(subscribeWithSelector((set) => ({
-  notificationCount: 0,
-  hasMoreAccountNotifications: false,
-  isError: false,
-  isOnline: true,
+const useNotificationsStore = create<NotificationsStore>()(
+  subscribeWithSelector((set) => ({
+    notificationCount: 0,
+    hasMoreAccountNotifications: false,
+    isError: false,
+    isOnline: true,
 
-  updateNotificationStatus: (
-    notificationCount: number,
-    hasMoreAccountNotifications: boolean,
-    isError: boolean,
-  ) => {
-    set({ notificationCount, hasMoreAccountNotifications, isError });
-  },
+    updateNotificationStatus: (
+      notificationCount: number,
+      hasMoreAccountNotifications: boolean,
+      isError: boolean,
+    ) => {
+      set({ notificationCount, hasMoreAccountNotifications, isError });
+    },
 
-  updateIsOnline: (isOnline: boolean) => {
-    set({ isOnline });
-  },
-})));
+    updateIsOnline: (isOnline: boolean) => {
+      set({ isOnline });
+    },
+  })),
+);
 
 export default useNotificationsStore;
