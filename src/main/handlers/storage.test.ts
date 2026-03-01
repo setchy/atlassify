@@ -1,5 +1,3 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { EVENTS } from '../../shared/events';
 
 import { registerStorageHandlers } from './storage';

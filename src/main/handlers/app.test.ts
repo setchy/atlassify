@@ -1,7 +1,5 @@
 import type { Menubar } from 'menubar';
 
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { EVENTS } from '../../shared/events';
 
 import { registerAppHandlers } from './app';

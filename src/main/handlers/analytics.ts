@@ -3,7 +3,7 @@ import { initialize, trackEvent } from '@aptabase/electron/main';
 import { EVENTS, type IAptabaseEvent } from '../../shared/events';
 import { logError, logInfo } from '../../shared/logger';
 
-import { handleMainEvent } from '../events';
+import { onMainEvent } from '../events';
 
 /**
  * Initialize the Aptabase analytics SDK using the APTABASE_KEY environment variable.
@@ -35,7 +35,7 @@ export function registerAnalyticsHandlers(): void {
   /**
    * Track an event in Aptabase with the given event name and properties.
    */
-  handleMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
+  onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
     trackEvent(event.eventName, event.props);
   });
 }

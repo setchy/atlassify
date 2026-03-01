@@ -1,14 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { EVENTS } from '../../shared/events';
 
 import { initializeAnalytics, registerAnalyticsHandlers } from './analytics';
 
-const handleMock = vi.fn();
+const onMock = vi.fn();
 
 vi.mock('electron', () => ({
   ipcMain: {
-    handle: (...args: unknown[]) => handleMock(...args),
+    on: (...args: unknown[]) => onMock(...args),
   },
 }));
 
@@ -31,7 +29,7 @@ describe('main/handlers/analytics.ts', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    handleMock.mockClear();
+    onMock.mockClear();
     process.env = { ...originalEnv };
   });
 
@@ -87,17 +85,17 @@ describe('main/handlers/analytics.ts', () => {
     it('registers the APTABASE_TRACK_EVENT handler', () => {
       registerAnalyticsHandlers();
 
-      const registeredHandlers = handleMock.mock.calls.map(
+      const registeredEvents = onMock.mock.calls.map(
         (call: [string]) => call[0],
       );
 
-      expect(registeredHandlers).toContain(EVENTS.APTABASE_TRACK_EVENT);
+      expect(registeredEvents).toContain(EVENTS.APTABASE_TRACK_EVENT);
     });
 
     it('calls trackEvent with the correct arguments when the handler is invoked', () => {
       registerAnalyticsHandlers();
 
-      const handlerCallback = handleMock.mock.calls.find(
+      const handlerCallback = onMock.mock.calls.find(
         (call: [string]) => call[0] === EVENTS.APTABASE_TRACK_EVENT,
       )?.[1];
 
@@ -114,7 +112,7 @@ describe('main/handlers/analytics.ts', () => {
     it('calls trackEvent without props when props are omitted', () => {
       registerAnalyticsHandlers();
 
-      const handlerCallback = handleMock.mock.calls.find(
+      const handlerCallback = onMock.mock.calls.find(
         (call: [string]) => call[0] === EVENTS.APTABASE_TRACK_EVENT,
       )?.[1];
 
