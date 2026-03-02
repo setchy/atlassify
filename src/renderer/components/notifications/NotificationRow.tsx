@@ -17,9 +17,6 @@ import type { AtlassifyNotification } from '../../types';
 import { cn } from '../../utils/cn';
 import {
   blockAlignmentByLength,
-  formatNotificationBodyText,
-  formatNotificationFooterText,
-  formatNotificationUpdatedAt,
   isCompassScorecardNotification,
 } from '../../utils/helpers';
 import { openNotification } from '../../utils/links';
@@ -27,6 +24,11 @@ import {
   categoryFilter,
   readStateFilter,
 } from '../../utils/notifications/filters';
+import {
+  formatNotificationBodyText,
+  formatNotificationFooterText,
+  formatNotificationUpdatedAt,
+} from '../../utils/notifications/formatters';
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
 
 export interface NotificationRowProps {

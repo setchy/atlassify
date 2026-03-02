@@ -10,8 +10,8 @@ import { useAppContext } from '../../hooks/useAppContext';
 import { type FiltersState, useFiltersStore } from '../../stores';
 
 import { cn } from '../../utils/cn';
-import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
+import { formatProperCase } from '../../utils/notifications/formatters';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
   title: string;
