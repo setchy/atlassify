@@ -253,7 +253,7 @@ export const useNotifications = (): NotificationsState => {
   ]);
 
   // Unified mutation for marking notifications as read or unread
-  const markMutation = useMutation({
+  const markAsMutation = useMutation({
     mutationFn: async ({
       targetNotifications,
       action,
@@ -261,7 +261,7 @@ export const useNotifications = (): NotificationsState => {
       targetNotifications: AtlassifyNotification[];
       action: NotificationActionType;
     }) => {
-      const apiFn =
+      const markAsApiFn =
         action === 'read' ? markNotificationsAsRead : markNotificationsAsUnread;
 
       trackEvent('Action', {
@@ -281,7 +281,7 @@ export const useNotifications = (): NotificationsState => {
         targetNotifications,
       );
 
-      await apiFn(account, notificationIDs);
+      await markAsApiFn(account, notificationIDs);
 
       // Use unfiltered cache data so active filters don't permanently drop
       // notifications from the cache when marking as read/unread
@@ -313,22 +313,22 @@ export const useNotifications = (): NotificationsState => {
 
   const markNotificationsRead = useCallback(
     async (readNotifications: AtlassifyNotification[]) => {
-      await markMutation.mutateAsync({
+      await markAsMutation.mutateAsync({
         targetNotifications: readNotifications,
         action: 'read',
       });
     },
-    [markMutation],
+    [markAsMutation],
   );
 
   const markNotificationsUnread = useCallback(
     async (unreadNotifications: AtlassifyNotification[]) => {
-      await markMutation.mutateAsync({
+      await markAsMutation.mutateAsync({
         targetNotifications: unreadNotifications,
         action: 'unread',
       });
     },
-    [markMutation],
+    [markAsMutation],
   );
 
   return {
