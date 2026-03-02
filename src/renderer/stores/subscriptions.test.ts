@@ -5,10 +5,10 @@ import { Theme } from '../../shared/theme';
 import type { Account, Percentage } from '../types';
 
 import { queryClient } from '../utils/api/client';
-import * as comms from '../utils/comms';
-import * as theme from '../utils/theme';
-import * as tray from '../utils/tray';
-import * as zoom from '../utils/zoom';
+import * as comms from '../utils/system/comms';
+import * as tray from '../utils/system/tray';
+import * as theme from '../utils/ui/theme';
+import * as zoom from '../utils/ui/zoom';
 import {
   useAccountsStore,
   useFiltersStore,
@@ -32,16 +32,16 @@ vi.stubGlobal('window', {
 });
 
 // Mock external functions
-vi.mock('../utils/theme', () => ({
+vi.mock('../utils/ui/theme', () => ({
   setTheme: vi.fn(),
 }));
 
-vi.mock('../utils/comms', () => ({
+vi.mock('../utils/system/comms', () => ({
   setAutoLaunch: vi.fn(),
   setKeyboardShortcut: vi.fn(),
 }));
 
-vi.mock('../utils/zoom', () => ({
+vi.mock('../utils/ui/zoom', () => ({
   zoomPercentageToLevel: vi.fn((percentage) => percentage / 10),
   zoomLevelToPercentage: vi.fn((level) => level * 10),
 }));
@@ -52,7 +52,7 @@ vi.mock('../utils/api/client', () => ({
   },
 }));
 
-vi.mock('../utils/tray', () => ({
+vi.mock('../utils/system/tray', () => ({
   setTrayIconColorAndTitle: vi.fn(),
 }));
 

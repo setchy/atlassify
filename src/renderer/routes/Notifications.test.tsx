@@ -7,7 +7,7 @@ import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import { Errors } from '../utils/errors';
+import { Errors } from '../utils/core/errors';
 import { NotificationsRoute } from './Notifications';
 
 vi.mock('../components/notifications/AccountNotifications', () => ({

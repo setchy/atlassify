@@ -11,7 +11,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import { isCompassScorecardNotification } from '../../helpers';
+import { isCompassScorecardNotification } from '../formatters';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   user: {

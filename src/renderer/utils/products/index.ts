@@ -1,2 +1,2 @@
 export * from './catalog';
-export * from './utils';
+export * from './inference';

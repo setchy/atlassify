@@ -9,10 +9,10 @@ import { shallow } from 'zustand/shallow';
 
 import { queryClient } from '../utils/api/client';
 import { notificationsKeys } from '../utils/api/queryKeys';
-import { setAutoLaunch, setKeyboardShortcut } from '../utils/comms';
-import { setTheme } from '../utils/theme';
-import { setTrayIconColorAndTitle } from '../utils/tray';
-import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
+import { setAutoLaunch, setKeyboardShortcut } from '../utils/system/comms';
+import { setTrayIconColorAndTitle } from '../utils/system/tray';
+import { setTheme } from '../utils/ui/theme';
+import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/ui/zoom';
 import {
   useAccountsStore,
   useFiltersStore,

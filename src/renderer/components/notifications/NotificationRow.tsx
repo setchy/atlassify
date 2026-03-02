@@ -14,12 +14,6 @@ import { useSettingsStore } from '../../stores';
 
 import type { AtlassifyNotification } from '../../types';
 
-import { cn } from '../../utils/cn';
-import {
-  blockAlignmentByLength,
-  isCompassScorecardNotification,
-} from '../../utils/helpers';
-import { openNotification } from '../../utils/links';
 import {
   categoryFilter,
   readStateFilter,
@@ -28,8 +22,12 @@ import {
   formatNotificationBodyText,
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
+  isCompassScorecardNotification,
 } from '../../utils/notifications/formatters';
-import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
+import { openNotification } from '../../utils/system/links';
+import { cn } from '../../utils/ui/cn';
+import { blockAlignmentByLength } from '../../utils/ui/display';
 
 export interface NotificationRowProps {
   notification: AtlassifyNotification;

@@ -28,10 +28,13 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
-import { getChevronDetails } from '../../utils/helpers';
-import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';
-import { isLightMode } from '../../utils/theme';
+import {
+  openAccountProfile,
+  openMyPullRequests,
+} from '../../utils/system/links';
+import { getChevronDetails } from '../../utils/ui/display';
+import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';

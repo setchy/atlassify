@@ -4,7 +4,10 @@ import { keybindings } from '../constants/keybindings';
 
 import type { AccountNotifications, AtlassifyNotification } from '../types';
 
-import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/keyboard';
+import {
+  getNormalizedKey,
+  shouldIgnoreKeyboardEvent,
+} from '../utils/ui/keyboard';
 
 interface UseKeyboardNavigationOptions {
   notifications: AccountNotifications[];

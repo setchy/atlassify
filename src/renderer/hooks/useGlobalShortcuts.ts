@@ -5,8 +5,8 @@ import { keybindings } from '../constants/keybindings';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import { quitApp, trackEvent } from '../utils/comms';
-import { openMyNotifications } from '../utils/links';
+import { quitApp, trackEvent } from '../utils/system/comms';
+import { openMyNotifications } from '../utils/system/links';
 import { useAppContext } from './useAppContext';
 
 type ShortcutName =

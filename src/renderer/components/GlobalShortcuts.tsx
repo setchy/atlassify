@@ -2,7 +2,10 @@ import { type FC, useEffect } from 'react';
 
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 
-import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/keyboard';
+import {
+  getNormalizedKey,
+  shouldIgnoreKeyboardEvent,
+} from '../utils/ui/keyboard';
 
 /**let
  * Component that registers global keyboard shortcuts for the renderer app.

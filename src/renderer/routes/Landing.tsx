@@ -24,7 +24,7 @@ import { useAccountsStore } from '../stores';
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';
 
-import { showWindow } from '../utils/comms';
+import { showWindow } from '../utils/system/comms';
 
 export const LandingRoute: FC = () => {
   const { t } = useTranslation();

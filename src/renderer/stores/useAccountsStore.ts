@@ -7,8 +7,8 @@ import type { Account, Token, Username } from '../types';
 import type { AccountsStore } from './types';
 
 import { getAuthenticatedUser } from '../utils/api/client';
-import { encryptValue } from '../utils/comms';
-import { rendererLogError } from '../utils/logger';
+import { rendererLogError } from '../utils/core/logger';
+import { encryptValue } from '../utils/system/comms';
 import { DEFAULT_ACCOUNTS_STATE } from './defaults';
 
 /**

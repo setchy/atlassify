@@ -7,8 +7,8 @@ import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks'
 
 import { useSettingsStore } from '../../stores';
 
-import * as links from '../../utils/links';
-import * as theme from '../../utils/theme';
+import * as links from '../../utils/system/links';
+import * as theme from '../../utils/ui/theme';
 import {
   AccountNotifications,
   type AccountNotificationsProps,

@@ -3,8 +3,8 @@ import axios from 'axios';
 import type { Account, Token, Username } from '../../types';
 import type { AtlassianGraphQLResponse } from './types';
 
-import { decryptValue } from '../comms';
-import { URLs } from '../links';
+import { decryptValue } from '../system/comms';
+import { URLs } from '../system/links';
 import type { TypedDocumentString } from './graphql/generated/graphql';
 
 /**

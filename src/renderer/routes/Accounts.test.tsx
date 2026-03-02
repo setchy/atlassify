@@ -6,8 +6,8 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore } from '../stores';
 
-import * as links from '../utils/links';
-import * as theme from '../utils/theme';
+import * as links from '../utils/system/links';
+import * as theme from '../utils/ui/theme';
 import { AccountsRoute } from './Accounts';
 
 const navigateMock = vi.fn();

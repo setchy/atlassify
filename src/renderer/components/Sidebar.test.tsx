@@ -13,7 +13,7 @@ import {
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import * as comms from '../utils/comms';
+import * as comms from '../utils/system/comms';
 import { Sidebar } from './Sidebar';
 
 vi.mock('@atlaskit/tokens', async () => {

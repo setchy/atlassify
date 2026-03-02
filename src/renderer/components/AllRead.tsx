@@ -7,7 +7,7 @@ import { useFiltersStore } from '../stores';
 
 import { EmojiSplash } from './layout/EmojiSplash';
 
-import { randomIndex } from '../utils/random';
+import { randomIndex } from '../utils/core/random';
 
 export const AllRead: FC = () => {
   const { t } = useTranslation();

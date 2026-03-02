@@ -4,8 +4,8 @@ import { EmojiSplash } from './layout/EmojiSplash';
 
 import type { AtlassifyError } from '../types';
 
-import { Errors } from '../utils/errors';
-import { randomIndex } from '../utils/random';
+import { Errors } from '../utils/core/errors';
+import { randomIndex } from '../utils/core/random';
 
 interface OopsProps {
   error: AtlassifyError;

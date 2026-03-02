@@ -125,3 +125,16 @@ export function extractGoalOrProjectKey(
   const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
   return match ? match[2] : null;
 }
+
+/**
+ * Returns true if the notification is a Compass scorecard notification.
+ * Used to apply special rendering for scorecard-related activity.
+ */
+export function isCompassScorecardNotification(
+  notification: AtlassifyNotification,
+): boolean {
+  return (
+    notification.product.type === 'compass' &&
+    notification.message.includes('a scorecard')
+  );
+}

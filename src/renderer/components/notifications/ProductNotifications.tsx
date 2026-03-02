@@ -11,10 +11,10 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
-import { openExternalLink } from '../../utils/comms';
-import { getChevronDetails } from '../../utils/helpers';
-import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
-import { isLightMode } from '../../utils/theme';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
+import { openExternalLink } from '../../utils/system/comms';
+import { getChevronDetails } from '../../utils/ui/display';
+import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
