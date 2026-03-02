@@ -25,7 +25,7 @@ import {
   PRODUCTS,
 } from '.';
 
-describe('renderer/utils/products/utils.ts', () => {
+describe('renderer/utils/products/inference.ts', () => {
   describe('inferAtlassianProduct', () => {
     test.each([
       ['bitbucket', PRODUCTS.bitbucket],

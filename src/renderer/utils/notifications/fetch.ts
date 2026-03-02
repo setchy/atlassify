@@ -6,8 +6,8 @@ import type { AccountNotifications, AtlassifyNotification } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
+import { determineIfMorePagesAvailable } from '../api/pagination';
 import { transformNotifications } from '../api/transform';
-import { determineIfMorePagesAvailable } from '../api/utils';
 import { Errors } from '../core/errors';
 import { rendererLogError } from '../core/logger';
 import { getFlattenedNotificationsByProduct } from './group';

@@ -15,6 +15,7 @@ import {
   formatNotificationFooterText,
   formatNotificationUpdatedAt,
   formatProperCase,
+  isCompassScorecardNotification,
 } from './formatters';
 
 describe('renderer/utils/notifications/formatters.ts', () => {
@@ -213,6 +214,28 @@ describe('renderer/utils/notifications/formatters.ts', () => {
 
         expect(extractGoalOrProjectKey(mockNotif)).toBe('ABC-123');
       });
+    });
+  });
+
+  describe('isCompassScorecardNotification', () => {
+    it('should return true for compass scorecard notifications', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.compass,
+        message: 'some-project improved a scorecard',
+      };
+
+      expect(isCompassScorecardNotification(mockNotification)).toBe(true);
+    });
+
+    it('should return false for non-compass notifications', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.confluence,
+        message: 'This is a scorecard wiki',
+      };
+
+      expect(isCompassScorecardNotification(mockNotification)).toBe(false);
     });
   });
 });
