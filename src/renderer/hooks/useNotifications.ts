@@ -27,24 +27,27 @@ import {
   markNotificationsAsUnread,
 } from '../utils/api/client';
 import { notificationsKeys } from '../utils/api/queryKeys';
-import { trackEvent } from '../utils/comms';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
   Errors,
-} from '../utils/errors';
-import { rendererLogError } from '../utils/logger';
-import { filterNotifications } from '../utils/notifications/filters';
-import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
-import { raiseNativeNotification } from '../utils/notifications/native';
+} from '../utils/core/errors';
+import { rendererLogError } from '../utils/core/logger';
 import {
   getAllNotifications,
+  getNewNotifications,
   getNotificationCount,
   hasMoreNotifications,
-} from '../utils/notifications/notifications';
-import { postProcessNotifications } from '../utils/notifications/postProcess';
-import { raiseSoundNotification } from '../utils/notifications/sound';
-import { getNewNotifications } from '../utils/notifications/utils';
+} from '../utils/notifications/fetch';
+import { filterNotifications } from '../utils/notifications/filters';
+import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  type NotificationActionType,
+  postProcessNotifications,
+} from '../utils/notifications/postProcess';
+import { raiseSoundNotification } from '../utils/system/audio';
+import { trackEvent } from '../utils/system/comms';
+import { raiseNativeNotification } from '../utils/system/native';
 
 /**
  * State and actions for notifications management.
@@ -156,16 +159,8 @@ export const useNotifications = (): NotificationsState => {
   });
 
   const notificationCount = getNotificationCount(notifications);
-
-  const hasNotifications = useMemo(
-    () => notificationCount > 0,
-    [notificationCount],
-  );
-
-  const hasMoreAccountNotifications = useMemo(
-    () => hasMoreNotifications(notifications),
-    [notifications],
-  );
+  const hasNotifications = notificationCount > 0;
+  const hasMoreAccountNotifications = hasMoreNotifications(notifications);
 
   const isErrorOrPaused = isError || isPaused;
 
@@ -257,96 +252,60 @@ export const useNotifications = (): NotificationsState => {
     notificationsQueryKey,
   ]);
 
-  // Mutation for marking notifications as read
-  const markAsReadMutation = useMutation({
+  // Unified mutation for marking notifications as read or unread
+  const markMutation = useMutation({
     mutationFn: async ({
-      readNotifications,
+      targetNotifications,
+      action,
     }: {
-      readNotifications: AtlassifyNotification[];
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
     }) => {
-      trackEvent('Action', { name: 'Mark as Read' });
+      const apiFn =
+        action === 'read' ? markNotificationsAsRead : markNotificationsAsUnread;
 
-      // TODO - Ideally we would achieve this in a better way
-      const account = readNotifications[0].account;
-
-      // Assert all notifications are for the same account
-      if (!readNotifications.every((n) => n.account === account)) {
-        throw new Error('All notifications must belong to the same account');
-      }
-
-      const notificationIDs = await resolveNotificationIdsForGroup(
-        account,
-        readNotifications,
-      );
-
-      await markNotificationsAsRead(account, notificationIDs);
-
-      const updatedNotifications = postProcessNotifications(
-        account,
-        notifications,
-        readNotifications,
-        'read',
-      );
-      return updatedNotifications;
-    },
-
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
-    },
-
-    onError: (err) => {
-      rendererLogError(
-        'markNotificationsRead',
-        'Error occurred while marking notifications as read',
-        err,
-      );
-    },
-  });
-
-  // Mutation for marking notifications as unread
-  const markAsUnreadMutation = useMutation({
-    mutationFn: async ({
-      unreadNotifications,
-    }: {
-      unreadNotifications: AtlassifyNotification[];
-    }) => {
       trackEvent('Action', {
-        name: 'Mark as Unread',
+        name: action === 'read' ? 'Mark as Read' : 'Mark as Unread',
       });
 
       // TODO - Ideally we would achieve this in a better way
-      const account = unreadNotifications[0].account;
+      const account = targetNotifications[0].account;
 
       // Assert all notifications are for the same account
-      if (!unreadNotifications.every((n) => n.account === account)) {
+      if (!targetNotifications.every((n) => n.account === account)) {
         throw new Error('All notifications must belong to the same account');
       }
 
       const notificationIDs = await resolveNotificationIdsForGroup(
         account,
-        unreadNotifications,
+        targetNotifications,
       );
 
-      await markNotificationsAsUnread(account, notificationIDs);
+      await apiFn(account, notificationIDs);
 
-      const updatedNotifications = postProcessNotifications(
+      // Use unfiltered cache data so active filters don't permanently drop
+      // notifications from the cache when marking as read/unread
+      const unfilteredNotifications =
+        queryClient.getQueryData<AccountNotifications[]>(
+          notificationsQueryKey,
+        ) ?? [];
+
+      return postProcessNotifications(
         account,
-        notifications,
-        unreadNotifications,
-        'unread',
+        unfilteredNotifications,
+        targetNotifications,
+        action,
       );
-
-      return updatedNotifications;
     },
 
     onSuccess: (updatedNotifications) => {
       queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
     },
 
-    onError: (err) => {
+    onError: (err, { action }) => {
       rendererLogError(
-        'markNotificationsUnread',
-        'Error occurred while marking notifications as unread',
+        action === 'read' ? 'markNotificationsRead' : 'markNotificationsUnread',
+        `Error occurred while marking notifications as ${action}`,
         err,
       );
     },
@@ -354,16 +313,22 @@ export const useNotifications = (): NotificationsState => {
 
   const markNotificationsRead = useCallback(
     async (readNotifications: AtlassifyNotification[]) => {
-      await markAsReadMutation.mutateAsync({ readNotifications });
+      await markMutation.mutateAsync({
+        targetNotifications: readNotifications,
+        action: 'read',
+      });
     },
-    [markAsReadMutation],
+    [markMutation],
   );
 
   const markNotificationsUnread = useCallback(
     async (unreadNotifications: AtlassifyNotification[]) => {
-      await markAsUnreadMutation.mutateAsync({ unreadNotifications });
+      await markMutation.mutateAsync({
+        targetNotifications: unreadNotifications,
+        action: 'unread',
+      });
     },
-    [markAsUnreadMutation],
+    [markMutation],
   );
 
   return {

@@ -1,4 +1,4 @@
-import type { Percentage } from '../types';
+import type { Percentage } from '../../types';
 
 import {
   canDecreaseZoom,
@@ -10,7 +10,7 @@ import {
   zoomPercentageToLevel,
 } from './zoom';
 
-describe('renderer/utils/zoom.ts', () => {
+describe('renderer/utils/ui/zoom.ts', () => {
   window.atlassify.zoom.setLevel = vi.fn();
 
   afterEach(() => {

@@ -21,14 +21,14 @@ import { useAccountsStore, useSettingsStore } from '../../stores';
 import { LANGUAGES } from '../../i18n/types';
 
 import { loadLanguageLocale } from '../../i18n';
-import { setTheme } from '../../utils/theme';
+import { setTheme } from '../../utils/ui/theme';
 import {
   canDecreaseZoom,
   canIncreaseZoom,
   decreaseZoom,
   increaseZoom,
   resetZoomLevel,
-} from '../../utils/zoom';
+} from '../../utils/ui/zoom';
 
 export const AppearanceSettings: FC = () => {
   const { t, i18n } = useTranslation();

@@ -1,6 +1,12 @@
-import { OpenPreference, useSettingsStore } from '../stores';
+import type {
+  TrayAppState,
+  TrayIdleIconType,
+  TrayUnreadIconStyle,
+} from '../../../shared/events';
 
-import type { Link } from '../types';
+import { OpenPreference, useSettingsStore } from '../../stores';
+
+import type { Link } from '../../types';
 
 export function openExternalLink(url: Link): void {
   const settings = useSettingsStore.getState();
@@ -47,26 +53,24 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
 }
 
 /**
- * Updates the tray icon color based on the number of unread notifications.
+ * Updates the tray icon color based on the current notification and app state.
  *
- * Passing a negative number will set the error state color.
- *
- * @param notificationsLength The number of unread notifications
- * @param isOnline Whether the app is currently online
- * @param useUnreadActiveIcon Whether to use the active icon for unread notifications
- * @param useAlternateIdleIcon Whether to use the alternate idle icon
+ * @param notificationsCount The number of unread notifications
+ * @param appState The current app state: online, offline, or error
+ * @param idleIconType Which idle icon variant to display
+ * @param unreadIconStyle Whether to show the active icon when there are unread notifications
  */
 export function updateTrayColor(
-  notificationsLength: number,
-  isOnline: boolean,
-  useUnreadActiveIcon: boolean,
-  useAlternateIdleIcon: boolean,
+  notificationsCount: number,
+  appState: TrayAppState,
+  idleIconType: TrayIdleIconType,
+  unreadIconStyle: TrayUnreadIconStyle,
 ): void {
   window.atlassify.tray.updateColor(
-    notificationsLength,
-    isOnline,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
+    notificationsCount,
+    appState,
+    idleIconType,
+    unreadIconStyle,
   );
 }
 

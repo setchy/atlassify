@@ -5,7 +5,7 @@ import { renderWithAppContext } from '../__helpers__/test-utils';
 
 import { useAccountsStore } from '../stores';
 
-import * as comms from '../utils/comms';
+import * as comms from '../utils/system/comms';
 import { LoginRoute } from './Login';
 
 const navigateMock = vi.fn();

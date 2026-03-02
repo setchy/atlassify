@@ -2,13 +2,18 @@ import {
   mockAtlassianCloudAccount,
   mockAtlassianCloudAccountTwo,
 } from '../../__mocks__/account-mocks';
-import { createMockNotificationForProductType } from '../../__mocks__/notifications-mocks';
+import {
+  createMockNotificationForProductType,
+  mockSingleAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 
 import type { AccountNotifications } from '../../types';
 
-import { getNewNotifications } from './utils';
+import { PRODUCTS } from '../products';
+import { getNewNotifications } from './fetch';
+import { isCompassScorecardNotification } from './formatters';
 
-describe('renderer/utils/notifications/utils.ts', () => {
+describe('renderer/utils/notifications - getNewNotifications & isCompassScorecardNotification', () => {
   describe('getNewNotifications', () => {
     it('returns all notifications when previous is empty', () => {
       const newAccountNotifications: AccountNotifications[] = [
@@ -331,6 +336,28 @@ describe('renderer/utils/notifications/utils.ts', () => {
 
       expect(result).toHaveLength(4);
       expect(result.map((n) => n.id)).toEqual(['1', '2', '10', '11']);
+    });
+  });
+
+  describe('isCompassScorecardNotification', () => {
+    it('should return true for compass scorecard notifications', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.compass,
+        message: 'some-project improved a scorecard',
+      };
+
+      expect(isCompassScorecardNotification(mockNotification)).toBe(true);
+    });
+
+    it('should return false for non-compass notifications', () => {
+      const mockNotification = {
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.confluence,
+        message: 'This is a scorecard wiki',
+      };
+
+      expect(isCompassScorecardNotification(mockNotification)).toBe(false);
     });
   });
 });

@@ -36,15 +36,15 @@ export const api = {
   tray: {
     updateColor: (
       notificationsCount = 0,
-      isOnline = true,
-      useUnreadActiveIcon = true,
-      useAlternateIdleIcon = false,
+      appState: 'online' | 'offline' | 'error' = 'online',
+      idleIconType: 'default' | 'alternative' = 'default',
+      unreadIconStyle: 'active' | 'idle' = 'active',
     ) => {
       sendMainEvent(EVENTS.UPDATE_ICON_COLOR, {
         notificationsCount,
-        isOnline,
-        useUnreadActiveIcon,
-        useAlternateIdleIcon,
+        appState,
+        idleIconType,
+        unreadIconStyle,
       });
     },
 

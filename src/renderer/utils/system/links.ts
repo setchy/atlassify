@@ -1,6 +1,6 @@
-import { APPLICATION } from '../../shared/constants';
+import { APPLICATION } from '../../../shared/constants';
 
-import type { Account, AtlassifyNotification, Link } from '../types';
+import type { Account, AtlassifyNotification, Link } from '../../types';
 
 import { openExternalLink, trackEvent } from './comms';
 

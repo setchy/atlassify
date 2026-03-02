@@ -1,6 +1,6 @@
-import { OpenPreference, useSettingsStore } from '../stores';
+import { OpenPreference, useSettingsStore } from '../../stores';
 
-import type { Link } from '../types';
+import type { Link } from '../../types';
 
 import {
   decryptValue,
@@ -16,7 +16,7 @@ import {
   updateTrayTitle,
 } from './comms';
 
-describe('renderer/utils/comms.ts', () => {
+describe('renderer/utils/system/comms.ts', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -119,15 +119,27 @@ describe('renderer/utils/comms.ts', () => {
   });
 
   describe('tray helpers', () => {
-    it('updates tray icon color with count', () => {
-      updateTrayColor(5, true, true, false);
+    it('updates tray color with online state', () => {
+      updateTrayColor(5, 'online', 'default', 'active');
 
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
       expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(
         5,
-        true,
-        true,
-        false,
+        'online',
+        'default',
+        'active',
+      );
+    });
+
+    it('updates tray color with error state', () => {
+      updateTrayColor(5, 'error', 'default', 'active');
+
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledTimes(1);
+      expect(window.atlassify.tray.updateColor).toHaveBeenCalledWith(
+        5,
+        'error',
+        'default',
+        'active',
       );
     });
 

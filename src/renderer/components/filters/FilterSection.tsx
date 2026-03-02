@@ -9,9 +9,9 @@ import { Box, Inline, Stack } from '@atlaskit/primitives';
 import { useAppContext } from '../../hooks/useAppContext';
 import { type FiltersState, useFiltersStore } from '../../stores';
 
-import { cn } from '../../utils/cn';
 import type { Filter } from '../../utils/notifications/filters';
 import { formatProperCase } from '../../utils/notifications/formatters';
+import { cn } from '../../utils/ui/cn';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
   title: string;

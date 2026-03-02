@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { trackEvent } from '../utils/comms';
 import { formatProperCase } from '../utils/notifications/formatters';
+import { trackEvent } from '../utils/system/comms';
 
 /**
  * Hook to log navigation events on every location change.

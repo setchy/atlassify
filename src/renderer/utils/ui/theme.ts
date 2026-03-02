@@ -1,6 +1,6 @@
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
-import { Theme } from '../../shared/theme';
+import { Theme } from '../../../shared/theme';
 
 export function getTheme(): Theme {
   return getGlobalTheme().colorMode === 'dark' ? Theme.DARK : Theme.LIGHT;

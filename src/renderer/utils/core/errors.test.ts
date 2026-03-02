@@ -1,6 +1,6 @@
-import { createMockAccountWithError } from '../__mocks__/account-mocks';
+import { createMockAccountWithError } from '../../__mocks__/account-mocks';
 
-import type { AccountNotifications } from '../types';
+import type { AccountNotifications } from '../../types';
 
 import {
   areAllAccountErrorsSame,
@@ -8,7 +8,7 @@ import {
   Errors,
 } from './errors';
 
-describe('renderer/utils/errors.ts', () => {
+describe('renderer/utils/core/errors.ts', () => {
   describe('doesAllAccountsHaveErrors', () => {
     it('returns false for empty list', () => {
       expect(doesAllAccountsHaveErrors([])).toBe(false);

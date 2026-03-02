@@ -10,7 +10,7 @@ import { Page } from '../components/layout/Page';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
 import { Oops } from '../components/Oops';
 
-import { Errors } from '../utils/errors';
+import { Errors } from '../utils/core/errors';
 
 export const NotificationsRoute: FC = () => {
   const {

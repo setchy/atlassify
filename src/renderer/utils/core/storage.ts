@@ -1,6 +1,6 @@
-import { Constants } from '../constants';
+import { Constants } from '../../constants';
 
-import { useAccountsStore, useSettingsStore } from '../stores';
+import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import { rendererLogError, rendererLogInfo } from './logger';
 

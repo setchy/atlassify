@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { getNormalizedKey, shouldIgnoreKeyboardEvent } from './keyboard';
 
-describe('renderer/utils/keyboard.ts', () => {
+describe('renderer/utils/ui/keyboard.ts', () => {
   describe('shouldIgnoreKeyboardEvent', () => {
     const baseEvent = {
       target: null,

@@ -1,8 +1,12 @@
-import { Constants } from '../constants';
+import { Constants } from '../../constants';
 
-import type { AccountNotifications, AtlassifyError, ErrorType } from '../types';
+import type {
+  AccountNotifications,
+  AtlassifyError,
+  ErrorType,
+} from '../../types';
 
-import i18n from '../i18n';
+import i18n from '../../i18n';
 
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {

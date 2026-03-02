@@ -8,9 +8,9 @@ import { useSettingsStore } from '../../stores';
 
 import type { ReadStateType } from '../../types';
 
-import * as comms from '../../utils/comms';
-import * as links from '../../utils/links';
 import { PRODUCTS } from '../../utils/products';
+import * as comms from '../../utils/system/comms';
+import * as links from '../../utils/system/links';
 import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {

@@ -12,7 +12,7 @@ import {
   getJiraProjectTypeByKey,
 } from '../api/client';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import { rendererLogError } from '../logger';
+import { rendererLogError } from '../core/logger';
 import { PRODUCTS } from './catalog';
 
 // Use a promise cache to avoid duplicate API calls for the same hostname

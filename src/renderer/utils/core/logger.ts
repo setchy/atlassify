@@ -1,6 +1,6 @@
-import { logError, logInfo, logWarn } from '../../shared/logger';
+import { logError, logInfo, logWarn } from '../../../shared/logger';
 
-import type { AtlassifyNotification } from '../types';
+import type { AtlassifyNotification } from '../../types';
 
 // Renderer logger augments log entries with notification context formatting.
 export function rendererLogInfo(

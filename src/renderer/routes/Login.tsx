@@ -33,11 +33,11 @@ import { Header } from '../components/primitives/Header';
 import type { Token, Username } from '../types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
+import { rendererLogError } from '../utils/core/logger';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
-} from '../utils/links';
-import { rendererLogError } from '../utils/logger';
+} from '../utils/system/links';
 
 interface LoginProps {
   username: Username;

@@ -9,7 +9,7 @@ vi.mock('../api/client', () => ({
   getCloudIDsForHostnames,
   getJiraProjectTypeByKey,
 }));
-vi.mock('../logger', () => ({
+vi.mock('../core/logger', () => ({
   rendererLogError: vi.fn(),
 }));
 
@@ -18,7 +18,7 @@ import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import type { JiraProjectType } from '../api/types';
 
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import { rendererLogError } from '../logger';
+import { rendererLogError } from '../core/logger';
 import {
   __resetProductInferenceCaches,
   inferAtlassianProduct,

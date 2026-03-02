@@ -2,16 +2,9 @@ import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+import { blockAlignmentByLength, getChevronDetails } from './display';
 
-import {
-  blockAlignmentByLength,
-  getChevronDetails,
-  isCompassScorecardNotification,
-} from './helpers';
-import { PRODUCTS } from './products';
-
-describe('renderer/utils/helpers.ts', () => {
+describe('renderer/utils/ui/display.ts', () => {
   describe('getChevronDetails', () => {
     it('should return correct chevron details', () => {
       expect(getChevronDetails(true, true, 'account')).toEqual({
@@ -41,27 +34,5 @@ describe('renderer/utils/helpers.ts', () => {
         'Some much longer string that should trigger a different format',
       ),
     ).toEqual('start');
-  });
-
-  describe('isCompassScorecardNotification', () => {
-    it('should return true for compass scorecard notifications', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        product: PRODUCTS.compass,
-        message: 'some-project improved a scorecard',
-      };
-
-      expect(isCompassScorecardNotification(mockNotification)).toBe(true);
-    });
-
-    it('should return false for non-compass notifications', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        product: PRODUCTS.confluence,
-        message: 'This is a scorecard wiki',
-      };
-
-      expect(isCompassScorecardNotification(mockNotification)).toBe(false);
-    });
   });
 });

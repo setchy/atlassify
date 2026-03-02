@@ -5,7 +5,7 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 // Ensure stability in EmojiSplash component snapshots
-vi.mock('../utils/random', () => ({
+vi.mock('../utils/core/random', () => ({
   randomIndex: vi.fn(() => 0),
 }));
 

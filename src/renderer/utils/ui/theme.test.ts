@@ -1,6 +1,6 @@
 import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
 
-import { Theme } from '../../shared/theme';
+import { Theme } from '../../../shared/theme';
 
 import { getTheme, isLightMode, setTheme } from './theme';
 
@@ -9,7 +9,7 @@ vi.mock('@atlaskit/tokens', () => ({
   setGlobalTheme: vi.fn(),
 }));
 
-describe('renderer/utils/theme.ts', () => {
+describe('renderer/utils/ui/theme.ts', () => {
   const htmlElement = document.createElement('html');
 
   beforeEach(() => {

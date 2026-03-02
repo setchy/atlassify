@@ -54,7 +54,14 @@ class MockNotification {
   MockNotification;
 
 interface TestApi {
-  tray: { updateColor: (n?: number) => void };
+  tray: {
+    updateColor: (
+      notificationsCount?: number,
+      appState?: 'online' | 'offline' | 'error',
+      idleIconType?: 'default' | 'alternative',
+      unreadIconStyle?: 'active' | 'idle',
+    ) => void;
+  };
   openExternalLink: (u: string, f: boolean) => void;
   app: { version: () => Promise<string>; show?: () => void; hide?: () => void };
   onSystemThemeUpdate: (cb: (t: string) => void) => void;
@@ -86,16 +93,16 @@ describe('preload/index', () => {
   it('tray.updateColor sends correct events', async () => {
     const api = getExposedApi();
 
-    api.tray.updateColor(-1);
+    api.tray.updateColor(5, 'online', 'default', 'active');
 
     expect(sendMainEventMock).toHaveBeenNthCalledWith(
       1,
       EVENTS.UPDATE_ICON_COLOR,
       {
-        isOnline: true,
-        notificationsCount: -1,
-        useAlternateIdleIcon: false,
-        useUnreadActiveIcon: true,
+        notificationsCount: 5,
+        appState: 'online',
+        idleIconType: 'default',
+        unreadIconStyle: 'active',
       },
     );
   });

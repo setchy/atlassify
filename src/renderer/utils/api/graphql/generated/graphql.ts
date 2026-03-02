@@ -40945,7 +40945,8 @@ export type JpdViewsServiceDeleteGlobalViewInput = {
 };
 
 export type JpdViewsServiceFieldInput = {
-  jiraFieldKey: Scalars['String']['input'];
+  jiraFieldKey?: InputMaybe<Scalars['String']['input']>;
+  key?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type JpdViewsServiceFieldRollupInput = {

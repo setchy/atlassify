@@ -5,7 +5,7 @@ import { useRuntimeStore } from '../../stores';
 import type { AtlassifyError } from '../../types';
 import type { AtlassianAPIError } from './types';
 
-import { Errors } from '../errors';
+import { Errors } from '../core/errors';
 
 export function determineFailureType(
   err: AxiosError<AtlassianAPIError>,

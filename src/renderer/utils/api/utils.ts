@@ -2,7 +2,7 @@ import { Constants } from '../../constants';
 
 import type { AtlassianGraphQLResponse } from './types';
 
-import { rendererLogWarn } from '../logger';
+import { rendererLogWarn } from '../core/logger';
 
 /**
  * Atlassian GraphQL response always returns true for Relay PageInfo `hasNextPage` even when there are no more pages.

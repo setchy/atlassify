@@ -4,7 +4,7 @@ import type { Account, AtlassifyNotification } from '../../types';
 
 import { getNotificationsByGroupId } from '../api/client';
 import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
-import { rendererLogError } from '../logger';
+import { rendererLogError } from '../core/logger';
 
 /**
  * Check if a notification is a group notification.

@@ -6,8 +6,8 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
-import * as comms from '../utils/comms';
-import * as links from '../utils/links';
+import * as comms from '../utils/system/comms';
+import * as links from '../utils/system/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
 
 const navigateMock = vi.fn();

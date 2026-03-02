@@ -6,7 +6,7 @@ import { useRuntimeStore } from '../../stores';
 
 import type { AtlassianAPIError } from './types';
 
-import { Errors } from '../errors';
+import { Errors } from '../core/errors';
 import { determineFailureType } from './errors';
 
 describe('renderer/utils/api/errors.ts', () => {

@@ -19,8 +19,8 @@ import { Header } from '../components/primitives/Header';
 
 import type { Account } from '../types';
 
-import { openAccountProfile } from '../utils/links';
-import { isLightMode } from '../utils/theme';
+import { openAccountProfile } from '../utils/system/links';
+import { isLightMode } from '../utils/ui/theme';
 
 export const AccountsRoute: FC = () => {
   const { t } = useTranslation();

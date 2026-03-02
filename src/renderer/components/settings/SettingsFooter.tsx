@@ -14,8 +14,8 @@ import { useGlobalShortcuts } from '../../hooks/useGlobalShortcuts';
 
 import { Footer } from '../primitives/Footer';
 
-import { getAppVersion } from '../../utils/comms';
-import { openAtlassifyReleaseNotes } from '../../utils/links';
+import { getAppVersion } from '../../utils/system/comms';
+import { openAtlassifyReleaseNotes } from '../../utils/system/links';
 
 export const SettingsFooter: FC = () => {
   const { t } = useTranslation();

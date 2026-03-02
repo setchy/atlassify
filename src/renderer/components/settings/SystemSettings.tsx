@@ -22,7 +22,7 @@ import {
   canIncreaseVolume,
   decreaseVolume,
   increaseVolume,
-} from '../../utils/notifications/sound';
+} from '../../utils/ui/volume';
 
 export const SystemSettings: FC = () => {
   const { t } = useTranslation();

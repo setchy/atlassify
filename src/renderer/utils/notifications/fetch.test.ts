@@ -1,8 +1,8 @@
 import { mockSingleAccountNotifications } from '../../__mocks__/notifications-mocks';
 
-import { getNotificationCount, hasMoreNotifications } from './notifications';
+import { getNotificationCount, hasMoreNotifications } from './fetch';
 
-describe('renderer/utils/notifications/notifications.ts', () => {
+describe('renderer/utils/notifications/fetch.ts', () => {
   it('getNotificationCount', () => {
     const result = getNotificationCount(mockSingleAccountNotifications);
 

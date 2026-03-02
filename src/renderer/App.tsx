@@ -26,7 +26,7 @@ import { AppLayout } from './components/layout/AppLayout';
 import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
 import { queryClient } from './utils/api/client';
-import { migrateLegacyStoreToZustand } from './utils/storage';
+import { migrateLegacyStoreToZustand } from './utils/core/storage';
 
 // Run migration from legacy local storage to Zustand stores (async)
 migrateLegacyStoreToZustand();

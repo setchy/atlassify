@@ -1,9 +1,9 @@
-import { useRuntimeStore, useSettingsStore } from '../stores';
+import { useRuntimeStore, useSettingsStore } from '../../stores';
 
 import * as comms from './comms';
 import { setTrayIconColorAndTitle } from './tray';
 
-describe('renderer/utils/tray.ts', () => {
+describe('renderer/utils/system/tray.ts', () => {
   const updateTrayColorSpy = vi.spyOn(comms, 'updateTrayColor');
   const updateTrayTitleSpy = vi.spyOn(comms, 'updateTrayTitle');
 
@@ -29,7 +29,12 @@ describe('renderer/utils/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        5,
+        'online',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5');
     });
@@ -43,7 +48,12 @@ describe('renderer/utils/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        5,
+        'online',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5+');
     });
@@ -55,7 +65,12 @@ describe('renderer/utils/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        5,
+        'online',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -66,7 +81,12 @@ describe('renderer/utils/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, false, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        5,
+        'offline',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -75,7 +95,12 @@ describe('renderer/utils/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, true, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        0,
+        'online',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -89,15 +114,25 @@ describe('renderer/utils/tray.ts', () => {
 
       setTrayIconColorAndTitle();
 
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, true, false, true);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        5,
+        'online',
+        'alternative',
+        'idle',
+      );
     });
 
-    it('should pass -1 to updateTrayColor and empty title when isError is true', () => {
+    it('should pass appState error when isError is true', () => {
       useRuntimeStore.setState({ isError: true });
 
       setTrayIconColorAndTitle();
 
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(-1, true, true, false);
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        0,
+        'error',
+        'default',
+        'active',
+      );
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
   });

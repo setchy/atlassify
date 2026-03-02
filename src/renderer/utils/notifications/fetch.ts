@@ -2,14 +2,14 @@ import { AxiosError } from 'axios';
 
 import { useAccountsStore } from '../../stores';
 
-import type { AccountNotifications } from '../../types';
+import type { AccountNotifications, AtlassifyNotification } from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
 import { transformNotifications } from '../api/transform';
 import { determineIfMorePagesAvailable } from '../api/utils';
-import { Errors } from '../errors';
-import { rendererLogError } from '../logger';
+import { Errors } from '../core/errors';
+import { rendererLogError } from '../core/logger';
 import { getFlattenedNotificationsByProduct } from './group';
 
 /**
@@ -129,4 +129,30 @@ export function stabilizeNotificationsOrder(
       notification.order = orderIndex++;
     }
   }
+}
+
+/**
+ * Find notifications that exist in newNotifications but not in previousNotifications
+ */
+export function getNewNotifications(
+  previousAccountNotifications: AccountNotifications[],
+  newAccountNotifications: AccountNotifications[],
+): AtlassifyNotification[] {
+  return newAccountNotifications.flatMap((accountNotifications) => {
+    const accountPreviousNotifications = previousAccountNotifications.find(
+      (item) => item.account.id === accountNotifications.account.id,
+    );
+
+    if (!accountPreviousNotifications) {
+      return accountNotifications.notifications;
+    }
+
+    const previousIds = new Set(
+      accountPreviousNotifications.notifications.map((item) => item.id),
+    );
+
+    return accountNotifications.notifications.filter(
+      (notification) => !previousIds.has(notification.id),
+    );
+  });
 }

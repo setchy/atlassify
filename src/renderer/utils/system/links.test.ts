@@ -1,5 +1,5 @@
-import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
 import * as comms from './comms';
 import {
@@ -13,7 +13,7 @@ import {
   URLs,
 } from './links';
 
-describe('renderer/utils/links.ts', () => {
+describe('renderer/utils/system/links.ts', () => {
   const openExternalLinkSpy = vi
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());

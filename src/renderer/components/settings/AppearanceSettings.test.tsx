@@ -9,7 +9,7 @@ import {
 
 import { useAccountsStore, useSettingsStore } from '../../stores';
 
-import * as zoom from '../../utils/zoom';
+import * as zoom from '../../utils/ui/zoom';
 import { AppearanceSettings } from './AppearanceSettings';
 
 describe('renderer/components/settings/AppearanceSettings.tsx', () => {

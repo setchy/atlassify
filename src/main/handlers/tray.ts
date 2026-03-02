@@ -12,26 +12,23 @@ import { TrayIcons } from '../icons';
  * @returns The icon path to display.
  */
 export function selectTrayIcon(state: ITrayColorUpdate): string {
-  const {
-    notificationsCount,
-    isOnline,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
-  } = state;
+  const { notificationsCount, appState, idleIconType, unreadIconStyle } = state;
 
-  if (!isOnline) {
-    return TrayIcons.offline;
-  }
-
-  if (notificationsCount < 0) {
+  if (appState === 'error') {
     return TrayIcons.error;
   }
 
-  if (notificationsCount > 0 && useUnreadActiveIcon) {
+  if (appState === 'offline') {
+    return TrayIcons.offline;
+  }
+
+  if (notificationsCount > 0 && unreadIconStyle === 'active') {
     return TrayIcons.active;
   }
 
-  return useAlternateIdleIcon ? TrayIcons.idleAlternate : TrayIcons.idle;
+  return idleIconType === 'alternative'
+    ? TrayIcons.idleAlternate
+    : TrayIcons.idle;
 }
 
 /**

@@ -3,11 +3,11 @@ import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
-import { Constants } from '../constants';
+import { Constants } from '../../constants';
 
-import type { AtlassifyNotification, Chevron } from '../types';
+import type { Chevron } from '../../types';
 
-import i18n from '../i18n';
+import i18n from '../../i18n';
 
 export function getChevronDetails(
   hasNotifications: boolean,
@@ -45,13 +45,4 @@ export function blockAlignmentByLength(text: string): AlignBlock {
   return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
     ? 'start'
     : 'center';
-}
-
-export function isCompassScorecardNotification(
-  notification: AtlassifyNotification,
-): boolean {
-  return (
-    notification.product.type === 'compass' &&
-    notification.message.includes('a scorecard')
-  );
 }

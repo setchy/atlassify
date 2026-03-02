@@ -14,7 +14,7 @@ import {
 import type { AtlassianProduct, ProductType } from '../../types';
 
 import i18n from '../../i18n';
-import { URLs } from '../links';
+import { URLs } from '../system/links';
 
 export const PRODUCTS: Record<ProductType, AtlassianProduct> = {
   bitbucket: {

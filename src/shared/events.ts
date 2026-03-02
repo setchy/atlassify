@@ -43,11 +43,15 @@ export interface IAptabaseEvent {
   props?: Record<string, string | number | boolean>;
 }
 
+export type TrayAppState = 'online' | 'offline' | 'error';
+export type TrayIdleIconType = 'default' | 'alternative';
+export type TrayUnreadIconStyle = 'active' | 'idle';
+
 export interface ITrayColorUpdate {
   notificationsCount: number;
-  isOnline: boolean;
-  useUnreadActiveIcon: boolean;
-  useAlternateIdleIcon: boolean;
+  appState: TrayAppState;
+  idleIconType: TrayIdleIconType;
+  unreadIconStyle: TrayUnreadIconStyle;
 }
 
 export type EventData =

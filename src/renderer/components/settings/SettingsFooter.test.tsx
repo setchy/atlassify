@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
-import * as comms from '../../utils/comms';
+import * as comms from '../../utils/system/comms';
 import { SettingsFooter } from './SettingsFooter';
 
 const navigateMock = vi.fn();

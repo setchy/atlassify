@@ -1,4 +1,10 @@
-import { useRuntimeStore, useSettingsStore } from '../stores';
+import type {
+  TrayAppState,
+  TrayIdleIconType,
+  TrayUnreadIconStyle,
+} from '../../../shared/events';
+
+import { useRuntimeStore, useSettingsStore } from '../../stores';
 
 import { updateTrayColor, updateTrayTitle } from './comms';
 
@@ -32,11 +38,20 @@ export function setTrayIconColorAndTitle() {
     title = `${notificationCount.toString()}${hasMoreAccountNotifications ? '+' : ''}`;
   }
 
-  updateTrayColor(
-    isError ? -1 : notificationCount,
-    isOnline,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
-  );
+  const appState: TrayAppState = isError
+    ? 'error'
+    : isOnline
+      ? 'online'
+      : 'offline';
+
+  const idleIconType: TrayIdleIconType = useAlternateIdleIcon
+    ? 'alternative'
+    : 'default';
+
+  const unreadIconStyle: TrayUnreadIconStyle = useUnreadActiveIcon
+    ? 'active'
+    : 'idle';
+
+  updateTrayColor(notificationCount, appState, idleIconType, unreadIconStyle);
   updateTrayTitle(title);
 }

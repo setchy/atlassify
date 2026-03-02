@@ -1,10 +1,10 @@
-import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
+import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
-import * as logger from '../../shared/logger';
+import * as logger from '../../../shared/logger';
 
 import { rendererLogError, rendererLogInfo, rendererLogWarn } from './logger';
 
-describe('renderer/utils/logger.ts', () => {
+describe('renderer/utils/core/logger.ts', () => {
   const logInfoSpy = vi.spyOn(logger, 'logInfo').mockImplementation(vi.fn());
   const logWarnSpy = vi.spyOn(logger, 'logWarn').mockImplementation(vi.fn());
   const logErrorSpy = vi.spyOn(logger, 'logError').mockImplementation(vi.fn());
