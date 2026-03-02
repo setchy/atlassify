@@ -50,8 +50,8 @@ describe('main/handlers/tray.ts', () => {
     const base = {
       notificationsCount: 0,
       appState: 'online' as const,
-      idleIconType: 'default' as const,
-      unreadIconStyle: 'idle' as const,
+      idleIconVariant: 'default' as const,
+      unreadIconVariant: 'idle' as const,
     };
 
     it('returns offline icon when appState is offline', () => {
@@ -66,33 +66,33 @@ describe('main/handlers/tray.ts', () => {
       );
     });
 
-    it('returns active icon when there are notifications and unreadIconStyle is active', () => {
+    it('returns active icon when there are notifications and unreadIconVariant is active', () => {
       expect(
         selectTrayIcon({
           ...base,
           notificationsCount: 3,
-          unreadIconStyle: 'active',
+          unreadIconVariant: 'active',
         }),
       ).toBe(TrayIcons.active);
     });
 
-    it('returns idle icon when there are notifications but unreadIconStyle is idle', () => {
+    it('returns idle icon when there are notifications but unreadIconVariant is idle', () => {
       expect(
         selectTrayIcon({
           ...base,
           notificationsCount: 3,
-          unreadIconStyle: 'idle',
+          unreadIconVariant: 'idle',
         }),
       ).toBe(TrayIcons.idle);
     });
 
-    it('returns idleAlternate icon when there are notifications, unreadIconStyle is idle, and idleIconType is alternative', () => {
+    it('returns idleAlternate icon when there are notifications, unreadIconVariant is idle, and idleIconVariant is alternative', () => {
       expect(
         selectTrayIcon({
           ...base,
           notificationsCount: 3,
-          unreadIconStyle: 'idle',
-          idleIconType: 'alternative',
+          unreadIconVariant: 'idle',
+          idleIconVariant: 'alternative',
         }),
       ).toBe(TrayIcons.idleAlternate);
     });
@@ -103,12 +103,12 @@ describe('main/handlers/tray.ts', () => {
       );
     });
 
-    it('returns idleAlternate icon when there are no notifications and idleIconType is alternative', () => {
+    it('returns idleAlternate icon when there are no notifications and idleIconVariant is alternative', () => {
       expect(
         selectTrayIcon({
           ...base,
           notificationsCount: 0,
-          idleIconType: 'alternative',
+          idleIconVariant: 'alternative',
         }),
       ).toBe(TrayIcons.idleAlternate);
     });

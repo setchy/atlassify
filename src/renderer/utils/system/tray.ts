@@ -1,7 +1,7 @@
 import type {
   TrayAppState,
-  TrayIdleIconType,
-  TrayUnreadIconStyle,
+  TrayIdleIconVariant,
+  TrayUnreadIconVariant,
 } from '../../../shared/events';
 
 import { useRuntimeStore, useSettingsStore } from '../../stores';
@@ -44,14 +44,19 @@ export function setTrayIconColorAndTitle() {
       ? 'online'
       : 'offline';
 
-  const idleIconType: TrayIdleIconType = useAlternateIdleIcon
+  const idleIconVariant: TrayIdleIconVariant = useAlternateIdleIcon
     ? 'alternative'
     : 'default';
 
-  const unreadIconStyle: TrayUnreadIconStyle = useUnreadActiveIcon
+  const unreadIconVariant: TrayUnreadIconVariant = useUnreadActiveIcon
     ? 'active'
     : 'idle';
 
-  updateTrayColor(notificationCount, appState, idleIconType, unreadIconStyle);
+  updateTrayColor(
+    notificationCount,
+    appState,
+    idleIconVariant,
+    unreadIconVariant,
+  );
   updateTrayTitle(title);
 }

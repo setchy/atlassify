@@ -44,14 +44,14 @@ export interface IAptabaseEvent {
 }
 
 export type TrayAppState = 'online' | 'offline' | 'error';
-export type TrayIdleIconType = 'default' | 'alternative';
-export type TrayUnreadIconStyle = 'active' | 'idle';
+export type TrayIdleIconVariant = 'default' | 'alternative';
+export type TrayUnreadIconVariant = 'active' | 'idle';
 
 export interface ITrayColorUpdate {
   notificationsCount: number;
   appState: TrayAppState;
-  idleIconType: TrayIdleIconType;
-  unreadIconStyle: TrayUnreadIconStyle;
+  idleIconVariant: TrayIdleIconVariant;
+  unreadIconVariant: TrayUnreadIconVariant;
 }
 
 export type EventData =

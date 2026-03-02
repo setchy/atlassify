@@ -12,7 +12,8 @@ import { TrayIcons } from '../icons';
  * @returns The icon path to display.
  */
 export function selectTrayIcon(state: ITrayColorUpdate): string {
-  const { notificationsCount, appState, idleIconType, unreadIconStyle } = state;
+  const { notificationsCount, appState, idleIconVariant, unreadIconVariant } =
+    state;
 
   if (appState === 'error') {
     return TrayIcons.error;
@@ -22,11 +23,11 @@ export function selectTrayIcon(state: ITrayColorUpdate): string {
     return TrayIcons.offline;
   }
 
-  if (notificationsCount > 0 && unreadIconStyle === 'active') {
+  if (notificationsCount > 0 && unreadIconVariant === 'active') {
     return TrayIcons.active;
   }
 
-  return idleIconType === 'alternative'
+  return idleIconVariant === 'alternative'
     ? TrayIcons.idleAlternate
     : TrayIcons.idle;
 }

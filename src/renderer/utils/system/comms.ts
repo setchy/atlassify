@@ -1,7 +1,7 @@
 import type {
   TrayAppState,
-  TrayIdleIconType,
-  TrayUnreadIconStyle,
+  TrayIdleIconVariant,
+  TrayUnreadIconVariant,
 } from '../../../shared/events';
 
 import { OpenPreference, useSettingsStore } from '../../stores';
@@ -57,20 +57,20 @@ export function setKeyboardShortcut(keyboardShortcut: boolean): void {
  *
  * @param notificationsCount The number of unread notifications
  * @param appState The current app state: online, offline, or error
- * @param idleIconType Which idle icon variant to display
- * @param unreadIconStyle Whether to show the active icon when there are unread notifications
+ * @param idleIconVariant Which idle icon variant to display
+ * @param unreadIconVariant Whether to show the active icon when there are unread notifications
  */
 export function updateTrayColor(
   notificationsCount: number,
   appState: TrayAppState,
-  idleIconType: TrayIdleIconType,
-  unreadIconStyle: TrayUnreadIconStyle,
+  idleIconVariant: TrayIdleIconVariant,
+  unreadIconVariant: TrayUnreadIconVariant,
 ): void {
   window.atlassify.tray.updateColor(
     notificationsCount,
     appState,
-    idleIconType,
-    unreadIconStyle,
+    idleIconVariant,
+    unreadIconVariant,
   );
 }
 

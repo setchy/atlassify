@@ -1,7 +1,12 @@
 import { contextBridge, webFrame } from 'electron';
 
 import { APPLICATION } from '../shared/constants';
-import { EVENTS } from '../shared/events';
+import {
+  EVENTS,
+  type TrayAppState,
+  type TrayIdleIconVariant,
+  type TrayUnreadIconVariant,
+} from '../shared/events';
 import { isLinux, isMacOS, isWindows } from '../shared/platform';
 
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
@@ -35,16 +40,16 @@ export const api = {
 
   tray: {
     updateColor: (
-      notificationsCount = 0,
-      appState: 'online' | 'offline' | 'error' = 'online',
-      idleIconType: 'default' | 'alternative' = 'default',
-      unreadIconStyle: 'active' | 'idle' = 'active',
+      notificationsCount,
+      appState: TrayAppState,
+      idleIconVariant: TrayIdleIconVariant,
+      unreadIconVariant: TrayUnreadIconVariant,
     ) => {
       sendMainEvent(EVENTS.UPDATE_ICON_COLOR, {
         notificationsCount,
         appState,
-        idleIconType,
-        unreadIconStyle,
+        idleIconVariant,
+        unreadIconVariant,
       });
     },
 

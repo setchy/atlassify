@@ -1,4 +1,9 @@
-import { EVENTS } from '../shared/events';
+import {
+  EVENTS,
+  type TrayAppState,
+  type TrayIdleIconVariant,
+  type TrayUnreadIconVariant,
+} from '../shared/events';
 
 import { api } from './index';
 
@@ -56,10 +61,10 @@ class MockNotification {
 interface TestApi {
   tray: {
     updateColor: (
-      notificationsCount?: number,
-      appState?: 'online' | 'offline' | 'error',
-      idleIconType?: 'default' | 'alternative',
-      unreadIconStyle?: 'active' | 'idle',
+      notificationsCount: number,
+      appState: TrayAppState,
+      idleIconVariant: TrayIdleIconVariant,
+      unreadIconVariant: TrayUnreadIconVariant,
     ) => void;
   };
   openExternalLink: (u: string, f: boolean) => void;
@@ -101,8 +106,8 @@ describe('preload/index', () => {
       {
         notificationsCount: 5,
         appState: 'online',
-        idleIconType: 'default',
-        unreadIconStyle: 'active',
+        idleIconVariant: 'default',
+        unreadIconVariant: 'active',
       },
     );
   });
