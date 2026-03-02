@@ -31,9 +31,9 @@ export function setTrayIconColorAndTitle() {
   let title = '';
   if (
     isOnline &&
-    showNotificationsCountInTray &&
     !isError &&
-    notificationCount > 0
+    notificationCount > 0 &&
+    showNotificationsCountInTray
   ) {
     title = `${notificationCount.toString()}${hasMoreAccountNotifications ? '+' : ''}`;
   }
