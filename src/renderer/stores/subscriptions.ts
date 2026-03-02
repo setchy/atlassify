@@ -16,7 +16,7 @@ import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
 import {
   useAccountsStore,
   useFiltersStore,
-  useNotificationsStore,
+  useRuntimeStore,
   useSettingsStore,
 } from './';
 
@@ -35,6 +35,7 @@ export function initializeStoreSubscriptions(): () => void {
   setTheme(useSettingsStore.getState().theme);
   setAutoLaunch(useSettingsStore.getState().openAtStartup);
   setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
+  setTrayIconColorAndTitle();
 
   // ========================================================================
   // Settings Store Side Effects
@@ -145,11 +146,11 @@ export function initializeStoreSubscriptions(): () => void {
   unsubscribers.push(unsubFilters);
 
   // ========================================================================
-  // Notifications Store Side Effects
+  // Runtime Store Side Effects
   // ========================================================================
 
   // Tray updates when notification status changes
-  const unsubNotifications = useNotificationsStore.subscribe(
+  const unsubRuntime = useRuntimeStore.subscribe(
     (state) => ({
       notificationCount: state.notificationCount,
       hasMoreAccountNotifications: state.hasMoreAccountNotifications,
@@ -159,7 +160,7 @@ export function initializeStoreSubscriptions(): () => void {
     setTrayIconColorAndTitle,
     { equalityFn: shallow },
   );
-  unsubscribers.push(unsubNotifications);
+  unsubscribers.push(unsubRuntime);
 
   // ========================================================================
   // Additional store subscriptions can be added here following the same pattern

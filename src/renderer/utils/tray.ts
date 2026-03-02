@@ -1,4 +1,4 @@
-import { useNotificationsStore, useSettingsStore } from '../stores';
+import { useRuntimeStore, useSettingsStore } from '../stores';
 
 import { updateTrayColor, updateTrayTitle } from './comms';
 
@@ -6,7 +6,7 @@ import { updateTrayColor, updateTrayTitle } from './comms';
  * Updates the tray icon and title using the current notification status,
  * online status, and settings store values.
  *
- * Notification status (count, hasMore, isError) is read from useNotificationsStore,
+ * Notification status (count, hasMore, isError) is read from useRuntimeStore,
  * which is kept up-to-date by useNotifications with already-filtered values.
  * This avoids re-applying filter logic against the raw query cache.
  *
@@ -15,7 +15,7 @@ import { updateTrayColor, updateTrayTitle } from './comms';
  */
 export function setTrayIconColorAndTitle() {
   const { notificationCount, hasMoreAccountNotifications, isError, isOnline } =
-    useNotificationsStore.getState();
+    useRuntimeStore.getState();
   const {
     showNotificationsCountInTray,
     useUnreadActiveIcon,

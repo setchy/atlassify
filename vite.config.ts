@@ -11,15 +11,11 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 import { Constants } from './src/renderer/constants';
 
-import { Errors } from './src/renderer/utils/errors';
-
-const ALL_EMOJIS = [
-  ...Constants.ALL_READ_EMOJIS,
-  ...Errors.BAD_CREDENTIALS.emojis,
-  ...Errors.BAD_REQUEST.emojis,
-  ...Errors.NETWORK.emojis,
-  ...Errors.UNKNOWN.emojis,
-];
+const ALL_EMOJIS = (function flatten(obj: object): string[] {
+  return Object.values(obj).flatMap((v) =>
+    Array.isArray(v) ? v : flatten(v as object),
+  );
+})(Constants.EMOJIS);
 
 const extractSvgFilename = (imgHtml: string) =>
   imgHtml

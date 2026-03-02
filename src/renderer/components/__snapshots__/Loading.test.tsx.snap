@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderer/components/Loading.tsx > should render itself & its children 1`] = `
+<div>
+  <div
+    class="flex flex-1 flex-col items-center justify-center min-h-screen"
+  >
+    <div
+      class="css-1rd5nai"
+    >
+      <div
+        class="css-1ma91a4"
+      >
+        <span
+          class="text-5xl"
+        >
+          <span>
+            <img
+              alt="⏳"
+              class="emoji"
+              draggable="false"
+              src="/mock/assets/images/23f3.svg"
+            />
+          </span>
+        </span>
+        <span
+          class="text-xl font-semibold"
+        >
+          Loading
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

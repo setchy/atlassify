@@ -31,9 +31,11 @@ function AppContextProvider({
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       notifications: [],
-      status: 'success',
       globalError: null,
       isOnline: true,
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
       ...value,
     } as Partial<AppContextState>;
   }, [value]);

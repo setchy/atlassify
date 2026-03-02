@@ -30,11 +30,6 @@ export type EncryptedToken = Branded<string, 'Token'>;
 export type Link = Branded<string, 'WebUrl'>;
 
 /**
- * The status of the applications data fetching process.
- */
-export type Status = 'loading' | 'success' | 'error';
-
-/**
  * The hostname of an Atlassian tenant
  */
 export type Hostname = Branded<string, 'Hostname'>;

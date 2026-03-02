@@ -1,3 +1,5 @@
+import { Constants } from '../constants';
+
 import type { AccountNotifications, AtlassifyError, ErrorType } from '../types';
 
 import i18n from '../i18n';
@@ -9,12 +11,12 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
       i18n.t('errors.badCredentials.description1'),
       i18n.t('errors.badCredentials.description2'),
     ],
-    emojis: ['🔓'],
+    emojis: Constants.EMOJIS.ERRORS.BAD_CREDENTIALS,
   },
   BAD_REQUEST: {
     title: i18n.t('errors.badRequest.title'),
     descriptions: [i18n.t('errors.badRequest.description1')],
-    emojis: ['😳'],
+    emojis: Constants.EMOJIS.ERRORS.BAD_REQUEST,
   },
   NETWORK: {
     title: i18n.t('errors.network.title'),
@@ -22,7 +24,7 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
       i18n.t('errors.network.description1'),
       i18n.t('errors.network.description2'),
     ],
-    emojis: ['🛜'],
+    emojis: Constants.EMOJIS.ERRORS.NETWORK,
   },
   OFFLINE: {
     title: i18n.t('errors.offline.title'),
@@ -30,12 +32,12 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
       i18n.t('errors.offline.description1'),
       i18n.t('errors.offline.description2'),
     ],
-    emojis: ['🛜'],
+    emojis: Constants.EMOJIS.ERRORS.OFFLINE,
   },
   UNKNOWN: {
     title: i18n.t('errors.unknown.title'),
     descriptions: [i18n.t('errors.unknown.description1')],
-    emojis: ['🤔', '🥲', '🫠', '🙃', '🙈'],
+    emojis: Constants.EMOJIS.ERRORS.UNKNOWN,
   },
 };
 

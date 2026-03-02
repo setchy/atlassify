@@ -12,7 +12,7 @@ import { Constants } from '../constants';
 import {
   useAccountsStore,
   useFiltersStore,
-  useNotificationsStore,
+  useRuntimeStore,
   useSettingsStore,
 } from '../stores';
 
@@ -20,7 +20,6 @@ import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  Status,
 } from '../types';
 
 import {
@@ -51,8 +50,11 @@ import { getNewNotifications } from '../utils/notifications/utils';
  * State and actions for notifications management.
  */
 interface NotificationsState {
-  status: Status;
-  globalError: AtlassifyError;
+  isLoading: boolean;
+  isFetching: boolean;
+  isErrorOrPaused: boolean;
+
+  globalError: AtlassifyError | null;
 
   notifications: AccountNotifications[];
   notificationCount: number;
@@ -165,39 +167,10 @@ export const useNotifications = (): NotificationsState => {
     [notifications],
   );
 
-  // Determine status and globalError from query state
-  const status: Status = useMemo(() => {
-    if (isLoading || isFetching) {
-      return 'loading';
-    }
+  const isErrorOrPaused = isError || isPaused;
 
-    // Check if paused due to offline state first (instant detection)
-    if (isPaused) {
-      return 'error';
-    }
-
-    if (isError) {
-      return 'error';
-    }
-
-    return 'success';
-  }, [isLoading, isFetching, isPaused, isError]);
-
-  // Sync filtered notification status to store so tray updates outside React
-  // can read pre-filtered values without re-applying filter logic.
-  useEffect(() => {
-    const isErrorOrOffline = status === 'error';
-
-    useNotificationsStore
-      .getState()
-      .updateNotificationStatus(
-        notificationCount,
-        hasMoreAccountNotifications,
-        isErrorOrOffline,
-      );
-  }, [notificationCount, hasMoreAccountNotifications, status]);
-
-  const globalError: AtlassifyError = useMemo(() => {
+  // Determine global error from query state
+  const globalError: AtlassifyError | null = useMemo(() => {
     // If paused due to offline, show network error
     if (isPaused) {
       return Errors.OFFLINE;
@@ -217,13 +190,27 @@ export const useNotifications = (): NotificationsState => {
     return null;
   }, [isPaused, isError, notifications]);
 
+  /**
+   * Sync filtered notification derived states to store so tray updates outside React
+   * components can read pre-filtered values without re-applying filter logic.
+   */
+  useEffect(() => {
+    useRuntimeStore
+      .getState()
+      .updateNotificationStatus(
+        notificationCount,
+        hasMoreAccountNotifications,
+        isErrorOrPaused,
+      );
+  }, [notificationCount, hasMoreAccountNotifications, isErrorOrPaused]);
+
   const refetchNotifications = useCallback(async () => {
     await refetch();
   }, [refetch]);
 
   // Handle sound and native notifications when new notifications arrive
   useEffect(() => {
-    if (isLoading || isError || notifications.length === 0) {
+    if (isLoading || isErrorOrPaused || notifications.length === 0) {
       return;
     }
 
@@ -262,7 +249,7 @@ export const useNotifications = (): NotificationsState => {
   }, [
     notifications,
     isLoading,
-    isError,
+    isErrorOrPaused,
     playSoundNewNotifications,
     showSystemNotifications,
     notificationVolume,
@@ -380,7 +367,10 @@ export const useNotifications = (): NotificationsState => {
   );
 
   return {
-    status,
+    isLoading,
+    isFetching,
+    isErrorOrPaused,
+
     globalError,
 
     notifications,

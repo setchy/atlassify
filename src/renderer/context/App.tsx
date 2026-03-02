@@ -1,10 +1,4 @@
-import {
-  createContext,
-  type ReactNode,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext, type ReactNode, useEffect, useMemo } from 'react';
 
 import { onlineManager } from '@tanstack/react-query';
 
@@ -14,7 +8,7 @@ import { useNotifications } from '../hooks/useNotifications';
 import {
   useAccountsStore,
   useFiltersStore,
-  useNotificationsStore,
+  useRuntimeStore,
   useSettingsStore,
 } from '../stores';
 
@@ -22,12 +16,15 @@ import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  Status,
 } from '../types';
 
 export interface AppContextState {
-  status: Status;
-  globalError: AtlassifyError;
+  isOnline: boolean;
+  isLoading: boolean;
+  isFetching: boolean;
+  isErrorOrPaused: boolean;
+
+  globalError: AtlassifyError | null;
 
   notifications: AccountNotifications[];
   notificationCount: number;
@@ -44,8 +41,6 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
-
-  isOnline: boolean;
 }
 
 export const AppContext = createContext<Partial<AppContextState> | undefined>(
@@ -59,7 +54,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const resetSettings = useSettingsStore((s) => s.reset);
 
   const {
-    status,
+    isLoading,
+    isFetching,
+    isErrorOrPaused,
+
     globalError,
 
     notifications,
@@ -73,17 +71,15 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
-  const [isOnline, setIsOnline] = useState(() => onlineManager.isOnline());
+  const isOnline = useRuntimeStore((s) => s.isOnline);
 
-  // Online Manager subscription to update online status in state and notifications store
+  // Subscribe to onlineManager and write changes into the runtime store.
   useEffect(() => {
-    const handle = () => {
-      const online = onlineManager.isOnline();
-      setIsOnline(online);
-      useNotificationsStore.getState().updateIsOnline(online);
+    const syncOnlineState = () => {
+      useRuntimeStore.getState().updateIsOnline(onlineManager.isOnline());
     };
-    const unsubscribe = onlineManager.subscribe(handle);
-    handle();
+    const unsubscribe = onlineManager.subscribe(syncOnlineState);
+    syncOnlineState();
     return () => unsubscribe();
   }, []);
 
@@ -105,7 +101,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   const contextValues: AppContextState = useMemo(
     () => ({
-      status,
+      isOnline,
+      isLoading,
+      isFetching,
+      isErrorOrPaused,
+
       globalError,
 
       notifications,
@@ -119,11 +119,13 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-
-      isOnline,
     }),
     [
-      status,
+      isOnline,
+      isLoading,
+      isFetching,
+      isErrorOrPaused,
+
       globalError,
 
       notifications,
@@ -137,8 +139,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
-
-      isOnline,
     ],
   );
 

@@ -9,7 +9,12 @@ import * as comms from '../utils/comms';
 import * as theme from '../utils/theme';
 import * as tray from '../utils/tray';
 import * as zoom from '../utils/zoom';
-import { useAccountsStore, useFiltersStore, useSettingsStore } from './';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useRuntimeStore,
+  useSettingsStore,
+} from './';
 import { initializeStoreSubscriptions } from './subscriptions';
 
 // Mock window.atlassify
@@ -83,6 +88,12 @@ describe('renderer/stores/subscriptions.ts', () => {
 
       expect(zoom.zoomPercentageToLevel).toHaveBeenCalledWith(150);
       expect(mockZoom.setLevel).toHaveBeenCalledWith(15); // 150 / 10
+    });
+
+    it('should call setTrayIconColorAndTitle on startup', () => {
+      cleanup = initializeStoreSubscriptions();
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -174,6 +185,31 @@ describe('renderer/stores/subscriptions.ts', () => {
         queryKey: ['notifications', 2, true, true],
         refetchType: 'none',
       });
+    });
+  });
+
+  describe('Runtime Store Subscriptions', () => {
+    beforeEach(() => {
+      cleanup = initializeStoreSubscriptions();
+      vi.clearAllMocks(); // Clear calls from initialization
+    });
+
+    it('should trigger setTrayIconColorAndTitle when notificationCount changes', () => {
+      useRuntimeStore.getState().updateNotificationStatus(5, false, false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when isOnline changes', () => {
+      useRuntimeStore.getState().updateIsOnline(false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when isError changes', () => {
+      useRuntimeStore.getState().updateNotificationStatus(0, false, true);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
   });
 

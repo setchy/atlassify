@@ -2013,6 +2013,8 @@ export type AgentWorkspaceAvailabilityInput = {
   projectKey?: InputMaybe<Scalars['String']['input']>;
   /** Filter by multiple statuses (optional) */
   statuses?: InputMaybe<Array<AgentWorkspaceAvailabilityStatus>>;
+  /** Filter by multiple team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
+  teamARIs?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by multiple team IDs (optional) - only include agents belonging to these teams */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -2048,6 +2050,8 @@ export type AgentWorkspaceCapacityInput = {
   projectKey: Scalars['String']['input'];
   /** Filter by multiple capacity statuses (optional) */
   statuses?: InputMaybe<Array<AgentWorkspaceCapacityStatus>>;
+  /** Filter by multiple team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
+  teamARIs?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by multiple team IDs (optional) */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -2214,7 +2218,9 @@ export type AgentWorkspaceCreateScheduleInput = {
   recurrence?: InputMaybe<AgentWorkspaceRecurrenceRuleInput>;
   /** Shift start time in UTC (required) */
   startTime: Scalars['DateTime']['input'];
-  /** Team ARI ID (optional) */
+  /** Team ARI (optional). Alternative to teamId — accepts a full team ARI. */
+  teamARI?: InputMaybe<Scalars['ID']['input']>;
+  /** Team ID (optional) */
   teamId?: InputMaybe<Scalars['ID']['input']>;
   /** IANA timezone ID (e.g., Australia/Sydney). Defaults to UTC if not provided. */
   timezone?: InputMaybe<Scalars['String']['input']>;
@@ -2299,6 +2305,8 @@ export type AgentWorkspacePaginationInput = {
 
 /** Filter criteria for querying project skills */
 export type AgentWorkspaceProjectSkillFilterInput = {
+  /** Filter by specific project skill IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by skill IDs */
   skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by statuses */
@@ -2384,6 +2392,7 @@ export enum AgentWorkspaceScheduleErrorCode {
   InvalidRecurrence = 'INVALID_RECURRENCE',
   InvalidTimeRange = 'INVALID_TIME_RANGE',
   ProjectNotFound = 'PROJECT_NOT_FOUND',
+  ScheduleDeleted = 'SCHEDULE_DELETED',
   ScheduleNotFound = 'SCHEDULE_NOT_FOUND',
   TeamNotFound = 'TEAM_NOT_FOUND',
   ValidationError = 'VALIDATION_ERROR'
@@ -2418,6 +2427,8 @@ export type AgentWorkspaceShiftsQueryInput = {
   scheduleIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Start of the time range to fetch shifts (required) */
   startTime: Scalars['DateTime']['input'];
+  /** Filter by specific team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
+  teamARIs?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by specific team IDs (optional) - only include agents belonging to these teams */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -2556,6 +2567,8 @@ export type AgentWorkspaceTeamSchedulesQueryInput = {
   projectKey?: InputMaybe<Scalars['String']['input']>;
   /** Start of the time range to fetch schedules (required) */
   startTime: Scalars['DateTime']['input'];
+  /** Filter by specific team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
+  teamARIs?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter by specific team IDs (optional) */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -2633,7 +2646,9 @@ export type AgentWorkspaceUpdateScheduleInput = {
   scheduleId: Scalars['ID']['input'];
   /** Shift start time in UTC (required) */
   startTime: Scalars['DateTime']['input'];
-  /** Team ARI ID (optional) */
+  /** Team ARI (optional). Alternative to teamId — accepts a full team ARI. */
+  teamARI?: InputMaybe<Scalars['ID']['input']>;
+  /** Team ID (optional) */
   teamId?: InputMaybe<Scalars['ID']['input']>;
   /** IANA timezone ID (e.g., Australia/Sydney). Defaults to UTC if not provided. */
   timezone?: InputMaybe<Scalars['String']['input']>;
@@ -2653,6 +2668,14 @@ export type AgentWorkspaceUpdateSkillProficiencyInput = {
   skillId: Scalars['ID']['input'];
   /** ID of the user */
   userId: Scalars['ID']['input'];
+};
+
+/** Input for updating the smart routing configuration for a project. */
+export type AgentWorkspaceUpdateSmartRoutingConfigInput = {
+  /** Whether to enable or disable smart routing for this project. */
+  enabled: Scalars['Boolean']['input'];
+  /** The ARI of the project to configure smart routing for. */
+  projectAri: Scalars['ID']['input'];
 };
 
 /** Filter criteria for querying user skills */
@@ -40951,6 +40974,7 @@ export enum JpdViewsServiceGlobalViewAssociationContainerType {
 
 /** ## Query model */
 export type JpdViewsServiceGlobalViewsByCriteriaInput = {
+  assocToNewSpaces?: InputMaybe<Scalars['Boolean']['input']>;
   /**
    * Free text search to filter global views by name which contains the given text.
    * Empty means no filtering - return all global views.
@@ -41048,6 +41072,7 @@ export type JpdViewsServiceUnassociateGlobalViewInput = {
 };
 
 export type JpdViewsServiceUpdateGlobalViewInput = {
+  assocToNewSpaces?: InputMaybe<Scalars['Boolean']['input']>;
   boldColors?: InputMaybe<Scalars['Boolean']['input']>;
   colorBy?: InputMaybe<JpdViewsServiceFieldInput>;
   colorStyle?: InputMaybe<Scalars['String']['input']>;
@@ -41457,6 +41482,7 @@ export type JsmConversationCloseConversationInput = {
 export enum JsmConversationMessageSource {
   Agent = 'AGENT',
   Helpseeker = 'HELPSEEKER',
+  RovoAssistant = 'ROVO_ASSISTANT',
   System = 'SYSTEM'
 }
 

@@ -36,7 +36,9 @@ describe('renderer/context/App.tsx', () => {
   beforeEach(() => {
     vi.useFakeTimers();
     vi.mocked(useNotifications).mockReturnValue({
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
       globalError: null,
       notifications: [],
       notificationCount: 0,
@@ -45,7 +47,6 @@ describe('renderer/context/App.tsx', () => {
       refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-      isOnline: true,
     } as ReturnType<typeof useNotifications>);
   });
 

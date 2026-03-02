@@ -42,13 +42,12 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, status } = useAppContext();
+  const { fetchNotifications, isLoading } = useAppContext();
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
-  const isLoading = status === 'loading';
 
   /**
    * All shortcut configs and actions.

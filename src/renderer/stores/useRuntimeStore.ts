@@ -1,24 +1,23 @@
 import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 
-import type { NotificationsStore } from './types';
+import type { RuntimeStore } from './types';
+
+import { DEFAULT_RUNTIME_STATE } from './defaults';
 
 /**
- * Atlassify Notifications store.
+ * Atlassify Runtime store.
  *
- * Holds tray-relevant notification status derived from filtered query data.
+ * Holds derived notification states from filtered query data.
  * Written by the useNotifications hook (inside React) so that tray update
  * functions running outside of React can read pre-filtered values without
  * needing to re-apply filter logic against the raw query cache.
  *
  * Not persisted — values are re-established on each render cycle.
  */
-const useNotificationsStore = create<NotificationsStore>()(
+const useRuntimeStore = create<RuntimeStore>()(
   subscribeWithSelector((set) => ({
-    notificationCount: 0,
-    hasMoreAccountNotifications: false,
-    isError: false,
-    isOnline: true,
+    ...DEFAULT_RUNTIME_STATE,
 
     updateNotificationStatus: (
       notificationCount: number,
@@ -34,4 +33,4 @@ const useNotificationsStore = create<NotificationsStore>()(
   })),
 );
 
-export default useNotificationsStore;
+export default useRuntimeStore;

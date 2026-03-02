@@ -59,7 +59,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
       await waitFor(() => {
-        expect(result.current.status).toBe('success');
+        expect(result.current.isFetching).toBe(false);
       });
 
       expect(result.current.notifications).toEqual([
@@ -101,7 +101,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
       await waitFor(() => {
-        expect(result.current.status).toBe('success');
+        expect(result.current.isFetching).toBe(false);
       });
 
       expect(result.current.notifications).toEqual([
@@ -136,7 +136,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
       await waitFor(() => {
-        expect(result.current.status).toBe('success');
+        expect(result.current.isFetching).toBe(false);
       });
 
       expect(result.current.notifications).toEqual([
@@ -199,7 +199,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.status).toBe('success');
+      expect(result.current.isFetching).toBe(false);
     });
 
     await act(async () => {
@@ -209,7 +209,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.status).toBe('success');
+      expect(result.current.isFetching).toBe(false);
     });
 
     expect(result.current.notifications.length).toBe(1);
@@ -264,7 +264,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.status).toBe('success');
+      expect(result.current.isFetching).toBe(false);
     });
 
     await act(async () => {
@@ -274,7 +274,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.status).toBe('success');
+      expect(result.current.isFetching).toBe(false);
     });
 
     expect(result.current.notifications.length).toBe(1);

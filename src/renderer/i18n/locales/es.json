@@ -128,6 +128,9 @@
     "token_helper": "y pegar arriba",
     "username_helper": "Su nombre de usuario / dirección de correo electrónico de Atlassian"
   },
+  "loading": {
+    "heading": "Cargando"
+  },
   "notifications": {
     "account": {
       "mark_all_read": "Marque todas las notificaciones de cuenta como lectura",
