@@ -9,27 +9,6 @@ import type { AtlassifyNotification, Chevron } from '../types';
 
 import i18n from '../i18n';
 
-export function extractRepositoryName(
-  notification: AtlassifyNotification,
-): string {
-  return notification.entity.url.split('/').slice(3, 5).join('/');
-}
-
-export function extractRovoDevContextName(
-  notification: AtlassifyNotification,
-): string {
-  const context = new URL(notification.url).pathname.split('/').pop();
-
-  return `The AI coding tool has generated code for ${context}`;
-}
-
-export function extractGoalOrProjectKey(
-  notification: AtlassifyNotification,
-): string | null {
-  const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
-  return match ? match[2] : null;
-}
-
 export function getChevronDetails(
   hasNotifications: boolean,
   isVisible: boolean,

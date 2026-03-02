@@ -2,12 +2,9 @@ import { formatDistanceToNowStrict, isValid, parseISO } from 'date-fns';
 
 import type { AtlassifyNotification } from '../../types';
 
-import {
-  extractGoalOrProjectKey,
-  extractRepositoryName,
-  extractRovoDevContextName,
-} from '../helpers';
-
+/**
+ * Formats a string to proper case (capitalizes the first letter of each word).
+ */
 export function formatProperCase(text: string) {
   if (!text) {
     return '';
@@ -18,6 +15,10 @@ export function formatProperCase(text: string) {
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   });
 }
+
+/**
+ * Formats the body text of a notification based on its product type.
+ */
 export function formatNotificationBodyText(
   notification: AtlassifyNotification,
 ): string {
@@ -29,6 +30,9 @@ export function formatNotificationBodyText(
   }
 }
 
+/**
+ * Formats the footer text of a notification based on its product type.
+ */
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
 ): string {
@@ -56,6 +60,25 @@ export function formatNotificationFooterText(
 
   return notification.product.display;
 }
+
+/**
+ * Formats the footer text of a native notification based on its product type.
+ */
+export function formatNativeNotificationFooterText(
+  notification: AtlassifyNotification,
+): string {
+  let footer = formatNotificationFooterText(notification);
+
+  if (notification.entity.title) {
+    footer += `: ${notification.entity.title}`;
+  }
+
+  return footer;
+}
+
+/**
+ * Formats the updated_at timestamp of a notification to a human-readable string.
+ */
 export function formatNotificationUpdatedAt(
   notification: AtlassifyNotification,
 ): string {
@@ -72,14 +95,33 @@ export function formatNotificationUpdatedAt(
 
   return formatDistanceToNowStrict(parsed, { addSuffix: true });
 }
-export function formatNativeNotificationFooterText(
+
+/**
+ * Extracts the repository name from a Bitbucket notification's entity URL.
+ */
+export function extractRepositoryName(
   notification: AtlassifyNotification,
 ): string {
-  let footer = formatNotificationFooterText(notification);
+  return notification.entity.url.split('/').slice(3, 5).join('/');
+}
 
-  if (notification.entity.title) {
-    footer += `: ${notification.entity.title}`;
-  }
+/**
+ * Extracts the context name from a Rovo Dev notification's URL.
+ */
+export function extractRovoDevContextName(
+  notification: AtlassifyNotification,
+): string {
+  const context = new URL(notification.url).pathname.split('/').pop();
 
-  return footer;
+  return `The AI coding tool has generated code for ${context}`;
+}
+
+/**
+ * Extracts the goal or project key from a notification's path URL if it matches the expected pattern.
+ */
+export function extractGoalOrProjectKey(
+  notification: AtlassifyNotification,
+): string | null {
+  const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
+  return match ? match[2] : null;
 }

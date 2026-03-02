@@ -4,36 +4,14 @@ import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
-import type { Link } from '../types';
-
 import {
   blockAlignmentByLength,
-  extractRepositoryName,
-  extractRovoDevContextName,
   getChevronDetails,
   isCompassScorecardNotification,
 } from './helpers';
 import { PRODUCTS } from './products';
 
 describe('renderer/utils/helpers.ts', () => {
-  describe('extracting', () => {
-    it('extractRepositoryName', () => {
-      const mockNotif = mockSingleAtlassifyNotification;
-
-      expect(extractRepositoryName(mockNotif)).toBe('myorg/notifications-test');
-    });
-
-    it('extractRovoDevContextName', () => {
-      const mockNotif = mockSingleAtlassifyNotification;
-      mockNotif.url =
-        'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link;
-
-      expect(extractRovoDevContextName(mockNotif)).toBe(
-        'The AI coding tool has generated code for ATLASSIFY-123',
-      );
-    });
-  });
-
   describe('getChevronDetails', () => {
     it('should return correct chevron details', () => {
       expect(getChevronDetails(true, true, 'account')).toEqual({
