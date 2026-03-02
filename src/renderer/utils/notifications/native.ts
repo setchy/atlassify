@@ -3,7 +3,7 @@ import { APPLICATION } from '../../../shared/constants';
 import type { AtlassifyNotification } from '../../types';
 
 import i18n from '../../i18n';
-import { formatNativeNotificationFooterText } from '../helpers';
+import { formatNativeNotificationFooterText } from './formatters';
 
 export const raiseNativeNotification = (
   notifications: AtlassifyNotification[],
