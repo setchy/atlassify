@@ -75,13 +75,6 @@ export function renderWithAppContext(
 }
 
 /**
- * Ensure stable snapshots for our randomized emoji use-cases
- */
-export function ensureStableEmojis() {
-  globalThis.Math.random = vi.fn(() => 0.1);
-}
-
-/**
  * Configure axios to use the http adapter instead of XHR.
  * This allows nock to intercept HTTP requests in tests
  *

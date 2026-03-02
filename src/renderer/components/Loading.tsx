@@ -5,14 +5,14 @@ import { Constants } from '../constants';
 
 import { EmojiSplash } from './layout/EmojiSplash';
 
+import { randomIndex } from '../utils/random';
+
 export const Loading: FC = () => {
   const { t } = useTranslation();
 
   const emoji = useMemo(
     () =>
-      Constants.EMOJIS.LOADING[
-        Math.floor(Math.random() * Constants.EMOJIS.LOADING.length)
-      ],
+      Constants.EMOJIS.LOADING[randomIndex(Constants.EMOJIS.LOADING.length)],
     [],
   );
 
