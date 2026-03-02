@@ -34,7 +34,6 @@ export type Scalars = {
   URL: { input: any; output: any; }
   UUID: { input: any; output: any; }
   Upload: { input: any; output: any; }
-  VTRI: { input: any; output: any; }
 };
 
 export type AvpAddDashboardElementInput = {
@@ -28278,7 +28277,7 @@ export type GravityFieldRefMappingInput = {
   /** Target field key (e.g. 'customfield_10055'). */
   key: Scalars['String']['input'];
   /** Template field reference (e.g. 'vtri:field:ref:polaris-rating-effort'). */
-  ref: Scalars['VTRI']['input'];
+  ref: Scalars['ID']['input'];
 };
 
 /** Aggregation function for field rollups. */

@@ -79,7 +79,15 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       useRuntimeStore.getState().updateIsOnline(onlineManager.isOnline());
     };
     const unsubscribe = onlineManager.subscribe(syncOnlineState);
-    syncOnlineState();
+
+    /**
+     * onlineManager initializes #online = true regardless of actual network state.
+     * it only corrects itself when the first online/offline window event fires.
+     * Calling setOnline(navigator.onLine) syncs its internal flag so
+     * that future online→offline→online transitions are detected correctly.
+     */
+    onlineManager.setOnline(navigator.onLine);
+
     return () => unsubscribe();
   }, []);
 
