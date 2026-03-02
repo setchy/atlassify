@@ -134,7 +134,7 @@ describe('components/GlobalShortcuts.tsx', () => {
             <GlobalShortcuts />
           </MemoryRouter>,
           {
-            status: 'loading',
+            isLoading: true,
           },
         );
 
@@ -278,7 +278,7 @@ describe('components/GlobalShortcuts.tsx', () => {
             <GlobalShortcuts />
           </MemoryRouter>,
           {
-            status: 'loading',
+            isLoading: true,
           },
         );
 

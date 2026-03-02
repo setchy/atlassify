@@ -128,6 +128,9 @@
     "duplicate_username": "This username has already been added. Please use a different username.",
     "security_docs": "See Atlassian documentation"
   },
+  "loading": {
+    "heading": "Loading"
+  },
   "notifications": {
     "native_count": "You have {{count}} notifications",
     "account": {

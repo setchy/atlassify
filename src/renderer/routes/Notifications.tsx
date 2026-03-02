@@ -4,6 +4,7 @@ import { useAppContext } from '../hooks/useAppContext';
 import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { AllRead } from '../components/AllRead';
+import { Loading } from '../components/Loading';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
@@ -12,8 +13,14 @@ import { Oops } from '../components/Oops';
 import { Errors } from '../utils/errors';
 
 export const NotificationsRoute: FC = () => {
-  const { notifications, status, globalError, hasNotifications, isOnline } =
-    useAppContext();
+  const {
+    notifications,
+    globalError,
+    hasNotifications,
+    isOnline,
+    isLoading,
+    isErrorOrPaused,
+  } = useAppContext();
 
   const hasNoAccountErrors = useMemo(
     () => notifications.every((account) => account.error === null),
@@ -27,8 +34,12 @@ export const NotificationsRoute: FC = () => {
     return <Oops error={Errors.OFFLINE} />;
   }
 
-  if (status === 'error') {
+  if (isErrorOrPaused) {
     return <Oops error={globalError ?? Errors.UNKNOWN} />;
+  }
+
+  if (isLoading) {
+    return <Loading />;
   }
 
   if (!hasNotifications && hasNoAccountErrors) {

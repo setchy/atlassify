@@ -374,7 +374,6 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           fetchNotifications: fetchNotificationsMock,
-          status: 'success',
         },
       );
 
@@ -391,7 +390,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         </MemoryRouter>,
         {
           fetchNotifications: fetchNotificationsMock,
-          status: 'loading',
+          isLoading: true,
         },
       );
 

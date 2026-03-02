@@ -9,8 +9,18 @@ export const Constants = {
     LANGUAGE: 'atlassify-language',
   },
 
-  // Emojis to use when all notifications are read
-  ALL_READ_EMOJIS: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
+  // Emojis for different states and events
+  EMOJIS: {
+    ALL_READ: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
+    LOADING: ['⏳', '🔄', '⌛'],
+    ERRORS: {
+      BAD_CREDENTIALS: ['🔓'],
+      BAD_REQUEST: ['😳'],
+      NETWORK: ['🛜'],
+      OFFLINE: ['🛜'],
+      UNKNOWN: ['🤔', '🥲', '🫠', '🙃', '🙈'],
+    },
+  },
 
   // Fetch notifications interval in milliseconds, used by useNotifications hook
   FETCH_NOTIFICATIONS_INTERVAL_MS: 60 * 1000, // 1 minute

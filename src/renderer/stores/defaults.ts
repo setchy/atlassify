@@ -33,6 +33,18 @@ export const DEFAULT_FILTERS_STATE: FiltersState = {
 };
 
 /**
+ * Default runtime state
+ * isOnline defaults to true; the onlineManager subscription in AppProvider
+ * will correct this immediately after mount if the device is actually offline.
+ */
+export const DEFAULT_RUNTIME_STATE = {
+  notificationCount: 0,
+  hasMoreAccountNotifications: false,
+  isError: false,
+  isOnline: true,
+};
+
+/**
  * Default appearance settings
  */
 const DEFAULT_APPEARANCE_SETTINGS: AppearanceSettingsState = {

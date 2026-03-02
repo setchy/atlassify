@@ -33,7 +33,7 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
   - Uses modular Zustand stores in `src/renderer/stores` for persistent state.
     - `useAccountsStore` - Authenticated accounts
     - `useFiltersStore` - Notification filter settings
-    - `useNotificationsStore` - derived notification values for use outside of React components
+    - `useRuntimeStore` - derived notification values for use outside of React components
     - `useSettingsStore` - Atlassify application settings
   - Hooks in `src/renderer/hooks` (e.g., `useNotifications`, `useAccounts`) provide derived state, effects, and business logic. Store subscriptions and selectors optimize reactivity and performance.
 - **Subscriptions**: Store subscriptions and effects synchronize state with Electron APIs, system events, and UI updates.

@@ -31,9 +31,11 @@ function AppContextProvider({
   const defaultValue: Partial<AppContextState> = useMemo(() => {
     return {
       notifications: [],
-      status: 'success',
       globalError: null,
       isOnline: true,
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
       ...value,
     } as Partial<AppContextState>;
   }, [value]);
@@ -70,13 +72,6 @@ export function renderWithAppContext(
       </QueryClientProvider>
     ),
   });
-}
-
-/**
- * Ensure stable snapshots for our randomized emoji use-cases
- */
-export function ensureStableEmojis() {
-  globalThis.Math.random = vi.fn(() => 0.1);
 }
 
 /**

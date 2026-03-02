@@ -4,6 +4,11 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
+// Ensure stability in EmojiSplash component snapshots
+vi.mock('../utils/random', () => ({
+  randomIndex: vi.fn(() => 0),
+}));
+
 vi.mock('axios', async (importOriginal) => {
   const actual = await importOriginal<typeof import('axios')>();
   const realAxios = actual.default;

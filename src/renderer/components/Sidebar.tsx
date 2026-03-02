@@ -31,7 +31,7 @@ const SidebarComponent: FC = () => {
   const theme = useThemeObserver();
 
   const {
-    status,
+    isFetching,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
@@ -206,7 +206,7 @@ const SidebarComponent: FC = () => {
                   <IconButton
                     appearance="subtle"
                     icon={(iconProps) =>
-                      status === 'loading' ? (
+                      isFetching ? (
                         <Spinner
                           appearance="invert"
                           label={t('sidebar.refresh.label')}
@@ -219,7 +219,7 @@ const SidebarComponent: FC = () => {
                         />
                       )
                     }
-                    isDisabled={status === 'loading'}
+                    isDisabled={isFetching}
                     label={t('sidebar.refresh.label')}
                     onClick={() => shortcuts.refresh.action()}
                     shape="circle"

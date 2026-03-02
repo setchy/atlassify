@@ -1,4 +1,4 @@
-import { useNotificationsStore, useSettingsStore } from '../stores';
+import { useRuntimeStore, useSettingsStore } from '../stores';
 
 import * as comms from './comms';
 import { setTrayIconColorAndTitle } from './tray';
@@ -9,7 +9,7 @@ describe('renderer/utils/tray.ts', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    useNotificationsStore.setState({
+    useRuntimeStore.setState({
       notificationCount: 0,
       hasMoreAccountNotifications: false,
       isError: false,
@@ -24,7 +24,7 @@ describe('renderer/utils/tray.ts', () => {
 
   describe('setTrayIconColorAndTitle', () => {
     it('should update tray color and title when showNotificationsCountInTray is true and has notifications', () => {
-      useNotificationsStore.setState({ notificationCount: 5 });
+      useRuntimeStore.setState({ notificationCount: 5 });
 
       setTrayIconColorAndTitle();
 
@@ -35,7 +35,7 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should update tray color and title when showNotificationsCountInTray is true and has more notifications', () => {
-      useNotificationsStore.setState({
+      useRuntimeStore.setState({
         notificationCount: 5,
         hasMoreAccountNotifications: true,
       });
@@ -50,7 +50,7 @@ describe('renderer/utils/tray.ts', () => {
 
     it('should update tray color and empty title when showNotificationsCountInTray is false and has notifications', () => {
       useSettingsStore.setState({ showNotificationsCountInTray: false });
-      useNotificationsStore.setState({ notificationCount: 5 });
+      useRuntimeStore.setState({ notificationCount: 5 });
 
       setTrayIconColorAndTitle();
 
@@ -61,7 +61,7 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should update tray color and empty title when offline and has notifications', () => {
-      useNotificationsStore.setState({ notificationCount: 5, isOnline: false });
+      useRuntimeStore.setState({ notificationCount: 5, isOnline: false });
 
       setTrayIconColorAndTitle();
 
@@ -85,7 +85,7 @@ describe('renderer/utils/tray.ts', () => {
         useUnreadActiveIcon: false,
         useAlternateIdleIcon: true,
       });
-      useNotificationsStore.setState({ notificationCount: 5 });
+      useRuntimeStore.setState({ notificationCount: 5 });
 
       setTrayIconColorAndTitle();
 
@@ -93,7 +93,7 @@ describe('renderer/utils/tray.ts', () => {
     });
 
     it('should pass -1 to updateTrayColor and empty title when isError is true', () => {
-      useNotificationsStore.setState({ isError: true });
+      useRuntimeStore.setState({ isError: true });
 
       setTrayIconColorAndTitle();
 

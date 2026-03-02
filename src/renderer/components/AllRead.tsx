@@ -7,6 +7,8 @@ import { useFiltersStore } from '../stores';
 
 import { EmojiSplash } from './layout/EmojiSplash';
 
+import { randomIndex } from '../utils/random';
+
 export const AllRead: FC = () => {
   const { t } = useTranslation();
 
@@ -14,9 +16,7 @@ export const AllRead: FC = () => {
 
   const emoji = useMemo(
     () =>
-      Constants.ALL_READ_EMOJIS[
-        Math.floor(Math.random() * Constants.ALL_READ_EMOJIS.length)
-      ],
+      Constants.EMOJIS.ALL_READ[randomIndex(Constants.EMOJIS.ALL_READ.length)],
     [],
   );
 

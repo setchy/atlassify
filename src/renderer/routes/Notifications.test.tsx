@@ -29,6 +29,10 @@ vi.mock('../components/AllRead', () => ({
   AllRead: () => <p>AllRead</p>,
 }));
 
+vi.mock('../components/Loading', () => ({
+  Loading: () => <p>Loading</p>,
+}));
+
 vi.mock('../components/Oops', () => ({
   Oops: () => <p>Oops</p>,
 }));
@@ -45,7 +49,9 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,
       hasNotifications: true,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
       globalError: null,
     });
 
@@ -61,7 +67,22 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,
       hasNotifications: true,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should render Loading on first startup when loading and no notifications', () => {
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+      hasNotifications: false,
+      isLoading: true,
+      isFetching: false,
+      isErrorOrPaused: false,
       globalError: null,
     });
 
@@ -72,7 +93,35 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should show notifications while loading when data already exists', () => {
+    useSettingsStore.setState({ showAccountHeader: false });
+    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: mockAccountNotifications,
+      hasNotifications: true,
+      isFetching: true,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should render AllRead when loading a background refresh with an empty inbox', () => {
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+      hasNotifications: false,
+      isLoading: false,
+      isFetching: true,
       globalError: null,
     });
 
@@ -83,7 +132,6 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'success',
       globalError: null,
       isOnline: false,
     });
@@ -99,7 +147,7 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'error',
+      isErrorOrPaused: true,
       globalError,
     });
 

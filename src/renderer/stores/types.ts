@@ -296,15 +296,15 @@ export interface SettingsActions {
 export type SettingsStore = SettingsState & SettingsActions;
 
 // ============================================================================
-// Notifications Store Types
+// Runtime Store Types
 // ============================================================================
 
 /**
- * Runtime tray-relevant state derived from filtered notification data.
+ * Runtime states derived from filtered notification data.
  * Written by useNotifications (inside React) so tray updates outside React
  * can read pre-filtered values without re-applying filter logic.
  */
-export interface NotificationsState {
+export interface RuntimeState {
   notificationCount: number;
   hasMoreAccountNotifications: boolean;
   isError: boolean;
@@ -312,9 +312,9 @@ export interface NotificationsState {
 }
 
 /**
- * Actions for managing notifications status state.
+ * Actions for managing runtime state.
  */
-export interface NotificationsActions {
+export interface RuntimeActions {
   /**
    * Updates the tray-relevant notification status snapshot.
    */
@@ -331,6 +331,6 @@ export interface NotificationsActions {
 }
 
 /**
- * Complete notifications store type.
+ * Complete runtime store type.
  */
-export type NotificationsStore = NotificationsState & NotificationsActions;
+export type RuntimeStore = RuntimeState & RuntimeActions;

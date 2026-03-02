@@ -44,6 +44,7 @@ export const useAccounts = (): AccountsState => {
 
     refetchInterval: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
     refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
 
   const refreshAccounts = useCallback(async () => {
