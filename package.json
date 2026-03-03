@@ -84,7 +84,7 @@
     "@atlaskit/toggle": "15.2.11",
     "@atlaskit/tokens": "11.0.1",
     "@atlaskit/tooltip": "20.14.4",
-    "@biomejs/biome": "2.4.4",
+    "@biomejs/biome": "2.4.5",
     "@compiled/vite-plugin": "1.1.4",
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.1.1",
