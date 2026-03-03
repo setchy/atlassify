@@ -38,5 +38,5 @@ export const Constants = {
   BLOCK_ALIGNMENT_LENGTH_THRESHOLD: 55,
 
   // Notification exit animation duration in milliseconds
-  NOTIFICATION_EXIT_ANIMATION_DURATION_MS: 350,
+  NOTIFICATION_EXIT_ANIMATION_DURATION_MS: 100,
 };

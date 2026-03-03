@@ -287,7 +287,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                         label=""
                       />
                     )}
-                    isDisabled={markAsMutation?.isPending}
                     label={t('notifications.interactions.mark_as_read')}
                     onClick={actionMarkAsRead}
                     shape="circle"
@@ -303,7 +302,6 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                   <IconButton
                     appearance="subtle"
                     icon={() => null}
-                    isDisabled={markAsMutation?.isPending}
                     label={t('notifications.interactions.mark_as_unread')}
                     onClick={actionMarkAsUnread}
                     shape="circle"
