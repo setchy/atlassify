@@ -171,8 +171,8 @@
     "notifications": {
       "title": "Notifications",
       "mark_as_read_on_open": "Mark as read on open",
-      "group_alphabetically": "Group product notifications alphabetically",
-      "group_alphabetically_help": "When notifications are grouped by products, this setting will sort products in alphabetical order.",
+      "group_alphabetically": "Sort product groups alphabetically",
+      "group_alphabetically_help": "When `Group notifications by product` is enabled in the sidebar, this setting will sort products in alphabetical order.",
       "delay_notification_state": "Delay notification state",
       "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated)."
     },
@@ -180,10 +180,14 @@
       "title": "Tray",
       "show_count_in_tray": "Show notifications count in tray",
       "show_count_in_tray_help": "Show the unread notification count next to the tray icon. Useful for a quick glance at unread activity.",
-      "unread_active_icon": "Highlight unread notifications",
-      "unread_active_icon_help": "Use a blue {{appName}} logo when there are unread notifications.",
-      "alternate_icon": "Use alternate idle icon",
-      "alternate_icon_help": "Use a white {{appName}} logo (instead of the default black logo) when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar."
+      "unread_active_icon": "Unread style",
+      "unread_active_icon_help": "Choose which tray icon variant to display when you have unread notifications.",
+      "unread_icon_stealth": "Stealth",
+      "unread_icon_highlighted": "Highlighted",
+      "alternate_icon": "Idle style",
+      "alternate_icon_help": "Choose which tray icon variant to display when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
+      "idle_icon_default": "Default",
+      "idle_icon_alternate": "Alternate"
     },
     "system": {
       "title": "System",

@@ -8,8 +8,7 @@ import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
 import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
-import { RadioGroup } from '@atlaskit/radio';
-import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
+import { Radio } from '@atlaskit/radio';
 import Select from '@atlaskit/select';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
@@ -58,22 +57,6 @@ export const AppearanceSettings: FC = () => {
     });
   }, [theme]);
 
-  const themeOptions: OptionsPropType = [
-    {
-      name: 'theme',
-      label: 'System',
-      value: Theme.SYSTEM,
-      testId: 'theme-system',
-    },
-    {
-      name: 'theme',
-      label: 'Light',
-      value: Theme.LIGHT,
-      testId: 'theme-light',
-    },
-    { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
-  ];
-
   const handleLanguageChange = useCallback(
     (option) => {
       i18n.changeLanguage(option.value);
@@ -108,18 +91,31 @@ export const AppearanceSettings: FC = () => {
       </Box>
 
       <Box paddingInlineStart="space.050">
-        <Inline alignBlock="start" space="space.100">
-          <Text id="theme-label" weight="medium">
-            {t('settings.appearance.theme')}:
-          </Text>
-          <RadioGroup
-            defaultValue={theme}
-            labelId="theme-label"
-            onChange={(evt) => {
-              updateSetting('theme', evt.target.value as Theme);
-            }}
-            options={themeOptions}
-            value={theme}
+        <Inline alignBlock="center" space="space.100">
+          <Text weight="medium">{t('settings.appearance.theme')}:</Text>
+          <Radio
+            isChecked={theme === Theme.SYSTEM}
+            label="System"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.SYSTEM)}
+            testId="theme-system"
+            value={Theme.SYSTEM}
+          />
+          <Radio
+            isChecked={theme === Theme.LIGHT}
+            label="Light"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.LIGHT)}
+            testId="theme-light"
+            value={Theme.LIGHT}
+          />
+          <Radio
+            isChecked={theme === Theme.DARK}
+            label="Dark"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.DARK)}
+            testId="theme-dark"
+            value={Theme.DARK}
           />
         </Inline>
       </Box>

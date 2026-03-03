@@ -39468,6 +39468,11 @@ export type JiraUpdateCustomFieldInput = {
   searcherKey?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type JiraUpdateCustomFieldsInput = {
+  /** An array of custom field updates. */
+  fields: Array<JiraUpdateCustomFieldInput>;
+};
+
 /** Input for updating a JiraCustomFilter. */
 export type JiraUpdateCustomFilterDetailsInput = {
   /** A string containing filter description */
@@ -55145,7 +55150,9 @@ export enum TaskStatus {
 
 /** Input for archiving teams in bulk */
 export type TeamBulkArchiveTeamsInput = {
+  /** SiteARI or userbase ARI that the request is from. This site should be from the org that all these teams belong to */
   scopeId: Scalars['ID']['input'];
+  /** Team ARIs */
   teamIds: Array<Scalars['ID']['input']>;
 };
 

@@ -9,8 +9,7 @@ import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
-import { RadioGroup } from '@atlaskit/radio';
-import type { OptionsPropType } from '@atlaskit/radio/types';
+import { Radio } from '@atlaskit/radio';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
@@ -45,19 +44,6 @@ export const SystemSettings: FC = () => {
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
-  const openLinksOptions: OptionsPropType = [
-    {
-      name: 'openLinks',
-      label: t('settings.system.open_links_foreground'),
-      value: OpenPreference.FOREGROUND,
-    },
-    {
-      name: 'openLinks',
-      label: t('settings.system.open_links_background'),
-      value: OpenPreference.BACKGROUND,
-    },
-  ];
-
   const volumeBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
 
@@ -69,18 +55,25 @@ export const SystemSettings: FC = () => {
       <Heading size="small">{t('settings.system.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
-        <Inline space="space.100">
-          <Text id="openLinks-label" weight="medium">
-            {t('settings.system.open_links')}:
-          </Text>
-          <RadioGroup
-            defaultValue={openLinks}
-            labelId="openLinks-label"
-            onChange={(evt) => {
-              updateSetting('openLinks', evt.target.value as OpenPreference);
-            }}
-            options={openLinksOptions}
-            value={openLinks}
+        <Inline alignBlock="center" space="space.100">
+          <Text weight="medium">{t('settings.system.open_links')}:</Text>
+          <Radio
+            isChecked={openLinks === OpenPreference.FOREGROUND}
+            label={t('settings.system.open_links_foreground')}
+            name="openLinks"
+            onChange={() =>
+              updateSetting('openLinks', OpenPreference.FOREGROUND)
+            }
+            value={OpenPreference.FOREGROUND}
+          />
+          <Radio
+            isChecked={openLinks === OpenPreference.BACKGROUND}
+            label={t('settings.system.open_links_background')}
+            name="openLinks"
+            onChange={() =>
+              updateSetting('openLinks', OpenPreference.BACKGROUND)
+            }
+            value={OpenPreference.BACKGROUND}
           />
         </Inline>
       </Box>
