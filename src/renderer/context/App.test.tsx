@@ -65,7 +65,7 @@ describe('renderer/context/App.tsx', () => {
       refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-      markAsMutation: markAsMutationMock as any,
+      markAsMutation: markAsMutationMock,
     } as ReturnType<typeof useNotifications>);
   });
 
