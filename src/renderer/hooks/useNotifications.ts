@@ -47,8 +47,6 @@ import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
 import {
   type NotificationActionType,
   postProcessNotifications,
-  shouldRemoveNotificationsFromState,
-  updateNotificationsReadState,
 } from '../utils/notifications/postProcess';
 import { raiseSoundNotification } from '../utils/system/audio';
 import { trackEvent } from '../utils/system/comms';
@@ -171,8 +169,9 @@ export const useNotifications = (): NotificationsState => {
 
     placeholderData: keepPreviousData,
 
-    // Manual interval-based fetching (see useIntervalTimer below) instead of refetchInterval
-    // and refetchIntervalInBackground to ensure reliable background fetching.
+    // Manual interval-based fetching (see useIntervalTimer below) instead of refetchInterval.
+    // TanStack Query's refetchInterval uses the Page Visibility API and pauses when
+    // document.hidden === true, which happens when the menubar window is hidden (normal state).
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,
   });
@@ -184,13 +183,15 @@ export const useNotifications = (): NotificationsState => {
   const isErrorOrPaused = isError || isPaused;
 
   /**
-   * Manual interval-based fetching for reliable background updates.
-   * This ensures fetching continues even when the app is in the background,
-   * and isn't deferred by TanStack Query's internal logic during mutations or state changes.
-   * This also provides graceful recovery after system sleep/suspend.
+   * Manual interval-based fetching for reliable background updates in Electron tray apps.
    *
-   * In future maybe we can switch back to TanStack Query's
-   * refetchInterval and refetchIntervalInBackground
+   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
+   * document.hidden === true. For menubar apps, the window is hidden most of the time,
+   * so refetchInterval would effectively never run in the background.
+   *
+   * This setInterval-based approach continues running regardless of window visibility,
+   * ensuring notifications stay fresh even when the app is hidden in the system tray.
+   * It also provides graceful recovery after system sleep/suspend cycles.
    */
   useIntervalTimer(() => {
     refetch();
@@ -297,12 +298,10 @@ export const useNotifications = (): NotificationsState => {
         queryKey: notificationsKeys.all,
       });
 
-      // Optimistically update ALL notification queries in cache
-      // This ensures the UI updates immediately regardless of which query key is active
+      // Optimistically update ALL notification queries in cache with full transformation.
+      // This ensures the UI updates immediately regardless of which query key is active.
+      // Components handle their own exit animations independently of cache updates.
       const account = targetNotifications[0].account;
-      const affectedNotificationIds = new Set(
-        targetNotifications.map((n) => n.id),
-      );
 
       queryClient.setQueriesData<AccountNotifications[]>(
         { queryKey: notificationsKeys.all },
@@ -311,27 +310,13 @@ export const useNotifications = (): NotificationsState => {
             return oldData;
           }
 
-          let optimisticNotifications: AccountNotifications[];
-
-          if (action === 'unread') {
-            // For unread, use full post-processing (no removal happens anyway)
-            optimisticNotifications = postProcessNotifications(
-              account,
-              oldData,
-              targetNotifications,
-              action,
-            );
-          } else {
-            // For read, only update read state without removing (removal happens after animation)
-            optimisticNotifications = updateNotificationsReadState(
-              account,
-              oldData,
-              affectedNotificationIds,
-              action,
-            );
-          }
-
-          return optimisticNotifications;
+          // Apply full post-processing including read state update and removal (if needed)
+          return postProcessNotifications(
+            account,
+            oldData,
+            targetNotifications,
+            action,
+          );
         },
       );
 
@@ -372,44 +357,15 @@ export const useNotifications = (): NotificationsState => {
       return { account, targetNotifications, action };
     },
 
-    onSuccess: ({ account, targetNotifications, action }) => {
-      // Delay cache update to allow optimistic UI animations to complete.
-      // Components trigger animations immediately for seamless UX.
-      // If notifications will be removed from state after being marked read,
-      // we wait for the exit animation to finish before updating the cache.
-      const shouldRemove =
-        action === 'read' && shouldRemoveNotificationsFromState();
-      const delay = shouldRemove
-        ? Constants.NOTIFICATION_EXIT_ANIMATION_DURATION_MS
-        : 0;
-
-      setTimeout(() => {
-        // Update ALL notification queries with post-processed data
-        // This ensures consistency across different query keys (e.g., show all vs unread only)
-        queryClient.setQueriesData<AccountNotifications[]>(
-          { queryKey: notificationsKeys.all },
-          (oldData) => {
-            if (!oldData) {
-              return oldData;
-            }
-
-            return postProcessNotifications(
-              account,
-              oldData,
-              targetNotifications,
-              action,
-            );
-          },
-        );
-
-        // Invalidate all notification queries to ensure fresh data when
-        // switching between different query parameters (e.g., fetchOnlyUnread toggle).
-        // This prevents stale cache issues when toggling view modes after mutations.
-        queryClient.invalidateQueries({
-          queryKey: notificationsKeys.all,
-          refetchType: 'none', // Don't refetch the current query since we just updated it
-        });
-      }, delay);
+    onSuccess: () => {
+      // Invalidate all notification queries to mark them as stale.
+      // This ensures fresh data is fetched on next access or when switching query parameters
+      // (e.g., toggling fetchOnlyUnread setting).
+      // refetchType: 'none' prevents immediate refetch since cache was already updated optimistically.
+      queryClient.invalidateQueries({
+        queryKey: notificationsKeys.all,
+        refetchType: 'none',
+      });
     },
 
     onError: (err, { action }, context) => {
