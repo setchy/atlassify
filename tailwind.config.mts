@@ -37,7 +37,20 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(({ addBase }) => {
+    plugin(({ addBase, addComponents }) => {
+      addComponents({
+        '.tray-icon': {
+          '@apply h-4 w-4': {},
+        },
+        '.tray-icon-pill': {
+          '@apply inline-flex items-center gap-1.5 rounded border-2 border-slate-300 px-1':
+            {},
+        },
+        '.tray-icon-pill-dark': {
+          '@apply inline-flex items-center gap-1.5 rounded bg-slate-700 px-1':
+            {},
+        },
+      });
       addBase({
         ':root': {
           '--atlassify-background-sidebar': B200,

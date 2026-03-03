@@ -53,8 +53,8 @@ export const TraySettings: FC = () => {
           <Radio
             isChecked={!useAlternateIdleIcon}
             label={
-              <span className="inline-flex items-center gap-1.5">
-                <img alt="" className="h-3 w-3" src={trayIdleIcon} />
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayIdleIcon} />
                 <span>{t('settings.tray.idle_icon_default')}</span>
               </span>
             }
@@ -65,8 +65,8 @@ export const TraySettings: FC = () => {
           <Radio
             isChecked={useAlternateIdleIcon}
             label={
-              <span className="inline-flex items-center gap-1.5 rounded bg-slate-700 px-1">
-                <img alt="" className="h-3 w-3" src={trayIdleWhiteIcon} />
+              <span className="tray-icon-pill-dark">
+                <img alt="" className="tray-icon" src={trayIdleWhiteIcon} />
                 <span className="text-white">
                   {t('settings.tray.idle_icon_alternate')}
                 </span>
@@ -88,28 +88,28 @@ export const TraySettings: FC = () => {
         <div className="flex items-center gap-2">
           <Text weight="medium">{t('settings.tray.unread_active_icon')}:</Text>
           <Radio
-            isChecked={!useUnreadActiveIcon}
-            label={
-              <span className="inline-flex items-center gap-1.5">
-                <img alt="" className="h-3 w-3" src={trayIdleIcon} />
-                <span>{t('settings.tray.unread_icon_stealth')}</span>
-              </span>
-            }
-            name="useUnreadActiveIcon"
-            onChange={() => updateSetting('useUnreadActiveIcon', false)}
-            value="false"
-          />
-          <Radio
             isChecked={useUnreadActiveIcon}
             label={
-              <span className="inline-flex items-center gap-1.5">
-                <img alt="" className="h-3 w-3" src={trayActiveIcon} />
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayActiveIcon} />
                 <span>{t('settings.tray.unread_icon_highlighted')}</span>
               </span>
             }
             name="useUnreadActiveIcon"
             onChange={() => updateSetting('useUnreadActiveIcon', true)}
             value="true"
+          />
+          <Radio
+            isChecked={!useUnreadActiveIcon}
+            label={
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayIdleIcon} />
+                <span>{t('settings.tray.unread_icon_stealth')}</span>
+              </span>
+            }
+            name="useUnreadActiveIcon"
+            onChange={() => updateSetting('useUnreadActiveIcon', false)}
+            value="false"
           />
           <InlineMessage appearance="info">
             <div className="w-60 text-xs">
