@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useState } from 'react';
+import { type FC, type MouseEvent, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
@@ -26,7 +26,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { markNotificationsRead } = useAppContext();
+  const { markNotificationsRead, markAsMutation } = useAppContext();
 
   const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);
@@ -36,6 +36,33 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
+
+  // Optimistic update error recovery:
+  // Animation is triggered immediately on user action for seamless UX.
+  // If the mutation fails, this effect resets the animation to restore the original state.
+  useEffect(() => {
+    if (
+      markAsMutation?.isError &&
+      markAsMutation?.variables?.action === 'read'
+    ) {
+      const mutatedNotificationIds =
+        markAsMutation.variables.targetNotifications.map((n) => n.id);
+      const productNotificationIds = productNotifications.map((n) => n.id);
+
+      // Check if any of this product's notifications were part of the failed mutation
+      const hasFailedNotification = productNotificationIds.some((id) =>
+        mutatedNotificationIds.includes(id),
+      );
+
+      if (hasFailedNotification) {
+        setShouldAnimateProductExit(false);
+      }
+    }
+  }, [
+    markAsMutation?.isError,
+    markAsMutation?.variables,
+    productNotifications,
+  ]);
 
   const actionProductInteraction = () => {
     openExternalLink(productNotification.home);

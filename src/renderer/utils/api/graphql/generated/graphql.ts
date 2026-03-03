@@ -1572,6 +1572,10 @@ export type AgentStudioConfluenceKnowledgeFilterInput = {
   spaceFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
+export type AgentStudioConversationConfigInput = {
+  isEnabled: Scalars['Boolean']['input'];
+};
+
 export enum AgentStudioConversationReportPeriod {
   Daily = 'DAILY',
   Monthly = 'MONTHLY'
@@ -14201,6 +14205,11 @@ export type DevConsoleAssignDeveloperSpaceInput = {
   appId: Scalars['String']['input'];
   developerSpaceId: Scalars['String']['input'];
 };
+
+export enum DevConsoleComputeType {
+  Async = 'async',
+  Sync = 'sync'
+}
 
 export type DevConsoleCreateDeveloperSpaceInput = {
   name: Scalars['String']['input'];
@@ -28364,22 +28373,7 @@ export enum GravityRefResolutionStrategy {
    * Fail the operation if any required mapping cannot be resolved.
    * No new fields are created.
    */
-  FailIfMissing = 'FAIL_IF_MISSING',
-  /**
-   * Use the first best match for each template field; for any unresolved ones,
-   * attempt to create missing fields.
-   */
-  FirstBestMatchThenCreate = 'FIRST_BEST_MATCH_THEN_CREATE',
-  /**
-   * Use the first best match for each template field; if any mapping
-   * is still unresolved, fail the operation.
-   */
-  FirstBestMatchThenFail = 'FIRST_BEST_MATCH_THEN_FAIL',
-  /**
-   * Attempt to match existing fields only. If a suitable match is not found,
-   * the mapping is considered unresolved; behavior depends on additional rules.
-   */
-  Match = 'MATCH'
+  FailIfMissing = 'FAIL_IF_MISSING'
 }
 
 /** Sort order used across different features. */
@@ -44821,8 +44815,11 @@ export enum MercuryPassionfruitPermission {
   DeletePlan = 'DELETE_PLAN',
   EditAsk = 'EDIT_ASK',
   EditPlan = 'EDIT_PLAN',
+  Manage = 'MANAGE',
+  Read = 'READ',
   ViewAsk = 'VIEW_ASK',
-  ViewPlan = 'VIEW_PLAN'
+  ViewPlan = 'VIEW_PLAN',
+  Write = 'WRITE'
 }
 
 export enum MercuryPermission {
@@ -46497,6 +46494,21 @@ export type PostOfficeContextInput = {
   tenantId?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type PostOfficeGetMessagesInput = {
+  messages: Array<PostOfficeGetMessagesMessageInput>;
+  subscriptionMatchers: PostOfficeSubscriptionMatchersInput;
+};
+
+export type PostOfficeGetMessagesMessageInput = {
+  context: Scalars['JSON']['input'];
+  createdAt: Scalars['String']['input'];
+  eventTime: Scalars['String']['input'];
+  messageCategory: Scalars['String']['input'];
+  messageInstanceId: Scalars['String']['input'];
+  messageTemplateId: Scalars['String']['input'];
+  triggerId: Scalars['String']['input'];
+};
+
 export enum PostOfficeMessageCreationType {
   Explicit = 'explicit',
   Implicit = 'implicit'
@@ -46504,6 +46516,11 @@ export enum PostOfficeMessageCreationType {
 
 export type PostOfficeScopeEntryInput = {
   name: Scalars['String']['input'];
+};
+
+export type PostOfficeSubscriptionMatchersInput = {
+  atlassianAccountId: Scalars['String']['input'];
+  placementId: Scalars['String']['input'];
 };
 
 export enum PrincipalFilterType {

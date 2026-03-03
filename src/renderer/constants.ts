@@ -12,7 +12,7 @@ export const Constants = {
   // Emojis for different states and events
   EMOJIS: {
     ALL_READ: ['🎉', '🎊', '🥳', '👏', '🙌', '😎', '🏖️', '🚀', '✨', '🏆'],
-    LOADING: ['⏳', '🔄', '⌛'],
+    LOADING: ['⏳', '⌛'],
     ERRORS: {
       BAD_CREDENTIALS: ['🔓'],
       BAD_REQUEST: ['😳'],
@@ -36,4 +36,7 @@ export const Constants = {
 
   // Threshold for determining if a notification content block is "long" and needs truncating
   BLOCK_ALIGNMENT_LENGTH_THRESHOLD: 55,
+
+  // Notification exit animation duration in milliseconds
+  NOTIFICATION_EXIT_ANIMATION_DURATION_MS: 350,
 };

@@ -1,6 +1,6 @@
 import { createContext, type ReactNode, useEffect, useMemo } from 'react';
 
-import { onlineManager } from '@tanstack/react-query';
+import { onlineManager, type UseMutationResult } from '@tanstack/react-query';
 
 import { useAccounts } from '../hooks/useAccounts';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
@@ -13,10 +13,13 @@ import {
 } from '../stores';
 
 import type {
+  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
 } from '../types';
+
+import type { NotificationActionType } from '../utils/notifications/postProcess';
 
 export interface AppContextState {
   isOnline: boolean;
@@ -39,6 +42,19 @@ export interface AppContextState {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+
+  markAsMutation: UseMutationResult<
+    {
+      account: Account;
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
+    },
+    Error,
+    {
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
+    }
+  >;
 
   focusedNotificationId: string | null;
 }
@@ -69,6 +85,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     markNotificationsRead,
     markNotificationsUnread,
+
+    markAsMutation,
   } = useNotifications();
 
   const isOnline = useRuntimeStore((s) => s.isOnline);
@@ -126,6 +144,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsRead,
       markNotificationsUnread,
 
+      markAsMutation,
+
       focusedNotificationId,
     }),
     [
@@ -145,6 +165,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       markNotificationsRead,
       markNotificationsUnread,
+
+      markAsMutation,
 
       focusedNotificationId,
     ],

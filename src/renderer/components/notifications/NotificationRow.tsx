@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
@@ -45,6 +45,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const {
     markNotificationsRead,
     markNotificationsUnread,
+    markAsMutation,
     focusedNotificationId,
   } = useAppContext();
 
@@ -55,10 +56,28 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
+  // Optimistic update error recovery:
+  // Animation is triggered immediately on user action for seamless UX.
+  // If the mutation fails, this effect resets the animation to restore the original state.
+  useEffect(() => {
+    // On error: reset animation for this notification if it was part of the failed mutation
+    if (
+      markAsMutation?.isError &&
+      markAsMutation?.variables?.action === 'read'
+    ) {
+      const mutatedNotificationIds =
+        markAsMutation.variables.targetNotifications.map((n) => n.id);
 
+      if (mutatedNotificationIds.includes(notification.id)) {
+        setShouldAnimateNotificationExit(false);
+      }
+    }
+  }, [markAsMutation?.isError, markAsMutation?.variables, notification.id]);
+
+  const actionNotificationInteraction = () => {
     if (markAsReadOnOpen) {
+      // Optimistically trigger animation immediately
+      setShouldAnimateNotificationExit(shouldAnimateExit);
       markNotificationsRead([notification]);
     }
 
@@ -66,6 +85,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   };
 
   const actionMarkAsRead = () => {
+    // Optimistically trigger animation immediately
     setShouldAnimateNotificationExit(shouldAnimateExit);
     markNotificationsRead([notification]);
   };
@@ -267,6 +287,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                         label=""
                       />
                     )}
+                    isDisabled={markAsMutation?.isPending}
                     label={t('notifications.interactions.mark_as_read')}
                     onClick={actionMarkAsRead}
                     shape="circle"
@@ -282,6 +303,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
                   <IconButton
                     appearance="subtle"
                     icon={() => null}
+                    isDisabled={markAsMutation?.isPending}
                     label={t('notifications.interactions.mark_as_unread')}
                     onClick={actionMarkAsUnread}
                     shape="circle"

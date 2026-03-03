@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import {
   keepPreviousData,
+  type UseMutationResult,
   useMutation,
   useQuery,
   useQueryClient,
@@ -9,6 +10,7 @@ import {
 
 import { Constants } from '../constants';
 
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import {
   useAccountsStore,
   useFiltersStore,
@@ -17,6 +19,7 @@ import {
 } from '../stores';
 
 import type {
+  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -44,6 +47,8 @@ import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
 import {
   type NotificationActionType,
   postProcessNotifications,
+  shouldRemoveNotificationsFromState,
+  updateNotificationsReadState,
 } from '../utils/notifications/postProcess';
 import { raiseSoundNotification } from '../utils/system/audio';
 import { trackEvent } from '../utils/system/comms';
@@ -72,6 +77,19 @@ interface NotificationsState {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+
+  markAsMutation: UseMutationResult<
+    {
+      account: Account;
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
+    },
+    Error,
+    {
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
+    }
+  >;
 }
 
 /**
@@ -153,9 +171,9 @@ export const useNotifications = (): NotificationsState => {
 
     placeholderData: keepPreviousData,
 
-    refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+    // Manual interval-based fetching (see useIntervalTimer below) instead of refetchInterval
+    // and refetchIntervalInBackground to ensure reliable background fetching.
     refetchOnReconnect: true,
-    refetchIntervalInBackground: true,
     refetchOnWindowFocus: true,
   });
 
@@ -164,6 +182,19 @@ export const useNotifications = (): NotificationsState => {
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
 
   const isErrorOrPaused = isError || isPaused;
+
+  /**
+   * Manual interval-based fetching for reliable background updates.
+   * This ensures fetching continues even when the app is in the background,
+   * and isn't deferred by TanStack Query's internal logic during mutations or state changes.
+   * This also provides graceful recovery after system sleep/suspend.
+   *
+   * In future maybe we can switch back to TanStack Query's
+   * refetchInterval and refetchIntervalInBackground
+   */
+  useIntervalTimer(() => {
+    refetch();
+  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
 
   // Determine global error from query state
   const globalError: AtlassifyError | null = useMemo(() => {
@@ -255,6 +286,59 @@ export const useNotifications = (): NotificationsState => {
 
   // Unified mutation for marking notifications as read or unread
   const markAsMutation = useMutation({
+    onMutate: async ({ targetNotifications, action }) => {
+      // Cancel any outgoing refetches to prevent them from overwriting our optimistic update
+      await queryClient.cancelQueries({ queryKey: notificationsKeys.all });
+
+      // Snapshot ALL notification queries for rollback on error
+      const previousQueriesData = queryClient.getQueriesData<
+        AccountNotifications[]
+      >({
+        queryKey: notificationsKeys.all,
+      });
+
+      // Optimistically update ALL notification queries in cache
+      // This ensures the UI updates immediately regardless of which query key is active
+      const account = targetNotifications[0].account;
+      const affectedNotificationIds = new Set(
+        targetNotifications.map((n) => n.id),
+      );
+
+      queryClient.setQueriesData<AccountNotifications[]>(
+        { queryKey: notificationsKeys.all },
+        (oldData) => {
+          if (!oldData) {
+            return oldData;
+          }
+
+          let optimisticNotifications: AccountNotifications[];
+
+          if (action === 'unread') {
+            // For unread, use full post-processing (no removal happens anyway)
+            optimisticNotifications = postProcessNotifications(
+              account,
+              oldData,
+              targetNotifications,
+              action,
+            );
+          } else {
+            // For read, only update read state without removing (removal happens after animation)
+            optimisticNotifications = updateNotificationsReadState(
+              account,
+              oldData,
+              affectedNotificationIds,
+              action,
+            );
+          }
+
+          return optimisticNotifications;
+        },
+      );
+
+      // Return context with snapshot for potential rollback
+      return { previousQueriesData };
+    },
+
     mutationFn: async ({
       targetNotifications,
       action,
@@ -284,26 +368,60 @@ export const useNotifications = (): NotificationsState => {
 
       await markAsApiFn(account, notificationIDs);
 
-      // Use unfiltered cache data so active filters don't permanently drop
-      // notifications from the cache when marking as read/unread
-      const unfilteredNotifications =
-        queryClient.getQueryData<AccountNotifications[]>(
-          notificationsQueryKey,
-        ) ?? [];
-
-      return postProcessNotifications(
-        account,
-        unfilteredNotifications,
-        targetNotifications,
-        action,
-      );
+      // Return data needed for post-processing
+      return { account, targetNotifications, action };
     },
 
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
+    onSuccess: ({ account, targetNotifications, action }) => {
+      // Delay cache update to allow optimistic UI animations to complete.
+      // Components trigger animations immediately for seamless UX.
+      // If notifications will be removed from state after being marked read,
+      // we wait for the exit animation to finish before updating the cache.
+      const shouldRemove =
+        action === 'read' && shouldRemoveNotificationsFromState();
+      const delay = shouldRemove
+        ? Constants.NOTIFICATION_EXIT_ANIMATION_DURATION_MS
+        : 0;
+
+      setTimeout(() => {
+        // Update ALL notification queries with post-processed data
+        // This ensures consistency across different query keys (e.g., show all vs unread only)
+        queryClient.setQueriesData<AccountNotifications[]>(
+          { queryKey: notificationsKeys.all },
+          (oldData) => {
+            if (!oldData) {
+              return oldData;
+            }
+
+            return postProcessNotifications(
+              account,
+              oldData,
+              targetNotifications,
+              action,
+            );
+          },
+        );
+
+        // Invalidate all notification queries to ensure fresh data when
+        // switching between different query parameters (e.g., fetchOnlyUnread toggle).
+        // This prevents stale cache issues when toggling view modes after mutations.
+        queryClient.invalidateQueries({
+          queryKey: notificationsKeys.all,
+          refetchType: 'none', // Don't refetch the current query since we just updated it
+        });
+      }, delay);
     },
 
-    onError: (err, { action }) => {
+    onError: (err, { action }, context) => {
+      // Rollback ALL notification queries to their snapshots on error
+      if (context?.previousQueriesData) {
+        for (const [queryKey, data] of context.previousQueriesData) {
+          queryClient.setQueryData(queryKey, data);
+        }
+      }
+
+      // Components watch mutation.isError and rollback optimistic UI changes
+      // (e.g., reverse exit animations) when errors occur.
       rendererLogError(
         action === 'read' ? 'markNotificationsRead' : 'markNotificationsUnread',
         `Error occurred while marking notifications as ${action}`,
@@ -348,5 +466,7 @@ export const useNotifications = (): NotificationsState => {
 
     markNotificationsRead,
     markNotificationsUnread,
+
+    markAsMutation,
   };
 };
