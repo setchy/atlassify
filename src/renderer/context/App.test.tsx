@@ -32,24 +32,6 @@ describe('renderer/context/App.tsx', () => {
   const refetchNotificationsMock = vi.fn();
   const markNotificationsReadMock = vi.fn();
   const markNotificationsUnreadMock = vi.fn();
-  const markAsMutationMock = {
-    mutate: vi.fn(),
-    mutateAsync: vi.fn(),
-    reset: vi.fn(),
-    isIdle: true,
-    isPending: false,
-    isSuccess: false,
-    isError: false,
-    data: undefined,
-    error: null,
-    variables: undefined,
-    status: 'idle' as const,
-    context: undefined,
-    failureCount: 0,
-    failureReason: null,
-    isPaused: false,
-    submittedAt: 0,
-  };
 
   beforeEach(() => {
     vi.useFakeTimers();
@@ -65,7 +47,6 @@ describe('renderer/context/App.tsx', () => {
       refetchNotifications: refetchNotificationsMock,
       markNotificationsRead: markNotificationsReadMock,
       markNotificationsUnread: markNotificationsUnreadMock,
-      markAsMutation: markAsMutationMock,
     } as ReturnType<typeof useNotifications>);
   });
 

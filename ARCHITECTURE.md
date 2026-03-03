@@ -41,8 +41,9 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 - **Background Polling Strategy**: 
   - **Manual Interval Polling**: Uses `useIntervalTimer` with `refetch()` instead of TanStack Query's `refetchInterval` for reliable background updates.
   - **Why**: Electron tray apps have `document.hidden === true` when the window is hidden (normal state for menubar apps). TanStack Query's Page Visibility API would pause `refetchInterval`, breaking background updates.
-  - **Solution**: JavaScript `setInterval` continues running regardless of window visibility, ensuring notifications stay fresh even when the app is hidden in the system tray.
-  - **Benefits**: Survives system sleep/wake cycles and provides consistent 60-second polling regardless of app state.
+  - **Solution**: JavaScript `setInterval` continues running regardless of window visibility, ensuring data stays fresh even when the app is hidden in the system tray.
+  - **Benefits**: Survives system sleep/wake cycles and provides consistent polling (60s for notifications, 1hr for accounts) regardless of app state.
+  - **Implementation**: Applied in both `useNotifications` (60s interval) and `useAccounts` (1hr interval) hooks.
 - **Mutation Optimizations**: 
   - **Optimistic Updates**: Cache updated immediately on user action (mark as read/unread) for instant UI feedback.
   - **Multi-Query Sync**: Uses `setQueriesData` with `notificationsKeys.all` to update all cached query variations simultaneously.

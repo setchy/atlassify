@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import {
   keepPreviousData,
-  type UseMutationResult,
   useMutation,
   useQuery,
   useQueryClient,
@@ -19,7 +18,6 @@ import {
 } from '../stores';
 
 import type {
-  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -75,19 +73,6 @@ interface NotificationsState {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
-
-  markAsMutation: UseMutationResult<
-    {
-      account: Account;
-      targetNotifications: AtlassifyNotification[];
-      action: NotificationActionType;
-    },
-    Error,
-    {
-      targetNotifications: AtlassifyNotification[];
-      action: NotificationActionType;
-    }
-  >;
 }
 
 /**
@@ -420,7 +405,5 @@ export const useNotifications = (): NotificationsState => {
 
     markNotificationsRead,
     markNotificationsUnread,
-
-    markAsMutation,
   };
 };
