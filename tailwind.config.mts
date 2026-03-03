@@ -6,7 +6,7 @@ import plugin from 'tailwindcss/plugin';
 
 import { Constants } from './src/renderer/constants';
 
-const sidebarWidth = '3rem'; // 48px;
+const sidebarWidth = '2.5rem'; // 40px;
 
 const config: Config = {
   content: ['./src/**/*.ts', './src/**/*.tsx'],
