@@ -154,9 +154,6 @@ export const useNotifications = (): NotificationsState => {
 
     placeholderData: keepPreviousData,
 
-    // Manual interval-based fetching (see useIntervalTimer below) instead of refetchInterval.
-    // TanStack Query's refetchInterval uses the Page Visibility API and pauses when
-    // document.hidden === true, which happens when the menubar window is hidden (normal state).
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,
   });
