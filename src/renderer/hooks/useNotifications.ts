@@ -155,6 +155,7 @@ export const useNotifications = (): NotificationsState => {
 
     refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,
+    refetchIntervalInBackground: true,
     refetchOnWindowFocus: true,
   });
 
