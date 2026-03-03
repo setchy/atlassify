@@ -1753,6 +1753,8 @@ export enum AgentStudioKnowledgeGapUploadJobStatus {
 }
 
 export type AgentStudioKnowledgeSourceInput = {
+  /** Optional cloud identifier for the knowledge source */
+  cloudId?: InputMaybe<Scalars['String']['input']>;
   /** Enable individual knowledge source */
   enabled?: InputMaybe<Scalars['Boolean']['input']>;
   /** Optional filters applicable to certain knowledge types */
@@ -4358,9 +4360,21 @@ export type BlockServiceCreateBlockInput = {
   stepVersion?: InputMaybe<Scalars['Float']['input']>;
 };
 
+export type BlockServiceCreateReferenceInput = {
+  blockAri: Scalars['String']['input'];
+  blockInstanceId: Scalars['String']['input'];
+  documentAri: Scalars['String']['input'];
+};
+
 export type BlockServiceDeleteBlockInput = {
   blockAri: Scalars['String']['input'];
   deletionReason?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BlockServiceDeleteReferenceInput = {
+  blockAri: Scalars['String']['input'];
+  blockInstanceId: Scalars['String']['input'];
+  documentAri: Scalars['String']['input'];
 };
 
 export type BlockServiceUpdateBlockInput = {
@@ -41528,6 +41542,29 @@ export enum JsmConversationStatus {
   Unassigned = 'UNASSIGNED'
 }
 
+export enum JsmSolutionComposerPlanStatusType {
+  Done = 'DONE',
+  Failed = 'FAILED',
+  InProgress = 'IN_PROGRESS'
+}
+
+export enum JsmSolutionComposerStepEntityType {
+  AiAgent = 'AI_AGENT',
+  Automation = 'AUTOMATION',
+  Hub = 'HUB',
+  Kb = 'KB',
+  Portal = 'PORTAL',
+  Queue = 'QUEUE',
+  RequestType = 'REQUEST_TYPE',
+  Sla = 'SLA'
+}
+
+export enum JsmSolutionComposerStepStatusType {
+  Done = 'DONE',
+  Failed = 'FAILED',
+  InProgress = 'IN_PROGRESS'
+}
+
 export enum KitsuneComparisonOperator {
   Contains = 'CONTAINS',
   DoesNotContain = 'DOES_NOT_CONTAIN',
@@ -41542,6 +41579,11 @@ export enum KitsuneComparisonOperator {
   IsNot = 'IS_NOT',
   IsNotEmpty = 'IS_NOT_EMPTY',
   IsTrue = 'IS_TRUE'
+}
+
+export enum KitsuneFeedbackEditionType {
+  FeedbackBeta = 'FEEDBACK_BETA',
+  NoActiveProduct = 'NO_ACTIVE_PRODUCT'
 }
 
 export enum KitsuneFeedbackType {
@@ -46318,6 +46360,24 @@ export enum PolarisTimelineMode {
 export enum PolarisTimelineTodayMarker {
   Disabled = 'DISABLED',
   Enabled = 'ENABLED'
+}
+
+export enum PolarisTreeDirection {
+  Down = 'DOWN',
+  Left = 'LEFT',
+  Right = 'RIGHT',
+  Up = 'UP'
+}
+
+export enum PolarisTreeHierarchyType {
+  Field = 'FIELD',
+  Issue = 'ISSUE',
+  IssueType = 'ISSUE_TYPE'
+}
+
+export enum PolarisTreeMode {
+  Automatic = 'AUTOMATIC',
+  Manual = 'MANUAL'
 }
 
 export type PolarisViewFieldRollupInput = {
@@ -59206,6 +59266,19 @@ export type UpdatePolarisTimelineConfig = {
   todayMarker?: InputMaybe<PolarisTimelineTodayMarker>;
 };
 
+export type UpdatePolarisTreeConfig = {
+  defaultFields?: InputMaybe<Array<Scalars['ID']['input']>>;
+  hierarchy?: InputMaybe<Array<UpdatePolarisTreeHierarchyItem>>;
+  mode?: InputMaybe<PolarisTreeMode>;
+  treeDirection?: InputMaybe<PolarisTreeDirection>;
+};
+
+export type UpdatePolarisTreeHierarchyItem = {
+  filter?: InputMaybe<Array<PolarisViewFilterInput>>;
+  items?: InputMaybe<Array<Scalars['JSON']['input']>>;
+  type?: InputMaybe<PolarisTreeHierarchyType>;
+};
+
 export type UpdatePolarisViewInput = {
   /**  how to apply color */
   boldColors?: InputMaybe<Scalars['Boolean']['input']>;
@@ -59253,6 +59326,7 @@ export type UpdatePolarisViewInput = {
   /**  just the user filtering part of the JQL */
   tableColumnSizes?: InputMaybe<Array<PolarisViewTableColumnSizeInput>>;
   timelineConfig?: InputMaybe<UpdatePolarisTimelineConfig>;
+  treeConfig?: InputMaybe<UpdatePolarisTreeConfig>;
   /**  the JQL (sets filter and sorting) */
   userJql?: InputMaybe<Scalars['String']['input']>;
   /**  what are the (ordered) grouping values */

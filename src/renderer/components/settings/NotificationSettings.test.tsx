@@ -33,7 +33,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(
-      screen.getByLabelText('Group product notifications alphabetically'),
+      screen.getByLabelText('Sort product groups alphabetically'),
     );
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
