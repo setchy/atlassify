@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
@@ -45,53 +45,54 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const {
     markNotificationsRead,
     markNotificationsUnread,
-    markAsMutation,
     focusedNotificationId,
   } = useAppContext();
 
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
 
   const isFocused = focusedNotificationId === notification.id;
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  // Optimistic update error recovery:
-  // Animation is triggered immediately on user action for seamless UX.
-  // If the mutation fails, this effect resets the animation to restore the original state.
-  useEffect(() => {
-    // On error: reset animation for this notification if it was part of the failed mutation
-    if (
-      markAsMutation?.isError &&
-      markAsMutation?.variables?.action === 'read'
-    ) {
-      const mutatedNotificationIds =
-        markAsMutation.variables.targetNotifications.map((n) => n.id);
-
-      if (mutatedNotificationIds.includes(notification.id)) {
-        setShouldAnimateNotificationExit(false);
-      }
-    }
-  }, [markAsMutation?.isError, markAsMutation?.variables, notification.id]);
-
   const actionNotificationInteraction = () => {
     if (markAsReadOnOpen) {
-      // Optimistically trigger animation immediately
-      setShouldAnimateNotificationExit(shouldAnimateExit);
-      markNotificationsRead([notification]);
+      if (shouldAnimateExit) {
+        // Trigger animation, mark as read after animation completes
+        setShouldAnimateNotificationExit(true);
+        setPendingMarkAsRead(true);
+      } else {
+        // No animation needed, mark as read immediately
+        markNotificationsRead([notification]);
+      }
     }
 
     openNotification(notification);
   };
 
   const actionMarkAsRead = () => {
-    // Optimistically trigger animation immediately
-    setShouldAnimateNotificationExit(shouldAnimateExit);
-    markNotificationsRead([notification]);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateNotificationExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead([notification]);
+    }
   };
 
   const actionMarkAsUnread = () => {
     markNotificationsUnread([notification]);
+  };
+
+  const handleTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    // Only trigger if this is an individual notification animation, not a product group animation
+    if (pendingMarkAsRead && !isProductAnimatingExit) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead([notification]);
+    }
   };
 
   const updatedAt = formatNotificationUpdatedAt(notification);
@@ -143,6 +144,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       data-notification-id={notification.id}
       data-notification-row="true"
       id={notification.id}
+      onTransitionEnd={handleTransitionEnd}
       style={focusedStyles}
     >
       <Box padding="space.100">

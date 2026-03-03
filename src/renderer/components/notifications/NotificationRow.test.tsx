@@ -136,7 +136,17 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         markNotificationsRead: markNotificationsReadMock,
       });
 
+      // Get notification row element reference before clicking
+      const notificationElement = screen
+        .getByTestId('notification-details')
+        .closest('[data-notification-row="true"]');
+
       await userEvent.click(screen.getByTestId('notification-details'));
+
+      // Trigger transitionEnd to complete the animation and execute mutation
+      notificationElement?.dispatchEvent(
+        new Event('transitionend', { bubbles: true }),
+      );
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -174,7 +184,17 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         markNotificationsRead: markNotificationsReadMock,
       });
 
+      // Get notification row element reference before clicking (button will be removed after click)
+      const notificationElement = screen
+        .getByTestId('notification-mark-as-read')
+        .closest('[data-notification-row="true"]');
+
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
+
+      // Trigger transitionEnd to complete the animation and execute mutation
+      notificationElement?.dispatchEvent(
+        new Event('transitionend', { bubbles: true }),
+      );
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });

@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useEffect, useState } from 'react';
+import { type FC, type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge';
@@ -26,10 +26,11 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { markNotificationsRead, markAsMutation } = useAppContext();
+  const { markNotificationsRead } = useAppContext();
 
   const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
   const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
 
@@ -37,40 +38,27 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   const productNotification = productNotifications[0].product;
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  // Optimistic update error recovery:
-  // Animation is triggered immediately on user action for seamless UX.
-  // If the mutation fails, this effect resets the animation to restore the original state.
-  useEffect(() => {
-    if (
-      markAsMutation?.isError &&
-      markAsMutation?.variables?.action === 'read'
-    ) {
-      const mutatedNotificationIds =
-        markAsMutation.variables.targetNotifications.map((n) => n.id);
-      const productNotificationIds = productNotifications.map((n) => n.id);
-
-      // Check if any of this product's notifications were part of the failed mutation
-      const hasFailedNotification = productNotificationIds.some((id) =>
-        mutatedNotificationIds.includes(id),
-      );
-
-      if (hasFailedNotification) {
-        setShouldAnimateProductExit(false);
-      }
-    }
-  }, [
-    markAsMutation?.isError,
-    markAsMutation?.variables,
-    productNotifications,
-  ]);
-
   const actionProductInteraction = () => {
     openExternalLink(productNotification.home);
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateProductExit(shouldAnimateExit);
-    markNotificationsRead(productNotifications);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateProductExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead(productNotifications);
+    }
+  };
+
+  const handleProductTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    if (pendingMarkAsRead) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead(productNotifications);
+    }
   };
 
   const actionToggleProductNotifications = () => {
@@ -180,14 +168,25 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         </Flex>
       </Box>
 
-      {isProductNotificationsVisible &&
-        productNotifications.map((notification) => (
-          <NotificationRow
-            isProductAnimatingExit={shouldAnimateProductExit}
-            key={notification.id}
-            notification={notification}
-          />
-        ))}
+      {isProductNotificationsVisible && (
+        <div
+          className={
+            shouldAnimateProductExit
+              ? 'translate-x-full opacity-0 transition duration-350 ease-in-out'
+              : ''
+          }
+          data-testid="product-notifications-wrapper"
+          onTransitionEnd={handleProductTransitionEnd}
+        >
+          {productNotifications.map((notification) => (
+            <NotificationRow
+              isProductAnimatingExit={shouldAnimateProductExit}
+              key={notification.id}
+              notification={notification}
+            />
+          ))}
+        </div>
+      )}
     </Stack>
   );
 };

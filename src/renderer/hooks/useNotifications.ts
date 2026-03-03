@@ -376,8 +376,6 @@ export const useNotifications = (): NotificationsState => {
         }
       }
 
-      // Components watch mutation.isError and rollback optimistic UI changes
-      // (e.g., reverse exit animations) when errors occur.
       rendererLogError(
         action === 'read' ? 'markNotificationsRead' : 'markNotificationsUnread',
         `Error occurred while marking notifications as ${action}`,

@@ -46,7 +46,7 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 - **Mutation Optimizations**: 
   - **Optimistic Updates**: Cache updated immediately on user action (mark as read/unread) for instant UI feedback.
   - **Multi-Query Sync**: Uses `setQueriesData` with `notificationsKeys.all` to update all cached query variations simultaneously.
-  - **Error Recovery**: Full rollback of all queries on mutation failure with component-level animation reversal.
+  - **Error Recovery**: Full rollback of all queries on mutation failure.
   - **Animation Coordination**: Components manage their own exit animations independently of cache updates, decoupling UI timing from data layer.
 
 ## UI
