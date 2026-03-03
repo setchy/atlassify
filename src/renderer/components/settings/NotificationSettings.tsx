@@ -21,6 +21,9 @@ export const NotificationSettings: FC = () => {
   const groupNotificationsByProductAlphabetically = useSettingsStore(
     (s) => s.groupNotificationsByProductAlphabetically,
   );
+  const groupNotificationsByProduct = useSettingsStore(
+    (s) => s.groupNotificationsByProduct,
+  );
   const delayNotificationState = useSettingsStore(
     (s) => s.delayNotificationState,
   );
@@ -39,6 +42,7 @@ export const NotificationSettings: FC = () => {
       <Inline space="space.100">
         <Checkbox
           isChecked={groupNotificationsByProductAlphabetically}
+          isDisabled={!groupNotificationsByProduct}
           label={t('settings.notifications.group_alphabetically')}
           name="groupNotificationsByProductAlphabetically"
           onChange={() =>
