@@ -357,7 +357,7 @@ export const useNotifications = (): NotificationsState => {
       const account = targetNotifications[0].account;
 
       // Assert all notifications are for the same account
-      if (!targetNotifications.every((n) => n.account === account)) {
+      if (!targetNotifications.every((n) => n.account.id === account.id)) {
         throw new Error('All notifications must belong to the same account');
       }
 
