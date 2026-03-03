@@ -30,6 +30,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
   const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
   const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
 
@@ -42,8 +43,22 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateProductExit(shouldAnimateExit);
-    markNotificationsRead(productNotifications);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateProductExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead(productNotifications);
+    }
+  };
+
+  const handleProductTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    if (pendingMarkAsRead) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead(productNotifications);
+    }
   };
 
   const actionToggleProductNotifications = () => {
@@ -153,14 +168,25 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         </Flex>
       </Box>
 
-      {isProductNotificationsVisible &&
-        productNotifications.map((notification) => (
-          <NotificationRow
-            isProductAnimatingExit={shouldAnimateProductExit}
-            key={notification.id}
-            notification={notification}
-          />
-        ))}
+      {isProductNotificationsVisible && (
+        <div
+          className={
+            shouldAnimateProductExit
+              ? 'translate-x-full opacity-0 transition duration-350 ease-in-out'
+              : ''
+          }
+          data-testid="product-notifications-wrapper"
+          onTransitionEnd={handleProductTransitionEnd}
+        >
+          {productNotifications.map((notification) => (
+            <NotificationRow
+              isProductAnimatingExit={shouldAnimateProductExit}
+              key={notification.id}
+              notification={notification}
+            />
+          ))}
+        </div>
+      )}
     </Stack>
   );
 };

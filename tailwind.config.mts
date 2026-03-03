@@ -4,7 +4,9 @@ import { token } from '@atlaskit/tokens';
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
-const sidebarWidth = '3rem'; // 48px
+import { Constants } from './src/renderer/constants';
+
+const sidebarWidth = '3rem'; // 48px;
 
 const config: Config = {
   content: ['./src/**/*.ts', './src/**/*.tsx'],
@@ -16,6 +18,9 @@ const config: Config = {
       },
       width: {
         sidebar: sidebarWidth,
+      },
+      transitionDuration: {
+        'notification-exit': `${Constants.NOTIFICATION_EXIT_ANIMATION_DURATION_MS}`,
       },
       colors: {
         atlassify: {

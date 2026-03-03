@@ -9,6 +9,7 @@ import {
 
 import { Constants } from '../constants';
 
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import {
   useAccountsStore,
   useFiltersStore,
@@ -153,9 +154,7 @@ export const useNotifications = (): NotificationsState => {
 
     placeholderData: keepPreviousData,
 
-    refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,
-    refetchIntervalInBackground: true,
     refetchOnWindowFocus: true,
   });
 
@@ -164,6 +163,21 @@ export const useNotifications = (): NotificationsState => {
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
 
   const isErrorOrPaused = isError || isPaused;
+
+  /**
+   * Manual interval-based fetching for reliable background updates in Electron tray apps.
+   *
+   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
+   * document.hidden === true. For menubar apps, the window is hidden most of the time,
+   * so refetchInterval would effectively never run in the background.
+   *
+   * This setInterval-based approach continues running regardless of window visibility,
+   * ensuring notifications stay fresh even when the app is hidden in the system tray.
+   * It also provides graceful recovery after system sleep/suspend cycles.
+   */
+  useIntervalTimer(() => {
+    refetch();
+  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
 
   // Determine global error from query state
   const globalError: AtlassifyError | null = useMemo(() => {
@@ -255,6 +269,43 @@ export const useNotifications = (): NotificationsState => {
 
   // Unified mutation for marking notifications as read or unread
   const markAsMutation = useMutation({
+    onMutate: async ({ targetNotifications, action }) => {
+      // Cancel any outgoing refetches to prevent them from overwriting our optimistic update
+      await queryClient.cancelQueries({ queryKey: notificationsKeys.all });
+
+      // Snapshot ALL notification queries for rollback on error
+      const previousQueriesData = queryClient.getQueriesData<
+        AccountNotifications[]
+      >({
+        queryKey: notificationsKeys.all,
+      });
+
+      // Optimistically update ALL notification queries in cache with full transformation.
+      // This ensures the UI updates immediately regardless of which query key is active.
+      // Components handle their own exit animations independently of cache updates.
+      const account = targetNotifications[0].account;
+
+      queryClient.setQueriesData<AccountNotifications[]>(
+        { queryKey: notificationsKeys.all },
+        (oldData) => {
+          if (!oldData) {
+            return oldData;
+          }
+
+          // Apply full post-processing including read state update and removal (if needed)
+          return postProcessNotifications(
+            account,
+            oldData,
+            targetNotifications,
+            action,
+          );
+        },
+      );
+
+      // Return context with snapshot for potential rollback
+      return { previousQueriesData };
+    },
+
     mutationFn: async ({
       targetNotifications,
       action,
@@ -273,7 +324,7 @@ export const useNotifications = (): NotificationsState => {
       const account = targetNotifications[0].account;
 
       // Assert all notifications are for the same account
-      if (!targetNotifications.every((n) => n.account === account)) {
+      if (!targetNotifications.every((n) => n.account.id === account.id)) {
         throw new Error('All notifications must belong to the same account');
       }
 
@@ -284,26 +335,29 @@ export const useNotifications = (): NotificationsState => {
 
       await markAsApiFn(account, notificationIDs);
 
-      // Use unfiltered cache data so active filters don't permanently drop
-      // notifications from the cache when marking as read/unread
-      const unfilteredNotifications =
-        queryClient.getQueryData<AccountNotifications[]>(
-          notificationsQueryKey,
-        ) ?? [];
-
-      return postProcessNotifications(
-        account,
-        unfilteredNotifications,
-        targetNotifications,
-        action,
-      );
+      // Return data needed for post-processing
+      return { account, targetNotifications, action };
     },
 
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
+    onSuccess: () => {
+      // Invalidate all notification queries to mark them as stale.
+      // This ensures fresh data is fetched on next access or when switching query parameters
+      // (e.g., toggling fetchOnlyUnread setting).
+      // refetchType: 'none' prevents immediate refetch since cache was already updated optimistically.
+      queryClient.invalidateQueries({
+        queryKey: notificationsKeys.all,
+        refetchType: 'none',
+      });
     },
 
-    onError: (err, { action }) => {
+    onError: (err, { action }, context) => {
+      // Rollback ALL notification queries to their snapshots on error
+      if (context?.previousQueriesData) {
+        for (const [queryKey, data] of context.previousQueriesData) {
+          queryClient.setQueryData(queryKey, data);
+        }
+      }
+
       rendererLogError(
         action === 'read' ? 'markNotificationsRead' : 'markNotificationsUnread',
         `Error occurred while marking notifications as ${action}`,

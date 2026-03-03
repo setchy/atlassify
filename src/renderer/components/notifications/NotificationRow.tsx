@@ -50,28 +50,49 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
     useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
 
   const isFocused = focusedNotificationId === notification.id;
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
   const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
-
     if (markAsReadOnOpen) {
-      markNotificationsRead([notification]);
+      if (shouldAnimateExit) {
+        // Trigger animation, mark as read after animation completes
+        setShouldAnimateNotificationExit(true);
+        setPendingMarkAsRead(true);
+      } else {
+        // No animation needed, mark as read immediately
+        markNotificationsRead([notification]);
+      }
     }
 
     openNotification(notification);
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit);
-    markNotificationsRead([notification]);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateNotificationExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead([notification]);
+    }
   };
 
   const actionMarkAsUnread = () => {
     markNotificationsUnread([notification]);
+  };
+
+  const handleTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    // Only trigger if this is an individual notification animation, not a product group animation
+    if (pendingMarkAsRead && !isProductAnimatingExit) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead([notification]);
+    }
   };
 
   const updatedAt = formatNotificationUpdatedAt(notification);
@@ -123,6 +144,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       data-notification-id={notification.id}
       data-notification-row="true"
       id={notification.id}
+      onTransitionEnd={handleTransitionEnd}
       style={focusedStyles}
     >
       <Box padding="space.100">
