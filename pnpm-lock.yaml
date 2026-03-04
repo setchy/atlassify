@@ -67,8 +67,8 @@ importers:
         specifier: 32.0.0
         version: 32.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/inline-message':
-        specifier: 15.5.6
-        version: 15.5.6(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 15.5.7
+        version: 15.5.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/logo':
         specifier: 19.10.3
         version: 19.10.3(@types/react@19.2.14)(react@19.2.4)
@@ -351,8 +351,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-message@15.5.6':
-    resolution: {integrity: sha512-0fkW2HuFGnwo9Ximop3mEM8NDl5HLmxQxhCFV34ajT0gXQDb/OiVGUVWTZ5EN4QA4PDjjnNUh30Xdg6t9R4l0A==}
+  '@atlaskit/inline-message@15.5.7':
+    resolution: {integrity: sha512-p14ClIt4CYqkFM/XRJNwD3eLMA0n634nDkscMawqJjsZ7VrhuS466XHC4XAqjbB46jpH4N8JRB0O+I+2sVJ6yg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5550,7 +5550,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/inline-message@15.5.6(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/inline-message@15.5.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/button': 23.10.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.14)(react@19.2.4)
@@ -5560,7 +5560,7 @@ snapshots:
       '@atlaskit/popper': 7.1.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/popup': 4.13.3(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/primitives': 18.0.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/theme': 21.0.5(@types/react@19.2.14)(react@19.2.4)
+      '@atlaskit/theme': 22.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/tokens': 11.0.2(@types/react@19.2.14)(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
