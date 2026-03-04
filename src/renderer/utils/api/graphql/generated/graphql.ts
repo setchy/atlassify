@@ -1990,7 +1990,7 @@ export type AgentWorkspaceArchiveSkillInput = {
 export type AgentWorkspaceAssignSkillInput = {
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
-  /** Proficiency level index (0-based index into the skill's proficiencyDefinitions array) */
+  /** Proficiency level (1-5, where 1 is the lowest and 5 is the highest). Maps to proficiencyDefinitions array at index proficiencyLevel - 1. */
   proficiencyLevel: Scalars['Int']['input'];
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -2053,6 +2053,10 @@ export type AgentWorkspaceCapacityInput = {
   cloudId: Scalars['ID']['input'];
   /** Project key (required) */
   projectKey: Scalars['String']['input'];
+  /** Sort field (optional) */
+  sortBy?: InputMaybe<AgentWorkspaceCapacitySortField>;
+  /** Sort direction (optional, defaults to ASC) */
+  sortOrder?: InputMaybe<SortDirection>;
   /** Filter by multiple capacity statuses (optional) */
   statuses?: InputMaybe<Array<AgentWorkspaceCapacityStatus>>;
   /** Filter by multiple team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
@@ -2060,6 +2064,12 @@ export type AgentWorkspaceCapacityInput = {
   /** Filter by multiple team IDs (optional) */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
+
+/** Sort field for agent capacity queries. */
+export enum AgentWorkspaceCapacitySortField {
+  /** Sort by utilization percentage (currentLoad / maxCapacity), numerical */
+  Capacity = 'CAPACITY'
+}
 
 export enum AgentWorkspaceCapacityStatus {
   /** 61-80% utilization */
@@ -2178,7 +2188,7 @@ export type AgentWorkspaceCreateCatalogInput = {
   name: Scalars['String']['input'];
   /** IDs of the parent catalogs (optional) */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Proficiency level definitions for this catalog (array of 5 strings for levels 0-4) */
+  /** Proficiency level definitions for this catalog (array of 5 strings for levels 1-5). If omitted or equal to shared defaults, defaults will be used. */
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -2294,6 +2304,27 @@ export type AgentWorkspaceEditShiftInput = {
   projectARI: Scalars['ID']['input'];
   /** The schedule this shift belongs to. */
   scheduleId: Scalars['ID']['input'];
+};
+
+/** Error codes for eligibility operations */
+export enum AgentWorkspaceEligibilityErrorCode {
+  InternalError = 'INTERNAL_ERROR',
+  TeamNotFound = 'TEAM_NOT_FOUND',
+  ValidationError = 'VALIDATION_ERROR'
+}
+
+/** Input for finding the best matching agents based on skill requirements within a team */
+export type AgentWorkspaceFindBestMatchAgentsInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** List of required skills with minimum proficiency levels */
+  requirements: Array<AgentWorkspaceSkillRequirementInput>;
+  /** Team ID to scope the agent search */
+  teamId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 /** Standard cursor-based pagination input */
@@ -2448,7 +2479,7 @@ export type AgentWorkspaceSkillCreateInput = {
   name: Scalars['String']['input'];
   /** List of parent catalog IDs this skill belongs to */
   parentCatalogIds: Array<Scalars['ID']['input']>;
-  /** Proficiency level definitions for this skill (array of 5 strings for levels 0-4). If not provided, defaults will be used. */
+  /** Proficiency level definitions for this skill (array of 5 strings for levels 1-5). If omitted or equal to shared defaults, defaults will be used. */
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -2510,6 +2541,14 @@ export enum AgentWorkspaceSkillMatchType {
   Any = 'ANY'
 }
 
+/** A single skill requirement specifying a skill and the minimum proficiency level needed */
+export type AgentWorkspaceSkillRequirementInput = {
+  /** Minimum proficiency level required (0-4) */
+  minProficiencyLevel: Scalars['Int']['input'];
+  /** ID of the required skill */
+  skillId: Scalars['ID']['input'];
+};
+
 /** Input for updating an existing skill */
 export type AgentWorkspaceSkillUpdateInput = {
   /** Cloud ID (required) */
@@ -2522,7 +2561,7 @@ export type AgentWorkspaceSkillUpdateInput = {
   name?: InputMaybe<Scalars['String']['input']>;
   /** List of parent catalog IDs this skill belongs to */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Proficiency level definitions for this skill (array of 5 strings for levels 0-4) */
+  /** Proficiency level definitions for this skill (array of 5 strings for levels 1-5). Omit to keep existing. Set null or provide shared defaults to reset to shared defaults. */
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -2602,7 +2641,7 @@ export type AgentWorkspaceUpdateCatalogInput = {
   name?: InputMaybe<Scalars['String']['input']>;
   /** IDs of the parent catalogs */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Proficiency level definitions for this catalog (array of 5 strings for levels 0-4) */
+  /** Proficiency level definitions for this catalog (array of 5 strings for levels 1-5). Omit to keep existing. Set null or provide shared defaults to reset to shared defaults. */
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -2687,7 +2726,7 @@ export type AgentWorkspaceUpdateSmartRoutingConfigInput = {
 export type AgentWorkspaceUserSkillFilterInput = {
   /** Filter by specific user skill IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-  /** Filter by proficiency level */
+  /** Filter by proficiency level (1-5) */
   proficiencyLevel?: InputMaybe<Scalars['Int']['input']>;
   /** Filter by skill IDs */
   skillIds?: InputMaybe<Array<Scalars['ID']['input']>>;
@@ -32229,25 +32268,12 @@ export type JiraConfluenceRemoteIssueLinksFieldOperationInput = {
 };
 
 export type JiraConsolidatedResourcesInput = {
-  /**
-   * Cursor for pagination (optional).
-   *
-   * When set, fetches items AFTER this cursor.
-   * Returned from previous query's pageInfo.endCursor.
-   * Leave null/empty for first page.
-   */
+  /**  Todo: Remove */
   after?: InputMaybe<Scalars['String']['input']>;
   /** The input for the Jira attachments with filters query. */
   filters?: InputMaybe<Array<InputMaybe<JiraIssueResourceFilters>>>;
-  /**
-   * First N items to fetch (required).
-   *
-   * Recommended range: 10-50
-   * Max recommended: 100 (larger values may timeout with whiteboards)
-   *
-   * Type: Positive integer
-   */
-  first: Scalars['Int']['input'];
+  /**  Todo: Remove */
+  first?: InputMaybe<Scalars['Int']['input']>;
   /**
    * Whether to hydrate (load) resource details (optional, default: true).
    *
@@ -33829,6 +33855,15 @@ export type JiraFormulaFieldFixContext = {
   projectId?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Represents types used for input parameters for Formula Expression Functions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
+export enum JiraFormulaFieldParameterType {
+  Any = 'ANY',
+  Boolean = 'BOOLEAN',
+  Datetime = 'DATETIME',
+  Number = 'NUMBER',
+  Text = 'TEXT'
+}
+
 export type JiraFormulaFieldSuggestionContext = {
   /** The field ID of the formula field if applicable */
   fieldId?: InputMaybe<Scalars['String']['input']>;
@@ -33842,10 +33877,13 @@ export type JiraFormulaFieldSuggestionContext = {
   projectId?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Represents types returned within Formula Field expressions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
 export enum JiraFormulaFieldType {
+  Boolean = 'BOOLEAN',
   Datetime = 'DATETIME',
   Number = 'NUMBER',
-  Text = 'TEXT'
+  Text = 'TEXT',
+  Unknown = 'UNKNOWN'
 }
 
 /** Input for generating an AI summary for a Jira issue. */
@@ -34287,6 +34325,23 @@ export enum JiraIssueExportType {
   /** Export to CSV with BOM, user default fields (for saved filters). */
   CsvWithBomFilterDefaultFields = 'CSV_WITH_BOM_FILTER_DEFAULT_FIELDS'
 }
+
+export type JiraIssueFieldConfigDescriptionCustomisationsInput = {
+  schemeOrProject: JiraIssueFieldConfigSchemeOrProjectInput;
+};
+
+export type JiraIssueFieldConfigRequiredOnCustomisationsInput = {
+  schemeOrProject: JiraIssueFieldConfigSchemeOrProjectInput;
+};
+
+export type JiraIssueFieldConfigSchemeOrProjectInput = {
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+  schemeId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type JiraIssueFieldConfigWorkTypesAssociationInput = {
+  schemeOrProject: JiraIssueFieldConfigSchemeOrProjectInput;
+};
 
 /** Inputs for adding fields during an issue create or update */
 export type JiraIssueFieldsInput = {
@@ -37627,6 +37682,7 @@ export enum JiraResourceIntegration {
   Confluence = 'CONFLUENCE',
   Gdrive = 'GDRIVE',
   Loom = 'LOOM',
+  Weblink = 'WEBLINK',
   Whiteboard = 'WHITEBOARD'
 }
 
@@ -48314,6 +48370,11 @@ export type SearchInput = {
   enableHighlighting?: InputMaybe<Scalars['Boolean']['input']>;
   /** Whether the query should generate relevance debug events for consumption in the query debugger tool. */
   enableRelevanceDebugging?: InputMaybe<Scalars['Boolean']['input']>;
+  /**
+   * Whether the caller expects a result from the async search.
+   * When false (default), the search may return early without results if caching is in progress.
+   */
+  expectResult?: InputMaybe<Scalars['Boolean']['input']>;
   /** String describing which experience the search is being called from, e.g. confluence.advanced_search */
   experience: Scalars['String']['input'];
   /** Contains context for the search experiment */
@@ -48433,9 +48494,12 @@ export type SearchParticipant = {
 };
 
 export enum SearchParticipantType {
+  Commented = 'COMMENTED',
   Contributor = 'CONTRIBUTOR',
   Mentions = 'MENTIONS',
-  Presence = 'PRESENCE'
+  Presence = 'PRESENCE',
+  Shared = 'SHARED',
+  Viewed = 'VIEWED'
 }
 
 export type SearchParticipants = {
