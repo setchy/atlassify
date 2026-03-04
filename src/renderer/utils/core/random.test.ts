@@ -1,25 +1,25 @@
 vi.unmock('./random');
 
-import { randomIndex } from './random';
+import { randomElement } from './random';
 
-describe('randomIndex', () => {
-  it('should return an integer within [0, length)', () => {
+const FRUITS = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+
+describe('randomElement', () => {
+  it('should return an element from the array', () => {
     for (let i = 0; i < 100; i++) {
-      const result = randomIndex(10);
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThan(10);
-      expect(Number.isInteger(result)).toBe(true);
+      const result = randomElement(FRUITS);
+      expect(FRUITS).toContain(result);
     }
   });
 
   it('should use crypto.getRandomValues', () => {
     const spy = vi.spyOn(globalThis.crypto, 'getRandomValues');
-    randomIndex(5);
+    randomElement(FRUITS);
     expect(spy).toHaveBeenCalledOnce();
     spy.mockRestore();
   });
 
-  it('should return 0 when crypto returns 0', () => {
+  it('should return first element when crypto returns 0', () => {
     vi.spyOn(globalThis.crypto, 'getRandomValues').mockImplementation(
       <T extends ArrayBufferView>(array: T): T => {
         if (array instanceof Uint32Array) {
@@ -29,7 +29,7 @@ describe('randomIndex', () => {
       },
     );
 
-    expect(randomIndex(10)).toBe(0);
+    expect(randomElement(FRUITS)).toBe('apple');
     vi.restoreAllMocks();
   });
 
@@ -43,7 +43,7 @@ describe('randomIndex', () => {
       },
     );
 
-    expect(randomIndex(5)).toBe(3); // 13 % 5 === 3
+    expect(randomElement(FRUITS)).toBe('date'); // 13 % 5 === 3
     vi.restoreAllMocks();
   });
 });
