@@ -46407,6 +46407,7 @@ export enum PolarisSortOrder {
 export enum PolarisTimelineMode {
   Months = 'MONTHS',
   Quarters = 'QUARTERS',
+  Weeks = 'WEEKS',
   Years = 'YEARS'
 }
 
