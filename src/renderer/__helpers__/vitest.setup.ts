@@ -6,7 +6,7 @@ import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 // Ensure stability in EmojiSplash component snapshots
 vi.mock('../utils/core/random', () => ({
-  randomIndex: vi.fn(() => 0),
+  randomElement: vi.fn((arr: unknown[]) => arr[0]),
 }));
 
 vi.mock('axios', async (importOriginal) => {
