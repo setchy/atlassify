@@ -40,8 +40,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@40.6.1)
       '@atlaskit/avatar':
-        specifier: 25.8.1
-        version: 25.8.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 25.8.2
+        version: 25.8.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/avatar-group':
         specifier: 12.4.10
         version: 12.4.10(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -283,8 +283,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.8.1':
-    resolution: {integrity: sha512-QruRhT7xv2BC7Nr49c5dhI4Nzb0yqHPfqqnTcQ2/uRdV71Ylsx5CjuVPjYiBjd1aR6GRPhmWFMTHdE2vrGsXaQ==}
+  '@atlaskit/avatar@25.8.2':
+    resolution: {integrity: sha512-yGjVWoMaiY8c14vt/JYmGjqpES3rWMNEV9n4LqmrFnIPm4OqA8JmDYJkz5uF33QUy7yk4X1WHjjRW6COAdpDFQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5346,7 +5346,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.4.10(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@atlaskit/avatar': 25.8.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/avatar': 25.8.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/menu': 8.4.17(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5363,7 +5363,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.8.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/avatar@25.8.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
@@ -5371,7 +5371,7 @@ snapshots:
       '@atlaskit/icon': 32.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.0.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/theme': 21.0.5(@types/react@19.2.14)(react@19.2.4)
+      '@atlaskit/theme': 22.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/tokens': 11.0.2(@types/react@19.2.14)(react@19.2.4)
       '@babel/runtime': 7.28.6
       '@compiled/react': 0.18.6(react@19.2.4)
