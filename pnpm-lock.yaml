@@ -82,8 +82,8 @@ importers:
         specifier: 8.4.4
         version: 8.4.4(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/select':
-        specifier: 21.7.7
-        version: 21.7.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 21.7.8
+        version: 21.7.8(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/spinner':
         specifier: 19.0.10
         version: 19.0.10(@types/react@19.2.14)(react@19.2.4)
@@ -431,8 +431,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/select@21.7.7':
-    resolution: {integrity: sha512-Z/yVoFwxUCpgxn16QSFRHin22ZQsm90RjRev5NMzk8GKhpx02CH+xxWXNja4tNKEB1TQInweokwWmsx/dlwwBg==}
+  '@atlaskit/select@21.7.8':
+    resolution: {integrity: sha512-6ywxGC1ZwqvT3M1M7uWhctmiiDlQn7L01+WabgyKrhXSzdZgrpab+FzSFZOXWMXwbI7bLM73U/nBxLWSfbBq2w==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5781,7 +5781,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@21.7.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/select@21.7.8(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.0(@types/react@19.2.14)(react@19.2.4)
@@ -5790,7 +5790,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.0.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/react-select': 3.13.8(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/theme': 21.0.5(@types/react@19.2.14)(react@19.2.4)
+      '@atlaskit/theme': 22.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/tokens': 11.0.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/visually-hidden': 3.0.4(react@19.2.4)
       '@babel/runtime': 7.28.6
