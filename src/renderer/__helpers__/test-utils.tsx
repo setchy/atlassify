@@ -1,15 +1,22 @@
 import { render } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/App';
 
-const EMPTY_APP_CONTEXT: Partial<AppContextState> = {};
+export { navigateMock } from './vitest.setup';
+
+const EMPTY_APP_CONTEXT: TestAppContext = {};
+
+interface RenderOptions extends Partial<AppContextState> {
+  initialEntries?: string[];
+}
 
 /**
- * Test context (settings removed as it's no longer in context)
+ * Test context
  */
 type TestAppContext = Partial<AppContextState>;
 
@@ -19,6 +26,7 @@ type TestAppContext = Partial<AppContextState>;
 interface AppContextProviderProps {
   readonly children: ReactNode;
   readonly value?: TestAppContext;
+  readonly initialEntries?: string[];
 }
 
 /**
@@ -27,8 +35,9 @@ interface AppContextProviderProps {
 function AppContextProvider({
   children,
   value = EMPTY_APP_CONTEXT,
+  initialEntries,
 }: AppContextProviderProps) {
-  const defaultValue: Partial<AppContextState> = useMemo(() => {
+  const defaultValue: TestAppContext = useMemo(() => {
     return {
       notifications: [],
       globalError: null,
@@ -37,11 +46,13 @@ function AppContextProvider({
       isFetching: false,
       isErrorOrPaused: false,
       ...value,
-    } as Partial<AppContextState>;
+    } as TestAppContext;
   }, [value]);
 
   return (
-    <AppContext.Provider value={defaultValue}>{children}</AppContext.Provider>
+    <MemoryRouter initialEntries={initialEntries}>
+      <AppContext.Provider value={defaultValue}>{children}</AppContext.Provider>
+    </MemoryRouter>
   );
 }
 
@@ -53,7 +64,7 @@ function AppContextProvider({
  */
 export function renderWithAppContext(
   ui: ReactElement,
-  context: TestAppContext = {},
+  { initialEntries, ...context }: RenderOptions = {},
 ) {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -68,7 +79,9 @@ export function renderWithAppContext(
   return render(ui, {
     wrapper: ({ children }) => (
       <QueryClientProvider client={queryClient}>
-        <AppContextProvider value={context}>{children}</AppContextProvider>
+        <AppContextProvider initialEntries={initialEntries} value={context}>
+          {children}
+        </AppContextProvider>
       </QueryClientProvider>
     ),
   });

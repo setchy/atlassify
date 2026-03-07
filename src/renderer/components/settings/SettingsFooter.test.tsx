@@ -1,17 +1,13 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import {
+  navigateMock,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
 
 import * as comms from '../../utils/system/comms';
 import { SettingsFooter } from './SettingsFooter';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
   afterEach(() => {
@@ -20,11 +16,9 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
 
   it('should show app version', async () => {
     await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsFooter />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<SettingsFooter />, {
+        initialEntries: ['/settings'],
+      });
     });
 
     expect(screen.getByTestId('settings-release-notes')).toMatchSnapshot();
@@ -35,11 +29,9 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
       .spyOn(comms, 'openExternalLink')
       .mockImplementation(vi.fn());
 
-    renderWithAppContext(
-      <MemoryRouter initialEntries={['/settings']}>
-        <SettingsFooter />
-      </MemoryRouter>,
-    );
+    renderWithAppContext(<SettingsFooter />, {
+      initialEntries: ['/settings'],
+    });
 
     await userEvent.click(screen.getByTestId('settings-release-notes'));
 
@@ -50,11 +42,9 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should open account management', async () => {
-    renderWithAppContext(
-      <MemoryRouter initialEntries={['/settings']}>
-        <SettingsFooter />
-      </MemoryRouter>,
-    );
+    renderWithAppContext(<SettingsFooter />, {
+      initialEntries: ['/settings'],
+    });
 
     await userEvent.click(screen.getByTestId('settings-accounts'));
 
@@ -64,11 +54,9 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
 
-    renderWithAppContext(
-      <MemoryRouter initialEntries={['/settings']}>
-        <SettingsFooter />
-      </MemoryRouter>,
-    );
+    renderWithAppContext(<SettingsFooter />, {
+      initialEntries: ['/settings'],
+    });
 
     await userEvent.click(screen.getByTestId('settings-quit'));
 

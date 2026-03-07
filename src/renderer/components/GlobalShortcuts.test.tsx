@@ -1,7 +1,6 @@
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
@@ -9,12 +8,6 @@ import { useAccountsStore, useSettingsStore } from '../stores';
 import * as comms from '../utils/system/comms';
 import * as links from '../utils/system/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = vi.fn();
@@ -33,11 +26,7 @@ describe('components/GlobalShortcuts.tsx', () => {
   describe('key bindings', () => {
     describe('ignores keys that are not valid', () => {
       it('ignores B key', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('b');
 
@@ -47,11 +36,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('home', () => {
       it('navigates home when pressing H key', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('h');
 
@@ -67,11 +52,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('opens my notifications when pressing N while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('n');
 
@@ -81,11 +62,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not open my notifications when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('n');
 
@@ -99,11 +76,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('u');
 
@@ -115,11 +88,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle read/unread when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('u');
 
@@ -129,14 +98,9 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle read/unread when status is loading', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            isLoading: true,
-          },
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          isLoading: true,
+        });
 
         await userEvent.keyboard('u');
 
@@ -149,11 +113,7 @@ describe('components/GlobalShortcuts.tsx', () => {
         useSettingsStore.setState({ groupNotificationsByProduct: false });
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('p');
 
@@ -165,11 +125,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle group by product when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('p');
 
@@ -182,11 +138,7 @@ describe('components/GlobalShortcuts.tsx', () => {
         useSettingsStore.setState({ groupNotificationsByTitle: false });
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('t');
 
@@ -198,11 +150,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle group by title when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('t');
 
@@ -214,11 +162,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('toggles filters when pressing F while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('f');
 
@@ -228,11 +172,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle filters when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('f');
 
@@ -242,14 +182,9 @@ describe('components/GlobalShortcuts.tsx', () => {
 
     describe('refresh', () => {
       it('refreshes notifications when pressing R key', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            fetchNotifications: fetchNotificationsMock,
-          },
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          fetchNotifications: fetchNotificationsMock,
+        });
 
         await userEvent.keyboard('r');
 
@@ -257,14 +192,10 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('refreshes notifications from other screen', async () => {
-        renderWithAppContext(
-          <MemoryRouter initialEntries={['/settings']}>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            fetchNotifications: fetchNotificationsMock,
-          },
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          initialEntries: ['/settings'],
+          fetchNotifications: fetchNotificationsMock,
+        });
 
         await userEvent.keyboard('r');
 
@@ -273,14 +204,9 @@ describe('components/GlobalShortcuts.tsx', () => {
       });
 
       it('does not refresh when status is loading', async () => {
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-          {
-            isLoading: true,
-          },
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          isLoading: true,
+        });
 
         await userEvent.keyboard('r');
 
@@ -292,11 +218,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('toggles settings when pressing S while logged in', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('s');
 
@@ -306,11 +228,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not toggle settings when logged out', async () => {
         useAccountsStore.setState({ accounts: [] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('s');
 
@@ -322,11 +240,9 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('navigates to accounts when pressing A on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter initialEntries={['/settings']}>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          initialEntries: ['/settings'],
+        });
 
         await userEvent.keyboard('a');
 
@@ -336,11 +252,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not trigger accounts when not on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('a');
 
@@ -352,11 +264,9 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('quits the app when pressing Q on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter initialEntries={['/settings']}>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />, {
+          initialEntries: ['/settings'],
+        });
 
         await userEvent.keyboard('q');
 
@@ -366,11 +276,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('does not quit the app when not on settings route', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         await userEvent.keyboard('q');
 
@@ -383,10 +289,10 @@ describe('components/GlobalShortcuts.tsx', () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
-          <MemoryRouter>
+          <div>
             <GlobalShortcuts />
             <input id="test-input" />
-          </MemoryRouter>,
+          </div>,
         );
 
         const input = document.getElementById(
@@ -402,10 +308,10 @@ describe('components/GlobalShortcuts.tsx', () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
         renderWithAppContext(
-          <MemoryRouter>
+          <div>
             <GlobalShortcuts />
             <textarea id="test-textarea" />
-          </MemoryRouter>,
+          </div>,
         );
 
         const textarea = document.getElementById(
@@ -420,11 +326,7 @@ describe('components/GlobalShortcuts.tsx', () => {
       it('ignores shortcuts when modifier keys are pressed', async () => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-        renderWithAppContext(
-          <MemoryRouter>
-            <GlobalShortcuts />
-          </MemoryRouter>,
-        );
+        renderWithAppContext(<GlobalShortcuts />);
 
         const event = new KeyboardEvent('keydown', { key: 'h', metaKey: true });
         navigateMock.mockClear();
