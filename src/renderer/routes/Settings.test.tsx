@@ -1,6 +1,5 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
 import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 
@@ -13,11 +12,9 @@ describe('renderer/routes/Settings.tsx', () => {
 
   it('should render itself & its children', async () => {
     await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsRoute />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<SettingsRoute />, {
+        initialEntries: ['/settings'],
+      });
     });
 
     expect(screen.getByTestId('settings')).toMatchSnapshot();
@@ -31,11 +28,9 @@ describe('renderer/routes/Settings.tsx', () => {
 
   it('should go back by pressing the icon', async () => {
     await act(async () => {
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <SettingsRoute />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<SettingsRoute />, {
+        initialEntries: ['/settings'],
+      });
     });
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
