@@ -19,9 +19,6 @@ const config: Config = {
       width: {
         sidebar: sidebarWidth,
       },
-      transitionDuration: {
-        'notification-exit': `${Constants.NOTIFICATION_EXIT_ANIMATION_DURATION_MS}`,
-      },
       colors: {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
@@ -54,6 +51,19 @@ const config: Config = {
         '.tray-icon-pill-dark': {
           '@apply inline-flex items-center gap-1.5 rounded bg-slate-700 px-1':
             {},
+        },
+        '.settings-help-text': {
+          '@apply w-60 text-xs': {},
+        },
+        '.notification-exit': {
+          '@apply translate-x-full opacity-0 transition ease-in-out': {},
+          'transition-duration': `${Constants.NOTIFICATION_EXIT_ANIMATION_DURATION_MS}ms`,
+        },
+        '.keycap': {
+          '@apply rounded px-1.5 py-0.5 text-xs font-semibold': {},
+          'background-color': token('color.background.neutral.subtle'),
+          border: `1px solid ${token('color.border')}`,
+          'line-height': '1.2',
         },
       });
       addBase({

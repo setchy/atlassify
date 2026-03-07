@@ -40,7 +40,7 @@ export const TraySettings: FC = () => {
             onChange={() => toggleSetting('showNotificationsCountInTray')}
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.tray.show_count_in_tray_help')}
             </div>
           </InlineMessage>
@@ -77,7 +77,7 @@ export const TraySettings: FC = () => {
             value="true"
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.tray.alternate_icon_help')}
             </div>
           </InlineMessage>
@@ -112,7 +112,7 @@ export const TraySettings: FC = () => {
             value="false"
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.tray.unread_active_icon_help')}
             </div>
           </InlineMessage>
