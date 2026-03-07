@@ -139,7 +139,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         isFocused && 'bg-atlassify-notifications',
         (isProductAnimatingExit || shouldAnimateNotificationExit) &&
-          'translate-x-full opacity-0 transition duration-350 ease-in-out',
+          'notification-exit',
       )}
       data-notification-id={notification.id}
       data-notification-row="true"

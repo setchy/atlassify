@@ -86,7 +86,7 @@ export const SystemSettings: FC = () => {
           onChange={() => toggleSetting('keyboardShortcutEnabled')}
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.system.keyboard_shortcut_help', {
               shortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
               appName: APPLICATION.NAME,
@@ -103,7 +103,7 @@ export const SystemSettings: FC = () => {
           onChange={() => toggleSetting('showSystemNotifications')}
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.system.system_notifications_help')}
           </div>
         </InlineMessage>
@@ -192,7 +192,7 @@ export const SystemSettings: FC = () => {
             onChange={() => toggleSetting('openAtStartup')}
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.system.startup_help', {
                 appName: APPLICATION.NAME,
               })}

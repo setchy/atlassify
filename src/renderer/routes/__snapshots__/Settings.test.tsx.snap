@@ -1607,8 +1607,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             h
                           </span>
@@ -1630,8 +1629,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             n
                           </span>
@@ -1653,8 +1651,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             u
                           </span>
@@ -1676,8 +1673,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             p
                           </span>
@@ -1699,8 +1695,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             t
                           </span>
@@ -1722,8 +1717,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             f
                           </span>
@@ -1745,8 +1739,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             r
                           </span>
@@ -1768,8 +1761,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             s
                           </span>
@@ -1791,8 +1783,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             a
                           </span>
@@ -1814,8 +1805,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             q
                           </span>
@@ -1854,8 +1844,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↑
                           </span>
@@ -1865,8 +1854,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↓
                           </span>
@@ -1888,8 +1876,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Shift
                           </span>
@@ -1899,8 +1886,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↑
                           </span>
@@ -1922,8 +1908,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Shift
                           </span>
@@ -1933,8 +1918,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↓
                           </span>
@@ -1956,8 +1940,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Enter
                           </span>
@@ -1979,8 +1962,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             a
                           </span>

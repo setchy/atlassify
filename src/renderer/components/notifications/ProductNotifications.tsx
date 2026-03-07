@@ -170,11 +170,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
       {isProductNotificationsVisible && (
         <div
-          className={
-            shouldAnimateProductExit
-              ? 'translate-x-full opacity-0 transition duration-350 ease-in-out'
-              : ''
-          }
+          className={shouldAnimateProductExit ? 'notification-exit' : ''}
           data-testid="product-notifications-wrapper"
           onTransitionEnd={handleProductTransitionEnd}
         >

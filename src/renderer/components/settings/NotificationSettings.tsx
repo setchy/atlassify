@@ -50,7 +50,7 @@ export const NotificationSettings: FC = () => {
           }
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.notifications.group_alphabetically_help')}
           </div>
         </InlineMessage>
@@ -64,7 +64,7 @@ export const NotificationSettings: FC = () => {
           onChange={() => toggleSetting('delayNotificationState')}
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.notifications.delay_notification_state_help', {
               appName: APPLICATION.NAME,
             })}

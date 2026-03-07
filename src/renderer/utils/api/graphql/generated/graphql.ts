@@ -1507,8 +1507,6 @@ export type AgentStudioActorRoleInput = {
  * onlyVerifiedAgents) are mutually exclusive—only one can be true at a time.
  */
 export type AgentStudioAgentQueryInput = {
-  /** Include draft agents in the results. Only admins and collaborators can see draft agents. Defaults to false. */
-  includeDraftAgents?: InputMaybe<Scalars['Boolean']['input']>;
   /** Filter by agent name */
   name?: InputMaybe<Scalars['String']['input']>;
   /** Filter by only agents the user is able to edit */
@@ -1519,6 +1517,8 @@ export type AgentStudioAgentQueryInput = {
   onlyMyAgents?: InputMaybe<Scalars['Boolean']['input']>;
   /** Filter by only template agents */
   onlyTemplateAgents?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Filter by only unpublished agents, i.e. agent that has been created but there is no published version */
+  onlyUnpublishedAgents?: InputMaybe<Scalars['Boolean']['input']>;
   /** Filter by only verified agents */
   onlyVerifiedAgents?: InputMaybe<Scalars['Boolean']['input']>;
 };
@@ -2056,7 +2056,7 @@ export type AgentWorkspaceCapacityInput = {
   /** Sort field (optional) */
   sortBy?: InputMaybe<AgentWorkspaceCapacitySortField>;
   /** Sort direction (optional, defaults to ASC) */
-  sortOrder?: InputMaybe<SortDirection>;
+  sortOrder?: InputMaybe<AgentWorkspaceSortDirection>;
   /** Filter by multiple capacity statuses (optional) */
   statuses?: InputMaybe<Array<AgentWorkspaceCapacityStatus>>;
   /** Filter by multiple team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
@@ -2443,6 +2443,16 @@ export type AgentWorkspaceSetDefaultCapacityInput = {
   projectKey: Scalars['String']['input'];
 };
 
+/** Input for setting the default availability status for a project */
+export type AgentWorkspaceSetProjectDefaultAvailabilityInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Project ID (required) */
+  projectId: Scalars['ID']['input'];
+  /** The default availability status to set */
+  status: AgentWorkspaceAvailabilityStatus;
+};
+
 /**
  * ============================================
  * Shift Query Types
@@ -2582,6 +2592,14 @@ export type AgentWorkspaceSkillsInput = {
   /** Project Key */
   projectKey?: InputMaybe<Scalars['String']['input']>;
 };
+
+/** The sort direction of the collection */
+export enum AgentWorkspaceSortDirection {
+  /** Sort in ascending order */
+  Asc = 'ASC',
+  /** Sort in descending order */
+  Desc = 'DESC'
+}
 
 /** Input for subscribing a skill to a project */
 export type AgentWorkspaceSubscribeSkillInput = {
@@ -8602,6 +8620,40 @@ export enum ConfluenceAnalyticsCommentContentType {
   Database = 'database',
   Page = 'page',
   Whiteboard = 'whiteboard'
+}
+
+export enum ConfluenceAnalyticsMetricName {
+  LiveDocsLoadTime = 'LIVE_DOCS_LOAD_TIME',
+  PageEditLoadTime = 'PAGE_EDIT_LOAD_TIME',
+  PageViewLoadTime = 'PAGE_VIEW_LOAD_TIME'
+}
+
+export type ConfluenceAnalyticsMetricRequest = {
+  id: Scalars['String']['input'];
+  metricName: Array<InputMaybe<ConfluenceAnalyticsMetricName>>;
+  stat: ConfluenceAnalyticsStat;
+};
+
+export type ConfluenceAnalyticsStat = {
+  type: ConfluenceAnalyticsStatType;
+  value?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum ConfluenceAnalyticsStatType {
+  Avg = 'AVG',
+  Count = 'COUNT',
+  CountDistinct = 'COUNT_DISTINCT',
+  Max = 'MAX',
+  Min = 'MIN',
+  Percentile = 'PERCENTILE',
+  Sum = 'SUM'
+}
+
+export enum ConfluenceAnalyticsTimeseriesGranularity {
+  Daily = 'DAILY',
+  Hourly = 'HOURLY',
+  Monthly = 'MONTHLY',
+  Weekly = 'WEEKLY'
 }
 
 export type ConfluenceAnswerFilters = {
@@ -14838,6 +14890,7 @@ export type EcosystemGlobalInstallationOverrideInput = {
 };
 
 export enum EcosystemGlobalInstallationOverrideKeys {
+  AllowCustomMetrics = 'ALLOW_CUSTOM_METRICS',
   AllowEgressAnalytics = 'ALLOW_EGRESS_ANALYTICS',
   AllowLlmCapability = 'ALLOW_LLM_CAPABILITY',
   AllowLogsAccess = 'ALLOW_LOGS_ACCESS',
@@ -14850,6 +14903,7 @@ export type EcosystemInstallationConfigInput = {
 };
 
 export enum EcosystemInstallationOverrideKeys {
+  AllowCustomMetrics = 'ALLOW_CUSTOM_METRICS',
   AllowEgressAnalytics = 'ALLOW_EGRESS_ANALYTICS',
   AllowLlmCapability = 'ALLOW_LLM_CAPABILITY',
   AllowRestApis = 'ALLOW_REST_APIS'
@@ -15092,6 +15146,7 @@ export enum ExternalDesignType {
 
 export enum ExternalDocumentCategory {
   Archive = 'ARCHIVE',
+  Article = 'ARTICLE',
   Audio = 'AUDIO',
   Blogpost = 'BLOGPOST',
   Code = 'CODE',
@@ -15104,6 +15159,7 @@ export enum ExternalDocumentCategory {
   Other = 'OTHER',
   Page = 'PAGE',
   Pdf = 'PDF',
+  Post = 'POST',
   Presentation = 'PRESENTATION',
   Shortcut = 'SHORTCUT',
   Spreadsheet = 'SPREADSHEET',
@@ -15191,6 +15247,7 @@ export enum ExternalWorkItemSubtype {
   Section = 'SECTION',
   Story = 'STORY',
   Task = 'TASK',
+  Ticket = 'TICKET',
   WorkItem = 'WORK_ITEM'
 }
 
@@ -32267,6 +32324,13 @@ export type JiraConfluenceRemoteIssueLinksFieldOperationInput = {
   operation: JiraMultiValueFieldOperations;
 };
 
+export type JiraConnectTownsquareProjectToSpaceInput = {
+  /** The ARI of the Jira Space to link */
+  spaceAri: Scalars['ID']['input'];
+  /** The ARI of the Townsquare Project to link with */
+  townsquareProjectAri: Scalars['String']['input'];
+};
+
 export type JiraConsolidatedResourcesInput = {
   /**  Todo: Remove */
   after?: InputMaybe<Scalars['String']['input']>;
@@ -32650,6 +32714,17 @@ export type JiraCreateSimpleNavigationItemInput = {
   typeKey: JiraNavigationItemTypeKey;
 };
 
+export type JiraCreateTownsquareProjectAndConnectToSpaceInput = {
+  /** Whether the Townsquare Project should be private */
+  private?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The ARI of the Jira Space to link */
+  spaceAri: Scalars['ID']['input'];
+  /** The icon configuration for the Townsquare Project */
+  townsquareProjectIcon?: InputMaybe<JiraTownsquareIconInput>;
+  /** The name of the Townsquare Project to create */
+  townsquareProjectName: Scalars['String']['input'];
+};
+
 /** The supported brightness of a custom background */
 export enum JiraCustomBackgroundBrightness {
   Dark = 'DARK',
@@ -32799,6 +32874,16 @@ export type JiraDateTimeWindow = {
   /** The start date time of the window. */
   start?: InputMaybe<Scalars['DateTime']['input']>;
 };
+
+/** Decimal separator options for number formatting. */
+export enum JiraDecimalSeparator {
+  /** Use comma for decimal (123,45) */
+  Comma = 'COMMA',
+  /** Use browser/locale default decimal separator */
+  Locale = 'LOCALE',
+  /** Use period for decimal (123.45) */
+  Period = 'PERIOD'
+}
 
 /** Input to decline creating board views for workflows. */
 export type JiraDeclineBoardViewsForWorkflowsInput = {
@@ -34063,6 +34148,20 @@ export enum JiraGroupManagedBy {
 export enum JiraGroupUsageType {
   TeamCollaboration = 'TEAM_COLLABORATION',
   UserbaseGroup = 'USERBASE_GROUP'
+}
+
+/** Grouping separator options for number formatting. */
+export enum JiraGroupingSeparator {
+  /** Use comma for grouping (1,000,000) */
+  Comma = 'COMMA',
+  /** Use browser/locale default grouping */
+  Locale = 'LOCALE',
+  /** No grouping separator */
+  None = 'NONE',
+  /** Use period for grouping (1.000.000) */
+  Period = 'PERIOD',
+  /** Use space for grouping (1 000 000) */
+  Space = 'SPACE'
 }
 
 /** The types of Contexts supported by Groups field. */
@@ -36119,6 +36218,8 @@ export enum JiraNotificationType {
 }
 
 export type JiraNumberFieldFormatConfigInput = {
+  /** The decimal separator character for the number field. */
+  decimalSeparator?: InputMaybe<JiraDecimalSeparator>;
   /**
    * The number of decimals allowed or enforced on display.
    * Possible values are null, 1, 2, 3, or 4.
@@ -36128,6 +36229,8 @@ export type JiraNumberFieldFormatConfigInput = {
   formatStyle: JiraNumberFieldFormatStyle;
   /** The ISO currency code or unit configured for the number field. */
   formatUnit?: InputMaybe<Scalars['String']['input']>;
+  /** The grouping separator character for the number field. */
+  groupingSeparator?: InputMaybe<JiraGroupingSeparator>;
 };
 
 /** Represents the formatting style configuration for formatting a number field on the UI */
@@ -37133,6 +37236,8 @@ export type JiraProjectSchemeAssociatedFieldsInput = {
   nameOrDescriptionFilter?: InputMaybe<Scalars['String']['input']>;
   /** Search fields by whether they are required on the given issue types. If null or empty, fields will not be filtered by required on issue types. */
   requiredOnIssueTypesFilter?: InputMaybe<Array<JiraFieldsRequiredOnIssueTypesFilterInput>>;
+  /** Sort order. Note: only a single sort order is supported at present. Supplying multiples would result in an error. */
+  sortBy?: InputMaybe<Array<JiraFieldSchemesSort>>;
 };
 
 /** The supported different shortcut types */
@@ -39246,6 +39351,15 @@ export type JiraTopCustomFieldDefaultContextOptionPositionInput = {
   dummy?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type JiraTownsquareIconInput = {
+  /** Background color of the icon. */
+  color?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the selected icon. */
+  id?: InputMaybe<Scalars['String']['input']>;
+  /** Shortname of the icon. */
+  shortName?: InputMaybe<Scalars['String']['input']>;
+};
+
 /** Input for tracking a recent issue. */
 export type JiraTrackRecentIssueInput = {
   /** The Cloud ID of the Jira site for routing. */
@@ -41064,45 +41178,6 @@ export type JpdViewsServiceOptionInput = {
   id: Scalars['String']['input'];
   label: Scalars['String']['input'];
   weight: Scalars['Int']['input'];
-};
-
-/**
- * JpdViewsServicePaginationInput defines Relay-style cursor-based pagination
- * with two modes: forward and backward.
- * Forward pagination (from the start or after a cursor):
- * - First page:    first = N
- * - Next pages:    first = N, after = <endCursor of previous page>
- * Backward pagination (towards the start, before a cursor):
- * - Previous page: last = N, before = <startCursor of current page>
- * Last page (tail of the full result set):
- * - last = N (before = null) → returns the last N items of the full ordered result set.
- * Rules
- * - first and last:
- * - At least one of 'first' or 'last' must be provided.
- * - If both are provided, forward pagination ('first') takes precedence and 'last' is ignored.
- * - after and before:
- * - 'after' and 'before' are optional cursor arguments.
- * - Limits:
- * - 'first' and 'last' must be positive integers (N > 0).
- * - The service may enforce an upper limit on N.
- * Examples
- * Given:
- * IDs:     [1, 2, 3, 4, 5, 6, 7, 8]
- * Cursors: [c1,c2,c3,c4,c5,c6,c7,c8]  // each cursor corresponds to the item with the same index
- * - first: 3
- * → [1, 2, 3]
- * - first: 3, after: "c3"
- * → [4, 5, 6]
- * - last: 3
- * → [6, 7, 8]
- * - last: 3, before: "c6"
- * → [3, 4, 5]
- */
-export type JpdViewsServicePaginationInput = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /**  rerank global view mutation input */
@@ -44792,6 +44867,18 @@ export type MercuryLinkWorkToFocusAreaInput = {
 
 /**
  *  ------------------------------------------------------
+ *   Risk Work links
+ *  ------------------------------------------------------
+ */
+export type MercuryLinkWorkToRiskInput = {
+  /** The risk ID (ARI) to link work to. */
+  riskId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to link to the risk. */
+  workIds: Array<Scalars['ID']['input']>;
+};
+
+/**
+ *  ------------------------------------------------------
  *  Moving Changes
  *  ------------------------------------------------------
  */
@@ -45090,11 +45177,14 @@ export type MercuryRiskSort = {
 
 export enum MercuryRiskSortField {
   Name = 'NAME',
-  Status = 'STATUS'
+  Status = 'STATUS',
+  TargetDate = 'TARGET_DATE'
 }
 
 export enum MercuryRiskStatusColor {
+  Blue = 'BLUE',
   Gray = 'GRAY',
+  Green = 'GREEN',
   Red = 'RED'
 }
 
@@ -45150,6 +45240,15 @@ export type MercurySetPreferenceInput = {
 
 export type MercurySingleSelectCustomFieldInput = {
   option?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/**
+ *  ------------------------------------------------------
+ *   Star/Unstar Focus Area mutations
+ *  ------------------------------------------------------
+ */
+export type MercuryStarFocusAreaInput = {
+  focusAreaId: Scalars['ID']['input'];
 };
 
 /**
@@ -45220,6 +45319,10 @@ export type MercuryTransitionStrategicEventStatusInput = {
   statusTransitionId: Scalars['ID']['input'];
 };
 
+export type MercuryUnStarFocusAreaInput = {
+  focusAreaId: Scalars['ID']['input'];
+};
+
 export type MercuryUnarchiveFocusAreaInput = {
   cloudId: Scalars['ID']['input'];
   comment?: InputMaybe<Scalars['String']['input']>;
@@ -45242,6 +45345,13 @@ export type MercuryUnlinkWorkFromChangeProposalInput = {
   /** The proposal ID (ARI) to unlink work from. */
   changeProposalId: Scalars['ID']['input'];
   /** The IDs (ARIs) of the work items to unlink from the proposal. */
+  workIds: Array<Scalars['ID']['input']>;
+};
+
+export type MercuryUnlinkWorkFromRiskInput = {
+  /** The risk ID (ARI) to unlink work from. */
+  riskId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to unlink from the risk. */
   workIds: Array<Scalars['ID']['input']>;
 };
 
@@ -48355,6 +48465,11 @@ export type SearchFilterInput = {
   trelloFilters?: InputMaybe<SearchTrelloFilter>;
 };
 
+export type SearchGitFilters = {
+  /** Filter pull requests by status (e.g., merged, declined, open) */
+  pullRequestStatus?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
 /** Consolidated input for search operations */
 export type SearchInput = {
   /** This is a cursor after which (exclusive) the data should be fetched from */
@@ -48637,6 +48752,8 @@ export type SearchThirdPartyFilter = {
   createdBy?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Exclude the entities that have the subtypes specified */
   excludeSubtypes?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Git provider search filters (Bitbucket, GitHub, GitLab) */
+  gitFilters?: InputMaybe<SearchGitFilters>;
   /** Search for only entities that have the integration ids specified */
   integrations?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Search for labels in any thirdparty filter */
@@ -54338,6 +54455,12 @@ export type SpfUpdateAskPriorityInput = {
   priority: SpfAskPriority;
 };
 
+export type SpfUpdateAskReceivingFieldsInput = {
+  id: Scalars['ID']['input'];
+  ownerId?: InputMaybe<Scalars['String']['input']>;
+  receivingTeamId?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type SpfUpdateAskReceivingTeamInput = {
   id: Scalars['ID']['input'];
   receivingTeamId?: InputMaybe<Scalars['String']['input']>;
@@ -54346,6 +54469,12 @@ export type SpfUpdateAskReceivingTeamInput = {
 export type SpfUpdateAskSubmitterInput = {
   id: Scalars['ID']['input'];
   submitterId: Scalars['String']['input'];
+};
+
+export type SpfUpdateAskSubmittingFieldsInput = {
+  id: Scalars['ID']['input'];
+  submitterId: Scalars['String']['input'];
+  submittingTeamId?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SpfUpdateAskSubmittingTeamInput = {
@@ -57679,8 +57808,8 @@ export type TrelloCardIdsClause = {
 
 /** Describes a filter for the parent list of cards. */
 export type TrelloCardListClause = {
-  /** The parent list which contains matching cards. */
-  listId: Scalars['ID']['input'];
+  /** The parent lists which contain matching cards. */
+  lists?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
 /** Special TrelloCard roles */
@@ -58323,6 +58452,12 @@ export type TrelloUpdateBoardStarPositionInput = {
 
 /** Arguments passed into the update board viewer AI Browser Extension mutation */
 export type TrelloUpdateBoardViewerAiBrowserExtensionInput = {
+  boardId: Scalars['ID']['input'];
+  value: Scalars['Boolean']['input'];
+};
+
+/** Arguments passed into the update board viewer AI Confluence mutation */
+export type TrelloUpdateBoardViewerAiConfluenceInput = {
   boardId: Scalars['ID']['input'];
   value: Scalars['Boolean']['input'];
 };
@@ -59339,6 +59474,7 @@ export type UpdatePolarisSnippetInput = {
 };
 
 export type UpdatePolarisTimelineConfig = {
+  columnWidth?: InputMaybe<Scalars['Int']['input']>;
   dueDateField?: InputMaybe<Scalars['ID']['input']>;
   endTimestamp?: InputMaybe<Scalars['String']['input']>;
   mode?: InputMaybe<PolarisTimelineMode>;
