@@ -43,6 +43,7 @@ export function takeScreenshot(mb: Menubar) {
  */
 export function openLogsDirectory() {
   const logFilePath = log.transports.file?.getFile()?.path;
+
   if (!logFilePath) {
     logError(
       'openLogsDirectory',
@@ -51,6 +52,7 @@ export function openLogsDirectory() {
     );
     return;
   }
+
   const logDirectory = path.dirname(logFilePath);
   shell.openPath(logDirectory);
 }
