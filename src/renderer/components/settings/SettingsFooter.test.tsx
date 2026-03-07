@@ -2,16 +2,13 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import {
+  navigateMock,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
 
 import * as comms from '../../utils/system/comms';
 import { SettingsFooter } from './SettingsFooter';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
   afterEach(() => {

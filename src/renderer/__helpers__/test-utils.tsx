@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/App';
 
+export { navigateMock } from './vitest.setup';
+
 const EMPTY_APP_CONTEXT: Partial<AppContextState> = {};
 
 /**

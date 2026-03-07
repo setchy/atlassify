@@ -2,15 +2,9 @@ import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 
 import { SettingsRoute } from './Settings';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/routes/Settings.tsx', () => {
   afterEach(() => {

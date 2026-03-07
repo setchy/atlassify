@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import {
   mockAccountNotifications,
@@ -29,12 +29,6 @@ import { useFiltersStore } from '../stores';
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
 };
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/components/Sidebar.tsx', () => {
   const fetchNotificationsMock = vi.fn();

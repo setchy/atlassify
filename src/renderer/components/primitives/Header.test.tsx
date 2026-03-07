@@ -1,15 +1,12 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import {
+  navigateMock,
+  renderWithAppContext,
+} from '../../__helpers__/test-utils';
 
 import { Header } from './Header';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/components/primitives/Header.tsx', () => {
   const fetchNotificationsMock = vi.fn();

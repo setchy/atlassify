@@ -4,6 +4,15 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
+/**
+ * Shared navigate mock — import from test-utils in any test that needs to assert on navigation
+ */
+export const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...(await vi.importActual('react-router-dom')),
+  useNavigate: () => navigateMock,
+}));
+
 // Ensure stability in EmojiSplash component snapshots
 vi.mock('../utils/core/random', () => ({
   randomElement: vi.fn((arr: unknown[]) => arr[0]),

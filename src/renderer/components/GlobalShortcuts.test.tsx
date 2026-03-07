@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
@@ -9,12 +9,6 @@ import { useAccountsStore, useSettingsStore } from '../stores';
 import * as comms from '../utils/system/comms';
 import * as links from '../utils/system/links';
 import { GlobalShortcuts } from './GlobalShortcuts';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('components/GlobalShortcuts.tsx', () => {
   const fetchNotificationsMock = vi.fn();

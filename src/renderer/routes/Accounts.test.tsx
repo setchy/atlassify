@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore } from '../stores';
@@ -9,12 +9,6 @@ import { useAccountsStore } from '../stores';
 import * as links from '../utils/system/links';
 import * as theme from '../utils/ui/theme';
 import { AccountsRoute } from './Accounts';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/routes/Accounts.tsx', () => {
   afterEach(() => {
