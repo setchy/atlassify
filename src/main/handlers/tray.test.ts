@@ -18,7 +18,6 @@ describe('main/handlers/tray.ts', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    onMock.mockClear();
 
     menubar = {
       tray: {
@@ -34,7 +33,7 @@ describe('main/handlers/tray.ts', () => {
       expect(() => registerTrayHandlers(menubar)).not.toThrow();
     });
 
-    it('registers expected IPC event handlers', () => {
+    it('registers expected tray IPC event handlers', () => {
       registerTrayHandlers(menubar);
 
       const registeredEvents = onMock.mock.calls.map(

@@ -1,5 +1,4 @@
 import { dialog, type MessageBoxOptions } from 'electron';
-import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import type { Menubar } from 'menubar';
 
@@ -15,19 +14,21 @@ import type MenuBuilder from './menu';
  *
  * Documentation: https://www.electron.build/auto-update
  *
- * NOTE: previously used update-electron-app (Squirrel-focused, no Linux + NSIS). electron-updater gives cross-platform support.
- * Caller guarantees app is ready before initialize() is invoked.
+ * NOTE: previously we tried update-electron-app (Squirrel-focused, no Linux + NSIS) before migrating to electron-updater for cross-platform support.
  */
 export default class AppUpdater {
   private readonly menubar: Menubar;
   private readonly menuBuilder: MenuBuilder;
   private started = false;
   private noUpdateMessageTimeout?: NodeJS.Timeout;
+  private periodicInterval?: NodeJS.Timeout;
 
   constructor(menubar: Menubar, menuBuilder: MenuBuilder) {
     this.menubar = menubar;
     this.menuBuilder = menuBuilder;
-    autoUpdater.logger = log;
+    // Disable electron-updater's own logging to avoid duplicate log messages
+    // We'll handle all logging through our event listeners
+    autoUpdater.logger = null;
   }
 
   /**
@@ -130,13 +131,23 @@ export default class AppUpdater {
    * Schedule recurring update checks.
    */
   private schedulePeriodicChecks() {
-    setInterval(async () => {
+    const runScheduledCheck = async () => {
       try {
         logInfo('app updater', 'Checking for updates on a periodic schedule');
         await autoUpdater.checkForUpdatesAndNotify();
       } catch (err) {
         logError('auto updater', 'Scheduled check failed', err as Error);
       }
+    };
+
+    // Defer the first periodic check until after the interval elapses.
+    // This avoids an immediate duplicate check on startup.
+    setTimeout(async () => {
+      await runScheduledCheck();
+      this.periodicInterval = setInterval(
+        runScheduledCheck,
+        APPLICATION.UPDATE_CHECK_INTERVAL_MS,
+      );
     }, APPLICATION.UPDATE_CHECK_INTERVAL_MS);
   }
 
@@ -168,6 +179,15 @@ export default class AppUpdater {
     this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateAvailableMenuVisibility(false);
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+
+    // Clear any pending timeout
+    this.clearNoUpdateTimeout();
+
+    // Clear periodic interval if present
+    if (this.periodicInterval) {
+      clearInterval(this.periodicInterval);
+      this.periodicInterval = undefined;
+    }
   }
 
   /**

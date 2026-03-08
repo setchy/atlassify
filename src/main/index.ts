@@ -10,16 +10,18 @@ import { Paths, WindowConfig } from './config';
 import {
   initializeAnalytics,
   registerAnalyticsHandlers,
+  registerAppHandlers,
+  registerStorageHandlers,
+  registerSystemHandlers,
+  registerTrayHandlers,
   trackEvent,
-} from './handlers/analytics';
-import { registerAppHandlers } from './handlers/app';
-import { registerStorageHandlers } from './handlers/storage';
-import { registerSystemHandlers } from './handlers/system';
-import { registerTrayHandlers } from './handlers/tray';
+} from './handlers';
 import { TrayIcons } from './icons';
-import { onFirstRunMaybe } from './lifecycle/first-run';
-import { initializeAppLifecycle } from './lifecycle/startup';
-import { configureWindowEvents } from './lifecycle/window';
+import {
+  configureWindowEvents,
+  initializeAppLifecycle,
+  onFirstRunMaybe,
+} from './lifecycle';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
@@ -32,7 +34,7 @@ const mb = menubar({
   index: Paths.indexHtml,
   browserWindow: WindowConfig,
   preloadWindow: true,
-  showDockIcon: false,
+  showDockIcon: false, // Hide the app from the macOS dock
 });
 
 const menuBuilder = new MenuBuilder(mb);
@@ -47,14 +49,7 @@ app.whenReady().then(async () => {
 
   appUpdater.start();
 
-  initializeAppLifecycle(mb);
-
-  mb.on('ready', () => {
-    mb.tray.setIgnoreDoubleClickEvents(true);
-    mb.tray.on('right-click', (_event, bounds) => {
-      mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
-    });
-  });
+  initializeAppLifecycle(mb, contextMenu);
 
   // Configure window event handlers
   configureWindowEvents(mb);
