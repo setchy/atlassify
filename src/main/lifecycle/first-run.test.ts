@@ -46,27 +46,31 @@ import { APPLICATION } from '../../shared/constants';
 
 import { onFirstRunMaybe } from './first-run';
 
+function configPath() {
+  return path.join('/User/Data', 'FirstRun', APPLICATION.FIRST_RUN_FOLDER);
+}
+
 describe('main/lifecycle/first-run', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mac = true;
   });
 
-  function configPath() {
-    return path.join('/User/Data', 'FirstRun', APPLICATION.FIRST_RUN_FOLDER);
-  }
-
   it('creates first-run marker when not existing and returns true', async () => {
     existsSyncMock.mockReturnValueOnce(false); // marker absent
     existsSyncMock.mockReturnValueOnce(false); // folder absent
+
     await onFirstRunMaybe();
+
     expect(mkdirSyncMock).toHaveBeenCalledWith(path.dirname(configPath()));
     expect(writeFileSyncMock).toHaveBeenCalledWith(configPath(), '');
   });
 
   it('skips writing when marker exists', async () => {
     existsSyncMock.mockReturnValueOnce(true); // marker present
+
     await onFirstRunMaybe();
+
     expect(writeFileSyncMock).not.toHaveBeenCalled();
     expect(mkdirSyncMock).not.toHaveBeenCalled();
   });
@@ -77,9 +81,11 @@ describe('main/lifecycle/first-run', () => {
     writeFileSyncMock.mockImplementation(() => {
       throw new Error('fail');
     });
+
     await onFirstRunMaybe();
+
     expect(logErrorMock).toHaveBeenCalledWith(
-      'isFirstRun',
+      'checkAndMarkFirstRun',
       'Unable to write firstRun file',
       expect.any(Error),
     );
@@ -89,7 +95,9 @@ describe('main/lifecycle/first-run', () => {
     existsSyncMock.mockReturnValueOnce(false); // marker
     existsSyncMock.mockReturnValueOnce(false); // folder
     showMessageBoxMock.mockResolvedValueOnce({ response: 0 });
+
     await onFirstRunMaybe();
+
     expect(moveToApplicationsFolderMock).toHaveBeenCalled();
   });
 
@@ -97,7 +105,9 @@ describe('main/lifecycle/first-run', () => {
     existsSyncMock.mockReturnValueOnce(false);
     existsSyncMock.mockReturnValueOnce(false);
     showMessageBoxMock.mockResolvedValueOnce({ response: 1 });
+
     await onFirstRunMaybe();
+
     expect(moveToApplicationsFolderMock).not.toHaveBeenCalled();
   });
 
@@ -105,7 +115,9 @@ describe('main/lifecycle/first-run', () => {
     mac = false;
     existsSyncMock.mockReturnValueOnce(false);
     existsSyncMock.mockReturnValueOnce(false);
+
     await onFirstRunMaybe();
+
     expect(showMessageBoxMock).not.toHaveBeenCalled();
   });
 });

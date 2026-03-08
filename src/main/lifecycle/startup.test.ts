@@ -4,45 +4,72 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { initializeAppLifecycle } from './startup';
 
+const requestSingleInstanceLockMock = vi.fn(() => true);
+const appOnMock = vi.fn();
+const appQuitMock = vi.fn();
+const nativeThemeMock = vi.fn();
+
 vi.mock('electron', () => ({
   app: {
-    requestSingleInstanceLock: vi.fn(() => true),
-    on: vi.fn(),
-    quit: vi.fn(),
+    requestSingleInstanceLock: () => requestSingleInstanceLockMock(),
+    on: (...a: unknown[]) => appOnMock(...a),
+    quit: () => appQuitMock(),
   },
   nativeTheme: {
-    on: vi.fn(),
+    on: () => nativeThemeMock(),
   },
 }));
 
+const sendRendererEventMock = vi.fn();
 vi.mock('../events', () => ({
-  sendRendererEvent: vi.fn(),
+  sendRendererEvent: (...a: unknown[]) => sendRendererEventMock(...a),
 }));
 
+const logInfoMock = vi.fn();
+const logWarnMock = vi.fn();
 vi.mock('../../shared/logger', () => ({
-  logWarn: vi.fn(),
+  logInfo: (...a: unknown[]) => logInfoMock(...a),
+  logWarn: (...a: unknown[]) => logWarnMock(...a),
 }));
+
+function createMb() {
+  return {
+    on: vi.fn(),
+    showWindow: vi.fn(),
+    app: { setAppUserModelId: vi.fn(), quit: vi.fn() },
+    tray: {
+      setToolTip: vi.fn(),
+      setIgnoreDoubleClickEvents: vi.fn(),
+      on: vi.fn(),
+      popUpContextMenu: vi.fn(),
+    },
+  };
+}
 
 describe('main/lifecycle/startup.ts', () => {
-  let menubar: Menubar;
-
   beforeEach(() => {
     vi.clearAllMocks();
-
-    menubar = {
-      on: vi.fn(),
-      showWindow: vi.fn(),
-      app: { setAppUserModelId: vi.fn() },
-      tray: {
-        setToolTip: vi.fn(),
-        setIgnoreDoubleClickEvents: vi.fn(),
-      },
-    } as unknown as Menubar;
   });
 
-  it('initializeAppLifecycle registers menubar ready handler', () => {
-    initializeAppLifecycle(menubar);
+  describe('initializeAppLifecycle', () => {
+    it('registers menubar ready handler', () => {
+      const mb = createMb();
+      const contextMenu = {} as Electron.Menu;
 
-    expect(menubar.on).toHaveBeenCalledWith('ready', expect.any(Function));
+      initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
+
+      expect(mb.on).toHaveBeenCalledWith('ready', expect.any(Function));
+    });
+
+    it('quits and warns when second instance detected', () => {
+      requestSingleInstanceLockMock.mockReturnValueOnce(false);
+      const mb = createMb();
+      const contextMenu = {} as Electron.Menu;
+
+      initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
+
+      expect(appQuitMock).toHaveBeenCalled();
+      expect(logWarnMock).toHaveBeenCalled();
+    });
   });
 });
