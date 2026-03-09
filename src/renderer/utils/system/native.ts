@@ -5,6 +5,15 @@ import type { AtlassifyNotification } from '../../types';
 import i18n from '../../i18n';
 import { formatNativeNotificationFooterText } from '../notifications/formatters';
 
+/**
+ * Raises a native OS notification.
+ *
+ * For a single notification, the message is used as the title (non-Windows) and the
+ * formatted footer text is used as the body. For multiple notifications, a generic count
+ * summary is shown instead.
+ *
+ * @param notifications - The notifications to surface as a native OS notification.
+ */
 export const raiseNativeNotification = (
   notifications: AtlassifyNotification[],
 ) => {

@@ -1,3 +1,6 @@
+/**
+ * Application-wide constants shared across main, preload, and renderer processes.
+ */
 export const APPLICATION = {
   ID: 'com.electron.atlassify',
 

@@ -22,6 +22,7 @@ const useAccountsStore = create<AccountsStore>()(
     (set, get, store) => ({
       ...DEFAULT_ACCOUNTS_STATE,
 
+      /** Creates a new account, encrypts the token, fetches the user profile and persists to the store. */
       createAccount: async (username: Username, token: Token) => {
         const encryptedToken = await encryptValue(token);
 
@@ -38,6 +39,7 @@ const useAccountsStore = create<AccountsStore>()(
         }));
       },
 
+      /** Re-fetches user profile data from the API and updates the account in the store. Returns the updated account, or the original on failure. */
       refreshAccount: async (account: Account): Promise<Account> => {
         try {
           const res = await getAuthenticatedUser(account);
@@ -68,20 +70,24 @@ const useAccountsStore = create<AccountsStore>()(
         }
       },
 
+      /** Removes an account from the store by its ID. */
       removeAccount: (account) => {
         set((state) => ({
           accounts: state.accounts.filter((a) => a.id !== account.id),
         }));
       },
 
+      /** Returns `true` if at least one account is logged in. */
       isLoggedIn: () => {
         return get().accounts.length > 0;
       },
 
+      /** Returns `true` if more than one account exists. */
       hasMultipleAccounts: () => {
         return get().accounts.length > 1;
       },
 
+      /** Returns `true` if the username already exists in the store (case-insensitive). */
       hasUsernameAlready: (username: Username) => {
         return get().accounts.some(
           (a) =>
@@ -89,6 +95,7 @@ const useAccountsStore = create<AccountsStore>()(
         );
       },
 
+      /** Resets the store to its initial state, clearing all accounts. */
       reset: () => {
         set(store.getInitialState());
       },

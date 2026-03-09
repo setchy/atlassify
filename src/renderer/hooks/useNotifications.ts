@@ -78,6 +78,8 @@ interface NotificationsState {
 /**
  * Custom hook for managing notifications state, actions, and side effects.
  * Handles fetching, filtering, marking as read/unread, and notification triggers.
+ *
+ * @returns Notifications state and action callbacks.
  */
 export const useNotifications = (): NotificationsState => {
   const queryClient = useQueryClient();

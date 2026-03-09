@@ -5,6 +5,8 @@ import { AppContext, type AppContextState } from '../context/App';
 /**
  * Custom hook that provides type-safe access to AppContext.
  * Throws if used outside of AppProvider.
+ *
+ * @returns The current `AppContextState` from the nearest `AppProvider`.
  */
 export function useAppContext(): AppContextState {
   const context = useContext(AppContext);

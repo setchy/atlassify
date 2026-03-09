@@ -16,7 +16,7 @@ import { getFlattenedNotificationsByProduct } from './group';
  * Get the count of notifications across all accounts.
  *
  * @param accountNotifications - The account notifications to check.
- * @returns The count of all notifications.
+ * @returns The total count of all notifications across all accounts.
  */
 export function getNotificationCount(
   accountNotifications: AccountNotifications[],
@@ -31,7 +31,7 @@ export function getNotificationCount(
  * Check if any accounts have more notifications beyond the max page size fetched per account.
  *
  * @param accountNotifications - The account notifications to check.
- * @returns The count of all notifications.
+ * @returns `true` if any account has more notifications available to load, `false` otherwise.
  */
 export function hasMoreNotifications(
   accountNotifications: AccountNotifications[],
@@ -111,9 +111,9 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
 
 /**
  * Assign an order property to each notification to stabilize how they are displayed
- * during notification interaction events (mark as read, mark as done, etc.)
+ * during notification interaction events (mark as read, mark as done, etc.).
  *
- * @param accountNotifications
+ * @param accountNotifications - The list of account notifications to assign order indices to.
  */
 export function stabilizeNotificationsOrder(
   accountNotifications: AccountNotifications[],
@@ -132,7 +132,11 @@ export function stabilizeNotificationsOrder(
 }
 
 /**
- * Find notifications that exist in newNotifications but not in previousNotifications
+ * Find notifications that exist in newNotifications but not in previousNotifications.
+ *
+ * @param previousAccountNotifications - The previous state of account notifications.
+ * @param newAccountNotifications - The new state of account notifications.
+ * @returns Array of notifications that are new (present in new state but absent in previous state).
  */
 export function getNewNotifications(
   previousAccountNotifications: AccountNotifications[],

@@ -31,7 +31,10 @@ export async function invokeMainEvent<T = string>(
 }
 
 /**
- * Handle renderer event without expecting a response
+ * Register a persistent listener for an event sent from the main process to the renderer.
+ *
+ * @param event - The IPC event name to listen for.
+ * @param listener - Callback invoked with the IpcRendererEvent and the event payload.
  */
 export function onRendererEvent(
   event: EventType,
