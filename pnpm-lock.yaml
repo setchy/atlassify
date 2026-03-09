@@ -58,8 +58,8 @@ importers:
         specifier: 7.3.13
         version: 7.3.13(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/form':
-        specifier: 15.3.7
-        version: 15.3.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 15.4.0
+        version: 15.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/heading':
         specifier: 5.3.0
         version: 5.3.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -335,8 +335,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/form@15.3.7':
-    resolution: {integrity: sha512-nao+Ty2jBOHqBYaHwdXDMR/cE+xzqZcaaYxylOeC/yv4zvDtig+4zOmkkk7ULkztCJv49s38yhXR3w5M8lbl3A==}
+  '@atlaskit/form@15.4.0':
+    resolution: {integrity: sha512-vZ0vKUvPzJolX8mtGdqFNyYoB1eGO4+V/mkaVLaHuLLglOMwd2vfKzJatj7edvLuCQ1J9MkFaJYXbO4SihWJaA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -655,6 +655,11 @@ packages:
     resolution: {integrity: sha512-Mt6sJOwykeoToEBFbOUNR4xABi2gOr/+X5QSGqGEYiCBMh+XPDAclG2UX94zveiYJXO4AUJIQBCVwa4/lwPMBA==}
     peerDependencies:
       react: '>= 16.12.0'
+
+  '@compiled/react@0.20.0':
+    resolution: {integrity: sha512-mEJuYGFxIDST1H7CpksyE6a3HRVRQmeDal26O+bCHTEZlPp7iKvs5KD1FOmd2palng+S60dPFFG+UuoZDRILwA==}
+    peerDependencies:
+      react: '>=18.0.0'
 
   '@compiled/utils@0.13.2':
     resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
@@ -5354,7 +5359,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@15.3.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/form@15.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/ds-lib': 5.3.1(@types/react@19.2.14)(react@19.2.4)
@@ -5365,7 +5370,7 @@ snapshots:
       '@atlaskit/tokens': 11.0.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/visually-hidden': 3.0.4(react@19.2.4)
       '@babel/runtime': 7.28.6
-      '@compiled/react': 0.18.6(react@19.2.4)
+      '@compiled/react': 0.20.0(react@19.2.4)
       final-form: 4.20.10
       final-form-focus: 1.1.2(final-form@4.20.10)
       lodash: 4.17.23
@@ -5976,6 +5981,11 @@ snapshots:
       postcss-values-parser: 6.0.2(postcss@8.5.8)
 
   '@compiled/react@0.18.6(react@19.2.4)':
+    dependencies:
+      csstype: 3.2.3
+      react: 19.2.4
+
+  '@compiled/react@0.20.0(react@19.2.4)':
     dependencies:
       csstype: 3.2.3
       react: 19.2.4
