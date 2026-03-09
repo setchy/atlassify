@@ -9,7 +9,9 @@ import type {
 export type NotificationActionType = 'read' | 'unread';
 
 /**
- * Determine if notifications should be removed from state or left in-place.
+ * Determine if notifications should be removed from state or left in-place after being actioned.
+ *
+ * @returns `true` if notifications should be immediately removed from state, `false` if they should remain.
  */
 export function shouldRemoveNotificationsFromState(): boolean {
   const settings = useSettingsStore.getState();

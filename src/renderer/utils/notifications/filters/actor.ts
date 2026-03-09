@@ -26,6 +26,9 @@ const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   },
 };
 
+/**
+ * Filter implementation for the notification actor type (user vs automation).
+ */
 export const actorFilter: Filter<ActorType> = {
   FILTER_TYPES: ACTOR_DETAILS,
 
@@ -65,6 +68,18 @@ export const actorFilter: Filter<ActorType> = {
   },
 };
 
+/**
+ * Infers whether a notification was triggered by a human user or an automated actor.
+ *
+ * A notification is classified as `'automation'` when:
+ * - The actor has no display name
+ * - It is a Compass scorecard notification
+ * - The product type is `rovo_dev`
+ * - The actor display name starts with `'Automation for'`
+ *
+ * @param notification - The notification to inspect.
+ * @returns `'automation'` if the actor is automated, `'user'` otherwise.
+ */
 export function inferNotificationActor(
   notification: AtlassifyNotification,
 ): ActorType {

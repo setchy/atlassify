@@ -77,6 +77,17 @@ export async function inferAtlassianProduct(
   }
 }
 
+/**
+ * Resolves the specific Jira product variant (Jira, Jira Service Management) for a notification
+ * by looking up the project type via the Jira REST API.
+ *
+ * Uses promise-aware caches for both Cloud ID (per hostname) and project type (per project key)
+ * to avoid redundant API calls within a single fetch cycle.
+ *
+ * @param account - The account to use for API authentication.
+ * @param headNotification - The head notification containing path and hostname context.
+ * @returns Promise resolving to the matching `AtlassianProduct` for the Jira project type.
+ */
 async function lookupJiraProjectType(
   account: Account,
   headNotification: AtlassianHeadNotificationFragment,

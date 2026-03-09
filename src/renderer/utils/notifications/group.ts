@@ -21,10 +21,10 @@ export function isGroupNotification(
 /**
  * Group notifications by product type preserving first-seen product order.
  * Returns a Map where keys are product types and values are arrays of notifications.
- * Skips notifications without valid repository data.
+ * Skips notifications without a product type.
  *
- * @param notifications List of notifications to group
- * @returns Map of product types to arrays of notifications
+ * @param notifications - List of notifications to group.
+ * @returns Map of product types to arrays of notifications.
  */
 export function groupNotificationsByProduct(
   notifications: AtlassifyNotification[],
@@ -102,7 +102,8 @@ export async function resolveNotificationIdsForGroup(
 /**
  * Given a list of notifications, resolves all notification IDs for non-group notifications.
  *
- * @param notifications List of notifications (may include group notifications)
+ * @param notifications - List of notifications (may include group notifications).
+ * @returns Array of notification IDs for non-group notifications.
  */
 export function getNotificationIdsForNonGroups(
   notifications: AtlassifyNotification[],
@@ -117,8 +118,9 @@ export function getNotificationIdsForNonGroups(
 /**
  * Given a list of notifications, resolves all notification IDs for group notifications.
  *
- * @param account The account to use for fetching group notifications
- * @param notifications List of notifications (may include group notifications)
+ * @param account - The account to use for fetching group notifications.
+ * @param notifications - List of notifications (may include group notifications).
+ * @returns Promise resolving to a flat array of notification IDs for all group notifications.
  */
 export async function getNotificationIdsForGroups(
   account: Account,

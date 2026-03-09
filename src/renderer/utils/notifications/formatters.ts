@@ -4,6 +4,9 @@ import type { AtlassifyNotification } from '../../types';
 
 /**
  * Formats a string to proper case (capitalizes the first letter of each word).
+ *
+ * @param text - The string to format.
+ * @returns The proper-cased string, or an empty string if the input is falsy.
  */
 export function formatProperCase(text: string) {
   if (!text) {
@@ -18,6 +21,9 @@ export function formatProperCase(text: string) {
 
 /**
  * Formats the body text of a notification based on its product type.
+ *
+ * @param notification - The notification to format body text for.
+ * @returns The formatted body text string.
  */
 export function formatNotificationBodyText(
   notification: AtlassifyNotification,
@@ -32,6 +38,9 @@ export function formatNotificationBodyText(
 
 /**
  * Formats the footer text of a notification based on its product type.
+ *
+ * @param notification - The notification to format footer text for.
+ * @returns The formatted footer text string.
  */
 export function formatNotificationFooterText(
   notification: AtlassifyNotification,
@@ -63,6 +72,10 @@ export function formatNotificationFooterText(
 
 /**
  * Formats the footer text of a native notification based on its product type.
+ * Appends the entity title to the footer text when present.
+ *
+ * @param notification - The notification to format native footer text for.
+ * @returns The formatted native footer text string.
  */
 export function formatNativeNotificationFooterText(
   notification: AtlassifyNotification,
@@ -77,7 +90,10 @@ export function formatNativeNotificationFooterText(
 }
 
 /**
- * Formats the updated_at timestamp of a notification to a human-readable string.
+ * Formats the `updated_at` timestamp of a notification to a human-readable relative time string.
+ *
+ * @param notification - The notification whose timestamp to format.
+ * @returns A relative time string (e.g. `"2 hours ago"`), or an empty string if the date is absent or invalid.
  */
 export function formatNotificationUpdatedAt(
   notification: AtlassifyNotification,
@@ -97,7 +113,10 @@ export function formatNotificationUpdatedAt(
 }
 
 /**
- * Extracts the repository name from a Bitbucket notification's entity URL.
+ * Extracts the repository name (in `owner/repo` format) from a Bitbucket notification's entity URL.
+ *
+ * @param notification - The Bitbucket notification to extract the repository name from.
+ * @returns The repository name in `owner/repo` format.
  */
 export function extractRepositoryName(
   notification: AtlassifyNotification,
@@ -106,7 +125,10 @@ export function extractRepositoryName(
 }
 
 /**
- * Extracts the context name from a Rovo Dev notification's URL.
+ * Extracts the Rovo Dev context name from a Rovo Dev notification's URL.
+ *
+ * @param notification - The Rovo Dev notification to extract the context name from.
+ * @returns A human-readable string describing the AI coding context (e.g. `"The AI coding tool has generated code for my-branch"`).
  */
 export function extractRovoDevContextName(
   notification: AtlassifyNotification,
@@ -118,6 +140,9 @@ export function extractRovoDevContextName(
 
 /**
  * Extracts the goal or project key from a notification's path URL if it matches the expected pattern.
+ *
+ * @param notification - The notification whose path URL to inspect.
+ * @returns The key string (e.g. `"PROJ-123"`) if matched, or `null` if the URL does not contain a goal/project path.
  */
 export function extractGoalOrProjectKey(
   notification: AtlassifyNotification,
@@ -127,8 +152,11 @@ export function extractGoalOrProjectKey(
 }
 
 /**
- * Returns true if the notification is a Compass scorecard notification.
+ * Returns `true` if the notification is a Compass scorecard notification.
  * Used to apply special rendering for scorecard-related activity.
+ *
+ * @param notification - The notification to inspect.
+ * @returns `true` if the notification is a Compass scorecard notification, `false` otherwise.
  */
 export function isCompassScorecardNotification(
   notification: AtlassifyNotification,

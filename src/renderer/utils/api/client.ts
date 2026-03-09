@@ -56,6 +56,9 @@ export const queryClient = new QueryClient({
 /**
  * Check if provided credentials (username and token) are valid.
  *
+ * @param username - The Atlassian account username (email address).
+ * @param token - The API token to validate.
+ * @returns Promise resolving to the GraphQL response containing the authenticated user's profile.
  */
 export function checkIfCredentialsAreValid(
   username: Username,
@@ -65,7 +68,10 @@ export function checkIfCredentialsAreValid(
 }
 
 /**
- * Get the authenticated user
+ * Get the authenticated user.
+ *
+ * @param account - The account to fetch the authenticated user for.
+ * @returns Promise resolving to the GraphQL response containing the authenticated user's profile.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -77,6 +83,9 @@ export function getAuthenticatedUser(
 
 /**
  * List all notifications for the current user.
+ *
+ * @param account - The account to fetch notifications for.
+ * @returns Promise resolving to the GraphQL response containing the notification feed.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -95,7 +104,11 @@ export function getNotificationsForUser(
 }
 
 /**
- * Mark a notification as "read".
+ * Mark notifications as "read".
+ *
+ * @param account - The account the notifications belong to.
+ * @param notificationIds - Array of notification IDs to mark as read.
+ * @returns Promise resolving to the GraphQL response for the mark-as-read mutation.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -109,7 +122,11 @@ export function markNotificationsAsRead(
 }
 
 /**
- * Mark a notification as "unread".
+ * Mark notifications as "unread".
+ *
+ * @param account - The account the notifications belong to.
+ * @param notificationIds - Array of notification IDs to mark as unread.
+ * @returns Promise resolving to the GraphQL response for the mark-as-unread mutation.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -124,6 +141,11 @@ export function markNotificationsAsUnread(
 
 /**
  * Get notifications by group ID.
+ *
+ * @param account - The account to fetch notifications for.
+ * @param notificationGroupId - The ID of the notification group.
+ * @param notificationGroupSize - The total number of notifications in the group (used to set page size).
+ * @returns Promise resolving to the GraphQL response containing notification group details.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -147,7 +169,11 @@ export function getNotificationsByGroupId(
 }
 
 /**
- * Get Cloud IDs for Hostnames
+ * Get Cloud IDs for a list of hostnames.
+ *
+ * @param account - The account to use when making the API request.
+ * @param hostnames - Array of Atlassian hostnames to resolve Cloud IDs for.
+ * @returns Promise resolving to the GraphQL response containing the Cloud ID for each hostname.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
@@ -165,7 +191,12 @@ export function getCloudIDsForHostnames(
 }
 
 /**
- * Get Jira Project Type by Project Key (via Jira Cloud REST API)
+ * Get the Jira project type for a given project key (via Jira Cloud REST API).
+ *
+ * @param account - The account to authenticate the REST request.
+ * @param cloudId - The Cloud ID of the Atlassian tenant hosting the Jira instance.
+ * @param projectKey - The Jira project key (e.g. `"PROJ"`).
+ * @returns Promise resolving to the project type key (e.g. `"software"`, `"service_desk"`, `"business"`).
  *
  * Endpoint documentation: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/#api-rest-api-3-project-projectidorkey-get
  */

@@ -10,6 +10,14 @@ import {
   readStateFilter,
 } from '.';
 
+/**
+ * Applies all active notification filters to a list of notifications.
+ * Each enabled filter type uses AND logic between filter types, with OR logic within a filter type
+ * (i.e. a notification must match at least one value in each active filter group).
+ *
+ * @param notifications - The notifications to filter.
+ * @returns The subset of notifications that pass all active filters.
+ */
 export function filterNotifications(
   notifications: AtlassifyNotification[],
 ): AtlassifyNotification[] {

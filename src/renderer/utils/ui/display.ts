@@ -9,6 +9,14 @@ import type { Chevron } from '../../types';
 
 import i18n from '../../i18n';
 
+/**
+ * Returns the appropriate chevron icon and accessible label for a collapsible section.
+ *
+ * @param hasNotifications - Whether the section has any notifications to display.
+ * @param isVisible - Whether the section is currently expanded/visible.
+ * @param type - The type of section (`'account'` or `'product'`).
+ * @returns A `Chevron` object containing the icon component and its accessible label.
+ */
 export function getChevronDetails(
   hasNotifications: boolean,
   isVisible: boolean,
@@ -41,6 +49,13 @@ export function getChevronDetails(
   };
 }
 
+/**
+ * Returns the Atlaskit block alignment based on the text length.
+ * Long text uses `'start'` alignment; short text uses `'center'`.
+ *
+ * @param text - The text whose length determines alignment.
+ * @returns `'start'` if the text exceeds the alignment threshold, `'center'` otherwise.
+ */
 export function blockAlignmentByLength(text: string): AlignBlock {
   return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
     ? 'start'
