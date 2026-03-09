@@ -9,15 +9,17 @@ import { useAccountsStore } from '../stores';
 
 import { accountsKeys } from '../utils/api/queryKeys';
 
-/**
- * Custom hook to manage scheduled refresh of accounts.
- */
 interface AccountsState {
   isLoading: boolean;
   error: Error | null;
   refreshAccounts: () => Promise<void>;
 }
 
+/**
+ * Custom hook to manage scheduled refresh of accounts.
+ *
+ * @returns Account loading state, any fetch error, and a manual `refreshAccounts` callback.
+ */
 export const useAccounts = (): AccountsState => {
   const accounts = useAccountsStore((s) => s.accounts);
   const refreshAccount = useAccountsStore.getState().refreshAccount;

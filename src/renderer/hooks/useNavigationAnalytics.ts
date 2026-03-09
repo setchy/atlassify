@@ -8,7 +8,7 @@ import { trackEvent } from '../utils/system/comms';
  * Hook to log navigation events on every location change.
  *
  * Tracks navigation to different screens for analytics purposes.
- * Screen name is derived from pathname, with '/' mapped to 'Notifications'.
+ * Screen name is derived from pathname, with `'/'` mapped to `'Notifications'`.
  */
 export function useNavigationAnalytics() {
   const location = useLocation();

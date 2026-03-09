@@ -23,6 +23,10 @@ export default class AppUpdater {
   private noUpdateMessageTimeout?: NodeJS.Timeout;
   private periodicInterval?: NodeJS.Timeout;
 
+  /**
+   * @param menubar - The menubar instance used for app lifecycle and tray access.
+   * @param menuBuilder - The menu builder used to reflect update state in the tray menu.
+   */
   constructor(menubar: Menubar, menuBuilder: MenuBuilder) {
     this.menubar = menubar;
     this.menuBuilder = menuBuilder;
@@ -34,6 +38,9 @@ export default class AppUpdater {
   /**
    * Start the updater: register event listeners, perform the initial update check,
    * and schedule periodic checks. Idempotent — safe to call multiple times.
+   *
+   * @returns Promise that resolves when the updater has been fully started, or immediately if
+   *   already started or running in development mode.
    */
   async start(): Promise<void> {
     if (this.started) {

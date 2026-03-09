@@ -18,10 +18,12 @@ const useSettingsStore = create<SettingsStore>()(
       (set, _get, store) => ({
         ...DEFAULT_SETTINGS_STATE,
 
+        /** Updates a single setting value by key. */
         updateSetting: (name, value) => {
           set({ [name]: value });
         },
 
+        /** Toggles a boolean setting. Throws if the setting is not a boolean. */
         toggleSetting: (name) => {
           set((state) => {
             const current = state[name];
@@ -36,6 +38,7 @@ const useSettingsStore = create<SettingsStore>()(
           });
         },
 
+        /** Resets the store to its initial state. */
         reset: () => {
           set(store.getInitialState());
         },
