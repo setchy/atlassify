@@ -56,7 +56,7 @@
     "@biomejs/biome": "2.4.6",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.31.0",
+  "packageManager": "pnpm@10.32.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
