@@ -148,8 +148,6 @@ export function useGlobalShortcuts({
         action: () => {
           if (isOnSettingsRoute) {
             navigate('/', { replace: true });
-
-            fetchNotifications();
           } else {
             navigate('/settings');
           }

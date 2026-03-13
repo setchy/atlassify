@@ -317,12 +317,10 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       renderWithAppContext(<Sidebar />, {
         initialEntries: ['/settings'],
-        fetchNotifications: fetchNotificationsMock,
       });
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
