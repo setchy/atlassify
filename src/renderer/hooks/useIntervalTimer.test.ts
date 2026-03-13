@@ -14,7 +14,7 @@ describe('renderer/hooks/useIntervalTimer.ts', () => {
   it('calls the callback after the specified delay', () => {
     const callback = vi.fn();
 
-    renderHook(() => useIntervalTimer(callback, 1000));
+    renderHook(() => useIntervalTimer({ callback, delay: 1000 }));
 
     expect(callback).not.toHaveBeenCalled();
 
@@ -28,7 +28,7 @@ describe('renderer/hooks/useIntervalTimer.ts', () => {
   it('calls the callback on each subsequent interval tick', () => {
     const callback = vi.fn();
 
-    renderHook(() => useIntervalTimer(callback, 1000));
+    renderHook(() => useIntervalTimer({ callback, delay: 1000 }));
 
     act(() => {
       vi.advanceTimersByTime(3000);
@@ -40,7 +40,9 @@ describe('renderer/hooks/useIntervalTimer.ts', () => {
   it('clears the interval on unmount', () => {
     const callback = vi.fn();
 
-    const { unmount } = renderHook(() => useIntervalTimer(callback, 1000));
+    const { unmount } = renderHook(() =>
+      useIntervalTimer({ callback, delay: 1000 }),
+    );
 
     unmount();
 
@@ -56,7 +58,8 @@ describe('renderer/hooks/useIntervalTimer.ts', () => {
     const second = vi.fn();
 
     const { rerender } = renderHook(
-      ({ cb }: { cb: () => void }) => useIntervalTimer(cb, 1000),
+      ({ cb }: { cb: () => void }) =>
+        useIntervalTimer({ callback: cb, delay: 1000 }),
       { initialProps: { cb: first } },
     );
 

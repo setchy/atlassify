@@ -21,9 +21,8 @@ import { SettingsRoute } from './routes/Settings';
 import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
 
-import { GlobalShortcuts } from './components/GlobalShortcuts';
+import { AppRouterEffects } from './components/AppRouterEffects';
 import { AppLayout } from './components/layout/AppLayout';
-import { NavigationAnalyticsListener } from './components/NavigationAnalyticsListener';
 
 import { queryClient } from './utils/api/client';
 import { migrateLegacyStoreToZustand } from './utils/core/storage';
@@ -54,9 +53,8 @@ export const App: FC = () => {
     <QueryClientProvider client={queryClient}>
       <AppProvider>
         <Router>
-          <NavigationAnalyticsListener />
+          <AppRouterEffects />
           <AppLayout>
-            <GlobalShortcuts />
             <Routes>
               <Route
                 element={

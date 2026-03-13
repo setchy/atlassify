@@ -36,6 +36,8 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
+
+  refreshAccounts: () => Promise<void>;
 }
 
 export const AppContext = createContext<AppContextState | null>(null);
@@ -65,7 +67,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const isOnline = useRuntimeStore((s) => s.isOnline);
 
   // Periodic account refreshes
-  useAccounts();
+  const { refreshAccounts } = useAccounts();
 
   // Keyboard navigation
   const { focusedNotificationId } = useKeyboardNavigation({
@@ -95,6 +97,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      refreshAccounts,
     }),
     [
       isOnline,
@@ -115,6 +119,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      refreshAccounts,
     ],
   );
 
