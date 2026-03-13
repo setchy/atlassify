@@ -1482,6 +1482,11 @@ export type AdminUserEmailInput = {
   email: Scalars['String']['input'];
 };
 
+export enum AgentAiCitationSourceType {
+  KbArticle = 'KB_ARTICLE',
+  SimilarIssue = 'SIMILAR_ISSUE'
+}
+
 export type AgentStudioActionConfigurationInput = {
   /** List of actions configured for the agent perform */
   actions?: InputMaybe<Array<AgentStudioActionInput>>;
@@ -1752,6 +1757,8 @@ export enum AgentStudioKnowledgeGapUploadJobStatus {
   PartialComplete = 'PARTIAL_COMPLETE',
   /** Job is pending execution */
   Pending = 'PENDING',
+  /** Job is performing post-processing tasks */
+  Postprocessing = 'POSTPROCESSING',
   /** Job is currently processing the uploaded file */
   Processing = 'PROCESSING'
 }
@@ -1842,6 +1849,16 @@ export type AgentStudioSuggestConversationStartersInput = {
   agentName?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Input for a tool configuration */
+export type AgentStudioToolConfigurationInput = {
+  /** Id of the configuration */
+  id: Scalars['ID']['input'];
+  /** Name of the configuration */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The configured properties */
+  properties?: InputMaybe<Array<AgentStudioToolPropertyConfigurationInput>>;
+};
+
 export enum AgentStudioToolDefinitionSource {
   ConvoAi = 'CONVO_AI',
   Forge = 'FORGE',
@@ -1857,13 +1874,15 @@ export type AgentStudioToolIdAndSource = {
 };
 
 export type AgentStudioToolInput = {
+  /** If the tool is configured, the tool's configuration; otherwise null */
+  configuration?: InputMaybe<AgentStudioToolConfigurationInput>;
   /** Indicates if a tool is a configured or not */
   configured?: InputMaybe<Scalars['Boolean']['input']>;
   /** Id of the definition */
   definitionId: Scalars['String']['input'];
   /** Source of the definition */
   definitionSource: AgentStudioToolDefinitionSource;
-  /** Id of the configured tool */
+  /** Id of the tool; equals definitionId if the tool is unconfigured, does not equal definitionId if the tool is configured */
   toolId?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1871,6 +1890,14 @@ export enum AgentStudioToolIntegrationOwner {
   Atlassian = 'ATLASSIAN',
   Other = 'OTHER'
 }
+
+/** Input for a single configured property of a tool */
+export type AgentStudioToolPropertyConfigurationInput = {
+  /** The allowed values for this property */
+  allowedValues?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Id of the property */
+  id: Scalars['String']['input'];
+};
 
 export type AgentStudioUpdateAgentDetailsInput = {
   /** The authoring team for this agent */
@@ -2012,10 +2039,19 @@ export type AgentWorkspaceAvailabilityInput = {
   agentIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
+  /**
+   * Signals the first page load. When true and the caller is a non-admin agent,
+   * the backend auto-filters results to the current user and returns initialFilters.
+   */
+  isInitialFetch?: InputMaybe<Scalars['Boolean']['input']>;
   /** Project ID (optional) */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project key (optional) */
   projectKey?: InputMaybe<Scalars['String']['input']>;
+  /** Sort field (optional) */
+  sortBy?: InputMaybe<AgentWorkspaceAvailabilitySortField>;
+  /** Sort direction (optional, defaults to ASC) */
+  sortOrder?: InputMaybe<AgentWorkspaceSortDirection>;
   /** Filter by multiple statuses (optional) */
   statuses?: InputMaybe<Array<AgentWorkspaceAvailabilityStatus>>;
   /** Filter by multiple team ARIs (optional). Alternative to teamIds — accepts full team ARIs. */
@@ -2023,6 +2059,16 @@ export type AgentWorkspaceAvailabilityInput = {
   /** Filter by multiple team IDs (optional) - only include agents belonging to these teams */
   teamIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
+
+/** Sort field for agent availability queries. */
+export enum AgentWorkspaceAvailabilitySortField {
+  /** Sort by last updated timestamp */
+  LastUpdated = 'LAST_UPDATED',
+  /** Sort by agent display name, alphabetical */
+  Name = 'NAME',
+  /** Sort by availability status (AVAILABLE before ON_BREAK in ASC) */
+  Status = 'STATUS'
+}
 
 export enum AgentWorkspaceAvailabilityStatus {
   Available = 'AVAILABLE',
@@ -2067,6 +2113,8 @@ export type AgentWorkspaceCapacityInput = {
 
 /** Sort field for agent capacity queries. */
 export enum AgentWorkspaceCapacitySortField {
+  /** Sort by agent display name, alphabetical (case-insensitive) */
+  Agent = 'AGENT',
   /** Sort by utilization percentage (currentLoad / maxCapacity), numerical */
   Capacity = 'CAPACITY'
 }
@@ -2098,6 +2146,8 @@ export type AgentWorkspaceCatalogDeleteInput = {
 export type AgentWorkspaceCatalogFilterInput = {
   /** Filter catalogs by their type ID */
   catalogTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Filter catalogs by their hierarchy definition ID */
+  hierarchyDefinitionId?: InputMaybe<Scalars['ID']['input']>;
   /** Filter by specific catalog IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Filter catalogs whose names contain this string (case-insensitive) */
@@ -2130,8 +2180,12 @@ export type AgentWorkspaceCatalogTypeDeleteInput = {
 
 /** Filter criteria for querying catalog types */
 export type AgentWorkspaceCatalogTypeFilterInput = {
+  /** Filter catalog types by their hierarchy definition ID */
+  hierarchyDefinitionId?: InputMaybe<Scalars['ID']['input']>;
   /** Filter by specific catalog type IDs */
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter catalog types by their level in the hierarchy */
+  level?: InputMaybe<Scalars['Int']['input']>;
   /** Filter catalog types whose names contain this string (case-insensitive) */
   nameContains?: InputMaybe<Scalars['String']['input']>;
 };
@@ -2178,15 +2232,15 @@ export type AgentWorkspaceCatalogsInput = {
 
 /** Input for creating a new catalog */
 export type AgentWorkspaceCreateCatalogInput = {
-  /** ID of the catalog type */
-  catalogTypeId: Scalars['ID']['input'];
   /** Cloud ID (required) */
   cloudId: Scalars['ID']['input'];
   /** Description of the catalog */
   description?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the hierarchy definition (required for root catalogs, ignored for non-root) */
+  hierarchyDefinitionId?: InputMaybe<Scalars['ID']['input']>;
   /** Name of the catalog */
   name: Scalars['String']['input'];
-  /** IDs of the parent catalogs (optional) */
+  /** IDs of the parent catalogs (optional, empty means root catalog) */
   parentCatalogIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   /** Proficiency level definitions for this catalog (array of 5 strings for levels 1-5). If omitted or equal to shared defaults, defaults will be used. */
   proficiencyDefinitions?: InputMaybe<Array<Scalars['String']['input']>>;
@@ -2202,10 +2256,26 @@ export type AgentWorkspaceCreateCatalogTypeInput = {
   cloudId: Scalars['ID']['input'];
   /** Description of the catalog type */
   description?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the hierarchy definition this type belongs to */
+  hierarchyDefinitionId: Scalars['ID']['input'];
+  /** Level/depth in the hierarchy (0 = root level) */
+  level: Scalars['Int']['input'];
   /** Name of the catalog type */
   name: Scalars['String']['input'];
-  /** ID of the parent catalog type (optional) */
-  parentTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input for creating a new hierarchy definition */
+export type AgentWorkspaceCreateHierarchyDefinitionInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Description of the hierarchy definition */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Name of the hierarchy definition */
+  name: Scalars['String']['input'];
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project Key */
@@ -2250,6 +2320,18 @@ export enum AgentWorkspaceDayOfWeek {
   Tuesday = 'TUESDAY',
   Wednesday = 'WEDNESDAY'
 }
+
+/** Input for deleting a hierarchy definition */
+export type AgentWorkspaceDeleteHierarchyDefinitionInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Hierarchy definition ID (required) */
+  id: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
 
 export type AgentWorkspaceDeleteScheduleInput = {
   cloudId: Scalars['ID']['input'];
@@ -2325,6 +2407,40 @@ export type AgentWorkspaceFindBestMatchAgentsInput = {
   requirements: Array<AgentWorkspaceSkillRequirementInput>;
   /** Team ID to scope the agent search */
   teamId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Filter criteria for querying hierarchy definitions */
+export type AgentWorkspaceHierarchyDefinitionFilterInput = {
+  /** Filter by specific hierarchy definition IDs */
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Filter hierarchy definitions whose names contain this string (case-insensitive) */
+  nameContains?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input for querying a hierarchy definition */
+export type AgentWorkspaceHierarchyDefinitionInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Hierarchy definition ID (required) */
+  id: Scalars['ID']['input'];
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input for querying hierarchy definitions */
+export type AgentWorkspaceHierarchyDefinitionsInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Filter criteria for querying hierarchy definitions */
+  filter?: InputMaybe<AgentWorkspaceHierarchyDefinitionFilterInput>;
+  /** Standard cursor-based pagination input */
+  pagination?: InputMaybe<AgentWorkspacePaginationInput>;
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Standard cursor-based pagination input */
@@ -2465,6 +2581,11 @@ export type AgentWorkspaceShiftsQueryInput = {
   cloudId: Scalars['ID']['input'];
   /** End of the time range to fetch shifts (required) */
   endTime: Scalars['DateTime']['input'];
+  /**
+   * Signals the first page load. When true and the caller is a non-admin agent,
+   * the backend auto-filters results to the current user and returns initialFilters.
+   */
+  isInitialFetch?: InputMaybe<Scalars['Boolean']['input']>;
   /** Project ID (optional) */
   projectId?: InputMaybe<Scalars['ID']['input']>;
   /** Project key (optional) */
@@ -2673,9 +2794,29 @@ export type AgentWorkspaceUpdateCatalogTypeInput = {
   cloudId: Scalars['ID']['input'];
   /** Description of the catalog type */
   description?: InputMaybe<Scalars['String']['input']>;
+  /** ID of the hierarchy definition this type belongs to */
+  hierarchyDefinitionId?: InputMaybe<Scalars['ID']['input']>;
   /** Catalog Type ID (required) */
   id: Scalars['ID']['input'];
+  /** Level/depth in the hierarchy (0 = root level) */
+  level?: InputMaybe<Scalars['Int']['input']>;
   /** Name of the catalog type */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Project ID */
+  projectId?: InputMaybe<Scalars['ID']['input']>;
+  /** Project Key */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input for updating an existing hierarchy definition */
+export type AgentWorkspaceUpdateHierarchyDefinitionInput = {
+  /** Cloud ID (required) */
+  cloudId: Scalars['ID']['input'];
+  /** Description of the hierarchy definition */
+  description?: InputMaybe<Scalars['String']['input']>;
+  /** Hierarchy definition ID (required) */
+  id: Scalars['ID']['input'];
+  /** Name of the hierarchy definition */
   name?: InputMaybe<Scalars['String']['input']>;
   /** Project ID */
   projectId?: InputMaybe<Scalars['ID']['input']>;
@@ -5362,6 +5503,18 @@ export type ChangeManagementUpdateRovoRiskAssessmentSettingsInput = {
   knowledgeBases: Array<Scalars['String']['input']>;
   projectId: Scalars['String']['input'];
 };
+
+export type ChannelPlatformBotConversationInput = {
+  action: Scalars['String']['input'];
+  answer?: InputMaybe<Scalars['String']['input']>;
+  contactId: Scalars['String']['input'];
+  workflowId?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum ChannelPlatformBotConversationStatus {
+  Completed = 'COMPLETED',
+  InProgress = 'IN_PROGRESS'
+}
 
 export type ChannelPlatformChannelAvailabilityRequestInput = {
   aaId?: InputMaybe<Scalars['String']['input']>;
@@ -11614,6 +11767,7 @@ export type CplsDeleteWorkScopeAssociationsInput = {
 };
 
 export type CplsFiltersInput = {
+  atlasProjects?: InputMaybe<Array<Scalars['ID']['input']>>;
   contributorDataIds?: InputMaybe<Array<Scalars['ID']['input']>>;
   customContributionTargets?: InputMaybe<Array<Scalars['ID']['input']>>;
   jiraWorkItemStatusNames?: InputMaybe<Array<Scalars['String']['input']>>;
@@ -11686,6 +11840,7 @@ export type CplsViewSettingsInput = {
 };
 
 export enum CplsWorkType {
+  AtlasProject = 'ATLAS_PROJECT',
   CustomContributionTarget = 'CUSTOM_CONTRIBUTION_TARGET',
   JiraWorkItem = 'JIRA_WORK_ITEM'
 }
@@ -13324,8 +13479,8 @@ export type CustomerServiceRequestFilterInput = {
   reportedBy?: InputMaybe<CustomerServiceReportedByFilter>;
   /** Filter requests by search text (case insensitive) */
   searchText?: InputMaybe<Scalars['String']['input']>;
-  /** Filter requests by status key (SUBMITTED, RESOLVED) */
-  status?: InputMaybe<CustomerServiceStatusKey>;
+  /** Filter requests by status IDs */
+  statusFilter?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type CustomerServiceReturnEscalationInput = {
@@ -15198,6 +15353,7 @@ export enum ExternalPullRequestStatus {
   Draft = 'DRAFT',
   Merged = 'MERGED',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -15614,6 +15770,7 @@ export type ForgeMetricsInvocationLatencySummaryQueryInput = {
 export enum ForgeMetricsLabels {
   ForgeApiRequestCount = 'FORGE_API_REQUEST_COUNT',
   ForgeApiRequestLatency = 'FORGE_API_REQUEST_LATENCY',
+  ForgeBackendCustomMetricsCount = 'FORGE_BACKEND_CUSTOM_METRICS_COUNT',
   ForgeBackendInvocationCount = 'FORGE_BACKEND_INVOCATION_COUNT',
   ForgeBackendInvocationErrors = 'FORGE_BACKEND_INVOCATION_ERRORS',
   ForgeBackendInvocationLatency = 'FORGE_BACKEND_INVOCATION_LATENCY'
@@ -15715,6 +15872,38 @@ export enum FunctionTriggerType {
   Product = 'PRODUCT',
   Web = 'WEB'
 }
+
+/**
+ * Input for AI playbook generation from documentation or prompt.
+ * Supports two modes: (1) resource-based with Confluence URL,
+ * (2) prompt-only with instructions in userPrompt.
+ */
+export type GeneratePlaybookInput = {
+  /**
+   * Cloud ID of the Jira instance where the playbook will be created.
+   * Required for tenant routing and permission validation.
+   * Annotated with @CloudID directive for gateway routing.
+   */
+  cloudId: Scalars['ID']['input'];
+  /**
+   * OPTIONAL: URL of the Confluence page containing the procedure/documentation.
+   * If not provided, LLM uses userPrompt content as the source of instructions.
+   * If provided, LLM combines Confluence page content with userPrompt for context.
+   */
+  documentUrl?: InputMaybe<Scalars['String']['input']>;
+  /**
+   * REQUIRED: Single instrumentation identifier to correlate generation telemetry and experiments.
+   * Provided by the client; opaque string.
+   */
+  singleInstrumentationID: Scalars['String']['input'];
+  /**
+   * User's automation intent and requirements.
+   * Guides the LLM in generating relevant playbook steps.
+   * Can contain instructions.
+   * Max length: 3000 words.
+   */
+  userPrompt?: InputMaybe<Scalars['String']['input']>;
+};
 
 export enum GlanceEnvironment {
   Dev = 'DEV',
@@ -16136,6 +16325,13 @@ export type GraphIntegrationRemoveTwgCapabilityContainerInput = {
   id: Scalars['String']['input'];
 };
 
+/**  --------------------------------------------------------------------------------------------- */
+export type GraphIntegrationSetTwgPlatformCapabilityGlobalAdminSettingInput = {
+  capabilityType: GraphIntegrationTwgCapabilityType;
+  cloudId: Scalars['ID']['input'];
+  status: GraphIntegrationTwgCapabilityStatus;
+};
+
 export enum GraphIntegrationSkillColor {
   Blue = 'BLUE',
   Default = 'DEFAULT',
@@ -16161,6 +16357,15 @@ export enum GraphIntegrationSurface {
   Pollinator = 'POLLINATOR',
   Rovo = 'ROVO',
   Studio = 'STUDIO'
+}
+
+export enum GraphIntegrationTwgCapabilityStatus {
+  Disabled = 'DISABLED',
+  Enabled = 'ENABLED'
+}
+
+export enum GraphIntegrationTwgCapabilityType {
+  PlatformMcpServer = 'PLATFORM_MCP_SERVER'
 }
 
 export enum GraphQlContentStatus {
@@ -18595,6 +18800,11 @@ export type GraphStoreAskHasSubmittingTeamSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreAssetTypeHasChildAssetTypeSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreAtiFilterInput = {
   is?: InputMaybe<Array<Scalars['String']['input']>>;
   isNot?: InputMaybe<Array<Scalars['String']['input']>>;
@@ -20299,6 +20509,16 @@ export type GraphStoreExternalCustomerOrgWorksOnJiraWorkItemWorklogSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreExternalDataTableHasExternalSpaceSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreExternalDocumentHasExternalSpaceSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreExternalOrgHasExternalPositionSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -20351,6 +20571,11 @@ export type GraphStoreExternalTeamWorksOnJiraWorkItemWorklogSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreExternalVideoHasExternalSpaceSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreExternalWorkerConflatesToIdentity3pUserSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -20397,6 +20622,11 @@ export type GraphStoreFocusAreaHasPageSortInput = {
 };
 
 export type GraphStoreFocusAreaHasProjectSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreFocusAreaHasRiskSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -20525,6 +20755,7 @@ export enum GraphStoreFullIssueAssociatedPrPullRequestStatusOutput {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -20563,6 +20794,7 @@ export enum GraphStoreFullParentDocumentHasChildDocumentCategoryOutput {
   Folder = 'FOLDER',
   Form = 'FORM',
   Image = 'IMAGE',
+  Notebook = 'NOTEBOOK',
   NotSet = 'NOT_SET',
   Other = 'OTHER',
   Page = 'PAGE',
@@ -20580,6 +20812,7 @@ export enum GraphStoreFullPrInRepoPullRequestStatusOutput {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -20626,6 +20859,7 @@ export enum GraphStoreFullProjectAssociatedPrPullRequestStatusOutput {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -20729,6 +20963,7 @@ export enum GraphStoreFullSprintAssociatedPrPullRequestStatusOutput {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -21900,6 +22135,7 @@ export enum GraphStoreProjectAssociatedPrPullRequestStatus {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -22612,6 +22848,7 @@ export enum GraphStoreSprintAssociatedPrPullRequestStatus {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -22826,6 +23063,11 @@ export type GraphStoreSprintRetrospectiveWhiteboardSortInput = {
   toAti?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreTeamAssignedIssueSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreTeamConnectedToContainerSortInput = {
   /** Sort by the creation date of the relationship */
   createdAt?: InputMaybe<GraphStoreSortInput>;
@@ -22849,6 +23091,11 @@ export type GraphStoreTeamHasCustomFieldValueSortInput = {
 };
 
 export type GraphStoreTeamIsOfTypeSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreTeamIsOpsTeamSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -23157,6 +23404,11 @@ export type GraphStoreUserCreatedExternalSpaceSortInput = {
 };
 
 export type GraphStoreUserCreatedExternalTestSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreUserCreatedFocusAreaSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -23624,12 +23876,27 @@ export type GraphStoreUserUpdatedExternalTestSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreUserUpdatedFocusAreaSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreUserUpdatedGraphDocumentSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
 export type GraphStoreUserUpdatedIssueSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreUserUpdatedIssueWorklogSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreUserUpdatedVideoSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -23689,6 +23956,11 @@ export type GraphStoreUserWatchesConfluenceBlogpostSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreUserWatchesConfluenceDatabaseSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreUserWatchesConfluencePageSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -23700,6 +23972,11 @@ export type GraphStoreUserWatchesConfluenceWhiteboardSortInput = {
 };
 
 export type GraphStoreUserWatchesTeamSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AssetTypeHasChildAssetTypeSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -23759,6 +24036,11 @@ export type GraphStoreV2AtlassianProjectLinksAtlassianProjectSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreV2AtlassianTeamAssignedJiraWorkItemSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreV2AtlassianTeamContributesToAtlassianGoalSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -23786,6 +24068,11 @@ export type GraphStoreV2AtlassianTeamHasChildAtlassianTeamSortInput = {
 };
 
 export type GraphStoreV2AtlassianTeamIsAtlassianTeamTypeSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianTeamLinksOpsgenieTeamSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -23981,6 +24268,11 @@ export type GraphStoreV2AtlassianUserCreatedExternalRemoteLinkSortInput = {
 };
 
 export type GraphStoreV2AtlassianUserCreatedExternalRepositorySortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianUserCreatedFocusFocusAreaSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -24410,7 +24702,22 @@ export type GraphStoreV2AtlassianUserUpdatedConfluenceWhiteboardSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreV2AtlassianUserUpdatedFocusFocusAreaSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreV2AtlassianUserUpdatedJiraWorkItemSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianUserUpdatedJiraWorkItemWorklogSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianUserUpdatedLoomVideoSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -24471,6 +24778,11 @@ export type GraphStoreV2AtlassianUserWatchesAtlassianTeamSortInput = {
 };
 
 export type GraphStoreV2AtlassianUserWatchesConfluenceBlogpostSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2AtlassianUserWatchesConfluenceDatabaseSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -25616,6 +25928,11 @@ export type GraphStoreV2ExternalCustomerOrgWorksOnJiraWorkItemWorklogSortInput =
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreV2ExternalDataTableHasExternalSpaceSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreV2ExternalDeploymentHasExternalCommitSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -25632,6 +25949,11 @@ export type GraphStoreV2ExternalDeploymentLinksExternalRepositorySortInput = {
 };
 
 export type GraphStoreV2ExternalDocumentHasChildExternalDocumentSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2ExternalDocumentHasExternalSpaceSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -26209,6 +26531,11 @@ export type GraphStoreV2ExternalUserUpdatedExternalTestStatusSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreV2ExternalVideoHasExternalSpaceSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreV2ExternalWorkerFillsExternalPositionSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -26261,6 +26588,11 @@ export type GraphStoreV2FocusFocusAreaHasExternalPositionSortInput = {
 };
 
 export type GraphStoreV2FocusFocusAreaHasFocusFocusAreaStatusUpdateSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2FocusFocusAreaHasFocusRiskSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -26732,6 +27064,7 @@ export enum GraphStoreV2JiraSpaceLinksExternalPullRequestPullRequestStatus {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -27244,6 +27577,7 @@ export enum GraphStoreV2JiraSprintHasExternalPullRequestPullRequestStatus {
   Merged = 'MERGED',
   NotSet = 'NOT_SET',
   Open = 'OPEN',
+  Queued = 'QUEUED',
   Unknown = 'UNKNOWN'
 }
 
@@ -28384,7 +28718,7 @@ export type GravityCreateViewFromTemplateInput = {
   refMappings?: InputMaybe<GravityRefMappingsInput>;
   /**
    * Strategy for resolving template references (fields) to concrete instances.
-   * Defaults to CREATE_IF_MISSING.
+   * Defaults to CREATE_IF_UNMAPPED.
    */
   refResolutionStrategy?: InputMaybe<GravityRefResolutionStrategy>;
   /** The ID of the template from which to create the view. */
@@ -28459,17 +28793,20 @@ export type GravityRefMappingsInput = {
 };
 
 /**
- * Strategy for resolving template resource references into concrete entities
- * in the target context when creating a view from a template.
+ * Controls how unmapped template field references are handled when creating a view from a template.
+ * A reference is considered unmapped if it is not covered by the explicit `refMappings` input.
  */
 export enum GravityRefResolutionStrategy {
-  /** Default. Create missing fields where possible; fail only on unrecoverable errors. */
-  CreateIfMissing = 'CREATE_IF_MISSING',
   /**
-   * Fail the operation if any required mapping cannot be resolved.
-   * No new fields are created.
+   * Default. Any unmapped field reference is resolved by creating a new field in the target project.
+   * The operation fails if Jira rejects field creation (e.g. a field with the same name and type already exists in the project).
    */
-  FailIfMissing = 'FAIL_IF_MISSING'
+  CreateIfUnmapped = 'CREATE_IF_UNMAPPED',
+  /**
+   * Fail the operation if any field reference is unmapped.
+   * All field references must be provided via `refMappings`; no new fields are created.
+   */
+  FailIfUnmapped = 'FAIL_IF_UNMAPPED'
 }
 
 /** Sort order used across different features. */
@@ -29337,7 +29674,7 @@ export type HelpCenterProductEntityFilter = {
    * For suggested request types: helpCenterAri
    */
   parentId?: InputMaybe<Scalars['String']['input']>;
-  /** For JSM_HELP_OBJECTS: REQUEST_TYPES, KB_ARTICLES, EXT_RESOURCES */
+  /** For JSM_HELP_OBJECTS: REQUEST_TYPES, KB_ARTICLES, EXT_RESOURCES, PORTAL_GROUPS */
   subEntityTypes?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
@@ -29380,7 +29717,9 @@ export enum HelpCenterProductEntityType {
    */
   JsmHelpObjects = 'JSM_HELP_OBJECTS',
   /** indicates knowledge cards as an entity */
-  KnowledgeCards = 'KNOWLEDGE_CARDS'
+  KnowledgeCards = 'KNOWLEDGE_CARDS',
+  /** Portal groups with request forms mapped to a help center */
+  PortalGroups = 'PORTAL_GROUPS'
 }
 
 export enum HelpCenterProjectMappingOperationType {
@@ -29928,6 +30267,7 @@ export type HelpObjectStoreCreateEntityMappingInput = {
 export enum HelpObjectStoreEntityTypes {
   ExtResources = 'EXT_RESOURCES',
   KbArticles = 'KB_ARTICLES',
+  PortalGroups = 'PORTAL_GROUPS',
   RequestTypes = 'REQUEST_TYPES'
 }
 
@@ -29935,7 +30275,7 @@ export enum HelpObjectStoreEntityTypes {
 export type HelpObjectStoreFilter = {
   /** Project ID */
   parentId?: InputMaybe<Scalars['String']['input']>;
-  /** List of sub-entity types to filter by, REQUEST_TYPES, KB_ARTICLES, EXT_RESOURCES */
+  /** List of sub-entity types to filter by, REQUEST_TYPES, KB_ARTICLES, EXT_RESOURCES, PORTAL_GROUPS */
   subEntityTypes?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
@@ -29970,6 +30310,8 @@ export type HelpObjectStoreProductEntityInput = {
   cloudId: Scalars['ID']['input'];
   /** Number of entities to return */
   first?: InputMaybe<Scalars['Int']['input']>;
+  /** Help Center ARI for scoping the query */
+  helpCenterAri?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export enum HelpObjectStoreRequestTypeSearchStrategy {
@@ -31801,6 +32143,12 @@ export type JiraClearBoardIssueCardCoverInput = {
   viewId: Scalars['ID']['input'];
 };
 
+/** Input for clearing a custom name from a menu item. */
+export type JiraClearProjectLevelSidebarMenuItemNameInput = {
+  /** Set to true to confirm clearing the name. */
+  confirm?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 /** Input type for date field. accepts null value to clear the date */
 export type JiraClearableDateFieldInput = {
   date?: InputMaybe<JiraDateInput>;
@@ -31917,7 +32265,9 @@ export enum JiraColorSchemeThemeSetting {
 /** The field for sorting comments. */
 export enum JiraCommentSortField {
   /** sorts by the created date */
-  Created = 'CREATED'
+  Created = 'CREATED',
+  /** sorts by the last child comment created */
+  LatestActivity = 'LATEST_ACTIVITY'
 }
 
 export type JiraCommentSortInput = {
@@ -37717,6 +38067,31 @@ export type JiraRenameNavigationItemInput = {
   scopeId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type JiraRenameProjectLevelSidebarMenuItemInput = {
+  /** The action to perform on the menu item name. */
+  action: JiraRenameProjectLevelSidebarMenuItemNameActionInput;
+  /** The identifier of the cloud instance. */
+  cloudId: Scalars['ID']['input'];
+  /** The identifier of the menu item to rename. */
+  itemId: Scalars['ID']['input'];
+  /** The identifier of the project. */
+  projectId: Scalars['ID']['input'];
+};
+
+/** Action to perform on a menu item name. Exactly one field must be provided. */
+export type JiraRenameProjectLevelSidebarMenuItemNameActionInput = {
+  /** Clear the custom name for the menu item. */
+  clear?: InputMaybe<JiraClearProjectLevelSidebarMenuItemNameInput>;
+  /** Rename the menu item to a new name. */
+  rename?: InputMaybe<JiraRenameProjectLevelSidebarMenuItemNameInput>;
+};
+
+/** Input for renaming a menu item. */
+export type JiraRenameProjectLevelSidebarMenuItemNameInput = {
+  /** The new name for the menu item. */
+  newName: Scalars['String']['input'];
+};
+
 /** Input to reorder a column on the board view. */
 export type JiraReorderBoardViewColumnInput = {
   /** Id of the column to be reordered. */
@@ -39577,6 +39952,8 @@ export type JiraUpdateCommentInput = {
    * Null means the permission level is unspecified, i.e. the comment is public.
    */
   permissionLevel?: InputMaybe<JiraPermissionLevelInput>;
+  /** The JSM visibility property to associate with this comment. */
+  visibility?: InputMaybe<JiraServiceManagementCommentVisibility>;
 };
 
 export type JiraUpdateComponentsFieldInput = {
@@ -41102,11 +41479,17 @@ export enum JpdImportSourceType {
   Text = 'TEXT'
 }
 
-export type JpdViewsServiceAssociateGlobalViewInput = {
+export type JpdViewsServiceAssociateGlobalViewContainerInput = {
   /** The ID of the container to associate the global view with (e.g. Jira project ID). */
   containerId: Scalars['String']['input'];
   /** The type of the container to associate the global view with. */
   containerType: JpdViewsServiceGlobalViewAssociationContainerType;
+};
+
+export type JpdViewsServiceAssociateGlobalViewInput = {
+  /** The containers to associate the global view with. */
+  containers: Array<JpdViewsServiceAssociateGlobalViewContainerInput>;
+  /** The ARI of the global view to associate. */
   id: Scalars['ID']['input'];
 };
 
@@ -41116,6 +41499,23 @@ export type JpdViewsServiceAxisConfigInput = {
   fieldOptions: Array<JpdViewsServiceOptionInput>;
   reversed: Scalars['Boolean']['input'];
 };
+
+export enum JpdViewsServiceColorStyle {
+  Background = 'BACKGROUND',
+  Highlight = 'HIGHLIGHT'
+}
+
+export enum JpdViewsServiceColumnSize {
+  Default = 'DEFAULT',
+  Large = 'LARGE',
+  Small = 'SMALL'
+}
+
+export enum JpdViewsServiceConnectionsLayout {
+  Cards = 'CARDS',
+  List = 'LIST',
+  Summary = 'SUMMARY'
+}
 
 export type JpdViewsServiceCreateGlobalViewInput = {
   name: Scalars['String']['input'];
@@ -41192,6 +41592,12 @@ export type JpdViewsServiceSortInput = {
   order: Scalars['String']['input'];
 };
 
+export enum JpdViewsServiceSortMode {
+  FieldsSort = 'FIELDS_SORT',
+  ProjectRank = 'PROJECT_RANK',
+  ViewRank = 'VIEW_RANK'
+}
+
 export type JpdViewsServiceTableColumnSizeInput = {
   field: Scalars['String']['input'];
   size: Scalars['Int']['input'];
@@ -41204,14 +41610,31 @@ export type JpdViewsServiceTimelineConfigInput = {
   startDateField: Scalars['String']['input'];
   startTimestamp: Scalars['String']['input'];
   summaryCardField: Scalars['String']['input'];
+  todayMarker?: InputMaybe<Scalars['String']['input']>;
 };
 
+export enum JpdViewsServiceTimelineMode {
+  Months = 'MONTHS',
+  Quarters = 'QUARTERS'
+}
+
+export enum JpdViewsServiceTodayMarker {
+  Disabled = 'DISABLED',
+  Enabled = 'ENABLED'
+}
+
 /**  unassociate global view from a container (e.g. project) */
-export type JpdViewsServiceUnassociateGlobalViewInput = {
+export type JpdViewsServiceUnassociateGlobalViewContainerInput = {
   /** The ID of the container to unassociate the global view from (e.g. Jira project ID). */
   containerId: Scalars['String']['input'];
   /** The type of the container to unassociate the global view from. */
   containerType: JpdViewsServiceGlobalViewAssociationContainerType;
+};
+
+export type JpdViewsServiceUnassociateGlobalViewInput = {
+  /** The containers to unassociate the global view from. */
+  containers: Array<JpdViewsServiceUnassociateGlobalViewContainerInput>;
+  /** The ARI of the global view to unassociate. */
   id: Scalars['ID']['input'];
 };
 
@@ -41223,7 +41646,7 @@ export type JpdViewsServiceUpdateGlobalViewInput = {
   columnSize?: InputMaybe<Scalars['String']['input']>;
   connectionsFilter?: InputMaybe<Array<InputMaybe<JpdViewsServiceFilterInput>>>;
   connectionsLayoutType?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
+  descriptionNew?: InputMaybe<Scalars['JSON']['input']>;
   emoji?: InputMaybe<Scalars['String']['input']>;
   fieldRollups?: InputMaybe<Array<InputMaybe<JpdViewsServiceFieldRollupInput>>>;
   fields?: InputMaybe<Array<InputMaybe<JpdViewsServiceFieldInput>>>;
@@ -41237,7 +41660,7 @@ export type JpdViewsServiceUpdateGlobalViewInput = {
   id: Scalars['ID']['input'];
   layoutType?: InputMaybe<Scalars['String']['input']>;
   matrixConfig?: InputMaybe<JpdViewsServiceMatrixConfigInput>;
-  name: Scalars['String']['input'];
+  name?: InputMaybe<Scalars['String']['input']>;
   showConnectionsMatchingColumn?: InputMaybe<Scalars['Boolean']['input']>;
   showConnectionsMatchingGroup?: InputMaybe<Scalars['Boolean']['input']>;
   sort?: InputMaybe<Array<InputMaybe<JpdViewsServiceSortInput>>>;
@@ -41247,8 +41670,13 @@ export type JpdViewsServiceUpdateGlobalViewInput = {
   verticalGroupBy?: InputMaybe<JpdViewsServiceFieldInput>;
   verticalGroupValues?: InputMaybe<Array<InputMaybe<JpdViewsServiceNestedIdInput>>>;
   verticalGroupsFilter?: InputMaybe<Array<InputMaybe<JpdViewsServiceFilterInput>>>;
-  visualizationType: JpdViewsServiceVisualizationType;
 };
+
+export enum JpdViewsServiceViewLayoutType {
+  Compact = 'COMPACT',
+  Detailed = 'DETAILED',
+  Summary = 'SUMMARY'
+}
 
 /**
  * ## Views
@@ -42953,7 +43381,6 @@ export type MarketplaceConsoleDeploymentInstructionInput = {
   screenshotImageUrl?: InputMaybe<Scalars['String']['input']>;
 };
 
-/**  eslint-disable-next-line @graphql-eslint/strict-id-in-types -- id is not required */
 export type MarketplaceConsoleDevSpaceContactInput = {
   addressLine1?: InputMaybe<Scalars['String']['input']>;
   addressLine2?: InputMaybe<Scalars['String']['input']>;
@@ -44036,6 +44463,16 @@ export type MercuryChangeParentFocusAreaChangeInput = {
   targetFocusAreaId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type MercuryChangeProposalCommentSort = {
+  field: MercuryChangeProposalCommentSortField;
+  order: SortOrder;
+};
+
+export enum MercuryChangeProposalCommentSortField {
+  CreatedDate = 'CREATED_DATE',
+  UpdatedDate = 'UPDATED_DATE'
+}
+
 export type MercuryChangeProposalSort = {
   /** Either 'field' or 'fieldKey' must be provided, but not both. */
   field?: InputMaybe<MercuryChangeProposalSortField>;
@@ -44339,12 +44776,16 @@ export type MercuryCreateRiskInput = {
   cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The description of the Risk in ADF format. */
   description?: InputMaybe<Scalars['String']['input']>;
+  /** The impact value (Int) from riskImpactValues. Pass the numeric value, not the key. */
+  impact?: InputMaybe<Scalars['Int']['input']>;
   /** The name of the Risk. */
   name: Scalars['String']['input'];
   /** The owner of the Risk (user ARI). Defaults to the requesting user if not provided. */
   owner?: InputMaybe<Scalars['ID']['input']>;
-  /** The target date of the Risk (ISO date format). */
-  targetDate?: InputMaybe<Scalars['String']['input']>;
+  /** The submitter of the Risk (user ARI). Defaults to the requesting user if not provided. */
+  submitter?: InputMaybe<Scalars['ID']['input']>;
+  /** The target date of the Risk (date and type: day, month, or quarter). */
+  targetDate?: InputMaybe<MercuryRiskTargetDateInput>;
 };
 
 export type MercuryCreateSingleSelectCustomFieldDefinitionInput = {
@@ -44404,6 +44845,14 @@ export type MercuryCustomFieldInput = {
   textField?: InputMaybe<MercuryTextCustomFieldInput>;
 };
 
+/** The kind of a custom field. */
+export enum MercuryCustomFieldKind {
+  /** A custom (user-created) custom field. */
+  Custom = 'CUSTOM',
+  /** A system-provided custom field. */
+  System = 'SYSTEM'
+}
+
 export type MercuryCustomFieldSelectionOptionSettingInput = {
   key: MercuryCustomFieldSelectionOptionSettingKey;
   value?: InputMaybe<Scalars['String']['input']>;
@@ -44411,6 +44860,14 @@ export type MercuryCustomFieldSelectionOptionSettingInput = {
 
 export enum MercuryCustomFieldSelectionOptionSettingKey {
   Color = 'COLOR'
+}
+
+/** The visibility of a custom field. */
+export enum MercuryCustomFieldVisibility {
+  /** The custom field is hidden in the UI. */
+  Hidden = 'HIDDEN',
+  /** The custom field is visible in the UI. */
+  Visible = 'VISIBLE'
 }
 
 export type MercuryCustomSelectFieldOptionInput = {
@@ -45176,6 +45633,7 @@ export type MercuryRiskSort = {
 };
 
 export enum MercuryRiskSortField {
+  Impact = 'IMPACT',
   Name = 'NAME',
   Status = 'STATUS',
   TargetDate = 'TARGET_DATE'
@@ -45186,6 +45644,21 @@ export enum MercuryRiskStatusColor {
   Gray = 'GRAY',
   Green = 'GREEN',
   Red = 'RED'
+}
+
+/** Input for Risk target date (date and granularity). */
+export type MercuryRiskTargetDateInput = {
+  /** The target date in ISO date format (e.g. 2026-03-15). */
+  targetDate: Scalars['String']['input'];
+  /** The granularity: day, month, or quarter. */
+  targetDateType: MercuryRiskTargetDateType;
+};
+
+/** Granularity for a Risk target date. */
+export enum MercuryRiskTargetDateType {
+  Day = 'DAY',
+  Month = 'MONTH',
+  Quarter = 'QUARTER'
 }
 
 export type MercurySetChangeProposalCustomFieldInput = {
@@ -45512,6 +45985,13 @@ export type MercuryUpdateCostItemInvestmentCategoryInput = {
   investmentCategoryId?: InputMaybe<Scalars['ID']['input']>;
 };
 
+export type MercuryUpdateCostItemNameInput = {
+  /** The ARI of the Cost Item. */
+  id: Scalars['ID']['input'];
+  /** The new name of the Cost Item. */
+  name: Scalars['String']['input'];
+};
+
 export type MercuryUpdateCostPeriodValueAmountInput = {
   /** The new amount of funds. */
   amount: Scalars['String']['input'];
@@ -45592,6 +46072,13 @@ export type MercuryUpdateFocusAreaTargetDateInput = {
   targetDateType?: InputMaybe<MercuryTargetDateType>;
 };
 
+export type MercuryUpdateInsightWidgetInput = {
+  cloudId: Scalars['ID']['input'];
+  insightWidgetId: Scalars['ID']['input'];
+  /** Natural language prompt */
+  prompt: Scalars['String']['input'];
+};
+
 export type MercuryUpdateInvestmentCategoryNameInput = {
   id: Scalars['ID']['input'];
   /** The name of the Investment Category. */
@@ -45663,6 +46150,13 @@ export type MercuryUpdateRiskDescriptionInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryUpdateRiskImpactInput = {
+  /** The ID of the Risk to update. */
+  id: Scalars['ID']['input'];
+  /** The impact value (Int) from riskImpactValues. Pass the numeric value, not the key. */
+  impact: Scalars['Int']['input'];
+};
+
 export type MercuryUpdateRiskNameInput = {
   /** The ID of the Risk to update. */
   id: Scalars['ID']['input'];
@@ -45677,11 +46171,18 @@ export type MercuryUpdateRiskOwnerInput = {
   owner: Scalars['ID']['input'];
 };
 
+export type MercuryUpdateRiskSubmitterInput = {
+  /** The ID of the Risk to update. */
+  id: Scalars['ID']['input'];
+  /** The new submitter of the Risk. */
+  submitter: Scalars['ID']['input'];
+};
+
 export type MercuryUpdateRiskTargetDateInput = {
   /** The ID of the Risk to update. */
   id: Scalars['ID']['input'];
-  /** The new target date of the Risk (ISO date format). Pass null to clear. */
-  targetDate?: InputMaybe<Scalars['String']['input']>;
+  /** The new target date of the Risk (date and type). Pass null to clear. */
+  targetDate?: InputMaybe<MercuryRiskTargetDateInput>;
 };
 
 export type MercuryUpdateStrategicEventBudgetInput = {
@@ -46479,6 +46980,11 @@ export type PolarisGroupValueInput = {
   label?: InputMaybe<Scalars['String']['input']>;
 };
 
+export enum PolarisNumberColumnDisplay {
+  Disabled = 'DISABLED',
+  Enabled = 'ENABLED'
+}
+
 export enum PolarisPlayKind {
   PolarisBudgetAllocationPlay = 'PolarisBudgetAllocationPlay'
 }
@@ -46688,6 +47194,8 @@ export type PostOfficeScopeEntryInput = {
 export type PostOfficeSubscriptionMatchersInput = {
   atlassianAccountId: Scalars['String']['input'];
   placementId: Scalars['String']['input'];
+  product?: InputMaybe<Scalars['String']['input']>;
+  workspaceAri?: InputMaybe<Scalars['String']['input']>;
 };
 
 export enum PrincipalFilterType {
@@ -54179,6 +54687,34 @@ export enum SpaceViewsPersistenceOption {
   Tree = 'TREE'
 }
 
+export enum SpcsFullSiteScanStatus {
+  Cancelled = 'CANCELLED',
+  Done = 'DONE',
+  Failed = 'FAILED',
+  InProgress = 'IN_PROGRESS',
+  Pending = 'PENDING'
+}
+
+export type SpcsListFullSiteScansInput = {
+  /** Optional pagination cursor for the next page. */
+  cursor?: InputMaybe<Scalars['String']['input']>;
+  /** Optional maximum number of items per page (1–100). */
+  pageSize?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type SpcsStartFullSiteScanInput = {
+  dryRun?: InputMaybe<Scalars['Boolean']['input']>;
+  workspaceAris: Array<Scalars['String']['input']>;
+};
+
+export enum SpcsUpdateScanStatusAction {
+  Cancel = 'CANCEL'
+}
+
+export type SpcsUpdateScanStatusInput = {
+  status: SpcsUpdateScanStatusAction;
+};
+
 export type SpfAddPlanApproverInput = {
   approverId: Scalars['String']['input'];
   planId: Scalars['ID']['input'];
@@ -54560,6 +55096,11 @@ export enum SprintState {
   Closed = 'CLOSED',
   Future = 'FUTURE'
 }
+
+/** Input for starting an export of scanning results. Maps to ExportsRequest (scanId). */
+export type SpssExportFullSiteScanResultsInput = {
+  scanId: Scalars['ID']['input'];
+};
 
 export enum StakeholderCommsAddedFromType {
   Jsm = 'JSM',
@@ -55613,6 +56154,14 @@ export type TeamSearchFilter = {
   teamTypes?: InputMaybe<TeamTypeFilter>;
 };
 
+/** The states that can be used to filter team search results */
+export enum TeamSearchStateV2 {
+  /** The team is currently active */
+  Active = 'ACTIVE',
+  /** The team is currently archived */
+  Disbanded = 'DISBANDED'
+}
+
 /** Input for setting a notification configuration. */
 export type TeamSetNotificationConfigurationInput = {
   /** The ARI of the scope (org or userbase). */
@@ -55707,10 +56256,32 @@ export enum TeamTypeDefaultFor {
   Verified = 'VERIFIED'
 }
 
+export enum TeamTypeDefaultPermissionEntity {
+  OrgAdmin = 'ORG_ADMIN',
+  TeamsAppUser = 'TEAMS_APP_USER'
+}
+
 /** Team Type filter used as input on team search filter */
 export type TeamTypeFilter = {
   /** List of Team Type IDs */
   teamTypeIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+};
+
+/**  Team Type Permissions */
+export enum TeamTypeLevelPermission {
+  CreateTeams = 'CREATE_TEAMS',
+  DeleteTeams = 'DELETE_TEAMS',
+  ManageTeams = 'MANAGE_TEAMS'
+}
+
+export type TeamTypeLevelPermissionInput = {
+  granted: Scalars['Boolean']['input'];
+  permission: TeamTypeLevelPermission;
+};
+
+export type TeamTypePermissionAssignedEntityInput = {
+  entityId: Scalars['ID']['input'];
+  permissions: Array<TeamTypeLevelPermissionInput>;
 };
 
 export enum TeamTypeState {
@@ -55766,6 +56337,13 @@ export type TeamUpdateTeamInput = {
   scopeId: Scalars['ID']['input'];
   /** ID of the team to update */
   teamId: Scalars['ID']['input'];
+};
+
+export type TeamUpdateTeamTypePermissionsInput = {
+  deleted: Array<Scalars['ID']['input']>;
+  scopeId: Scalars['ID']['input'];
+  typeId: Scalars['ID']['input'];
+  updated: Array<TeamTypePermissionAssignedEntityInput>;
 };
 
 export enum TeamworkGraphUserViewedEntityType {
@@ -56101,10 +56679,12 @@ export type TownsquareEditGoalTypeInputV2 = {
  * The access level of the goal. Determines whether anyone can edit the goal or only specific people.
  * - OPEN_EDIT: Anyone can view or edit the goal.
  * - OPEN_VIEW: Only specific people can edit the goal.
+ * - RESTRICTED: The goal is hidden from everyone except people with explicit access.
  */
 export enum TownsquareGoalAccessLevel {
   OpenEdit = 'OPEN_EDIT',
-  OpenView = 'OPEN_VIEW'
+  OpenView = 'OPEN_VIEW',
+  Restricted = 'RESTRICTED'
 }
 
 export enum TownsquareGoalAccessRole {
@@ -56168,6 +56748,14 @@ export enum TownsquareGoalIconKey {
   KeyResult = 'KEY_RESULT',
   Objective = 'OBJECTIVE'
 }
+
+/** Input to manage the access level of a goal. */
+export type TownsquareGoalManageAccessInput = {
+  /** The access level to set on the goal. */
+  accessLevel?: InputMaybe<TownsquareGoalAccessLevel>;
+  /** ID of the goal. */
+  goalId: Scalars['ID']['input'];
+};
 
 /** Represents the method used to calculate the progress of a goal. */
 export enum TownsquareGoalProgressType {
@@ -56777,6 +57365,18 @@ export enum TownsquareMetricValueSortEnum {
   TimeDesc = 'TIME_DESC'
 }
 
+/**
+ * The access level of the project. Controls who can view and edit the project.
+ * - OPEN_EDIT: The project is visible to everyone, and anyone can edit it.
+ * - OPEN_VIEW: The project is visible to everyone, but only people with explicit access can edit it.
+ * - RESTRICTED: The project is hidden from everyone except people with explicit access, who can both view and edit it.
+ */
+export enum TownsquareProjectAccessLevel {
+  OpenEdit = 'OPEN_EDIT',
+  OpenView = 'OPEN_VIEW',
+  Restricted = 'RESTRICTED'
+}
+
 export enum TownsquareProjectAccessRole {
   Editor = 'EDITOR',
   Viewer = 'VIEWER'
@@ -56827,6 +57427,14 @@ export type TownsquareProjectGrantAccessInput = {
   projectId: Scalars['ID']['input'];
   /** Role to assign to the users. */
   role: TownsquareProjectAccessRoleInput;
+};
+
+/** Input to manage the access level of a project. */
+export type TownsquareProjectManageAccessInput = {
+  /** The access level to set on the project. */
+  accessLevel?: InputMaybe<TownsquareProjectAccessLevel>;
+  /** ID of the project. */
+  projectId: Scalars['ID']['input'];
 };
 
 export enum TownsquareProjectPhase {
@@ -57232,6 +57840,11 @@ export type TownsquareProjectsRemoveJiraWorkItemLinkInput = {
 export type TownsquareProjectsRemoveMemberInput = {
   /** ID of the Project that the user to be removed is a contributor to. */
   projectId: Scalars['ID']['input'];
+  /**
+   * When true, also revokes any granted roles (editor/viewer access) for the removed user on the project.
+   * Defaults to false if not provided.
+   */
+  revokeAccess?: InputMaybe<Scalars['Boolean']['input']>;
   /** ID of the user to be removed as a contributor from a Project. */
   userId: Scalars['ID']['input'];
 };
@@ -57250,6 +57863,11 @@ export type TownsquareProjectsRemoveNumericCustomFieldValueInput = {
 export type TownsquareProjectsRemoveTeamContributorsInput = {
   /** ID of the Project to remove the team from. */
   projectId: Scalars['ID']['input'];
+  /**
+   * When true, also revokes any granted roles (editor/viewer access) for the removed team members on the project.
+   * Defaults to false if not provided.
+   */
+  revokeAccess?: InputMaybe<Scalars['Boolean']['input']>;
   /** Th team to remove as a contributor to the Project. */
   teamId: Scalars['ID']['input'];
 };
@@ -57620,6 +58238,11 @@ export enum TrelloBoardPrefsPermissionLevel {
   Public = 'PUBLIC'
 }
 
+/** Arguments passed into the bulkDeleteList mutation. */
+export type TrelloBulkDeleteListInput = {
+  listIds: Array<Scalars['ID']['input']>;
+};
+
 /** Selectable action types for a card */
 export enum TrelloCardActionType {
   AddAttachment = 'ADD_ATTACHMENT',
@@ -57790,6 +58413,10 @@ export type TrelloCardCoverTypeInput = {
 /** TrelloCard external sources, from which cards can be generated */
 export enum TrelloCardExternalSource {
   BrowserExtension = 'BROWSER_EXTENSION',
+  BrowserExtensionHighlight = 'BROWSER_EXTENSION_HIGHLIGHT',
+  BrowserExtensionImage = 'BROWSER_EXTENSION_IMAGE',
+  BrowserExtensionLink = 'BROWSER_EXTENSION_LINK',
+  Confluence = 'CONFLUENCE',
   Email = 'EMAIL',
   Loom = 'LOOM',
   Msteams = 'MSTEAMS',
@@ -57832,6 +58459,21 @@ export type TrelloChecklistTarget = {
   id?: InputMaybe<Scalars['ID']['input']>;
   /** The name of the new checklist to create. */
   name?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Arguments passed into the close board mutation */
+export type TrelloCloseBoardInput = {
+  boardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the convertBoardToTemplate mutation */
+export type TrelloConvertBoardToTemplateInput = {
+  boardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the convertTemplateToBoard mutation */
+export type TrelloConvertTemplateToBoardInput = {
+  boardId: Scalars['ID']['input'];
 };
 
 /** Input type for creating a Trello application (Power-Up / Integration) */
@@ -58311,6 +58953,12 @@ export type TrelloRemoveWorkspaceTagFromBoardInput = {
   tagId: Scalars['ID']['input'];
 };
 
+/** Arguments passed into the reopen board mutation */
+export type TrelloReopenBoardInput = {
+  boardId: Scalars['ID']['input'];
+  keepBillableGuests: Scalars['Boolean']['input'];
+};
+
 /** Arguments passed into the resetCardCover mutation. */
 export type TrelloResetCardCoverInput = {
   /** The ID of the card to reset cover for. */
@@ -58429,6 +59077,12 @@ export type TrelloUpdateAiRuleInput = {
 export type TrelloUpdateBoardBackgroundInput = {
   background?: InputMaybe<TrelloBoardBackgroundInput>;
   id: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the update board description mutation */
+export type TrelloUpdateBoardDescriptionInput = {
+  boardId: Scalars['ID']['input'];
+  description: Scalars['String']['input'];
 };
 
 /** Arguments passed into the update board isTemplate mutation */
@@ -58598,6 +59252,20 @@ export type TrelloUpdateProposedEventInput = {
   startTime?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
+/**
+ * Arguments passed into the updateSmartScheduleBoardPreference mutation.
+ * The member is inferred from the authenticated principal.
+ */
+export type TrelloUpdateSmartScheduleBoardPreferenceInput = {
+  /** Whether to include the member's inbox board in smart schedule runs. */
+  includeInbox?: InputMaybe<Scalars['Boolean']['input']>;
+  /**
+   * Ordered list of boards to target during smart schedule runs.
+   * An empty list means only inbox is eligible.
+   */
+  preferredBoards?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
 /** Arguments passed to update tag in workspace mutation */
 export type TrelloUpdateWorkspaceTagInput = {
   name: Scalars['String']['input'];
@@ -58625,15 +59293,23 @@ export enum TrelloWorkOverviewDashboardJobStatus {
    * Note that some errors may have still been encountered, but not considered fatal.
    */
   Completed = 'COMPLETED',
-  /** The scaffolding job is creating the host board. */
-  Creating = 'CREATING',
+  /** The scaffolding job has created a host board for its contents. */
+  Created = 'CREATED',
+  /** The scaffolding job has discovered all source boards. */
+  Discovered = 'DISCOVERED',
+  /** The scaffolding job has been created, but not started executing. */
+  Enqueued = 'ENQUEUED',
   /**
    * The scaffolding job encountered a fatal error and could not complete.
    * No further progress will be made.
    */
   Failed = 'FAILED',
-  /** The scaffolding job is still waiting to begin. */
-  Pending = 'PENDING'
+  /** The scaffolding job has performed a one-time import of contents. */
+  Imported = 'IMPORTED',
+  /** The scaffolding job has started executing. */
+  Started = 'STARTED',
+  /** The scaffolding job has created sync rules for future updates to contents. */
+  Synced = 'SYNCED'
 }
 
 /** Membership types for a TrelloWorkspace */
@@ -59492,9 +60168,16 @@ export type UpdatePolarisTreeConfig = {
 };
 
 export type UpdatePolarisTreeHierarchyItem = {
+  fields?: InputMaybe<Array<Scalars['ID']['input']>>;
   filter?: InputMaybe<Array<PolarisViewFilterInput>>;
-  items?: InputMaybe<Array<Scalars['JSON']['input']>>;
+  items?: InputMaybe<Array<UpdatePolarisTreeHierarchyItemEntry>>;
   type?: InputMaybe<PolarisTreeHierarchyType>;
+};
+
+export type UpdatePolarisTreeHierarchyItemEntry = {
+  fieldKey?: InputMaybe<Scalars['String']['input']>;
+  issueId?: InputMaybe<Scalars['String']['input']>;
+  issueTypeName?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type UpdatePolarisViewInput = {
@@ -59536,6 +60219,7 @@ export type UpdatePolarisViewInput = {
   matrixConfig?: InputMaybe<UpdatePolarisMatrixConfig>;
   /**  view to update, if this is an UPDATE operation */
   name?: InputMaybe<Scalars['String']['input']>;
+  numberColumnDisplay?: InputMaybe<PolarisNumberColumnDisplay>;
   showConnectionsMatchingColumn?: InputMaybe<Scalars['Boolean']['input']>;
   showConnectionsMatchingGroup?: InputMaybe<Scalars['Boolean']['input']>;
   /**  what are the (ordered) vertical grouping values */

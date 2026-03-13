@@ -11,7 +11,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css';
 
-import { AppProvider } from './context/App';
+import { AppProvider } from './context/AppContext';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';
@@ -21,9 +21,8 @@ import { SettingsRoute } from './routes/Settings';
 import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
 
-import { GlobalShortcuts } from './components/GlobalShortcuts';
+import { AppRouterEffects } from './components/AppRouterEffects';
 import { AppLayout } from './components/layout/AppLayout';
-import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
 import { queryClient } from './utils/api/client';
 import { migrateLegacyStoreToZustand } from './utils/core/storage';
@@ -54,9 +53,8 @@ export const App: FC = () => {
     <QueryClientProvider client={queryClient}>
       <AppProvider>
         <Router>
-          <AppAnalytics />
+          <AppRouterEffects />
           <AppLayout>
-            <GlobalShortcuts />
             <Routes>
               <Route
                 element={

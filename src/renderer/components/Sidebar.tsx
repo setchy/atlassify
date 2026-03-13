@@ -26,16 +26,18 @@ import { AtlassifyIcon } from './icons/AtlassifyIcon';
 const SidebarComponent: FC = () => {
   const { t } = useTranslation();
 
-  const { shortcuts } = useGlobalShortcuts();
-
-  const theme = useThemeObserver();
-
   const {
     isFetching,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
+    fetchNotifications,
+    isLoading,
   } = useAppContext();
+
+  const { shortcuts } = useGlobalShortcuts({ fetchNotifications, isLoading });
+
+  const theme = useThemeObserver();
 
   // Account store values
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());

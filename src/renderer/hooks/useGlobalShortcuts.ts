@@ -7,7 +7,6 @@ import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { quitApp, trackEvent } from '../utils/system/comms';
 import { openMyNotifications } from '../utils/system/links';
-import { useAppContext } from './useAppContext';
 
 type ShortcutName =
   | 'home'
@@ -32,17 +31,29 @@ type ShortcutConfig = {
 
 type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
 
+interface UseGlobalShortcutsOptions {
+  /** Triggers a notifications refresh. */
+  fetchNotifications: () => Promise<void>;
+  /** Whether a notifications fetch is currently in-flight. */
+  isLoading: boolean;
+}
+
+interface UseGlobalShortcutsResult {
+  /** All shortcut configs, actions, and enabled state. */
+  shortcuts: ShortcutConfigs;
+}
+
 /**
  * Centralized shortcut actions, enabled state, and hotkeys.
- * Used by both the global shortcuts component and UI buttons to avoid duplication.
- *
- * @returns { shortcuts: ShortcutConfigs } - All shortcut configs and actions.
+ * Used by both the global keyboard listener and UI shortcut hint buttons.
  */
-export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
+export function useGlobalShortcuts({
+  fetchNotifications,
+  isLoading,
+}: UseGlobalShortcutsOptions): UseGlobalShortcutsResult {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, isLoading } = useAppContext();
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   const isOnNotificationsRoute = location.pathname === '/';
@@ -137,8 +148,6 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
         action: () => {
           if (isOnSettingsRoute) {
             navigate('/', { replace: true });
-
-            fetchNotifications();
           } else {
             navigate('/settings');
           }

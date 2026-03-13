@@ -9,18 +9,19 @@ import { useAccountsStore } from '../stores';
 
 import { accountsKeys } from '../utils/api/queryKeys';
 
-interface AccountsState {
+interface UseAccountsResult {
+  /** Whether the accounts query is currently loading. */
   isLoading: boolean;
+  /** Any error thrown during the last fetch, or `null`. */
   error: Error | null;
+  /** Manually triggers an immediate accounts refresh. */
   refreshAccounts: () => Promise<void>;
 }
 
 /**
  * Custom hook to manage scheduled refresh of accounts.
- *
- * @returns Account loading state, any fetch error, and a manual `refreshAccounts` callback.
  */
-export const useAccounts = (): AccountsState => {
+export const useAccounts = (): UseAccountsResult => {
   const accounts = useAccountsStore((s) => s.accounts);
   const refreshAccount = useAccountsStore.getState().refreshAccount;
 
@@ -60,9 +61,10 @@ export const useAccounts = (): AccountsState => {
    * ensuring accounts stay fresh even when the app is hidden in the system tray.
    * It also provides graceful recovery after system sleep/suspend cycles.
    */
-  useIntervalTimer(() => {
-    refetch();
-  }, Constants.REFRESH_ACCOUNTS_INTERVAL_MS);
+  useIntervalTimer({
+    callback: () => refetch(),
+    delay: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
+  });
 
   const refreshAccounts = useCallback(async () => {
     await refetch();

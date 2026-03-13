@@ -1,16 +1,11 @@
-import { createContext, type ReactNode, useEffect, useMemo } from 'react';
-
-import { onlineManager } from '@tanstack/react-query';
+import { createContext, type ReactNode, useMemo } from 'react';
 
 import { useAccounts } from '../hooks/useAccounts';
+import { useAppReset } from '../hooks/useAppReset';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import { useNotifications } from '../hooks/useNotifications';
-import {
-  useAccountsStore,
-  useFiltersStore,
-  useRuntimeStore,
-  useSettingsStore,
-} from '../stores';
+import { useOnlineSync } from '../hooks/useOnlineSync';
+import { useRuntimeStore } from '../stores';
 
 import type {
   AccountNotifications,
@@ -41,18 +36,13 @@ export interface AppContextState {
   ) => Promise<void>;
 
   focusedNotificationId: string | null;
+
+  refreshAccounts: () => Promise<void>;
 }
 
-export const AppContext = createContext<Partial<AppContextState> | undefined>(
-  undefined,
-);
+export const AppContext = createContext<AppContextState | null>(null);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  // Get store actions and reset functions
-  const resetAccounts = useAccountsStore((s) => s.reset);
-  const resetFilters = useFiltersStore((s) => s.reset);
-  const resetSettings = useSettingsStore((s) => s.reset);
-
   const {
     isLoading,
     isFetching,
@@ -71,41 +61,21 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
+  // Sync online/offline state into runtime store
+  useOnlineSync();
+
   const isOnline = useRuntimeStore((s) => s.isOnline);
 
-  // Subscribe to onlineManager and write changes into the runtime store.
-  useEffect(() => {
-    const syncOnlineState = () => {
-      useRuntimeStore.getState().updateIsOnline(onlineManager.isOnline());
-    };
-    const unsubscribe = onlineManager.subscribe(syncOnlineState);
-
-    /**
-     * onlineManager initializes #online = true regardless of actual network state.
-     * it only corrects itself when the first online/offline window event fires.
-     * Calling setOnline(navigator.onLine) syncs its internal flag so
-     * that future online→offline→online transitions are detected correctly.
-     */
-    onlineManager.setOnline(navigator.onLine);
-
-    return () => unsubscribe();
-  }, []);
-
   // Periodic account refreshes
-  useAccounts();
+  const { refreshAccounts } = useAccounts();
 
   // Keyboard navigation
   const { focusedNotificationId } = useKeyboardNavigation({
     notifications,
   });
 
-  useEffect(() => {
-    window.atlassify.onResetApp(() => {
-      resetAccounts();
-      resetSettings();
-      resetFilters();
-    });
-  }, [resetAccounts, resetSettings, resetFilters]);
+  // Full app reset via IPC
+  useAppReset();
 
   const contextValues: AppContextState = useMemo(
     () => ({
@@ -127,6 +97,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      refreshAccounts,
     }),
     [
       isOnline,
@@ -147,6 +119,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       markNotificationsUnread,
 
       focusedNotificationId,
+
+      refreshAccounts,
     ],
   );
 

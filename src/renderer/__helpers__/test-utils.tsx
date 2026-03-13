@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 
-import { AppContext, type AppContextState } from '../context/App';
+import { AppContext, type AppContextState } from '../context/AppContext';
 
 export { navigateMock } from './vitest.setup';
 
@@ -51,7 +51,9 @@ function AppContextProvider({
 
   return (
     <MemoryRouter initialEntries={initialEntries}>
-      <AppContext.Provider value={defaultValue}>{children}</AppContext.Provider>
+      <AppContext.Provider value={defaultValue as AppContextState}>
+        {children}
+      </AppContext.Provider>
     </MemoryRouter>
   );
 }

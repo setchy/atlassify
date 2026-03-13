@@ -53,7 +53,7 @@ import { raiseNativeNotification } from '../utils/system/native';
 /**
  * State and actions for notifications management.
  */
-interface NotificationsState {
+interface UseNotificationsResult {
   isLoading: boolean;
   isFetching: boolean;
   isErrorOrPaused: boolean;
@@ -81,7 +81,7 @@ interface NotificationsState {
  *
  * @returns Notifications state and action callbacks.
  */
-export const useNotifications = (): NotificationsState => {
+export const useNotifications = (): UseNotificationsResult => {
   const queryClient = useQueryClient();
 
   // Track previous notifications for diffing new notifications
@@ -177,9 +177,10 @@ export const useNotifications = (): NotificationsState => {
    * ensuring notifications stay fresh even when the app is hidden in the system tray.
    * It also provides graceful recovery after system sleep/suspend cycles.
    */
-  useIntervalTimer(() => {
-    refetch();
-  }, Constants.FETCH_NOTIFICATIONS_INTERVAL_MS);
+  useIntervalTimer({
+    callback: () => refetch(),
+    delay: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+  });
 
   // Determine global error from query state
   const globalError: AtlassifyError | null = useMemo(() => {

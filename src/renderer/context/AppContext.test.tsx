@@ -6,7 +6,7 @@ import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mock
 import { useAppContext } from '../hooks/useAppContext';
 import { useNotifications } from '../hooks/useNotifications';
 
-import { type AppContextState, AppProvider } from './App';
+import { type AppContextState, AppProvider } from './AppContext';
 
 vi.mock('../hooks/useNotifications');
 
