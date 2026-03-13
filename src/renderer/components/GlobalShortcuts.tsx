@@ -1,15 +1,21 @@
 import { type FC, useEffect } from 'react';
 
+import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 
-import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/keyboard';
+import {
+  getNormalizedKey,
+  shouldIgnoreKeyboardEvent,
+} from '../utils/ui/keyboard';
 
-/**let
+/**
  * Component that registers global keyboard shortcuts for the renderer app.
  * Mount once inside App, within Router + AppProvider.
  */
 export const GlobalShortcuts: FC = () => {
-  const { shortcuts } = useGlobalShortcuts();
+  const { fetchNotifications, isLoading } = useAppContext();
+
+  const { shortcuts } = useGlobalShortcuts({ fetchNotifications, isLoading });
 
   useEffect(() => {
     const keyToName = new Map<string, keyof typeof shortcuts>(

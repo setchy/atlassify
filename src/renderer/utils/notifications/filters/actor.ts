@@ -1,7 +1,7 @@
 import AutomationIcon from '@atlaskit/icon/core/automation';
 import PersonIcon from '@atlaskit/icon/core/person';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,
@@ -11,7 +11,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import { isCompassScorecardNotification } from '../../helpers';
+import { isCompassScorecardNotification } from '../formatters';
 
 const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   user: {
@@ -26,6 +26,9 @@ const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
   },
 };
 
+/**
+ * Filter implementation for the notification actor type (user vs automation).
+ */
 export const actorFilter: Filter<ActorType> = {
   FILTER_TYPES: ACTOR_DETAILS,
 
@@ -65,6 +68,18 @@ export const actorFilter: Filter<ActorType> = {
   },
 };
 
+/**
+ * Infers whether a notification was triggered by a human user or an automated actor.
+ *
+ * A notification is classified as `'automation'` when:
+ * - The actor has no display name
+ * - It is a Compass scorecard notification
+ * - The product type is `rovo_dev`
+ * - The actor display name starts with `'Automation for'`
+ *
+ * @param notification - The notification to inspect.
+ * @returns `'automation'` if the actor is automated, `'user'` otherwise.
+ */
 export function inferNotificationActor(
   notification: AtlassifyNotification,
 ): ActorType {

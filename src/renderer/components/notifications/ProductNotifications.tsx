@@ -11,10 +11,10 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 import type { AtlassifyNotification } from '../../types';
 
-import { openExternalLink } from '../../utils/comms';
-import { getChevronDetails } from '../../utils/helpers';
-import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
-import { isLightMode } from '../../utils/theme';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
+import { openExternalLink } from '../../utils/system/comms';
+import { getChevronDetails } from '../../utils/ui/display';
+import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
@@ -24,12 +24,13 @@ export interface ProductNotificationsProps {
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
 }) => {
-  const { markNotificationsRead } = useAppContext();
-
   const { t } = useTranslation();
+
+  const { markNotificationsRead } = useAppContext();
 
   const [shouldAnimateProductExit, setShouldAnimateProductExit] =
     useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
   const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
     useState(true);
 
@@ -42,8 +43,22 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateProductExit(shouldAnimateExit);
-    markNotificationsRead(productNotifications);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateProductExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead(productNotifications);
+    }
+  };
+
+  const handleProductTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    if (pendingMarkAsRead) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead(productNotifications);
+    }
   };
 
   const actionToggleProductNotifications = () => {
@@ -153,14 +168,21 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         </Flex>
       </Box>
 
-      {isProductNotificationsVisible &&
-        productNotifications.map((notification) => (
-          <NotificationRow
-            isProductAnimatingExit={shouldAnimateProductExit}
-            key={notification.id}
-            notification={notification}
-          />
-        ))}
+      {isProductNotificationsVisible && (
+        <div
+          className={shouldAnimateProductExit ? 'notification-exit' : ''}
+          data-testid="product-notifications-wrapper"
+          onTransitionEnd={handleProductTransitionEnd}
+        >
+          {productNotifications.map((notification) => (
+            <NotificationRow
+              isProductAnimatingExit={shouldAnimateProductExit}
+              key={notification.id}
+              notification={notification}
+            />
+          ))}
+        </div>
+      )}
     </Stack>
   );
 };

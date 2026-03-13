@@ -20,7 +20,7 @@ import Tooltip from '@atlaskit/tooltip';
 import { Constants } from '../../constants';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type {
   Account,
@@ -28,10 +28,13 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
-import { getChevronDetails } from '../../utils/helpers';
-import { openAccountProfile, openMyPullRequests } from '../../utils/links';
 import { groupNotificationsByProduct } from '../../utils/notifications/group';
-import { isLightMode } from '../../utils/theme';
+import {
+  openAccountProfile,
+  openMyPullRequests,
+} from '../../utils/system/links';
+import { getChevronDetails } from '../../utils/ui/display';
+import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
@@ -51,9 +54,9 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const { account, notifications, hasMoreNotifications, showAccountHeader } =
     props;
 
-  const { markNotificationsRead } = useAppContext();
-
   const { t } = useTranslation();
+
+  const { markNotificationsRead } = useAppContext();
 
   const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
     useState(true);
@@ -107,13 +110,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
   };
 
-  const hasNotifications = useMemo(
-    () => notifications.length > 0,
-    [notifications],
-  );
+  const hasAccountNotifications = notifications.length > 0;
 
   const Chevron = getChevronDetails(
-    hasNotifications,
+    hasAccountNotifications,
     isAccountNotificationsVisible,
     'account',
   );
@@ -238,7 +238,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         <Fragment>
           {props.error && <Oops error={props.error} />}
 
-          {!hasNotifications && !props.error && <AllRead />}
+          {!hasAccountNotifications && !props.error && <AllRead />}
 
           {groupByProduct
             ? groupedNotifications.map(

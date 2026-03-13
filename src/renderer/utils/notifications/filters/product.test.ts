@@ -3,7 +3,7 @@ import {
   mockSingleAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 

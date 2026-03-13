@@ -151,11 +151,16 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
         </div>
       </div>
     </div>
-    <div>
-      NotificationRow
-    </div>
-    <div>
-      NotificationRow
+    <div
+      class=""
+      data-testid="product-notifications-wrapper"
+    >
+      <div>
+        NotificationRow
+      </div>
+      <div>
+        NotificationRow
+      </div>
     </div>
   </div>
 </div>
@@ -312,11 +317,16 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
         </div>
       </div>
     </div>
-    <div>
-      NotificationRow
-    </div>
-    <div>
-      NotificationRow
+    <div
+      class=""
+      data-testid="product-notifications-wrapper"
+    >
+      <div>
+        NotificationRow
+      </div>
+      <div>
+        NotificationRow
+      </div>
     </div>
   </div>
 </div>
@@ -473,11 +483,16 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should tog
         </div>
       </div>
     </div>
-    <div>
-      NotificationRow
-    </div>
-    <div>
-      NotificationRow
+    <div
+      class=""
+      data-testid="product-notifications-wrapper"
+    >
+      <div>
+        NotificationRow
+      </div>
+      <div>
+        NotificationRow
+      </div>
     </div>
   </div>
 </div>

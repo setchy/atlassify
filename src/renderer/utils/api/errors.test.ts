@@ -2,12 +2,19 @@ import { AxiosError, type AxiosResponse } from 'axios';
 
 import { EVENTS } from '../../../shared/events';
 
+import { useRuntimeStore } from '../../stores';
+
 import type { AtlassianAPIError } from './types';
 
-import { Errors } from '../errors';
+import { Errors } from '../core/errors';
 import { determineFailureType } from './errors';
 
 describe('renderer/utils/api/errors.ts', () => {
+  beforeEach(() => {
+    // Reset online status between tests to prevent state leak
+    useRuntimeStore.getState().updateIsOnline(true);
+  });
+
   describe('bad credentials errors', () => {
     it('bad credentials - 401', async () => {
       const mockError: Partial<AxiosError<AtlassianAPIError>> = {
@@ -74,6 +81,19 @@ describe('renderer/utils/api/errors.ts', () => {
     );
 
     expect(result).toBe(Errors.NETWORK);
+  });
+
+  it('offline error', async () => {
+    useRuntimeStore.getState().updateIsOnline(false);
+    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
+      code: AxiosError.ERR_NETWORK,
+    };
+
+    const result = determineFailureType(
+      mockError as AxiosError<AtlassianAPIError>,
+    );
+
+    expect(result).toBe(Errors.OFFLINE);
   });
 
   it('unknown error', async () => {

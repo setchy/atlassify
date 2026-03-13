@@ -4,22 +4,28 @@ import { useTranslation } from 'react-i18next';
 import { Checkbox } from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import InlineMessage from '@atlaskit/inline-message';
-import { Inline, Stack } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
+import { Radio } from '@atlaskit/radio';
 
-import { APPLICATION } from '../../../shared/constants';
+import { useSettingsStore } from '../../stores';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import trayActiveIcon from '../../../../assets/images/tray-active@2x.png';
+import trayIdleWhiteIcon from '../../../../assets/images/tray-idle-white@2x.png';
+import trayIdleIcon from '../../../../assets/images/tray-idleTemplate@2x.png';
 
 export const TraySettings: FC = () => {
+  const { t } = useTranslation();
+
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
 
+  // Setting store values
   const showNotificationsCountInTray = useSettingsStore(
     (s) => s.showNotificationsCountInTray,
   );
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
-
-  const { t } = useTranslation();
 
   return (
     <Stack space="space.100">
@@ -31,56 +37,87 @@ export const TraySettings: FC = () => {
             isChecked={showNotificationsCountInTray}
             label={t('settings.tray.show_count_in_tray')}
             name="showNotificationsCountInTray"
-            onChange={() =>
-              updateSetting(
-                'showNotificationsCountInTray',
-                !showNotificationsCountInTray,
-              )
-            }
+            onChange={() => toggleSetting('showNotificationsCountInTray')}
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.tray.show_count_in_tray_help')}
             </div>
           </InlineMessage>
         </Inline>
       )}
 
-      <Inline space="space.100">
-        <Checkbox
-          isChecked={useUnreadActiveIcon}
-          label={t('settings.tray.unread_active_icon')}
-          name="useUnreadActiveIcon"
-          onChange={() =>
-            updateSetting('useUnreadActiveIcon', !useUnreadActiveIcon)
-          }
-        />
-        <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
-            {t('settings.tray.unread_active_icon_help', {
-              appName: APPLICATION.NAME,
-            })}
-          </div>
-        </InlineMessage>
-      </Inline>
+      <Box paddingInlineStart="space.050">
+        <div className="flex items-center gap-2">
+          <Text weight="medium">{t('settings.tray.alternate_icon')}:</Text>
+          <Radio
+            isChecked={!useAlternateIdleIcon}
+            label={
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayIdleIcon} />
+                <span>{t('settings.tray.idle_icon_default')}</span>
+              </span>
+            }
+            name="useAlternateIdleIcon"
+            onChange={() => updateSetting('useAlternateIdleIcon', false)}
+            value="false"
+          />
+          <Radio
+            isChecked={useAlternateIdleIcon}
+            label={
+              <span className="tray-icon-pill-dark">
+                <img alt="" className="tray-icon" src={trayIdleWhiteIcon} />
+                <span className="text-white">
+                  {t('settings.tray.idle_icon_alternate')}
+                </span>
+              </span>
+            }
+            name="useAlternateIdleIcon"
+            onChange={() => updateSetting('useAlternateIdleIcon', true)}
+            value="true"
+          />
+          <InlineMessage appearance="info">
+            <div className="settings-help-text">
+              {t('settings.tray.alternate_icon_help')}
+            </div>
+          </InlineMessage>
+        </div>
+      </Box>
 
-      <Inline space="space.100">
-        <Checkbox
-          isChecked={useAlternateIdleIcon}
-          label={t('settings.tray.alternate_icon')}
-          name="useAlternateIdleIcon"
-          onChange={() =>
-            updateSetting('useAlternateIdleIcon', !useAlternateIdleIcon)
-          }
-        />
-        <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
-            {t('settings.tray.alternate_icon_help', {
-              appName: APPLICATION.NAME,
-            })}
-          </div>
-        </InlineMessage>
-      </Inline>
+      <Box paddingInlineStart="space.050">
+        <div className="flex items-center gap-2">
+          <Text weight="medium">{t('settings.tray.unread_active_icon')}:</Text>
+          <Radio
+            isChecked={useUnreadActiveIcon}
+            label={
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayActiveIcon} />
+                <span>{t('settings.tray.unread_icon_highlighted')}</span>
+              </span>
+            }
+            name="useUnreadActiveIcon"
+            onChange={() => updateSetting('useUnreadActiveIcon', true)}
+            value="true"
+          />
+          <Radio
+            isChecked={!useUnreadActiveIcon}
+            label={
+              <span className="tray-icon-pill">
+                <img alt="" className="tray-icon" src={trayIdleIcon} />
+                <span>{t('settings.tray.unread_icon_stealth')}</span>
+              </span>
+            }
+            name="useUnreadActiveIcon"
+            onChange={() => updateSetting('useUnreadActiveIcon', false)}
+            value="false"
+          />
+          <InlineMessage appearance="info">
+            <div className="settings-help-text">
+              {t('settings.tray.unread_active_icon_help')}
+            </div>
+          </InlineMessage>
+        </div>
+      </Box>
     </Stack>
   );
 };

@@ -10,24 +10,24 @@ import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type { AtlassifyNotification } from '../../types';
 
-import { cn } from '../../utils/cn';
-import {
-  blockAlignmentByLength,
-  formatNotificationBodyText,
-  formatNotificationFooterText,
-  formatNotificationUpdatedAt,
-  isCompassScorecardNotification,
-} from '../../utils/helpers';
-import { openNotification } from '../../utils/links';
 import {
   categoryFilter,
   readStateFilter,
 } from '../../utils/notifications/filters';
-import { shouldRemoveNotificationsFromState } from '../../utils/notifications/remove';
+import {
+  formatNotificationBodyText,
+  formatNotificationFooterText,
+  formatNotificationUpdatedAt,
+  isCompassScorecardNotification,
+} from '../../utils/notifications/formatters';
+import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
+import { openNotification } from '../../utils/system/links';
+import { cn } from '../../utils/ui/cn';
+import { blockAlignmentByLength } from '../../utils/ui/display';
 
 export interface NotificationRowProps {
   notification: AtlassifyNotification;
@@ -38,40 +38,61 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   notification,
   isProductAnimatingExit,
 }: NotificationRowProps) => {
+  const { t } = useTranslation();
+
+  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
+
   const {
     markNotificationsRead,
     markNotificationsUnread,
     focusedNotificationId,
   } = useAppContext();
 
-  const { t } = useTranslation();
+  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
+    useState(false);
+  const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
 
   const isFocused = focusedNotificationId === notification.id;
 
-  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
-    useState(false);
-
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
-  const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
-
   const actionNotificationInteraction = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit && markAsReadOnOpen);
-
     if (markAsReadOnOpen) {
-      markNotificationsRead([notification]);
+      if (shouldAnimateExit) {
+        // Trigger animation, mark as read after animation completes
+        setShouldAnimateNotificationExit(true);
+        setPendingMarkAsRead(true);
+      } else {
+        // No animation needed, mark as read immediately
+        markNotificationsRead([notification]);
+      }
     }
 
     openNotification(notification);
   };
 
   const actionMarkAsRead = () => {
-    setShouldAnimateNotificationExit(shouldAnimateExit);
-    markNotificationsRead([notification]);
+    if (shouldAnimateExit) {
+      // Trigger animation, mark as read after animation completes
+      setShouldAnimateNotificationExit(true);
+      setPendingMarkAsRead(true);
+    } else {
+      // No animation needed, mark as read immediately
+      markNotificationsRead([notification]);
+    }
   };
 
   const actionMarkAsUnread = () => {
     markNotificationsUnread([notification]);
+  };
+
+  const handleTransitionEnd = () => {
+    // After animation completes, execute pending mutation if any
+    // Only trigger if this is an individual notification animation, not a product group animation
+    if (pendingMarkAsRead && !isProductAnimatingExit) {
+      setPendingMarkAsRead(false);
+      markNotificationsRead([notification]);
+    }
   };
 
   const updatedAt = formatNotificationUpdatedAt(notification);
@@ -118,11 +139,12 @@ export const NotificationRow: FC<NotificationRowProps> = ({
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         isFocused && 'bg-atlassify-notifications',
         (isProductAnimatingExit || shouldAnimateNotificationExit) &&
-          'translate-x-full opacity-0 transition duration-350 ease-in-out',
+          'notification-exit',
       )}
       data-notification-id={notification.id}
       data-notification-row="true"
       id={notification.id}
+      onTransitionEnd={handleTransitionEnd}
       style={focusedStyles}
     >
       <Box padding="space.100">

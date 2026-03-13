@@ -7,37 +7,33 @@ import {
   useLocation,
 } from 'react-router-dom';
 
-import { AppProvider } from './context/App';
+import { QueryClientProvider } from '@tanstack/react-query';
+
+import './App.css';
+
+import { AppProvider } from './context/AppContext';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
-
-import './App.css';
-
-import { QueryClientProvider } from '@tanstack/react-query';
-
+import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
-import useAccountsStore from './stores/useAccountsStore';
 
-import { GlobalShortcuts } from './components/GlobalShortcuts';
+import { AppRouterEffects } from './components/AppRouterEffects';
 import { AppLayout } from './components/layout/AppLayout';
-import { AppAnalytics } from './components/NavigationAnalyticsListener';
 
 import { queryClient } from './utils/api/client';
-import { rendererLogError } from './utils/logger';
-import { migrateContextToZustand } from './utils/storage';
+import { migrateLegacyStoreToZustand } from './utils/core/storage';
 
-// Run migration from Context storage to Zustand stores (async)
-migrateContextToZustand().catch((error) => {
-  rendererLogError('App', 'Failed to migrate storage', error);
-});
+// Run migration from legacy local storage to Zustand stores (async)
+migrateLegacyStoreToZustand();
 
 function RequireAuth({ children }) {
-  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
   const location = useLocation();
+
+  const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   return isLoggedIn ? (
     children
@@ -57,9 +53,8 @@ export const App: FC = () => {
     <QueryClientProvider client={queryClient}>
       <AppProvider>
         <Router>
-          <AppAnalytics />
+          <AppRouterEffects />
           <AppLayout>
-            <GlobalShortcuts />
             <Routes>
               <Route
                 element={

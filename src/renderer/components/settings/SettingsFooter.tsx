@@ -10,19 +10,22 @@ import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
+import { useAppContext } from '../../hooks/useAppContext';
 import { useGlobalShortcuts } from '../../hooks/useGlobalShortcuts';
 
 import { Footer } from '../primitives/Footer';
 
-import { getAppVersion } from '../../utils/comms';
-import { openAtlassifyReleaseNotes } from '../../utils/links';
+import { getAppVersion } from '../../utils/system/comms';
+import { openAtlassifyReleaseNotes } from '../../utils/system/links';
 
 export const SettingsFooter: FC = () => {
-  const [appVersion, setAppVersion] = useState<string | null>(null);
-
   const { t } = useTranslation();
 
-  const { shortcuts } = useGlobalShortcuts();
+  const { fetchNotifications, isLoading } = useAppContext();
+
+  const { shortcuts } = useGlobalShortcuts({ fetchNotifications, isLoading });
+
+  const [appVersion, setAppVersion] = useState<string | null>(null);
 
   useEffect(() => {
     (async () => {

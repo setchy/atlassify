@@ -1,12 +1,23 @@
 import { contextBridge, webFrame } from 'electron';
 
 import { APPLICATION } from '../shared/constants';
-import { EVENTS } from '../shared/events';
+import {
+  EVENTS,
+  type TrayAppState,
+  type TrayIdleIconVariant,
+  type TrayUnreadIconVariant,
+} from '../shared/events';
 import { isLinux, isMacOS, isWindows } from '../shared/platform';
 
 import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
 
+/**
+ * The Atlassify Bridge API exposed to the renderer process via `contextBridge`.
+ * Provides a safe, sandboxed interface for IPC communication between renderer and main.
+ * Accessible as `window.atlassify` in the renderer.
+ */
 export const api = {
+  /** Opens a URL in the system default browser. Only HTTPS URLs are forwarded. */
   openExternalLink: (url: string, openInForeground: boolean) => {
     sendMainEvent(EVENTS.OPEN_EXTERNAL, {
       url: url,
@@ -14,18 +25,22 @@ export const api = {
     });
   },
 
+  /** Encrypts a plaintext string using Electron's safeStorage. */
   encryptValue: (value: string) =>
     invokeMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, value),
 
+  /** Decrypts a previously encrypted string using Electron's safeStorage. */
   decryptValue: (value: string) =>
     invokeMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, value),
 
+  /** Enables or disables auto-launch of the application on system startup. */
   setAutoLaunch: (value: boolean) =>
     sendMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, {
       openAtLogin: value,
       openAsHidden: value,
     }),
 
+  /** Registers or unregisters the global keyboard shortcut to toggle the application window. */
   setKeyboardShortcut: (keyboardShortcut: boolean) => {
     sendMainEvent(EVENTS.UPDATE_KEYBOARD_SHORTCUT, {
       enabled: keyboardShortcut,
@@ -33,24 +48,32 @@ export const api = {
     });
   },
 
+  /** Tray icon controls. */
   tray: {
-    updateColor: (notificationsCount = 0, isOnline = true) => {
-      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, { notificationsCount, isOnline });
+    updateColor: (
+      notificationsCount,
+      appState: TrayAppState,
+      idleIconVariant: TrayIdleIconVariant,
+      unreadIconVariant: TrayUnreadIconVariant,
+    ) => {
+      sendMainEvent(EVENTS.UPDATE_ICON_COLOR, {
+        notificationsCount,
+        appState,
+        idleIconVariant,
+        unreadIconVariant,
+      });
     },
 
     updateTitle: (title = '') => sendMainEvent(EVENTS.UPDATE_ICON_TITLE, title),
-
-    useAlternateIdleIcon: (value: boolean) =>
-      sendMainEvent(EVENTS.USE_ALTERNATE_IDLE_ICON, value),
-
-    useUnreadActiveIcon: (value: boolean) =>
-      sendMainEvent(EVENTS.USE_UNREAD_ACTIVE_ICON, value),
   },
 
+  /** Returns the absolute path to the notification sound file. */
   notificationSoundPath: () => invokeMainEvent(EVENTS.NOTIFICATION_SOUND_PATH),
 
+  /** Returns the absolute path to the local Twemoji SVG asset directory. */
   twemojiDirectory: () => invokeMainEvent(EVENTS.TWEMOJI_DIRECTORY),
 
+  /** Platform detection helpers (replicates Node.js `process.platform` checks in the sandboxed renderer). */
   platform: {
     isLinux: () => isLinux(),
 
@@ -59,6 +82,7 @@ export const api = {
     isWindows: () => isWindows(),
   },
 
+  /** Application lifecycle controls. */
   app: {
     hide: () => sendMainEvent(EVENTS.WINDOW_HIDE),
 
@@ -77,20 +101,24 @@ export const api = {
     },
   },
 
+  /** Electron `webFrame` zoom controls. */
   zoom: {
     getLevel: () => webFrame.getZoomLevel(),
 
     setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
   },
 
+  /** Registers a callback invoked when the main process requests a full app reset. */
   onResetApp: (callback: () => void) => {
     onRendererEvent(EVENTS.RESET_APP, () => callback());
   },
 
+  /** Registers a callback invoked when the OS system theme changes. */
   onSystemThemeUpdate: (callback: (theme: string) => void) => {
     onRendererEvent(EVENTS.UPDATE_THEME, (_, theme) => callback(theme));
   },
 
+  /** Raises a native OS notification. Clicking opens the entity URL or shows the app window. */
   raiseNativeNotification: (title: string, body: string, url?: string) => {
     const notification = new Notification(title, { body: body, silent: true });
     notification.onclick = () => {
@@ -105,6 +133,7 @@ export const api = {
     return notification;
   },
 
+  /** Aptabase analytics helpers. */
   aptabase: {
     trackEvent: (
       eventName: string,

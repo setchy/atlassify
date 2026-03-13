@@ -1,5 +1,3 @@
-import { render } from '@testing-library/react';
-
 import { renderWithAppContext } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
@@ -7,11 +5,9 @@ import {
 } from '../__mocks__/account-mocks';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
-import { AppContext, type AppContextState } from '../context/App';
-import useAccountsStore from '../stores/useAccountsStore';
-import { useSettingsStore } from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
-import { Errors } from '../utils/errors';
+import { Errors } from '../utils/core/errors';
 import { NotificationsRoute } from './Notifications';
 
 vi.mock('../components/notifications/AccountNotifications', () => ({
@@ -33,6 +29,10 @@ vi.mock('../components/AllRead', () => ({
   AllRead: () => <p>AllRead</p>,
 }));
 
+vi.mock('../components/Loading', () => ({
+  Loading: () => <p>Loading</p>,
+}));
+
 vi.mock('../components/Oops', () => ({
   Oops: () => <p>Oops</p>,
 }));
@@ -44,12 +44,14 @@ describe('renderer/routes/Notifications.tsx', () => {
 
   it('should render account notifications when present', () => {
     useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore.getState().setAccounts([mockAtlassianCloudAccount]);
+    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,
       hasNotifications: true,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
       globalError: null,
     });
 
@@ -58,14 +60,29 @@ describe('renderer/routes/Notifications.tsx', () => {
 
   it('should force account header when multiple accounts', () => {
     useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore
-      .getState()
-      .setAccounts([mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo]);
+    useAccountsStore.setState({
+      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+    });
 
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: mockAccountNotifications,
       hasNotifications: true,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should render Loading on first startup when loading and no notifications', () => {
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+      hasNotifications: false,
+      isLoading: true,
+      isFetching: false,
+      isErrorOrPaused: false,
       globalError: null,
     });
 
@@ -76,7 +93,35 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'success',
+      isLoading: false,
+      isFetching: false,
+      isErrorOrPaused: false,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should show notifications while loading when data already exists', () => {
+    useSettingsStore.setState({ showAccountHeader: false });
+    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: mockAccountNotifications,
+      hasNotifications: true,
+      isFetching: true,
+      globalError: null,
+    });
+
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should render AllRead when loading a background refresh with an empty inbox', () => {
+    const tree = renderWithAppContext(<NotificationsRoute />, {
+      notifications: [],
+      hasNotifications: false,
+      isLoading: false,
+      isFetching: true,
       globalError: null,
     });
 
@@ -87,7 +132,6 @@ describe('renderer/routes/Notifications.tsx', () => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'success',
       globalError: null,
       isOnline: false,
     });
@@ -96,57 +140,16 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it.each([
-    ['bad credentials', Errors.BAD_CREDENTIALS, Errors.BAD_CREDENTIALS],
-    ['unknown error', Errors.UNKNOWN, Errors.UNKNOWN],
-    ['default error', null, Errors.UNKNOWN],
+    ['bad credentials', Errors.BAD_CREDENTIALS],
+    ['unknown error', Errors.UNKNOWN],
+    ['default error', null],
   ])('should render Oops for %s', (_label, globalError) => {
     const tree = renderWithAppContext(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
-      status: 'error',
+      isErrorOrPaused: true,
       globalError,
     });
-
-    expect(tree.container).toMatchSnapshot();
-  });
-
-  it('should keep previous state while loading', () => {
-    useSettingsStore.setState({ showAccountHeader: false });
-
-    const baseContext: AppContextState = {
-      status: 'success',
-      globalError: null,
-      notifications: mockAccountNotifications,
-      notificationCount: 2,
-      hasNotifications: true,
-      hasMoreAccountNotifications: false,
-      fetchNotifications: vi.fn(),
-      markNotificationsRead: vi.fn(),
-      markNotificationsUnread: vi.fn(),
-      focusedNotificationId: null,
-      isOnline: true,
-    };
-
-    const tree = render(
-      <AppContext.Provider value={baseContext}>
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
-
-    expect(tree.container).toMatchSnapshot();
-
-    tree.rerender(
-      <AppContext.Provider
-        value={{
-          ...baseContext,
-          status: 'loading',
-          notifications: [],
-          hasNotifications: false,
-        }}
-      >
-        <NotificationsRoute />
-      </AppContext.Provider>,
-    );
 
     expect(tree.container).toMatchSnapshot();
   });

@@ -19,27 +19,30 @@ import { APPLICATION } from '../../shared/constants';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
-import { useAccountsStore } from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
+  const { t } = useTranslation();
+
   const {
-    status,
+    isFetching,
     hasMoreAccountNotifications,
     notificationCount,
     hasNotifications,
+    fetchNotifications,
+    isLoading,
   } = useAppContext();
 
+  const { shortcuts } = useGlobalShortcuts({ fetchNotifications, isLoading });
+
+  const theme = useThemeObserver();
+
+  // Account store values
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
-  const { t } = useTranslation();
-
-  const { shortcuts } = useGlobalShortcuts();
-
-  // Subscribe to settings from store
+  // Setting store values
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );
@@ -50,9 +53,8 @@ const SidebarComponent: FC = () => {
     (s) => s.groupNotificationsByTitle,
   );
 
+  // Filter store values
   const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
-
-  const theme = useThemeObserver();
 
   const sidebarIconColorToken =
     theme.colorMode === 'dark'
@@ -206,7 +208,7 @@ const SidebarComponent: FC = () => {
                   <IconButton
                     appearance="subtle"
                     icon={(iconProps) =>
-                      status === 'loading' ? (
+                      isFetching ? (
                         <Spinner
                           appearance="invert"
                           label={t('sidebar.refresh.label')}
@@ -219,7 +221,7 @@ const SidebarComponent: FC = () => {
                         />
                       )
                     }
-                    isDisabled={status === 'loading'}
+                    isDisabled={isFetching}
                     label={t('sidebar.refresh.label')}
                     onClick={() => shortcuts.refresh.action()}
                     shape="circle"

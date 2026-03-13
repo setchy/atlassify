@@ -45,10 +45,17 @@ i18n
       // order and from where user language should be detected
       order: ['localStorage', 'navigator'],
       // keys or params to lookup language from
-      lookupLocalStorage: Constants.LANGUAGE_STORAGE_KEY,
+      lookupLocalStorage: Constants.STORAGE.LANGUAGE,
       // cache user language
       caches: ['localStorage'],
     },
   });
+
+export function loadLanguageLocale(): Language {
+  const existing = localStorage.getItem(Constants.STORAGE.LANGUAGE);
+  const language = (existing as Language) || DEFAULT_LANGUAGE;
+
+  return language;
+}
 
 export default i18n;

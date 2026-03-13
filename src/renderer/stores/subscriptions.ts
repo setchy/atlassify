@@ -5,19 +5,20 @@
  * to ensure proper lifecycle management and cleanup on unmount.
  */
 
+import { shallow } from 'zustand/shallow';
+
 import { queryClient } from '../utils/api/client';
+import { notificationsKeys } from '../utils/api/queryKeys';
+import { setAutoLaunch, setKeyboardShortcut } from '../utils/system/comms';
+import { setTrayIconColorAndTitle } from '../utils/system/tray';
+import { setTheme } from '../utils/ui/theme';
+import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/ui/zoom';
 import {
-  setAutoLaunch,
-  setKeyboardShortcut,
-  setUseAlternateIdleIcon,
-  setUseUnreadActiveIcon,
-} from '../utils/comms';
-import { notificationsKeys } from '../utils/queryKeys';
-import { setTheme } from '../utils/theme';
-import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/zoom';
-import { useAccountsStore } from './useAccountsStore';
-import { useFiltersStore } from './useFiltersStore';
-import { useSettingsStore } from './useSettingsStore';
+  useAccountsStore,
+  useFiltersStore,
+  useRuntimeStore,
+  useSettingsStore,
+} from './';
 
 /**
  * Initialize all store side-effect subscriptions and startup values for main.
@@ -34,8 +35,7 @@ export function initializeStoreSubscriptions(): () => void {
   setTheme(useSettingsStore.getState().theme);
   setAutoLaunch(useSettingsStore.getState().openAtStartup);
   setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
-  setUseUnreadActiveIcon(useSettingsStore.getState().useUnreadActiveIcon);
-  setUseAlternateIdleIcon(useSettingsStore.getState().useAlternateIdleIcon);
+  setTrayIconColorAndTitle();
 
   // ========================================================================
   // Settings Store Side Effects
@@ -68,23 +68,17 @@ export function initializeStoreSubscriptions(): () => void {
   );
   unsubscribers.push(unsubKeyboard);
 
-  // Tray icon settings (unread active icon)
-  const unsubUnreadActive = useSettingsStore.subscribe(
-    (state) => state.useUnreadActiveIcon,
-    (useUnreadActiveIcon) => {
-      setUseUnreadActiveIcon(useUnreadActiveIcon);
-    },
+  // Tray updates for settings changes that affect tray appearance
+  const unsubTrayAppearance = useSettingsStore.subscribe(
+    (state) => ({
+      useUnreadActiveIcon: state.useUnreadActiveIcon,
+      useAlternateIdleIcon: state.useAlternateIdleIcon,
+      showNotificationsCountInTray: state.showNotificationsCountInTray,
+    }),
+    setTrayIconColorAndTitle,
+    { equalityFn: shallow },
   );
-  unsubscribers.push(unsubUnreadActive);
-
-  // Tray icon settings (alternate idle icon)
-  const unsubAlternateIdle = useSettingsStore.subscribe(
-    (state) => state.useAlternateIdleIcon,
-    (useAlternateIdleIcon) => {
-      setUseAlternateIdleIcon(useAlternateIdleIcon);
-    },
-  );
-  unsubscribers.push(unsubAlternateIdle);
+  unsubscribers.push(unsubTrayAppearance);
 
   // Initialize zoom level from saved settings on startup
   const initialZoomPercentage = useSettingsStore.getState().zoomPercentage;
@@ -150,6 +144,27 @@ export function initializeStoreSubscriptions(): () => void {
     queryClient.invalidateQueries({ queryKey, refetchType: 'none' });
   });
   unsubscribers.push(unsubFilters);
+
+  // ========================================================================
+  // Runtime Store Side Effects
+  // ========================================================================
+
+  // Tray updates when notification status changes
+  const unsubRuntime = useRuntimeStore.subscribe(
+    (state) => ({
+      notificationCount: state.notificationCount,
+      hasMoreAccountNotifications: state.hasMoreAccountNotifications,
+      isError: state.isError,
+      isOnline: state.isOnline,
+    }),
+    setTrayIconColorAndTitle,
+    { equalityFn: shallow },
+  );
+  unsubscribers.push(unsubRuntime);
+
+  // ========================================================================
+  // Additional store subscriptions can be added here following the same pattern
+  // ========================================================================
 
   // Return cleanup function that unsubscribes all listeners
   return () => {

@@ -16,10 +16,10 @@ exports[`renderer/components/AllRead.tsx > should render itself & its children -
         >
           <span>
             <img
-              alt="🎊"
+              alt="🎉"
               class="emoji"
               draggable="false"
-              src="/mock/images/assets/1f38a.svg"
+              src="/mock/assets/images/1f389.svg"
             />
           </span>
         </span>
@@ -50,10 +50,10 @@ exports[`renderer/components/AllRead.tsx > should render itself & its children -
         >
           <span>
             <img
-              alt="🎊"
+              alt="🎉"
               class="emoji"
               draggable="false"
-              src="/mock/images/assets/1f38a.svg"
+              src="/mock/assets/images/1f389.svg"
             />
           </span>
         </span>

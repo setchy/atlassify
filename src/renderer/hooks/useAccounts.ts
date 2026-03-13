@@ -1,39 +1,78 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
+import { useAccountsStore } from '../stores';
 
-import type { Account } from '../types';
+import { accountsKeys } from '../utils/api/queryKeys';
 
-interface AccountsState {
-  refetchAccounts: () => Promise<void>;
+interface UseAccountsResult {
+  /** Whether the accounts query is currently loading. */
+  isLoading: boolean;
+  /** Any error thrown during the last fetch, or `null`. */
+  error: Error | null;
+  /** Manually triggers an immediate accounts refresh. */
+  refreshAccounts: () => Promise<void>;
 }
 
-export const useAccounts = (accounts: Account[]): AccountsState => {
-  const { refetch } = useQuery<boolean, Error>({
-    queryKey: ['accounts', accounts.length],
+/**
+ * Custom hook to manage scheduled refresh of accounts.
+ */
+export const useAccounts = (): UseAccountsResult => {
+  const accounts = useAccountsStore((s) => s.accounts);
+  const refreshAccount = useAccountsStore.getState().refreshAccount;
+
+  // Query key
+  const accountsQueryKeys = useMemo(
+    () => accountsKeys.list(accounts.length),
+    [accounts.length],
+  );
+
+  const { isLoading, error, refetch } = useQuery<boolean, Error>({
+    queryKey: accountsQueryKeys,
 
     queryFn: async () => {
-      const refreshAccount = useAccountsStore.getState().refreshAccount;
-      await Promise.all(accounts.map(refreshAccount));
-
+      // Perform partial refreshes: update only successfully refreshed accounts
+      await Promise.all(
+        accounts.map(async (account) => {
+          await refreshAccount(account);
+        }),
+      );
       return true;
     },
 
     enabled: accounts.length > 0,
 
-    refetchInterval: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
 
-  const refetchAccounts = useCallback(async () => {
+  /**
+   * Manual interval-based fetching for reliable background updates in Electron tray apps.
+   *
+   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
+   * document.hidden === true. For menubar apps, the window is hidden most of the time,
+   * so refetchInterval would effectively never run in the background.
+   *
+   * This setInterval-based approach continues running regardless of window visibility,
+   * ensuring accounts stay fresh even when the app is hidden in the system tray.
+   * It also provides graceful recovery after system sleep/suspend cycles.
+   */
+  useIntervalTimer({
+    callback: () => refetch(),
+    delay: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
+  });
+
+  const refreshAccounts = useCallback(async () => {
     await refetch();
   }, [refetch]);
 
   return {
-    refetchAccounts,
+    isLoading,
+    error: error ?? null,
+    refreshAccounts,
   };
 };

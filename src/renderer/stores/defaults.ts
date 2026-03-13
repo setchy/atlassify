@@ -1,16 +1,16 @@
 import { Theme } from '../../shared/theme';
 
 import type { Percentage } from '../types';
-import type {
-  AccountsState,
-  AppearanceSettingsState,
-  FiltersState,
-  NotificationSettingsState,
-  SettingsState,
-  SystemSettingsState,
-  TraySettingsState,
+import {
+  type AccountsState,
+  type AppearanceSettingsState,
+  type FiltersState,
+  type NotificationSettingsState,
+  OpenPreference,
+  type SettingsState,
+  type SystemSettingsState,
+  type TraySettingsState,
 } from './types';
-import { OpenPreference } from './types';
 
 import { DEFAULT_LANGUAGE } from '../i18n';
 
@@ -30,6 +30,18 @@ export const DEFAULT_FILTERS_STATE: FiltersState = {
   readStates: [],
   products: [],
   actors: [],
+};
+
+/**
+ * Default runtime state
+ * isOnline defaults to true; the onlineManager subscription in AppProvider
+ * will correct this immediately after mount if the device is actually offline.
+ */
+export const DEFAULT_RUNTIME_STATE = {
+  notificationCount: 0,
+  hasMoreAccountNotifications: false,
+  isError: false,
+  isOnline: true,
 };
 
 /**

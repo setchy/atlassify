@@ -1,19 +1,13 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
-import * as comms from '../utils/comms';
+import * as comms from '../utils/system/comms';
 import { LandingRoute } from './Landing';
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/routes/Landing.tsx', () => {
   afterEach(() => {
@@ -40,6 +34,7 @@ describe('renderer/routes/Landing.tsx', () => {
 
   it('should navigate to login with api token', async () => {
     useAccountsStore.setState({ accounts: [] });
+
     renderWithAppContext(<LandingRoute />);
 
     await userEvent.click(screen.getByTestId('login'));

@@ -128,6 +128,9 @@
     "token_helper": "y pegar arriba",
     "username_helper": "Su nombre de usuario / dirección de correo electrónico de Atlassian"
   },
+  "loading": {
+    "heading": "Cargando"
+  },
   "notifications": {
     "account": {
       "mark_all_read": "Marque todas las notificaciones de cuenta como lectura",
@@ -215,13 +218,17 @@
     },
     "title": "Ajustes",
     "tray": {
-      "alternate_icon": "Use un icono de inactividad alternativo",
-      "alternate_icon_help": "Use un logotipo blanco {{appName}} (en lugar del logotipo negro predeterminado) cuando se leen todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen un Menubar o una barra de tareas de temática oscura.",
       "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
       "show_count_in_tray_help": "Muestra el recuento de notificaciones no leídas junto al icono de la bandeja. \nÚtil para echar un vistazo rápido a la actividad no leída.",
       "title": "Bandeja",
-      "unread_active_icon": "Resaltar las notificaciones no leídas",
-      "unread_active_icon_help": "Utilice un logotipo azul {{appName}} cuando haya notificaciones no leídas."
+      "alternate_icon": "Estilo inactivo",
+      "alternate_icon_help": "Elija qué icono mostrar cuando todas las notificaciones estén leídas.",
+      "unread_active_icon": "Estilo no leídas",
+      "unread_active_icon_help": "Elija qué icono mostrar cuando tenga notificaciones no leídas.",
+      "unread_icon_stealth": "Stealth",
+      "unread_icon_highlighted": "Destacado",
+      "idle_icon_dark": "Oscuro",
+      "idle_icon_alternate": "Alternativo"
     },
     "view_release_notes": "Ver {{appName}} Notas de versión"
   },

@@ -32,7 +32,7 @@ jobs:
           name: "${{ env.RELEASE_TAG }}"
           tag_name: "${{ env.RELEASE_TAG }}"
           draft: true
-          body: '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png"  /> Atlassify ${{ env.RELEASE_TAG }}'
+          body: '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${{ env.RELEASE_TAG }}'
           generate_release_notes: true
 
   release:
@@ -86,7 +86,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: ${{ matrix.artifact-name }}
           path: |

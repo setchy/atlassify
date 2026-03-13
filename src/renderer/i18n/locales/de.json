@@ -128,6 +128,9 @@
     "token_helper": "und oben einfügen",
     "username_helper": "Ihr Atlassian Benutzername / E -Mail -Adresse"
   },
+  "loading": {
+    "heading": "Laden"
+  },
   "notifications": {
     "account": {
       "mark_all_read": "Markieren Sie alle Kontobenachrichtigungen wie gelesen",
@@ -215,13 +218,17 @@
     },
     "title": "Einstellungen",
     "tray": {
-      "alternate_icon": "Verwenden Sie ein alternatives Leerlaufsymbol",
-      "alternate_icon_help": "Verwenden Sie ein weißes {{appName}} logo (anstelle des Standard -Black -Logos), wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer Menuubar oder einer Taskleiste mit dunklem Thema.",
       "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
       "show_count_in_tray_help": "Zeigt die Anzahl der ungelesenen Benachrichtigungen neben dem Taskleistensymbol an. \nNützlich für einen schnellen Blick auf ungelesene Aktivitäten.",
       "title": "Tablett",
-      "unread_active_icon": "Machen Sie ungelesene Benachrichtigungen hervor",
-      "unread_active_icon_help": "Verwenden Sie ein blaues {{appName}} logo, wenn ungelesene Benachrichtigungen vorliegen."
+      "alternate_icon": "Leerlauf-Stil",
+      "alternate_icon_help": "Wählen Sie das Taskleistensymbol, das angezeigt wird, wenn alle Benachrichtigungen gelesen wurden.",
+      "unread_active_icon": "Ungelesen-Stil",
+      "unread_active_icon_help": "Wählen Sie das Taskleistensymbol, das beim Vorhandensein ungelesener Benachrichtigungen angezeigt wird.",
+      "unread_icon_stealth": "Stealth",
+      "unread_icon_highlighted": "Hervorgehoben",
+      "idle_icon_dark": "Dunkel",
+      "idle_icon_alternate": "Alternativ"
     },
     "view_release_notes": "View {{appName}} Versionshinweise"
   },

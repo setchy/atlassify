@@ -1,71 +1,70 @@
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import { NotificationSettings } from './NotificationSettings';
 
 describe('renderer/components/settings/NotificationSettings.tsx', () => {
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(async () => {
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should toggle the markAsReadOnOpen checkbox', async () => {
     useSettingsStore.setState({ markAsReadOnOpen: true });
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
 
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen');
   });
 
-  it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
+  it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
+    useSettingsStore.setState({ groupNotificationsByProduct: true });
 
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(
-      screen.getByLabelText('Group product notifications alphabetically'),
+      screen.getByLabelText('Sort product groups alphabetically'),
     );
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith(
       'groupNotificationsByProductAlphabetically',
-      true,
+    );
+  });
+
+  it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
+    useSettingsStore.setState({ groupNotificationsByProduct: false });
+
+    renderWithAppContext(<NotificationSettings />);
+
+    await userEvent.click(
+      screen.getByLabelText('Sort product groups alphabetically'),
+    );
+
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
+    expect(toggleSettingSpy).not.toHaveBeenCalledWith(
+      'groupNotificationsByProductAlphabetically',
     );
   });
 
   it('should toggle the delayNotificationState checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<NotificationSettings />);
-    });
+    renderWithAppContext(<NotificationSettings />);
 
     await userEvent.click(screen.getByLabelText('Delay notification state'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'delayNotificationState',
-      true,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('delayNotificationState');
   });
 });

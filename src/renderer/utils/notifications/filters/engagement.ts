@@ -2,7 +2,7 @@ import CommentIcon from '@atlaskit/icon/core/comment';
 import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
 
-import useFiltersStore from '../../../stores/useFiltersStore';
+import { useFiltersStore } from '../../../stores';
 
 import type {
   AccountNotifications,
@@ -31,6 +31,9 @@ const ENGAGEMENT_DETAILS: Record<EngagementStateType, FilterDetails> = {
   },
 };
 
+/**
+ * Filter implementation for the notification engagement state (mention, comment, reaction).
+ */
 export const engagementFilter: Filter<EngagementStateType> = {
   FILTER_TYPES: ENGAGEMENT_DETAILS,
 
@@ -70,6 +73,12 @@ export const engagementFilter: Filter<EngagementStateType> = {
   },
 };
 
+/**
+ * Infers the engagement state of a notification from its message text.
+ *
+ * @param notification - The notification to inspect.
+ * @returns The engagement state (`'mention'`, `'comment'`, or `'reaction'`), or `null` if none matched.
+ */
 export function inferNotificationEngagementState(
   notification: AtlassifyNotification,
 ): EngagementStateType | null {

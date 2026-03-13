@@ -7,12 +7,11 @@ import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import type { FiltersState } from '../../stores/types';
-import useFiltersStore from '../../stores/useFiltersStore';
+import { type FiltersState, useFiltersStore } from '../../stores';
 
-import { cn } from '../../utils/cn';
-import { formatProperCase } from '../../utils/helpers';
 import type { Filter } from '../../utils/notifications/filters';
+import { formatProperCase } from '../../utils/notifications/formatters';
+import { cn } from '../../utils/ui/cn';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
   title: string;
@@ -27,6 +26,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
 }: FilterSectionProps<K>) => {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
+
   // Subscribe to the specific filter state so component re-renders when filters change
   useFiltersStore((s) => s[filterSetting]);
 

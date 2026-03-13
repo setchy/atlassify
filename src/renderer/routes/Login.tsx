@@ -23,7 +23,7 @@ import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -33,11 +33,11 @@ import { Header } from '../components/primitives/Header';
 import type { Token, Username } from '../types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
+import { rendererLogError } from '../utils/core/logger';
 import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
-} from '../utils/links';
-import { rendererLogError } from '../utils/logger';
+} from '../utils/system/links';
 
 interface LoginProps {
   username: Username;
@@ -45,12 +45,12 @@ interface LoginProps {
 }
 
 export const LoginRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const createAccount = useAccountsStore((s) => s.createAccount);
   const hasUsernameAlready = useAccountsStore((s) => s.hasUsernameAlready);
-
-  const { t } = useTranslation();
 
   const [isValidCredentials, setIsValidCredentials] = useState(true);
   const [isDuplicateUsername, setIsDuplicateUsername] = useState(false);

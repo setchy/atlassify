@@ -5,14 +5,17 @@ import { Theme } from '../../shared/theme';
 import type { Account, Percentage } from '../types';
 
 import { queryClient } from '../utils/api/client';
-import * as comms from '../utils/comms';
-import * as theme from '../utils/theme';
-import * as zoom from '../utils/zoom';
-import { DEFAULT_SETTINGS_STATE } from './defaults';
+import * as comms from '../utils/system/comms';
+import * as tray from '../utils/system/tray';
+import * as theme from '../utils/ui/theme';
+import * as zoom from '../utils/ui/zoom';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useRuntimeStore,
+  useSettingsStore,
+} from './';
 import { initializeStoreSubscriptions } from './subscriptions';
-import { useAccountsStore } from './useAccountsStore';
-import { useFiltersStore } from './useFiltersStore';
-import { useSettingsStore } from './useSettingsStore';
 
 // Mock window.atlassify
 const mockZoom = {
@@ -29,18 +32,16 @@ vi.stubGlobal('window', {
 });
 
 // Mock external functions
-vi.mock('../utils/theme', () => ({
+vi.mock('../utils/ui/theme', () => ({
   setTheme: vi.fn(),
 }));
 
-vi.mock('../utils/comms', () => ({
+vi.mock('../utils/system/comms', () => ({
   setAutoLaunch: vi.fn(),
   setKeyboardShortcut: vi.fn(),
-  setUseAlternateIdleIcon: vi.fn(),
-  setUseUnreadActiveIcon: vi.fn(),
 }));
 
-vi.mock('../utils/zoom', () => ({
+vi.mock('../utils/ui/zoom', () => ({
   zoomPercentageToLevel: vi.fn((percentage) => percentage / 10),
   zoomLevelToPercentage: vi.fn((level) => level * 10),
 }));
@@ -49,6 +50,10 @@ vi.mock('../utils/api/client', () => ({
   queryClient: {
     invalidateQueries: vi.fn(),
   },
+}));
+
+vi.mock('../utils/system/tray', () => ({
+  setTrayIconColorAndTitle: vi.fn(),
 }));
 
 describe('renderer/stores/subscriptions.ts', () => {
@@ -84,6 +89,12 @@ describe('renderer/stores/subscriptions.ts', () => {
       expect(zoom.zoomPercentageToLevel).toHaveBeenCalledWith(150);
       expect(mockZoom.setLevel).toHaveBeenCalledWith(15); // 150 / 10
     });
+
+    it('should call setTrayIconColorAndTitle on startup', () => {
+      cleanup = initializeStoreSubscriptions();
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('Settings Store Subscriptions', () => {
@@ -112,16 +123,24 @@ describe('renderer/stores/subscriptions.ts', () => {
       expect(comms.setKeyboardShortcut).toHaveBeenCalledWith(false);
     });
 
-    it('should trigger setUseUnreadActiveIcon when useUnreadActiveIcon changes', () => {
+    it('should trigger setTrayIconColorAndTitle when useUnreadActiveIcon changes', () => {
       useSettingsStore.getState().updateSetting('useUnreadActiveIcon', false);
 
-      expect(comms.setUseUnreadActiveIcon).toHaveBeenCalledWith(false);
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
 
-    it('should trigger setUseAlternateIdleIcon when useAlternateIdleIcon changes', () => {
+    it('should trigger setTrayIconColorAndTitle when useAlternateIdleIcon changes', () => {
       useSettingsStore.getState().updateSetting('useAlternateIdleIcon', true);
 
-      expect(comms.setUseAlternateIdleIcon).toHaveBeenCalledWith(true);
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when showNotificationsCountInTray changes', () => {
+      useSettingsStore
+        .getState()
+        .updateSetting('showNotificationsCountInTray', false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
 
     it('should update zoom level when zoomPercentage changes', () => {
@@ -156,7 +175,6 @@ describe('renderer/stores/subscriptions.ts', () => {
         accounts: [{ id: '1' } as Account, { id: '2' } as Account],
       });
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         fetchOnlyUnreadNotifications: true,
       });
 
@@ -167,6 +185,31 @@ describe('renderer/stores/subscriptions.ts', () => {
         queryKey: ['notifications', 2, true, true],
         refetchType: 'none',
       });
+    });
+  });
+
+  describe('Runtime Store Subscriptions', () => {
+    beforeEach(() => {
+      cleanup = initializeStoreSubscriptions();
+      vi.clearAllMocks(); // Clear calls from initialization
+    });
+
+    it('should trigger setTrayIconColorAndTitle when notificationCount changes', () => {
+      useRuntimeStore.getState().updateNotificationStatus(5, false, false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when isOnline changes', () => {
+      useRuntimeStore.getState().updateIsOnline(false);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
+    });
+
+    it('should trigger setTrayIconColorAndTitle when isError changes', () => {
+      useRuntimeStore.getState().updateNotificationStatus(0, false, true);
+
+      expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -243,7 +286,6 @@ describe('renderer/stores/subscriptions.ts', () => {
 
       // Set current zoom to 100%
       useSettingsStore.setState({
-        ...DEFAULT_SETTINGS_STATE,
         zoomPercentage: 100 as Percentage,
       });
 

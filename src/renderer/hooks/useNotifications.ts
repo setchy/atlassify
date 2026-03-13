@@ -9,46 +9,56 @@ import {
 
 import { Constants } from '../constants';
 
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useIntervalTimer } from '../hooks/useIntervalTimer';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useRuntimeStore,
+  useSettingsStore,
+} from '../stores';
 
 import type {
-  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
-  Status,
 } from '../types';
 
 import {
-  getNotificationsByGroupId,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
-import type { GroupNotificationDetailsFragment } from '../utils/api/graphql/generated/graphql';
-import { trackEvent } from '../utils/comms';
+import { notificationsKeys } from '../utils/api/queryKeys';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
   Errors,
-} from '../utils/errors';
-import { rendererLogError } from '../utils/logger';
-import { filterNotifications } from '../utils/notifications/filters';
-import { isGroupNotification } from '../utils/notifications/group';
-import { raiseNativeNotification } from '../utils/notifications/native';
+} from '../utils/core/errors';
+import { rendererLogError } from '../utils/core/logger';
 import {
   getAllNotifications,
+  getNewNotifications,
   getNotificationCount,
   hasMoreNotifications,
-} from '../utils/notifications/notifications';
-import { removeNotificationsForAccount } from '../utils/notifications/remove';
-import { raiseSoundNotification } from '../utils/notifications/sound';
-import { getNewNotifications } from '../utils/notifications/utils';
-import { notificationsKeys } from '../utils/queryKeys';
+} from '../utils/notifications/fetch';
+import { filterNotifications } from '../utils/notifications/filters';
+import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  type NotificationActionType,
+  postProcessNotifications,
+} from '../utils/notifications/postProcess';
+import { raiseSoundNotification } from '../utils/system/audio';
+import { trackEvent } from '../utils/system/comms';
+import { raiseNativeNotification } from '../utils/system/native';
 
-interface NotificationsState {
-  status: Status;
-  globalError: AtlassifyError;
+/**
+ * State and actions for notifications management.
+ */
+interface UseNotificationsResult {
+  isLoading: boolean;
+  isFetching: boolean;
+  isErrorOrPaused: boolean;
+
+  globalError: AtlassifyError | null;
 
   notifications: AccountNotifications[];
   notificationCount: number;
@@ -65,25 +75,42 @@ interface NotificationsState {
   ) => Promise<void>;
 }
 
-export const useNotifications = (accounts: Account[]): NotificationsState => {
+/**
+ * Custom hook for managing notifications state, actions, and side effects.
+ * Handles fetching, filtering, marking as read/unread, and notification triggers.
+ *
+ * @returns Notifications state and action callbacks.
+ */
+export const useNotifications = (): UseNotificationsResult => {
   const queryClient = useQueryClient();
+
+  // Track previous notifications for diffing new notifications
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
-  // Subscribe to filter store to trigger re-render when filters change
-  // This ensures the select function gets recreated with latest filter state
+  // Account store values
+  const accounts = useAccountsStore((s) => s.accounts);
+
+  // Filter store values
   const engagementStates = useFiltersStore((s) => s.engagementStates);
   const categories = useFiltersStore((s) => s.categories);
   const actors = useFiltersStore((s) => s.actors);
   const readStates = useFiltersStore((s) => s.readStates);
   const products = useFiltersStore((s) => s.products);
 
-  // Get settings to determine query key
+  // Setting store values
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );
   const groupNotificationsByTitle = useSettingsStore(
     (s) => s.groupNotificationsByTitle,
   );
+  const playSoundNewNotifications = useSettingsStore(
+    (s) => s.playSoundNewNotifications,
+  );
+  const showSystemNotifications = useSettingsStore(
+    (s) => s.showSystemNotifications,
+  );
+  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
 
   // Query key excludes filters to prevent API refetches on filter changes
   // Filters are applied client-side via subscription in subscriptions.ts
@@ -98,7 +125,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   );
 
   // Create select function that depends on filter state
-  // biome-ignore lint/correctness/useExhaustiveDependencies: specify all filters to ensure this function is recreated on change, causing Tanstack Query to re-run.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recreate selection function on filter store changes
   const selectFilteredNotifications = useMemo(
     () => (data: AccountNotifications[]) =>
       data.map((accountNotifications) => ({
@@ -120,7 +147,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications(accounts);
+      return await getAllNotifications();
     },
 
     // Apply filters as a transformation on the cached data
@@ -129,45 +156,37 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
     placeholderData: keepPreviousData,
 
-    refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,
   });
 
   const notificationCount = getNotificationCount(notifications);
+  const hasNotifications = notificationCount > 0;
+  const hasMoreAccountNotifications = hasMoreNotifications(notifications);
 
-  const hasNotifications = useMemo(
-    () => notificationCount > 0,
-    [notificationCount],
-  );
+  const isErrorOrPaused = isError || isPaused;
 
-  const hasMoreAccountNotifications = useMemo(
-    () => hasMoreNotifications(notifications),
-    [notifications],
-  );
+  /**
+   * Manual interval-based fetching for reliable background updates in Electron tray apps.
+   *
+   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
+   * document.hidden === true. For menubar apps, the window is hidden most of the time,
+   * so refetchInterval would effectively never run in the background.
+   *
+   * This setInterval-based approach continues running regardless of window visibility,
+   * ensuring notifications stay fresh even when the app is hidden in the system tray.
+   * It also provides graceful recovery after system sleep/suspend cycles.
+   */
+  useIntervalTimer({
+    callback: () => refetch(),
+    delay: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+  });
 
-  // Determine status and globalError from query state
-  const status: Status = useMemo(() => {
-    if (isLoading || isFetching) {
-      return 'loading';
-    }
-
-    // Check if paused due to offline state first (instant detection)
-    if (isPaused) {
-      return 'error';
-    }
-
-    if (isError) {
-      return 'error';
-    }
-
-    return 'success';
-  }, [isLoading, isFetching, isPaused, isError]);
-
-  const globalError: AtlassifyError = useMemo(() => {
+  // Determine global error from query state
+  const globalError: AtlassifyError | null = useMemo(() => {
     // If paused due to offline, show network error
     if (isPaused) {
-      return Errors.NETWORK;
+      return Errors.OFFLINE;
     }
 
     if (!isError || notifications.length === 0) {
@@ -184,22 +203,27 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     return null;
   }, [isPaused, isError, notifications]);
 
+  /**
+   * Sync filtered notification derived states to store so tray updates outside React
+   * components can read pre-filtered values without re-applying filter logic.
+   */
+  useEffect(() => {
+    useRuntimeStore
+      .getState()
+      .updateNotificationStatus(
+        notificationCount,
+        hasMoreAccountNotifications,
+        isErrorOrPaused,
+      );
+  }, [notificationCount, hasMoreAccountNotifications, isErrorOrPaused]);
+
   const refetchNotifications = useCallback(async () => {
     await refetch();
   }, [refetch]);
 
-  // Get settings for notifications side effects
-  const playSoundNewNotifications = useSettingsStore(
-    (s) => s.playSoundNewNotifications,
-  );
-  const showSystemNotifications = useSettingsStore(
-    (s) => s.showSystemNotifications,
-  );
-  const notificationVolume = useSettingsStore((s) => s.notificationVolume);
-
   // Handle sound and native notifications when new notifications arrive
   useEffect(() => {
-    if (isLoading || isError || notifications.length === 0) {
+    if (isLoading || isErrorOrPaused || notifications.length === 0) {
       return;
     }
 
@@ -212,6 +236,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
       queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ||
       [];
 
+    // Find new notifications by diffing previous and current
     const diffNotifications = getNewNotifications(
       previousNotificationsRef.current,
       unfilteredNotifications,
@@ -222,6 +247,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
       const filteredDiffNotifications = filterNotifications(diffNotifications);
 
       if (filteredDiffNotifications.length > 0) {
+        // Play sound and show system notifications for new filtered notifications
         if (playSoundNewNotifications) {
           raiseSoundNotification(notificationVolume);
         }
@@ -236,7 +262,7 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
   }, [
     notifications,
     isLoading,
-    isError,
+    isErrorOrPaused,
     playSoundNewNotifications,
     showSystemNotifications,
     notificationVolume,
@@ -244,139 +270,100 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
     notificationsQueryKey,
   ]);
 
-  const getNotificationIdsForGroups = useCallback(
-    async (notifications: AtlassifyNotification[]) => {
-      const notificationIDs: string[] = [];
+  // Unified mutation for marking notifications as read or unread
+  const markAsMutation = useMutation({
+    onMutate: async ({ targetNotifications, action }) => {
+      // Cancel any outgoing refetches to prevent them from overwriting our optimistic update
+      await queryClient.cancelQueries({ queryKey: notificationsKeys.all });
 
-      const account = notifications[0].account;
-
-      const groupNotifications = notifications.filter((notification) =>
-        isGroupNotification(notification),
-      );
-
-      try {
-        for (const group of groupNotifications) {
-          const res = await getNotificationsByGroupId(
-            account,
-            group.notificationGroup.id,
-            group.notificationGroup.size,
-          );
-
-          const groupNotifications = res.data.notifications.notificationGroup
-            .nodes as GroupNotificationDetailsFragment[];
-
-          const groupNotificationIDs = groupNotifications.map(
-            (notification) => notification.notificationId,
-          );
-
-          notificationIDs.push(...groupNotificationIDs);
-        }
-      } catch (err) {
-        rendererLogError(
-          'getNotificationIdsForGroups',
-          'Error occurred while fetching notification ids for notification groups',
-          err,
-        );
-      }
-
-      return notificationIDs;
-    },
-    [],
-  );
-
-  // Mutation for marking notifications as read
-  const markAsReadMutation = useMutation({
-    mutationFn: async ({
-      readNotifications,
-    }: {
-      readNotifications: AtlassifyNotification[];
-    }) => {
-      trackEvent('Action', { name: 'Mark as Read' });
-
-      const account = readNotifications[0].account;
-
-      const singleGroupNotifications = readNotifications.filter(
-        (notification) => !isGroupNotification(notification),
-      );
-      const singleNotificationIDs = singleGroupNotifications.map(
-        (notification) => notification.id,
-      );
-
-      const groupedNotificationIds =
-        await getNotificationIdsForGroups(readNotifications);
-
-      singleNotificationIDs.push(...groupedNotificationIds);
-
-      await markNotificationsAsRead(account, singleNotificationIDs);
-
-      for (const notification of readNotifications) {
-        notification.readState = 'read';
-      }
-
-      const updatedNotifications = removeNotificationsForAccount(
-        account,
-        readNotifications,
-        notifications,
-      );
-
-      return updatedNotifications;
-    },
-
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
-    },
-
-    onError: (err) => {
-      rendererLogError(
-        'markNotificationsRead',
-        'Error occurred while marking notifications as read',
-        err,
-      );
-    },
-  });
-
-  // Mutation for marking notifications as unread
-  const markAsUnreadMutation = useMutation({
-    mutationFn: async ({
-      unreadNotifications,
-    }: {
-      unreadNotifications: AtlassifyNotification[];
-    }) => {
-      trackEvent('Action', {
-        name: 'Mark as Unread',
+      // Snapshot ALL notification queries for rollback on error
+      const previousQueriesData = queryClient.getQueriesData<
+        AccountNotifications[]
+      >({
+        queryKey: notificationsKeys.all,
       });
 
-      const account = unreadNotifications[0].account;
+      // Optimistically update ALL notification queries in cache with full transformation.
+      // This ensures the UI updates immediately regardless of which query key is active.
+      // Components handle their own exit animations independently of cache updates.
+      const account = targetNotifications[0].account;
 
-      const singleGroupNotifications = unreadNotifications.filter(
-        (notification) => !isGroupNotification(notification),
+      queryClient.setQueriesData<AccountNotifications[]>(
+        { queryKey: notificationsKeys.all },
+        (oldData) => {
+          if (!oldData) {
+            return oldData;
+          }
+
+          // Apply full post-processing including read state update and removal (if needed)
+          return postProcessNotifications(
+            account,
+            oldData,
+            targetNotifications,
+            action,
+          );
+        },
       );
-      const singleNotificationIDs = singleGroupNotifications.map(
-        (notification) => notification.id,
-      );
 
-      const groupedNotificationIds =
-        await getNotificationIdsForGroups(unreadNotifications);
+      // Return context with snapshot for potential rollback
+      return { previousQueriesData };
+    },
 
-      singleNotificationIDs.push(...groupedNotificationIds);
+    mutationFn: async ({
+      targetNotifications,
+      action,
+    }: {
+      targetNotifications: AtlassifyNotification[];
+      action: NotificationActionType;
+    }) => {
+      const markAsApiFn =
+        action === 'read' ? markNotificationsAsRead : markNotificationsAsUnread;
 
-      await markNotificationsAsUnread(account, singleNotificationIDs);
+      trackEvent('Action', {
+        name: action === 'read' ? 'Mark as Read' : 'Mark as Unread',
+      });
 
-      for (const notification of unreadNotifications) {
-        notification.readState = 'unread';
+      // TODO - Ideally we would achieve this in a better way
+      const account = targetNotifications[0].account;
+
+      // Assert all notifications are for the same account
+      if (!targetNotifications.every((n) => n.account.id === account.id)) {
+        throw new Error('All notifications must belong to the same account');
       }
 
-      return notifications;
+      const notificationIDs = await resolveNotificationIdsForGroup(
+        account,
+        targetNotifications,
+      );
+
+      await markAsApiFn(account, notificationIDs);
+
+      // Return data needed for post-processing
+      return { account, targetNotifications, action };
     },
 
-    onSuccess: (updatedNotifications) => {
-      queryClient.setQueryData(notificationsQueryKey, updatedNotifications);
+    onSuccess: () => {
+      // Invalidate all notification queries to mark them as stale.
+      // This ensures fresh data is fetched on next access or when switching query parameters
+      // (e.g., toggling fetchOnlyUnread setting).
+      // refetchType: 'none' prevents immediate refetch since cache was already updated optimistically.
+      queryClient.invalidateQueries({
+        queryKey: notificationsKeys.all,
+        refetchType: 'none',
+      });
     },
 
-    onError: (err) => {
+    onError: (err, { action }, context) => {
+      // Rollback ALL notification queries to their snapshots on error
+      if (context?.previousQueriesData) {
+        for (const [queryKey, data] of context.previousQueriesData) {
+          queryClient.setQueryData(queryKey, data);
+        }
+      }
+
       rendererLogError(
-        'markNotificationsUnread',
-        'Error occurred while marking notifications as unread',
+        action === 'read' ? 'markNotificationsRead' : 'markNotificationsUnread',
+        `Error occurred while marking notifications as ${action}`,
         err,
       );
     },
@@ -384,20 +371,29 @@ export const useNotifications = (accounts: Account[]): NotificationsState => {
 
   const markNotificationsRead = useCallback(
     async (readNotifications: AtlassifyNotification[]) => {
-      await markAsReadMutation.mutateAsync({ readNotifications });
+      await markAsMutation.mutateAsync({
+        targetNotifications: readNotifications,
+        action: 'read',
+      });
     },
-    [markAsReadMutation],
+    [markAsMutation],
   );
 
   const markNotificationsUnread = useCallback(
     async (unreadNotifications: AtlassifyNotification[]) => {
-      await markAsUnreadMutation.mutateAsync({ unreadNotifications });
+      await markAsMutation.mutateAsync({
+        targetNotifications: unreadNotifications,
+        action: 'unread',
+      });
     },
-    [markAsUnreadMutation],
+    [markAsMutation],
   );
 
   return {
-    status,
+    isLoading,
+    isFetching,
+    isErrorOrPaused,
+
     globalError,
 
     notifications,

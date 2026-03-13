@@ -8,42 +8,41 @@ import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
 import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
-import { RadioGroup } from '@atlaskit/radio';
-import type { OptionsPropType } from '@atlaskit/radio/dist/types/types';
+import { Radio } from '@atlaskit/radio';
 import Select from '@atlaskit/select';
 import { setGlobalTheme } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';
 
-import useAccountsStore from '../../stores/useAccountsStore';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../../stores';
 
 import { LANGUAGES } from '../../i18n/types';
 
-import { loadLanguageLocale } from '../../utils/storage';
-import { setTheme } from '../../utils/theme';
+import { loadLanguageLocale } from '../../i18n';
+import { setTheme } from '../../utils/ui/theme';
 import {
   canDecreaseZoom,
   canIncreaseZoom,
   decreaseZoom,
   increaseZoom,
   resetZoomLevel,
-  zoomLevelToPercentage,
-} from '../../utils/zoom';
+} from '../../utils/ui/zoom';
 
 export const AppearanceSettings: FC = () => {
-  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
-  const updateSetting = useSettingsStore((s) => s.updateSetting);
-  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
-
   const { t, i18n } = useTranslation();
 
-  const theme = useSettingsStore((s) => s.theme);
+  // Account store values
+  const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
 
-  const zoomPercentage = zoomLevelToPercentage(
-    window.atlassify.zoom.getLevel(),
-  );
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
+  const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  // Setting store values
+  const theme = useSettingsStore((s) => s.theme);
+  const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
+  const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
 
   const zoomBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
@@ -57,22 +56,6 @@ export const AppearanceSettings: FC = () => {
       }
     });
   }, [theme]);
-
-  const themeOptions: OptionsPropType = [
-    {
-      name: 'theme',
-      label: 'System',
-      value: Theme.SYSTEM,
-      testId: 'theme-system',
-    },
-    {
-      name: 'theme',
-      label: 'Light',
-      value: Theme.LIGHT,
-      testId: 'theme-light',
-    },
-    { name: 'theme', label: 'Dark', value: Theme.DARK, testId: 'theme-dark' },
-  ];
 
   const handleLanguageChange = useCallback(
     (option) => {
@@ -108,18 +91,31 @@ export const AppearanceSettings: FC = () => {
       </Box>
 
       <Box paddingInlineStart="space.050">
-        <Inline alignBlock="start" space="space.100">
-          <Text id="theme-label" weight="medium">
-            {t('settings.appearance.theme')}:
-          </Text>
-          <RadioGroup
-            defaultValue={theme}
-            labelId="theme-label"
-            onChange={(evt) => {
-              updateSetting('theme', evt.target.value as Theme);
-            }}
-            options={themeOptions}
-            value={theme}
+        <Inline alignBlock="center" space="space.100">
+          <Text weight="medium">{t('settings.appearance.theme')}:</Text>
+          <Radio
+            isChecked={theme === Theme.SYSTEM}
+            label="System"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.SYSTEM)}
+            testId="theme-system"
+            value={Theme.SYSTEM}
+          />
+          <Radio
+            isChecked={theme === Theme.LIGHT}
+            label="Light"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.LIGHT)}
+            testId="theme-light"
+            value={Theme.LIGHT}
+          />
+          <Radio
+            isChecked={theme === Theme.DARK}
+            label="Dark"
+            name="theme"
+            onChange={() => updateSetting('theme', Theme.DARK)}
+            testId="theme-dark"
+            value={Theme.DARK}
           />
         </Inline>
       </Box>
@@ -187,9 +183,7 @@ export const AppearanceSettings: FC = () => {
           isChecked={showAccountHeader}
           label={t('settings.appearance.show_account_header')}
           name="showAccountHeader"
-          onChange={() =>
-            updateSetting('showAccountHeader', !showAccountHeader)
-          }
+          onChange={() => toggleSetting('showAccountHeader')}
         />
       )}
     </Stack>

@@ -1,20 +1,18 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
-import * as comms from '../utils/comms';
+import * as comms from '../utils/system/comms';
 import { Sidebar } from './Sidebar';
 
 vi.mock('@atlaskit/tokens', async () => {
@@ -25,17 +23,11 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-import useFiltersStore from '../stores/useFiltersStore';
+import { useFiltersStore } from '../stores';
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
 };
-
-const navigateMock = vi.fn();
-vi.mock('react-router-dom', async () => ({
-  ...(await vi.importActual('react-router-dom')),
-  useNavigate: () => navigateMock,
-}));
 
 describe('renderer/components/Sidebar.tsx', () => {
   const fetchNotificationsMock = vi.fn();
@@ -52,14 +44,10 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('light');
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      const tree = renderWithAppContext(
-        <MemoryRouter initialEntries={['/']}>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotifications,
-        },
-      );
+      const tree = renderWithAppContext(<Sidebar />, {
+        initialEntries: ['/'],
+        notifications: mockAccountNotifications,
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -68,14 +56,10 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('dark');
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      const tree = renderWithAppContext(
-        <MemoryRouter initialEntries={['/']}>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotifications,
-        },
-      );
+      const tree = renderWithAppContext(<Sidebar />, {
+        initialEntries: ['/'],
+        notifications: mockAccountNotifications,
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -86,14 +70,10 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('light');
       useAccountsStore.setState({ accounts: [] });
 
-      const tree = renderWithAppContext(
-        <MemoryRouter initialEntries={['/landing']}>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotifications,
-        },
-      );
+      const tree = renderWithAppContext(<Sidebar />, {
+        initialEntries: ['/landing'],
+        notifications: mockAccountNotifications,
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -102,25 +82,16 @@ describe('renderer/components/Sidebar.tsx', () => {
       mockThemeObserverColorMode('dark');
       useAccountsStore.setState({ accounts: [] });
 
-      const tree = renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotifications,
-        },
-      );
+      const tree = renderWithAppContext(<Sidebar />, {
+        notifications: mockAccountNotifications,
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
   });
 
   it('should navigate to home when clicking logo', async () => {
-    renderWithAppContext(
-      <MemoryRouter>
-        <Sidebar />
-      </MemoryRouter>,
-    );
+    renderWithAppContext(<Sidebar />);
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
 
@@ -130,11 +101,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('notifications icon', () => {
     it('opens notifications home when clicked', async () => {
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
@@ -144,40 +111,25 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are no notifications', () => {
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: [],
-        },
-      );
+      renderWithAppContext(<Sidebar />, {
+        notifications: [],
+      });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when there are notifications', () => {
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotifications,
-        },
-      );
+      renderWithAppContext(<Sidebar />, {
+        notifications: mockAccountNotifications,
+      });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when there are more notifications available', () => {
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          notifications: mockAccountNotificationsWithMorePages,
-        },
-      );
+      renderWithAppContext(<Sidebar />, {
+        notifications: mockAccountNotificationsWithMorePages,
+      });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
@@ -187,11 +139,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('renders correct icon when in unread only mode', () => {
       useSettingsStore.setState({ fetchOnlyUnreadNotifications: true });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
@@ -199,23 +147,15 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('renders correct icon when in unread and read mode', () => {
       useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('should toggle show only unread notifications', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {},
-      );
+
+      renderWithAppContext(<Sidebar />);
 
       expect(
         screen.getByTestId('sidebar-toggle-unread-only--input'),
@@ -236,11 +176,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       useSettingsStore.setState({ groupNotificationsByProduct: false });
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
@@ -249,23 +185,15 @@ describe('renderer/components/Sidebar.tsx', () => {
       useSettingsStore.setState({ groupNotificationsByProduct: true });
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by products', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {},
-      );
+
+      renderWithAppContext(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
 
@@ -278,11 +206,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       useSettingsStore.setState({ groupNotificationsByTitle: true });
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
@@ -291,23 +215,15 @@ describe('renderer/components/Sidebar.tsx', () => {
       useSettingsStore.setState({ groupNotificationsByTitle: false });
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by title', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {},
-      );
+
+      renderWithAppContext(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-title'));
 
@@ -318,11 +234,8 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('Filter notifications', () => {
     it('go to the filters route', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+
+      renderWithAppContext(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
@@ -335,11 +248,10 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('go to the home if filters path already shown', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/filters']}>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+
+      renderWithAppContext(<Sidebar />, {
+        initialEntries: ['/filters'],
+      });
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
@@ -354,11 +266,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       useFiltersStore.setState({ products: ['bitbucket'] });
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+      renderWithAppContext(<Sidebar />);
 
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
@@ -369,15 +277,10 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('Refresh Notifications', () => {
     it('should refresh the notifications when status is not loading', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          fetchNotifications: fetchNotificationsMock,
-          status: 'success',
-        },
-      );
+
+      renderWithAppContext(<Sidebar />, {
+        fetchNotifications: fetchNotificationsMock,
+      });
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
@@ -386,15 +289,10 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should not refresh the notifications when status is loading', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          fetchNotifications: fetchNotificationsMock,
-          status: 'loading',
-        },
-      );
+      renderWithAppContext(<Sidebar />, {
+        fetchNotifications: fetchNotificationsMock,
+        isLoading: true,
+      });
 
       await userEvent.click(screen.getByTestId('sidebar-refresh'));
 
@@ -405,11 +303,8 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('Settings', () => {
     it('go to the settings route', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter>
-          <Sidebar />
-        </MemoryRouter>,
-      );
+
+      renderWithAppContext(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
@@ -419,18 +314,13 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('go to the home if settings path already shown', async () => {
       useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(
-        <MemoryRouter initialEntries={['/settings']}>
-          <Sidebar />
-        </MemoryRouter>,
-        {
-          fetchNotifications: fetchNotificationsMock,
-        },
-      );
+
+      renderWithAppContext(<Sidebar />, {
+        initialEntries: ['/settings'],
+      });
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
-      expect(fetchNotificationsMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
@@ -440,11 +330,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
     useAccountsStore.setState({ accounts: [] });
 
-    renderWithAppContext(
-      <MemoryRouter>
-        <Sidebar />
-      </MemoryRouter>,
-    );
+    renderWithAppContext(<Sidebar />);
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));
 

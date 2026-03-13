@@ -1,12 +1,22 @@
 import '@testing-library/jest-dom/vitest';
 
-import { beforeEach, vi } from 'vitest';
-
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useFiltersStore from '../stores/useFiltersStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
+
+/**
+ * Shared navigate mock — import from test-utils in any test that needs to assert on navigation
+ */
+export const navigateMock = vi.fn();
+vi.mock('react-router-dom', async () => ({
+  ...(await vi.importActual('react-router-dom')),
+  useNavigate: () => navigateMock,
+}));
+
+// Ensure stability in EmojiSplash component snapshots
+vi.mock('../utils/core/random', () => ({
+  randomElement: vi.fn((arr: unknown[]) => arr[0]),
+}));
 
 vi.mock('axios', async (importOriginal) => {
   const actual = await importOriginal<typeof import('axios')>();
@@ -47,7 +57,7 @@ window.atlassify = {
     quit: vi.fn(),
     show: vi.fn(),
   },
-  twemojiDirectory: vi.fn().mockResolvedValue('/mock/images/assets'),
+  twemojiDirectory: vi.fn().mockResolvedValue('/mock/assets/images'),
   openExternalLink: vi.fn(),
   decryptValue: vi.fn().mockResolvedValue('decrypted'),
   encryptValue: vi.fn().mockResolvedValue('encrypted'),
@@ -63,10 +73,8 @@ window.atlassify = {
   tray: {
     updateColor: vi.fn(),
     updateTitle: vi.fn(),
-    useAlternateIdleIcon: vi.fn(),
-    useUnreadActiveIcon: vi.fn(),
   },
-  notificationSoundPath: vi.fn(),
+  notificationSoundPath: vi.fn().mockResolvedValue('/mock/assets/sounds'),
   onResetApp: vi.fn(),
   onSystemThemeUpdate: vi.fn(),
   setAutoLaunch: vi.fn(),

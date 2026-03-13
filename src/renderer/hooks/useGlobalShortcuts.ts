@@ -1,14 +1,12 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { keybindings } from '../constants/keybindings';
 
-import useAccountsStore from '../stores/useAccountsStore';
-import useSettingsStore from '../stores/useSettingsStore';
+import { useAccountsStore, useSettingsStore } from '../stores';
 
-import { quitApp, setKeyboardShortcut, trackEvent } from '../utils/comms';
-import { openMyNotifications } from '../utils/links';
-import { useAppContext } from './useAppContext';
+import { quitApp, trackEvent } from '../utils/system/comms';
+import { openMyNotifications } from '../utils/system/links';
 
 type ShortcutName =
   | 'home'
@@ -33,30 +31,38 @@ type ShortcutConfig = {
 
 type ShortcutConfigs = Record<ShortcutName, ShortcutConfig>;
 
+interface UseGlobalShortcutsOptions {
+  /** Triggers a notifications refresh. */
+  fetchNotifications: () => Promise<void>;
+  /** Whether a notifications fetch is currently in-flight. */
+  isLoading: boolean;
+}
+
+interface UseGlobalShortcutsResult {
+  /** All shortcut configs, actions, and enabled state. */
+  shortcuts: ShortcutConfigs;
+}
+
 /**
- * Centralized shortcut actions + enabled state + hotkeys.
- * Used by both the global shortcuts component and UI buttons to avoid duplication.
+ * Centralized shortcut actions, enabled state, and hotkeys.
+ * Used by both the global keyboard listener and UI shortcut hint buttons.
  */
-export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
+export function useGlobalShortcuts({
+  fetchNotifications,
+  isLoading,
+}: UseGlobalShortcutsOptions): UseGlobalShortcutsResult {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { fetchNotifications, status } = useAppContext();
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
   const isOnSettingsRoute = location.pathname.startsWith('/settings');
-  const isLoading = status === 'loading';
 
-  const keyboardShortcutEnabled = useSettingsStore(
-    (s) => s.keyboardShortcutEnabled,
-  );
-
-  useEffect(() => {
-    setKeyboardShortcut(keyboardShortcutEnabled);
-  }, [keyboardShortcutEnabled]);
-
+  /**
+   * All shortcut configs and actions.
+   */
   const shortcuts: ShortcutConfigs = useMemo(() => {
     return {
       home: {
@@ -79,10 +85,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'fetchOnlyUnreadNotifications',
-              !useSettingsStore.getState().fetchOnlyUnreadNotifications,
-            );
+            .toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
       groupByProduct: {
@@ -95,10 +98,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByProduct',
-              !useSettingsStore.getState().groupNotificationsByProduct,
-            );
+            .toggleSetting('groupNotificationsByProduct');
         },
       },
       groupByTitle: {
@@ -111,10 +111,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
 
           useSettingsStore
             .getState()
-            .updateSetting(
-              'groupNotificationsByTitle',
-              !useSettingsStore.getState().groupNotificationsByTitle,
-            );
+            .toggleSetting('groupNotificationsByTitle');
         },
       },
       filters: {
@@ -142,7 +139,7 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
             navigate('/', { replace: true });
           }
 
-          void fetchNotifications();
+          fetchNotifications();
         },
       },
       settings: {
@@ -151,7 +148,6 @@ export function useGlobalShortcuts(): { shortcuts: ShortcutConfigs } {
         action: () => {
           if (isOnSettingsRoute) {
             navigate('/', { replace: true });
-            void fetchNotifications();
           } else {
             navigate('/settings');
           }

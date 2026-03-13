@@ -9,25 +9,28 @@ import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
-import { RadioGroup } from '@atlaskit/radio';
-import type { OptionsPropType } from '@atlaskit/radio/types';
+import { Radio } from '@atlaskit/radio';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
 
-import { DEFAULT_SETTINGS_STATE } from '../../stores/defaults';
-import { OpenPreference } from '../../stores/types';
-import useSettingsStore from '../../stores/useSettingsStore';
+import { OpenPreference, useSettingsStore } from '../../stores';
 
 import {
   canDecreaseVolume,
   canIncreaseVolume,
   decreaseVolume,
   increaseVolume,
-} from '../../utils/notifications/sound';
+} from '../../utils/ui/volume';
 
 export const SystemSettings: FC = () => {
+  const { t } = useTranslation();
+
+  // Setting store actions
+  const toggleSetting = useSettingsStore((s) => s.toggleSetting);
   const updateSetting = useSettingsStore((s) => s.updateSetting);
+
+  // Setting store values
   const openLinks = useSettingsStore((s) => s.openLinks);
   const keyboardShortcutEnabled = useSettingsStore(
     (s) => s.keyboardShortcutEnabled,
@@ -41,21 +44,6 @@ export const SystemSettings: FC = () => {
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
-  const { t } = useTranslation();
-
-  const openLinksOptions: OptionsPropType = [
-    {
-      name: 'openLinks',
-      label: t('settings.system.open_links_foreground'),
-      value: OpenPreference.FOREGROUND,
-    },
-    {
-      name: 'openLinks',
-      label: t('settings.system.open_links_background'),
-      value: OpenPreference.BACKGROUND,
-    },
-  ];
-
   const volumeBoxStyles = xcss({
     backgroundColor: 'color.background.accent.gray.subtlest',
 
@@ -67,18 +55,25 @@ export const SystemSettings: FC = () => {
       <Heading size="small">{t('settings.system.title')}</Heading>
 
       <Box paddingInlineStart="space.050">
-        <Inline space="space.100">
-          <Text id="openLinks-label" weight="medium">
-            {t('settings.system.open_links')}:
-          </Text>
-          <RadioGroup
-            defaultValue={openLinks}
-            labelId="openLinks-label"
-            onChange={(evt) => {
-              updateSetting('openLinks', evt.target.value as OpenPreference);
-            }}
-            options={openLinksOptions}
-            value={openLinks}
+        <Inline alignBlock="center" space="space.100">
+          <Text weight="medium">{t('settings.system.open_links')}:</Text>
+          <Radio
+            isChecked={openLinks === OpenPreference.FOREGROUND}
+            label={t('settings.system.open_links_foreground')}
+            name="openLinks"
+            onChange={() =>
+              updateSetting('openLinks', OpenPreference.FOREGROUND)
+            }
+            value={OpenPreference.FOREGROUND}
+          />
+          <Radio
+            isChecked={openLinks === OpenPreference.BACKGROUND}
+            label={t('settings.system.open_links_background')}
+            name="openLinks"
+            onChange={() =>
+              updateSetting('openLinks', OpenPreference.BACKGROUND)
+            }
+            value={OpenPreference.BACKGROUND}
           />
         </Inline>
       </Box>
@@ -88,12 +83,10 @@ export const SystemSettings: FC = () => {
           isChecked={keyboardShortcutEnabled}
           label={t('settings.system.keyboard_shortcut')}
           name="keyboardShortcutEnabled"
-          onChange={() =>
-            updateSetting('keyboardShortcutEnabled', !keyboardShortcutEnabled)
-          }
+          onChange={() => toggleSetting('keyboardShortcutEnabled')}
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.system.keyboard_shortcut_help', {
               shortcut: APPLICATION.DEFAULT_KEYBOARD_SHORTCUT,
               appName: APPLICATION.NAME,
@@ -107,12 +100,10 @@ export const SystemSettings: FC = () => {
           isChecked={showSystemNotifications}
           label={t('settings.system.system_notifications')}
           name="showNotifications"
-          onChange={() =>
-            updateSetting('showSystemNotifications', !showSystemNotifications)
-          }
+          onChange={() => toggleSetting('showSystemNotifications')}
         />
         <InlineMessage appearance="info">
-          <div className="w-60 text-xs">
+          <div className="settings-help-text">
             {t('settings.system.system_notifications_help')}
           </div>
         </InlineMessage>
@@ -123,12 +114,7 @@ export const SystemSettings: FC = () => {
           isChecked={playSoundNewNotifications}
           label={t('settings.system.play_sound')}
           name="playSoundNewNotifications"
-          onChange={() =>
-            updateSetting(
-              'playSoundNewNotifications',
-              !playSoundNewNotifications,
-            )
-          }
+          onChange={() => toggleSetting('playSoundNewNotifications')}
         />
         <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
           <SplitButton spacing="compact">
@@ -185,7 +171,7 @@ export const SystemSettings: FC = () => {
                 onClick={() =>
                   updateSetting(
                     'notificationVolume',
-                    DEFAULT_SETTINGS_STATE.notificationVolume,
+                    useSettingsStore.getInitialState().notificationVolume,
                   )
                 }
                 shape="circle"
@@ -203,10 +189,10 @@ export const SystemSettings: FC = () => {
             isChecked={openAtStartup}
             label={t('settings.system.startup')}
             name="openAtStartUp"
-            onChange={() => updateSetting('openAtStartup', !openAtStartup)}
+            onChange={() => toggleSetting('openAtStartup')}
           />
           <InlineMessage appearance="info">
-            <div className="w-60 text-xs">
+            <div className="settings-help-text">
               {t('settings.system.startup_help', {
                 appName: APPLICATION.NAME,
               })}

@@ -4,13 +4,13 @@ import userEvent from '@testing-library/user-event';
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type { ReadStateType } from '../../types';
 
-import * as comms from '../../utils/comms';
-import * as links from '../../utils/links';
 import { PRODUCTS } from '../../utils/products';
+import * as comms from '../../utils/system/comms';
+import * as links from '../../utils/system/links';
 import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
@@ -136,7 +136,17 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         markNotificationsRead: markNotificationsReadMock,
       });
 
+      // Get notification row element reference before clicking
+      const notificationElement = screen
+        .getByTestId('notification-details')
+        .closest('[data-notification-row="true"]');
+
       await userEvent.click(screen.getByTestId('notification-details'));
+
+      // Trigger transitionEnd to complete the animation and execute mutation
+      notificationElement?.dispatchEvent(
+        new Event('transitionend', { bubbles: true }),
+      );
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -174,7 +184,17 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         markNotificationsRead: markNotificationsReadMock,
       });
 
+      // Get notification row element reference before clicking (button will be removed after click)
+      const notificationElement = screen
+        .getByTestId('notification-mark-as-read')
+        .closest('[data-notification-row="true"]');
+
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
+
+      // Trigger transitionEnd to complete the animation and execute mutation
+      notificationElement?.dispatchEvent(
+        new Event('transitionend', { bubbles: true }),
+      );
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });

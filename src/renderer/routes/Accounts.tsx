@@ -10,7 +10,7 @@ import RefreshIcon from '@atlaskit/icon/core/refresh';
 import { Box, Inline, xcss } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
@@ -19,17 +19,17 @@ import { Header } from '../components/primitives/Header';
 
 import type { Account } from '../types';
 
-import { openAccountProfile } from '../utils/links';
-import { isLightMode } from '../utils/theme';
+import { openAccountProfile } from '../utils/system/links';
+import { isLightMode } from '../utils/ui/theme';
 
 export const AccountsRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const accounts = useAccountsStore((s) => s.accounts);
   const removeAccount = useAccountsStore((s) => s.removeAccount);
   const refreshAccount = useAccountsStore((s) => s.refreshAccount);
-
-  const { t } = useTranslation();
 
   const logoutAccount = useCallback(
     (account: Account) => {

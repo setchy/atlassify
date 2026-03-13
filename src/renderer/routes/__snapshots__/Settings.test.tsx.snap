@@ -185,82 +185,75 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-5shg4o"
           >
             <div
-              class="css-xxi07b"
+              class="css-gdhcj"
             >
               <span
                 class="css-1w9vgw2"
-                id="theme-label"
               >
                 Theme
                 :
               </span>
-              <div
-                aria-labelledby="theme-label"
-                id="uid3"
-                role="radiogroup"
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                data-testid="theme-system--radio-label"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
               >
-                <label
-                  class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                  data-testid="theme-system--radio-label"
-                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                <input
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  data-testid="theme-system--radio-input"
+                  name="theme"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="SYSTEM"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
-                  <input
-                    class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8 _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c"
-                    data-testid="theme-system--radio-input"
-                    name="theme"
-                    style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-                    tabindex="0"
-                    type="radio"
-                    value="SYSTEM"
-                  />
-                  <span
-                    class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
-                  >
-                    System
-                  </span>
-                </label>
-                <label
-                  class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                  data-testid="theme-light--radio-label"
-                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                  System
+                </span>
+              </label>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                data-testid="theme-light--radio-label"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  checked=""
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  data-testid="theme-light--radio-input"
+                  name="theme"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="LIGHT"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
-                  <input
-                    checked=""
-                    class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8 _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c"
-                    data-testid="theme-light--radio-input"
-                    name="theme"
-                    style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-                    tabindex="0"
-                    type="radio"
-                    value="LIGHT"
-                  />
-                  <span
-                    class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
-                  >
-                    Light
-                  </span>
-                </label>
-                <label
-                  class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                  data-testid="theme-dark--radio-label"
-                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                  Light
+                </span>
+              </label>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                data-testid="theme-dark--radio-label"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  data-testid="theme-dark--radio-input"
+                  name="theme"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="DARK"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
-                  <input
-                    class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8 _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c"
-                    data-testid="theme-dark--radio-input"
-                    name="theme"
-                    style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-                    tabindex="0"
-                    type="radio"
-                    value="DARK"
-                  />
-                  <span
-                    class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
-                  >
-                    Dark
-                  </span>
-                </label>
-              </div>
+                  Dark
+                </span>
+              </label>
             </div>
           </div>
           <div
@@ -426,21 +419,19 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <label
-            class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-            style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+            class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
           >
             <input
               checked=""
-              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
               name="showAccountHeader"
               tabindex="0"
               type="checkbox"
             />
             <svg
-              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+              class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
               height="24"
               role="presentation"
-              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
               width="24"
             >
@@ -448,6 +439,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 fill-rule="evenodd"
               >
                 <rect
+                  class="_v56411so _1snbe4h9 _1s17hteq"
                   fill="currentColor"
                   height="13"
                   rx="1.5"
@@ -479,21 +471,19 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             Notifications
           </h4>
           <label
-            class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-            style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+            class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
           >
             <input
               checked=""
-              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+              class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
               name="markAsReadOnOpen"
               tabindex="0"
               type="checkbox"
             />
             <svg
-              class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+              class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
               height="24"
               role="presentation"
-              style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
               viewBox="0 0 24 24"
               width="24"
             >
@@ -501,6 +491,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 fill-rule="evenodd"
               >
                 <rect
+                  class="_v56411so _1snbe4h9 _1s17hteq"
                   fill="currentColor"
                   height="13"
                   rx="1.5"
@@ -526,20 +517,20 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1tvo _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
+              data-disabled="true"
             >
               <input
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                disabled=""
                 name="groupNotificationsByProductAlphabetically"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -547,6 +538,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -559,7 +551,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               <span
                 class="_nd5l11ig _1wpz1h6o"
               >
-                Group product notifications alphabetically
+                Sort product groups alphabetically
               </span>
             </label>
             <div
@@ -570,7 +562,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid10"
+                id="uid9"
                 type="button"
               >
                 <span
@@ -613,20 +605,18 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
             >
               <input
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="delayNotificationState"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -634,6 +624,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -657,7 +648,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid12"
+                id="uid11"
                 type="button"
               >
                 <span
@@ -709,21 +700,19 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
             >
               <input
                 checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="showNotificationsCountInTray"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -731,6 +720,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -760,7 +750,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid14"
+                id="uid13"
                 type="button"
               >
                 <span
@@ -800,184 +790,243 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="css-5shg4o"
           >
-            <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-            >
-              <input
-                checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-                name="useUnreadActiveIcon"
-                tabindex="0"
-                type="checkbox"
-              />
-              <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
-                height="24"
-                role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <g
-                  fill-rule="evenodd"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="13"
-                    rx="1.5"
-                    width="13"
-                    x="5.5"
-                    y="5.5"
-                  />
-                  <path
-                    clip-rule="evenodd"
-                    d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
-                    fill="inherit"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <span
-                class="_nd5l11ig _1wpz1h6o"
-              >
-                Highlight unread notifications
-              </span>
-            </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="flex items-center gap-2"
             >
-              <button
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
-                data-ds--inline-message--button="true"
-                id="uid16"
-                type="button"
+              <span
+                class="css-1w9vgw2"
               >
+                Idle style
+                :
+              </span>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  checked=""
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="useAlternateIdleIcon"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="false"
+                />
                 <span
-                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                    data-ds--inline-message--icon="true"
+                    class="tray-icon-pill"
                   >
-                    <span
-                      aria-label="info inline message"
-                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                      data-testid="inline-message-icon"
-                      role="img"
-                      style="color: currentcolor;"
-                    >
-                      <svg
-                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
-                        fill="none"
-                        role="presentation"
-                        viewBox="-4 -4 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
+                    <img
+                      alt=""
+                      class="tray-icon"
+                      src="/assets/images/tray-idleTemplate@2x.png"
+                    />
+                    <span>
+                      Default
                     </span>
                   </span>
-                  <span
-                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                  />
                 </span>
-              </button>
+              </label>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="useAlternateIdleIcon"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="true"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
+                >
+                  <span
+                    class="tray-icon-pill-dark"
+                  >
+                    <img
+                      alt=""
+                      class="tray-icon"
+                      src="/assets/images/tray-idle-white@2x.png"
+                    />
+                    <span
+                      class="text-white"
+                    >
+                      Alternate
+                    </span>
+                  </span>
+                </span>
+              </label>
+              <div
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                  data-ds--inline-message--button="true"
+                  id="uid15"
+                  type="button"
+                >
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                  >
+                    <span
+                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                      data-ds--inline-message--icon="true"
+                    >
+                      <span
+                        aria-label="info inline message"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        data-testid="inline-message-icon"
+                        role="img"
+                        style="color: currentcolor;"
+                      >
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                          fill="none"
+                          role="presentation"
+                          viewBox="-4 -4 24 24"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                    />
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="css-5shg4o"
           >
-            <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-            >
-              <input
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-                name="useAlternateIdleIcon"
-                tabindex="0"
-                type="checkbox"
-              />
-              <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
-                height="24"
-                role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <g
-                  fill-rule="evenodd"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="13"
-                    rx="1.5"
-                    width="13"
-                    x="5.5"
-                    y="5.5"
-                  />
-                </g>
-              </svg>
-              <span
-                class="_nd5l11ig _1wpz1h6o"
-              >
-                Use alternate idle icon
-              </span>
-            </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="flex items-center gap-2"
             >
-              <button
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
-                data-ds--inline-message--button="true"
-                id="uid18"
-                type="button"
+              <span
+                class="css-1w9vgw2"
               >
+                Unread style
+                :
+              </span>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  checked=""
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="useUnreadActiveIcon"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="true"
+                />
                 <span
-                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                    data-ds--inline-message--icon="true"
+                    class="tray-icon-pill"
                   >
-                    <span
-                      aria-label="info inline message"
-                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                      data-testid="inline-message-icon"
-                      role="img"
-                      style="color: currentcolor;"
-                    >
-                      <svg
-                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
-                        fill="none"
-                        role="presentation"
-                        viewBox="-4 -4 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
+                    <img
+                      alt=""
+                      class="tray-icon"
+                      src="/assets/images/tray-active@2x.png"
+                    />
+                    <span>
+                      Highlighted
                     </span>
                   </span>
-                  <span
-                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                  />
                 </span>
-              </button>
+              </label>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="useUnreadActiveIcon"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="false"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
+                >
+                  <span
+                    class="tray-icon-pill"
+                  >
+                    <img
+                      alt=""
+                      class="tray-icon"
+                      src="/assets/images/tray-idleTemplate@2x.png"
+                    />
+                    <span>
+                      Stealth
+                    </span>
+                  </span>
+                </span>
+              </label>
+              <div
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                  data-ds--inline-message--button="true"
+                  id="uid17"
+                  type="button"
+                >
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                  >
+                    <span
+                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                      data-ds--inline-message--icon="true"
+                    >
+                      <span
+                        aria-label="info inline message"
+                        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                        data-testid="inline-message-icon"
+                        role="img"
+                        style="color: currentcolor;"
+                      >
+                        <svg
+                          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                          fill="none"
+                          role="presentation"
+                          viewBox="-4 -4 24 24"
+                        >
+                          <path
+                            clip-rule="evenodd"
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                            fill="currentcolor"
+                            fill-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                    />
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -993,79 +1042,70 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-5shg4o"
           >
             <div
-              class="css-xxi07b"
+              class="css-gdhcj"
             >
               <span
                 class="css-1w9vgw2"
-                id="openLinks-label"
               >
                 Open Links
                 :
               </span>
-              <div
-                aria-labelledby="openLinks-label"
-                id="uid20"
-                role="radiogroup"
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
               >
-                <label
-                  class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                <input
+                  checked=""
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="openLinks"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="FOREGROUND"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
-                  <input
-                    checked=""
-                    class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8 _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c"
-                    name="openLinks"
-                    style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-                    tabindex="0"
-                    type="radio"
-                    value="FOREGROUND"
-                  />
-                  <span
-                    class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
-                  >
-                    Foreground
-                  </span>
-                </label>
-                <label
-                  class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                  style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                  Foreground
+                </span>
+              </label>
+              <label
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+              >
+                <input
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  name="openLinks"
+                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+                  tabindex="0"
+                  type="radio"
+                  value="BACKGROUND"
+                />
+                <span
+                  class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
                 >
-                  <input
-                    class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8 _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c"
-                    name="openLinks"
-                    style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-                    tabindex="0"
-                    type="radio"
-                    value="BACKGROUND"
-                  />
-                  <span
-                    class="_85i5v77o _1q51v77o _y4ti1b66 _bozg1b66"
-                  >
-                    Background
-                  </span>
-                </label>
-              </div>
+                  Background
+                </span>
+              </label>
             </div>
           </div>
           <div
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
             >
               <input
                 checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="keyboardShortcutEnabled"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -1073,6 +1113,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -1092,6 +1133,99 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 class="_nd5l11ig _1wpz1h6o"
               >
                 Enable keyboard shortcut
+              </span>
+            </label>
+            <div
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                data-ds--inline-message--button="true"
+                id="uid19"
+                type="button"
+              >
+                <span
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                >
+                  <span
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    data-ds--inline-message--icon="true"
+                  >
+                    <span
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      data-testid="inline-message-icon"
+                      role="img"
+                      style="color: currentcolor;"
+                    >
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="css-xxi07b"
+          >
+            <label
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
+            >
+              <input
+                checked=""
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                name="showNotifications"
+                tabindex="0"
+                type="checkbox"
+              />
+              <svg
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
+                    fill="currentColor"
+                    height="13"
+                    rx="1.5"
+                    width="13"
+                    x="5.5"
+                    y="5.5"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
+                    fill="inherit"
+                    fill-rule="evenodd"
+                  />
+                </g>
+              </svg>
+              <span
+                class="_nd5l11ig _1wpz1h6o"
+              >
+                Show system notifications
               </span>
             </label>
             <div
@@ -1142,118 +1276,22 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
-          >
-            <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
-            >
-              <input
-                checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
-                name="showNotifications"
-                tabindex="0"
-                type="checkbox"
-              />
-              <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
-                height="24"
-                role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
-                viewBox="0 0 24 24"
-                width="24"
-              >
-                <g
-                  fill-rule="evenodd"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="13"
-                    rx="1.5"
-                    width="13"
-                    x="5.5"
-                    y="5.5"
-                  />
-                  <path
-                    clip-rule="evenodd"
-                    d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
-                    fill="inherit"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <span
-                class="_nd5l11ig _1wpz1h6o"
-              >
-                Show system notifications
-              </span>
-            </label>
-            <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
-            >
-              <button
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
-                data-ds--inline-message--button="true"
-                id="uid23"
-                type="button"
-              >
-                <span
-                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
-                >
-                  <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
-                    data-ds--inline-message--icon="true"
-                  >
-                    <span
-                      aria-label="info inline message"
-                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
-                      data-testid="inline-message-icon"
-                      role="img"
-                      style="color: currentcolor;"
-                    >
-                      <svg
-                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
-                        fill="none"
-                        role="presentation"
-                        viewBox="-4 -4 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
-                          fill="currentcolor"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
-                  />
-                </span>
-              </button>
-            </div>
-          </div>
-          <div
             class="css-gdhcj"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
             >
               <input
                 checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="playSoundNewNotifications"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -1261,6 +1299,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -1435,21 +1474,19 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _syazovqm _80om73ad _zulp1nu5 _yv0ey09t _h5e31kd8 _1nzs1kc0 _1esz1j4g _yp0j1ehr _ay2w1ouc _d51u12ci _phftddza _1g1fe69j _l6wk1j4g _1dik1ehr _1sfg1380 _fpdj1ouc _1yjc3zdg _oaj1ddza _1j3h1380 _eawbxz7c _1rdaeh7q _18q0snw8 _13hr1j28"
-              style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF); --_4mkb4g: var(--ds-background-input, #FAFBFC); --_1cd0fcx: var(--ds-background-input-pressed, #DEEBFF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_vnm8xo: var(--ds-border-input, #7A869A); --_rczcge: var(--ds-border, #DEEBFF); --_1i4xulb: var(--ds-border-danger, #FF5630); --_xjqa3d: var(--ds-border-focused, #2684FF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
             >
               <input
                 checked=""
-                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf _r050fibj _9bg71mn3 _19op11so _a30fhteq _1610e4h9 _13wo93zu _q5a61gyf _8gq114p8 _wje2mov0 _1fo21cni _eyedglyw _1ef78r4n _1h6r8r4n _smzg1nfn _1dk71nfn _l71j1i6y _t34a1i6y _y32gkivo _1ah9199y _1frj180l _h78e1g3k _dwvb1ps2 _1bok170n _1mhr17cl _fx2i3rva _10oaq2ws _w12s155b _15y61vek _e6ww155b _sg1j1vek _rphw18jz _y9y9mz2b _141bmz2b _255gmz2b _jj67mz2b _swhgmz2b _axq81diq _1jiz1diq _s9051diq _1efy1diq _1oav1diq _10y313gf _1wt913gf _qq8613gf _1adw13gf _12sr13gf _16jiglyw _693jglyw _1niqglyw _cl9tglyw _1jbnglyw _j1ta1hou _18qu1ps2 _1g52170n _1log17cl _32hzmz2b _1vv91diq _yjhd1hou _w1cowc43 _jdqn1onz _4y4t1onz _lvfrwc43 _g68dwc43 _13dk1onz _w1el1onz _a9yw1onz _1l3g1onz _dcdpgir2 _wobcgir2 _rp9wgir2 _9ebfwc43 _e43iwc43 _1tkuwc43 _1lehwc43 _b9q3wc43 _tu2918qt _1uxv18qt _1ufw18qt _opo918qt _1e8318qt _1k3d18qt _25yv18qt _1igz18qt _c7cc18qt _1swg18qt"
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="openAtStartUp"
                 tabindex="0"
                 type="checkbox"
               />
               <svg
-                class="_1reo15vq _18m915vq _lswuvuon _lcxvglyw"
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
                 height="24"
                 role="presentation"
-                style="color: var(--checkbox-background-color); fill: var(--checkbox-tick-color);"
                 viewBox="0 0 24 24"
                 width="24"
               >
@@ -1457,6 +1494,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   fill-rule="evenodd"
                 >
                   <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
                     fill="currentColor"
                     height="13"
                     rx="1.5"
@@ -1486,7 +1524,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid31"
+                id="uid29"
                 type="button"
               >
                 <span
@@ -1569,8 +1607,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             h
                           </span>
@@ -1592,8 +1629,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             n
                           </span>
@@ -1615,8 +1651,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             u
                           </span>
@@ -1638,8 +1673,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             p
                           </span>
@@ -1661,8 +1695,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             t
                           </span>
@@ -1684,8 +1717,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             f
                           </span>
@@ -1707,8 +1739,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             r
                           </span>
@@ -1730,8 +1761,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             s
                           </span>
@@ -1753,8 +1783,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             a
                           </span>
@@ -1776,8 +1805,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             q
                           </span>
@@ -1816,8 +1844,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↑
                           </span>
@@ -1827,8 +1854,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↓
                           </span>
@@ -1850,8 +1876,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Shift
                           </span>
@@ -1861,8 +1886,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↑
                           </span>
@@ -1884,8 +1908,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Shift
                           </span>
@@ -1895,8 +1918,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                             +
                           </span>
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             ↓
                           </span>
@@ -1918,8 +1940,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             Enter
                           </span>
@@ -1941,8 +1962,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           class="css-5fz2td"
                         >
                           <span
-                            class="css-k5cxwk"
-                            style="background-color: var(--ds-background-neutral-subtle); border: 1px solid; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; line-height: 1.2; border-width: var(--ds-border); border-style: var(--ds-border); border-color: var(--ds-border);"
+                            class="keycap"
                           >
                             a
                           </span>

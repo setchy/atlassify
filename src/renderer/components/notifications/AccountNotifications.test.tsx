@@ -1,17 +1,14 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import {
-  ensureStableEmojis,
-  renderWithAppContext,
-} from '../../__helpers__/test-utils';
+import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
-import * as links from '../../utils/links';
-import * as theme from '../../utils/theme';
+import * as links from '../../utils/system/links';
+import * as theme from '../../utils/ui/theme';
 import {
   AccountNotifications,
   type AccountNotificationsProps,
@@ -22,10 +19,6 @@ vi.mock('./ProductNotifications', () => ({
 }));
 
 describe('renderer/components/notifications/AccountNotifications.tsx', () => {
-  beforeEach(() => {
-    ensureStableEmojis();
-  });
-
   describe('account view types', () => {
     it('should render itself - sort by date - light mode', () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(true);

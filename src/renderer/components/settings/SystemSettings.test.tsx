@@ -1,28 +1,29 @@
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
 
-import useSettingsStore from '../../stores/useSettingsStore';
+import { useSettingsStore } from '../../stores';
 
 import type { Percentage } from '../../types';
 
 import { SystemSettings } from './SystemSettings';
 
 describe('renderer/components/settings/SystemSettings.tsx', () => {
+  let toggleSettingSpy: ReturnType<typeof vi.spyOn>;
+  let updateSettingSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(async () => {
+    toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
+    updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });
 
   it('should change the open links radio group', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<SystemSettings />);
-    });
+    renderWithAppContext(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Background'));
 
@@ -31,60 +32,34 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should toggle the keyboardShortcutEnabled checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<SystemSettings />);
-    });
+    renderWithAppContext(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'keyboardShortcutEnabled',
-      false,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('keyboardShortcutEnabled');
   });
 
   it('should toggle the showSystemNotifications checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<SystemSettings />);
-    });
+    renderWithAppContext(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Show system notifications'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'showSystemNotifications',
-      false,
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('showSystemNotifications');
   });
 
   describe('playSoundNewNotifications', () => {
     it('should toggle the playSoundNewNotifications checkbox', async () => {
-      const updateSettingSpy = vi.spyOn(
-        useSettingsStore.getState(),
-        'updateSetting',
-      );
-
       renderWithAppContext(<SystemSettings />);
 
       await userEvent.click(
         screen.getByLabelText('Play sound for new notifications'),
       );
 
-      expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-      expect(updateSettingSpy).toHaveBeenCalledWith(
+      expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+      expect(toggleSettingSpy).toHaveBeenCalledWith(
         'playSoundNewNotifications',
-        false,
       );
     });
 
@@ -105,11 +80,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should increase notification volume', async () => {
-      const updateSettingSpy = vi.spyOn(
-        useSettingsStore.getState(),
-        'updateSetting',
-      );
-
       renderWithAppContext(<SystemSettings />);
 
       await userEvent.click(screen.getByTestId('settings-volume-up'));
@@ -119,11 +89,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should decrease notification volume', async () => {
-      const updateSettingSpy = vi.spyOn(
-        useSettingsStore.getState(),
-        'updateSetting',
-      );
-
       renderWithAppContext(<SystemSettings />);
 
       await userEvent.click(screen.getByTestId('settings-volume-down'));
@@ -133,10 +98,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should reset notification volume', async () => {
-      const updateSettingSpy = vi.spyOn(
-        useSettingsStore.getState(),
-        'updateSetting',
-      );
       useSettingsStore.setState({ notificationVolume: 30 as Percentage });
 
       renderWithAppContext(<SystemSettings />);
@@ -149,18 +110,11 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should toggle the openAtStartup checkbox', async () => {
-    const updateSettingSpy = vi.spyOn(
-      useSettingsStore.getState(),
-      'updateSetting',
-    );
-
-    await act(async () => {
-      renderWithAppContext(<SystemSettings />);
-    });
+    renderWithAppContext(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Open at startup'));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('openAtStartup', false);
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('openAtStartup');
   });
 });

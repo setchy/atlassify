@@ -19,19 +19,19 @@ import {
 import { Inline, Stack, Text } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
-import useAccountsStore from '../stores/useAccountsStore';
+import { useAccountsStore } from '../stores';
 
 import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';
 
-import { showWindow } from '../utils/comms';
+import { showWindow } from '../utils/system/comms';
 
 export const LandingRoute: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
-
-  const { t } = useTranslation();
 
   useEffect(() => {
     if (isLoggedIn) {
