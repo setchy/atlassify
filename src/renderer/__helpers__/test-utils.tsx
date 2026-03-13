@@ -51,7 +51,9 @@ function AppContextProvider({
 
   return (
     <MemoryRouter initialEntries={initialEntries}>
-      <AppContext.Provider value={defaultValue}>{children}</AppContext.Provider>
+      <AppContext.Provider value={defaultValue as AppContextState}>
+        {children}
+      </AppContext.Provider>
     </MemoryRouter>
   );
 }
