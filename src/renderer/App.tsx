@@ -11,7 +11,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css';
 
-import { AppProvider } from './context/App';
+import { AppProvider } from './context/AppContext';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
 import { LandingRoute } from './routes/Landing';

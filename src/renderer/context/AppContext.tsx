@@ -59,10 +59,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     markNotificationsUnread,
   } = useNotifications();
 
-  const isOnline = useRuntimeStore((s) => s.isOnline);
-
   // Sync online/offline state into runtime store
   useOnlineSync();
+
+  const isOnline = useRuntimeStore((s) => s.isOnline);
 
   // Periodic account refreshes
   useAccounts();
