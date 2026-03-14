@@ -1783,6 +1783,14 @@ export enum AgentStudioMessageActionStatus {
   Started = 'STARTED'
 }
 
+/** The action to perform on an agent's model version */
+export enum AgentStudioModelUpgradeAction {
+  /** Revert the agent to the previous model version */
+  Revert = 'REVERT',
+  /** Upgrade the agent to the latest model version */
+  Upgrade = 'UPGRADE'
+}
+
 /**  Batch Evaluation Types (public surface) */
 export enum AgentStudioProductType {
   Csm = 'CSM',
@@ -8769,6 +8777,10 @@ export enum ConfluenceAdminAnnouncementBannerVisibilityType {
   Authorized = 'AUTHORIZED'
 }
 
+export enum ConfluenceAggregationDimension {
+  PerformanceRating = 'PERFORMANCE_RATING'
+}
+
 export enum ConfluenceAnalyticsCommentContentType {
   Database = 'database',
   Page = 'page',
@@ -9008,6 +9020,19 @@ export type ConfluenceContentInput = {
   title?: InputMaybe<Scalars['String']['input']>;
   version?: InputMaybe<Scalars['Int']['input']>;
   versionMessage?: InputMaybe<Scalars['String']['input']>;
+};
+
+export enum ConfluenceContentPerformanceContentType {
+  BlogPost = 'BLOG_POST',
+  LivePage = 'LIVE_PAGE',
+  Page = 'PAGE'
+}
+
+export type ConfluenceContentPerformanceFilters = {
+  contentType?: InputMaybe<Array<InputMaybe<ConfluenceContentPerformanceContentType>>>;
+  ownerId?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  rating?: InputMaybe<Array<InputMaybe<ConfluenceLoadTimeRating>>>;
+  spaceId?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ConfluenceContentPermissionPrincipalInput = {
@@ -9680,6 +9705,12 @@ export enum ConfluenceLength {
   Long = 'LONG',
   Medium = 'MEDIUM',
   Short = 'SHORT'
+}
+
+export enum ConfluenceLoadTimeRating {
+  Fast = 'FAST',
+  Moderate = 'MODERATE',
+  Slow = 'SLOW'
 }
 
 export type ConfluenceMacroDefinitionInput = {
@@ -39101,6 +39132,14 @@ export type JiraSetTimelineHighlightedReleasesInput = {
   /** A list of version IDs to highlight on the timeline view. */
   highlightedReleases: Array<Scalars['ID']['input']>;
   /** ARI of the issue search view to manipulate. */
+  viewId: Scalars['ID']['input'];
+};
+
+/** Input to update the field sets of a timeline view. */
+export type JiraSetTimelineViewFieldSetsInput = {
+  /** The list of field set IDs to set on the timeline view. */
+  fieldSetIds: Array<Scalars['String']['input']>;
+  /** ARI of the timeline view to manipulate. */
   viewId: Scalars['ID']['input'];
 };
 
