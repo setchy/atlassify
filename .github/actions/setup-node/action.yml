@@ -1,14 +1,10 @@
 # This is the composite action:
 #   https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-name: Checkout and setup pnpm + node.js
-description: Checkout project, setup pnpm and node.js with caching
+name: Setup pnpm, node.js and install dependencies
+description: Setup pnpm and node.js with caching
 
 inputs:
-  fetch-depth:
-    description: 'Depth for git clone (default: 1 - shallow clone)'
-    required: false
-    default: '1'
   run-install:
     description: 'Whether to run `pnpm install`'
     required: false
@@ -21,11 +17,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      with:
-        fetch-depth: ${{ inputs.fetch-depth }}
-
     - name: Setup pnpm
       uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
       with:
