@@ -27,6 +27,10 @@ import AppUpdater from './updater';
 
 log.initialize();
 
+if (!app.isPackaged) {
+  log.transports.file.fileName = 'main.dev.log';
+}
+
 initializeAnalytics();
 
 const mb = menubar({
