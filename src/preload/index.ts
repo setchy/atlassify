@@ -17,6 +17,11 @@ import { invokeMainEvent, onRendererEvent, sendMainEvent } from './utils';
  * Accessible as `window.atlassify` in the renderer.
  */
 export const api = {
+  /** Listen for system resume/wake events from main process. */
+  onSystemResume: (callback: () => void) => {
+    onRendererEvent(EVENTS.SYSTEM_RESUME, () => callback());
+  },
+
   /** Opens a URL in the system default browser. Only HTTPS URLs are forwarded. */
   openExternalLink: (url: string, openInForeground: boolean) => {
     sendMainEvent(EVENTS.OPEN_EXTERNAL, {

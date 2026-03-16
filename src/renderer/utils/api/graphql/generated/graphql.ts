@@ -60,6 +60,245 @@ export type AvpAddDashboardRowInput = {
   rowIndex?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export type AvpAnalyticsColumnInput = {
+  formula?: InputMaybe<AvpAnalyticsFormulaColumnInput>;
+  simple?: InputMaybe<AvpAnalyticsSimpleColumnInput>;
+};
+
+/**  Enum */
+export enum AvpAnalyticsColumnType {
+  Boolean = 'BOOLEAN',
+  Date = 'DATE',
+  DateTime = 'DATE_TIME',
+  Double = 'DOUBLE',
+  Integer = 'INTEGER',
+  Reference = 'REFERENCE',
+  Text = 'TEXT',
+  Time = 'TIME'
+}
+
+/**  Mutation Input */
+export type AvpAnalyticsCreateModelInput = {
+  modelDefinition?: InputMaybe<AvpAnalyticsModelDefinitionInput>;
+  modelDescription?: InputMaybe<Scalars['String']['input']>;
+  modelName?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsFilter = {
+  type: AvpAnalyticsFilterType;
+  values: Array<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsFilterInput = {
+  filters?: InputMaybe<Array<AvpAnalyticsFilter>>;
+};
+
+export enum AvpAnalyticsFilterOperator {
+  After = 'AFTER',
+  Before = 'BEFORE',
+  Equals = 'EQUALS',
+  IsEmpty = 'IS_EMPTY',
+  IsNotEmpty = 'IS_NOT_EMPTY',
+  NotEquals = 'NOT_EQUALS',
+  On = 'ON',
+  Range = 'RANGE'
+}
+
+export enum AvpAnalyticsFilterType {
+  ModelCreatedBy = 'MODEL_CREATED_BY',
+  ModelLabel = 'MODEL_LABEL',
+  ModelStatus = 'MODEL_STATUS'
+}
+
+export type AvpAnalyticsFilterValueInput = {
+  multiple?: InputMaybe<Array<Scalars['String']['input']>>;
+  range?: InputMaybe<AvpAnalyticsRangeValueInput>;
+  single?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsFormulaColumnInput = {
+  expression: Scalars['String']['input'];
+  id?: InputMaybe<Scalars['ID']['input']>;
+  isHidden: Scalars['Boolean']['input'];
+  name: Scalars['String']['input'];
+  type: AvpAnalyticsColumnType;
+};
+
+export type AvpAnalyticsGetDataSourceInput = {
+  cloudId: Scalars['ID']['input'];
+  dataSourceId: Scalars['ID']['input'];
+  workspaceId: Scalars['ID']['input'];
+};
+
+export type AvpAnalyticsGetDataSourcesInput = {
+  cloudId: Scalars['ID']['input'];
+  searchInput?: InputMaybe<AvpAnalyticsSearchInput>;
+  workspaceId: Scalars['ID']['input'];
+};
+
+export type AvpAnalyticsGetModelInput = {
+  modelId: Scalars['ID']['input'];
+  modelType: AvpAnalyticsModelType;
+  modelVersion?: InputMaybe<Scalars['Int']['input']>;
+  modelViewMode: AvpAnalyticsModelViewMode;
+};
+
+/**  Query Input */
+export type AvpAnalyticsGetModelsInput = {
+  filterInput?: InputMaybe<AvpAnalyticsFilterInput>;
+  modelType: AvpAnalyticsModelType;
+  paginationInput: AvpAnalyticsPaginationInput;
+  searchInput?: InputMaybe<AvpAnalyticsSearchInput>;
+  sortInput?: InputMaybe<AvpAnalyticsSortInput>;
+};
+
+export type AvpAnalyticsJoinColumnPairsInput = {
+  joinOnOperator: AvpAnalyticsJoinOnOperator;
+  leftColumnId: Scalars['ID']['input'];
+  rightColumnId: Scalars['ID']['input'];
+};
+
+export enum AvpAnalyticsJoinOnOperator {
+  Equals = 'EQUALS',
+  GreaterOrEqualThan = 'GREATER_OR_EQUAL_THAN',
+  GreaterThan = 'GREATER_THAN',
+  LessOrEqualThan = 'LESS_OR_EQUAL_THAN',
+  LessThan = 'LESS_THAN',
+  NotEquals = 'NOT_EQUALS'
+}
+
+export type AvpAnalyticsJoinPathsInput = {
+  columnPairs: Array<AvpAnalyticsJoinColumnPairsInput>;
+  joinType: AvpAnalyticsJoinType;
+  leftModelId: Scalars['ID']['input'];
+  rightModelId: Scalars['ID']['input'];
+};
+
+export enum AvpAnalyticsJoinType {
+  Full = 'FULL',
+  Inner = 'INNER',
+  Left = 'LEFT',
+  Right = 'RIGHT'
+}
+
+/**  Helper Input */
+export type AvpAnalyticsModelDataSort = {
+  columnName: Scalars['String']['input'];
+  sortType: AvpAnalyticsSortType;
+};
+
+export type AvpAnalyticsModelDataSourceInput = {
+  id: Scalars['ID']['input'];
+  models?: InputMaybe<Array<AvpAnalyticsModelInput>>;
+  subDataSources?: InputMaybe<Array<AvpAnalyticsModelDataSourceInput>>;
+};
+
+export type AvpAnalyticsModelDefinitionInput = {
+  columns?: InputMaybe<Array<AvpAnalyticsColumnInput>>;
+  dataSources?: InputMaybe<Array<AvpAnalyticsModelDataSourceInput>>;
+  filters?: InputMaybe<Array<AvpAnalyticsModelFilterInput>>;
+  joinPaths?: InputMaybe<Array<AvpAnalyticsJoinPathsInput>>;
+};
+
+export type AvpAnalyticsModelFilterInput = {
+  columnName: Scalars['String']['input'];
+  operator: AvpAnalyticsFilterOperator;
+  value?: InputMaybe<AvpAnalyticsFilterValueInput>;
+};
+
+export type AvpAnalyticsModelInput = {
+  id: Scalars['ID']['input'];
+  type: AvpAnalyticsModelType;
+};
+
+export enum AvpAnalyticsModelStatus {
+  Deleted = 'DELETED',
+  Draft = 'DRAFT',
+  Invalidated = 'INVALIDATED',
+  Published = 'PUBLISHED'
+}
+
+export enum AvpAnalyticsModelType {
+  Assets = 'ASSETS',
+  Jira = 'JIRA',
+  UserDefined = 'USER_DEFINED'
+}
+
+export enum AvpAnalyticsModelViewMode {
+  Edit = 'EDIT',
+  ReadOnly = 'READ_ONLY'
+}
+
+export type AvpAnalyticsPaginationInput = {
+  /** forward: start *after* this item */
+  after?: InputMaybe<Scalars['String']['input']>;
+  /** backward: end *before* this item */
+  before?: InputMaybe<Scalars['String']['input']>;
+  /** forward pagination: get next N items */
+  first?: InputMaybe<Scalars['Int']['input']>;
+  /** backward pagination: get previous N items */
+  last?: InputMaybe<Scalars['Int']['input']>;
+  /** Page number which need to retrieve */
+  pageNumber?: InputMaybe<Scalars['Int']['input']>;
+  /** Retrieve N items for the *pageNumber* */
+  pageSize?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum AvpAnalyticsPermissionType {
+  None = 'NONE',
+  Read = 'READ',
+  Write = 'WRITE'
+}
+
+export type AvpAnalyticsRangeValueInput = {
+  fromExpression?: InputMaybe<Scalars['String']['input']>;
+  fromValue?: InputMaybe<Scalars['String']['input']>;
+  toExpression?: InputMaybe<Scalars['String']['input']>;
+  toValue?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsSearchInput = {
+  searchQuery: Scalars['String']['input'];
+};
+
+export type AvpAnalyticsSimpleColumnInput = {
+  id?: InputMaybe<Scalars['ID']['input']>;
+  isHidden: Scalars['Boolean']['input'];
+  name: Scalars['String']['input'];
+  sourceColumnId: Scalars['ID']['input'];
+  sourceModelId: Scalars['ID']['input'];
+  type: AvpAnalyticsColumnType;
+};
+
+export type AvpAnalyticsSortInput = {
+  sortKey: AvpAnalyticsSortKey;
+  sortType: AvpAnalyticsSortType;
+};
+
+export enum AvpAnalyticsSortKey {
+  ModelCreatedAt = 'MODEL_CREATED_AT',
+  ModelCreatedBy = 'MODEL_CREATED_BY',
+  ModelName = 'MODEL_NAME',
+  ModelStarred = 'MODEL_STARRED',
+  ModelStatus = 'MODEL_STATUS',
+  ModelUpdatedAt = 'MODEL_UPDATED_AT'
+}
+
+export enum AvpAnalyticsSortType {
+  Asc = 'ASC',
+  Desc = 'DESC'
+}
+
+export type AvpAnalyticsUpdateModelInput = {
+  forceUpdate: Scalars['Boolean']['input'];
+  modelDefinition: AvpAnalyticsModelDefinitionInput;
+  modelDescription?: InputMaybe<Scalars['String']['input']>;
+  modelId: Scalars['ID']['input'];
+  modelName?: InputMaybe<Scalars['String']['input']>;
+  modelVersion: Scalars['Int']['input'];
+  shouldPublish: Scalars['Boolean']['input'];
+};
+
 export enum AvpCanvasRowHeight {
   Large = 'large',
   Medium = 'medium',
@@ -5746,6 +5985,7 @@ export enum CommentCreationLocation {
   Editor = 'EDITOR',
   Live = 'LIVE',
   Renderer = 'RENDERER',
+  Slide = 'SLIDE',
   Whiteboard = 'WHITEBOARD'
 }
 
@@ -10248,11 +10488,6 @@ export type ConfluencePromotePageTemplateInput = {
   spaceId: Scalars['Long']['input'];
 };
 
-export enum ConfluencePublicLinkAccessType {
-  External = 'EXTERNAL',
-  InternalLicensed = 'INTERNAL_LICENSED'
-}
-
 export type ConfluencePublishBlogPostInput = {
   /** ID of draft BlogPost. */
   id: Scalars['ID']['input'];
@@ -10447,6 +10682,25 @@ export type ConfluenceShareContent = {
   contentId: Scalars['ID']['input'];
   contentUrl?: InputMaybe<Scalars['String']['input']>;
 };
+
+export enum ConfluenceShareableLinkAccessType {
+  External = 'EXTERNAL',
+  InternalLicensed = 'INTERNAL_LICENSED'
+}
+
+export enum ConfluenceShareableLinkSiteStatus {
+  BlockedByOrg = 'BLOCKED_BY_ORG',
+  Off = 'OFF',
+  On = 'ON'
+}
+
+export enum ConfluenceShareableLinkSpaceStatus {
+  BlockedByContainerPolicy = 'BLOCKED_BY_CONTAINER_POLICY',
+  BlockedByOrg = 'BLOCKED_BY_ORG',
+  BlockedByProduct = 'BLOCKED_BY_PRODUCT',
+  Off = 'OFF',
+  On = 'ON'
+}
 
 export enum ConfluenceSiteConfigurationEditorDefaultWidth {
   Max = 'MAX',
@@ -10961,9 +11215,20 @@ export type ConfluenceUpdateReviewerDecisionInput = {
   reviewerId: Scalars['Long']['input'];
 };
 
-export type ConfluenceUpdateShareableLinksInput = {
-  accessType: ConfluencePublicLinkAccessType;
+export type ConfluenceUpdateShareableLinkInput = {
+  accessType: ConfluenceShareableLinkAccessType;
   contentId: Scalars['ID']['input'];
+};
+
+export type ConfluenceUpdateShareableLinkSiteConfigInput = {
+  accessType: ConfluenceShareableLinkAccessType;
+  status: ConfluenceShareableLinkSiteStatus;
+};
+
+export type ConfluenceUpdateShareableLinkSpaceConfigInput = {
+  accessType: ConfluenceShareableLinkAccessType;
+  spaceId: Scalars['ID']['input'];
+  status: ConfluenceShareableLinkSpaceStatus;
 };
 
 export type ConfluenceUpdateSiteConfigurationInput = {
@@ -13383,6 +13648,13 @@ export type CustomerServiceIndividualUpdateAttributeMultiValueByNameInput = {
   attributeValues: Array<Scalars['String']['input']>;
 };
 
+export type CustomerServiceLiveChatSpacesByActivityInput = {
+  /** The live chat activity */
+  activity: Scalars['String']['input'];
+  /** The ids of the CSM spaces that the activity applies to */
+  ids: Array<Scalars['ID']['input']>;
+};
+
 export type CustomerServiceNoteCreateInput = {
   body: Scalars['String']['input'];
   entityId: Scalars['ID']['input'];
@@ -13605,6 +13877,20 @@ export type CustomerServiceUpdateCustomDetailValueInput = {
   value?: InputMaybe<Scalars['String']['input']>;
   /** The new value for the custom detail, for a multi-value field */
   values?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+/**
+ * ########################
+ *  Mutation Inputs
+ * #########################
+ */
+export type CustomerServiceUpdateLiveChatAgentActivitiesInput = {
+  /** Account ID of the agent */
+  id: Scalars['ID']['input'];
+  /** The global live chat activity sid for the agent */
+  liveChatActivity: Scalars['String']['input'];
+  /** The per space live chat activity for an agent */
+  liveChatSpacesByActivity: Array<CustomerServiceLiveChatSpacesByActivityInput>;
 };
 
 /**
@@ -15176,6 +15462,7 @@ export type EnabledContentTypesInput = {
   isEmbedsEnabled?: InputMaybe<Scalars['Boolean']['input']>;
   isFoldersEnabled?: InputMaybe<Scalars['Boolean']['input']>;
   isLivePagesEnabled?: InputMaybe<Scalars['Boolean']['input']>;
+  isSlidesEnabled?: InputMaybe<Scalars['Boolean']['input']>;
   isWhiteboardsEnabled?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -23290,6 +23577,11 @@ export type GraphStoreUserCollaboratedOnDocumentSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreUserCommentedOnThirdPartyDocumentSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreUserContributedConfluenceBlogpostSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -23798,6 +24090,11 @@ export type GraphStoreUserReportsIssueSortInput = {
 };
 
 export type GraphStoreUserReviewsPrSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreUserSharedThirdPartyDocumentSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -26243,6 +26540,11 @@ export type GraphStoreV2ExternalUserCollaboratedOnExternalDocumentSortInput = {
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
 
+export type GraphStoreV2ExternalUserCommentedOnThirdPartyDocumentSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
 export type GraphStoreV2ExternalUserCreatedExternalBranchSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
@@ -26483,6 +26785,11 @@ export type GraphStoreV2ExternalUserOwnsExternalTestStatusSortInput = {
 };
 
 export type GraphStoreV2ExternalUserReviewedExternalPullRequestSortInput = {
+  /** Sort by the date the relationship was last changed */
+  lastModified?: InputMaybe<GraphStoreSortInput>;
+};
+
+export type GraphStoreV2ExternalUserSharedThirdPartyDocumentSortInput = {
   /** Sort by the date the relationship was last changed */
   lastModified?: InputMaybe<GraphStoreSortInput>;
 };
@@ -45234,6 +45541,22 @@ export enum MercuryFundsType {
   Forecast = 'FORECAST'
 }
 
+export enum MercuryImportExecutionErrorEntityType {
+  Financial = 'FINANCIAL',
+  FocusArea = 'FOCUS_AREA',
+  FocusAreaFunds = 'FOCUS_AREA_FUNDS',
+  FocusAreaLink = 'FOCUS_AREA_LINK',
+  PeopleBudget = 'PEOPLE_BUDGET',
+  Team = 'TEAM',
+  TeamAllocation = 'TEAM_ALLOCATION'
+}
+
+export enum MercuryImportJobStatus {
+  Failed = 'FAILED',
+  InProgress = 'IN_PROGRESS',
+  Succeeded = 'SUCCEEDED'
+}
+
 export enum MercuryInsightTypeEnum {
   FocusArea = 'FOCUS_AREA',
   Fund = 'FUND',
@@ -45675,7 +45998,8 @@ export enum MercuryRiskSortField {
   Impact = 'IMPACT',
   Name = 'NAME',
   Status = 'STATUS',
-  TargetDate = 'TARGET_DATE'
+  TargetDate = 'TARGET_DATE',
+  UpdatedDate = 'UPDATED_DATE'
 }
 
 export enum MercuryRiskStatusColor {
@@ -48030,6 +48354,7 @@ export enum ResourceType {
   Database = 'DATABASE',
   Folder = 'FOLDER',
   Page = 'PAGE',
+  Slide = 'SLIDE',
   Space = 'SPACE',
   Whiteboard = 'WHITEBOARD'
 }
@@ -49015,6 +49340,8 @@ export type SearchFilterInput = {
 export type SearchGitFilters = {
   /** Filter pull requests by status (e.g., merged, declined, open) */
   pullRequestStatus?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Filter by repository name (e.g., atlassian/atlascode) */
+  repoName?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 /** Consolidated input for search operations */

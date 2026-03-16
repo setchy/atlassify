@@ -1,4 +1,4 @@
-import { app, globalShortcut, shell } from 'electron';
+import { app, globalShortcut, powerMonitor, shell } from 'electron';
 import type { Menubar } from 'menubar';
 
 import {
@@ -7,8 +7,9 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../../shared/events';
+import { logInfo } from '../../shared/logger';
 
-import { onMainEvent } from '../events';
+import { onMainEvent, sendRendererEvent } from '../events';
 
 /**
  * Register IPC handlers for OS-level system operations.
@@ -16,6 +17,22 @@ import { onMainEvent } from '../events';
  * @param mb - The menubar instance used for show/hide on keyboard shortcut activation.
  */
 export function registerSystemHandlers(mb: Menubar): void {
+  /**
+   * Send resume event on resume
+   */
+  powerMonitor.on('resume', () => {
+    sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
+    logInfo('ADAM POWER RANGER', 'resume event triggered');
+  });
+
+  /**
+   * Send resume event on screen unlock
+   */
+  powerMonitor.on('unlock-screen', () => {
+    sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
+    logInfo('ADAM POWER RANGER', 'unlock-screen event triggered');
+  });
+
   /**
    * Open the given URL in the user's default browser, with an option to activate the app.
    */
