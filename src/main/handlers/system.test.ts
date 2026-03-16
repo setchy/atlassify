@@ -20,6 +20,9 @@ vi.mock('electron', () => ({
   shell: {
     openExternal: vi.fn(),
   },
+  powerMonitor: {
+    on: vi.fn(),
+  },
 }));
 
 describe('main/handlers/system.ts', () => {
