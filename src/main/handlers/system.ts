@@ -18,24 +18,21 @@ import { onMainEvent, sendRendererEvent } from '../events';
  */
 export function registerSystemHandlers(mb: Menubar): void {
   /**
-   * Send resume event on resume
+   * Handle system wake from sleep/hibernate
    */
   powerMonitor.on('resume', () => {
-    sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
-    logInfo(
-      'power monitor',
-      'resume event triggered. will refetch notifications',
-    );
+    sendRendererEvent(mb, EVENTS.SYSTEM_WAKE);
+    logInfo('power-monitor', 'resume event triggered, will refetch data');
   });
 
   /**
-   * Send resume event on screen unlock
+   * Handle screen unlock (user returned to device)
    */
   powerMonitor.on('unlock-screen', () => {
-    sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
+    sendRendererEvent(mb, EVENTS.SYSTEM_WAKE);
     logInfo(
-      'power monitor',
-      'unlock-screen event triggered.  will refetch notifications',
+      'power-monitor',
+      'unlock-screen event triggered, will refetch data',
     );
   });
 

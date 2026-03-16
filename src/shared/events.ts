@@ -7,7 +7,7 @@ const P = APPLICATION.EVENT_PREFIX;
  * Each value is prefixed with `APPLICATION.EVENT_PREFIX` to prevent collisions.
  */
 export const EVENTS = {
-  SYSTEM_RESUME: `${P}system-resume`,
+  SYSTEM_WAKE: `${P}system-wake`,
   QUIT: `${P}quit`,
   WINDOW_SHOW: `${P}window-show`,
   WINDOW_HIDE: `${P}window-hide`,

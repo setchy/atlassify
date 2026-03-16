@@ -162,14 +162,14 @@ export const useNotifications = (): UseNotificationsResult => {
     refetchIntervalInBackground: true,
   });
 
-  // Listen for system resume/wake and refetch notifications only if not already fetching
+  const refetchRef = useRef(refetch);
+  refetchRef.current = refetch;
+
   useEffect(() => {
-    window.atlassify.onSystemResume(() => {
-      if (!isFetching) {
-        refetch();
-      }
+    window.atlassify.onSystemWake(() => {
+      refetchRef.current();
     });
-  }, [isFetching, refetch]);
+  }, []);
 
   const notificationCount = getNotificationCount(notifications);
   const hasNotifications = notificationCount > 0;

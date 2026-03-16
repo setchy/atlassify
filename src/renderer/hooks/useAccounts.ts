@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
@@ -54,6 +54,15 @@ export const useAccounts = (): UseAccountsResult => {
   const refreshAccounts = useCallback(async () => {
     await refetch();
   }, [refetch]);
+
+  const refreshAccountsRef = useRef(refreshAccounts);
+  refreshAccountsRef.current = refreshAccounts;
+
+  useEffect(() => {
+    window.atlassify.onSystemWake(() => {
+      refreshAccountsRef.current();
+    });
+  }, []);
 
   return {
     isLoading,

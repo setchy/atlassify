@@ -108,9 +108,9 @@ export const api = {
     setLevel: (zoomLevel: number) => webFrame.setZoomLevel(zoomLevel),
   },
 
-  /** Listen for system resume/wake events from main process. */
-  onSystemResume: (callback: () => void) => {
-    onRendererEvent(EVENTS.SYSTEM_RESUME, () => callback());
+  /** Listen for system wake events from main process. */
+  onSystemWake: (callback: () => void) => {
+    onRendererEvent(EVENTS.SYSTEM_WAKE, () => callback());
   },
 
   /** Registers a callback invoked when the main process requests a full app reset. */
