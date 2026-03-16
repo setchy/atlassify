@@ -22,7 +22,10 @@ export function registerSystemHandlers(mb: Menubar): void {
    */
   powerMonitor.on('resume', () => {
     sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
-    logInfo('ADAM POWER RANGER', 'resume event triggered');
+    logInfo(
+      'power monitor',
+      'resume event triggered. will refetch notifications',
+    );
   });
 
   /**
@@ -30,7 +33,10 @@ export function registerSystemHandlers(mb: Menubar): void {
    */
   powerMonitor.on('unlock-screen', () => {
     sendRendererEvent(mb, EVENTS.SYSTEM_RESUME);
-    logInfo('ADAM POWER RANGER', 'unlock-screen event triggered');
+    logInfo(
+      'power monitor',
+      'unlock-screen event triggered.  will refetch notifications',
+    );
   });
 
   /**
