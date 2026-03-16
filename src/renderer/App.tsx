@@ -43,15 +43,6 @@ function RequireAuth({ children }) {
 }
 
 export const App: FC = () => {
-  // Listen for system resume/wake and refetch all queries
-  useEffect(() => {
-    if (window.atlassify?.onSystemResume) {
-      window.atlassify.onSystemResume(() => {
-        queryClient.refetchQueries();
-      });
-    }
-  }, []);
-
   // Initialize store subscriptions with proper cleanup
   useEffect(() => {
     const cleanup = initializeStoreSubscriptions();
