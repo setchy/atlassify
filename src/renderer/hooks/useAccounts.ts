@@ -1,10 +1,9 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import { useAccountsStore } from '../stores';
 
 import { accountsKeys } from '../utils/api/queryKeys';
@@ -33,7 +32,6 @@ export const useAccounts = (): UseAccountsResult => {
 
   const { isLoading, error, refetch } = useQuery<boolean, Error>({
     queryKey: accountsQueryKeys,
-
     queryFn: async () => {
       // Perform partial refreshes: update only successfully refreshed accounts
       await Promise.all(
@@ -46,29 +44,28 @@ export const useAccounts = (): UseAccountsResult => {
 
     enabled: accounts.length > 0,
 
-    refetchOnWindowFocus: true,
+    refetchOnWindowFocus: false,
     refetchOnReconnect: true,
-  });
 
-  /**
-   * Manual interval-based fetching for reliable background updates in Electron tray apps.
-   *
-   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
-   * document.hidden === true. For menubar apps, the window is hidden most of the time,
-   * so refetchInterval would effectively never run in the background.
-   *
-   * This setInterval-based approach continues running regardless of window visibility,
-   * ensuring accounts stay fresh even when the app is hidden in the system tray.
-   * It also provides graceful recovery after system sleep/suspend cycles.
-   */
-  useIntervalTimer({
-    callback: () => refetch(),
-    delay: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
+    refetchInterval: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
+    refetchIntervalInBackground: true,
   });
 
   const refreshAccounts = useCallback(async () => {
     await refetch();
   }, [refetch]);
+
+  const refreshAccountsRef = useRef(refreshAccounts);
+  refreshAccountsRef.current = refreshAccounts;
+
+  /**
+   * Refetch accounts when system wakes from sleep to ensure data is fresh.
+   */
+  useEffect(() => {
+    window.atlassify.onSystemWake(() => {
+      refreshAccountsRef.current();
+    });
+  }, []);
 
   return {
     isLoading,

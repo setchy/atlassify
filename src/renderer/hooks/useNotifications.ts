@@ -9,7 +9,6 @@ import {
 
 import { Constants } from '../constants';
 
-import { useIntervalTimer } from '../hooks/useIntervalTimer';
 import {
   useAccountsStore,
   useFiltersStore,
@@ -158,6 +157,9 @@ export const useNotifications = (): UseNotificationsResult => {
 
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,
+
+    refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
+    refetchIntervalInBackground: true,
   });
 
   const notificationCount = getNotificationCount(notifications);
@@ -165,22 +167,6 @@ export const useNotifications = (): UseNotificationsResult => {
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
 
   const isErrorOrPaused = isError || isPaused;
-
-  /**
-   * Manual interval-based fetching for reliable background updates in Electron tray apps.
-   *
-   * TanStack Query's refetchInterval uses the Page Visibility API, which pauses when
-   * document.hidden === true. For menubar apps, the window is hidden most of the time,
-   * so refetchInterval would effectively never run in the background.
-   *
-   * This setInterval-based approach continues running regardless of window visibility,
-   * ensuring notifications stay fresh even when the app is hidden in the system tray.
-   * It also provides graceful recovery after system sleep/suspend cycles.
-   */
-  useIntervalTimer({
-    callback: () => refetch(),
-    delay: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-  });
 
   // Determine global error from query state
   const globalError: AtlassifyError | null = useMemo(() => {
@@ -202,6 +188,18 @@ export const useNotifications = (): UseNotificationsResult => {
 
     return null;
   }, [isPaused, isError, notifications]);
+
+  const refetchRef = useRef(refetch);
+  refetchRef.current = refetch;
+
+  /**
+   * Refetch notifications when system wakes from sleep to ensure data is fresh.
+   */
+  useEffect(() => {
+    window.atlassify.onSystemWake(() => {
+      refetchRef.current();
+    });
+  }, []);
 
   /**
    * Sync filtered notification derived states to store so tray updates outside React
