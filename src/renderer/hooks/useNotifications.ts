@@ -162,15 +162,6 @@ export const useNotifications = (): UseNotificationsResult => {
     refetchIntervalInBackground: true,
   });
 
-  const refetchRef = useRef(refetch);
-  refetchRef.current = refetch;
-
-  useEffect(() => {
-    window.atlassify.onSystemWake(() => {
-      refetchRef.current();
-    });
-  }, []);
-
   const notificationCount = getNotificationCount(notifications);
   const hasNotifications = notificationCount > 0;
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
@@ -197,6 +188,18 @@ export const useNotifications = (): UseNotificationsResult => {
 
     return null;
   }, [isPaused, isError, notifications]);
+
+  const refetchRef = useRef(refetch);
+  refetchRef.current = refetch;
+
+  /**
+   * Refetch notifications when system wakes from sleep to ensure data is fresh.
+   */
+  useEffect(() => {
+    window.atlassify.onSystemWake(() => {
+      refetchRef.current();
+    });
+  }, []);
 
   /**
    * Sync filtered notification derived states to store so tray updates outside React

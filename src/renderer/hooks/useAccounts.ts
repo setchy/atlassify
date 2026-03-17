@@ -58,6 +58,9 @@ export const useAccounts = (): UseAccountsResult => {
   const refreshAccountsRef = useRef(refreshAccounts);
   refreshAccountsRef.current = refreshAccounts;
 
+  /**
+   * Refetch accounts when system wakes from sleep to ensure data is fresh.
+   */
   useEffect(() => {
     window.atlassify.onSystemWake(() => {
       refreshAccountsRef.current();
