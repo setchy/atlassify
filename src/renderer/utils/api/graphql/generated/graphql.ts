@@ -32611,8 +32611,8 @@ export enum JiraCommentSortField {
 export type JiraCommentSortInput = {
   /** The field to sort on. */
   field: JiraCommentSortField;
-  /** The sort direction. */
-  order: SortDirection;
+  /** The sort direction. If not specified, the default activity sort order is used. */
+  order?: InputMaybe<SortDirection>;
 };
 
 /** Represents the source of a Jira comment if it came from a third-party source. */
@@ -33846,6 +33846,13 @@ export type JiraDiscardUserViewConfigInput = {
   viewId: Scalars['ID']['input'];
 };
 
+export type JiraDisconnectTownsquareProjectToSpaceInput = {
+  /** The ARI of the Jira Space to unlink */
+  spaceAri: Scalars['ID']['input'];
+  /** The ARI of the Townsquare Project to unlink from */
+  townsquareProjectAri: Scalars['String']['input'];
+};
+
 export type JiraDismissAiAgentSessionInput = {
   /** The agents identity account ID */
   agentIdentityAccountId: Scalars['String']['input'];
@@ -33916,6 +33923,17 @@ export type JiraDurationFieldInput = {
   /** Represents the time original estimate */
   originalEstimateField?: InputMaybe<Scalars['String']['input']>;
 };
+
+/** Time unit options for duration formatting. */
+export enum JiraDurationUnit {
+  Days = 'DAYS',
+  Hours = 'HOURS',
+  Minutes = 'MINUTES',
+  Months = 'MONTHS',
+  Seconds = 'SECONDS',
+  Weeks = 'WEEKS',
+  Years = 'YEARS'
+}
 
 export type JiraEchoWhereInput = {
   /** If provided, the echo will return after this many milliseconds. */
@@ -34060,6 +34078,40 @@ export enum JiraFavouriteType {
   Project = 'PROJECT',
   Queue = 'QUEUE'
 }
+
+/** Input to resolve aggregated field data by board ID. */
+export type JiraFieldAggregationByBoardQuery = {
+  /** ID of a Jira board. */
+  boardId: Scalars['Long']['input'];
+  /** The identifier which indicates the cloud instance this data is to be fetched for. */
+  cloudId: Scalars['ID']['input'];
+};
+
+/** Input to resolve aggregated field data by project. */
+export type JiraFieldAggregationByProjectQuery = {
+  /** The identifier which indicates the cloud instance this data is to be fetched for. */
+  cloudId: Scalars['ID']['input'];
+  /** Identifies the project by either key or ID. Exactly one must be provided. */
+  projectIdOrKey: JiraFieldAggregationProjectIdOrKeyInput;
+};
+
+/** Input to identify a project for field aggregation by either key or ID. Exactly one must be provided. */
+export type JiraFieldAggregationProjectIdOrKeyInput = {
+  /** ID of a Jira project. */
+  projectId?: InputMaybe<Scalars['Long']['input']>;
+  /** Key of a Jira project. */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input to query aggregated field data. Provides context for resolving aggregated (roll-up) values. */
+export type JiraFieldAggregationQueryInput = {
+  /** Input to resolve aggregated field data by board ID. */
+  boardQuery?: InputMaybe<JiraFieldAggregationByBoardQuery>;
+  /** Input to resolve aggregated field data by project. */
+  projectQuery?: InputMaybe<JiraFieldAggregationByProjectQuery>;
+  /** Jira View ARI. */
+  viewId?: InputMaybe<Scalars['ID']['input']>;
+};
 
 /** Represents an input to fieldAssociationWithIssueTypes query */
 export type JiraFieldAssociationWithIssueTypesInput = {
@@ -36909,6 +36961,12 @@ export type JiraNumberFieldFormatConfigInput = {
   /** The decimal separator character for the number field. */
   decimalSeparator?: InputMaybe<JiraDecimalSeparator>;
   /**
+   * The set of time units to include when displaying formatted duration values.
+   * This is a display configuration only — no duration formatting is performed server-side.
+   * Only applicable when formatStyle is DURATION.
+   */
+  durationUnits?: InputMaybe<Array<JiraDurationUnit>>;
+  /**
    * The number of decimals allowed or enforced on display.
    * Possible values are null, 1, 2, 3, or 4.
    */
@@ -36927,6 +36985,11 @@ export enum JiraNumberFieldFormatStyle {
   Currency = 'CURRENCY',
   /** Decimal means default number formatting without any Unit or Currency style */
   Decimal = 'DECIMAL',
+  /**
+   * Duration formatting (e.g., "3h 20m", "1d 2h 3m 4s").
+   * Values are stored as seconds and formatted on the frontend.
+   */
+  Duration = 'DURATION',
   /** Percent formatting. see Intl.NumberFormat style='percent' */
   Percent = 'PERCENT',
   /** Units like Kilogram, Gigabyte. see Intl.NumberFormat style='unit' */
@@ -44800,6 +44863,11 @@ export type MercuryAssignUserAccessToFocusAreaInput = {
   focusAreaUserAccessAssignment: Array<InputMaybe<MercuryFocusAreaUserAccessInput>>;
 };
 
+export type MercuryBooleanCustomFieldInput = {
+  /** The boolean value to set on the custom field. */
+  booleanValue?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MercuryChangeParentFocusAreaChangeInput = {
   /** The ARI of the Focus Area being moved. */
   focusAreaId: Scalars['ID']['input'];
@@ -44893,6 +44961,12 @@ export enum MercuryCostSubtypeSortField {
   Name = 'NAME'
 }
 
+export enum MercuryCostSummaryDimension {
+  FinancialVersionCostClassification = 'FINANCIAL_VERSION_COST_CLASSIFICATION',
+  FinancialVersionExpenditureType = 'FINANCIAL_VERSION_EXPENDITURE_TYPE',
+  FinancialVersionInvestmentCategory = 'FINANCIAL_VERSION_INVESTMENT_CATEGORY'
+}
+
 /**
  *  ----------------------------------------
  *   Custom field definitions inputs and payloads
@@ -44901,6 +44975,11 @@ export enum MercuryCostSubtypeSortField {
 export type MercuryCreateBaseCustomFieldDefinitionInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
+};
+
+export type MercuryCreateBooleanCustomFieldDefinitionInput = {
+  /** The base input for a custom field definition. */
+  base: MercuryCreateBaseCustomFieldDefinitionInput;
 };
 
 export type MercuryCreateChangeProposalCommentInput = {
@@ -44962,6 +45041,7 @@ export type MercuryCreateCommentInput = {
 };
 
 export type MercuryCreateCoreCustomFieldDefinitionInput = {
+  booleanField?: InputMaybe<MercuryCreateBooleanCustomFieldDefinitionInput>;
   dateField?: InputMaybe<MercuryCreateDateCustomFieldDefinitionInput>;
   multiSelectField?: InputMaybe<MercuryCreateMultiSelectCustomFieldDefinitionInput>;
   numberField?: InputMaybe<MercuryCreateNumberCustomFieldDefinitionInput>;
@@ -45124,6 +45204,8 @@ export type MercuryCreateRiskInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   /** The impact value (Int) from riskImpactValues. Pass the numeric value, not the key. */
   impact?: InputMaybe<Scalars['Int']['input']>;
+  /** The likelihood value (Int) from riskLikelihoodValues. Pass the numeric value, not the key. */
+  likelihood?: InputMaybe<Scalars['Int']['input']>;
   /** The name of the Risk. */
   name: Scalars['String']['input'];
   /** The owner of the Risk (user ARI). Defaults to the requesting user if not provided. */
@@ -45184,6 +45266,7 @@ export enum MercuryCustomFieldDefinitionSortField {
  *  ----------------------------------------
  */
 export type MercuryCustomFieldInput = {
+  booleanField?: InputMaybe<MercuryBooleanCustomFieldInput>;
   dateField?: InputMaybe<MercuryDateCustomFieldInput>;
   multiSelectField?: InputMaybe<MercuryMultiSelectCustomFieldInput>;
   numberField?: InputMaybe<MercuryNumberCustomFieldInput>;
@@ -45387,6 +45470,15 @@ export enum MercuryEventType {
   Unarchive = 'UNARCHIVE',
   Unlink = 'UNLINK',
   Update = 'UPDATE'
+}
+
+export type MercuryFinancialVersionSort = {
+  field?: InputMaybe<MercuryFinancialVersionSortField>;
+  order: SortOrder;
+};
+
+export enum MercuryFinancialVersionSortField {
+  Type = 'TYPE'
 }
 
 export enum MercuryFinancialVersionType {
@@ -45996,6 +46088,7 @@ export type MercuryRiskSort = {
 
 export enum MercuryRiskSortField {
   Impact = 'IMPACT',
+  Likelihood = 'LIKELIHOOD',
   Name = 'NAME',
   Status = 'STATUS',
   TargetDate = 'TARGET_DATE',
@@ -46518,6 +46611,13 @@ export type MercuryUpdateRiskImpactInput = {
   id: Scalars['ID']['input'];
   /** The impact value (Int) from riskImpactValues. Pass the numeric value, not the key. */
   impact: Scalars['Int']['input'];
+};
+
+export type MercuryUpdateRiskLikelihoodInput = {
+  /** The ID of the Risk to update. */
+  id: Scalars['ID']['input'];
+  /** The likelihood value (Int) from riskLikelihoodValues. Pass the numeric value, not the key. */
+  likelihood: Scalars['Int']['input'];
 };
 
 export type MercuryUpdateRiskNameInput = {
