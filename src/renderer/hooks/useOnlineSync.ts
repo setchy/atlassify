@@ -20,6 +20,15 @@ export function useOnlineSync(): void {
 
     onlineManager.setOnline(navigator.onLine);
 
+    /**
+     * Re-sync online state on system wake.
+     * The browser's online/offline events may not have fired yet when powerMonitor
+     * triggers the wake event, so we force-sync from navigator.onLine immediately.
+     */
+    window.atlassify.onSystemWake(() => {
+      onlineManager.setOnline(navigator.onLine);
+    });
+
     return () => unsubscribe();
   }, []);
 }
