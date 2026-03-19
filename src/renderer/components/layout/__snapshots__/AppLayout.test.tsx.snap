@@ -135,12 +135,12 @@ exports[`renderer/components/layout/AppLayout.tsx > should render itself & its c
                 >
                   <span
                     hidden=""
-                    id="uid4"
+                    id="_r_4_"
                   >
                     Show only unread toggle
                   </span>
                   <input
-                    aria-labelledby="uid4"
+                    aria-labelledby="_r_4_"
                     checked=""
                     data-testid="sidebar-toggle-unread-only--input"
                     id="toggle-unread-only"
