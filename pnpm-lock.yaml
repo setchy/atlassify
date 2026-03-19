@@ -94,8 +94,8 @@ importers:
         specifier: 22.0.1
         version: 22.0.1(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/toggle':
-        specifier: 15.2.13
-        version: 15.2.13(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 15.2.14
+        version: 15.2.14(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/tokens':
         specifier: 11.1.0
         version: 11.1.0(@types/react@19.2.14)(react@19.2.4)
@@ -355,6 +355,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/icon@33.0.0':
+    resolution: {integrity: sha512-kJNbOoeL5K5wy/fEHgxNXoNIPkNtEU+9tRV46gsUC6U8In+sp4YxbAwLLXG3OOim5QTAdy4ZhnJ6l0RICeMjJw==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/inline-message@15.5.7':
     resolution: {integrity: sha512-p14ClIt4CYqkFM/XRJNwD3eLMA0n634nDkscMawqJjsZ7VrhuS466XHC4XAqjbB46jpH4N8JRB0O+I+2sVJ6yg==}
     peerDependencies:
@@ -481,8 +486,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.2.13':
-    resolution: {integrity: sha512-9W69PVeR/Zb7PHIqt5J5t2sT+34Trt+47BWvt1SltVZheOCQyofaCQKGm4/wyVBAzdxFcz2r9RTX6YY/gqMmwg==}
+  '@atlaskit/toggle@15.2.14':
+    resolution: {integrity: sha512-RFnDbJXGR5GJGQpgak/NUgnAmDWWdaoMbkMWtlQkg/7U64j7RWMukJj8y6tHxJo26kd6rxs+avkFHZeMkE7q9A==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5330,6 +5335,18 @@ snapshots:
       - '@types/react'
       - supports-color
 
+  '@atlaskit/icon@33.0.0(@types/react@19.2.14)(react@19.2.4)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
+      '@atlaskit/tile': 1.0.5(@types/react@19.2.14)(react@19.2.4)
+      '@atlaskit/tokens': 11.1.0(@types/react@19.2.14)(react@19.2.4)
+      '@babel/runtime': 7.28.6
+      '@compiled/react': 0.20.0(react@19.2.4)
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
   '@atlaskit/inline-message@15.5.7(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/button': 23.10.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5704,12 +5721,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/toggle@15.2.13(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/toggle@15.2.14(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.1.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/ds-lib': 6.0.0(react@19.2.4)
-      '@atlaskit/icon': 32.0.1(@types/react@19.2.14)(react@19.2.4)
+      '@atlaskit/icon': 33.0.0(@types/react@19.2.14)(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.0.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/spinner': 19.0.11(@types/react@19.2.14)(react@19.2.4)
