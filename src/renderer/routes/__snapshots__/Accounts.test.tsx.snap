@@ -76,7 +76,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
             type="button"
           >
             <div
-              aria-labelledby="uid7"
+              aria-labelledby="uid2"
               class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
               role="img"
             >
@@ -95,7 +95,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
               </span>
               <span
                 hidden=""
-                id="uid7"
+                id="uid2"
               >
                 Atlassify
               </span>
@@ -322,7 +322,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
             type="button"
           >
             <div
-              aria-labelledby="uid2"
+              aria-labelledby="uid1"
               class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
               role="img"
             >
@@ -341,7 +341,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
               </span>
               <span
                 hidden=""
-                id="uid2"
+                id="uid1"
               >
                 Atlassify
               </span>
