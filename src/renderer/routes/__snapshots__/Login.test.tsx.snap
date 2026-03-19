@@ -79,8 +79,8 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
               <label
                 class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                 data-testid="login-username--label"
-                for="username-uid2"
-                id="username-uid2-label"
+                for="username-_r_1_"
+                id="username-_r_1_-label"
               >
                 Username
               </label>
@@ -91,13 +91,13 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
                 style="max-width: 100%;"
               >
                 <input
-                  aria-describedby="username-uid2-valid username-uid2-helper"
-                  aria-labelledby="username-uid2-label"
+                  aria-describedby="username-_r_1_-valid username-_r_1_-helper"
+                  aria-labelledby="username-_r_1_-label"
                   aria-required="false"
                   autocomplete="off"
                   class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                   data-ds--text-field--input="true"
-                  id="username-uid2"
+                  id="username-_r_1_"
                   name="username"
                   value=""
                 />
@@ -105,7 +105,7 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
               <div
                 aria-live="polite"
                 class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-                id="username-uid2-helper"
+                id="username-_r_1_-helper"
               >
                 Your Atlassian username / email address
               </div>
@@ -117,8 +117,8 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
               <label
                 class="_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t"
                 data-testid="login-token--label"
-                for="token-uid3"
-                id="token-uid3-label"
+                for="token-_r_2_"
+                id="token-_r_2_-label"
               >
                 API Token
               </label>
@@ -129,12 +129,12 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
                 style="max-width: 100%;"
               >
                 <input
-                  aria-describedby="token-uid3-valid token-uid3-helper"
-                  aria-labelledby="token-uid3-label"
+                  aria-describedby="token-_r_2_-valid token-_r_2_-helper"
+                  aria-labelledby="token-_r_2_-label"
                   aria-required="false"
                   class="_19itidpf _11c81d4k _12ji1r31 _1qu2glyw _12y31o36 _vchhusvi _1bsb1osq _1ul9idpf _bfhk1j28 _syaz1kw7 _80om1kw7 _14ji12x7 _olc612x7 _1kod12x7 _7ba012x7 _1goxglyw _13xeglyw _1n7e1l2s _1idr1rpy _1tn2fhey _l9oiu2gc _549yu2gc _1h5w12x7 _124212x7"
                   data-ds--text-field--input="true"
-                  id="token-uid3"
+                  id="token-_r_2_"
                   name="token"
                   type="password"
                   value=""
@@ -143,7 +143,7 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
               <div
                 aria-live="polite"
                 class="_zulp12x7 _11c8wadc _1e0c1txw _1bah1q9y _1pfh1b66 _syaz1wmz"
-                id="token-uid3-helper"
+                id="token-_r_2_-helper"
               >
                 <span>
                   <div
