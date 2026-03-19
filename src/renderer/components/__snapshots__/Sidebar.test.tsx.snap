@@ -456,12 +456,12 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             >
               <span
                 hidden=""
-                id="uid24"
+                id="uid13"
               >
                 Show only unread toggle
               </span>
               <input
-                aria-labelledby="uid24"
+                aria-labelledby="uid13"
                 checked=""
                 data-testid="sidebar-toggle-unread-only--input"
                 id="toggle-unread-only"
@@ -843,12 +843,12 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             >
               <span
                 hidden=""
-                id="uid7"
+                id="uid4"
               >
                 Show only unread toggle
               </span>
               <input
-                aria-labelledby="uid7"
+                aria-labelledby="uid4"
                 checked=""
                 data-testid="sidebar-toggle-unread-only--input"
                 id="toggle-unread-only"
