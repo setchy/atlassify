@@ -75,7 +75,7 @@
     "@atlaskit/icon": "32.0.1",
     "@atlaskit/inline-message": "15.5.7",
     "@atlaskit/logo": "19.10.4",
-    "@atlaskit/modal-dialog": "14.11.2",
+    "@atlaskit/modal-dialog": "14.11.3",
     "@atlaskit/primitives": "18.0.1",
     "@atlaskit/radio": "8.4.5",
     "@atlaskit/select": "21.8.1",
