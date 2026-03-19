@@ -135,5 +135,19 @@ describe('renderer/utils/system/tray.ts', () => {
       );
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
+
+    it('should pass appState offline (not error) when both isError and isOnline are false', () => {
+      useRuntimeStore.setState({ isError: true, isOnline: false });
+
+      setTrayIconColorAndTitle();
+
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        0,
+        'offline',
+        'default',
+        'active',
+      );
+      expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
+    });
   });
 });
