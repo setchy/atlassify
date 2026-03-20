@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
@@ -69,8 +69,10 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should hide the account header setting when there are multiple accounts', async () => {
-    useAccountsStore.setState({
-      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+    act(() => {
+      useAccountsStore.setState({
+        accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+      });
     });
 
     renderWithAppContext(<AppearanceSettings />);

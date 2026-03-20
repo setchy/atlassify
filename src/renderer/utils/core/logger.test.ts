@@ -11,9 +11,9 @@ describe('renderer/utils/core/logger.ts', () => {
   const mockError = new Error('boom');
 
   beforeEach(() => {
-    logInfoSpy.mockReset();
-    logWarnSpy.mockReset();
-    logErrorSpy.mockReset();
+    logInfoSpy.mockClear();
+    logWarnSpy.mockClear();
+    logErrorSpy.mockClear();
   });
 
   it('logs info without notification', () => {

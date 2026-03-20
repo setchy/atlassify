@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
@@ -144,9 +144,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-details'));
 
       // Trigger transitionEnd to complete the animation and execute mutation
-      notificationElement?.dispatchEvent(
-        new Event('transitionend', { bubbles: true }),
-      );
+      await act(async () => {
+        notificationElement?.dispatchEvent(
+          new Event('transitionend', { bubbles: true }),
+        );
+      });
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -192,9 +194,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
 
       // Trigger transitionEnd to complete the animation and execute mutation
-      notificationElement?.dispatchEvent(
-        new Event('transitionend', { bubbles: true }),
-      );
+      await act(async () => {
+        notificationElement?.dispatchEvent(
+          new Event('transitionend', { bubbles: true }),
+        );
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });

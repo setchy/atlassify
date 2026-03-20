@@ -115,7 +115,9 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     // Trigger transitionEnd on the wrapper div to complete the animation and execute mutation
     const wrapperDiv = screen.getByTestId('product-notifications-wrapper');
-    wrapperDiv.dispatchEvent(new Event('transitionend', { bubbles: true }));
+    await act(async () => {
+      wrapperDiv.dispatchEvent(new Event('transitionend', { bubbles: true }));
+    });
 
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });

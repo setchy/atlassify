@@ -10,9 +10,9 @@ describe('shared/logger.ts', () => {
   const mockError = new Error('baz');
 
   beforeEach(() => {
-    logInfoSpy.mockReset();
-    logWarnSpy.mockReset();
-    logErrorSpy.mockReset();
+    logInfoSpy.mockClear();
+    logWarnSpy.mockClear();
+    logErrorSpy.mockClear();
   });
 
   describe('logInfo', () => {
