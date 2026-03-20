@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { renderWithProviders } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
@@ -19,7 +19,7 @@ const renderWithContext = () => {
     return null;
   };
 
-  renderWithAppContext(
+  renderWithProviders(
     <AppProvider>
       <CaptureContext />
     </AppProvider>,

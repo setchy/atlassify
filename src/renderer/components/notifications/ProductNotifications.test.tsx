@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
 import * as comms from '../../utils/system/comms';
@@ -27,7 +27,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -39,7 +39,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -54,7 +54,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<ProductNotifications {...props} />);
+      renderWithProviders(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-home'));
@@ -68,7 +68,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     expect(mockConfluenceNotification.product.type).toBe('confluence');
 
     await act(async () => {
-      renderWithAppContext(
+      renderWithProviders(
         <ProductNotifications
           productNotifications={[mockConfluenceNotification]}
         />,
@@ -86,12 +86,12 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<ProductNotifications {...props} />);
+      renderWithProviders(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-toggle'));
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -103,7 +103,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const markNotificationsReadMock = vi.fn();
 
-    renderWithAppContext(<ProductNotifications {...props} />, {
+    renderWithProviders(<ProductNotifications {...props} />, {
       markNotificationsRead: markNotificationsReadMock,
     });
 

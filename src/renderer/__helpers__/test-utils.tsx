@@ -19,9 +19,9 @@ const EMPTY_APP_CONTEXT: TestAppContext = {};
 
 interface RenderOptions extends Partial<AppContextState> {
   initialEntries?: string[];
-  accountsStore?: Partial<AccountsStore>;
-  settingsStore?: Partial<SettingsStore>;
-  filtersStore?: Partial<FiltersStore>;
+  accounts?: Partial<AccountsStore>;
+  settings?: Partial<SettingsStore>;
+  filters?: Partial<FiltersStore>;
 }
 
 /**
@@ -68,29 +68,30 @@ function AppContextProvider({
 }
 
 /**
- * Custom render that wraps components with AppContextProvider by default.
+ * Custom render that wraps components with all providers needed for testing:
+ * QueryClient, MemoryRouter, AppContext, and Zustand stores.
  *
  * Usage:
- *   renderWithAppContext(<MyComponent />, { auth, settings, ... })
+ *   renderWithProviders(<MyComponent />, { notifications, accounts, settings, filters, ... })
  */
-export function renderWithAppContext(
+export function renderWithProviders(
   ui: ReactElement,
   {
     initialEntries,
-    accountsStore,
-    settingsStore,
-    filtersStore,
+    accounts,
+    settings,
+    filters,
     ...context
   }: RenderOptions = {},
 ) {
-  if (accountsStore) {
-    useAccountsStore.setState(accountsStore);
+  if (accounts) {
+    useAccountsStore.setState(accounts);
   }
-  if (settingsStore) {
-    useSettingsStore.setState(settingsStore);
+  if (settings) {
+    useSettingsStore.setState(settings);
   }
-  if (filtersStore) {
-    useFiltersStore.setState(filtersStore);
+  if (filters) {
+    useFiltersStore.setState(filters);
   }
 
   const queryClient = new QueryClient({
@@ -99,6 +100,7 @@ export function renderWithAppContext(
         retry: false,
         refetchOnWindowFocus: false,
         refetchInterval: false,
+        networkMode: 'online',
       },
     },
   });

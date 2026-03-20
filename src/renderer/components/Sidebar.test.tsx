@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
@@ -33,7 +33,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
         initialEntries: ['/'],
         notifications: mockAccountNotifications,
       });
@@ -43,7 +43,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
         initialEntries: ['/'],
         notifications: mockAccountNotifications,
       });
@@ -56,8 +56,8 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
 
-      const tree = renderWithAppContext(<Sidebar />, {
-        accountsStore: { accounts: [] },
+      const tree = renderWithProviders(<Sidebar />, {
+        accounts: { accounts: [] },
         initialEntries: ['/landing'],
         notifications: mockAccountNotifications,
       });
@@ -68,8 +68,8 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
 
-      const tree = renderWithAppContext(<Sidebar />, {
-        accountsStore: { accounts: [] },
+      const tree = renderWithProviders(<Sidebar />, {
+        accounts: { accounts: [] },
         notifications: mockAccountNotifications,
       });
 
@@ -78,7 +78,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   it('should navigate to home when clicking logo', async () => {
-    renderWithAppContext(<Sidebar />);
+    renderWithProviders(<Sidebar />);
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
 
@@ -88,7 +88,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('notifications icon', () => {
     it('opens notifications home when clicked', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
@@ -98,7 +98,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are no notifications', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: [],
       });
 
@@ -106,7 +106,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are notifications', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: mockAccountNotifications,
       });
 
@@ -114,7 +114,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are more notifications available', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: mockAccountNotificationsWithMorePages,
       });
 
@@ -124,23 +124,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('show read / unread notifications', () => {
     it('renders correct icon when in unread only mode', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { fetchOnlyUnreadNotifications: true },
+      renderWithProviders(<Sidebar />, {
+        settings: { fetchOnlyUnreadNotifications: true },
       });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when in unread and read mode', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { fetchOnlyUnreadNotifications: false },
+      renderWithProviders(<Sidebar />, {
+        settings: { fetchOnlyUnreadNotifications: false },
       });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('should toggle show only unread notifications', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       expect(
         screen.getByTestId('sidebar-toggle-unread-only--input'),
@@ -158,23 +158,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by products', () => {
     it('should order notifications by date', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { groupNotificationsByProduct: false },
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByProduct: false },
       });
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should group notifications by product', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { groupNotificationsByProduct: true },
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByProduct: true },
       });
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by products', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
 
@@ -184,23 +184,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by titles', () => {
     it('should group notifications by title', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { groupNotificationsByTitle: true },
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByTitle: true },
       });
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should not group notifications by title - flat notifications', () => {
-      renderWithAppContext(<Sidebar />, {
-        settingsStore: { groupNotificationsByTitle: false },
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByTitle: false },
       });
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by title', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-title'));
 
@@ -210,7 +210,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Filter notifications', () => {
     it('go to the filters route', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
@@ -222,7 +222,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if filters path already shown', async () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         initialEntries: ['/filters'],
       });
 
@@ -236,8 +236,8 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('highlight filters sidebar if any are saved', () => {
-      renderWithAppContext(<Sidebar />, {
-        filtersStore: { products: ['bitbucket'] },
+      renderWithProviders(<Sidebar />, {
+        filters: { products: ['bitbucket'] },
       });
 
       expect(
@@ -248,7 +248,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Refresh Notifications', () => {
     it('should refresh the notifications when status is not loading', async () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         fetchNotifications: fetchNotificationsMock,
       });
 
@@ -258,7 +258,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should not refresh the notifications when status is loading', async () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         fetchNotifications: fetchNotificationsMock,
         isLoading: true,
       });
@@ -271,7 +271,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Settings', () => {
     it('go to the settings route', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
@@ -280,7 +280,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if settings path already shown', async () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         initialEntries: ['/settings'],
       });
 
@@ -294,8 +294,8 @@ describe('renderer/components/Sidebar.tsx', () => {
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
 
-    renderWithAppContext(<Sidebar />, {
-      accountsStore: { accounts: [] },
+    renderWithProviders(<Sidebar />, {
+      accounts: { accounts: [] },
     });
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));

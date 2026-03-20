@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 
 import { type FiltersStore, useFiltersStore } from '../stores';
 
@@ -22,7 +22,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
   describe('General', () => {
     it('should render itself & its children', async () => {
-      renderWithAppContext(<FiltersRoute />, {
+      renderWithProviders(<FiltersRoute />, {
         notifications: [],
       });
 
@@ -30,7 +30,7 @@ describe('renderer/routes/Filters.tsx', () => {
     });
 
     it('should go back by pressing the icon', async () => {
-      renderWithAppContext(<FiltersRoute />, {
+      renderWithProviders(<FiltersRoute />, {
         notifications: [],
       });
 
@@ -44,7 +44,7 @@ describe('renderer/routes/Filters.tsx', () => {
   describe('filters', () => {
     describe('time sensitive filters', () => {
       it('should filter by time sensitive - no existing filters set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
         });
 
@@ -58,9 +58,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by engagement state - existing filter set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
-          filtersStore: { engagementStates: ['mention'] },
+          filters: { engagementStates: ['mention'] },
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
@@ -75,7 +75,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('category filters', () => {
       it('should filter by category - no existing filters set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
         });
 
@@ -85,9 +85,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by category - existing filter set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
-          filtersStore: { categories: ['direct'] },
+          filters: { categories: ['direct'] },
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
@@ -98,7 +98,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('actor filters', () => {
       it('should filter by actor - no existing filters set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
         });
 
@@ -108,9 +108,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by actor - existing filter set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
-          filtersStore: { actors: ['automation'] },
+          filters: { actors: ['automation'] },
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
@@ -121,7 +121,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('read state filters', () => {
       it('should filter by read state - no existing filters set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
         });
 
@@ -131,9 +131,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by read state - existing filter set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
-          filtersStore: { readStates: ['unread'] },
+          filters: { readStates: ['unread'] },
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
@@ -144,7 +144,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
     describe('product filters', () => {
       it('should filter by product - no existing filters set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
         });
 
@@ -157,9 +157,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by product - existing filter set', async () => {
-        renderWithAppContext(<FiltersRoute />, {
+        renderWithProviders(<FiltersRoute />, {
           notifications: [],
-          filtersStore: { products: ['bitbucket'] },
+          filters: { products: ['bitbucket'] },
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {
@@ -176,7 +176,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
   describe('Footer section', () => {
     it('should clear filters', async () => {
-      renderWithAppContext(<FiltersRoute />, {
+      renderWithProviders(<FiltersRoute />, {
         notifications: [],
       });
 

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 
 import { useSettingsStore } from '../../stores';
 
@@ -19,7 +19,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should change the open links radio group', async () => {
-    renderWithAppContext(<SystemSettings />);
+    renderWithProviders(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Background'));
 
@@ -28,7 +28,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should toggle the keyboardShortcutEnabled checkbox', async () => {
-    renderWithAppContext(<SystemSettings />);
+    renderWithProviders(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
 
@@ -37,7 +37,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should toggle the showSystemNotifications checkbox', async () => {
-    renderWithAppContext(<SystemSettings />);
+    renderWithProviders(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Show system notifications'));
 
@@ -47,7 +47,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
 
   describe('playSoundNewNotifications', () => {
     it('should toggle the playSoundNewNotifications checkbox', async () => {
-      renderWithAppContext(<SystemSettings />);
+      renderWithProviders(<SystemSettings />);
 
       await userEvent.click(
         screen.getByLabelText('Play sound for new notifications'),
@@ -60,23 +60,23 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('volume controls should not be shown if playSound checkbox is false', async () => {
-      renderWithAppContext(<SystemSettings />, {
-        settingsStore: { playSoundNewNotifications: false },
+      renderWithProviders(<SystemSettings />, {
+        settings: { playSoundNewNotifications: false },
       });
 
       expect(screen.getByTestId('settings-volume-group')).not.toBeVisible();
     });
 
     it('volume controls should be shown if playSound checkbox is true', async () => {
-      renderWithAppContext(<SystemSettings />, {
-        settingsStore: { playSoundNewNotifications: true },
+      renderWithProviders(<SystemSettings />, {
+        settings: { playSoundNewNotifications: true },
       });
 
       expect(screen.getByTestId('settings-volume-group')).toBeVisible();
     });
 
     it('should increase notification volume', async () => {
-      renderWithAppContext(<SystemSettings />);
+      renderWithProviders(<SystemSettings />);
 
       await userEvent.click(screen.getByTestId('settings-volume-up'));
 
@@ -85,7 +85,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should decrease notification volume', async () => {
-      renderWithAppContext(<SystemSettings />);
+      renderWithProviders(<SystemSettings />);
 
       await userEvent.click(screen.getByTestId('settings-volume-down'));
 
@@ -94,8 +94,8 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should reset notification volume', async () => {
-      renderWithAppContext(<SystemSettings />, {
-        settingsStore: { notificationVolume: 30 as Percentage },
+      renderWithProviders(<SystemSettings />, {
+        settings: { notificationVolume: 30 as Percentage },
       });
 
       await userEvent.click(screen.getByTestId('settings-volume-reset'));
@@ -106,7 +106,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   });
 
   it('should toggle the openAtStartup checkbox', async () => {
-    renderWithAppContext(<SystemSettings />);
+    renderWithProviders(<SystemSettings />);
 
     await userEvent.click(screen.getByLabelText('Open at startup'));
 

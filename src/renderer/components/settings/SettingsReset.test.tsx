@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 
 import { useSettingsStore } from '../../stores';
 
@@ -13,7 +13,7 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
   beforeEach(async () => {
     resetSpy = vi.spyOn(useSettingsStore.getState(), 'reset');
 
-    renderWithAppContext(<SettingsReset />);
+    renderWithProviders(<SettingsReset />);
   });
 
   it('should reset default settings when `confirmed`', async () => {

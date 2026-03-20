@@ -1,4 +1,4 @@
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { renderWithProviders } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
   mockAtlassianCloudAccountTwo,
@@ -37,9 +37,9 @@ vi.mock('../components/Oops', () => ({
 
 describe('renderer/routes/Notifications.tsx', () => {
   it('should render account notifications when present', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
-      accountsStore: { accounts: [mockAtlassianCloudAccount] },
-      settingsStore: { showAccountHeader: false },
+    const tree = renderWithProviders(<NotificationsRoute />, {
+      accounts: { accounts: [mockAtlassianCloudAccount] },
+      settings: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isLoading: false,
@@ -52,11 +52,11 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should force account header when multiple accounts', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
-      accountsStore: {
+    const tree = renderWithProviders(<NotificationsRoute />, {
+      accounts: {
         accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
       },
-      settingsStore: { showAccountHeader: false },
+      settings: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isLoading: false,
@@ -69,7 +69,7 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render Loading on first startup when loading and no notifications', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
+    const tree = renderWithProviders(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       isLoading: true,
@@ -82,7 +82,7 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render AllRead when there are no notifications and no errors', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
+    const tree = renderWithProviders(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       isLoading: false,
@@ -95,9 +95,9 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should show notifications while loading when data already exists', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
-      accountsStore: { accounts: [mockAtlassianCloudAccount] },
-      settingsStore: { showAccountHeader: false },
+    const tree = renderWithProviders(<NotificationsRoute />, {
+      accounts: { accounts: [mockAtlassianCloudAccount] },
+      settings: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isFetching: true,
@@ -108,7 +108,7 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render AllRead when loading a background refresh with an empty inbox', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
+    const tree = renderWithProviders(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       isLoading: false,
@@ -120,7 +120,7 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should render Offline Error when not online', () => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
+    const tree = renderWithProviders(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       globalError: null,
@@ -135,7 +135,7 @@ describe('renderer/routes/Notifications.tsx', () => {
     ['unknown error', Errors.UNKNOWN],
     ['default error', null],
   ])('should render Oops for %s', (_label, globalError) => {
-    const tree = renderWithAppContext(<NotificationsRoute />, {
+    const tree = renderWithProviders(<NotificationsRoute />, {
       notifications: [],
       hasNotifications: false,
       isErrorOrPaused: true,

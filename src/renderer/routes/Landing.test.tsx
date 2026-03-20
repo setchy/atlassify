@@ -1,15 +1,15 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 
 import * as comms from '../utils/system/comms';
 import { LandingRoute } from './Landing';
 
 describe('renderer/routes/Landing.tsx', () => {
   it('should render itself & its children', () => {
-    const tree = renderWithAppContext(<LandingRoute />, {
-      accountsStore: { accounts: [] },
+    const tree = renderWithProviders(<LandingRoute />, {
+      accounts: { accounts: [] },
     });
 
     expect(tree.container).toMatchSnapshot();
@@ -18,7 +18,7 @@ describe('renderer/routes/Landing.tsx', () => {
   it('should redirect to notifications once logged in', () => {
     const showWindowSpy = vi.spyOn(comms, 'showWindow');
 
-    renderWithAppContext(<LandingRoute />);
+    renderWithProviders(<LandingRoute />);
 
     expect(showWindowSpy).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledTimes(1);
@@ -26,8 +26,8 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should navigate to login with api token', async () => {
-    renderWithAppContext(<LandingRoute />, {
-      accountsStore: { accounts: [] },
+    renderWithProviders(<LandingRoute />, {
+      accounts: { accounts: [] },
     });
 
     await userEvent.click(screen.getByTestId('login'));

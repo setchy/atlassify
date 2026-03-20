@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import {
   navigateMock,
-  renderWithAppContext,
+  renderWithProviders,
 } from '../../__helpers__/test-utils';
 
 import * as comms from '../../utils/system/comms';
@@ -12,7 +12,7 @@ import { SettingsFooter } from './SettingsFooter';
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
   it('should show app version', async () => {
     await act(async () => {
-      renderWithAppContext(<SettingsFooter />, {
+      renderWithProviders(<SettingsFooter />, {
         initialEntries: ['/settings'],
       });
     });
@@ -25,7 +25,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
       .spyOn(comms, 'openExternalLink')
       .mockImplementation(vi.fn());
 
-    renderWithAppContext(<SettingsFooter />, {
+    renderWithProviders(<SettingsFooter />, {
       initialEntries: ['/settings'],
     });
 
@@ -38,7 +38,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   });
 
   it('should open account management', async () => {
-    renderWithAppContext(<SettingsFooter />, {
+    renderWithProviders(<SettingsFooter />, {
       initialEntries: ['/settings'],
     });
 
@@ -50,7 +50,7 @@ describe('renderer/components/settings/SettingsFooter.tsx', () => {
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
 
-    renderWithAppContext(<SettingsFooter />, {
+    renderWithProviders(<SettingsFooter />, {
       initialEntries: ['/settings'],
     });
 
