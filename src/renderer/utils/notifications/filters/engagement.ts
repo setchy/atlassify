@@ -13,29 +13,29 @@ import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
 
-const ENGAGEMENT_DETAILS: Record<EngagementStateType, FilterDetails> = {
-  mention: {
-    name: i18n.t('filters.engagement.mention.title'),
-    description: i18n.t('filters.engagement.mention.description'),
-    icon: MentionIcon,
-  },
-  comment: {
-    name: i18n.t('filters.engagement.comment.title'),
-    description: i18n.t('filters.engagement.comment.description'),
-    icon: CommentIcon,
-  },
-  reaction: {
-    name: i18n.t('filters.engagement.reactions.title'),
-    description: i18n.t('filters.engagement.reactions.description'),
-    icon: EmojiIcon,
-  },
-};
-
 /**
  * Filter implementation for the notification engagement state (mention, comment, reaction).
  */
 export const engagementFilter: Filter<EngagementStateType> = {
-  FILTER_TYPES: ENGAGEMENT_DETAILS,
+  get FILTER_TYPES(): Record<EngagementStateType, FilterDetails> {
+    return {
+      mention: {
+        name: i18n.t('filters.engagement.mention.title'),
+        description: i18n.t('filters.engagement.mention.description'),
+        icon: MentionIcon,
+      },
+      comment: {
+        name: i18n.t('filters.engagement.comment.title'),
+        description: i18n.t('filters.engagement.comment.description'),
+        icon: CommentIcon,
+      },
+      reaction: {
+        name: i18n.t('filters.engagement.reactions.title'),
+        description: i18n.t('filters.engagement.reactions.description'),
+        icon: EmojiIcon,
+      },
+    };
+  },
 
   getTypeDetails(type: EngagementStateType): FilterDetails {
     return this.FILTER_TYPES[type];
