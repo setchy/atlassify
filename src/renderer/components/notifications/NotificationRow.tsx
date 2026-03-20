@@ -2,7 +2,7 @@ import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
-import AvatarGroup from '@atlaskit/avatar-group';
+import AvatarGroup, { type AvatarProps } from '@atlaskit/avatar-group';
 import { IconButton } from '@atlaskit/button/new';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
@@ -104,22 +104,23 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const spaceBetweenSections = 'space.100';
 
   const strategy = getProductStrategy(notification);
+
+  const notificationBodyText = strategy.bodyText(notification);
+  const notificationFooterText = strategy.footerText(notification);
   const avatarAppearanceStyle: AppearanceType =
     strategy.avatarAppearance(notification);
 
-  const avatarGroup = notification.notificationGroup.additionalActors.map(
-    (actor) => ({
+  const avatarGroup: AvatarProps[] =
+    notification.notificationGroup.additionalActors.map((actor) => ({
       key: actor.displayName,
       name: actor.displayName,
       href: '#',
       src: actor.avatarURL,
-    }),
-  );
+    }));
 
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
-  const notificationBodyText = strategy.bodyText(notification);
-  const notificationFooterText = strategy.footerText(notification);
+
   const focusedStyles = isFocused
     ? {
         backgroundColor: token('color.background.selected'),
