@@ -1,7 +1,3 @@
-import { config } from 'dotenv';
-
-config();
-
 import { app } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
