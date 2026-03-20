@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 
 import { useAccountsStore } from '../stores';
 
@@ -13,12 +13,8 @@ describe('renderer/routes/Login.tsx', () => {
     useAccountsStore.setState({ accounts: [] });
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
-    const tree = renderWithAppContext(<LoginRoute />);
+    const tree = renderWithProviders(<LoginRoute />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -30,7 +26,7 @@ describe('renderer/routes/Login.tsx', () => {
         .mockImplementation(vi.fn());
 
       await act(async () => {
-        renderWithAppContext(<LoginRoute />);
+        renderWithProviders(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-create-token'));
@@ -44,7 +40,7 @@ describe('renderer/routes/Login.tsx', () => {
         .mockImplementation(vi.fn());
 
       await act(async () => {
-        renderWithAppContext(<LoginRoute />);
+        renderWithProviders(<LoginRoute />);
       });
 
       await userEvent.click(screen.getByTestId('login-docs'));
@@ -55,7 +51,7 @@ describe('renderer/routes/Login.tsx', () => {
 
   it('should navigate back to landing page on cancel', async () => {
     await act(async () => {
-      renderWithAppContext(<LoginRoute />);
+      renderWithProviders(<LoginRoute />);
     });
 
     await userEvent.click(screen.getByTestId('login-cancel'));

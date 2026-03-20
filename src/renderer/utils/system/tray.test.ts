@@ -8,7 +8,6 @@ describe('renderer/utils/system/tray.ts', () => {
   const updateTrayTitleSpy = vi.spyOn(comms, 'updateTrayTitle');
 
   beforeEach(() => {
-    vi.clearAllMocks();
     useRuntimeStore.setState({
       notificationCount: 0,
       hasMoreAccountNotifications: false,

@@ -28,7 +28,6 @@ describe('main/handlers/app.ts', () => {
   let menubar: Menubar;
 
   beforeEach(() => {
-    vi.clearAllMocks();
     handleMock.mockClear();
     onMock.mockClear();
 

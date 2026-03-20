@@ -17,10 +17,6 @@ import {
 } from './comms';
 
 describe('renderer/utils/system/comms.ts', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('openExternalLink', () => {
     it('should open an external link', () => {
       useSettingsStore.setState({

@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
 import * as comms from '../../utils/system/comms';
@@ -20,10 +20,6 @@ const openExternalLinkSpy = vi
   .mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children - light mode', () => {
     vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 
@@ -31,7 +27,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -43,7 +39,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       productNotifications: mockAtlassifyNotifications,
     };
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -58,7 +54,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<ProductNotifications {...props} />);
+      renderWithProviders(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-home'));
@@ -72,7 +68,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     expect(mockConfluenceNotification.product.type).toBe('confluence');
 
     await act(async () => {
-      renderWithAppContext(
+      renderWithProviders(
         <ProductNotifications
           productNotifications={[mockConfluenceNotification]}
         />,
@@ -90,12 +86,12 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<ProductNotifications {...props} />);
+      renderWithProviders(<ProductNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('product-toggle'));
 
-    const tree = renderWithAppContext(<ProductNotifications {...props} />);
+    const tree = renderWithProviders(<ProductNotifications {...props} />);
 
     expect(tree.container).toMatchSnapshot();
   });
@@ -107,7 +103,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     const markNotificationsReadMock = vi.fn();
 
-    renderWithAppContext(<ProductNotifications {...props} />, {
+    renderWithProviders(<ProductNotifications {...props} />, {
       markNotificationsRead: markNotificationsReadMock,
     });
 
@@ -115,7 +111,9 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     // Trigger transitionEnd on the wrapper div to complete the animation and execute mutation
     const wrapperDiv = screen.getByTestId('product-notifications-wrapper');
-    wrapperDiv.dispatchEvent(new Event('transitionend', { bubbles: true }));
+    await act(async () => {
+      wrapperDiv.dispatchEvent(new Event('transitionend', { bubbles: true }));
+    });
 
     expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
   });

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import {
   navigateMock,
-  renderWithAppContext,
+  renderWithProviders,
 } from '../../__helpers__/test-utils';
 
 import { Header } from './Header';
@@ -11,18 +11,14 @@ import { Header } from './Header';
 describe('renderer/components/primitives/Header.tsx', () => {
   const fetchNotificationsMock = vi.fn();
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
-    const tree = renderWithAppContext(<Header>Test Header</Header>);
+    const tree = renderWithProviders(<Header>Test Header</Header>);
 
     expect(tree.container).toMatchSnapshot();
   });
 
   it('should navigate back', async () => {
-    renderWithAppContext(<Header>Test Header</Header>);
+    renderWithProviders(<Header>Test Header</Header>);
 
     await userEvent.click(screen.getByTestId('header-nav-back'));
 
@@ -31,7 +27,7 @@ describe('renderer/components/primitives/Header.tsx', () => {
   });
 
   it('should navigate back and fetch notifications', async () => {
-    renderWithAppContext(<Header fetchOnBack={true}>Test Header</Header>, {
+    renderWithProviders(<Header fetchOnBack={true}>Test Header</Header>, {
       fetchNotifications: fetchNotificationsMock,
     });
 

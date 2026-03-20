@@ -13,10 +13,6 @@ import {
 describe('renderer/utils/ui/zoom.ts', () => {
   window.atlassify.zoom.setLevel = vi.fn();
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should convert percentage to zoom level', () => {
     expect(zoomPercentageToLevel(100 as Percentage)).toBe(0);
     expect(zoomPercentageToLevel(50 as Percentage)).toBe(-1);

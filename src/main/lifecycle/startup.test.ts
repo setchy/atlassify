@@ -1,6 +1,6 @@
 import type { Menubar } from 'menubar';
 
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { initializeAppLifecycle } from './startup';
 
@@ -47,10 +47,6 @@ function createMb() {
 }
 
 describe('main/lifecycle/startup.ts', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('initializeAppLifecycle', () => {
     it('registers menubar ready handler', () => {
       const mb = createMb();

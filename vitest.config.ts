@@ -6,6 +6,7 @@ export default defineConfig({
   test: {
     globals: true,
     pool: 'threads',
+    clearMocks: true,
     onConsoleLog(log, type) {
       // suppress noisy Atlaskit feature-gate/platform-feature-flags errors
       if (

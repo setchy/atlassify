@@ -232,6 +232,5 @@ function createProductNotificationMock(
 }
 
 afterEach(() => {
-  vi.clearAllMocks();
   __resetProductInferenceCaches();
 });

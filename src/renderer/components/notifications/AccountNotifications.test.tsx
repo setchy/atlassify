@@ -1,11 +1,9 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
-
-import { useSettingsStore } from '../../stores';
 
 import * as links from '../../utils/system/links';
 import * as theme from '../../utils/ui/theme';
@@ -31,7 +29,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithProviders(<AccountNotifications {...props} />);
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -47,17 +45,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithProviders(<AccountNotifications {...props} />);
 
       expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-        groupNotificationsByProductAlphabetically: false,
-      });
-
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -66,17 +59,17 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithProviders(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: false,
+        },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-        groupNotificationsByProductAlphabetically: true,
-      });
-
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -85,7 +78,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithProviders(<AccountNotifications {...props} />, {
+        settings: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: true,
+        },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -100,7 +98,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       };
 
       await act(async () => {
-        renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithProviders(<AccountNotifications {...props} />);
       });
 
       expect(screen.getByText('No new notifications')).toBeInTheDocument();
@@ -120,7 +118,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
       };
 
       await act(async () => {
-        renderWithAppContext(<AccountNotifications {...props} />);
+        renderWithProviders(<AccountNotifications {...props} />);
       });
 
       expect(screen.getByText('Error title')).toBeInTheDocument();
@@ -136,7 +134,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: false,
       };
 
-      renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithProviders(<AccountNotifications {...props} />);
 
       expect(
         screen.queryByTestId('account-profile--itemInner'),
@@ -167,7 +165,7 @@ describe('account actions', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithProviders(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-profile--itemInner'));
@@ -192,7 +190,7 @@ describe('account actions', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithProviders(<AccountNotifications {...props} />);
     });
 
     await userEvent.click(screen.getByTestId('account-pull-requests'));
@@ -212,7 +210,7 @@ describe('account actions', () => {
     const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
-      renderWithAppContext(<AccountNotifications {...props} />, {
+      renderWithProviders(<AccountNotifications {...props} />, {
         markNotificationsRead: markNotificationsReadMock,
       });
     });
@@ -235,7 +233,7 @@ describe('account actions', () => {
     const markNotificationsReadMock = vi.fn();
 
     await act(async () => {
-      renderWithAppContext(<AccountNotifications {...props} />, {
+      renderWithProviders(<AccountNotifications {...props} />, {
         markNotificationsRead: markNotificationsReadMock,
       });
     });
@@ -256,7 +254,7 @@ describe('account actions', () => {
     };
 
     await act(async () => {
-      renderWithAppContext(<AccountNotifications {...props} />);
+      renderWithProviders(<AccountNotifications {...props} />);
     });
 
     expect(

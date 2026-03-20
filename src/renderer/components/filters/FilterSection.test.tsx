@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockAccountNotifications } from '../../__mocks__/notifications-mocks';
 
 import { useFiltersStore } from '../../stores';
@@ -18,12 +18,8 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
     updateFilterSpy = vi.spyOn(useFiltersStore.getState(), 'updateFilter');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
-    const tree = renderWithAppContext(
+    const tree = renderWithProviders(
       <FilterSection
         filter={mockFilter}
         filterSetting={mockFilterSetting}
@@ -38,7 +34,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - none already set', async () => {
-    renderWithAppContext(
+    renderWithProviders(
       <FilterSection
         filter={mockFilter}
         filterSetting={mockFilterSetting}
@@ -59,9 +55,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    useFiltersStore.setState({ engagementStates: ['mention'] });
-
-    renderWithAppContext(
+    renderWithProviders(
       <FilterSection
         filter={mockFilter}
         filterSetting={mockFilterSetting}
@@ -69,6 +63,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       />,
       {
         notifications: [],
+        filters: { engagementStates: ['mention'] },
       },
     );
 

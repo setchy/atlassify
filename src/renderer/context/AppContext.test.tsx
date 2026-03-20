@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { renderWithProviders } from '../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useAppContext } from '../hooks/useAppContext';
@@ -19,7 +19,7 @@ const renderWithContext = () => {
     return null;
   };
 
-  renderWithAppContext(
+  renderWithProviders(
     <AppProvider>
       <CaptureContext />
     </AppProvider>,
@@ -52,13 +52,12 @@ describe('renderer/context/App.tsx', () => {
 
   afterEach(() => {
     vi.clearAllTimers();
-    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
-      refetchNotificationsMock.mockReset();
+      refetchNotificationsMock.mockClear();
 
       await act(async () => {
         await getContext().fetchNotifications();

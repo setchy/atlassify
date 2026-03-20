@@ -1,10 +1,8 @@
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
-
-import { useSettingsStore } from '../../stores';
 
 import type { ReadStateType } from '../../types';
 
@@ -20,10 +18,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     new Date('2024').valueOf(),
   );
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('should render notifications', () => {
     it('standard notification', async () => {
       const props: NotificationRowProps = {
@@ -31,20 +25,20 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />);
 
       expect(tree.container).toMatchSnapshot();
     });
 
     it('group by title', async () => {
-      useSettingsStore.setState({ groupNotificationsByTitle: true });
-
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
         isProductAnimatingExit: false,
       };
 
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByTitle: true },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -62,9 +56,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      useSettingsStore.setState({ groupNotificationsByProduct: true });
-
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByProduct: true },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -79,9 +73,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      useSettingsStore.setState({ groupNotificationsByTitle: true });
-
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByTitle: true },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -96,9 +90,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      useSettingsStore.setState({ groupNotificationsByProduct: true });
-
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByProduct: true },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -115,9 +109,9 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      useSettingsStore.setState({ groupNotificationsByProduct: true });
-
-      const tree = renderWithAppContext(<NotificationRow {...props} />);
+      const tree = renderWithProviders(<NotificationRow {...props} />, {
+        settings: { groupNotificationsByProduct: true },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
@@ -132,7 +126,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      renderWithAppContext(<NotificationRow {...props} />, {
+      renderWithProviders(<NotificationRow {...props} />, {
         markNotificationsRead: markNotificationsReadMock,
       });
 
@@ -144,9 +138,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-details'));
 
       // Trigger transitionEnd to complete the animation and execute mutation
-      notificationElement?.dispatchEvent(
-        new Event('transitionend', { bubbles: true }),
-      );
+      await act(async () => {
+        notificationElement?.dispatchEvent(
+          new Event('transitionend', { bubbles: true }),
+        );
+      });
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -155,14 +151,13 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
     it('should open a notification in the browser - delay notification setting enabled', async () => {
       const markNotificationsReadMock = vi.fn();
 
-      useSettingsStore.setState({ delayNotificationState: true });
-
       const props: NotificationRowProps = {
         notification: mockSingleAtlassifyNotification,
         isProductAnimatingExit: false,
       };
 
-      renderWithAppContext(<NotificationRow {...props} />, {
+      renderWithProviders(<NotificationRow {...props} />, {
+        settings: { delayNotificationState: true },
         markNotificationsRead: markNotificationsReadMock,
       });
 
@@ -180,7 +175,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      renderWithAppContext(<NotificationRow {...props} />, {
+      renderWithProviders(<NotificationRow {...props} />, {
         markNotificationsRead: markNotificationsReadMock,
       });
 
@@ -192,9 +187,11 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-mark-as-read'));
 
       // Trigger transitionEnd to complete the animation and execute mutation
-      notificationElement?.dispatchEvent(
-        new Event('transitionend', { bubbles: true }),
-      );
+      await act(async () => {
+        notificationElement?.dispatchEvent(
+          new Event('transitionend', { bubbles: true }),
+        );
+      });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
     });
@@ -210,7 +207,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
         isProductAnimatingExit: false,
       };
 
-      renderWithAppContext(<NotificationRow {...props} />, {
+      renderWithProviders(<NotificationRow {...props} />, {
         markNotificationsUnread: markNotificationsUnreadMock,
       });
 

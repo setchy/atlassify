@@ -28,7 +28,6 @@ describe('main/handlers/analytics.ts', () => {
   const originalEnv = process.env;
 
   beforeEach(() => {
-    vi.clearAllMocks();
     process.env = { ...originalEnv };
   });
 
