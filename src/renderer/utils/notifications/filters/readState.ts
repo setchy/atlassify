@@ -11,21 +11,21 @@ import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
 
-const READ_STATE_DETAILS: Record<ReadStateType, FilterDetails> = {
-  unread: {
-    name: i18n.t('filters.read_state.unread.title'),
-    description: i18n.t('filters.read_state.unread.description'),
-    heroicon: EnvelopeIcon,
-  },
-  read: {
-    name: i18n.t('filters.read_state.read.title'),
-    description: i18n.t('filters.read_state.read.description'),
-    heroicon: EnvelopeOpenIcon,
-  },
-};
-
 export const readStateFilter: Filter<ReadStateType> = {
-  FILTER_TYPES: READ_STATE_DETAILS,
+  get FILTER_TYPES(): Record<ReadStateType, FilterDetails> {
+    return {
+      unread: {
+        name: i18n.t('filters.read_state.unread.title'),
+        description: i18n.t('filters.read_state.unread.description'),
+        heroicon: EnvelopeIcon,
+      },
+      read: {
+        name: i18n.t('filters.read_state.read.title'),
+        description: i18n.t('filters.read_state.read.description'),
+        heroicon: EnvelopeOpenIcon,
+      },
+    };
+  },
 
   getTypeDetails(type: ReadStateType): FilterDetails {
     return this.FILTER_TYPES[type];
