@@ -17,11 +17,6 @@ Clone the repository and install dependencies:
   pnpm install
   ```
 
-Build static resources (tray icons, twemojis, etc). You only need to rebuild if you change static assets:
-  ```shell
-  pnpm build
-  ```
-
 Start development mode (includes GraphQL codegen and hot module reload):
   ```shell
   pnpm dev
