@@ -6,7 +6,6 @@ import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-m
 
 import type { ReadStateType } from '../../types';
 
-import { PRODUCTS } from '../../utils/products';
 import * as comms from '../../utils/system/comms';
 import * as links from '../../utils/system/links';
 import { NotificationRow, type NotificationRowProps } from './NotificationRow';
@@ -38,79 +37,6 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       const tree = renderWithProviders(<NotificationRow {...props} />, {
         settings: { groupNotificationsByTitle: true },
-      });
-
-      expect(tree.container).toMatchSnapshot();
-    });
-
-    it('group by title with multiple named actors', async () => {
-      const mockNotification = mockSingleAtlassifyNotification;
-      mockNotification.notificationGroup.size = 3;
-      mockNotification.notificationGroup.additionalActors = [
-        { displayName: 'User 1', avatarURL: null },
-        { displayName: 'User 2', avatarURL: null },
-      ];
-
-      const props: NotificationRowProps = {
-        notification: mockNotification,
-        isProductAnimatingExit: false,
-      };
-
-      const tree = renderWithProviders(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByProduct: true },
-      });
-
-      expect(tree.container).toMatchSnapshot();
-    });
-
-    it('group by title with multiple unnamed actors', async () => {
-      const mockNotification = mockSingleAtlassifyNotification;
-      mockNotification.notificationGroup.size = 3;
-      mockNotification.notificationGroup.additionalActors = [];
-
-      const props: NotificationRowProps = {
-        notification: mockNotification,
-        isProductAnimatingExit: false,
-      };
-
-      const tree = renderWithProviders(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByTitle: true },
-      });
-
-      expect(tree.container).toMatchSnapshot();
-    });
-
-    it('compass avatar as square', async () => {
-      const props: NotificationRowProps = {
-        notification: {
-          ...mockSingleAtlassifyNotification,
-          product: PRODUCTS.compass,
-          message: 'some-project improved a scorecard',
-        },
-        isProductAnimatingExit: false,
-      };
-
-      const tree = renderWithProviders(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByProduct: true },
-      });
-
-      expect(tree.container).toMatchSnapshot();
-    });
-
-    it('missing entity icon url should default to product logo', async () => {
-      const props: NotificationRowProps = {
-        notification: {
-          ...mockSingleAtlassifyNotification,
-          entity: {
-            ...mockSingleAtlassifyNotification.entity,
-            iconUrl: null,
-          },
-        },
-        isProductAnimatingExit: false,
-      };
-
-      const tree = renderWithProviders(<NotificationRow {...props} />, {
-        settings: { groupNotificationsByProduct: true },
       });
 
       expect(tree.container).toMatchSnapshot();

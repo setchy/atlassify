@@ -40176,6 +40176,17 @@ export type JiraSprintUpdateInput = {
   startDate?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type JiraStartAiAgentSessionInput = {
+  /** The account ID of the agent to trigger */
+  agentId: Scalars['String']['input'];
+  /** A unique identifier for the client performing the mutation, used for deduplication */
+  clientMutationId: Scalars['String']['input'];
+  /** Identifier for the cloud instance */
+  cloudId: Scalars['ID']['input'];
+  /** ID of the issue the session relates to */
+  issueId: Scalars['String']['input'];
+};
+
 /** Color of the status category. */
 export enum JiraStatusCategoryColor {
   /** #4a6785 */
