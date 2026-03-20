@@ -59458,6 +59458,22 @@ export type TrelloCreateCardInput = {
   urlSourceText?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Arguments passed into the createCustomField mutation */
+export type TrelloCreateCustomFieldInput = {
+  /** The ID of the board to which to add the custom field */
+  boardId: Scalars['ID']['input'];
+  /** How the new custom field should be displayed. */
+  display?: InputMaybe<TrelloCustomFieldDisplayInput>;
+  /** Whether the new custom field was a pre-populated, suggested option in the client. */
+  isSuggestedField?: InputMaybe<Scalars['Boolean']['input']>;
+  /** The name of the new custom field. */
+  name: Scalars['String']['input'];
+  /** The position of the new custom field */
+  position?: InputMaybe<Scalars['Float']['input']>;
+  /** The type of the new custom field. */
+  type: TrelloCustomFieldType;
+};
+
 /** Arguments passed into the createMemberAiRule mutation. */
 export type TrelloCreateMemberAiRuleInput = {
   /** The position the rule should occupy relative to other rules. */
@@ -59504,6 +59520,29 @@ export type TrelloCreateWorkspaceTagInput = {
   workspaceId: Scalars['ID']['input'];
 };
 
+/** Display settings for the custom field to be created. */
+export type TrelloCustomFieldDisplayInput = {
+  /** Whether or not to show the custom field on the card front. */
+  cardFront?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/**
+ * Custom field types. Currently only used for mutation inputs; the TrelloCustomField
+ * type should be migrated to use this
+ */
+export enum TrelloCustomFieldType {
+  /** A checkbox custom field */
+  Checkbox = 'CHECKBOX',
+  /** A DateTime custom field */
+  Date = 'DATE',
+  /** A list custom field (users can only select values from a list of predetermined options) */
+  List = 'LIST',
+  /** A numeric custom field */
+  Number = 'NUMBER',
+  /** A text custom field */
+  Text = 'TEXT'
+}
+
 /** Manages how the data is processed */
 export enum TrelloDataSourceHandler {
   LinkingPlatform = 'LINKING_PLATFORM'
@@ -59523,6 +59562,12 @@ export type TrelloDeleteBoardBackgroundInput = {
 /** Arguments passed into the delete board mutation */
 export type TrelloDeleteBoardInput = {
   boardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the deleteCustomField mutation */
+export type TrelloDeleteCustomFieldInput = {
+  /** The ID of the custom field to delete */
+  customFieldId: Scalars['ID']['input'];
 };
 
 /** Arguments passed into deletePlannerCalendarEvent mutation */
@@ -60123,6 +60168,18 @@ export type TrelloUpdateCardRoleInput = {
   cardRole?: InputMaybe<TrelloCardRole>;
 };
 
+/** Arguments passed into the updateCustomField mutation */
+export type TrelloUpdateCustomFieldInput = {
+  /** The ID of the custom field to update */
+  customFieldId: Scalars['ID']['input'];
+  /** New display settings for the custom field */
+  display?: InputMaybe<TrelloCustomFieldDisplayInput>;
+  /** The new name of the custom field. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** The new position of the custom field */
+  position?: InputMaybe<Scalars['Float']['input']>;
+};
+
 /** Arguments passed into the update inbox background mutation */
 export type TrelloUpdateInboxBackgroundInput = {
   background?: InputMaybe<TrelloBoardBackgroundInput>;
@@ -60351,6 +60408,7 @@ export type UnifiedChampionSignupInput = {
   fourEventsPerYear?: InputMaybe<Scalars['String']['input']>;
   howContributeOnline?: InputMaybe<Scalars['String']['input']>;
   howHeard?: InputMaybe<Scalars['String']['input']>;
+  howHeardEmployee?: InputMaybe<Scalars['String']['input']>;
   howHeardOther?: InputMaybe<Scalars['String']['input']>;
   lastName?: InputMaybe<Scalars['String']['input']>;
   linkedinUrl?: InputMaybe<Scalars['String']['input']>;

@@ -25,28 +25,26 @@ vi.mock('../../shared/logger', () => ({
 }));
 
 describe('main/handlers/analytics.ts', () => {
-  const originalEnv = process.env;
-
-  beforeEach(() => {
-    process.env = { ...originalEnv };
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   describe('initializeAnalytics', () => {
-    it('logs an error and skips initialization when APTABASE_KEY is not set', async () => {
-      delete process.env.APTABASE_KEY;
+    it('logs an error and skips initialization when VITE_APTABASE_KEY is not set', async () => {
+      vi.stubEnv('VITE_APTABASE_KEY', '');
 
       await initializeAnalytics();
 
       expect(initializeMock).not.toHaveBeenCalled();
       expect(logErrorMock).toHaveBeenCalledWith(
         'analytics',
-        'APTABASE_KEY environment variable is not set',
+        'VITE_APTABASE_KEY environment variable is not set',
         expect.any(Error),
       );
     });
 
-    it('initializes the SDK and logs success when APTABASE_KEY is set', async () => {
-      process.env.APTABASE_KEY = 'test-key-123';
+    it('initializes the SDK and logs success when VITE_APTABASE_KEY is set', async () => {
+      vi.stubEnv('VITE_APTABASE_KEY', 'test-key-123');
 
       await initializeAnalytics();
 
@@ -59,7 +57,7 @@ describe('main/handlers/analytics.ts', () => {
     });
 
     it('logs an error when SDK initialization throws', async () => {
-      process.env.APTABASE_KEY = 'test-key-123';
+      vi.stubEnv('VITE_APTABASE_KEY', 'test-key-123');
       const sdkError = new Error('SDK init failed');
       initializeMock.mockImplementationOnce(() => {
         throw sdkError;
