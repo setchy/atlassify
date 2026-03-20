@@ -30,37 +30,56 @@ const copyStaticAssetsPlugin = (): Plugin => {
       .split('/')
       .pop();
 
+  let isBuild = false;
+
+  const copyAssets = () => {
+    // Copy the root assets/ directory (images, sounds, etc.) into build/
+    fs.cpSync(
+      fileURLToPath(new URL('assets', import.meta.url)),
+      fileURLToPath(new URL('build/assets', import.meta.url)),
+      { recursive: true },
+    );
+
+    // Copy individual Twemoji SVGs needed by the app into build/assets/images/twemoji/
+    const twemojiSrcDir = fileURLToPath(
+      new URL('node_modules/@discordapp/twemoji/dist/svg', import.meta.url),
+    );
+    const twemojiDestDir = fileURLToPath(
+      new URL('build/assets/images/twemoji', import.meta.url),
+    );
+
+    fs.mkdirSync(twemojiDestDir, { recursive: true });
+
+    const allEmojis = flatten(Constants.EMOJIS);
+    for (const emoji of allEmojis) {
+      const filename = extractSvgFilename(
+        twemoji.parse(emoji, { folder: 'svg', ext: '.svg' }),
+      );
+      if (filename) {
+        fs.copyFileSync(
+          path.join(twemojiSrcDir, filename),
+          path.join(twemojiDestDir, filename),
+        );
+      }
+    }
+  };
+
   return {
     name: 'copy-static-assets',
+    configResolved(config) {
+      isBuild = config.command === 'build';
+    },
+    // In serve/dev mode, copy before the build starts (emptyOutDir doesn't run).
+    // In build mode, copy after all output is written — buildStart runs before
+    // Vite's emptyOutDir wipe, so assets copied there would be deleted.
     buildStart() {
-      // Copy the root assets/ directory (images, sounds, etc.) into build/
-      fs.cpSync(
-        fileURLToPath(new URL('assets', import.meta.url)),
-        fileURLToPath(new URL('build/assets', import.meta.url)),
-        { recursive: true },
-      );
-
-      // Copy individual Twemoji SVGs needed by the app into build/assets/images/twemoji/
-      const twemojiSrcDir = fileURLToPath(
-        new URL('node_modules/@discordapp/twemoji/dist/svg', import.meta.url),
-      );
-      const twemojiDestDir = fileURLToPath(
-        new URL('build/assets/images/twemoji', import.meta.url),
-      );
-
-      fs.mkdirSync(twemojiDestDir, { recursive: true });
-
-      const allEmojis = flatten(Constants.EMOJIS);
-      for (const emoji of allEmojis) {
-        const filename = extractSvgFilename(
-          twemoji.parse(emoji, { folder: 'svg', ext: '.svg' }),
-        );
-        if (filename) {
-          fs.copyFileSync(
-            path.join(twemojiSrcDir, filename),
-            path.join(twemojiDestDir, filename),
-          );
-        }
+      if (!isBuild) {
+        copyAssets();
+      }
+    },
+    closeBundle() {
+      if (isBuild) {
+        copyAssets();
       }
     },
   };

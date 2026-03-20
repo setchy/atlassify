@@ -2101,6 +2101,31 @@ export type AgentStudioToolConfigurationInput = {
   properties?: InputMaybe<Array<AgentStudioToolPropertyConfigurationInput>>;
 };
 
+export enum AgentStudioToolConfigurationInputPropertySchemaType {
+  Object = 'object'
+}
+
+export enum AgentStudioToolConfigurationInputPropertyType {
+  Boolean = 'boolean',
+  Number = 'number',
+  String = 'string'
+}
+
+export enum AgentStudioToolConfigurationUiElementRuleEffect {
+  Disable = 'disable',
+  Enable = 'enable',
+  Hide = 'hide',
+  Show = 'show'
+}
+
+export enum AgentStudioToolConfigurationUiElementType {
+  Control = 'Control'
+}
+
+export enum AgentStudioToolConfigurationUiSchemaType {
+  VerticalLayout = 'VerticalLayout'
+}
+
 export enum AgentStudioToolDefinitionSource {
   ConvoAi = 'CONVO_AI',
   Forge = 'FORGE',
