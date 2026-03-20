@@ -15,8 +15,7 @@ import frTranslation from './locales/fr.json';
 
 export const DEFAULT_LANGUAGE: Language = 'en';
 
-// biome-ignore lint/suspicious/noExplicitAny: no need to explicitly check translation keys
-const resources: Record<Language, { translation: Record<string, any> }> = {
+const resources: Record<Language, { translation: typeof enTranslation }> = {
   de: {
     translation: deTranslation,
   },
