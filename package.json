@@ -65,7 +65,7 @@
   "devDependencies": {
     "@aptabase/electron": "0.3.1",
     "@atlaskit/avatar": "25.10.0",
-    "@atlaskit/avatar-group": "12.4.11",
+    "@atlaskit/avatar-group": "12.4.12",
     "@atlaskit/badge": "18.4.1",
     "@atlaskit/button": "23.10.3",
     "@atlaskit/checkbox": "17.3.6",
