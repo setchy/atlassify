@@ -1,4 +1,8 @@
-import { render } from '@testing-library/react';
+import {
+  type RenderHookOptions,
+  render,
+  renderHook,
+} from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -17,17 +21,17 @@ export { navigateMock } from './vitest.setup';
 
 const EMPTY_APP_CONTEXT: TestAppContext = {};
 
-interface RenderOptions extends Partial<AppContextState> {
+/**
+ * Test context
+ */
+type TestAppContext = Partial<AppContextState>;
+
+interface RenderOptions extends TestAppContext {
   initialEntries?: string[];
   accounts?: Partial<AccountsStore>;
   settings?: Partial<SettingsStore>;
   filters?: Partial<FiltersStore>;
 }
-
-/**
- * Test context
- */
-type TestAppContext = Partial<AppContextState>;
 
 /**
  * Props for the AppContextProvider wrapper
@@ -67,6 +71,39 @@ function AppContextProvider({
   );
 }
 
+export function createTestQueryClient(): QueryClient {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        refetchInterval: false,
+        networkMode: 'online',
+      },
+    },
+  });
+}
+
+/**
+ * renderHook wrapper that provides a QueryClientProvider for testing hooks.
+ *
+ * Usage:
+ *   const { result } = renderHookWithProviders(() => useMyHook());
+ */
+export function renderHookWithProviders<T>(
+  hook: () => T,
+  options?: Omit<RenderHookOptions<unknown>, 'wrapper'>,
+) {
+  const queryClient = createTestQueryClient();
+
+  return renderHook(hook, {
+    ...options,
+    wrapper: ({ children }: { children: ReactNode }) => (
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    ),
+  });
+}
+
 /**
  * Custom render that wraps components with all providers needed for testing:
  * QueryClient, MemoryRouter, AppContext, and Zustand stores.
@@ -94,16 +131,7 @@ export function renderWithProviders(
     useFiltersStore.setState(filters);
   }
 
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-        networkMode: 'online',
-      },
-    },
-  });
+  const queryClient = createTestQueryClient();
 
   return render(ui, {
     wrapper: ({ children }) => (
