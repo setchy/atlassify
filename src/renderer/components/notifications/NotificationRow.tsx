@@ -18,13 +18,9 @@ import {
   categoryFilter,
   readStateFilter,
 } from '../../utils/notifications/filters';
-import {
-  formatNotificationBodyText,
-  formatNotificationFooterText,
-  formatNotificationUpdatedAt,
-  isCompassScorecardNotification,
-} from '../../utils/notifications/formatters';
+import { formatNotificationUpdatedAt } from '../../utils/notifications/formatters';
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
+import { getProductStrategy } from '../../utils/products';
 import { openNotification } from '../../utils/system/links';
 import { cn } from '../../utils/ui/cn';
 import { blockAlignmentByLength } from '../../utils/ui/display';
@@ -107,11 +103,9 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const spaceBetweenSections = 'space.100';
 
-  const avatarAppearanceStyle: AppearanceType = isCompassScorecardNotification(
-    notification,
-  )
-    ? 'square'
-    : 'circle';
+  const strategy = getProductStrategy(notification);
+  const avatarAppearanceStyle: AppearanceType =
+    strategy.avatarAppearance(notification);
 
   const avatarGroup = notification.notificationGroup.additionalActors.map(
     (actor) => ({
@@ -124,8 +118,8 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
-  const notificationBodyText = formatNotificationBodyText(notification);
-  const notificationFooterText = formatNotificationFooterText(notification);
+  const notificationBodyText = strategy.bodyText(notification);
+  const notificationFooterText = strategy.footerText(notification);
   const focusedStyles = isFocused
     ? {
         backgroundColor: token('color.background.selected'),

@@ -11,7 +11,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import { isCompassScorecardNotification } from '../formatters';
+import { getProductStrategy } from '../../products';
 
 /**
  * Filter implementation for the notification actor type (user vs automation).
@@ -87,11 +87,7 @@ export function inferNotificationActor(
     return 'automation';
   }
 
-  if (isCompassScorecardNotification(notification)) {
-    return 'automation';
-  }
-
-  if (notification.product.type === 'rovo_dev') {
+  if (getProductStrategy(notification).isAutomationActor(notification)) {
     return 'automation';
   }
 
