@@ -28,7 +28,10 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
-import { groupNotificationsByProduct } from '../../utils/notifications/group';
+import {
+  groupNotificationsByProductEntries,
+  sortNotificationsByOrder,
+} from '../../utils/notifications/group';
 import {
   openAccountProfile,
   openMyPullRequests,
@@ -85,7 +88,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   });
 
   const sortedNotifications = useMemo(
-    () => [...notifications].sort((a, b) => a.order - b.order),
+    () => sortNotificationsByOrder(notifications),
     [notifications],
   );
 
@@ -94,17 +97,14 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   );
   const groupByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
 
-  const groupedNotifications = useMemo(() => {
-    const map = groupNotificationsByProduct(sortedNotifications);
-
-    const notifications = Array.from(map.entries());
-
-    if (groupNotificationsByProductAlphabetically) {
-      notifications.sort((a, b) => a[0].localeCompare(b[0]));
-    }
-
-    return notifications;
-  }, [sortedNotifications, groupNotificationsByProductAlphabetically]);
+  const groupedNotifications = useMemo(
+    () =>
+      groupNotificationsByProductEntries(
+        sortedNotifications,
+        groupNotificationsByProductAlphabetically,
+      ),
+    [sortedNotifications, groupNotificationsByProductAlphabetically],
+  );
 
   const actionToggleAccountNotifications = () => {
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
