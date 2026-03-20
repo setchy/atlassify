@@ -118,6 +118,9 @@
     "notifications": "notifications",
     "subheading": "sur votre barre de menu"
   },
+  "loading": {
+    "heading": "Chargement"
+  },
   "login": {
     "create_token": "Créer un jeton API",
     "duplicate_username": "Ce nom d'utilisateur a déjà été ajouté. \nVeuillez utiliser un nom d'utilisateur différent.",
@@ -127,9 +130,6 @@
     "token": "Jeton API",
     "token_helper": "et collez dessus",
     "username_helper": "Votre nom d'utilisateur Atlassian / adresse e-mail"
-  },
-  "loading": {
-    "heading": "Chargement"
   },
   "notifications": {
     "account": {
@@ -218,17 +218,17 @@
     },
     "title": "Paramètres",
     "tray": {
+      "alternate_icon": "Style d'icône inactive",
+      "alternate_icon_help": "Choisissez quelle icône afficher lorsque toutes les notifications sont lues.",
+      "idle_icon_alternate": "Alternative",
+      "idle_icon_default": "Défaut",
       "show_count_in_tray": "Afficher les notifications qui comptent dans le plateau",
       "show_count_in_tray_help": "Affichez le nombre de notifications non lues à côté de l'icône de la barre d'état. \nUtile pour un aperçu rapide des activités non lues.",
       "title": "Plateau",
-      "alternate_icon": "Style d'icône inactive",
-      "alternate_icon_help": "Choisissez quelle icône afficher lorsque toutes les notifications sont lues.",
       "unread_active_icon": "Style non lues",
       "unread_active_icon_help": "Choisissez quelle icône afficher lorsque vous avez des notifications non lues.",
-      "unread_icon_stealth": "Stealth",
       "unread_icon_highlighted": "En surbrillance",
-      "idle_icon_dark": "Foncé",
-      "idle_icon_alternate": "Alternative"
+      "unread_icon_stealth": "Stealth"
     },
     "view_release_notes": "Afficher {{appName}} Notes de version"
   },
