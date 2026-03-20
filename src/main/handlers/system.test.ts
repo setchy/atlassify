@@ -29,8 +29,6 @@ describe('main/handlers/system.ts', () => {
   let menubar: Menubar;
 
   beforeEach(() => {
-    vi.clearAllMocks();
-
     menubar = {
       showWindow: vi.fn(),
       hideWindow: vi.fn(),

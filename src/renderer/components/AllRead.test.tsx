@@ -2,8 +2,6 @@ import { act } from '@testing-library/react';
 
 import { renderWithAppContext } from '../__helpers__/test-utils';
 
-import { useFiltersStore } from '../stores';
-
 import { AllRead } from './AllRead';
 
 describe('renderer/components/AllRead.tsx', () => {
@@ -18,12 +16,12 @@ describe('renderer/components/AllRead.tsx', () => {
   });
 
   it('should render itself & its children - with filters', async () => {
-    useFiltersStore.setState({ products: ['jira'] });
-
     let tree: ReturnType<typeof renderWithAppContext> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<AllRead />);
+      tree = renderWithAppContext(<AllRead />, {
+        filtersStore: { products: ['jira'] },
+      });
     });
 
     expect(tree?.container).toMatchSnapshot();

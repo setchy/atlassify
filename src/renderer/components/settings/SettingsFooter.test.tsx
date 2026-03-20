@@ -10,10 +10,6 @@ import * as comms from '../../utils/system/comms';
 import { SettingsFooter } from './SettingsFooter';
 
 describe('renderer/components/settings/SettingsFooter.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should show app version', async () => {
     await act(async () => {
       renderWithAppContext(<SettingsFooter />, {

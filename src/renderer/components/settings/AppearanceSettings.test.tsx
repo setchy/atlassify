@@ -1,4 +1,4 @@
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithAppContext } from '../../__helpers__/test-utils';
@@ -21,10 +21,6 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
 
     renderWithAppContext(<AppearanceSettings />);
-  });
-
-  afterEach(() => {
-    vi.clearAllMocks();
   });
 
   it('should change the theme radio group', async () => {
@@ -69,13 +65,11 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should hide the account header setting when there are multiple accounts', async () => {
-    act(() => {
-      useAccountsStore.setState({
+    renderWithAppContext(<AppearanceSettings />, {
+      accountsStore: {
         accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
-      });
+      },
     });
-
-    renderWithAppContext(<AppearanceSettings />);
 
     expect(screen.queryByLabelText('Show account header')).toBeNull();
 

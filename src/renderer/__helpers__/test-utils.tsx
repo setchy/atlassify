@@ -6,6 +6,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/AppContext';
+import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
+import type {
+  AccountsStore,
+  FiltersStore,
+  SettingsStore,
+} from '../stores/types';
 
 export { navigateMock } from './vitest.setup';
 
@@ -13,6 +19,9 @@ const EMPTY_APP_CONTEXT: TestAppContext = {};
 
 interface RenderOptions extends Partial<AppContextState> {
   initialEntries?: string[];
+  accountsStore?: Partial<AccountsStore>;
+  settingsStore?: Partial<SettingsStore>;
+  filtersStore?: Partial<FiltersStore>;
 }
 
 /**
@@ -66,8 +75,24 @@ function AppContextProvider({
  */
 export function renderWithAppContext(
   ui: ReactElement,
-  { initialEntries, ...context }: RenderOptions = {},
+  {
+    initialEntries,
+    accountsStore,
+    settingsStore,
+    filtersStore,
+    ...context
+  }: RenderOptions = {},
 ) {
+  if (accountsStore) {
+    useAccountsStore.setState(accountsStore);
+  }
+  if (settingsStore) {
+    useSettingsStore.setState(settingsStore);
+  }
+  if (filtersStore) {
+    useFiltersStore.setState(filtersStore);
+  }
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {

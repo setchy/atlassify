@@ -20,10 +20,6 @@ const openExternalLinkSpy = vi
   .mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children - light mode', () => {
     vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
 

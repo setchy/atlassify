@@ -16,10 +16,6 @@ describe('renderer/components/settings/SettingsReset.tsx', () => {
     renderWithAppContext(<SettingsReset />);
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should reset default settings when `confirmed`', async () => {
     await userEvent.click(screen.getByTestId('settings-reset-defaults'));
     await userEvent.click(screen.getByTestId('settings-reset-confirm'));

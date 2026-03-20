@@ -6,10 +6,6 @@ import {
 import * as native from './native';
 
 describe('renderer/utils/system/native.ts', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should raise a native notification for a single new notification', () => {
     native.raiseNativeNotification(
       mockSingleAccountNotifications[0].notifications,

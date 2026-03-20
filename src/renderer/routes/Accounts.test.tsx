@@ -11,15 +11,9 @@ import * as theme from '../utils/ui/theme';
 import { AccountsRoute } from './Accounts';
 
 describe('renderer/routes/Accounts.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('General', () => {
     it('should render itself & its children - light mode', async () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
       renderWithAppContext(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
@@ -27,8 +21,6 @@ describe('renderer/routes/Accounts.tsx', () => {
 
     it('should render itself & its children - dark mode', async () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
       renderWithAppContext(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
@@ -49,8 +41,6 @@ describe('renderer/routes/Accounts.tsx', () => {
       const openAccountProfileSpy = vi
         .spyOn(links, 'openAccountProfile')
         .mockImplementation(vi.fn());
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
       renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
@@ -65,8 +55,6 @@ describe('renderer/routes/Accounts.tsx', () => {
       const refreshAccountSpy = vi
         .spyOn(useAccountsStore.getState(), 'refreshAccount')
         .mockResolvedValue(mockAtlassianCloudAccount);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
       renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-refresh'));
@@ -87,8 +75,6 @@ describe('renderer/routes/Accounts.tsx', () => {
       const removeAccountMock = vi
         .spyOn(useAccountsStore.getState(), 'removeAccount')
         .mockImplementation(vi.fn());
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
       renderWithAppContext(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-logout'));

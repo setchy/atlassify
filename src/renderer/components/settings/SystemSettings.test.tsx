@@ -18,10 +18,6 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should change the open links radio group', async () => {
     renderWithAppContext(<SystemSettings />);
 
@@ -64,17 +60,17 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('volume controls should not be shown if playSound checkbox is false', async () => {
-      useSettingsStore.setState({ playSoundNewNotifications: false });
-
-      renderWithAppContext(<SystemSettings />);
+      renderWithAppContext(<SystemSettings />, {
+        settingsStore: { playSoundNewNotifications: false },
+      });
 
       expect(screen.getByTestId('settings-volume-group')).not.toBeVisible();
     });
 
     it('volume controls should be shown if playSound checkbox is true', async () => {
-      useSettingsStore.setState({ playSoundNewNotifications: true });
-
-      renderWithAppContext(<SystemSettings />);
+      renderWithAppContext(<SystemSettings />, {
+        settingsStore: { playSoundNewNotifications: true },
+      });
 
       expect(screen.getByTestId('settings-volume-group')).toBeVisible();
     });
@@ -98,9 +94,9 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
 
     it('should reset notification volume', async () => {
-      useSettingsStore.setState({ notificationVolume: 30 as Percentage });
-
-      renderWithAppContext(<SystemSettings />);
+      renderWithAppContext(<SystemSettings />, {
+        settingsStore: { notificationVolume: 30 as Percentage },
+      });
 
       await userEvent.click(screen.getByTestId('settings-volume-reset'));
 

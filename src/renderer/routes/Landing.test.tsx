@@ -2,28 +2,21 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
-import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
-
-import { useAccountsStore } from '../stores';
 
 import * as comms from '../utils/system/comms';
 import { LandingRoute } from './Landing';
 
 describe('renderer/routes/Landing.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
-    useAccountsStore.setState({ accounts: [] });
-    const tree = renderWithAppContext(<LandingRoute />);
+    const tree = renderWithAppContext(<LandingRoute />, {
+      accountsStore: { accounts: [] },
+    });
 
     expect(tree.container).toMatchSnapshot();
   });
 
   it('should redirect to notifications once logged in', () => {
     const showWindowSpy = vi.spyOn(comms, 'showWindow');
-    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
 
     renderWithAppContext(<LandingRoute />);
 
@@ -33,9 +26,9 @@ describe('renderer/routes/Landing.tsx', () => {
   });
 
   it('should navigate to login with api token', async () => {
-    useAccountsStore.setState({ accounts: [] });
-
-    renderWithAppContext(<LandingRoute />);
+    renderWithAppContext(<LandingRoute />, {
+      accountsStore: { accounts: [] },
+    });
 
     await userEvent.click(screen.getByTestId('login'));
 

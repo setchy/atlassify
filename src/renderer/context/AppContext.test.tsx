@@ -52,13 +52,12 @@ describe('renderer/context/App.tsx', () => {
 
   afterEach(() => {
     vi.clearAllTimers();
-    vi.clearAllMocks();
   });
 
   describe('notification methods', () => {
     it('should call fetchNotifications', async () => {
       const getContext = renderWithContext();
-      refetchNotificationsMock.mockReset();
+      refetchNotificationsMock.mockClear();
 
       await act(async () => {
         await getContext().fetchNotifications();

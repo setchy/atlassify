@@ -6,10 +6,6 @@ import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
 import { SettingsRoute } from './Settings';
 
 describe('renderer/routes/Settings.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', async () => {
     await act(async () => {
       renderWithAppContext(<SettingsRoute />, {

@@ -20,10 +20,6 @@ describe('renderer/routes/Filters.tsx', () => {
     resetSpy = vi.spyOn(useFiltersStore.getState() as FiltersStore, 'reset');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('General', () => {
     it('should render itself & its children', async () => {
       renderWithAppContext(<FiltersRoute />, {
@@ -62,12 +58,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by engagement state - existing filter set', async () => {
-        useFiltersStore.setState({
-          engagementStates: ['mention'],
-        });
-
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
+          filtersStore: { engagementStates: ['mention'] },
         });
 
         await userEvent.click(screen.getByLabelText('Mentions'));
@@ -92,12 +85,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by category - existing filter set', async () => {
-        useFiltersStore.setState({
-          categories: ['direct'],
-        });
-
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
+          filtersStore: { categories: ['direct'] },
         });
 
         await userEvent.click(screen.getByLabelText('Direct'));
@@ -118,12 +108,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by actor - existing filter set', async () => {
-        useFiltersStore.setState({
-          actors: ['automation'],
-        });
-
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
+          filtersStore: { actors: ['automation'] },
         });
 
         await userEvent.click(screen.getByLabelText('Automation'));
@@ -144,12 +131,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by read state - existing filter set', async () => {
-        useFiltersStore.setState({
-          readStates: ['unread'],
-        });
-
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
+          filtersStore: { readStates: ['unread'] },
         });
 
         await userEvent.click(screen.getByLabelText('Unread'));
@@ -173,12 +157,9 @@ describe('renderer/routes/Filters.tsx', () => {
       });
 
       it('should filter by product - existing filter set', async () => {
-        useFiltersStore.setState({
-          products: ['bitbucket'],
-        });
-
         renderWithAppContext(<FiltersRoute />, {
           notifications: [],
+          filtersStore: { products: ['bitbucket'] },
         });
 
         const bitbucketInput = screen.getByRole('checkbox', {

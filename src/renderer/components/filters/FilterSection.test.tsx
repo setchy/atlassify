@@ -18,10 +18,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
     updateFilterSpy = vi.spyOn(useFiltersStore.getState(), 'updateFilter');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(
       <FilterSection
@@ -59,8 +55,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
-    useFiltersStore.setState({ engagementStates: ['mention'] });
-
     renderWithAppContext(
       <FilterSection
         filter={mockFilter}
@@ -69,6 +63,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
       />,
       {
         notifications: [],
+        filtersStore: { engagementStates: ['mention'] },
       },
     );
 

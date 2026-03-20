@@ -5,8 +5,6 @@ import { renderWithAppContext } from '../../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks';
 
-import { useSettingsStore } from '../../stores';
-
 import * as links from '../../utils/system/links';
 import * as theme from '../../utils/ui/theme';
 import {
@@ -53,11 +51,6 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
     });
 
     it('should render itself - group notifications by products - ordered by datetime', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-        groupNotificationsByProductAlphabetically: false,
-      });
-
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -66,17 +59,17 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settingsStore: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: false,
+        },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });
 
     it('should render itself - group notifications by products - ordered by products alphabetically', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-        groupNotificationsByProductAlphabetically: true,
-      });
-
       const props: AccountNotificationsProps = {
         account: mockAtlassianCloudAccount,
         notifications: mockAtlassifyNotifications,
@@ -85,7 +78,12 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
         showAccountHeader: true,
       };
 
-      const tree = renderWithAppContext(<AccountNotifications {...props} />);
+      const tree = renderWithAppContext(<AccountNotifications {...props} />, {
+        settingsStore: {
+          groupNotificationsByProduct: true,
+          groupNotificationsByProductAlphabetically: true,
+        },
+      });
 
       expect(tree.container).toMatchSnapshot();
     });

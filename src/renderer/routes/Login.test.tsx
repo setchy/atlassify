@@ -13,10 +13,6 @@ describe('renderer/routes/Login.tsx', () => {
     useAccountsStore.setState({ accounts: [] });
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render itself & its children', () => {
     const tree = renderWithAppContext(<LoginRoute />);
 

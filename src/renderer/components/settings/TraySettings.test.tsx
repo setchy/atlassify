@@ -18,10 +18,6 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
     renderWithAppContext(<TraySettings />);
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should toggle the showNotificationsCountInTray checkbox', async () => {
     await userEvent.click(
       screen.getByLabelText('Show notifications count in tray'),

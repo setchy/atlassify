@@ -18,10 +18,6 @@ describe('renderer/utils/system/links.ts', () => {
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('openAtlassifyReleaseNotes', () => {
     openAtlassifyReleaseNotes('v1.0.0');
     expect(openExternalLinkSpy).toHaveBeenCalledWith(

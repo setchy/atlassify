@@ -83,7 +83,6 @@ interface TestApi {
 
 describe('preload/index', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
     MockNotification.instances = [];
     exposeInMainWorldMock('atlassify', api);
   });

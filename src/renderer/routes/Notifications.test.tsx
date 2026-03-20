@@ -5,8 +5,6 @@ import {
 } from '../__mocks__/account-mocks';
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
-import { useAccountsStore, useSettingsStore } from '../stores';
-
 import { Errors } from '../utils/core/errors';
 import { NotificationsRoute } from './Notifications';
 
@@ -38,15 +36,10 @@ vi.mock('../components/Oops', () => ({
 }));
 
 describe('renderer/routes/Notifications.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should render account notifications when present', () => {
-    useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
     const tree = renderWithAppContext(<NotificationsRoute />, {
+      accountsStore: { accounts: [mockAtlassianCloudAccount] },
+      settingsStore: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isLoading: false,
@@ -59,12 +52,11 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should force account header when multiple accounts', () => {
-    useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore.setState({
-      accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
-    });
-
     const tree = renderWithAppContext(<NotificationsRoute />, {
+      accountsStore: {
+        accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+      },
+      settingsStore: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isLoading: false,
@@ -103,10 +95,9 @@ describe('renderer/routes/Notifications.tsx', () => {
   });
 
   it('should show notifications while loading when data already exists', () => {
-    useSettingsStore.setState({ showAccountHeader: false });
-    useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
     const tree = renderWithAppContext(<NotificationsRoute />, {
+      accountsStore: { accounts: [mockAtlassianCloudAccount] },
+      settingsStore: { showAccountHeader: false },
       notifications: mockAccountNotifications,
       hasNotifications: true,
       isFetching: true,

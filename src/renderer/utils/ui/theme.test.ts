@@ -14,7 +14,6 @@ describe('renderer/utils/ui/theme.ts', () => {
 
   beforeEach(() => {
     document.querySelector = vi.fn(() => htmlElement);
-    vi.clearAllMocks();
   });
 
   describe('setTheme', () => {

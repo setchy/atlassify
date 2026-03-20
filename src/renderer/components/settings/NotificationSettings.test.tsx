@@ -14,14 +14,10 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should toggle the markAsReadOnOpen checkbox', async () => {
-    useSettingsStore.setState({ markAsReadOnOpen: true });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithAppContext(<NotificationSettings />, {
+      settingsStore: { markAsReadOnOpen: true },
+    });
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
@@ -30,9 +26,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
-    useSettingsStore.setState({ groupNotificationsByProduct: true });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithAppContext(<NotificationSettings />, {
+      settingsStore: { groupNotificationsByProduct: true },
+    });
 
     await userEvent.click(
       screen.getByLabelText('Sort product groups alphabetically'),
@@ -45,9 +41,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
-    useSettingsStore.setState({ groupNotificationsByProduct: false });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithAppContext(<NotificationSettings />, {
+      settingsStore: { groupNotificationsByProduct: false },
+    });
 
     await userEvent.click(
       screen.getByLabelText('Sort product groups alphabetically'),

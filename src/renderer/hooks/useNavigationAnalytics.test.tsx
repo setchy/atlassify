@@ -11,10 +11,6 @@ const makeWrapper =
   );
 
 describe('renderer/hooks/useNavigationAnalytics.ts', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('tracks "Notifications" for the root route', () => {
     renderHook(() => useNavigationAnalytics(), { wrapper: makeWrapper('/') });
 
