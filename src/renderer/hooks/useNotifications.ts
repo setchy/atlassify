@@ -40,7 +40,11 @@ import {
   hasMoreNotifications,
 } from '../utils/notifications/fetch';
 import { filterNotifications } from '../utils/notifications/filters';
-import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  groupNotificationsByProduct,
+  resolveNotificationIdsForGroup,
+  sortNotificationsByOrder,
+} from '../utils/notifications/group';
 import {
   type NotificationActionType,
   postProcessNotifications,
@@ -165,6 +169,22 @@ export const useNotifications = (): UseNotificationsResult => {
   const notificationCount = getNotificationCount(notifications);
   const hasNotifications = notificationCount > 0;
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
+
+  const notificationsWithGrouped = useMemo(
+    () =>
+      notifications.map((accountNotifications) => {
+        const sortedNotifications = sortNotificationsByOrder(
+          accountNotifications.notifications,
+        );
+        const groupedMap = groupNotificationsByProduct(sortedNotifications);
+        return {
+          ...accountNotifications,
+          notifications: sortedNotifications,
+          groupedNotifications: Object.fromEntries(groupedMap.entries()),
+        };
+      }),
+    [notifications],
+  );
 
   const isErrorOrPaused = isError || isPaused;
 
@@ -394,7 +414,7 @@ export const useNotifications = (): UseNotificationsResult => {
 
     globalError,
 
-    notifications,
+    notifications: notificationsWithGrouped,
     notificationCount,
     hasNotifications,
     hasMoreAccountNotifications,

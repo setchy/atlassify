@@ -10218,8 +10218,8 @@ export enum ConfluenceMutationContentStatus {
   Draft = 'DRAFT'
 }
 
-/** Input for adding a global NBM transformer */
-export type ConfluenceNbmAddGlobalTransformerInput = {
+/** Input for adding an NBM transformer */
+export type ConfluenceNbmAddTransformerInput = {
   /** The transformer as a JSON string */
   transformerJson: Scalars['String']['input'];
 };
@@ -10319,6 +10319,14 @@ export enum ConfluenceNbmTransformationStatus {
   Pending = 'PENDING',
   Running = 'RUNNING'
 }
+
+/** Input for updating or deleting an NBM transformer */
+export type ConfluenceNbmUpdateTransformerInput = {
+  /** The transformer configuration as a JSON string. Send '{}' to delete the transformer. */
+  transformerJson: Scalars['String']['input'];
+  /** The name of the transformer to update or delete */
+  transformerName: Scalars['String']['input'];
+};
 
 export type ConfluenceNbmUploadTransformerConfigInput = {
   scanId: Scalars['ID']['input'];
@@ -13160,6 +13168,7 @@ export type CsmAiByodSourceInput = {
 
 /** Input for Confluence knowledge source filters */
 export type CsmAiConfluenceKnowledgeFilterInput = {
+  knowledgeGapFilter?: InputMaybe<Array<CsmAiKnowledgeGapSpaceInput>>;
   parentFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
   spaceFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -13236,6 +13245,12 @@ export type CsmAiKnowledgeFilterInput = {
   byodFilter?: InputMaybe<CsmAiByodKnowledgeFilterInput>;
   /** Page and space filters of a knowledge source */
   confluenceFilter?: InputMaybe<CsmAiConfluenceKnowledgeFilterInput>;
+};
+
+/** Input for knowledge gap space filter */
+export type CsmAiKnowledgeGapSpaceInput = {
+  enabled: Scalars['Boolean']['input'];
+  spaceAri: Scalars['ID']['input'];
 };
 
 export type CsmAiMessageHandoffInput = {
@@ -32726,6 +32741,7 @@ export type JiraClassificationLevelFilterInput = {
 export enum JiraClassificationLevelSource {
   /** Classification was set by auto-classification. */
   AutoClassification = 'AUTO_CLASSIFICATION',
+  AutoClassifiedIssue = 'AUTO_CLASSIFIED_ISSUE',
   /** @deprecated Use USER_CLASSIFICATION or AUTO_CLASSIFICATION instead. */
   Issue = 'ISSUE',
   /** No classification source. */
@@ -34517,6 +34533,25 @@ export type JiraFieldContextualDataFilterInput = {
   scopes?: InputMaybe<Array<JiraFieldContextualDataScopeFilterInput>>;
 };
 
+/** Input for filtering field contextual data in the issue experience. */
+export type JiraFieldContextualDataForIssueFilterInput = {
+  /** A list of field IDs to filter by. */
+  fieldIds: Array<Scalars['String']['input']>;
+  /** A list of scopes to filter by. At least one scope with a projectId is required. */
+  scopes: Array<JiraFieldContextualDataForIssueScopeInput>;
+};
+
+/** Input for defining a scope in the issue experience */
+export type JiraFieldContextualDataForIssueScopeInput = {
+  /**
+   * The ID of the issue type.
+   * IMPORTANT: Issue Type level context is not supported at the moment and this field should be set to null.
+   */
+  issueTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** The ID of the project. */
+  projectId: Scalars['ID']['input'];
+};
+
 /** Input for defining a scope to filter by. */
 export type JiraFieldContextualDataScopeFilterInput = {
   /**
@@ -34978,6 +35013,7 @@ export type JiraFormulaFieldFixContext = {
 export enum JiraFormulaFieldParameterType {
   Any = 'ANY',
   Boolean = 'BOOLEAN',
+  Date = 'DATE',
   Datetime = 'DATETIME',
   Number = 'NUMBER',
   Text = 'TEXT'
@@ -34999,6 +35035,7 @@ export type JiraFormulaFieldSuggestionContext = {
 /** Represents types returned within Formula Field expressions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
 export enum JiraFormulaFieldType {
   Boolean = 'BOOLEAN',
+  Date = 'DATE',
   Datetime = 'DATETIME',
   Number = 'NUMBER',
   Text = 'TEXT',
@@ -42189,6 +42226,19 @@ export type JiraWorklogSortInput = {
   /** The sort direction. */
   order: SortDirection;
 };
+
+/**
+ * Represents the cardinality of a collection in a ZERO, ONE, or MANY pattern.
+ * Using this pattern removes the need to count all items in a collection which may prove prohibitively expensive.
+ */
+export enum JiraZeroOneOrMany {
+  /** Multiple items available. Strictly greater than 1. */
+  Many = 'MANY',
+  /** Exactly one item available */
+  One = 'ONE',
+  /** No items available */
+  Zero = 'ZERO'
+}
 
 /**  --------------------------------------------------------------------------------------------- */
 export type JpdImportIdeasInput = {

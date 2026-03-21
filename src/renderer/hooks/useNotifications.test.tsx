@@ -1,3 +1,5 @@
+import { group } from 'console';
+
 import { act, waitFor } from '@testing-library/react';
 
 import nock from 'nock';
@@ -10,6 +12,8 @@ import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useSettingsStore } from '../stores';
+
+import type { AtlassifyNotification, ProductType } from '../types';
 
 import { useNotifications } from './useNotifications';
 
@@ -49,6 +53,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
         {
           account: mockAtlassianCloudAccount,
           notifications: [],
+          groupedNotifications: {} as Record<
+            ProductType,
+            AtlassifyNotification[]
+          >,
           error: null,
           hasMoreNotifications: false,
         },
@@ -89,6 +97,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
         {
           account: mockAtlassianCloudAccount,
           notifications: [],
+          groupedNotifications: {} as Record<
+            ProductType,
+            AtlassifyNotification[]
+          >,
           error: null,
           hasMoreNotifications: false,
         },
@@ -122,6 +134,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
         {
           account: mockAtlassianCloudAccount,
           notifications: [],
+          groupedNotifications: {} as Record<
+            ProductType,
+            AtlassifyNotification[]
+          >,
           error: null,
           hasMoreNotifications: false,
         },
