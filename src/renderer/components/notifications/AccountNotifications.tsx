@@ -1,4 +1,4 @@
-import { type FC, Fragment, type MouseEvent, useMemo, useState } from 'react';
+import { type FC, Fragment, type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
@@ -29,10 +29,6 @@ import type {
 } from '../../types';
 
 import {
-  groupNotificationsByProductEntries,
-  sortNotificationsByOrder,
-} from '../../utils/notifications/group';
-import {
   openAccountProfile,
   openMyPullRequests,
 } from '../../utils/system/links';
@@ -46,6 +42,7 @@ import { ProductNotifications } from './ProductNotifications';
 export interface AccountNotificationsProps {
   account: Account;
   notifications: AtlassifyNotification[];
+  groupedNotifications: Record<string, AtlassifyNotification[]>;
   hasMoreNotifications: boolean;
   error: AtlassifyError | null;
   showAccountHeader: boolean;
@@ -54,8 +51,13 @@ export interface AccountNotificationsProps {
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, hasMoreNotifications, showAccountHeader } =
-    props;
+  const {
+    account,
+    notifications,
+    groupedNotifications,
+    hasMoreNotifications,
+    showAccountHeader,
+  } = props;
 
   const { t } = useTranslation();
 
@@ -87,24 +89,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     gridArea: 'title',
   });
 
-  const sortedNotifications = useMemo(
-    () => sortNotificationsByOrder(notifications),
-    [notifications],
-  );
-
-  const groupNotificationsByProductAlphabetically = useSettingsStore(
-    (s) => s.groupNotificationsByProductAlphabetically,
-  );
   const groupByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
-
-  const groupedNotifications = useMemo(
-    () =>
-      groupNotificationsByProductEntries(
-        sortedNotifications,
-        groupNotificationsByProductAlphabetically,
-      ),
-    [sortedNotifications, groupNotificationsByProductAlphabetically],
-  );
 
   const actionToggleAccountNotifications = () => {
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
@@ -241,7 +226,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
           {!hasAccountNotifications && !props.error && <AllRead />}
 
           {groupByProduct
-            ? groupedNotifications.map(
+            ? Object.entries(groupedNotifications).map(
                 ([productType, productNotifications]) => (
                   <ProductNotifications
                     key={productType}
@@ -249,7 +234,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                   />
                 ),
               )
-            : sortedNotifications.map((notification) => (
+            : notifications.map((notification) => (
                 <NotificationRow
                   isProductAnimatingExit={false}
                   key={notification.id}

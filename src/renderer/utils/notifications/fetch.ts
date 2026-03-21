@@ -2,7 +2,11 @@ import { AxiosError } from 'axios';
 
 import { useAccountsStore } from '../../stores';
 
-import type { AccountNotifications, AtlassifyNotification } from '../../types';
+import type {
+  AccountNotifications,
+  AtlassifyNotification,
+  ProductType,
+} from '../../types';
 
 import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
@@ -83,6 +87,10 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
           return {
             account: accountNotifications.account,
             notifications: notifications,
+            groupedNotifications: {} as Record<
+              ProductType,
+              AtlassifyNotification[]
+            >,
             hasMoreNotifications: determineIfMorePagesAvailable(res),
             error: null,
           };
@@ -96,6 +104,10 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
           return {
             account: accountNotifications.account,
             notifications: [],
+            groupedNotifications: {} as Record<
+              ProductType,
+              AtlassifyNotification[]
+            >,
             hasMoreNotifications: false,
             error: determineFailureType(err),
           };

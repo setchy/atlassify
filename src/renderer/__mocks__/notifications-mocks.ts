@@ -86,6 +86,10 @@ export const mockAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: mockAtlassifyNotifications,
+    groupedNotifications: {
+      [PRODUCTS.bitbucket.type]: [mockAtlassifyNotifications[0]],
+      [PRODUCTS.confluence.type]: [mockAtlassifyNotifications[1]],
+    },
     hasMoreNotifications: false,
     error: null,
   },
@@ -95,6 +99,10 @@ export const mockAccountNotificationsWithMorePages: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: mockAtlassifyNotifications,
+    groupedNotifications: {
+      [PRODUCTS.bitbucket.type]: [mockAtlassifyNotifications[0]],
+      [PRODUCTS.confluence.type]: [mockAtlassifyNotifications[1]],
+    },
     hasMoreNotifications: true,
     error: null,
   },
@@ -104,6 +112,9 @@ export const mockSingleAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,
     notifications: [mockAtlassifyNotifications[0]],
+    groupedNotifications: {
+      [PRODUCTS.bitbucket.type]: [mockAtlassifyNotifications[0]],
+    },
     hasMoreNotifications: false,
     error: null,
   },

@@ -1,6 +1,6 @@
 import { useSettingsStore } from '../../stores';
 
-import type { Account, AtlassifyNotification } from '../../types';
+import type { Account, AtlassifyNotification, ProductType } from '../../types';
 
 import { getNotificationsByGroupId } from '../api/client';
 import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
@@ -28,8 +28,8 @@ export function isGroupNotification(
  */
 export function groupNotificationsByProduct(
   notifications: AtlassifyNotification[],
-): Map<string, AtlassifyNotification[]> {
-  const productGroups = new Map<string, AtlassifyNotification[]>();
+): Map<ProductType, AtlassifyNotification[]> {
+  const productGroups = new Map<ProductType, AtlassifyNotification[]>();
 
   for (const notification of notifications) {
     const product = notification.product.type;
@@ -72,7 +72,7 @@ export function sortNotificationsByOrder(
 export function groupNotificationsByProductEntries(
   notifications: AtlassifyNotification[],
   alphabetically: boolean,
-): [string, AtlassifyNotification[]][] {
+): [ProductType, AtlassifyNotification[]][] {
   const entries = Array.from(
     groupNotificationsByProduct(notifications).entries(),
   );

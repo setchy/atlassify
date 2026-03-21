@@ -2,8 +2,10 @@ import type {
   Account,
   AccountNotifications,
   AtlassifyError,
+  AtlassifyNotification,
   EncryptedToken,
   Link,
+  ProductType,
   Username,
 } from '../types';
 
@@ -29,6 +31,7 @@ export function createMockAccountWithError(
   return {
     account: mockAtlassianCloudAccount,
     notifications: [],
+    groupedNotifications: {} as Record<ProductType, AtlassifyNotification[]>,
     hasMoreNotifications: false,
     error,
   };

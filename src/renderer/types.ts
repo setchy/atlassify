@@ -94,6 +94,11 @@ export interface AccountNotifications {
   notifications: AtlassifyNotification[];
 
   /**
+   * The notifications grouped by product type.
+   */
+  groupedNotifications: Record<ProductType, AtlassifyNotification[]>;
+
+  /**
    * An indicator of whether there were further notifications on the server that were not fetched.
    */
   hasMoreNotifications: boolean;

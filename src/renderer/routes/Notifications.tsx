@@ -53,6 +53,7 @@ export const NotificationsRoute: FC = () => {
           <AccountNotifications
             account={accountNotifications.account}
             error={accountNotifications.error}
+            groupedNotifications={accountNotifications.groupedNotifications}
             hasMoreNotifications={accountNotifications.hasMoreNotifications}
             key={accountNotifications.account.id}
             notifications={accountNotifications.notifications}
