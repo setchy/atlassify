@@ -91,6 +91,10 @@
         "description": "Reaktionen",
         "title": "Reaktionen"
       },
+      "other": {
+        "description": "Anderes Engagement",
+        "title": "Andere"
+      },
       "title": "Engagement"
     },
     "products": {
@@ -257,9 +261,10 @@
       "tooltip": "Einstellungen"
     },
     "toggles": {
-      "groupByProduct": {
-        "label": "Gruppenbenachrichtigungen durch Produkte",
-        "tooltip": "Gruppenbenachrichtigungen durch Produkte"
+      "groupBy": {
+        "label": "Benachrichtigungen gruppieren",
+        "tooltip_none": "Benachrichtigungen gruppieren nach: keine (klicken zum Wechseln)",
+        "tooltip": "Benachrichtigungen gruppieren nach: {{type}} (klicken zum Wechseln)"
       },
       "groupByTitle": {
         "label": "Gruppenbenachrichtigungen nach Titel",

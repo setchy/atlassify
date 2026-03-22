@@ -61,7 +61,7 @@ const DEFAULT_NOTIFICATION_SETTINGS: NotificationSettingsState = {
   markAsReadOnOpen: true,
   delayNotificationState: false,
   fetchOnlyUnreadNotifications: true,
-  groupNotificationsByProduct: false,
+  groupBy: 'none',
   sortGroupedNotificationsAlphabetically: false,
   groupNotificationsByTitle: true,
 };

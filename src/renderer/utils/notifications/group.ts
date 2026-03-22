@@ -5,6 +5,7 @@ import type { Account, AtlassifyNotification } from '../../types';
 import { getNotificationsByGroupId } from '../api/client';
 import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
 import { rendererLogError } from '../core/logger';
+import { GROUPING_CONFIGS } from './grouping';
 import { groupNotifications } from './grouping/utils';
 
 /**
@@ -33,30 +34,25 @@ export function sortNotificationsByOrder(
 
 /**
  * Returns a flattened, ordered notifications list according to:
- *   - product-first-seen order (when grouped by product)
+ *   - grouped order (when grouping is enabled)
  *   - natural notification order otherwise
  *
  * @param notifications List of notifications to flatten
  * @returns Flattened list of notifications
  */
-export function getFlattenedNotificationsByProduct(
+export function flattenGroupedNotifications(
   notifications: AtlassifyNotification[],
 ): AtlassifyNotification[] {
-  const {
-    groupNotificationsByProduct: groupByProduct,
-    sortGroupedNotificationsAlphabetically: groupAlphabetically,
-  } = useSettingsStore.getState();
+  const { groupBy } = useSettingsStore.getState();
 
-  if (groupByProduct || groupAlphabetically) {
-    const productGroups = groupNotifications(
-      notifications,
-      (n) => n.product.type,
-    );
-
-    return Array.from(productGroups.values()).flat();
+  if (groupBy === 'none') {
+    return notifications;
   }
 
-  return notifications;
+  const config = GROUPING_CONFIGS[groupBy];
+  const groups = groupNotifications(notifications, config.getGroupKey);
+
+  return Array.from(groups.values()).flat();
 }
 
 /**

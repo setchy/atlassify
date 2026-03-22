@@ -91,6 +91,10 @@
         "description": "Réactions",
         "title": "Réactions"
       },
+      "other": {
+        "description": "Autre engagement",
+        "title": "Autres"
+      },
       "title": "Fiançailles"
     },
     "products": {
@@ -257,9 +261,10 @@
       "tooltip": "Paramètres"
     },
     "toggles": {
-      "groupByProduct": {
-        "label": "Notifications de groupe par produits",
-        "tooltip": "Notifications de groupe par produits"
+      "groupBy": {
+        "label": "Grouper les notifications",
+        "tooltip_none": "Grouper les notifications par : aucune (cliquer pour parcourir)",
+        "tooltip": "Grouper les notifications par : {{type}} (cliquer pour parcourir)"
       },
       "groupByTitle": {
         "label": "Notifications de groupe par titre",

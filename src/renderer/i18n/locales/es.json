@@ -91,6 +91,10 @@
         "description": "Reacciones",
         "title": "Reacciones"
       },
+      "other": {
+        "description": "Otro compromiso",
+        "title": "Otros"
+      },
       "title": "Compromiso"
     },
     "products": {
@@ -257,9 +261,10 @@
       "tooltip": "Ajustes"
     },
     "toggles": {
-      "groupByProduct": {
-        "label": "Notificaciones grupales por productos",
-        "tooltip": "Notificaciones grupales por productos"
+      "groupBy": {
+        "label": "Agrupar notificaciones",
+        "tooltip_none": "Agrupar notificaciones por: ninguna (clic para cambiar)",
+        "tooltip": "Agrupar notificaciones por: {{type}} (clic para cambiar)"
       },
       "groupByTitle": {
         "label": "Notificaciones grupales por título",

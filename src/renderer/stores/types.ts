@@ -189,9 +189,9 @@ export interface NotificationSettingsState {
   fetchOnlyUnreadNotifications: boolean;
 
   /**
-   * Whether to group notifications by product.
+   * The type to group notifications by.
    */
-  groupNotificationsByProduct: boolean;
+  groupBy: GroupByType;
 
   /**
    * Whether to sort grouped notifications alphabetically by group name or by timestamp (server order).
@@ -203,6 +203,13 @@ export interface NotificationSettingsState {
    */
   groupNotificationsByTitle: boolean;
 }
+
+export type GroupByType =
+  | 'none'
+  | 'product'
+  | 'actor'
+  | 'engagement'
+  | 'category';
 
 /**
  * Settings related to the tray / menu bar behavior.

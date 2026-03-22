@@ -21,6 +21,7 @@ import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
+import { formatProperCase } from '../utils/notifications/formatters';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 const SidebarComponent: FC = () => {
@@ -46,9 +47,7 @@ const SidebarComponent: FC = () => {
   const fetchOnlyUnreadNotifications = useSettingsStore(
     (s) => s.fetchOnlyUnreadNotifications,
   );
-  const groupNotificationsByProduct = useSettingsStore(
-    (s) => s.groupNotificationsByProduct,
-  );
+  const groupBy = useSettingsStore((s) => s.groupBy);
   const groupNotificationsByTitle = useSettingsStore(
     (s) => s.groupNotificationsByTitle,
   );
@@ -126,25 +125,29 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={t('sidebar.toggles.groupByProduct.tooltip')}
+                  content={
+                    groupBy === 'none'
+                      ? t('sidebar.toggles.groupBy.tooltip_none')
+                      : t('sidebar.toggles.groupBy.tooltip', {
+                          type: formatProperCase(groupBy),
+                        })
+                  }
                   position="right"
                   shortcut={[shortcuts.groupNotifications.key]}
                 >
                   <IconButton
-                    appearance={
-                      groupNotificationsByProduct ? 'discovery' : 'subtle'
-                    }
+                    appearance={groupBy !== 'none' ? 'discovery' : 'subtle'}
                     icon={() => (
                       <ListBulletedIcon
                         color={sidebarIconColorToken}
-                        label="groupByProduct"
+                        label="groupBy"
                       />
                     )}
-                    label={t('sidebar.toggles.groupByProduct.label')}
+                    label={t('sidebar.toggles.groupBy.label')}
                     onClick={() => shortcuts.groupNotifications.action()}
                     shape="circle"
                     spacing="compact"
-                    testId="sidebar-group-by-product"
+                    testId="sidebar-group-by"
                   />
                 </Tooltip>
 

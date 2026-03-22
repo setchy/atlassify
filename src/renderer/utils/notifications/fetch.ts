@@ -10,7 +10,7 @@ import { determineIfMorePagesAvailable } from '../api/pagination';
 import { transformNotifications } from '../api/transform';
 import { Errors } from '../core/errors';
 import { rendererLogError } from '../core/logger';
-import { getFlattenedNotificationsByProduct } from './group';
+import { flattenGroupedNotifications } from './group';
 
 /**
  * Get the count of notifications across all accounts.
@@ -121,7 +121,7 @@ export function stabilizeNotificationsOrder(
   let orderIndex = 0;
 
   for (const account of accountNotifications) {
-    const flattenedNotifications = getFlattenedNotificationsByProduct(
+    const flattenedNotifications = flattenGroupedNotifications(
       account.notifications,
     );
 

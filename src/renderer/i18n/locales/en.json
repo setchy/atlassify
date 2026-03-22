@@ -107,6 +107,10 @@
       "reactions": {
         "title": "Reactions",
         "description": "Reactions"
+      },
+      "other": {
+        "title": "Other",
+        "description": "Other engagement"
       }
     }
   },
@@ -245,9 +249,10 @@
         "label": "Show only unread toggle",
         "tooltip": "Show only unread notifications"
       },
-      "groupByProduct": {
-        "label": "Group notifications by products",
-        "tooltip": "Group notifications by products"
+      "groupBy": {
+        "label": "Group notifications",
+        "tooltip_none": "Group notifications by: none (press to cycle)",
+        "tooltip": "Group notifications by: {{type}} (press to cycle)"
       },
       "groupByTitle": {
         "label": "Group notifications by title",
