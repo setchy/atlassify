@@ -25,9 +25,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     expect(toggleSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen');
   });
 
-  it('should toggle the sortGroupedNotificationsAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
+  it('should toggle the sortGroupedNotificationsAlphabetically checkbox when groupBy is "product"', async () => {
     renderWithProviders(<NotificationSettings />, {
-      settings: { groupNotificationsByProduct: true },
+      settings: { groupBy: 'product' },
     });
 
     await userEvent.click(
@@ -42,7 +42,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
   it('should not toggle the sortGroupedNotificationsAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
     renderWithProviders(<NotificationSettings />, {
-      settings: { groupNotificationsByProduct: false },
+      settings: { groupBy: 'none' },
     });
 
     await userEvent.click(

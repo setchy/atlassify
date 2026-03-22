@@ -87,13 +87,13 @@
         "description": "Erwähnungen",
         "title": "Erwähnen"
       },
-      "reactions": {
-        "description": "Reaktionen",
-        "title": "Reaktionen"
-      },
       "other": {
         "description": "Anderes Engagement",
         "title": "Andere"
+      },
+      "reactions": {
+        "description": "Reaktionen",
+        "title": "Reaktionen"
       },
       "title": "Engagement"
     },
@@ -195,8 +195,9 @@
     "notifications": {
       "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
       "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appName}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
-      "group_alphabetically": "Sortieren Sie die Gruppen alphabetisch",
+      "group_alphabetically": "Sortieren Sie gruppierte Benachrichtigungen alphabetisch",
       "group_alphabetically_help": "Wenn das Gruppieren von Benachrichtigungen aktiviert ist, sortiert diese Einstellung die Gruppen in alphabetischer Reihenfolge. \nAndernfalls werden die Gruppen nach der aktuellsten Benachrichtigung sortiert.",
+      "group_by": "Gruppieren Sie Benachrichtigungen nach",
       "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
       "title": "Benachrichtigungen"
     },
@@ -263,7 +264,6 @@
     "toggles": {
       "groupBy": {
         "label": "Benachrichtigungen gruppieren",
-        "tooltip_none": "Benachrichtigungen gruppieren nach: keine (klicken zum Wechseln)",
         "tooltip": "Benachrichtigungen gruppieren nach: {{type}} (klicken zum Wechseln)"
       },
       "groupByTitle": {

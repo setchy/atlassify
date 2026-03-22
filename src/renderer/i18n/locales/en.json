@@ -175,7 +175,8 @@
     "notifications": {
       "title": "Notifications",
       "mark_as_read_on_open": "Mark as read on open",
-      "group_alphabetically": "Sort groups alphabetically",
+      "group_by": "Group notifications by",
+      "group_alphabetically": "Sort grouped notifications alphabetically",
       "group_alphabetically_help": "When grouping notifications is enabled, this setting will sort groups in alphabetical order. Otherwise, groups will be sorted by most recent notification.",
       "delay_notification_state": "Delay notification state",
       "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated)."
@@ -251,8 +252,7 @@
       },
       "groupBy": {
         "label": "Group notifications",
-        "tooltip_none": "Group notifications by: none (press to cycle)",
-        "tooltip": "Group notifications by: {{type}} (press to cycle)"
+        "tooltip": "Group notifications by: {{type}}"
       },
       "groupByTitle": {
         "label": "Group notifications by title",

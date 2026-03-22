@@ -87,13 +87,13 @@
         "description": "Menciones",
         "title": "Mencionar"
       },
-      "reactions": {
-        "description": "Reacciones",
-        "title": "Reacciones"
-      },
       "other": {
         "description": "Otro compromiso",
         "title": "Otros"
+      },
+      "reactions": {
+        "description": "Reacciones",
+        "title": "Reacciones"
       },
       "title": "Compromiso"
     },
@@ -195,8 +195,9 @@
     "notifications": {
       "delay_notification_state": "Estado de notificación de retraso",
       "delay_notification_state_help": "Mantenga la notificación dentro de {{appName}} tras la interacción (es decir: Abra la notificación, marque como lea) hasta que la siguiente ventana de actualización (programada o iniciada por el usuario).",
-      "group_alphabetically": "Ordenar grupos alfabéticamente",
+      "group_alphabetically": "Ordenar alfabéticamente las notificaciones agrupadas",
       "group_alphabetically_help": "Cuando las notificaciones de agrupación están habilitadas, esta configuración ordenará los grupos en orden alfabético. \nDe lo contrario, los grupos se ordenarán según la notificación más reciente.",
+      "group_by": "Notificaciones grupales por",
       "mark_as_read_on_open": "Mark como leída en Open",
       "title": "Notificaciones"
     },
@@ -263,7 +264,6 @@
     "toggles": {
       "groupBy": {
         "label": "Agrupar notificaciones",
-        "tooltip_none": "Agrupar notificaciones por: ninguna (clic para cambiar)",
         "tooltip": "Agrupar notificaciones por: {{type}} (clic para cambiar)"
       },
       "groupByTitle": {

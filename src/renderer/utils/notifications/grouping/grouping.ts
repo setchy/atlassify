@@ -1,6 +1,11 @@
 import type { GroupByType } from '../../../stores/types';
 
-import type { ProductType } from '../../../types';
+import type {
+  ActorType,
+  CategoryType,
+  EngagementStateType,
+  ProductType,
+} from '../../../types';
 import type { GroupingConfig } from './types';
 
 import { actorFilter, inferNotificationActor } from '../filters/actor';
@@ -22,23 +27,19 @@ export const GROUPING_CONFIGS: Record<
   },
   actor: {
     groupByType: 'actor',
-    getDetails: (type) =>
-      actorFilter.getTypeDetails(type as 'user' | 'automation'),
+    getDetails: (type) => actorFilter.getTypeDetails(type as ActorType),
     getGroupKey: (notification) => inferNotificationActor(notification),
   },
   engagement: {
     groupByType: 'engagement',
     getDetails: (type) =>
-      engagementFilter.getTypeDetails(
-        type as 'mention' | 'comment' | 'reaction' | 'other',
-      ),
+      engagementFilter.getTypeDetails(type as EngagementStateType),
     getGroupKey: (notification) =>
       inferNotificationEngagementState(notification),
   },
   category: {
     groupByType: 'category',
-    getDetails: (type) =>
-      categoryFilter.getTypeDetails(type as 'direct' | 'watching'),
+    getDetails: (type) => categoryFilter.getTypeDetails(type as CategoryType),
     getGroupKey: (notification) => notification.category,
   },
 };

@@ -87,13 +87,13 @@
         "description": "Mentions",
         "title": "Mention"
       },
-      "reactions": {
-        "description": "Réactions",
-        "title": "Réactions"
-      },
       "other": {
         "description": "Autre engagement",
         "title": "Autres"
+      },
+      "reactions": {
+        "description": "Réactions",
+        "title": "Réactions"
       },
       "title": "Fiançailles"
     },
@@ -195,8 +195,9 @@
     "notifications": {
       "delay_notification_state": "État de notification de retard",
       "delay_notification_state_help": "Gardez la notification dans {{appName}} lors de l'interaction (c'est-à-dire: ouvrir la notification, marque comme lecture) jusqu'à la fenêtre de rafraîchissement suivante (planifiée ou initiée par l'utilisateur).",
-      "group_alphabetically": "Trier les groupes par ordre alphabétique",
+      "group_alphabetically": "Trier les notifications groupées par ordre alphabétique",
       "group_alphabetically_help": "Lorsque le regroupement des notifications est activé, ce paramètre triera les groupes par ordre alphabétique. \nSinon, les groupes seront triés par notification la plus récente.",
+      "group_by": "Regrouper les notifications par",
       "mark_as_read_on_open": "Mark comme lu sur ouvert",
       "title": "Notifications"
     },
@@ -263,7 +264,6 @@
     "toggles": {
       "groupBy": {
         "label": "Grouper les notifications",
-        "tooltip_none": "Grouper les notifications par : aucune (cliquer pour parcourir)",
         "tooltip": "Grouper les notifications par : {{type}} (cliquer pour parcourir)"
       },
       "groupByTitle": {

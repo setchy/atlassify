@@ -125,13 +125,9 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={
-                    groupBy === 'none'
-                      ? t('sidebar.toggles.groupBy.tooltip_none')
-                      : t('sidebar.toggles.groupBy.tooltip', {
-                          type: formatProperCase(groupBy),
-                        })
-                  }
+                  content={t('sidebar.toggles.groupBy.tooltip', {
+                    type: formatProperCase(groupBy),
+                  })}
                   position="right"
                   shortcut={[shortcuts.groupNotifications.key]}
                 >
