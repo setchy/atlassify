@@ -523,7 +523,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               <input
                 class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 disabled=""
-                name="groupNotificationsByProductAlphabetically"
+                name="sortGroupedNotificationsAlphabetically"
                 tabindex="0"
                 type="checkbox"
               />
@@ -551,7 +551,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               <span
                 class="_nd5l11ig _1wpz1h6o"
               >
-                Sort product groups alphabetically
+                Sort groups alphabetically
               </span>
             </label>
             <div
@@ -1675,7 +1675,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                           <span
                             class="keycap"
                           >
-                            p
+                            g
                           </span>
                         </div>
                       </div>

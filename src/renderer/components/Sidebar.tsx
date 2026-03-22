@@ -128,7 +128,7 @@ const SidebarComponent: FC = () => {
                 <Tooltip
                   content={t('sidebar.toggles.groupByProduct.tooltip')}
                   position="right"
-                  shortcut={[shortcuts.groupByProduct.key]}
+                  shortcut={[shortcuts.groupNotifications.key]}
                 >
                   <IconButton
                     appearance={
@@ -141,7 +141,7 @@ const SidebarComponent: FC = () => {
                       />
                     )}
                     label={t('sidebar.toggles.groupByProduct.label')}
-                    onClick={() => shortcuts.groupByProduct.action()}
+                    onClick={() => shortcuts.groupNotifications.action()}
                     shape="circle"
                     spacing="compact"
                     testId="sidebar-group-by-product"

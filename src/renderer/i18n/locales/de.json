@@ -191,8 +191,8 @@
     "notifications": {
       "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
       "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appName}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
-      "group_alphabetically": "Gruppenproduktbenachrichtigungen alphabetisch",
-      "group_alphabetically_help": "Wenn Benachrichtigungen nach Produkten gruppiert werden, sortiert diese Einstellung Produkte in alphabetischer Reihenfolge.",
+      "group_alphabetically": "Sortieren Sie die Gruppen alphabetisch",
+      "group_alphabetically_help": "Wenn das Gruppieren von Benachrichtigungen aktiviert ist, sortiert diese Einstellung die Gruppen in alphabetischer Reihenfolge. \nAndernfalls werden die Gruppen nach der aktuellsten Benachrichtigung sortiert.",
       "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
       "title": "Benachrichtigungen"
     },

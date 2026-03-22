@@ -191,8 +191,8 @@
     "notifications": {
       "delay_notification_state": "Estado de notificación de retraso",
       "delay_notification_state_help": "Mantenga la notificación dentro de {{appName}} tras la interacción (es decir: Abra la notificación, marque como lea) hasta que la siguiente ventana de actualización (programada o iniciada por el usuario).",
-      "group_alphabetically": "Notificaciones de productos grupales alfabéticamente",
-      "group_alphabetically_help": "Cuando los productos agrupan las notificaciones, esta configuración ordenará los productos en orden alfabético.",
+      "group_alphabetically": "Ordenar grupos alfabéticamente",
+      "group_alphabetically_help": "Cuando las notificaciones de agrupación están habilitadas, esta configuración ordenará los grupos en orden alfabético. \nDe lo contrario, los grupos se ordenarán según la notificación más reciente.",
       "mark_as_read_on_open": "Mark como leída en Open",
       "title": "Notificaciones"
     },

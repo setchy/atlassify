@@ -68,6 +68,7 @@ function buildProductFilterDetails(
             type: p.display,
           }),
           logo: p.logo,
+          home: p.home,
         } as FilterDetails,
       ];
     }),

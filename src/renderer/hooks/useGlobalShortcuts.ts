@@ -12,7 +12,7 @@ type ShortcutName =
   | 'home'
   | 'myNotifications'
   | 'toggleReadUnread'
-  | 'groupByProduct'
+  | 'groupNotifications'
   | 'groupByTitle'
   | 'filters'
   | 'refresh'
@@ -88,8 +88,8 @@ export function useGlobalShortcuts({
             .toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
-      groupByProduct: {
-        key: keybindings.shortcuts.groupByProduct.eventKey,
+      groupNotifications: {
+        key: keybindings.shortcuts.groupNotifications.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
           trackEvent('Action', {

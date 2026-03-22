@@ -5,6 +5,7 @@ import type { Account, AtlassifyNotification } from '../../types';
 import { getNotificationsByGroupId } from '../api/client';
 import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
 import { rendererLogError } from '../core/logger';
+import { groupNotifications } from './grouping/utils';
 
 /**
  * Check if a notification is a group notification.
@@ -16,38 +17,6 @@ export function isGroupNotification(
   notification: AtlassifyNotification,
 ): boolean {
   return notification.notificationGroup.size > 1;
-}
-
-/**
- * Group notifications by product type preserving first-seen product order.
- * Returns a Map where keys are product types and values are arrays of notifications.
- * Skips notifications without a product type.
- *
- * @param notifications - List of notifications to group.
- * @returns Map of product types to arrays of notifications.
- */
-export function groupNotificationsByProduct(
-  notifications: AtlassifyNotification[],
-): Map<string, AtlassifyNotification[]> {
-  const productGroups = new Map<string, AtlassifyNotification[]>();
-
-  for (const notification of notifications) {
-    const product = notification.product.type;
-
-    if (!product) {
-      continue;
-    }
-
-    const group = productGroups.get(product);
-
-    if (group) {
-      group.push(notification);
-    } else {
-      productGroups.set(product, [notification]);
-    }
-  }
-
-  return productGroups;
 }
 
 /**
@@ -63,28 +32,6 @@ export function sortNotificationsByOrder(
 }
 
 /**
- * Converts grouped notifications into an ordered entries array, optionally sorted alphabetically.
- *
- * @param notifications - Ordered list of notifications to group.
- * @param alphabetically - Whether to sort product groups alphabetically by product type.
- * @returns Ordered entries array of [productType, notifications[]] pairs.
- */
-export function groupNotificationsByProductEntries(
-  notifications: AtlassifyNotification[],
-  alphabetically: boolean,
-): [string, AtlassifyNotification[]][] {
-  const entries = Array.from(
-    groupNotificationsByProduct(notifications).entries(),
-  );
-
-  if (alphabetically) {
-    entries.sort((a, b) => a[0].localeCompare(b[0]));
-  }
-
-  return entries;
-}
-
-/**
  * Returns a flattened, ordered notifications list according to:
  *   - product-first-seen order (when grouped by product)
  *   - natural notification order otherwise
@@ -97,11 +44,14 @@ export function getFlattenedNotificationsByProduct(
 ): AtlassifyNotification[] {
   const {
     groupNotificationsByProduct: groupByProduct,
-    groupNotificationsByProductAlphabetically: groupAlphabetically,
+    sortGroupedNotificationsAlphabetically: groupAlphabetically,
   } = useSettingsStore.getState();
 
   if (groupByProduct || groupAlphabetically) {
-    const productGroups = groupNotificationsByProduct(notifications);
+    const productGroups = groupNotifications(
+      notifications,
+      (n) => n.product.type,
+    );
 
     return Array.from(productGroups.values()).flat();
   }

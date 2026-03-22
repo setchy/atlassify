@@ -26,12 +26,15 @@ import type {
   Account,
   AtlassifyError,
   AtlassifyNotification,
+  ProductType,
 } from '../../types';
 
+import { sortNotificationsByOrder } from '../../utils/notifications/group';
 import {
-  groupNotificationsByProductEntries,
-  sortNotificationsByOrder,
-} from '../../utils/notifications/group';
+  groupNotifications,
+  PRODUCT_GROUPING_CONFIG,
+  sortGroupedEntries,
+} from '../../utils/notifications/grouping';
 import {
   openAccountProfile,
   openMyPullRequests,
@@ -40,8 +43,8 @@ import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
+import { GroupedNotification } from './GroupedNotification';
 import { NotificationRow } from './NotificationRow';
-import { ProductNotifications } from './ProductNotifications';
 
 export interface AccountNotificationsProps {
   account: Account;
@@ -92,18 +95,23 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     [notifications],
   );
 
-  const groupNotificationsByProductAlphabetically = useSettingsStore(
-    (s) => s.groupNotificationsByProductAlphabetically,
+  const sortGroupedNotificationsAlphabetically = useSettingsStore(
+    (s) => s.sortGroupedNotificationsAlphabetically,
   );
   const groupByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
 
   const groupedNotifications = useMemo(
     () =>
-      groupNotificationsByProductEntries(
-        sortedNotifications,
-        groupNotificationsByProductAlphabetically,
+      sortGroupedEntries(
+        Array.from(
+          groupNotifications(
+            sortedNotifications,
+            PRODUCT_GROUPING_CONFIG.getGroupKey,
+          ).entries(),
+        ) as [ProductType, AtlassifyNotification[]][],
+        sortGroupedNotificationsAlphabetically,
       ),
-    [sortedNotifications, groupNotificationsByProductAlphabetically],
+    [sortedNotifications, sortGroupedNotificationsAlphabetically],
   );
 
   const actionToggleAccountNotifications = () => {
@@ -243,9 +251,11 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
           {groupByProduct
             ? groupedNotifications.map(
                 ([productType, productNotifications]) => (
-                  <ProductNotifications
+                  <GroupedNotification
+                    groupingConfig={PRODUCT_GROUPING_CONFIG}
+                    groupKey={productType}
+                    groupNotifications={productNotifications}
                     key={productType}
-                    productNotifications={productNotifications}
                   />
                 ),
               )

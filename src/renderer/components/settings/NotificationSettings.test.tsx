@@ -25,7 +25,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     expect(toggleSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen');
   });
 
-  it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
+  it('should toggle the sortGroupedNotificationsAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
     renderWithProviders(<NotificationSettings />, {
       settings: { groupNotificationsByProduct: true },
     });
@@ -36,11 +36,11 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
     expect(toggleSettingSpy).toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
+      'sortGroupedNotificationsAlphabetically',
     );
   });
 
-  it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
+  it('should not toggle the sortGroupedNotificationsAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
     renderWithProviders(<NotificationSettings />, {
       settings: { groupNotificationsByProduct: false },
     });
@@ -51,7 +51,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
     expect(toggleSettingSpy).not.toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
+      'sortGroupedNotificationsAlphabetically',
     );
   });
 

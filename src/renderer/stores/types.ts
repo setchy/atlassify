@@ -194,9 +194,9 @@ export interface NotificationSettingsState {
   groupNotificationsByProduct: boolean;
 
   /**
-   * Whether to sort grouped notifications by product alphabetically or time.
+   * Whether to sort grouped notifications alphabetically by group name or by timestamp (server order).
    */
-  groupNotificationsByProductAlphabetically: boolean;
+  sortGroupedNotificationsAlphabetically: boolean;
 
   /**
    * Whether to group notifications by title.
