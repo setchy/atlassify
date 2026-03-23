@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { getNormalizedKey, shouldIgnoreKeyboardEvent } from './keyboard';
 
 describe('renderer/utils/ui/keyboard.ts', () => {

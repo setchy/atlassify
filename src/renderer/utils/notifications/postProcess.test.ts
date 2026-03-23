@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { mockAtlassianCloudAccountTwo } from '../../__mocks__/account-mocks';
 import {
   mockAccountNotifications,

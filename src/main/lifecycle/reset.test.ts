@@ -1,7 +1,5 @@
 import type { Menubar } from 'menubar';
 
-import { describe, expect, it, vi } from 'vitest';
-
 vi.mock('electron', () => ({
   dialog: { showMessageBoxSync: vi.fn(() => 0) },
 }));

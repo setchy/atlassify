@@ -1,7 +1,5 @@
 import type { Menubar } from 'menubar';
 
-import { describe, expect, it, vi } from 'vitest';
-
 import { initializeAppLifecycle } from './startup';
 
 const requestSingleInstanceLockMock = vi.fn(() => true);
