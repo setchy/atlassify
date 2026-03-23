@@ -46,7 +46,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     });
 
     await userEvent.click(
-      screen.getByLabelText('Sort product groups alphabetically'),
+      screen.getByLabelText('Sort grouped notifications alphabetically'),
     );
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
