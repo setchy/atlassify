@@ -39,7 +39,6 @@ describe('renderer/utils/products/strategies/default', () => {
   });
 
   describe('actorType', () => {
-
     it('actorType infers automation actor', () => {
       const automationNotification = {
         ...mockSingleAtlassifyNotification,
@@ -48,7 +47,9 @@ describe('renderer/utils/products/strategies/default', () => {
         },
       } as AtlassifyNotification;
 
-      expect(defaultStrategy.actorType(automationNotification)).toBe('automation');
+      expect(defaultStrategy.actorType(automationNotification)).toBe(
+        'automation',
+      );
     });
 
     it('actorType infers user actor', () => {
@@ -111,6 +112,6 @@ describe('renderer/utils/products/strategies/default', () => {
       } as AtlassifyNotification;
 
       expect(defaultStrategy.engagementState(notification)).toBe('other');
-    })
+    });
   });
 });

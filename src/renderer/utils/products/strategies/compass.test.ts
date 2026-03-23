@@ -42,9 +42,9 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'some-component is failing a scorecard',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).actorType(notification),
-      ).toBe('automation');
+      expect(getProductStrategy(notification).actorType(notification)).toBe(
+        'automation',
+      );
     });
 
     it('actorType falls back to default strategy for non-scorecard notifications', () => {
@@ -54,9 +54,9 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'John commented on your PR',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).actorType(notification),
-      ).toBe(defaultStrategy.actorType(notification));
+      expect(getProductStrategy(notification).actorType(notification)).toBe(
+        defaultStrategy.actorType(notification),
+      );
     });
   });
 

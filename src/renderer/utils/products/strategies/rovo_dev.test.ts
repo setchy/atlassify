@@ -26,6 +26,6 @@ describe('renderer/utils/products/strategies/rovo_dev', () => {
 
     expect(getProductStrategy(notification).actorType(notification)).toBe(
       'automation',
-    );  
+    );
   });
 });
