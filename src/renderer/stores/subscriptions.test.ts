@@ -155,7 +155,6 @@ describe('renderer/stores/subscriptions.ts', () => {
     beforeEach(() => {
       cleanup = initializeStoreSubscriptions();
       vi.clearAllMocks(); // Clear calls from initialization
-      vi.mocked(queryClient.invalidateQueries).mockClear();
     });
 
     it('should invalidate queries when filters change', () => {

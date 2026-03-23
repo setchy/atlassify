@@ -28,9 +28,6 @@ describe('main/handlers/app.ts', () => {
   let menubar: Menubar;
 
   beforeEach(() => {
-    handleMock.mockClear();
-    onMock.mockClear();
-
     menubar = {
       showWindow: vi.fn(),
       hideWindow: vi.fn(),

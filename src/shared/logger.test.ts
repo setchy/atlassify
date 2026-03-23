@@ -9,12 +9,6 @@ describe('shared/logger.ts', () => {
 
   const mockError = new Error('baz');
 
-  beforeEach(() => {
-    logInfoSpy.mockClear();
-    logWarnSpy.mockClear();
-    logErrorSpy.mockClear();
-  });
-
   describe('logInfo', () => {
     it('logs info without contexts', () => {
       logInfo('foo', 'bar');

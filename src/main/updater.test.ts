@@ -197,8 +197,6 @@ describe('main/updater.ts', () => {
       try {
         await updater.start();
 
-        menuBuilder.setNoUpdateAvailableMenuVisibility.mockClear();
-
         emit('update-not-available');
         // Immediately shows the message
         expect(
@@ -219,7 +217,6 @@ describe('main/updater.ts', () => {
       vi.useFakeTimers();
       try {
         await updater.start();
-        menuBuilder.setNoUpdateAvailableMenuVisibility.mockClear();
 
         emit('update-not-available');
         // Message shown
