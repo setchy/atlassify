@@ -55,8 +55,8 @@ importers:
         specifier: 17.3.6
         version: 17.3.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css-reset':
-        specifier: 7.3.13
-        version: 7.3.13(react@19.2.4)
+        specifier: 7.4.0
+        version: 7.4.0(react@19.2.4)
       '@atlaskit/form':
         specifier: 15.4.2
         version: 15.4.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -306,8 +306,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/css-reset@7.3.13':
-    resolution: {integrity: sha512-nqliNswB+8tD+RhbaD9HRoGf8zFX88oRInV9HE6A6DdjBx7OFw9db18y3i0MCiy9Igf5OwFkNvxDQQNXv3fpvA==}
+  '@atlaskit/css-reset@7.4.0':
+    resolution: {integrity: sha512-uH+E0Zptfqo4eSpn1YvUmlaOmDP6pRNtPPWlNC2gnHu0oDe4SF6Fpd5+xQ1K3w4P0GVj+m9OpDK1A5tDhUE6Ag==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5019,7 +5019,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/css-reset@7.3.13(react@19.2.4)':
+  '@atlaskit/css-reset@7.4.0(react@19.2.4)':
     dependencies:
       '@atlaskit/theme': 22.0.1(react@19.2.4)
       '@atlaskit/tokens': 11.1.1(react@19.2.4)
