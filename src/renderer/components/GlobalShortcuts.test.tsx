@@ -100,22 +100,22 @@ describe('components/GlobalShortcuts.tsx', () => {
     });
 
     describe('groupByProduct', () => {
-      it('toggles group by product setting when pressing G while logged in', async () => {
+      it('toggles group by setting when pressing G while logged in', async () => {
         renderWithProviders(<GlobalShortcuts />, {
           settings: { groupBy: 'none' },
         });
 
-        await userEvent.keyboard('p');
+        await userEvent.keyboard('g');
 
         expect(updateSettingsSpy).toHaveBeenCalledWith('groupBy', 'product');
       });
 
-      it('does not toggle group by product when logged out', async () => {
+      it('does not toggle group by setting when logged out', async () => {
         renderWithProviders(<GlobalShortcuts />, {
           accounts: { accounts: [] },
         });
 
-        await userEvent.keyboard('p');
+        await userEvent.keyboard('g');
 
         expect(toggleSettingsSpy).not.toHaveBeenCalled();
       });
