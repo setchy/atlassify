@@ -39,7 +39,7 @@ describe('renderer/utils/notifications/grouping/grouping.ts', () => {
 
     it('product config should return product filter details', () => {
       const config = GROUPING_CONFIGS.product;
-      const details = config.getDetails('jira_software');
+      const details = config.getDetails('jira');
       expect(details).toBeDefined();
       expect(details.name).toBeDefined();
     });

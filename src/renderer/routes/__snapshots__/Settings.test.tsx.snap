@@ -551,7 +551,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               <span
                 class="_nd5l11ig _1wpz1h6o"
               >
-                Sort groups alphabetically
+                Sort grouped notifications alphabetically
               </span>
             </label>
             <div
