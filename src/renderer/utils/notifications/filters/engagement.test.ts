@@ -7,7 +7,7 @@ import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 
-import { engagementFilter, inferNotificationEngagementState } from '.';
+import { engagementFilter } from '.';
 
 describe('renderer/utils/notifications/filters/engagement.ts', () => {
   it('hasEngagementStateFilters', () => {
@@ -63,60 +63,5 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
     expect(
       engagementFilter.filterNotification(mockNotification, 'reaction'),
     ).toBe(false);
-  });
-
-  describe('inferNotificationEngagementState', () => {
-    it('should infer mention engagement state', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        message: 'someone mentioned you on a page',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'mention',
-      );
-    });
-
-    it('should infer comment engagement state', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        message: 'someone replied on a page',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'comment',
-      );
-    });
-
-    it('should infer reaction engagement state', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        message: 'someone reacted to your comment',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'reaction',
-      );
-    });
-
-    it('should infer reaction engagement state with emoji', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        message: 'someone reacted 🍻 to your comment',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'reaction',
-      );
-    });
-
-    it('should return null if no engagement state can be inferred from message', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        message: 'mentionedreplied on a page',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationEngagementState(mockNotification)).toBeNull();
-    });
   });
 });

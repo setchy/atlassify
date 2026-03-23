@@ -8,12 +8,10 @@ import type {
 } from '../../../types';
 import type { GroupingConfig } from './types';
 
-import { actorFilter, inferNotificationActor } from '../filters/actor';
+import { getProductStrategy } from '../../products';
+import { actorFilter } from '../filters/actor';
 import { categoryFilter } from '../filters/category';
-import {
-  engagementFilter,
-  inferNotificationEngagementState,
-} from '../filters/engagement';
+import { engagementFilter } from '../filters/engagement';
 import { productFilter } from '../filters/product';
 
 export const GROUPING_CONFIGS: Record<
@@ -28,14 +26,19 @@ export const GROUPING_CONFIGS: Record<
   actor: {
     groupByType: 'actor',
     getDetails: (type) => actorFilter.getTypeDetails(type as ActorType),
-    getGroupKey: (notification) => inferNotificationActor(notification),
+    getGroupKey: (notification) => {
+      const strategy = getProductStrategy(notification);
+      return strategy.actorType(notification);
+    },
   },
   engagement: {
     groupByType: 'engagement',
     getDetails: (type) =>
       engagementFilter.getTypeDetails(type as EngagementStateType),
-    getGroupKey: (notification) =>
-      inferNotificationEngagementState(notification),
+    getGroupKey: (notification) => {
+      const strategy = getProductStrategy(notification);
+      return strategy.engagementState(notification);
+    },
   },
   category: {
     groupByType: 'category',

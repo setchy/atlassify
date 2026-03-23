@@ -4,7 +4,6 @@ import type { AtlassifyNotification, Link } from '../../../types';
 
 import { PRODUCTS } from '../index';
 import { getProductStrategy } from './index';
-import { extractRovoDevContextName, rovoDevStrategy } from './rovo_dev';
 
 describe('renderer/utils/products/strategies/rovo_dev', () => {
   it('bodyText returns AI context string', () => {
@@ -19,18 +18,14 @@ describe('renderer/utils/products/strategies/rovo_dev', () => {
     );
   });
 
-  it('isAutomationActor always returns true', () => {
-    expect(rovoDevStrategy.isAutomationActor()).toBe(true);
-  });
-
-  it('extractRovoDevContextName parses context name from url', () => {
+  it('actorType returns automation for rovo dev notifications', () => {
     const notification = {
       ...mockSingleAtlassifyNotification,
-      url: 'https://atlassify.atlassian.net/browse/ATLASSIFY-123?showAutodev=true' as Link,
+      product: PRODUCTS.rovo_dev,
     } as AtlassifyNotification;
 
-    expect(extractRovoDevContextName(notification)).toBe(
-      'The AI coding tool has generated code for ATLASSIFY-123',
-    );
+    expect(getProductStrategy(notification).actorType(notification)).toBe(
+      'automation',
+    );  
   });
 });

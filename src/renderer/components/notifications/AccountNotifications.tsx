@@ -28,7 +28,6 @@ import type {
   AtlassifyNotification,
 } from '../../types';
 
-import { sortNotificationsByOrder } from '../../utils/notifications/group';
 import {
   GROUPING_CONFIGS,
   groupNotifications,
@@ -89,26 +88,22 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     gridArea: 'title',
   });
 
-  const sortedNotifications = useMemo(
-    () => sortNotificationsByOrder(notifications),
-    [notifications],
-  );
-
   const sortGroupedNotificationsAlphabetically = useSettingsStore(
     (s) => s.sortGroupedNotificationsAlphabetically,
   );
   const groupBy = useSettingsStore((s) => s.groupBy);
 
-  const activeConfig = groupBy !== 'none' ? GROUPING_CONFIGS[groupBy] : null;
+  const activeGroupConfig =
+    groupBy !== 'none' ? GROUPING_CONFIGS[groupBy] : null;
 
   const groupedNotifications = useMemo(() => {
-    if (!activeConfig) {
+    if (!activeGroupConfig) {
       return null;
     }
 
     const groups = groupNotifications(
-      sortedNotifications,
-      activeConfig.getGroupKey,
+      notifications,
+      activeGroupConfig.getGroupKey,
     );
 
     return sortGroupedEntries(
@@ -116,9 +111,9 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
       sortGroupedNotificationsAlphabetically,
     );
   }, [
-    sortedNotifications,
+    notifications,
     sortGroupedNotificationsAlphabetically,
-    activeConfig,
+    activeGroupConfig,
   ]);
 
   const actionToggleAccountNotifications = () => {
@@ -255,20 +250,20 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
           {!hasAccountNotifications && !props.error && <AllRead />}
 
-          {groupBy === 'none'
-            ? sortedNotifications.map((notification) => (
+          {activeGroupConfig
+            ? groupedNotifications?.map(([groupKey, groupNotifications]) => (
+                <GroupedNotification
+                  groupingConfig={activeGroupConfig}
+                  groupKey={groupKey}
+                  groupNotifications={groupNotifications}
+                  key={groupKey}
+                />
+              ))
+            : notifications.map((notification) => (
                 <NotificationRow
                   isProductAnimatingExit={false}
                   key={notification.id}
                   notification={notification}
-                />
-              ))
-            : groupedNotifications?.map(([groupKey, groupNotifications]) => (
-                <GroupedNotification
-                  groupingConfig={activeConfig}
-                  groupKey={groupKey}
-                  groupNotifications={groupNotifications}
-                  key={groupKey}
                 />
               ))}
         </Fragment>

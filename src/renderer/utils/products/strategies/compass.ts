@@ -19,8 +19,12 @@ class CompassStrategy extends DefaultStrategy {
     return isCompassScorecardNotification(notification) ? 'square' : 'circle';
   }
 
-  override isAutomationActor(notification: AtlassifyNotification): boolean {
-    return isCompassScorecardNotification(notification);
+  override actorType(notification: AtlassifyNotification) {
+    if (isCompassScorecardNotification(notification)) {
+      return 'automation';
+    }
+
+    return super.actorType(notification);
   }
 }
 

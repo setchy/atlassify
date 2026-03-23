@@ -7,8 +7,7 @@ import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 
-import { PRODUCTS } from '../../products';
-import { actorFilter, inferNotificationActor } from '.';
+import { actorFilter } from '.';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
   it('hasActorFilters', () => {
@@ -54,60 +53,5 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
     expect(actorFilter.filterNotification(mockNotification, 'automation')).toBe(
       true,
     );
-  });
-
-  describe('inferNotificationActor', () => {
-    it('should infer user actor', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        actor: {
-          displayName: 'Atlassify',
-        },
-      } as AtlassifyNotification;
-
-      expect(inferNotificationActor(mockNotification)).toBe('user');
-    });
-
-    it('should infer automation actor when displayName is null', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        actor: {
-          displayName: null,
-        },
-      } as AtlassifyNotification;
-
-      expect(inferNotificationActor(mockNotification)).toBe('automation');
-    });
-
-    it('should infer automation actor from compass scorecard', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        product: PRODUCTS.compass,
-        message: 'some-component is failing a scorecard',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationActor(mockNotification)).toBe('automation');
-    });
-
-    it('should infer automation actor from rovo dev', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        product: PRODUCTS.rovo_dev,
-        message: 'AI generated code is ready',
-      } as AtlassifyNotification;
-
-      expect(inferNotificationActor(mockNotification)).toBe('automation');
-    });
-
-    it('should infer automation actor from displayName', () => {
-      const mockNotification = {
-        ...mockSingleAtlassifyNotification,
-        actor: {
-          displayName: 'Automation for Jira',
-        },
-      } as AtlassifyNotification;
-
-      expect(inferNotificationActor(mockNotification)).toBe('automation');
-    });
   });
 });

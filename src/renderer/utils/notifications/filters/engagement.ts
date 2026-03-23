@@ -13,6 +13,7 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import { getProductStrategy } from '../../products';
 
 /**
  * Filter implementation for the notification engagement state (mention, comment, reaction, other).
@@ -75,30 +76,7 @@ export const engagementFilter: Filter<EngagementStateType> = {
     notification: AtlassifyNotification,
     engagementState: EngagementStateType,
   ): boolean {
-    return inferNotificationEngagementState(notification) === engagementState;
+    const strategy = getProductStrategy(notification);
+    return strategy.engagementState(notification) === engagementState;
   },
 };
-
-/**
- * Infers the engagement state of a notification from its message text.
- *
- * @param notification - The notification to inspect.
- * @returns The engagement state (`'mention'`, `'comment'`, `'reaction'`, or `'other'`).
- */
-export function inferNotificationEngagementState(
-  notification: AtlassifyNotification,
-): EngagementStateType {
-  if (notification.message.includes(' mentioned ')) {
-    return 'mention';
-  }
-
-  if (notification.message.includes(' replied ')) {
-    return 'comment';
-  }
-
-  if (/ reacted.+to your /.exec(notification.message)) {
-    return 'reaction';
-  }
-
-  return 'other';
-}

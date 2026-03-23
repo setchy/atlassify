@@ -56,6 +56,8 @@ async function mapAtlassianNotificationToAtlassifyNotification(
     };
   }
 
+  const product = await inferAtlassianProduct(account, headNotification);
+
   return {
     id: headNotification.notificationId,
     message: headNotification.content.message,
@@ -74,7 +76,7 @@ async function mapAtlassianNotificationToAtlassifyNotification(
       displayName: headNotification.content.actor.displayName,
       avatarURL: headNotification.content.actor.avatarURL as Link,
     },
-    product: await inferAtlassianProduct(account, headNotification),
+    product: product,
     notificationGroup: {
       id: raw.groupId,
       size: raw.groupSize,

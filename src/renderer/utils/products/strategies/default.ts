@@ -1,4 +1,8 @@
-import type { AtlassifyNotification } from '../../../types';
+import type {
+  ActorType,
+  AtlassifyNotification,
+  EngagementStateType,
+} from '../../../types';
 import type { ProductNotificationStrategy } from './types';
 
 export class DefaultStrategy implements ProductNotificationStrategy {
@@ -17,8 +21,37 @@ export class DefaultStrategy implements ProductNotificationStrategy {
     return 'circle';
   }
 
-  isAutomationActor(_notification: AtlassifyNotification): boolean {
-    return false;
+  actorType(notification: AtlassifyNotification): ActorType {
+    const displayName = notification.actor.displayName;
+
+    if (!displayName) {
+      return 'automation';
+    }
+
+    // Check for "Automation for" prefix
+    if (displayName.startsWith('Automation for')) {
+      return 'automation';
+    }
+
+    return 'user';
+  }
+
+  engagementState(notification: AtlassifyNotification): EngagementStateType {
+    const message = notification.message;
+
+    if (message.includes(' mentioned ')) {
+      return 'mention';
+    }
+
+    if (message.includes(' replied ')) {
+      return 'comment';
+    }
+
+    if (/ reacted.+to your /.exec(message)) {
+      return 'reaction';
+    }
+
+    return 'other';
   }
 }
 

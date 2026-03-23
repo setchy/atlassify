@@ -87,7 +87,13 @@ export type AvpAnalyticsCreateModelInput = {
 export type AvpAnalyticsDeleteModelInput = {
   forceDelete: Scalars['Boolean']['input'];
   modelId: Scalars['ID']['input'];
-  modelVersion?: InputMaybe<Scalars['Int']['input']>;
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsDiscardModelUpdatesInput = {
+  forceDiscard?: InputMaybe<Scalars['Boolean']['input']>;
+  modelId: Scalars['ID']['input'];
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AvpAnalyticsFilter = {
@@ -138,7 +144,7 @@ export type AvpAnalyticsGetDataSourcesInput = {
 
 export type AvpAnalyticsGetModelInput = {
   modelId: Scalars['ID']['input'];
-  modelVersion?: InputMaybe<Scalars['Int']['input']>;
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
   modelViewMode: AvpAnalyticsModelViewMode;
 };
 
@@ -302,7 +308,7 @@ export type AvpAnalyticsUpdateModelInput = {
   modelDescription?: InputMaybe<Scalars['String']['input']>;
   modelId: Scalars['ID']['input'];
   modelName?: InputMaybe<Scalars['String']['input']>;
-  modelVersion: Scalars['Int']['input'];
+  modelVersion: Scalars['String']['input'];
   shouldPublish: Scalars['Boolean']['input'];
 };
 
@@ -12300,6 +12306,11 @@ export type CplsCreateCustomContributionTargetWithWorkAssociationInput = {
   cloudId: Scalars['ID']['input'];
   contributorDataId: Scalars['ID']['input'];
   name: Scalars['String']['input'];
+};
+
+/** Input for deleting all suggestions for a user. */
+export type CplsDeleteAllSuggestionsForUserInput = {
+  scopeId: Scalars['ID']['input'];
 };
 
 /** Input for deleting one or more contributor associations in bulk. */
@@ -42240,28 +42251,6 @@ export enum JiraZeroOneOrMany {
   Zero = 'ZERO'
 }
 
-/**  --------------------------------------------------------------------------------------------- */
-export type JpdImportIdeasInput = {
-  csvContent?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded image content */
-  imageContent?: InputMaybe<Scalars['String']['input']>;
-  /** MIME type for image (e.g., image/png, image/jpeg) */
-  imageMimeType?: InputMaybe<Scalars['String']['input']>;
-  jpdProjectId?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded PDF content */
-  pdfContent?: InputMaybe<Scalars['String']['input']>;
-  sourceLabel?: InputMaybe<Scalars['String']['input']>;
-  sourceType: JpdImportSourceType;
-  textContent?: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum JpdImportSourceType {
-  Csv = 'CSV',
-  Image = 'IMAGE',
-  Pdf = 'PDF',
-  Text = 'TEXT'
-}
-
 export type JpdViewsServiceAssociateGlobalViewContainerInput = {
   /** The ID of the container to associate the global view with (e.g. Jira project ID). */
   containerId: Scalars['String']['input'];
@@ -42421,6 +42410,16 @@ export type JpdViewsServiceTimelineConfigInput = {
   startDateField: Scalars['String']['input'];
   startTimestamp: Scalars['String']['input'];
   summaryCardField: Scalars['String']['input'];
+  todayMarker?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JpdViewsServiceTimelineConfigInput2 = {
+  dueDateField?: InputMaybe<Scalars['String']['input']>;
+  endTimestamp?: InputMaybe<Scalars['String']['input']>;
+  mode: Scalars['String']['input'];
+  startDateField?: InputMaybe<Scalars['String']['input']>;
+  startTimestamp?: InputMaybe<Scalars['String']['input']>;
+  summaryCardField?: InputMaybe<Scalars['String']['input']>;
   todayMarker?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -48171,6 +48170,7 @@ export type PostOfficeScopeEntryInput = {
 };
 
 export type PostOfficeSubscriptionMatchersInput = {
+  activeScopes?: InputMaybe<Array<PostOfficeScopeEntryInput>>;
   atlassianAccountId: Scalars['String']['input'];
   placementId: Scalars['String']['input'];
   product?: InputMaybe<Scalars['String']['input']>;
