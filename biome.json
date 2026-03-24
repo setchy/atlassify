@@ -94,7 +94,8 @@
         "useSingleVarDeclarator": "error"
       },
       "suspicious": {
-        "noConsole": "error"
+        "noConsole": "error",
+        "noUnknownAtRules": "warn"
       }
     }
   },
