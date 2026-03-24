@@ -107,6 +107,10 @@
       "reactions": {
         "title": "Reactions",
         "description": "Reactions"
+      },
+      "other": {
+        "title": "Other",
+        "description": "Other engagement"
       }
     }
   },
@@ -171,8 +175,9 @@
     "notifications": {
       "title": "Notifications",
       "mark_as_read_on_open": "Mark as read on open",
-      "group_alphabetically": "Sort product groups alphabetically",
-      "group_alphabetically_help": "When `Group notifications by product` is enabled in the sidebar, this setting will sort products in alphabetical order.",
+      "group_by": "Group notifications by",
+      "group_alphabetically": "Sort grouped notifications alphabetically",
+      "group_alphabetically_help": "When grouping notifications is enabled, this setting will sort groups in alphabetical order. Otherwise, groups will be sorted by most recent notification.",
       "delay_notification_state": "Delay notification state",
       "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated)."
     },
@@ -245,9 +250,9 @@
         "label": "Show only unread toggle",
         "tooltip": "Show only unread notifications"
       },
-      "groupByProduct": {
-        "label": "Group notifications by products",
-        "tooltip": "Group notifications by products"
+      "groupBy": {
+        "label": "Group notifications",
+        "tooltip": "Group notifications by: {{type}}"
       },
       "groupByTitle": {
         "label": "Group notifications by title",

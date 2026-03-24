@@ -8,7 +8,7 @@ export type KeybindingsConfig = {
     home: KeybindingEntry;
     myNotifications: KeybindingEntry;
     toggleReadUnread: KeybindingEntry;
-    groupByProduct: KeybindingEntry;
+    groupNotifications: KeybindingEntry;
     groupByTitle: KeybindingEntry;
     filters: KeybindingEntry;
     refresh: KeybindingEntry;
@@ -33,7 +33,7 @@ export const keybindings: KeybindingsConfig = {
     home: { eventKey: 'h' },
     myNotifications: { eventKey: 'n' },
     toggleReadUnread: { eventKey: 'u' },
-    groupByProduct: { eventKey: 'p' },
+    groupNotifications: { eventKey: 'g' },
     groupByTitle: { eventKey: 't' },
     filters: { eventKey: 'f' },
     refresh: { eventKey: 'r' },

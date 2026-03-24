@@ -40,7 +40,10 @@ import {
   hasMoreNotifications,
 } from '../utils/notifications/fetch';
 import { filterNotifications } from '../utils/notifications/filters';
-import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  resolveNotificationIdsForGroup,
+  sortNotificationsByOrder,
+} from '../utils/notifications/group';
 import {
   type NotificationActionType,
   postProcessNotifications,
@@ -129,7 +132,9 @@ export const useNotifications = (): UseNotificationsResult => {
     () => (data: AccountNotifications[]) =>
       data.map((accountNotifications) => ({
         ...accountNotifications,
-        notifications: filterNotifications(accountNotifications.notifications),
+        notifications: sortNotificationsByOrder(
+          filterNotifications(accountNotifications.notifications),
+        ),
       })),
     [engagementStates, categories, actors, readStates, products],
   );

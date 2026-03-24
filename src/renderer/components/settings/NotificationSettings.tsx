@@ -18,12 +18,10 @@ export const NotificationSettings: FC = () => {
 
   // Setting store values
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
-  const groupNotificationsByProductAlphabetically = useSettingsStore(
-    (s) => s.groupNotificationsByProductAlphabetically,
+  const sortGroupedNotificationsAlphabetically = useSettingsStore(
+    (s) => s.sortGroupedNotificationsAlphabetically,
   );
-  const groupNotificationsByProduct = useSettingsStore(
-    (s) => s.groupNotificationsByProduct,
-  );
+  const groupBy = useSettingsStore((s) => s.groupBy);
   const delayNotificationState = useSettingsStore(
     (s) => s.delayNotificationState,
   );
@@ -41,12 +39,12 @@ export const NotificationSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
-          isChecked={groupNotificationsByProductAlphabetically}
-          isDisabled={!groupNotificationsByProduct}
+          isChecked={sortGroupedNotificationsAlphabetically}
+          isDisabled={!groupBy || groupBy === 'none'}
           label={t('settings.notifications.group_alphabetically')}
-          name="groupNotificationsByProductAlphabetically"
+          name="sortGroupedNotificationsAlphabetically"
           onChange={() =>
-            toggleSetting('groupNotificationsByProductAlphabetically')
+            toggleSetting('sortGroupedNotificationsAlphabetically')
           }
         />
         <InlineMessage appearance="info">

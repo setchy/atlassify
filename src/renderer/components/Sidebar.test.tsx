@@ -159,26 +159,26 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('Group by products', () => {
     it('should order notifications by date', () => {
       renderWithProviders(<Sidebar />, {
-        settings: { groupNotificationsByProduct: false },
+        settings: { groupBy: 'none' },
       });
 
-      expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-group-by')).toMatchSnapshot();
     });
 
     it('should group notifications by product', () => {
       renderWithProviders(<Sidebar />, {
-        settings: { groupNotificationsByProduct: true },
+        settings: { groupBy: 'product' },
       });
 
-      expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-group-by')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by products', async () => {
       renderWithProviders(<Sidebar />);
 
-      await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
+      await userEvent.click(screen.getByTestId('sidebar-group-by'));
 
-      expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-group-by')).toMatchSnapshot();
     });
   });
 

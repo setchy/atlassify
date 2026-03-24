@@ -287,13 +287,14 @@ export type CategoryType = 'direct' | 'watching';
 export type ReadStateType = 'unread' | 'read';
 
 /**
- * Types of notifications that are a result of others engaging with your work.
+ * The engagement state of a notification.
  *
  * - 'mention' - A user has mentioned you as part of the notification.
  * - 'comment' - A user has commented on your work.
  * - 'reaction' - A user has reacted on your work.
+ * - 'other' - Notification with unknown engagement state.
  */
-export type EngagementStateType = 'mention' | 'comment' | 'reaction';
+export type EngagementStateType = 'mention' | 'comment' | 'reaction' | 'other';
 
 /**
  * The actor type.

@@ -5,6 +5,7 @@ import { keybindings } from '../constants/keybindings';
 
 import { useAccountsStore, useSettingsStore } from '../stores';
 
+import { cycleGroupBy } from '../utils/notifications/grouping';
 import { quitApp, trackEvent } from '../utils/system/comms';
 import { openMyNotifications } from '../utils/system/links';
 
@@ -12,7 +13,7 @@ type ShortcutName =
   | 'home'
   | 'myNotifications'
   | 'toggleReadUnread'
-  | 'groupByProduct'
+  | 'groupNotifications'
   | 'groupByTitle'
   | 'filters'
   | 'refresh'
@@ -88,17 +89,18 @@ export function useGlobalShortcuts({
             .toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
-      groupByProduct: {
-        key: keybindings.shortcuts.groupByProduct.eventKey,
+      groupNotifications: {
+        key: keybindings.shortcuts.groupNotifications.eventKey,
         isAllowed: isLoggedIn,
         action: () => {
+          const current = useSettingsStore.getState().groupBy;
+          const next = cycleGroupBy(current);
+
           trackEvent('Action', {
-            name: 'Group By Product',
+            name: 'Cycle Group By',
           });
 
-          useSettingsStore
-            .getState()
-            .toggleSetting('groupNotificationsByProduct');
+          useSettingsStore.getState().updateSetting('groupBy', next);
         },
       },
       groupByTitle: {

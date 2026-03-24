@@ -4,6 +4,7 @@ import type { LogoProps } from '@atlaskit/logo';
 import type {
   AccountNotifications,
   AtlassifyNotification,
+  Link,
 } from '../../../types';
 
 /**
@@ -40,6 +41,11 @@ export interface FilterDetails {
    * See https://heroicons.com/ for available heroicons.
    */
   heroicon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+
+  /**
+   * The URL to the home page of the filter item.
+   */
+  home?: Link;
 }
 
 export interface Filter<T extends string> {

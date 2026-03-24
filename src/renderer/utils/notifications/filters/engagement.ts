@@ -1,6 +1,7 @@
 import CommentIcon from '@atlaskit/icon/core/comment';
 import EmojiIcon from '@atlaskit/icon/core/emoji';
 import MentionIcon from '@atlaskit/icon/core/mention';
+import MoreHorizontalIcon from '@atlaskit/icon/core/show-more-horizontal';
 
 import { useFiltersStore } from '../../../stores';
 
@@ -12,9 +13,10 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
+import { getProductStrategy } from '../../products';
 
 /**
- * Filter implementation for the notification engagement state (mention, comment, reaction).
+ * Filter implementation for the notification engagement state (mention, comment, reaction, other).
  */
 export const engagementFilter: Filter<EngagementStateType> = {
   get FILTER_TYPES(): Record<EngagementStateType, FilterDetails> {
@@ -33,6 +35,11 @@ export const engagementFilter: Filter<EngagementStateType> = {
         name: i18n.t('filters.engagement.reactions.title'),
         description: i18n.t('filters.engagement.reactions.description'),
         icon: EmojiIcon,
+      },
+      other: {
+        name: i18n.t('filters.engagement.other.title'),
+        description: i18n.t('filters.engagement.other.description'),
+        icon: MoreHorizontalIcon,
       },
     };
   },
@@ -69,30 +76,7 @@ export const engagementFilter: Filter<EngagementStateType> = {
     notification: AtlassifyNotification,
     engagementState: EngagementStateType,
   ): boolean {
-    return inferNotificationEngagementState(notification) === engagementState;
+    const strategy = getProductStrategy(notification);
+    return strategy.engagementState(notification) === engagementState;
   },
 };
-
-/**
- * Infers the engagement state of a notification from its message text.
- *
- * @param notification - The notification to inspect.
- * @returns The engagement state (`'mention'`, `'comment'`, or `'reaction'`), or `null` if none matched.
- */
-export function inferNotificationEngagementState(
-  notification: AtlassifyNotification,
-): EngagementStateType | null {
-  if (notification.message.includes(' mentioned ')) {
-    return 'mention';
-  }
-
-  if (notification.message.includes(' replied ')) {
-    return 'comment';
-  }
-
-  if (/ reacted.+to your /.exec(notification.message)) {
-    return 'reaction';
-  }
-
-  return null;
-}

@@ -62,7 +62,9 @@ export const KeyboardShortcutsSettings: FC = () => {
                   label={t('settings.keyboard_shortcuts.toggle_unread')}
                 />
                 <KeybindingRow
-                  keys={getDisplayKeys(keybindings.shortcuts.groupByProduct)}
+                  keys={getDisplayKeys(
+                    keybindings.shortcuts.groupNotifications,
+                  )}
                   label={t('settings.keyboard_shortcuts.group_by_product')}
                 />
                 <KeybindingRow

@@ -61,8 +61,8 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithProviders(<AccountNotifications {...props} />, {
         settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: false,
+          groupBy: 'product',
+          sortGroupedNotificationsAlphabetically: false,
         },
       });
 
@@ -80,8 +80,8 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       const tree = renderWithProviders(<AccountNotifications {...props} />, {
         settings: {
-          groupNotificationsByProduct: true,
-          groupNotificationsByProductAlphabetically: true,
+          groupBy: 'product',
+          sortGroupedNotificationsAlphabetically: true,
         },
       });
 

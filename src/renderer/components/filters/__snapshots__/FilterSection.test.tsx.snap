@@ -229,6 +229,78 @@ exports[`renderer/components/filters/FilterSection.tsx > should render itself & 
           </span>
         </span>
       </div>
+      <div
+        class="css-5fz2td"
+      >
+        <label
+          class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+        >
+          <input
+            aria-label="Other"
+            class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+            tabindex="0"
+            type="checkbox"
+          />
+          <svg
+            class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+            height="24"
+            role="presentation"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <g
+              fill-rule="evenodd"
+            >
+              <rect
+                class="_v56411so _1snbe4h9 _1s17hteq"
+                fill="currentColor"
+                height="13"
+                rx="1.5"
+                width="13"
+                x="5.5"
+                y="5.5"
+              />
+            </g>
+          </svg>
+          <span
+            class="_nd5l11ig _1wpz1h6o"
+          >
+            Other
+          </span>
+        </label>
+        <span
+          class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
+        >
+          <span
+            aria-hidden="true"
+            class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
+            style="color: currentcolor;"
+          >
+            <svg
+              class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
+              fill="none"
+              role="presentation"
+              viewBox="-4 -4 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M0 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m6.5 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0M13 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"
+                fill="currentcolor"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="_2rkolb4i _18zr1b66 _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x _bfhk1fkg _syazwwip"
+        >
+          <span
+            class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+          >
+            2
+          </span>
+        </span>
+      </div>
     </div>
   </div>
 </div>

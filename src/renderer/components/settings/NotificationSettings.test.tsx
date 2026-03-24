@@ -25,33 +25,33 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     expect(toggleSettingSpy).toHaveBeenCalledWith('markAsReadOnOpen');
   });
 
-  it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
+  it('should toggle the sortGroupedNotificationsAlphabetically checkbox when groupBy is "product"', async () => {
     renderWithProviders(<NotificationSettings />, {
-      settings: { groupNotificationsByProduct: true },
+      settings: { groupBy: 'product' },
     });
 
     await userEvent.click(
-      screen.getByLabelText('Sort product groups alphabetically'),
+      screen.getByLabelText('Sort grouped notifications alphabetically'),
     );
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
     expect(toggleSettingSpy).toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
+      'sortGroupedNotificationsAlphabetically',
     );
   });
 
-  it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
+  it('should not toggle the sortGroupedNotificationsAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
     renderWithProviders(<NotificationSettings />, {
-      settings: { groupNotificationsByProduct: false },
+      settings: { groupBy: 'none' },
     });
 
     await userEvent.click(
-      screen.getByLabelText('Sort product groups alphabetically'),
+      screen.getByLabelText('Sort grouped notifications alphabetically'),
     );
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
     expect(toggleSettingSpy).not.toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
+      'sortGroupedNotificationsAlphabetically',
     );
   });
 
