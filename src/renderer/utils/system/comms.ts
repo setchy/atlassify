@@ -29,7 +29,7 @@ export function openExternalLink(url: Link): void {
 /**
  * Returns the current application version string.
  *
- * @returns Promise resolving to the app version (e.g. `"1.2.3"`).
+ * @returns Promise resolving to the app version (e.g. `"3.5.1"`).
  */
 export async function getAppVersion(): Promise<string> {
   return await window.atlassify.app.version();
@@ -56,7 +56,7 @@ export async function decryptValue(value: string): Promise<string> {
 }
 
 /**
- * Quits the Atlassify application.
+ * Quits the application.
  */
 export function quitApp(): void {
   window.atlassify.app.quit();
