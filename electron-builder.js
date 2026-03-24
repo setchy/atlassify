@@ -31,8 +31,8 @@ const config = {
     gatekeeperAssess: false,
   },
   dmg: {
-    sign: false,
     icon: 'assets/images/app-icon.icns',
+    sign: false,
   },
   win: {
     target: [
