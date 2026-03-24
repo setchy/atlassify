@@ -45,7 +45,6 @@ pnpm test -u
 - Follow existing file and folder naming conventions.
 - Keep commit messages clear and descriptive.
 
-
 ### How to Report Bugs or Request Features
 
 If you encounter a bug or have a feature request, please [open an issue][github-issues] with clear steps to reproduce or a detailed description of your idea. Check for existing issues before creating a new one.
