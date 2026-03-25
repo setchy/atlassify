@@ -1,10 +1,10 @@
 {
   "accounts": {
     "add_new": "Agregar nueva cuenta",
-    "logout_account": "Cerrar sesión {{nombre de usuario}}",
+    "logout_account": "Cerrar sesión {{username}}",
     "manage": "Administrar cuentas",
     "open_profile": "Abrir perfil de cuenta ↗",
-    "refresh_account": "Actualizar {{nombre de usuario}}",
+    "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"
   },
   "allRead": {
@@ -50,7 +50,7 @@
     },
     "unknown": {
       "description1": "Inténtelo de nuevo más tarde.",
-      "title": "¡Ups! \nalgo salió mal"
+      "title": "¡Ups! Algo salió mal"
     }
   },
   "filters": {
@@ -95,7 +95,7 @@
       "title": "Compromiso"
     },
     "products": {
-      "description": "{{tipo}} notificaciones",
+      "description": "{{type}} notificaciones",
       "title": "Productos"
     },
     "read_state": {
@@ -124,8 +124,8 @@
   },
   "login": {
     "create_token": "Crear token API",
-    "duplicate_username": "Este nombre de usuario ya ha sido agregado. \nUtilice un nombre de usuario diferente.",
-    "error_message": "¡Ups! \nLa combinación de token de nombre de usuario proporcionada no es válida. \nPor favor inténtalo de nuevo.",
+    "duplicate_username": "Este nombre de usuario ya ha sido agregado. Utilice un nombre de usuario diferente.",
+    "error_message": "¡Ups! La combinación de token de nombre de usuario proporcionada no es válida. Por favor inténtalo de nuevo.",
     "security_docs": "Ver documentación de Atlassian",
     "title": "Iniciar sesión con Atlassian",
     "token": "Ficha API",
@@ -150,7 +150,7 @@
     "native_count": "Tienes {{count}} notificaciones",
     "product": {
       "mark_all_read": "Marcar todas las notificaciones de productos como leídas",
-      "open_product": "Abrir {{nombre}} ↗"
+      "open_product": "Abrir {{name}} ↗"
     }
   },
   "products": {
@@ -220,11 +220,11 @@
     "title": "Ajustes",
     "tray": {
       "alternate_icon": "estilo inactivo",
-      "alternate_icon_help": "Elija qué variante del icono de la bandeja mostrar cuando se lean todas las notificaciones. \nEsta configuración es particularmente útil para dispositivos que tienen una barra de menú o barra de tareas con temas oscuros.",
+      "alternate_icon_help": "Elija qué variante del icono de la bandeja mostrar cuando se lean todas las notificaciones. Esta configuración es particularmente útil para dispositivos que tienen una barra de menú o barra de tareas con temas oscuros.",
       "idle_icon_alternate": "Alternar",
       "idle_icon_default": "Por defecto",
       "show_count_in_tray": "Mostrar el recuento de notificaciones en la bandeja",
-      "show_count_in_tray_help": "Muestra el recuento de notificaciones no leídas junto al icono de la bandeja. \nÚtil para echar un vistazo rápido a la actividad no leída.",
+      "show_count_in_tray_help": "Muestra el recuento de notificaciones no leídas junto al icono de la bandeja. Útil para echar un vistazo rápido a la actividad no leída.",
       "title": "Bandeja",
       "unread_active_icon": "Estilo no leído",
       "unread_active_icon_help": "Elija qué variante del icono de la bandeja desea mostrar cuando tenga notificaciones no leídas.",

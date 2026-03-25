@@ -1,7 +1,7 @@
 {
   "accounts": {
     "add_new": "Neues Konto hinzufügen",
-    "logout_account": "Abmelden {{Benutzername}}",
+    "logout_account": "Abmelden {{username}}",
     "manage": "Konten verwalten",
     "open_profile": "Kontoprofil öffnen ↗",
     "refresh_account": "{{username}} aktualisieren",
@@ -12,7 +12,7 @@
     "headingFiltered": "Keine neuen gefilterten Benachrichtigungen"
   },
   "chevron": {
-    "hide": "{{type}}-Benachrichtigungen ausblenden",
+    "hide": "{{type}} Benachrichtigungen ausblenden",
     "none": "Keine Benachrichtigungen für {{type}}",
     "show": "{{type}} Benachrichtigungen anzeigen"
   },
@@ -50,7 +50,7 @@
     },
     "unknown": {
       "description1": "Bitte versuchen Sie es später noch einmal.",
-      "title": "Hoppla! \nEtwas ist schief gelaufen"
+      "title": "Hoppla! Etwas ist schief gelaufen"
     }
   },
   "filters": {
@@ -124,8 +124,8 @@
   },
   "login": {
     "create_token": "API-Token erstellen",
-    "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. \nBitte verwenden Sie einen anderen Benutzernamen.",
-    "error_message": "Hoppla! \nDie angegebene Benutzernamen-Token-Kombination ist ungültig. \nBitte versuchen Sie es erneut.",
+    "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. Bitte verwenden Sie einen anderen Benutzernamen.",
+    "error_message": "Hoppla! Die angegebene Benutzernamen-Token-Kombination ist ungültig. Bitte versuchen Sie es erneut.",
     "security_docs": "Siehe Atlassian-Dokumentation",
     "title": "Melden Sie sich mit Atlassian an",
     "token": "API-Token",
@@ -220,7 +220,7 @@
     "title": "Einstellungen",
     "tray": {
       "alternate_icon": "Idle-Stil",
-      "alternate_icon_help": "Wählen Sie aus, welche Taskleistensymbolvariante angezeigt werden soll, wenn alle Benachrichtigungen gelesen werden. \nDiese Einstellung ist besonders nützlich für Geräte mit einer dunklen Menü- oder Taskleiste.",
+      "alternate_icon_help": "Wählen Sie aus, welche Taskleistensymbolvariante angezeigt werden soll, wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer dunklen Menü- oder Taskleiste.",
       "idle_icon_alternate": "Wechseln",
       "idle_icon_default": "Standard",
       "show_count_in_tray": "Anzahl der Benachrichtigungen in der Taskleiste anzeigen",
