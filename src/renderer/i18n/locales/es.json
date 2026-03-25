@@ -2,6 +2,7 @@
   "accounts": {
     "add_new": "Agregar nueva cuenta",
     "logout_account": "Cerrar sesión {{username}}",
+    "manage": "Administrar cuentas",
     "open_profile": "Perfil de cuenta abierto ↗",
     "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"

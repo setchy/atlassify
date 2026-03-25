@@ -16,6 +16,13 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
       i18n.t('errors.badCredentials.description2'),
     ],
     emojis: Constants.EMOJIS.ERRORS.BAD_CREDENTIALS,
+    actions: [
+      {
+        label: i18n.t('accounts.manage'),
+        route: '/accounts',
+        appearance: 'warning',
+      },
+    ],
   },
   BAD_REQUEST: {
     title: i18n.t('errors.badRequest.title'),

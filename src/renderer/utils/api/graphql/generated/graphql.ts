@@ -87,7 +87,13 @@ export type AvpAnalyticsCreateModelInput = {
 export type AvpAnalyticsDeleteModelInput = {
   forceDelete: Scalars['Boolean']['input'];
   modelId: Scalars['ID']['input'];
-  modelVersion?: InputMaybe<Scalars['Int']['input']>;
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AvpAnalyticsDiscardModelUpdatesInput = {
+  forceDiscard?: InputMaybe<Scalars['Boolean']['input']>;
+  modelId: Scalars['ID']['input'];
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AvpAnalyticsFilter = {
@@ -138,7 +144,7 @@ export type AvpAnalyticsGetDataSourcesInput = {
 
 export type AvpAnalyticsGetModelInput = {
   modelId: Scalars['ID']['input'];
-  modelVersion?: InputMaybe<Scalars['Int']['input']>;
+  modelVersion?: InputMaybe<Scalars['String']['input']>;
   modelViewMode: AvpAnalyticsModelViewMode;
 };
 
@@ -302,7 +308,7 @@ export type AvpAnalyticsUpdateModelInput = {
   modelDescription?: InputMaybe<Scalars['String']['input']>;
   modelId: Scalars['ID']['input'];
   modelName?: InputMaybe<Scalars['String']['input']>;
-  modelVersion: Scalars['Int']['input'];
+  modelVersion: Scalars['String']['input'];
   shouldPublish: Scalars['Boolean']['input'];
 };
 
@@ -10218,8 +10224,8 @@ export enum ConfluenceMutationContentStatus {
   Draft = 'DRAFT'
 }
 
-/** Input for adding a global NBM transformer */
-export type ConfluenceNbmAddGlobalTransformerInput = {
+/** Input for adding an NBM transformer */
+export type ConfluenceNbmAddTransformerInput = {
   /** The transformer as a JSON string */
   transformerJson: Scalars['String']['input'];
 };
@@ -10319,6 +10325,14 @@ export enum ConfluenceNbmTransformationStatus {
   Pending = 'PENDING',
   Running = 'RUNNING'
 }
+
+/** Input for updating or deleting an NBM transformer */
+export type ConfluenceNbmUpdateTransformerInput = {
+  /** The transformer configuration as a JSON string. Send '{}' to delete the transformer. */
+  transformerJson: Scalars['String']['input'];
+  /** The name of the transformer to update or delete */
+  transformerName: Scalars['String']['input'];
+};
 
 export type ConfluenceNbmUploadTransformerConfigInput = {
   scanId: Scalars['ID']['input'];
@@ -12169,6 +12183,8 @@ export enum ConvoAiHomeThreadSuggestedActionType {
 export type ConvoAiHomeThreadsInput = {
   /** promptOverride -> Optional prompt to override the default prompt for generating threads */
   promptOverride?: InputMaybe<Scalars['String']['input']>;
+  /** skipCache -> Optional flag to skip the internal cache */
+  skipCache?: InputMaybe<Scalars['Boolean']['input']>;
   /** userId -> ID of the user to get threads for */
   userId: Scalars['ID']['input'];
 };
@@ -12292,6 +12308,11 @@ export type CplsCreateCustomContributionTargetWithWorkAssociationInput = {
   cloudId: Scalars['ID']['input'];
   contributorDataId: Scalars['ID']['input'];
   name: Scalars['String']['input'];
+};
+
+/** Input for deleting all suggestions for a user. */
+export type CplsDeleteAllSuggestionsForUserInput = {
+  scopeId: Scalars['ID']['input'];
 };
 
 /** Input for deleting one or more contributor associations in bulk. */
@@ -13160,6 +13181,7 @@ export type CsmAiByodSourceInput = {
 
 /** Input for Confluence knowledge source filters */
 export type CsmAiConfluenceKnowledgeFilterInput = {
+  knowledgeGapFilter?: InputMaybe<Array<CsmAiKnowledgeGapSpaceInput>>;
   parentFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
   spaceFilter?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
@@ -13236,6 +13258,12 @@ export type CsmAiKnowledgeFilterInput = {
   byodFilter?: InputMaybe<CsmAiByodKnowledgeFilterInput>;
   /** Page and space filters of a knowledge source */
   confluenceFilter?: InputMaybe<CsmAiConfluenceKnowledgeFilterInput>;
+};
+
+/** Input for knowledge gap space filter */
+export type CsmAiKnowledgeGapSpaceInput = {
+  enabled: Scalars['Boolean']['input'];
+  spaceAri: Scalars['ID']['input'];
 };
 
 export type CsmAiMessageHandoffInput = {
@@ -29339,7 +29367,7 @@ export type GravityCreateViewFromTemplateInput = {
   refMappings?: InputMaybe<GravityRefMappingsInput>;
   /**
    * Strategy for resolving template references (fields) to concrete instances.
-   * Defaults to CREATE_IF_UNMAPPED.
+   * Defaults to MATCH_THEN_CREATE_IF_UNMAPPED.
    */
   refResolutionStrategy?: InputMaybe<GravityRefResolutionStrategy>;
   /** The ID of the template from which to create the view. */
@@ -29427,7 +29455,12 @@ export enum GravityRefResolutionStrategy {
    * Fail the operation if any field reference is unmapped.
    * All field references must be provided via `refMappings`; no new fields are created.
    */
-  FailIfUnmapped = 'FAIL_IF_UNMAPPED'
+  FailIfUnmapped = 'FAIL_IF_UNMAPPED',
+  /**
+   * First try to match unmapped field references to existing fields in the project by name and type.
+   * Only if no strict match (by name and type) is found will a new field be created.
+   */
+  MatchThenCreateIfUnmapped = 'MATCH_THEN_CREATE_IF_UNMAPPED'
 }
 
 /** Sort order used across different features. */
@@ -32726,6 +32759,7 @@ export type JiraClassificationLevelFilterInput = {
 export enum JiraClassificationLevelSource {
   /** Classification was set by auto-classification. */
   AutoClassification = 'AUTO_CLASSIFICATION',
+  AutoClassifiedIssue = 'AUTO_CLASSIFIED_ISSUE',
   /** @deprecated Use USER_CLASSIFICATION or AUTO_CLASSIFICATION instead. */
   Issue = 'ISSUE',
   /** No classification source. */
@@ -34517,6 +34551,25 @@ export type JiraFieldContextualDataFilterInput = {
   scopes?: InputMaybe<Array<JiraFieldContextualDataScopeFilterInput>>;
 };
 
+/** Input for filtering field contextual data in the issue experience. */
+export type JiraFieldContextualDataForIssueFilterInput = {
+  /** A list of field IDs to filter by. */
+  fieldIds: Array<Scalars['String']['input']>;
+  /** A list of scopes to filter by. At least one scope with a projectId is required. */
+  scopes: Array<JiraFieldContextualDataForIssueScopeInput>;
+};
+
+/** Input for defining a scope in the issue experience */
+export type JiraFieldContextualDataForIssueScopeInput = {
+  /**
+   * The ID of the issue type.
+   * IMPORTANT: Issue Type level context is not supported at the moment and this field should be set to null.
+   */
+  issueTypeId?: InputMaybe<Scalars['ID']['input']>;
+  /** The ID of the project. */
+  projectId: Scalars['ID']['input'];
+};
+
 /** Input for defining a scope to filter by. */
 export type JiraFieldContextualDataScopeFilterInput = {
   /**
@@ -34978,6 +35031,7 @@ export type JiraFormulaFieldFixContext = {
 export enum JiraFormulaFieldParameterType {
   Any = 'ANY',
   Boolean = 'BOOLEAN',
+  Date = 'DATE',
   Datetime = 'DATETIME',
   Number = 'NUMBER',
   Text = 'TEXT'
@@ -34999,6 +35053,7 @@ export type JiraFormulaFieldSuggestionContext = {
 /** Represents types returned within Formula Field expressions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
 export enum JiraFormulaFieldType {
   Boolean = 'BOOLEAN',
+  Date = 'DATE',
   Datetime = 'DATETIME',
   Number = 'NUMBER',
   Text = 'TEXT',
@@ -42190,26 +42245,17 @@ export type JiraWorklogSortInput = {
   order: SortDirection;
 };
 
-/**  --------------------------------------------------------------------------------------------- */
-export type JpdImportIdeasInput = {
-  csvContent?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded image content */
-  imageContent?: InputMaybe<Scalars['String']['input']>;
-  /** MIME type for image (e.g., image/png, image/jpeg) */
-  imageMimeType?: InputMaybe<Scalars['String']['input']>;
-  jpdProjectId?: InputMaybe<Scalars['String']['input']>;
-  /** Base64 encoded PDF content */
-  pdfContent?: InputMaybe<Scalars['String']['input']>;
-  sourceLabel?: InputMaybe<Scalars['String']['input']>;
-  sourceType: JpdImportSourceType;
-  textContent?: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum JpdImportSourceType {
-  Csv = 'CSV',
-  Image = 'IMAGE',
-  Pdf = 'PDF',
-  Text = 'TEXT'
+/**
+ * Represents the cardinality of a collection in a ZERO, ONE, or MANY pattern.
+ * Using this pattern removes the need to count all items in a collection which may prove prohibitively expensive.
+ */
+export enum JiraZeroOneOrMany {
+  /** Multiple items available. Strictly greater than 1. */
+  Many = 'MANY',
+  /** Exactly one item available */
+  One = 'ONE',
+  /** No items available */
+  Zero = 'ZERO'
 }
 
 export type JpdViewsServiceAssociateGlobalViewContainerInput = {
@@ -42371,6 +42417,16 @@ export type JpdViewsServiceTimelineConfigInput = {
   startDateField: Scalars['String']['input'];
   startTimestamp: Scalars['String']['input'];
   summaryCardField: Scalars['String']['input'];
+  todayMarker?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type JpdViewsServiceTimelineConfigInput2 = {
+  dueDateField?: InputMaybe<Scalars['String']['input']>;
+  endTimestamp?: InputMaybe<Scalars['String']['input']>;
+  mode: Scalars['String']['input'];
+  startDateField?: InputMaybe<Scalars['String']['input']>;
+  startTimestamp?: InputMaybe<Scalars['String']['input']>;
+  summaryCardField?: InputMaybe<Scalars['String']['input']>;
   todayMarker?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -45382,9 +45438,6 @@ export type MercuryCreateBenefitPeriodValueInput = {
 };
 
 /**
- * ###################################################################################################################
- *  FUNDS - MUTATION TYPES
- * ###################################################################################################################
  *  ------------------------------------------------------
  *  Benefit Types
  *  ------------------------------------------------------
@@ -45798,11 +45851,6 @@ export type MercuryDeleteCustomFieldDefinitionOptionsInput = {
   customFieldDefinitionId: Scalars['ID']['input'];
   /** The option IDs to delete. */
   optionIds: Array<Scalars['ID']['input']>;
-};
-
-export type MercuryDeleteFocusAreaGoalLinkInput = {
-  cloudId: Scalars['ID']['input'];
-  id: Scalars['ID']['input'];
 };
 
 export type MercuryDeleteFocusAreaGoalLinksInput = {
@@ -46542,6 +46590,23 @@ export enum MercuryRiskTargetDateType {
   Quarter = 'QUARTER'
 }
 
+/**
+ * ###################################################################################################################
+ *  FUNDS - MUTATION TYPES
+ * ###################################################################################################################
+ *  ------------------------------------------------------
+ *   Baselines
+ *  ------------------------------------------------------
+ */
+export type MercurySetBaselineInput = {
+  endYearMonth: Scalars['String']['input'];
+  /** The ARI of the FORECAST Financial Version. */
+  financialVersionId: Scalars['ID']['input'];
+  /** The ARI of the Focus Area. */
+  focusAreaId: Scalars['ID']['input'];
+  startYearMonth: Scalars['String']['input'];
+};
+
 export type MercurySetChangeProposalCustomFieldInput = {
   /** The ARI of the change proposal to update. */
   changeProposalId: Scalars['ID']['input'];
@@ -46714,6 +46779,15 @@ export type MercuryUnrankChangeProposalInViewInput = {
   changeProposalId: Scalars['ID']['input'];
   /** The ARI of the Change Proposals View to remove Change Proposals from. */
   changeProposalsViewId: Scalars['ID']['input'];
+};
+
+export type MercuryUnsetBaselineInput = {
+  endYearMonth: Scalars['String']['input'];
+  /** The ARI of the FORECAST Financial Version. */
+  financialVersionId: Scalars['ID']['input'];
+  /** The ARI of the Focus Area. */
+  focusAreaId: Scalars['ID']['input'];
+  startYearMonth: Scalars['String']['input'];
 };
 
 /**
@@ -48121,6 +48195,7 @@ export type PostOfficeScopeEntryInput = {
 };
 
 export type PostOfficeSubscriptionMatchersInput = {
+  activeScopes?: InputMaybe<Array<PostOfficeScopeEntryInput>>;
   atlassianAccountId: Scalars['String']['input'];
   placementId: Scalars['String']['input'];
   product?: InputMaybe<Scalars['String']['input']>;
@@ -59213,6 +59288,15 @@ export enum TrelloBoardPrefsPermissionLevel {
   Public = 'PUBLIC'
 }
 
+/** Voting permission preferences for a board */
+export enum TrelloBoardVotingPermissions {
+  Board = 'BOARD',
+  Disabled = 'DISABLED',
+  Observers = 'OBSERVERS',
+  Public = 'PUBLIC',
+  Workspace = 'WORKSPACE'
+}
+
 /** Arguments passed into the bulkDeleteList mutation. */
 export type TrelloBulkDeleteListInput = {
   listIds: Array<Scalars['ID']['input']>;
@@ -59518,6 +59602,22 @@ export type TrelloCreateMemberAiRuleInput = {
   rule: Scalars['String']['input'];
   /** The type of AI rule to create. */
   type?: InputMaybe<TrelloAiRuleType>;
+};
+
+/** Arguments passed into the createMemberFromAa mutation. */
+export type TrelloCreateMemberFromAaInput = {
+  /** The account ID of the Atlassian account to create a member from. */
+  atlassianAccountId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/** Input type for creating an OAuth2 Client for an existing Trello application that does not yet have one. */
+export type TrelloCreateOAuth2ClientInput = {
+  /** The client type of the OAuth2 Client. Defaults to 'public'. */
+  clientType?: InputMaybe<Scalars['String']['input']>;
+  /** The id of the Trello application to create an OAuth2 Client for */
+  id: Scalars['ID']['input'];
+  /** The scopes to register for the OAuth2 Client */
+  scopes?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 /** Arguments passed into createOrUpdatePlannerCalendar mutation */
@@ -60171,6 +60271,12 @@ export type TrelloUpdateBoardViewerShowCompactMirrorCardInput = {
 export type TrelloUpdateBoardVisibilityInput = {
   boardId: Scalars['ID']['input'];
   visibility: TrelloBoardPrefsPermissionLevel;
+};
+
+/** Arguments passed into the update board voting permissions mutation */
+export type TrelloUpdateBoardVotingPermissionsInput = {
+  boardId: Scalars['ID']['input'];
+  voting: TrelloBoardVotingPermissions;
 };
 
 /** Arguments passed into the update card cover mutation */

@@ -1,6 +1,7 @@
 {
   "accounts": {
     "title": "Accounts",
+    "manage": "Manage accounts",
     "open_profile": "Open account profile ↗",
     "refresh_account": "Refresh {{username}}",
     "logout_account": "Logout {{username}}",
