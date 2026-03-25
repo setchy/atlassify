@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
@@ -12,6 +12,7 @@ interface EmojiSplashProps {
   emoji: string;
   heading: string;
   subHeadings?: string[];
+  actions?: ReactNode;
 }
 
 export const EmojiSplash: FC<EmojiSplashProps> = ({
@@ -39,6 +40,8 @@ export const EmojiSplash: FC<EmojiSplashProps> = ({
               })}
             </Stack>
           )}
+
+          {props.actions && <span>{props.actions}</span>}
         </Stack>
       </Box>
     </Centered>
