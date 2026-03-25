@@ -150,7 +150,7 @@
   },
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
-    "*.{ts,tsx}": "pnpm i18n:check",
+    "*.{ts,tsx}": "pnpm i18n:check && pnpm i18n:lint",
     "*.{js,ts,tsx}": "pnpm test --changed --passWithNoTests --update"
   }
 }

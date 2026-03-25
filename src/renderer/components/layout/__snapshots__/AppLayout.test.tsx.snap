@@ -6,7 +6,6 @@ exports[`renderer/components/layout/AppLayout.tsx > should render itself & its c
     class="flex min-h-screen"
   >
     <button
-      aria-label="initial focus"
       class="sr-only"
       data-testid="initial-focus-sentinel"
       type="button"
