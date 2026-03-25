@@ -20,6 +20,8 @@
     "i18n:check": "i18next-cli extract --ci --quiet",
     "i18n:lint": "i18next-cli lint",
     "i18n:status": "i18next-cli status",
+    "i18n:translate": "node scripts/i18n-translate.mjs",
+    "i18n:types": "i18next-cli types",
     "lint": "biome check --fix",
     "lint:check": "biome check",
     "test": "vitest --coverage --run",
