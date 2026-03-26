@@ -151,8 +151,8 @@
     "*": "biome check --fix --no-errors-on-unmatched",
     "*.{js,ts,tsx}": [
       "bash -c 'tsc --noEmit'",
-      "pnpm test --changed --passWithNoTests --update",
-      "bash -c 'pnpm i18n:lint'"
+      "bash -c 'pnpm i18n:lint'",
+      "pnpm test --changed --passWithNoTests --update"
     ]
   }
 }
