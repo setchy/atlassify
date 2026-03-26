@@ -1,13 +1,18 @@
 import { defineConfig } from 'i18next-cli';
 
+import {
+  DEFAULT_LANGUAGE,
+  SUPPORTED_LANGUAGES,
+} from './src/renderer/i18n/types';
+
 export default defineConfig({
-  locales: ['en', 'de', 'es', 'fr'],
+  locales: [...SUPPORTED_LANGUAGES],
   extract: {
     input: ['src/renderer/**/*.{ts,tsx}'],
     output: 'src/renderer/i18n/locales/{{language}}.json',
 
     defaultNS: false,
-    primaryLanguage: 'en',
+    primaryLanguage: DEFAULT_LANGUAGE,
 
     sort: true,
     removeUnusedKeys: true,
@@ -16,11 +21,5 @@ export default defineConfig({
   },
   lint: {
     ignore: ['**/*.test.{ts,tsx}'],
-  },
-
-  types: {
-    input: ['src/renderer/i18n/locales/en.json'],
-    output: 'src/@types/i18next.d.ts',
-    resourcesFile: 'src/@types/resources.d.ts',
   },
 });

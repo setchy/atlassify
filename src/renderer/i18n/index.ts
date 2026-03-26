@@ -5,7 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { Constants } from '../constants';
 
-import type { Language } from './types';
+import { DEFAULT_LANGUAGE, type Language } from './types';
 
 // Locales
 import deTranslation from './locales/de.json';
@@ -13,22 +13,16 @@ import enTranslation from './locales/en.json';
 import esTranslation from './locales/es.json';
 import frTranslation from './locales/fr.json';
 
-export const DEFAULT_LANGUAGE: Language = 'en';
-
-const resources: Record<Language, { translation: typeof enTranslation }> = {
-  de: {
-    translation: deTranslation,
-  },
-  en: {
-    translation: enTranslation,
-  },
-  es: {
-    translation: esTranslation,
-  },
-  fr: {
-    translation: frTranslation,
-  },
+const locales: Record<Language, typeof enTranslation> = {
+  de: deTranslation,
+  en: enTranslation,
+  es: esTranslation,
+  fr: frTranslation,
 };
+
+const resources = Object.fromEntries(
+  Object.entries(locales).map(([lng, data]) => [lng, { translation: data }]),
+) as Record<Language, { translation: typeof enTranslation }>;
 
 i18n
   .use(LanguageDetector)
@@ -49,6 +43,10 @@ i18n
       caches: ['localStorage'],
     },
   });
+
+// A translation function typed for string namespace (bare keys, no "translation:" prefix).
+// Use this instead of i18n.t() in non-React code.
+export const t = i18n.getFixedT(null, 'translation');
 
 export function loadLanguageLocale(): Language {
   const existing = localStorage.getItem(Constants.STORAGE.LANGUAGE);

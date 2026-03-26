@@ -1,7 +1,11 @@
+export const DEFAULT_LANGUAGE: Language = 'en';
+
+export const SUPPORTED_LANGUAGES = ['de', 'en', 'es', 'fr'] as const;
+
 /**
  * The different types of allowed languages.
  */
-export type Language = 'de' | 'en' | 'es' | 'fr';
+export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
 const LANGUAGE_LABELS: Record<Language, string> = {
   de: 'Deutsch',
