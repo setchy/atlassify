@@ -1,6 +1,5 @@
 import type { Theme } from '../../shared/theme';
 
-import type { Language } from '../i18n/types';
 import type {
   Account,
   ActorType,
@@ -12,6 +11,8 @@ import type {
   Token,
   Username,
 } from '../types';
+
+import type { Language } from '../i18n';
 
 /**
  * System preference for opening web resources / links.

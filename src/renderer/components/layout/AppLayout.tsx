@@ -19,7 +19,6 @@ export const AppLayout: FC<AppLayoutProps> = ({ children }) => {
     <div className="flex min-h-screen">
       {/* Hidden focus sentinel; grabs initial focus via callback ref */}
       <button
-        aria-label="initial focus"
         className="sr-only"
         data-testid="initial-focus-sentinel"
         ref={setFocusRef}
