@@ -28,3 +28,11 @@ jobs:
       - name: Run linter
         run: pnpm lint:check
         working-directory: ${{ github.event.inputs.directory }}
+
+      - name: i18n linter
+        run: pnpm i18n:lint
+        working-directory: ${{ github.event.inputs.directory }}
+
+      - name: i18n check
+        run: pnpm i18n:check
+        working-directory: ${{ github.event.inputs.directory }}
