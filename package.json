@@ -120,7 +120,7 @@
     "graphql": "16.13.2",
     "happy-dom": "20.8.9",
     "husky": "9.1.7",
-    "i18next-cli": "1.51.3",
+    "i18next-cli": "1.51.4",
     "nock": "14.0.11",
     "react-devtools": "7.0.1",
     "rimraf": "6.1.3",
