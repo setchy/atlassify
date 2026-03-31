@@ -110,7 +110,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     style="box-sizing: border-box;"
                   >
                     <div
-                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _19pkidpf _2hwxv77o _otyridpf _18u0v77o _syazi7uo -singleValue"
+                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _1pfhidpf _12l2v77o _6rthidpf _ahbqv77o _syazi7uo -singleValue"
                       id="react-select-2-single-value"
                       style="box-sizing: border-box;"
                     >
