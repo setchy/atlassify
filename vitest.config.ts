@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     globals: true,
-    pool: 'threads',
+    pool: 'vmThreads',
     clearMocks: true,
     onConsoleLog(log, type) {
       // suppress noisy Atlaskit feature-gate/platform-feature-flags errors
