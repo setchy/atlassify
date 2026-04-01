@@ -98,7 +98,7 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-release-badge]: https://img.shields.io/github/v/release/setchy/atlassify?logo=github
 [license]: LICENSE
 [license-badge]: https://img.shields.io/github/license/setchy/atlassify?logo=github
-[netlify-badge]: https://api.netlify.com/api/v1/badges/8e836542-4728-433c-9b38-17b98edea7aa/deploy-status
+[netlify-badge]: https://img.shields.io/netlify/8e836542-4728-433c-9b38-17b98edea7aa?logo=netlify&logoColor=white
 [netlify-deploys]: https://app.netlify.com/projects/atlassify/deploys
 [renovate]: https://github.com/setchy/atlassify/issues/1
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
