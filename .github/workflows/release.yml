@@ -5,13 +5,14 @@ on:
     branches:
       - release/v*.*.* # macOS code-signing only works on `push` events and not `pull_request` events
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   lint:
     name: Lint
     uses: ./.github/workflows/lint.yml
+    permissions:
+      contents: read
     with:
       directory: "."
 
@@ -19,6 +20,8 @@ jobs:
     name: Tests
     uses: ./.github/workflows/test.yml
     needs: lint
+    permissions:
+      contents: read
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 

@@ -8,13 +8,14 @@ on:
         required: true
         description: "The directory to lint"
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   lint-code:
     name: Lint Code [biomejs]
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -34,6 +35,8 @@ jobs:
   lint-i18n:
     name: Lint i18n [i18next-cli]
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -57,6 +60,8 @@ jobs:
   lint-actions:
     name: Lint GitHub Actions [actionlint]
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout

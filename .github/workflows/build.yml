@@ -15,12 +15,13 @@ on:
       WIN_CSC_KEY_PASSWORD:
         required: true
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   build:
     name: Build ${{ matrix.platform }} (electron-builder)
+    permissions:
+      contents: read
     strategy:
       matrix:
         include:

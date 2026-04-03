@@ -23,6 +23,8 @@ on:
         required: true
   workflow_dispatch: # For manually running release process to verify code-signing of artifacts
 
+permissions: {}
+
 jobs:
   prepare:
     name: Prepare draft release
