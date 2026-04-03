@@ -29,13 +29,14 @@ jobs:
         shell: bash
 
       - name: Create draft release
-        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
-        with:
-          name: "${{ env.RELEASE_TAG }}"
-          tag_name: "${{ env.RELEASE_TAG }}"
-          draft: true
-          body: '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${{ env.RELEASE_TAG }}'
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ env.RELEASE_TAG }}" \
+            --title "${{ env.RELEASE_TAG }}" \
+            --draft \
+            --notes '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${{ env.RELEASE_TAG }}' \
+            --generate-notes
 
   release:
     name: Publish ${{ matrix.platform }} (electron-builder)
