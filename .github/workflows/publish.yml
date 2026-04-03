@@ -29,15 +29,15 @@ jobs:
         shell: bash
 
       - name: Create draft release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_TAG: ${{ env.RELEASE_TAG }}
         run: |
           gh release create "${RELEASE_TAG}" \
             --title "${RELEASE_TAG}" \
             --draft \
-            --notes '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${{ env.RELEASE_TAG }}' \
+            --notes '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${RELEASE_TAG}' \
             --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
   release:
     name: Publish ${{ matrix.platform }} (electron-builder)
