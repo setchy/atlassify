@@ -87,7 +87,7 @@
     "@atlaskit/textfield": "8.2.3",
     "@atlaskit/theme": "22.0.2",
     "@atlaskit/toggle": "15.2.16",
-    "@atlaskit/tokens": "11.4.0",
+    "@atlaskit/tokens": "11.4.2",
     "@atlaskit/tooltip": "21.1.2",
     "@biomejs/biome": "2.4.10",
     "@compiled/vite-plugin": "1.1.4",
