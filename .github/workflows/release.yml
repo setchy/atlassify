@@ -19,12 +19,26 @@ jobs:
     name: Tests
     uses: ./.github/workflows/test.yml
     needs: lint
-    secrets: inherit
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   publish:
     name: Publish
     uses: ./.github/workflows/publish.yml
     needs: tests
-    secrets: inherit
+    secrets:
+      # Signing certificates
+      CSC_LINK: ${{ secrets.CSC_LINK }}
+      WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+      # macOS specific
+      APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+      APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+      APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
+      # General
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     permissions:
       contents: write

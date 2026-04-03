@@ -36,10 +36,17 @@ jobs:
     name: Tests
     uses: ./.github/workflows/test.yml
     needs: lint
-    secrets: inherit
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build:
     name: Build
     uses: ./.github/workflows/build.yml
     needs: tests
-    secrets: inherit
+    secrets:
+      APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
+      CSC_LINK: ${{ secrets.CSC_LINK }}
+      WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
