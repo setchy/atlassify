@@ -100,8 +100,8 @@ importers:
         specifier: 11.4.0
         version: 11.4.0(react@19.2.4)
       '@atlaskit/tooltip':
-        specifier: 21.0.1
-        version: 21.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 21.1.2
+        version: 21.1.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@biomejs/biome':
         specifier: 2.4.10
         version: 2.4.10
@@ -488,8 +488,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tooltip@21.0.1':
-    resolution: {integrity: sha512-pwpt1ZJgYYJdVQG6cs/daADdNnbYwqIYYn0Eoo+fbIDzjhCV80TnU1ydP83IXj2R+rMKgd1KHmKXaRb41Dfh1w==}
+  '@atlaskit/tooltip@21.1.2':
+    resolution: {integrity: sha512-sRiDgq/QxMUeXX9oCMOtLmz79rmk/1KtkcybhLNhAms/F122vp0U3xoVjwob1e7RIouB6cX3KvUgng8V0pJwMg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5292,7 +5292,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/popup': 4.14.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/tokens': 11.4.0(react@19.2.4)
-      '@atlaskit/tooltip': 21.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/tooltip': 21.1.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.4)
       bind-event-listener: 3.0.0
@@ -5364,7 +5364,7 @@ snapshots:
       '@atlaskit/spinner': 19.0.12(react@19.2.4)
       '@atlaskit/theme': 22.0.2(react@19.2.4)
       '@atlaskit/tokens': 11.4.0(react@19.2.4)
-      '@atlaskit/tooltip': 21.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/tooltip': 21.1.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/visually-hidden': 3.0.4(react@19.2.4)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.4)
@@ -5882,7 +5882,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tooltip@21.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/tooltip@21.1.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/ds-lib': 6.0.0(react@19.2.4)
