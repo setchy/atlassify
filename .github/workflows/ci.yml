@@ -21,7 +21,9 @@ jobs:
     name: Prepare CI
     runs-on: ubuntu-latest
     steps:
-      - run: echo Running CI for branch ${{ github.head_ref }}
+      - run: echo Running CI for branch ${GITHUB_HEAD_REF}
+    env:
+      GITHUB_HEAD_REF: ${{ github.head_ref }}
 
   lint:
     name: Lint App
