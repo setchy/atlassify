@@ -60,7 +60,7 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
   release:
-    name: Publish ${{ matrix.platform }} (electron-builder)
+    name: Publish ${{ matrix.platform }} [electron-builder]
     needs: prepare
     permissions:
       contents: write
