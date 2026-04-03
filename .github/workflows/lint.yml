@@ -12,8 +12,8 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    name: biomejs
+  setup-lint:
+    name: Setup linter
     runs-on: ubuntu-latest
 
     steps:
@@ -27,10 +27,22 @@ jobs:
         with:
           directory: ${{ github.event.inputs.directory }}
 
+  lint-code:
+    name: biomejs
+    runs-on: ubuntu-latest
+    needs: setup-lint
+
+    steps:
       - name: Run linter
         run: pnpm lint:check
         working-directory: ${{ github.event.inputs.directory }}
 
+  lint-i18n:
+    name: i18n linter
+    runs-on: ubuntu-latest
+    needs: setup-lint
+
+    steps:
       - name: i18n linter
         run: pnpm i18n:lint
         working-directory: ${{ github.event.inputs.directory }}
@@ -38,3 +50,12 @@ jobs:
       - name: i18n check
         run: pnpm i18n:check
         working-directory: ${{ github.event.inputs.directory }}
+
+  lint-actions:
+    name: linter
+    runs-on: ubuntu-latest
+    needs: setup-lint
+
+    steps:
+      - name: GitHub Actions linter
+        uses: docker://rhysd/actionlint:1.7.12@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
