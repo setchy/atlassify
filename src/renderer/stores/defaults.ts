@@ -1,9 +1,10 @@
 import { Theme } from '../../shared/theme';
 
-import type { Percentage } from '../types';
+import type { EncryptedToken, Percentage } from '../types';
 import {
   type AccountsState,
   type AppearanceSettingsState,
+  type BitbucketSettingsState,
   type FiltersState,
   type NotificationSettingsState,
   OpenPreference,
@@ -42,6 +43,15 @@ export const DEFAULT_RUNTIME_STATE = {
   hasMoreAccountNotifications: false,
   isError: false,
   isOnline: true,
+};
+
+/**
+ * Default Bitbucket settings
+ */
+const DEFAULT_BITBUCKET_SETTINGS: BitbucketSettingsState = {
+  bitbucketUsername: '',
+  bitbucketToken: '' as EncryptedToken,
+  bitbucketWorkspaces: [],
 };
 
 /**
@@ -92,6 +102,7 @@ const DEFAULT_SYSTEM_SETTINGS: SystemSettingsState = {
  */
 export const DEFAULT_SETTINGS_STATE: SettingsState = {
   ...DEFAULT_APPEARANCE_SETTINGS,
+  ...DEFAULT_BITBUCKET_SETTINGS,
   ...DEFAULT_NOTIFICATION_SETTINGS,
   ...DEFAULT_TRAY_SETTINGS,
   ...DEFAULT_SYSTEM_SETTINGS,

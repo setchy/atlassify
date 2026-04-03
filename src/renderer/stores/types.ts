@@ -4,6 +4,7 @@ import type {
   Account,
   ActorType,
   CategoryType,
+  EncryptedToken,
   EngagementStateType,
   Percentage,
   ProductType,
@@ -206,6 +207,27 @@ export interface NotificationSettingsState {
 }
 
 /**
+ * Settings related to Bitbucket-specific features.
+ */
+export interface BitbucketSettingsState {
+  /**
+   * Bitbucket username for Basic Auth.
+   */
+  bitbucketUsername: string;
+
+  /**
+   * Encrypted Bitbucket app password for Basic Auth.
+   */
+  bitbucketToken: EncryptedToken;
+
+  /**
+   * Bitbucket workspace slugs to enable the "Your Work" inbox.
+   * An empty array disables the feature.
+   */
+  bitbucketWorkspaces: string[];
+}
+
+/**
  * Settings related to the tray / menu bar behavior.
  */
 export interface TraySettingsState {
@@ -264,6 +286,7 @@ export interface SystemSettingsState {
  * All Settings combined.
  */
 export type SettingsState = AppearanceSettingsState &
+  BitbucketSettingsState &
   NotificationSettingsState &
   TraySettingsState &
   SystemSettingsState;

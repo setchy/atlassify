@@ -156,8 +156,29 @@
   "products": {
     "unknown": "Unknown"
   },
+  "your_work": {
+    "authored": "Created by you",
+    "closed": "Recently closed",
+    "configure": "Configure a Bitbucket workspace in Settings to enable this view.",
+    "empty": "No open pull requests in your work view.",
+    "error": "Failed to load Your Work data. Please try again.",
+    "open_settings": "Open Settings",
+    "reviewing": "Needs your review",
+    "title": "Your Work"
+  },
   "settings": {
     "accounts": "Accounts",
+    "bitbucket": {
+      "title": "Bitbucket",
+      "token": "App Password",
+      "token_help": "Create a Bitbucket App Password with 'Pull requests: Read' scope.",
+      "token_placeholder": "Enter app password",
+      "username": "Username",
+      "username_placeholder": "your-bitbucket-username",
+      "workspaces": "Workspaces",
+      "workspaces_help": "Enter comma-separated workspace slugs to enable the 'Your Work' inbox.",
+      "workspaces_placeholder": "my-workspace, another-workspace"
+    },
     "appearance": {
       "language": "Language",
       "language_select": "Select language",
@@ -256,6 +277,10 @@
     "settings": {
       "label": "Settings",
       "tooltip": "Settings"
+    },
+    "your_work": {
+      "label": "Your Work",
+      "tooltip": "Bitbucket Your Work"
     },
     "toggles": {
       "groupByProduct": {

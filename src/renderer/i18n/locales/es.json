@@ -156,8 +156,29 @@
   "products": {
     "unknown": "Desconocido"
   },
+  "your_work": {
+    "authored": "Creado por ti",
+    "closed": "Cerradas recientemente",
+    "configure": "Configure un espacio de trabajo de Bitbucket en Ajustes para habilitar esta vista.",
+    "empty": "No hay solicitudes de extracción abiertas en su vista de trabajo.",
+    "error": "Error al cargar los datos de Su trabajo. Por favor, inténtelo de nuevo.",
+    "open_settings": "Abrir ajustes",
+    "reviewing": "Necesita su revisión",
+    "title": "Su trabajo"
+  },
   "settings": {
     "accounts": "Cuentas",
+    "bitbucket": {
+      "title": "Bitbucket",
+      "token": "Contraseña de aplicación",
+      "token_help": "Crea una contraseña de aplicación de Bitbucket con el permiso 'Pull requests: Leer'.",
+      "token_placeholder": "Ingresa la contraseña de aplicación",
+      "username": "Nombre de usuario",
+      "username_placeholder": "tu-usuario-bitbucket",
+      "workspaces": "Espacios de trabajo",
+      "workspaces_help": "Ingrese slugs de espacios de trabajo separados por comas para habilitar la bandeja de entrada 'Su trabajo'.",
+      "workspaces_placeholder": "mi-espacio, otro-espacio"
+    },
     "appearance": {
       "language": "Idioma",
       "language_select": "Seleccionar idioma",
@@ -256,6 +277,10 @@
     "settings": {
       "label": "Ajustes",
       "tooltip": "Ajustes"
+    },
+    "your_work": {
+      "label": "Su trabajo",
+      "tooltip": "Bitbucket Su trabajo"
     },
     "toggles": {
       "groupByProduct": {

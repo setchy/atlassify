@@ -15,6 +15,7 @@ type ShortcutName =
   | 'groupByProduct'
   | 'groupByTitle'
   | 'filters'
+  | 'yourWork'
   | 'refresh'
   | 'settings'
   | 'quit'
@@ -55,6 +56,7 @@ export function useGlobalShortcuts({
   const location = useLocation();
 
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
+  const bitbucketWorkspaces = useSettingsStore((s) => s.bitbucketWorkspaces);
 
   const isOnNotificationsRoute = location.pathname === '/';
   const isOnFiltersRoute = location.pathname.startsWith('/filters');
@@ -125,6 +127,11 @@ export function useGlobalShortcuts({
           }
         },
       },
+      yourWork: {
+        key: keybindings.shortcuts.yourWork.eventKey,
+        isAllowed: isLoggedIn && bitbucketWorkspaces.length > 0,
+        action: () => navigate('/your-work'),
+      },
       refresh: {
         key: keybindings.shortcuts.refresh.eventKey,
         isAllowed: !isLoading,
@@ -171,6 +178,7 @@ export function useGlobalShortcuts({
   }, [
     isLoggedIn,
     isLoading,
+    bitbucketWorkspaces,
     isOnFiltersRoute,
     isOnSettingsRoute,
     isOnNotificationsRoute,

@@ -7,6 +7,7 @@ import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 import { AppearanceSettings } from '../components/settings/AppearanceSettings';
+import { BitbucketSettings } from '../components/settings/BitbucketSettings';
 import { KeyboardShortcutsSettings } from '../components/settings/KeyboardShortcutsSettings';
 import { NotificationSettings } from '../components/settings/NotificationSettings';
 import { SettingsFooter } from '../components/settings/SettingsFooter';
@@ -26,6 +27,7 @@ export const SettingsRoute: FC = () => {
           <Stack space="space.200">
             <AppearanceSettings />
             <NotificationSettings />
+            <BitbucketSettings />
             <TraySettings />
             <SystemSettings />
             <KeyboardShortcutsSettings />

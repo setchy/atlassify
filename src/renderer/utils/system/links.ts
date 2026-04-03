@@ -13,6 +13,7 @@ export const URLs = {
     },
     WEB: {
       BITBUCKET_HOME: 'https://bitbucket.org' as Link,
+      BITBUCKET_YOUR_WORK: 'https://bitbucket.org/dashboard/work/' as Link,
       MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
       SECURITY_TOKENS:
@@ -45,7 +46,7 @@ const _links = {
   },
 
   openMyPullRequests() {
-    const url = new URL(URLs.ATLASSIAN.WEB.BITBUCKET_HOME);
+    const url = new URL(URLs.ATLASSIAN.WEB.BITBUCKET_YOUR_WORK);
     openExternalLink(url.toString() as Link);
   },
 

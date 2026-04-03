@@ -53,7 +53,9 @@ describe('renderer/utils/system/links.ts', () => {
   it('openMyPullRequests', () => {
     openMyPullRequests();
 
-    expect(openExternalLinkSpy).toHaveBeenCalledWith('https://bitbucket.org/');
+    expect(openExternalLinkSpy).toHaveBeenCalledWith(
+      'https://bitbucket.org/dashboard/work/',
+    );
   });
 
   it('openAccountProfile', () => {

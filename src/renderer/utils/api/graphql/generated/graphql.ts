@@ -10754,12 +10754,14 @@ export enum ConfluenceGroupManagementType {
   Admins = 'ADMINS',
   External = 'EXTERNAL',
   Open = 'OPEN',
-  TeamMembers = 'TEAM_MEMBERS'
+  TeamMembers = 'TEAM_MEMBERS',
+  Unknown = 'UNKNOWN'
 }
 
 export enum ConfluenceGroupUsageType {
   AdminOversight = 'ADMIN_OVERSIGHT',
   TeamCollaboration = 'TEAM_COLLABORATION',
+  Unknown = 'UNKNOWN',
   UserbaseGroup = 'USERBASE_GROUP'
 }
 
@@ -39433,7 +39435,7 @@ export type JiraProjectSchemeAssociatedFieldsInput = {
 export enum JiraProjectShortcutType {
   /** A shortcut which links to a repository */
   Repository = 'REPOSITORY',
-  /** The basic shortcut link */
+  /** The basic shortcut link to a frequently used resource, like a web page. */
   ShortcutLink = 'SHORTCUT_LINK',
   /** When an unexpected shortcut type is encountered which is not yet supported */
   Unknown = 'UNKNOWN'
@@ -41151,6 +41153,33 @@ export enum JiraSidebarMenuItemReorderOperation {
   MoveToBottom = 'MOVE_TO_BOTTOM',
   MoveToTop = 'MOVE_TO_TOP',
   MoveUp = 'MOVE_UP'
+}
+
+/**
+ * Types of sidebar in the project navigation.
+ * Maps to ProjectConnectSubItemsType in the REST API.
+ */
+export enum JiraSidebarType {
+  /**
+   * The home/main project sidebar.
+   * Maps to 'home' in REST API.
+   */
+  Home = 'HOME',
+  /**
+   * The queues sidebar for JSM (Jira Service Management).
+   * Maps to 'jsm_queues' in REST API.
+   */
+  JsmQueues = 'JSM_QUEUES',
+  /**
+   * The reports sidebar.
+   * Maps to 'reports' in REST API.
+   */
+  Reports = 'REPORTS',
+  /**
+   * The settings sidebar.
+   * Maps to 'settings' in REST API.
+   */
+  Settings = 'SETTINGS'
 }
 
 /** Input type for single group picker field */
@@ -61174,6 +61203,11 @@ export type TrelloDeleteWorkspaceTagInput = {
   workspaceId: Scalars['ID']['input'];
 };
 
+/** Arguments passed into the disable board self join mutation */
+export type TrelloDisableBoardSelfJoinInput = {
+  boardId: Scalars['ID']['input'];
+};
+
 /** Arguments passed into editPlannerCalendarEvent mutation */
 export type TrelloEditPlannerCalendarEventInput = {
   event: TrelloEditPlannerCalendarEventOptions;
@@ -61192,6 +61226,11 @@ export type TrelloEditPlannerCalendarEventOptions = {
   targetPlannerCalendar?: InputMaybe<TrelloMovePlannerCalendarEventTargetOptions>;
   title?: InputMaybe<Scalars['String']['input']>;
   visibility?: InputMaybe<TrelloPlannerCalendarEventVisibility>;
+};
+
+/** Arguments passed into the enable board self join mutation */
+export type TrelloEnableBoardSelfJoinInput = {
+  boardId: Scalars['ID']['input'];
 };
 
 /** Arguments passed into generateBoardBackgroundWithAi mutation */

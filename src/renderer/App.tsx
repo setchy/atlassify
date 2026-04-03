@@ -18,6 +18,7 @@ import { LandingRoute } from './routes/Landing';
 import { LoginRoute } from './routes/Login';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
+import { YourWorkRoute } from './routes/YourWork';
 import { useAccountsStore } from './stores';
 import { initializeStoreSubscriptions } from './stores/subscriptions';
 
@@ -90,6 +91,14 @@ export const App: FC = () => {
               />
               <Route element={<LandingRoute />} path="/landing" />
               <Route element={<LoginRoute />} path="/login" />
+              <Route
+                element={
+                  <RequireAuth>
+                    <YourWorkRoute />
+                  </RequireAuth>
+                }
+                path="/your-work"
+              />
             </Routes>
           </AppLayout>
         </Router>

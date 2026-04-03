@@ -11,6 +11,7 @@ export type KeybindingsConfig = {
     groupByProduct: KeybindingEntry;
     groupByTitle: KeybindingEntry;
     filters: KeybindingEntry;
+    yourWork: KeybindingEntry;
     refresh: KeybindingEntry;
     settings: KeybindingEntry;
     accounts: KeybindingEntry;
@@ -36,6 +37,7 @@ export const keybindings: KeybindingsConfig = {
     groupByProduct: { eventKey: 'p' },
     groupByTitle: { eventKey: 't' },
     filters: { eventKey: 'f' },
+    yourWork: { eventKey: 'w' },
     refresh: { eventKey: 'r' },
     settings: { eventKey: 's' },
     accounts: { eventKey: 'a' },

@@ -156,8 +156,29 @@
   "products": {
     "unknown": "Inconnu"
   },
+  "your_work": {
+    "authored": "Créé par vous",
+    "closed": "Récemment fermées",
+    "configure": "Configurez un espace de travail Bitbucket dans les paramètres pour activer cette vue.",
+    "empty": "Aucune pull request ouverte dans votre vue de travail.",
+    "error": "Échec du chargement de Votre travail. Veuillez réessayer.",
+    "open_settings": "Ouvrir les paramètres",
+    "reviewing": "Nécessite votre révision",
+    "title": "Votre travail"
+  },
   "settings": {
     "accounts": "Comptes",
+    "bitbucket": {
+      "title": "Bitbucket",
+      "token": "Mot de passe d'application",
+      "token_help": "Créez un mot de passe d'application Bitbucket avec la portée 'Pull requests : Lire'.",
+      "token_placeholder": "Saisir le mot de passe d'application",
+      "username": "Nom d'utilisateur",
+      "username_placeholder": "votre-utilisateur-bitbucket",
+      "workspaces": "Espaces de travail",
+      "workspaces_help": "Entrez des slugs d'espaces de travail séparés par des virgules pour activer la boîte de réception 'Votre travail'.",
+      "workspaces_placeholder": "mon-espace, autre-espace"
+    },
     "appearance": {
       "language": "Langue",
       "language_select": "Sélectionnez la langue",
@@ -256,6 +277,10 @@
     "settings": {
       "label": "Paramètres",
       "tooltip": "Paramètres"
+    },
+    "your_work": {
+      "label": "Votre travail",
+      "tooltip": "Bitbucket Votre travail"
     },
     "toggles": {
       "groupByProduct": {

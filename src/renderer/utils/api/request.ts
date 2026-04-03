@@ -76,6 +76,30 @@ export async function performRESTRequestForAccount<TResult>(
 }
 
 /**
+ * Perform a REST API request with explicit (pre-decrypted) credentials.
+ * Use this when the credentials are stored separately from the Atlassian account,
+ * e.g. Bitbucket-specific username and app password.
+ *
+ * @param url The API endpoint
+ * @param username The Bitbucket username
+ * @param token The decrypted app password / token
+ * @returns Resolves to the REST response body
+ */
+export async function performRESTRequestWithCredentials<TResult>(
+  url: string,
+  username: Username,
+  token: Token,
+): Promise<TResult> {
+  return axios({
+    method: 'GET',
+    url,
+    headers: getHeaders(username, token),
+  }).then((response) => {
+    return response.data;
+  }) as Promise<TResult>;
+}
+
+/**
  * Perform a GraphQL API request for username and token
  *
  * @param username An Atlassian account username

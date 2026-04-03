@@ -7,6 +7,7 @@ import CrossCircleIcon from '@atlaskit/icon/core/cross-circle';
 import FilterIcon from '@atlaskit/icon/core/filter';
 import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
 import NotificationIcon from '@atlaskit/icon/core/notification';
+import PullRequestIcon from '@atlaskit/icon/core/pull-request';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
 import SettingsIcon from '@atlaskit/icon/core/settings';
 import { Box, Stack } from '@atlaskit/primitives';
@@ -52,6 +53,7 @@ const SidebarComponent: FC = () => {
   const groupNotificationsByTitle = useSettingsStore(
     (s) => s.groupNotificationsByTitle,
   );
+  const bitbucketWorkspaces = useSettingsStore((s) => s.bitbucketWorkspaces);
 
   // Filter store values
   const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
@@ -191,6 +193,29 @@ const SidebarComponent: FC = () => {
                     testId="sidebar-filter-notifications"
                   />
                 </Tooltip>
+
+                {bitbucketWorkspaces.length > 0 && (
+                  <Tooltip
+                    content={t('sidebar.your_work.tooltip')}
+                    position="right"
+                    shortcut={[shortcuts.yourWork.key]}
+                  >
+                    <IconButton
+                      appearance="subtle"
+                      icon={(iconProps) => (
+                        <PullRequestIcon
+                          {...iconProps}
+                          color={sidebarIconColorToken}
+                        />
+                      )}
+                      label={t('sidebar.your_work.label')}
+                      onClick={() => shortcuts.yourWork.action()}
+                      shape="circle"
+                      spacing="compact"
+                      testId="sidebar-your-work"
+                    />
+                  </Tooltip>
+                )}
               </Fragment>
             )}
           </Stack>

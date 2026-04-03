@@ -156,8 +156,29 @@
   "products": {
     "unknown": "Unbekannt"
   },
+  "your_work": {
+    "authored": "Von Ihnen erstellt",
+    "closed": "Kürzlich geschlossen",
+    "configure": "Konfigurieren Sie einen Bitbucket-Arbeitsbereich in den Einstellungen, um diese Ansicht zu aktivieren.",
+    "empty": "Keine offenen Pull-Requests in Ihrer Arbeitsansicht.",
+    "error": "Fehler beim Laden der Arbeitsansicht. Bitte versuchen Sie es erneut.",
+    "open_settings": "Einstellungen öffnen",
+    "reviewing": "Braucht Ihre Überprüfung",
+    "title": "Meine Arbeit"
+  },
   "settings": {
     "accounts": "Konten",
+    "bitbucket": {
+      "title": "Bitbucket",
+      "token": "App-Passwort",
+      "token_help": "Erstelle ein Bitbucket App-Passwort mit dem Bereich 'Pull Requests: Lesen'.",
+      "token_placeholder": "App-Passwort eingeben",
+      "username": "Benutzername",
+      "username_placeholder": "dein-bitbucket-benutzername",
+      "workspaces": "Arbeitsbereiche",
+      "workspaces_help": "Geben Sie kommagetrennte Workspace-Slugs ein, um den 'Ihre Arbeit'-Posteingang zu aktivieren.",
+      "workspaces_placeholder": "mein-arbeitsbereich, anderer-arbeitsbereich"
+    },
     "appearance": {
       "language": "Sprache",
       "language_select": "Sprache auswählen",
@@ -256,6 +277,10 @@
     "settings": {
       "label": "Einstellungen",
       "tooltip": "Einstellungen"
+    },
+    "your_work": {
+      "label": "Meine Arbeit",
+      "tooltip": "Bitbucket Meine Arbeit"
     },
     "toggles": {
       "groupByProduct": {
