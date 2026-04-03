@@ -37,7 +37,6 @@ jobs:
     uses: ./.github/workflows/test.yml
     needs: lint
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build:

@@ -2,6 +2,17 @@ name: Build
 
 on:
   workflow_call:
+    secrets:
+      APTABASE_KEY:
+        required: true
+      CSC_LINK:
+        required: true
+      WIN_CSC_LINK:
+        required: true
+      CSC_KEY_PASSWORD:
+        required: true
+      WIN_CSC_KEY_PASSWORD:
+        required: true
 
 permissions:
   contents: read
