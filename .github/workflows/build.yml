@@ -5,6 +5,7 @@ on:
     secrets:
       APTABASE_KEY:
         required: true
+      # Signing certificates
       CSC_LINK:
         required: true
       WIN_CSC_LINK:

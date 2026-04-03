@@ -3,6 +3,9 @@ name: Publish
 on:
   workflow_call:
     secrets:
+      APTABASE_KEY:
+        required: true
+      # Signing certificates
       CSC_LINK:
         required: true
       WIN_CSC_LINK:
@@ -11,6 +14,7 @@ on:
         required: true
       WIN_CSC_KEY_PASSWORD:
         required: true
+      # macOS specific
       APPLE_ID_USERNAME:
         required: true
       APPLE_ID_PASSWORD:
