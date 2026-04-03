@@ -20,7 +20,6 @@ jobs:
     uses: ./.github/workflows/test.yml
     needs: lint
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   publish:
@@ -37,8 +36,6 @@ jobs:
       APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
       APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
-      # General
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     permissions:
       contents: write

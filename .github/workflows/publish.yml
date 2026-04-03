@@ -2,6 +2,21 @@ name: Publish
 
 on:
   workflow_call:
+    secrets:
+      CSC_LINK:
+        required: true
+      WIN_CSC_LINK:
+        required: true
+      CSC_KEY_PASSWORD:
+        required: true
+      WIN_CSC_KEY_PASSWORD:
+        required: true
+      APPLE_ID_USERNAME:
+        required: true
+      APPLE_ID_PASSWORD:
+        required: true
+      APPLE_ID_TEAM_ID:
+        required: true
   workflow_dispatch: # For manually running release process to verify code-signing of artifacts
 
 jobs:
@@ -21,10 +36,10 @@ jobs:
         run: |
           # Extract the branch name (e.g. release/v1.2.3[-meta])
           ref=${GITHUB_REF#refs/heads/}
-          echo "RELEASE_BRANCH=$ref" >> $GITHUB_ENV
+          echo "RELEASE_BRANCH=$ref" >> "$GITHUB_ENV"
           # Also export a RELEASE_TAG by removing the `release/` prefix (keeps leading 'v')
           tag=${ref#release/}
-          echo "RELEASE_TAG=$tag" >> $GITHUB_ENV
+          echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
         shell: bash
 
       - name: Create draft release
@@ -32,7 +47,7 @@ jobs:
           gh release create "${RELEASE_TAG}" \
             --title "${RELEASE_TAG}" \
             --draft \
-            --notes '# <img src="https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png" /> Atlassify ${RELEASE_TAG}' \
+            --notes "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\" /> Atlassify ${RELEASE_TAG}" \
             --generate-notes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

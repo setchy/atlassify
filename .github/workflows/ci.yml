@@ -21,7 +21,7 @@ jobs:
     name: Prepare CI
     runs-on: ubuntu-latest
     steps:
-      - run: echo Running CI for branch ${GITHUB_HEAD_REF}
+      - run: echo "Running CI for branch ${GITHUB_HEAD_REF}"
     env:
       GITHUB_HEAD_REF: ${{ github.head_ref }}
 
@@ -45,6 +45,7 @@ jobs:
     needs: tests
     secrets:
       APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
+      # Signing certificates
       CSC_LINK: ${{ secrets.CSC_LINK }}
       WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
