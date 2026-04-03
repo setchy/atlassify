@@ -40,8 +40,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@41.1.1)
       '@atlaskit/avatar':
-        specifier: 25.11.1
-        version: 25.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 25.11.2
+        version: 25.11.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/avatar-group':
         specifier: 12.5.0
         version: 12.5.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -279,8 +279,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@25.11.1':
-    resolution: {integrity: sha512-pl0aTw4K4wziZqOv066UdmvbZqJBCTvVxoov0tfvRILQrv9ocoPsadcQwJMPztBh5O3F7vCeGV11FXHO7GgdeA==}
+  '@atlaskit/avatar@25.11.2':
+    resolution: {integrity: sha512-T/EoZNW9J7IBuRBJP1EbI6yDoV3XEhI/hmiP+05rZ7BK8zgTTofZPk88T4y5ZXQICs51fdyCa7d01NbUF4VABw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5284,7 +5284,7 @@ snapshots:
 
   '@atlaskit/avatar-group@12.5.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@atlaskit/avatar': 25.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/avatar': 25.11.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(react@19.2.4)
       '@atlaskit/ds-lib': 6.0.0(react@19.2.4)
       '@atlaskit/menu': 8.4.19(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5302,12 +5302,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@25.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@atlaskit/avatar@25.11.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(react@19.2.4)
       '@atlaskit/ds-lib': 6.0.0(react@19.2.4)
-      '@atlaskit/icon': 33.1.0(react@19.2.4)
+      '@atlaskit/icon': 34.0.0(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.1.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/tokens': 11.4.0(react@19.2.4)
@@ -5784,7 +5784,7 @@ snapshots:
   '@atlaskit/tag@14.6.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@atlaskit/avatar': 25.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/avatar': 25.11.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(react@19.2.4)
       '@atlaskit/ds-lib': 6.0.0(react@19.2.4)
       '@atlaskit/icon': 33.1.0(react@19.2.4)
@@ -5805,7 +5805,7 @@ snapshots:
 
   '@atlaskit/teams-avatar@2.4.11(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@atlaskit/avatar': 25.11.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@atlaskit/avatar': 25.11.2(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@atlaskit/css': 0.19.2(react@19.2.4)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.4)
       '@atlaskit/primitives': 18.1.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
