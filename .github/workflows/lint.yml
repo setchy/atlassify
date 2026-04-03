@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   lint-code:
-    name: biomejs
+    name: Lint Code [biomejs]
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
         working-directory: ${{ inputs.directory }}
 
   lint-i18n:
-    name: i18n linter
+    name: Lint i18n [i18next-cli]
     runs-on: ubuntu-latest
 
     steps:
@@ -55,7 +55,7 @@ jobs:
         working-directory: ${{ inputs.directory }}
 
   lint-actions:
-    name: actionslint
+    name: Lint GitHub Actions [actionlint]
     runs-on: ubuntu-latest
 
     steps:

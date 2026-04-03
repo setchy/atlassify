@@ -26,7 +26,7 @@ jobs:
       GITHUB_HEAD_REF: ${{ github.head_ref }}
 
   lint:
-    name: Lint App
+    name: Lint
     uses: ./.github/workflows/lint.yml
     needs: prepare
     with:

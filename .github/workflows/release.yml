@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   lint:
-    name: Lint App
+    name: Lint
     uses: ./.github/workflows/lint.yml
     with:
       directory: "."
@@ -27,6 +27,7 @@ jobs:
     uses: ./.github/workflows/publish.yml
     needs: tests
     secrets:
+      APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
       # Signing certificates
       CSC_LINK: ${{ secrets.CSC_LINK }}
       WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
