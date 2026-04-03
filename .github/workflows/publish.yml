@@ -4,9 +4,6 @@ on:
   workflow_call:
   workflow_dispatch: # For manually running release process to verify code-signing of artifacts
 
-permissions:
-  contents: write
-
 jobs:
   prepare:
     name: Prepare draft release
