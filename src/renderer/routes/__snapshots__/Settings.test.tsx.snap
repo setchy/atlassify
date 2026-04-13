@@ -511,7 +511,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1tvo _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1gmx _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
               data-disabled="true"
             >
               <input
