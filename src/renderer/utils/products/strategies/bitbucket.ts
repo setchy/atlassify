@@ -12,6 +12,14 @@ class BitbucketStrategy extends DefaultStrategy {
   override footerText(notification: AtlassifyNotification): string {
     return extractRepositoryName(notification);
   }
+
+  override isAutomationActor(notification: AtlassifyNotification): boolean {
+    if (notification.actor.displayName === 'Rovo Dev') {
+      return true;
+    }
+
+    return false;
+  }
 }
 
 export const bitbucketStrategy = new BitbucketStrategy();
