@@ -34,6 +34,7 @@ jobs:
 
   lint-i18n:
     name: Lint i18n [i18next-cli]
+    if: ${{ inputs.directory == '.' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
