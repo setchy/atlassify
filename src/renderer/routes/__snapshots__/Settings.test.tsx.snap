@@ -549,7 +549,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
@@ -635,7 +635,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
@@ -737,7 +737,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
@@ -853,7 +853,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <div
-                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
               >
                 <button
                   aria-expanded="false"
@@ -968,7 +968,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <div
-                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
               >
                 <button
                   aria-expanded="false"
@@ -1118,7 +1118,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
@@ -1211,7 +1211,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
@@ -1499,7 +1499,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
