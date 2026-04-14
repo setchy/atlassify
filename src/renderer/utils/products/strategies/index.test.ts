@@ -59,7 +59,10 @@ describe('renderer/utils/products/strategies/index', () => {
     },
   ];
 
-  it.each(cases)('maps $product.type to the correct strategy', ({ product, strategy }) => {
+  it.each(cases)('maps $product.type to the correct strategy', ({
+    product,
+    strategy,
+  }) => {
     const notification = {
       ...mockSingleAtlassifyNotification,
       product,
