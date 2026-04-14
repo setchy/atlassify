@@ -13,7 +13,7 @@ class BitbucketStrategy extends DefaultStrategy {
     return extractRepositoryName(notification);
   }
 
-  override isAutomationActor(notification: AtlassifyNotification): boolean {
+  override isRovoActor(notification: AtlassifyNotification): boolean {
     if (notification.actor.displayName === 'Rovo Dev') {
       return true;
     }

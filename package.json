@@ -77,6 +77,7 @@
     "@atlaskit/form": "15.5.4",
     "@atlaskit/heading": "5.4.1",
     "@atlaskit/icon": "34.0.3",
+    "@atlaskit/icon-lab": "6.4.0",
     "@atlaskit/inline-message": "15.6.8",
     "@atlaskit/logo": "20.0.0",
     "@atlaskit/modal-dialog": "14.15.0",

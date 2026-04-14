@@ -19,8 +19,8 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
     );
   });
 
-  describe('isAutomationActor', () => {
-    it('isAutomationActor returns true for Rovo Dev actors', () => {
+  describe('isRovoActor', () => {
+    it('isRovoActor returns true for Rovo Dev actors', () => {
       const notification = {
         ...mockSingleAtlassifyNotification,
         product: PRODUCTS.bitbucket,
@@ -30,9 +30,9 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
         },
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).isAutomationActor(notification),
-      ).toBe(true);
+      expect(getProductStrategy(notification).isRovoActor(notification)).toBe(
+        true,
+      );
     });
 
     it('isAutomationActor returns false for other display names', () => {
@@ -45,9 +45,9 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
         },
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).isAutomationActor(notification),
-      ).toBe(false);
+      expect(getProductStrategy(notification).isRovoActor(notification)).toBe(
+        false,
+      );
     });
   });
 

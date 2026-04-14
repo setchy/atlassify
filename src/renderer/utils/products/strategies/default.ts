@@ -17,7 +17,19 @@ export class DefaultStrategy implements ProductNotificationStrategy {
     return 'circle';
   }
 
-  isAutomationActor(_notification: AtlassifyNotification): boolean {
+  isAutomationActor(notification: AtlassifyNotification): boolean {
+    if (!notification.actor.displayName) {
+      return true;
+    }
+
+    if (notification.actor.displayName?.startsWith('Automation for')) {
+      return true;
+    }
+
+    return false;
+  }
+
+  isRovoActor(_notification: AtlassifyNotification): boolean {
     return false;
   }
 }

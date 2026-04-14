@@ -20,4 +20,9 @@ export interface ProductNotificationStrategy {
    * Returns `true` if the notification actor should be treated as an automation (bot/service).
    */
   isAutomationActor(notification: AtlassifyNotification): boolean;
+
+  /**
+   * Returns `true` if the notification actor should be treated as Rovo.
+   */
+  isRovoActor(notification: AtlassifyNotification): boolean;
 }

@@ -3,61 +3,68 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 import type { AtlassifyNotification } from '../../../types';
 
 import { PRODUCTS } from '../index';
+import { bitbucketStrategy } from './bitbucket';
+import { compassStrategy } from './compass';
 import { defaultStrategy } from './default';
+import { homeStrategy } from './home';
 import { getProductStrategy } from './index';
+import { rovoChatStrategy } from './rovo_chat';
+import { rovoDevStrategy } from './rovo_dev';
 
 describe('renderer/utils/products/strategies/index', () => {
-  it('returns defaultStrategy for confluence', () => {
-    const notification = {
-      ...mockSingleAtlassifyNotification,
+  const cases = [
+    {
+      product: PRODUCTS.bitbucket,
+      strategy: bitbucketStrategy,
+    },
+    {
+      product: PRODUCTS.compass,
+      strategy: compassStrategy,
+    },
+    {
+      product: PRODUCTS.home,
+      strategy: homeStrategy,
+    },
+    {
+      product: PRODUCTS.rovo_chat,
+      strategy: rovoChatStrategy,
+    },
+    {
+      product: PRODUCTS.rovo_dev,
+      strategy: rovoDevStrategy,
+    },
+    {
       product: PRODUCTS.confluence,
-    } as AtlassifyNotification;
-
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
-  });
-
-  it('returns defaultStrategy for jira', () => {
-    const notification = {
-      ...mockSingleAtlassifyNotification,
+      strategy: defaultStrategy,
+    },
+    {
       product: PRODUCTS.jira,
-    } as AtlassifyNotification;
-
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
-  });
-
-  it('returns defaultStrategy for jira_product_discovery', () => {
-    const notification = {
-      ...mockSingleAtlassifyNotification,
+      strategy: defaultStrategy,
+    },
+    {
       product: PRODUCTS.jira_product_discovery,
-    } as AtlassifyNotification;
-
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
-  });
-
-  it('returns defaultStrategy for jira_service_management', () => {
-    const notification = {
-      ...mockSingleAtlassifyNotification,
+      strategy: defaultStrategy,
+    },
+    {
       product: PRODUCTS.jira_service_management,
-    } as AtlassifyNotification;
-
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
-  });
-
-  it('returns defaultStrategy for teams', () => {
-    const notification = {
-      ...mockSingleAtlassifyNotification,
+      strategy: defaultStrategy,
+    },
+    {
       product: PRODUCTS.teams,
-    } as AtlassifyNotification;
+      strategy: defaultStrategy,
+    },
+    {
+      product: PRODUCTS.unknown,
+      strategy: defaultStrategy,
+    },
+  ];
 
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
-  });
-
-  it('returns defaultStrategy for unknown', () => {
+  it.each(cases)('maps $product.type to the correct strategy', ({ product, strategy }) => {
     const notification = {
       ...mockSingleAtlassifyNotification,
-      product: PRODUCTS.unknown,
+      product,
     } as AtlassifyNotification;
 
-    expect(getProductStrategy(notification)).toBe(defaultStrategy);
+    expect(getProductStrategy(notification)).toBe(strategy);
   });
 });
