@@ -33,6 +33,7 @@ describe('renderer/utils/products/inference.ts', () => {
       ['confluence', PRODUCTS.confluence],
       ['opsgenie', PRODUCTS.jira_service_management],
       ['people-and-teams-collective', PRODUCTS.teams],
+      ['rovo', PRODUCTS.rovo_chat],
       ['team-central', PRODUCTS.home],
       ['unmapped', PRODUCTS.unknown],
     ])('%s maps correctly', async (registrationProduct, expected) => {
@@ -60,11 +61,26 @@ describe('renderer/utils/products/inference.ts', () => {
     });
 
     describe('rovo dev product inference', () => {
-      it('should infer rovo dev product', async () => {
+      it('should infer rovo dev product - code ready', async () => {
         const mockNotification = {
           ...createProductNotificationMock('post-office'),
           content: {
             message: 'AI generated code is ready',
+          },
+        } as AtlassianHeadNotificationFragment;
+
+        const inferredProduct = await inferAtlassianProduct(
+          mockAtlassianCloudAccount,
+          mockNotification,
+        );
+        expect(inferredProduct).toBe(PRODUCTS.rovo_dev);
+      });
+
+      it('should infer rovo dev product - session waiting input', async () => {
+        const mockNotification = {
+          ...createProductNotificationMock('post-office'),
+          content: {
+            message: 'Rovo Dev session is waiting for your input',
           },
         } as AtlassianHeadNotificationFragment;
 

@@ -3,6 +3,7 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 import type { AtlassifyNotification, Link } from '../../../types';
 
 import { PRODUCTS } from '../index';
+import { defaultStrategy } from './default';
 import { getProductStrategy } from './index';
 import { extractRovoDevContextName, rovoDevStrategy } from './rovo_dev';
 
@@ -19,8 +20,8 @@ describe('renderer/utils/products/strategies/rovo_dev', () => {
     );
   });
 
-  it('isAutomationActor always returns true', () => {
-    expect(rovoDevStrategy.isAutomationActor()).toBe(true);
+  it('isRovoActor always returns true', () => {
+    expect(rovoDevStrategy.isRovoActor()).toBe(true);
   });
 
   it('extractRovoDevContextName parses context name from url', () => {
@@ -32,5 +33,9 @@ describe('renderer/utils/products/strategies/rovo_dev', () => {
     expect(extractRovoDevContextName(notification)).toBe(
       'The AI coding tool has generated code for ATLASSIFY-123',
     );
+  });
+
+  it('is distinct from defaultStrategy', () => {
+    expect(rovoDevStrategy).not.toBe(defaultStrategy);
   });
 });

@@ -5,6 +5,7 @@ import { bitbucketStrategy } from './bitbucket';
 import { compassStrategy } from './compass';
 import { defaultStrategy } from './default';
 import { homeStrategy } from './home';
+import { rovoChatStrategy } from './rovo_chat';
 import { rovoDevStrategy } from './rovo_dev';
 
 export function getProductStrategy(
@@ -17,6 +18,8 @@ export function getProductStrategy(
       return compassStrategy;
     case 'home':
       return homeStrategy;
+    case 'rovo_chat':
+      return rovoChatStrategy;
     case 'rovo_dev':
       return rovoDevStrategy;
     default:

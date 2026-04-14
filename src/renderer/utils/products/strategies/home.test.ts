@@ -3,7 +3,8 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 import type { AtlassifyNotification, Link } from '../../../types';
 
 import { PRODUCTS } from '../index';
-import { extractGoalOrProjectKey } from './home';
+import { defaultStrategy } from './default';
+import { extractGoalOrProjectKey, homeStrategy } from './home';
 import { getProductStrategy } from './index';
 
 describe('renderer/utils/products/strategies/home', () => {
@@ -83,5 +84,9 @@ describe('renderer/utils/products/strategies/home', () => {
 
       expect(extractGoalOrProjectKey(notification)).toBe('ABC-123');
     });
+  });
+
+  it('is distinct from defaultStrategy', () => {
+    expect(homeStrategy).not.toBe(defaultStrategy);
   });
 });

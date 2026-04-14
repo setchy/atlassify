@@ -62,6 +62,10 @@
         "description": "Notificaciones de reglas de automatización",
         "title": "Automatización"
       },
+      "rovo": {
+        "description": "Notificaciones de Rovo",
+        "title": "Rovo"
+      },
       "title": "actores",
       "user": {
         "description": "Notificaciones de usuarios",

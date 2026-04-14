@@ -66,10 +66,16 @@ export async function inferAtlassianProduct(
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
     case 'post-office':
-      if (headNotification.content.message.includes('AI generated code')) {
-        return PRODUCTS.rovo_dev;
+      // TODO - there may be other post-office notifications to further classify
+      if (
+        headNotification.content.message.includes('AI generated code') ||
+        headNotification.content.message.includes('Rovo Dev session')
+      ) {
+        return PRODUCTS.rovo_dev; // TODO - perhaps this should still be `Jira`
       }
       return PRODUCTS.unknown;
+    case 'rovo':
+      return PRODUCTS.rovo_chat;
     case 'team-central':
       return PRODUCTS.home;
     default:
