@@ -76,8 +76,8 @@ importers:
         specifier: 14.15.0
         version: 14.15.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/primitives':
-        specifier: 18.1.4
-        version: 18.1.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 19.0.0
+        version: 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/radio':
         specifier: 8.5.4
         version: 8.5.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
