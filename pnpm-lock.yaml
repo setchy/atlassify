@@ -94,8 +94,8 @@ importers:
         specifier: 23.0.1
         version: 23.0.1(react@19.2.5)
       '@atlaskit/toggle':
-        specifier: 15.5.0
-        version: 15.5.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 15.6.0
+        version: 15.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/tokens':
         specifier: 12.0.0
         version: 12.0.0(react@19.2.5)
@@ -426,6 +426,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/primitives@19.0.0':
+    resolution: {integrity: sha512-kkHUvoTuCUBy5z+79vLfxyCWPb+Dy34O4N/JI7vV0Uv992HHjZbMjnorwLfKb65VWhKGDw1y6XSO8jOMZEr7ZA==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/radio@8.5.2':
     resolution: {integrity: sha512-VHVu9yRD0dfthwyDpG87EbrRPdQ+cVhOgKZu4KnSqMfb1yrNsOifR7rOmQB+vMggTXr5JgaK6j7IjkMCE/ltEA==}
     peerDependencies:
@@ -478,8 +483,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/toggle@15.5.0':
-    resolution: {integrity: sha512-YY3X86chFObZLDvRqvei0oDXB0UMlAM8sHuVnEsfyDzCGY2E/C+J7zJ7zzx+0yBCFXckl0mmi53KZxWun14H3Q==}
+  '@atlaskit/toggle@15.6.0':
+    resolution: {integrity: sha512-U3m7ysq3sITriaBjRIC0fnGvoTKTx2SDxqYWjlhMbyX5sEi9LO0ZsA79b+eiNmvDK7Z7NFrqgHgzh4norerQUQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5712,6 +5717,27 @@ snapshots:
       - react-dom
       - supports-color
 
+  '@atlaskit/primitives@19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/app-provider': 4.2.2(react@19.2.5)
+      '@atlaskit/css': 0.19.3(react@19.2.5)
+      '@atlaskit/ds-lib': 7.0.0(react@19.2.5)
+      '@atlaskit/interaction-context': 3.1.0(react@19.2.5)
+      '@atlaskit/tokens': 13.0.0(react@19.2.5)
+      '@atlaskit/visually-hidden': 3.0.5(react@19.2.5)
+      '@babel/runtime': 7.29.2
+      '@compiled/react': 0.20.0(react@19.2.5)
+      '@emotion/react': 11.14.0(@types/react@19.2.14)(react@19.2.5)
+      '@emotion/serialize': 1.3.3
+      bind-event-listener: 3.0.0
+      react: 19.2.5
+      tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
   '@atlaskit/radio@8.5.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -5861,16 +5887,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/toggle@15.5.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@atlaskit/toggle@15.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/css': 0.19.3(react@19.2.5)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.5)
       '@atlaskit/icon': 34.2.0(react@19.2.5)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.5)
-      '@atlaskit/primitives': 18.1.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/primitives': 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/spinner': 19.1.2(react@19.2.5)
-      '@atlaskit/tokens': 12.0.0(react@19.2.5)
+      '@atlaskit/tokens': 13.0.0(react@19.2.5)
       '@atlaskit/visually-hidden': 3.0.5(react@19.2.5)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.5)
