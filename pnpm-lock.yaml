@@ -73,8 +73,8 @@ importers:
         specifier: 20.0.2
         version: 20.0.2(react@19.2.5)
       '@atlaskit/modal-dialog':
-        specifier: 14.15.0
-        version: 14.15.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 14.15.1
+        version: 14.15.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/primitives':
         specifier: 19.0.0
         version: 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -388,8 +388,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@14.15.0':
-    resolution: {integrity: sha512-PvKqqCOgkoGzk1EfFicHu1f9WWnutiBv86cvkdb0tRz1kBOpT4kLurl9DFXivww9Z8aYCBpTJ/iu9mZkqbNcRA==}
+  '@atlaskit/modal-dialog@14.15.1':
+    resolution: {integrity: sha512-wpyGFdVhSs9bvSe+AX925GpNXOoW1xg5t9LgHMvsqhpUMqNxd4xmufu2AsSk3oszXDXrznxBEEJg6Q9/9K3X4w==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5598,7 +5598,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@14.15.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@atlaskit/modal-dialog@14.15.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/blanket': 15.0.31(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -5611,9 +5611,9 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.5)
       '@atlaskit/portal': 5.4.2(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/pragmatic-drag-and-drop': 1.7.10
-      '@atlaskit/primitives': 18.1.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/primitives': 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/theme': 23.0.1(react@19.2.5)
-      '@atlaskit/tokens': 12.0.0(react@19.2.5)
+      '@atlaskit/tokens': 13.0.0(react@19.2.5)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.5)
       bind-event-listener: 3.0.0
