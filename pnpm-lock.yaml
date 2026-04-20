@@ -49,8 +49,8 @@ importers:
         specifier: 18.4.4
         version: 18.4.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/button':
-        specifier: 23.11.2
-        version: 23.11.2(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 23.11.3
+        version: 23.11.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/checkbox':
         specifier: 17.3.11
         version: 17.3.11(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -299,8 +299,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/button@23.11.2':
-    resolution: {integrity: sha512-1dBBnjDrH88wdlCiv4AzQZ45ovD+L4FHxutmrRyutCa5G4IXtHCR/M+oJKW6ntKBh4Lm8A/A9u0XaRvd6LM7uQ==}
+  '@atlaskit/button@23.11.3':
+    resolution: {integrity: sha512-VRQOEJdRvVlG2Bp/DEgLvYNLJdh7zTPB8nLypBdGdvJdRICSWd+eaDIk1PGLibYXy4CMKctS3AGNU7BiOvnPCg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5369,7 +5369,7 @@ snapshots:
       '@babel/runtime': 7.29.2
       react: 19.2.5
 
-  '@atlaskit/button@23.11.2(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@atlaskit/button@23.11.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/css': 0.19.3(react@19.2.5)
@@ -5378,10 +5378,10 @@ snapshots:
       '@atlaskit/icon': 34.2.0(react@19.2.5)
       '@atlaskit/interaction-context': 3.1.0(react@19.2.5)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.5)
-      '@atlaskit/primitives': 18.1.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/primitives': 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/spinner': 19.1.2(react@19.2.5)
       '@atlaskit/theme': 23.0.1(react@19.2.5)
-      '@atlaskit/tokens': 12.0.0(react@19.2.5)
+      '@atlaskit/tokens': 13.0.0(react@19.2.5)
       '@atlaskit/tooltip': 21.1.6(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/visually-hidden': 3.0.5(react@19.2.5)
       '@babel/runtime': 7.29.2
@@ -5504,7 +5504,7 @@ snapshots:
 
   '@atlaskit/inline-message@15.6.8(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@atlaskit/button': 23.11.2(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/button': 23.11.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.5)
       '@atlaskit/icon': 34.2.0(react@19.2.5)
       '@atlaskit/link': 3.4.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -5602,7 +5602,7 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/blanket': 15.0.31(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
-      '@atlaskit/button': 23.11.2(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/button': 23.11.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/css': 0.19.3(react@19.2.5)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.5)
       '@atlaskit/icon': 34.2.0(react@19.2.5)
