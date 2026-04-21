@@ -169,9 +169,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                   testId="account-profile"
                 />
               </Tooltip>{' '}
-              <Badge
-                max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT}
-              >
+              <Badge max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT}>
                 {hasMoreNotifications
                   ? Constants.MAX_NOTIFICATIONS_PER_ACCOUNT + 1
                   : notifications.length}
