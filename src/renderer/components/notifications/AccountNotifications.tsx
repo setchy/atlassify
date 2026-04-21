@@ -2,7 +2,7 @@ import { type FC, Fragment, type MouseEvent, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
-import Badge from '@atlaskit/badge';
+import Badge from '@atlaskit/badge/new';
 import Button, { IconButton } from '@atlaskit/button/new';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
@@ -170,7 +170,6 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 />
               </Tooltip>{' '}
               <Badge
-                appearance="primary"
                 max={Constants.MAX_NOTIFICATIONS_PER_ACCOUNT}
               >
                 {hasMoreNotifications

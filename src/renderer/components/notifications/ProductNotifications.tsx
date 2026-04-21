@@ -1,7 +1,7 @@
 import { type FC, type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Badge from '@atlaskit/badge';
+import Badge from '@atlaskit/badge/new';
 import Button, { IconButton } from '@atlaskit/button/new';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
