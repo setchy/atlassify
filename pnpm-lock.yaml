@@ -199,8 +199,8 @@ importers:
         specifier: 1.55.0
         version: 1.55.0(@types/node@24.12.2)(i18next@26.0.6(typescript@6.0.3))(react-dom@19.2.5(react@19.2.5))(typescript@6.0.3)
       nock:
-        specifier: 14.0.12
-        version: 14.0.12
+        specifier: 14.0.13
+        version: 14.0.13
       react-devtools:
         specifier: 7.0.1
         version: 7.0.1
@@ -3783,8 +3783,8 @@ packages:
   no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
 
-  nock@14.0.12:
-    resolution: {integrity: sha512-kZM3bHV0KzhHH6E2eRszHyML/w87AUzLBwupNTHohtYWP9fZYgUPmCbSKq6ITfEEmHqN4/p0MscvUipT4P5Qsg==}
+  nock@14.0.13:
+    resolution: {integrity: sha512-SCPsQmGVNY8h1rfS3aU0MzOGYY+wKIFukHEsoSIwPRCYocZkya7MFIlWIEYPWQZj+Gaksg6EyUaY255ZDqpQuA==}
     engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
   node-abi@4.28.0:
@@ -9552,7 +9552,7 @@ snapshots:
       lower-case: 2.0.2
       tslib: 2.8.1
 
-  nock@14.0.12:
+  nock@14.0.13:
     dependencies:
       '@mswjs/interceptors': 0.41.3
       json-stringify-safe: 5.0.1
