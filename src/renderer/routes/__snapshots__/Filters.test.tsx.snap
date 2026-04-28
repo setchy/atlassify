@@ -1321,6 +1321,89 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                   class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
                 >
                   <input
+                    aria-label="Rovo Chat"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo Chat
+                  </span>
+                </label>
+                <span
+                  aria-label="Rovo"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  role="img"
+                  style="--themed-icon-color: initial;"
+                >
+                  <svg
+                    height="100%"
+                    viewBox="0 0 24 24"
+                  >
+                    
+    
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
+                    />
+                    
+    
+                    <path
+                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+    
+                    <path
+                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+
+                  </svg>
+                  
+
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
                     aria-label="Rovo Dev"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                     tabindex="0"
@@ -2874,6 +2957,89 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                     <path
                       d="M13.744 10.156h4.578c.688 0 .922.654.503 1.174l-7.16 8.837c-2.314-1.845-2.096-4.763-.402-6.892zm-3.538 3.521H5.63c-.688 0-.923-.654-.504-1.173l7.16-8.837c2.315 1.844 2.063 4.728.386 6.875z"
                       fill="var(--icon-color, #101214)"
+                    />
+                    
+
+                  </svg>
+                  
+
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
+                    aria-label="Rovo Chat"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo Chat
+                  </span>
+                </label>
+                <span
+                  aria-label="Rovo"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  role="img"
+                  style="--themed-icon-color: initial;"
+                >
+                  <svg
+                    height="100%"
+                    viewBox="0 0 24 24"
+                  >
+                    
+    
+                    <path
+                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
+                      fill="var(--tile-color,#1868db)"
+                    />
+                    
+    
+                    <path
+                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
+                      fill="var(--icon-color, white)"
+                    />
+                    
+    
+                    <path
+                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
+                      fill="var(--icon-color, white)"
                     />
                     
 
