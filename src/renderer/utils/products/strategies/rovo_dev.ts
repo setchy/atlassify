@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
@@ -6,7 +6,7 @@ export function extractRovoDevContextName(
   notification: AtlassifyNotification,
 ): string {
   const context = new URL(notification.url).pathname.split('/').pop();
-  return `The AI coding tool has generated code for ${context}`;
+  return `${notification.message} for ${context}`;
 }
 
 class RovoDevStrategy extends DefaultStrategy {
@@ -14,8 +14,8 @@ class RovoDevStrategy extends DefaultStrategy {
     return extractRovoDevContextName(notification);
   }
 
-  override isAutomationActor(): boolean {
-    return true;
+  override actorType(_notification: AtlassifyNotification): ActorType {
+    return 'rovo';
   }
 }
 

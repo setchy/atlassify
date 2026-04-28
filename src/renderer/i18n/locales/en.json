@@ -62,6 +62,10 @@
         "description": "Notifications from automation rules",
         "title": "Automation"
       },
+      "rovo": {
+        "description": "Notifications from Rovo products",
+        "title": "Rovo"
+      },
       "title": "Actors",
       "user": {
         "description": "Notifications from users",

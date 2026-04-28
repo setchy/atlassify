@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 
 export interface ProductNotificationStrategy {
   /**
@@ -17,7 +17,7 @@ export interface ProductNotificationStrategy {
   avatarAppearance(notification: AtlassifyNotification): 'circle' | 'square';
 
   /**
-   * Returns `true` if the notification actor should be treated as an automation (bot/service).
+   * Returns the notification actor type.
    */
-  isAutomationActor(notification: AtlassifyNotification): boolean;
+  actorType(notification: AtlassifyNotification): ActorType;
 }

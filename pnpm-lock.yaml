@@ -66,6 +66,9 @@ importers:
       '@atlaskit/icon':
         specifier: 34.3.0
         version: 34.3.0(react@19.2.5)
+      '@atlaskit/icon-lab':
+        specifier: ^6.6.0
+        version: 6.6.0(react@19.2.5)
       '@atlaskit/inline-message':
         specifier: 15.6.9
         version: 15.6.9(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -344,6 +347,11 @@ packages:
 
   '@atlaskit/heading@5.4.2':
     resolution: {integrity: sha512-B4SMRq9sq3WWJYLo8Nx5731LvAjiev6dT3SbK1/dqSM+HXnrAy6GwEhW3oDJefeWYO7eZ9xPfuC3jpjdNBgxoA==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/icon-lab@6.6.0':
+    resolution: {integrity: sha512-PVnbaXav8wYJuIQTttUvVuBhkTqpwbDaVAA68aJtvO3Qf3Fyj6GUWRwzQn3J2cN6ZYgZYTdlz3hFh24w/LZutQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5478,6 +5486,14 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - react-dom
+      - supports-color
+
+  '@atlaskit/icon-lab@6.6.0(react@19.2.5)':
+    dependencies:
+      '@atlaskit/icon': 34.3.0(react@19.2.5)
+      '@babel/runtime': 7.29.2
+      react: 19.2.5
+    transitivePeerDependencies:
       - supports-color
 
   '@atlaskit/icon@34.3.0(react@19.2.5)':

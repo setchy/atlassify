@@ -38,9 +38,9 @@ describe('renderer/utils/products/strategies/default', () => {
     ).toBe('circle');
   });
 
-  it('isAutomationActor returns false', () => {
-    expect(
-      defaultStrategy.isAutomationActor(mockSingleAtlassifyNotification),
-    ).toBe(false);
+  it('actorType always returns user', () => {
+    expect(defaultStrategy.actorType(mockSingleAtlassifyNotification)).toBe(
+      'user',
+    );
   });
 });

@@ -62,6 +62,10 @@
         "description": "Benachrichtigungen von Automatisierungsregeln",
         "title": "Automatisierung"
       },
+      "rovo": {
+        "description": "Benachrichtigungen von Rovo-Produkten",
+        "title": "Rovo"
+      },
       "title": "Schauspieler",
       "user": {
         "description": "Benachrichtigungen von Benutzern",

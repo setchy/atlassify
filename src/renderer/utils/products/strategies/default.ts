@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 import type { ProductNotificationStrategy } from './types';
 
 export class DefaultStrategy implements ProductNotificationStrategy {
@@ -17,8 +17,8 @@ export class DefaultStrategy implements ProductNotificationStrategy {
     return 'circle';
   }
 
-  isAutomationActor(_notification: AtlassifyNotification): boolean {
-    return false;
+  actorType(_notification: AtlassifyNotification): ActorType {
+    return 'user';
   }
 }
 
