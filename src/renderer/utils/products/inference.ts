@@ -70,6 +70,8 @@ export async function inferAtlassianProduct(
         return PRODUCTS.rovo_dev;
       }
       return PRODUCTS.unknown;
+    case 'rovo':
+      return PRODUCTS.rovo;
     case 'team-central':
       return PRODUCTS.home;
     default:
