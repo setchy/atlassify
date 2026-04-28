@@ -341,6 +341,7 @@ export type ProductType =
   | 'jira'
   | 'jira_product_discovery'
   | 'jira_service_management'
+  | 'rovo'
   | 'rovo_dev'
   | 'teams'
   | 'unknown';
