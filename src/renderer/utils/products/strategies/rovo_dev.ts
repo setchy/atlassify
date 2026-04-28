@@ -6,7 +6,7 @@ export function extractRovoDevContextName(
   notification: AtlassifyNotification,
 ): string {
   const context = new URL(notification.url).pathname.split('/').pop();
-  return `The AI coding tool has generated code for ${context}`;
+  return `${notification.message} for ${context}`;
 }
 
 class RovoDevStrategy extends DefaultStrategy {

@@ -544,6 +544,78 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                   class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
                 >
                   <input
+                    aria-label="Rovo"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo
+                  </span>
+                </label>
+                <span
+                  class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
+                    style="color: currentcolor;"
+                  >
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
+                      fill="none"
+                      role="presentation"
+                      viewBox="-4 -4 24 24"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M6.687.64a2.63 2.63 0 0 1 2.625 0l4.404 2.544a2.63 2.63 0 0 1 1.313 2.273v5.084c0 .938-.5 1.804-1.313 2.274l-4.404 2.542a2.63 2.63 0 0 1-2.625 0l-4.403-2.542A2.63 2.63 0 0 1 .97 10.54V5.457c0-.938.5-1.804 1.313-2.273zM3.034 4.483a1.13 1.13 0 0 0-.563.975v5.084c0 .402.215.774.563.975l4.403 2.543c.348.2.777.2 1.125 0l.688-.398v-1.997L5.896 9.568a1.38 1.38 0 0 1-.646-1.166V3.203zM8.562 1.94a1.13 1.13 0 0 0-1.125 0l-.687.398v1.996l3.354 2.097c.402.251.646.692.646 1.166v5.199l2.216-1.28c.348-.2.563-.572.563-.974V5.457c0-.402-.215-.774-.563-.975zM6.75 8.333l2.5 1.563V7.663l-2.5-1.561z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
                     aria-label="Automation"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                     tabindex="0"
@@ -2180,6 +2252,78 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                       <path
                         clip-rule="evenodd"
                         d="M8 1.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0m-2 9a3.75 3.75 0 0 1 3.75-3.75h4.5A3.75 3.75 0 0 1 14 13v2h-1.5v-2a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 3.5 13v2H2z"
+                        fill="currentcolor"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
+                    aria-label="Rovo"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Rovo
+                  </span>
+                </label>
+                <span
+                  class="_1e0c116y _vchhusvi _4cvr1h6o _1bah1h6o _1wybidpf _bfhk7qp0 _syaz1diz _1bsb7vkz _4t3i7vkz _2rko12b0"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n _1bsb1kw7 _4t3i1kw7"
+                    style="color: currentcolor;"
+                  >
+                    <svg
+                      class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1kw7 _4t3i1kw7"
+                      fill="none"
+                      role="presentation"
+                      viewBox="-4 -4 24 24"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M6.687.64a2.63 2.63 0 0 1 2.625 0l4.404 2.544a2.63 2.63 0 0 1 1.313 2.273v5.084c0 .938-.5 1.804-1.313 2.274l-4.404 2.542a2.63 2.63 0 0 1-2.625 0l-4.403-2.542A2.63 2.63 0 0 1 .97 10.54V5.457c0-.938.5-1.804 1.313-2.273zM3.034 4.483a1.13 1.13 0 0 0-.563.975v5.084c0 .402.215.774.563.975l4.403 2.543c.348.2.777.2 1.125 0l.688-.398v-1.997L5.896 9.568a1.38 1.38 0 0 1-.646-1.166V3.203zM8.562 1.94a1.13 1.13 0 0 0-1.125 0l-.687.398v1.996l3.354 2.097c.402.251.646.692.646 1.166v5.199l2.216-1.28c.348-.2.563-.572.563-.974V5.457c0-.402-.215-.774-.563-.975zM6.75 8.333l2.5 1.563V7.663l-2.5-1.561z"
                         fill="currentcolor"
                         fill-rule="evenodd"
                       />

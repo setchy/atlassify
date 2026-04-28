@@ -66,8 +66,20 @@ export async function inferAtlassianProduct(
     case 'people-and-teams-collective':
       return PRODUCTS.teams;
     case 'post-office':
-      if (headNotification.content.message.includes('AI generated code')) {
+      if (
+        headNotification.content.message ===
+          'Rovo Dev session is waiting for your input' ||
+        headNotification.content.message.includes('AI generated code') // This may now be a legacy message mapping
+      ) {
         return PRODUCTS.rovo_dev;
+      }
+
+      if (
+        headNotification.content.message.startsWith(
+          'Rovo Dev has created a pull request',
+        )
+      ) {
+        return PRODUCTS.bitbucket;
       }
       return PRODUCTS.unknown;
     case 'rovo':

@@ -18,6 +18,10 @@ class BitbucketStrategy extends DefaultStrategy {
       return 'rovo';
     }
 
+    if (notification.message === 'Rovo Dev has created a pull request') {
+      return 'rovo';
+    }
+
     return 'user';
   }
 }
