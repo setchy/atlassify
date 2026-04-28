@@ -105,7 +105,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   style="box-sizing: border-box;"
                 >
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dlf1ug _1reo15vq _18m915vq _4cvr1h6o _1e0c11p5 _1n261g80 _8am5i4x0 _kqswh2mm _1q51v77o _y4ti12x7 _85i5v77o _bozg12x7 -ValueContainer"
+                    class="_16jlkb7n _1o9zkb7n _i0dlf1ug _1reo15vq _18m915vq _4cvr1h6o _1e0c11p5 _1n261g80 _8am5i4x0 _kqswh2mm _y4ti12x7 _bozg12x7 _1q51v77o _85i5v77o -ValueContainer"
                     data-testid="settings-language-selector-select--value-container"
                     style="box-sizing: border-box;"
                   >
