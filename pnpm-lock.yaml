@@ -67,7 +67,7 @@ importers:
         specifier: 34.3.0
         version: 34.3.0(react@19.2.5)
       '@atlaskit/icon-lab':
-        specifier: ^6.6.0
+        specifier: 6.6.0
         version: 6.6.0(react@19.2.5)
       '@atlaskit/inline-message':
         specifier: 15.6.9
