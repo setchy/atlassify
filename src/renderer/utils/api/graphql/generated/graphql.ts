@@ -64375,6 +64375,12 @@ export type TrelloRetryAiOnBoardInput = {
   userInput: TrelloAiBoardUserInput;
 };
 
+/** Arguments passed into revokeMemberOAuth2AccessGrants mutation */
+export type TrelloRevokeMemberOAuth2AccessGrantsInput = {
+  enterpriseId: Scalars['ID']['input'];
+  memberId: Scalars['ID']['input'];
+};
+
 /** Input type for rotating the secret for the OAuth2 Client of a Trello application. */
 export type TrelloRotateOAuth2ClientSecretInput = {
   /** The id of the Trello application whose OAuth2 Client secret is being rotated */
