@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
@@ -14,8 +14,8 @@ class RovoDevStrategy extends DefaultStrategy {
     return extractRovoDevContextName(notification);
   }
 
-  override isAutomationActor(): boolean {
-    return true;
+  override actorType(_notification: AtlassifyNotification): ActorType {
+    return 'rovo';
   }
 }
 

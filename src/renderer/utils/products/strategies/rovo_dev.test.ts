@@ -19,8 +19,13 @@ describe('renderer/utils/products/strategies/rovo_dev', () => {
     );
   });
 
-  it('isAutomationActor always returns true', () => {
-    expect(rovoDevStrategy.isAutomationActor()).toBe(true);
+  it('actorType always returns rovo', () => {
+    expect(
+      rovoDevStrategy.actorType({
+        ...mockSingleAtlassifyNotification,
+        product: PRODUCTS.rovo_dev,
+      }),
+    ).toBe('rovo');
   });
 
   it('extractRovoDevContextName parses context name from url', () => {

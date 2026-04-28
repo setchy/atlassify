@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
@@ -13,12 +13,12 @@ class BitbucketStrategy extends DefaultStrategy {
     return extractRepositoryName(notification);
   }
 
-  override isAutomationActor(notification: AtlassifyNotification): boolean {
+  override actorType(notification: AtlassifyNotification): ActorType {
     if (notification.actor.displayName === 'Rovo Dev') {
-      return true;
+      return 'rovo';
     }
 
-    return false;
+    return 'user';
   }
 }
 

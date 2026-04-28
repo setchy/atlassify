@@ -326,9 +326,10 @@ export type EngagementStateType = 'mention' | 'comment' | 'reaction';
  * The actor type.
  *
  * - 'user' - A user actor created the notification.
+ * - 'rovo' - A rovo based (rovo chat, rovo dev, etc) actor created the notification.
  * - 'automation' - An automation actor created the notification.
  */
-export type ActorType = 'user' | 'automation';
+export type ActorType = 'user' | 'rovo' | 'automation';
 
 /**
  * Atlassian products which are currently supported by Atlassify.

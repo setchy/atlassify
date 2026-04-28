@@ -1,4 +1,4 @@
-import type { AtlassifyNotification } from '../../../types';
+import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
@@ -19,8 +19,12 @@ class CompassStrategy extends DefaultStrategy {
     return isCompassScorecardNotification(notification) ? 'square' : 'circle';
   }
 
-  override isAutomationActor(notification: AtlassifyNotification): boolean {
-    return isCompassScorecardNotification(notification);
+  override actorType(notification: AtlassifyNotification): ActorType {
+    if (isCompassScorecardNotification(notification)) {
+      return 'automation';
+    }
+
+    return 'user';
   }
 }
 

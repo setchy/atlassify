@@ -34,29 +34,29 @@ describe('renderer/utils/products/strategies/compass', () => {
     });
   });
 
-  describe('isAutomationActor', () => {
-    it('isAutomationActor returns true for scorecard notifications', () => {
+  describe('actorType', () => {
+    it('actorType returns true for scorecard notifications', () => {
       const notification = {
         ...mockSingleAtlassifyNotification,
         product: PRODUCTS.compass,
         message: 'some-component is failing a scorecard',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).isAutomationActor(notification),
-      ).toBe(true);
+      expect(getProductStrategy(notification).actorType(notification)).toBe(
+        'automation',
+      );
     });
 
-    it('isAutomationActor returns false for non-scorecard notifications', () => {
+    it('actorType returns user for non-scorecard notifications', () => {
       const notification = {
         ...mockSingleAtlassifyNotification,
         product: PRODUCTS.compass,
         message: 'John commented on your component',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).isAutomationActor(notification),
-      ).toBe(false);
+      expect(getProductStrategy(notification).actorType(notification)).toBe(
+        'user',
+      );
     });
   });
 

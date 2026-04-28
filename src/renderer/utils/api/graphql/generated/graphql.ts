@@ -60,6 +60,12 @@ export type AvpAddDashboardRowInput = {
   rowIndex?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export enum AvpAnalyticsAcknowledgeableError {
+  ConcurrentUpdates = 'CONCURRENT_UPDATES',
+  InvalidModelDefinition = 'INVALID_MODEL_DEFINITION',
+  LineageImpact = 'LINEAGE_IMPACT'
+}
+
 export type AvpAnalyticsArithmeticFormulaInput = {
   leftOperand: AvpAnalyticsFormulaParameterInput;
   operator: AvpAnalyticsArithmeticOperator;
@@ -134,12 +140,14 @@ export enum AvpAnalyticsDateFormatBucket {
 }
 
 export type AvpAnalyticsDeleteModelInput = {
-  forceDelete: Scalars['Boolean']['input'];
+  acknowledgedErrors?: InputMaybe<Array<AvpAnalyticsAcknowledgeableError>>;
+  forceDelete?: InputMaybe<Scalars['Boolean']['input']>;
   modelId: Scalars['ID']['input'];
   modelVersion?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AvpAnalyticsDiscardModelUpdatesInput = {
+  acknowledgedErrors?: InputMaybe<Array<AvpAnalyticsAcknowledgeableError>>;
   forceDiscard?: InputMaybe<Scalars['Boolean']['input']>;
   modelId: Scalars['ID']['input'];
   modelVersion?: InputMaybe<Scalars['String']['input']>;
@@ -400,7 +408,8 @@ export enum AvpAnalyticsSortType {
 }
 
 export type AvpAnalyticsUpdateModelInput = {
-  forceUpdate: Scalars['Boolean']['input'];
+  acknowledgedErrors?: InputMaybe<Array<AvpAnalyticsAcknowledgeableError>>;
+  forceUpdate?: InputMaybe<Scalars['Boolean']['input']>;
   modelCloudId?: InputMaybe<Scalars['ID']['input']>;
   modelDefinition: AvpAnalyticsModelDefinitionInput;
   modelDescription?: InputMaybe<Scalars['String']['input']>;
@@ -721,6 +730,20 @@ export type AvpDashboardSettingsInput = {
   timezone?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** Sort key for ordering dashboard search results. Maps onto the ERS / XPSearch sort field used by the search service. */
+export enum AvpDashboardSortKey {
+  /** Sort by dashboard category. */
+  Category = 'CATEGORY',
+  /** Sort by dashboard creation timestamp. */
+  CreatedAt = 'CREATED_AT',
+  /** Sort by creator (initial contributor). */
+  CreatedBy = 'CREATED_BY',
+  /** Sort by dashboard title. */
+  Title = 'TITLE',
+  /** Sort by last-updated timestamp. */
+  UpdatedAt = 'UPDATED_AT'
+}
+
 export enum AvpDashboardStatus {
   Active = 'ACTIVE',
   Archived = 'ARCHIVED',
@@ -749,8 +772,8 @@ export type AvpDashboardTemplateInput = {
 export type AvpDashboardUserAccessInput = {
   /** The desired access level for this user */
   accessLevel: AvpDashboardIdentityAccessLevel;
-  /** The Atlassian account ID of the user */
-  accountId: Scalars['String']['input'];
+  /** The ARI of the user (e.g. ari:cloud:identity::user/<uuid>) */
+  principalAri: Scalars['ID']['input'];
 };
 
 /**
@@ -1047,6 +1070,25 @@ export type AvpRemoveDashboardElementInput = {
 export type AvpRemoveDashboardRowInput = {
   dashboardAri: Scalars['ID']['input'];
   rowId: Scalars['ID']['input'];
+};
+
+/**
+ * Filters and sort options for avp_searchDashboards. All filter fields are optional; when omitted, the
+ * filter is not applied. Pagination is controlled separately via the query's `first` / `after` arguments.
+ */
+export type AvpSearchDashboardsInput = {
+  /** Sort order. Defaults to descending when omitted. */
+  ascending?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Filter by category (substring match, wildcards applied server-side). */
+  category?: InputMaybe<Scalars['String']['input']>;
+  /** Filter by one or more creator (initial contributor) identity user ARIs. */
+  creatorAris?: InputMaybe<Array<Scalars['ID']['input']>>;
+  /** Field to sort results by. Omit for default (relevance) ordering. */
+  sortKey?: InputMaybe<AvpDashboardSortKey>;
+  /** Filter by dashboard status. Omit to include dashboards of all statuses. */
+  status?: InputMaybe<AvpDashboardStatus>;
+  /** Free-text search over the dashboard title. */
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AvpTemplatePlaceholderReplacement = {
@@ -1574,7 +1616,9 @@ export enum AdminAuditLogContainerType {
   /** Organization */
   Org = 'ORG',
   /** Site */
-  Site = 'SITE'
+  Site = 'SITE',
+  /** Unit */
+  Unit = 'UNIT'
 }
 
 /**  --------------------------------------------------------------------------------------------- */
@@ -1660,6 +1704,24 @@ export type AdminDateFilterInput = {
    */
   value?: InputMaybe<Scalars['Int']['input']>;
 };
+
+/** Status of a domain claim. */
+export enum AdminDomainClaimStatus {
+  Deleted = 'DELETED',
+  MissingToken = 'MISSING_TOKEN',
+  Superseded = 'SUPERSEDED',
+  Unverified = 'UNVERIFIED',
+  Verified = 'VERIFIED',
+  VerifiedUnclaimed = 'VERIFIED_UNCLAIMED'
+}
+
+/** Verification type used for domain verification. */
+export enum AdminDomainVerificationType {
+  Azure = 'AZURE',
+  Dns = 'DNS',
+  Google = 'GOOGLE',
+  Http = 'HTTP'
+}
 
 /** Input to fetch audit log events. */
 export type AdminFetchAdminAuditLogEventsInput = {
@@ -5340,6 +5402,7 @@ export type AssetsExternalReferenceInput = {
   url: Scalars['String']['input'];
 };
 
+/**  --------------------------------------------------------------------------------------------- */
 export type AssetsOtaValuesByIdInput = {
   objectTypeAttributeID: Scalars['ID']['input'];
   objectTypeID: Scalars['ID']['input'];
@@ -5389,21 +5452,21 @@ export enum AssetsVerticalAssetTypesTrackingQueryErrorCode {
 }
 
 /** Current execution status of an async task. */
-export enum AssetsVerticalAsyncTaskStatusEnum {
+export enum AssetsVerticalAsyncTaskStatus {
   /** Task completed successfully */
   Completed = 'COMPLETED',
   /** Task failed during execution */
   Failed = 'FAILED',
-  /** Task is currently executing */
-  InProgress = 'IN_PROGRESS',
-  /** Task queued but not yet started */
-  Queued = 'QUEUED'
+  /** Task is currently executing (includes queued tasks not yet picked up by a worker) */
+  InProgress = 'IN_PROGRESS'
 }
 
 /** Type of async task being performed. */
 export enum AssetsVerticalAsyncTaskType {
   /** Bundle instantiation operation */
-  BundleInstantiation = 'BUNDLE_INSTANTIATION'
+  BundleInstantiation = 'BUNDLE_INSTANTIATION',
+  /** Vertical provisioning operation */
+  VerticalProvisioning = 'VERTICAL_PROVISIONING'
 }
 
 /**
@@ -5518,6 +5581,19 @@ export type AssetsVerticalCreateItemMappingsInput = {
   itemMappings: Array<AssetsVerticalCreateItemMappingEntryInput>;
 };
 
+/**
+ * Input for the assetsVertical_createRoleAssignments mutation.
+ * Adds the given role assignments on the vertical resource.
+ */
+export type AssetsVerticalCreateRoleAssignmentsInput = {
+  /** Per-principal entries. Must be non-empty. */
+  assignments: Array<AssetsVerticalRoleAssignmentEntryInput>;
+  /** The tenant cloud identifier. */
+  cloudId: Scalars['ID']['input'];
+  /** The vertical type whose role assignments should be created (e.g. HAM). */
+  verticalType: AssetsVerticalVerticalType;
+};
+
 /** Input for creating a new vertical instantiation category. */
 export type AssetsVerticalCreateVerticalInstantiationCategoryInput = {
   /** Optional asset type selections. When provided, processing is handled asynchronously. */
@@ -5530,6 +5606,8 @@ export type AssetsVerticalCreateVerticalInstantiationCategoryInput = {
   items?: InputMaybe<Array<AssetsVerticalItemSelectionInput>>;
   /** Optional metadata field. */
   metadata?: InputMaybe<Array<AssetsVerticalKeyValueInput>>;
+  /** Optional role assignments. Used when category = USER_ROLES_ASSIGNMENT. */
+  roles?: InputMaybe<Array<AssetsVerticalRoleAssignmentEntryInput>>;
   /** Identifier of the parent vertical instantiation. */
   verticalInstantiationId: Scalars['ID']['input'];
 };
@@ -5566,6 +5644,33 @@ export type AssetsVerticalDeleteItemMappingInput = {
   cloudId: Scalars['ID']['input'];
   /** The ID of the item mapping to delete. */
   id: Scalars['ID']['input'];
+};
+
+/**
+ * Per-principal entry for the Delete mutation. Two modes:
+ *   - roleIds non-empty -> remove those (principal, role) edges.
+ *   - roleIds null/omitted -> remove ALL roles for this principal on the vertical.
+ * roleIds: [] (empty list) is rejected as VALIDATION_FAILED at the resolver to
+ * avoid ambiguity.
+ */
+export type AssetsVerticalDeleteRoleAssignmentEntryInput = {
+  /** ARI of the principal - user or group. */
+  principalId: Scalars['ID']['input'];
+  /** Identity role ARIs to remove for this principal. */
+  roleIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+/**
+ * Input for the assetsVertical_deleteRoleAssignments mutation.
+ * Each entry can either remove specific roles or wipe all roles for a principal.
+ */
+export type AssetsVerticalDeleteRoleAssignmentsInput = {
+  /** Per-principal entries. Must be non-empty. */
+  assignments: Array<AssetsVerticalDeleteRoleAssignmentEntryInput>;
+  /** The tenant cloud identifier. */
+  cloudId: Scalars['ID']['input'];
+  /** The vertical type whose role assignments should be deleted (e.g. HAM). */
+  verticalType: AssetsVerticalVerticalType;
 };
 
 /** The depreciation calculation method applied to a rule. */
@@ -5763,6 +5868,53 @@ export enum AssetsVerticalObjectsOrderDirection {
   Desc = 'DESC'
 }
 
+/**
+ * Per-principal entry for mutations.
+ * - For Create: the roles to ADD for this principal on the vertical.
+ * - For Update: the desired FINAL set of roles for this principal on the vertical
+ * roleIds must be non-empty (resolver-enforced).
+ */
+export type AssetsVerticalRoleAssignmentEntryInput = {
+  /** ARI of the principal - user or group. */
+  principalId: Scalars['ID']['input'];
+  /** Identity role ARIs. Must be non-empty. */
+  roleIds: Array<Scalars['ID']['input']>;
+};
+
+/** Error codes for individual role assignment failures. */
+export enum AssetsVerticalRoleAssignmentErrorCode {
+  /** Caller does not have permission to perform this operation. */
+  PermissionDenied = 'PERMISSION_DENIED',
+  /** Role assignment failed — Identity API call failed or write was not applied. */
+  RoleAssignmentFailed = 'ROLE_ASSIGNMENT_FAILED',
+  /** Token polling timed out — outcome unknown, write may or may not have been applied. */
+  Timeout = 'TIMEOUT',
+  /** Unknown/unexpected error. */
+  UnexpectedError = 'UNEXPECTED_ERROR',
+  /** Input validation failed (e.g. invalid principalId format, invalid roleId). */
+  ValidationFailed = 'VALIDATION_FAILED'
+}
+
+/**
+ * The type of operation performed on a single (principal, role) edge.
+ * Used in mutation result rows to indicate what action was taken.
+ * For create mutations: always CREATE.
+ * For delete mutations: always DELETE.
+ * For update mutations: a mix — CREATE for roles added, DELETE for roles removed.
+ */
+export enum AssetsVerticalRoleAssignmentOperation {
+  /** A role assignment was created. */
+  Create = 'CREATE',
+  /** A role assignment was deleted. */
+  Delete = 'DELETE'
+}
+
+/** Enum of all role types across verticals. */
+export enum AssetsVerticalRoleType {
+  HamAdmin = 'HAM_ADMIN',
+  HamUser = 'HAM_USER'
+}
+
 /** Input for updating an existing depreciation rule. */
 export type AssetsVerticalUpdateDepreciationRuleInput = {
   /** If provided, replaces the full set of linked asset types. */
@@ -5781,6 +5933,19 @@ export type AssetsVerticalUpdateDepreciationRuleInput = {
   salvageValue?: InputMaybe<Scalars['Float']['input']>;
   /** Updated useful life in years. */
   usefulLifeYears?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/**
+ * Input for the assetsVertical_updateRoleAssignments mutation.
+ * For each principal, sets the desired final set of roleIds.
+ */
+export type AssetsVerticalUpdateRoleAssignmentsInput = {
+  /** Per-principal entries. Must be non-empty (resolver-enforced). */
+  assignments: Array<AssetsVerticalRoleAssignmentEntryInput>;
+  /** The tenant cloud identifier. */
+  cloudId: Scalars['ID']['input'];
+  /** The vertical type whose role assignments should be updated (e.g. HAM). */
+  verticalType: AssetsVerticalVerticalType;
 };
 
 /** Input for updating an existing vertical instantiation category. */
@@ -5875,6 +6040,8 @@ export type AssetsVerticalVerticalInstantiationCategoryWithSelectionsInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
   /** Optional metadata field. */
   metadata?: InputMaybe<Array<AssetsVerticalKeyValueInput>>;
+  /** Optional role assignments. Used when category = USER_ROLES_ASSIGNMENT. verticalType is inferred from the parent VerticalInstantiation. */
+  roles?: InputMaybe<Array<AssetsVerticalRoleAssignmentEntryInput>>;
 };
 
 /**
@@ -5926,7 +6093,7 @@ export enum AssetsVerticalVerticalTemplateQueryErrorCode {
   UnknownError = 'UNKNOWN_ERROR'
 }
 
-/** The business vertical being instantiated. */
+/** The business vertical being instantiated and managed. */
 export enum AssetsVerticalVerticalType {
   /** Hardware Asset Management. */
   Ham = 'HAM'
@@ -5964,6 +6131,16 @@ export enum AuthClientType {
   AtlassianMobile = 'ATLASSIAN_MOBILE',
   ThirdParty = 'THIRD_PARTY',
   ThirdPartyNative = 'THIRD_PARTY_NATIVE'
+}
+
+export enum AutoManagedSprintErrorType {
+  Generic = 'GENERIC',
+  OpenSubtasks = 'OPEN_SUBTASKS'
+}
+
+export enum AutoManagedSprintSetting {
+  Disabled = 'DISABLED',
+  Enabled = 'ENABLED'
 }
 
 /** Payload to invoke an AUX Effect */
@@ -7036,6 +7213,11 @@ export enum ChannelPlatformChannelType {
 export type ChannelPlatformChatRequestDetailsRequest = {
   conversationId?: InputMaybe<Scalars['String']['input']>;
 };
+
+export enum ChannelPlatformChatStatus {
+  Active = 'ACTIVE',
+  Closed = 'CLOSED'
+}
 
 export enum ChannelPlatformContactState {
   Assigned = 'ASSIGNED',
@@ -11092,6 +11274,9 @@ export type ConfluenceForgeExtensionDataContent = {
 
 export type ConfluenceForgeExtensionDataMacro = {
   body?: InputMaybe<Scalars['String']['input']>;
+  isConfiguring?: InputMaybe<Scalars['Boolean']['input']>;
+  isInserting?: InputMaybe<Scalars['Boolean']['input']>;
+  layout?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ConfluenceForgeExtensionDataSpace = {
@@ -12162,11 +12347,6 @@ export type ConfluenceSetContentGeneralAccessModeInput = {
   mode: ConfluenceContentRestrictionStateInput;
 };
 
-export type ConfluenceSetCutoverRoleConfigInput = {
-  fallbackRoleId?: InputMaybe<Scalars['ID']['input']>;
-  strategy: ConfluenceCutoverFallbackStrategy;
-};
-
 export type ConfluenceSetSubCalendarReminderInput = {
   isReminder: Scalars['Boolean']['input'];
   subCalendarId: Scalars['ID']['input'];
@@ -12651,6 +12831,26 @@ export type ConfluenceUpdateLoomEntryPointsConfigurationInput = {
   isEnabled: Scalars['Boolean']['input'];
 };
 
+export type ConfluenceUpdateMarkdownModeInput = {
+  contentId: Scalars['ID']['input'];
+  isMarkdownMode: Scalars['Boolean']['input'];
+};
+
+export enum ConfluenceUpdateModeChangeErrorCode {
+  AlreadyInRolesMode = 'ALREADY_IN_ROLES_MODE',
+  ExperimentDisabled = 'EXPERIMENT_DISABLED',
+  FallbackRoleNotFound = 'FALLBACK_ROLE_NOT_FOUND',
+  FallbackRoleNoLongerEligible = 'FALLBACK_ROLE_NO_LONGER_ELIGIBLE',
+  InternalError = 'INTERNAL_ERROR',
+  InvalidStrategyFallbackCombination = 'INVALID_STRATEGY_FALLBACK_COMBINATION',
+  PermissionDenied = 'PERMISSION_DENIED'
+}
+
+export type ConfluenceUpdateModeChangeInput = {
+  fallbackRoleId?: InputMaybe<Scalars['ID']['input']>;
+  strategy: ConfluenceCutoverFallbackStrategy;
+};
+
 export type ConfluenceUpdateNewCodeMacroInput = {
   languageName: Scalars['String']['input'];
   themeName: Scalars['String']['input'];
@@ -12856,6 +13056,17 @@ export type ConfluenceUpdateSmartSpaceOverviewTopLinksInput = {
   add?: InputMaybe<ConfluenceAddTopLinkInput>;
   edit?: InputMaybe<ConfluenceEditTopLinkInput>;
   remove?: InputMaybe<ConfluenceRemoveTopLinkInput>;
+};
+
+export type ConfluenceUpdateSpaceAnalyticsPermissionsInput = {
+  /** IDs of groups to grant analytics access to. Ignored when isOpen is true. */
+  groupIds: Array<InputMaybe<Scalars['String']['input']>>;
+  /** Whether the space analytics should be open to all licensed users. When true, userAccountIds and groupIds are ignored. */
+  isOpen: Scalars['Boolean']['input'];
+  /** The ARI of the space to update. */
+  spaceId: Scalars['ID']['input'];
+  /** Account IDs of users to grant analytics access to. Ignored when isOpen is true. */
+  userAccountIds: Array<InputMaybe<Scalars['String']['input']>>;
 };
 
 export type ConfluenceUpdateSpaceInput = {
@@ -16024,6 +16235,8 @@ export type DevAiRovoDevCreateSessionOptionsInput = {
   useDeepPlan?: InputMaybe<Scalars['Boolean']['input']>;
   /** Whether to use restricted mode for Rovodev. Defaults to false. */
   useRovodevRestrictedMode?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Whether to enable autonomous CI self-correction. Defaults to false. */
+  useSelfCorrection?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Pr status states */
@@ -16345,6 +16558,8 @@ export enum DevConsoleResource {
   FunctionCompute = 'FUNCTION_COMPUTE',
   KvsRead = 'KVS_READ',
   KvsWrite = 'KVS_WRITE',
+  LlmInput = 'LLM_INPUT',
+  LlmOutput = 'LLM_OUTPUT',
   LogsWrite = 'LOGS_WRITE',
   SqlCompute = 'SQL_COMPUTE',
   SqlRequests = 'SQL_REQUESTS',
@@ -16994,10 +17209,13 @@ export type EcosystemUpdateInstallationRemoteRegionInput = {
 
 /** Edit sprint */
 export type EditSprintInput = {
+  autoManaged?: InputMaybe<AutoManagedSprintSetting>;
   boardId: Scalars['ID']['input'];
   endDate?: InputMaybe<Scalars['String']['input']>;
   goal?: InputMaybe<Scalars['String']['input']>;
+  incompleteCardsDestination?: InputMaybe<SoftwareCardsDestination>;
   name?: InputMaybe<Scalars['String']['input']>;
+  rollingSprint?: InputMaybe<RollingSprintSetting>;
   sprintId: Scalars['ID']['input'];
   startDate?: InputMaybe<Scalars['String']['input']>;
 };
@@ -34057,6 +34275,7 @@ export type JiraBoardViewSettings = {
 
 /** Group By options for board view settings */
 export enum JiraBoardViewSettingsGroupBy {
+  Agents = 'AGENTS',
   Assignee = 'ASSIGNEE',
   Epic = 'EPIC',
   None = 'NONE',
@@ -34790,6 +35009,8 @@ export enum JiraCollapsibleSection {
   ChildWorkItem = 'CHILD_WORK_ITEM',
   Description = 'DESCRIPTION',
   LinkedWorkItem = 'LINKED_WORK_ITEM',
+  ProformaForms = 'PROFORMA_FORMS',
+  SimilarIssues = 'SIMILAR_ISSUES',
   UnifiedWorkSection = 'UNIFIED_WORK_SECTION'
 }
 
@@ -36944,6 +37165,8 @@ export type JiraFormulaFieldFixContext = {
   previousResponses?: InputMaybe<Array<Scalars['String']['input']>>;
   /** The project ID where the formula field is being created/edited if applicable */
   projectId?: InputMaybe<Scalars['String']['input']>;
+  /** The project key where the formula field is being created/edited if applicable */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Represents types used for input parameters for Formula Expression Functions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
@@ -36967,6 +37190,8 @@ export type JiraFormulaFieldSuggestionContext = {
   previousResponses?: InputMaybe<Array<Scalars['String']['input']>>;
   /** The project ID where the formula field is being created/edited if applicable */
   projectId?: InputMaybe<Scalars['String']['input']>;
+  /** The project key where the formula field is being created/edited if applicable */
+  projectKey?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Represents types returned within Formula Field expressions. Note: These do not represent Formula Field Field Types, i.e. some values may not have a corresponding formula field field type */
@@ -44331,6 +44556,7 @@ export type JpdViewsServiceAxisConfigInput = {
 
 export type JpdViewsServiceCloneGlobalViewInput = {
   id: Scalars['ID']['input'];
+  name?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type JpdViewsServiceCloneViewIntoGlobalInput = {
@@ -44651,7 +44877,25 @@ export type JsmChannelsExperienceConfigurationInput = {
 };
 
 export type JsmChannelsFilterConfigurationInput = {
+  evaluationStrategy?: InputMaybe<JsmChannelsRuleEvaluationStrategy>;
+  jqlRules?: InputMaybe<Array<JsmChannelsJqlEnablementRuleInput>>;
   requestTypes?: InputMaybe<Array<JsmChannelsRequestTypesInput>>;
+};
+
+/**
+ * One JQL-based rule: if the issue matches jqlExpression, use the given execution mode.
+ * Rules are ordered by priority (lower numbers first); first matching rule wins.
+ */
+export type JsmChannelsJqlEnablementRuleInput = {
+  /** Stable id for updates and merges. Omit to create a new rule (server may assign id). */
+  id?: InputMaybe<Scalars['String']['input']>;
+  /** Raw JQL as in Jira (e.g. project = FOO AND priority = High). */
+  jqlExpression: Scalars['String']['input'];
+  mode: JsmChannelsRequestTypeExecutionMode;
+  /** Optional label for operators and logs. */
+  name?: InputMaybe<Scalars['String']['input']>;
+  /** Lower value = evaluated earlier among jqlRules. */
+  priority: Scalars['Int']['input'];
 };
 
 export enum JsmChannelsOrchestratorConversationActionType {
@@ -44757,6 +45001,12 @@ export enum JsmChannelsResolutionPlanStepStatus {
   InProgress = 'IN_PROGRESS',
   Pending = 'PENDING',
   Waiting = 'WAITING'
+}
+
+export enum JsmChannelsRuleEvaluationStrategy {
+  JqlFirst = 'JQL_FIRST',
+  JqlOnly = 'JQL_ONLY',
+  RequestTypeFirst = 'REQUEST_TYPE_FIRST'
 }
 
 /** Input for updating the task agent configuration */
@@ -45131,13 +45381,24 @@ export enum KitsuneJobType {
   ExportFeedback = 'EXPORT_FEEDBACK',
   ImportCustomer = 'IMPORT_CUSTOMER',
   ImportFeedback = 'IMPORT_FEEDBACK',
-  ImportOrganization = 'IMPORT_ORGANIZATION'
+  ImportOrganization = 'IMPORT_ORGANIZATION',
+  SyncCsmProperties = 'SYNC_CSM_PROPERTIES'
 }
 
 export enum KitsuneLogicalOperator {
   And = 'AND',
   Or = 'OR'
 }
+
+export enum KitsuneOrganizationDomainAction {
+  Add = 'ADD',
+  Remove = 'REMOVE'
+}
+
+export type KitsuneOrganizationDomainInput = {
+  action: KitsuneOrganizationDomainAction;
+  domainName: Scalars['String']['input'];
+};
 
 export type KitsunePaginationInput = {
   after?: InputMaybe<Scalars['String']['input']>;
@@ -45154,6 +45415,12 @@ export type KitsuneRankInput = {
 export type KitsuneSearchFeedbackInput = {
   config?: InputMaybe<KitsuneViewConfigInput>;
   viewId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+/**  --------------------------------------------------------------------------------------------- */
+export type KitsuneSnippetInput = {
+  content: Array<Scalars['String']['input']>;
+  feedbackId: Scalars['ID']['input'];
 };
 
 export enum KitsuneSourceCategoryType {
@@ -45568,6 +45835,17 @@ export enum KnowledgeDiscoveryJiraSearchClassificationType {
 /**  Start Jira intent detection types */
 export enum KnowledgeDiscoveryJiraSearchExperience {
   QuickFind = 'QUICK_FIND'
+}
+
+export enum KnowledgeDiscoveryJiraSearchPatternType {
+  Empty = 'EMPTY',
+  ExtendedPhrase = 'EXTENDED_PHRASE',
+  JiraNlPattern = 'JIRA_NL_PATTERN',
+  Jql = 'JQL',
+  NoPattern = 'NO_PATTERN',
+  Numeric = 'NUMERIC',
+  QuestionPattern = 'QUESTION_PATTERN',
+  SingleWord = 'SINGLE_WORD'
 }
 
 export enum KnowledgeDiscoveryKeyPhraseCategory {
@@ -47257,6 +47535,7 @@ export type MarketplaceStoreInstallAppTargetInput = {
 
 /** Products onto which an app can be installed */
 export enum MarketplaceStoreInstallationTargetProduct {
+  Bitbucket = 'BITBUCKET',
   Compass = 'COMPASS',
   Confluence = 'CONFLUENCE',
   Jira = 'JIRA',
@@ -47341,7 +47620,7 @@ export type MarketplaceStorePersonalisationContextInput = {
 
 /**  --------------------------------------------------------------------------------------------- */
 export enum MarketplaceStorePersonalisationTargetSurface {
-  StoreHome = 'STORE_HOME'
+  UnifiedStore = 'UNIFIED_STORE'
 }
 
 export type MarketplaceStorePersonalisedContextAndLayoutInput = {
@@ -47401,7 +47680,7 @@ export type MarketplaceStoreUpdateAppRequestStatusInput = {
   appRequestStatus: MarketplaceStoreAppRequestStatus;
   cloudId: Scalars['String']['input'];
   comment?: InputMaybe<Scalars['String']['input']>;
-  edition?: InputMaybe<Scalars['String']['input']>;
+  edition?: InputMaybe<MarketplaceStoreEditionType>;
   productId: Scalars['ID']['input'];
   productName: Scalars['String']['input'];
 };
@@ -47494,6 +47773,16 @@ export type MercuryAddTagsToProposalInput = {
 };
 
 /**
+ * ###################################################################################################################
+ *  WATCHERS
+ * ###################################################################################################################
+ */
+export type MercuryAddWatcherToBusinessDomainInput = {
+  businessDomainId: Scalars['ID']['input'];
+  userId: Scalars['ID']['input'];
+};
+
+/**
  *  ------------------------------------------------------
  *   Watch/Unwatch Focus Area mutations
  *  ------------------------------------------------------
@@ -47502,6 +47791,27 @@ export type MercuryAddWatcherToFocusAreaInput = {
   cloudId: Scalars['ID']['input'];
   focusAreaId: Scalars['ID']['input'];
   userId: Scalars['ID']['input'];
+};
+
+/**
+ * ###################################################################################################################
+ *  WATCHERS
+ * ###################################################################################################################
+ */
+export type MercuryAddWatcherToOrganizationInput = {
+  organizationId: Scalars['ID']['input'];
+  userId: Scalars['ID']['input'];
+};
+
+export type MercuryArchiveBusinessDomainInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  comment?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryArchiveBusinessDomainValidationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
 };
 
 export type MercuryArchiveFocusAreaChangeInput = {
@@ -47527,6 +47837,22 @@ export type MercuryArchiveFocusAreaValidationInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryArchiveOrganizationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  comment?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryArchiveOrganizationValidationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryAssignUserAccessToBusinessDomainInput = {
+  businessDomainAri: Scalars['ID']['input'];
+  businessDomainUserAccessAssignment?: InputMaybe<Array<InputMaybe<MercuryBusinessDomainUserAccessInput>>>;
+};
+
 /**
  *  ------------------------------------------------------
  *   Focus Area User Access mutations
@@ -47535,6 +47861,11 @@ export type MercuryArchiveFocusAreaValidationInput = {
 export type MercuryAssignUserAccessToFocusAreaInput = {
   focusAreaAri: Scalars['ID']['input'];
   focusAreaUserAccessAssignment: Array<InputMaybe<MercuryFocusAreaUserAccessInput>>;
+};
+
+export type MercuryAssignUserAccessToOrganizationInput = {
+  organizationAri: Scalars['ID']['input'];
+  organizationUserAccessAssignment?: InputMaybe<Array<InputMaybe<MercuryOrganizationUserAccessInput>>>;
 };
 
 export type MercuryBenefitItemSort = {
@@ -47554,6 +47885,136 @@ export type MercuryBooleanCustomFieldInput = {
   /** The boolean value to set on the custom field. */
   booleanValue?: InputMaybe<Scalars['Boolean']['input']>;
 };
+
+export type MercuryBulkCreateBusinessDomainTypesInput = {
+  businessDomainHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+  cloudId: Scalars['ID']['input'];
+  names?: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+export type MercuryBulkCreateOrganizationTypesInput = {
+  cloudId: Scalars['ID']['input'];
+  names?: InputMaybe<Array<Scalars['String']['input']>>;
+  organizationHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export enum MercuryBusinessDomainHealthColor {
+  Green = 'GREEN',
+  Red = 'RED',
+  Yellow = 'YELLOW'
+}
+
+export type MercuryBusinessDomainHierarchySort = {
+  field: MercuryBusinessDomainHierarchySortField;
+  order: SortOrder;
+};
+
+export enum MercuryBusinessDomainHierarchySortField {
+  Name = 'NAME'
+}
+
+export enum MercuryBusinessDomainHierarchyTypeKey {
+  Investment = 'INVESTMENT',
+  Portfolio = 'PORTFOLIO'
+}
+
+/** The action being performed on the Business Domain in the FE */
+export enum MercuryBusinessDomainLinkAction {
+  LinkChildren = 'LINK_CHILDREN',
+  LinkParent = 'LINK_PARENT',
+  UnlinkChildren = 'UNLINK_CHILDREN',
+  UnlinkParent = 'UNLINK_PARENT'
+}
+
+export enum MercuryBusinessDomainPermission {
+  Archive = 'ARCHIVE',
+  CreateGoalLink = 'CREATE_GOAL_LINK',
+  CreateLink = 'CREATE_LINK',
+  CreateUpdate = 'CREATE_UPDATE',
+  CreateWorkLink = 'CREATE_WORK_LINK',
+  Delete = 'DELETE',
+  DeleteGoalLink = 'DELETE_GOAL_LINK',
+  DeleteLink = 'DELETE_LINK',
+  DeleteUpdate = 'DELETE_UPDATE',
+  DeleteWorkLink = 'DELETE_WORK_LINK',
+  EditAbout = 'EDIT_ABOUT',
+  EditName = 'EDIT_NAME',
+  EditOwner = 'EDIT_OWNER',
+  EditType = 'EDIT_TYPE',
+  Export = 'EXPORT',
+  ViewFund = 'VIEW_FUND'
+}
+
+export type MercuryBusinessDomainSort = {
+  /** Either 'field' or 'fieldKey' must be provided, but not both. */
+  field?: InputMaybe<MercuryBusinessDomainSortField>;
+  fieldKey?: InputMaybe<Scalars['String']['input']>;
+  order: SortOrder;
+};
+
+export enum MercuryBusinessDomainSortField {
+  BusinessDomainType = 'BUSINESS_DOMAIN_TYPE',
+  HasParent = 'HAS_PARENT',
+  Health = 'HEALTH',
+  HierarchyLevel = 'HIERARCHY_LEVEL',
+  LastUpdated = 'LAST_UPDATED',
+  Name = 'NAME',
+  Starred = 'STARRED',
+  Status = 'STATUS',
+  TargetDate = 'TARGET_DATE',
+  Watching = 'WATCHING'
+}
+
+export enum MercuryBusinessDomainSummaryType {
+  BusinessDomain = 'BUSINESS_DOMAIN',
+  Goals = 'GOALS',
+  Work = 'WORK'
+}
+
+export type MercuryBusinessDomainTargetDateInput = {
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryBusinessDomainTargetDateType>;
+};
+
+export enum MercuryBusinessDomainTargetDateType {
+  Day = 'DAY',
+  Month = 'MONTH',
+  Quarter = 'QUARTER'
+}
+
+export type MercuryBusinessDomainUserAccessInput = {
+  accessLevel?: InputMaybe<MercuryBusinessDomainUserAccessLevel>;
+  addAsFollower?: InputMaybe<Scalars['Boolean']['input']>;
+  principalId: Scalars['ID']['input'];
+};
+
+export enum MercuryBusinessDomainUserAccessLevel {
+  Edit = 'EDIT',
+  View = 'VIEW'
+}
+
+export enum MercuryBusinessDomainUserAccessReason {
+  AccessGranted = 'ACCESS_GRANTED',
+  AlreadyHasAccess = 'ALREADY_HAS_ACCESS',
+  RequiresAppAccess = 'REQUIRES_APP_ACCESS',
+  RequiresNewProductRole = 'REQUIRES_NEW_PRODUCT_ROLE',
+  RequiresSiteAccess = 'REQUIRES_SITE_ACCESS'
+}
+
+export type MercuryBusinessDomainViewSort = {
+  field: MercuryBusinessDomainViewSortField;
+  order: SortOrder;
+};
+
+export enum MercuryBusinessDomainViewSortField {
+  Name = 'NAME',
+  Owner = 'OWNER',
+  Starred = 'STARRED'
+}
+
+export enum MercuryBusinessDomainViewType {
+  HierarchyView = 'HIERARCHY_VIEW'
+}
 
 export type MercuryChangeParentFocusAreaChangeInput = {
   /** The ARI of the Focus Area being moved. */
@@ -47709,6 +48170,64 @@ export type MercuryCreateBooleanCustomFieldDefinitionInput = {
   base: MercuryCreateBaseCustomFieldDefinitionInput;
 };
 
+export type MercuryCreateBusinessDomainCustomFieldDefinitionInput = {
+  /** The site ID. */
+  cloudId: Scalars['ID']['input'];
+  /** Input for core custom field definition types. */
+  coreCustomFieldDefinition?: InputMaybe<MercuryCreateCoreCustomFieldDefinitionInput>;
+};
+
+export type MercuryCreateBusinessDomainHierarchyInput = {
+  cloudId: Scalars['ID']['input'];
+  hierarchyTypeKey: MercuryBusinessDomainHierarchyTypeKey;
+  name: Scalars['String']['input'];
+};
+
+/**
+ * ###################################################################################################################
+ *  BUSINESS DOMAINS - INPUT TYPES
+ * ###################################################################################################################
+ */
+export type MercuryCreateBusinessDomainInput = {
+  businessDomainTypeId: Scalars['ID']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** Optional unique identifier for correlating a Business Domain with external systems or records. */
+  externalId?: InputMaybe<Scalars['String']['input']>;
+  name: Scalars['String']['input'];
+  owner?: InputMaybe<Scalars['ID']['input']>;
+  /** Optional ID of the parent Business Domain in the hierarchy. If not provided the Business Domain has no parent. */
+  parentBusinessDomainId?: InputMaybe<Scalars['ID']['input']>;
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryBusinessDomainTargetDateType>;
+};
+
+export type MercuryCreateBusinessDomainStatusUpdateInput = {
+  /** ID of the Business Domain for which an update is posted. */
+  businessDomainId: Scalars['ID']['input'];
+  /** The new target date for the Business Domain. */
+  newTargetDate?: InputMaybe<MercuryBusinessDomainTargetDateInput>;
+  /** The ID of the status to transition the Business Domain to as part of the update. */
+  statusTransitionId?: InputMaybe<Scalars['ID']['input']>;
+  /** The summary text (ADF) for the update. */
+  summary?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MercuryCreateBusinessDomainTypeInput = {
+  businessDomainHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+  cloudId: Scalars['ID']['input'];
+  /** Desired order of the Business Domain - 0 for the highest level, 1 for the next level, etc. */
+  level?: InputMaybe<Scalars['Int']['input']>;
+  name: Scalars['String']['input'];
+};
+
+export type MercuryCreateBusinessDomainViewBusinessDomainsInput = {
+  businessDomainIds: Array<Scalars['ID']['input']>;
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  name: Scalars['String']['input'];
+  owner?: InputMaybe<Scalars['String']['input']>;
+  viewType?: InputMaybe<MercuryBusinessDomainViewType>;
+};
+
 export type MercuryCreateChangeProposalCommentInput = {
   cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The content of the comment. */
@@ -47771,8 +48290,10 @@ export type MercuryCreateCoreCustomFieldDefinitionInput = {
   booleanField?: InputMaybe<MercuryCreateBooleanCustomFieldDefinitionInput>;
   dateField?: InputMaybe<MercuryCreateDateCustomFieldDefinitionInput>;
   multiSelectField?: InputMaybe<MercuryCreateMultiSelectCustomFieldDefinitionInput>;
+  multiUserField?: InputMaybe<MercuryCreateMultiUserCustomFieldDefinitionInput>;
   numberField?: InputMaybe<MercuryCreateNumberCustomFieldDefinitionInput>;
   singleSelectField?: InputMaybe<MercuryCreateSingleSelectCustomFieldDefinitionInput>;
+  singleUserField?: InputMaybe<MercuryCreateSingleUserCustomFieldDefinitionInput>;
   textField?: InputMaybe<MercuryCreateTextCustomFieldDefinitionInput>;
 };
 
@@ -47919,8 +48440,71 @@ export type MercuryCreateMultiSelectCustomFieldDefinitionInput = {
   options: Array<MercuryCustomSelectFieldOptionInput>;
 };
 
+export type MercuryCreateMultiUserCustomFieldDefinitionInput = {
+  /** The base input for a custom field definition. */
+  base: MercuryCreateBaseCustomFieldDefinitionInput;
+};
+
 export type MercuryCreateNumberCustomFieldDefinitionInput = {
   base: MercuryCreateBaseCustomFieldDefinitionInput;
+};
+
+export type MercuryCreateOrganizationCustomFieldDefinitionInput = {
+  /** The site ID. */
+  cloudId: Scalars['ID']['input'];
+  /** Input for core custom field definition types. */
+  coreCustomFieldDefinition?: InputMaybe<MercuryCreateCoreCustomFieldDefinitionInput>;
+};
+
+export type MercuryCreateOrganizationHierarchyInput = {
+  cloudId: Scalars['ID']['input'];
+  hierarchyTypeKey: MercuryOrganizationHierarchyTypeKey;
+  name: Scalars['String']['input'];
+};
+
+/**
+ * ###################################################################################################################
+ *  ORGANIZATIONS - INPUT TYPES
+ * ###################################################################################################################
+ */
+export type MercuryCreateOrganizationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** Optional unique identifier for correlating an Organization with external systems or records. */
+  externalId?: InputMaybe<Scalars['String']['input']>;
+  name: Scalars['String']['input'];
+  organizationTypeId: Scalars['ID']['input'];
+  owner?: InputMaybe<Scalars['ID']['input']>;
+  /** Optional ID of the parent Organization in the hierarchy. If not provided the Organization has no parent. */
+  parentOrganizationId?: InputMaybe<Scalars['ID']['input']>;
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryOrganizationTargetDateType>;
+};
+
+export type MercuryCreateOrganizationStatusUpdateInput = {
+  /** The new target date for the Organization. */
+  newTargetDate?: InputMaybe<MercuryOrganizationTargetDateInput>;
+  /** ID of the Organization for which an update is posted. */
+  organizationId: Scalars['ID']['input'];
+  /** The ID of the status to transition the Organization to as part of the update. */
+  statusTransitionId?: InputMaybe<Scalars['ID']['input']>;
+  /** The summary text (ADF) for the update. */
+  summary?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MercuryCreateOrganizationTypeInput = {
+  cloudId: Scalars['ID']['input'];
+  /** Desired order of the Organization - 0 for the highest level, 1 for the next level, etc. */
+  level?: InputMaybe<Scalars['Int']['input']>;
+  name: Scalars['String']['input'];
+  organizationHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type MercuryCreateOrganizationViewOrganizationsInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  name: Scalars['String']['input'];
+  organizationIds: Array<Scalars['ID']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+  viewType?: InputMaybe<MercuryOrganizationViewType>;
 };
 
 export type MercuryCreatePortfolioFocusAreasInput = {
@@ -47966,6 +48550,11 @@ export type MercuryCreateSingleSelectCustomFieldDefinitionInput = {
   options: Array<MercuryCustomSelectFieldOptionInput>;
 };
 
+export type MercuryCreateSingleUserCustomFieldDefinitionInput = {
+  /** The base input for a custom field definition. */
+  base: MercuryCreateBaseCustomFieldDefinitionInput;
+};
+
 export type MercuryCreateStrategicEventCommentInput = {
   cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The content of the comment. */
@@ -47994,6 +48583,15 @@ export type MercuryCreateStrategicEventInput = {
 
 export type MercuryCreateTextCustomFieldDefinitionInput = {
   base: MercuryCreateBaseCustomFieldDefinitionInput;
+};
+
+export type MercuryCreateThreadedCommentInput = {
+  cloudId: Scalars['ID']['input'];
+  commentText: Scalars['String']['input'];
+  /** The ARI of the the top-level container entity, for example the risk for a threaded comment. */
+  containerId: Scalars['ID']['input'];
+  /** The ARI of the immediate parent entity, for example a risk or a parent comment. */
+  parentId: Scalars['ID']['input'];
 };
 
 export type MercuryCustomFieldDefinitionSort = {
@@ -48073,6 +48671,48 @@ export type MercuryDeleteBenefitPeriodValueInput = {
 };
 
 export type MercuryDeleteBenefitTypeInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainGoalLinksInput = {
+  atlasGoalAris: Array<Scalars['String']['input']>;
+  businessDomainAri: Scalars['String']['input'];
+};
+
+export type MercuryDeleteBusinessDomainHierarchyInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainLinkInput = {
+  businessDomainLinkAction?: InputMaybe<MercuryBusinessDomainLinkAction>;
+  cloudId: Scalars['ID']['input'];
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainStatusUpdateInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** The ID of the Business Domain status update entry. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainTypeInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  dryRun?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteBusinessDomainViewBusinessDomainLinkInput = {
+  businessDomainIds: Array<Scalars['ID']['input']>;
+  businessDomainViewId: Scalars['ID']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+};
+
+export type MercuryDeleteBusinessDomainViewInput = {
   id: Scalars['ID']['input'];
 };
 
@@ -48170,6 +48810,48 @@ export type MercuryDeleteInvestmentCategoryInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryDeleteOrganizationGoalLinksInput = {
+  atlasGoalAris: Array<Scalars['String']['input']>;
+  organizationAri: Scalars['String']['input'];
+};
+
+export type MercuryDeleteOrganizationHierarchyInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteOrganizationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteOrganizationLinkInput = {
+  cloudId: Scalars['ID']['input'];
+  id: Scalars['ID']['input'];
+  organizationLinkAction?: InputMaybe<MercuryOrganizationLinkAction>;
+};
+
+export type MercuryDeleteOrganizationStatusUpdateInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** The ID of the Organization status update entry. */
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteOrganizationTypeInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  dryRun?: InputMaybe<Scalars['Boolean']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteOrganizationViewInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteOrganizationViewOrganizationLinkInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  organizationIds: Array<Scalars['ID']['input']>;
+  organizationViewId: Scalars['ID']['input'];
+};
+
 export type MercuryDeletePortfolioFocusAreaLinkInput = {
   cloudId: Scalars['ID']['input'];
   focusAreaIds: Array<Scalars['ID']['input']>;
@@ -48205,6 +48887,11 @@ export type MercuryDeleteStrategicEventCommentInput = {
 };
 
 export type MercuryDeleteStrategicEventInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryDeleteThreadedCommentInput = {
+  cloudId: Scalars['ID']['input'];
   id: Scalars['ID']['input'];
 };
 
@@ -48417,8 +49104,6 @@ export type MercuryForYouInsightsFilter = {
  * ###################################################################################################################
  */
 export enum MercuryFundsPermission {
-  /**  TODO: Cleanup CREATE_COST_ITEM after FE is migrated to EDIT_FUND_ITEM */
-  CreateCostItem = 'CREATE_COST_ITEM',
   EditBaseline = 'EDIT_BASELINE',
   EditBudget = 'EDIT_BUDGET',
   EditFundItem = 'EDIT_FUND_ITEM',
@@ -48499,6 +49184,27 @@ export type MercuryLinkAtlassianWorkToFocusAreaInput = {
   workAris: Array<Scalars['String']['input']>;
 };
 
+/** Input for linking a Business Domain to a third-party document */
+export type MercuryLinkBusinessDomainToThirdPartyDocumentInput = {
+  /** The ARI of the Business Domain */
+  id: Scalars['ID']['input'];
+  /** The ARI of the third-party document to link (e.g., Google Drive, OneDrive, Dropbox) */
+  thirdPartyDocumentId: Scalars['ID']['input'];
+};
+
+export type MercuryLinkBusinessDomainsToBusinessDomainInput = {
+  businessDomainLinkAction?: InputMaybe<MercuryBusinessDomainLinkAction>;
+  childBusinessDomainIds: Array<Scalars['ID']['input']>;
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  parentBusinessDomainId: Scalars['ID']['input'];
+};
+
+export type MercuryLinkBusinessDomainsToBusinessDomainViewInput = {
+  businessDomainIds: Array<Scalars['ID']['input']>;
+  businessDomainViewId: Scalars['ID']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+};
+
 /**
  *  ------------------------------------------------------
  *   Focus Area links
@@ -48521,6 +49227,12 @@ export type MercuryLinkFocusAreasToPortfolioInput = {
   portfolioId: Scalars['ID']['input'];
 };
 
+export type MercuryLinkGoalsToBusinessDomainInput = {
+  atlasGoalAris?: InputMaybe<Array<Scalars['String']['input']>>;
+  atlasGoalIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  parentBusinessDomainId: Scalars['ID']['input'];
+};
+
 /**
  *  ----------------------------------------
  *   Goal to change proposal link mutations
@@ -48541,11 +49253,50 @@ export type MercuryLinkGoalsToFocusAreaInput = {
   focusAreaAri: Scalars['String']['input'];
 };
 
+export type MercuryLinkGoalsToOrganizationInput = {
+  atlasGoalAris?: InputMaybe<Array<Scalars['String']['input']>>;
+  atlasGoalIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+  parentOrganizationId: Scalars['ID']['input'];
+};
+
+/** Input for linking an Organization to a third-party document */
+export type MercuryLinkOrganizationToThirdPartyDocumentInput = {
+  /** The ARI of the Organization */
+  id: Scalars['ID']['input'];
+  /** The ARI of the third-party document to link (e.g., Google Drive, OneDrive, Dropbox) */
+  thirdPartyDocumentId: Scalars['ID']['input'];
+};
+
+export type MercuryLinkOrganizationsToOrganizationInput = {
+  childOrganizationIds: Array<Scalars['ID']['input']>;
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  organizationLinkAction?: InputMaybe<MercuryOrganizationLinkAction>;
+  parentOrganizationId: Scalars['ID']['input'];
+};
+
+export type MercuryLinkOrganizationsToOrganizationViewInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  organizationIds: Array<Scalars['ID']['input']>;
+  organizationViewId: Scalars['ID']['input'];
+};
+
 export type MercuryLinkRiskToFocusAreasInput = {
   /** The ARIs of the focus areas to link. */
   focusAreaIds: Array<Scalars['ID']['input']>;
   /** The ARI of the Risk to link focus areas to. */
   id: Scalars['ID']['input'];
+};
+
+/**
+ *  ------------------------------------------------------
+ *   Benefit Item Work links
+ *  ------------------------------------------------------
+ */
+export type MercuryLinkWorkToBenefitItemInput = {
+  /** The benefit item ID (ARI) to link work to. */
+  benefitItemId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to link to the benefit item. */
+  workIds: Array<Scalars['ID']['input']>;
 };
 
 /**
@@ -48641,6 +49392,7 @@ export type MercuryNormalizedWorkSearchFiltersInput = {
   source?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   targetDate?: InputMaybe<MercuryNormalizedWorkTargetDateInput>;
+  targetDateRange?: InputMaybe<MercuryNormalizedWorkTargetDateRangeInput>;
   type?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
@@ -48664,9 +49416,132 @@ export type MercuryNormalizedWorkTargetDateInput = {
   targetDateType?: InputMaybe<MercuryProjectTargetDateType>;
 };
 
+export type MercuryNormalizedWorkTargetDateRangeInput = {
+  targetDateMax?: InputMaybe<Scalars['String']['input']>;
+  targetDateMin?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MercuryNumberCustomFieldInput = {
   numberValue?: InputMaybe<Scalars['Float']['input']>;
 };
+
+export enum MercuryOrganizationHealthColor {
+  Green = 'GREEN',
+  Red = 'RED',
+  Yellow = 'YELLOW'
+}
+
+export type MercuryOrganizationHierarchySort = {
+  field: MercuryOrganizationHierarchySortField;
+  order: SortOrder;
+};
+
+export enum MercuryOrganizationHierarchySortField {
+  Name = 'NAME'
+}
+
+export enum MercuryOrganizationHierarchyTypeKey {
+  Investment = 'INVESTMENT',
+  Portfolio = 'PORTFOLIO'
+}
+
+/** The action being performed on the Organization in the FE */
+export enum MercuryOrganizationLinkAction {
+  LinkChildren = 'LINK_CHILDREN',
+  LinkParent = 'LINK_PARENT',
+  UnlinkChildren = 'UNLINK_CHILDREN',
+  UnlinkParent = 'UNLINK_PARENT'
+}
+
+export enum MercuryOrganizationPermission {
+  Archive = 'ARCHIVE',
+  CreateGoalLink = 'CREATE_GOAL_LINK',
+  CreateLink = 'CREATE_LINK',
+  CreateUpdate = 'CREATE_UPDATE',
+  CreateWorkLink = 'CREATE_WORK_LINK',
+  Delete = 'DELETE',
+  DeleteGoalLink = 'DELETE_GOAL_LINK',
+  DeleteLink = 'DELETE_LINK',
+  DeleteUpdate = 'DELETE_UPDATE',
+  DeleteWorkLink = 'DELETE_WORK_LINK',
+  EditAbout = 'EDIT_ABOUT',
+  EditName = 'EDIT_NAME',
+  EditOwner = 'EDIT_OWNER',
+  EditType = 'EDIT_TYPE',
+  Export = 'EXPORT',
+  ViewFund = 'VIEW_FUND'
+}
+
+export type MercuryOrganizationSort = {
+  /** Either 'field' or 'fieldKey' must be provided, but not both. */
+  field?: InputMaybe<MercuryOrganizationSortField>;
+  fieldKey?: InputMaybe<Scalars['String']['input']>;
+  order: SortOrder;
+};
+
+export enum MercuryOrganizationSortField {
+  HasParent = 'HAS_PARENT',
+  Health = 'HEALTH',
+  HierarchyLevel = 'HIERARCHY_LEVEL',
+  LastUpdated = 'LAST_UPDATED',
+  Name = 'NAME',
+  OrganizationType = 'ORGANIZATION_TYPE',
+  Starred = 'STARRED',
+  Status = 'STATUS',
+  TargetDate = 'TARGET_DATE',
+  Watching = 'WATCHING'
+}
+
+export enum MercuryOrganizationSummaryType {
+  Goals = 'GOALS',
+  Organization = 'ORGANIZATION',
+  Work = 'WORK'
+}
+
+export type MercuryOrganizationTargetDateInput = {
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryOrganizationTargetDateType>;
+};
+
+export enum MercuryOrganizationTargetDateType {
+  Day = 'DAY',
+  Month = 'MONTH',
+  Quarter = 'QUARTER'
+}
+
+export type MercuryOrganizationUserAccessInput = {
+  accessLevel?: InputMaybe<MercuryOrganizationUserAccessLevel>;
+  addAsFollower?: InputMaybe<Scalars['Boolean']['input']>;
+  principalId: Scalars['ID']['input'];
+};
+
+export enum MercuryOrganizationUserAccessLevel {
+  Edit = 'EDIT',
+  View = 'VIEW'
+}
+
+export enum MercuryOrganizationUserAccessReason {
+  AccessGranted = 'ACCESS_GRANTED',
+  AlreadyHasAccess = 'ALREADY_HAS_ACCESS',
+  RequiresAppAccess = 'REQUIRES_APP_ACCESS',
+  RequiresNewProductRole = 'REQUIRES_NEW_PRODUCT_ROLE',
+  RequiresSiteAccess = 'REQUIRES_SITE_ACCESS'
+}
+
+export type MercuryOrganizationViewSort = {
+  field: MercuryOrganizationViewSortField;
+  order: SortOrder;
+};
+
+export enum MercuryOrganizationViewSortField {
+  Name = 'NAME',
+  Owner = 'OWNER',
+  Starred = 'STARRED'
+}
+
+export enum MercuryOrganizationViewType {
+  HierarchyView = 'HIERARCHY_VIEW'
+}
 
 export enum MercuryPassionfruitPermission {
   CreateAsk = 'CREATE_ASK',
@@ -48816,9 +49691,29 @@ export enum MercuryProviderWorkTargetDateType {
   Quarter = 'QUARTER'
 }
 
+export type MercuryPublishBusinessDomainInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
 export type MercuryPublishFocusAreaInput = {
   cloudId?: InputMaybe<Scalars['ID']['input']>;
   id: Scalars['ID']['input'];
+};
+
+export type MercuryPublishOrganizationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryRecreateBusinessDomainViewBusinessDomainsInput = {
+  businessDomainIds: Array<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryRecreateOrganizationViewOrganizationsInput = {
+  id: Scalars['ID']['input'];
+  organizationIds: Array<Scalars['ID']['input']>;
 };
 
 export type MercuryRecreatePortfolioFocusAreasInput = {
@@ -48835,14 +49730,34 @@ export type MercuryRemoveTagsFromProposalInput = {
   tagIds: Array<Scalars['ID']['input']>;
 };
 
+export type MercuryRemoveUserAccessToBusinessDomainInput = {
+  businessDomainAri: Scalars['ID']['input'];
+  principalIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
 export type MercuryRemoveUserAccessToFocusAreaInput = {
   focusAreaAri: Scalars['ID']['input'];
   principalIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
+export type MercuryRemoveUserAccessToOrganizationInput = {
+  organizationAri: Scalars['ID']['input'];
+  principalIds?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+export type MercuryRemoveWatcherFromBusinessDomainInput = {
+  businessDomainId: Scalars['ID']['input'];
+  userId: Scalars['ID']['input'];
+};
+
 export type MercuryRemoveWatcherFromFocusAreaInput = {
   cloudId: Scalars['ID']['input'];
   focusAreaId: Scalars['ID']['input'];
+  userId: Scalars['ID']['input'];
+};
+
+export type MercuryRemoveWatcherFromOrganizationInput = {
+  organizationId: Scalars['ID']['input'];
   userId: Scalars['ID']['input'];
 };
 
@@ -48855,11 +49770,25 @@ export type MercuryRenameFocusAreaChangeInput = {
   targetFocusAreaId: Scalars['ID']['input'];
 };
 
+export type MercuryReorderBusinessDomainTypesInput = {
+  businessDomainHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+  businessDomainTypeIds: Array<Scalars['ID']['input']>;
+  cloudId: Scalars['ID']['input'];
+  dryRun?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MercuryReorderCustomFieldDefinitionOptionsInput = {
   /** The ID of the custom field definition. */
   customFieldDefinitionId: Scalars['ID']['input'];
   /** The option IDs in the desired order. */
   optionIds: Array<Scalars['ID']['input']>;
+};
+
+export type MercuryReorderOrganizationTypesInput = {
+  cloudId: Scalars['ID']['input'];
+  dryRun?: InputMaybe<Scalars['Boolean']['input']>;
+  organizationHierarchyId?: InputMaybe<Scalars['ID']['input']>;
+  organizationTypeIds: Array<Scalars['ID']['input']>;
 };
 
 export type MercuryRequestFundsChangeInput = {
@@ -48881,6 +49810,18 @@ export type MercuryRequestPositionsChangeInput = {
   /** The ARI of the Focus Area the Positions are being requested for. */
   targetFocusAreaId: Scalars['ID']['input'];
 };
+
+export type MercuryRiskActivitySort = {
+  order: SortOrder;
+};
+
+export enum MercuryRiskEventType {
+  Create = 'CREATE',
+  Delete = 'DELETE',
+  LinkFocusArea = 'LINK_FOCUS_AREA',
+  UnlinkFocusArea = 'UNLINK_FOCUS_AREA',
+  Update = 'UPDATE'
+}
 
 /**
  *  ----------------------------------------
@@ -48940,6 +49881,23 @@ export type MercurySetBaselineInput = {
   startYearMonth: Scalars['String']['input'];
 };
 
+export type MercurySetBusinessDomainCustomFieldInput = {
+  /** The ARI of the Business Domain to update. */
+  businessDomainId: Scalars['ID']['input'];
+  /** Input for core custom field types. */
+  coreField?: InputMaybe<MercuryCustomFieldInput>;
+  /** The ARI of the custom field definition to set the value for. */
+  customFieldDefinitionId: Scalars['ID']['input'];
+};
+
+/** Input for setting multiple custom fields */
+export type MercurySetBusinessDomainCustomFieldsInput = {
+  /** Cloud ID only when routing via AGG */
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** List of custom field to set. */
+  customFields: Array<MercurySetBusinessDomainCustomFieldInput>;
+};
+
 export type MercurySetChangeProposalCustomFieldInput = {
   /** The ARI of the change proposal to update. */
   changeProposalId: Scalars['ID']['input'];
@@ -48979,6 +49937,23 @@ export type MercurySetFocusAreaCustomFieldsInput = {
   customFields: Array<MercurySetFocusAreaCustomFieldInput>;
 };
 
+export type MercurySetOrganizationCustomFieldInput = {
+  /** Input for core custom field types. */
+  coreField?: InputMaybe<MercuryCustomFieldInput>;
+  /** The ARI of the custom field definition to set the value for. */
+  customFieldDefinitionId: Scalars['ID']['input'];
+  /** The ARI of the Organization to update. */
+  organizationId: Scalars['ID']['input'];
+};
+
+/** Input for setting multiple custom fields */
+export type MercurySetOrganizationCustomFieldsInput = {
+  /** Cloud ID only when routing via AGG */
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  /** List of custom field to set. */
+  customFields: Array<MercurySetOrganizationCustomFieldInput>;
+};
+
 /**
  *  ----------------------------------------
  *   Preference Mutations
@@ -49000,12 +49975,30 @@ export type MercurySingleUserCustomFieldInput = {
 };
 
 /**
+ * ###################################################################################################################
+ *  STARS
+ * ###################################################################################################################
+ */
+export type MercuryStarBusinessDomainInput = {
+  businessDomainId: Scalars['ID']['input'];
+};
+
+/**
  *  ------------------------------------------------------
  *   Star/Unstar Focus Area mutations
  *  ------------------------------------------------------
  */
 export type MercuryStarFocusAreaInput = {
   focusAreaId: Scalars['ID']['input'];
+};
+
+/**
+ * ###################################################################################################################
+ *  STARS
+ * ###################################################################################################################
+ */
+export type MercuryStarOrganizationInput = {
+  organizationId: Scalars['ID']['input'];
 };
 
 /**
@@ -49042,6 +50035,12 @@ export type MercuryTextCustomFieldInput = {
   textValue?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type MercuryTransitionBusinessDomainStatusInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  statusTransitionId: Scalars['ID']['input'];
+};
+
 export type MercuryTransitionChangeProposalStatusInput = {
   cloudId?: InputMaybe<Scalars['ID']['input']>;
   /** The ID of the Change Proposal to transition. */
@@ -49061,6 +50060,12 @@ export type MercuryTransitionFocusAreaStatusInput = {
   statusTransitionId: Scalars['ID']['input'];
 };
 
+export type MercuryTransitionOrganizationStatusInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  statusTransitionId: Scalars['ID']['input'];
+};
+
 export type MercuryTransitionRiskStatusInput = {
   /** The ID of the Risk to transition. */
   id: Scalars['ID']['input'];
@@ -49076,12 +50081,32 @@ export type MercuryTransitionStrategicEventStatusInput = {
   statusTransitionId: Scalars['ID']['input'];
 };
 
+export type MercuryUnStarBusinessDomainInput = {
+  businessDomainId: Scalars['ID']['input'];
+};
+
 export type MercuryUnStarFocusAreaInput = {
   focusAreaId: Scalars['ID']['input'];
 };
 
+export type MercuryUnStarOrganizationInput = {
+  organizationId: Scalars['ID']['input'];
+};
+
+export type MercuryUnarchiveBusinessDomainInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  comment?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+};
+
 export type MercuryUnarchiveFocusAreaInput = {
   cloudId: Scalars['ID']['input'];
+  comment?: InputMaybe<Scalars['String']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUnarchiveOrganizationInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
   comment?: InputMaybe<Scalars['String']['input']>;
   id: Scalars['ID']['input'];
 };
@@ -49101,6 +50126,13 @@ export type MercuryUnlinkRiskFromFocusAreasInput = {
   focusAreaIds: Array<Scalars['ID']['input']>;
   /** The ARI of the Risk to unlink focus areas from. */
   id: Scalars['ID']['input'];
+};
+
+export type MercuryUnlinkWorkFromBenefitItemInput = {
+  /** The benefit item ID (ARI) to unlink work from. */
+  benefitItemId: Scalars['ID']['input'];
+  /** The IDs (ARIs) of the work items to unlink from the benefit item. */
+  workIds: Array<Scalars['ID']['input']>;
 };
 
 export type MercuryUnlinkWorkFromChangeProposalInput = {
@@ -49150,6 +50182,13 @@ export type MercuryUpdateBenefitItemBenefitTypeInput = {
   id: Scalars['ID']['input'];
 };
 
+export type MercuryUpdateBenefitItemNameInput = {
+  /** The ARI of the Benefit Item. */
+  id: Scalars['ID']['input'];
+  /** The new name of the Benefit Item. */
+  name: Scalars['String']['input'];
+};
+
 export type MercuryUpdateBenefitPeriodValueAmountInput = {
   /** The new amount of funds. */
   amount: Scalars['String']['input'];
@@ -49160,6 +50199,64 @@ export type MercuryUpdateBenefitPeriodValueAmountInput = {
 export type MercuryUpdateBenefitTypeNameInput = {
   id: Scalars['ID']['input'];
   /** The name of the Benefit Type. */
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateBusinessDomainAboutContentInput = {
+  aboutContent: Scalars['String']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateBusinessDomainHierarchyNameInput = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateBusinessDomainNameInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateBusinessDomainOwnerInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  owner: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateBusinessDomainStatusUpdateInput = {
+  /** The ID of the Business Domain status update entry. */
+  id: Scalars['ID']['input'];
+  /** The new target date for the Business Domain. */
+  newTargetDate?: InputMaybe<MercuryBusinessDomainTargetDateInput>;
+  /** The ID of the status to transition the Business Domain to as part of the update. */
+  statusTransitionId?: InputMaybe<Scalars['ID']['input']>;
+  /** Summary text (ADF) for the update. */
+  summary?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MercuryUpdateBusinessDomainTargetDateInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryBusinessDomainTargetDateType>;
+};
+
+export type MercuryUpdateBusinessDomainTypeInput = {
+  businessDomainTypeId: Scalars['ID']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateBusinessDomainTypeNameInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateBusinessDomainViewNameInput = {
+  id: Scalars['ID']['input'];
   name: Scalars['String']['input'];
 };
 
@@ -49457,6 +50554,64 @@ export type MercuryUpdateMovePositionsChangeInput = {
   targetFocusAreaId?: InputMaybe<MercuryUpdateChangeFocusAreaInput>;
 };
 
+export type MercuryUpdateOrganizationAboutContentInput = {
+  aboutContent: Scalars['String']['input'];
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateOrganizationHierarchyNameInput = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateOrganizationNameInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateOrganizationOwnerInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  owner: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateOrganizationStatusUpdateInput = {
+  /** The ID of the Organization status update entry. */
+  id: Scalars['ID']['input'];
+  /** The new target date for the Organization. */
+  newTargetDate?: InputMaybe<MercuryOrganizationTargetDateInput>;
+  /** The ID of the status to transition the Organization to as part of the update. */
+  statusTransitionId?: InputMaybe<Scalars['ID']['input']>;
+  /** Summary text (ADF) for the update. */
+  summary?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MercuryUpdateOrganizationTargetDateInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  targetDate?: InputMaybe<Scalars['String']['input']>;
+  targetDateType?: InputMaybe<MercuryOrganizationTargetDateType>;
+};
+
+export type MercuryUpdateOrganizationTypeInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  organizationTypeId: Scalars['ID']['input'];
+};
+
+export type MercuryUpdateOrganizationTypeNameInput = {
+  cloudId?: InputMaybe<Scalars['ID']['input']>;
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type MercuryUpdateOrganizationViewNameInput = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
 export type MercuryUpdatePortfolioNameInput = {
   cloudId: Scalars['ID']['input'];
   id: Scalars['ID']['input'];
@@ -49592,6 +50747,12 @@ export type MercuryUpdateStrategicEventTargetDateInput = {
   id: Scalars['ID']['input'];
   /** The new target date of the Strategic Event. */
   targetDate?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MercuryUpdateThreadedCommentInput = {
+  cloudId: Scalars['ID']['input'];
+  commentText: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
 };
 
 export type MercuryValidateFocusAreasForRankingInput = {
@@ -50674,6 +51835,7 @@ export enum PublicLinkStatus {
 }
 
 export enum PublicLinksByCriteriaOrder {
+  AccessType = 'ACCESS_TYPE',
   DateEnabled = 'DATE_ENABLED',
   Status = 'STATUS',
   Title = 'TITLE'
@@ -50936,6 +52098,25 @@ export type RadarLastAppliedFilterInput = {
   rqlQuery?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type RadarMetricSettingsInput = {
+  metricKey: RadarOrgMetric;
+  metricType: RadarMetricType;
+  orgId: Scalars['ID']['input'];
+  values?: InputMaybe<Array<RadarMetricValueInput>>;
+};
+
+export enum RadarMetricType {
+  Multi = 'MULTI',
+  Range = 'RANGE',
+  Single = 'SINGLE'
+}
+
+export type RadarMetricValueInput = {
+  dimensionName: Scalars['String']['input'];
+  target: Scalars['Float']['input'];
+  tolerance?: InputMaybe<Scalars['Float']['input']>;
+};
+
 /**
  * ========================================
  *          Labor Cost Estimates
@@ -50976,6 +52157,12 @@ export enum RadarNotificationType {
 export enum RadarNumericAppearance {
   Duration = 'DURATION',
   Number = 'NUMBER'
+}
+
+export enum RadarOrgMetric {
+  CraftRatio = 'CRAFT_RATIO',
+  Footprint = 'FOOTPRINT',
+  SpanOfControl = 'SPAN_OF_CONTROL'
 }
 
 /**
@@ -51035,6 +52222,11 @@ export enum RadarSensitivityLevel {
   Private = 'PRIVATE',
   Restricted = 'RESTRICTED'
 }
+
+export type RadarSkillAssignmentInput = {
+  skillId: Scalars['ID']['input'];
+  workerId: Scalars['ID']['input'];
+};
 
 export enum RadarStatusAppearance {
   Default = 'default',
@@ -51659,6 +52851,11 @@ export enum RoleAssignmentPrincipalType {
   User = 'USER'
 }
 
+export enum RollingSprintSetting {
+  Disabled = 'DISABLED',
+  Enabled = 'ENABLED'
+}
+
 export type RunImportInput = {
   accessToken: Scalars['String']['input'];
   application: Scalars['String']['input'];
@@ -52104,8 +53301,12 @@ export enum Scope {
   TrelloAtlassianExternal = 'TRELLO_ATLASSIAN_EXTERNAL',
   TrelloReadBoard = 'TRELLO_READ_BOARD',
   TrelloReadMember = 'TRELLO_READ_MEMBER',
+  TrelloReadMemberInbox = 'TRELLO_READ_MEMBER_INBOX',
+  TrelloReadMemberPlanner = 'TRELLO_READ_MEMBER_PLANNER',
   TrelloReadOrganization = 'TRELLO_READ_ORGANIZATION',
   TrelloWriteBoard = 'TRELLO_WRITE_BOARD',
+  TrelloWriteMemberInbox = 'TRELLO_WRITE_MEMBER_INBOX',
+  TrelloWriteMemberPlanner = 'TRELLO_WRITE_MEMBER_PLANNER',
   UserColumnsRead = 'USER_COLUMNS_READ',
   UserConfigurationDelete = 'USER_CONFIGURATION_DELETE',
   UserConfigurationRead = 'USER_CONFIGURATION_READ',
@@ -52526,6 +53727,7 @@ export type SearchLayerDefinition = {
 };
 
 export enum SearchLinkedEntitiesType {
+  Comments = 'comments',
   Messages = 'messages',
   Thread = 'thread'
 }
@@ -58192,6 +59394,7 @@ export type SpfAddPlanOwnerInput = {
 };
 
 export enum SpfAskActivityAttribute {
+  ConnectedWork = 'CONNECTED_WORK',
   Description = 'DESCRIPTION',
   ImpactedWork = 'IMPACTED_WORK',
   Justification = 'JUSTIFICATION',
@@ -58231,6 +59434,7 @@ export enum SpfAskStatus {
   Deferred = 'DEFERRED',
   Draft = 'DRAFT',
   InReview = 'IN_REVIEW',
+  Resolved = 'RESOLVED',
   Revising = 'REVISING',
   Submitted = 'SUBMITTED'
 }
@@ -58332,6 +59536,14 @@ export type SpfCreatePlanScenarioInvestmentsInput = {
   planScenarioId: Scalars['ID']['input'];
 };
 
+export type SpfCreateViewInput = {
+  cloudId: Scalars['ID']['input'];
+  entityType: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+  ownerId?: InputMaybe<Scalars['String']['input']>;
+  settings: SpfViewSettingsInput;
+};
+
 export type SpfDeleteAskCommentInput = {
   id: Scalars['ID']['input'];
 };
@@ -58363,6 +59575,10 @@ export type SpfDeletePlanScenarioInput = {
 
 export type SpfDeletePlanScenarioInvestmentsInput = {
   ids: Array<Scalars['ID']['input']>;
+};
+
+export type SpfDeleteViewInput = {
+  id: Scalars['ID']['input'];
 };
 
 export type SpfEntityPermissionInput = {
@@ -58584,6 +59800,30 @@ export type SpfUpdatePlanTimeframeInput = {
 export type SpfUpdatePlanVisibilityInput = {
   id: Scalars['ID']['input'];
   visibility: SpfPlanVisibility;
+};
+
+export type SpfUpdateViewNameInput = {
+  id: Scalars['ID']['input'];
+  name: Scalars['String']['input'];
+};
+
+export type SpfUpdateViewOwnerInput = {
+  id: Scalars['ID']['input'];
+  ownerId: Scalars['String']['input'];
+};
+
+export type SpfUpdateViewSettingsInput = {
+  id: Scalars['ID']['input'];
+  settings: SpfViewSettingsInput;
+};
+
+export type SpfViewSettingValueInput = {
+  key: Scalars['String']['input'];
+  value: Scalars['String']['input'];
+};
+
+export type SpfViewSettingsInput = {
+  values: Array<SpfViewSettingValueInput>;
 };
 
 export type SplitIssueInput = {
@@ -59269,10 +60509,13 @@ export enum StalePagesSortingType {
 
 /** Start sprint */
 export type StartSprintInput = {
+  autoManaged?: InputMaybe<AutoManagedSprintSetting>;
   boardId: Scalars['ID']['input'];
   endDate: Scalars['String']['input'];
   goal?: InputMaybe<Scalars['String']['input']>;
+  incompleteCardsDestination?: InputMaybe<SoftwareCardsDestination>;
   name: Scalars['String']['input'];
+  rollingSprint?: InputMaybe<RollingSprintSetting>;
   sprintId: Scalars['ID']['input'];
   startDate: Scalars['String']['input'];
 };
@@ -59545,6 +60788,20 @@ export type TeamCreateCustomFieldValuePayload = {
   value: Scalars['String']['input'];
 };
 
+export type TeamCreateExternalTeamInput = {
+  /** Team description. Maximum 360 characters. */
+  description: Scalars['String']['input'];
+  /**
+   * Optional display name. If provided and differs from the external source name,
+   * team name syncing will be disabled.
+   */
+  displayName?: InputMaybe<Scalars['String']['input']>;
+  /** External reference to link the team to. */
+  externalReference: TeamExternalReferenceInput;
+  /** Scope ID (userbase ARI). Used to derive the organisation context. */
+  scopeId: Scalars['ID']['input'];
+};
+
 export type TeamCreateTeamInput = {
   /**
    * Description of the new team
@@ -59601,6 +60858,21 @@ export type TeamDeleteTeamInput = {
   teamId: Scalars['ID']['input'];
 };
 
+export type TeamExternalReferenceInput = {
+  /**
+   * The external ID. For ATLASSIAN_GROUP this is the group ID;
+   * for HRIS this is the combinedId (activationId/hrisOrgId).
+   */
+  id: Scalars['String']['input'];
+  /** The external source type. */
+  source: TeamSource;
+  /**
+   * If true, the team name will be kept in sync with the external source name.
+   * Defaults to true.
+   */
+  syncTeamName?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 /** Enum representing the errors that can be there in a ancestor list */
 export enum TeamHierarchyErrorCode {
   AncestorHierarchyExceedsMaxDepth = 'ANCESTOR_HIERARCHY_EXCEEDS_MAX_DEPTH',
@@ -59614,6 +60886,10 @@ export type TeamMembershipFilter = {
   /** List of members AccountIDs */
   memberIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
 };
+
+export enum TeamMembershipProcessingStatus {
+  Async = 'ASYNC'
+}
 
 /** The roles that a member can have within a team */
 export enum TeamMembershipRole {
@@ -59781,6 +61057,11 @@ export enum TeamSortOrder {
   Desc = 'DESC'
 }
 
+export enum TeamSource {
+  AtlassianGroup = 'ATLASSIAN_GROUP',
+  Hris = 'HRIS'
+}
+
 /** The states that a team can have */
 export enum TeamState {
   /** The team is currently active */
@@ -59871,6 +61152,14 @@ export type TeamTypeUpdatePayload = {
    * If not provided, then name will not be modified
    */
   name?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Input for unlinking a single externally linked team from its external source. */
+export type TeamUnlinkExternalTeamInput = {
+  /** Scope ID (userbase ARI). Used to derive the organisation context. */
+  scopeId: Scalars['ID']['input'];
+  /** The ID (or ARI) of the externally linked team to unlink. */
+  teamId: Scalars['ID']['input'];
 };
 
 /**
@@ -60301,6 +61590,8 @@ export type TownsquareGoalCreateMetricInput = {
   source?: InputMaybe<Scalars['String']['input']>;
   /** The sub-type of the metric. Only applicable for metric type "CURRENCY". */
   subType?: InputMaybe<Scalars['String']['input']>;
+  /** The time at which the metric value was recorded. Must be an ISO 8601 datetime string. */
+  time?: InputMaybe<Scalars['DateTime']['input']>;
   /** The type of the metric. */
   type: TownsquareMetricType;
   /** Past values that the metric has had. */
@@ -60599,6 +61890,12 @@ export type TownsquareGoalsCreateRiskInput = {
 
 /** The input for creating an update to a goal. */
 export type TownsquareGoalsCreateUpdateInput = {
+  /**
+   * The date the update was posted, used for back-dating updates to support import.
+   *
+   * You cannot back-date an update past the most recent update.
+   */
+  creationDate?: InputMaybe<Scalars['DateTime']['input']>;
   /** The ID of the goal. */
   goalId: Scalars['ID']['input'];
   /** A list of highlights associated with the goal update. */
@@ -62219,6 +63516,7 @@ export type TrelloCardListClause = {
 export enum TrelloCardRole {
   Board = 'BOARD',
   Link = 'LINK',
+  Manifest = 'MANIFEST',
   Mirror = 'MIRROR',
   Separator = 'SEPARATOR'
 }
@@ -62227,6 +63525,23 @@ export enum TrelloCardRole {
 export enum TrelloCheckItemState {
   Complete = 'COMPLETE',
   Incomplete = 'INCOMPLETE'
+}
+
+/** Possible checklist creation methods */
+export enum TrelloChecklistCreationMethod {
+  Ai = 'AI',
+  Assisted = 'ASSISTED',
+  Automatic = 'AUTOMATIC',
+  Demo = 'DEMO',
+  EmailSource = 'EMAIL_SOURCE'
+}
+
+/** Possible checklist media types */
+export enum TrelloChecklistMediaType {
+  ImageGif = 'IMAGE_GIF',
+  ImageJpeg = 'IMAGE_JPEG',
+  ImagePng = 'IMAGE_PNG',
+  ImageWebp = 'IMAGE_WEBP'
 }
 
 /** Specifies either an existing checklist ARI or a new checklist name to create. */
@@ -62245,6 +63560,11 @@ export type TrelloCloseBoardInput = {
 /** Arguments passed into the closeCard mutation */
 export type TrelloCloseCardInput = {
   cardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the closeList mutation */
+export type TrelloCloseListInput = {
+  listId: Scalars['ID']['input'];
 };
 
 /** Arguments for the first board in completeOnboarding */
@@ -62320,6 +63640,24 @@ export type TrelloCreateCardInput = {
   position?: InputMaybe<Scalars['TrelloCardPosition']['input']>;
   urlSource?: InputMaybe<Scalars['String']['input']>;
   urlSourceText?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Arguments passed into the createChecklist mutation */
+export type TrelloCreateChecklistInput = {
+  /** ARI of the card to create the checklist on */
+  cardId: Scalars['ID']['input'];
+  /** The way the checklist was created */
+  creationMethod?: InputMaybe<TrelloChecklistCreationMethod>;
+  /** Image URL for the checklist */
+  imageUrl?: InputMaybe<Scalars['URL']['input']>;
+  /** Valid Anthropic media types when using Anthropic AI */
+  mediaType?: InputMaybe<TrelloChecklistMediaType>;
+  /** Name of the new checklist */
+  name: Scalars['String']['input'];
+  /** Position of the checklist on the card */
+  position?: InputMaybe<TrelloPosition>;
+  /** ARI of the checklist to copy data from */
+  sourceChecklistId?: InputMaybe<Scalars['ID']['input']>;
 };
 
 /** Arguments passed into the createCustomField mutation */
@@ -62574,6 +63912,14 @@ export type TrelloHideCardCoversOnCardFrontInput = {
 /** Arguments passed into the hide votes on board mutation */
 export type TrelloHideVotesOnBoardInput = {
   boardId: Scalars['ID']['input'];
+};
+
+/** Arguments passed into the initializeVoiceCaptureSession mutation */
+export type TrelloInitializeVoiceCaptureSessionInput = {
+  /** The ID of the board the session is associated with */
+  boardId: Scalars['ID']['input'];
+  /** The ID of the list the session is associated with */
+  listId: Scalars['ID']['input'];
 };
 
 /** The feature of the labs preference. */
@@ -62884,6 +64230,12 @@ export enum TrelloPlannerEventTimeFilter {
   /** Only upcoming events (default for badges and boards). */
   Future = 'FUTURE'
 }
+
+/** The new checklist's position.  Relative takes precedence. */
+export type TrelloPosition = {
+  absolute?: InputMaybe<Scalars['Float']['input']>;
+  relative?: InputMaybe<TrelloRelativePosition>;
+};
 
 /** TrelloPowerUpData visibility */
 export enum TrelloPowerUpDataAccess {
