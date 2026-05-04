@@ -31,9 +31,9 @@ export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type MeQuery = { me: { user:
-      | { accountId: string, name: string, picture: unknown }
-      | { accountId: string, name: string, picture: unknown }
-      | { accountId: string, name: string, picture: unknown }
+      | { accountId: string, name: string, picture: string }
+      | { accountId: string, name: string, picture: string }
+      | { accountId: string, name: string, picture: string }
      | null } };
 
 export type MarkAsReadMutationVariables = Exact<{
@@ -68,11 +68,11 @@ export type MyNotificationsQueryVariables = Exact<{
 }>;
 
 
-export type MyNotificationsQuery = { notifications: { unseenNotificationCount: number, notificationFeed: { pageInfo: { hasNextPage: boolean }, nodes: Array<{ groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: unknown, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } }> } } | null };
+export type MyNotificationsQuery = { notifications: { unseenNotificationCount: number, notificationFeed: { pageInfo: { hasNextPage: boolean }, nodes: Array<{ groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } }> } } | null };
 
-export type AtlassianNotificationFragment = { groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: unknown, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } };
+export type AtlassianNotificationFragment = { groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } };
 
-export type AtlassianHeadNotificationFragment = { notificationId: string, timestamp: unknown, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null };
+export type AtlassianHeadNotificationFragment = { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null };
 
 export type RetrieveCloudIDsForHostnamesQueryVariables = Exact<{
   hostNames: Array<string> | string;

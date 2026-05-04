@@ -10,6 +10,10 @@ const config: CodegenConfig = {
       config: {
         documentMode: 'string',
         enumType: 'native',
+        scalars: {
+          DateTime: 'string',
+          URL: 'string',
+        },
         useTypeImports: true,
       },
     },
