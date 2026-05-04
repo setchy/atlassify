@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 
 import { Constants } from '../constants';
 
-import type { Account, Link, Token, Username } from '../types';
+import type { Account, Token, Username } from '../types';
 import type { AccountsStore } from './types';
 
 import { getAuthenticatedUser } from '../utils/api/client';
@@ -47,7 +47,7 @@ const useAccountsStore = create<AccountsStore>()(
             ...account,
             id: res.data.me.user.accountId,
             name: res.data.me.user.name,
-            avatar: res.data.me.user.picture as Link,
+            avatar: res.data.me.user.picture,
           };
 
           set((state) => ({

@@ -2,6 +2,7 @@
 type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+import type { Link } from '../../../../types';
 import type { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
 export enum InfluentsNotificationCategory {
   Direct = 'direct',
@@ -31,9 +32,9 @@ export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type MeQuery = { me: { user:
-      | { accountId: string, name: string, picture: string }
-      | { accountId: string, name: string, picture: string }
-      | { accountId: string, name: string, picture: string }
+      | { accountId: string, name: string, picture: Link }
+      | { accountId: string, name: string, picture: Link }
+      | { accountId: string, name: string, picture: Link }
      | null } };
 
 export type MarkAsReadMutationVariables = Exact<{
