@@ -10,12 +10,6 @@ describe('renderer/utils/core/logger.ts', () => {
   const logErrorSpy = vi.spyOn(logger, 'logError').mockImplementation(vi.fn());
   const mockError = new Error('boom');
 
-  beforeEach(() => {
-    logInfoSpy.mockReset();
-    logWarnSpy.mockReset();
-    logErrorSpy.mockReset();
-  });
-
   it('logs info without notification', () => {
     rendererLogInfo('foo', 'bar');
     expect(logInfoSpy).toHaveBeenCalledWith('foo', 'bar', []);

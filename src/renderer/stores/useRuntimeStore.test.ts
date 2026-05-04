@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import useRuntimeStore from './useRuntimeStore';
 
 describe('renderer/stores/useRuntimeStore.ts', () => {

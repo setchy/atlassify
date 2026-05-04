@@ -1,7 +1,3 @@
-import { config } from 'dotenv';
-
-config();
-
 import { app } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'menubar';
@@ -26,6 +22,10 @@ import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
 log.initialize();
+
+if (!app.isPackaged) {
+  log.transports.file.fileName = 'main.dev.log';
+}
 
 initializeAnalytics();
 

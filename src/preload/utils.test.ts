@@ -29,14 +29,9 @@ vi.mock('electron', () => {
 import { ipcRenderer } from 'electron';
 
 describe('preload/utils', () => {
-  afterEach(() => {
-    vi.mocked(ipcRenderer.send).mockClear();
-    vi.mocked(ipcRenderer.invoke).mockClear();
-    vi.mocked(ipcRenderer.on).mockClear();
-  });
-
   it('sendMainEvent forwards to ipcRenderer.send', () => {
     sendMainEvent(EVENTS.WINDOW_SHOW);
+
     expect(ipcRenderer.send).toHaveBeenCalledWith(
       EVENTS.WINDOW_SHOW,
       undefined,
@@ -45,6 +40,7 @@ describe('preload/utils', () => {
 
   it('invokeMainEvent forwards and resolves', async () => {
     const result = await invokeMainEvent(EVENTS.VERSION, 'data');
+
     expect(ipcRenderer.invoke).toHaveBeenCalledWith(EVENTS.VERSION, 'data');
     expect(result).toBe('response');
   });
@@ -63,6 +59,7 @@ describe('preload/utils', () => {
         __emit: (channel: string, ...a: unknown[]) => void;
       }
     ).__emit(EVENTS.UPDATE_ICON_TITLE, 'payload');
+
     expect(ipcRenderer.on).toHaveBeenCalledWith(
       EVENTS.UPDATE_ICON_TITLE,
       handlerMock,

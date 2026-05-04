@@ -12,21 +12,21 @@ import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
 
-const CATEGORY_DETAILS: Record<CategoryType, FilterDetails> = {
-  direct: {
-    name: i18n.t('filters.category.direct.title'),
-    description: i18n.t('filters.category.direct.description'),
-    icon: FlagIcon,
-  },
-  watching: {
-    name: i18n.t('filters.category.watching.title'),
-    description: i18n.t('filters.category.watching.description'),
-    icon: EyeOpenIcon,
-  },
-};
-
 export const categoryFilter: Filter<CategoryType> = {
-  FILTER_TYPES: CATEGORY_DETAILS,
+  get FILTER_TYPES(): Record<CategoryType, FilterDetails> {
+    return {
+      direct: {
+        name: i18n.t('filters.category.direct.title'),
+        description: i18n.t('filters.category.direct.description'),
+        icon: FlagIcon,
+      },
+      watching: {
+        name: i18n.t('filters.category.watching.title'),
+        description: i18n.t('filters.category.watching.description'),
+        icon: EyeOpenIcon,
+      },
+    };
+  },
 
   getTypeDetails(type: CategoryType): FilterDetails {
     return this.FILTER_TYPES[type];

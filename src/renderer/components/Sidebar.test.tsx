@@ -3,14 +3,11 @@ import userEvent from '@testing-library/user-event';
 
 import { useThemeObserver } from '@atlaskit/tokens';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
-import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 import {
   mockAccountNotifications,
   mockAccountNotificationsWithMorePages,
 } from '../__mocks__/notifications-mocks';
-
-import { useAccountsStore, useSettingsStore } from '../stores';
 
 import * as comms from '../utils/system/comms';
 import { Sidebar } from './Sidebar';
@@ -23,8 +20,6 @@ vi.mock('@atlaskit/tokens', async () => {
   };
 });
 
-import { useFiltersStore } from '../stores';
-
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
 };
@@ -35,16 +30,10 @@ describe('renderer/components/Sidebar.tsx', () => {
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
         initialEntries: ['/'],
         notifications: mockAccountNotifications,
       });
@@ -54,9 +43,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
         initialEntries: ['/'],
         notifications: mockAccountNotifications,
       });
@@ -68,9 +55,9 @@ describe('renderer/components/Sidebar.tsx', () => {
   describe('logged out', () => {
     it('should render itself & its children - light mode', () => {
       mockThemeObserverColorMode('light');
-      useAccountsStore.setState({ accounts: [] });
 
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
+        accounts: { accounts: [] },
         initialEntries: ['/landing'],
         notifications: mockAccountNotifications,
       });
@@ -80,9 +67,9 @@ describe('renderer/components/Sidebar.tsx', () => {
 
     it('should render itself & its children - dark mode', () => {
       mockThemeObserverColorMode('dark');
-      useAccountsStore.setState({ accounts: [] });
 
-      const tree = renderWithAppContext(<Sidebar />, {
+      const tree = renderWithProviders(<Sidebar />, {
+        accounts: { accounts: [] },
         notifications: mockAccountNotifications,
       });
 
@@ -91,7 +78,7 @@ describe('renderer/components/Sidebar.tsx', () => {
   });
 
   it('should navigate to home when clicking logo', async () => {
-    renderWithAppContext(<Sidebar />);
+    renderWithProviders(<Sidebar />);
 
     await userEvent.click(screen.getByTestId('sidebar-home'));
 
@@ -101,7 +88,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('notifications icon', () => {
     it('opens notifications home when clicked', async () => {
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
@@ -111,7 +98,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are no notifications', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: [],
       });
 
@@ -119,7 +106,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are notifications', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: mockAccountNotifications,
       });
 
@@ -127,7 +114,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('renders correct icon when there are more notifications available', () => {
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         notifications: mockAccountNotificationsWithMorePages,
       });
 
@@ -137,25 +124,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('show read / unread notifications', () => {
     it('renders correct icon when in unread only mode', () => {
-      useSettingsStore.setState({ fetchOnlyUnreadNotifications: true });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { fetchOnlyUnreadNotifications: true },
+      });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('renders correct icon when in unread and read mode', () => {
-      useSettingsStore.setState({ fetchOnlyUnreadNotifications: false });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { fetchOnlyUnreadNotifications: false },
+      });
 
       expect(screen.getByTestId('sidebar-notifications')).toMatchSnapshot();
     });
 
     it('should toggle show only unread notifications', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       expect(
         screen.getByTestId('sidebar-toggle-unread-only--input'),
@@ -173,27 +158,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by products', () => {
     it('should order notifications by date', () => {
-      useSettingsStore.setState({ groupNotificationsByProduct: false });
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByProduct: false },
+      });
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should group notifications by product', () => {
-      useSettingsStore.setState({ groupNotificationsByProduct: true });
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByProduct: true },
+      });
 
       expect(screen.getByTestId('sidebar-group-by-product')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by products', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-product'));
 
@@ -203,27 +184,23 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Group by titles', () => {
     it('should group notifications by title', () => {
-      useSettingsStore.setState({ groupNotificationsByTitle: true });
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByTitle: true },
+      });
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should not group notifications by title - flat notifications', () => {
-      useSettingsStore.setState({ groupNotificationsByTitle: false });
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        settings: { groupNotificationsByTitle: false },
+      });
 
       expect(screen.getByTestId('sidebar-group-by-title')).toMatchSnapshot();
     });
 
     it('should toggle group notifications by title', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-group-by-title'));
 
@@ -233,9 +210,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Filter notifications', () => {
     it('go to the filters route', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
@@ -247,9 +222,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if filters path already shown', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         initialEntries: ['/filters'],
       });
 
@@ -263,10 +236,9 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('highlight filters sidebar if any are saved', () => {
-      useFiltersStore.setState({ products: ['bitbucket'] });
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />, {
+        filters: { products: ['bitbucket'] },
+      });
 
       expect(
         screen.getByTestId('sidebar-filter-notifications'),
@@ -276,9 +248,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Refresh Notifications', () => {
     it('should refresh the notifications when status is not loading', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         fetchNotifications: fetchNotificationsMock,
       });
 
@@ -288,8 +258,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('should not refresh the notifications when status is loading', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         fetchNotifications: fetchNotificationsMock,
         isLoading: true,
       });
@@ -302,9 +271,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   describe('Settings', () => {
     it('go to the settings route', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />);
+      renderWithProviders(<Sidebar />);
 
       await userEvent.click(screen.getByTestId('sidebar-settings'));
 
@@ -313,9 +280,7 @@ describe('renderer/components/Sidebar.tsx', () => {
     });
 
     it('go to the home if settings path already shown', async () => {
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<Sidebar />, {
+      renderWithProviders(<Sidebar />, {
         initialEntries: ['/settings'],
       });
 
@@ -328,9 +293,10 @@ describe('renderer/components/Sidebar.tsx', () => {
 
   it('should quit the app', async () => {
     const quitAppSpy = vi.spyOn(comms, 'quitApp');
-    useAccountsStore.setState({ accounts: [] });
 
-    renderWithAppContext(<Sidebar />);
+    renderWithProviders(<Sidebar />, {
+      accounts: { accounts: [] },
+    });
 
     await userEvent.click(screen.getByTestId('sidebar-quit'));
 

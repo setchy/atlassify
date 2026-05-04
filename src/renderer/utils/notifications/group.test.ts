@@ -12,7 +12,9 @@ import {
   getFlattenedNotificationsByProduct,
   getNotificationIdsForGroups,
   groupNotificationsByProduct,
+  groupNotificationsByProductEntries,
   isGroupNotification,
+  sortNotificationsByOrder,
 } from './group';
 
 describe('renderer/utils/notifications/group.ts', () => {
@@ -96,11 +98,89 @@ describe('renderer/utils/notifications/group.ts', () => {
     });
   });
 
+  describe('groupNotificationsByProductEntries', () => {
+    it('preserves first-seen product order when alphabetically is false', () => {
+      const notifications: AtlassifyNotification[] = [
+        createMockNotificationForProductType('1', 'jira'),
+        createMockNotificationForProductType('2', 'bitbucket'),
+        createMockNotificationForProductType('3', 'jira'),
+      ];
+
+      const result = groupNotificationsByProductEntries(notifications, false);
+
+      expect(result.map(([key]) => key)).toEqual(['jira', 'bitbucket']);
+      expect(result[0][1].map((n) => n.id)).toEqual(['1', '3']);
+      expect(result[1][1].map((n) => n.id)).toEqual(['2']);
+    });
+
+    it('sorts groups alphabetically when alphabetically is true', () => {
+      const notifications: AtlassifyNotification[] = [
+        createMockNotificationForProductType('1', 'jira'),
+        createMockNotificationForProductType('2', 'bitbucket'),
+        createMockNotificationForProductType('3', 'confluence'),
+      ];
+
+      const result = groupNotificationsByProductEntries(notifications, true);
+
+      expect(result.map(([key]) => key)).toEqual([
+        'bitbucket',
+        'confluence',
+        'jira',
+      ]);
+    });
+
+    it('returns empty array when no notifications', () => {
+      const result = groupNotificationsByProductEntries([], false);
+
+      expect(result).toEqual([]);
+    });
+
+    it('skips notifications without product data', () => {
+      const notifications: AtlassifyNotification[] = [
+        createMockNotificationForProductType('1', 'bitbucket'),
+        createMockNotificationForProductType('2', null),
+      ];
+
+      const result = groupNotificationsByProductEntries(notifications, false);
+
+      expect(result).toHaveLength(1);
+      expect(result[0][0]).toBe('bitbucket');
+    });
+  });
+
+  describe('sortNotificationsByOrder', () => {
+    it('sorts notifications ascending by order field', () => {
+      const notifications: AtlassifyNotification[] = [
+        { ...createMockNotificationForProductType('3', 'jira'), order: 2 },
+        { ...createMockNotificationForProductType('1', 'jira'), order: 0 },
+        { ...createMockNotificationForProductType('2', 'jira'), order: 1 },
+      ];
+
+      const result = sortNotificationsByOrder(notifications);
+
+      expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
+    });
+
+    it('does not mutate the original array', () => {
+      const notifications: AtlassifyNotification[] = [
+        { ...createMockNotificationForProductType('2', 'jira'), order: 1 },
+        { ...createMockNotificationForProductType('1', 'jira'), order: 0 },
+      ];
+      const original = [...notifications];
+
+      sortNotificationsByOrder(notifications);
+
+      expect(notifications.map((n) => n.id)).toEqual(original.map((n) => n.id));
+    });
+
+    it('returns empty array when no notifications', () => {
+      expect(sortNotificationsByOrder([])).toEqual([]);
+    });
+  });
+
   describe('getFlattenedNotificationsByProduct', () => {
     it('returns product-grouped order when groupNotificationsByProduct is true', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
 
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
@@ -111,7 +191,6 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = getFlattenedNotificationsByProduct(notifications);
 
-      // First repo-b notifications, then repo-a notifications
       expect(result.map((n) => n.id)).toEqual(['1', '3', '2', '4']);
     });
 
@@ -129,14 +208,11 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = getFlattenedNotificationsByProduct(notifications);
 
-      // First repo-b notifications, then repo-a notifications
       expect(result.map((n) => n.id)).toEqual(['1', '3', '2', '4']);
     });
 
-    it('returns natural account order when groupNotificationsByProduct is false', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: false,
-      });
+    it('returns natural account order when both flags are false', () => {
+      useSettingsStore.setState({ groupNotificationsByProduct: false });
 
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
@@ -146,22 +222,15 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = getFlattenedNotificationsByProduct(notifications);
 
-      // Natural order preserved
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
     });
 
     it('returns empty array when no notifications', () => {
-      const notifications: AtlassifyNotification[] = [];
-
-      const result = getFlattenedNotificationsByProduct(notifications);
-
-      expect(result).toEqual([]);
+      expect(getFlattenedNotificationsByProduct([])).toEqual([]);
     });
 
     it('handles notifications without product data when grouped', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: true,
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: true });
 
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
@@ -171,14 +240,11 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = getFlattenedNotificationsByProduct(notifications);
 
-      // Only notifications with repository data are included when grouped
       expect(result.map((n) => n.id)).toEqual(['1', '3']);
     });
 
     it('preserves notifications without product data when not grouped', () => {
-      useSettingsStore.setState({
-        groupNotificationsByProduct: false,
-      });
+      useSettingsStore.setState({ groupNotificationsByProduct: false });
 
       const notifications: AtlassifyNotification[] = [
         createMockNotificationForProductType('1', 'bitbucket'),
@@ -188,7 +254,6 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = getFlattenedNotificationsByProduct(notifications);
 
-      // All notifications preserved in natural order
       expect(result.map((n) => n.id)).toEqual(['1', '2', '3']);
     });
   });

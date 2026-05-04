@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 
-import Badge from '@atlaskit/badge';
+import Badge from '@atlaskit/badge/new';
 import Checkbox from '@atlaskit/checkbox';
 import Heading from '@atlaskit/heading';
 import { IconTile } from '@atlaskit/icon';
@@ -90,7 +90,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
                   />
                 )}
                 <Badge
-                  appearance={isChecked ? 'primary' : 'default'}
+                  appearance={isChecked ? 'information' : null}
                   max={false}
                 >
                   {count}

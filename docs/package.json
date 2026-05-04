@@ -38,25 +38,25 @@
     "@iconify-json/line-md": "1.2.16",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "27.0.0",
-    "@tailwindcss/vite": "4.2.1",
+    "@tailwindcss/vite": "4.2.4",
     "accessible-astro-components": "5.2.0",
-    "astro": "6.0.4",
+    "astro": "6.2.1",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
-    "marked": "17.0.4",
+    "marked": "18.0.2",
     "octokit": "5.0.5",
     "sharp": "0.34.5",
     "tailwind-merge": "3.5.0",
-    "tailwindcss": "4.2.1",
+    "tailwindcss": "4.2.4",
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.14",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",

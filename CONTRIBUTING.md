@@ -17,11 +17,6 @@ Clone the repository and install dependencies:
   pnpm install
   ```
 
-Build static resources (tray icons, twemojis, etc). You only need to rebuild if you change static assets:
-  ```shell
-  pnpm build
-  ```
-
 Start development mode (includes GraphQL codegen and hot module reload):
   ```shell
   pnpm dev
@@ -49,7 +44,6 @@ pnpm test -u
 - We use [Biome][biome-website] for linting and formatting. Please run `pnpm lint:check` before submitting a PR.
 - Follow existing file and folder naming conventions.
 - Keep commit messages clear and descriptive.
-
 
 ### How to Report Bugs or Request Features
 

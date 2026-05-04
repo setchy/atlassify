@@ -1,11 +1,12 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
   test: {
     globals: true,
-    pool: 'threads',
+    pool: 'vmThreads',
+    clearMocks: true,
     onConsoleLog(log, type) {
       // suppress noisy Atlaskit feature-gate/platform-feature-flags errors
       if (
@@ -20,7 +21,7 @@ export default defineConfig({
       if (
         type === 'stdout' &&
         typeof log === 'string' &&
-        log.includes('i18next is maintained with support from Locize')
+        log.includes('Locize')
       ) {
         return false;
       }

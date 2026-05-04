@@ -7,6 +7,7 @@
     "GraphQL.vscode-graphql-syntax",
     "lokalise.i18n-ally",
     "SonarSource.sonarlint-vscode",
-    "vitest.explorer"
+    "vitest.explorer",
+    "zizmor.zizmor-vscode"
   ]
 }

@@ -5,10 +5,6 @@ import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 import { useAppReset } from './useAppReset';
 
 describe('renderer/hooks/useAppReset.ts', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('resets all persisted stores when the onResetApp IPC event fires', () => {
     const resetAccounts = vi.spyOn(useAccountsStore.getState(), 'reset');
     const resetSettings = vi.spyOn(useSettingsStore.getState(), 'reset');

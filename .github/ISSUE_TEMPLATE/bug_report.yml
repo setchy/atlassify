@@ -15,7 +15,7 @@ body:
   - type: textarea
     attributes:
       label: 📝 Description
-      description: List steps to reproduce the error and details on what happens and what you expected to happen.
+      description: Describe what happens and what you expected to happen.
     validations:
       required: true
 
@@ -23,7 +23,7 @@ body:
     id: steps-to-reproduce
     attributes:
       label: 🪜 Steps To Reproduce
-      description: Steps to reproduce the behavior.
+      description: List out steps to reproduce the behavior.
       placeholder: |
         1. Go to '...'
         2. Click on '...'
@@ -32,12 +32,20 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: logs
+    attributes:
+      label: 🪵 Log Excerpts
+      description: Share any relevant log excerpts where available - see https://atlassify.io/faq
+    validations:
+      required: false
+
   - type: input
     id: app-version
     attributes:
       label: Atlassify Version
       description: What version of Atlassify are you using?
-      placeholder: 1.x.x
+      placeholder: 3.x.x
     validations:
       required: true
 
@@ -50,7 +58,6 @@ body:
         - macOS
         - Windows
         - Linux
-        - Other
     validations:
       required: true
 

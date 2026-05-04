@@ -45,12 +45,19 @@ export const WindowConfig: BrowserWindowConstructorOptions = {
   minWidth: 500,
   minHeight: 400,
   resizable: false,
-  skipTaskbar: true, // Hide the app from the Windows taskbar
+  /** Hide the app from the Windows taskbar */
+  skipTaskbar: true,
   webPreferences: {
     preload: Paths.preload,
     contextIsolation: true,
     nodeIntegration: false,
-    // Disable web security in development to allow CORS requests
+    /** Disable web security in development to allow CORS requests */
     webSecurity: !process.env.VITE_DEV_SERVER_URL,
+    /**
+     * Keep the renderer process active even when the window is hidden. This prevents
+     * Chromium from throttling or freezing the renderer process, ensuring that the menubar
+     * window remains responsive and up-to-date with the latest notification content on show.
+     */
+    backgroundThrottling: false,
   },
 };

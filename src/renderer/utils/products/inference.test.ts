@@ -33,6 +33,7 @@ describe('renderer/utils/products/inference.ts', () => {
       ['confluence', PRODUCTS.confluence],
       ['opsgenie', PRODUCTS.jira_service_management],
       ['people-and-teams-collective', PRODUCTS.teams],
+      ['rovo', PRODUCTS.rovo],
       ['team-central', PRODUCTS.home],
       ['unmapped', PRODUCTS.unknown],
     ])('%s maps correctly', async (registrationProduct, expected) => {
@@ -232,6 +233,5 @@ function createProductNotificationMock(
 }
 
 afterEach(() => {
-  vi.clearAllMocks();
   __resetProductInferenceCaches();
 });

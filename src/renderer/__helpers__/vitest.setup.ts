@@ -51,6 +51,7 @@ beforeEach(() => {
  * Atlassify context bridge API
  */
 window.atlassify = {
+  onSystemWake: vi.fn(),
   app: {
     version: vi.fn().mockResolvedValue('v0.0.1'),
     hide: vi.fn(),

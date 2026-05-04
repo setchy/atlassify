@@ -12,8 +12,9 @@ const ZOOM_STEP = 10 as Percentage;
 /**
  * Zoom percentage to level. 100% is the recommended zoom level (0).
  * If somehow the percentage is not set, it will return 0, the default zoom level.
- * @param percentage 0-150
- * @returns zoomLevel -2 to 0.5
+ *
+ * @param percentage - Zoom percentage (0–150).
+ * @returns Electron zoom level (-2 to 0.5).
  */
 export function zoomPercentageToLevel(percentage: Percentage): number {
   if (percentage === undefined) {
@@ -26,8 +27,9 @@ export function zoomPercentageToLevel(percentage: Percentage): number {
 /**
  * Zoom level to percentage. 0 is the recommended zoom level (100%).
  * If somehow the zoom level is not set, it will return 100, the default zoom percentage.
- * @param zoom -2 to 0.5
- * @returns percentage 0-150
+ *
+ * @param zoom - Electron zoom level (-2 to 0.5).
+ * @returns Zoom percentage (0–150).
  */
 export function zoomLevelToPercentage(zoom: number): Percentage {
   if (zoom === undefined) {

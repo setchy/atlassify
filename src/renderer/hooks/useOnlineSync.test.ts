@@ -41,4 +41,20 @@ describe('renderer/hooks/useOnlineSync.ts', () => {
 
     expect(unsubscribeMock).toHaveBeenCalledOnce();
   });
+
+  it('re-syncs onlineManager with navigator.onLine on system wake', () => {
+    const setOnlineSpy = vi.spyOn(onlineManager, 'setOnline');
+
+    renderHook(() => useOnlineSync());
+
+    setOnlineSpy.mockClear();
+
+    // Simulate system wake event
+    const wakeCallback = (
+      window.atlassify.onSystemWake as ReturnType<typeof vi.fn>
+    ).mock.calls[0][0];
+    wakeCallback();
+
+    expect(setOnlineSpy).toHaveBeenCalledWith(navigator.onLine);
+  });
 });

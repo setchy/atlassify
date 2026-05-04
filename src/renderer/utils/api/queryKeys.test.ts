@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { notificationsKeys } from './queryKeys';
 
 describe('renderer/utils/queryKeys.ts', () => {

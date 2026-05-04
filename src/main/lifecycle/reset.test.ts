@@ -1,7 +1,5 @@
 import type { Menubar } from 'menubar';
 
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
 vi.mock('electron', () => ({
   dialog: { showMessageBoxSync: vi.fn(() => 0) },
 }));
@@ -25,10 +23,6 @@ function createMb() {
 }
 
 describe('main/lifecycle/reset.ts', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('sends reset event and quits on confirm', () => {
     vi.mocked(dialog.showMessageBoxSync).mockReturnValue(1);
     const mb = createMb();

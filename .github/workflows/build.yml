@@ -2,13 +2,26 @@ name: Build
 
 on:
   workflow_call:
+    secrets:
+      APTABASE_KEY:
+        required: true
+      # Signing certificates
+      CSC_LINK:
+        required: true
+      WIN_CSC_LINK:
+        required: true
+      CSC_KEY_PASSWORD:
+        required: true
+      WIN_CSC_KEY_PASSWORD:
+        required: true
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   build:
-    name: Build ${{ matrix.platform }} (electron-builder)
+    name: Build ${{ matrix.platform }} [electron-builder]
+    permissions:
+      contents: read
     strategy:
       matrix:
         include:
@@ -32,6 +45,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: ./.github/actions/setup-node
@@ -39,12 +54,11 @@ jobs:
       - name: Build application
         run: pnpm build
         env:
-          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
+          VITE_APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
       - name: Package for ${{ matrix.platform }}
         run: ${{ matrix.package-cmd }}
         env:
-          APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
           # Signing certificates - important to use the correct cert per platform
           CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
           CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
@@ -54,7 +68,7 @@ jobs:
         run: rm -rfv ${{ matrix.cleanup-path }}
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: ${{ matrix.artifact-name }}
           path: |

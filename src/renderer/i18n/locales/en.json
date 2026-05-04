@@ -1,262 +1,257 @@
 {
   "accounts": {
-    "title": "Accounts",
+    "add_new": "Add new account",
+    "logout_account": "Logout {{username}}",
+    "manage": "Manage accounts",
     "open_profile": "Open account profile ↗",
     "refresh_account": "Refresh {{username}}",
-    "logout_account": "Logout {{username}}",
-    "add_new": "Add new account"
+    "title": "Accounts"
   },
   "allRead": {
     "heading": "No new notifications",
     "headingFiltered": "No new filtered notifications"
   },
   "chevron": {
+    "hide": "Hide {{type}} notifications",
     "none": "No notifications for {{type}}",
-    "show": "Show {{type}} notifications",
-    "hide": "Hide {{type}} notifications"
+    "show": "Show {{type}} notifications"
   },
   "common": {
-    "cancel": "Cancel",
-    "reset": "Reset",
-    "login": "Login",
-    "username": "Username",
-    "docs": "Docs",
-    "close": "Close",
-    "proceed": "Proceed",
-    "are_you_sure": "Are you sure?",
     "account": "account",
-    "product": "product"
+    "are_you_sure": "Are you sure?",
+    "cancel": "Cancel",
+    "close": "Close",
+    "docs": "Docs",
+    "login": "Login",
+    "proceed": "Proceed",
+    "product": "product",
+    "reset": "Reset",
+    "username": "Username"
   },
   "errors": {
     "badCredentials": {
-      "title": "Bad Credentials",
       "description1": "Your credentials are either invalid or expired.",
-      "description2": "Please try removing your account and authenticating again."
+      "description2": "Please try removing your account and authenticating again.",
+      "title": "Bad Credentials"
     },
     "badRequest": {
-      "title": "Bad Request",
-      "description1": "Something went wrong making the API request."
+      "description1": "Something went wrong making the API request.",
+      "title": "Bad Request"
     },
     "network": {
-      "title": "Network Error",
       "description1": "Unable to connect to Atlassian Cloud.",
-      "description2": "Please check your network connection, including whether you require a VPN, and try again."
+      "description2": "Please check your network connection, including whether you require a VPN, and try again.",
+      "title": "Network Error"
     },
     "offline": {
-      "title": "Network Offline",
       "description1": "Your device is offline.",
-      "description2": "Please check your network connection."
+      "description2": "Please check your network connection.",
+      "title": "Network Offline"
     },
     "unknown": {
-      "title": "Oops! Something went wrong",
-      "description1": "Please try again later."
+      "description1": "Please try again later.",
+      "title": "Oops! Something went wrong"
     }
   },
   "filters": {
-    "title": "Filters",
     "actions": {
       "clear": "Clear Filters"
     },
     "actors": {
+      "automation": {
+        "description": "Notifications from automation rules",
+        "title": "Automation"
+      },
+      "rovo": {
+        "description": "Notifications from Rovo products",
+        "title": "Rovo"
+      },
       "title": "Actors",
       "user": {
-        "title": "User",
-        "description": "Notifications from users"
-      },
-      "automation": {
-        "title": "Automation",
-        "description": "Notifications from automation rules"
+        "description": "Notifications from users",
+        "title": "User"
       }
     },
     "category": {
-      "title": "Category",
       "direct": {
-        "title": "Direct",
-        "description": "Direct notifications"
+        "description": "Direct notifications",
+        "title": "Direct"
       },
+      "title": "Category",
       "watching": {
-        "title": "Watching",
-        "description": "Watching notifications"
-      }
-    },
-    "products": {
-      "title": "Products",
-      "description": "{{type}} notifications"
-    },
-    "read_state": {
-      "title": "Read State",
-      "unread": {
-        "title": "Unread",
-        "description": "Unread notifications"
-      },
-      "read": {
-        "title": "Read",
-        "description": "Read notifications"
+        "description": "Watching notifications",
+        "title": "Watching"
       }
     },
     "engagement": {
-      "title": "Engagement",
-      "mention": {
-        "title": "Mentions",
-        "description": "Mentions"
-      },
       "comment": {
-        "title": "Comments",
-        "description": "Comments"
+        "description": "Comments",
+        "title": "Comments"
+      },
+      "mention": {
+        "description": "Mentions",
+        "title": "Mentions"
       },
       "reactions": {
-        "title": "Reactions",
-        "description": "Reactions"
+        "description": "Reactions",
+        "title": "Reactions"
+      },
+      "title": "Engagement"
+    },
+    "products": {
+      "description": "{{type}} notifications",
+      "title": "Products"
+    },
+    "read_state": {
+      "read": {
+        "description": "Read notifications",
+        "title": "Read"
+      },
+      "title": "Read State",
+      "unread": {
+        "description": "Unread notifications",
+        "title": "Unread"
       }
-    }
+    },
+    "title": "Filters"
   },
   "landing": {
-    "notifications": "notifications",
-    "subheading": "on your menu bar",
     "login": {
       "title": "Login",
       "tooltip": "Login with Atlassian"
-    }
-  },
-  "login": {
-    "title": "Login with Atlassian",
-    "username_helper": "Your Atlassian username / email address",
-    "token": "API Token",
-    "create_token": "Create API token",
-    "token_helper": "and paste above",
-    "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
-    "duplicate_username": "This username has already been added. Please use a different username.",
-    "security_docs": "See Atlassian documentation"
+    },
+    "notifications": "notifications",
+    "subheading": "on your menu bar"
   },
   "loading": {
     "heading": "Loading"
   },
+  "login": {
+    "create_token": "Create API token",
+    "duplicate_username": "This username has already been added. Please use a different username.",
+    "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
+    "security_docs": "See Atlassian documentation",
+    "title": "Login with Atlassian",
+    "token": "API Token",
+    "token_helper": "and paste above",
+    "username_helper": "Your Atlassian username / email address"
+  },
   "notifications": {
-    "native_count": "You have {{count}} notifications",
     "account": {
-      "open_profile": "Open account profile ↗",
-      "pull_requests": "My pull requests ↗",
       "mark_all_read": "Mark all account notifications as read",
       "mark_read_confirm": {
         "description1": "Please confirm that you want to",
         "description2": "mark all account notifications",
         "description3": "as read"
-      }
-    },
-    "product": {
-      "open_product": "Open {{name}} ↗",
-      "mark_all_read": "Mark all product notifications as read"
+      },
+      "open_profile": "Open account profile ↗",
+      "pull_requests": "My pull requests ↗"
     },
     "interactions": {
       "mark_as_read": "Mark as read",
       "mark_as_unread": "Mark as unread"
+    },
+    "native_count": "You have {{count}} notifications",
+    "product": {
+      "mark_all_read": "Mark all product notifications as read",
+      "open_product": "Open {{name}} ↗"
     }
   },
   "products": {
     "unknown": "Unknown"
   },
   "settings": {
-    "title": "Settings",
+    "accounts": "Accounts",
     "appearance": {
-      "title": "Appearance",
       "language": "Language",
       "language_select": "Select language",
+      "show_account_header": "Show account header",
       "theme": "Theme",
+      "title": "Appearance",
       "zoom": "Zoom",
       "zoom_in": "Zoom in",
       "zoom_out": "Zoom out",
-      "zoom_reset": "Reset zoom",
-      "show_account_header": "Show account header"
-    },
-    "notifications": {
-      "title": "Notifications",
-      "mark_as_read_on_open": "Mark as read on open",
-      "group_alphabetically": "Sort product groups alphabetically",
-      "group_alphabetically_help": "When `Group notifications by product` is enabled in the sidebar, this setting will sort products in alphabetical order.",
-      "delay_notification_state": "Delay notification state",
-      "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated)."
-    },
-    "tray": {
-      "title": "Tray",
-      "show_count_in_tray": "Show notifications count in tray",
-      "show_count_in_tray_help": "Show the unread notification count next to the tray icon. Useful for a quick glance at unread activity.",
-      "unread_active_icon": "Unread style",
-      "unread_active_icon_help": "Choose which tray icon variant to display when you have unread notifications.",
-      "unread_icon_stealth": "Stealth",
-      "unread_icon_highlighted": "Highlighted",
-      "alternate_icon": "Idle style",
-      "alternate_icon_help": "Choose which tray icon variant to display when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
-      "idle_icon_default": "Default",
-      "idle_icon_alternate": "Alternate"
-    },
-    "system": {
-      "title": "System",
-      "open_links": "Open Links",
-      "open_links_foreground": "Foreground",
-      "open_links_background": "Background",
-      "keyboard_shortcut": "Enable keyboard shortcut",
-      "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
-      "system_notifications": "Show system notifications",
-      "system_notifications_help": "Display native operating system notifications for new unread notifications.",
-      "play_sound": "Play sound for new notifications",
-      "volume_up": "Volume up",
-      "volume_down": "Volume down",
-      "volume_reset": "Reset volume",
-      "startup": "Open at startup",
-      "startup_help": "Launch {{appName}} automatically at startup."
+      "zoom_reset": "Reset zoom"
     },
     "keyboard_shortcuts": {
-      "title": "Keyboard Shortcuts",
+      "accounts": "Open accounts (from Settings)",
+      "expand": "Expand notification",
+      "filters": "Filters",
+      "first": "First notification",
       "general": "General",
-      "notifications": "Notifications list",
-      "home": "Home",
-      "my_notifications": "Open My Notifications",
-      "toggle_unread": "Toggle unread only",
       "group_by_product": "Group by product",
       "group_by_title": "Group by title",
-      "filters": "Filters",
+      "home": "Home",
+      "last": "Last notification",
+      "my_notifications": "Open My Notifications",
+      "navigate": "Move between notifications",
+      "notifications": "Notifications list",
+      "quit": "Quit app",
       "refresh": "Refresh notifications",
       "settings": "Open settings",
-      "accounts": "Open accounts (from Settings)",
-      "quit": "Quit app",
-      "navigate": "Move between notifications",
-      "first": "First notification",
-      "last": "Last notification",
-      "expand": "Expand notification",
-      "toggle_read": "Change read state"
+      "title": "Keyboard Shortcuts",
+      "toggle_read": "Change read state",
+      "toggle_unread": "Toggle unread only"
+    },
+    "notifications": {
+      "delay_notification_state": "Delay notification state",
+      "delay_notification_state_help": "Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated).",
+      "group_alphabetically": "Sort product groups alphabetically",
+      "group_alphabetically_help": "When `Group notifications by product` is enabled in the sidebar, this setting will sort products in alphabetical order.",
+      "mark_as_read_on_open": "Mark as read on open",
+      "title": "Notifications"
     },
     "reset": {
-      "title": "Reset Settings",
-      "confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults."
+      "confirm": "Please confirm that you want to reset all settings to the {{appName}} defaults.",
+      "title": "Reset Settings"
     },
-    "view_release_notes": "View {{appName}} release notes",
-    "accounts": "Accounts"
+    "system": {
+      "keyboard_shortcut": "Enable keyboard shortcut",
+      "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
+      "open_links": "Open Links",
+      "open_links_background": "Background",
+      "open_links_foreground": "Foreground",
+      "play_sound": "Play sound for new notifications",
+      "startup": "Open at startup",
+      "startup_help": "Launch {{appName}} automatically at startup.",
+      "system_notifications": "Show system notifications",
+      "system_notifications_help": "Display native operating system notifications for new unread notifications.",
+      "title": "System",
+      "volume_down": "Volume down",
+      "volume_reset": "Reset volume",
+      "volume_up": "Volume up"
+    },
+    "title": "Settings",
+    "tray": {
+      "alternate_icon": "Idle style",
+      "alternate_icon_help": "Choose which tray icon variant to display when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.",
+      "idle_icon_alternate": "Alternate",
+      "idle_icon_default": "Default",
+      "show_count_in_tray": "Show notifications count in tray",
+      "show_count_in_tray_help": "Show the unread notification count next to the tray icon. Useful for a quick glance at unread activity.",
+      "title": "Tray",
+      "unread_active_icon": "Unread style",
+      "unread_active_icon_help": "Choose which tray icon variant to display when you have unread notifications.",
+      "unread_icon_highlighted": "Highlighted",
+      "unread_icon_stealth": "Stealth"
+    },
+    "view_release_notes": "View {{appName}} release notes"
   },
   "sidebar": {
-    "home": "Home",
-    "notifications": {
-      "label": "Notifications",
-      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
-      "unread": "unread notifications",
-      "read": "notifications"
-    },
-    "toggles": {
-      "unreadOnly": {
-        "label": "Show only unread toggle",
-        "tooltip": "Show only unread notifications"
-      },
-      "groupByProduct": {
-        "label": "Group notifications by products",
-        "tooltip": "Group notifications by products"
-      },
-      "groupByTitle": {
-        "label": "Group notifications by title",
-        "tooltip": "Group notifications by title"
-      }
-    },
     "filters": {
       "label": "Filters",
       "tooltip": "Filter notifications"
+    },
+    "home": "Home",
+    "notifications": {
+      "label": "Notifications",
+      "read": "notifications",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
+      "unread": "unread notifications"
+    },
+    "quit": {
+      "label": "Quit {{appName}}",
+      "tooltip": "Quit {{appName}}"
     },
     "refresh": {
       "label": "Refresh notifications",
@@ -266,9 +261,19 @@
       "label": "Settings",
       "tooltip": "Settings"
     },
-    "quit": {
-      "label": "Quit {{appName}}",
-      "tooltip": "Quit {{appName}}"
+    "toggles": {
+      "groupByProduct": {
+        "label": "Group notifications by products",
+        "tooltip": "Group notifications by products"
+      },
+      "groupByTitle": {
+        "label": "Group notifications by title",
+        "tooltip": "Group notifications by title"
+      },
+      "unreadOnly": {
+        "label": "Show only unread toggle",
+        "tooltip": "Show only unread notifications"
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithAppContext } from '../../__helpers__/test-utils';
+import { renderWithProviders } from '../../__helpers__/test-utils';
 
 import { useSettingsStore } from '../../stores';
 
@@ -14,14 +14,10 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
     toggleSettingSpy = vi.spyOn(useSettingsStore.getState(), 'toggleSetting');
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('should toggle the markAsReadOnOpen checkbox', async () => {
-    useSettingsStore.setState({ markAsReadOnOpen: true });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithProviders(<NotificationSettings />, {
+      settings: { markAsReadOnOpen: true },
+    });
 
     await userEvent.click(screen.getByLabelText('Mark as read on open'));
 
@@ -30,9 +26,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is true', async () => {
-    useSettingsStore.setState({ groupNotificationsByProduct: true });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithProviders(<NotificationSettings />, {
+      settings: { groupNotificationsByProduct: true },
+    });
 
     await userEvent.click(
       screen.getByLabelText('Sort product groups alphabetically'),
@@ -45,9 +41,9 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
-    useSettingsStore.setState({ groupNotificationsByProduct: false });
-
-    renderWithAppContext(<NotificationSettings />);
+    renderWithProviders(<NotificationSettings />, {
+      settings: { groupNotificationsByProduct: false },
+    });
 
     await userEvent.click(
       screen.getByLabelText('Sort product groups alphabetically'),
@@ -60,7 +56,7 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
   });
 
   it('should toggle the delayNotificationState checkbox', async () => {
-    renderWithAppContext(<NotificationSettings />);
+    renderWithProviders(<NotificationSettings />);
 
     await userEvent.click(screen.getByLabelText('Delay notification state'));
 

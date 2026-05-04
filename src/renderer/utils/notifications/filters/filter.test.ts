@@ -5,10 +5,6 @@ import { useFiltersStore } from '../../../stores';
 import { filterNotifications } from '.';
 
 describe('renderer/utils/notifications/filter.ts', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('filterNotifications', () => {
     it('should filter notifications by engagement state when provided', async () => {
       mockAtlassifyNotifications[0].message = 'Some message';

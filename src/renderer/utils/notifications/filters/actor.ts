@@ -1,5 +1,6 @@
 import AutomationIcon from '@atlaskit/icon/core/automation';
 import PersonIcon from '@atlaskit/icon/core/person';
+import RovoIcon from '@atlaskit/icon-lab/core/rovo';
 
 import { useFiltersStore } from '../../../stores';
 
@@ -11,26 +12,31 @@ import type {
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
-import { isCompassScorecardNotification } from '../formatters';
-
-const ACTOR_DETAILS: Record<ActorType, FilterDetails> = {
-  user: {
-    name: i18n.t('filters.actors.user.title'),
-    description: i18n.t('filters.actors.user.description'),
-    icon: PersonIcon,
-  },
-  automation: {
-    name: i18n.t('filters.actors.automation.title'),
-    description: i18n.t('filters.actors.automation.description'),
-    icon: AutomationIcon,
-  },
-};
+import { getProductStrategy } from '../../products';
 
 /**
  * Filter implementation for the notification actor type (user vs automation).
  */
 export const actorFilter: Filter<ActorType> = {
-  FILTER_TYPES: ACTOR_DETAILS,
+  get FILTER_TYPES(): Record<ActorType, FilterDetails> {
+    return {
+      user: {
+        name: i18n.t('filters.actors.user.title'),
+        description: i18n.t('filters.actors.user.description'),
+        icon: PersonIcon,
+      },
+      rovo: {
+        name: i18n.t('filters.actors.rovo.title'),
+        description: i18n.t('filters.actors.rovo.description'),
+        icon: RovoIcon,
+      },
+      automation: {
+        name: i18n.t('filters.actors.automation.title'),
+        description: i18n.t('filters.actors.automation.description'),
+        icon: AutomationIcon,
+      },
+    };
+  },
 
   getTypeDetails(type: ActorType): FilterDetails {
     return this.FILTER_TYPES[type];
@@ -69,16 +75,10 @@ export const actorFilter: Filter<ActorType> = {
 };
 
 /**
- * Infers whether a notification was triggered by a human user or an automated actor.
- *
- * A notification is classified as `'automation'` when:
- * - The actor has no display name
- * - It is a Compass scorecard notification
- * - The product type is `rovo_dev`
- * - The actor display name starts with `'Automation for'`
+ * Infers whether a notification was triggered by a human user, rovo product suite or an automated actor.
  *
  * @param notification - The notification to inspect.
- * @returns `'automation'` if the actor is automated, `'user'` otherwise.
+ * @returns actor type based on notification heuristics
  */
 export function inferNotificationActor(
   notification: AtlassifyNotification,
@@ -87,17 +87,9 @@ export function inferNotificationActor(
     return 'automation';
   }
 
-  if (isCompassScorecardNotification(notification)) {
-    return 'automation';
-  }
-
-  if (notification.product.type === 'rovo_dev') {
-    return 'automation';
-  }
-
   if (notification.actor.displayName?.startsWith('Automation for')) {
     return 'automation';
   }
 
-  return 'user';
+  return getProductStrategy(notification).actorType(notification);
 }

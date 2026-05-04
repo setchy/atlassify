@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { navigateMock, renderWithAppContext } from '../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore } from '../stores';
@@ -11,31 +11,23 @@ import * as theme from '../utils/ui/theme';
 import { AccountsRoute } from './Accounts';
 
 describe('renderer/routes/Accounts.tsx', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('General', () => {
     it('should render itself & its children - light mode', async () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(true);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
     });
 
     it('should render itself & its children - dark mode', async () => {
       vi.spyOn(theme, 'isLightMode').mockReturnValue(false);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       expect(screen.getByTestId('accounts')).toMatchSnapshot();
     });
 
     it('should go back by pressing the icon', async () => {
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('header-nav-back'));
 
@@ -49,9 +41,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       const openAccountProfileSpy = vi
         .spyOn(links, 'openAccountProfile')
         .mockImplementation(vi.fn());
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
@@ -65,9 +55,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       const refreshAccountSpy = vi
         .spyOn(useAccountsStore.getState(), 'refreshAccount')
         .mockResolvedValue(mockAtlassianCloudAccount);
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-refresh'));
 
@@ -87,9 +75,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       const removeAccountMock = vi
         .spyOn(useAccountsStore.getState(), 'removeAccount')
         .mockImplementation(vi.fn());
-      useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
-
-      renderWithAppContext(<AccountsRoute />);
+      renderWithProviders(<AccountsRoute />);
 
       await userEvent.click(screen.getByTestId('account-logout'));
 
@@ -101,7 +87,7 @@ describe('renderer/routes/Accounts.tsx', () => {
   });
 
   it('should add new accounts', async () => {
-    renderWithAppContext(<AccountsRoute />);
+    renderWithProviders(<AccountsRoute />);
 
     await userEvent.click(screen.getByTestId('account-add-new'));
 

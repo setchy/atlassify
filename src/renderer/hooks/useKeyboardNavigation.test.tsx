@@ -6,8 +6,6 @@ import {
   waitFor,
 } from '@testing-library/react';
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
 import { useKeyboardNavigation } from './useKeyboardNavigation';

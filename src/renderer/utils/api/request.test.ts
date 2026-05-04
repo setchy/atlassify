@@ -22,10 +22,6 @@ describe('renderer/utils/api/request.ts', () => {
     });
   });
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('performRequestForAccount - should execute graphql request with the correct parameters', async () => {
     const data = {
       query: 'foo',

@@ -8,7 +8,6 @@ describe('renderer/utils/system/tray.ts', () => {
   const updateTrayTitleSpy = vi.spyOn(comms, 'updateTrayTitle');
 
   beforeEach(() => {
-    vi.clearAllMocks();
     useRuntimeStore.setState({
       notificationCount: 0,
       hasMoreAccountNotifications: false,
@@ -130,6 +129,20 @@ describe('renderer/utils/system/tray.ts', () => {
       expect(updateTrayColorSpy).toHaveBeenCalledWith(
         0,
         'error',
+        'default',
+        'active',
+      );
+      expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
+    });
+
+    it('should pass appState offline (not error) when both isError and isOnline are false', () => {
+      useRuntimeStore.setState({ isError: true, isOnline: false });
+
+      setTrayIconColorAndTitle();
+
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(
+        0,
+        'offline',
         'default',
         'active',
       );

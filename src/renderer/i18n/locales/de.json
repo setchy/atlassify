@@ -1,9 +1,10 @@
 {
   "accounts": {
     "add_new": "Neues Konto hinzufügen",
-    "logout_account": "Logout {{username}}",
+    "logout_account": "Abmelden {{username}}",
+    "manage": "Konten verwalten",
     "open_profile": "Kontoprofil öffnen ↗",
-    "refresh_account": "Aktualisieren Sie {{username}}",
+    "refresh_account": "{{username}} aktualisieren",
     "title": "Konten"
   },
   "allRead": {
@@ -11,14 +12,14 @@
     "headingFiltered": "Keine neuen gefilterten Benachrichtigungen"
   },
   "chevron": {
-    "hide": "Verstecken Sie {{type}} Benachrichtigungen",
+    "hide": "{{type}} Benachrichtigungen ausblenden",
     "none": "Keine Benachrichtigungen für {{type}}",
-    "show": "Anzeigen {{type}} Benachrichtigungen"
+    "show": "{{type}} Benachrichtigungen anzeigen"
   },
   "common": {
     "account": "Konto",
     "are_you_sure": "Bist du sicher?",
-    "cancel": "Abbrechen",
+    "cancel": "Stornieren",
     "close": "Schließen",
     "docs": "Dokumente",
     "login": "Login",
@@ -30,16 +31,16 @@
   "errors": {
     "badCredentials": {
       "description1": "Ihre Anmeldeinformationen sind entweder ungültig oder abgelaufen.",
-      "description2": "Bitte versuchen Sie, Ihr Konto zu entfernen und erneut zu authentifizieren.",
+      "description2": "Versuchen Sie bitte, Ihr Konto zu entfernen und sich erneut zu authentifizieren.",
       "title": "Schlechte Anmeldeinformationen"
     },
     "badRequest": {
-      "description1": "Etwas lief schief und machte die API -Anfrage.",
+      "description1": "Bei der API-Anfrage ist ein Fehler aufgetreten.",
       "title": "Ungültige Anforderung"
     },
     "network": {
-      "description1": "Es kann keine Verbindung zu Atlassian Cloud herstellen.",
-      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, einschließlich der Frage, ob Sie ein VPN benötigen, und versuchen Sie es erneut.",
+      "description1": "Es kann keine Verbindung zur Atlassian Cloud hergestellt werden.",
+      "description2": "Bitte überprüfen Sie Ihre Netzwerkverbindung, prüfen Sie auch, ob Sie ein VPN benötigen, und versuchen Sie es erneut.",
       "title": "Netzwerkfehler"
     },
     "offline": {
@@ -48,18 +49,22 @@
       "title": "Netzwerk offline"
     },
     "unknown": {
-      "description1": "Bitte versuchen Sie es später erneut.",
-      "title": "Hoppla! Etwas lief schief"
+      "description1": "Bitte versuchen Sie es später noch einmal.",
+      "title": "Hoppla! Etwas ist schief gelaufen"
     }
   },
   "filters": {
     "actions": {
-      "clear": "Klare Filter"
+      "clear": "Filter löschen"
     },
     "actors": {
       "automation": {
-        "description": "Benachrichtigungen aus Automatisierungsregeln",
+        "description": "Benachrichtigungen von Automatisierungsregeln",
         "title": "Automatisierung"
+      },
+      "rovo": {
+        "description": "Benachrichtigungen von Rovo-Produkten",
+        "title": "Rovo"
       },
       "title": "Schauspieler",
       "user": {
@@ -74,18 +79,18 @@
       },
       "title": "Kategorie",
       "watching": {
-        "description": "Benachrichtigungen beobachten",
+        "description": "Benachrichtigungen ansehen",
         "title": "Aufpassen"
       }
     },
     "engagement": {
       "comment": {
         "description": "Kommentare",
-        "title": "Kommentar"
+        "title": "Kommentare"
       },
       "mention": {
         "description": "Erwähnungen",
-        "title": "Erwähnen"
+        "title": "Erwähnungen"
       },
       "reactions": {
         "description": "Reaktionen",
@@ -102,7 +107,7 @@
         "description": "Benachrichtigungen lesen",
         "title": "Lesen"
       },
-      "title": "Staat lesen",
+      "title": "Status lesen",
       "unread": {
         "description": "Ungelesene Benachrichtigungen",
         "title": "Ungelesen"
@@ -116,39 +121,39 @@
       "tooltip": "Melden Sie sich mit Atlassian an"
     },
     "notifications": "Benachrichtigungen",
-    "subheading": "auf Ihrer Menüleiste"
-  },
-  "login": {
-    "create_token": "API-Token erstellen",
-    "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. \nBitte verwenden Sie einen anderen Benutzernamen.",
-    "error_message": "Hoppla! Die angegebene Benutzername-Token-Kombination ist nicht gültig",
-    "security_docs": "Siehe Atlassian Dokumentation",
-    "title": "Melden Sie sich mit Atlassian an",
-    "token": "API -Token",
-    "token_helper": "und oben einfügen",
-    "username_helper": "Ihr Atlassian Benutzername / E -Mail -Adresse"
+    "subheading": "in Ihrer Menüleiste"
   },
   "loading": {
     "heading": "Laden"
   },
+  "login": {
+    "create_token": "API-Token erstellen",
+    "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. Bitte verwenden Sie einen anderen Benutzernamen.",
+    "error_message": "Hoppla! Die angegebene Benutzernamen-Token-Kombination ist ungültig. Bitte versuchen Sie es erneut.",
+    "security_docs": "Siehe Atlassian-Dokumentation",
+    "title": "Melden Sie sich mit Atlassian an",
+    "token": "API-Token",
+    "token_helper": "und oben einfügen",
+    "username_helper": "Ihr Atlassian-Benutzername/Ihre E-Mail-Adresse"
+  },
   "notifications": {
     "account": {
-      "mark_all_read": "Markieren Sie alle Kontobenachrichtigungen wie gelesen",
+      "mark_all_read": "Markieren Sie alle Kontobenachrichtigungen als gelesen",
       "mark_read_confirm": {
-        "description1": "Bitte bestätigen Sie, dass Sie möchten",
+        "description1": "Bitte bestätigen Sie, dass Sie dies wünschen",
         "description2": "Markieren Sie alle Kontobenachrichtigungen",
         "description3": "wie gelesen"
       },
       "open_profile": "Kontoprofil öffnen ↗",
-      "pull_requests": "Meine Anfragen ↗"
+      "pull_requests": "Meine Pull-Requests ↗"
     },
     "interactions": {
-      "mark_as_read": "Markieren Sie wie gelesen",
-      "mark_as_unread": "Markieren Sie als ungelesen"
+      "mark_as_read": "Als gelesen markieren",
+      "mark_as_unread": "Als ungelesen markieren"
     },
     "native_count": "Sie haben {{count}} Benachrichtigungen",
     "product": {
-      "mark_all_read": "Markieren Sie alle Produktbenachrichtigungen wie gelesen",
+      "mark_all_read": "Markieren Sie alle Produktbenachrichtigungen als gelesen",
       "open_product": "Öffnen Sie {{name}} ↗"
     }
   },
@@ -164,8 +169,8 @@
       "theme": "Thema",
       "title": "Aussehen",
       "zoom": "Zoom",
-      "zoom_in": "Zoomen",
-      "zoom_out": "Zoomen",
+      "zoom_in": "Vergrößern",
+      "zoom_out": "Herauszoomen",
       "zoom_reset": "Zoom zurücksetzen"
     },
     "keyboard_shortcuts": {
@@ -189,64 +194,64 @@
       "toggle_unread": "Nur ungelesen umschalten"
     },
     "notifications": {
-      "delay_notification_state": "Verzögerung des Benachrichtigungszustands",
-      "delay_notification_state_help": "Behalten Sie die Benachrichtigung in {{appName}} nach der Interaktion (dh die Benachrichtigung, markieren Sie als Lesen) bis zum nächsten Aktualisierungsfenster (geplant oder benutzerdefiniert).",
-      "group_alphabetically": "Gruppenproduktbenachrichtigungen alphabetisch",
-      "group_alphabetically_help": "Wenn Benachrichtigungen nach Produkten gruppiert werden, sortiert diese Einstellung Produkte in alphabetischer Reihenfolge.",
-      "mark_as_read_on_open": "Markieren Sie als Lesen auf Open",
+      "delay_notification_state": "Verzögerungsbenachrichtigungsstatus",
+      "delay_notification_state_help": "Behalten Sie die Benachrichtigung bei Interaktion (z. B. Benachrichtigung öffnen, als gelesen markieren) innerhalb von {{appName}} bis zum nächsten Aktualisierungsfenster (geplant oder vom Benutzer initiiert).",
+      "group_alphabetically": "Sortieren Sie Produktgruppen alphabetisch",
+      "group_alphabetically_help": "Wenn „Benachrichtigungen nach Produkt gruppieren“ in der Seitenleiste aktiviert ist, sortiert diese Einstellung die Produkte in alphabetischer Reihenfolge.",
+      "mark_as_read_on_open": "Beim Öffnen als gelesen markieren",
       "title": "Benachrichtigungen"
     },
     "reset": {
-      "confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen {{appName}} zurücksetzen möchten.",
+      "confirm": "Bitte bestätigen Sie, dass Sie alle Einstellungen auf die Standardeinstellungen von {{appName}} zurücksetzen möchten.",
       "title": "Einstellungen zurücksetzen"
     },
     "system": {
-      "keyboard_shortcut": "Aktivieren Sie die Tastaturverknüpfung",
-      "keyboard_shortcut_help": "Wenn Sie aktiviert sind, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
+      "keyboard_shortcut": "Tastaturkürzel aktivieren",
+      "keyboard_shortcut_help": "Wenn diese Option aktiviert ist, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
       "open_links_background": "Hintergrund",
       "open_links_foreground": "Vordergrund",
-      "play_sound": "Spielen Sie Sound für neue Benachrichtigungen",
-      "startup": "Im Start geöffnet",
+      "play_sound": "Spielen Sie Ton für neue Benachrichtigungen ab",
+      "startup": "Beim Start öffnen",
       "startup_help": "Starten Sie {{appName}} automatisch beim Start.",
       "system_notifications": "Systembenachrichtigungen anzeigen",
       "system_notifications_help": "Zeigen Sie native Betriebssystembenachrichtigungen für neue ungelesene Benachrichtigungen an.",
       "title": "System",
-      "volume_down": "Lautstärke nach unten",
-      "volume_reset": "Volumen zurücksetzen",
-      "volume_up": "Lautstärke"
+      "volume_down": "Lautstärke verringern",
+      "volume_reset": "Lautstärke zurücksetzen",
+      "volume_up": "Lautstärke erhöhen"
     },
     "title": "Einstellungen",
     "tray": {
-      "show_count_in_tray": "Benachrichtigungen zeigen im Tablett zählen",
+      "alternate_icon": "Idle-Stil",
+      "alternate_icon_help": "Wählen Sie aus, welche Taskleistensymbolvariante angezeigt werden soll, wenn alle Benachrichtigungen gelesen werden. Diese Einstellung ist besonders nützlich für Geräte mit einer dunklen Menü- oder Taskleiste.",
+      "idle_icon_alternate": "Wechseln",
+      "idle_icon_default": "Standard",
+      "show_count_in_tray": "Anzahl der Benachrichtigungen in der Taskleiste anzeigen",
       "show_count_in_tray_help": "Zeigt die Anzahl der ungelesenen Benachrichtigungen neben dem Taskleistensymbol an. \nNützlich für einen schnellen Blick auf ungelesene Aktivitäten.",
       "title": "Tablett",
-      "alternate_icon": "Leerlauf-Stil",
-      "alternate_icon_help": "Wählen Sie das Taskleistensymbol, das angezeigt wird, wenn alle Benachrichtigungen gelesen wurden.",
-      "unread_active_icon": "Ungelesen-Stil",
-      "unread_active_icon_help": "Wählen Sie das Taskleistensymbol, das beim Vorhandensein ungelesener Benachrichtigungen angezeigt wird.",
-      "unread_icon_stealth": "Stealth",
+      "unread_active_icon": "Ungelesener Stil",
+      "unread_active_icon_help": "Wählen Sie aus, welche Taskleistensymbolvariante angezeigt werden soll, wenn Sie ungelesene Benachrichtigungen haben.",
       "unread_icon_highlighted": "Hervorgehoben",
-      "idle_icon_dark": "Dunkel",
-      "idle_icon_alternate": "Alternativ"
+      "unread_icon_stealth": "Heimlichkeit"
     },
-    "view_release_notes": "View {{appName}} Versionshinweise"
+    "view_release_notes": "Versionshinweise zu {{appName}} ansehen"
   },
   "sidebar": {
     "filters": {
       "label": "Filter",
-      "tooltip": "Filterbenachrichtigungen"
+      "tooltip": "Benachrichtigungen filtern"
     },
     "home": "Heim",
     "notifications": {
       "label": "Benachrichtigungen",
       "read": "Benachrichtigungen",
-      "tooltip": "{{count}} {{countSuffix}} {{countType}} ↗",
+      "tooltip": "{{count}}{{countSuffix}} {{countType}} ↗",
       "unread": "ungelesene Benachrichtigungen"
     },
     "quit": {
-      "label": "Beenden {{appName}}",
-      "tooltip": "Beenden {{appName}}"
+      "label": "Beenden Sie {{appName}}",
+      "tooltip": "Beenden Sie {{appName}}"
     },
     "refresh": {
       "label": "Benachrichtigungen aktualisieren",
@@ -258,16 +263,16 @@
     },
     "toggles": {
       "groupByProduct": {
-        "label": "Gruppenbenachrichtigungen durch Produkte",
-        "tooltip": "Gruppenbenachrichtigungen durch Produkte"
+        "label": "Gruppieren Sie Benachrichtigungen nach Produkten",
+        "tooltip": "Gruppieren Sie Benachrichtigungen nach Produkten"
       },
       "groupByTitle": {
-        "label": "Gruppenbenachrichtigungen nach Titel",
-        "tooltip": "Gruppenbenachrichtigungen nach Titel"
+        "label": "Gruppieren Sie Benachrichtigungen nach Titel",
+        "tooltip": "Gruppieren Sie Benachrichtigungen nach Titel"
       },
       "unreadOnly": {
-        "label": "Zeigen Sie nur ungelesen",
-        "tooltip": "Zeigen Sie nur ungelesene Benachrichtigungen"
+        "label": "Nur ungelesen anzeigen, umschalten",
+        "tooltip": "Nur ungelesene Benachrichtigungen anzeigen"
       }
     }
   }

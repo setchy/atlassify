@@ -8,30 +8,68 @@ on:
         required: true
         description: "The directory to lint"
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  lint:
-    name: biomejs
+  lint-code:
+    name: Lint Code [biomejs]
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
-
-      - name: Setup Node
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version-file: .nvmrc
+          persist-credentials: false
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-        working-directory: ${{ github.event.inputs.directory }}
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+        with:
+          directory: ${{ inputs.directory }}
 
       - name: Run linter
         run: pnpm lint:check
-        working-directory: ${{ github.event.inputs.directory }}
+        working-directory: ${{ inputs.directory }}
+
+  lint-i18n:
+    name: Lint i18n [i18next-cli]
+    if: ${{ inputs.directory == '.' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+        with:
+          directory: ${{ inputs.directory }}
+
+      - name: i18n linter
+        run: pnpm i18n:lint
+        working-directory: ${{ inputs.directory }}
+
+      - name: i18n check
+        run: pnpm i18n:check
+        working-directory: ${{ inputs.directory }}
+
+  lint-actions:
+    name: Lint GitHub Actions [actionlint]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/
+
+      - name: GitHub Actions linter
+        uses: docker://rhysd/actionlint:1.7.12@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667

@@ -1,5 +1,3 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { Theme } from '../../shared/theme';
 
 import type { Account, Percentage } from '../types';
@@ -157,7 +155,6 @@ describe('renderer/stores/subscriptions.ts', () => {
     beforeEach(() => {
       cleanup = initializeStoreSubscriptions();
       vi.clearAllMocks(); // Clear calls from initialization
-      vi.mocked(queryClient.invalidateQueries).mockClear();
     });
 
     it('should invalidate queries when filters change', () => {

@@ -1,32 +1,17 @@
-import { act, renderHook, waitFor } from '@testing-library/react';
-import type { ReactNode } from 'react';
+import { act, waitFor } from '@testing-library/react';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import nock from 'nock';
 
-import { configureAxiosHttpAdapterForNock } from '../__helpers__/test-utils';
+import {
+  configureAxiosHttpAdapterForNock,
+  renderHookWithProviders,
+} from '../__helpers__/test-utils';
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../__mocks__/notifications-mocks';
 
 import { useSettingsStore } from '../stores';
 
 import { useNotifications } from './useNotifications';
-
-const createWrapper = () => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        refetchOnWindowFocus: false,
-        refetchInterval: false,
-      },
-    },
-  });
-
-  return ({ children }: { children: ReactNode }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
-};
 
 describe('renderer/hooks/useNotifications.ts', () => {
   beforeEach(() => {
@@ -54,9 +39,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHookWithProviders(() => useNotifications());
 
       await waitFor(() => {
         expect(result.current.isFetching).toBe(false);
@@ -96,9 +79,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHookWithProviders(() => useNotifications());
 
       await waitFor(() => {
         expect(result.current.isFetching).toBe(false);
@@ -131,9 +112,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         });
 
-      const { result } = renderHook(() => useNotifications(), {
-        wrapper: createWrapper(),
-      });
+      const { result } = renderHookWithProviders(() => useNotifications());
 
       await waitFor(() => {
         expect(result.current.isFetching).toBe(false);
@@ -194,9 +173,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(), {
-      wrapper: createWrapper(),
-    });
+    const { result } = renderHookWithProviders(() => useNotifications());
 
     await waitFor(() => {
       expect(result.current.isFetching).toBe(false);
@@ -259,9 +236,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         },
       });
 
-    const { result } = renderHook(() => useNotifications(), {
-      wrapper: createWrapper(),
-    });
+    const { result } = renderHookWithProviders(() => useNotifications());
 
     await waitFor(() => {
       expect(result.current.isFetching).toBe(false);

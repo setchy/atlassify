@@ -1,3 +1,4 @@
+import type { ButtonAppearance } from '@atlaskit/button/dist/types/new-button/variants/types';
 import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
@@ -240,6 +241,31 @@ export interface AtlassifyError {
    * An array of emojis that suitably summarize the error message.
    */
   emojis: string[];
+
+  /**
+   * Optional actions that can be taken to resolve the error.
+   */
+  actions?: AtlassifyErrorAction[];
+}
+
+/**
+ * An action that can be taken to resolve an error.
+ */
+export interface AtlassifyErrorAction {
+  /**
+   * The label for the error action button.
+   */
+  label: string;
+
+  /**
+   * The route to navigate to when the error action button is clicked.
+   */
+  route: string;
+
+  /**
+   * The appearance for the error action button.
+   */
+  appearance: ButtonAppearance;
 }
 
 /**
@@ -259,10 +285,11 @@ export interface Chevron {
   /**
    * The chevron icon.
    */
+  // TODO improve these types
   icon:
+    | typeof ChevronDownIcon
     | typeof ChevronLeftIcon
-    | typeof ChevronRightIcon
-    | typeof ChevronDownIcon;
+    | typeof ChevronRightIcon;
 
   /**
    * The chevron label.
@@ -299,9 +326,10 @@ export type EngagementStateType = 'mention' | 'comment' | 'reaction';
  * The actor type.
  *
  * - 'user' - A user actor created the notification.
+ * - 'rovo' - A rovo based (rovo chat, rovo dev, etc) actor created the notification.
  * - 'automation' - An automation actor created the notification.
  */
-export type ActorType = 'user' | 'automation';
+export type ActorType = 'user' | 'rovo' | 'automation';
 
 /**
  * Atlassian products which are currently supported by Atlassify.
@@ -314,6 +342,7 @@ export type ProductType =
   | 'jira'
   | 'jira_product_discovery'
   | 'jira_service_management'
+  | 'rovo'
   | 'rovo_dev'
   | 'teams'
   | 'unknown';

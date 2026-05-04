@@ -51,6 +51,40 @@ export function groupNotificationsByProduct(
 }
 
 /**
+ * Sort notifications by their stabilized display order.
+ *
+ * @param notifications - List of notifications to sort.
+ * @returns A new sorted array of notifications.
+ */
+export function sortNotificationsByOrder(
+  notifications: AtlassifyNotification[],
+): AtlassifyNotification[] {
+  return [...notifications].sort((a, b) => a.order - b.order);
+}
+
+/**
+ * Converts grouped notifications into an ordered entries array, optionally sorted alphabetically.
+ *
+ * @param notifications - Ordered list of notifications to group.
+ * @param alphabetically - Whether to sort product groups alphabetically by product type.
+ * @returns Ordered entries array of [productType, notifications[]] pairs.
+ */
+export function groupNotificationsByProductEntries(
+  notifications: AtlassifyNotification[],
+  alphabetically: boolean,
+): [string, AtlassifyNotification[]][] {
+  const entries = Array.from(
+    groupNotificationsByProduct(notifications).entries(),
+  );
+
+  if (alphabetically) {
+    entries.sort((a, b) => a[0].localeCompare(b[0]));
+  }
+
+  return entries;
+}
+
+/**
  * Returns a flattened, ordered notifications list according to:
  *   - product-first-seen order (when grouped by product)
  *   - natural notification order otherwise
@@ -61,12 +95,12 @@ export function groupNotificationsByProduct(
 export function getFlattenedNotificationsByProduct(
   notifications: AtlassifyNotification[],
 ): AtlassifyNotification[] {
-  const settings = useSettingsStore.getState();
+  const {
+    groupNotificationsByProduct: groupByProduct,
+    groupNotificationsByProductAlphabetically: groupAlphabetically,
+  } = useSettingsStore.getState();
 
-  if (
-    settings.groupNotificationsByProduct ||
-    settings.groupNotificationsByProductAlphabetically
-  ) {
+  if (groupByProduct || groupAlphabetically) {
     const productGroups = groupNotificationsByProduct(notifications);
 
     return Array.from(productGroups.values()).flat();
@@ -132,29 +166,31 @@ export async function getNotificationIdsForGroups(
     isGroupNotification(notification),
   );
 
-  try {
-    for (const group of groupNotifications) {
+  const results = await Promise.allSettled(
+    groupNotifications.map(async (group) => {
       const res = await getNotificationsByGroupId(
         account,
         group.notificationGroup.id,
         group.notificationGroup.size,
       );
 
-      const groupNotifications = res.data.notifications.notificationGroup
+      const nodes = res.data.notifications.notificationGroup
         .nodes as GroupNotificationDetailsFragment[];
 
-      const groupNotificationIDs = groupNotifications.map(
-        (notification) => notification.notificationId,
-      );
+      return nodes.map((notification) => notification.notificationId);
+    }),
+  );
 
-      notificationIDs.push(...groupNotificationIDs);
+  for (const result of results) {
+    if (result.status === 'fulfilled') {
+      notificationIDs.push(...result.value);
+    } else {
+      rendererLogError(
+        'getNotificationIdsForGroups',
+        'Error occurred while fetching notification ids for notification groups',
+        result.reason,
+      );
     }
-  } catch (err) {
-    rendererLogError(
-      'getNotificationIdsForGroups',
-      'Error occurred while fetching notification ids for notification groups',
-      err,
-    );
   }
 
   return notificationIDs;

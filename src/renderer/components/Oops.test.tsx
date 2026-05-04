@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 
-import { renderWithAppContext } from '../__helpers__/test-utils';
+import { renderWithProviders } from '../__helpers__/test-utils';
 
 import { Oops } from './Oops';
 
@@ -12,20 +12,20 @@ describe('renderer/components/Oops.tsx', () => {
       emojis: ['🔥'],
     };
 
-    let tree: ReturnType<typeof renderWithAppContext> | null = null;
+    let tree: ReturnType<typeof renderWithProviders> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<Oops error={mockError} />);
+      tree = renderWithProviders(<Oops error={mockError} />);
     });
 
     expect(tree?.container).toMatchSnapshot();
   });
 
   it('should render itself & its children - fallback to unknown error', async () => {
-    let tree: ReturnType<typeof renderWithAppContext> | null = null;
+    let tree: ReturnType<typeof renderWithProviders> | null = null;
 
     await act(async () => {
-      tree = renderWithAppContext(<Oops error={null} />);
+      tree = renderWithProviders(<Oops error={null} />);
     });
 
     expect(tree?.container).toMatchSnapshot();

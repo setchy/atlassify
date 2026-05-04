@@ -10,12 +10,13 @@ on:
     paths:
       - "docs/**"
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   lint:
     name: Lint Docs
     uses: ./.github/workflows/lint.yml
+    permissions:
+      contents: read
     with:
       directory: "docs"

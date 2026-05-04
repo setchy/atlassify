@@ -6,16 +6,16 @@ import { logError, logInfo } from '../../shared/logger';
 import { onMainEvent } from '../events';
 
 /**
- * Initialize the Aptabase analytics SDK using the APTABASE_KEY environment variable.
+ * Initialize the Aptabase analytics SDK using the VITE_APTABASE_KEY environment variable.
  */
 export async function initializeAnalytics(): Promise<void> {
-  const aptabaseKey = process.env.APTABASE_KEY;
+  const aptabaseKey = import.meta.env.VITE_APTABASE_KEY;
 
   if (!aptabaseKey) {
     logError(
       'analytics',
-      'APTABASE_KEY environment variable is not set',
-      new Error('APTABASE_KEY environment variable is not set'),
+      'VITE_APTABASE_KEY environment variable is not set',
+      new Error('VITE_APTABASE_KEY environment variable is not set'),
     );
     return;
   }

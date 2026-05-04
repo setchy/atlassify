@@ -18,12 +18,9 @@ describe('renderer/utils/system/links.ts', () => {
     .spyOn(comms, 'openExternalLink')
     .mockImplementation(vi.fn());
 
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('openAtlassifyReleaseNotes', () => {
     openAtlassifyReleaseNotes('v1.0.0');
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       'https://github.com/setchy/atlassify/releases/tag/v1.0.0',
     );
@@ -31,6 +28,7 @@ describe('renderer/utils/system/links.ts', () => {
 
   it('openAtlassianSecurityDocs', () => {
     openAtlassianSecurityDocs();
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       URLs.ATLASSIAN.DOCS.API_TOKEN,
     );
@@ -38,6 +36,7 @@ describe('renderer/utils/system/links.ts', () => {
 
   it('openAtlassianCreateToken', () => {
     openAtlassianCreateToken();
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       URLs.ATLASSIAN.WEB.SECURITY_TOKENS,
     );
@@ -45,6 +44,7 @@ describe('renderer/utils/system/links.ts', () => {
 
   it('openMyNotifications', () => {
     openMyNotifications();
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
     );
@@ -52,11 +52,13 @@ describe('renderer/utils/system/links.ts', () => {
 
   it('openMyPullRequests', () => {
     openMyPullRequests();
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith('https://bitbucket.org/');
   });
 
   it('openAccountProfile', () => {
     openAccountProfile(mockAtlassianCloudAccount);
+
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       'https://team.atlassian.com/people/123456789',
     );
@@ -65,7 +67,9 @@ describe('renderer/utils/system/links.ts', () => {
   describe('openNotification', () => {
     it('openNotification should use entity url when available', async () => {
       const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
+
       await openNotification(mockSingleAtlassifyNotification);
+
       expect(openExternalLinkSpy).toHaveBeenCalledWith(mockNotificationUrl);
     });
 
@@ -75,6 +79,7 @@ describe('renderer/utils/system/links.ts', () => {
       const mockNotificationUrl = mockNotif.url;
 
       await openNotification(mockNotif);
+
       expect(openExternalLinkSpy).toHaveBeenCalledWith(mockNotificationUrl);
     });
   });

@@ -1,22 +1,24 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import compiled from '@compiled/vite-plugin';
 import twemoji from '@discordapp/twemoji';
 import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import type { Plugin } from 'vite';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
 import electron from 'vite-plugin-electron/simple';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 import { Constants } from './src/renderer/constants';
 
 /**
- * Helper to generate Twemoji static copy targets.
- * Extracts all emojis from Constants.EMOJIS and maps them to their SVG filenames.
+ * Vite plugin that copies static assets to disk on startup.
+ * Runs in both dev and build modes so the Electron main process can resolve
+ * asset file URLs without requiring a prior `pnpm build`.
  */
-const getTwemojiCopyTargets = () => {
+const copyStaticAssetsPlugin = (): Plugin => {
   const flatten = (obj: object): string[] =>
     Object.values(obj).flatMap((v) =>
       Array.isArray(v) ? v : flatten(v as object),
@@ -28,15 +30,59 @@ const getTwemojiCopyTargets = () => {
       .split('/')
       .pop();
 
-  const allEmojis = flatten(Constants.EMOJIS);
-  const emojiFilenames = allEmojis.map((emoji) =>
-    extractSvgFilename(twemoji.parse(emoji, { folder: 'svg', ext: '.svg' })),
-  );
+  let isBuild = false;
 
-  return emojiFilenames.map((filename) => ({
-    src: `../../node_modules/@discordapp/twemoji/dist/svg/${filename}`,
-    dest: 'assets/images/twemoji',
-  }));
+  const copyAssets = () => {
+    // Copy the root assets/ directory (images, sounds, etc.) into build/
+    fs.cpSync(
+      fileURLToPath(new URL('assets', import.meta.url)),
+      fileURLToPath(new URL('build/assets', import.meta.url)),
+      { recursive: true },
+    );
+
+    // Copy individual Twemoji SVGs needed by the app into build/assets/images/twemoji/
+    const twemojiSrcDir = fileURLToPath(
+      new URL('node_modules/@discordapp/twemoji/dist/svg', import.meta.url),
+    );
+    const twemojiDestDir = fileURLToPath(
+      new URL('build/assets/images/twemoji', import.meta.url),
+    );
+
+    fs.mkdirSync(twemojiDestDir, { recursive: true });
+
+    const allEmojis = flatten(Constants.EMOJIS);
+    for (const emoji of allEmojis) {
+      const filename = extractSvgFilename(
+        twemoji.parse(emoji, { folder: 'svg', ext: '.svg' }),
+      );
+      if (filename) {
+        fs.copyFileSync(
+          path.join(twemojiSrcDir, filename),
+          path.join(twemojiDestDir, filename),
+        );
+      }
+    }
+  };
+
+  return {
+    name: 'copy-static-assets',
+    configResolved(config) {
+      isBuild = config.command === 'build';
+    },
+    // In serve/dev mode, copy before the build starts (emptyOutDir doesn't run).
+    // In build mode, copy after all output is written — buildStart runs before
+    // Vite's emptyOutDir wipe, so assets copied there would be deleted.
+    buildStart() {
+      if (!isBuild) {
+        copyAssets();
+      }
+    },
+    closeBundle() {
+      if (isBuild) {
+        copyAssets();
+      }
+    },
+  };
 };
 
 /**
@@ -92,15 +138,9 @@ export default defineConfig(({ command }) => {
         main: {
           entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
           vite: {
-            // Define build-time replacements for the main process bundle.
-            // During CI builds `process.env.APTABASE_KEY` will be injected via the environment.
-            define: isBuild
-              ? {
-                  'process.env.APTABASE_KEY': JSON.stringify(
-                    process.env.APTABASE_KEY ?? '',
-                  ),
-                }
-              : {},
+            // The outer Vite config sets root:'src/renderer', so we must
+            // explicitly tell the main-process sub-build where to find .env files.
+            envDir: fileURLToPath(new URL('.', import.meta.url)),
             build: {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
               rollupOptions: {
@@ -130,15 +170,7 @@ export default defineConfig(({ command }) => {
           },
         },
       }),
-      viteStaticCopy({
-        targets: [
-          ...getTwemojiCopyTargets(),
-          {
-            src: '../../assets',
-            dest: '.',
-          },
-        ],
-      }),
+      copyStaticAssetsPlugin(),
     ],
     root: 'src/renderer',
     publicDir: false as const,

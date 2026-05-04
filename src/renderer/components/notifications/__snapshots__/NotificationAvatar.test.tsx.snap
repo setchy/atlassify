@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderer/components/notifications/NotificationAvatar.tsx > renders actor avatar with circle appearance 1`] = `
+<div>
+  <div
+    class="css-1cd2fb3"
+  >
+    <div
+      role="presentation"
+    >
+      <div
+        aria-labelledby="_r_1_"
+        class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+        role="img"
+      >
+        <span
+          class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko1rr0"
+            data-ssr-placeholder-ignored="true"
+            data-vc="avatar-image"
+            src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+          />
+        </span>
+        <span
+          hidden=""
+          id="_r_1_"
+        >
+          atlassify-app
+        </span>
+      </div>
+    </div>
+    <div
+      role="presentation"
+    >
+      <span
+        aria-label="Direct notifications"
+        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+        role="img"
+        style="color: currentcolor;"
+      >
+        <svg
+          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+          fill="none"
+          role="presentation"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+            fill="currentcolor"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renderer/components/notifications/NotificationAvatar.tsx > renders actor avatar with square appearance 1`] = `
+<div>
+  <div
+    class="css-1cd2fb3"
+  >
+    <div
+      role="presentation"
+    >
+      <div
+        aria-labelledby="_r_4_"
+        class="_12ji1r31 _1qu2glyw _12y3idpf _1e0c1o8l _kqswh2mm"
+        role="img"
+      >
+        <span
+          class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsbzwfg _4t3izwfg"
+          style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            class="_16jlkb7n _1o9zkb7n _i0dl1osq _1e0c1txw _1bsb1osq _4t3i1osq _2rko12b0"
+            data-ssr-placeholder-ignored="true"
+            data-vc="avatar-image"
+            src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/123"
+          />
+        </span>
+        <span
+          hidden=""
+          id="_r_4_"
+        >
+          atlassify-app
+        </span>
+      </div>
+    </div>
+    <div
+      role="presentation"
+    >
+      <span
+        aria-label="Direct notifications"
+        class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+        role="img"
+        style="color: currentcolor;"
+      >
+        <svg
+          class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsbpxbi _4t3ipxbi"
+          fill="none"
+          role="presentation"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M2.22 1.22A.75.75 0 0 1 2.75 1H14a.75.75 0 0 1 .6 1.2l-2.662 3.55L14.6 9.3a.75.75 0 0 1-.6 1.2H3.5V15H2V1.75a.75.75 0 0 1 .22-.53M3.5 9h9l-2.1-2.8a.75.75 0 0 1 0-.9l2.1-2.8h-9z"
+            fill="currentcolor"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;

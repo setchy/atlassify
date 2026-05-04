@@ -1,7 +1,5 @@
 import type { Menubar } from 'menubar';
 
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
 import { configureWindowEvents } from './window';
 
 vi.mock('../config', () => ({
@@ -15,8 +13,6 @@ describe('main/lifecycle/window.ts', () => {
   let menubar: Menubar;
 
   beforeEach(() => {
-    vi.clearAllMocks();
-
     menubar = {
       hideWindow: vi.fn(),
       tray: {

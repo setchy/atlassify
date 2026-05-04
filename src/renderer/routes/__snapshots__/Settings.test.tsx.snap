@@ -15,7 +15,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         role="presentation"
       >
         <button
-          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
           data-testid="header-nav-back"
           type="button"
         >
@@ -105,12 +105,12 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   style="box-sizing: border-box;"
                 >
                   <div
-                    class="_16jlkb7n _1o9zkb7n _i0dlf1ug _1reo15vq _18m915vq _4cvr1h6o _1e0c11p5 _1n261g80 _8am5i4x0 _kqswh2mm _ca0qv77o _u5f312x7 _n3tdv77o _19bv12x7 -ValueContainer"
+                    class="_16jlkb7n _1o9zkb7n _i0dlf1ug _1reo15vq _18m915vq _4cvr1h6o _1e0c11p5 _1n261g80 _8am5i4x0 _kqswh2mm _y4ti12x7 _bozg12x7 _1q51v77o _85i5v77o -ValueContainer"
                     data-testid="settings-language-selector-select--value-container"
                     style="box-sizing: border-box;"
                   >
                     <div
-                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _19pkidpf _2hwxv77o _otyridpf _18u0v77o _syazi7uo -singleValue"
+                      class="_nd5l1sux _1reo15vq _18m915vq _p12f1osq _1bto1l2s _o5721q9c _1pfhidpf _12l2v77o _6rthidpf _ahbqv77o _syazi7uo -singleValue"
                       id="react-select-2-single-value"
                       style="box-sizing: border-box;"
                     >
@@ -194,15 +194,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 :
               </span>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
                 data-testid="theme-system--radio-label"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
               >
                 <input
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   data-testid="theme-system--radio-input"
                   name="theme"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="SYSTEM"
@@ -214,16 +212,14 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
                 data-testid="theme-light--radio-label"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
               >
                 <input
                   checked=""
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   data-testid="theme-light--radio-input"
                   name="theme"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="LIGHT"
@@ -235,15 +231,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
                 data-testid="theme-dark--radio-label"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
               >
                 <input
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   data-testid="theme-dark--radio-input"
                   name="theme"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="DARK"
@@ -295,7 +289,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                         role="presentation"
                       >
                         <button
-                          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                           data-testid="settings-zoom-out"
                           type="button"
                         >
@@ -333,7 +327,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                         role="presentation"
                       >
                         <button
-                          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                           data-testid="settings-zoom-in"
                           type="button"
                         >
@@ -370,7 +364,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     </div>
                   </div>
                   <div
-                    class="_1bsbe4h9 _kqswh2mm _1pbykb7n _4t3i1hvu _bfhkmuej _195g1n1a"
+                    class="_1bsbe4h9 _kqswh2mm _1pbykb7n _4t3i1hvu _bfhk1l7x _195g1n1a"
                   />
                   <div
                     class="_1j4hidpf _1553idpf _1qgbidpf _y1n3idpf"
@@ -379,7 +373,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                       role="presentation"
                     >
                       <button
-                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                         data-testid="settings-zoom-reset"
                         type="button"
                       >
@@ -517,7 +511,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1tvo _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1gmx _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
               data-disabled="true"
             >
               <input
@@ -555,21 +549,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid9"
+                id="_r_8_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -641,21 +635,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid11"
+                id="_r_a_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -743,21 +737,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid13"
+                id="_r_c_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -802,14 +796,12 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 :
               </span>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
                   checked=""
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="useAlternateIdleIcon"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="false"
@@ -832,13 +824,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="useAlternateIdleIcon"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="true"
@@ -863,21 +853,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <div
-                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
               >
                 <button
                   aria-expanded="false"
                   aria-haspopup="true"
                   class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                   data-ds--inline-message--button="true"
-                  id="uid15"
+                  id="_r_e_"
                   type="button"
                 >
                   <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                       data-ds--inline-message--icon="true"
                     >
                       <span
@@ -923,14 +913,12 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 :
               </span>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
                   checked=""
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="useUnreadActiveIcon"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="true"
@@ -953,13 +941,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="useUnreadActiveIcon"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="false"
@@ -982,21 +968,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <div
-                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+                class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
               >
                 <button
                   aria-expanded="false"
                   aria-haspopup="true"
                   class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                   data-ds--inline-message--button="true"
-                  id="uid17"
+                  id="_r_g_"
                   type="button"
                 >
                   <span
                     class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                   >
                     <span
-                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                      class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                       data-ds--inline-message--icon="true"
                     >
                       <span
@@ -1051,14 +1037,12 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 :
               </span>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
                   checked=""
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="openLinks"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="FOREGROUND"
@@ -1070,13 +1054,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 </span>
               </label>
               <label
-                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazovqm _mqf87wap _g7st13gf"
-                style="--_5xk3r4: var(--ds-text, #091E42); --_1ynhf1h: var(--ds-text-disabled, #97A0AF);"
+                class="_11c8fhey _1e0c1txw _vchhusvi _kqswh2mm _4cvr1y6m _syazi7uo"
               >
                 <input
-                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1kd8 _1151ddza _1s6weh7q _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosi1j4g _11jy1j4g _f3ett94y _y2mv15pg _1bg41l7b _6tjk15pg _awqn1l7b _1rvq12ci _1p9jddza _x2tz1ehr _1iwz1ehr _sj8ye8ep _jckowjs8 _1dvdddza _60akxz7c _19ybua6f _1d7pua6f _j5dh13gf _scgf13gf _4fps13gf _5ry313gf _qep213gf _180n13gf _1gcs13gf _1x1a13gf _6hp813gf _4rya1ouc _o1bd1ouc _2kbk1ouc _6cyr1ouc _n8t01ouc _1o5r1ouc _nxi61ouc _neoe1ouc _1el21ouc _lekr1pl2 _11v71pl2 _1if11pl2 _bl0e1pl2 _92na1pl2 _awur1pl2 _1f8c1pl2 _s2ft1pl2 _17a11pl2 _x48asnw8 _1ib2snw8 _wml0snw8 _tusmsnw8 _1c6fsnw8 _qfttsnw8 _1yk9snw8 _gdmbsnw8 _pmm4snw8"
+                  class="_18s8ze3t _19it3vzd _2rko1qll _12ji1r31 _1qu2glyw _12y31o36 _v56415j1 _1e0c1txw _1bsb1tcg _4t3i1tcg _kqswh2mm _4cvr1h6o _1bah1h6o _1o9zidpf _bfhk4t47 _13diglyw _1q6q1j9a _1151rsbi _1s6w5w2r _tqbwidpf _t9ec1soj _s7n4jp4b _wstuglyw _16r2ucr4 _14mj1qll _qc5orqeg _z0ai120g _1qdg120g _18postnw _aetrb3bt _1peq1xmd _iosijmqp _11jyjmqp _f3ett94y _y2mvdfik _1bg41l7b _6tjkdfik _awqn1l7b _1rvql4ek _1p9jrsbi _x2tz1q28 _1iwz1q28 _sj8yr01l _jcko12kk _1dvdrsbi _60ak5w2r"
                   name="openLinks"
-                  style="--_4mkb4g: var(--ds-background-input, #FAFBFC); --_vnm8xo: var(--ds-border-input, #7A869A); --_jf353p: var(--ds-icon-inverse, #FAFBFC); --_1z08gfx: var(--ds-background-input-hovered, #EBECF0); --_174hl94: var(--ds-background-input-pressed, #EBECF0); --_2yg3i9: var(--ds-border-width-focused, 3px) solid var(--ds-border-focused, #2684FF); --_1gcp7nr: var(--ds-background-selected-bold, #0052CC); --_14y1fod: var(--ds-background-selected-bold-hovered, #0065FF); --_9b0jbo: var(--ds-background-selected-bold-pressed, #DEEBFF); --_uq1ko9: var(--ds-icon-inverse, #0052CC); --_m4cp67: var(--ds-icon-danger, #FF5630); --_r5pknd: var(--ds-background-disabled, #F4F5F7); --_1ufdgqf: var(--ds-border-disabled, #F4F5F7); --_1xmcmw9: var(--ds-icon-disabled, #A5ADBA);"
                   tabindex="0"
                   type="radio"
                   value="BACKGROUND"
@@ -1136,21 +1118,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid19"
+                id="_r_i_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -1229,21 +1211,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid21"
+                id="_r_k_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -1348,7 +1330,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                       role="presentation"
                     >
                       <button
-                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                         data-testid="settings-volume-down"
                         type="button"
                       >
@@ -1386,7 +1368,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                       role="presentation"
                     >
                       <button
-                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                        class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                         data-testid="settings-volume-up"
                         type="button"
                       >
@@ -1423,7 +1405,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   </div>
                 </div>
                 <div
-                  class="_1bsbe4h9 _kqswh2mm _1pbykb7n _4t3i1hvu _bfhkmuej _195g1n1a"
+                  class="_1bsbe4h9 _kqswh2mm _1pbykb7n _4t3i1hvu _bfhk1l7x _195g1n1a"
                 />
                 <div
                   class="_1j4hidpf _1553idpf _1qgbidpf _y1n3idpf"
@@ -1432,7 +1414,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     role="presentation"
                   >
                     <button
-                      class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
+                      class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1 _g0pbb4wl"
                       data-testid="settings-volume-reset"
                       type="button"
                     >
@@ -1517,21 +1499,21 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </span>
             </label>
             <div
-              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v913wx"
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="uid29"
+                id="_r_s_"
                 type="button"
               >
                 <span
                   class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
                 >
                   <span
-                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazkr0v _1b3ige5s"
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
                     data-ds--inline-message--icon="true"
                   >
                     <span
@@ -1980,7 +1962,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         >
           <button
             aria-haspopup="dialog"
-            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhk1v7l _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr31rwk _1di6yycf _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkybec _syaz15cr _105315cr _f8pj15cr _30l315cr _9h8h15cr _irr3s9hg _1di613a9 _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
             data-testid="settings-reset-defaults"
             type="button"
           >
@@ -2004,7 +1986,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         role="presentation"
       >
         <button
-          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+          class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rkofajl _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsb1wug _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tiutpp _bozgutpp _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
           data-testid="settings-release-notes"
           type="button"
         >
@@ -2028,7 +2010,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           role="presentation"
         >
           <button
-            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
             data-testid="settings-accounts"
             type="button"
           >
@@ -2067,7 +2049,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           role="presentation"
         >
           <button
-            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p1b66 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhkqtfy _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr34mfv _1di619qy _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+            class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjc12x7 _1e0c116y _1bsbviql _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3iviql _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
             color="danger"
             data-testid="settings-quit"
             type="button"

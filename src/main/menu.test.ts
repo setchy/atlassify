@@ -88,7 +88,6 @@ describe('main/menu.ts', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
     vi.mocked(isMacOS).mockReturnValue(false);
     menuItemInstances.length = 0; // Clear tracked instances
     menubar = { app: { quit: vi.fn() } } as unknown as Menubar;
@@ -275,7 +274,6 @@ describe('main/menu.ts', () => {
     it('uses mac accelerator for toggleDevTools when on macOS', async () => {
       vi.mocked(isMacOS).mockReturnValue(true);
       menuItemInstances.length = 0;
-      (Menu.buildFromTemplate as Mock).mockClear();
 
       const mb = new MenuBuilder({
         app: { quit: vi.fn() },
@@ -298,7 +296,6 @@ describe('main/menu.ts', () => {
     it('uses non-mac accelerator for toggleDevTools otherwise', async () => {
       vi.mocked(isMacOS).mockReturnValue(false);
       menuItemInstances.length = 0;
-      (Menu.buildFromTemplate as Mock).mockClear();
 
       const mb = new MenuBuilder({
         app: { quit: vi.fn() },

@@ -17,9 +17,7 @@ import { Theme } from '../../../shared/theme';
 
 import { useAccountsStore, useSettingsStore } from '../../stores';
 
-import { LANGUAGES } from '../../i18n/types';
-
-import { loadLanguageLocale } from '../../i18n';
+import { LANGUAGES, loadLanguageLocale } from '../../i18n';
 import { setTheme } from '../../utils/ui/theme';
 import {
   canDecreaseZoom,
