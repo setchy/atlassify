@@ -95,7 +95,7 @@
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.1.1",
     "@graphql-codegen/cli": "6.3.1",
-    "@graphql-codegen/schema-ast": "5.0.2",
+    "@graphql-codegen/schema-ast": "6.0.0",
     "@graphql-typed-document-node/core": "3.2.0",
     "@heroicons/react": "2.2.0",
     "@parcel/watcher": "2.5.6",
