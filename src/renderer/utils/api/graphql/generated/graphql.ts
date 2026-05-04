@@ -3,26 +3,29 @@ type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import type { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
-export type InfluentsNotificationCategory =
-  | 'direct'
-  | 'watching';
+export enum InfluentsNotificationCategory {
+  Direct = 'direct',
+  Watching = 'watching'
+}
 
-export type InfluentsNotificationReadState =
-  | 'read'
-  | 'unread';
+export enum InfluentsNotificationReadState {
+  Read = 'read',
+  Unread = 'unread'
+}
 
 /** Jira Project types. */
-export type JiraProjectType =
+export enum JiraProjectType {
   /** A business project. */
-  | 'BUSINESS'
+  Business = 'BUSINESS',
   /** A customer service project. */
-  | 'CUSTOMER_SERVICE'
+  CustomerService = 'CUSTOMER_SERVICE',
   /** A product discovery project. */
-  | 'PRODUCT_DISCOVERY'
+  ProductDiscovery = 'PRODUCT_DISCOVERY',
   /** A service desk project. */
-  | 'SERVICE_DESK'
+  ServiceDesk = 'SERVICE_DESK',
   /** A software project. */
-  | 'SOFTWARE';
+  Software = 'SOFTWARE'
+}
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -124,7 +124,7 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(graphql@16.13.2)
       '@graphql-codegen/typescript-operations':
-        specifier: ^6.0.0
+        specifier: 6.0.0
         version: 6.0.0(graphql@16.13.2)
       '@graphql-typed-document-node/core':
         specifier: 3.2.0
