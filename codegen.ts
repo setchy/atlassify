@@ -12,7 +12,7 @@ const config: CodegenConfig = {
         enumType: 'native',
         scalars: {
           DateTime: 'string',
-          URL: 'string',
+          URL: '../../../../types#Link',
         },
         useTypeImports: true,
       },
