@@ -6,12 +6,12 @@ const config: CodegenConfig = {
   documents: ['src/renderer/utils/api/**/*.graphql'],
   generates: {
     'src/renderer/utils/api/graphql/generated/graphql.ts': {
-      plugins: ['typescript', 'typescript-operations', 'typed-document-node'],
+      plugins: ['typescript-operations'],
       config: {
-        onlyOperationTypes: true,
-        documentMode: 'string',
-        useTypeImports: true,
-        skipTypename: true,
+        // onlyOperationTypes: true,
+        // documentMode: 'string',
+        // useTypeImports: true,
+        // skipTypename: true,
       },
     },
   },
