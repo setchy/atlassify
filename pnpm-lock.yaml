@@ -22,7 +22,7 @@ importers:
         version: 8.2.1
       menubar:
         specifier: 9.5.2
-        version: 9.5.2(electron@41.4.0)
+        version: 9.5.2(electron@41.5.0)
       react:
         specifier: 19.2.5
         version: 19.2.5
@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@41.4.0)
+        version: 0.3.1(electron@41.5.0)
       '@atlaskit/avatar':
         specifier: 25.14.1
         version: 25.14.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -187,8 +187,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       electron:
-        specifier: 41.4.0
-        version: 41.4.0
+        specifier: 41.5.0
+        version: 41.5.0
       electron-builder:
         specifier: 26.8.1
         version: 26.8.1(electron-builder-squirrel-windows@26.8.1)
@@ -2495,8 +2495,8 @@ packages:
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
-  electron@41.4.0:
-    resolution: {integrity: sha512-1afmxJGyrZ4bve+PDCs8YtNjjVu4cPwUtSjx36o6gyJWI0NvhebMKtIzzKNOScRyXntH2hX0i350Xgm3BKiEYQ==}
+  electron@41.5.0:
+    resolution: {integrity: sha512-x9j9//PubUA4EjDtQbZhtk3prolandqCKgit0uCIqc1jb8FTskPbnJtxcDFB1aejczJcuERgjPixBUaMwoWyJg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -4916,9 +4916,9 @@ snapshots:
 
   '@adobe/css-tools@4.4.4': {}
 
-  '@aptabase/electron@0.3.1(electron@41.4.0)':
+  '@aptabase/electron@0.3.1(electron@41.5.0)':
     dependencies:
-      electron: 41.4.0
+      electron: 41.5.0
 
   '@ardatan/relay-compiler@13.0.1(graphql@16.13.2)':
     dependencies:
@@ -7866,7 +7866,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@41.4.0:
+  electron@41.5.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 24.12.2
@@ -8767,9 +8767,9 @@ snapshots:
 
   memoize-one@6.0.0: {}
 
-  menubar@9.5.2(electron@41.4.0):
+  menubar@9.5.2(electron@41.5.0):
     dependencies:
-      electron: 41.4.0
+      electron: 41.5.0
       electron-positioner: 4.1.0
 
   merge-stream@2.0.0: {}

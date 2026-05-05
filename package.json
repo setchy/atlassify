@@ -117,7 +117,7 @@
     "clsx": "2.1.1",
     "concurrently": "9.2.1",
     "date-fns": "4.1.0",
-    "electron": "41.4.0",
+    "electron": "41.5.0",
     "electron-builder": "26.8.1",
     "graphql": "16.13.2",
     "happy-dom": "20.9.0",
