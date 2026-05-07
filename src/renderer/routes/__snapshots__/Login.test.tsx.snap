@@ -183,7 +183,7 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
                         <span
                           class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
                         >
-                          Create API token
+                          Create API token with scopes
                         </span>
                       </button>
                     </div>
