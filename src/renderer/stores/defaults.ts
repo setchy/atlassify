@@ -40,7 +40,7 @@ export const DEFAULT_FILTERS_STATE: FiltersState = {
 export const DEFAULT_RUNTIME_STATE = {
   notificationCount: 0,
   hasMoreAccountNotifications: false,
-  isError: false,
+  hasAnyAccountError: false,
   isOnline: true,
 };
 

@@ -11,7 +11,7 @@ describe('renderer/utils/system/tray.ts', () => {
     useRuntimeStore.setState({
       notificationCount: 0,
       hasMoreAccountNotifications: false,
-      isError: false,
+      hasAnyAccountError: false,
       isOnline: true,
     });
     useSettingsStore.setState({
@@ -121,8 +121,8 @@ describe('renderer/utils/system/tray.ts', () => {
       );
     });
 
-    it('should pass appState error when isError is true', () => {
-      useRuntimeStore.setState({ isError: true });
+    it('should pass appState error when any account has an error', () => {
+      useRuntimeStore.setState({ hasAnyAccountError: true });
 
       setTrayIconColorAndTitle();
 
@@ -135,8 +135,8 @@ describe('renderer/utils/system/tray.ts', () => {
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
 
-    it('should pass appState offline (not error) when both isError and isOnline are false', () => {
-      useRuntimeStore.setState({ isError: true, isOnline: false });
+    it('should pass appState offline (not error) when both hasAnyAccountError and isOnline are false', () => {
+      useRuntimeStore.setState({ hasAnyAccountError: true, isOnline: false });
 
       setTrayIconColorAndTitle();
 
