@@ -127,7 +127,7 @@
     "heading": "Laden"
   },
   "login": {
-    "create_token": "API-Token erstellen",
+    "create_token": "Erstellen Sie ein API-Token mit Bereichen",
     "duplicate_username": "Dieser Benutzername wurde bereits hinzugefügt. Bitte verwenden Sie einen anderen Benutzernamen.",
     "error_message": "Hoppla! Die angegebene Benutzernamen-Token-Kombination ist ungültig. Bitte versuchen Sie es erneut.",
     "security_docs": "Siehe Atlassian-Dokumentation",
