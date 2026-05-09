@@ -49,8 +49,8 @@ importers:
         specifier: 18.6.0
         version: 18.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/button':
-        specifier: 23.11.3
-        version: 23.11.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 23.11.4
+        version: 23.11.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/checkbox':
         specifier: 17.3.12
         version: 17.3.12(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -307,6 +307,11 @@ packages:
 
   '@atlaskit/button@23.11.3':
     resolution: {integrity: sha512-VRQOEJdRvVlG2Bp/DEgLvYNLJdh7zTPB8nLypBdGdvJdRICSWd+eaDIk1PGLibYXy4CMKctS3AGNU7BiOvnPCg==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/button@23.11.4':
+    resolution: {integrity: sha512-Vm2ss7MtWvposFy08xK4XwksiuJM4KQ++khR3bsxt14IMKbgFDVVoyVmhePr7KVhuG+hWFETGLmKb3Ujd1bKZg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5048,6 +5053,30 @@ snapshots:
       '@atlaskit/theme': 23.2.0(react@19.2.5)
       '@atlaskit/tokens': 13.0.2(react@19.2.5)
       '@atlaskit/tooltip': 21.2.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/visually-hidden': 3.1.0(react@19.2.5)
+      '@babel/runtime': 7.29.2
+      '@compiled/react': 0.20.0(react@19.2.5)
+      '@emotion/react': 11.14.0(@types/react@19.2.14)(react@19.2.5)
+      react: 19.2.5
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/button@23.11.4(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/css': 0.19.4(react@19.2.5)
+      '@atlaskit/ds-lib': 7.0.0(react@19.2.5)
+      '@atlaskit/focus-ring': 3.1.0(@types/react@19.2.14)(react@19.2.5)
+      '@atlaskit/icon': 34.3.0(react@19.2.5)
+      '@atlaskit/interaction-context': 3.1.0(react@19.2.5)
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.5)
+      '@atlaskit/primitives': 19.0.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@atlaskit/spinner': 19.1.2(react@19.2.5)
+      '@atlaskit/theme': 23.2.0(react@19.2.5)
+      '@atlaskit/tokens': 13.0.2(react@19.2.5)
+      '@atlaskit/tooltip': 22.0.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.5)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.5)
