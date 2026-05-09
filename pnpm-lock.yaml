@@ -79,8 +79,8 @@ importers:
         specifier: 14.18.2
         version: 14.18.2(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/primitives':
-        specifier: 19.0.0
-        version: 19.0.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 19.0.1
+        version: 19.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/radio':
         specifier: 8.6.0
         version: 8.6.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -434,6 +434,11 @@ packages:
 
   '@atlaskit/primitives@19.0.0':
     resolution: {integrity: sha512-kkHUvoTuCUBy5z+79vLfxyCWPb+Dy34O4N/JI7vV0Uv992HHjZbMjnorwLfKb65VWhKGDw1y6XSO8jOMZEr7ZA==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/primitives@19.0.1':
+    resolution: {integrity: sha512-8sw++3BDKzm3N39hDhP4qdzKtq1wlHpO9d5bzRkTyRVWjy4DcuRdBk2sIUTQVIbNM7k5z9ywfPvy7xf/JeYoPQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4991,7 +4996,7 @@ snapshots:
       '@atlaskit/browser-apis': 0.0.1(react@19.2.6)
       '@atlaskit/css': 0.19.4(react@19.2.6)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.6)
-      '@atlaskit/tokens': 13.0.2(react@19.2.6)
+      '@atlaskit/tokens': 13.0.3(react@19.2.6)
       '@babel/runtime': 7.29.2
       bind-event-listener: 3.0.0
       react: 19.2.6
@@ -5430,6 +5435,27 @@ snapshots:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.6)
       '@atlaskit/interaction-context': 3.1.0(react@19.2.6)
       '@atlaskit/tokens': 13.0.2(react@19.2.6)
+      '@atlaskit/visually-hidden': 3.1.0(react@19.2.6)
+      '@babel/runtime': 7.29.2
+      '@compiled/react': 0.20.0(react@19.2.6)
+      '@emotion/react': 11.14.0(@types/react@19.2.14)(react@19.2.6)
+      '@emotion/serialize': 1.3.3
+      bind-event-listener: 3.0.0
+      react: 19.2.6
+      tiny-invariant: 1.3.3
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/primitives@19.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@atlaskit/app-provider': 4.3.0(react@19.2.6)
+      '@atlaskit/css': 0.19.4(react@19.2.6)
+      '@atlaskit/ds-lib': 7.0.0(react@19.2.6)
+      '@atlaskit/interaction-context': 3.1.0(react@19.2.6)
+      '@atlaskit/tokens': 13.0.3(react@19.2.6)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.6)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.6)
