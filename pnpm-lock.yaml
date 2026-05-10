@@ -205,8 +205,8 @@ importers:
         specifier: 1.56.11
         version: 1.56.11(@types/node@24.12.2)(i18next@26.0.10(typescript@6.0.3))(react-dom@19.2.6(react@19.2.6))(typescript@6.0.3)
       nock:
-        specifier: 14.0.14
-        version: 14.0.14
+        specifier: 14.0.15
+        version: 14.0.15
       react-devtools:
         specifier: 7.0.1
         version: 7.0.1
@@ -3513,8 +3513,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nock@14.0.14:
-    resolution: {integrity: sha512-PKk7tex0O3RRXUZC5XDKJ9yM3rYRPS13myduT85VIIYDBnib42Fpxoe6KxRSzqB4iL2NDxkcJ2yiskZ18hGLEQ==}
+  nock@14.0.15:
+    resolution: {integrity: sha512-S0a47C9pLvcYx/Ugf0H30BVBEcUgMMBDk9VJIDlJ8XGrfH2QDUD4Tgdp45qDIiHttokBG+IbsOtsvIjGR/j3bg==}
     engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
   node-abi@4.31.0:
@@ -8868,7 +8868,7 @@ snapshots:
 
   nanoid@3.3.12: {}
 
-  nock@14.0.14:
+  nock@14.0.15:
     dependencies:
       '@mswjs/interceptors': 0.41.8
       json-stringify-safe: 5.0.1
