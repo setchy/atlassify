@@ -76,8 +76,8 @@ importers:
         specifier: 20.1.0
         version: 20.1.0(react@19.2.6)
       '@atlaskit/modal-dialog':
-        specifier: 15.0.0
-        version: 15.0.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 15.0.1
+        version: 15.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/primitives':
         specifier: 19.0.1
         version: 19.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -394,8 +394,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@15.0.0':
-    resolution: {integrity: sha512-ExbTR4YzaanuogwSJnN4GD/rybXCBELRRT3GpligrSSsgEiQHSuTIzM185jB3EBJVOz7WtTlQVY9vHDgp2H8kw==}
+  '@atlaskit/modal-dialog@15.0.1':
+    resolution: {integrity: sha512-Ol8FjJpfsm6FRSggUFUh7//t5sxWMwbJw0F0RbJbDUeoZRDTWQfSk9FkXYjfx264usulLLUObmOiPG3Ba+RHCA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5298,7 +5298,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@15.0.0(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+  '@atlaskit/modal-dialog@15.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/blanket': 15.0.32(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -5313,7 +5313,8 @@ snapshots:
       '@atlaskit/pragmatic-drag-and-drop': 1.8.1
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/theme': 23.2.0(react@19.2.6)
-      '@atlaskit/tokens': 13.0.3(react@19.2.6)
+      '@atlaskit/tokens': 13.0.4(react@19.2.6)
+      '@atlaskit/top-layer': 0.6.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.6)
       bind-event-listener: 3.0.0
