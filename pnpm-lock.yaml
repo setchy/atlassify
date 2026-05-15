@@ -103,8 +103,8 @@ importers:
         specifier: 13.0.4
         version: 13.0.4(react@19.2.6)
       '@atlaskit/tooltip':
-        specifier: 22.0.0
-        version: 22.0.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 22.1.0
+        version: 22.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@biomejs/biome':
         specifier: 2.4.15
         version: 2.4.15
@@ -499,8 +499,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tooltip@22.0.0':
-    resolution: {integrity: sha512-5QnHuTC2lhsDLgcNAUpFasvSxinkAIFwZ+prGCGdcd51Z1AgpzAMNK82LiR94ZqZJfOv8omyG6GZ07uhygtcpQ==}
+  '@atlaskit/tooltip@22.1.0':
+    resolution: {integrity: sha512-70hUC6CEZj504ck8rJ3XYBEgv3GU0Err3IwCBixWnP5y5VYvRnf+WzRNjnqOHLvOOVSK0a6FDKP6XVnoiH76Lg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5086,7 +5086,7 @@ snapshots:
       '@atlaskit/spinner': 19.1.2(react@19.2.6)
       '@atlaskit/theme': 23.2.0(react@19.2.6)
       '@atlaskit/tokens': 13.0.3(react@19.2.6)
-      '@atlaskit/tooltip': 22.0.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@atlaskit/tooltip': 22.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.6)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.6)
@@ -5616,7 +5616,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tooltip@22.0.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+  '@atlaskit/tooltip@22.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.6)
@@ -5626,7 +5626,8 @@ snapshots:
       '@atlaskit/popper': 7.2.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/portal': 5.5.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/theme': 23.2.0(react@19.2.6)
-      '@atlaskit/tokens': 13.0.3(react@19.2.6)
+      '@atlaskit/tokens': 13.0.4(react@19.2.6)
+      '@atlaskit/top-layer': 0.6.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.6)
       bind-event-listener: 3.0.0
