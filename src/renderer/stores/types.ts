@@ -308,7 +308,7 @@ export type SettingsStore = SettingsState & SettingsActions;
 export interface RuntimeState {
   notificationCount: number;
   hasMoreAccountNotifications: boolean;
-  isError: boolean;
+  hasAnyAccountError: boolean;
   isOnline: boolean;
 }
 
@@ -322,7 +322,7 @@ export interface RuntimeActions {
   updateNotificationStatus: (
     notificationCount: number,
     hasMoreAccountNotifications: boolean,
-    isError: boolean,
+    hasAnyAccountError: boolean,
   ) => void;
 
   /**
