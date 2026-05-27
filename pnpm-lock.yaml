@@ -76,8 +76,8 @@ importers:
         specifier: 20.1.1
         version: 20.1.1(react@19.2.6)
       '@atlaskit/modal-dialog':
-        specifier: 15.1.2
-        version: 15.1.2(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 15.1.3
+        version: 15.1.3(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/primitives':
         specifier: 19.0.1
         version: 19.0.1(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -409,8 +409,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@15.1.2':
-    resolution: {integrity: sha512-ZIKqHjwbzBUdAz5iC4Am2Dg1905Z4dmh73VYabCBfZSM/Vjpc/AmCZ1fZhBcDO0f4g2EKvOYj6r+6zWeETw6ZA==}
+  '@atlaskit/modal-dialog@15.1.3':
+    resolution: {integrity: sha512-KEpl7sG56ojftdrgQCt4hHSB/vUzjMY9xDP7AwBq2WKTtvR9jaSmXpWfvcebjFSqM8ZEhjhoZTDscv+OUFcLLA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5361,11 +5361,11 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@15.1.2(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+  '@atlaskit/modal-dialog@15.1.3(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/blanket': 15.0.32(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      '@atlaskit/button': 23.11.5(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@atlaskit/button': 23.11.6(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/css': 0.19.4(react@19.2.6)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.6)
       '@atlaskit/icon': 35.0.0(react@19.2.6)
@@ -5375,7 +5375,7 @@ snapshots:
       '@atlaskit/portal': 5.5.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/pragmatic-drag-and-drop': 1.8.1
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      '@atlaskit/theme': 23.2.0(react@19.2.6)
+      '@atlaskit/theme': 24.0.0(react@19.2.6)
       '@atlaskit/tokens': 13.0.4(react@19.2.6)
       '@atlaskit/top-layer': 0.8.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@babel/runtime': 7.29.2
