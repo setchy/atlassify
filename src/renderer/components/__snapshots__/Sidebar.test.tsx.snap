@@ -21,10 +21,8 @@ exports[`renderer/components/Sidebar.tsx > Filter notifications > go to the filt
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          d="M11 12v1.5H5V12zm2-4.75v1.5H3v-1.5zm2-4.75V4H1V2.5z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -58,10 +56,8 @@ exports[`renderer/components/Sidebar.tsx > Filter notifications > go to the home
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          d="M11 12v1.5H5V12zm2-4.75v1.5H3v-1.5zm2-4.75V4H1V2.5z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -95,10 +91,8 @@ exports[`renderer/components/Sidebar.tsx > Filter notifications > highlight filt
         viewBox="0 0 16 16"
       >
         <path
-          clip-rule="evenodd"
-          d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+          d="M11 12v1.5H5V12zm2-4.75v1.5H3v-1.5zm2-4.75V4H1V2.5z"
           fill="currentcolor"
-          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -613,10 +607,8 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
                     viewBox="0 0 16 16"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+                      d="M11 12v1.5H5V12zm2-4.75v1.5H3v-1.5zm2-4.75V4H1V2.5z"
                       fill="currentcolor"
-                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -999,10 +991,8 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
                     viewBox="0 0 16 16"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M15 3.5H1V2h14zm-2 5.25H3v-1.5h10zM11 14H5v-1.5h6z"
+                      d="M11 12v1.5H5V12zm2-4.75v1.5H3v-1.5zm2-4.75V4H1V2.5z"
                       fill="currentcolor"
-                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
