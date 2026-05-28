@@ -69,7 +69,8 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
                     appearance={isChecked ? 'blue' : 'gray'}
                     icon={typeDetails.icon}
                     label=""
-                    size="16"
+                    /** Use xxsmall size for consistency with logos */
+                    size={'xxsmall' as 'xsmall'}
                   />
                 )}
                 {typeDetails.logo && (
