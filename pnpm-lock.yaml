@@ -67,8 +67,8 @@ importers:
         specifier: 35.1.0
         version: 35.1.0(react@19.2.6)
       '@atlaskit/icon-lab':
-        specifier: 6.9.1
-        version: 6.9.1(react@19.2.6)
+        specifier: 6.10.0
+        version: 6.10.0(react@19.2.6)
       '@atlaskit/inline-message':
         specifier: 15.6.13
         version: 15.6.13(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -358,8 +358,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/icon-lab@6.9.1':
-    resolution: {integrity: sha512-scJQhGXJAPXe/9IHHB1OblnKh8an7UGOVw53EeiAFGnIHEjkF6NpPgVrKIBftY7mVqSGX8I78zEHIpH5vAIYig==}
+  '@atlaskit/icon-lab@6.10.0':
+    resolution: {integrity: sha512-kHxAkEY9L1OTePukTENBlycZHpO+IvkdinE0w4gsL5O3K8gzA4Sa/EFa2cL9c+9nz0UtW4tsyKyXQQgD7hRCqA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5264,9 +5264,9 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/icon-lab@6.9.1(react@19.2.6)':
+  '@atlaskit/icon-lab@6.10.0(react@19.2.6)':
     dependencies:
-      '@atlaskit/icon': 35.0.0(react@19.2.6)
+      '@atlaskit/icon': 35.1.0(react@19.2.6)
       '@babel/runtime': 7.29.2
       react: 19.2.6
     transitivePeerDependencies:
