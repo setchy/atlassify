@@ -136,7 +136,7 @@
     "vitest": "4.1.7",
     "zustand": "5.0.13"
   },
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@11.3.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@biomejs/biome",
