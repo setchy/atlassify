@@ -442,9 +442,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             role="presentation"
           >
             <label
-              class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1aqn _syaz5w2r _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys41v1w _krlfnqa1 _ju3ddkaa _1bkiby5v _1fltby5v _3xv2by5v _9471kcmj _ucab5w2r _mqf82sac _3dj22sac _1dl92sac _1div5w2r _1il8kb7n _y54d5w2r _irr31ibz _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1pluy7x8 _1uo81ibz _178cby5v _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
-              data-checked="true"
-              data-size="regular"
+              class="_1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1oeci9qs _k8m01e03 _6fl4574g _rfx31qll _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1cg6i9qs _qs2z1e03 _mlfe574g _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
               data-testid="sidebar-toggle-unread-only"
             >
               <span
@@ -456,6 +454,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
               <input
                 aria-labelledby="_r_n_"
                 checked=""
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itglyw _tzy4idpf _nt751snc _49pcagmp _1hvw10yn"
                 data-testid="sidebar-toggle-unread-only--input"
                 id="toggle-unread-only"
                 name=""
@@ -500,7 +499,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M14.03 3.03 9.06 8l4.97 4.97-1.06 1.06L8 9.06l-4.97 4.97-1.06-1.06L6.94 8 1.97 3.03l1.06-1.06L8 6.94l4.97-4.97z"
+                      d="M13.53 3.53 9.06 8l4.47 4.47-1.06 1.06L8 9.06l-4.47 4.47-1.06-1.06L6.94 8 2.47 3.53l1.06-1.06L8 6.94l4.47-4.47z"
                       fill="currentcolor"
                     />
                   </svg>
@@ -826,9 +825,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             role="presentation"
           >
             <label
-              class="_v564kete _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhk1aqn _syaz5w2r _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1i2uidpf _1i3tidpf _se28idpf _3tunidpf _1423idpf _1hrtidpf _1bz2idpf _rqfvidpf _1yc0glyw _onsr1snc _1vgmagmp _1av610yn _1ulhidpf _rfx31qll _pdykkete _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _7dwzglyw _1ys41v1w _krlfnqa1 _ju3ddkaa _1bkiby5v _1fltby5v _3xv2by5v _9471kcmj _ucab5w2r _mqf82sac _3dj22sac _1dl92sac _1div5w2r _1il8kb7n _y54d5w2r _irr31ibz _d0altlke _19ja13gf _8muf13gf _1k1q13gf _1pluy7x8 _1uo81ibz _178cby5v _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _p9c41fbe"
-              data-checked="true"
-              data-size="regular"
+              class="_1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1oeci9qs _k8m01e03 _6fl4574g _rfx31qll _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1cg6i9qs _qs2z1e03 _mlfe574g _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
               data-testid="sidebar-toggle-unread-only"
             >
               <span
@@ -840,6 +837,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
               <input
                 aria-labelledby="_r_6_"
                 checked=""
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _19itglyw _tzy4idpf _nt751snc _49pcagmp _1hvw10yn"
                 data-testid="sidebar-toggle-unread-only--input"
                 id="toggle-unread-only"
                 name=""
@@ -884,7 +882,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M14.03 3.03 9.06 8l4.97 4.97-1.06 1.06L8 9.06l-4.97 4.97-1.06-1.06L6.94 8 1.97 3.03l1.06-1.06L8 6.94l4.97-4.97z"
+                      d="M13.53 3.53 9.06 8l4.47 4.47-1.06 1.06L8 9.06l-4.47 4.47-1.06-1.06L6.94 8 2.47 3.53l1.06-1.06L8 6.94l4.47-4.47z"
                       fill="currentcolor"
                     />
                   </svg>
