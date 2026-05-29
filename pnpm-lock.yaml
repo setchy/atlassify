@@ -103,8 +103,8 @@ importers:
         specifier: 13.0.4
         version: 13.0.4(react@19.2.6)
       '@atlaskit/tooltip':
-        specifier: 22.3.2
-        version: 22.3.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+        specifier: 22.3.4
+        version: 22.3.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@biomejs/biome':
         specifier: 2.4.15
         version: 2.4.15
@@ -519,8 +519,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tooltip@22.3.2':
-    resolution: {integrity: sha512-sVtb3CyoNDOF7DSMWc6cSKQ37fDC44Zj2k02UfVwj4Z97KzMc1lLbflPzUswejOA6KNg6HdEpR0ZCvrUtQIRKw==}
+  '@atlaskit/tooltip@22.3.4':
+    resolution: {integrity: sha512-KzyCCbBRagcMa3ZoAPJzrVDKKX4w6PWSvtwggqp8H6KYXexdR06mLmcwJtNGOWZDPHlkOhuocRmnsuSrFpAr+A==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5676,7 +5676,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tooltip@22.3.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+  '@atlaskit/tooltip@22.3.4(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@atlaskit/analytics-next': 11.2.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.6)
@@ -5687,7 +5687,7 @@ snapshots:
       '@atlaskit/portal': 5.5.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@atlaskit/theme': 25.0.0(react@19.2.6)
       '@atlaskit/tokens': 13.0.4(react@19.2.6)
-      '@atlaskit/top-layer': 0.10.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@atlaskit/top-layer': 0.12.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@babel/runtime': 7.29.2
       '@compiled/react': 0.20.0(react@19.2.6)
       bind-event-listener: 3.0.0
