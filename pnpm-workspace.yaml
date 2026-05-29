@@ -3,3 +3,7 @@ allowBuilds:
   '@swc/core': true
   electron: true
   electron-winstaller: true
+  '@biomejs/biome': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  unrs-resolver: true
