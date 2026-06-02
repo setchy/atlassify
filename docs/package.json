@@ -44,7 +44,7 @@
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
-    "date-fns": "4.3.0",
+    "date-fns": "4.4.0",
     "marked": "18.0.4",
     "octokit": "5.0.5",
     "sharp": "0.34.5",
