@@ -264,8 +264,8 @@ packages:
     peerDependencies:
       react: ^16.8.0
 
-  '@atlaskit/analytics-next@11.2.2':
-    resolution: {integrity: sha512-tIpx2agZHEMW27KN/RpSLiDUmSnuI/hqvbrnSKnYEobyBH5hbAZbj1lWfyo4vLH+h2F0NijU3qrAyyX+Waf68Q==}
+  '@atlaskit/analytics-next@11.3.0':
+    resolution: {integrity: sha512-UDTl1YSRz7QCFXxTXctgsbVjXMVIIaoyqpH7SAZw2CRjKeTuihljtxBuv0C2EX5hocPS6b2KZKCwA4yEXHWozQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -275,8 +275,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/atlassian-context@0.9.0':
-    resolution: {integrity: sha512-5oY2wMYEfXE3oVIdlqQB9HTZHAfp6+xgWuwyVU1dHOTb+VC2DW6nFaFxj6HKsusuZl8auMHlZOl8tiNO1/fYhA==}
+  '@atlaskit/atlassian-context@0.10.0':
+    resolution: {integrity: sha512-4/cWFp+mxIYqPmcn3NSHf/JNL/8bRx0/+lpFTsc1C5nfjyyeuFG18pDQBtNn6kMDjGLAt06TSXEgwZV+P4zmGg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -330,8 +330,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/feature-gate-js-client@5.7.1':
-    resolution: {integrity: sha512-srKJmOSV0EeCuQ4atPs0Dsap5msJUabBLVMMhK9F5M2bMDpcgNXmL8a0h+LmCINyxevFhcIEjDhKoJnMkgRJ/w==}
+  '@atlaskit/feature-gate-js-client@5.7.2':
+    resolution: {integrity: sha512-82ItxZN7aVftw2AVV/JY8wU7Z4Zmmv4rquSEWNTzsjh3/5vjPi2Rfo6iCzRqJjpg/8eNQWOZ5Pq3oL9IPfz2vA==}
 
   '@atlaskit/focus-ring@3.1.0':
     resolution: {integrity: sha512-mrXeeqrV0wVnru59ZfRBG9VitjQA13roEiwU4efOHM/mHGrkWsFiCTdmwJAJklyBddiemUTM08I/+Av+QHHBag==}
@@ -353,11 +353,6 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/icon@35.3.0':
-    resolution: {integrity: sha512-s0rKUSJTZUycBSvL8DGibyVquajMwT1RBEJ6v+BWMSFsBQMHQbMLCA5TOUoICSTq5ewELAYq8FWulfnKZZnv1A==}
-    peerDependencies:
-      react: ^18.2.0
-
   '@atlaskit/icon@35.4.0':
     resolution: {integrity: sha512-zE8DtQVaPTL3H6OSOwtgDihal0d5As/J3f4W2gzVLn9gOv24sFMlFC/GEEuotyYOFFwS7+NeT2pVqOi2IRv17g==}
     peerDependencies:
@@ -373,8 +368,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/layering@3.7.0':
-    resolution: {integrity: sha512-v0lRuVjV4gCGtln7eBq0/StjnT3CBSCd+mkU+z1Vq0ajYSadxMNqUxjkmW85i4QADiiJhC7O+JJeW3h9+le+zQ==}
+  '@atlaskit/layering@3.8.0':
+    resolution: {integrity: sha512-PmwwvOuj2VhHU+LLsAwFl2VptWNn1aSuSoTXwsC0ZedV4M2WDr0yn0Z3ex0JGq7Za+6VOZsVhiBVW2jXW9a+0A==}
     peerDependencies:
       react: ^18.2.0
 
@@ -388,8 +383,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/lozenge@13.8.3':
-    resolution: {integrity: sha512-uguyBwWp8eI7srjKx/52kidYAob5pWUIsaXMguzvAXkKC3JppN92wsGSjgcUArsQOq0vkcSCOacpbVGc53+hIQ==}
+  '@atlaskit/lozenge@13.8.4':
+    resolution: {integrity: sha512-qJ0dMUYh2LuQwYEgxrq1eFg6zBeQ4Swa9KEejlnPICdDh9pCiJI2owiHhKQaMoAXbjxBdVI+QGSWGOhkqh7OfA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -404,8 +399,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/motion@6.2.4':
-    resolution: {integrity: sha512-6bZFFRbv9dMYIopX4CsSUx8vwnaGisoWPmEMagR9jf+xqThf7TKhfldRi5TxMfMTgAgtjv0lF5/P17jW5o4Y1g==}
+  '@atlaskit/motion@6.2.5':
+    resolution: {integrity: sha512-cYKzj5cS6nxF0lmfxXBRvYmmTys3SAYkLIl29z6/hFNELs4LpU+13CGtJz/0+lDl7X4Lnt5QWjrCJdoeoACKGA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -417,20 +412,14 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/popup@4.22.1':
-    resolution: {integrity: sha512-0JC67I8jo6uo3Hth6eChfzr9reDdCefyQ2JYJPsHwEmoyHpySJ1NgwwXWBW9pe5hox0PEKEFwjCiUXmhjs33Pg==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-
   '@atlaskit/popup@4.23.1':
     resolution: {integrity: sha512-REH2Ow4Pg1G4i5W6g7E0Ncw3C45CNY8rSkFdSb+gF/6uL+k8B2313jrv7MD4HuZWkRky/hvMQOtRRJeVS1LGYg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/portal@5.5.5':
-    resolution: {integrity: sha512-/UaHHm2c9Rn3C6LHFbYU6bkT9qA8jBtcknghn6C6o/RIL0xPFGJC5r7ITPbTJCJwRC7S5SKsIvMIgg/aKrSJ1Q==}
+  '@atlaskit/portal@5.5.6':
+    resolution: {integrity: sha512-sB+31TrDA/r6daytYawF1zGJoVG/hbfhosGIu2gKmg/8KM/waNGVYd2HlUPGmhbuFKxT5P+NbIAbOF/zHffnaQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -470,8 +459,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/tag@14.14.0':
-    resolution: {integrity: sha512-Zi9H+Zcu9/gL/mEwTsZ4Ad1tjLXJ2ngiln/kXZJEmhQ3001L0NYYcRxR3HhsfB1GCtUKQMxoDld2EXuLP7n8WA==}
+  '@atlaskit/tag@14.15.0':
+    resolution: {integrity: sha512-L1cebhP+aEnQXK30P6S/ABz4bIxK4bbCrs8Jq5ulWz8NEPAhp9yUVoNpxb2YUIWwINGzkYmGQcXJdH97GdWs2g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -505,33 +494,16 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/tokens@13.1.0':
-    resolution: {integrity: sha512-P9VUWZDFY6Rsm7R1GINAkkIMgj/uwxdxgKfdF6iDIBTD6ffVPID4cubal6lsdFZ3JxWZ6W7wQnw/fO3If0H0dw==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-
   '@atlaskit/tokens@13.1.1':
     resolution: {integrity: sha512-YNa0EO38NlW7S4xEBFS6mYDB5jDmqBHM9bJflYHM2KuVrEFVHkKd0TiHmUscD4mwvQoI1KK4BgVUIuyP3ZUwfw==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
-
-  '@atlaskit/tooltip@22.5.0':
-    resolution: {integrity: sha512-y9Pc+Yoqde6MHEny3ULwb5j72IrSGJWf7Z6fbeRzhxeGNrGnqZHfh+pEusO8UnUvaGe5PjwWyGRJA5Php4QMSw==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
 
   '@atlaskit/tooltip@22.6.0':
     resolution: {integrity: sha512-lZyzAPk0S6H9HHBN7GclSXq7oh9suDFbaGdDUfXd4sT+4Gqqh15ceY0g0/qzCL8PHrpff8wIc38koampKoDXaw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
-
-  '@atlaskit/top-layer@0.12.0':
-    resolution: {integrity: sha512-kgu0CPFuJ1h8HZ2whHgvu39LEjkeUhAzSYdXKEVQ5+3Y40SxiYT9CneTUnrWXgjF/LaoOzzCYI3mCPZ4gH2Odg==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-      react-dom: ^18.2.0 || ^19.0.0
 
   '@atlaskit/top-layer@0.13.0':
     resolution: {integrity: sha512-fza/XD2ndYUlpmxS7t3i+qrh/TgsCpEGDyeD+tTlMtHySuZYmja91xjnzSUY+sNkYjTgKXf5YB8+rz8bkxsHrA==}
@@ -915,8 +887,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/typed-document-node@7.0.2':
-    resolution: {integrity: sha512-vrjigzqpKsaQ2Ra4QBBuG9TcwG1O0pw9EOSFU0aj7mS2EK19vWs5N4rzwDDvHrQZW62wwqzUcqBoFitVBQqlmg==}
+  '@graphql-codegen/typed-document-node@7.0.3':
+    resolution: {integrity: sha512-l/4KenYJG5D8Aj6Aa2KPeS0fdMIIi04Qx28d4SLwMWuyFU9WXspU5mR9YMNDRZzaTgBtGR8aMIl9RzyiWf5uUw==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -937,8 +909,8 @@ packages:
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/visitor-plugin-common@7.0.4':
-    resolution: {integrity: sha512-IESwu40Gpl+9x5vRGLsaYAWM9KRobnN74h+SB4EtfDrt0V87Q74ZzWZGmuS2m6A/fq7E/bS6YgSEMVACjaRUVw==}
+  '@graphql-codegen/visitor-plugin-common@7.1.0':
+    resolution: {integrity: sha512-CO4fJyflbYBuAwbQD16bAuWBIXkz9il3JwyC+pQzXh8NJ+BZZDXmYjmVeGeJuoMUIQDb+CNo2thCU0bFFamAkg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -965,8 +937,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/delegate@12.0.16':
-    resolution: {integrity: sha512-WEJaFwWG82a0VzhfE4sRsaOPjxgCVfn4fOe3ho+r3uIbPYpc7qHpFdu1PLg6meikq6fuW9NJ1J88fEgnWuXDVg==}
+  '@graphql-tools/delegate@12.0.17':
+    resolution: {integrity: sha512-pIVszWEm69rF+bkM0jUyM1KdIxGzygQbIp1GtV1CuEGRB8lN1uFY1eeTzM2nudHXg8cj+XSVO8cnRpph+o8Dmg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -1085,8 +1057,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/wrap@11.1.15':
-    resolution: {integrity: sha512-GCMx6l0MPwHVaBMHf29oG8eIrsJ8PBXq9y5DNX9/r9oCpCBfqxfWzcejx4CpO4chA3+yylGOKcAyEbOUgxfI1Q==}
+  '@graphql-tools/wrap@11.1.16':
+    resolution: {integrity: sha512-JW1XGFTmltXa537J2bAr8dN/n6EWwiBuM9q8V8mWqZ0eWrf++/TT3/mlV3c0M8B8nrS/lqSsotIwPAtVZR8sWQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -1101,134 +1073,134 @@ packages:
     peerDependencies:
       react: '>= 16 || ^19.0.0-rc'
 
-  '@inquirer/ansi@2.0.6':
-    resolution: {integrity: sha512-I/INw4sHGlVZ/afZOckpLiDP9SmbMl1g/GCqeHjLw1Afw/0PlRs2tRFgTGWmdI0hoNuWZn3y2iHNmG1vyECyQQ==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/ansi@2.0.7':
+    resolution: {integrity: sha512-3eTuUO1vH2cZm2ZKHeQxnOqlTi9EfZDGgIe3BL3I4u+rJHocr9Fz86M4fjYABPvFnQG/gGK551HqDiIcETwU6Q==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
 
-  '@inquirer/checkbox@5.2.0':
-    resolution: {integrity: sha512-1HJt+3fqxblp/GQjdntSyoSHYBc0e3CzXVgjFpKA6qFLd9FHBBqwN8Co0xYH6t2JVUZrtFwZ4bBiwptkiLxyOg==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/checkbox@5.2.1':
+    resolution: {integrity: sha512-b6xmA/VlTe0ZgDQHDui+Nav470u7u49nRd8/iuhOcQPO9Ch7lGuogydhi2VOmNlZ+zXcM8IcPuNSwQcdJaF/kw==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/confirm@6.1.0':
-    resolution: {integrity: sha512-USpeB76eqK7yGricDlGAupxWlp4a59qpeZOoNWaxO/nJln7agpJveyNkQ1d5u8YXG6TOqxZtQpKPORQQDrdVsA==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/confirm@6.1.1':
+    resolution: {integrity: sha512-eb8DBZcz/2qHWQda4rk2JiQk5h9QV/cVHi1yjt0f69WFZMRFn0sJTye3EAP8icut8UDMjQPsaH5KbcOogefrFQ==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/core@11.2.0':
-    resolution: {integrity: sha512-joR1YS2sI0us+9d0I8ViqFbrRLONO8CFTuyvBX4ZVBSch+VsZiugUABdrhBXXJR1VyEzvpz5SQCix3keETQ58g==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/core@11.2.1':
+    resolution: {integrity: sha512-Qd6GJT1yVyrZZCfN8W2qKF5ApmqryXRhRKCuip8h01x2w/esJQ2XIYc6f9abMIHgKQdBfFTSOdbHRLAhuM09UA==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/editor@5.2.0':
-    resolution: {integrity: sha512-/m+sgRmzSdK6HDtVnl3PmI6MnZC4O+LLezedoJcrX7mINhTjjb0hlC7aEDGZXkFTB4b5uQ0q59AhYTah88KbNg==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/editor@5.2.2':
+    resolution: {integrity: sha512-ZRVd/oD+sYsUd5zVm0NflqEzlqfYCyHNsqkHl2oWXEUHs12tCbcSFi+wVFEvD8+LGRaMUsVrE7qeo6lSG/S1Vg==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/expand@5.1.0':
-    resolution: {integrity: sha512-fR7g4BVnIcs+4NApF6C5byflNM/EULxSxsv/2Jvg+gmop0R6eBIPvZqE6RYnTy1tQTFnf9wyHkwNoQSZbofaGA==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/expand@5.1.1':
+    resolution: {integrity: sha512-YmQpenjbFSHAK3sOd44puHh3V1KXXr+JiNpUztoSQ4drLh2rTVzTap/YtlAVu/5xavifIlBfNEzJ/neZJ1a/1g==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/external-editor@3.0.1':
-    resolution: {integrity: sha512-tam+Gwjsxg2sx3iUVPkAnhKT/yrk2rd2NAa7XJU/J8OYpU0ifXsnp12xlvzp/DCpWBXVv+vLQsqnpAWwUcWD5Q==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/external-editor@3.0.3':
+    resolution: {integrity: sha512-6thf5I8q7lZwzGLAxPaaGEREEkZ3nyePPDQ1oyobblxmEE8mqTLguScP7pDjUTAibiyb4hfXl+qjUEJ+di/aNA==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/figures@2.0.6':
-    resolution: {integrity: sha512-dsZgQtH2t5Q6ah3aPbZbeEZAxsD9qQu0DXf01AltuEfRTm+NoLN6+rLVbr+4edeEbNCp/wBNM6mALRWtsQpfkw==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/figures@2.0.7':
+    resolution: {integrity: sha512-aJ8TBPOGB6f/2qziPfElISTCEd5XOYTFckA2SGjhNmiKzfK/u4ot3v0DUzGVdUnKjN10EqnnEPck36BkyfLnJw==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
 
-  '@inquirer/input@5.1.0':
-    resolution: {integrity: sha512-sVZCz6P6e8tW5g2bSFel1oLpa6jK/u7BexFfrgTqR8syIdnHqy+iopnlSbYBZMsCK52chLjhGNBxt0eRqhsghw==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/input@5.1.2':
+    resolution: {integrity: sha512-9K/DDBSQpOyZSkt6sOVP9Vo0TR7atX2kuILsUu0x3wVcVbe97lJwIJKMLdMw25tDYuXl/qp6erT0Xs1rfmcfZg==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/number@4.1.0':
-    resolution: {integrity: sha512-VMXB/XejCbaSTf9Xucl7dqjzzsaGsrs6XwSYXPbGZ2QbSuq/Gz8XamhSi9ClRubNXZlGry9xVg1tKkJdTDgCtQ==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/number@4.1.1':
+    resolution: {integrity: sha512-XF4IXAbPnGPgw0wsbC/i2tPcyfdZgDpUlhsqU0SfT4IRIGWha6Xm9VRgN5yYxJq+jnyXlfXI/nQ3ulfk0iEICA==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/password@5.1.0':
-    resolution: {integrity: sha512-5tqRuKCDIUxdPxTI/CuLnh914kz+WMPmURHKnZgui9gk43ebudEsdu4EwSn1CPSi5R+17YpBG+ba/YqTnRAcJA==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/password@5.1.1':
+    resolution: {integrity: sha512-3XBfF7DAsp5qeDsvN5Rd1HmbNokVvEQoUM0QLrRcybC9nX96w3Pbmu7qUsb3IT3J3jBvs2+mTXaKHOUsgHMLzg==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/prompts@8.5.0':
-    resolution: {integrity: sha512-pLjXOnY4y3R1mgyHP3pXD/8eXejp+L/dde/0N2NLKgKfMstqhNZrpvs7Wkzbl9FYFQh10LRQ7QZwq+cz9rrhyw==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/prompts@8.5.2':
+    resolution: {integrity: sha512-IYR/3C/paEVVQYQvdDlFZVjRCJVYHHON0XXMH91KO9GSxs0TdKYWlUdvfQl2EfAHDxUaN3IBffkE/BDTh5nJ6g==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/rawlist@5.3.0':
-    resolution: {integrity: sha512-p+vAeTAD+cGXjGleP1F5LXrX2ISxNDZm+lqeBpnJausNLSZskZZkcggwhomqP8Igx9oIjnoeOrw98xvdFvdm2w==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/rawlist@5.3.1':
+    resolution: {integrity: sha512-QqdTqQddL3qPX/PPrjobpsO25NZ4dWXgTLenrR445L2ptLEYE6Z+PD5c5CNDJNx4ugRgELAIpSIJxZaO2jJ2Og==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/search@4.2.0':
-    resolution: {integrity: sha512-ByURoSGIaSl5O5Q0AmYmVmUsXbMUcBGNoA3FRL7TOyiA22IeFHymJKRkuILbOIlJwqnBk7AnPpseodyFUBzg+g==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/search@4.2.1':
+    resolution: {integrity: sha512-xJj8QWKRSrfKoBIITLZK61dD3zwo0Rz11fgDImku30/Oe81zMdIdGgrLY2h6RkJ+KZ/GhNYIRMKnH/62qBTA5g==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/select@5.2.0':
-    resolution: {integrity: sha512-6IzkcmEbEXfgVbxZ2d1UyJFbCBoc6dTofulFmrYuomIp88HXiVqRbqbg4/mbfZhvnNo6xYmnYo2AEmDof6fQkg==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/select@5.2.1':
+    resolution: {integrity: sha512-FlDndEUww8m7BfukO2nJa25vhD+H5jxxCv4oGioKqzyWz3nPHhhw4LKdYRSlXuAx7DsdWia7iyaBPKKS95Evfw==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@inquirer/type@4.0.6':
-    resolution: {integrity: sha512-J+9tdxOskuYuGjsvGaq00AamhDgjR7anhEW2dP4QdQpFCMPngCeC/bCYWQ5NsMWZRdsy53is7kAHb/+7cwDk2g==}
-    engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
+  '@inquirer/type@4.0.7':
+    resolution: {integrity: sha512-t28inv14nMQ1PhKpsJPY+kEs/c00qzeCOS2gTNRyTjG5d6qsVA2fItxW4hkvGZ5lvanGLdtCzVIx5dwdRpN1+g==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
     peerDependenciesMeta:
@@ -1806,9 +1778,6 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.2.15':
-    resolution: {integrity: sha512-eRwcGNHve+E8qtEQSSRl6urh+rFop4v8gm6O8rGv25CodbvFdLjA1vVQ1KkiFE0w0UPOnb8tDiFKL5lp0rtY5Q==}
-
   '@types/react@19.2.16':
     resolution: {integrity: sha512-esJiCAnl0kfpNdE69f3So4WJUXy95dLZydX0KwK46riIHDzHM7O9Vtf9xCHW0PXIqvgqNrswl522kA/5yx+F4w==}
 
@@ -1891,8 +1860,8 @@ packages:
     resolution: {integrity: sha512-b4PhJ+zYj4357zwk4TTuF2nEe0vVtOrwdsrNo5hL+u1ojXNhh1FgJ6pg1jzDlwlT4oBdzfSwaBwMCtFCsIWg8Q==}
     engines: {node: '>=18.0.0'}
 
-  '@whatwg-node/node-fetch@0.8.5':
-    resolution: {integrity: sha512-4xzCl/zphPqlp9tASLVeUhB5+WJHbuWGYpfoC2q1qh5dw0AqZBW7L27V5roxYWijPxj4sspRAAoOH3d2ztaHUQ==}
+  '@whatwg-node/node-fetch@0.8.6':
+    resolution: {integrity: sha512-BDMdYFcerLQkwA2RTldxOqRCs6ZQD1S7UgP3pUdGUkcbgTrP/V5ko77ZkCww9DHmC4lpoYuwigGfQYj285gMvA==}
     engines: {node: '>=18.0.0'}
 
   '@whatwg-node/promise-helpers@1.3.2':
@@ -1994,8 +1963,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  ast-v8-to-istanbul@1.0.2:
-    resolution: {integrity: sha512-dKmJxJsGItLmc5CYZKuEjuG6GnBs6PG4gohMhyFOWKaNQoYCuRZJDECaBlHmcG0lv2wc2E0uU8lESmBEumC3DQ==}
+  ast-v8-to-istanbul@1.0.3:
+    resolution: {integrity: sha512-jCMQ6ZylLPudp0CDfBmQBZUsrh1/8psbmu9ibeVWKuHWD0YrH9YABwlKu5kVEFoT0GCQQW9Z/SxfuEbbkGQCRg==}
 
   astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
@@ -2043,8 +2012,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.10.32:
-    resolution: {integrity: sha512-wbPvpyjJPC0zdfdKXxqEL3Ea+bOMD/87X4lftiJkkaBiuG6ALQy1SLmEd7BSmVCuwCQsBrCamgBoLyfFDD1EPg==}
+  baseline-browser-mapping@2.10.33:
+    resolution: {integrity: sha512-bA6+tcSLpz2tIEdDXZPpPTIuxBcC4+w6SieaYyfigIa4h8GlFxbA17v22Vx3JUtuZQj9SgOsnbK+aTBzyDyEuw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -2523,8 +2492,8 @@ packages:
   electron-publish@26.8.1:
     resolution: {integrity: sha512-q+jrSTIh/Cv4eGZa7oVR+grEJo/FoLMYBAnSL5GCtqwUpr1T+VgKB/dn1pnzxIxqD8S/jP1yilT9VrwCqINR4w==}
 
-  electron-to-chromium@1.5.363:
-    resolution: {integrity: sha512-VjUKPyWzGnT1fujlkEGC/BvN70Hh70KXtAqcmniXviYlJC/ivcT+BWGPyxWVbJZLfvtKR6dqg1L7T7pgAMBtWA==}
+  electron-to-chromium@1.5.368:
+    resolution: {integrity: sha512-7RckJJK4uESJF9PxvfMWd3TGqIiieUTG4HxnKaKuIpGbcr+r2ZEB3g2gAhCP3Fqm42vJSzLfgab9eva/C4/XVw==}
 
   electron-updater@6.8.3:
     resolution: {integrity: sha512-Z6sgw3jgbikWKXei1ENdqFOxBP0WlXg3TtKfz0rgw2vIZFJUyI4pD7ZN7jrkm7EoMK+tcm/qTnPUdqfZukBlBQ==}
@@ -2552,8 +2521,8 @@ packages:
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
 
-  enhanced-resolve@5.22.1:
-    resolution: {integrity: sha512-6QEuw3zoX1SJQc7b87aBXke/no+mG2bTBgw29gWMQonLmpEkWoCAVkl+M49e48AZlWzxiDzDZzYdp6kobcyLww==}
+  enhanced-resolve@5.22.2:
+    resolution: {integrity: sha512-0rxICaFZ7NQho/sHely2bvOPRP0Eu2B0NZ9zM54YvRvWMn7jfz3DmnOZDR9LlXDdDcqntAVc6Hfy4gr/tdH/Ag==}
     engines: {node: '>=10.13.0'}
 
   entities@2.2.0:
@@ -2918,8 +2887,8 @@ packages:
     resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
     engines: {node: '>= 0.4'}
 
-  hasown@2.0.3:
-    resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
+  hasown@2.0.4:
+    resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
     engines: {node: '>= 0.4'}
 
   hoist-non-react-statics@3.3.2:
@@ -3007,8 +2976,8 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  immutable@5.1.5:
-    resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
+  immutable@5.1.6:
+    resolution: {integrity: sha512-q1swsS8K7L8usSHuOqF2TAoCCkonYz0SG38wLAggaa4Wml70zixIvt2ql4coQ2C2B3hTjltJry4r6bULwgAXLQ==}
 
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
@@ -3230,8 +3199,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@4.1.1:
-    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+  js-yaml@4.2.0:
+    resolution: {integrity: sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==}
     hasBin: true
 
   jsesc@3.1.0:
@@ -3551,10 +3520,6 @@ packages:
     resolution: {integrity: sha512-dkEJPVvun4FryqBmZ5KhDo0K9iDXAwn08tMLDinNdRBNPcYEDiWYysLcc6k3mjTMlbP9KyylvRpd4wFtwrT9rw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  mute-stream@4.0.0:
-    resolution: {integrity: sha512-gSrprq0fJ3EiOErzjdIZrjysVVmJ4uu1QWfCDss5LypA5OXvrMje5Ym5z6V6RLyJ2eF87lasX7t6a0AnFvZblg==}
-    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
-
   nanoid@3.3.12:
     resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3586,13 +3551,13 @@ packages:
     resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  node-gyp@12.3.0:
-    resolution: {integrity: sha512-QNcUWM+HgJplcPzBvFBZ9VXacyGZ4+VTOb80PwWR+TlVzoHbRKULNEzpRsnaoxG3Wzr7Qh7BYxGDU3CbKib2Yg==}
+  node-gyp@12.4.0:
+    resolution: {integrity: sha512-OMcPNvqTCFUnNaBlmdgq+lfNqY7gTiSmNRDjY3uAXRyudeKZEZxu3CLtjMQrx4zZxCX2b/mpNqTtwuCJgXhHkw==}
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
 
-  node-releases@2.0.46:
-    resolution: {integrity: sha512-GYVXHE2KnrzAfsAjl4uP++evGFCrAU1jta4ubEjIG7YWt/64Gqv66a30yKwWczVjA6j3bM4nBwH7Pk1JmDHaxQ==}
+  node-releases@2.0.47:
+    resolution: {integrity: sha512-Uzmd6LXpouKo8EUK68IjH4+E01w/hXyV3R3g/geCJo+rXLNfh1xucB+LOzYEOQPSiUK3h/xZf0cQGcSsmyL2Og==}
     engines: {node: '>=18'}
 
   nopt@9.0.0:
@@ -3631,8 +3596,9 @@ packages:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
 
-  obug@2.1.1:
-    resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
+  obug@2.1.2:
+    resolution: {integrity: sha512-AWGB9WFcRXOQs48Z/udjI5ZcZMHXwX8XPByNpOydgcGsDLIzjGizhoMWJyKAWze7AVW/2W1i+/gPX4YtKe5cyg==}
+    engines: {node: '>=12.20.0'}
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -4245,8 +4211,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.1:
-    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
+  semver@7.8.2:
+    resolution: {integrity: sha512-c8jsqUZm3omBOI66G90z1Dyw5z622G8oLG+omfsHBJf3CWQTlOcwOjvOG6wtiNfW6anKm/eA39LMwMtMez2TiQ==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -4469,8 +4435,8 @@ packages:
     resolution: {integrity: sha512-uxc/zpqFg6x7C8vOE7lh6Lbda8eEL9zmVm/PLeTPBRhh1xCgdWaQ+J1CUieGpIfm2HdtsUpRv+HshiasBMcc6A==}
     engines: {node: '>=6'}
 
-  tar@7.5.15:
-    resolution: {integrity: sha512-dzGK0boVlC4W5QFuQN1EFSl3bIDYsk7Tj40U6eIBnK2k/8ml7TZ5agbI5j5+qnoVcAA+rNtBml8SEiLxZpNqRQ==}
+  tar@7.5.16:
+    resolution: {integrity: sha512-56adEpPMouktRlBLXiaYFFzZ/3+JXa8P9n7WbR+ibIjtviN55mEaOkiysCnPnWm+7kkui1Dn8J9l+g6zV8731w==}
     engines: {node: '>=18'}
 
   temp-file@3.4.0:
@@ -4504,13 +4470,9 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@1.2.2:
-    resolution: {integrity: sha512-M/Q0B2cp4K7kynaT/vnED1j8TlLY+Pp7C6Wl2bl/7u/F0mUVwdyOpwomQb8JpYLitHUssAJRmLZdMCGsrx7i+g==}
+  tinyexec@1.2.4:
+    resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
     engines: {node: '>=18'}
-
-  tinyglobby@0.2.16:
-    resolution: {integrity: sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==}
-    engines: {node: '>=12.0.0'}
 
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
@@ -4572,8 +4534,8 @@ packages:
     resolution: {integrity: sha512-4yqz8a3n5HmGTlsbADNtr/dJlhkh/55Rq798G6ibiULcXbDtaLpTl1pvdqcbFfeoj3iSi52lePFM7h9H21cw/A==}
     engines: {node: '>=18.17'}
 
-  undici@7.26.0:
-    resolution: {integrity: sha512-3O9Tf67pGhgOv9jM35AbhkXAKi13f3oy3aE4CSgr+TckGeY+/iu97ZXN+J7DpHPzLbVApFd1IFhcnBjREYXYcg==}
+  undici@7.27.1:
+    resolution: {integrity: sha512-UDdpiex+mzigiyrXrGbiUaF4HzTNhKbh2vRNFaTMzcqmLIPrZxaCtwo/1TMSuWoM1Xz3WiTo9KdgI3kRqYzJGg==}
     engines: {node: '>=20.18.1'}
 
   unicorn-magic@0.3.0:
@@ -4977,7 +4939,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.7
       graphql: 16.14.1
-      immutable: 5.1.5
+      immutable: 5.1.6
       invariant: 2.2.4
 
   '@atlaskit/analytics-next-stable-react-context@1.0.1(react@19.2.7)':
@@ -4985,7 +4947,7 @@ snapshots:
       react: 19.2.7
       tslib: 2.8.1
 
-  '@atlaskit/analytics-next@11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/analytics-next@11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/analytics-next-stable-react-context': 1.0.1(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
@@ -5007,7 +4969,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/atlassian-context@0.9.0(react@19.2.7)':
+  '@atlaskit/atlassian-context@0.10.0(react@19.2.7)':
     dependencies:
       '@babel/runtime': 7.29.7
       react: 19.2.7
@@ -5018,7 +4980,7 @@ snapshots:
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/menu': 8.5.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/popup': 4.23.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens': 13.1.1(react@19.2.7)
@@ -5035,13 +4997,13 @@ snapshots:
 
   '@atlaskit/avatar@25.15.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/icon': 35.3.0(react@19.2.7)
+      '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5054,7 +5016,7 @@ snapshots:
     dependencies:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5065,7 +5027,7 @@ snapshots:
 
   '@atlaskit/blanket@15.0.34(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
@@ -5084,18 +5046,18 @@ snapshots:
 
   '@atlaskit/button@23.11.8(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/focus-ring': 3.1.0(@types/react@19.2.16)(react@19.2.7)
-      '@atlaskit/icon': 35.3.0(react@19.2.7)
+      '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/interaction-context': 3.1.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/spinner': 19.1.2(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
-      '@atlaskit/tooltip': 22.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
+      '@atlaskit/tooltip': 22.6.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -5108,10 +5070,10 @@ snapshots:
 
   '@atlaskit/checkbox@17.3.12(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5121,7 +5083,7 @@ snapshots:
 
   '@atlaskit/css-reset@7.4.5(react@19.2.7)':
     dependencies:
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       react: 19.2.7
     transitivePeerDependencies:
@@ -5129,7 +5091,7 @@ snapshots:
 
   '@atlaskit/css@0.19.4(react@19.2.7)':
     dependencies:
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5143,9 +5105,9 @@ snapshots:
       react: 19.2.7
       tiny-invariant: 1.3.3
 
-  '@atlaskit/feature-gate-js-client@5.7.1(react@19.2.7)':
+  '@atlaskit/feature-gate-js-client@5.7.2(react@19.2.7)':
     dependencies:
-      '@atlaskit/atlassian-context': 0.9.0(react@19.2.7)
+      '@atlaskit/atlassian-context': 0.10.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@statsig/client-core': 3.33.2
       '@statsig/js-client': 3.33.2
@@ -5168,10 +5130,10 @@ snapshots:
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/heading': 5.4.2(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/icon': 35.3.0(react@19.2.7)
+      '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -5187,7 +5149,7 @@ snapshots:
   '@atlaskit/heading@5.4.2(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5200,17 +5162,6 @@ snapshots:
     dependencies:
       '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@babel/runtime': 7.29.7
-      react: 19.2.7
-    transitivePeerDependencies:
-      - supports-color
-
-  '@atlaskit/icon@35.3.0(react@19.2.7)':
-    dependencies:
-      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/tile': 1.1.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
     transitivePeerDependencies:
       - supports-color
@@ -5230,14 +5181,14 @@ snapshots:
     dependencies:
       '@atlaskit/button': 23.11.8(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/icon': 35.3.0(react@19.2.7)
+      '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/link': 3.4.2(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/popup': 4.22.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/popup': 4.23.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5251,7 +5202,7 @@ snapshots:
       '@babel/runtime': 7.29.7
       react: 19.2.7
 
-  '@atlaskit/layering@3.7.0(react@19.2.7)':
+  '@atlaskit/layering@3.8.0(react@19.2.7)':
     dependencies:
       '@babel/runtime': 7.29.7
       bind-event-listener: 3.0.0
@@ -5278,21 +5229,21 @@ snapshots:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/lozenge@13.8.3(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/lozenge@13.8.4(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/badge': 18.6.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/icon': 35.4.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/spinner': 19.1.2(react@19.2.7)
@@ -5323,16 +5274,16 @@ snapshots:
 
   '@atlaskit/modal-dialog@15.2.5(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/blanket': 15.0.34(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/button': 23.11.8(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/icon': 35.4.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/portal': 5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/portal': 5.5.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/pragmatic-drag-and-drop': 1.8.1
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
@@ -5350,7 +5301,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/motion@6.2.4(react@19.2.7)':
+  '@atlaskit/motion@6.2.5(react@19.2.7)':
     dependencies:
       '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
@@ -5366,7 +5317,7 @@ snapshots:
 
   '@atlaskit/platform-feature-flags@1.1.3(react@19.2.7)':
     dependencies:
-      '@atlaskit/feature-gate-js-client': 5.7.1(react@19.2.7)
+      '@atlaskit/feature-gate-js-client': 5.7.2(react@19.2.7)
       '@babel/runtime': 7.29.7
     transitivePeerDependencies:
       - react
@@ -5380,39 +5331,15 @@ snapshots:
     transitivePeerDependencies:
       - react-dom
 
-  '@atlaskit/popup@4.22.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/css': 0.19.4(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
-      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/portal': 5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 13.1.1(react@19.2.7)
-      '@atlaskit/top-layer': 0.12.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      bind-event-listener: 3.0.0
-      focus-trap: 2.4.6
-      memoize-one: 6.0.0
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      tiny-invariant: 1.3.3
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
   '@atlaskit/popup@4.23.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/portal': 5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/portal': 5.5.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@atlaskit/top-layer': 0.13.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -5428,7 +5355,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/portal@5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/portal@5.5.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/app-provider': 4.3.3(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
@@ -5447,12 +5374,12 @@ snapshots:
 
   '@atlaskit/primitives@19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/app-provider': 4.3.3(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/interaction-context': 3.1.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -5468,12 +5395,12 @@ snapshots:
 
   '@atlaskit/radio@8.6.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5485,11 +5412,11 @@ snapshots:
     dependencies:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/icon': 35.4.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/spinner': 19.1.2(react@19.2.7)
-      '@atlaskit/tag': 14.14.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/tag': 14.15.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -5504,10 +5431,10 @@ snapshots:
 
   '@atlaskit/select@21.12.10(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/icon': 35.4.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/react-select': 3.16.2(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -5540,23 +5467,23 @@ snapshots:
   '@atlaskit/spinner@19.1.2(react@19.2.7)':
     dependencies:
       '@atlaskit/interaction-context': 3.1.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tag@14.14.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/tag@14.15.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/avatar': 25.15.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/link': 3.4.2(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/lozenge': 13.8.3(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/lozenge': 13.8.4(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/spinner': 19.1.2(react@19.2.7)
@@ -5587,9 +5514,9 @@ snapshots:
 
   '@atlaskit/textfield@8.3.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -5600,7 +5527,7 @@ snapshots:
   '@atlaskit/theme@23.2.0(react@19.2.7)':
     dependencies:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       react: 19.2.7
     transitivePeerDependencies:
@@ -5627,14 +5554,14 @@ snapshots:
 
   '@atlaskit/toggle@16.1.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/icon': 35.3.0(react@19.2.7)
+      '@atlaskit/icon': 35.4.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.1(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/spinner': 19.1.2(react@19.2.7)
-      '@atlaskit/tokens': 13.1.0(react@19.2.7)
+      '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@atlaskit/visually-hidden': 3.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -5643,18 +5570,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - react-dom
-      - supports-color
-
-  '@atlaskit/tokens@13.1.0(react@19.2.7)':
-    dependencies:
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@babel/traverse': 7.29.7
-      '@babel/types': 7.29.7
-      bind-event-listener: 3.0.0
-      react: 19.2.7
-    transitivePeerDependencies:
       - supports-color
 
   '@atlaskit/tokens@13.1.1(react@19.2.7)':
@@ -5669,35 +5584,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tooltip@22.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
-      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/portal': 5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.1(react@19.2.7)
-      '@atlaskit/top-layer': 0.12.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      bind-event-listener: 3.0.0
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
   '@atlaskit/tooltip@22.6.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/analytics-next': 11.2.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/motion': 6.2.4(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/portal': 5.5.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/portal': 5.5.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/theme': 25.0.0(react@19.2.7)
       '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@atlaskit/top-layer': 0.13.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -5709,60 +5604,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/top-layer@0.12.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
-      '@atlaskit/css': 0.19.4(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.1(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      bind-event-listener: 3.0.0
-      raf-schd: 4.0.3
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
   '@atlaskit/top-layer@0.13.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.1(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      bind-event-listener: 3.0.0
-      raf-schd: 4.0.3
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@atlaskit/top-layer@0.13.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
-      '@atlaskit/css': 0.19.4(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
-      '@atlaskit/tokens': 13.1.1(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      bind-event-listener: 3.0.0
-      raf-schd: 4.0.3
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@atlaskit/top-layer@0.13.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
-      '@atlaskit/css': 0.19.4(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/layering': 3.7.0(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
       '@atlaskit/tokens': 13.1.1(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
@@ -6001,7 +5848,7 @@ snapshots:
       '@compiled/babel-plugin-strip-runtime': 0.38.0
       '@compiled/css': 0.21.1
       '@compiled/utils': 0.13.2
-      enhanced-resolve: 5.22.1
+      enhanced-resolve: 5.22.2
       vite: 8.0.16(@types/node@24.12.4)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
@@ -6070,10 +5917,10 @@ snapshots:
       env-paths: 3.0.0
       graceful-fs: 4.2.11
       progress: 2.0.3
-      semver: 7.8.1
+      semver: 7.8.2
       sumchecker: 3.0.1
     optionalDependencies:
-      undici: 7.26.0
+      undici: 7.27.1
     transitivePeerDependencies:
       - supports-color
 
@@ -6109,7 +5956,7 @@ snapshots:
       debug: 4.4.3
       node-abi: 4.31.0
       node-api-version: 0.2.1
-      node-gyp: 12.3.0
+      node-gyp: 12.4.0
       read-binary-file-arch: 1.0.6
     transitivePeerDependencies:
       - supports-color
@@ -6275,7 +6122,7 @@ snapshots:
       '@graphql-tools/merge': 9.1.9(graphql@16.14.1)
       '@graphql-tools/url-loader': 9.1.2(@types/node@24.12.4)(graphql@16.14.1)
       '@graphql-tools/utils': 11.1.0(graphql@16.14.1)
-      '@inquirer/prompts': 8.5.0(@types/node@24.12.4)
+      '@inquirer/prompts': 8.5.2(@types/node@24.12.4)
       '@whatwg-node/fetch': 0.10.13
       chalk: 5.6.2
       cosmiconfig: 9.0.1(typescript@6.0.3)
@@ -6315,10 +6162,10 @@ snapshots:
       '@graphql-codegen/add': 7.0.1(graphql@16.14.1)
       '@graphql-codegen/gql-tag-operations': 6.0.1(graphql@16.14.1)
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
-      '@graphql-codegen/typed-document-node': 7.0.2(graphql@16.14.1)
+      '@graphql-codegen/typed-document-node': 7.0.3(graphql@16.14.1)
       '@graphql-codegen/typescript': 6.0.2(graphql@16.14.1)
       '@graphql-codegen/typescript-operations': 6.0.3(graphql@16.14.1)
-      '@graphql-codegen/visitor-plugin-common': 7.0.4(graphql@16.14.1)
+      '@graphql-codegen/visitor-plugin-common': 7.1.0(graphql@16.14.1)
       '@graphql-tools/documents': 1.0.1(graphql@16.14.1)
       '@graphql-tools/utils': 11.1.0(graphql@16.14.1)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.14.1)
@@ -6336,7 +6183,7 @@ snapshots:
   '@graphql-codegen/gql-tag-operations@6.0.1(graphql@16.14.1)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
-      '@graphql-codegen/visitor-plugin-common': 7.0.4(graphql@16.14.1)
+      '@graphql-codegen/visitor-plugin-common': 7.1.0(graphql@16.14.1)
       '@graphql-tools/utils': 11.1.0(graphql@16.14.1)
       auto-bind: 5.0.1
       graphql: 16.14.1
@@ -6358,10 +6205,10 @@ snapshots:
       graphql: 16.14.1
       tslib: 2.8.1
 
-  '@graphql-codegen/typed-document-node@7.0.2(graphql@16.14.1)':
+  '@graphql-codegen/typed-document-node@7.0.3(graphql@16.14.1)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
-      '@graphql-codegen/visitor-plugin-common': 7.0.4(graphql@16.14.1)
+      '@graphql-codegen/visitor-plugin-common': 7.1.0(graphql@16.14.1)
       auto-bind: 5.0.1
       change-case-all: 2.1.0
       graphql: 16.14.1
@@ -6371,7 +6218,7 @@ snapshots:
     dependencies:
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
       '@graphql-codegen/schema-ast': 6.0.1(graphql@16.14.1)
-      '@graphql-codegen/visitor-plugin-common': 7.0.4(graphql@16.14.1)
+      '@graphql-codegen/visitor-plugin-common': 7.1.0(graphql@16.14.1)
       auto-bind: 5.0.1
       graphql: 16.14.1
       tslib: 2.8.1
@@ -6380,12 +6227,12 @@ snapshots:
     dependencies:
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
       '@graphql-codegen/schema-ast': 6.0.1(graphql@16.14.1)
-      '@graphql-codegen/visitor-plugin-common': 7.0.4(graphql@16.14.1)
+      '@graphql-codegen/visitor-plugin-common': 7.1.0(graphql@16.14.1)
       auto-bind: 5.0.1
       graphql: 16.14.1
       tslib: 2.8.1
 
-  '@graphql-codegen/visitor-plugin-common@7.0.4(graphql@16.14.1)':
+  '@graphql-codegen/visitor-plugin-common@7.1.0(graphql@16.14.1)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 7.0.1(graphql@16.14.1)
       '@graphql-tools/optimize': 2.0.0(graphql@16.14.1)
@@ -6428,7 +6275,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/delegate@12.0.16(graphql@16.14.1)':
+  '@graphql-tools/delegate@12.0.17(graphql@16.14.1)':
     dependencies:
       '@graphql-tools/batch-execute': 10.0.8(graphql@16.14.1)
       '@graphql-tools/executor': 1.5.3(graphql@16.14.1)
@@ -6607,7 +6454,7 @@ snapshots:
       '@graphql-tools/executor-http': 3.3.0(@types/node@24.12.4)(graphql@16.14.1)
       '@graphql-tools/executor-legacy-ws': 1.1.28(graphql@16.14.1)
       '@graphql-tools/utils': 11.1.0(graphql@16.14.1)
-      '@graphql-tools/wrap': 11.1.15(graphql@16.14.1)
+      '@graphql-tools/wrap': 11.1.16(graphql@16.14.1)
       '@types/ws': 8.18.1
       '@whatwg-node/fetch': 0.10.13
       '@whatwg-node/promise-helpers': 1.3.2
@@ -6631,9 +6478,9 @@ snapshots:
       graphql: 16.14.1
       tslib: 2.8.1
 
-  '@graphql-tools/wrap@11.1.15(graphql@16.14.1)':
+  '@graphql-tools/wrap@11.1.16(graphql@16.14.1)':
     dependencies:
-      '@graphql-tools/delegate': 12.0.16(graphql@16.14.1)
+      '@graphql-tools/delegate': 12.0.17(graphql@16.14.1)
       '@graphql-tools/schema': 10.0.33(graphql@16.14.1)
       '@graphql-tools/utils': 11.1.0(graphql@16.14.1)
       '@whatwg-node/promise-helpers': 1.3.2
@@ -6648,122 +6495,122 @@ snapshots:
     dependencies:
       react: 19.2.7
 
-  '@inquirer/ansi@2.0.6': {}
+  '@inquirer/ansi@2.0.7': {}
 
-  '@inquirer/checkbox@5.2.0(@types/node@24.12.4)':
+  '@inquirer/checkbox@5.2.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/ansi': 2.0.6
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/figures': 2.0.6
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/figures': 2.0.7
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/confirm@6.1.0(@types/node@24.12.4)':
+  '@inquirer/confirm@6.1.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/core@11.2.0(@types/node@24.12.4)':
+  '@inquirer/core@11.2.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/ansi': 2.0.6
-      '@inquirer/figures': 2.0.6
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/figures': 2.0.7
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
       cli-width: 4.1.0
       fast-wrap-ansi: 0.2.2
-      mute-stream: 4.0.0
+      mute-stream: 3.0.0
       signal-exit: 4.1.0
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/editor@5.2.0(@types/node@24.12.4)':
+  '@inquirer/editor@5.2.2(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/external-editor': 3.0.1(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/external-editor': 3.0.3(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/expand@5.1.0(@types/node@24.12.4)':
+  '@inquirer/expand@5.1.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/external-editor@3.0.1(@types/node@24.12.4)':
+  '@inquirer/external-editor@3.0.3(@types/node@24.12.4)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.2
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/figures@2.0.6': {}
+  '@inquirer/figures@2.0.7': {}
 
-  '@inquirer/input@5.1.0(@types/node@24.12.4)':
+  '@inquirer/input@5.1.2(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/number@4.1.0(@types/node@24.12.4)':
+  '@inquirer/number@4.1.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/password@5.1.0(@types/node@24.12.4)':
+  '@inquirer/password@5.1.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/ansi': 2.0.6
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/prompts@8.5.0(@types/node@24.12.4)':
+  '@inquirer/prompts@8.5.2(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/checkbox': 5.2.0(@types/node@24.12.4)
-      '@inquirer/confirm': 6.1.0(@types/node@24.12.4)
-      '@inquirer/editor': 5.2.0(@types/node@24.12.4)
-      '@inquirer/expand': 5.1.0(@types/node@24.12.4)
-      '@inquirer/input': 5.1.0(@types/node@24.12.4)
-      '@inquirer/number': 4.1.0(@types/node@24.12.4)
-      '@inquirer/password': 5.1.0(@types/node@24.12.4)
-      '@inquirer/rawlist': 5.3.0(@types/node@24.12.4)
-      '@inquirer/search': 4.2.0(@types/node@24.12.4)
-      '@inquirer/select': 5.2.0(@types/node@24.12.4)
+      '@inquirer/checkbox': 5.2.1(@types/node@24.12.4)
+      '@inquirer/confirm': 6.1.1(@types/node@24.12.4)
+      '@inquirer/editor': 5.2.2(@types/node@24.12.4)
+      '@inquirer/expand': 5.1.1(@types/node@24.12.4)
+      '@inquirer/input': 5.1.2(@types/node@24.12.4)
+      '@inquirer/number': 4.1.1(@types/node@24.12.4)
+      '@inquirer/password': 5.1.1(@types/node@24.12.4)
+      '@inquirer/rawlist': 5.3.1(@types/node@24.12.4)
+      '@inquirer/search': 4.2.1(@types/node@24.12.4)
+      '@inquirer/select': 5.2.1(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/rawlist@5.3.0(@types/node@24.12.4)':
+  '@inquirer/rawlist@5.3.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/search@4.2.0(@types/node@24.12.4)':
+  '@inquirer/search@4.2.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/figures': 2.0.6
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/figures': 2.0.7
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/select@5.2.0(@types/node@24.12.4)':
+  '@inquirer/select@5.2.1(@types/node@24.12.4)':
     dependencies:
-      '@inquirer/ansi': 2.0.6
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/figures': 2.0.6
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/figures': 2.0.7
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
     optionalDependencies:
       '@types/node': 24.12.4
 
-  '@inquirer/type@4.0.6(@types/node@24.12.4)':
+  '@inquirer/type@4.0.7(@types/node@24.12.4)':
     optionalDependencies:
       '@types/node': 24.12.4
 
@@ -7042,7 +6889,7 @@ snapshots:
   '@tailwindcss/node@4.3.0':
     dependencies:
       '@jridgewell/remapping': 2.3.5
-      enhanced-resolve: 5.22.1
+      enhanced-resolve: 5.22.2
       jiti: 2.7.0
       lightningcss: 1.32.0
       magic-string: 0.30.21
@@ -7212,17 +7059,13 @@ snapshots:
   '@types/react-router-dom@5.3.3':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.2.15
+      '@types/react': 19.2.16
       '@types/react-router': 5.1.20
 
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.2.15
-
-  '@types/react@19.2.15':
-    dependencies:
-      csstype: 3.2.3
+      '@types/react': 19.2.16
 
   '@types/react@19.2.16':
     dependencies:
@@ -7255,12 +7098,12 @@ snapshots:
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.1.8
-      ast-v8-to-istanbul: 1.0.2
+      ast-v8-to-istanbul: 1.0.3
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
       istanbul-reports: 3.2.0
       magicast: 0.5.3
-      obug: 2.1.1
+      obug: 2.1.2
       std-env: 4.1.0
       tinyrainbow: 3.1.0
       vitest: 4.1.8(@types/node@24.12.4)(@vitest/coverage-v8@4.1.8)(@vitest/ui@4.1.8)(happy-dom@20.9.0)(vite@8.0.16(@types/node@24.12.4)(jiti@2.7.0)(yaml@2.9.0))
@@ -7307,7 +7150,7 @@ snapshots:
       flatted: 3.4.2
       pathe: 2.0.3
       sirv: 3.0.2
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
       vitest: 4.1.8(@types/node@24.12.4)(@vitest/coverage-v8@4.1.8)(@vitest/ui@4.1.8)(happy-dom@20.9.0)(vite@8.0.16(@types/node@24.12.4)(jiti@2.7.0)(yaml@2.9.0))
 
@@ -7324,10 +7167,10 @@ snapshots:
 
   '@whatwg-node/fetch@0.10.13':
     dependencies:
-      '@whatwg-node/node-fetch': 0.8.5
+      '@whatwg-node/node-fetch': 0.8.6
       urlpattern-polyfill: 10.1.0
 
-  '@whatwg-node/node-fetch@0.8.5':
+  '@whatwg-node/node-fetch@0.8.6':
     dependencies:
       '@fastify/busboy': 3.2.0
       '@whatwg-node/disposablestack': 0.0.6
@@ -7420,7 +7263,7 @@ snapshots:
       hosted-git-info: 4.1.0
       isbinaryfile: 5.0.7
       jiti: 2.7.0
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       json5: 2.2.3
       lazy-val: 1.0.5
       minimatch: 10.2.5
@@ -7428,7 +7271,7 @@ snapshots:
       proper-lockfile: 4.1.2
       resedit: 1.7.2
       semver: 7.7.4
-      tar: 7.5.15
+      tar: 7.5.16
       temp-file: 3.4.0
       tiny-async-pool: 1.3.0
       which: 5.0.0
@@ -7450,7 +7293,7 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  ast-v8-to-istanbul@1.0.2:
+  ast-v8-to-istanbul@1.0.3:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       estree-walker: 3.0.3
@@ -7500,7 +7343,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.10.32: {}
+  baseline-browser-mapping@2.10.33: {}
 
   bind-event-listener@3.0.0: {}
 
@@ -7538,10 +7381,10 @@ snapshots:
 
   browserslist@4.28.2:
     dependencies:
-      baseline-browser-mapping: 2.10.32
+      baseline-browser-mapping: 2.10.33
       caniuse-lite: 1.0.30001793
-      electron-to-chromium: 1.5.363
-      node-releases: 2.0.46
+      electron-to-chromium: 1.5.368
+      node-releases: 2.0.47
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
   buffer-crc32@0.2.13: {}
@@ -7573,7 +7416,7 @@ snapshots:
       fs-extra: 10.1.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       sanitize-filename: 1.6.4
       source-map-support: 0.5.21
       stat-mode: 1.0.0
@@ -7764,7 +7607,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@6.0.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -7774,7 +7617,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 6.0.3
@@ -7943,7 +7786,7 @@ snapshots:
       builder-util: 26.8.1
       fs-extra: 10.1.0
       iconv-lite: 0.6.3
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
     optionalDependencies:
       dmg-license: 1.0.11
     transitivePeerDependencies:
@@ -8048,13 +7891,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-to-chromium@1.5.363: {}
+  electron-to-chromium@1.5.368: {}
 
   electron-updater@6.8.3:
     dependencies:
       builder-util-runtime: 9.5.1
       fs-extra: 10.1.0
-      js-yaml: 4.1.1
+      js-yaml: 4.2.0
       lazy-val: 1.0.5
       lodash.escaperegexp: 4.1.2
       lodash.isequal: 4.5.0
@@ -8099,7 +7942,7 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  enhanced-resolve@5.22.1:
+  enhanced-resolve@5.22.2:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.3.3
@@ -8135,7 +7978,7 @@ snapshots:
       es-errors: 1.3.0
       get-intrinsic: 1.3.0
       has-tostringtag: 1.0.2
-      hasown: 2.0.3
+      hasown: 2.0.4
 
   es6-error@4.1.1:
     optional: true
@@ -8290,7 +8133,7 @@ snapshots:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       es-set-tostringtag: 2.1.0
-      hasown: 2.0.3
+      hasown: 2.0.4
       mime-types: 2.1.35
 
   formdata-polyfill@4.0.10:
@@ -8353,7 +8196,7 @@ snapshots:
       get-proto: 1.0.1
       gopd: 1.2.0
       has-symbols: 1.1.0
-      hasown: 2.0.3
+      hasown: 2.0.4
       math-intrinsics: 1.1.0
 
   get-proto@1.0.1:
@@ -8399,7 +8242,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.8.1
+      semver: 7.8.2
       serialize-error: 7.0.1
     optional: true
 
@@ -8518,7 +8361,7 @@ snapshots:
     dependencies:
       has-symbols: 1.1.0
 
-  hasown@2.0.3:
+  hasown@2.0.4:
     dependencies:
       function-bind: 1.1.2
 
@@ -8632,7 +8475,7 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  immutable@5.1.5: {}
+  immutable@5.1.6: {}
 
   import-fresh@3.3.1:
     dependencies:
@@ -8658,10 +8501,10 @@ snapshots:
 
   inquirer@13.4.3(@types/node@24.12.4):
     dependencies:
-      '@inquirer/ansi': 2.0.6
-      '@inquirer/core': 11.2.0(@types/node@24.12.4)
-      '@inquirer/prompts': 8.5.0(@types/node@24.12.4)
-      '@inquirer/type': 4.0.6(@types/node@24.12.4)
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/core': 11.2.1(@types/node@24.12.4)
+      '@inquirer/prompts': 8.5.2(@types/node@24.12.4)
+      '@inquirer/type': 4.0.7(@types/node@24.12.4)
       mute-stream: 3.0.0
       run-async: 4.0.6
       rxjs: 7.8.2
@@ -8696,7 +8539,7 @@ snapshots:
 
   is-core-module@2.16.2:
     dependencies:
-      hasown: 2.0.3
+      hasown: 2.0.4
 
   is-extglob@2.1.1: {}
 
@@ -8804,7 +8647,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@4.1.1:
+  js-yaml@4.2.0:
     dependencies:
       argparse: 2.0.1
 
@@ -8978,7 +8821,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.8.1
+      semver: 7.8.2
 
   map-cache@0.2.2: {}
 
@@ -9063,8 +8906,6 @@ snapshots:
 
   mute-stream@3.0.0: {}
 
-  mute-stream@4.0.0: {}
-
   nanoid@3.3.12: {}
 
   nock@14.0.15:
@@ -9075,7 +8916,7 @@ snapshots:
 
   node-abi@4.31.0:
     dependencies:
-      semver: 7.8.1
+      semver: 7.7.4
 
   node-addon-api@1.7.2:
     optional: true
@@ -9084,7 +8925,7 @@ snapshots:
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.8.1
+      semver: 7.7.4
 
   node-domexception@1.0.0: {}
 
@@ -9094,20 +8935,20 @@ snapshots:
       fetch-blob: 3.2.0
       formdata-polyfill: 4.0.10
 
-  node-gyp@12.3.0:
+  node-gyp@12.4.0:
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.3
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.8.1
-      tar: 7.5.15
-      tinyglobby: 0.2.16
+      semver: 7.7.4
+      tar: 7.5.16
+      tinyglobby: 0.2.17
       undici: 6.26.0
       which: 6.0.1
 
-  node-releases@2.0.46: {}
+  node-releases@2.0.47: {}
 
   nopt@9.0.0:
     dependencies:
@@ -9141,7 +8982,7 @@ snapshots:
   object-keys@1.1.1:
     optional: true
 
-  obug@2.1.1: {}
+  obug@2.1.2: {}
 
   once@1.4.0:
     dependencies:
@@ -9733,7 +9574,7 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.1: {}
+  semver@7.8.2: {}
 
   serialize-error@7.0.1:
     dependencies:
@@ -9766,7 +9607,7 @@ snapshots:
 
   simple-update-notifier@2.0.0:
     dependencies:
-      semver: 7.8.1
+      semver: 7.8.2
 
   sirv@3.0.2:
     dependencies:
@@ -9926,7 +9767,7 @@ snapshots:
 
   tapable@2.3.3: {}
 
-  tar@7.5.15:
+  tar@7.5.16:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
@@ -9962,12 +9803,7 @@ snapshots:
 
   tinybench@2.9.0: {}
 
-  tinyexec@1.2.2: {}
-
-  tinyglobby@0.2.16:
-    dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
+  tinyexec@1.2.4: {}
 
   tinyglobby@0.2.17:
     dependencies:
@@ -10013,7 +9849,7 @@ snapshots:
 
   undici@6.26.0: {}
 
-  undici@7.26.0:
+  undici@7.27.1:
     optional: true
 
   unicorn-magic@0.3.0: {}
@@ -10146,13 +9982,13 @@ snapshots:
       es-module-lexer: 2.1.0
       expect-type: 1.3.0
       magic-string: 0.30.21
-      obug: 2.1.1
+      obug: 2.1.2
       pathe: 2.0.3
       picomatch: 4.0.4
       std-env: 4.1.0
       tinybench: 2.9.0
-      tinyexec: 1.2.2
-      tinyglobby: 0.2.16
+      tinyexec: 1.2.4
+      tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
       vite: 8.0.16(@types/node@24.12.4)(jiti@2.7.0)(yaml@2.9.0)
       why-is-node-running: 2.3.0
