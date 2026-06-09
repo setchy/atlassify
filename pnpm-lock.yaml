@@ -100,8 +100,8 @@ importers:
         specifier: 16.1.0
         version: 16.1.0(@types/react@19.2.16)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens':
-        specifier: 13.1.1
-        version: 13.1.1(react@19.2.7)
+        specifier: 13.2.0
+        version: 13.2.0(react@19.2.7)
       '@atlaskit/tooltip':
         specifier: 22.6.0
         version: 22.6.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
