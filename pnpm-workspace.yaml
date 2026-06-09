@@ -7,3 +7,11 @@ allowBuilds:
   '@tailwindcss/oxide': true
   esbuild: true
   unrs-resolver: true
+overrides:
+  react-is: '19.2.6'
+  # Force patched versions of transitive dev-tooling deps pulled in by
+  # react-devtools (old electron/got/cross-spawn) so they don't trip security
+  # scanners. None of these ship in the packaged app.
+  cross-spawn: '^7.0.6'
+  got: '^11.8.5'
+  electron: '$electron'
